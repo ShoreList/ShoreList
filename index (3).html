@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ShoreList — Your Local Guide to Coastal Adventures</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=Caveat:wght@400;600&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif !important;
+  background-color: #0A4D5C !important;
+  background: #0A4D5C !important;
+  color: #FEFCF7 !important;
+  overflow-x: hidden;
+}
+
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:200;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 48px;
+  transition: background 0.4s;
+  background-color: transparent !important;
+}
+nav.scrolled {
+  background-color: rgba(10,77,92,0.97) !important;
+  background: rgba(10,77,92,0.97) !important;
+  backdrop-filter: blur(16px);
+}
+.logo-text { font-size:1.7rem; font-weight:900; line-height:1; display:flex; align-items:baseline; }
+.logo-shore { font-family:'Playfair Display',serif; font-style:italic; color:#F5E8CB !important; }
+.logo-list  { font-family:'DM Sans',sans-serif; font-weight:700; color:#E96645 !important; }
+.nav-links { display:flex; gap:32px; align-items:center; }
+.nav-links a { font-size:0.82rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,232,203,0.65) !important; text-decoration:none; }
+.nav-links a:hover { color:#F5E8CB !important; }
+.nav-cta { background-color:#E96645 !important; background:#E96645 !important; color:#FEFCF7 !important; padding:10px 24px !important; border-radius:6px; font-weight:600 !important; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background-color: #0A4D5C !important;
+  background: #0A4D5C !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 48px 0;
+  position: relative;
+  overflow: hidden;
+}
+.hero-gradient {
+  position:absolute; inset:0; pointer-events:none;
+  background: radial-gradient(ellipse 100% 80% at 50% 0%, #1a8595 0%, #0A4D5C 60%) !important;
+}
+.hero-dots {
+  position:absolute; inset:0; pointer-events:none;
+  background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px) !important;
+  background-size:28px 28px;
+}
+.compass { position:absolute; top:80px; right:60px; width:72px; height:72px; border:1.5px solid rgba(245,232,203,0.25); border-radius:50%; display:flex; align-items:center; justify-content:center; animation:spin 30s linear infinite; }
+.compass-inner { font-size:1.4rem; color:#E96645 !important; animation:spin 30s linear infinite reverse; }
+@keyframes spin { to{transform:rotate(360deg)} }
+
+/* Two-column hero layout */
+.hero-layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  padding-bottom: 80px;
+}
+
+.hero-inner { position:relative; z-index:2; }
+.hero-tag { display:inline-flex; align-items:center; gap:10px; font-size:0.72rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:#E96645 !important; margin-bottom:24px; animation:fadeUp 0.7s ease both; }
+.hero-tag::before { content:''; width:28px; height:1px; background:#E96645 !important; }
+.hero-title { font-family:'Playfair Display',serif; font-size:clamp(3.2rem,6vw,5.2rem); line-height:1.02; letter-spacing:-2px; margin-bottom:24px; animation:fadeUp 0.7s 0.1s ease both; color:#FEFCF7 !important; }
+.hero-title .italic { font-style:italic; color:#F5E8CB !important; }
+.hero-title .block { display:block; color:#FEFCF7 !important; }
+.hero-title .orange { color:#E96645 !important; font-style:normal; }
+.hero-sub { font-size:1rem; font-weight:300; line-height:1.75; color:rgba(245,232,203,0.7) !important; max-width:460px; margin-bottom:36px; animation:fadeUp 0.7s 0.2s ease both; }
+.hero-btns { display:flex; gap:14px; flex-wrap:wrap; animation:fadeUp 0.7s 0.3s ease both; margin-bottom:44px; }
+
+/* Hero stats */
+.hero-stats {
+  display: flex;
+  gap: 28px;
+  animation: fadeUp 0.7s 0.45s ease both;
+}
+.hstat-divider { width:1px; background:rgba(245,232,203,0.15); }
+.hstat-num { font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:900; color:#F5E8CB !important; line-height:1; }
+.hstat-lbl { font-size:0.7rem; color:rgba(245,232,203,0.45) !important; margin-top:3px; font-weight:500; letter-spacing:0.05em; }
+
+.btn-fill { background-color:#E96645 !important; background:#E96645 !important; color:#FEFCF7 !important; padding:15px 36px; border-radius:6px; font-weight:600; font-size:0.95rem; text-decoration:none; border:none; cursor:pointer; font-family:'DM Sans',sans-serif; display:inline-block; transition:transform 0.2s; }
+.btn-fill:hover { background-color:#F07A5A !important; transform:translateY(-2px); }
+.btn-ghost { background:transparent !important; color:#F5E8CB !important; padding:15px 36px; border-radius:6px; font-weight:500; font-size:0.95rem; text-decoration:none; display:inline-block; border:1.5px solid rgba(245,232,203,0.3); transition:transform 0.2s; cursor:pointer; }
+
+/* ── CARD CLUSTER (right side of hero) ── */
+.hero-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 480px;
+}
+
+.cluster {
+  position: relative;
+  width: 320px;
+  height: 440px;
+}
+
+.xcard {
+  position: absolute;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Back cards */
+.xc-back-l {
+  width: 224px; height: 280px;
+  top: 65px; left: -8px;
+  background: linear-gradient(150deg,#0a2540 0%,#0d4070 55%,#1a6b8a 100%);
+  transform: rotate(-9deg);
+  filter: blur(1.5px);
+  opacity: 0;
+  z-index: 1;
+  animation: slideL 0.65s ease forwards 1.0s;
+}
+.xc-back-r {
+  width: 224px; height: 280px;
+  top: 75px; right: -8px;
+  background: linear-gradient(150deg,#0a2e1a 0%,#0f4d2e 55%,#1a7a56 100%);
+  transform: rotate(9deg);
+  filter: blur(1.5px);
+  opacity: 0;
+  z-index: 1;
+  animation: slideR 0.65s ease forwards 1.0s;
+}
+
+/* Main card */
+.xc-main {
+  width: 284px; height: 370px;
+  top: 18px;
+  left: 50%; transform: translateX(-50%) rotate(-2.5deg);
+  z-index: 3;
+  opacity: 0;
+  animation: cardIn 0.75s cubic-bezier(0.34,1.2,0.64,1) forwards 1.2s,
+             floatIt 4.5s ease-in-out infinite 2.2s;
+}
+.xc-main:hover {
+  transform: translateX(-50%) rotate(0deg) scale(1.03) !important;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.55);
+  animation-play-state: paused;
+}
+
+/* Card image zone */
+.xcard-img {
+  height: 160px;
+  position: relative;
+  background: linear-gradient(145deg,#0d0d2b 0%,#1a0533 42%,#2d1060 72%,#4a0e8f 100%);
+  overflow: hidden;
+}
+.xcard-stars-field { position:absolute; inset:0; }
+.xcard-stars-field span {
+  position:absolute; width:2px; height:2px;
+  background:white; border-radius:50%;
+  animation: twinkle 3s ease-in-out infinite;
+}
+.ghost-bg {
+  position:absolute; bottom:-4px; left:50%;
+  transform:translateX(-50%);
+  font-size:60px; opacity:0.22; filter:blur(1px);
+  user-select:none;
+}
+.xcard-badge {
+  position:absolute; top:11px; left:11px;
+  background:rgba(233,102,69,0.92);
+  backdrop-filter:blur(6px);
+  color:white; font-size:9px; letter-spacing:1.2px;
+  text-transform:uppercase; font-weight:700;
+  padding:4px 10px; border-radius:20px;
+}
+.xcard-price {
+  position:absolute; top:11px; right:11px;
+  background:rgba(0,0,0,0.5);
+  backdrop-filter:blur(6px);
+  color:white; font-size:12px; font-weight:700;
+  padding:4px 10px; border-radius:20px;
+}
+
+/* Card body */
+.xcard-body {
+  padding:15px 15px 13px;
+  background:rgba(8,18,32,0.93);
+  backdrop-filter:blur(10px);
+  height: calc(100% - 160px);
+  display:flex; flex-direction:column; gap:9px;
+}
+.xcard-title {
+  font-family:'Playfair Display',serif;
+  font-size:17px; font-weight:700;
+  color:#F5E8CB !important; line-height:1.2;
+}
+.xcard-stars-row { display:flex; align-items:center; gap:6px; }
+.xstars { color:#FFD700; font-size:11px; letter-spacing:1px; }
+.xrating { font-size:12px; font-weight:700; color:white; }
+.xreviews { font-size:11px; color:rgba(255,255,255,0.4); }
+.xdivider { height:1px; background:rgba(255,255,255,0.08); }
+.xcard-row { display:flex; align-items:center; justify-content:space-between; }
+.xdetail-lbl { font-size:9.5px; color:rgba(255,255,255,0.45); margin-bottom:2px; letter-spacing:0.05em; }
+.xdetail-val { font-size:12px; font-weight:600; color:white; }
+.xbook-btn {
+  background:#E96645 !important; color:white;
+  border:none; padding:8px 15px;
+  border-radius:6px; font-size:11px; font-weight:700;
+  cursor:pointer; font-family:'DM Sans',sans-serif;
+  transition:background 0.2s;
+}
+.xbook-btn:hover { background:#F07A5A !important; }
+.xtimes { display:flex; gap:5px; }
+.xchip {
+  font-size:9.5px; padding:3px 8px;
+  border-radius:4px; font-weight:600;
+}
+.xchip-avail { background:rgba(255,255,255,0.09); color:rgba(255,255,255,0.7); }
+.xchip-sold { background:rgba(233,102,69,0.15); color:rgba(233,102,69,0.7); text-decoration:line-through; }
+
+/* Live badge */
+.xlive {
+  position:absolute; top:-13px; right:2px;
+  background:#22c55e; color:white;
+  font-size:9px; font-weight:700; letter-spacing:1.2px;
+  padding:4px 11px; border-radius:20px;
+  display:flex; align-items:center; gap:5px;
+  z-index:10; opacity:0;
+  animation:fadeUp 0.5s ease forwards 2.2s;
+  box-shadow:0 4px 18px rgba(34,197,94,0.4);
+}
+.xlive-dot {
+  width:5px; height:5px; background:white; border-radius:50%;
+  animation:pulseDot 1.6s ease-in-out infinite;
+}
+
+/* Toast notifications */
+.xtoasts {
+  position:absolute; bottom:-8px; right:-36px;
+  z-index:10; display:flex; flex-direction:column; gap:7px;
+}
+.xtoast {
+  background:white; border-radius:13px;
+  padding:9px 12px;
+  display:flex; align-items:center; gap:9px;
+  box-shadow:0 8px 28px rgba(0,0,0,0.25);
+  transform:translateX(140%); opacity:0;
+  transition:all 0.48s cubic-bezier(0.34,1.3,0.64,1);
+  min-width:200px;
+}
+.xtoast.show { transform:translateX(0); opacity:1; }
+.xta { width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0; }
+.xta-ghost { background:linear-gradient(135deg,#1a0533,#4a0e8f); }
+.xta-fish  { background:linear-gradient(135deg,#0a2540,#1a6b8a); }
+.xtbody { flex:1; }
+.xtname   { font-size:11.5px; font-weight:700; color:#1a1a1a; }
+.xtaction { font-size:10.5px; color:#666; }
+.xttime   { font-size:10px; color:#aaa; white-space:nowrap; }
+
+/* Wave */
+.wave-stack { position:absolute; bottom:0; left:0; right:0; height:160px; overflow:hidden; }
+.wv { position:absolute; bottom:0; left:-5%; width:110%; border-radius:50% 50% 0 0; }
+.wv1 { height:100px; background-color:rgba(42,156,173,0.35) !important; animation:wv 9s ease-in-out infinite; }
+.wv2 { height:75px; background-color:rgba(180,215,220,0.25) !important; animation:wv 11s ease-in-out infinite reverse; }
+.wv3 { height:50px; background-color:rgba(232,213,170,0.18) !important; animation:wv 7s ease-in-out infinite; }
+@keyframes wv { 0%,100%{transform:translateX(0)} 50%{transform:translateX(3%)} }
+
+/* MARQUEE */
+.marquee-bar { background-color:#E96645 !important; background:#E96645 !important; padding:13px 0; overflow:hidden; }
+.marquee { display:flex; animation:mq 20s linear infinite; white-space:nowrap; }
+.mq-item { display:inline-flex; align-items:center; gap:20px; padding:0 28px; font-size:0.76rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:#FEFCF7 !important; }
+.mq-dot { width:4px; height:4px; background:rgba(255,255,255,0.45) !important; border-radius:50%; }
+@keyframes mq { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+/* SECTIONS */
+.sec { padding:110px 48px; background-color:#0A4D5C !important; background:#0A4D5C !important; }
+.sec-alt { background-color:#073D4A !important; background:#073D4A !important; }
+.sec-tag { font-size:0.72rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:#E96645 !important; margin-bottom:14px; display:flex; align-items:center; gap:10px; }
+.sec-tag::before { content:''; width:24px; height:1px; background:#E96645 !important; }
+.sec-title { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3rem); font-weight:900; line-height:1.12; letter-spacing:-1px; margin-bottom:60px; max-width:480px; color:#FEFCF7 !important; }
+.sec-title em { font-style:italic; color:#E96645 !important; }
+
+.steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:2px; }
+.step { padding:44px 32px; background-color:rgba(255,255,255,0.04) !important; border:1px solid rgba(255,255,255,0.07); transition:background 0.3s; }
+.step:hover { background-color:rgba(233,102,69,0.08) !important; }
+.step-n { font-family:'Playfair Display',serif; font-size:3.5rem; font-weight:900; font-style:italic; color:rgba(233,102,69,0.25) !important; line-height:1; margin-bottom:20px; }
+.step h3 { font-size:1.05rem; font-weight:600; margin-bottom:10px; color:#F5E8CB !important; }
+.step p { font-size:0.88rem; line-height:1.75; color:rgba(245,232,203,0.6) !important; }
+
+.cats { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:10px; }
+.cat { background-color:rgba(255,255,255,0.04) !important; border:1px solid rgba(255,255,255,0.08); padding:28px 20px; border-radius:4px; text-align:center; cursor:pointer; transition:all 0.22s; text-decoration:none; display:block; }
+.cat:hover { background-color:rgba(233,102,69,0.12) !important; border-color:#E96645; transform:translateY(-4px); }
+.cat-ico { font-size:1.9rem; display:block; margin-bottom:10px; }
+.cat-name { font-size:0.8rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#E8D5AA !important; }
+
+/* BOOKING */
+.booking-wrap { display:flex; justify-content:center; padding:80px 48px; background-color:#121212 !important; background:#121212 !important; }
+.booking-inner { max-width:360px; width:100%; }
+.booking-phone { background:#ffffff !important; border-radius:28px; width:100%; max-width:360px; overflow:hidden; box-shadow:0 40px 80px rgba(0,0,0,0.6); }
+.bp-header { background-color:#1A7585 !important; background:#1A7585 !important; padding:20px 20px 16px; color:#FEFCF7 !important; }
+.bp-loc { font-size:0.72rem; font-weight:500; opacity:0.75; margin-bottom:4px; color:#FEFCF7 !important; }
+.bp-q { font-size:1.3rem; font-weight:700; line-height:1.2; color:#FEFCF7 !important; }
+.bp-tabs { display:flex; gap:16px; margin-top:12px; }
+.bp-tab { font-size:0.7rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.5) !important; padding-bottom:4px; cursor:pointer; }
+.bp-tab.active { color:#FEFCF7 !important; border-bottom:2px solid #E96645; }
+.bp-item { display:flex; align-items:center; gap:12px; padding:16px 20px; border-bottom:1px solid #f0f0f0; background-color:#ffffff !important; }
+.bp-item:last-child { border-bottom:none; }
+.bp-ico { width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; flex-shrink:0; }
+.bp-iname { font-size:0.92rem; font-weight:600; color:#1a1a1a !important; margin-bottom:2px; }
+.bp-imeta { font-size:0.75rem; color:#888 !important; }
+.bp-price { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:900; color:#E96645 !important; }
+.bp-caption { text-align:center; padding:24px; font-size:0.85rem; line-height:1.7; color:rgba(245,232,203,0.65) !important; background-color:#121212 !important; }
+
+/* OPERATOR */
+.op-section { padding:100px 48px; background-color:#0A4D5C !important; background:#0A4D5C !important; border-top:1px solid rgba(255,255,255,0.06); }
+.op-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+.op-badge { display:inline-block; background-color:rgba(233,102,69,0.15) !important; border:1px solid rgba(233,102,69,0.35); color:#E96645 !important; font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; padding:6px 14px; border-radius:4px; margin-bottom:20px; }
+.op-title { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,3vw,2.6rem); font-weight:900; line-height:1.15; margin-bottom:16px; color:#F5E8CB !important; }
+.op-sub { font-size:0.95rem; line-height:1.8; color:rgba(245,232,203,0.65) !important; margin-bottom:36px; }
+.perks { display:flex; flex-direction:column; gap:18px; margin-bottom:40px; }
+.perk { display:flex; gap:12px; align-items:flex-start; }
+.perk-dot { width:22px; height:22px; border-radius:50%; background-color:rgba(233,102,69,0.18) !important; border:1px solid rgba(233,102,69,0.4); display:flex; align-items:center; justify-content:center; font-size:0.7rem; color:#E96645 !important; flex-shrink:0; margin-top:2px; }
+.perk p { font-size:0.88rem; line-height:1.65; color:rgba(245,232,203,0.65) !important; }
+.perk p strong { color:#FEFCF7 !important; font-weight:600; }
+.op-card { background-color:rgba(255,255,255,0.04) !important; border:1px solid rgba(245,232,203,0.12); border-radius:12px; overflow:hidden; }
+.op-card-header { background-color:#1A7585 !important; padding:20px 28px; font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:rgba(245,232,203,0.7) !important; }
+.op-row { display:flex; justify-content:space-between; align-items:center; padding:20px 28px; border-bottom:1px solid rgba(255,255,255,0.05); }
+.op-row:last-child { border-bottom:none; }
+.op-row-label { font-size:0.88rem; color:rgba(245,232,203,0.6) !important; }
+.op-row-val { font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:900; color:#E96645 !important; }
+
+/* CONTACT */
+.contact-sec { background-color:#0E5F6E !important; background:#0E5F6E !important; padding:100px 48px; text-align:center; position:relative; overflow:hidden; }
+.contact-dots { position:absolute; inset:0; background-image:radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px) !important; background-size:28px 28px; }
+.contact-tag { font-size:0.72rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:#E96645 !important; margin-bottom:16px; display:flex; align-items:center; justify-content:center; gap:10px; position:relative; z-index:1; }
+.contact-title { font-family:'Playfair Display',serif; font-size:clamp(2.2rem,5vw,3.6rem); font-weight:900; line-height:1.1; letter-spacing:-1.5px; margin-bottom:14px; position:relative; z-index:1; color:#FEFCF7 !important; }
+.contact-title em { font-style:italic; color:#E96645 !important; }
+.contact-sub { font-size:0.98rem; color:rgba(245,232,203,0.65) !important; line-height:1.75; max-width:440px; margin:0 auto 44px; position:relative; z-index:1; }
+.contact-form { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; max-width:500px; margin:0 auto 14px; position:relative; z-index:1; }
+.cf-input { flex:1; min-width:200px; background-color:rgba(255,255,255,0.08) !important; border:1px solid rgba(255,255,255,0.15); color:#FEFCF7 !important; padding:15px 18px; border-radius:6px; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; }
+.cf-input::placeholder { color:rgba(245,232,203,0.35) !important; }
+.contact-note { font-size:0.76rem; color:rgba(245,232,203,0.35) !important; position:relative; z-index:1; }
+
+footer { background-color:#121212 !important; background:#121212 !important; padding:36px 48px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; border-top:1px solid rgba(255,255,255,0.05); }
+.foot-shore { font-family:'Playfair Display',serif; font-style:italic; font-size:1.2rem; color:#F5E8CB !important; }
+.foot-list { font-family:'DM Sans',sans-serif; font-weight:700; font-size:1.2rem; color:#E96645 !important; }
+.foot-copy { font-size:0.78rem; color:rgba(245,232,203,0.3) !important; }
+.foot-links { display:flex; gap:22px; }
+.foot-links a { font-size:0.78rem; color:rgba(245,232,203,0.3) !important; text-decoration:none; }
+.foot-links a:hover { color:#E96645 !important; }
+
+/* ── KEYFRAMES ── */
+@keyframes fadeUp  { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+@keyframes slideL  { from{opacity:0;transform:translateX(-22px) rotate(-9deg)} to{opacity:0.65;transform:translateX(0) rotate(-9deg)} }
+@keyframes slideR  { from{opacity:0;transform:translateX(22px) rotate(9deg)} to{opacity:0.65;transform:translateX(0) rotate(9deg)} }
+@keyframes cardIn  { from{opacity:0;transform:translateX(-50%) translateY(26px) rotate(-2.5deg)} to{opacity:1;transform:translateX(-50%) translateY(0) rotate(-2.5deg)} }
+@keyframes floatIt { 0%,100%{transform:translateX(-50%) rotate(-2.5deg) translateY(0)} 50%{transform:translateX(-50%) rotate(-2.5deg) translateY(-10px)} }
+@keyframes pulseDot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.75)} }
+@keyframes twinkle  { 0%,100%{opacity:.9} 50%{opacity:.2} }
+
+/* ── MOBILE ── */
+@media (max-width:900px) {
+  .hero-layout { grid-template-columns:1fr; }
+  .hero-right { display:none; }
+}
+@media (max-width:780px) {
+  nav { padding:16px 22px; }
+  .nav-links { display:none; }
+  .hero { padding:90px 22px 0; min-height:auto; }
+  .compass { display:none; }
+  .sec { padding:72px 22px; }
+  .op-section { padding:72px 22px; }
+  .op-grid { grid-template-columns:1fr; gap:40px; }
+  .contact-sec { padding:72px 22px; }
+  footer { padding:28px 22px; flex-direction:column; text-align:center; }
+  .booking-wrap { padding:60px 22px; }
+}
+
+/* ── HAMBURGER ── */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.hamburger span{display:block;width:24px;height:2px;background:#F5E8CB;border-radius:2px;transition:all 0.3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,77,92,0.99);z-index:190;flex-direction:column;align-items:center;justify-content:center;gap:36px;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:1.4rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F5E8CB !important;text-decoration:none;}
+.mobile-menu .mm-cta{background:#E96645 !important;color:#FEFCF7 !important;padding:16px 40px;border-radius:6px;}
+.sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:180;padding:12px 20px 20px;background:linear-gradient(to top,rgba(10,77,92,1) 60%,transparent);transition:opacity 0.3s;}
+.sticky-cta a{display:block;background:#E96645 !important;color:#FEFCF7 !important;text-align:center;padding:16px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;box-shadow:0 8px 32px rgba(233,102,69,0.45);}
+
+/* ── CATEGORY OVERLAY ── */
+.cat-overlay{display:none;position:fixed;inset:0;background:#0A4D5C;z-index:300;overflow-y:auto;}
+.cat-overlay.open{display:block;}
+.cat-overlay-nav{position:sticky;top:0;background:rgba(10,77,92,0.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.07);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;}
+.cat-back{font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,232,203,0.55) !important;text-decoration:none;cursor:pointer;background:none;border:none;font-family:"DM Sans",sans-serif;transition:color 0.2s;}
+.cat-back:hover{color:#F5E8CB !important;}
+.cat-overlay-hero{padding:56px 48px 48px;background:radial-gradient(ellipse 80% 60% at 20% 50%,rgba(26,133,149,0.25) 0%,transparent 65%);border-bottom:1px solid rgba(255,255,255,0.06);}
+.cat-overlay-tag{font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#E96645 !important;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.cat-overlay-tag::before{content:"";width:24px;height:1px;background:#E96645;}
+.cat-overlay-icon{font-size:3.5rem;display:block;margin-bottom:16px;}
+.cat-overlay-title{font-family:"Playfair Display",serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;color:#FEFCF7 !important;margin-bottom:14px;}
+.cat-overlay-sub{font-size:1rem;font-weight:300;line-height:1.8;color:rgba(245,232,203,0.65) !important;max-width:520px;margin-bottom:32px;}
+.loc-pills{display:flex;flex-wrap:wrap;gap:8px;}
+.loc-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.05) !important;border:1px solid rgba(255,255,255,0.1);color:rgba(245,232,203,0.6) !important;font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:6px 14px;border-radius:4px;cursor:pointer;transition:all 0.2s;}
+.loc-pill:hover,.loc-pill.active{background:rgba(233,102,69,0.15) !important;border-color:#E96645;color:#E96645 !important;}
+.cat-overlay-body{padding:72px 48px;}
+.cat-overlay-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;max-width:1100px;}
+.cat-form-card{background:rgba(255,255,255,0.03) !important;border:1px solid rgba(245,232,203,0.1);border-radius:12px;overflow:hidden;}
+.cat-form-header{background:#1A7585 !important;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;}
+.cat-form-header-title{font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,232,203,0.85) !important;}
+.cat-form-badge{background:rgba(233,102,69,0.25) !important;border:1px solid rgba(233,102,69,0.45);color:#E96645 !important;font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:4px 10px;border-radius:4px;}
+.cat-form-body{padding:28px;display:flex;flex-direction:column;gap:12px;}
+.cat-form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.fi-label{display:block;font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,232,203,0.4) !important;margin-bottom:5px;}
+.fi{width:100%;background:rgba(255,255,255,0.05) !important;border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:12px 14px;font-family:"DM Sans",sans-serif;font-size:0.9rem;color:#FEFCF7 !important;outline:none;transition:border-color 0.2s;-webkit-appearance:none;}
+.fi:focus{border-color:rgba(233,102,69,0.5);}
+.fi::placeholder{color:rgba(245,232,203,0.25) !important;}
+.fi option{background:#073D4A;color:#FEFCF7;}
+textarea.fi{resize:vertical;min-height:100px;}
+.cat-form-note{text-align:center;padding:0 28px 20px;font-family:"Caveat",cursive;font-size:1rem;color:rgba(245,232,203,0.4) !important;}
+.op-info-head{font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#E96645 !important;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.op-info-head::before{content:"";width:24px;height:1px;background:#E96645;}
+.op-info-title{font-family:"Playfair Display",serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;line-height:1.15;color:#F5E8CB !important;letter-spacing:-0.5px;margin-bottom:14px;}
+.op-info-title em{font-style:italic;color:#E96645 !important;}
+.op-info-copy{font-size:0.93rem;line-height:1.8;color:rgba(245,232,203,0.6) !important;margin-bottom:32px;}
+.op-perks{display:flex;flex-direction:column;gap:16px;}
+.op-perk{display:flex;gap:12px;align-items:flex-start;}
+.op-perk-dot{width:20px;height:20px;border-radius:50%;background:rgba(233,102,69,0.18) !important;border:1px solid rgba(233,102,69,0.4);display:flex;align-items:center;justify-content:center;font-size:0.65rem;color:#E96645 !important;flex-shrink:0;margin-top:2px;}
+.op-perk p{font-size:0.86rem;line-height:1.65;color:rgba(245,232,203,0.65) !important;}
+.op-perk p strong{color:#FEFCF7 !important;font-weight:600;}
+
+@media (max-width:900px){.cat-overlay-grid{grid-template-columns:1fr;gap:40px;}}
+@media (max-width:780px){
+  nav{padding:16px 22px;}
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .hero{padding:90px 22px 80px;min-height:auto;}
+  .compass{display:none;}
+  .hero-btns{flex-direction:column;gap:10px;}
+  .btn-fill,.btn-ghost{width:100%;text-align:center;padding:16px 24px;font-size:1rem;border-radius:8px;}
+  .hero-stats{gap:18px;}
+  .sec{padding:72px 22px;}
+  .op-section{padding:72px 22px;}
+  .op-grid{grid-template-columns:1fr;gap:40px;}
+  .contact-sec{padding:72px 22px;}
+  .booking-wrap{padding:60px 22px;}
+  .cats{grid-template-columns:repeat(3,1fr);gap:8px;}
+  .cat{padding:20px 10px;border-radius:6px;}
+  .cat-ico{font-size:1.6rem;margin-bottom:8px;}
+  .cat-name{font-size:0.65rem;letter-spacing:0.06em;}
+  .booking-inner{max-width:100%;}
+  .booking-phone{max-width:100%;border-radius:20px;}
+  .contact-form{flex-direction:column;}
+  .cf-input{width:100%;min-width:unset;font-size:16px;padding:16px 18px;border-radius:8px;}
+  footer{padding:28px 22px;flex-direction:column;text-align:center;}
+  .foot-links{flex-wrap:wrap;justify-content:center;gap:16px;}
+  .sticky-cta{display:block;}
+  body{padding-bottom:80px;}
+  .cat-overlay-nav,.cat-overlay-hero,.cat-overlay-body{padding-left:20px;padding-right:20px;}
+  .cat-form-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body style="background-color:#0A4D5C !important; background:#0A4D5C !important;">
+
+<!-- NAV -->
+<nav id="nav" style="background-color:transparent !important;">
+  <div class="logo-text"><span class="logo-shore">Shore</span><span class="logo-list">List</span></div>
+  <div class="nav-links">
+    <a href="#how">How It Works</a>
+    <a href="#explore">Experiences</a>
+    <a href="#operators">List Your Business</a>
+    <a href="#contact" class="nav-cta">Get Started</a>
+  </div>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#how" onclick="closeMenu()">How It Works</a>
+  <a href="#explore" onclick="closeMenu()">Experiences</a>
+  <a href="#operators" onclick="closeMenu()">List Your Business</a>
+  <a href="#contact" class="mm-cta" onclick="closeMenu()">Get Started</a>
+</div>
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="stickyCta"><a href="#explore">Explore Experiences</a></div>
+
+<!-- CATEGORY OVERLAY -->
+<div class="cat-overlay" id="catOverlay">
+  <div class="cat-overlay-nav">
+    <button class="cat-back" onclick="closeCat()">← All Experiences</button>
+    <div class="logo-text"><span class="logo-shore">Shore</span><span class="logo-list">List</span></div>
+  </div>
+  <div class="cat-overlay-hero">
+    <div class="cat-overlay-tag" id="cat-tag">Explore</div>
+    <span class="cat-overlay-icon" id="cat-icon"></span>
+    <h1 class="cat-overlay-title" id="cat-title"></h1>
+    <p class="cat-overlay-sub" id="cat-sub"></p>
+    <div class="loc-pills">
+      <div class="loc-pill active" onclick="filterLoc(this)">All Locations</div>
+      <div class="loc-pill" onclick="filterLoc(this)">Wilmington</div>
+      <div class="loc-pill" onclick="filterLoc(this)">Wrightsville Beach</div>
+      <div class="loc-pill" onclick="filterLoc(this)">Carolina Beach</div>
+      <div class="loc-pill" onclick="filterLoc(this)">Kure Beach</div>
+      <div class="loc-pill" onclick="filterLoc(this)">Oak Island</div>
+      <div class="loc-pill" onclick="filterLoc(this)">Southport</div>
+      <div class="loc-pill" onclick="filterLoc(this)">Topsail Island</div>
+    </div>
+  </div>
+  <div class="cat-overlay-body">
+    <div class="cat-overlay-grid">
+      <div>
+        <div class="op-info-head">For Local Operators</div>
+        <h2 class="op-info-title">Be the first to list<br/>in <em id="form-cat-name">this category.</em></h2>
+        <p class="op-info-copy">ShoreList puts your business in front of thousands of visitors already searching for things to do — through our website, QR-code pamphlets in vacation rentals, and hotel placements across Wilmington and the surrounding beaches.</p>
+        <div class="op-perks">
+          <div class="op-perk"><div class="op-perk-dot">✓</div><p><strong>Free to list.</strong> No setup fees, no monthly charges. Zero risk.</p></div>
+          <div class="op-perk"><div class="op-perk-dot">✓</div><p><strong>Commission only.</strong> We earn 15–20% per booking — we only make money when you do.</p></div>
+          <div class="op-perk"><div class="op-perk-dot">✓</div><p><strong>STR & hotel placement.</strong> Your listing promoted in vacation rental pamphlets across the area.</p></div>
+          <div class="op-perk"><div class="op-perk-dot">✓</div><p><strong>You stay in control.</strong> We drive the guests. You run the experience.</p></div>
+        </div>
+      </div>
+      <div>
+        <div class="cat-form-card">
+          <div class="cat-form-header">
+            <span class="cat-form-header-title">Operator Inquiry</span>
+            <span class="cat-form-badge">Free to List</span>
+          </div>
+          <form class="cat-form-body" id="inquiryForm">
+            <div class="cat-form-row">
+              <div><label class="fi-label">Business Name</label><input class="fi" type="text" name="business" placeholder="Your business name" id="f-business"/></div>
+              <div><label class="fi-label">Your Name</label><input class="fi" type="text" name="name" placeholder="First and last name" id="f-name"/></div>
+            </div>
+            <div class="cat-form-row">
+              <div><label class="fi-label">Email</label><input class="fi" type="email" name="email" placeholder="you@yourbusiness.com" id="f-email"/></div>
+              <div><label class="fi-label">Phone</label><input class="fi" type="tel" name="phone" placeholder="(910) 000-0000"/></div>
+            </div>
+            <div>
+              <label class="fi-label">Primary Location</label>
+              <select class="fi" name="location" id="f-location">
+                <option value="" disabled selected>Select your beach community</option>
+                <option>Wilmington</option>
+                <option>Wrightsville Beach</option>
+                <option>Carolina Beach</option>
+                <option>Kure Beach</option>
+                <option>Oak Island</option>
+                <option>Southport</option>
+                <option>Topsail Island</option>
+                <option>Multiple Locations</option>
+              </select>
+            </div>
+            <div><label class="fi-label">Tell us about your business</label><textarea class="fi" name="message" placeholder="Briefly describe what you offer, pricing range, and availability..."></textarea></div>
+            <button class="btn-fill" type="submit" id="inquiryBtn">Submit My Application</button>
+          </form>
+          <p class="cat-form-note">We'll be in touch within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" style="background-color:#0A4D5C !important; background:#0A4D5C !important;">
+  <div class="hero-gradient"></div>
+  <div class="hero-dots"></div>
+  <div class="compass"><span class="compass-inner">✦</span></div>
+
+  <div class="hero-layout">
+
+    <!-- LEFT: original copy -->
+    <div class="hero-inner">
+      <div class="hero-tag">Wilmington, NC &amp; the Beaches</div>
+      <h1 class="hero-title">
+        <span class="italic">Your local guide</span>
+        <span class="block">to <span class="orange">coastal</span></span>
+        <span class="block">adventures.</span>
+      </h1>
+      <p class="hero-sub">ShoreList connects Wilmington visitors with unforgettable local experiences — ghost tours, fishing charters, kayak adventures, river cruises and more. One place. All the good stuff.</p>
+      <div class="hero-btns">
+        <a href="#explore" class="btn-fill">Explore Experiences</a>
+        <a href="#operators" class="btn-ghost">List Your Business</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hstat-num">20+</div>
+          <div class="hstat-lbl">Local Experiences</div>
+        </div>
+        <div class="hstat-divider"></div>
+        <div>
+          <div class="hstat-num">4</div>
+          <div class="hstat-lbl">Beach Communities</div>
+        </div>
+        <div class="hstat-divider"></div>
+        <div>
+          <div class="hstat-num">5★</div>
+          <div class="hstat-lbl">Curated Only</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: card cluster -->
+    <div class="hero-right">
+      <div class="cluster">
+
+        <!-- Live badge -->
+        <div class="xlive">
+          <div class="xlive-dot"></div>
+          LIVE BOOKINGS
+        </div>
+
+        <!-- Back cards -->
+        <div class="xcard xc-back-l"></div>
+        <div class="xcard xc-back-r"></div>
+
+        <!-- Main card -->
+        <div class="xcard xc-main">
+          <div class="xcard-img">
+            <div class="xcard-stars-field" id="starsField"></div>
+            <div class="ghost-bg">👻</div>
+            <div class="xcard-badge">Ghost Tours</div>
+            <div class="xcard-price">From $28</div>
+          </div>
+          <div class="xcard-body">
+            <div class="xcard-title">Historic Ghost Walk</div>
+            <div class="xcard-stars-row">
+              <div class="xstars">★★★★★</div>
+              <div class="xrating">4.9</div>
+              <div class="xreviews">(128 reviews)</div>
+            </div>
+            <div class="xdivider"></div>
+            <div class="xcard-row">
+              <div>
+                <div class="xdetail-lbl">Duration</div>
+                <div class="xdetail-val">90 min</div>
+              </div>
+              <div>
+                <div class="xdetail-lbl">Group size</div>
+                <div class="xdetail-val">Up to 20</div>
+              </div>
+              <button class="xbook-btn">Book Now</button>
+            </div>
+            <div class="xtimes">
+              <div class="xchip xchip-sold">8 PM</div>
+              <div class="xchip xchip-avail">9 PM ✓</div>
+              <div class="xchip xchip-avail">10 PM ✓</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toast notifications -->
+        <div class="xtoasts">
+          <div class="xtoast" id="xt1">
+            <div class="xta xta-ghost">👻</div>
+            <div class="xtbody">
+              <div class="xtname">Tyler B.</div>
+              <div class="xtaction">Just booked Ghost Walk</div>
+            </div>
+            <div class="xttime">2m ago</div>
+          </div>
+          <div class="xtoast" id="xt2">
+            <div class="xta xta-fish">🎣</div>
+            <div class="xtbody">
+              <div class="xtname">Sarah M.</div>
+              <div class="xtaction">Booked Fishing Charter</div>
+            </div>
+            <div class="xttime">5m ago</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- end hero-layout -->
+
+  <div class="wave-stack">
+    <div class="wv wv1"></div>
+    <div class="wv wv2"></div>
+    <div class="wv wv3"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-bar" style="background-color:#E96645 !important; background:#E96645 !important;">
+  <div class="marquee">
+    <span class="mq-item">Ghost Tours <span class="mq-dot"></span></span>
+    <span class="mq-item">Fishing Charters <span class="mq-dot"></span></span>
+    <span class="mq-item">Kayak Adventures <span class="mq-dot"></span></span>
+    <span class="mq-item">River Cruises <span class="mq-dot"></span></span>
+    <span class="mq-item">Surf Lessons <span class="mq-dot"></span></span>
+    <span class="mq-item">Paddleboard Rentals <span class="mq-dot"></span></span>
+    <span class="mq-item">Bike Tours <span class="mq-dot"></span></span>
+    <span class="mq-item">Wildlife Tours <span class="mq-dot"></span></span>
+    <span class="mq-item">E-Bike Rentals <span class="mq-dot"></span></span>
+    <span class="mq-item">Scooter Rentals <span class="mq-dot"></span></span>
+    <span class="mq-item">Foil Surfing <span class="mq-dot"></span></span>
+    <span class="mq-item">Sailboat Rides <span class="mq-dot"></span></span>
+    <span class="mq-item">Nature Walks <span class="mq-dot"></span></span>
+    <span class="mq-item">Beach Photography <span class="mq-dot"></span></span>
+    <span class="mq-item">Beach Picnics <span class="mq-dot"></span></span>
+    <span class="mq-item">Beach Chair Rentals <span class="mq-dot"></span></span>
+    <span class="mq-item">Wellness <span class="mq-dot"></span></span>
+    <span class="mq-item">Ghost Tours <span class="mq-dot"></span></span>
+    <span class="mq-item">Fishing Charters <span class="mq-dot"></span></span>
+    <span class="mq-item">Kayak Adventures <span class="mq-dot"></span></span>
+    <span class="mq-item">River Cruises <span class="mq-dot"></span></span>
+    <span class="mq-item">Surf Lessons <span class="mq-dot"></span></span>
+    <span class="mq-item">Paddleboard Rentals <span class="mq-dot"></span></span>
+    <span class="mq-item">Bike Tours <span class="mq-dot"></span></span>
+    <span class="mq-item">Wildlife Tours <span class="mq-dot"></span></span>
+    <span class="mq-item">E-Bike Rentals <span class="mq-dot"></span></span>
+    <span class="mq-item">Scooter Rentals <span class="mq-dot"></span></span>
+    <span class="mq-item">Foil Surfing <span class="mq-dot"></span></span>
+    <span class="mq-item">Sailboat Rides <span class="mq-dot"></span></span>
+    <span class="mq-item">Nature Walks <span class="mq-dot"></span></span>
+    <span class="mq-item">Beach Photography <span class="mq-dot"></span></span>
+    <span class="mq-item">Beach Picnics <span class="mq-dot"></span></span>
+    <span class="mq-item">Beach Chair Rentals <span class="mq-dot"></span></span>
+    <span class="mq-item">Wellness <span class="mq-dot"></span></span>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="sec" id="how" style="background-color:#0A4D5C !important; background:#0A4D5C !important;">
+  <div class="sec-tag">Simple Process</div>
+  <h2 class="sec-title">How <em>ShoreList</em> works</h2>
+  <div class="steps">
+    <div class="step"><div class="step-n">01</div><h3>Browse Local Experiences</h3><p>Discover hand-picked tours, charters, and adventures across Wilmington and the beaches — all in one place.</p></div>
+    <div class="step"><div class="step-n">02</div><h3>Book Instantly</h3><p>Reserve your spot directly through ShoreList. No phone tag, no back-and-forth. Confirmation lands right in your inbox.</p></div>
+    <div class="step"><div class="step-n">03</div><h3>Show Up &amp; Explore</h3><p>All you have to do is arrive. Local operators handle everything else — you just enjoy the coast.</p></div>
+    <div class="step"><div class="step-n">04</div><h3>Leave a Review</h3><p>Share your experience to help other visitors and support the local operators who make this coast special.</p></div>
+  </div>
+</section>
+
+<!-- EXPLORE -->
+<section class="sec sec-alt" id="explore" style="background-color:#073D4A !important; background:#073D4A !important;">
+  <div class="sec-tag">Explore</div>
+  <h2 class="sec-title">Find your next <em>adventure</em></h2>
+  <div class="cats">
+    <a class="cat" href="#" onclick="openCat('ghost-tours');return false;"><span class="cat-ico">👻</span><div class="cat-name">Ghost Tours</div></a>
+    <a class="cat" href="#" onclick="openCat('fishing-charters');return false;"><span class="cat-ico">🎣</span><div class="cat-name">Fishing Charters</div></a>
+    <a class="cat" href="#" onclick="openCat('kayak-tours');return false;"><span class="cat-ico">🚣</span><div class="cat-name">Kayak Tours</div></a>
+    <a class="cat" href="#" onclick="openCat('river-cruises');return false;"><span class="cat-ico">⛵</span><div class="cat-name">River Cruises</div></a>
+    <a class="cat" href="#" onclick="openCat('surf-lessons');return false;"><span class="cat-ico">🏄</span><div class="cat-name">Surf Lessons</div></a>
+    <a class="cat" href="#" onclick="openCat('paddleboard');return false;"><span class="cat-ico">🏝️</span><div class="cat-name">Paddleboard</div></a>
+    <a class="cat" href="#" onclick="openCat('bike-tours');return false;"><span class="cat-ico">🚴</span><div class="cat-name">Bike Tours</div></a>
+    <a class="cat" href="#" onclick="openCat('wildlife-tours');return false;"><span class="cat-ico">🐬</span><div class="cat-name">Wildlife Tours</div></a>
+    <a class="cat" href="#" onclick="openCat('ebike-rentals');return false;"><span class="cat-ico">⚡</span><div class="cat-name">E-Bike Rentals</div></a>
+    <a class="cat" href="#" onclick="openCat('scooter-rentals');return false;"><span class="cat-ico">🛵</span><div class="cat-name">Scooter Rentals</div></a>
+    <a class="cat" href="#" onclick="openCat('fat-bike-rentals');return false;"><span class="cat-ico">🚲</span><div class="cat-name">Fat Bike Rentals</div></a>
+    <a class="cat" href="#" onclick="openCat('foil-surfing');return false;"><span class="cat-ico">🪁</span><div class="cat-name">Foil Surfing</div></a>
+    <a class="cat" href="#" onclick="openCat('sailboat-rides');return false;"><span class="cat-ico">⛵</span><div class="cat-name">Sailboat Rides</div></a>
+    <a class="cat" href="#" onclick="openCat('nature-walks');return false;"><span class="cat-ico">🌿</span><div class="cat-name">Nature Walks</div></a>
+    <a class="cat" href="#" onclick="openCat('beach-photography');return false;"><span class="cat-ico">📸</span><div class="cat-name">Beach Photography</div></a>
+    <a class="cat" href="#" onclick="openCat('beach-picnics');return false;"><span class="cat-ico">🧺</span><div class="cat-name">Beach Picnics</div></a>
+    <a class="cat" href="#" onclick="openCat('beach-chairs');return false;"><span class="cat-ico">🏖️</span><div class="cat-name">Beach Chair Rentals</div></a>
+    <a class="cat" href="#" onclick="openCat('wellness');return false;"><span class="cat-ico">🧘</span><div class="cat-name">Wellness</div></a>
+  </div>
+</section>
+
+<!-- BOOKING MOCKUP -->
+<div class="booking-wrap" style="background-color:#121212 !important; background:#121212 !important;">
+  <div class="booking-inner">
+    <div style="text-align:center;margin-bottom:28px;">
+      <div class="sec-tag" style="justify-content:center;">What Guests See</div>
+      <p style="font-family:'Caveat',cursive;font-size:1.1rem;color:rgba(245,232,203,0.55) !important;line-height:1.6;">Guests scan a QR code from a ShoreList pamphlet in their Airbnb or hotel, land here, and book in under 60 seconds.</p>
+    </div>
+    <div class="booking-phone">
+      <div class="bp-header">
+        <div class="bp-loc">📍 Wilmington, NC</div>
+        <div class="bp-q">What do you want to do today?</div>
+        <div class="bp-tabs">
+          <div class="bp-tab active">Explore</div>
+          <div class="bp-tab">My Bookings</div>
+          <div class="bp-tab">Saved</div>
+        </div>
+      </div>
+      <div class="bp-item"><div class="bp-ico" style="background:#eef6f6 !important;">👻</div><div style="flex:1"><div class="bp-iname">Historic Ghost Tour</div><div class="bp-imeta">Downtown · 2 hrs · ⭐ 4.9</div></div><div class="bp-price">$28</div></div>
+      <div class="bp-item"><div class="bp-ico" style="background:#eef6f0 !important;">🚣</div><div style="flex:1"><div class="bp-iname">Coastal Kayak Tour</div><div class="bp-imeta">River · Half Day · ⭐ 4.8</div></div><div class="bp-price">$65</div></div>
+      <div class="bp-item"><div class="bp-ico" style="background:#fef4ee !important;">🎣</div><div style="flex:1"><div class="bp-iname">Offshore Fishing Charter</div><div class="bp-imeta">Carolina Beach · Full Day · ⭐ 4.9</div></div><div class="bp-price">$195</div></div>
+      <div class="bp-item"><div class="bp-ico" style="background:#fef8ee !important;">⛵</div><div style="flex:1"><div class="bp-iname">Sunset River Cruise</div><div class="bp-imeta">Wilmington · 90 min · ⭐ 5.0</div></div><div class="bp-price">$45</div></div>
+    </div>
+    <div class="bp-caption">Guests scan a QR code from a ShoreList pamphlet and book in under 60 seconds.</div>
+  </div>
+</div>
+
+<!-- OPERATORS -->
+<section class="op-section" id="operators" style="background-color:#0A4D5C !important; background:#0A4D5C !important;">
+  <div class="op-grid">
+    <div>
+      <div class="op-badge">For Business Owners</div>
+      <h2 class="op-title">Get your experiences in front of thousands of visitors</h2>
+      <p class="op-sub">ShoreList puts your tours, charters, and activities directly in the hands of guests already looking for something to do. No setup fees. No monthly costs. You only pay when we send you a booking.</p>
+      <div class="perks">
+        <div class="perk"><div class="perk-dot">✓</div><p><strong>Free to list.</strong> No setup fees, no monthly charges. Zero risk to get started.</p></div>
+        <div class="perk"><div class="perk-dot">✓</div><p><strong>Commission only.</strong> We earn 15–20% per booking — we only make money when you do.</p></div>
+        <div class="perk"><div class="perk-dot">✓</div><p><strong>STR placement.</strong> Your experience is featured in Wilmington vacation rental pamphlets.</p></div>
+        <div class="perk"><div class="perk-dot">✓</div><p><strong>Keep your brand.</strong> We send the guests. You run the show.</p></div>
+      </div>
+      <a href="#contact" class="btn-fill">Apply to List Your Business</a>
+    </div>
+    <div class="op-card">
+      <div class="op-card-header">Why It Works — At a Glance</div>
+      <div class="op-row"><span class="op-row-label">Cost to list</span><span class="op-row-val" style="color:#5ecfb0 !important;">$0</span></div>
+      <div class="op-row"><span class="op-row-label">Monthly fees</span><span class="op-row-val" style="color:#5ecfb0 !important;">$0</span></div>
+      <div class="op-row"><span class="op-row-label">Commission per booking</span><span class="op-row-val">15–20%</span></div>
+      <div class="op-row"><span class="op-row-label">Setup time</span><span class="op-row-val" style="font-size:1rem;font-family:'DM Sans',sans-serif;font-weight:600;color:#FEFCF7 !important;">~10 minutes</span></div>
+      <div class="op-row"><span class="op-row-label">Contract required</span><span class="op-row-val" style="color:#5ecfb0 !important;font-size:1rem;font-family:'DM Sans',sans-serif;font-weight:600;">None</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec" id="contact" style="background-color:#0E5F6E !important; background:#0E5F6E !important;">
+  <div class="contact-dots"></div>
+  <div class="contact-tag">Get In Touch</div>
+  <h2 class="contact-title">Ready to join<br/><em>ShoreList?</em></h2>
+  <p class="contact-sub">Whether you're a visitor planning a trip or a local operator ready to list — drop your info and we'll be in touch within 24 hours.</p>
+  <form class="contact-form" id="contactForm">
+    <input class="cf-input" type="text" name="name" placeholder="Your name" required/>
+    <input class="cf-input" type="email" name="email" placeholder="Your email address" required/>
+    <input class="cf-input" type="text" name="business" placeholder="Business name (or Visitor)"/>
+    <button class="btn-fill" type="submit" id="contactBtn">Send Message</button>
+  </form>
+  <p class="contact-note">Or reach us at shorelistwilmington@gmail.com · @ShoreList on Instagram</p>
+</section>
+
+<!-- FOOTER -->
+<footer style="background-color:#121212 !important; background:#121212 !important;">
+  <div><span class="foot-shore">Shore</span><span class="foot-list">List</span></div>
+  <div class="foot-copy">© 2025 ShoreList LLC · Wilmington, NC</div>
+  <div class="foot-links">
+    <a href="#how">How It Works</a>
+    <a href="#explore">Experiences</a>
+    <a href="#operators">Operators</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+
+  // Category data
+  const catData = {
+    'ghost-tours':       {icon:'👻',title:'Ghost Tours',sub:'Historic walks through Wilmington\'s most haunted streets with expert local guides.'},
+    'fishing-charters':  {icon:'🎣',title:'Fishing Charters',sub:'Half & full-day offshore charters departing from Carolina Beach, Wrightsville Beach, and surrounding waters.'},
+    'kayak-tours':       {icon:'🚣',title:'Kayak Tours',sub:'Guided paddle tours through tidal creeks, marshes, and waterways across the Wilmington area.'},
+    'river-cruises':     {icon:'⛵',title:'River Cruises',sub:'Sunset and sightseeing cruises along the Wilmington waterfront.'},
+    'surf-lessons':      {icon:'🏄',title:'Surf Lessons',sub:'Learn to surf at Wrightsville Beach with certified local instructors. All gear included.'},
+    'paddleboard':       {icon:'🏝️',title:'Paddleboard',sub:'SUP rentals and guided lessons on calm coastal waterways across the Wilmington beaches.'},
+    'bike-tours':        {icon:'🚴',title:'Bike Tours',sub:'Guided rides through Wilmington\'s historic districts and beachfront communities.'},
+    'wildlife-tours':    {icon:'🐬',title:'Wildlife Tours',sub:'Dolphin watches, birding excursions, and nature tours along the North Carolina coast.'},
+    'ebike-rentals':     {icon:'⚡',title:'E-Bike Rentals',sub:'Explore the islands and beachfront communities on electric bikes — no sweat required.'},
+    'scooter-rentals':   {icon:'🛵',title:'Scooter Rentals',sub:'Zip around the beach towns at your own pace — the best way to cover the coast.'},
+    'fat-bike-rentals':  {icon:'🚲',title:'Fat Bike Rentals',sub:'Wide-tire bikes built for sand — ride the beach the way locals do.'},
+    'foil-surfing':      {icon:'🪁',title:'Foil Surfing',sub:'Hydrofoil surf lessons on the Atlantic — the most exhilarating thing on the water.'},
+    'sailboat-rides':    {icon:'⛵',title:'Sailboat Rides',sub:'Private and group sailing experiences along the North Carolina coastline and Intracoastal Waterway.'},
+    'nature-walks':      {icon:'🌿',title:'Nature Walking Tours',sub:'Guided walks through maritime forests, salt marshes, and coastal trails with a certified local guide.'},
+    'beach-photography': {icon:'📸',title:'Beach Photography',sub:'Family portraits, engagement sessions, maternity shoots, and couples photos on the beach.'},
+    'beach-picnics':     {icon:'🧺',title:'Beach Picnics',sub:'Fully set-up private picnic experiences delivered to the beach — arrive to a perfect spread.'},
+    'beach-chairs':      {icon:'🏖️',title:'Beach Chair Rentals',sub:'Chairs, umbrellas, and beach gear delivered and set up before you arrive.'},
+    'wellness':          {icon:'🧘',title:'Wellness',sub:'Yoga, reiki, massage, spas, barbershops, and nail salons — rest, restore, and feel your best on the coast.'},
+  };
+
+  function openCat(cat) {
+    const d = catData[cat];
+    if (!d) return;
+    document.getElementById('cat-icon').textContent = d.icon;
+    document.getElementById('cat-title').textContent = d.title;
+    document.getElementById('cat-sub').textContent = d.sub;
+    document.getElementById('cat-tag').textContent = 'Explore — ' + d.title;
+    const fcn = document.getElementById('form-cat-name');
+    if (fcn) fcn.textContent = d.title.toLowerCase() + '.';
+    document.getElementById('catOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    window.scrollTo(0,0);
+  }
+
+  function closeCat() {
+    document.getElementById('catOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function filterLoc(el) {
+    document.querySelectorAll('.loc-pill').forEach(p => p.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  // Hamburger
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+    document.getElementById('hamburger').classList.toggle('open');
+    document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Sticky CTA
+  const stickyCta = document.getElementById('stickyCta');
+  const exploreEl = document.getElementById('explore');
+  window.addEventListener('scroll', () => {
+    if (!stickyCta || !exploreEl) return;
+    stickyCta.style.opacity = exploreEl.getBoundingClientRect().top < 100 ? '0' : '1';
+    stickyCta.style.pointerEvents = exploreEl.getBoundingClientRect().top < 100 ? 'none' : 'auto';
+  });
+
+  // Contact form
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('contactBtn');
+      btn.textContent = 'Sending...'; btn.disabled = true;
+      try {
+        const res = await fetch('https://formspree.io/f/xeevzzqd', {
+          method:'POST', headers:{'Accept':'application/json'}, body: new FormData(contactForm)
+        });
+        if (res.ok) { btn.textContent = 'Message Sent ✓'; btn.style.backgroundColor = '#3aaa8a'; contactForm.reset(); }
+        else { btn.textContent = 'Try Again'; btn.disabled = false; }
+      } catch { btn.textContent = 'Try Again'; btn.disabled = false; }
+    });
+  }
+
+  // Inquiry form
+  const inquiryForm = document.getElementById('inquiryForm');
+  if (inquiryForm) {
+    inquiryForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const b = document.getElementById('f-business').value;
+      const n = document.getElementById('f-name').value;
+      const em = document.getElementById('f-email').value;
+      const l = document.getElementById('f-location').value;
+      if (!b||!n||!em||!l) { alert('Please fill in all required fields.'); return; }
+      const btn = document.getElementById('inquiryBtn');
+      btn.textContent = 'Submitting...'; btn.disabled = true;
+      try {
+        const res = await fetch('https://formspree.io/f/xeevzzqd', {
+          method:'POST', headers:{'Accept':'application/json'}, body: new FormData(inquiryForm)
+        });
+        if (res.ok) { btn.textContent = 'Application Received ✓'; btn.style.backgroundColor = '#3aaa8a'; inquiryForm.reset(); }
+        else { btn.textContent = 'Try Again'; btn.disabled = false; }
+      } catch { btn.textContent = 'Try Again'; btn.disabled = false; }
+    });
+  }
+
+  // Nav scroll behavior
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if(scrollY > 50){
+      nav.style.backgroundColor = 'rgba(10,77,92,0.97)';
+      nav.style.backdropFilter = 'blur(16px)';
+    } else {
+      nav.style.backgroundColor = 'transparent';
+      nav.style.backdropFilter = 'none';
+    }
+  });
+
+  // Random star field
+  const sf = document.getElementById('starsField');
+  for(let i = 0; i < 26; i++){
+    const s = document.createElement('span');
+    const big = Math.random() > 0.8;
+    s.style.cssText = `
+      left:${(Math.random()*100).toFixed(1)}%;
+      top:${(Math.random()*100).toFixed(1)}%;
+      animation-delay:${(Math.random()*3).toFixed(2)}s;
+      animation-duration:${(2+Math.random()*2).toFixed(2)}s;
+      opacity:${(0.4+Math.random()*0.6).toFixed(2)};
+      width:${big?3:2}px; height:${big?3:2}px;
+    `;
+    sf.appendChild(s);
+  }
+
+  // Toast cycling
+  function showToast(id, delay){ setTimeout(()=>document.getElementById(id).classList.add('show'), delay); }
+  function hideToast(id, delay){ setTimeout(()=>document.getElementById(id).classList.remove('show'), delay); }
+
+  showToast('xt1', 2600); hideToast('xt1', 6400);
+  showToast('xt2', 3900); hideToast('xt2', 7600);
+
+  // Repeat cycle
+  setTimeout(()=>{
+    showToast('xt1', 0);   hideToast('xt1', 3800);
+    showToast('xt2', 1300); hideToast('xt2', 5100);
+  }, 11000);
+</script>
+
+</body>
+</html>
