@@ -932,6 +932,35 @@ textarea.fi{resize:vertical;min-height:100px;}
   </div>
 </section>
 
+<script>
+// Immediate click binding - fires as soon as this script tag is parsed
+(function() {
+  function bindCats() {
+    var cats = document.querySelectorAll('[data-cat]');
+    for (var i = 0; i < cats.length; i++) {
+      (function(el) {
+        el.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (typeof openCat === 'function') {
+            openCat(el.getAttribute('data-cat'));
+          } else {
+            // openCat not ready yet, try after a tick
+            setTimeout(function() { openCat(el.getAttribute('data-cat')); }, 100);
+          }
+        });
+      })(cats[i]);
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bindCats);
+  } else {
+    bindCats();
+  }
+})();
+</script>
+
+
 <!-- BOOKING MOCKUP -->
 <div class="booking-wrap" style="background-color:#121212 !important; background:#121212 !important;">
   <div class="booking-inner">
