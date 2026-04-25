@@ -931,31 +931,17 @@ textarea.fi{resize:vertical;min-height:100px;}
     <a class="cat" href="javascript:void(0)" data-cat="wellness"><span class="cat-ico">🧘</span><div class="cat-name">Wellness</div></a>
   </div>
 </section>
-
 <script>
-// Immediate click binding - fires as soon as this script tag is parsed
-(function() {
-  function bindCats() {
-    var cats = document.querySelectorAll('[data-cat]');
-    for (var i = 0; i < cats.length; i++) {
-      (function(el) {
-        el.addEventListener('click', function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-          if (typeof openCat === 'function') {
-            openCat(el.getAttribute('data-cat'));
-          } else {
-            // openCat not ready yet, try after a tick
-            setTimeout(function() { openCat(el.getAttribute('data-cat')); }, 100);
-          }
-        });
-      })(cats[i]);
-    }
+(function bindCategories() {
+  var els = document.querySelectorAll('[data-cat]');
+  for (var i = 0; i < els.length; i++) {
+    els[i].onclick = function() {
+      openCat(this.getAttribute('data-cat'));
+      return false;
+    };
   }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', bindCats);
-  } else {
-    bindCats();
+  if (!els.length) {
+    setTimeout(bindCategories, 200);
   }
 })();
 </script>
@@ -1142,16 +1128,7 @@ textarea.fi{resize:vertical;min-height:100px;}
   // OPERATOR DATA — add real operators here when they sign up
   // Format: catKey: [{ name, desc, location, price (cents), priceLabel }]
   // ═══════════════════════════════════════════
-  // Wire up category clicks via event delegation (more reliable than inline onclick)
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.cat[data-cat]').forEach(function(el) {
-      el.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        openCat(this.getAttribute('data-cat'));
-      });
-    });
-  });
+  // Category clicks wired below the grid
 
   const OPERATORS = {
     // Example — uncomment and edit when first operator signs up:
