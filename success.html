@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Booking Confirmed — ShoreList</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'DM Sans',sans-serif;background:#0A4D5C;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;}
+  .card{background:#fff;border-radius:16px;max-width:520px;width:100%;padding:48px 40px;text-align:center;box-shadow:0 24px 80px rgba(0,0,0,0.3);}
+  .check{width:72px;height:72px;background:#E96645;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:2rem;}
+  h1{font-family:'Playfair Display',serif;font-size:2rem;color:#0A4D5C;margin-bottom:10px;}
+  .sub{font-size:1rem;color:#5A7070;line-height:1.7;margin-bottom:28px;}
+  .details{background:#FAF6EE;border-radius:10px;padding:20px 24px;margin-bottom:28px;text-align:left;}
+  .det-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #EDE8DF;font-size:0.9rem;}
+  .det-row:last-child{border-bottom:none;}
+  .det-label{color:#5A7070;font-weight:500;}
+  .det-val{color:#152830;font-weight:600;}
+  .what-next{background:#EFF6F7;border-radius:10px;padding:18px 22px;margin-bottom:28px;text-align:left;border-left:4px solid #1A7585;}
+  .what-next h3{font-size:0.85rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#1A7585;margin-bottom:8px;}
+  .what-next ul{padding-left:18px;}
+  .what-next li{font-size:0.9rem;color:#2C3E3F;line-height:1.8;}
+  .back-btn{display:inline-block;background:#E96645;color:#fff;text-decoration:none;padding:14px 32px;border-radius:8px;font-weight:700;font-size:0.95rem;transition:background 0.2s;}
+  .back-btn:hover{background:#F07A5A;}
+  .logo{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:32px;color:#fff;}
+  .logo span{color:#E96645;font-weight:700;}
+  .footer-note{margin-top:20px;font-size:0.78rem;color:rgba(255,255,255,0.45);text-align:center;}
+</style>
+</head>
+<body>
+<div class="logo">Shore<span>List</span></div>
+<div class="card">
+  <div class="check">✓</div>
+  <h1>You're Booked!</h1>
+  <p class="sub">Your deposit is confirmed and your spot is held. We'll reach out within 24 hours to confirm your experience details.</p>
+
+  <div class="details" id="booking-details">
+    <div class="det-row"><span class="det-label">Experience</span><span class="det-val" id="d-category">—</span></div>
+    <div class="det-row"><span class="det-label">Name</span><span class="det-val" id="d-name">—</span></div>
+    <div class="det-row"><span class="det-label">Date</span><span class="det-val" id="d-date">—</span></div>
+    <div class="det-row"><span class="det-label">Party Size</span><span class="det-val" id="d-party">—</span></div>
+    <div class="det-row"><span class="det-label">Deposit Paid</span><span class="det-val" style="color:#E96645;">$25.00 ✓</span></div>
+  </div>
+
+  <div class="what-next">
+    <h3>What Happens Next</h3>
+    <ul>
+      <li>Check your email for your Stripe receipt</li>
+      <li>Our team will contact you within 24 hours to confirm</li>
+      <li>Your deposit is fully refunded if we can't confirm availability</li>
+      <li>Questions? Email shorelistwilmington@gmail.com</li>
+    </ul>
+  </div>
+
+  <a href="/" class="back-btn">Explore More Experiences</a>
+</div>
+<p class="footer-note">Shorelist LLC · Wilmington, NC · Shorelist.net</p>
+
+<script>
+  // Pull booking details from URL params (set by Stripe success_url)
+  const params = new URLSearchParams(window.location.search);
+  const set = (id, val) => { const el = document.getElementById(id); if(el && val) el.textContent = decodeURIComponent(val); };
+  set('d-category', params.get('category'));
+  set('d-name',     params.get('name'));
+  set('d-date',     params.get('date'));
+  set('d-party',    params.get('party') ? params.get('party') + (params.get('party')==='1' ? ' Guest' : ' Guests') : null);
+</script>
+</body>
+</html>
