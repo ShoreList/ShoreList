@@ -1,0 +1,8 @@
+{
+  "name": "shorelist-functions",
+  "version": "1.0.0",
+  "description": "Netlify serverless functions for Shorelist.net",
+  "dependencies": {
+    "stripe": "^14.0.0"
+  }
+}
