@@ -388,90 +388,141 @@ footer { background-color:#121212 !important; background:#121212 !important; pad
   .booking-wrap { padding:60px 22px; }
 }
 
-/* ── HAMBURGER ── */
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
-.hamburger span{display:block;width:24px;height:2px;background:#F5E8CB;border-radius:2px;transition:all 0.3s;}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.hamburger.open span:nth-child(2){opacity:0;}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,77,92,0.99);z-index:190;flex-direction:column;align-items:center;justify-content:center;gap:36px;}
-.mobile-menu.open{display:flex;}
-.mobile-menu a{font-size:1.4rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F5E8CB !important;text-decoration:none;}
-.mobile-menu .mm-cta{background:#E96645 !important;color:#FEFCF7 !important;padding:16px 40px;border-radius:6px;}
-.sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:180;padding:12px 20px 20px;background:linear-gradient(to top,rgba(10,77,92,1) 60%,transparent);transition:opacity 0.3s;}
-.sticky-cta a{display:block;background:#E96645 !important;color:#FEFCF7 !important;text-align:center;padding:16px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;box-shadow:0 8px 32px rgba(233,102,69,0.45);}
+/* ── HAMBURGER MENU ── */
+.hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none; }
+.hamburger span { display:block; width:24px; height:2px; background:#F5E8CB; border-radius:2px; transition:all 0.3s; }
+.hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity:0; }
+.hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+.mobile-menu { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(10,77,92,0.99); z-index:190; flex-direction:column; align-items:center; justify-content:center; gap:36px; }
+.mobile-menu.open { display:flex; }
+.mobile-menu a { font-size:1.4rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#F5E8CB !important; text-decoration:none; transition:color 0.2s; }
+.mobile-menu a:hover { color:#E96645 !important; }
+.mobile-menu .mm-cta { background:#E96645 !important; color:#FEFCF7 !important; padding:16px 40px; border-radius:6px; font-size:1rem !important; }
+.sticky-cta { display:none; position:fixed; bottom:0; left:0; right:0; z-index:180; padding:12px 20px 20px; background:linear-gradient(to top, rgba(10,77,92,1) 60%, transparent); transition:opacity 0.3s; }
+.sticky-cta a { display:block; background:#E96645 !important; color:#FEFCF7 !important; text-align:center; padding:16px; border-radius:8px; font-weight:700; font-size:1rem; text-decoration:none; letter-spacing:0.03em; box-shadow:0 8px 32px rgba(233,102,69,0.45); }
+
+/* ── MOBILE ── */
+@media (max-width:900px) { .hero-layout { grid-template-columns:1fr; } .hero-right { display:none; } }
+@media (max-width:780px) {
+  nav { padding:16px 22px; }
+  .nav-links { display:none; }
+  .hamburger { display:flex; }
+  .hero { padding:90px 22px 80px; min-height:auto; }
+  .compass { display:none; }
+  .hero-title { letter-spacing:-1px; }
+  .hero-btns { flex-direction:column; gap:10px; }
+  .btn-fill, .btn-ghost { width:100%; text-align:center; padding:16px 24px; font-size:1rem; border-radius:8px; }
+  .hero-stats { gap:18px; justify-content:flex-start; }
+  .sec { padding:72px 22px; }
+  .op-section { padding:72px 22px; }
+  .op-grid { grid-template-columns:1fr; gap:40px; }
+  .contact-sec { padding:72px 22px; }
+  .booking-wrap { padding:60px 22px; }
+  .cats { grid-template-columns:repeat(3,1fr); gap:8px; }
+  .cat { padding:20px 10px; border-radius:6px; }
+  .cat-ico { font-size:1.6rem; margin-bottom:8px; }
+  .cat-name { font-size:0.65rem; letter-spacing:0.06em; }
+  .booking-inner { max-width:100%; }
+  .booking-phone { max-width:100%; border-radius:20px; }
+  .contact-form { flex-direction:column; }
+  .cf-input { width:100%; min-width:unset; font-size:16px; padding:16px 18px; border-radius:8px; }
+  footer { padding:28px 22px; flex-direction:column; text-align:center; }
+  .foot-links { flex-wrap:wrap; justify-content:center; gap:16px; }
+  .sticky-cta { display:block; }
+  body { padding-bottom:80px; }
+}
 
 /* ── CATEGORY OVERLAY ── */
 .cat-overlay{display:none;position:fixed;inset:0;background:#0A4D5C;z-index:300;overflow-y:auto;}
 .cat-overlay.open{display:block;}
-.cat-overlay-nav{position:sticky;top:0;background:rgba(10,77,92,0.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.07);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;}
-.cat-back{font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,232,203,0.55) !important;text-decoration:none;cursor:pointer;background:none;border:none;font-family:"DM Sans",sans-serif;transition:color 0.2s;}
-.cat-back:hover{color:#F5E8CB !important;}
-.cat-overlay-hero{padding:56px 48px 48px;background:radial-gradient(ellipse 80% 60% at 20% 50%,rgba(26,133,149,0.25) 0%,transparent 65%);border-bottom:1px solid rgba(255,255,255,0.06);}
-.cat-overlay-tag{font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#E96645 !important;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
-.cat-overlay-tag::before{content:"";width:24px;height:1px;background:#E96645;}
-.cat-overlay-icon{font-size:3.5rem;display:block;margin-bottom:16px;}
-.cat-overlay-title{font-family:"Playfair Display",serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;color:#FEFCF7 !important;margin-bottom:14px;}
-.cat-overlay-sub{font-size:1rem;font-weight:300;line-height:1.8;color:rgba(245,232,203,0.65) !important;max-width:520px;margin-bottom:32px;}
+.cat-ov-nav{position:sticky;top:0;background:rgba(10,77,92,0.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.07);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;}
+.cat-back-btn{font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,232,203,0.55)!important;text-decoration:none;cursor:pointer;background:none;border:none;font-family:"DM Sans",sans-serif;transition:color 0.2s;}
+.cat-back-btn:hover{color:#F5E8CB!important;}
+.cat-ov-hero{padding:56px 48px 48px;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,0.06);}
+.cat-ov-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 50%,rgba(26,133,149,0.25) 0%,transparent 65%);pointer-events:none;}
+.cat-ov-hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;}
+.cat-ov-inner{position:relative;z-index:2;}
+.cat-ov-tag{font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#E96645!important;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.cat-ov-tag::before{content:"";width:24px;height:1px;background:#E96645;}
+.cat-ov-icon{font-size:3.5rem;display:block;margin-bottom:16px;line-height:1;}
+.cat-ov-title{font-family:"Playfair Display",serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;color:#FEFCF7!important;margin-bottom:14px;}
+.cat-ov-sub{font-size:1rem;font-weight:300;line-height:1.8;color:rgba(245,232,203,0.65)!important;max-width:520px;margin-bottom:32px;}
 .loc-pills{display:flex;flex-wrap:wrap;gap:8px;}
-.loc-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.05) !important;border:1px solid rgba(255,255,255,0.1);color:rgba(245,232,203,0.6) !important;font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:6px 14px;border-radius:4px;cursor:pointer;transition:all 0.2s;}
-.loc-pill:hover,.loc-pill.active{background:rgba(233,102,69,0.15) !important;border-color:#E96645;color:#E96645 !important;}
-.cat-overlay-body{padding:72px 48px;}
-.cat-overlay-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;max-width:1100px;}
-.cat-form-card{background:rgba(255,255,255,0.03) !important;border:1px solid rgba(245,232,203,0.1);border-radius:12px;overflow:hidden;}
-.cat-form-header{background:#1A7585 !important;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;}
-.cat-form-header-title{font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,232,203,0.85) !important;}
-.cat-form-badge{background:rgba(233,102,69,0.25) !important;border:1px solid rgba(233,102,69,0.45);color:#E96645 !important;font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:4px 10px;border-radius:4px;}
+.loc-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.05)!important;border:1px solid rgba(255,255,255,0.1);color:rgba(245,232,203,0.6)!important;font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:6px 14px;border-radius:4px;cursor:pointer;transition:all 0.2s;}
+.loc-pill:hover,.loc-pill.active{background:rgba(233,102,69,0.15)!important;border-color:#E96645;color:#E96645!important;}
+.cat-ov-body{padding:72px 48px;}
+.cat-ov-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
+.cat-form-card{background:rgba(255,255,255,0.03)!important;border:1px solid rgba(245,232,203,0.1);border-radius:12px;overflow:hidden;}
+.cat-form-hdr{background:#1A7585!important;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;}
+.cat-form-hdr-title{font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,232,203,0.85)!important;}
+.cat-form-badge{background:rgba(233,102,69,0.25)!important;border:1px solid rgba(233,102,69,0.45);color:#E96645!important;font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:4px 10px;border-radius:4px;}
 .cat-form-body{padding:28px;display:flex;flex-direction:column;gap:12px;}
-.cat-form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.fi-label{display:block;font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,232,203,0.4) !important;margin-bottom:5px;}
-.fi{width:100%;background:rgba(255,255,255,0.05) !important;border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:12px 14px;font-family:"DM Sans",sans-serif;font-size:0.9rem;color:#FEFCF7 !important;outline:none;transition:border-color 0.2s;-webkit-appearance:none;}
+.cat-form-row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.fi-lbl{display:block;font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,232,203,0.4)!important;margin-bottom:5px;}
+.fi{width:100%;background:rgba(255,255,255,0.05)!important;border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:12px 14px;font-family:"DM Sans",sans-serif;font-size:0.9rem;color:#FEFCF7!important;outline:none;transition:border-color 0.2s;-webkit-appearance:none;}
 .fi:focus{border-color:rgba(233,102,69,0.5);}
-.fi::placeholder{color:rgba(245,232,203,0.25) !important;}
+.fi::placeholder{color:rgba(245,232,203,0.25)!important;}
 .fi option{background:#073D4A;color:#FEFCF7;}
 textarea.fi{resize:vertical;min-height:100px;}
-.cat-form-note{text-align:center;padding:0 28px 20px;font-family:"Caveat",cursive;font-size:1rem;color:rgba(245,232,203,0.4) !important;}
-.op-info-head{font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#E96645 !important;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
-.op-info-head::before{content:"";width:24px;height:1px;background:#E96645;}
-.op-info-title{font-family:"Playfair Display",serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;line-height:1.15;color:#F5E8CB !important;letter-spacing:-0.5px;margin-bottom:14px;}
-.op-info-title em{font-style:italic;color:#E96645 !important;}
-.op-info-copy{font-size:0.93rem;line-height:1.8;color:rgba(245,232,203,0.6) !important;margin-bottom:32px;}
-.op-perks{display:flex;flex-direction:column;gap:16px;}
-.op-perk{display:flex;gap:12px;align-items:flex-start;}
-.op-perk-dot{width:20px;height:20px;border-radius:50%;background:rgba(233,102,69,0.18) !important;border:1px solid rgba(233,102,69,0.4);display:flex;align-items:center;justify-content:center;font-size:0.65rem;color:#E96645 !important;flex-shrink:0;margin-top:2px;}
-.op-perk p{font-size:0.86rem;line-height:1.65;color:rgba(245,232,203,0.65) !important;}
-.op-perk p strong{color:#FEFCF7 !important;font-weight:600;}
+.cat-form-note{text-align:center;padding:0 28px 20px;font-family:"Caveat",cursive;font-size:1rem;color:rgba(245,232,203,0.4)!important;}
+.op-lft-tag{font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#E96645!important;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.op-lft-tag::before{content:"";width:24px;height:1px;background:#E96645;}
+.op-lft-h2{font-family:"Playfair Display",serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;line-height:1.15;color:#F5E8CB!important;letter-spacing:-0.5px;margin-bottom:14px;}
+.op-lft-h2 em{font-style:italic;color:#E96645!important;}
+.op-lft-p{font-size:0.93rem;line-height:1.8;color:rgba(245,232,203,0.6)!important;margin-bottom:32px;}
+.op-perks-list{display:flex;flex-direction:column;gap:16px;}
+.op-perk-row{display:flex;gap:12px;align-items:flex-start;}
+.op-perk-dot{width:20px;height:20px;border-radius:50%;background:rgba(233,102,69,0.18)!important;border:1px solid rgba(233,102,69,0.4);display:flex;align-items:center;justify-content:center;font-size:0.65rem;color:#E96645!important;flex-shrink:0;margin-top:2px;}
+.op-perk-row p{font-size:0.86rem;line-height:1.65;color:rgba(245,232,203,0.65)!important;}
+.op-perk-row p strong{color:#FEFCF7!important;font-weight:600;}
+@media(max-width:900px){.cat-ov-grid{grid-template-columns:1fr;gap:40px;}}
+@media(max-width:780px){.cat-ov-nav,.cat-ov-hero,.cat-ov-body{padding-left:20px;padding-right:20px;}.cat-form-row2{grid-template-columns:1fr;}}
 
-@media (max-width:900px){.cat-overlay-grid{grid-template-columns:1fr;gap:40px;}}
-@media (max-width:780px){
-  nav{padding:16px 22px;}
-  .nav-links{display:none;}
-  .hamburger{display:flex;}
-  .hero{padding:90px 22px 80px;min-height:auto;}
-  .compass{display:none;}
-  .hero-btns{flex-direction:column;gap:10px;}
-  .btn-fill,.btn-ghost{width:100%;text-align:center;padding:16px 24px;font-size:1rem;border-radius:8px;}
-  .hero-stats{gap:18px;}
-  .sec{padding:72px 22px;}
-  .op-section{padding:72px 22px;}
-  .op-grid{grid-template-columns:1fr;gap:40px;}
-  .contact-sec{padding:72px 22px;}
-  .booking-wrap{padding:60px 22px;}
-  .cats{grid-template-columns:repeat(3,1fr);gap:8px;}
-  .cat{padding:20px 10px;border-radius:6px;}
-  .cat-ico{font-size:1.6rem;margin-bottom:8px;}
-  .cat-name{font-size:0.65rem;letter-spacing:0.06em;}
-  .booking-inner{max-width:100%;}
-  .booking-phone{max-width:100%;border-radius:20px;}
-  .contact-form{flex-direction:column;}
-  .cf-input{width:100%;min-width:unset;font-size:16px;padding:16px 18px;border-radius:8px;}
-  footer{padding:28px 22px;flex-direction:column;text-align:center;}
-  .foot-links{flex-wrap:wrap;justify-content:center;gap:16px;}
-  .sticky-cta{display:block;}
-  body{padding-bottom:80px;}
-  .cat-overlay-nav,.cat-overlay-hero,.cat-overlay-body{padding-left:20px;padding-right:20px;}
-  .cat-form-row{grid-template-columns:1fr;}
-}
+
+/* ── BOOKING / OPERATOR TABS ── */
+.ov-tabs{display:flex;gap:0;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:32px;}
+.ov-tab{flex:1;padding:14px 10px;text-align:center;font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,232,203,0.45);cursor:pointer;border-bottom:3px solid transparent;transition:all 0.2s;background:none;border-top:none;border-left:none;border-right:none;}
+.ov-tab.active{color:#E96645;border-bottom-color:#E96645;}
+.ov-tab:hover{color:rgba(245,232,203,0.8);}
+.ov-panel{display:none;}.ov-panel.active{display:block;}
+
+/* booking form panel */
+.book-panel{max-width:620px;margin:0 auto;}
+.book-hero{text-align:center;margin-bottom:28px;}
+.book-hero h3{font-family:"Playfair Display",serif;font-size:1.6rem;color:#FEFCF7;margin:0 0 6px;}
+.book-hero p{font-size:0.9rem;color:rgba(245,232,203,0.55);margin:0;}
+.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+.book-grid.full{grid-template-columns:1fr;}
+.bfi-wrap{display:flex;flex-direction:column;gap:5px;}
+.bfi-lbl{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,232,203,0.45);}
+.bfi{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:7px;padding:12px 14px;font-family:"DM Sans",sans-serif;font-size:0.92rem;color:#FEFCF7;outline:none;transition:border-color 0.2s;-webkit-appearance:none;box-sizing:border-box;}
+.bfi:focus{border-color:rgba(233,102,69,0.6);}
+.bfi::placeholder{color:rgba(245,232,203,0.22);}
+.bfi option{background:#073D4A;color:#FEFCF7;}
+.price-row{display:flex;align-items:center;justify-content:space-between;background:rgba(233,102,69,0.1);border:1px solid rgba(233,102,69,0.25);border-radius:8px;padding:14px 16px;margin:14px 0;}
+.price-label{font-size:0.8rem;color:rgba(245,232,203,0.6);font-family:"DM Sans",sans-serif;}
+.price-amount{font-size:1.3rem;font-weight:700;color:#E96645;font-family:"DM Sans",sans-serif;}
+.price-note{font-size:0.72rem;color:rgba(245,232,203,0.4);margin-top:3px;}
+.book-submit{width:100%;background:#E96645;color:#FEFCF7;border:none;border-radius:8px;padding:16px;font-family:"DM Sans",sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:all 0.2s;margin-top:4px;display:flex;align-items:center;justify-content:center;gap:10px;}
+.book-submit:hover{background:#F07A5A;transform:translateY(-1px);}
+.book-submit:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
+.book-note{text-align:center;font-size:0.75rem;color:rgba(245,232,203,0.35);margin-top:10px;}
+.book-err{background:rgba(200,70,42,0.15);border:1px solid rgba(200,70,42,0.4);border-radius:7px;padding:10px 14px;font-size:0.85rem;color:#ffaaaa;margin-top:8px;display:none;}
+.stripe-badge{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:12px;opacity:0.4;}
+.stripe-badge span{font-size:0.7rem;color:rgba(245,232,203,0.6);font-family:"DM Sans",sans-serif;}
+
+/* no-operators state */
+.no-ops-state{text-align:center;padding:40px 20px;}
+.no-ops-icon{font-size:3rem;margin-bottom:12px;}
+.no-ops-state h3{font-family:"Playfair Display",serif;font-size:1.4rem;color:#FEFCF7;margin:0 0 8px;}
+.no-ops-state p{font-size:0.9rem;color:rgba(245,232,203,0.5);max-width:400px;margin:0 auto 20px;}
+.notify-row{display:flex;gap:8px;max-width:380px;margin:0 auto;}
+.notify-input{flex:1;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:7px;padding:11px 14px;font-family:"DM Sans",sans-serif;font-size:0.9rem;color:#FEFCF7;outline:none;}
+.notify-input::placeholder{color:rgba(245,232,203,0.25);}
+.notify-btn{background:#E96645;color:#fff;border:none;border-radius:7px;padding:11px 18px;font-family:"DM Sans",sans-serif;font-size:0.85rem;font-weight:700;cursor:pointer;white-space:nowrap;}
+@media(max-width:600px){.book-grid{grid-template-columns:1fr;}.notify-row{flex-direction:column;}}
+
 </style>
 </head>
 <body style="background-color:#0A4D5C !important; background:#0A4D5C !important;">
@@ -496,77 +547,187 @@ textarea.fi{resize:vertical;min-height:100px;}
   <a href="#operators" onclick="closeMenu()">List Your Business</a>
   <a href="#contact" class="mm-cta" onclick="closeMenu()">Get Started</a>
 </div>
-<!-- STICKY CTA -->
+<!-- STICKY MOBILE CTA -->
 <div class="sticky-cta" id="stickyCta"><a href="#explore">Explore Experiences</a></div>
+
 
 <!-- CATEGORY OVERLAY -->
 <div class="cat-overlay" id="catOverlay">
-  <div class="cat-overlay-nav">
-    <button class="cat-back" onclick="closeCat()">← All Experiences</button>
+  <div class="cat-ov-nav">
+    <button class="cat-back-btn" onclick="closeCat()">← All Experiences</button>
     <div class="logo-text"><span class="logo-shore">Shore</span><span class="logo-list">List</span></div>
   </div>
-  <div class="cat-overlay-hero">
-    <div class="cat-overlay-tag" id="cat-tag">Explore</div>
-    <span class="cat-overlay-icon" id="cat-icon"></span>
-    <h1 class="cat-overlay-title" id="cat-title"></h1>
-    <p class="cat-overlay-sub" id="cat-sub"></p>
-    <div class="loc-pills">
-      <div class="loc-pill active" onclick="filterLoc(this)">All Locations</div>
-      <div class="loc-pill" onclick="filterLoc(this)">Wilmington</div>
-      <div class="loc-pill" onclick="filterLoc(this)">Wrightsville Beach</div>
-      <div class="loc-pill" onclick="filterLoc(this)">Carolina Beach</div>
-      <div class="loc-pill" onclick="filterLoc(this)">Kure Beach</div>
-      <div class="loc-pill" onclick="filterLoc(this)">Oak Island</div>
-      <div class="loc-pill" onclick="filterLoc(this)">Southport</div>
-      <div class="loc-pill" onclick="filterLoc(this)">Topsail Island</div>
+  <div class="cat-ov-hero">
+    <div class="cat-ov-inner">
+      <div class="cat-ov-tag" id="cat-tag">Explore</div>
+      <span class="cat-ov-icon" id="cat-icon"></span>
+      <h1 class="cat-ov-title" id="cat-title"></h1>
+      <p class="cat-ov-sub" id="cat-sub"></p>
+      <div class="loc-pills">
+        <div class="loc-pill active" onclick="filterLoc(this)">All Locations</div>
+        <div class="loc-pill" onclick="filterLoc(this)">Wilmington</div>
+        <div class="loc-pill" onclick="filterLoc(this)">Wrightsville Beach</div>
+        <div class="loc-pill" onclick="filterLoc(this)">Carolina Beach</div>
+        <div class="loc-pill" onclick="filterLoc(this)">Kure Beach</div>
+        <div class="loc-pill" onclick="filterLoc(this)">Oak Island</div>
+        <div class="loc-pill" onclick="filterLoc(this)">Southport</div>
+        <div class="loc-pill" onclick="filterLoc(this)">Topsail Island</div>
+      </div>
     </div>
   </div>
-  <div class="cat-overlay-body">
-    <div class="cat-overlay-grid">
-      <div>
-        <div class="op-info-head">For Local Operators</div>
-        <h2 class="op-info-title">Be the first to list<br/>in <em id="form-cat-name">this category.</em></h2>
-        <p class="op-info-copy">ShoreList puts your business in front of thousands of visitors already searching for things to do — through our website, QR-code pamphlets in vacation rentals, and hotel placements across Wilmington and the surrounding beaches.</p>
-        <div class="op-perks">
-          <div class="op-perk"><div class="op-perk-dot">✓</div><p><strong>Free to list.</strong> No setup fees, no monthly charges. Zero risk.</p></div>
-          <div class="op-perk"><div class="op-perk-dot">✓</div><p><strong>Commission only.</strong> We earn 15–20% per booking — we only make money when you do.</p></div>
-          <div class="op-perk"><div class="op-perk-dot">✓</div><p><strong>STR & hotel placement.</strong> Your listing promoted in vacation rental pamphlets across the area.</p></div>
-          <div class="op-perk"><div class="op-perk-dot">✓</div><p><strong>You stay in control.</strong> We drive the guests. You run the experience.</p></div>
+  <div class="cat-ov-body">
+    <!-- TABS -->
+    <div class="ov-tabs">
+      <button class="ov-tab active" onclick="switchTab('book')">Book an Experience</button>
+      <button class="ov-tab" onclick="switchTab('operator')">List Your Business</button>
+    </div>
+
+    <!-- BOOK TAB -->
+    <div class="ov-panel active" id="panel-book">
+      <div class="book-panel">
+        <div class="book-hero">
+          <h3 id="book-title">Book This Experience</h3>
+          <p id="book-sub">Secure your spot with a fully refundable deposit. We confirm availability within 24 hours.</p>
         </div>
-      </div>
-      <div>
-        <div class="cat-form-card">
-          <div class="cat-form-header">
-            <span class="cat-form-header-title">Operator Inquiry</span>
-            <span class="cat-form-badge">Free to List</span>
+
+        <!-- OPERATOR LISTINGS — shown when operators are live for this category -->
+        <div id="operator-listings" style="display:none; margin-bottom:24px;">
+          <!-- Populated dynamically by JS when operators exist -->
+        </div>
+
+        <!-- BOOKING FORM -->
+        <div id="booking-form-wrap">
+          <div class="book-grid">
+            <div class="bfi-wrap">
+              <label class="bfi-lbl">Your Name</label>
+              <input class="bfi" type="text" id="bk-name" placeholder="First and last name" required/>
+            </div>
+            <div class="bfi-wrap">
+              <label class="bfi-lbl">Email</label>
+              <input class="bfi" type="email" id="bk-email" placeholder="your@email.com" required/>
+            </div>
           </div>
-          <form class="cat-form-body" id="inquiryForm">
-            <div class="cat-form-row">
-              <div><label class="fi-label">Business Name</label><input class="fi" type="text" name="business" placeholder="Your business name" id="f-business"/></div>
-              <div><label class="fi-label">Your Name</label><input class="fi" type="text" name="name" placeholder="First and last name" id="f-name"/></div>
+          <div class="book-grid">
+            <div class="bfi-wrap">
+              <label class="bfi-lbl">Phone</label>
+              <input class="bfi" type="tel" id="bk-phone" placeholder="(910) 000-0000"/>
             </div>
-            <div class="cat-form-row">
-              <div><label class="fi-label">Email</label><input class="fi" type="email" name="email" placeholder="you@yourbusiness.com" id="f-email"/></div>
-              <div><label class="fi-label">Phone</label><input class="fi" type="tel" name="phone" placeholder="(910) 000-0000"/></div>
-            </div>
-            <div>
-              <label class="fi-label">Primary Location</label>
-              <select class="fi" name="location" id="f-location">
-                <option value="" disabled selected>Select your beach community</option>
-                <option>Wilmington</option>
-                <option>Wrightsville Beach</option>
-                <option>Carolina Beach</option>
-                <option>Kure Beach</option>
-                <option>Oak Island</option>
-                <option>Southport</option>
-                <option>Topsail Island</option>
-                <option>Multiple Locations</option>
+            <div class="bfi-wrap">
+              <label class="bfi-lbl">Party Size</label>
+              <select class="bfi" id="bk-party">
+                <option value="" disabled selected>How many guests?</option>
+                <option value="1">1 Guest</option>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5">5 Guests</option>
+                <option value="6">6 Guests</option>
+                <option value="7">7+ Guests</option>
               </select>
             </div>
-            <div><label class="fi-label">Tell us about your business</label><textarea class="fi" name="message" placeholder="Briefly describe what you offer, pricing range, and availability..."></textarea></div>
-            <button class="btn-fill" type="submit" id="inquiryBtn">Submit My Application</button>
-          </form>
-          <p class="cat-form-note">We'll be in touch within 24 hours.</p>
+          </div>
+          <div class="book-grid">
+            <div class="bfi-wrap">
+              <label class="bfi-lbl">Preferred Date</label>
+              <input class="bfi" type="date" id="bk-date" required/>
+            </div>
+            <div class="bfi-wrap">
+              <label class="bfi-lbl">Preferred Time</label>
+              <select class="bfi" id="bk-time">
+                <option value="" disabled selected>Select a time</option>
+                <option>Morning (8AM–12PM)</option>
+                <option>Afternoon (12PM–4PM)</option>
+                <option>Evening (4PM–8PM)</option>
+                <option>Flexible</option>
+              </select>
+            </div>
+          </div>
+          <div class="book-grid full">
+            <div class="bfi-wrap">
+              <label class="bfi-lbl">Special Requests / Notes</label>
+              <textarea class="bfi" id="bk-notes" rows="2" placeholder="Dietary needs, accessibility, celebrating something special?"></textarea>
+            </div>
+          </div>
+
+          <div class="price-row">
+            <div>
+              <div class="price-label">Fully Refundable Booking Deposit</div>
+              <div class="price-note">Charged now to hold your spot · Refunded in full if we can't confirm</div>
+            </div>
+            <div style="text-align:right;">
+              <div class="price-amount" id="bk-price-display">$25.00</div>
+            </div>
+          </div>
+
+          <div class="book-err" id="book-err">Please fill in your name, email, date, and party size.</div>
+
+          <button class="book-submit" id="bk-submit-btn" onclick="submitBooking()">
+            <span id="bk-btn-text">Secure My Spot — $25.00</span>
+          </button>
+          <p class="book-note">Powered by Stripe · 256-bit SSL encryption · Fully refundable if unavailable</p>
+          <div class="stripe-badge">
+            <span>🔒 Secure checkout via</span>
+            <span style="font-weight:700;color:rgba(245,232,203,0.6);">Stripe</span>
+          </div>
+        </div>
+
+        <!-- NO OPERATORS / NOTIFY STATE — shown when no operators are live yet -->
+        <div class="no-ops-state" id="no-ops-state" style="display:none;">
+          <div class="no-ops-icon">🌊</div>
+          <h3 id="no-ops-title">Coming Soon</h3>
+          <p id="no-ops-desc">We're onboarding local operators for this category right now. Drop your email and we'll notify you the moment bookings go live.</p>
+          <div class="notify-row">
+            <input class="notify-input" type="email" id="notify-email" placeholder="your@email.com"/>
+            <button class="notify-btn" onclick="submitNotify()">Notify Me</button>
+          </div>
+          <p style="font-size:0.72rem;color:rgba(245,232,203,0.3);margin-top:12px;">No spam. One email when it's live.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPERATOR TAB -->
+    <div class="ov-panel" id="panel-operator">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;">
+        <div>
+          <div class="op-lft-tag">For Local Operators</div>
+          <h2 class="op-lft-h2">Be the first to list<br/>in <em id="form-cat-name">this category.</em></h2>
+          <p class="op-lft-p">ShoreList puts your business in front of thousands of visitors already searching for things to do — through our website, QR-code pamphlets in vacation rentals, and hotel placements across Wilmington and the surrounding beaches.</p>
+          <div class="op-perks-list">
+            <div class="op-perk-row"><div class="op-perk-dot">✓</div><p><strong>Free to list.</strong> No setup fees, no monthly charges. Zero risk to get started.</p></div>
+            <div class="op-perk-row"><div class="op-perk-dot">✓</div><p><strong>Commission only.</strong> We earn 15–20% per booking — we only make money when you do.</p></div>
+            <div class="op-perk-row"><div class="op-perk-dot">✓</div><p><strong>STR & hotel placement.</strong> Your listing promoted in vacation rental pamphlets across the area.</p></div>
+            <div class="op-perk-row"><div class="op-perk-dot">✓</div><p><strong>You stay in control.</strong> We drive the guests. You run the experience.</p></div>
+          </div>
+        </div>
+        <div>
+          <div class="cat-form-card">
+            <div class="cat-form-hdr">
+              <span class="cat-form-hdr-title">Operator Inquiry</span>
+              <span class="cat-form-badge">Free to List</span>
+            </div>
+            <form class="cat-form-body" id="inquiryForm">
+              <div class="cat-form-row2">
+                <div><label class="fi-lbl">Business Name</label><input class="fi" type="text" name="business" placeholder="Your business name" id="f-business" required/></div>
+                <div><label class="fi-lbl">Your Name</label><input class="fi" type="text" name="name" placeholder="First and last name" id="f-name" required/></div>
+              </div>
+              <div class="cat-form-row2">
+                <div><label class="fi-lbl">Email</label><input class="fi" type="email" name="email" placeholder="you@yourbusiness.com" id="f-email" required/></div>
+                <div><label class="fi-lbl">Phone</label><input class="fi" type="tel" name="phone" placeholder="(910) 000-0000"/></div>
+              </div>
+              <div>
+                <label class="fi-lbl">Primary Location</label>
+                <select class="fi" name="location" id="f-location" required>
+                  <option value="" disabled selected>Select your beach community</option>
+                  <option>Wilmington</option><option>Wrightsville Beach</option><option>Carolina Beach</option>
+                  <option>Kure Beach</option><option>Oak Island</option><option>Southport</option>
+                  <option>Multiple Locations</option>
+                </select>
+              </div>
+              <div><label class="fi-lbl">Tell us about your business</label><textarea class="fi" name="message" placeholder="Briefly describe what you offer, pricing range, and availability..."></textarea></div>
+              <button class="btn-fill" type="submit" id="inquiryBtn">Submit My Application</button>
+            </form>
+            <p class="cat-form-note">We'll be in touch within 24 hours.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -832,7 +993,7 @@ textarea.fi{resize:vertical;min-height:100px;}
   <form class="contact-form" id="contactForm">
     <input class="cf-input" type="text" name="name" placeholder="Your name" required/>
     <input class="cf-input" type="email" name="email" placeholder="Your email address" required/>
-    <input class="cf-input" type="text" name="business" placeholder="Business name (or Visitor)"/>
+    <input class="cf-input" type="text" name="business" placeholder="Business name (or 'Visitor')"/>
     <button class="btn-fill" type="submit" id="contactBtn">Send Message</button>
   </form>
   <p class="contact-note">Or reach us at shorelistwilmington@gmail.com · @ShoreList on Instagram</p>
@@ -852,57 +1013,13 @@ textarea.fi{resize:vertical;min-height:100px;}
 
 <script>
 
-  // Category data
-  const catData = {
-    'ghost-tours':       {icon:'👻',title:'Ghost Tours',sub:'Historic walks through Wilmington\'s most haunted streets with expert local guides.'},
-    'fishing-charters':  {icon:'🎣',title:'Fishing Charters',sub:'Half & full-day offshore charters departing from Carolina Beach, Wrightsville Beach, and surrounding waters.'},
-    'kayak-tours':       {icon:'🚣',title:'Kayak Tours',sub:'Guided paddle tours through tidal creeks, marshes, and waterways across the Wilmington area.'},
-    'river-cruises':     {icon:'⛵',title:'River Cruises',sub:'Sunset and sightseeing cruises along the Wilmington waterfront.'},
-    'surf-lessons':      {icon:'🏄',title:'Surf Lessons',sub:'Learn to surf at Wrightsville Beach with certified local instructors. All gear included.'},
-    'paddleboard':       {icon:'🏝️',title:'Paddleboard',sub:'SUP rentals and guided lessons on calm coastal waterways across the Wilmington beaches.'},
-    'bike-tours':        {icon:'🚴',title:'Bike Tours',sub:'Guided rides through Wilmington\'s historic districts and beachfront communities.'},
-    'wildlife-tours':    {icon:'🐬',title:'Wildlife Tours',sub:'Dolphin watches, birding excursions, and nature tours along the North Carolina coast.'},
-    'ebike-rentals':     {icon:'⚡',title:'E-Bike Rentals',sub:'Explore the islands and beachfront communities on electric bikes — no sweat required.'},
-    'scooter-rentals':   {icon:'🛵',title:'Scooter Rentals',sub:'Zip around the beach towns at your own pace — the best way to cover the coast.'},
-    'fat-bike-rentals':  {icon:'🚲',title:'Fat Bike Rentals',sub:'Wide-tire bikes built for sand — ride the beach the way locals do.'},
-    'foil-surfing':      {icon:'🪁',title:'Foil Surfing',sub:'Hydrofoil surf lessons on the Atlantic — the most exhilarating thing on the water.'},
-    'sailboat-rides':    {icon:'⛵',title:'Sailboat Rides',sub:'Private and group sailing experiences along the North Carolina coastline and Intracoastal Waterway.'},
-    'nature-walks':      {icon:'🌿',title:'Nature Walking Tours',sub:'Guided walks through maritime forests, salt marshes, and coastal trails with a certified local guide.'},
-    'beach-photography': {icon:'📸',title:'Beach Photography',sub:'Family portraits, engagement sessions, maternity shoots, and couples photos on the beach.'},
-    'beach-picnics':     {icon:'🧺',title:'Beach Picnics',sub:'Fully set-up private picnic experiences delivered to the beach — arrive to a perfect spread.'},
-    'beach-chairs':      {icon:'🏖️',title:'Beach Chair Rentals',sub:'Chairs, umbrellas, and beach gear delivered and set up before you arrive.'},
-    'wellness':          {icon:'🧘',title:'Wellness',sub:'Yoga, reiki, massage, spas, barbershops, and nail salons — rest, restore, and feel your best on the coast.'},
-  };
-
-  function openCat(cat) {
-    const d = catData[cat];
-    if (!d) return;
-    document.getElementById('cat-icon').textContent = d.icon;
-    document.getElementById('cat-title').textContent = d.title;
-    document.getElementById('cat-sub').textContent = d.sub;
-    document.getElementById('cat-tag').textContent = 'Explore — ' + d.title;
-    const fcn = document.getElementById('form-cat-name');
-    if (fcn) fcn.textContent = d.title.toLowerCase() + '.';
-    document.getElementById('catOverlay').classList.add('open');
-    document.body.style.overflow = 'hidden';
-    window.scrollTo(0,0);
-  }
-
-  function closeCat() {
-    document.getElementById('catOverlay').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  function filterLoc(el) {
-    document.querySelectorAll('.loc-pill').forEach(p => p.classList.remove('active'));
-    el.classList.add('active');
-  }
-
-  // Hamburger
+  // Hamburger menu
   function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('open');
-    document.getElementById('hamburger').classList.toggle('open');
-    document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('hamburger');
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
   }
   function closeMenu() {
     document.getElementById('mobileMenu').classList.remove('open');
@@ -910,51 +1027,43 @@ textarea.fi{resize:vertical;min-height:100px;}
     document.body.style.overflow = '';
   }
 
-  // Sticky CTA
+  // Hide sticky CTA after hero
   const stickyCta = document.getElementById('stickyCta');
-  const exploreEl = document.getElementById('explore');
+  const exploreSection = document.getElementById('explore');
   window.addEventListener('scroll', () => {
-    if (!stickyCta || !exploreEl) return;
-    stickyCta.style.opacity = exploreEl.getBoundingClientRect().top < 100 ? '0' : '1';
-    stickyCta.style.pointerEvents = exploreEl.getBoundingClientRect().top < 100 ? 'none' : 'auto';
+    if (!stickyCta || !exploreSection) return;
+    const exploreTop = exploreSection.getBoundingClientRect().top;
+    stickyCta.style.opacity = exploreTop < 100 ? '0' : '1';
+    stickyCta.style.pointerEvents = exploreTop < 100 ? 'none' : 'auto';
   });
 
-  // Contact form
+  // Formspree contact form
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', async function(e) {
       e.preventDefault();
       const btn = document.getElementById('contactBtn');
-      btn.textContent = 'Sending...'; btn.disabled = true;
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
       try {
         const res = await fetch('https://formspree.io/f/xeevzzqd', {
-          method:'POST', headers:{'Accept':'application/json'}, body: new FormData(contactForm)
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(contactForm)
         });
-        if (res.ok) { btn.textContent = 'Message Sent ✓'; btn.style.backgroundColor = '#3aaa8a'; contactForm.reset(); }
-        else { btn.textContent = 'Try Again'; btn.disabled = false; }
-      } catch { btn.textContent = 'Try Again'; btn.disabled = false; }
-    });
-  }
-
-  // Inquiry form
-  const inquiryForm = document.getElementById('inquiryForm');
-  if (inquiryForm) {
-    inquiryForm.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const b = document.getElementById('f-business').value;
-      const n = document.getElementById('f-name').value;
-      const em = document.getElementById('f-email').value;
-      const l = document.getElementById('f-location').value;
-      if (!b||!n||!em||!l) { alert('Please fill in all required fields.'); return; }
-      const btn = document.getElementById('inquiryBtn');
-      btn.textContent = 'Submitting...'; btn.disabled = true;
-      try {
-        const res = await fetch('https://formspree.io/f/xeevzzqd', {
-          method:'POST', headers:{'Accept':'application/json'}, body: new FormData(inquiryForm)
-        });
-        if (res.ok) { btn.textContent = 'Application Received ✓'; btn.style.backgroundColor = '#3aaa8a'; inquiryForm.reset(); }
-        else { btn.textContent = 'Try Again'; btn.disabled = false; }
-      } catch { btn.textContent = 'Try Again'; btn.disabled = false; }
+        if (res.ok) {
+          btn.textContent = 'Message Sent ✓';
+          btn.style.backgroundColor = '#3aaa8a';
+          contactForm.reset();
+        } else {
+          btn.textContent = 'Try Again';
+          btn.disabled = false;
+          btn.style.backgroundColor = '';
+        }
+      } catch {
+        btn.textContent = 'Try Again';
+        btn.disabled = false;
+      }
     });
   }
 
@@ -998,6 +1107,254 @@ textarea.fi{resize:vertical;min-height:100px;}
     showToast('xt1', 0);   hideToast('xt1', 3800);
     showToast('xt2', 1300); hideToast('xt2', 5100);
   }, 11000);
+
+
+  // ═══════════════════════════════════════════
+  // OPERATOR DATA — add real operators here when they sign up
+  // Format: catKey: [{ name, desc, location, price (cents), priceLabel }]
+  // ═══════════════════════════════════════════
+  const OPERATORS = {
+    // Example — uncomment and edit when first operator signs up:
+    // 'ghost-tours': [
+    //   { name: 'Wilmington Ghost Tours', desc: '90-min guided walk through historic downtown Wilmington', location: 'Downtown Wilmington', price: 2200, priceLabel: '$22/person' }
+    // ],
+  };
+
+  // Deposit amount in cents — charged upfront, fully refundable if can't confirm
+  const DEPOSIT_CENTS = 2500; // $25.00
+
+  // ── CATEGORY DATA ──
+  const catData = {
+    'ghost-tours':       {icon:'👻',title:'Ghost Tours',sub:'Historic walks through Wilmington's most haunted streets with expert local guides.'},
+    'fishing-charters':  {icon:'🎣',title:'Fishing Charters',sub:'Half & full-day offshore charters departing from Carolina Beach, Wrightsville Beach, and surrounding waters.'},
+    'kayak-tours':       {icon:'🚣',title:'Kayak Tours',sub:'Guided paddle tours through tidal creeks, marshes, and waterways across the Wilmington area.'},
+    'river-cruises':     {icon:'⛵',title:'River Cruises',sub:'Sunset and sightseeing cruises along the Wilmington waterfront.'},
+    'surf-lessons':      {icon:'🏄',title:'Surf Lessons',sub:'Learn to surf at Wrightsville Beach with certified local instructors. All gear included.'},
+    'paddleboard':       {icon:'🏝️',title:'Paddleboard',sub:'SUP rentals and guided lessons on calm coastal waterways across the Wilmington beaches.'},
+    'bike-tours':        {icon:'🚴',title:'Bike Tours',sub:'Guided rides through Wilmington's historic districts and beachfront communities.'},
+    'wildlife-tours':    {icon:'🐬',title:'Wildlife Tours',sub:'Dolphin watches, birding excursions, and nature tours along the North Carolina coast.'},
+    'ebike-rentals':     {icon:'⚡',title:'E-Bike Rentals',sub:'Explore the islands and beachfront communities on electric bikes — no sweat required.'},
+    'scooter-rentals':   {icon:'🛵',title:'Scooter Rentals',sub:'Zip around the beach towns at your own pace — the best way to cover the coast.'},
+    'fat-bike-rentals':  {icon:'🚲',title:'Fat Bike Rentals',sub:'Wide-tire bikes built for sand — ride the beach the way locals do.'},
+    'foil-surfing':      {icon:'🪁',title:'Foil Surfing',sub:'Hydrofoil surf lessons on the Atlantic — the most exhilarating thing on the water.'},
+    'sailboat-rides':    {icon:'⛵',title:'Sailboat Rides',sub:'Private and group sailing experiences along the North Carolina coastline.'},
+    'nature-walks':      {icon:'🌿',title:'Nature Walking Tours',sub:'Guided walks through maritime forests, salt marshes, and coastal trails with a certified local guide.'},
+    'beach-photography': {icon:'📸',title:'Beach Photography',sub:'Family portraits, engagement sessions, maternity shoots, and couples photos on the beach.'},
+    'beach-picnics':     {icon:'🧺',title:'Beach Picnics',sub:'Fully set-up private picnic experiences delivered to the beach — arrive to a perfect spread.'},
+    'beach-chairs':      {icon:'🏖️',title:'Beach Chair Rentals',sub:'Chairs, umbrellas, and beach gear delivered and set up before you arrive.'},
+    'wellness':          {icon:'🧘',title:'Wellness',sub:'Yoga, reiki, massage, spas, and more — rest and restore on the coast.'},
+  };
+
+  let currentCat = '';
+
+  function openCat(cat) {
+    const d = catData[cat];
+    if (!d) return;
+    currentCat = cat;
+
+    // Set header content
+    document.getElementById('cat-icon').textContent  = d.icon;
+    document.getElementById('cat-title').textContent = d.title;
+    document.getElementById('cat-sub').textContent   = d.sub;
+    document.getElementById('cat-tag').textContent   = 'Explore — ' + d.title;
+    const fcn = document.getElementById('form-cat-name');
+    if (fcn) fcn.textContent = d.title.toLowerCase() + '.';
+
+    // Set booking panel title
+    document.getElementById('book-title').textContent = 'Book ' + d.title;
+    document.getElementById('book-sub').textContent   = 'Secure your spot with a $25 fully-refundable deposit. We confirm within 24 hours.';
+
+    // Check operators for this category
+    const ops = OPERATORS[cat] || [];
+    renderBookingState(cat, ops);
+
+    // Show overlay
+    document.getElementById('catOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    window.scrollTo(0, 0);
+
+    // Default to Book tab
+    switchTab('book');
+  }
+
+  function renderBookingState(cat, ops) {
+    const listingsWrap = document.getElementById('operator-listings');
+    const formWrap     = document.getElementById('booking-form-wrap');
+    const noOpsWrap    = document.getElementById('no-ops-state');
+
+    if (ops.length === 0) {
+      // No operators yet — show notify state
+      listingsWrap.style.display = 'none';
+      formWrap.style.display     = 'none';
+      noOpsWrap.style.display    = 'block';
+      const d = catData[cat];
+      document.getElementById('no-ops-title').textContent = d.title + ' — Coming Soon';
+      document.getElementById('no-ops-desc').textContent  =
+        'We're onboarding local ' + d.title.toLowerCase() + ' operators right now. '
+        + 'Drop your email and we'll notify you the moment bookings go live.';
+    } else {
+      // Operators exist — show booking form
+      listingsWrap.style.display = 'block';
+      formWrap.style.display     = 'block';
+      noOpsWrap.style.display    = 'none';
+      renderOperatorCards(ops);
+    }
+  }
+
+  function renderOperatorCards(ops) {
+    const wrap = document.getElementById('operator-listings');
+    wrap.innerHTML = ops.map((op, i) => `
+      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:16px 18px;margin-bottom:10px;cursor:pointer;transition:border-color 0.2s;"
+           id="op-card-${i}" onclick="selectOperator(${i})">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div>
+            <div style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:1rem;color:#FEFCF7;">${op.name}</div>
+            <div style="font-size:0.82rem;color:rgba(245,232,203,0.55);margin-top:3px;">${op.desc}</div>
+            <div style="font-size:0.75rem;color:rgba(245,232,203,0.4);margin-top:4px;">📍 ${op.location}</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;margin-left:16px;">
+            <div style="font-size:1.1rem;font-weight:700;color:#E96645;">${op.priceLabel}</div>
+            <div style="font-size:0.7rem;color:rgba(245,232,203,0.4);">per person</div>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  let selectedOperatorIdx = null;
+  function selectOperator(idx) {
+    selectedOperatorIdx = idx;
+    // Highlight selected card
+    document.querySelectorAll('[id^="op-card-"]').forEach((el, i) => {
+      el.style.borderColor = i === idx ? '#E96645' : 'rgba(255,255,255,0.1)';
+    });
+  }
+
+  function switchTab(tab) {
+    document.querySelectorAll('.ov-tab').forEach((t, i) => {
+      t.classList.toggle('active', (i === 0 && tab === 'book') || (i === 1 && tab === 'operator'));
+    });
+    document.getElementById('panel-book').classList.toggle('active',     tab === 'book');
+    document.getElementById('panel-operator').classList.toggle('active', tab === 'operator');
+  }
+
+  function filterLoc(el) {
+    document.querySelectorAll('.loc-pill').forEach(p => p.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  function closeCat() {
+    document.getElementById('catOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+    selectedOperatorIdx = null;
+    currentCat = '';
+  }
+
+  // ── STRIPE BOOKING SUBMIT ──
+  async function submitBooking() {
+    const name    = document.getElementById('bk-name').value.trim();
+    const email   = document.getElementById('bk-email').value.trim();
+    const date    = document.getElementById('bk-date').value;
+    const party   = document.getElementById('bk-party').value;
+    const phone   = document.getElementById('bk-phone').value.trim();
+    const time    = document.getElementById('bk-time').value;
+    const notes   = document.getElementById('bk-notes').value.trim();
+    const errEl   = document.getElementById('book-err');
+
+    if (!name || !email || !date || !party) {
+      errEl.style.display = 'block';
+      errEl.textContent   = 'Please fill in your name, email, preferred date, and party size.';
+      return;
+    }
+    errEl.style.display = 'none';
+
+    const d        = catData[currentCat];
+    const ops      = OPERATORS[currentCat] || [];
+    const selOp    = (ops.length > 0 && selectedOperatorIdx !== null) ? ops[selectedOperatorIdx] : null;
+
+    const btn      = document.getElementById('bk-submit-btn');
+    const btnText  = document.getElementById('bk-btn-text');
+    btn.disabled   = true;
+    btnText.textContent = 'Redirecting to secure checkout...';
+
+    try {
+      const res = await fetch('/.netlify/functions/create-checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          category:      currentCat,
+          categoryLabel: d.title,
+          guestName:     name,
+          guestEmail:    email,
+          guestPhone:    phone,
+          date:          date + (time ? ' — ' + time : ''),
+          partySize:     party,
+          notes:         notes,
+          priceInCents:  selOp ? selOp.price : DEPOSIT_CENTS,
+          operatorName:  selOp ? selOp.name  : '',
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        throw new Error(data.error || 'No checkout URL returned');
+      }
+    } catch (err) {
+      btn.disabled       = false;
+      btnText.textContent = 'Secure My Spot — $25.00';
+      errEl.style.display = 'block';
+      errEl.textContent   = 'Something went wrong. Please try again or email shorelistwilmington@gmail.com.';
+      console.error(err);
+    }
+  }
+
+  // ── NOTIFY ME (no operators yet) ──
+  async function submitNotify() {
+    const email = document.getElementById('notify-email').value.trim();
+    if (!email) return;
+    const d = catData[currentCat];
+    try {
+      await fetch('https://formspree.io/f/xeevzzqd', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, category: d.title, _subject: 'Shorelist Notify Request: ' + d.title }),
+      });
+      document.getElementById('notify-email').value = '';
+      document.querySelector('.notify-btn').textContent = 'Got it ✓';
+      document.querySelector('.notify-btn').style.background = '#3aaa8a';
+    } catch { /* silent fail */ }
+  }
+
+  // ── OPERATOR INQUIRY FORM ──
+  const inquiryForm = document.getElementById('inquiryForm');
+  if (inquiryForm) {
+    inquiryForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const b = document.getElementById('f-business').value;
+      const n = document.getElementById('f-name').value;
+      const em = document.getElementById('f-email').value;
+      const l = document.getElementById('f-location').value;
+      if (!b||!n||!em||!l) { alert('Please fill in all required fields.'); return; }
+      const btn = document.getElementById('inquiryBtn');
+      btn.textContent = 'Submitting...'; btn.disabled = true;
+      try {
+        const res = await fetch('https://formspree.io/f/xeevzzqd', {
+          method:'POST', headers:{'Accept':'application/json'}, body: new FormData(inquiryForm)
+        });
+        if (res.ok) {
+          btn.textContent = 'Application Received ✓';
+          btn.style.backgroundColor = '#3aaa8a';
+          inquiryForm.reset();
+        } else {
+          btn.textContent = 'Try Again'; btn.disabled = false;
+        }
+      } catch { btn.textContent = 'Try Again'; btn.disabled = false; }
+    });
+  }
+
 </script>
 
 </body>
