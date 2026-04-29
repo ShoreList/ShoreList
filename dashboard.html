@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ShoreList — Operator Dashboard</title>
+<meta name="robots" content="noindex,nofollow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--teal:#0A4D5C;--teal2:#1A7585;--coral:#E96645;--coral2:#F07A5A;--cream:#F5E8CB;--cream2:#FEFCF7;--dark:#0D1F25;--mid:#2C4A52;--lgray:#F2F4F3;--border:rgba(10,77,92,0.10);}
+body{font-family:'DM Sans',sans-serif;background:var(--lgray);color:var(--dark);min-height:100vh;}
+nav{background:var(--teal);padding:18px 40px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--cream2);text-decoration:none;font-weight:700;}
+.nav-logo span{color:var(--coral);}
+.nav-tag{font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,232,203,0.45);}
+.nav-right{display:flex;align-items:center;gap:16px;}
+.btn-logout{background:transparent;border:1px solid rgba(255,255,255,0.15);color:rgba(245,232,203,0.7);padding:8px 16px;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.8rem;cursor:pointer;transition:all 0.2s;}
+.btn-logout:hover{border-color:rgba(255,255,255,0.35);color:white;}
+.btn-refresh{background:var(--coral);color:white;border:none;padding:8px 18px;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:700;cursor:pointer;transition:background 0.2s;}
+.btn-refresh:hover{background:var(--coral2);}
+.login-screen{min-height:100vh;background:var(--teal);display:flex;align-items:center;justify-content:center;padding:20px;}
+.login-box{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:48px;width:100%;max-width:380px;text-align:center;backdrop-filter:blur(10px);}
+.login-logo{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--cream2);margin-bottom:4px;}
+.login-logo span{color:var(--coral);}
+.login-sub{font-size:0.84rem;color:rgba(245,232,203,0.5);margin-bottom:32px;}
+.login-label{font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,232,203,0.45);text-align:left;margin-bottom:8px;display:block;}
+.login-input{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:14px 16px;font-family:'DM Sans',sans-serif;font-size:0.95rem;color:var(--cream2);outline:none;transition:border-color 0.2s;margin-bottom:20px;}
+.login-input:focus{border-color:var(--coral);}
+.login-input::placeholder{color:rgba(245,232,203,0.25);}
+.btn-login{width:100%;background:var(--coral);color:white;border:none;padding:15px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:background 0.2s;}
+.btn-login:hover{background:var(--coral2);}
+.login-err{font-size:0.83rem;color:#f87171;margin-top:14px;display:none;}
+.dash-wrap{display:none;}
+.dash-inner{max-width:1200px;margin:0 auto;padding:40px 32px 80px;}
+.dash-header{margin-bottom:36px;}
+.dash-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--teal);}
+.dash-sub{font-size:0.9rem;color:var(--mid);margin-top:4px;}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px;}
+.stat-card{background:white;border:1px solid var(--border);border-radius:12px;padding:24px;}
+.stat-label{font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(44,74,82,0.45);margin-bottom:8px;}
+.stat-val{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--teal);}
+.stat-note{font-size:0.78rem;color:rgba(44,74,82,0.45);margin-top:4px;}
+.stat-card.highlight .stat-val{color:var(--coral);}
+.filters{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap;align-items:center;}
+.filter-btn{background:white;border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:var(--mid);cursor:pointer;transition:all 0.15s;}
+.filter-btn.active{background:var(--teal);color:white;border-color:var(--teal);}
+.filter-btn:hover:not(.active){border-color:var(--teal);color:var(--teal);}
+.search-input{flex:1;min-width:200px;background:white;border:1px solid var(--border);border-radius:8px;padding:8px 14px;font-family:'DM Sans',sans-serif;font-size:0.88rem;color:var(--dark);outline:none;transition:border-color 0.2s;}
+.search-input:focus{border-color:var(--teal);}
+.search-input::placeholder{color:rgba(44,74,82,0.35);}
+.btn-export{background:var(--lgray);border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:var(--mid);cursor:pointer;transition:all 0.15s;margin-left:auto;}
+.btn-export:hover{border-color:var(--teal);color:var(--teal);}
+.table-wrap{background:white;border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+.table-scroll{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;min-width:800px;}
+thead{background:var(--lgray);border-bottom:1px solid var(--border);}
+th{padding:13px 18px;text-align:left;font-size:0.68rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:rgba(44,74,82,0.5);}
+tr:not(:last-child) td{border-bottom:1px solid rgba(10,77,92,0.06);}
+td{padding:15px 18px;font-size:0.88rem;color:var(--dark);vertical-align:top;}
+.td-name{font-weight:600;}
+.td-exp{font-weight:600;color:var(--teal);}
+.td-date{font-size:0.84rem;color:var(--mid);}
+.td-amt{font-weight:700;color:var(--coral);}
+.td-status{display:inline-flex;align-items:center;gap:5px;font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:3px 10px;border-radius:100px;}
+.td-status.paid{background:rgba(34,197,94,0.10);color:#166534;}
+.td-status.pending{background:rgba(234,179,8,0.10);color:#854d0e;}
+tr:hover td{background:rgba(10,77,92,0.02);}
+.empty-state{text-align:center;padding:64px 24px;color:rgba(44,74,82,0.40);font-size:0.92rem;}
+.empty-icon{font-size:2.5rem;margin-bottom:12px;display:block;opacity:0.4;}
+.loading-state{text-align:center;padding:48px;color:rgba(44,74,82,0.45);}
+.note-chip{background:var(--lgray);border-radius:4px;padding:2px 8px;font-size:0.73rem;color:var(--mid);cursor:help;display:inline-block;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:middle;}
+@media(max-width:900px){.stats-grid{grid-template-columns:repeat(2,1fr);}.dash-inner{padding:24px 16px 60px;}}
+@media(max-width:600px){.stats-grid{grid-template-columns:1fr 1fr;}.filters{gap:8px;}.btn-export{display:none;}}
+</style>
+</head>
+<body>
+
+<div id="login" class="login-screen">
+  <div class="login-box">
+    <div class="login-logo">Shore<span>List</span></div>
+    <p class="login-sub">Operator Dashboard &nbsp;&middot;&nbsp; Booking Management</p>
+    <label class="login-label">Access Password</label>
+    <input class="login-input" type="password" id="pw" placeholder="Enter dashboard password" onkeydown="if(event.key==='Enter')doLogin()"/>
+    <button class="btn-login" onclick="doLogin()">Sign In &rarr;</button>
+    <div class="login-err" id="login-err">Incorrect password. Please try again.</div>
+  </div>
+</div>
+
+<div id="dash" class="dash-wrap">
+  <nav>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <a href="/" class="nav-logo">Shore<span>List</span></a>
+      <span class="nav-tag">Operator Dashboard</span>
+    </div>
+    <div class="nav-right">
+      <button class="btn-refresh" onclick="loadData()">&#8635; Refresh</button>
+      <button class="btn-logout" onclick="doLogout()">Sign Out</button>
+    </div>
+  </nav>
+
+  <div class="dash-inner">
+    <div class="dash-header">
+      <h1 class="dash-title">All Bookings</h1>
+      <p class="dash-sub" id="dash-sub">Loading booking data&hellip;</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card highlight">
+        <div class="stat-label">Total Revenue</div>
+        <div class="stat-val" id="s-rev">—</div>
+        <div class="stat-note">Deposits collected</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Total Bookings</div>
+        <div class="stat-val" id="s-total">—</div>
+        <div class="stat-note">Confirmed paid</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">This Month</div>
+        <div class="stat-val" id="s-month">—</div>
+        <div class="stat-note">Bookings</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Avg. Booking</div>
+        <div class="stat-val" id="s-avg">—</div>
+        <div class="stat-note">Per transaction</div>
+      </div>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all" onclick="applyFilter(this)">All Bookings</button>
+      <button class="filter-btn" data-filter="ghost" onclick="applyFilter(this)">Ghost Tours</button>
+      <button class="filter-btn" data-filter="surf" onclick="applyFilter(this)">Surf Lessons</button>
+      <button class="filter-btn" data-filter="nature" onclick="applyFilter(this)">Nature Walks</button>
+      <button class="filter-btn" data-filter="historic" onclick="applyFilter(this)">Historic Tours</button>
+      <input class="search-input" type="search" id="search-input" placeholder="Search by guest name or email&hellip;" oninput="searchTable()"/>
+      <button class="btn-export" onclick="exportCSV()">&#8615; Export CSV</button>
+    </div>
+
+    <div class="table-wrap">
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Guest</th>
+              <th>Experience</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Party</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody id="tbl-body">
+            <tr><td colspan="8" class="loading-state">Loading bookings&hellip;</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+var ALL_BOOKINGS=[];
+var ACTIVE_FILTER='all';
+var PASS='';
+
+function doLogin(){
+  var pw=document.getElementById('pw').value;
+  var err=document.getElementById('login-err');
+  if(!pw){err.style.display='block';err.textContent='Please enter a password.';return;}
+  PASS=pw;
+  fetch('/.netlify/functions/get-bookings?password='+encodeURIComponent(pw))
+    .then(function(r){return r.json();})
+    .then(function(data){
+      if(data.error&&data.error==='Unauthorized'){err.style.display='block';err.textContent='Incorrect password. Please try again.';PASS='';return;}
+      if(data.error){throw new Error(data.error);}
+      showDash(data);
+    })
+    .catch(function(){err.style.display='block';err.textContent='Error connecting. Check your internet connection.';});
+}
+
+function showDash(data){
+  document.getElementById('login').style.display='none';
+  var d=document.getElementById('dash');
+  d.style.display='block';
+  ALL_BOOKINGS=data.bookings||[];
+  renderStats(data.summary||{});
+  renderTable(ALL_BOOKINGS);
+  var sub=document.getElementById('dash-sub');
+  if(sub) sub.textContent='Last updated: '+new Date().toLocaleString('en-US',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+}
+
+function renderStats(s){
+  var rev=(s.totalRevenue||0)/100;
+  document.getElementById('s-rev').textContent='$'+rev.toFixed(2);
+  document.getElementById('s-total').textContent=s.total||0;
+  var now=new Date();
+  var mc=ALL_BOOKINGS.filter(function(b){var d=new Date(b.created*1000);return d.getMonth()===now.getMonth()&&d.getFullYear()===now.getFullYear();}).length;
+  document.getElementById('s-month').textContent=mc;
+  var avg=s.total>0?(rev/s.total):0;
+  document.getElementById('s-avg').textContent='$'+avg.toFixed(2);
+}
+
+function renderTable(bookings){
+  var tbody=document.getElementById('tbl-body');
+  if(!bookings||!bookings.length){
+    tbody.innerHTML='<tr><td colspan="8" class="empty-state"><span class="empty-icon">&#128197;</span>No bookings yet. Once guests book and pay, they\'ll appear here.</td></tr>';
+    return;
+  }
+  var html='';
+  bookings.forEach(function(b){
+    var dt=b.date?fmtDate(b.date):'—';
+    var amt=b.amount?'$'+((b.amount/100).toFixed(2)):'$25.00';
+    var status=b.status==='paid'?'paid':'pending';
+    var notes=b.notes?'<span class="note-chip" title="'+esc(b.notes)+'">'+esc(b.notes)+'</span>':'<span style="color:rgba(44,74,82,0.25);">—</span>';
+    var booked=b.created?new Date(b.created*1000).toLocaleDateString('en-US',{month:'short',day:'numeric'}):'';
+    html+='<tr>';
+    html+='<td><div class="td-name">'+esc(b.guestName||'—')+'</div><div style="font-size:0.78rem;color:rgba(44,74,82,0.50);">'+esc(b.guestEmail||'')+(b.guestPhone?'<br/>'+esc(b.guestPhone):'')+'</div></td>';
+    html+='<td class="td-exp">'+esc(b.category||'—')+'<div style="font-size:0.76rem;font-weight:400;color:rgba(44,74,82,0.5);">'+esc(b.operator||'')+'</div></td>';
+    html+='<td class="td-date">'+dt+'<div style="font-size:0.73rem;color:rgba(44,74,82,0.40);">Booked '+booked+'</div></td>';
+    html+='<td>'+esc(b.timeSlot||'—')+'</td>';
+    html+='<td style="text-align:center;">'+esc(b.partySize||'1')+'</td>';
+    html+='<td class="td-amt">'+amt+'</td>';
+    html+='<td><span class="td-status '+status+'">'+(status==='paid'?'&#10003; Paid':'Pending')+'</span></td>';
+    html+='<td>'+notes+'</td>';
+    html+='</tr>';
+  });
+  tbody.innerHTML=html;
+}
+
+function fmtDate(ds){
+  if(!ds) return '—';
+  try{var d=new Date(ds+'T12:00:00');return d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});}
+  catch(e){return ds;}
+}
+
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+function applyFilter(btn){
+  document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  ACTIVE_FILTER=btn.dataset.filter;
+  filterAndSearch();
+}
+
+function searchTable(){filterAndSearch();}
+
+function filterAndSearch(){
+  var q=(document.getElementById('search-input').value||'').toLowerCase();
+  var filtered=ALL_BOOKINGS.filter(function(b){
+    var mf=ACTIVE_FILTER==='all'||
+      (ACTIVE_FILTER==='ghost'&&(b.operatorId||'').includes('ghost'))||
+      (ACTIVE_FILTER==='surf'&&(b.operatorId||'').includes('surf'))||
+      (ACTIVE_FILTER==='nature'&&(b.operatorId||'').includes('nature'))||
+      (ACTIVE_FILTER==='historic'&&(b.operatorId||'').includes('historic'));
+    var ms=!q||(b.guestName||'').toLowerCase().includes(q)||(b.guestEmail||'').toLowerCase().includes(q)||(b.category||'').toLowerCase().includes(q);
+    return mf&&ms;
+  });
+  renderTable(filtered);
+}
+
+function loadData(){
+  if(!PASS) return;
+  fetch('/.netlify/functions/get-bookings?password='+encodeURIComponent(PASS))
+    .then(function(r){return r.json();})
+    .then(function(data){
+      if(data.error) return;
+      ALL_BOOKINGS=data.bookings||[];
+      renderStats(data.summary||{});
+      filterAndSearch();
+      var sub=document.getElementById('dash-sub');
+      if(sub) sub.textContent='Last updated: '+new Date().toLocaleString('en-US',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+    }).catch(function(){});
+}
+
+function doLogout(){
+  PASS='';ALL_BOOKINGS=[];
+  document.getElementById('dash').style.display='none';
+  document.getElementById('login').style.display='flex';
+  document.getElementById('pw').value='';
+  document.getElementById('login-err').style.display='none';
+}
+
+function exportCSV(){
+  if(!ALL_BOOKINGS.length) return;
+  var rows=[['Guest Name','Email','Phone','Experience','Operator','Date','Time','Party','Amount','Status','Notes','Booked On']];
+  ALL_BOOKINGS.forEach(function(b){
+    rows.push([b.guestName||'',b.guestEmail||'',b.guestPhone||'',b.category||'',b.operator||'',b.date||'',b.timeSlot||'',b.partySize||'',b.amount?((b.amount/100).toFixed(2)):'25.00',b.status||'paid',b.notes||'',b.created?new Date(b.created*1000).toLocaleDateString():'']);
+  });
+  var csv=rows.map(function(r){return r.map(function(c){return '"'+(c+'').replace(/"/g,'""')+'"';}).join(',');}).join('\n');
+  var blob=new Blob([csv],{type:'text/csv'});
+  var a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='shorelist-bookings-'+new Date().toISOString().split('T')[0]+'.csv';
+  a.click();
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+  var pw=document.getElementById('pw'); if(pw) pw.focus();
+});
+</script>
+</body>
+</html>
