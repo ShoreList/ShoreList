@@ -4,16 +4,16 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>ShoreList — Your Local Guide to Coastal Adventures</title>
+<meta name="description" content="ShoreList connects Wilmington visitors with unforgettable local experiences — ghost tours, fishing charters, kayak adventures, river cruises and more."/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=Caveat:wght@400;600&display=swap" rel="stylesheet"/>
 <style>
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 
 body {
-  font-family: 'DM Sans', sans-serif !important;
-  background-color: #0A4D5C !important;
-  background: #0A4D5C !important;
-  color: #FEFCF7 !important;
+  font-family: 'DM Sans', sans-serif;
+  background: #0A4D5C;
+  color: #FEFCF7;
   overflow-x: hidden;
 }
 
@@ -22,26 +22,23 @@ nav {
   display: flex; justify-content: space-between; align-items: center;
   padding: 20px 48px;
   transition: background 0.4s;
-  background-color: transparent !important;
+  background: transparent;
 }
 nav.scrolled {
-  background-color: rgba(10,77,92,0.97) !important;
-  background: rgba(10,77,92,0.97) !important;
+  background: rgba(10,77,92,0.97);
   backdrop-filter: blur(16px);
 }
 .logo-text { font-size:1.7rem; font-weight:900; line-height:1; display:flex; align-items:baseline; }
-.logo-shore { font-family:'Playfair Display',serif; font-style:italic; color:#F5E8CB !important; }
-.logo-list  { font-family:'DM Sans',sans-serif; font-weight:700; color:#E96645 !important; }
+.logo-shore { font-family:'Playfair Display',serif; font-style:italic; color:#F5E8CB; }
+.logo-list  { font-family:'DM Sans',sans-serif; font-weight:700; color:#E96645; }
 .nav-links { display:flex; gap:32px; align-items:center; }
-.nav-links a { font-size:0.82rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,232,203,0.65) !important; text-decoration:none; }
-.nav-links a:hover { color:#F5E8CB !important; }
-.nav-cta { background-color:#E96645 !important; background:#E96645 !important; color:#FEFCF7 !important; padding:10px 24px !important; border-radius:6px; font-weight:600 !important; }
+.nav-links a { font-size:0.82rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,232,203,0.65); text-decoration:none; }
+.nav-links a:hover { color:#F5E8CB; }
+.nav-cta { background:#E96645 !important; color:#FEFCF7 !important; padding:10px 24px !important; border-radius:6px; font-weight:600 !important; }
 
-/* ── HERO ── */
 .hero {
   min-height: 100vh;
-  background-color: #0A4D5C !important;
-  background: #0A4D5C !important;
+  background: #0A4D5C;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,161 +48,56 @@ nav.scrolled {
 }
 .hero-gradient {
   position:absolute; inset:0; pointer-events:none;
-  background: radial-gradient(ellipse 100% 80% at 50% 0%, #1a8595 0%, #0A4D5C 60%) !important;
+  background: radial-gradient(ellipse 100% 80% at 50% 0%, #1a8595 0%, #0A4D5C 60%);
 }
 .hero-dots {
   position:absolute; inset:0; pointer-events:none;
-  background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px) !important;
+  background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
   background-size:28px 28px;
 }
 .compass { position:absolute; top:80px; right:60px; width:72px; height:72px; border:1.5px solid rgba(245,232,203,0.25); border-radius:50%; display:flex; align-items:center; justify-content:center; animation:spin 30s linear infinite; }
-.compass-inner { font-size:1.4rem; color:#E96645 !important; animation:spin 30s linear infinite reverse; }
+.compass-inner { font-size:1.4rem; color:#E96645; animation:spin 30s linear infinite reverse; }
 @keyframes spin { to{transform:rotate(360deg)} }
 
-/* Two-column hero layout */
 .hero-layout {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 40px;
-  padding-bottom: 80px;
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center; gap: 40px; padding-bottom: 80px;
 }
-
 .hero-inner { position:relative; z-index:2; }
-.hero-tag { display:inline-flex; align-items:center; gap:10px; font-size:0.72rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:#E96645 !important; margin-bottom:24px; animation:fadeUp 0.7s ease both; }
-.hero-tag::before { content:''; width:28px; height:1px; background:#E96645 !important; }
-.hero-title { font-family:'Playfair Display',serif; font-size:clamp(3.2rem,6vw,5.2rem); line-height:1.02; letter-spacing:-2px; margin-bottom:24px; animation:fadeUp 0.7s 0.1s ease both; color:#FEFCF7 !important; }
-.hero-title .italic { font-style:italic; color:#F5E8CB !important; }
-.hero-title .block { display:block; color:#FEFCF7 !important; }
-.hero-title .orange { color:#E96645 !important; font-style:normal; }
-.hero-sub { font-size:1rem; font-weight:300; line-height:1.75; color:rgba(245,232,203,0.7) !important; max-width:460px; margin-bottom:36px; animation:fadeUp 0.7s 0.2s ease both; }
+.hero-tag { display:inline-flex; align-items:center; gap:10px; font-size:0.72rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:#E96645; margin-bottom:24px; animation:fadeUp 0.7s ease both; }
+.hero-tag::before { content:''; width:28px; height:1px; background:#E96645; }
+.hero-title { font-family:'Playfair Display',serif; font-size:clamp(3.2rem,6vw,5.2rem); line-height:1.02; letter-spacing:-2px; margin-bottom:24px; animation:fadeUp 0.7s 0.1s ease both; color:#FEFCF7; }
+.hero-title .italic { font-style:italic; color:#F5E8CB; }
+.hero-title .block { display:block; color:#FEFCF7; }
+.hero-title .orange { color:#E96645; font-style:normal; }
+.hero-sub { font-size:1rem; font-weight:300; line-height:1.75; color:rgba(245,232,203,0.7); max-width:460px; margin-bottom:36px; animation:fadeUp 0.7s 0.2s ease both; }
 .hero-btns { display:flex; gap:14px; flex-wrap:wrap; animation:fadeUp 0.7s 0.3s ease both; margin-bottom:44px; }
-
-/* Hero stats */
-.hero-stats {
-  display: flex;
-  gap: 28px;
-  animation: fadeUp 0.7s 0.45s ease both;
-}
+.hero-stats { display:flex; gap:28px; animation:fadeUp 0.7s 0.45s ease both; }
 .hstat-divider { width:1px; background:rgba(245,232,203,0.15); }
-.hstat-num { font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:900; color:#F5E8CB !important; line-height:1; }
-.hstat-lbl { font-size:0.7rem; color:rgba(245,232,203,0.45) !important; margin-top:3px; font-weight:500; letter-spacing:0.05em; }
+.hstat-num { font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:900; color:#F5E8CB; line-height:1; }
+.hstat-lbl { font-size:0.7rem; color:rgba(245,232,203,0.45); margin-top:3px; font-weight:500; letter-spacing:0.05em; }
 
-.btn-fill { background-color:#E96645 !important; background:#E96645 !important; color:#FEFCF7 !important; padding:15px 36px; border-radius:6px; font-weight:600; font-size:0.95rem; text-decoration:none; border:none; cursor:pointer; font-family:'DM Sans',sans-serif; display:inline-block; transition:transform 0.2s; }
-.btn-fill:hover { background-color:#F07A5A !important; transform:translateY(-2px); }
-.btn-ghost { background:transparent !important; color:#F5E8CB !important; padding:15px 36px; border-radius:6px; font-weight:500; font-size:0.95rem; text-decoration:none; display:inline-block; border:1.5px solid rgba(245,232,203,0.3); transition:transform 0.2s; cursor:pointer; }
+.btn-fill { background:#E96645; color:#FEFCF7; padding:15px 36px; border-radius:6px; font-weight:600; font-size:0.95rem; text-decoration:none; border:none; cursor:pointer; font-family:'DM Sans',sans-serif; display:inline-block; transition:transform 0.2s, background 0.2s; }
+.btn-fill:hover { background:#F07A5A; transform:translateY(-2px); }
+.btn-ghost { background:transparent; color:#F5E8CB; padding:15px 36px; border-radius:6px; font-weight:500; font-size:0.95rem; text-decoration:none; display:inline-block; border:1.5px solid rgba(245,232,203,0.3); transition:transform 0.2s; }
+.btn-ghost:hover { transform:translateY(-2px); }
 
-/* ── CARD CLUSTER (right side of hero) ── */
-.hero-right {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 480px;
-}
-
-.cluster {
-  position: relative;
-  width: 320px;
-  height: 440px;
-}
-
-.xcard {
-  position: absolute;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Back cards */
-.xc-back-l {
-  width: 224px; height: 280px;
-  top: 65px; left: -8px;
-  background: linear-gradient(150deg,#0a2540 0%,#0d4070 55%,#1a6b8a 100%);
-  transform: rotate(-9deg);
-  filter: blur(1.5px);
-  opacity: 0;
-  z-index: 1;
-  animation: slideL 0.65s ease forwards 1.0s;
-}
-.xc-back-r {
-  width: 224px; height: 280px;
-  top: 75px; right: -8px;
-  background: linear-gradient(150deg,#0a2e1a 0%,#0f4d2e 55%,#1a7a56 100%);
-  transform: rotate(9deg);
-  filter: blur(1.5px);
-  opacity: 0;
-  z-index: 1;
-  animation: slideR 0.65s ease forwards 1.0s;
-}
-
-/* Main card */
-.xc-main {
-  width: 284px; height: 370px;
-  top: 18px;
-  left: 50%; transform: translateX(-50%) rotate(-2.5deg);
-  z-index: 3;
-  opacity: 0;
-  animation: cardIn 0.75s cubic-bezier(0.34,1.2,0.64,1) forwards 1.2s,
-             floatIt 4.5s ease-in-out infinite 2.2s;
-}
-.xc-main:hover {
-  transform: translateX(-50%) rotate(0deg) scale(1.03) !important;
-  box-shadow: 0 32px 80px rgba(0,0,0,0.55);
-  animation-play-state: paused;
-}
-
-/* Card image zone */
-.xcard-img {
-  height: 160px;
-  position: relative;
-  background: linear-gradient(145deg,#0d0d2b 0%,#1a0533 42%,#2d1060 72%,#4a0e8f 100%);
-  overflow: hidden;
-}
+.hero-right { position:relative; display:flex; align-items:center; justify-content:center; height:480px; }
+.cluster { position:relative; width:320px; height:440px; }
+.xcard { position:absolute; border-radius:20px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.45); transition:transform 0.3s ease, box-shadow 0.3s ease; }
+.xc-back-l { width:224px; height:280px; top:65px; left:-8px; background:linear-gradient(150deg,#0a2540 0%,#0d4070 55%,#1a6b8a 100%); transform:rotate(-9deg); filter:blur(1.5px); opacity:0; z-index:1; animation:slideL 0.65s ease forwards 1.0s; }
+.xc-back-r { width:224px; height:280px; top:75px; right:-8px; background:linear-gradient(150deg,#0a2e1a 0%,#0f4d2e 55%,#1a7a56 100%); transform:rotate(9deg); filter:blur(1.5px); opacity:0; z-index:1; animation:slideR 0.65s ease forwards 1.0s; }
+.xc-main { width:284px; height:370px; top:18px; left:50%; transform:translateX(-50%) rotate(-2.5deg); z-index:3; opacity:0; animation:cardIn 0.75s cubic-bezier(0.34,1.2,0.64,1) forwards 1.2s, floatIt 4.5s ease-in-out infinite 2.2s; }
+.xc-main:hover { transform:translateX(-50%) rotate(0deg) scale(1.03) !important; box-shadow:0 32px 80px rgba(0,0,0,0.55); animation-play-state:paused; }
+.xcard-img { height:160px; position:relative; background:linear-gradient(145deg,#0d0d2b 0%,#1a0533 42%,#2d1060 72%,#4a0e8f 100%); overflow:hidden; }
 .xcard-stars-field { position:absolute; inset:0; }
-.xcard-stars-field span {
-  position:absolute; width:2px; height:2px;
-  background:white; border-radius:50%;
-  animation: twinkle 3s ease-in-out infinite;
-}
-.ghost-bg {
-  position:absolute; bottom:-4px; left:50%;
-  transform:translateX(-50%);
-  font-size:60px; opacity:0.22; filter:blur(1px);
-  user-select:none;
-}
-.xcard-badge {
-  position:absolute; top:11px; left:11px;
-  background:rgba(233,102,69,0.92);
-  backdrop-filter:blur(6px);
-  color:white; font-size:9px; letter-spacing:1.2px;
-  text-transform:uppercase; font-weight:700;
-  padding:4px 10px; border-radius:20px;
-}
-.xcard-price {
-  position:absolute; top:11px; right:11px;
-  background:rgba(0,0,0,0.5);
-  backdrop-filter:blur(6px);
-  color:white; font-size:12px; font-weight:700;
-  padding:4px 10px; border-radius:20px;
-}
-
-/* Card body */
-.xcard-body {
-  padding:15px 15px 13px;
-  background:rgba(8,18,32,0.93);
-  backdrop-filter:blur(10px);
-  height: calc(100% - 160px);
-  display:flex; flex-direction:column; gap:9px;
-}
-.xcard-title {
-  font-family:'Playfair Display',serif;
-  font-size:17px; font-weight:700;
-  color:#F5E8CB !important; line-height:1.2;
-}
+.xcard-stars-field span { position:absolute; width:2px; height:2px; background:white; border-radius:50%; animation:twinkle 3s ease-in-out infinite; }
+.ghost-bg { position:absolute; bottom:-4px; left:50%; transform:translateX(-50%); font-size:60px; opacity:0.22; filter:blur(1px); user-select:none; }
+.xcard-badge { position:absolute; top:11px; left:11px; background:rgba(233,102,69,0.92); backdrop-filter:blur(6px); color:white; font-size:9px; letter-spacing:1.2px; text-transform:uppercase; font-weight:700; padding:4px 10px; border-radius:20px; }
+.xcard-price { position:absolute; top:11px; right:11px; background:rgba(0,0,0,0.5); backdrop-filter:blur(6px); color:white; font-size:12px; font-weight:700; padding:4px 10px; border-radius:20px; }
+.xcard-body { padding:15px 15px 13px; background:rgba(8,18,32,0.93); backdrop-filter:blur(10px); height:calc(100% - 160px); display:flex; flex-direction:column; gap:9px; }
+.xcard-title { font-family:'Playfair Display',serif; font-size:17px; font-weight:700; color:#F5E8CB; line-height:1.2; }
 .xcard-stars-row { display:flex; align-items:center; gap:6px; }
 .xstars { color:#FFD700; font-size:11px; letter-spacing:1px; }
 .xrating { font-size:12px; font-weight:700; color:white; }
@@ -214,52 +106,16 @@ nav.scrolled {
 .xcard-row { display:flex; align-items:center; justify-content:space-between; }
 .xdetail-lbl { font-size:9.5px; color:rgba(255,255,255,0.45); margin-bottom:2px; letter-spacing:0.05em; }
 .xdetail-val { font-size:12px; font-weight:600; color:white; }
-.xbook-btn {
-  background:#E96645 !important; color:white;
-  border:none; padding:8px 15px;
-  border-radius:6px; font-size:11px; font-weight:700;
-  cursor:pointer; font-family:'DM Sans',sans-serif;
-  transition:background 0.2s;
-}
-.xbook-btn:hover { background:#F07A5A !important; }
+.xbook-btn { background:#E96645; color:white; border:none; padding:8px 15px; border-radius:6px; font-size:11px; font-weight:700; cursor:pointer; font-family:'DM Sans',sans-serif; transition:background 0.2s; }
+.xbook-btn:hover { background:#F07A5A; }
 .xtimes { display:flex; gap:5px; }
-.xchip {
-  font-size:9.5px; padding:3px 8px;
-  border-radius:4px; font-weight:600;
-}
+.xchip { font-size:9.5px; padding:3px 8px; border-radius:4px; font-weight:600; }
 .xchip-avail { background:rgba(255,255,255,0.09); color:rgba(255,255,255,0.7); }
 .xchip-sold { background:rgba(233,102,69,0.15); color:rgba(233,102,69,0.7); text-decoration:line-through; }
-
-/* Live badge */
-.xlive {
-  position:absolute; top:-13px; right:2px;
-  background:#22c55e; color:white;
-  font-size:9px; font-weight:700; letter-spacing:1.2px;
-  padding:4px 11px; border-radius:20px;
-  display:flex; align-items:center; gap:5px;
-  z-index:10; opacity:0;
-  animation:fadeUp 0.5s ease forwards 2.2s;
-  box-shadow:0 4px 18px rgba(34,197,94,0.4);
-}
-.xlive-dot {
-  width:5px; height:5px; background:white; border-radius:50%;
-  animation:pulseDot 1.6s ease-in-out infinite;
-}
-
-/* Toast notifications */
-.xtoasts {
-  position:absolute; bottom:-8px; right:-36px;
-  z-index:10; display:flex; flex-direction:column; gap:7px;
-}
-.xtoast {
-  background:white; border-radius:13px;
-  padding:9px 12px;
-  display:flex; align-items:center; gap:9px;
-  box-shadow:0 8px 28px rgba(0,0,0,0.25);
-  transform:translateX(140%); opacity:0;
-  transition:all 0.48s cubic-bezier(0.34,1.3,0.64,1);
-  min-width:200px;
-}
+.xlive { position:absolute; top:-13px; right:2px; background:#22c55e; color:white; font-size:9px; font-weight:700; letter-spacing:1.2px; padding:4px 11px; border-radius:20px; display:flex; align-items:center; gap:5px; z-index:10; opacity:0; animation:fadeUp 0.5s ease forwards 2.2s; box-shadow:0 4px 18px rgba(34,197,94,0.4); }
+.xlive-dot { width:5px; height:5px; background:white; border-radius:50%; animation:pulseDot 1.6s ease-in-out infinite; }
+.xtoasts { position:absolute; bottom:-8px; right:-36px; z-index:10; display:flex; flex-direction:column; gap:7px; }
+.xtoast { background:white; border-radius:13px; padding:9px 12px; display:flex; align-items:center; gap:9px; box-shadow:0 8px 28px rgba(0,0,0,0.25); transform:translateX(140%); opacity:0; transition:all 0.48s cubic-bezier(0.34,1.3,0.64,1); min-width:200px; }
 .xtoast.show { transform:translateX(0); opacity:1; }
 .xta { width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0; }
 .xta-ghost { background:linear-gradient(135deg,#1a0533,#4a0e8f); }
@@ -269,99 +125,92 @@ nav.scrolled {
 .xtaction { font-size:10.5px; color:#666; }
 .xttime   { font-size:10px; color:#aaa; white-space:nowrap; }
 
-/* Wave */
 .wave-stack { position:absolute; bottom:0; left:0; right:0; height:160px; overflow:hidden; }
 .wv { position:absolute; bottom:0; left:-5%; width:110%; border-radius:50% 50% 0 0; }
-.wv1 { height:100px; background-color:rgba(42,156,173,0.35) !important; animation:wv 9s ease-in-out infinite; }
-.wv2 { height:75px; background-color:rgba(180,215,220,0.25) !important; animation:wv 11s ease-in-out infinite reverse; }
-.wv3 { height:50px; background-color:rgba(232,213,170,0.18) !important; animation:wv 7s ease-in-out infinite; }
+.wv1 { height:100px; background:rgba(42,156,173,0.35); animation:wv 9s ease-in-out infinite; }
+.wv2 { height:75px; background:rgba(180,215,220,0.25); animation:wv 11s ease-in-out infinite reverse; }
+.wv3 { height:50px; background:rgba(232,213,170,0.18); animation:wv 7s ease-in-out infinite; }
 @keyframes wv { 0%,100%{transform:translateX(0)} 50%{transform:translateX(3%)} }
 
-/* MARQUEE */
-.marquee-bar { background-color:#E96645 !important; background:#E96645 !important; padding:13px 0; overflow:hidden; }
+.marquee-bar { background:#E96645; padding:13px 0; overflow:hidden; }
 .marquee { display:flex; animation:mq 20s linear infinite; white-space:nowrap; }
-.mq-item { display:inline-flex; align-items:center; gap:20px; padding:0 28px; font-size:0.76rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:#FEFCF7 !important; }
-.mq-dot { width:4px; height:4px; background:rgba(255,255,255,0.45) !important; border-radius:50%; }
+.mq-item { display:inline-flex; align-items:center; gap:20px; padding:0 28px; font-size:0.76rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:#FEFCF7; }
+.mq-dot { width:4px; height:4px; background:rgba(255,255,255,0.45); border-radius:50%; }
 @keyframes mq { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
-/* SECTIONS */
-.sec { padding:110px 48px; background-color:#0A4D5C !important; background:#0A4D5C !important; }
-.sec-alt { background-color:#073D4A !important; background:#073D4A !important; }
-.sec-tag { font-size:0.72rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:#E96645 !important; margin-bottom:14px; display:flex; align-items:center; gap:10px; }
-.sec-tag::before { content:''; width:24px; height:1px; background:#E96645 !important; }
-.sec-title { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3rem); font-weight:900; line-height:1.12; letter-spacing:-1px; margin-bottom:60px; max-width:480px; color:#FEFCF7 !important; }
-.sec-title em { font-style:italic; color:#E96645 !important; }
+.sec { padding:110px 48px; background:#0A4D5C; }
+.sec-alt { background:#073D4A; }
+.sec-tag { font-size:0.72rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:#E96645; margin-bottom:14px; display:flex; align-items:center; gap:10px; }
+.sec-tag::before { content:''; width:24px; height:1px; background:#E96645; }
+.sec-title { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3rem); font-weight:900; line-height:1.12; letter-spacing:-1px; margin-bottom:60px; max-width:480px; color:#FEFCF7; }
+.sec-title em { font-style:italic; color:#E96645; }
 
 .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:2px; }
-.step { padding:44px 32px; background-color:rgba(255,255,255,0.04) !important; border:1px solid rgba(255,255,255,0.07); transition:background 0.3s; }
-.step:hover { background-color:rgba(233,102,69,0.08) !important; }
-.step-n { font-family:'Playfair Display',serif; font-size:3.5rem; font-weight:900; font-style:italic; color:rgba(233,102,69,0.25) !important; line-height:1; margin-bottom:20px; }
-.step h3 { font-size:1.05rem; font-weight:600; margin-bottom:10px; color:#F5E8CB !important; }
-.step p { font-size:0.88rem; line-height:1.75; color:rgba(245,232,203,0.6) !important; }
+.step { padding:44px 32px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); transition:background 0.3s; }
+.step:hover { background:rgba(233,102,69,0.08); }
+.step-n { font-family:'Playfair Display',serif; font-size:3.5rem; font-weight:900; font-style:italic; color:rgba(233,102,69,0.25); line-height:1; margin-bottom:20px; }
+.step h3 { font-size:1.05rem; font-weight:600; margin-bottom:10px; color:#F5E8CB; }
+.step p { font-size:0.88rem; line-height:1.75; color:rgba(245,232,203,0.6); }
 
 .cats { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:10px; }
-.cat { background-color:rgba(255,255,255,0.04) !important; border:1px solid rgba(255,255,255,0.08); padding:28px 20px; border-radius:4px; text-align:center; cursor:pointer; transition:all 0.22s; text-decoration:none; display:block; }
-.cat:hover { background-color:rgba(233,102,69,0.12) !important; border-color:#E96645; transform:translateY(-4px); }
+.cat { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); padding:28px 20px; border-radius:4px; text-align:center; cursor:pointer; transition:all 0.22s; text-decoration:none; display:block; }
+.cat:hover { background:rgba(233,102,69,0.12); border-color:#E96645; transform:translateY(-4px); }
 .cat-ico { font-size:1.9rem; display:block; margin-bottom:10px; }
-.cat-name { font-size:0.8rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#E8D5AA !important; }
+.cat-name { font-size:0.8rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#E8D5AA; }
 
-/* BOOKING */
-.booking-wrap { display:flex; justify-content:center; padding:80px 48px; background-color:#121212 !important; background:#121212 !important; }
+.booking-wrap { display:flex; justify-content:center; padding:80px 48px; background:#121212; }
 .booking-inner { max-width:360px; width:100%; }
-.booking-phone { background:#ffffff !important; border-radius:28px; width:100%; max-width:360px; overflow:hidden; box-shadow:0 40px 80px rgba(0,0,0,0.6); }
-.bp-header { background-color:#1A7585 !important; background:#1A7585 !important; padding:20px 20px 16px; color:#FEFCF7 !important; }
-.bp-loc { font-size:0.72rem; font-weight:500; opacity:0.75; margin-bottom:4px; color:#FEFCF7 !important; }
-.bp-q { font-size:1.3rem; font-weight:700; line-height:1.2; color:#FEFCF7 !important; }
+.booking-phone { background:#ffffff; border-radius:28px; width:100%; max-width:360px; overflow:hidden; box-shadow:0 40px 80px rgba(0,0,0,0.6); }
+.bp-header { background:#1A7585; padding:20px 20px 16px; color:#FEFCF7; }
+.bp-loc { font-size:0.72rem; font-weight:500; opacity:0.75; margin-bottom:4px; }
+.bp-q { font-size:1.3rem; font-weight:700; line-height:1.2; }
 .bp-tabs { display:flex; gap:16px; margin-top:12px; }
-.bp-tab { font-size:0.7rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.5) !important; padding-bottom:4px; cursor:pointer; }
-.bp-tab.active { color:#FEFCF7 !important; border-bottom:2px solid #E96645; }
-.bp-item { display:flex; align-items:center; gap:12px; padding:16px 20px; border-bottom:1px solid #f0f0f0; background-color:#ffffff !important; }
+.bp-tab { font-size:0.7rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.5); padding-bottom:4px; cursor:pointer; }
+.bp-tab.active { color:#FEFCF7; border-bottom:2px solid #E96645; }
+.bp-item { display:flex; align-items:center; gap:12px; padding:16px 20px; border-bottom:1px solid #f0f0f0; background:#ffffff; }
 .bp-item:last-child { border-bottom:none; }
 .bp-ico { width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; flex-shrink:0; }
-.bp-iname { font-size:0.92rem; font-weight:600; color:#1a1a1a !important; margin-bottom:2px; }
-.bp-imeta { font-size:0.75rem; color:#888 !important; }
-.bp-price { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:900; color:#E96645 !important; }
-.bp-caption { text-align:center; padding:24px; font-size:0.85rem; line-height:1.7; color:rgba(245,232,203,0.65) !important; background-color:#121212 !important; }
+.bp-iname { font-size:0.92rem; font-weight:600; color:#1a1a1a; margin-bottom:2px; }
+.bp-imeta { font-size:0.75rem; color:#888; }
+.bp-price { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:900; color:#E96645; }
+.bp-caption { text-align:center; padding:24px; font-size:0.85rem; line-height:1.7; color:rgba(245,232,203,0.65); background:#121212; }
 
-/* OPERATOR */
-.op-section { padding:100px 48px; background-color:#0A4D5C !important; background:#0A4D5C !important; border-top:1px solid rgba(255,255,255,0.06); }
+.op-section { padding:100px 48px; background:#0A4D5C; border-top:1px solid rgba(255,255,255,0.06); }
 .op-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
-.op-badge { display:inline-block; background-color:rgba(233,102,69,0.15) !important; border:1px solid rgba(233,102,69,0.35); color:#E96645 !important; font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; padding:6px 14px; border-radius:4px; margin-bottom:20px; }
-.op-title { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,3vw,2.6rem); font-weight:900; line-height:1.15; margin-bottom:16px; color:#F5E8CB !important; }
-.op-sub { font-size:0.95rem; line-height:1.8; color:rgba(245,232,203,0.65) !important; margin-bottom:36px; }
+.op-badge { display:inline-block; background:rgba(233,102,69,0.15); border:1px solid rgba(233,102,69,0.35); color:#E96645; font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; padding:6px 14px; border-radius:4px; margin-bottom:20px; }
+.op-title { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,3vw,2.6rem); font-weight:900; line-height:1.15; margin-bottom:16px; color:#F5E8CB; }
+.op-sub { font-size:0.95rem; line-height:1.8; color:rgba(245,232,203,0.65); margin-bottom:36px; }
 .perks { display:flex; flex-direction:column; gap:18px; margin-bottom:40px; }
 .perk { display:flex; gap:12px; align-items:flex-start; }
-.perk-dot { width:22px; height:22px; border-radius:50%; background-color:rgba(233,102,69,0.18) !important; border:1px solid rgba(233,102,69,0.4); display:flex; align-items:center; justify-content:center; font-size:0.7rem; color:#E96645 !important; flex-shrink:0; margin-top:2px; }
-.perk p { font-size:0.88rem; line-height:1.65; color:rgba(245,232,203,0.65) !important; }
-.perk p strong { color:#FEFCF7 !important; font-weight:600; }
-.op-card { background-color:rgba(255,255,255,0.04) !important; border:1px solid rgba(245,232,203,0.12); border-radius:12px; overflow:hidden; }
-.op-card-header { background-color:#1A7585 !important; padding:20px 28px; font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:rgba(245,232,203,0.7) !important; }
+.perk-dot { width:22px; height:22px; border-radius:50%; background:rgba(233,102,69,0.18); border:1px solid rgba(233,102,69,0.4); display:flex; align-items:center; justify-content:center; font-size:0.7rem; color:#E96645; flex-shrink:0; margin-top:2px; }
+.perk p { font-size:0.88rem; line-height:1.65; color:rgba(245,232,203,0.65); }
+.perk p strong { color:#FEFCF7; font-weight:600; }
+.op-card { background:rgba(255,255,255,0.04); border:1px solid rgba(245,232,203,0.12); border-radius:12px; overflow:hidden; }
+.op-card-header { background:#1A7585; padding:20px 28px; font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:rgba(245,232,203,0.7); }
 .op-row { display:flex; justify-content:space-between; align-items:center; padding:20px 28px; border-bottom:1px solid rgba(255,255,255,0.05); }
 .op-row:last-child { border-bottom:none; }
-.op-row-label { font-size:0.88rem; color:rgba(245,232,203,0.6) !important; }
-.op-row-val { font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:900; color:#E96645 !important; }
+.op-row-label { font-size:0.88rem; color:rgba(245,232,203,0.6); }
+.op-row-val { font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:900; color:#E96645; }
 
-/* CONTACT */
-.contact-sec { background-color:#0E5F6E !important; background:#0E5F6E !important; padding:100px 48px; text-align:center; position:relative; overflow:hidden; }
-.contact-dots { position:absolute; inset:0; background-image:radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px) !important; background-size:28px 28px; }
-.contact-tag { font-size:0.72rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:#E96645 !important; margin-bottom:16px; display:flex; align-items:center; justify-content:center; gap:10px; position:relative; z-index:1; }
-.contact-title { font-family:'Playfair Display',serif; font-size:clamp(2.2rem,5vw,3.6rem); font-weight:900; line-height:1.1; letter-spacing:-1.5px; margin-bottom:14px; position:relative; z-index:1; color:#FEFCF7 !important; }
-.contact-title em { font-style:italic; color:#E96645 !important; }
-.contact-sub { font-size:0.98rem; color:rgba(245,232,203,0.65) !important; line-height:1.75; max-width:440px; margin:0 auto 44px; position:relative; z-index:1; }
+.contact-sec { background:#0E5F6E; padding:100px 48px; text-align:center; position:relative; overflow:hidden; }
+.contact-dots { position:absolute; inset:0; background-image:radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px); background-size:28px 28px; }
+.contact-tag { font-size:0.72rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:#E96645; margin-bottom:16px; display:flex; align-items:center; justify-content:center; gap:10px; position:relative; z-index:1; }
+.contact-title { font-family:'Playfair Display',serif; font-size:clamp(2.2rem,5vw,3.6rem); font-weight:900; line-height:1.1; letter-spacing:-1.5px; margin-bottom:14px; position:relative; z-index:1; color:#FEFCF7; }
+.contact-title em { font-style:italic; color:#E96645; }
+.contact-sub { font-size:0.98rem; color:rgba(245,232,203,0.65); line-height:1.75; max-width:440px; margin:0 auto 44px; position:relative; z-index:1; }
 .contact-form { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; max-width:500px; margin:0 auto 14px; position:relative; z-index:1; }
-.cf-input { flex:1; min-width:200px; background-color:rgba(255,255,255,0.08) !important; border:1px solid rgba(255,255,255,0.15); color:#FEFCF7 !important; padding:15px 18px; border-radius:6px; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; }
-.cf-input::placeholder { color:rgba(245,232,203,0.35) !important; }
-.contact-note { font-size:0.76rem; color:rgba(245,232,203,0.35) !important; position:relative; z-index:1; }
+.cf-input { flex:1; min-width:200px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:#FEFCF7; padding:15px 18px; border-radius:6px; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; }
+.cf-input::placeholder { color:rgba(245,232,203,0.35); }
+.contact-note { font-size:0.76rem; color:rgba(245,232,203,0.35); position:relative; z-index:1; }
 
-footer { background-color:#121212 !important; background:#121212 !important; padding:36px 48px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; border-top:1px solid rgba(255,255,255,0.05); }
-.foot-shore { font-family:'Playfair Display',serif; font-style:italic; font-size:1.2rem; color:#F5E8CB !important; }
-.foot-list { font-family:'DM Sans',sans-serif; font-weight:700; font-size:1.2rem; color:#E96645 !important; }
-.foot-copy { font-size:0.78rem; color:rgba(245,232,203,0.3) !important; }
+footer { background:#121212; padding:36px 48px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; border-top:1px solid rgba(255,255,255,0.05); }
+.foot-shore { font-family:'Playfair Display',serif; font-style:italic; font-size:1.2rem; color:#F5E8CB; }
+.foot-list { font-family:'DM Sans',sans-serif; font-weight:700; font-size:1.2rem; color:#E96645; }
+.foot-copy { font-size:0.78rem; color:rgba(245,232,203,0.3); }
 .foot-links { display:flex; gap:22px; }
-.foot-links a { font-size:0.78rem; color:rgba(245,232,203,0.3) !important; text-decoration:none; }
-.foot-links a:hover { color:#E96645 !important; }
+.foot-links a { font-size:0.78rem; color:rgba(245,232,203,0.3); text-decoration:none; }
+.foot-links a:hover { color:#E96645; }
 
-/* ── KEYFRAMES ── */
 @keyframes fadeUp  { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
 @keyframes slideL  { from{opacity:0;transform:translateX(-22px) rotate(-9deg)} to{opacity:0.65;transform:translateX(0) rotate(-9deg)} }
 @keyframes slideR  { from{opacity:0;transform:translateX(22px) rotate(9deg)} to{opacity:0.65;transform:translateX(0) rotate(9deg)} }
@@ -370,7 +219,6 @@ footer { background-color:#121212 !important; background:#121212 !important; pad
 @keyframes pulseDot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.75)} }
 @keyframes twinkle  { 0%,100%{opacity:.9} 50%{opacity:.2} }
 
-/* ── MOBILE ── */
 @media (max-width:900px) {
   .hero-layout { grid-template-columns:1fr; }
   .hero-right { display:none; }
@@ -387,50 +235,11 @@ footer { background-color:#121212 !important; background:#121212 !important; pad
   footer { padding:28px 22px; flex-direction:column; text-align:center; }
   .booking-wrap { padding:60px 22px; }
 }
-
-/* CATEGORY OVERLAY */
-.cat-overlay{display:none;position:fixed;inset:0;background:#0A4D5C;z-index:300;overflow-y:auto;}
-.cat-overlay.open{display:block;}
-.cat-ov-nav{position:sticky;top:0;background:rgba(10,77,92,0.97);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.07);}
-.cat-back{font-size:0.82rem;font-weight:600;color:rgba(245,232,203,0.6);cursor:pointer;background:none;border:none;font-family:"DM Sans",sans-serif;letter-spacing:0.08em;text-transform:uppercase;}
-.cat-back:hover{color:#F5E8CB;}
-.cat-ov-hero{padding:56px 48px 40px;border-bottom:1px solid rgba(255,255,255,0.06);}
-.cat-icon-big{font-size:3rem;display:block;margin-bottom:12px;}
-.cat-ov-tag{font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#E96645;margin-bottom:10px;}
-.cat-ov-title{font-family:"Playfair Display",serif;font-size:2.8rem;font-weight:900;color:#FEFCF7;margin-bottom:10px;line-height:1.1;}
-.cat-ov-sub{font-size:1rem;color:rgba(245,232,203,0.6);max-width:520px;margin-bottom:24px;line-height:1.8;}
-.cat-ov-body{padding:56px 48px;}
-.cat-ov-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
-.op-tag{font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#E96645;margin-bottom:12px;}
-.op-h2{font-family:"Playfair Display",serif;font-size:2rem;font-weight:900;color:#F5E8CB;margin-bottom:12px;line-height:1.2;}
-.op-h2 em{color:#E96645;font-style:italic;}
-.op-p{font-size:0.93rem;line-height:1.8;color:rgba(245,232,203,0.6);margin-bottom:28px;}
-.op-perk{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;}
-.op-dot{width:20px;height:20px;border-radius:50%;background:rgba(233,102,69,0.18);border:1px solid rgba(233,102,69,0.4);display:flex;align-items:center;justify-content:center;font-size:0.65rem;color:#E96645;flex-shrink:0;margin-top:2px;}
-.op-perk p{font-size:0.86rem;line-height:1.65;color:rgba(245,232,203,0.65);}
-.op-perk p strong{color:#FEFCF7;}
-.cat-form-card{background:rgba(255,255,255,0.03);border:1px solid rgba(245,232,203,0.1);border-radius:12px;overflow:hidden;}
-.cat-form-hdr{background:#1A7585;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;}
-.cat-form-hdr-title{font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,232,203,0.85);}
-.cat-form-badge{background:rgba(233,102,69,0.25);border:1px solid rgba(233,102,69,0.45);color:#E96645;font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:4px 10px;border-radius:4px;}
-.cat-form-body{padding:28px;display:flex;flex-direction:column;gap:12px;}
-.cat-form-row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.fi-lbl{display:block;font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,232,203,0.4);margin-bottom:5px;}
-.fi{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:12px 14px;font-family:"DM Sans",sans-serif;font-size:0.9rem;color:#FEFCF7;outline:none;transition:border-color 0.2s;box-sizing:border-box;}
-.fi:focus{border-color:rgba(233,102,69,0.5);}
-.fi::placeholder{color:rgba(245,232,203,0.25);}
-.fi option{background:#073D4A;color:#FEFCF7;}
-textarea.fi{resize:vertical;min-height:90px;}
-.cat-form-note{text-align:center;padding:0 28px 18px;font-size:0.85rem;color:rgba(245,232,203,0.4);}
-@media(max-width:900px){.cat-ov-grid{grid-template-columns:1fr;gap:40px;}}
-@media(max-width:760px){.cat-ov-nav,.cat-ov-hero,.cat-ov-body{padding-left:20px;padding-right:20px;}.cat-form-row2{grid-template-columns:1fr;}}
-
 </style>
 </head>
-<body style="background-color:#0A4D5C !important; background:#0A4D5C !important;">
+<body>
 
-<!-- NAV -->
-<nav id="nav" style="background-color:transparent !important;">
+<nav id="nav">
   <div class="logo-text"><span class="logo-shore">Shore</span><span class="logo-list">List</span></div>
   <div class="nav-links">
     <a href="#how">How It Works</a>
@@ -440,79 +249,13 @@ textarea.fi{resize:vertical;min-height:90px;}
   </div>
 </nav>
 
-
-<!-- CATEGORY OVERLAY -->
-<div class="cat-overlay" id="catOverlay">
-  <div class="cat-ov-nav">
-    <button class="cat-back" onclick="closeCat()">&#8592; All Experiences</button>
-    <div><span style="font-family:'Playfair Display',serif;font-style:italic;color:#F5E8CB;">Shore</span><span style="font-family:'DM Sans',sans-serif;font-weight:700;color:#E96645;">List</span></div>
-  </div>
-  <div class="cat-ov-hero">
-    <div class="cat-ov-tag" id="cat-tag">Explore</div>
-    <span class="cat-icon-big" id="cat-icon"></span>
-    <h1 class="cat-ov-title" id="cat-title"></h1>
-    <p class="cat-ov-sub" id="cat-sub"></p>
-  </div>
-  <div class="cat-ov-body">
-    <div class="cat-ov-grid">
-      <div>
-        <div class="op-tag">For Local Operators</div>
-        <h2 class="op-h2">Be the first to list<br/>in <em id="form-cat-name">this category.</em></h2>
-        <p class="op-p">ShoreList puts your business in front of thousands of visitors searching for things to do across Wilmington and the surrounding beaches.</p>
-        <div class="op-perk"><div class="op-dot">&#10003;</div><p><strong>Free to list.</strong> No setup fees, no monthly charges.</p></div>
-        <div class="op-perk"><div class="op-dot">&#10003;</div><p><strong>Commission only.</strong> We earn 15-20% per booking.</p></div>
-        <div class="op-perk"><div class="op-dot">&#10003;</div><p><strong>STR &amp; hotel placement.</strong> Your listing in vacation rental pamphlets.</p></div>
-        <div class="op-perk"><div class="op-dot">&#10003;</div><p><strong>You stay in control.</strong> We drive guests. You run the experience.</p></div>
-      </div>
-      <div>
-        <div class="cat-form-card">
-          <div class="cat-form-hdr">
-            <span class="cat-form-hdr-title">Operator Inquiry</span>
-            <span class="cat-form-badge">Free to List</span>
-          </div>
-          <form class="cat-form-body" id="inquiryForm">
-            <div class="cat-form-row2">
-              <div><label class="fi-lbl">Business Name</label><input class="fi" type="text" name="business" placeholder="Your business name" id="f-business" required/></div>
-              <div><label class="fi-lbl">Your Name</label><input class="fi" type="text" name="name" placeholder="First and last" id="f-name" required/></div>
-            </div>
-            <div class="cat-form-row2">
-              <div><label class="fi-lbl">Email</label><input class="fi" type="email" name="email" placeholder="you@yourbusiness.com" id="f-email" required/></div>
-              <div><label class="fi-lbl">Phone</label><input class="fi" type="tel" name="phone" placeholder="(910) 000-0000"/></div>
-            </div>
-            <div>
-              <label class="fi-lbl">Primary Location</label>
-              <select class="fi" name="location" id="f-location" required>
-                <option value="" disabled selected>Select your community</option>
-                <option>Wilmington</option>
-                <option>Wrightsville Beach</option>
-                <option>Carolina Beach</option>
-                <option>Kure Beach</option>
-                <option>Oak Island</option>
-                <option>Southport</option>
-                <option>Multiple Locations</option>
-              </select>
-            </div>
-            <div><label class="fi-lbl">Tell us about your business</label><textarea class="fi" name="message" placeholder="Describe what you offer, pricing range, and availability..."></textarea></div>
-            <button class="btn-fill" type="submit" id="inquiryBtn">Submit My Application</button>
-          </form>
-          <p class="cat-form-note">We will be in touch within 24 hours.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- HERO -->
-<section class="hero" style="background-color:#0A4D5C !important; background:#0A4D5C !important;">
+<section class="hero">
   <div class="hero-gradient"></div>
   <div class="hero-dots"></div>
   <div class="compass"><span class="compass-inner">✦</span></div>
-
   <div class="hero-layout">
-
-    <!-- LEFT: original copy -->
     <div class="hero-inner">
-      <div class="hero-tag">Wilmington, NC &amp; the the coast Coast</div>
+      <div class="hero-tag">Wilmington, NC &amp; the Beaches</div>
       <h1 class="hero-title">
         <span class="italic">Your local guide</span>
         <span class="block">to <span class="orange">coastal</span></span>
@@ -524,44 +267,24 @@ textarea.fi{resize:vertical;min-height:90px;}
         <a href="/join" class="btn-ghost">List Your Business</a>
       </div>
       <div class="hero-stats">
-        <div>
-          <div class="hstat-num">20+</div>
-          <div class="hstat-lbl">Local Experiences</div>
-        </div>
+        <div><div class="hstat-num">20+</div><div class="hstat-lbl">Local Experiences</div></div>
         <div class="hstat-divider"></div>
-        <div>
-          <div class="hstat-num">4</div>
-          <div class="hstat-lbl">Beach Communities</div>
-        </div>
+        <div><div class="hstat-num">4</div><div class="hstat-lbl">Beach Communities</div></div>
         <div class="hstat-divider"></div>
-        <div>
-          <div class="hstat-num">5★</div>
-          <div class="hstat-lbl">Curated Only</div>
-        </div>
+        <div><div class="hstat-num">5★</div><div class="hstat-lbl">Curated Only</div></div>
       </div>
     </div>
-
-    <!-- RIGHT: card cluster -->
     <div class="hero-right">
       <div class="cluster">
-
-        <!-- Live badge -->
-        <div class="xlive">
-          <div class="xlive-dot"></div>
-          LIVE BOOKINGS
-        </div>
-
-        <!-- Back cards -->
+        <div class="xlive"><div class="xlive-dot"></div>LIVE BOOKINGS</div>
         <div class="xcard xc-back-l"></div>
         <div class="xcard xc-back-r"></div>
-
-        <!-- Main card -->
         <div class="xcard xc-main">
           <div class="xcard-img">
             <div class="xcard-stars-field" id="starsField"></div>
             <div class="ghost-bg">👻</div>
             <div class="xcard-badge">Ghost Tours</div>
-            <div class="xcard-price">From $28</div>
+            <div class="xcard-price">From $25</div>
           </div>
           <div class="xcard-body">
             <div class="xcard-title">Historic Ghost Walk</div>
@@ -572,14 +295,8 @@ textarea.fi{resize:vertical;min-height:90px;}
             </div>
             <div class="xdivider"></div>
             <div class="xcard-row">
-              <div>
-                <div class="xdetail-lbl">Duration</div>
-                <div class="xdetail-val">90 min</div>
-              </div>
-              <div>
-                <div class="xdetail-lbl">Group size</div>
-                <div class="xdetail-val">Up to 20</div>
-              </div>
+              <div><div class="xdetail-lbl">Duration</div><div class="xdetail-val">90 min</div></div>
+              <div><div class="xdetail-lbl">Group size</div><div class="xdetail-val">Up to 15</div></div>
               <button class="xbook-btn">Book Now</button>
             </div>
             <div class="xtimes">
@@ -589,32 +306,21 @@ textarea.fi{resize:vertical;min-height:90px;}
             </div>
           </div>
         </div>
-
-        <!-- Toast notifications -->
         <div class="xtoasts">
           <div class="xtoast" id="xt1">
             <div class="xta xta-ghost">👻</div>
-            <div class="xtbody">
-              <div class="xtname">Tyler B.</div>
-              <div class="xtaction">Just booked Ghost Walk</div>
-            </div>
+            <div class="xtbody"><div class="xtname">Tyler B.</div><div class="xtaction">Just booked Ghost Walk</div></div>
             <div class="xttime">2m ago</div>
           </div>
           <div class="xtoast" id="xt2">
             <div class="xta xta-fish">🎣</div>
-            <div class="xtbody">
-              <div class="xtname">Sarah M.</div>
-              <div class="xtaction">Booked Fishing Charter</div>
-            </div>
+            <div class="xtbody"><div class="xtname">Sarah M.</div><div class="xtaction">Booked Fishing Charter</div></div>
             <div class="xttime">5m ago</div>
           </div>
         </div>
-
       </div>
     </div>
-
-  </div><!-- end hero-layout -->
-
+  </div>
   <div class="wave-stack">
     <div class="wv wv1"></div>
     <div class="wv wv2"></div>
@@ -622,8 +328,7 @@ textarea.fi{resize:vertical;min-height:90px;}
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee-bar" style="background-color:#E96645 !important; background:#E96645 !important;">
+<div class="marquee-bar">
   <div class="marquee">
     <span class="mq-item">Ghost Tours <span class="mq-dot"></span></span>
     <span class="mq-item">Fishing Charters <span class="mq-dot"></span></span>
@@ -644,51 +349,47 @@ textarea.fi{resize:vertical;min-height:90px;}
   </div>
 </div>
 
-<!-- HOW IT WORKS -->
-<section class="sec" id="how" style="background-color:#0A4D5C !important; background:#0A4D5C !important;">
+<section class="sec" id="how">
   <div class="sec-tag">Simple Process</div>
   <h2 class="sec-title">How <em>ShoreList</em> works</h2>
   <div class="steps">
-    <div class="step"><div class="step-n">01</div><h3>Browse Local Experiences</h3><p>Discover hand-picked tours, charters, and adventures across Wilmington and the the coast coast — all in one place.</p></div>
+    <div class="step"><div class="step-n">01</div><h3>Browse Local Experiences</h3><p>Discover hand-picked tours, charters, and adventures across Wilmington and the surrounding beaches — all in one place.</p></div>
     <div class="step"><div class="step-n">02</div><h3>Book Instantly</h3><p>Reserve your spot directly through ShoreList. No phone tag, no back-and-forth. Confirmation lands right in your inbox.</p></div>
     <div class="step"><div class="step-n">03</div><h3>Show Up &amp; Explore</h3><p>All you have to do is arrive. Local operators handle everything else — you just enjoy the coast.</p></div>
     <div class="step"><div class="step-n">04</div><h3>Leave a Review</h3><p>Share your experience to help other visitors and support the local operators who make this coast special.</p></div>
   </div>
 </section>
 
-<!-- EXPLORE -->
-<section class="sec sec-alt" id="explore" style="background-color:#073D4A !important; background:#073D4A !important;">
+<section class="sec sec-alt" id="explore">
   <div class="sec-tag">Explore</div>
   <h2 class="sec-title">Find your next <em>adventure</em></h2>
   <div class="cats">
-    <a class="cat" href="javascript:void(0)" onclick="openCat('ghost-tours')"><span class="cat-ico">👻</span><div class="cat-name">Ghost Tours
-<a class="cat" href="javascript:void(0)" onclick="openCat('ebike-rentals')"><span class="cat-ico">&#9889;</span><div class="cat-name">E-Bike Rentals</div></a>
-<a class="cat" href="javascript:void(0)" onclick="openCat('scooter-rentals')"><span class="cat-ico">&#128757;</span><div class="cat-name">Scooter Rentals</div></a>
-<a class="cat" href="javascript:void(0)" onclick="openCat('fat-bike-rentals')"><span class="cat-ico">&#128690;</span><div class="cat-name">Fat Bike Rentals</div></a>
-<a class="cat" href="javascript:void(0)" onclick="openCat('foil-surfing')"><span class="cat-ico">&#129361;</span><div class="cat-name">Foil Surfing</div></a>
-<a class="cat" href="javascript:void(0)" onclick="openCat('sailboat-rides')"><span class="cat-ico">&#9981;</span><div class="cat-name">Sailboat Rides</div></a>
-<a class="cat" href="javascript:void(0)" onclick="openCat('nature-walks')"><span class="cat-ico">&#127807;</span><div class="cat-name">Nature Walks</div></a>
-<a class="cat" href="javascript:void(0)" onclick="openCat('beach-photography')"><span class="cat-ico">&#128248;</span><div class="cat-name">Beach Photography</div></a>
-<a class="cat" href="javascript:void(0)" onclick="openCat('beach-picnics')"><span class="cat-ico">&#129082;</span><div class="cat-name">Beach Picnics</div></a>
-<a class="cat" href="javascript:void(0)" onclick="openCat('beach-chairs')"><span class="cat-ico">&#127958;</span><div class="cat-name">Beach Chair Rentals</div></a>
-<a class="cat" href="javascript:void(0)" onclick="openCat('wellness')"><span class="cat-ico">&#129496;</span><div class="cat-name">Wellness</div></a>
-</div></a>
-    <a class="cat" href="javascript:void(0)" onclick="openCat('fishing-charters')"><span class="cat-ico">🎣</span><div class="cat-name">Fishing Charters</div></a>
-    <a class="cat" href="javascript:void(0)" onclick="openCat('kayak-tours')"><span class="cat-ico">🚣</span><div class="cat-name">Kayak Tours</div></a>
-    <a class="cat" href="javascript:void(0)" onclick="openCat('river-cruises')"><span class="cat-ico">⛵</span><div class="cat-name">River Cruises</div></a>
-    <a class="cat" href="javascript:void(0)" onclick="openCat('surf-lessons')"><span class="cat-ico">🏄</span><div class="cat-name">Surf Lessons</div></a>
-    <a class="cat" href="javascript:void(0)" onclick="openCat('paddleboard')"><span class="cat-ico">🏝️</span><div class="cat-name">Paddleboard</div></a>
-    <a class="cat" href="javascript:void(0)" onclick="openCat('bike-tours')"><span class="cat-ico">🚴</span><div class="cat-name">Bike Tours</div></a>
-    <a class="cat" href="javascript:void(0)" onclick="openCat('wildlife-tours')"><span class="cat-ico">🐬</span><div class="cat-name">Wildlife Tours</div></a>
+    <a class="cat" href="/category?cat=ghost-tours"><span class="cat-ico">👻</span><div class="cat-name">Ghost Tours</div></a>
+    <a class="cat" href="/category?cat=fishing-charters"><span class="cat-ico">🎣</span><div class="cat-name">Fishing Charters</div></a>
+    <a class="cat" href="/category?cat=kayak-tours"><span class="cat-ico">🚣</span><div class="cat-name">Kayak Tours</div></a>
+    <a class="cat" href="/category?cat=river-cruises"><span class="cat-ico">🛥️</span><div class="cat-name">River Cruises</div></a>
+    <a class="cat" href="/category?cat=surf-lessons"><span class="cat-ico">🏄</span><div class="cat-name">Surf Lessons</div></a>
+    <a class="cat" href="/category?cat=paddleboard"><span class="cat-ico">🏝️</span><div class="cat-name">Paddleboard</div></a>
+    <a class="cat" href="/category?cat=bike-tours"><span class="cat-ico">🚴</span><div class="cat-name">Bike Tours</div></a>
+    <a class="cat" href="/category?cat=wildlife-tours"><span class="cat-ico">🐬</span><div class="cat-name">Wildlife Tours</div></a>
+    <a class="cat" href="/category?cat=ebike-rentals"><span class="cat-ico">⚡</span><div class="cat-name">E-Bike Rentals</div></a>
+    <a class="cat" href="/category?cat=scooter-rentals"><span class="cat-ico">🛵</span><div class="cat-name">Scooter Rentals</div></a>
+    <a class="cat" href="/category?cat=fat-bike-rentals"><span class="cat-ico">🚲</span><div class="cat-name">Fat Bike Rentals</div></a>
+    <a class="cat" href="/category?cat=foil-surfing"><span class="cat-ico">🪁</span><div class="cat-name">Foil Surfing</div></a>
+    <a class="cat" href="/category?cat=sailboat-rides"><span class="cat-ico">⛵</span><div class="cat-name">Sailboat Rides</div></a>
+    <a class="cat" href="/category?cat=nature-walks"><span class="cat-ico">🌿</span><div class="cat-name">Nature Walks</div></a>
+    <a class="cat" href="/category?cat=beach-photography"><span class="cat-ico">📸</span><div class="cat-name">Beach Photography</div></a>
+    <a class="cat" href="/category?cat=beach-picnics"><span class="cat-ico">🧺</span><div class="cat-name">Beach Picnics</div></a>
+    <a class="cat" href="/category?cat=beach-chairs"><span class="cat-ico">🏖️</span><div class="cat-name">Beach Chair Rentals</div></a>
+    <a class="cat" href="/category?cat=wellness"><span class="cat-ico">🧘</span><div class="cat-name">Wellness</div></a>
   </div>
 </section>
 
-<!-- BOOKING MOCKUP -->
-<div class="booking-wrap" style="background-color:#121212 !important; background:#121212 !important;">
+<div class="booking-wrap">
   <div class="booking-inner">
     <div style="text-align:center;margin-bottom:28px;">
       <div class="sec-tag" style="justify-content:center;">What Guests See</div>
-      <p style="font-family:'Caveat',cursive;font-size:1.1rem;color:rgba(245,232,203,0.55) !important;line-height:1.6;">Guests scan a QR code from a ShoreList pamphlet in their Airbnb or hotel, land here, and book in under 60 seconds.</p>
+      <p style="font-family:'Caveat',cursive;font-size:1.1rem;color:rgba(245,232,203,0.55);line-height:1.6;">Guests scan a QR code from a ShoreList pamphlet in their Airbnb or hotel, land here, and book in under 60 seconds.</p>
     </div>
     <div class="booking-phone">
       <div class="bp-header">
@@ -700,17 +401,16 @@ textarea.fi{resize:vertical;min-height:90px;}
           <div class="bp-tab">Saved</div>
         </div>
       </div>
-      <div class="bp-item"><div class="bp-ico" style="background:#eef6f6 !important;">👻</div><div style="flex:1"><div class="bp-iname">Historic Ghost Tour</div><div class="bp-imeta">Downtown · 2 hrs · ⭐ 4.9</div></div><div class="bp-price">$28</div></div>
-      <div class="bp-item"><div class="bp-ico" style="background:#eef6f0 !important;">🚣</div><div style="flex:1"><div class="bp-iname">the coast Kayak Co.</div><div class="bp-imeta">River · Half Day · ⭐ 4.8</div></div><div class="bp-price">$65</div></div>
-      <div class="bp-item"><div class="bp-ico" style="background:#fef4ee !important;">🎣</div><div style="flex:1"><div class="bp-iname">Offshore Fishing Charter</div><div class="bp-imeta">Carolina Beach · Full Day · ⭐ 4.9</div></div><div class="bp-price">$195</div></div>
-      <div class="bp-item"><div class="bp-ico" style="background:#fef8ee !important;">⛵</div><div style="flex:1"><div class="bp-iname">Sunset River Cruise</div><div class="bp-imeta">Wilmington · 90 min · ⭐ 5.0</div></div><div class="bp-price">$45</div></div>
+      <div class="bp-item"><div class="bp-ico" style="background:#eef6f6;">👻</div><div style="flex:1"><div class="bp-iname">Historic Ghost Tour</div><div class="bp-imeta">Downtown · 90 min · ⭐ 4.9</div></div><div class="bp-price">$25</div></div>
+      <div class="bp-item"><div class="bp-ico" style="background:#eef6f0;">🚣</div><div style="flex:1"><div class="bp-iname">the coast Kayak Co.</div><div class="bp-imeta">River · Half Day · ⭐ 4.8</div></div><div class="bp-price">$65</div></div>
+      <div class="bp-item"><div class="bp-ico" style="background:#fef4ee;">🎣</div><div style="flex:1"><div class="bp-iname">Offshore Fishing Charter</div><div class="bp-imeta">Carolina Beach · Full Day · ⭐ 4.9</div></div><div class="bp-price">$195</div></div>
+      <div class="bp-item"><div class="bp-ico" style="background:#fef8ee;">⛵</div><div style="flex:1"><div class="bp-iname">Sunset River Cruise</div><div class="bp-imeta">Wilmington · 90 min · ⭐ 5.0</div></div><div class="bp-price">$45</div></div>
     </div>
     <div class="bp-caption">Guests scan a QR code from a ShoreList pamphlet and book in under 60 seconds.</div>
   </div>
 </div>
 
-<!-- OPERATORS -->
-<section class="op-section" id="operators" style="background-color:#0A4D5C !important; background:#0A4D5C !important;">
+<section class="op-section" id="operators">
   <div class="op-grid">
     <div>
       <div class="op-badge">For Business Owners</div>
@@ -726,17 +426,16 @@ textarea.fi{resize:vertical;min-height:90px;}
     </div>
     <div class="op-card">
       <div class="op-card-header">Why It Works — At a Glance</div>
-      <div class="op-row"><span class="op-row-label">Cost to list</span><span class="op-row-val" style="color:#5ecfb0 !important;">$0</span></div>
-      <div class="op-row"><span class="op-row-label">Monthly fees</span><span class="op-row-val" style="color:#5ecfb0 !important;">$0</span></div>
+      <div class="op-row"><span class="op-row-label">Cost to list</span><span class="op-row-val" style="color:#5ecfb0;">$0</span></div>
+      <div class="op-row"><span class="op-row-label">Monthly fees</span><span class="op-row-val" style="color:#5ecfb0;">$0</span></div>
       <div class="op-row"><span class="op-row-label">Commission per booking</span><span class="op-row-val">15–20%</span></div>
-      <div class="op-row"><span class="op-row-label">Setup time</span><span class="op-row-val" style="font-size:1rem;font-family:'DM Sans',sans-serif;font-weight:600;color:#FEFCF7 !important;">~10 minutes</span></div>
-      <div class="op-row"><span class="op-row-label">Contract required</span><span class="op-row-val" style="color:#5ecfb0 !important;font-size:1rem;font-family:'DM Sans',sans-serif;font-weight:600;">None</span></div>
+      <div class="op-row"><span class="op-row-label">Setup time</span><span class="op-row-val" style="font-size:1rem;font-family:'DM Sans',sans-serif;font-weight:600;color:#FEFCF7;">~10 minutes</span></div>
+      <div class="op-row"><span class="op-row-label">Contract required</span><span class="op-row-val" style="color:#5ecfb0;font-size:1rem;font-family:'DM Sans',sans-serif;font-weight:600;">None</span></div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact-sec" id="contact" style="background-color:#0E5F6E !important; background:#0E5F6E !important;">
+<section class="contact-sec" id="contact">
   <div class="contact-dots"></div>
   <div class="contact-tag">Get In Touch</div>
   <h2 class="contact-title">Ready to join<br/><em>ShoreList?</em></h2>
@@ -744,13 +443,12 @@ textarea.fi{resize:vertical;min-height:90px;}
   <div class="contact-form">
     <input class="cf-input" type="text" placeholder="Your name"/>
     <input class="cf-input" type="email" placeholder="Your email address"/>
-    <button class="btn-fill" onclick="this.textContent='Sent ✓';this.style.backgroundColor='#3aaa8a';">Send</button>
+    <button class="btn-fill" onclick="this.textContent='Sent ✓';this.style.background='#3aaa8a';">Send</button>
   </div>
-  <p class="contact-note">Or reach us at Shorelist@gmail.com · @ShoreList on Instagram</p>
+  <p class="contact-note">Or reach us at shorelistwilmington@gmail.com · @ShoreList on Instagram</p>
 </section>
 
-<!-- FOOTER -->
-<footer style="background-color:#121212 !important; background:#121212 !important;">
+<footer>
   <div><span class="foot-shore">Shore</span><span class="foot-list">List</span></div>
   <div class="foot-copy">© 2025 ShoreList LLC · Wilmington, NC</div>
   <div class="foot-links">
@@ -762,21 +460,19 @@ textarea.fi{resize:vertical;min-height:90px;}
 </footer>
 
 <script>
-  // Nav scroll behavior
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
-    if(scrollY > 50){
-      nav.style.backgroundColor = 'rgba(10,77,92,0.97)';
+    if (scrollY > 50) {
+      nav.style.background = 'rgba(10,77,92,0.97)';
       nav.style.backdropFilter = 'blur(16px)';
     } else {
-      nav.style.backgroundColor = 'transparent';
+      nav.style.background = 'transparent';
       nav.style.backdropFilter = 'none';
     }
   });
 
-  // Random star field
   const sf = document.getElementById('starsField');
-  for(let i = 0; i < 26; i++){
+  for (let i = 0; i < 26; i++) {
     const s = document.createElement('span');
     const big = Math.random() > 0.8;
     s.style.cssText = `
@@ -790,96 +486,16 @@ textarea.fi{resize:vertical;min-height:90px;}
     sf.appendChild(s);
   }
 
-  // Toast cycling
-  function showToast(id, delay){ setTimeout(()=>document.getElementById(id).classList.add('show'), delay); }
-  function hideToast(id, delay){ setTimeout(()=>document.getElementById(id).classList.remove('show'), delay); }
+  function showToast(id, delay) { setTimeout(() => document.getElementById(id).classList.add('show'), delay); }
+  function hideToast(id, delay) { setTimeout(() => document.getElementById(id).classList.remove('show'), delay); }
 
   showToast('xt1', 2600); hideToast('xt1', 6400);
   showToast('xt2', 3900); hideToast('xt2', 7600);
 
-  // Repeat cycle
-  setTimeout(()=>{
-    showToast('xt1', 0);   hideToast('xt1', 3800);
+  setTimeout(() => {
+    showToast('xt1', 0);    hideToast('xt1', 3800);
     showToast('xt2', 1300); hideToast('xt2', 5100);
   }, 11000);
-
-  //  CATEGORY DATA (icons in HTML, not JS) 
-    var CAT_DATA = {
-    'ghost-tours':       {icon:'&#128123;',title:'Ghost Tours',       sub:'Historic walks through Wilmington haunted streets with expert local guides.'},
-    'fishing-charters':  {icon:'&#127907;',title:'Fishing Charters',  sub:'Half and full-day offshore charters from Carolina Beach and Wrightsville Beach.'},
-    'kayak-tours':       {icon:'&#128675;',title:'Kayak Tours',        sub:'Guided paddle tours through tidal creeks and waterways across the Wilmington area.'},
-    'river-cruises':     {icon:'&#9981;',title:'River Cruises',      sub:'Sunset and sightseeing cruises along the Wilmington waterfront.'},
-    'surf-lessons':      {icon:'&#127940;',title:'Surf Lessons',       sub:'Learn to surf at Wrightsville Beach with certified local instructors.'},
-    'paddleboard':       {icon:'&#127965;',title:'Paddleboard',        sub:'SUP rentals and guided lessons on calm coastal waterways.'},
-    'bike-tours':        {icon:'&#128692;',title:'Bike Tours',         sub:'Guided rides through Wilmington historic districts and beachfront communities.'},
-    'wildlife-tours':    {icon:'&#128044;',title:'Wildlife Tours',     sub:'Dolphin watches, birding excursions, and nature tours along the NC coast.'},
-    'ebike-rentals':     {icon:'&#9889;',title:'E-Bike Rentals',     sub:'Explore the islands and beach communities on electric bikes.'},
-    'scooter-rentals':   {icon:'&#128757;',title:'Scooter Rentals',    sub:'Zip around the beach towns at your own pace.'},
-    'fat-bike-rentals':  {icon:'&#128690;',title:'Fat Bike Rentals',   sub:'Wide-tire bikes built for sand - ride the beach the way locals do.'},
-    'foil-surfing':      {icon:'&#129361;',title:'Foil Surfing',       sub:'Hydrofoil surf lessons on the Atlantic.'},
-    'sailboat-rides':    {icon:'&#9981;',title:'Sailboat Rides',     sub:'Private and group sailing experiences along the NC coastline.'},
-    'nature-walks':      {icon:'&#127807;',title:'Nature Walking Tours', sub:'Guided walks through maritime forests, salt marshes, and coastal trails.'},
-    'beach-photography': {icon:'&#128248;',title:'Beach Photography',  sub:'Family portraits, engagement sessions, and couples photos on the beach.'},
-    'beach-picnics':     {icon:'&#129082;',title:'Beach Picnics',      sub:'Fully set-up private picnic experiences delivered to the beach.'},
-    'beach-chairs':      {icon:'&#127958;',title:'Beach Chair Rentals', sub:'Chairs, umbrellas, and beach gear delivered and set up before you arrive.'},
-    'wellness':          {icon:'&#129496;',title:'Wellness',            sub:'Yoga, reiki, massage, spas, and more on the coast.'}
-  };
-
-  function openCat(cat) {
-    var d = CAT_DATA[cat];
-    if (!d) return;
-    var overlay = document.getElementById('catOverlay');
-    if (!overlay) return;
-    document.getElementById('cat-icon').innerHTML = d.icon;
-    document.getElementById('cat-title').textContent = d.title;
-    document.getElementById('cat-sub').textContent = d.sub;
-    document.getElementById('cat-tag').textContent = 'Explore - ' + d.title;
-    var fcn = document.getElementById('form-cat-name');
-    if (fcn) fcn.textContent = d.title.toLowerCase() + '.';
-    overlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    window.scrollTo(0, 0);
-  }
-
-  function closeCat() {
-    var overlay = document.getElementById('catOverlay');
-    if (overlay) overlay.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  // Inquiry form
-  var iqForm = document.getElementById('inquiryForm');
-  if (iqForm) {
-    iqForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var b = document.getElementById('f-business').value;
-      var n = document.getElementById('f-name').value;
-      var em = document.getElementById('f-email').value;
-      var l = document.getElementById('f-location').value;
-      if (!b || !n || !em || !l) { alert('Please fill in all required fields.'); return; }
-      var btn = document.getElementById('inquiryBtn');
-      btn.textContent = 'Submitting...';
-      btn.disabled = true;
-      fetch('https://formspree.io/f/xeevzzqd', {
-        method: 'POST',
-        headers: {'Accept': 'application/json'},
-        body: new FormData(iqForm)
-      }).then(function(res) {
-        if (res.ok) {
-          btn.textContent = 'Application Received!';
-          btn.style.backgroundColor = '#3aaa8a';
-          iqForm.reset();
-        } else {
-          btn.textContent = 'Try Again';
-          btn.disabled = false;
-        }
-      }).catch(function() {
-        btn.textContent = 'Try Again';
-        btn.disabled = false;
-      });
-    });
-  }
-
 </script>
 
 </body>
