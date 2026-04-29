@@ -2,70 +2,262 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Booking Confirmed — ShoreList</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:'DM Sans',sans-serif;background:#0A4D5C;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;}
-  .card{background:#fff;border-radius:16px;max-width:520px;width:100%;padding:48px 40px;text-align:center;box-shadow:0 24px 80px rgba(0,0,0,0.3);}
-  .check{width:72px;height:72px;background:#E96645;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:2rem;}
-  h1{font-family:'Playfair Display',serif;font-size:2rem;color:#0A4D5C;margin-bottom:10px;}
-  .sub{font-size:1rem;color:#5A7070;line-height:1.7;margin-bottom:28px;}
-  .details{background:#FAF6EE;border-radius:10px;padding:20px 24px;margin-bottom:28px;text-align:left;}
-  .det-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #EDE8DF;font-size:0.9rem;}
-  .det-row:last-child{border-bottom:none;}
-  .det-label{color:#5A7070;font-weight:500;}
-  .det-val{color:#152830;font-weight:600;}
-  .what-next{background:#EFF6F7;border-radius:10px;padding:18px 22px;margin-bottom:28px;text-align:left;border-left:4px solid #1A7585;}
-  .what-next h3{font-size:0.85rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#1A7585;margin-bottom:8px;}
-  .what-next ul{padding-left:18px;}
-  .what-next li{font-size:0.9rem;color:#2C3E3F;line-height:1.8;}
-  .back-btn{display:inline-block;background:#E96645;color:#fff;text-decoration:none;padding:14px 32px;border-radius:8px;font-weight:700;font-size:0.95rem;transition:background 0.2s;}
-  .back-btn:hover{background:#F07A5A;}
-  .logo{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:32px;color:#fff;}
-  .logo span{color:#E96645;font-weight:700;}
-  .footer-note{margin-top:20px;font-size:0.78rem;color:rgba(255,255,255,0.45);text-align:center;}
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--teal:#0A4D5C;--teal2:#1A7585;--coral:#E96645;--coral2:#F07A5A;--cream:#F5E8CB;--cream2:#FEFCF7;--dark:#0D1F25;--mid:#2C4A52;--green:#22c55e;}
+body{font-family:'DM Sans',sans-serif;background:var(--teal);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:32px 20px 80px;overflow-x:hidden;}
+.bg-waves{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+.wave{position:absolute;width:200%;height:200%;border-radius:40%;background:rgba(255,255,255,0.02);animation:wave 18s infinite linear;}
+.wave:nth-child(2){animation-duration:24s;animation-direction:reverse;background:rgba(233,102,69,0.04);}
+.wave:nth-child(3){animation-duration:30s;background:rgba(255,255,255,0.015);animation-delay:-8s;}
+@keyframes wave{0%{transform:translate(-50%,-50%) rotate(0deg);}100%{transform:translate(-50%,-50%) rotate(360deg);}}
+nav{width:100%;max-width:700px;display:flex;align-items:center;justify-content:space-between;margin-bottom:48px;position:relative;z-index:1;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--cream2);text-decoration:none;font-weight:700;}
+.nav-logo span{color:var(--coral);}
+.nav-home{font-size:0.82rem;font-weight:600;color:rgba(245,232,203,0.5);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
+.nav-home:hover{color:var(--cream);}
+.check-wrap{position:relative;z-index:1;margin-bottom:32px;}
+.check-circle{width:96px;height:96px;border-radius:50%;background:rgba(34,197,94,0.15);border:2px solid rgba(34,197,94,0.35);display:flex;align-items:center;justify-content:center;margin:0 auto;animation:popIn 0.6s cubic-bezier(0.34,1.56,0.64,1) 0.2s both;}
+@keyframes popIn{0%{transform:scale(0);opacity:0;}100%{transform:scale(1);opacity:1;}}
+.check-circle svg{animation:drawCheck 0.5s ease 0.7s both;}
+@keyframes drawCheck{0%{stroke-dashoffset:100;}100%{stroke-dashoffset:0;}}
+.check-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(34,197,94,0.18) 0%,transparent 70%);animation:glow 2s ease infinite alternate;}
+@keyframes glow{0%{opacity:0.5;transform:translate(-50%,-50%) scale(0.9);}100%{opacity:1;transform:translate(-50%,-50%) scale(1.1);}}
+.main-card{width:100%;max-width:700px;position:relative;z-index:1;}
+.confirmed-label{font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--green);text-align:center;margin-bottom:12px;display:flex;align-items:center;justify-content:center;gap:8px;}
+.confirmed-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,2.8rem);font-weight:900;color:var(--cream2);text-align:center;line-height:1.1;margin-bottom:10px;}
+.confirmed-sub{font-size:1rem;color:rgba(245,232,203,0.60);text-align:center;line-height:1.8;margin-bottom:36px;max-width:500px;margin-left:auto;margin-right:auto;}
+.booking-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.10);border-radius:20px;padding:32px;margin-bottom:20px;backdrop-filter:blur(10px);}
+.bc-loading{text-align:center;padding:24px 0;color:rgba(245,232,203,0.45);font-size:0.9rem;}
+.bc-tag{font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--coral);margin-bottom:16px;}
+.bc-experience{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:var(--cream2);margin-bottom:4px;}
+.bc-operator{font-size:0.88rem;color:rgba(245,232,203,0.55);margin-bottom:24px;}
+.bc-divider{height:1px;background:rgba(255,255,255,0.08);margin-bottom:24px;}
+.bc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
+.bc-item-label{font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,232,203,0.35);margin-bottom:5px;}
+.bc-item-value{font-size:0.92rem;font-weight:600;color:var(--cream2);line-height:1.4;}
+.bc-item.full{grid-column:1/-1;}
+.bc-paid{background:rgba(34,197,94,0.10);border:1px solid rgba(34,197,94,0.22);border-radius:10px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.bc-paid-label{font-size:0.84rem;font-weight:600;color:#4ade80;}
+.bc-paid-note{font-size:0.75rem;color:rgba(245,232,203,0.40);margin-top:3px;}
+.bc-paid-amt{font-size:1.4rem;font-weight:700;color:#4ade80;}
+.action-row{display:flex;gap:12px;margin-bottom:20px;}
+.btn-cal{flex:1;background:var(--coral);color:white;text-decoration:none;padding:16px 20px;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:700;text-align:center;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:8px;}
+.btn-cal:hover{background:var(--coral2);transform:translateY(-1px);}
+.btn-share{flex:1;background:rgba(255,255,255,0.06);color:var(--cream2);border:1px solid rgba(255,255,255,0.12);padding:16px 20px;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer;text-align:center;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:8px;}
+.btn-share:hover{background:rgba(255,255,255,0.10);}
+.btn-explore{width:100%;background:transparent;color:var(--cream2);border:1px solid rgba(255,255,255,0.15);padding:16px;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer;text-align:center;transition:all 0.2s;text-decoration:none;display:block;}
+.btn-explore:hover{background:rgba(255,255,255,0.06);}
+.info-box{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:24px;margin-bottom:20px;}
+.info-title{font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,232,203,0.4);margin-bottom:16px;}
+.info-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;}
+.info-item:last-child{margin-bottom:0;}
+.info-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px;}
+.info-text{font-size:0.87rem;color:rgba(245,232,203,0.65);line-height:1.65;}
+.info-text strong{color:var(--cream2);}
+.more-sec{width:100%;max-width:700px;position:relative;z-index:1;margin-top:12px;}
+.more-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:var(--cream2);text-align:center;margin-bottom:20px;}
+.more-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.more-tile{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:18px 12px;text-align:center;text-decoration:none;transition:all 0.2s;}
+.more-tile:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);transform:translateY(-2px);}
+.mt-icon{font-size:1.7rem;margin-bottom:7px;display:block;}
+.mt-name{font-size:0.78rem;font-weight:600;color:rgba(245,232,203,0.8);line-height:1.3;}
+.mt-live{font-size:0.60rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#4ade80;display:block;margin-top:4px;}
+.shared-toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--dark);color:var(--cream2);border-radius:100px;padding:12px 24px;font-size:0.87rem;font-weight:600;opacity:0;transition:all 0.3s;z-index:100;white-space:nowrap;}
+.shared-toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+@media(max-width:600px){.action-row{flex-direction:column;}.bc-grid{grid-template-columns:1fr;}.more-grid{grid-template-columns:repeat(2,1fr);}nav{margin-bottom:32px;}}
 </style>
 </head>
 <body>
-<div class="logo">Shore<span>List</span></div>
-<div class="card">
-  <div class="check">✓</div>
-  <h1>You're Booked!</h1>
-  <p class="sub">Your deposit is confirmed and your spot is held. We'll reach out within 24 hours to confirm your experience details.</p>
 
-  <div class="details" id="booking-details">
-    <div class="det-row"><span class="det-label">Experience</span><span class="det-val" id="d-category">—</span></div>
-    <div class="det-row"><span class="det-label">Name</span><span class="det-val" id="d-name">—</span></div>
-    <div class="det-row"><span class="det-label">Date</span><span class="det-val" id="d-date">—</span></div>
-    <div class="det-row"><span class="det-label">Party Size</span><span class="det-val" id="d-party">—</span></div>
-    <div class="det-row"><span class="det-label">Deposit Paid</span><span class="det-val" style="color:#E96645;">$25.00 ✓</span></div>
-  </div>
-
-  <div class="what-next">
-    <h3>What Happens Next</h3>
-    <ul>
-      <li>Check your email for your Stripe receipt</li>
-      <li>Our team will contact you within 24 hours to confirm</li>
-      <li>Your deposit is fully refunded if we can't confirm availability</li>
-      <li>Questions? Email shorelistwilmington@gmail.com</li>
-    </ul>
-  </div>
-
-  <a href="/" class="back-btn">Explore More Experiences</a>
+<div class="bg-waves">
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
 </div>
-<p class="footer-note">Shorelist LLC · Wilmington, NC · Shorelist.net</p>
+
+<nav>
+  <a href="/" class="nav-logo">Shore<span>List</span></a>
+  <a href="/" class="nav-home">&#8592; All Experiences</a>
+</nav>
+
+<div class="check-wrap">
+  <div class="check-glow"></div>
+  <div class="check-circle">
+    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#4ade80" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="100" stroke-dashoffset="100">
+      <polyline points="8,22 18,32 36,14"/>
+    </svg>
+  </div>
+</div>
+
+<div class="main-card">
+  <div class="confirmed-label"><span>&#10003;</span> Booking Confirmed</div>
+  <h1 class="confirmed-title">You're all set<em style="color:var(--coral);">.</em></h1>
+  <p class="confirmed-sub" id="conf-sub">Your spot is reserved. A confirmation email is on its way to your inbox.</p>
+
+  <div class="booking-card" id="booking-card">
+    <div class="bc-loading">Loading your booking details&hellip;</div>
+  </div>
+
+  <div class="action-row" id="action-row" style="display:none;">
+    <a href="#" class="btn-cal" id="btn-gcal" target="_blank" rel="noopener">&#128197; Add to Calendar</a>
+    <button class="btn-share" onclick="shareBooking()">&#8679; Share</button>
+  </div>
+
+  <div class="info-box">
+    <div class="info-title">What Happens Next</div>
+    <div class="info-item">
+      <div class="info-icon">&#128231;</div>
+      <div class="info-text"><strong>Check your inbox.</strong> A confirmation email with your booking details has been sent from ShoreList. If you don't see it, check spam.</div>
+    </div>
+    <div class="info-item">
+      <div class="info-icon">&#128222;</div>
+      <div class="info-text"><strong>Operator will reach out.</strong> Your operator will contact you to confirm logistics, meeting location, and any gear or preparation needed.</div>
+    </div>
+    <div class="info-item">
+      <div class="info-icon">&#128205;</div>
+      <div class="info-text"><strong>Just show up.</strong> Arrive at the agreed location and enjoy your experience. Pay the remaining balance directly to your operator.</div>
+    </div>
+    <div class="info-item">
+      <div class="info-icon">&#128666;</div>
+      <div class="info-text"><strong>Need to cancel?</strong> Your $25 deposit is fully refundable. Email <strong>shorelistwilmington@gmail.com</strong> at least 24 hours before your experience.</div>
+    </div>
+  </div>
+
+  <a href="/" class="btn-explore">&#9760;&nbsp; Explore More Experiences</a>
+</div>
+
+<div class="more-sec">
+  <p class="more-title" style="margin-top:48px;">While you're here&hellip;</p>
+  <div class="more-grid">
+    <a class="more-tile" href="/category?cat=fishing-charters"><span class="mt-icon">&#127907;</span><div class="mt-name">Fishing Charters</div></a>
+    <a class="more-tile" href="/category?cat=kayak-tours"><span class="mt-icon">&#128675;</span><div class="mt-name">Kayak Tours</div></a>
+    <a class="more-tile" href="/category?cat=surf-lessons"><span class="mt-icon">&#127940;</span><div class="mt-name">Surf Lessons</div><span class="mt-live">Live Now</span></a>
+    <a class="more-tile" href="/category?cat=river-cruises"><span class="mt-icon">&#128741;</span><div class="mt-name">River Cruises</div></a>
+    <a class="more-tile" href="/category?cat=wildlife-tours"><span class="mt-icon">&#128044;</span><div class="mt-name">Wildlife Tours</div></a>
+    <a class="more-tile" href="/category?cat=nature-walks"><span class="mt-icon">&#127807;</span><div class="mt-name">Nature Walks</div><span class="mt-live">Live Now</span></a>
+  </div>
+</div>
+
+<div class="shared-toast" id="toast">&#10003;&nbsp; Link copied to clipboard!</div>
 
 <script>
-  // Pull booking details from URL params (set by Stripe success_url)
-  const params = new URLSearchParams(window.location.search);
-  const set = (id, val) => { const el = document.getElementById(id); if(el && val) el.textContent = decodeURIComponent(val); };
-  set('d-category', params.get('category'));
-  set('d-name',     params.get('name'));
-  set('d-date',     params.get('date'));
-  set('d-party',    params.get('party') ? params.get('party') + (params.get('party')==='1' ? ' Guest' : ' Guests') : null);
+function getParam(k){return new URLSearchParams(window.location.search).get(k)||'';}
+
+function fmtDate(ds){
+  if(!ds) return 'See confirmation email';
+  try{var d=new Date(ds+'T12:00:00');return d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});}
+  catch(e){return ds;}
+}
+
+function fmtAmt(cents){return '$'+(((cents||2500)/100).toFixed(2));}
+
+function buildGCalUrl(b){
+  if(!b.date) return 'https://calendar.google.com/calendar/r/eventedit';
+  try{
+    var d=new Date(b.date+'T12:00:00');
+    var y=d.getFullYear(),mo=String(d.getMonth()+1).padStart(2,'0'),day=String(d.getDate()).padStart(2,'0');
+    var start=y+mo+day;
+    if(b.timeSlot){
+      var parts=b.timeSlot.match(/(\d+):(\d+)\s*(AM|PM)/i);
+      if(parts){
+        var h=parseInt(parts[1]),min=parts[2],ampm=parts[3].toUpperCase();
+        if(ampm==='PM'&&h!==12) h+=12;
+        if(ampm==='AM'&&h===12) h=0;
+        var hs=String(h).padStart(2,'0'),eh=String((h+2)%24).padStart(2,'0');
+        var s2=y+mo+day+'T'+hs+min+'00',e2=y+mo+day+'T'+eh+min+'00';
+        var title=encodeURIComponent((b.categoryLabel||'ShoreList Experience')+' with '+(b.operatorName||'Local Operator'));
+        var desc=encodeURIComponent('Booked via ShoreList.net\nOperator: '+(b.operatorName||'')+'\nDeposit paid: '+fmtAmt(b.amount));
+        return 'https://calendar.google.com/calendar/r/eventedit?text='+title+'&dates='+s2+'/'+e2+'&location='+encodeURIComponent('Wilmington, NC')+'&details='+desc;
+      }
+    }
+    return 'https://calendar.google.com/calendar/r/eventedit?text='+encodeURIComponent(b.categoryLabel||'ShoreList Experience')+'&dates='+start+'/'+start;
+  }catch(e){return 'https://calendar.google.com/calendar/r/eventedit';}
+}
+
+function renderBooking(b){
+  var card=document.getElementById('booking-card');
+  var h='';
+  h+='<div class="bc-tag">Your Booking</div>';
+  h+='<div class="bc-experience">'+(b.categoryLabel||'Your Experience')+'</div>';
+  h+='<div class="bc-operator">with '+(b.operatorName||'Your Operator')+(b.guestName?' &nbsp;&middot;&nbsp; Booked for '+b.guestName:'')+'</div>';
+  h+='<div class="bc-divider"></div>';
+  h+='<div class="bc-grid">';
+  h+='<div class="bc-item"><div class="bc-item-label">Date</div><div class="bc-item-value">'+fmtDate(b.date)+'</div></div>';
+  h+='<div class="bc-item"><div class="bc-item-label">Time</div><div class="bc-item-value">'+(b.timeSlot||'See confirmation email')+'</div></div>';
+  h+='<div class="bc-item"><div class="bc-item-label">Party Size</div><div class="bc-item-value">'+(b.partySize||'1')+' guest(s)</div></div>';
+  h+='<div class="bc-item"><div class="bc-item-label">Confirmation sent to</div><div class="bc-item-value">'+(b.guestEmail||'Your email')+'</div></div>';
+  if(b.notes){h+='<div class="bc-item full"><div class="bc-item-label">Special Requests</div><div class="bc-item-value">'+b.notes+'</div></div>';}
+  h+='</div>';
+  h+='<div class="bc-paid"><div><div class="bc-paid-label">Deposit Paid &#10003;</div><div class="bc-paid-note">Fully refundable &nbsp;&middot;&nbsp; Balance due at experience</div></div><div class="bc-paid-amt">'+fmtAmt(b.amount)+'</div></div>';
+  card.innerHTML=h;
+  var ar=document.getElementById('action-row');
+  ar.style.display='flex';
+  var gcal=document.getElementById('btn-gcal');
+  if(gcal) gcal.href=buildGCalUrl(b);
+  if(b.guestName){
+    var sub=document.getElementById('conf-sub');
+    if(sub) sub.textContent='Your spot is reserved, '+b.guestName.split(' ')[0]+'. A confirmation email is on its way to your inbox.';
+  }
+}
+
+function shareBooking(){
+  var url=window.location.origin+'/';
+  if(navigator.share){
+    navigator.share({title:'ShoreList — Coastal Experiences in Wilmington, NC',text:'Just booked an experience through ShoreList! Check out all the amazing things to do in Wilmington.',url:url}).catch(function(){});
+  } else if(navigator.clipboard){
+    navigator.clipboard.writeText(url).then(function(){
+      var t=document.getElementById('toast');
+      t.classList.add('show');
+      setTimeout(function(){t.classList.remove('show');},2500);
+    });
+  }
+}
+
+var sessionId=getParam('session_id');
+if(sessionId&&sessionId.startsWith('cs_')){
+  fetch('/.netlify/functions/get-session?id='+encodeURIComponent(sessionId))
+    .then(function(r){return r.json();})
+    .then(function(data){
+      if(data.error){throw new Error(data.error);}
+      renderBooking(data);
+    })
+    .catch(function(){
+      var card=document.getElementById('booking-card');
+      card.innerHTML='<div class="bc-tag">Your Booking</div><div class="bc-experience">Experience Confirmed!</div><div class="bc-operator" style="margin-bottom:20px;">Your confirmation details will arrive by email shortly.</div><div class="bc-paid"><div><div class="bc-paid-label">Deposit Paid &#10003;</div><div class="bc-paid-note">Fully refundable &nbsp;&middot;&nbsp; Balance due at experience</div></div><div class="bc-paid-amt">$25.00</div></div>';
+      document.getElementById('action-row').style.display='flex';
+    });
+} else {
+  var card=document.getElementById('booking-card');
+  card.innerHTML='<div class="bc-tag">Booking Confirmed</div><div class="bc-experience">Your spot is reserved!</div><div class="bc-operator" style="margin-bottom:20px;">Check your email for confirmation details.</div><div class="bc-paid"><div><div class="bc-paid-label">Deposit Paid &#10003;</div><div class="bc-paid-note">Fully refundable &nbsp;&middot;&nbsp; Balance due at experience</div></div><div class="bc-paid-amt">$25.00</div></div>';
+}
+
+(function(){
+  var colors=['#E96645','#F5E8CB','#4ade80','#60a5fa','#FEFCF7'];
+  var container=document.createElement('div');
+  container.style.cssText='position:fixed;inset:0;pointer-events:none;z-index:999;overflow:hidden;';
+  for(var i=0;i<50;i++){
+    var c=document.createElement('div');
+    var color=colors[Math.floor(Math.random()*colors.length)];
+    var size=Math.random()*8+4;
+    var left=Math.random()*100;
+    var delay=Math.random()*0.8;
+    var dur=Math.random()*1.5+1.5;
+    var drift=(Math.random()-0.5)*300;
+    c.style.cssText='position:absolute;top:-20px;left:'+left+'%;width:'+size+'px;height:'+size+'px;background:'+color+';border-radius:'+(Math.random()>0.5?'50%':'2px')+';opacity:0;animation:fall '+dur+'s '+delay+'s ease forwards;';
+    c.style.setProperty('--drift',drift+'px');
+    container.appendChild(c);
+  }
+  var style=document.createElement('style');
+  style.textContent='@keyframes fall{0%{top:-20px;opacity:1;transform:translateX(0) rotate(0deg);}100%{top:100vh;opacity:0;transform:translateX(var(--drift)) rotate(720deg);}}';
+  document.head.appendChild(style);
+  document.body.appendChild(container);
+  setTimeout(function(){container.remove();},4000);
+})();
 </script>
 </body>
 </html>
