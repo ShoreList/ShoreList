@@ -11,7 +11,7 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:#0A4D5C;color:#FEFCF7;overflow-x:hidden;}
-:root{--teal:#0A4D5C;--teal2:#1A7585;--teal3:#073D4A;--coral:#E96645;--coral2:#F07A5A;--cream:#F5E8CB;--cream2:#FEFCF7;--dark:#0D1F25;--lgray:#F2F4F3;}
+:root{--teal:#0A4D5C;--teal2:#1A7585;--teal3:#073D4A;--coral:#E96645;--coral2:#F07A5A;--cream:#F5E8CB;--cream2:#FEFCF7;--dark:#0D1F25;}
 nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:18px 48px;background:rgba(10,77,92,0.98);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.07);}
 .logo{font-size:1.6rem;font-weight:900;display:flex;align-items:baseline;text-decoration:none;}
 .logo-s{font-family:'Playfair Display',serif;font-style:italic;color:var(--cream);}
@@ -101,8 +101,8 @@ nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between
 .faq-a{max-height:0;overflow:hidden;transition:max-height 0.32s ease,padding 0.32s ease;font-size:0.87rem;color:rgba(245,232,203,0.65);line-height:1.8;padding:0 22px;}
 .faq-item.open .faq-a{max-height:300px;padding:0 22px 18px;}
 .faq-item.open .faq-arrow{transform:rotate(180deg);}
-.form-steps{display:flex;gap:0;margin-bottom:40px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;overflow:hidden;}
-.fs-step{flex:1;padding:14px 16px;text-align:center;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,232,203,0.35);border-right:1px solid rgba(255,255,255,0.06);cursor:pointer;transition:all 0.2s;}
+.form-steps{display:flex;margin-bottom:40px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;overflow:hidden;}
+.fs-step{flex:1;padding:14px 16px;text-align:center;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,232,203,0.35);border-right:1px solid rgba(255,255,255,0.06);}
 .fs-step:last-child{border-right:none;}
 .fs-step.active{background:var(--coral);color:white;}
 .fs-step.done{color:rgba(245,232,203,0.60);}
@@ -116,14 +116,12 @@ nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between
 .form-input{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:13px 15px;font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--cream2);outline:none;transition:border-color 0.2s,box-shadow 0.2s;width:100%;-webkit-appearance:none;}
 .form-input:focus{border-color:var(--coral);box-shadow:0 0 0 3px rgba(233,102,69,0.10);}
 .form-input::placeholder{color:rgba(245,232,203,0.22);}
-.form-input option{background:var(--teal3);color:var(--cream2);}
 textarea.form-input{resize:vertical;min-height:90px;line-height:1.65;}
 .form-select{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:13px 15px;font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--cream2);outline:none;width:100%;-webkit-appearance:none;appearance:none;cursor:pointer;}
 .form-select:focus{border-color:var(--coral);}
 .form-checkbox{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;}
 .form-checkbox input{margin-top:3px;accent-color:var(--coral);width:16px;height:16px;flex-shrink:0;cursor:pointer;}
 .form-checkbox label{font-size:0.85rem;color:rgba(245,232,203,0.65);line-height:1.6;cursor:pointer;}
-.form-checkbox label a{color:var(--coral);text-decoration:none;}
 .form-actions{display:flex;gap:12px;align-items:center;margin-top:18px;}
 .btn-back-form{background:transparent;border:1px solid rgba(255,255,255,0.14);color:rgba(245,232,203,0.55);padding:14px 22px;border-radius:7px;font-family:'DM Sans',sans-serif;font-size:0.9rem;cursor:pointer;transition:all 0.2s;}
 .btn-back-form:hover{border-color:rgba(255,255,255,0.28);color:var(--cream);}
@@ -153,8 +151,8 @@ footer{background:#0b1a1f;padding:28px 48px;display:flex;justify-content:space-b
 .foot-copy{font-size:0.74rem;color:rgba(245,232,203,0.27);}
 .foot-links a{font-size:0.74rem;color:rgba(245,232,203,0.27);text-decoration:none;margin-left:18px;transition:color 0.2s;}
 .foot-links a:hover{color:var(--coral);}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.hero-card{max-width:500px;}.mockup-grid{grid-template-columns:1fr;}.value-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:768px){nav{padding:15px 20px;}.hero{padding:56px 20px 60px;}.sec{padding:56px 20px;}.form-grid{grid-template-columns:1fr;}.hero-h{letter-spacing:-0.5px;}footer{padding:22px 20px;flex-direction:column;text-align:center;}.value-grid{grid-template-columns:1fr;}.value-grid-2{grid-template-columns:1fr;}}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.mockup-grid{grid-template-columns:1fr;}.value-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){nav{padding:15px 20px;}.hero{padding:56px 20px 60px;}.sec{padding:56px 20px;}.form-grid{grid-template-columns:1fr;}footer{padding:22px 20px;flex-direction:column;text-align:center;}.value-grid{grid-template-columns:1fr;}.value-grid-2{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -206,7 +204,7 @@ footer{background:#0b1a1f;padding:28px 48px;display:flex;justify-content:space-b
     <div class="value-grid">
       <div class="vp"><span class="vp-icon">🌊</span><div class="vp-title">Local-First Platform</div><div class="vp-sub">No competing with operators from other cities. Every listing is a Wilmington-area business. Visitors searching for coastal experiences land directly on your listing.</div></div>
       <div class="vp"><span class="vp-icon">📍</span><div class="vp-title">STR &amp; Hotel Placement</div><div class="vp-sub">ShoreList materials go directly into vacation rentals and hotel properties across the region — reaching guests at the exact moment they're looking for something to do.</div></div>
-      <div class="vp"><span class="vp-icon">💰</span><div class="vp-title">Lowest Commission Around</div><div class="vp-sub"><strong>Viator charges 25%.</strong> GetYourGuide charges up to 30%. ShoreList charges 15–20% — and we know your market far better than they ever will.</div></div>
+      <div class="vp"><span class="vp-icon">💰</span><div class="vp-title">Lowest Commission Around</div><div class="vp-sub"><strong>Viator charges 20–30%.</strong> GetYourGuide charges up to 30%. ShoreList charges 15–20% — and we know your market far better than they ever will.</div></div>
     </div>
     <div class="value-grid-2">
       <div class="vp"><span class="vp-icon">📈</span><div class="vp-title">Ground Floor Opportunity</div><div class="vp-sub">You're joining early. Early operators get <strong>best placement, most visibility,</strong> and a direct relationship with our team as we expand across the NC coast and beyond.</div></div>
@@ -224,10 +222,10 @@ footer{background:#0b1a1f;padding:28px 48px;display:flex;justify-content:space-b
             <div class="mp-q">What do you want to do today?</div>
             <div class="mp-tabs"><div class="mp-tab active">Explore</div><div class="mp-tab">My Bookings</div><div class="mp-tab">Saved</div></div>
           </div>
-          <div class="mp-item"><div class="mp-ico" style="background:#eef6f6;">👻</div><div style="flex:1"><div class="mp-name">Historic Ghost Walk</div><div class="mp-meta">Downtown · 90 min · ⭐ 4.9</div></div><div class="mp-price">$25</div></div>
-          <div class="mp-item"><div class="mp-ico" style="background:#eef8f0;">🏄</div><div style="flex:1"><div class="mp-name">Surf Lesson with Tripp Cox</div><div class="mp-meta">Carolina Beach · 2 hrs · ⭐ 4.8</div></div><div class="mp-price">$75</div></div>
-          <div class="mp-item"><div class="mp-ico" style="background:#fef4ee;">🎣</div><div style="flex:1"><div class="mp-name">Offshore Fishing Charter</div><div class="mp-meta">Carolina Beach · Full Day · ⭐ 4.9</div></div><div class="mp-price">$195</div></div>
-          <div class="mp-item"><div class="mp-ico" style="background:#f0fef4;">🌿</div><div style="flex:1"><div class="mp-name">Coastal Nature Walk</div><div class="mp-meta">Carolina Beach SP · 2 hrs · ⭐ 5.0</div></div><div class="mp-price">$35</div></div>
+          <div class="mp-item"><div class="mp-ico" style="background:#eef6f6;">👻</div><div style="flex:1"><div class="mp-name">Historic Ghost Walk</div><div class="mp-meta">Downtown · 90 min · Sean Austin</div></div><div class="mp-price">$25</div></div>
+          <div class="mp-item"><div class="mp-ico" style="background:#eef8f0;">🏄</div><div style="flex:1"><div class="mp-name">Surf Lesson with Tripp Cox</div><div class="mp-meta">Carolina Beach · 2 hrs</div></div><div class="mp-price">$75</div></div>
+          <div class="mp-item"><div class="mp-ico" style="background:#fef4ee;">🎣</div><div style="flex:1"><div class="mp-name">Offshore Fishing Charter</div><div class="mp-meta">Carolina Beach · Full Day</div></div><div class="mp-price">$195</div></div>
+          <div class="mp-item"><div class="mp-ico" style="background:#f0fef4;">🌿</div><div style="flex:1"><div class="mp-name">Coastal Nature Walk</div><div class="mp-meta">Carolina Beach SP · 2 hrs</div></div><div class="mp-price">$35</div></div>
         </div>
         <div class="mockup-caption">Guests scan a QR code from a ShoreList pamphlet in their Airbnb or hotel, land here, and book in under 60 seconds.</div>
       </div>
@@ -239,7 +237,7 @@ footer{background:#0b1a1f;padding:28px 48px;display:flex;justify-content:space-b
           <div class="mb-item"><div class="mb-dot">✓</div><div class="mb-text"><strong>Real-time calendar.</strong> Guests see exactly which time slots are available. No double bookings. Ever.</div></div>
           <div class="mb-item"><div class="mb-dot">✓</div><div class="mb-text"><strong>Instant confirmation.</strong> Guests receive an email the moment they book. You get notified too.</div></div>
           <div class="mb-item"><div class="mb-dot">✓</div><div class="mb-text"><strong>Refundable deposit model.</strong> A $25 deposit holds the spot. Low barrier for the guest. Pre-committed booking for you.</div></div>
-          <div class="mb-item"><div class="mb-dot">✓</div><div class="mb-text"><strong>Stripe-powered checkout.</strong> Card, bank transfer, or Klarna. The most trusted payment processor in the world.</div></div>
+          <div class="mb-item"><div class="mb-dot">✓</div><div class="mb-text"><strong>Stripe-powered checkout.</strong> The most trusted payment processor in the world.</div></div>
           <div class="mb-item"><div class="mb-dot">✓</div><div class="mb-text"><strong>Your brand stays front and center.</strong> We send the guests. You run the show.</div></div>
         </div>
       </div>
@@ -250,7 +248,7 @@ footer{background:#0b1a1f;padding:28px 48px;display:flex;justify-content:space-b
   <div class="sec-inner">
     <div class="sec-label">Transparent Rates</div>
     <h2 class="sec-title">No surprises. <em>Ever.</em></h2>
-    <p class="sec-sub">Your commission rate is locked in at sign-up and never changes without your agreement.</p>
+    <p class="sec-sub">Your commission rate is locked in at sign-up and never changes without your agreement. Commission is deducted from the guest deposit automatically — no invoicing, no manual calculation.</p>
     <div class="commission-wrap">
       <table class="commission-table">
         <thead><tr><th>Experience Category</th><th>ShoreList Commission</th><th>You Receive (on $25 deposit)</th></tr></thead>
@@ -277,13 +275,13 @@ footer{background:#0b1a1f;padding:28px 48px;display:flex;justify-content:space-b
     <h2 class="sec-title">Everything you want to know.</h2>
     <p class="sec-sub" style="margin-bottom:32px;">Can't find your answer? Email us at shorelistwilmington@gmail.com.</p>
     <div class="faq">
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How does ShoreList handle payments? <span class="faq-arrow">▾</span></button><div class="faq-a">Guests pay a $25 refundable booking deposit through our secure Stripe checkout. Once you deliver the experience, ShoreList remits your net payout within 5 business days. The balance of your booking price is paid directly to you by the guest on the day.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How does ShoreList handle payments? <span class="faq-arrow">▾</span></button><div class="faq-a">Guests pay a $25 refundable booking deposit through our secure Stripe checkout. Once you deliver the experience, ShoreList remits your net payout within 5 business days. The balance of your booking price is paid directly to you by the guest on the day of the experience.</div></div>
       <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What if I need to cancel a booking? <span class="faq-arrow">▾</span></button><div class="faq-a">Life happens. If you need to cancel, notify us as soon as possible and we'll handle the guest communication and refund. We ask that cancellations be rare — frequent cancellations affect your listing visibility and placement.</div></div>
       <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I need to change how I run my business? <span class="faq-arrow">▾</span></button><div class="faq-a">Not at all. ShoreList drives guests to you. You run your experience exactly as you always have. We handle the booking infrastructure — you handle the magic.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What licenses and insurance do I need? <span class="faq-arrow">▾</span></button><div class="faq-a">You need to hold all required licenses and permits to legally operate your business in North Carolina. We recommend operators carry general liability insurance appropriate for their activity type — we'll discuss your specific coverage during onboarding. It's not a barrier to getting listed.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What licenses and insurance do I need? <span class="faq-arrow">▾</span></button><div class="faq-a">You need to hold all required licenses and permits to legally operate your business in North Carolina. We recommend operators carry general liability insurance appropriate for their activity type. We'll discuss your specific situation during onboarding — it's not a barrier to getting listed.</div></div>
       <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I be on ShoreList AND other platforms? <span class="faq-arrow">▾</span></button><div class="faq-a">Yes. ShoreList is a non-exclusive partnership. You can list on Viator, GetYourGuide, or any other platform simultaneously. We just ask that you don't direct ShoreList-referred guests to book outside our platform for the same experience.</div></div>
       <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long does it take to go live? <span class="faq-arrow">▾</span></button><div class="faq-a">Once your agreement is signed and your listing information is submitted, we'll have your business live on ShoreList.net within 48 hours. RJ will reach out personally to make sure everything looks perfect before launch.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the Featured Spotlight and how do I get it? <span class="faq-arrow">▾</span></button><div class="faq-a">The Featured Spotlight is a premium placement on the ShoreList homepage — the first thing every visitor sees. It includes your availability calendar, star rating, and a direct book button. Featured spots are available for $50/week. Contact shorelistwilmington@gmail.com to reserve yours.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the Featured Spotlight and how do I get it? <span class="faq-arrow">▾</span></button><div class="faq-a">The Featured Spotlight is a premium placement on the ShoreList homepage — the first thing every visitor sees. It includes your available time slots and a direct book button. Featured spots are available for $50/week. Contact shorelistwilmington@gmail.com to reserve yours.</div></div>
     </div>
   </div>
 </section>
@@ -300,8 +298,8 @@ footer{background:#0b1a1f;padding:28px 48px;display:flex;justify-content:space-b
       </div>
       <div class="success-screen" id="success-screen">
         <span class="success-icon">🎉</span>
-        <div class="success-title">You're on ShoreList!</div>
-        <p class="success-sub">Your application is submitted. RJ will reach out within 24 hours to finalize your listing and get you live within 48 hours.</p>
+        <div class="success-title">Application Received</div>
+        <p class="success-sub">Thank you for applying. RJ will reach out within 24 hours to finalize your listing details and get you live within 48 hours.</p>
         <a href="/" class="btn-fill">Back to ShoreList &rarr;</a>
       </div>
       <div class="form-panel active" id="panel-1">
@@ -311,7 +309,7 @@ footer{background:#0b1a1f;padding:28px 48px;display:flex;justify-content:space-b
         </div>
         <div class="form-grid">
           <div class="form-field"><label class="form-label">Email Address *</label><input class="form-input" type="email" id="f-email" placeholder="your@email.com" autocomplete="email"/></div>
-          <div class="form-field"><label class="form-label">Phone Number *</label><input class="form-input" type="tel" id="f-phone" placeholder="(910) 000-0000" autocomplete="tel"/></div>
+          <div class="form-field"><label class="form-label">Phone Number</label><input class="form-input" type="tel" id="f-phone" placeholder="(910) 000-0000" autocomplete="tel"/></div>
         </div>
         <div class="form-grid">
           <div class="form-field">
@@ -371,7 +369,7 @@ footer{background:#0b1a1f;padding:28px 48px;display:flex;justify-content:space-b
             <div class="agreement-header-title">ShoreList LLC — Operator Listing Agreement</div>
             <div class="agreement-header-badge">Plain English · Fair Terms</div>
           </div>
-          <div class="agreement-body" id="agreement-body">
+          <div class="agreement-body">
             <h3>1. Platform Services</h3>
             <p>ShoreList LLC agrees to list your business on Shorelist.net, market your experiences to visitors through our website and physical promotional materials, process guest booking deposits on your behalf, notify you of all new bookings by email, and remit your net payout within 5 business days of a completed experience.</p>
             <h3>2. Your Obligations as an Operator</h3>
@@ -414,7 +412,7 @@ footer{background:#0b1a1f;padding:28px 48px;display:flex;justify-content:space-b
         <div id="form-err-2" class="form-err"></div>
         <div class="form-actions">
           <button class="btn-back-form" onclick="goStep(1)">&#8592; Back</button>
-          <button class="btn-fill" onclick="goStep(3)">Continue to Sign &amp; Submit &rarr;</button>
+          <button class="btn-fill" onclick="goStep(3)">Continue to Review &amp; Submit &rarr;</button>
         </div>
       </div>
       <div class="form-panel" id="panel-3">
