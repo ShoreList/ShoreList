@@ -3,453 +3,607 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>List Your Business — ShoreList Wilmington, NC</title>
-<meta name="description" content="Join ShoreList and get your tours, charters, and experiences in front of thousands of Wilmington visitors. Free to list. Commission only. Go live in 48 hours."/>
+<title>ShoreList — Coastal Experiences in Wilmington, NC</title>
+<meta name="description" content="Book unforgettable local experiences in Wilmington, NC. Ghost tours, surf lessons, fishing charters, nature walks and more. Instant booking, $25 refundable deposit."/>
+<meta property="og:title" content="ShoreList — Wilmington's Coastal Experience Marketplace"/>
+<meta property="og:description" content="Book unforgettable local tours and adventures in Wilmington, NC and the surrounding beaches. Instant booking, curated local operators, fully refundable deposit."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://shorelist.net"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:#0A4D5C;color:#FEFCF7;overflow-x:hidden;}
-:root{--teal:#0A4D5C;--teal2:#1A7585;--teal3:#073D4A;--coral:#E96645;--coral2:#F07A5A;--cream:#F5E8CB;--cream2:#FEFCF7;--dark:#0D1F25;--lgray:#F2F4F3;}
-nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:18px 48px;background:rgba(10,77,92,0.98);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.07);}
-.logo{font-size:1.6rem;font-weight:900;display:flex;align-items:baseline;text-decoration:none;}
+:root{
+  --teal:#0A4D5C;--teal2:#1A7585;--teal3:#073D4A;
+  --coral:#E96645;--coral2:#F07A5A;
+  --cream:#F5E8CB;--cream2:#FEFCF7;
+  --dark:#0D1F25;--mid:#2C4A52;
+  --lgray:#F2F4F3;
+}
+#wave-intro{position:fixed;inset:0;z-index:9999;background:var(--teal3);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;transition:opacity 0.8s ease,visibility 0.8s ease;}
+#wave-intro.hide{opacity:0;visibility:hidden;pointer-events:none;}
+.wi-logo{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:var(--cream2);opacity:0;animation:fadeIn 0.6s ease 0.3s forwards;}
+.wi-logo span{color:var(--coral);}
+.wi-sub{font-size:0.72rem;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:rgba(245,232,203,0.35);opacity:0;animation:fadeIn 0.5s ease 0.7s forwards;}
+.wi-waves{position:absolute;bottom:0;left:0;right:0;height:200px;overflow:hidden;}
+.wi-wave{position:absolute;bottom:0;left:-5%;width:110%;border-radius:50% 50% 0 0;}
+.wi-w1{height:120px;background:rgba(26,117,133,0.45);animation:wiW 2s ease-in-out infinite;}
+.wi-w2{height:85px;background:rgba(7,61,74,0.75);animation:wiW 2.6s ease-in-out infinite reverse;}
+.wi-w3{height:55px;background:#052d38;animation:wiW 1.8s ease-in-out infinite;animation-delay:0.2s;}
+.wi-sweep{position:absolute;inset:0;background:linear-gradient(90deg,var(--teal3) 0%,var(--teal2) 40%,var(--teal3) 70%,transparent 100%);animation:wiSweep 1.3s cubic-bezier(0.4,0,0.2,1) 1.0s forwards;transform:translateX(-110%);}
+@keyframes fadeIn{to{opacity:1;}}
+@keyframes wiW{0%,100%{transform:translateX(0)}50%{transform:translateX(2.5%);}}
+@keyframes wiSweep{0%{transform:translateX(-110%);}100%{transform:translateX(110%);}}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:18px 48px;transition:background 0.35s,backdrop-filter 0.35s;background:transparent;}
+nav.scrolled{background:rgba(10,77,92,0.97);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.06);}
+.logo{font-size:1.65rem;font-weight:900;line-height:1;display:flex;align-items:baseline;text-decoration:none;}
 .logo-s{font-family:'Playfair Display',serif;font-style:italic;color:var(--cream);}
 .logo-l{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--coral);}
-.nav-r{display:flex;align-items:center;gap:18px;}
-.nav-back{font-size:0.78rem;font-weight:600;color:rgba(245,232,203,0.50);text-decoration:none;letter-spacing:0.07em;text-transform:uppercase;transition:color 0.2s;}
-.nav-back:hover{color:var(--cream);}
-.nav-cta-sm{background:var(--coral);color:white;text-decoration:none;padding:9px 20px;border-radius:6px;font-weight:700;font-size:0.80rem;transition:background 0.2s;white-space:nowrap;}
-.nav-cta-sm:hover{background:var(--coral2);}
-.hero{background:var(--teal3);padding:88px 48px 80px;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 70% 50%,rgba(233,102,69,0.07) 0%,transparent 60%);}
-.hero::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);background-size:28px 28px;}
-.hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
-.hero-tag{font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--coral);margin-bottom:18px;display:flex;align-items:center;gap:8px;}
-.hero-tag::before{content:'';width:20px;height:1px;background:var(--coral);}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
-.hero-h{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;margin-bottom:18px;color:var(--cream2);}
-.hero-h em{font-style:italic;color:var(--coral);}
-.hero-sub{font-size:0.97rem;color:rgba(245,232,203,0.65);line-height:1.85;margin-bottom:32px;max-width:460px;}
-.hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px;}
-.hb{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.10);border-radius:100px;padding:7px 14px;font-size:0.76rem;font-weight:600;color:rgba(245,232,203,0.75);}
-.hb.green{background:rgba(34,197,94,0.12);border-color:rgba(34,197,94,0.25);color:#4ade80;}
-.hero-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px;}
+.nav-links{display:flex;gap:28px;align-items:center;}
+.nav-links a{font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,232,203,0.65);text-decoration:none;white-space:nowrap;transition:color 0.2s;}
+.nav-links a:hover{color:var(--cream);}
+.nav-links a.nav-planner{color:var(--coral);}
+.nav-cta{background:var(--coral)!important;color:white!important;padding:9px 22px!important;border-radius:6px;font-weight:700!important;transition:background 0.2s!important;}
+.nav-cta:hover{background:var(--coral2)!important;}
+.nav-mob{display:none;flex-direction:column;gap:5px;background:transparent;border:none;cursor:pointer;padding:5px;z-index:201;}
+.nav-mob span{display:block;width:22px;height:2px;background:var(--cream);border-radius:2px;transition:all 0.28s;}
+.nav-mob.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-mob.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.nav-mob.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mob-drawer{position:fixed;top:0;left:0;right:0;z-index:199;background:rgba(5,46,56,0.99);backdrop-filter:blur(20px);padding:88px 28px 36px;display:flex;flex-direction:column;gap:2px;transform:translateY(-110%);transition:transform 0.34s cubic-bezier(0.4,0,0.2,1);border-bottom:1px solid rgba(255,255,255,0.08);}
+.mob-drawer.open{transform:translateY(0);}
+.mob-drawer a{font-size:1rem;font-weight:600;color:rgba(245,232,203,0.75);text-decoration:none;padding:13px 0;border-bottom:1px solid rgba(255,255,255,0.06);letter-spacing:0.03em;transition:color 0.2s;}
+.mob-drawer a:last-child{border-bottom:none;}
+.mob-drawer a:hover{color:var(--cream);}
+.mob-cta{margin-top:16px;background:var(--coral)!important;color:white!important;text-align:center;border-radius:8px;padding:15px!important;border-bottom:none!important;font-weight:700!important;}
+.hero{min-height:100vh;background:var(--teal);display:flex;flex-direction:column;justify-content:center;padding:110px 48px 0;position:relative;overflow:hidden;}
+.hero-grad{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 110% 90% at 45% 0%,#1a8595 0%,var(--teal) 55%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.055) 1px,transparent 1px);background-size:28px 28px;}
+.compass{position:absolute;top:88px;right:56px;width:68px;height:68px;border:1.5px solid rgba(245,232,203,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;animation:spin 32s linear infinite;}
+.compass-inner{font-size:1.3rem;color:var(--coral);animation:spin 32s linear infinite reverse;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.weather-badge{position:absolute;bottom:100px;left:48px;z-index:3;display:flex;align-items:center;gap:10px;background:rgba(0,0,0,0.28);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.12);border-radius:100px;padding:8px 16px 8px 12px;opacity:0;animation:fadeIn 0.5s ease 3.2s forwards;}
+.wb-dot{width:6px;height:6px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite;flex-shrink:0;}
+.wb-text{font-size:0.78rem;font-weight:500;color:rgba(245,232,203,0.80);white-space:nowrap;}
+.wb-text strong{font-weight:700;color:var(--cream2);}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.75);}}
+.hero-layout{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;padding-bottom:80px;}
+.hero-inner{position:relative;z-index:2;}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:0.70rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--coral);margin-bottom:22px;animation:fadeUp 0.6s ease both;}
+.hero-tag::before{content:'';width:26px;height:1px;background:var(--coral);}
+h1.hero-title{font-family:'Playfair Display',serif;font-size:clamp(3rem,5.5vw,5rem);line-height:1.03;letter-spacing:-2px;margin-bottom:20px;animation:fadeUp 0.6s 0.08s ease both;color:var(--cream2);}
+h1.hero-title .it{font-style:italic;color:var(--cream);}
+h1.hero-title .bl{display:block;}
+h1.hero-title .or{color:var(--coral);font-style:normal;}
+.hero-sub{font-size:0.97rem;font-weight:300;line-height:1.8;color:rgba(245,232,203,0.72);max-width:440px;margin-bottom:32px;animation:fadeUp 0.6s 0.15s ease both;}
+.trust-strip{display:flex;align-items:center;gap:8px;margin-bottom:32px;animation:fadeUp 0.6s 0.22s ease both;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:6px;font-size:0.75rem;font-weight:600;color:rgba(245,232,203,0.65);}
+.trust-item::before{content:'✓';color:#22c55e;font-weight:700;}
+.trust-sep{width:1px;height:12px;background:rgba(245,232,203,0.15);margin:0 6px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp 0.6s 0.28s ease both;margin-bottom:40px;}
 .btn-fill{background:var(--coral);color:white;padding:15px 34px;border-radius:7px;font-weight:700;font-size:0.95rem;text-decoration:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;display:inline-block;transition:all 0.2s;white-space:nowrap;}
 .btn-fill:hover{background:var(--coral2);transform:translateY(-2px);}
-.btn-ghost{background:transparent;color:var(--cream);padding:15px 34px;border-radius:7px;font-weight:500;font-size:0.95rem;text-decoration:none;display:inline-block;border:1.5px solid rgba(245,232,203,0.25);transition:all 0.2s;white-space:nowrap;}
-.btn-ghost:hover{border-color:rgba(245,232,203,0.50);transform:translateY(-2px);}
-.hero-note{font-size:0.76rem;color:rgba(245,232,203,0.32);}
-.hero-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.10);border-radius:18px;overflow:hidden;}
-.hc-head{background:var(--teal2);padding:20px 26px;}
-.hc-head-title{font-size:0.70rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(245,232,203,0.60);}
-.hc-row{display:flex;justify-content:space-between;align-items:center;padding:18px 26px;border-bottom:1px solid rgba(255,255,255,0.05);}
-.hc-row:last-child{border-bottom:none;}
-.hc-label{font-size:0.86rem;color:rgba(245,232,203,0.60);}
-.hc-val{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:900;color:var(--coral);}
-.hc-val.green{color:#4ade80;}
-.hc-val.white{color:var(--cream2);font-size:0.95rem;font-family:'DM Sans',sans-serif;font-weight:600;}
-.sec{padding:96px 48px;background:var(--teal);}
+.btn-ghost{background:transparent;color:var(--cream);padding:15px 34px;border-radius:7px;font-weight:500;font-size:0.95rem;text-decoration:none;display:inline-block;border:1.5px solid rgba(245,232,203,0.28);transition:all 0.2s;white-space:nowrap;}
+.btn-ghost:hover{border-color:rgba(245,232,203,0.55);transform:translateY(-2px);}
+.hero-stats{display:flex;gap:24px;animation:fadeUp 0.6s 0.38s ease both;}
+.hstat{text-align:left;}
+.hstat-num{font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:900;color:var(--cream);line-height:1;}
+.hstat-lbl{font-size:0.68rem;color:rgba(245,232,203,0.42);margin-top:3px;font-weight:500;letter-spacing:0.05em;}
+.hstat-divider{width:1px;background:rgba(245,232,203,0.14);align-self:stretch;}
+.hero-right{position:relative;display:flex;align-items:center;justify-content:center;height:480px;}
+.cluster{position:relative;width:320px;height:440px;}
+.xcard{position:absolute;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.45);transition:transform 0.3s,box-shadow 0.3s;}
+.xc-bl{width:222px;height:278px;top:65px;left:-8px;background:linear-gradient(150deg,#0a2540,#0d4070,#1a6b8a);transform:rotate(-9deg);filter:blur(1.5px);opacity:0;z-index:1;animation:slideL 0.6s ease forwards 1.0s;}
+.xc-br{width:222px;height:278px;top:75px;right:-8px;background:linear-gradient(150deg,#0a2e1a,#0f4d2e,#1a7a56);transform:rotate(9deg);filter:blur(1.5px);opacity:0;z-index:1;animation:slideR 0.6s ease forwards 1.0s;}
+.xc-main{width:282px;height:368px;top:18px;left:50%;transform:translateX(-50%) rotate(-2.5deg);z-index:3;opacity:0;animation:cardIn 0.7s cubic-bezier(0.34,1.2,0.64,1) forwards 1.2s,floatIt 4.5s ease-in-out infinite 2.2s;}
+.xc-main:hover{transform:translateX(-50%) rotate(0deg) scale(1.03)!important;box-shadow:0 32px 80px rgba(0,0,0,0.55);animation-play-state:paused;}
+.xcard-img{height:155px;position:relative;background:linear-gradient(145deg,#0d0d2b,#1a0533,#2d1060,#4a0e8f);overflow:hidden;}
+.xsf{position:absolute;inset:0;}
+.xsf span{position:absolute;width:2px;height:2px;background:white;border-radius:50%;animation:twinkle 3s ease-in-out infinite;}
+.ghost-bg{position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);font-size:58px;opacity:0.2;filter:blur(1px);user-select:none;}
+.xbadge{position:absolute;top:10px;left:10px;background:rgba(233,102,69,0.92);backdrop-filter:blur(6px);color:white;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;font-weight:700;padding:4px 10px;border-radius:20px;}
+.xprice{position:absolute;top:10px;right:10px;background:rgba(0,0,0,0.5);backdrop-filter:blur(6px);color:white;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;}
+.xbody{padding:14px 14px 12px;background:rgba(8,18,32,0.93);backdrop-filter:blur(10px);height:calc(100% - 155px);display:flex;flex-direction:column;gap:8px;}
+.xtitle{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--cream);line-height:1.2;}
+.xstars-row{display:flex;align-items:center;gap:5px;}
+.xstars{color:#FFD700;font-size:11px;letter-spacing:1px;}
+.xreviews{font-size:11px;color:rgba(255,255,255,0.5);}
+.xdiv{height:1px;background:rgba(255,255,255,0.08);}
+.xrow{display:flex;align-items:center;justify-content:space-between;}
+.xdlbl{font-size:9px;color:rgba(255,255,255,0.42);margin-bottom:2px;letter-spacing:0.05em;}
+.xdval{font-size:12px;font-weight:600;color:white;}
+.xbookbtn{background:var(--coral);color:white;border:none;padding:7px 14px;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s;}
+.xbookbtn:hover{background:var(--coral2);}
+.xtimes{display:flex;gap:5px;}
+.xchip{font-size:9px;padding:3px 8px;border-radius:4px;font-weight:600;}
+.xc-avail{background:rgba(255,255,255,0.09);color:rgba(255,255,255,0.7);}
+.xlive{position:absolute;top:-12px;right:2px;background:#22c55e;color:white;font-size:9px;font-weight:700;letter-spacing:1.2px;padding:4px 10px;border-radius:20px;display:flex;align-items:center;gap:5px;z-index:10;opacity:0;animation:fadeUp 0.5s ease forwards 2.2s;box-shadow:0 4px 18px rgba(34,197,94,0.4);}
+.xlive-dot{width:5px;height:5px;background:white;border-radius:50%;animation:pulseDot 1.6s ease-in-out infinite;}
+.xtoasts{position:absolute;bottom:-8px;right:-36px;z-index:10;display:flex;flex-direction:column;gap:7px;}
+.xtoast{background:white;border-radius:12px;padding:9px 11px;display:flex;align-items:center;gap:8px;box-shadow:0 8px 28px rgba(0,0,0,0.25);transform:translateX(140%);opacity:0;transition:all 0.46s cubic-bezier(0.34,1.3,0.64,1);min-width:195px;}
+.xtoast.show{transform:translateX(0);opacity:1;}
+.xta{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+.xta-g{background:linear-gradient(135deg,#1a0533,#4a0e8f);}
+.xta-f{background:linear-gradient(135deg,#0a2540,#1a6b8a);}
+.xtbody{flex:1;}
+.xtn{font-size:11px;font-weight:700;color:#1a1a1a;}
+.xta2{font-size:10px;color:#555;}
+.xtt{font-size:9.5px;color:#aaa;white-space:nowrap;}
+.wave-stack{position:absolute;bottom:0;left:0;right:0;height:150px;overflow:hidden;}
+.wv{position:absolute;bottom:0;left:-5%;width:110%;border-radius:50% 50% 0 0;}
+.wv1{height:95px;background:rgba(42,156,173,0.32);animation:wvA 9s ease-in-out infinite;}
+.wv2{height:70px;background:rgba(180,215,220,0.22);animation:wvA 11s ease-in-out infinite reverse;}
+.wv3{height:45px;background:rgba(232,213,170,0.15);animation:wvA 7s ease-in-out infinite;}
+@keyframes wvA{0%,100%{transform:translateX(0);}50%{transform:translateX(3%);}}
+.marquee-bar{background:var(--coral);padding:11px 0;overflow:hidden;}
+.marquee{display:flex;animation:mq 22s linear infinite;white-space:nowrap;}
+.mq-item{display:inline-flex;align-items:center;gap:18px;padding:0 26px;font-size:0.74rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:white;}
+.mq-dot{width:4px;height:4px;background:rgba(255,255,255,0.45);border-radius:50%;}
+@keyframes mq{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.trust-bar{background:var(--teal3);border-bottom:1px solid rgba(255,255,255,0.06);padding:18px 48px;display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;}
+.tb-item{display:flex;align-items:center;gap:8px;padding:0 28px;font-size:0.82rem;font-weight:600;color:rgba(245,232,203,0.70);white-space:nowrap;}
+.tb-icon{font-size:1rem;}
+.tb-sep{width:1px;height:18px;background:rgba(255,255,255,0.08);}
+.sec{padding:100px 48px;background:var(--teal);}
 .sec-alt{background:var(--teal3);}
 .sec-inner{max-width:1100px;margin:0 auto;}
-.sec-label{font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
-.sec-label::before{content:'';width:20px;height:1px;background:var(--coral);}
-.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.2vw,2.6rem);font-weight:900;line-height:1.1;margin-bottom:10px;color:var(--cream2);}
-.sec-title em{color:var(--coral);font-style:italic;}
-.sec-sub{font-size:0.92rem;color:rgba(245,232,203,0.55);line-height:1.85;margin-bottom:44px;max-width:520px;}
-.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px;}
-.value-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
-.vp{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:28px 24px;}
-.vp-icon{font-size:2rem;margin-bottom:14px;display:block;}
-.vp-title{font-size:1rem;font-weight:700;color:var(--cream2);margin-bottom:8px;}
-.vp-sub{font-size:0.86rem;color:rgba(245,232,203,0.58);line-height:1.75;}
-.vp-sub strong{color:var(--cream2);font-weight:600;}
-.mockup-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
-.mockup-phone{background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.55);max-width:340px;margin:0 auto;}
-.mp-header{background:var(--teal2);padding:18px 18px 14px;color:white;}
-.mp-loc{font-size:0.68rem;font-weight:500;opacity:0.7;margin-bottom:3px;}
-.mp-q{font-size:1.2rem;font-weight:700;line-height:1.2;}
-.mp-tabs{display:flex;gap:14px;margin-top:10px;}
-.mp-tab{font-size:0.65rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.45);padding-bottom:3px;}
-.mp-tab.active{color:white;border-bottom:2px solid var(--coral);}
-.mp-item{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid #f0f0f0;background:white;}
-.mp-item:last-child{border-bottom:none;}
-.mp-ico{width:40px;height:40px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
-.mp-name{font-size:0.88rem;font-weight:600;color:#1a1a1a;margin-bottom:2px;}
-.mp-meta{font-size:0.72rem;color:#888;}
-.mp-price{font-family:'Playfair Display',serif;font-size:1rem;font-weight:900;color:var(--coral);}
-.mockup-caption{text-align:center;padding:18px;font-size:0.82rem;line-height:1.7;color:rgba(245,232,203,0.55);background:var(--dark);}
-.mockup-bullets{display:flex;flex-direction:column;gap:16px;margin-top:28px;}
-.mb-item{display:flex;gap:12px;align-items:flex-start;}
-.mb-dot{width:20px;height:20px;border-radius:50%;background:rgba(233,102,69,0.18);border:1px solid rgba(233,102,69,0.38);display:flex;align-items:center;justify-content:center;font-size:0.65rem;color:var(--coral);flex-shrink:0;margin-top:2px;}
-.mb-text{font-size:0.87rem;line-height:1.65;color:rgba(245,232,203,0.65);}
-.mb-text strong{color:var(--cream2);font-weight:600;}
-.commission-wrap{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;}
-.commission-table{width:100%;border-collapse:collapse;}
-.commission-table thead tr{background:var(--teal2);}
-.commission-table th{padding:14px 20px;text-align:left;font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,232,203,0.60);}
-.commission-table td{padding:14px 20px;font-size:0.88rem;color:rgba(245,232,203,0.75);border-bottom:1px solid rgba(255,255,255,0.05);}
-.commission-table tbody tr:hover td{background:rgba(255,255,255,0.03);}
-.commission-table tbody tr:last-child td{border-bottom:none;}
-.commission-rate{font-weight:700;color:var(--coral);}
-.commission-note{font-size:0.78rem;color:rgba(245,232,203,0.35);margin-top:12px;line-height:1.65;}
-.faq{display:flex;flex-direction:column;gap:2px;}
-.faq-item{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:10px;overflow:hidden;}
-.faq-q{width:100%;text-align:left;background:none;border:none;padding:18px 22px;font-family:'DM Sans',sans-serif;font-size:0.92rem;font-weight:600;color:var(--cream2);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:background 0.2s;}
-.faq-q:hover{background:rgba(255,255,255,0.03);}
-.faq-arrow{font-size:0.8rem;color:var(--coral);transition:transform 0.25s;flex-shrink:0;}
-.faq-a{max-height:0;overflow:hidden;transition:max-height 0.32s ease,padding 0.32s ease;font-size:0.87rem;color:rgba(245,232,203,0.65);line-height:1.8;padding:0 22px;}
-.faq-item.open .faq-a{max-height:300px;padding:0 22px 18px;}
-.faq-item.open .faq-arrow{transform:rotate(180deg);}
-.form-steps{display:flex;gap:0;margin-bottom:40px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;overflow:hidden;}
-.fs-step{flex:1;padding:14px 16px;text-align:center;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,232,203,0.35);border-right:1px solid rgba(255,255,255,0.06);cursor:pointer;transition:all 0.2s;}
-.fs-step:last-child{border-right:none;}
-.fs-step.active{background:var(--coral);color:white;}
-.fs-step.done{color:rgba(245,232,203,0.60);}
-.fs-step.done::before{content:'✓ ';}
-.form-panel{display:none;}
-.form-panel.active{display:block;}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
-.form-grid.full{grid-template-columns:1fr;}
-.form-field{display:flex;flex-direction:column;gap:7px;}
-.form-label{font-size:0.66rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:rgba(245,232,203,0.42);}
-.form-input{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:13px 15px;font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--cream2);outline:none;transition:border-color 0.2s,box-shadow 0.2s;width:100%;-webkit-appearance:none;}
-.form-input:focus{border-color:var(--coral);box-shadow:0 0 0 3px rgba(233,102,69,0.10);}
-.form-input::placeholder{color:rgba(245,232,203,0.22);}
-.form-input option{background:var(--teal3);color:var(--cream2);}
-textarea.form-input{resize:vertical;min-height:90px;line-height:1.65;}
-.form-select{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:13px 15px;font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--cream2);outline:none;width:100%;-webkit-appearance:none;appearance:none;cursor:pointer;}
-.form-select:focus{border-color:var(--coral);}
-.form-checkbox{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;}
-.form-checkbox input{margin-top:3px;accent-color:var(--coral);width:16px;height:16px;flex-shrink:0;cursor:pointer;}
-.form-checkbox label{font-size:0.85rem;color:rgba(245,232,203,0.65);line-height:1.6;cursor:pointer;}
-.form-checkbox label a{color:var(--coral);text-decoration:none;}
-.form-actions{display:flex;gap:12px;align-items:center;margin-top:18px;}
-.btn-back-form{background:transparent;border:1px solid rgba(255,255,255,0.14);color:rgba(245,232,203,0.55);padding:14px 22px;border-radius:7px;font-family:'DM Sans',sans-serif;font-size:0.9rem;cursor:pointer;transition:all 0.2s;}
-.btn-back-form:hover{border-color:rgba(255,255,255,0.28);color:var(--cream);}
-.form-err{font-size:0.82rem;color:#f87171;margin-top:8px;display:none;}
-.agreement-wrap{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;margin-bottom:20px;}
-.agreement-header{background:rgba(255,255,255,0.05);padding:16px 22px;display:flex;align-items:center;justify-content:space-between;}
-.agreement-header-title{font-size:0.84rem;font-weight:700;color:var(--cream2);}
-.agreement-header-badge{font-size:0.66rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,232,203,0.40);background:rgba(255,255,255,0.06);padding:3px 10px;border-radius:4px;}
-.agreement-body{padding:24px;max-height:320px;overflow-y:auto;font-size:0.84rem;color:rgba(245,232,203,0.62);line-height:1.8;}
-.agreement-body h3{font-size:0.88rem;font-weight:700;color:var(--cream2);margin:16px 0 8px;}
-.agreement-body h3:first-child{margin-top:0;}
-.agreement-body ul{margin-left:18px;margin-bottom:8px;}
-.agreement-body li{margin-bottom:5px;}
-.agreement-body::-webkit-scrollbar{width:4px;}
-.agreement-body::-webkit-scrollbar-track{background:rgba(255,255,255,0.04);}
-.agreement-body::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
-.commission-display{background:rgba(233,102,69,0.10);border:1px solid rgba(233,102,69,0.22);border-radius:8px;padding:12px 16px;margin-top:10px;font-size:0.84rem;color:var(--coral);font-weight:600;display:none;}
-.success-screen{display:none;text-align:center;padding:48px 32px;}
-.success-screen.show{display:block;}
-.success-icon{font-size:3.5rem;margin-bottom:20px;display:block;}
-.success-title{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:900;color:var(--cream2);margin-bottom:10px;}
-.success-sub{font-size:0.92rem;color:rgba(245,232,203,0.55);line-height:1.85;max-width:440px;margin:0 auto 28px;}
-footer{background:#0b1a1f;padding:28px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(255,255,255,0.05);}
+.sec-label{font-size:0.70rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--coral);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.sec-label::before{content:'';width:22px;height:1px;background:var(--coral);}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:900;line-height:1.1;letter-spacing:-0.5px;margin-bottom:12px;color:var(--cream2);}
+.sec-title em{font-style:italic;color:var(--coral);}
+.sec-sub{font-size:0.92rem;color:rgba(245,232,203,0.55);line-height:1.85;margin-bottom:48px;max-width:520px;}
+.featured-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.feat-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(233,102,69,0.14);border:1px solid rgba(233,102,69,0.30);border-radius:100px;padding:5px 14px;font-size:0.66rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--coral);margin-bottom:16px;}
+.feat-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.3rem);font-weight:900;color:var(--cream2);line-height:1.1;margin-bottom:10px;}
+.feat-sub{font-size:0.9rem;color:rgba(245,232,203,0.60);line-height:1.85;margin-bottom:18px;}
+.feat-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+.feat-tag{background:rgba(255,255,255,0.06);border-radius:6px;padding:5px 12px;font-size:0.76rem;font-weight:600;color:rgba(245,232,203,0.60);}
+.feat-stars{display:flex;align-items:center;gap:6px;margin-bottom:16px;}
+.feat-star{color:#FFD700;font-size:1.05rem;}
+.feat-rcount{font-size:0.80rem;color:rgba(245,232,203,0.55);}
+.feat-price{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:900;color:var(--coral);margin-bottom:22px;}
+.feat-price span{font-size:0.78rem;font-family:'DM Sans',sans-serif;font-weight:400;color:rgba(245,232,203,0.40);}
+.feat-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.10);border-radius:18px;padding:28px;}
+.feat-card-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
+.feat-card-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--cream2);}
+.feat-spots{background:rgba(233,102,69,0.12);border:1px solid rgba(233,102,69,0.25);border-radius:100px;padding:4px 12px;font-size:0.70rem;font-weight:700;color:var(--coral);}
+.feat-times{display:flex;flex-direction:column;gap:7px;margin-bottom:18px;}
+.feat-row{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.07);background:rgba(255,255,255,0.03);cursor:pointer;transition:all 0.18s;}
+.feat-row:hover{border-color:var(--coral);background:rgba(233,102,69,0.06);}
+.feat-rl{font-size:0.88rem;font-weight:600;color:var(--cream2);}
+.feat-ra{font-size:0.73rem;font-weight:600;}
+.feat-ra.avail{color:#22c55e;}
+.feat-promo{font-size:0.70rem;color:rgba(245,232,203,0.28);text-align:center;margin-top:12px;}
+.feat-promo a{color:var(--coral);text-decoration:none;}
+.wk-hd{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px;}
+.wk-link{font-size:0.80rem;font-weight:600;color:var(--coral);text-decoration:none;white-space:nowrap;letter-spacing:0.04em;}
+.wk-link:hover{text-decoration:underline;}
+.wk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.wk-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px;transition:all 0.20s;text-decoration:none;display:block;}
+.wk-card:hover{background:rgba(233,102,69,0.08);border-color:rgba(233,102,69,0.28);transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,0.2);}
+.wk-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.wk-ico{font-size:1.75rem;}
+.wk-badge{font-size:0.60rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;padding:3px 9px;border-radius:100px;}
+.wk-live{background:rgba(34,197,94,0.14);color:#22c55e;border:1px solid rgba(34,197,94,0.22);}
+.wk-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream2);margin-bottom:4px;line-height:1.2;}
+.wk-meta{font-size:0.78rem;color:rgba(245,232,203,0.42);margin-bottom:12px;line-height:1.6;}
+.wk-ft{display:flex;align-items:center;justify-content:space-between;}
+.wk-price{font-weight:700;color:var(--coral);font-size:0.92rem;}
+.wk-spots{font-size:0.70rem;color:rgba(245,232,203,0.38);}
+.cats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:9px;}
+.cat{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);padding:26px 16px;border-radius:6px;text-align:center;cursor:pointer;transition:all 0.20s;text-decoration:none;display:block;}
+.cat:hover{background:rgba(233,102,69,0.11);border-color:var(--coral);transform:translateY(-4px);}
+.cat-ico{font-size:1.85rem;display:block;margin-bottom:8px;}
+.cat-name{font-size:0.76rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--cream2);}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.rv-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:24px;}
+.rv-stars{font-size:0.85rem;color:rgba(245,232,203,0.70);margin-bottom:10px;font-weight:600;}
+.rv-text{font-size:0.88rem;color:rgba(245,232,203,0.72);line-height:1.75;margin-bottom:16px;}
+.rv-foot{display:flex;align-items:center;gap:10px;}
+.rv-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+.rv-name{font-size:0.82rem;font-weight:700;color:var(--cream2);}
+.rv-meta{font-size:0.72rem;color:rgba(245,232,203,0.38);}
+.reviews-cta{text-align:center;margin-top:32px;}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+.step{padding:40px 28px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);transition:background 0.25s;}
+.step:hover{background:rgba(233,102,69,0.07);}
+.step-n{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:900;font-style:italic;color:rgba(233,102,69,0.22);line-height:1;margin-bottom:18px;}
+.step h3{font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--cream);}
+.step p{font-size:0.86rem;line-height:1.78;color:rgba(245,232,203,0.75);}
+.planner-cta{background:linear-gradient(135deg,var(--dark) 0%,var(--teal) 50%,var(--teal3) 100%);padding:88px 48px;text-align:center;position:relative;overflow:hidden;}
+.planner-cta::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(233,102,69,0.035) 1px,transparent 1px);background-size:24px 24px;}
+.pc-inner{position:relative;z-index:1;max-width:620px;margin:0 auto;}
+.pc-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(233,102,69,0.12);border:1px solid rgba(233,102,69,0.24);border-radius:100px;padding:5px 14px;font-size:0.66rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--coral);margin-bottom:20px;}
+.pc-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.8vw,2.9rem);font-weight:900;color:var(--cream2);line-height:1.1;margin-bottom:12px;}
+.pc-title em{color:var(--coral);font-style:italic;}
+.pc-sub{font-size:0.93rem;color:rgba(245,232,203,0.52);line-height:1.85;margin-bottom:32px;}
+.pc-demo{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:16px 20px;margin-bottom:26px;text-align:left;}
+.pc-demo-lbl{font-size:0.64rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,232,203,0.27);margin-bottom:7px;}
+.pc-demo-text{font-size:0.90rem;color:rgba(245,232,203,0.68);line-height:1.6;font-style:italic;min-height:22px;}
+.pc-cursor{display:inline-block;width:2px;height:0.9em;background:var(--coral);margin-left:1px;animation:blink 1s step-end infinite;vertical-align:text-bottom;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+#g-toasts{position:fixed;bottom:22px;right:22px;z-index:8888;display:flex;flex-direction:column-reverse;gap:9px;max-width:270px;pointer-events:none;}
+.g-toast{background:white;border-radius:13px;padding:11px 13px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 30px rgba(0,0,0,0.16);transform:translateX(115%);opacity:0;transition:all 0.38s cubic-bezier(0.34,1.3,0.64,1);pointer-events:auto;}
+.g-toast.show{transform:translateX(0);opacity:1;}
+.gt-ico{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.gt-body{flex:1;min-width:0;}
+.gt-name{font-size:11.5px;font-weight:700;color:#1a1a1a;margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.gt-action{font-size:10.5px;color:#555;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.gt-time{font-size:9.5px;color:#aaa;white-space:nowrap;flex-shrink:0;}
+footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;border-top:1px solid rgba(255,255,255,0.05);}
 .foot-logo{font-size:1.2rem;font-weight:900;display:flex;align-items:baseline;text-decoration:none;}
 .foot-s{font-family:'Playfair Display',serif;font-style:italic;color:var(--cream);}
 .foot-l{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--coral);}
-.foot-copy{font-size:0.74rem;color:rgba(245,232,203,0.27);}
-.foot-links a{font-size:0.74rem;color:rgba(245,232,203,0.27);text-decoration:none;margin-left:18px;transition:color 0.2s;}
+.foot-copy{font-size:0.76rem;color:rgba(245,232,203,0.28);}
+.foot-links{display:flex;gap:20px;align-items:center;}
+.foot-links a{font-size:0.76rem;color:rgba(245,232,203,0.28);text-decoration:none;transition:color 0.2s;}
 .foot-links a:hover{color:var(--coral);}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.hero-card{max-width:500px;}.mockup-grid{grid-template-columns:1fr;}.value-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:768px){nav{padding:15px 20px;}.hero{padding:56px 20px 60px;}.sec{padding:56px 20px;}.form-grid{grid-template-columns:1fr;}.hero-h{letter-spacing:-0.5px;}footer{padding:22px 20px;flex-direction:column;text-align:center;}.value-grid{grid-template-columns:1fr;}.value-grid-2{grid-template-columns:1fr;}}
+.foot-op{font-size:0.72rem;color:rgba(245,232,203,0.22);padding:5px 12px;border:1px solid rgba(255,255,255,0.08);border-radius:4px;text-decoration:none;transition:all 0.2s;}
+.foot-op:hover{color:rgba(245,232,203,0.55);border-color:rgba(255,255,255,0.20);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+@keyframes slideL{from{opacity:0;transform:translateX(-20px) rotate(-9deg);}to{opacity:0.62;transform:translateX(0) rotate(-9deg);}}
+@keyframes slideR{from{opacity:0;transform:translateX(20px) rotate(9deg);}to{opacity:0.62;transform:translateX(0) rotate(9deg);}}
+@keyframes cardIn{from{opacity:0;transform:translateX(-50%) translateY(24px) rotate(-2.5deg);}to{opacity:1;transform:translateX(-50%) translateY(0) rotate(-2.5deg);}}
+@keyframes floatIt{0%,100%{transform:translateX(-50%) rotate(-2.5deg) translateY(0);}50%{transform:translateX(-50%) rotate(-2.5deg) translateY(-9px);}}
+@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(.7);}}
+@keyframes twinkle{0%,100%{opacity:.9;}50%{opacity:.2;}}
+@media(max-width:1020px){.featured-grid{grid-template-columns:1fr;}.reviews-grid{grid-template-columns:1fr 1fr;}.steps-grid{grid-template-columns:1fr 1fr;}.wk-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:900px){.hero-layout{grid-template-columns:1fr;}.hero-right{display:none;}}
+@media(max-width:768px){nav{padding:15px 20px;}.nav-links{display:none!important;}.nav-mob{display:flex;}.hero{padding:95px 20px 0;min-height:auto;}.compass{display:none;}.weather-badge{left:20px;bottom:80px;}.sec{padding:60px 20px;}.trust-bar{padding:14px 20px;overflow-x:auto;}.tb-item{padding:0 16px;font-size:0.75rem;}.reviews-grid{grid-template-columns:1fr;}.steps-grid{grid-template-columns:1fr 1fr;}.wk-grid{grid-template-columns:1fr;}.cats-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));}footer{padding:24px 20px;flex-direction:column;text-align:center;gap:10px;}.planner-cta{padding:60px 20px;}#g-toasts{max-width:230px;right:10px;bottom:10px;}.hero-stats{gap:16px;}.btn-fill,.btn-ghost{padding:13px 22px;font-size:0.88rem;}.trust-strip{display:none;}}
+@media(max-width:480px){.steps-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
-<nav>
+<div id="wave-intro">
+  <div class="wi-logo">Shore<span>List</span></div>
+  <div class="wi-sub">Wilmington, NC &amp; the Beaches</div>
+  <div class="wi-waves">
+    <div class="wi-wave wi-w1"></div>
+    <div class="wi-wave wi-w2"></div>
+    <div class="wi-wave wi-w3"></div>
+  </div>
+  <div class="wi-sweep"></div>
+</div>
+<div id="g-toasts"></div>
+<nav id="nav">
   <a href="/" class="logo"><span class="logo-s">Shore</span><span class="logo-l">List</span></a>
-  <div class="nav-r">
-    <a href="/" class="nav-back">&#8592; Back to ShoreList</a>
-    <a href="#apply" class="nav-cta-sm">Apply Now</a>
+  <div class="nav-links">
+    <a href="#explore">Experiences</a>
+    <a href="/planner" class="nav-planner">✦ Plan My Trip</a>
+    <a href="#contact" class="nav-cta">Book Now</a>
   </div>
+  <button class="nav-mob" id="nav-mob" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-tag">Operator Partner Program</div>
-    <div class="hero-grid">
+<div class="mob-drawer" id="mob-drawer">
+  <a href="#explore" onclick="closeNav()">Browse Experiences</a>
+  <a href="/planner" onclick="closeNav()">✦ AI Trip Planner</a>
+  <a href="#how" onclick="closeNav()">How It Works</a>
+  <a href="#contact" class="mob-cta" onclick="closeNav()">Book Now</a>
+</div>
+<section class="hero" id="hero">
+  <div class="hero-grad"></div>
+  <div class="hero-dots"></div>
+  <div class="compass"><span class="compass-inner">✦</span></div>
+  <div class="hero-layout">
+    <div class="hero-inner">
+      <div class="hero-tag">Wilmington, NC &amp; the Beaches</div>
+      <h1 class="hero-title">
+        <span class="it">Your local guide</span>
+        <span class="bl">to <span class="or">coastal</span></span>
+        <span class="bl">adventures.</span>
+      </h1>
+      <p class="hero-sub">ShoreList connects visitors with the best local experiences Wilmington has to offer — ghost tours, surf lessons, fishing charters, nature walks, and more. One place. Instant booking.</p>
+      <div class="trust-strip">
+        <div class="trust-item">Instant confirmation</div>
+        <div class="trust-sep"></div>
+        <div class="trust-item">$25 refundable deposit</div>
+        <div class="trust-sep"></div>
+        <div class="trust-item">Curated local operators</div>
+      </div>
+      <div class="hero-btns">
+        <a href="#explore" class="btn-fill">Explore Experiences</a>
+        <a href="/planner" class="btn-ghost">✦ Plan My Trip</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><div class="hstat-num">20+</div><div class="hstat-lbl">Local Experiences</div></div>
+        <div class="hstat-divider"></div>
+        <div class="hstat"><div class="hstat-num">4</div><div class="hstat-lbl">Beach Communities</div></div>
+        <div class="hstat-divider"></div>
+        <div class="hstat"><div class="hstat-num">Est.</div><div class="hstat-lbl">2025 · Wilmington, NC</div></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="cluster">
+        <div class="xlive"><div class="xlive-dot"></div>LIVE BOOKINGS</div>
+        <div class="xcard xc-bl"></div>
+        <div class="xcard xc-br"></div>
+        <div class="xcard xc-main">
+          <div class="xcard-img">
+            <div class="xsf" id="sf"></div>
+            <div class="ghost-bg">👻</div>
+            <div class="xbadge">Ghost Tours</div>
+            <div class="xprice">From $25</div>
+          </div>
+          <div class="xbody">
+            <div class="xtitle">Historic Ghost Walk</div>
+            <div class="xstars-row">
+              <div class="xstars">★★★★★</div>
+              <div class="xreviews">Live &amp; taking bookings</div>
+            </div>
+            <div class="xdiv"></div>
+            <div class="xrow">
+              <div><div class="xdlbl">Duration</div><div class="xdval">90 min</div></div>
+              <div><div class="xdlbl">Group</div><div class="xdval">Up to 15</div></div>
+              <button class="xbookbtn" onclick="location='/category?cat=ghost-tours'">Book Now</button>
+            </div>
+            <div class="xtimes">
+              <div class="xchip xc-avail">7 PM ✓</div>
+              <div class="xchip xc-avail">9 PM ✓</div>
+              <div class="xchip xc-avail">10 PM ✓</div>
+            </div>
+          </div>
+        </div>
+        <div class="xtoasts">
+          <div class="xtoast" id="xt1">
+            <div class="xta xta-g">👻</div>
+            <div class="xtbody"><div class="xtn">Ghost Walk — Downtown</div><div class="xta2">Thu–Sun · Evening tours</div></div>
+            <div class="xtt">Live now</div>
+          </div>
+          <div class="xtoast" id="xt2">
+            <div class="xta xta-f">🏄</div>
+            <div class="xtbody"><div class="xtn">Surf Lessons — Carolina Beach</div><div class="xta2">With Tripp Cox</div></div>
+            <div class="xtt">Book now</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="weather-badge" id="weather-badge">
+    <div class="wb-dot"></div>
+    <div class="wb-text"><strong id="wb-temp">--°F</strong> &nbsp;·&nbsp; <span id="wb-cond">Live conditions</span> &nbsp;·&nbsp; Wilmington, NC</div>
+  </div>
+  <div class="wave-stack">
+    <div class="wv wv1"></div>
+    <div class="wv wv2"></div>
+    <div class="wv wv3"></div>
+  </div>
+</section>
+<div class="marquee-bar">
+  <div class="marquee">
+    <span class="mq-item">Ghost Tours<span class="mq-dot"></span></span>
+    <span class="mq-item">Fishing Charters<span class="mq-dot"></span></span>
+    <span class="mq-item">Kayak Adventures<span class="mq-dot"></span></span>
+    <span class="mq-item">River Cruises<span class="mq-dot"></span></span>
+    <span class="mq-item">Surf Lessons<span class="mq-dot"></span></span>
+    <span class="mq-item">Paddleboard Tours<span class="mq-dot"></span></span>
+    <span class="mq-item">Bike Tours<span class="mq-dot"></span></span>
+    <span class="mq-item">Nature Walks<span class="mq-dot"></span></span>
+    <span class="mq-item">Ghost Tours<span class="mq-dot"></span></span>
+    <span class="mq-item">Fishing Charters<span class="mq-dot"></span></span>
+    <span class="mq-item">Kayak Adventures<span class="mq-dot"></span></span>
+    <span class="mq-item">River Cruises<span class="mq-dot"></span></span>
+    <span class="mq-item">Surf Lessons<span class="mq-dot"></span></span>
+    <span class="mq-item">Paddleboard Tours<span class="mq-dot"></span></span>
+    <span class="mq-item">Bike Tours<span class="mq-dot"></span></span>
+    <span class="mq-item">Nature Walks<span class="mq-dot"></span></span>
+  </div>
+</div>
+<div class="trust-bar">
+  <div class="tb-item"><span class="tb-icon">⚡</span> Instant Confirmation</div>
+  <div class="tb-sep"></div>
+  <div class="tb-item"><span class="tb-icon">💳</span> $25 Refundable Deposit</div>
+  <div class="tb-sep"></div>
+  <div class="tb-item"><span class="tb-icon">🌊</span> Curated Local Operators</div>
+  <div class="tb-sep"></div>
+  <div class="tb-item"><span class="tb-icon">🔒</span> Secure Stripe Checkout</div>
+  <div class="tb-sep"></div>
+  <div class="tb-item"><span class="tb-icon">📍</span> Wilmington, NC &amp; the Beaches</div>
+</div>
+<section class="sec sec-alt" id="featured">
+  <div class="sec-inner">
+    <div class="featured-grid">
       <div>
-        <h1 class="hero-h">Grow your bookings.<br/><em>Zero upfront cost.</em></h1>
-        <p class="hero-sub">ShoreList puts your tours, charters, and experiences directly in front of thousands of Wilmington visitors already searching for something to do. Free to list. Commission only. We only make money when you do.</p>
-        <div class="hero-badges">
-          <div class="hb green">$0 to list</div>
-          <div class="hb">15–20% commission</div>
-          <div class="hb">Live in 48 hours</div>
-          <div class="hb">No long-term contract</div>
+        <div class="feat-badge">✦ Featured Experience</div>
+        <h2 class="feat-title">Wilmington Ghost Walk</h2>
+        <p class="feat-sub">90 spine-tingling minutes through the most haunted streets in one of America's oldest cities. Expert guide Sean Austin brings the stories of Wilmington's ghosts, Civil War spirits, and colonial hauntings to life.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">Downtown Wilmington</span>
+          <span class="feat-tag">90 Minutes</span>
+          <span class="feat-tag">All Ages</span>
+          <span class="feat-tag">Evening Tours</span>
         </div>
-        <div class="hero-cta-row">
-          <a href="#apply" class="btn-fill">Apply to List Your Business &rarr;</a>
-          <a href="#why" class="btn-ghost">See How It Works</a>
+        <div class="feat-stars">
+          <span class="feat-star">★</span><span class="feat-star">★</span><span class="feat-star">★</span><span class="feat-star">★</span><span class="feat-star">★</span>
+          <span class="feat-rcount">&nbsp;Expert local guide · Sean Austin</span>
         </div>
-        <p class="hero-note">RJ Brideau will personally reach out within 24 hours to finalize your listing.</p>
+        <div class="feat-price">From $25 <span>per person · fully refundable deposit</span></div>
+        <a href="/category?cat=ghost-tours" class="btn-fill">Book This Experience &rarr;</a>
       </div>
       <div>
-        <div class="hero-card">
-          <div class="hc-head"><div class="hc-head-title">Why ShoreList Works — At a Glance</div></div>
-          <div class="hc-row"><span class="hc-label">Cost to list</span><span class="hc-val green">$0</span></div>
-          <div class="hc-row"><span class="hc-label">Monthly fees</span><span class="hc-val green">$0</span></div>
-          <div class="hc-row"><span class="hc-label">Commission per booking</span><span class="hc-val">15–20%</span></div>
-          <div class="hc-row"><span class="hc-label">Time to go live</span><span class="hc-val white">48 hours</span></div>
-          <div class="hc-row"><span class="hc-label">Long-term contract</span><span class="hc-val green">None</span></div>
-          <div class="hc-row"><span class="hc-label">You keep your brand</span><span class="hc-val green">Always</span></div>
+        <div class="feat-card">
+          <div class="feat-card-hd">
+            <div class="feat-card-title">Available Time Slots</div>
+            <div class="feat-spots">Book Your Spot</div>
+          </div>
+          <div class="feat-times">
+            <div class="feat-row" onclick="location='/category?cat=ghost-tours'"><span class="feat-rl">7:00 PM</span><span class="feat-ra avail">Available ✓</span></div>
+            <div class="feat-row" onclick="location='/category?cat=ghost-tours'"><span class="feat-rl">8:30 PM</span><span class="feat-ra avail">Available ✓</span></div>
+            <div class="feat-row" onclick="location='/category?cat=ghost-tours'"><span class="feat-rl">10:00 PM</span><span class="feat-ra avail">Available ✓</span></div>
+          </div>
+          <a href="/category?cat=ghost-tours" class="btn-fill" style="display:block;text-align:center;width:100%;">Reserve My Spot &rarr;</a>
+          <p class="feat-promo">Want to be featured here? <a href="/join">Operators — learn more &rarr;</a></p>
         </div>
       </div>
     </div>
   </div>
 </section>
-<section class="sec" id="why">
+<section class="sec" id="weekend">
   <div class="sec-inner">
-    <div class="sec-label">The Opportunity</div>
-    <h2 class="sec-title">Wilmington gets <em>millions of visitors.</em><br/>Most never find the best experiences.</h2>
-    <p class="sec-sub">ShoreList is the only platform built exclusively for Wilmington's coastal experience market. We put your business where visitors are already looking — and we only earn when you do.</p>
-    <div class="value-grid">
-      <div class="vp"><span class="vp-icon">🌊</span><div class="vp-title">Local-First Platform</div><div class="vp-sub">No competing with operators from other cities. Every listing is a Wilmington-area business. Visitors searching for coastal experiences land directly on your listing.</div></div>
-      <div class="vp"><span class="vp-icon">📍</span><div class="vp-title">STR &amp; Hotel Placement</div><div class="vp-sub">ShoreList materials go directly into vacation rentals and hotel properties across the region — reaching guests at the exact moment they're looking for something to do.</div></div>
-      <div class="vp"><span class="vp-icon">💰</span><div class="vp-title">Lowest Commission Around</div><div class="vp-sub"><strong>Viator charges 25%.</strong> GetYourGuide charges up to 30%. ShoreList charges 15–20% — and we know your market far better than they ever will.</div></div>
-    </div>
-    <div class="value-grid-2">
-      <div class="vp"><span class="vp-icon">📈</span><div class="vp-title">Ground Floor Opportunity</div><div class="vp-sub">You're joining early. Early operators get <strong>best placement, most visibility,</strong> and a direct relationship with our team as we expand across the NC coast and beyond.</div></div>
-      <div class="vp"><span class="vp-icon">⚡</span><div class="vp-title">Instant Booking Infrastructure</div><div class="vp-sub">Real-time availability calendar, Stripe payments, automated confirmation emails, and a full operator dashboard — all built and maintained by us. <strong>Zero tech required on your end.</strong></div></div>
-    </div>
-  </div>
-</section>
-<section class="sec sec-alt">
-  <div class="sec-inner">
-    <div class="mockup-grid">
+    <div class="wk-hd">
       <div>
-        <div class="mockup-phone">
-          <div class="mp-header">
-            <div class="mp-loc">📍 Wilmington, NC</div>
-            <div class="mp-q">What do you want to do today?</div>
-            <div class="mp-tabs"><div class="mp-tab active">Explore</div><div class="mp-tab">My Bookings</div><div class="mp-tab">Saved</div></div>
-          </div>
-          <div class="mp-item"><div class="mp-ico" style="background:#eef6f6;">👻</div><div style="flex:1"><div class="mp-name">Historic Ghost Walk</div><div class="mp-meta">Downtown · 90 min · ⭐ 4.9</div></div><div class="mp-price">$25</div></div>
-          <div class="mp-item"><div class="mp-ico" style="background:#eef8f0;">🏄</div><div style="flex:1"><div class="mp-name">Surf Lesson with Tripp Cox</div><div class="mp-meta">Carolina Beach · 2 hrs · ⭐ 4.8</div></div><div class="mp-price">$75</div></div>
-          <div class="mp-item"><div class="mp-ico" style="background:#fef4ee;">🎣</div><div style="flex:1"><div class="mp-name">Offshore Fishing Charter</div><div class="mp-meta">Carolina Beach · Full Day · ⭐ 4.9</div></div><div class="mp-price">$195</div></div>
-          <div class="mp-item"><div class="mp-ico" style="background:#f0fef4;">🌿</div><div style="flex:1"><div class="mp-name">Coastal Nature Walk</div><div class="mp-meta">Carolina Beach SP · 2 hrs · ⭐ 5.0</div></div><div class="mp-price">$35</div></div>
-        </div>
-        <div class="mockup-caption">Guests scan a QR code from a ShoreList pamphlet in their Airbnb or hotel, land here, and book in under 60 seconds.</div>
+        <div class="sec-label">Book Before It Fills Up</div>
+        <h2 class="sec-title">Available <em>This Weekend</em></h2>
+        <p style="font-size:0.82rem;color:rgba(245,232,203,0.38);margin-top:4px;">Weekends move fast on the NC coast — secure your spot now.</p>
       </div>
-      <div>
-        <div class="sec-label">What Your Guests Experience</div>
-        <h2 class="sec-title">A booking experience guests <em>actually enjoy.</em></h2>
-        <p style="font-size:0.90rem;color:rgba(245,232,203,0.55);line-height:1.85;">When guests land on your ShoreList listing, they see a beautifully designed booking page with real-time availability and a secure $25 deposit checkout that takes under 60 seconds.</p>
-        <div class="mockup-bullets">
-          <div class="mb-item"><div class="mb-dot">✓</div><div class="mb-text"><strong>Real-time calendar.</strong> Guests see exactly which time slots are available. No double bookings. Ever.</div></div>
-          <div class="mb-item"><div class="mb-dot">✓</div><div class="mb-text"><strong>Instant confirmation.</strong> Guests receive an email the moment they book. You get notified too.</div></div>
-          <div class="mb-item"><div class="mb-dot">✓</div><div class="mb-text"><strong>Refundable deposit model.</strong> A $25 deposit holds the spot. Low barrier for the guest. Pre-committed booking for you.</div></div>
-          <div class="mb-item"><div class="mb-dot">✓</div><div class="mb-text"><strong>Stripe-powered checkout.</strong> Card, bank transfer, or Klarna. The most trusted payment processor in the world.</div></div>
-          <div class="mb-item"><div class="mb-dot">✓</div><div class="mb-text"><strong>Your brand stays front and center.</strong> We send the guests. You run the show.</div></div>
-        </div>
-      </div>
+      <a href="#explore" class="wk-link">View All Experiences &rarr;</a>
+    </div>
+    <div class="wk-grid">
+      <a class="wk-card" href="/category?cat=ghost-tours">
+        <div class="wk-top"><span class="wk-ico">👻</span><span class="wk-badge wk-live">Live Now</span></div>
+        <div class="wk-name">Wilmington Ghost Walk</div>
+        <div class="wk-meta">Thu–Sun &nbsp;·&nbsp; 7:00, 8:30, 10:00 PM &nbsp;·&nbsp; Downtown Wilmington</div>
+        <div class="wk-ft"><span class="wk-price">From $25</span><span class="wk-spots">Thu–Sun evenings</span></div>
+      </a>
+      <a class="wk-card" href="/category?cat=surf-lessons">
+        <div class="wk-top"><span class="wk-ico">🏄</span><span class="wk-badge wk-live">Live Now</span></div>
+        <div class="wk-name">Surf Lessons with Tripp Cox</div>
+        <div class="wk-meta">Sat–Sun &nbsp;·&nbsp; 8 AM–2 PM &nbsp;·&nbsp; Carolina &amp; Wrightsville Beach</div>
+        <div class="wk-ft"><span class="wk-price">From $75</span><span class="wk-spots">✓ Spots available</span></div>
+      </a>
+      <a class="wk-card" href="/category?cat=nature-walks">
+        <div class="wk-top"><span class="wk-ico">🌿</span><span class="wk-badge wk-live">Live Now</span></div>
+        <div class="wk-name">Coastal Carolina Nature Walk</div>
+        <div class="wk-meta">Sat–Sun &nbsp;·&nbsp; 8 AM, 10 AM, 2 PM &nbsp;·&nbsp; Carolina Beach State Park</div>
+        <div class="wk-ft"><span class="wk-price">From $35</span><span class="wk-spots">✓ Spots available</span></div>
+      </a>
     </div>
   </div>
 </section>
-<section class="sec" id="commission">
+<section class="sec sec-alt" id="explore">
   <div class="sec-inner">
-    <div class="sec-label">Transparent Rates</div>
-    <h2 class="sec-title">No surprises. <em>Ever.</em></h2>
-    <p class="sec-sub">Your commission rate is locked in at sign-up and never changes without your agreement.</p>
-    <div class="commission-wrap">
-      <table class="commission-table">
-        <thead><tr><th>Experience Category</th><th>ShoreList Commission</th><th>You Receive (on $25 deposit)</th></tr></thead>
-        <tbody>
-          <tr><td>Fishing Charters</td><td class="commission-rate">15%</td><td>$21.25</td></tr>
-          <tr><td>Sunset Sails &amp; River Cruises</td><td class="commission-rate">15%</td><td>$21.25</td></tr>
-          <tr><td>Beach Photography</td><td class="commission-rate">15%</td><td>$21.25</td></tr>
-          <tr><td>Kayak &amp; Paddleboard Tours</td><td class="commission-rate">18%</td><td>$20.50</td></tr>
-          <tr><td>Surf Lessons</td><td class="commission-rate">18%</td><td>$20.50</td></tr>
-          <tr><td>E-Bike, Jet Ski &amp; Rental Activities</td><td class="commission-rate">18%</td><td>$20.50</td></tr>
-          <tr><td>Wildlife &amp; Nature Tours</td><td class="commission-rate">18%</td><td>$20.50</td></tr>
-          <tr><td>Wellness &amp; Yoga</td><td class="commission-rate">18%</td><td>$20.50</td></tr>
-          <tr><td>Ghost &amp; Historic Walking Tours</td><td class="commission-rate">20%</td><td>$20.00</td></tr>
-          <tr><td>Beach Chair, Picnic &amp; Delivery</td><td class="commission-rate">20%</td><td>$20.00</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="commission-note">* The balance of the booking price is paid directly to you by the guest at the time of the experience.</p>
-  </div>
-</section>
-<section class="sec sec-alt">
-  <div class="sec-inner">
-    <div class="sec-label">Common Questions</div>
-    <h2 class="sec-title">Everything you want to know.</h2>
-    <p class="sec-sub" style="margin-bottom:32px;">Can't find your answer? Email us at shorelistwilmington@gmail.com.</p>
-    <div class="faq">
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How does ShoreList handle payments? <span class="faq-arrow">▾</span></button><div class="faq-a">Guests pay a $25 refundable booking deposit through our secure Stripe checkout. Once you deliver the experience, ShoreList remits your net payout within 5 business days. The balance of your booking price is paid directly to you by the guest on the day.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What if I need to cancel a booking? <span class="faq-arrow">▾</span></button><div class="faq-a">Life happens. If you need to cancel, notify us as soon as possible and we'll handle the guest communication and refund. We ask that cancellations be rare — frequent cancellations affect your listing visibility and placement.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I need to change how I run my business? <span class="faq-arrow">▾</span></button><div class="faq-a">Not at all. ShoreList drives guests to you. You run your experience exactly as you always have. We handle the booking infrastructure — you handle the magic.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What licenses and insurance do I need? <span class="faq-arrow">▾</span></button><div class="faq-a">You need to hold all required licenses and permits to legally operate your business in North Carolina. We recommend operators carry general liability insurance appropriate for their activity type — we'll discuss your specific coverage during onboarding. It's not a barrier to getting listed.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I be on ShoreList AND other platforms? <span class="faq-arrow">▾</span></button><div class="faq-a">Yes. ShoreList is a non-exclusive partnership. You can list on Viator, GetYourGuide, or any other platform simultaneously. We just ask that you don't direct ShoreList-referred guests to book outside our platform for the same experience.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long does it take to go live? <span class="faq-arrow">▾</span></button><div class="faq-a">Once your agreement is signed and your listing information is submitted, we'll have your business live on ShoreList.net within 48 hours. RJ will reach out personally to make sure everything looks perfect before launch.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the Featured Spotlight and how do I get it? <span class="faq-arrow">▾</span></button><div class="faq-a">The Featured Spotlight is a premium placement on the ShoreList homepage — the first thing every visitor sees. It includes your availability calendar, star rating, and a direct book button. Featured spots are available for $50/week. Contact shorelistwilmington@gmail.com to reserve yours.</div></div>
+    <div class="sec-label">Explore</div>
+    <h2 class="sec-title">Find your next <em>adventure</em></h2>
+    <p class="sec-sub">Browse 20 coastal experience categories. Instantly book our live operators — more coming as we grow across the Wilmington coast.</p>
+    <div class="cats-grid">
+      <a class="cat" href="/category?cat=ghost-tours"><span class="cat-ico">👻</span><div class="cat-name">Ghost Tours</div></a>
+      <a class="cat" href="/category?cat=fishing-charters"><span class="cat-ico">🎣</span><div class="cat-name">Fishing Charters</div></a>
+      <a class="cat" href="/category?cat=kayak-tours"><span class="cat-ico">🚣</span><div class="cat-name">Kayak Tours</div></a>
+      <a class="cat" href="/category?cat=river-cruises"><span class="cat-ico">🛥️</span><div class="cat-name">River Cruises</div></a>
+      <a class="cat" href="/category?cat=surf-lessons"><span class="cat-ico">🏄</span><div class="cat-name">Surf Lessons</div></a>
+      <a class="cat" href="/category?cat=paddleboard"><span class="cat-ico">🏝️</span><div class="cat-name">Paddleboard</div></a>
+      <a class="cat" href="/category?cat=bike-tours"><span class="cat-ico">🚴</span><div class="cat-name">Bike Tours</div></a>
+      <a class="cat" href="/category?cat=wildlife-tours"><span class="cat-ico">🐬</span><div class="cat-name">Wildlife Tours</div></a>
+      <a class="cat" href="/category?cat=ebike-rentals"><span class="cat-ico">⚡</span><div class="cat-name">E-Bike Rentals</div></a>
+      <a class="cat" href="/category?cat=scooter-rentals"><span class="cat-ico">🛵</span><div class="cat-name">Scooter Rentals</div></a>
+      <a class="cat" href="/category?cat=jet-ski-rentals"><span class="cat-ico">🚤</span><div class="cat-name">Jet Ski Rentals</div></a>
+      <a class="cat" href="/category?cat=golf-cart-rentals"><span class="cat-ico">🏌</span><div class="cat-name">Golf Cart Rentals</div></a>
+      <a class="cat" href="/category?cat=foil-surfing"><span class="cat-ico">🪁</span><div class="cat-name">Foil Surfing</div></a>
+      <a class="cat" href="/category?cat=sailboat-rides"><span class="cat-ico">⛵</span><div class="cat-name">Sailboat Rides</div></a>
+      <a class="cat" href="/category?cat=nature-walks"><span class="cat-ico">🌿</span><div class="cat-name">Nature Walks</div></a>
+      <a class="cat" href="/category?cat=beach-photography"><span class="cat-ico">📸</span><div class="cat-name">Beach Photography</div></a>
+      <a class="cat" href="/category?cat=beach-picnics"><span class="cat-ico">🧺</span><div class="cat-name">Beach Picnics</div></a>
+      <a class="cat" href="/category?cat=beach-chairs"><span class="cat-ico">🏖️</span><div class="cat-name">Beach Chairs</div></a>
+      <a class="cat" href="/category?cat=fat-bike-rentals"><span class="cat-ico">🚲</span><div class="cat-name">Fat Bike Rentals</div></a>
+      <a class="cat" href="/category?cat=wellness"><span class="cat-ico">🧘</span><div class="cat-name">Wellness &amp; Spa</div></a>
     </div>
   </div>
 </section>
-<section class="sec" id="apply">
+<section class="sec" id="reviews">
   <div class="sec-inner">
-    <div style="max-width:720px;margin:0 auto;">
-      <div class="sec-label">Apply Now</div>
-      <h2 class="sec-title">Let's get you <em>listed.</em></h2>
-      <p class="sec-sub">Fill out the form below. RJ will reach out within 24 hours to confirm your listing details and get you live within 48 hours.</p>
-      <div class="form-steps" id="form-steps">
-        <div class="fs-step active" id="fs1">1&nbsp; Your Details</div>
-        <div class="fs-step" id="fs2">2&nbsp; Agreement</div>
-        <div class="fs-step" id="fs3">3&nbsp; Sign &amp; Submit</div>
-      </div>
-      <div class="success-screen" id="success-screen">
-        <span class="success-icon">🎉</span>
-        <div class="success-title">You're on ShoreList!</div>
-        <p class="success-sub">Your application is submitted. RJ will reach out within 24 hours to finalize your listing and get you live within 48 hours.</p>
-        <a href="/" class="btn-fill">Back to ShoreList &rarr;</a>
-      </div>
-      <div class="form-panel active" id="panel-1">
-        <div class="form-grid">
-          <div class="form-field"><label class="form-label">Business Name *</label><input class="form-input" type="text" id="f-biz" placeholder="Your business name" autocomplete="organization"/></div>
-          <div class="form-field"><label class="form-label">Your Full Name *</label><input class="form-input" type="text" id="f-name" placeholder="First and last name" autocomplete="name"/></div>
-        </div>
-        <div class="form-grid">
-          <div class="form-field"><label class="form-label">Email Address *</label><input class="form-input" type="email" id="f-email" placeholder="your@email.com" autocomplete="email"/></div>
-          <div class="form-field"><label class="form-label">Phone Number *</label><input class="form-input" type="tel" id="f-phone" placeholder="(910) 000-0000" autocomplete="tel"/></div>
-        </div>
-        <div class="form-grid">
-          <div class="form-field">
-            <label class="form-label">Experience Category *</label>
-            <select class="form-select" id="f-cat" onchange="showCommission()">
-              <option value="" disabled selected>Select your category</option>
-              <option value="fishing|15">Fishing Charters — 15%</option>
-              <option value="sailing|15">Sunset Sails &amp; River Cruises — 15%</option>
-              <option value="photo|15">Beach Photography — 15%</option>
-              <option value="kayak|18">Kayak &amp; Paddleboard Tours — 18%</option>
-              <option value="surf|18">Surf Lessons — 18%</option>
-              <option value="rental|18">Rentals (Bike, Jet Ski, E-Bike, etc.) — 18%</option>
-              <option value="nature|18">Wildlife &amp; Nature Tours — 18%</option>
-              <option value="wellness|18">Wellness &amp; Yoga — 18%</option>
-              <option value="ghost|20">Ghost &amp; Historic Walking Tours — 20%</option>
-              <option value="beach|20">Beach Chair, Picnic &amp; Delivery — 20%</option>
-              <option value="other|20">Other — we'll discuss</option>
-            </select>
-            <div class="commission-display" id="commission-display"></div>
-          </div>
-          <div class="form-field">
-            <label class="form-label">Primary Service Location *</label>
-            <select class="form-select" id="f-loc">
-              <option value="" disabled selected>Select your main area</option>
-              <option>Wilmington</option>
-              <option>Wrightsville Beach</option>
-              <option>Carolina Beach</option>
-              <option>Kure Beach</option>
-              <option>Oak Island</option>
-              <option>Southport</option>
-              <option>Bald Head Island</option>
-              <option>Multiple Locations</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-grid full">
-          <div class="form-field"><label class="form-label">Tell Us About Your Business *</label><textarea class="form-input" id="f-desc" rows="3" placeholder="Describe your experience, what makes it special, pricing, and anything else you'd like us to know..."></textarea></div>
-        </div>
-        <div class="form-grid">
-          <div class="form-field"><label class="form-label">Website (optional)</label><input class="form-input" type="url" id="f-web" placeholder="https://yourwebsite.com"/></div>
-          <div class="form-field">
-            <label class="form-label">Are You Licensed to Operate?</label>
-            <select class="form-select" id="f-lic">
-              <option value="" disabled selected>Select one</option>
-              <option>Yes — I hold all required licenses and permits</option>
-              <option>In progress — getting licensed</option>
-              <option>Not applicable to my category</option>
-            </select>
-          </div>
-        </div>
-        <div id="form-err-1" class="form-err"></div>
-        <div class="form-actions"><button class="btn-fill" onclick="goStep(2)">Continue to Agreement &rarr;</button></div>
-      </div>
-      <div class="form-panel" id="panel-2">
-        <div class="agreement-wrap">
-          <div class="agreement-header">
-            <div class="agreement-header-title">ShoreList LLC — Operator Listing Agreement</div>
-            <div class="agreement-header-badge">Plain English · Fair Terms</div>
-          </div>
-          <div class="agreement-body" id="agreement-body">
-            <h3>1. Platform Services</h3>
-            <p>ShoreList LLC agrees to list your business on Shorelist.net, market your experiences to visitors through our website and physical promotional materials, process guest booking deposits on your behalf, notify you of all new bookings by email, and remit your net payout within 5 business days of a completed experience.</p>
-            <h3>2. Your Obligations as an Operator</h3>
-            <ul>
-              <li>Respond to booking notifications within 24 hours.</li>
-              <li>Maintain all required licenses, permits, and certifications to legally operate your business.</li>
-              <li>Carry appropriate general liability insurance for your activity type.</li>
-              <li>Provide accurate, honest descriptions of your experiences including pricing, duration, and any safety requirements.</li>
-              <li>Deliver confirmed bookings as described.</li>
-              <li>Notify ShoreList within 48 hours of any pricing or availability changes.</li>
-              <li>Treat all ShoreList-referred guests professionally and courteously.</li>
-              <li>Not solicit ShoreList-referred guests to bypass our platform during this agreement and for 12 months after termination.</li>
-            </ul>
-            <h3>3. Commission &amp; Payment</h3>
-            <p>ShoreList earns a commission on every completed booking. The commission rate applicable to your category is confirmed in your signed listing agreement. There are no listing fees, monthly fees, or setup charges. ShoreList earns only when you earn. Payouts are processed within 5 business days of the completed experience.</p>
-            <h3>4. Refunds &amp; Cancellations</h3>
-            <p><strong>If you cancel:</strong> Guests receive a full refund. You receive no payment for cancelled bookings.</p>
-            <p><strong>If a guest cancels:</strong> ShoreList's standard cancellation policy applies. You are paid only for delivered experiences.</p>
-            <p><strong>No-shows:</strong> You retain the booking deposit for confirmed no-shows.</p>
-            <p><strong>Disputes:</strong> ShoreList will notify you of any guest dispute and give you a reasonable opportunity to respond before any refund decision.</p>
-            <h3>5. Representations &amp; Warranties</h3>
-            <p>By signing, you confirm that you have legal authority to enter this agreement, all information you provide is accurate and complete, your experiences comply with all applicable North Carolina and federal laws, and you will maintain all required operating licenses.</p>
-            <h3>6. Intellectual Property</h3>
-            <p>You grant ShoreList a limited, non-exclusive license to use your business name, photos, and descriptions solely to promote your listings on our platform. You retain full ownership of all your content.</p>
-            <h3>7. Liability &amp; Indemnification</h3>
-            <p>ShoreList is a booking marketplace — we facilitate reservations but do not operate or supervise experiences. ShoreList is not responsible for events occurring during the delivery of your experience. You agree to indemnify ShoreList LLC against third-party claims arising from your business operations. ShoreList's total liability to you is limited to 3 months of commissions paid in the preceding period.</p>
-            <h3>8. Term &amp; Termination</h3>
-            <p>This agreement runs month-to-month from the date of signing. Either party may terminate with 30 days written notice. ShoreList may terminate immediately for cause including: violation of any applicable law, posing a safety risk to guests, or repeated failure to honor confirmed bookings.</p>
-            <h3>9. Confidentiality</h3>
-            <p>Both parties agree to keep non-public business information — including booking data, guest personal information, and negotiated commission rates — strictly confidential during and after the term of this agreement.</p>
-            <h3>10. Governing Law</h3>
-            <p>This agreement is governed by the laws of the State of North Carolina. You and ShoreList are independent contractors — not partners, employees, or agents of each other. Any unresolved disputes are subject to good-faith mediation in New Hanover County, NC before litigation.</p>
-            <p style="margin-top:16px;font-size:0.80rem;color:rgba(245,232,203,0.35);">ShoreList LLC recommends that all parties consult qualified legal counsel before signing any business agreement.</p>
-          </div>
-        </div>
-        <div class="form-checkbox">
-          <input type="checkbox" id="f-agree"/>
-          <label for="f-agree">I have read and understand the ShoreList Operator Listing Agreement. I agree to be bound by its terms on behalf of my business.</label>
-        </div>
-        <div id="form-err-2" class="form-err"></div>
-        <div class="form-actions">
-          <button class="btn-back-form" onclick="goStep(1)">&#8592; Back</button>
-          <button class="btn-fill" onclick="goStep(3)">Continue to Sign &amp; Submit &rarr;</button>
+    <div class="sec-label">The People Behind ShoreList</div>
+    <h2 class="sec-title">Real operators. <em>Real experiences.</em></h2>
+    <p class="sec-sub">ShoreList launched in 2025. We don't have hundreds of reviews yet — and we're not going to fabricate them. What we have is something better: three passionate local operators who know this coast better than anyone.</p>
+    <div class="reviews-grid">
+      <div class="rv-card">
+        <div class="rv-stars">👻 Ghost &amp; Historic Tours</div>
+        <div class="rv-text">Sean Austin has been guiding Wilmington ghost walks for years, with an encyclopedic knowledge of the city's darkest and most fascinating history. Downtown Wilmington. Thu–Sun evenings.</div>
+        <div class="rv-foot">
+          <div class="rv-avatar" style="background:linear-gradient(135deg,#1a0533,#4a0e8f);">👻</div>
+          <div><div class="rv-name">Sean Austin</div><div class="rv-meta">Wilmington Ghost Walk &nbsp;·&nbsp; From $25</div></div>
         </div>
       </div>
-      <div class="form-panel" id="panel-3">
-        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:24px;margin-bottom:24px;">
-          <div style="font-size:0.70rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,232,203,0.35);margin-bottom:16px;">Review Your Details</div>
-          <div id="review-content" style="font-size:0.88rem;color:rgba(245,232,203,0.70);line-height:1.8;"></div>
+      <div class="rv-card">
+        <div class="rv-stars">🏄 Surf Lessons</div>
+        <div class="rv-text">Tripp Cox is a certified surf instructor and Carolina Beach local. Whether you've never touched a board or want to level up, Tripp makes it happen. Carolina &amp; Wrightsville Beach.</div>
+        <div class="rv-foot">
+          <div class="rv-avatar" style="background:linear-gradient(135deg,#0a3d5c,#1a7585);">🏄</div>
+          <div><div class="rv-name">Tripp Cox</div><div class="rv-meta">Tripp Cox Surf School &nbsp;·&nbsp; From $75</div></div>
         </div>
-        <p style="font-size:0.84rem;color:rgba(245,232,203,0.50);line-height:1.75;margin-bottom:22px;">Everything look correct above? By clicking Submit, you confirm your details are accurate and you agree to the ShoreList Operator Listing Agreement.</p>
-        <div id="form-err-3" class="form-err"></div>
-        <div class="form-actions">
-          <button class="btn-back-form" onclick="goStep(2)">&#8592; Back</button>
-          <button class="btn-fill" id="submit-btn" onclick="submitForm()">Submit My Application &rarr;</button>
+      </div>
+      <div class="rv-card">
+        <div class="rv-stars">🌿 Nature &amp; Historic Walks</div>
+        <div class="rv-text">RJ Brideau is the founder of ShoreList and a Wilmington local. He leads historic walking tours and coastal nature walks through Carolina Beach State Park — home to wild Venus flytraps and ancient cypress swamps.</div>
+        <div class="rv-foot">
+          <div class="rv-avatar" style="background:linear-gradient(135deg,#0a2e1a,#1a7a56);">🌿</div>
+          <div><div class="rv-name">RJ Brideau</div><div class="rv-meta">ShoreList Founder &amp; Local Guide &nbsp;·&nbsp; From $28</div></div>
         </div>
       </div>
     </div>
+    <div class="reviews-cta" style="margin-top:40px;">
+      <p style="font-size:0.95rem;color:rgba(245,232,203,0.65);max-width:580px;margin:0 auto 20px;line-height:1.85;">We're building this the right way — real operators, real bookings, real reviews earned one experience at a time. Be one of our first guests. Your story helps us grow.</p>
+      <a href="#explore" class="btn-fill" style="display:inline-block;">Explore Experiences &rarr;</a>
+    </div>
+  </div>
+</section>
+<section class="sec sec-alt" id="how">
+  <div class="sec-inner">
+    <div class="sec-label">Simple Process</div>
+    <h2 class="sec-title">How <em>ShoreList</em> works</h2>
+    <p class="sec-sub">Four steps from landing on this page to standing on Wilmington's most beautiful beaches with a local guide.</p>
+    <div class="steps-grid">
+      <div class="step"><div class="step-n">01</div><h3>Browse Local Experiences</h3><p>Discover hand-picked tours, charters, and adventures across Wilmington and the surrounding beaches — all in one place.</p></div>
+      <div class="step"><div class="step-n">02</div><h3>Book Instantly</h3><p>Reserve your spot with a $25 refundable deposit. No phone tag, no back-and-forth. Confirmation hits your inbox in seconds.</p></div>
+      <div class="step"><div class="step-n">03</div><h3>Show Up &amp; Explore</h3><p>All you have to do is arrive. Local operators handle everything else. You just enjoy the coast.</p></div>
+      <div class="step"><div class="step-n">04</div><h3>Leave a Review</h3><p>Share your experience to help other visitors discover the best this coast has to offer.</p></div>
+    </div>
+  </div>
+</section>
+<section class="planner-cta" id="contact">
+  <div class="pc-inner">
+    <div class="pc-tag">✦ AI-Powered &nbsp;·&nbsp; Free</div>
+    <h2 class="pc-title">Your perfect Wilmington day,<br/><em>built in seconds.</em></h2>
+    <p class="pc-sub">Tell our AI what you're into — who's coming, what you love, how you like to spend your time — and get a custom itinerary with direct booking links for every stop.</p>
+    <div class="pc-demo">
+      <div class="pc-demo-lbl">Try asking...</div>
+      <div class="pc-demo-text" id="typewriter-text"><span class="pc-cursor"></span></div>
+    </div>
+    <a href="/planner" class="btn-fill" style="font-size:1rem;padding:17px 44px;">Build My Itinerary &rarr;</a>
   </div>
 </section>
 <footer>
   <a href="/" class="foot-logo"><span class="foot-s">Shore</span><span class="foot-l">List</span></a>
   <div class="foot-copy">© 2025 ShoreList LLC &nbsp;·&nbsp; Wilmington, NC</div>
   <div class="foot-links">
-    <a href="/">For Guests</a>
-    <a href="mailto:shorelistwilmington@gmail.com">Contact RJ</a>
+    <a href="#explore">Experiences</a>
+    <a href="/planner">Trip Planner</a>
+    <a href="mailto:shorelistwilmington@gmail.com">Contact</a>
+    <a href="/join" class="foot-op">Are you a local operator? →</a>
   </div>
 </footer>
 <script>
-var STEP=1;
-function goStep(n){if(n>STEP){if(STEP===1&&!validateStep1())return;if(STEP===2&&!validateStep2())return;}STEP=n;[1,2,3].forEach(function(i){var el=document.getElementById('fs'+i);el.classList.remove('active','done');if(i<n)el.classList.add('done');if(i===n)el.classList.add('active');});['panel-1','panel-2','panel-3'].forEach(function(id,i){var p=document.getElementById(id);if(p){p.classList.remove('active');if(i===n-1)p.classList.add('active');}});if(n===3)buildReview();document.getElementById('apply').scrollIntoView({behavior:'smooth',block:'start'});}
-function validateStep1(){var err=document.getElementById('form-err-1');var biz=document.getElementById('f-biz').value.trim();var name=document.getElementById('f-name').value.trim();var email=document.getElementById('f-email').value.trim();var cat=document.getElementById('f-cat').value;var desc=document.getElementById('f-desc').value.trim();if(!biz||!name||!email||!cat||!desc){err.style.display='block';err.textContent='Please fill in all required fields.';return false;}if(!email.includes('@')||!email.includes('.')){err.style.display='block';err.textContent='Please enter a valid email address.';return false;}err.style.display='none';return true;}
-function validateStep2(){var err=document.getElementById('form-err-2');if(!document.getElementById('f-agree').checked){err.style.display='block';err.textContent='Please read and check the agreement box before continuing.';return false;}err.style.display='none';return true;}
-function buildReview(){var catEl=document.getElementById('f-cat');var catText=catEl.options[catEl.selectedIndex].text;var locEl=document.getElementById('f-loc');var html='<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;">';html+='<div><strong style="color:#FEFCF7;">Business:</strong> '+esc(document.getElementById('f-biz').value)+'</div>';html+='<div><strong style="color:#FEFCF7;">Contact:</strong> '+esc(document.getElementById('f-name').value)+'</div>';html+='<div><strong style="color:#FEFCF7;">Email:</strong> '+esc(document.getElementById('f-email').value)+'</div>';html+='<div><strong style="color:#FEFCF7;">Phone:</strong> '+esc(document.getElementById('f-phone').value||'Not provided')+'</div>';html+='<div><strong style="color:#FEFCF7;">Category:</strong> '+esc(catText)+'</div>';html+='<div><strong style="color:#FEFCF7;">Location:</strong> '+esc(locEl.value||'Not selected')+'</div>';html+='</div>';html+='<div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.06);"><strong style="color:#FEFCF7;">Description:</strong><br/>'+esc(document.getElementById('f-desc').value)+'</div>';document.getElementById('review-content').innerHTML=html;}
-function submitForm(){var btn=document.getElementById('submit-btn');btn.disabled=true;btn.textContent='Submitting...';var data={business:document.getElementById('f-biz').value,contact:document.getElementById('f-name').value,email:document.getElementById('f-email').value,phone:document.getElementById('f-phone').value,category:document.getElementById('f-cat').value,location:document.getElementById('f-loc').value,description:document.getElementById('f-desc').value,website:document.getElementById('f-web').value,licensed:document.getElementById('f-lic').value,_subject:'ShoreList Operator Application: '+document.getElementById('f-biz').value};fetch('https://formspree.io/f/xeevzzqd',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(data)}).catch(function(){});setTimeout(function(){['panel-1','panel-2','panel-3'].forEach(function(id){var p=document.getElementById(id);if(p)p.classList.remove('active');});document.getElementById('form-steps').style.display='none';document.getElementById('success-screen').classList.add('show');document.getElementById('apply').scrollIntoView({behavior:'smooth',block:'start'});},800);}
-function showCommission(){var el=document.getElementById('f-cat');var disp=document.getElementById('commission-display');if(!el.value){disp.style.display='none';return;}var parts=el.value.split('|');var rate=parts[1]||'20';var payout=(25*(1-parseInt(rate)/100)).toFixed(2);disp.style.display='block';disp.textContent='Your commission rate: '+rate+'% · You receive $'+payout+' per $25 deposit';}
-function toggleFaq(btn){var item=btn.parentElement;var isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});if(!isOpen)item.classList.add('open');}
-function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+document.body.style.overflow='hidden';
+window.addEventListener('load',function(){setTimeout(function(){document.getElementById('wave-intro').classList.add('hide');document.body.style.overflow='';},2500);});
+setTimeout(function(){document.getElementById('wave-intro').classList.add('hide');document.body.style.overflow='';},3400);
+var _nav=document.getElementById('nav');
+window.addEventListener('scroll',function(){if(window.scrollY>60){_nav.style.background='rgba(10,77,92,0.97)';_nav.style.backdropFilter='blur(18px)';}else{_nav.style.background='transparent';_nav.style.backdropFilter='none';}});
+function toggleNav(){var b=document.getElementById('nav-mob');var d=document.getElementById('mob-drawer');b.classList.toggle('open');d.classList.toggle('open');document.body.style.overflow=d.classList.contains('open')?'hidden':'';}
+function closeNav(){document.getElementById('nav-mob').classList.remove('open');document.getElementById('mob-drawer').classList.remove('open');document.body.style.overflow='';}
+var sf=document.getElementById('sf');
+if(sf){for(var i=0;i<26;i++){var s=document.createElement('span');var big=Math.random()>0.8;s.style.cssText='left:'+Math.random()*100+'%;top:'+Math.random()*100+'%;animation-delay:'+Math.random()*3+'s;animation-duration:'+(2+Math.random()*2)+'s;opacity:'+(0.4+Math.random()*0.6)+';width:'+(big?3:2)+'px;height:'+(big?3:2)+'px;';sf.appendChild(s);}}
+function sT(id,d){setTimeout(function(){var e=document.getElementById(id);if(e)e.classList.add('show');},d);}
+function hT(id,d){setTimeout(function(){var e=document.getElementById(id);if(e)e.classList.remove('show');},d);}
+sT('xt1',2700);hT('xt1',6600);sT('xt2',4000);hT('xt2',7800);
+setTimeout(function(){sT('xt1',0);hT('xt1',3800);sT('xt2',1400);hT('xt2',5200);},12000);
+(function(){var WC={0:'☀️ Clear skies',1:'🌤️ Mostly clear',2:'⛅ Partly cloudy',3:'☁️ Overcast',51:'🌦️ Light drizzle',61:'🌧️ Light rain',80:'🌦️ Showers',95:'⛈️ Thunderstorm'};fetch('https://api.open-meteo.com/v1/forecast?latitude=34.2257&longitude=-77.9447&current=temperature_2m,weather_code&temperature_unit=fahrenheit').then(function(r){return r.json();}).then(function(d){var c=d.current||{};var t=c.temperature_2m?Math.round(c.temperature_2m)+'°F':'74°F';var wc=WC[c.weather_code]||'🌤️ Clear skies';var te=document.getElementById('wb-temp');var ce=document.getElementById('wb-cond');if(te)te.textContent=t;if(ce)ce.textContent=wc;}).catch(function(){var ce=document.getElementById('wb-cond');if(ce)ce.textContent='Beautiful coastal weather';});})();
+var TOASTS=[
+  {ico:'👻',bg:'linear-gradient(135deg,#1a0533,#4a0e8f)',name:'Ghost Walk · Downtown Wilmington',action:'Thu–Sun evenings · From $25'},
+  {ico:'🏄',bg:'linear-gradient(135deg,#0a3d5c,#1a7585)',name:'Surf Lessons · Carolina Beach',action:'With Tripp Cox · From $75'},
+  {ico:'🌿',bg:'linear-gradient(135deg,#0a2e1a,#1a7a56)',name:'Coastal Nature Walk',action:'Carolina Beach State Park · From $35'},
+  {ico:'👻',bg:'linear-gradient(135deg,#1a0533,#4a0e8f)',name:'Historic Walking Tour',action:'Wilmington\'s most fascinating stories'},
+  {ico:'🏄',bg:'linear-gradient(135deg,#0a3d5c,#1a7585)',name:'Surf · Wrightsville Beach',action:'Premium session · From $125'},
+  {ico:'🌿',bg:'linear-gradient(135deg,#0a2e1a,#1a7a56)',name:'Nature Walk · Weekend slots open',action:'8 AM, 10 AM and 2 PM available'},
+];
+var toastIdx=0;var gtc=document.getElementById('g-toasts');
+function showGToast(){if(!gtc)return;var d=TOASTS[toastIdx%TOASTS.length];toastIdx++;var el=document.createElement('div');el.className='g-toast';el.innerHTML='<div class="gt-ico" style="background:'+d.bg+'">'+d.ico+'</div><div class="gt-body"><div class="gt-name">'+d.name+'</div><div class="gt-action">'+d.action+'</div></div><div class="gt-time">live</div>';gtc.appendChild(el);setTimeout(function(){el.classList.add('show');},50);setTimeout(function(){el.classList.remove('show');setTimeout(function(){if(el.parentNode)el.parentNode.removeChild(el);},500);},5500);}
+setTimeout(showGToast,4800);setInterval(showGToast,24000);
+var PHRASES=['Romantic weekend for 2. We love sunsets and the water...','Family trip with kids — adventure, nature, and fun...','Bachelor party for 6. Max adrenaline. Flexible budget...','Solo traveler, one day — show me the real Wilmington...',];
+var ti=0,tc=0,td=false;var tel=document.getElementById('typewriter-text');
+function tw(){if(!tel)return;var p=PHRASES[ti];if(!td){tel.innerHTML=p.substring(0,tc+1)+'<span class="pc-cursor"></span>';tc++;if(tc===p.length){td=true;setTimeout(tw,2000);return;}}else{tel.innerHTML=p.substring(0,tc-1)+'<span class="pc-cursor"></span>';tc--;if(tc===0){td=false;ti=(ti+1)%PHRASES.length;setTimeout(tw,350);return;}}setTimeout(tw,td?25:50);}
+setTimeout(tw,3800);
 </script>
 </body>
 </html>
