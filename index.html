@@ -22,20 +22,19 @@ body{font-family:'DM Sans',sans-serif;background:#0A4D5C;color:#FEFCF7;overflow-
   --dark:#0D1F25;--mid:#2C4A52;
   --lgray:#F2F4F3;
 }
-#wave-intro{position:fixed;inset:0;z-index:9999;background:var(--teal3);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;transition:opacity 0.8s ease,visibility 0.8s ease;}
+/* ── WAVE INTRO ── */
+#wave-intro{position:fixed;inset:0;z-index:9999;background:#041f28;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;transition:opacity 0.9s ease,visibility 0.9s ease;}
 #wave-intro.hide{opacity:0;visibility:hidden;pointer-events:none;}
-.wi-logo{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:var(--cream2);opacity:0;animation:fadeIn 0.6s ease 0.3s forwards;}
+#wi-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;}
+.wi-logo{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:var(--cream2);opacity:0;animation:fadeIn 0.5s ease 0.8s forwards;position:relative;z-index:1;pointer-events:none;text-shadow:0 2px 20px rgba(0,0,0,0.5);}
 .wi-logo span{color:var(--coral);}
-.wi-sub{font-size:0.72rem;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:rgba(245,232,203,0.35);opacity:0;animation:fadeIn 0.5s ease 0.7s forwards;}
-.wi-waves{position:absolute;bottom:0;left:0;right:0;height:200px;overflow:hidden;}
-.wi-wave{position:absolute;bottom:0;left:-5%;width:110%;border-radius:50% 50% 0 0;}
-.wi-w1{height:120px;background:rgba(26,117,133,0.45);animation:wiW 2s ease-in-out infinite;}
-.wi-w2{height:85px;background:rgba(7,61,74,0.75);animation:wiW 2.6s ease-in-out infinite reverse;}
-.wi-w3{height:55px;background:#052d38;animation:wiW 1.8s ease-in-out infinite;animation-delay:0.2s;}
-.wi-sweep{position:absolute;inset:0;background:linear-gradient(90deg,var(--teal3) 0%,var(--teal2) 40%,var(--teal3) 70%,transparent 100%);animation:wiSweep 1.3s cubic-bezier(0.4,0,0.2,1) 1.0s forwards;transform:translateX(-110%);}
+.wi-sub{font-size:0.72rem;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:rgba(245,232,203,0.40);opacity:0;animation:fadeIn 0.5s ease 1.1s forwards;position:relative;z-index:1;pointer-events:none;}
 @keyframes fadeIn{to{opacity:1;}}
-@keyframes wiW{0%,100%{transform:translateX(0)}50%{transform:translateX(2.5%);}}
-@keyframes wiSweep{0%{transform:translateX(-110%);}100%{transform:translateX(110%);}}
+/* ── MUTE BUTTON ── */
+#mute-btn{position:fixed;bottom:22px;left:22px;z-index:8000;background:rgba(0,0,0,0.30);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.14);border-radius:100px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1rem;cursor:pointer;transition:all 0.22s;opacity:0;animation:fadeIn 0.5s ease 3.8s forwards;color:white;}
+#mute-btn:hover{background:rgba(0,0,0,0.50);transform:scale(1.1);}
+
+/* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:18px 48px;transition:background 0.35s,backdrop-filter 0.35s;background:transparent;}
 nav.scrolled{background:rgba(10,77,92,0.97);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.06);}
 .logo{font-size:1.65rem;font-weight:900;line-height:1;display:flex;align-items:baseline;text-decoration:none;}
@@ -60,6 +59,7 @@ nav.scrolled{background:rgba(10,77,92,0.97);backdrop-filter:blur(18px);border-bo
 .mob-drawer a:last-child{border-bottom:none;}
 .mob-drawer a:hover{color:var(--cream);}
 .mob-cta{margin-top:16px;background:var(--coral)!important;color:white!important;text-align:center;border-radius:8px;padding:15px!important;border-bottom:none!important;font-weight:700!important;}
+/* ── HERO ── */
 .hero{min-height:100vh;background:var(--teal);display:flex;flex-direction:column;justify-content:center;padding:110px 48px 0;position:relative;overflow:hidden;}
 .hero-grad{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 110% 90% at 45% 0%,#1a8595 0%,var(--teal) 55%);}
 .hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.055) 1px,transparent 1px);background-size:28px 28px;}
@@ -253,21 +253,17 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
 @keyframes twinkle{0%,100%{opacity:.9;}50%{opacity:.2;}}
 @media(max-width:1020px){.featured-grid{grid-template-columns:1fr;}.reviews-grid{grid-template-columns:1fr 1fr;}.steps-grid{grid-template-columns:1fr 1fr;}.wk-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:900px){.hero-layout{grid-template-columns:1fr;}.hero-right{display:none;}}
-@media(max-width:768px){nav{padding:15px 20px;}.nav-links{display:none!important;}.nav-mob{display:flex;}.hero{padding:95px 20px 0;min-height:auto;}.compass{display:none;}.weather-badge{display:none;}.sec{padding:60px 20px;}.trust-bar{padding:14px 20px;overflow-x:auto;}.tb-item{padding:0 16px;font-size:0.75rem;}.reviews-grid{grid-template-columns:1fr;}.steps-grid{grid-template-columns:1fr 1fr;}.wk-grid{grid-template-columns:1fr;}.cats-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));}footer{padding:24px 20px;flex-direction:column;text-align:center;gap:10px;}.planner-cta{padding:60px 20px;}#g-toasts{max-width:230px;right:10px;bottom:10px;}.hero-stats{gap:16px;}.btn-fill,.btn-ghost{padding:13px 22px;font-size:0.88rem;}.trust-strip{display:none;}}
+@media(max-width:768px){nav{padding:15px 20px;}.nav-links{display:none!important;}.nav-mob{display:flex;}.hero{padding:95px 20px 0;min-height:auto;}.compass{display:none;}.weather-badge{display:none;}.sec{padding:60px 20px;}.trust-bar{padding:14px 20px;gap:0;justify-content:flex-start;overflow-x:auto;}.tb-item{padding:0 16px;font-size:0.75rem;}.reviews-grid{grid-template-columns:1fr;}.steps-grid{grid-template-columns:1fr 1fr;}.wk-grid{grid-template-columns:1fr;}.cats-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));}footer{padding:24px 20px;flex-direction:column;text-align:center;gap:10px;}.planner-cta{padding:60px 20px;}#g-toasts{max-width:230px;right:10px;bottom:10px;}.hero-stats{gap:16px;}.btn-fill,.btn-ghost{padding:13px 22px;font-size:0.88rem;}.trust-strip{display:none;}}
 @media(max-width:480px){.steps-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
 <div id="wave-intro">
+  <canvas id="wi-canvas"></canvas>
   <div class="wi-logo">Shore<span>List</span></div>
   <div class="wi-sub">Wilmington, NC &amp; the Beaches</div>
-  <div class="wi-waves">
-    <div class="wi-wave wi-w1"></div>
-    <div class="wi-wave wi-w2"></div>
-    <div class="wi-wave wi-w3"></div>
-  </div>
-  <div class="wi-sweep"></div>
 </div>
+<button id="mute-btn" title="Mute ocean sounds" aria-label="Mute ocean sounds">🌊</button>
 <div id="g-toasts"></div>
 <nav id="nav">
   <a href="/" class="logo"><span class="logo-s">Shore</span><span class="logo-l">List</span></a>
@@ -413,7 +409,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
       <div>
         <div class="feat-badge">✦ Featured Experience</div>
         <h2 class="feat-title">Wilmington Ghost Walk</h2>
-        <p class="feat-sub">90 spine-tingling minutes through the most haunted streets in one of America's oldest cities. Expert guide Sean Austin brings the stories of Wilmington's ghosts, Civil War spirits, and colonial hauntings to life.</p>
+        <p class="feat-sub">90 spine-tingling minutes through the most haunted streets in one of America's oldest cities. Expert guide Sean Austin brings the stories of Wilmington's ghosts, Civil War spirits, and colonial hauntings to life. The definitive Wilmington ghost experience.</p>
         <div class="feat-tags">
           <span class="feat-tag">Downtown Wilmington</span>
           <span class="feat-tag">90 Minutes</span>
@@ -510,11 +506,11 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
   <div class="sec-inner">
     <div class="sec-label">The People Behind ShoreList</div>
     <h2 class="sec-title">Real operators. <em>Real experiences.</em></h2>
-    <p class="sec-sub">ShoreList launched in 2025. We don't have hundreds of reviews yet — and we're not going to fabricate them. What we have is something better: three passionate local operators who know this coast better than anyone.</p>
+    <p class="sec-sub">ShoreList launched in 2025. We don't have hundreds of reviews yet — and we're not going to fabricate them. What we have is something better: three passionate local operators who know this coast better than anyone, and a platform built to connect them with visitors who are ready to explore.</p>
     <div class="reviews-grid">
       <div class="rv-card">
         <div class="rv-stars">👻 Ghost &amp; Historic Tours</div>
-        <div class="rv-text">Sean Austin has been guiding Wilmington ghost walks for years, with an encyclopedic knowledge of the city's darkest and most fascinating history. Downtown Wilmington. Thu–Sun evenings.</div>
+        <div class="rv-text" style="font-style:normal;">Sean Austin has been guiding Wilmington ghost walks for years, with an encyclopedic knowledge of the city's darkest and most fascinating history. Downtown Wilmington. Thu–Sun evenings.</div>
         <div class="rv-foot">
           <div class="rv-avatar" style="background:linear-gradient(135deg,#1a0533,#4a0e8f);">👻</div>
           <div><div class="rv-name">Sean Austin</div><div class="rv-meta">Wilmington Ghost Walk &nbsp;·&nbsp; From $25</div></div>
@@ -522,7 +518,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
       </div>
       <div class="rv-card">
         <div class="rv-stars">🏄 Surf Lessons</div>
-        <div class="rv-text">Tripp Cox is a certified surf instructor and Carolina Beach local. Whether you've never touched a board or want to level up, Tripp makes it happen. Carolina &amp; Wrightsville Beach.</div>
+        <div class="rv-text" style="font-style:normal;">Tripp Cox is a certified surf instructor and Carolina Beach local. Whether you've never touched a board or want to level up, Tripp makes it happen. Carolina &amp; Wrightsville Beach.</div>
         <div class="rv-foot">
           <div class="rv-avatar" style="background:linear-gradient(135deg,#0a3d5c,#1a7585);">🏄</div>
           <div><div class="rv-name">Tripp Cox</div><div class="rv-meta">Tripp Cox Surf School &nbsp;·&nbsp; From $75</div></div>
@@ -530,7 +526,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
       </div>
       <div class="rv-card">
         <div class="rv-stars">🌿 Nature &amp; Historic Walks</div>
-        <div class="rv-text">RJ Brideau is the founder of ShoreList and a Wilmington local. He leads historic walking tours and coastal nature walks through Carolina Beach State Park — home to wild Venus flytraps and ancient cypress swamps.</div>
+        <div class="rv-text" style="font-style:normal;">RJ Brideau is the founder of ShoreList and a Wilmington local. He leads historic walking tours and coastal nature walks through Carolina Beach State Park — home to wild Venus flytraps and ancient cypress swamps.</div>
         <div class="rv-foot">
           <div class="rv-avatar" style="background:linear-gradient(135deg,#0a2e1a,#1a7a56);">🌿</div>
           <div><div class="rv-name">RJ Brideau</div><div class="rv-meta">ShoreList Founder &amp; Local Guide &nbsp;·&nbsp; From $28</div></div>
@@ -538,7 +534,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
       </div>
     </div>
     <div class="reviews-cta" style="margin-top:40px;">
-      <p style="font-size:0.95rem;color:rgba(245,232,203,0.65);max-width:580px;margin:0 auto 20px;line-height:1.85;">We're building this the right way — real operators, real bookings, real reviews earned one experience at a time. Be one of our first guests. Your story helps us grow.</p>
+      <p style="font-size:0.95rem;color:rgba(245,232,203,0.65);max-width:580px;margin:0 auto 16px;line-height:1.85;">We're building this the right way — real operators, real bookings, real reviews earned one experience at a time. Be one of our first guests. Your story helps us grow.</p>
       <a href="#explore" class="btn-fill" style="display:inline-block;">Explore Experiences &rarr;</a>
     </div>
   </div>
@@ -579,9 +575,152 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
   </div>
 </footer>
 <script>
+// ── CANVAS WAVE INTRO ──
 document.body.style.overflow='hidden';
-window.addEventListener('load',function(){setTimeout(function(){document.getElementById('wave-intro').classList.add('hide');document.body.style.overflow='';},2500);});
-setTimeout(function(){document.getElementById('wave-intro').classList.add('hide');document.body.style.overflow='';},3400);
+(function(){
+  var canvas=document.getElementById('wi-canvas');
+  if(!canvas){document.body.style.overflow='';return;}
+  var ctx=canvas.getContext('2d');
+  var dpr=Math.min(window.devicePixelRatio||1,2);
+  var W,H;
+  function resize(){
+    W=window.innerWidth;H=window.innerHeight;
+    canvas.width=W*dpr;canvas.height=H*dpr;
+    canvas.style.width=W+'px';canvas.style.height=H+'px';
+    ctx.setTransform(1,0,0,1,0,0);ctx.scale(dpr,dpr);
+  }
+  resize();window.addEventListener('resize',resize);
+  var isMobile=W<768;
+  var foam=[];var startTime=null;
+  var RUSH_DUR=1800;var FADE_START=2800;var FADE_DUR=800;var DONE=false;
+  function easeOut(t){return 1-Math.pow(1-t,2.8);}
+  function wY(x,t,a,f,ph){return a*Math.sin(x*f+t+ph)+a*0.38*Math.sin(x*f*1.9-t*1.4+ph)+a*0.18*Math.cos(x*f*2.8+t*0.8+ph);}
+  function spawnFoam(x,y,n){
+    var count=isMobile?Math.ceil(n/2):n;
+    for(var i=0;i<count;i++){foam.push({x:x+(Math.random()-0.5)*28,y:y-Math.random()*8,vx:Math.random()*2.8+0.8,vy:-(Math.random()*2.2+0.4),r:Math.random()*3+1.2,life:1,decay:0.016+Math.random()*0.018});}
+  }
+  function draw(ts){
+    if(DONE)return;
+    if(!startTime)startTime=ts;
+    var elapsed=ts-startTime;var t=elapsed/1000;
+    W=window.innerWidth;H=window.innerHeight;
+    ctx.clearRect(0,0,W,H);
+    var rushP=Math.min(elapsed/RUSH_DUR,1);
+    var wx=easeOut(rushP)*(W+280)-90;
+    var fillW=Math.min(wx+30,W);
+    if(fillW>0){
+      var og=ctx.createLinearGradient(0,0,fillW,0);
+      og.addColorStop(0,'#030e14');og.addColorStop(0.35,'#052535');og.addColorStop(0.75,'#073D4A');og.addColorStop(1,'#0a4a5a');
+      ctx.fillStyle=og;ctx.fillRect(0,0,fillW,H);
+      var dg=ctx.createLinearGradient(0,H*0.55,0,H);
+      dg.addColorStop(0,'transparent');dg.addColorStop(1,'rgba(1,8,12,0.75)');
+      ctx.fillStyle=dg;ctx.fillRect(0,0,fillW,H);
+      if(!isMobile){
+        for(var layer=0;layer<3;layer++){
+          ctx.beginPath();var yb=H*(0.22+layer*0.16);ctx.moveTo(0,yb);
+          for(var x=0;x<=fillW;x+=5){ctx.lineTo(x,yb+wY(x,t*0.8,6,0.035,layer*2.1));}
+          ctx.lineTo(fillW,H);ctx.lineTo(0,H);ctx.closePath();
+          ctx.fillStyle='rgba(20,100,120,'+(0.10-layer*0.028)+')';ctx.fill();
+        }
+      }
+    }
+    if(wx>-160&&wx<W+160){
+      var waveH=H*0.80;var crestY=H-waveH;
+      ctx.beginPath();var backX=Math.min(wx+130,W);
+      ctx.moveTo(backX,H);ctx.lineTo(backX,crestY+H*0.17);
+      for(var i=130;i>=-90;i-=3){
+        var px=wx+i;var curlDrop=i<0?i*i*0.0022:0;
+        var py=crestY+wY(px,t*2.8,16,0.020,0)+curlDrop;ctx.lineTo(px,py);
+      }
+      ctx.lineTo(wx-90,H);ctx.closePath();
+      var wg=ctx.createLinearGradient(wx-90,crestY,wx+130,crestY);
+      wg.addColorStop(0,'rgba(215,248,255,0.94)');wg.addColorStop(0.12,'rgba(40,180,220,0.97)');wg.addColorStop(0.38,'rgba(12,100,130,0.99)');wg.addColorStop(0.72,'rgba(5,45,62,1)');wg.addColorStop(1,'rgba(2,18,28,1)');
+      ctx.fillStyle=wg;ctx.fill();
+      ctx.beginPath();ctx.moveTo(Math.min(wx+80,W),crestY+H*0.18);
+      for(var i=70;i>=5;i-=4){var px=wx+i;var py=crestY+wY(px,t*2.8,16,0.020,0)+10;ctx.lineTo(px,py);}
+      ctx.lineTo(wx+5,crestY+H*0.28);ctx.closePath();ctx.fillStyle='rgba(120,220,245,0.10)';ctx.fill();
+      ctx.beginPath();var fStarted=false;
+      for(var i=80;i>=-55;i-=3){var px=wx+i;if(px<0||px>W)continue;var py=crestY+wY(px,t*2.8,16,0.020,0)-7;if(!fStarted){ctx.moveTo(px,py);fStarted=true;}else ctx.lineTo(px,py);}
+      ctx.strokeStyle='rgba(255,255,255,0.92)';ctx.lineWidth=5;ctx.lineCap='round';ctx.lineJoin='round';ctx.stroke();
+      for(var w=0;w<4;w++){
+        ctx.beginPath();var ws=false;
+        for(var i=60-w*12;i>=-35-w*8;i-=5){var px=wx+i;if(px<0||px>W)continue;var py=crestY+wY(px,t*2.8,16,0.020,0)+w*5+5;if(!ws){ctx.moveTo(px,py);ws=true;}else ctx.lineTo(px,py);}
+        ctx.strokeStyle='rgba(255,255,255,'+(0.52-w*0.10)+')';ctx.lineWidth=3-w*0.5;ctx.stroke();
+      }
+      if(wx>0&&wx<W&&elapsed%55<18){var fpx=wx+(Math.random()-0.5)*55;var fpy=crestY+wY(fpx,t*2.8,16,0.020,0)-7;spawnFoam(fpx,fpy,5);}
+    }
+    for(var i=foam.length-1;i>=0;i--){
+      var p=foam[i];p.x+=p.vx;p.y+=p.vy;p.vy+=0.09;p.vx*=0.97;p.life-=p.decay;
+      if(p.life<=0||p.x>W||p.y>H){foam.splice(i,1);continue;}
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r*p.life,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,'+(p.life*0.72)+')';ctx.fill();
+    }
+    if(elapsed>FADE_START){
+      var fp=Math.min((elapsed-FADE_START)/FADE_DUR,1);
+      ctx.fillStyle='rgba(4,31,40,'+fp+')';ctx.fillRect(0,0,W,H);
+      if(fp>=1){DONE=true;var wi=document.getElementById('wave-intro');if(wi)wi.classList.add('hide');document.body.style.overflow='';return;}
+    }
+    requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+  setTimeout(function(){if(DONE)return;DONE=true;var wi=document.getElementById('wave-intro');if(wi)wi.classList.add('hide');document.body.style.overflow='';},4500);
+})();
+
+// ── OCEAN AMBIENT AUDIO ──
+(function(){
+  var AC=window.AudioContext||window.webkitAudioContext;
+  if(!AC)return;
+  var ctx=null,master=null,muted=false,started=false;
+  function buildOcean(){
+    if(started)return;started=true;
+    try{
+      ctx=new AC();master=ctx.createGain();
+      master.gain.setValueAtTime(0,ctx.currentTime);master.gain.linearRampToValueAtTime(0.20,ctx.currentTime+5);master.connect(ctx.destination);
+      var rate=ctx.sampleRate;var buf=ctx.createBuffer(2,rate*12,rate);
+      for(var ch=0;ch<2;ch++){var d=buf.getChannelData(ch);var last=0;for(var i=0;i<d.length;i++){var w=Math.random()*2-1;d[i]=(last+0.022*w)/1.022;last=d[i];d[i]*=3.8;}}
+      var src=ctx.createBufferSource();src.buffer=buf;src.loop=true;
+      var lp=ctx.createBiquadFilter();lp.type='lowpass';lp.frequency.value=680;lp.Q.value=0.7;
+      var bp=ctx.createBiquadFilter();bp.type='bandpass';bp.frequency.value=220;bp.Q.value=0.6;
+      var lfo=ctx.createOscillator();lfo.type='sine';lfo.frequency.value=0.09;
+      var lfoGain=ctx.createGain();lfoGain.gain.value=0.38;lfo.connect(lfoGain);
+      var waveVol=ctx.createGain();waveVol.gain.value=0.62;lfoGain.connect(waveVol.gain);
+      src.connect(lp);lp.connect(bp);bp.connect(waveVol);waveVol.connect(master);src.start(0);lfo.start(0);
+      var buf2=ctx.createBuffer(1,rate*8,rate);var d2=buf2.getChannelData(0);var last2=0;
+      for(var i=0;i<d2.length;i++){var w2=Math.random()*2-1;d2[i]=(last2+0.05*w2)/1.05;last2=d2[i];d2[i]*=2.2;}
+      var src2=ctx.createBufferSource();src2.buffer=buf2;src2.loop=true;
+      var hp2=ctx.createBiquadFilter();hp2.type='bandpass';hp2.frequency.value=550;hp2.Q.value=1.2;
+      var surfGain=ctx.createGain();surfGain.gain.value=0.18;src2.connect(hp2);hp2.connect(surfGain);surfGain.connect(master);src2.start(0);
+      scheduleSeagull();
+    }catch(e){}
+  }
+  function scheduleSeagull(){
+    if(!ctx||!master)return;
+    var delay=11000+Math.random()*20000;
+    setTimeout(function(){
+      if(!ctx||muted){scheduleSeagull();return;}
+      try{
+        var now=ctx.currentTime;var baseF=1350+Math.random()*550;
+        cry(now,baseF,0.058);
+        if(Math.random()>0.42)cry(now+1.3+Math.random()*0.5,baseF*(0.82+Math.random()*0.38),0.044);
+        if(Math.random()>0.65)cry(now+2.6+Math.random()*0.8,baseF*(0.75+Math.random()*0.5),0.028);
+      }catch(e){}
+      scheduleSeagull();
+    },delay);
+  }
+  function cry(now,f,vol){
+    var osc=ctx.createOscillator();var g=ctx.createGain();osc.connect(g);g.connect(master);osc.type='sine';
+    g.gain.setValueAtTime(0,now);g.gain.linearRampToValueAtTime(vol,now+0.08);g.gain.setValueAtTime(vol*0.85,now+0.22);g.gain.linearRampToValueAtTime(vol*0.95,now+0.44);g.gain.linearRampToValueAtTime(vol*0.55,now+0.65);g.gain.linearRampToValueAtTime(0,now+0.88);
+    osc.frequency.setValueAtTime(f*0.80,now);osc.frequency.linearRampToValueAtTime(f*1.40,now+0.11);osc.frequency.linearRampToValueAtTime(f*0.88,now+0.26);osc.frequency.linearRampToValueAtTime(f*1.28,now+0.46);osc.frequency.linearRampToValueAtTime(f*0.72,now+0.88);
+    osc.start(now);osc.stop(now+0.95);
+  }
+  setTimeout(function(){try{buildOcean();}catch(e){}},3200);
+  var once=false;
+  function firstTouch(){if(once)return;once=true;try{buildOcean();}catch(e){}document.removeEventListener('touchstart',firstTouch);document.removeEventListener('click',firstTouch);}
+  document.addEventListener('touchstart',firstTouch,{passive:true});document.addEventListener('click',firstTouch);
+  var btn=document.getElementById('mute-btn');
+  if(btn){btn.addEventListener('click',function(e){e.stopPropagation();muted=!muted;if(master&&ctx){master.gain.cancelScheduledValues(ctx.currentTime);master.gain.setTargetAtTime(muted?0:0.20,ctx.currentTime,0.9);}btn.innerHTML=muted?'🔇':'🌊';btn.title=muted?'Unmute ocean sounds':'Mute ocean sounds';});}
+})();
+
+// ── NAV ──
 var _nav=document.getElementById('nav');
 window.addEventListener('scroll',function(){if(window.scrollY>60){_nav.style.background='rgba(10,77,92,0.97)';_nav.style.backdropFilter='blur(18px)';}else{_nav.style.background='transparent';_nav.style.backdropFilter='none';}});
 function toggleNav(){var b=document.getElementById('nav-mob');var d=document.getElementById('mob-drawer');b.classList.toggle('open');d.classList.toggle('open');document.body.style.overflow=d.classList.contains('open')?'hidden':'';}
@@ -602,7 +741,7 @@ var TOASTS=[
   {ico:'🌿',bg:'linear-gradient(135deg,#0a2e1a,#1a7a56)',name:'Nature Walk · Weekend slots open',action:'8 AM, 10 AM and 2 PM available'},
 ];
 var toastIdx=0;var gtc=document.getElementById('g-toasts');
-function showGToast(){if(!gtc)return;var d=TOASTS[toastIdx%TOASTS.length];toastIdx++;var el=document.createElement('div');el.className='g-toast';el.innerHTML='<div class="gt-ico" style="background:'+d.bg+'">'+d.ico+'</div><div class="gt-body"><div class="gt-name">'+d.name+'</div><div class="gt-action">'+d.action+'</div></div><div class="gt-time">live</div>';gtc.appendChild(el);setTimeout(function(){el.classList.add('show');},50);setTimeout(function(){el.classList.remove('show');setTimeout(function(){if(el.parentNode)el.parentNode.removeChild(el);},500);},5500);}
+function showGToast(){if(!gtc)return;var d=TOASTS[toastIdx%TOASTS.length];toastIdx++;var el=document.createElement('div');el.className='g-toast';el.innerHTML='<div class="gt-ico" style="background:'+d.bg+'">'+d.ico+'</div><div class="gt-body"><div class="gt-name">'+d.name+'</div><div class="gt-action">'+d.action+'</div></div><div class="gt-time">just now</div>';gtc.appendChild(el);setTimeout(function(){el.classList.add('show');},50);setTimeout(function(){el.classList.remove('show');setTimeout(function(){if(el.parentNode)el.parentNode.removeChild(el);},500);},5500);}
 setTimeout(showGToast,4800);setInterval(showGToast,24000);
 var PHRASES=['Romantic weekend for 2. We love sunsets and the water...','Family trip with kids — adventure, nature, and fun...','Bachelor party for 6. Max adrenaline. Flexible budget...','Solo traveler, one day — show me the real Wilmington...',];
 var ti=0,tc=0,td=false;var tel=document.getElementById('typewriter-text');
