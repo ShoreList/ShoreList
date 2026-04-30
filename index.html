@@ -45,6 +45,8 @@ nav.scrolled{background:rgba(10,77,92,0.97);backdrop-filter:blur(18px);border-bo
 .nav-links a{font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,232,203,0.65);text-decoration:none;white-space:nowrap;transition:color 0.2s;}
 .nav-links a:hover{color:var(--cream);}
 .nav-links a.nav-planner{color:var(--coral);}
+.nav-links a.nav-op{color:rgba(245,232,203,0.30)!important;font-size:0.72rem!important;letter-spacing:0.06em!important;}
+.nav-links a.nav-op:hover{color:rgba(245,232,203,0.55)!important;}
 .nav-cta{background:var(--coral)!important;color:white!important;padding:9px 22px!important;border-radius:6px;font-weight:700!important;transition:background 0.2s!important;}
 .nav-cta:hover{background:var(--coral2)!important;}
 .nav-mob{display:none;flex-direction:column;gap:5px;background:transparent;border:none;cursor:pointer;padding:5px;z-index:201;}
@@ -272,6 +274,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
   <div class="nav-links">
     <a href="#explore">Experiences</a>
     <a href="/planner" class="nav-planner">✦ Plan My Trip</a>
+    <a href="/join" class="nav-op">Operators</a>
     <a href="#contact" class="nav-cta">Book Now</a>
   </div>
   <button class="nav-mob" id="nav-mob" onclick="toggleNav()" aria-label="Menu">
@@ -283,6 +286,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
   <a href="/planner" onclick="closeNav()">✦ AI Trip Planner</a>
   <a href="#how" onclick="closeNav()">How It Works</a>
   <a href="#contact" class="mob-cta" onclick="closeNav()">Book Now</a>
+  <a href="/join" onclick="closeNav()" style="font-size:0.80rem;color:rgba(245,232,203,0.30);margin-top:8px;padding:10px 0;border-top:1px solid rgba(255,255,255,0.04);">Are you a local operator? →</a>
 </div>
 <section class="hero" id="hero">
   <div class="hero-grad"></div>
@@ -588,7 +592,7 @@ function sT(id,d){setTimeout(function(){var e=document.getElementById(id);if(e)e
 function hT(id,d){setTimeout(function(){var e=document.getElementById(id);if(e)e.classList.remove('show');},d);}
 sT('xt1',2700);hT('xt1',6600);sT('xt2',4000);hT('xt2',7800);
 setTimeout(function(){sT('xt1',0);hT('xt1',3800);sT('xt2',1400);hT('xt2',5200);},12000);
-(function(){var WC={0:'☀️ Clear skies',1:'🌤️ Mostly clear',2:'⛅ Partly cloudy',3:'☁️ Overcast',51:'🌦️ Light drizzle',61:'🌧️ Light rain',80:'🌦️ Showers',95:'⛈️ Thunderstorm'};fetch('https://api.open-meteo.com/v1/forecast?latitude=34.2257&longitude=-77.9447&current=temperature_2m,weather_code&temperature_unit=fahrenheit').then(function(r){return r.json();}).then(function(d){var c=d.current||{};var t=c.temperature_2m?Math.round(c.temperature_2m)+'°F':'74°F';var wc=WC[c.weather_code]||'🌤️ Clear skies';var te=document.getElementById('wb-temp');var ce=document.getElementById('wb-cond');if(te)te.textContent=t;if(ce)ce.textContent=wc;}).catch(function(){var ce=document.getElementById('wb-cond');if(ce)ce.textContent='Beautiful coastal weather';});})();
+(function(){var WC={0:'☀️ Clear skies',1:'🌤️ Mostly clear',2:'⛅ Partly cloudy',3:'☁️ Overcast',51:'🌦️ Light drizzle',53:'🌦️ Drizzle',61:'🌧️ Light rain',63:'🌧️ Rain',80:'🌦️ Showers',95:'⛈️ Thunderstorm'};fetch('https://api.open-meteo.com/v1/forecast?latitude=34.2257&longitude=-77.9447&current=temperature_2m,weather_code&temperature_unit=fahrenheit').then(function(r){return r.json();}).then(function(d){var c=d.current||{};var t=c.temperature_2m?Math.round(c.temperature_2m)+'°F':'74°F';var wc=WC[c.weather_code]||'🌤️ Clear skies';var te=document.getElementById('wb-temp');var ce=document.getElementById('wb-cond');if(te)te.textContent=t;if(ce)ce.textContent=wc;}).catch(function(){var ce=document.getElementById('wb-cond');if(ce)ce.textContent='Beautiful coastal weather';});})();
 var TOASTS=[
   {ico:'👻',bg:'linear-gradient(135deg,#1a0533,#4a0e8f)',name:'Ghost Walk · Downtown Wilmington',action:'Thu–Sun evenings · From $25'},
   {ico:'🏄',bg:'linear-gradient(135deg,#0a3d5c,#1a7585)',name:'Surf Lessons · Carolina Beach',action:'With Tripp Cox · From $75'},
