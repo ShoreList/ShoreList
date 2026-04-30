@@ -6,7 +6,7 @@
 <title>ShoreList — Wilmington, NC Coastal Experiences</title>
 <meta name="description" content="Book local coastal experiences in Wilmington, NC — ghost tours, fishing charters, surf lessons, kayak tours and more. Instant booking, refundable deposit."/>
 <meta property="og:title" content="ShoreList — Wilmington, NC Coastal Experiences"/>
-<meta property="og:description" content="Book unforgettable local experiences across Wilmington and the NC beaches. Instant booking, verified operators, refundable deposit."/>
+<meta property="og:description" content="Book unforgettable local experiences across Wilmington and the NC beaches. Instant booking, curated operators, refundable deposit."/>
 <meta property="og:type" content="website"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
@@ -74,86 +74,76 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 48px;display:fl
 .bk-input{width:100%;background:white;border:1px solid rgba(10,77,92,0.12);border-radius:8px;padding:13px 15px;font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--dark);outline:none;transition:border-color 0.2s,box-shadow 0.2s;-webkit-appearance:none;appearance:none;}
 .bk-input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(10,77,92,0.08);}
 .bk-input::placeholder{color:rgba(44,74,82,0.30);}
-.bk-input option{background:white;color:var(--dark);}
 textarea.bk-input{resize:vertical;min-height:80px;line-height:1.6;}
-.cal-section{margin-bottom:16px;}
+.cal-section{margin-bottom:24px;}
 .cal-lbl{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(10,77,92,0.5);margin-bottom:12px;}
-.cal-box{background:white;border:1px solid rgba(10,77,92,0.12);border-radius:12px;padding:20px 18px;}
-.cal-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
-.cal-arrow{background:white;border:1px solid rgba(10,77,92,0.12);border-radius:7px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:0.85rem;color:var(--teal);transition:all 0.15s;flex-shrink:0;}
-.cal-arrow:hover{background:var(--teal);color:white;border-color:var(--teal);}
+.cal-box{background:white;border:1px solid rgba(10,77,92,0.12);border-radius:10px;overflow:hidden;}
+.cal-hd{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid rgba(10,77,92,0.08);}
+.cal-arrow{background:none;border:none;font-size:1.1rem;cursor:pointer;color:var(--teal);padding:4px 10px;border-radius:6px;transition:background 0.2s;}
+.cal-arrow:hover{background:rgba(10,77,92,0.07);}
 .cal-mlbl{font-size:0.95rem;font-weight:700;color:var(--teal);}
-.cal-g{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;}
-.cal-dh{text-align:center;font-size:0.62rem;font-weight:700;color:rgba(44,74,82,0.38);letter-spacing:0.06em;padding:4px 0 8px;}
-.cal-d{aspect-ratio:1;border-radius:7px;border:1.5px solid transparent;display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:500;color:var(--dark);position:relative;transition:all 0.12s;}
-.cal-d.empty,.cal-d.past{color:rgba(44,74,82,0.18);cursor:default;}
-.cal-d.no{color:rgba(44,74,82,0.22);cursor:default;}
-.cal-d.yes{cursor:pointer;border-color:rgba(10,77,92,0.08);background:rgba(10,77,92,0.02);}
-.cal-d.yes:hover{border-color:var(--teal);background:rgba(10,77,92,0.07);transform:scale(1.06);}
-.cal-d.yes::after{content:'';position:absolute;bottom:3px;left:50%;transform:translateX(-50%);width:4px;height:4px;border-radius:50%;background:#22c55e;}
-.cal-d.today-ring:not(.picked){border-color:var(--coral);color:var(--coral);font-weight:700;}
-.cal-d.picked{background:var(--teal)!important;border-color:var(--teal)!important;color:white!important;font-weight:700;}
-.cal-d.picked::after{background:rgba(255,255,255,0.6);}
-.slots-area{margin-top:16px;padding-top:16px;border-top:1px solid rgba(10,77,92,0.07);}
-.slots-for{font-size:0.85rem;font-weight:600;color:var(--teal);margin-bottom:12px;}
-.slots-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:8px;}
-.slt{padding:11px 8px;border-radius:8px;border:1.5px solid rgba(10,77,92,0.12);background:white;font-family:'DM Sans',sans-serif;font-size:0.84rem;font-weight:600;color:var(--teal);cursor:pointer;transition:all 0.15s;text-align:center;line-height:1.3;}
-.slt:hover:not(.slt-taken){border-color:var(--coral);color:var(--coral);background:rgba(233,102,69,0.04);}
-.slt.slt-picked{background:var(--coral);border-color:var(--coral);color:white;}
-.slt.slt-taken{background:rgba(44,74,82,0.04);border-color:transparent;color:rgba(44,74,82,0.25);cursor:not-allowed;font-size:0.78rem;}
-.slt-sub{font-size:0.60rem;opacity:0.6;display:block;margin-top:2px;}
-.bk-sel-summary{display:none;margin-top:14px;padding:11px 15px;background:rgba(10,77,92,0.06);border:1px solid rgba(10,77,92,0.12);border-radius:8px;font-size:0.87rem;color:var(--teal);font-weight:600;}
-.bk-sel-summary.on{display:flex;align-items:center;gap:8px;}
-.dep-row{background:white;border:1px solid rgba(233,102,69,0.18);border-radius:10px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;margin:18px 0;}
-.dep-lbl{font-size:0.85rem;font-weight:600;color:var(--mid);}
-.dep-note{font-size:0.73rem;color:rgba(44,74,82,0.45);margin-top:2px;line-height:1.5;}
-.dep-amt{font-size:1.3rem;font-weight:700;color:var(--coral);}
-.bk-err{background:rgba(200,70,42,0.07);border:1px solid rgba(200,70,42,0.18);border-radius:7px;padding:11px 14px;font-size:0.84rem;color:#c8462a;margin-top:8px;display:none;}
-.bk-acts{display:flex;gap:12px;align-items:center;margin-top:6px;}
-.btn-sub{background:var(--teal);color:white;border:none;padding:16px 32px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;cursor:pointer;transition:all 0.2s;flex:1;}
-.btn-sub:hover{background:var(--teal2);}
-.btn-sub:disabled{opacity:0.48;cursor:not-allowed;}
-.btn-cxl{background:transparent;border:1px solid rgba(10,77,92,0.14);color:var(--mid);padding:16px 22px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.9rem;cursor:pointer;transition:all 0.2s;white-space:nowrap;}
-.btn-cxl:hover{background:rgba(10,77,92,0.04);}
-.stripe-line{font-size:0.72rem;color:rgba(44,74,82,0.38);text-align:center;margin-top:12px;line-height:1.6;}
-.coming-soon{background:white;border:1px solid var(--border);border-radius:16px;padding:64px 48px;text-align:center;margin-bottom:48px;}
-.cs-ico{font-size:4rem;margin-bottom:20px;display:block;}
-.cs-title{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:900;color:var(--teal);margin-bottom:14px;}
-.cs-sub{font-size:1rem;color:var(--mid);line-height:1.8;max-width:460px;margin:0 auto 32px;}
-.notify-form{display:flex;gap:10px;justify-content:center;max-width:400px;margin:0 auto;}
-.notify-inp{flex:1;background:var(--lgray);border:1px solid rgba(10,77,92,0.12);border-radius:8px;padding:13px 16px;font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--dark);outline:none;transition:border-color 0.2s;}
+.cal-g{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;padding:12px;}
+.cal-dh{text-align:center;font-size:0.68rem;font-weight:700;color:rgba(10,77,92,0.35);letter-spacing:0.06em;padding:4px 0;}
+.cal-d{text-align:center;padding:9px 4px;border-radius:7px;font-size:0.88rem;font-weight:500;cursor:default;color:rgba(10,77,92,0.25);}
+.cal-d.yes{background:rgba(10,77,92,0.06);color:var(--teal);cursor:pointer;font-weight:600;}
+.cal-d.yes:hover{background:rgba(10,77,92,0.13);}
+.cal-d.picked{background:var(--teal);color:white;}
+.cal-d.today-ring{box-shadow:0 0 0 2px var(--coral);}
+.cal-d.empty{background:transparent;}
+.slots-area{padding:14px 18px 16px;border-top:1px solid rgba(10,77,92,0.07);}
+.slots-for{font-size:0.82rem;font-weight:600;color:var(--teal);margin-bottom:10px;}
+.slots-row{display:flex;gap:8px;flex-wrap:wrap;}
+.slt{background:rgba(10,77,92,0.06);border:1.5px solid rgba(10,77,92,0.15);border-radius:8px;padding:9px 16px;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:600;color:var(--teal);cursor:pointer;transition:all 0.2s;display:flex;flex-direction:column;align-items:center;}
+.slt:hover:not(.slt-taken){background:var(--teal);color:white;border-color:var(--teal);}
+.slt-picked{background:var(--teal);color:white;border-color:var(--teal);}
+.slt-taken{opacity:0.38;cursor:default;text-decoration:line-through;}
+.slt-sub{font-size:0.65rem;font-weight:500;margin-top:2px;}
+.bk-sel-summary{margin-top:12px;padding:10px 14px;border-radius:8px;background:rgba(10,77,92,0.06);font-size:0.88rem;color:var(--teal);display:none;}
+.bk-sel-summary.on{display:block;}
+.dep-row{display:flex;align-items:center;justify-content:space-between;background:rgba(10,77,92,0.05);border:1px solid rgba(10,77,92,0.10);border-radius:10px;padding:16px 18px;margin-bottom:18px;}
+.dep-lbl{font-size:0.9rem;font-weight:700;color:var(--teal);}
+.dep-note{font-size:0.75rem;color:var(--mid);margin-top:3px;}
+.dep-amt{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:var(--teal);}
+.bk-err{display:none;background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:12px 16px;font-size:0.88rem;color:#dc2626;margin-bottom:14px;}
+.bk-acts{display:flex;gap:12px;align-items:center;}
+.btn-cxl{background:transparent;border:1px solid rgba(10,77,92,0.20);color:var(--mid);padding:13px 22px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.9rem;cursor:pointer;transition:all 0.2s;}
+.btn-cxl:hover{border-color:rgba(10,77,92,0.40);}
+.btn-sub{background:var(--coral);color:white;border:none;padding:14px 28px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;cursor:pointer;transition:all 0.2s;flex:1;}
+.btn-sub:hover{background:var(--coral2);transform:translateY(-1px);}
+.btn-sub:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
+.stripe-line{font-size:0.75rem;color:rgba(44,74,82,0.45);text-align:center;margin-top:14px;line-height:1.6;}
+.coming-soon{text-align:center;padding:72px 32px;max-width:520px;margin:0 auto;}
+.cs-ico{font-size:3.5rem;display:block;margin-bottom:20px;}
+.cs-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--teal);margin-bottom:12px;}
+.cs-sub{font-size:0.95rem;color:var(--mid);line-height:1.85;margin-bottom:28px;}
+.notify-form{display:flex;gap:10px;max-width:400px;margin:0 auto 12px;}
+.notify-inp{flex:1;background:white;border:1.5px solid rgba(10,77,92,0.18);border-radius:8px;padding:13px 16px;font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--dark);outline:none;}
 .notify-inp:focus{border-color:var(--teal);}
-.notify-inp::placeholder{color:rgba(44,74,82,0.35);}
-.btn-notify{background:var(--coral);color:white;border:none;padding:13px 26px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:background 0.2s;}
-.btn-notify:hover{background:var(--coral2);}
-.notify-done{font-size:0.88rem;color:var(--teal);font-weight:600;margin-top:14px;display:none;}
-.list-cta{background:var(--teal);border-radius:16px;padding:52px 60px;display:flex;align-items:center;justify-content:space-between;gap:40px;margin-bottom:64px;position:relative;overflow:hidden;}
-.list-cta::before{content:'';position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:rgba(233,102,69,0.10);}
-.lc-text{position:relative;z-index:1;}
-.lc-tag{font-size:0.68rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;}
-.lc-title{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;color:var(--cream2);line-height:1.1;margin-bottom:8px;}
-.lc-sub{font-size:0.9rem;color:rgba(245,232,203,0.60);line-height:1.75;max-width:460px;}
-.lc-btn{background:var(--coral);color:white;text-decoration:none;padding:17px 38px;border-radius:8px;font-weight:700;font-size:0.95rem;white-space:nowrap;transition:all 0.2s;position:relative;z-index:1;flex-shrink:0;}
-.lc-btn:hover{background:var(--coral2);transform:translateY(-1px);}
-.more-sec{margin-top:64px;}
-.more-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px;}
-.more-card{background:white;border:1px solid rgba(10,77,92,0.07);border-radius:12px;padding:22px 16px;text-align:center;cursor:pointer;transition:all 0.22s;text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:8px;}
-.more-card:hover{transform:translateY(-3px);border-color:rgba(10,77,92,0.18);box-shadow:0 12px 32px rgba(10,77,92,0.08);}
-.more-ico{font-size:1.9rem;}
-.more-name{font-size:0.82rem;font-weight:600;color:var(--teal);line-height:1.3;}
-.more-live{font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1a7a4a;background:rgba(26,122,74,0.10);border-radius:4px;padding:2px 8px;}
-footer{background:var(--dark);padding:40px 48px;text-align:center;}
-.foot-logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--cream2);margin-bottom:8px;}
+.btn-notify{background:var(--teal);color:white;border:none;padding:13px 22px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer;white-space:nowrap;}
+.notify-done{display:none;font-size:0.9rem;color:#1a7a4a;font-weight:600;padding:12px;}
+.list-cta{background:var(--teal);border-radius:16px;padding:40px 44px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:72px;}
+.lc-tag{font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(245,232,203,0.45);margin-bottom:8px;}
+.lc-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--cream2);margin-bottom:8px;line-height:1.2;}
+.lc-sub{font-size:0.87rem;color:rgba(245,232,203,0.60);line-height:1.75;max-width:500px;}
+.lc-btn{background:var(--coral);color:white;text-decoration:none;padding:14px 28px;border-radius:8px;font-weight:700;font-size:0.92rem;white-space:nowrap;transition:background 0.2s;flex-shrink:0;}
+.lc-btn:hover{background:var(--coral2);}
+.more-sec{margin-bottom:40px;}
+.more-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-top:24px;}
+.more-card{background:white;border:1px solid var(--border);border-radius:10px;padding:20px 14px;text-align:center;text-decoration:none;transition:all 0.2s;display:block;}
+.more-card:hover{border-color:var(--coral);transform:translateY(-3px);box-shadow:0 8px 24px rgba(10,77,92,0.10);}
+.more-ico{font-size:1.7rem;margin-bottom:7px;}
+.more-name{font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--teal);}
+.more-live{font-size:0.60rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1a7a4a;margin-top:4px;}
+footer{background:var(--teal);padding:28px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.foot-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;color:var(--cream2);}
 .foot-logo span{color:var(--coral);}
-.foot-txt{font-size:0.82rem;color:rgba(245,232,203,0.35);line-height:1.8;}
-.foot-txt a{color:rgba(245,232,203,0.50);text-decoration:none;}
-.foot-txt a:hover{color:var(--coral);}
-@media(max-width:900px){.more-grid{grid-template-columns:repeat(2,1fr);}.list-cta{flex-direction:column;padding:36px 28px;gap:28px;text-align:center;}.list-cta::before{display:none;}}
-@media(max-width:768px){nav{padding:16px 20px;}.hero{padding:100px 20px 48px;}.main{padding:40px 20px 80px;}.op-card-body{padding:24px 20px;}.book-form-wrap{padding:24px 20px;}.op-card-header{flex-direction:column;gap:8px;}.bk-row{grid-template-columns:1fr;}.hero-top{flex-direction:column;gap:16px;}.notify-form{flex-direction:column;}.bk-acts{flex-direction:column;}.btn-sub,.btn-cxl{width:100%;}.slots-row{grid-template-columns:repeat(2,1fr);}.coming-soon{padding:40px 24px;}}
+.foot-txt{font-size:0.78rem;color:rgba(245,232,203,0.45);}
+.foot-txt a{color:rgba(245,232,203,0.60);text-decoration:none;}
+@media(max-width:900px){.list-cta{flex-direction:column;}.lc-btn{width:100%;text-align:center;}}
+@media(max-width:768px){nav{padding:15px 20px;}.hero{padding:90px 20px 48px;}.main{padding:40px 20px 80px;}.op-card-body{padding:24px 20px;}.book-form-wrap{padding:24px 20px;}.bk-row{grid-template-columns:1fr;}.op-card-header{flex-direction:column;gap:8px;}.op-price-tag{text-align:left;}footer{padding:24px 20px;flex-direction:column;text-align:center;}}
 </style>
 </head>
 <body>
-
 <nav>
   <a href="/" class="nav-logo">Shore<span>List</span></a>
   <div class="nav-right">
@@ -161,10 +151,9 @@ footer{background:var(--dark);padding:40px 48px;text-align:center;}
     <a href="/join" class="nav-join">List Your Business</a>
   </div>
 </nav>
-
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-breadcrumb"><a href="/">ShoreList</a> &nbsp;&#8250;&nbsp; <span id="hbc">Experiences</span></div>
+    <div class="hero-breadcrumb"><a href="/">ShoreList</a> &nbsp;/&nbsp; <span id="hbc">Experiences</span></div>
     <div class="hero-top">
       <div class="hero-icon" id="hico">&#127758;</div>
       <div>
@@ -176,21 +165,18 @@ footer{background:var(--dark);padding:40px 48px;text-align:center;}
     <div class="hero-meta" id="hmeta"></div>
   </div>
 </section>
-
 <div class="main" id="mc"></div>
-
 <footer>
   <div class="foot-logo">Shore<span>List</span></div>
   <p class="foot-txt">Wilmington, NC &amp; the Beaches &nbsp;&middot;&nbsp; <a href="/">Shorelist.net</a> &nbsp;&middot;&nbsp; <a href="mailto:shorelistwilmington@gmail.com">shorelistwilmington@gmail.com</a></p>
 </footer>
-
 <script>
 var CAT_DATA={
   'ghost-tours':{icon:'&#128123;',title:'Ghost Tours',sub:'Spine-tingling walks through Wilmington\'s most haunted streets with expert local guides.'},
   'fishing-charters':{icon:'&#127907;',title:'Fishing Charters',sub:'Half and full-day offshore charters from Carolina Beach and Wrightsville Beach.'},
   'kayak-tours':{icon:'&#128675;',title:'Kayak Tours',sub:'Guided paddle adventures through tidal creeks, salt marshes, and barrier islands of coastal NC.'},
   'river-cruises':{icon:'&#128741;',title:'River Cruises',sub:'Sunset and sightseeing cruises along the Wilmington waterfront and Cape Fear River.'},
-  'surf-lessons':{icon:'&#127940;',title:'Surf Lessons',sub:'Learn to surf at Wrightsville Beach with certified local instructors. All gear included.'},
+  'surf-lessons':{icon:'&#127940;',title:'Surf Lessons',sub:'Learn to surf at Carolina or Wrightsville Beach with certified local instructors. All gear included.'},
   'paddleboard':{icon:'&#127965;',title:'Paddleboard & SUP',sub:'Stand-up paddleboard rentals and guided lessons on the calm coastal waterways.'},
   'bike-tours':{icon:'&#128692;',title:'Bike Tours',sub:'Guided rides through Wilmington\'s historic districts, riverfront, and beachfront communities.'},
   'wildlife-tours':{icon:'&#128044;',title:'Wildlife Tours',sub:'Dolphin watches, birding excursions, and guided nature tours along the NC coast.'},
@@ -203,15 +189,14 @@ var CAT_DATA={
   'beach-photography':{icon:'&#128248;',title:'Beach Photography',sub:'Family portraits, engagement sessions, and couples photos on the beach at golden hour.'},
   'beach-picnics':{icon:'&#127749;',title:'Beach Picnics',sub:'Fully set-up private picnic experiences delivered to the beach. You just show up.'},
   'beach-chairs':{icon:'&#127958;',title:'Beach Chair Rentals',sub:'Chairs, umbrellas, and beach gear delivered and set up before you arrive.'},
+  'jet-ski-rentals':{icon:'&#128676;',title:'Jet Ski Rentals',sub:'Hit the open water on a jet ski. Rentals available at Carolina Beach and Wrightsville Beach.'},
+  'golf-cart-rentals':{icon:'&#9971;',title:'Golf Cart Rentals',sub:'Cruise the beach communities in a golf cart. The most fun way to explore the island.'},
   'wellness':{icon:'&#129496;',title:'Wellness & Spa',sub:'Yoga on the beach, reiki, massage, spas, and mindful coastal retreats on the NC coast.'}
-  'jet-ski-rentals':{icon:'&#128692;',title:'Jet Ski Rentals',sub:'Rent a jet ski and tear across the Atlantic or the Cape Fear River. The fastest way to feel the coast.'},
-  'golf-cart-rentals':{icon:'&#127954;',title:'Golf Cart Rentals',sub:'Cruise the beach communities in style. Golf carts are the best way to get around Kure, Carolina, and Oak Island.'}
 };
-
 var OPS={
   'ghost-tours':[
     {id:'sean-ghost',business:'Wilmington Ghost Walk',operator:'Sean Austin',title:'Professional Ghost Tour Guide',
-     desc:'Join Sean Austin for an unforgettable 90-minute guided walk through Wilmington\'s most haunted streets and historic neighborhoods. With deep local expertise, Sean brings the dark and fascinating stories of this 300-year-old city to life — from Civil War spirits to colonial hauntings. One of the most highly rated ghost tours on the East Coast.',
+     desc:'Join Sean Austin for an unforgettable 90-minute guided walk through Wilmington\'s most haunted streets and historic neighborhoods. With deep local expertise, Sean brings the dark and fascinating stories of this 300-year-old city to life — from Civil War spirits to colonial hauntings.',
      price:'$25',priceLabel:'per person',priceCents:2500,
      tags:['Downtown Wilmington','90 Minutes','All Ages','Evening Tours'],
      note:'$25 refundable deposit holds your spot. No additional booking fee.',
@@ -225,11 +210,10 @@ var OPS={
   ],
   'surf-lessons':[
     {id:'james-surf',business:'Tripp Cox Surf School',operator:'Tripp Cox',title:'Certified Surf Instructor',
-     desc:'Learn to surf at one of the best beginner beaches on the East Coast with certified instructor Tripp Cox. Whether you\'ve never touched a board or want to level up your skills, Tripp makes learning fun, safe, and unforgettable. All boards included. Choose Carolina Beach for a laid-back local vibe, or upgrade to Wrightsville Beach for a premium session.',
-     price:'From $75',priceLabel:'per person',priceCents:2500,
-    tags:['Carolina Beach','Wrightsville Beach','2 Hours','All Skill Levels','All Gear Included'],
-     note:'$25 refundable deposit holds your spot. Balance due at lesson.+$50 for Wrightsville Beach location).',
-     locations:[{label:'Carolina Beach',price:'$75',priceCents:2500},{label:'Wrightsville Beach (+$50)',price:'$125',priceCents:7500}],
+     desc:'Learn to surf at one of the best beginner beaches on the East Coast with certified instructor Tripp Cox. Whether you\'ve never touched a board or want to level up your skills, Tripp makes learning fun, safe, and unforgettable. All equipment included — board, wetsuit, and rash guard.',
+     price:'$75',priceLabel:'per person',priceCents:2500,
+     tags:['Carolina Beach','2 Hours','All Skill Levels','All Gear Included'],
+     note:'$25 refundable deposit holds your spot. $50 balance due at lesson.',
      schedule:{days:[1,2,4,5,6,0],slots:['8:00 AM','10:00 AM','12:00 PM','2:00 PM']}}
   ],
   'nature-walks':[
@@ -241,119 +225,25 @@ var OPS={
      schedule:{days:[3,6,0],slots:['8:00 AM','10:00 AM','2:00 PM']}}
   ]
 };
-
 var CS={};
 var MN=['January','February','March','April','May','June','July','August','September','October','November','December'];
 var DW=['Su','Mo','Tu','We','Th','Fr','Sa'];
-
-function calInit(id,sched){
-  var n=new Date();
-  CS[id]={y:n.getFullYear(),m:n.getMonth(),date:null,slot:null,sched:sched,booked:{},loaded:{}};
-  calDraw(id);
-  calLoad(id,n.getFullYear(),n.getMonth()+1);
-}
-
-function calDraw(id){
-  var s=CS[id]; if(!s) return;
-  var ml=document.getElementById('cm-'+id); if(ml) ml.textContent=MN[s.m]+' '+s.y;
-  var g=document.getElementById('cg-'+id); if(!g) return;
-  var today=new Date(); today.setHours(0,0,0,0);
-  var tmrw=new Date(today); tmrw.setDate(tmrw.getDate()+1);
-  var first=new Date(s.y,s.m,1);
-  var dim=new Date(s.y,s.m+1,0).getDate();
-  var fdow=first.getDay();
-  var h=''; DW.forEach(function(d){h+='<div class="cal-dh">'+d+'</div>';});
-  for(var i=0;i<fdow;i++) h+='<div class="cal-d empty"></div>';
-  for(var day=1;day<=dim;day++){
-    var dt=new Date(s.y,s.m,day); dt.setHours(0,0,0,0);
-    var ds=pad(s.y)+'-'+pad(s.m+1)+'-'+pad(day);
-    var dow=dt.getDay();
-    var past=dt<tmrw;
-    var avail=!past&&s.sched.days.indexOf(dow)!==-1;
-    var sel=s.date===ds;
-    var tod=dt.getTime()===today.getTime();
-    var cls='cal-d'+(past?' past':avail?' yes':' no')+(sel?' picked':'')+(tod&&!sel?' today-ring':'');
-    var oc=avail?' onclick="cpick(\''+id+'\',\''+ds+'\')\"':'';
-    h+='<div class="'+cls+'"'+oc+'>'+day+'</div>';
-  }
-  g.innerHTML=h;
-  if(s.date) slotDraw(id);
-}
-
-function cpick(id,ds){
-  var s=CS[id]; if(!s) return;
-  s.date=ds; s.slot=null;
-  document.getElementById('hd-'+id).value='';
-  document.getElementById('ht-'+id).value='';
-  sumHide(id);
-  calDraw(id);
-  slotDraw(id);
-}
-
-function slotDraw(id){
-  var s=CS[id]; if(!s||!s.date) return;
-  var w=document.getElementById('sw-'+id); if(!w) return;
-  var taken=s.booked[s.date]||[];
-  var do2=new Date(s.date+'T12:00:00');
-  var lbl=do2.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
-  var h='<div class="slots-area"><div class="slots-for">Available times for <strong>'+lbl+'</strong></div><div class="slots-row">';
-  s.sched.slots.forEach(function(sl){
-    var tk=taken.indexOf(sl)!==-1;
-    var pk=s.slot===sl;
-    var cls='slt'+(tk?' slt-taken':'')+(pk?' slt-picked':'');
-    var oc=tk?'':' onclick="spick(\''+id+'\',\''+sl.replace(/'/g,"\\'")+'\')"';
-    h+='<button type="button" class="'+cls+'"'+oc+'>'+sl+(tk?'<span class="slt-sub">Sold Out</span>':'')+'</button>';
-  });
-  h+='</div></div>';
-  w.innerHTML=h;
-}
-
-function spick(id,sl){
-  var s=CS[id]; if(!s) return;
-  s.slot=sl;
-  document.getElementById('hd-'+id).value=s.date;
-  document.getElementById('ht-'+id).value=sl;
-  sumShow(id);
-  slotDraw(id);
-  var sum=document.getElementById('ss-'+id);
-  if(sum) setTimeout(function(){sum.scrollIntoView({behavior:'smooth',block:'nearest'});},60);
-}
-
-function sumShow(id){
-  var s=CS[id]; var el=document.getElementById('ss-'+id); if(!el||!s||!s.date||!s.slot) return;
-  var do2=new Date(s.date+'T12:00:00');
-  var fmt=do2.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
-  el.innerHTML='&#10003;&nbsp; <strong>'+fmt+' at '+s.slot+'</strong> selected — tap below to confirm';
-  el.classList.add('on');
-}
-function sumHide(id){var el=document.getElementById('ss-'+id); if(el) el.classList.remove('on');}
-
+function calInit(id,sched){var n=new Date();CS[id]={y:n.getFullYear(),m:n.getMonth(),date:null,slot:null,sched:sched,booked:{},loaded:{}};calDraw(id);calLoad(id,n.getFullYear(),n.getMonth()+1);}
+function calDraw(id){var s=CS[id];if(!s)return;var ml=document.getElementById('cm-'+id);if(ml)ml.textContent=MN[s.m]+' '+s.y;var g=document.getElementById('cg-'+id);if(!g)return;var today=new Date();today.setHours(0,0,0,0);var tmrw=new Date(today);tmrw.setDate(tmrw.getDate()+1);var first=new Date(s.y,s.m,1);var dim=new Date(s.y,s.m+1,0).getDate();var fdow=first.getDay();var h='';DW.forEach(function(d){h+='<div class="cal-dh">'+d+'</div>';});for(var i=0;i<fdow;i++)h+='<div class="cal-d empty"></div>';for(var day=1;day<=dim;day++){var dt=new Date(s.y,s.m,day);dt.setHours(0,0,0,0);var ds=pad(s.y)+'-'+pad(s.m+1)+'-'+pad(day);var dow=dt.getDay();var past=dt<tmrw;var avail=!past&&s.sched.days.indexOf(dow)!==-1;var sel=s.date===ds;var tod=dt.getTime()===today.getTime();var cls='cal-d'+(past?' past':avail?' yes':' no')+(sel?' picked':'')+(tod&&!sel?' today-ring':'');var oc=avail?' onclick="cpick(\''+id+'\',\''+ds+'\')"':'';h+='<div class="'+cls+'"'+oc+'>'+day+'</div>';}g.innerHTML=h;if(s.date)slotDraw(id);}
+function cpick(id,ds){var s=CS[id];if(!s)return;s.date=ds;s.slot=null;document.getElementById('hd-'+id).value='';document.getElementById('ht-'+id).value='';sumHide(id);calDraw(id);slotDraw(id);}
+function slotDraw(id){var s=CS[id];if(!s||!s.date)return;var w=document.getElementById('sw-'+id);if(!w)return;var taken=s.booked[s.date]||[];var do2=new Date(s.date+'T12:00:00');var lbl=do2.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});var h='<div class="slots-area"><div class="slots-for">Available times for <strong>'+lbl+'</strong></div><div class="slots-row">';s.sched.slots.forEach(function(sl){var tk=taken.indexOf(sl)!==-1;var pk=s.slot===sl;var cls='slt'+(tk?' slt-taken':'')+(pk?' slt-picked':'');var oc=tk?'':' onclick="spick(\''+id+'\',\''+sl.replace(/'/g,"\\'")+'\')"';h+='<button type="button" class="'+cls+'"'+oc+'>'+sl+(tk?'<span class="slt-sub">Unavailable</span>':'')+'</button>';});h+='</div></div>';w.innerHTML=h;}
+function spick(id,sl){var s=CS[id];if(!s)return;s.slot=sl;document.getElementById('hd-'+id).value=s.date;document.getElementById('ht-'+id).value=sl;sumShow(id);slotDraw(id);var sum=document.getElementById('ss-'+id);if(sum)setTimeout(function(){sum.scrollIntoView({behavior:'smooth',block:'nearest'});},60);}
+function sumShow(id){var s=CS[id];var el=document.getElementById('ss-'+id);if(!el||!s||!s.date||!s.slot)return;var do2=new Date(s.date+'T12:00:00');var fmt=do2.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});el.innerHTML='&#10003;&nbsp; <strong>'+fmt+' at '+s.slot+'</strong> selected — tap below to confirm';el.classList.add('on');}
+function sumHide(id){var el=document.getElementById('ss-'+id);if(el)el.classList.remove('on');}
 function cprev(id){var s=CS[id];if(!s)return;if(s.m===0){s.m=11;s.y--;}else s.m--;s.date=null;s.slot=null;var sw=document.getElementById('sw-'+id);if(sw)sw.innerHTML='';sumHide(id);calDraw(id);calLoad(id,s.y,s.m+1);}
 function cnext(id){var s=CS[id];if(!s)return;if(s.m===11){s.m=0;s.y++;}else s.m++;s.date=null;s.slot=null;var sw=document.getElementById('sw-'+id);if(sw)sw.innerHTML='';sumHide(id);calDraw(id);calLoad(id,s.y,s.m+1);}
-
-function calLoad(id,y,m){
-  var key=y+'-'+m; var s=CS[id]; if(!s||s.loaded[key]) return;
-  s.loaded[key]=true;
-  fetch('/.netlify/functions/get-availability?operatorId='+encodeURIComponent(id)+'&year='+y+'&month='+m)
-    .then(function(r){return r.json();})
-    .then(function(data){
-      (data.booked||[]).forEach(function(b){
-        if(!b.date||!b.timeSlot) return;
-        if(!s.booked[b.date]) s.booked[b.date]=[];
-        if(s.booked[b.date].indexOf(b.timeSlot)===-1) s.booked[b.date].push(b.timeSlot);
-      });
-      calDraw(id);
-    }).catch(function(){});
-}
-
+function calLoad(id,y,m){var key=y+'-'+m;var s=CS[id];if(!s||s.loaded[key])return;s.loaded[key]=true;fetch('/.netlify/functions/get-availability?operatorId='+encodeURIComponent(id)+'&year='+y+'&month='+m).then(function(r){return r.json();}).then(function(data){(data.booked||[]).forEach(function(b){if(!b.date||!b.timeSlot)return;if(!s.booked[b.date])s.booked[b.date]=[];if(s.booked[b.date].indexOf(b.timeSlot)===-1)s.booked[b.date].push(b.timeSlot);});calDraw(id);}).catch(function(){});}
 function pad(n){return String(n).padStart(2,'0');}
-
 var AF=null;
 function getCat(){return new URLSearchParams(window.location.search).get('cat')||'';}
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-
 function renderPage(){
-  var cat=getCat(); var d=CAT_DATA[cat]; if(!d){window.location.href='/';return;}
+  var cat=getCat();var d=CAT_DATA[cat];if(!d){window.location.href='/';return;}
   document.title=d.title+' — ShoreList Wilmington, NC';
   document.getElementById('hico').innerHTML=d.icon;
   document.getElementById('htitle').textContent=d.title;
@@ -362,14 +252,13 @@ function renderPage(){
   var ops=OPS[cat]||[];
   var mh='';
   if(ops.length>0){mh+='<div class="hm-badge live">'+ops.length+' Operator'+(ops.length>1?'s':'')+' Live Now</div>';mh+='<div class="hm-badge">Instant Booking</div>';mh+='<div class="hm-badge">Refundable Deposit</div>';mh+='<div class="hm-badge">Real-Time Availability</div>';}
-  else{mh+='<div class="hm-badge">Coming Soon</div>';mh+='<div class="hm-badge">Notify Me</div>';}
+  else{mh+='<div class="hm-badge">Coming Soon</div>';mh+='<div class="hm-badge">Notify Me When Live</div>';}
   document.getElementById('hmeta').innerHTML=mh;
-
   var h='';
   if(ops.length>0){
     h+='<div class="section-label">Ready to Book</div>';
     h+='<h2 class="section-title">Choose Your Experience</h2>';
-    h+='<p class="section-sub">All operators are locally verified by ShoreList. Select your date and time — your spot is secured with a $25 fully refundable deposit. Real-time availability. Zero double bookings.</p>';
+    h+='<p class="section-sub">All operators are personally onboarded by ShoreList. Select your date and time — your spot is secured with a $25 fully refundable deposit. Real-time availability. Zero double bookings.</p>';
     h+='<div class="operator-grid">';
     ops.forEach(function(op){
       var oid=esc(op.id);
@@ -377,7 +266,7 @@ function renderPage(){
       h+='<div class="op-card-body">';
       h+='<div class="op-card-header"><div><div class="op-live-badge"><span class="op-live-dot"></span>Live &amp; Taking Bookings</div><div class="op-business-name">'+esc(op.business)+'</div><div class="op-operator-name">with '+esc(op.operator)+' &nbsp;&middot;&nbsp; '+esc(op.title)+'</div></div><div class="op-price-tag"><div class="op-price">'+esc(op.price)+'</div><div class="op-price-label">'+esc(op.priceLabel)+'</div></div></div>';
       h+='<p class="op-desc">'+esc(op.desc)+'</p>';
-      h+='<div class="op-tags">'; op.tags.forEach(function(t){h+='<span class="op-tag">'+esc(t)+'</span>';}); h+='</div>';
+      h+='<div class="op-tags">';op.tags.forEach(function(t){h+='<span class="op-tag">'+esc(t)+'</span>';});h+='</div>';
       h+='<div class="op-divider"></div>';
       h+='<div class="op-book-row"><div class="op-book-note"><strong>$25 refundable deposit</strong> reserves your spot.<br/>'+esc(op.note)+'</div><button type="button" class="btn-book" id="btn-'+oid+'" onclick="togForm(\''+oid+'\')">Book This Experience &rarr;</button></div>';
       h+='</div>';
@@ -389,7 +278,7 @@ function renderPage(){
       h+='<div class="cal-box"><div class="cal-hd"><button type="button" class="cal-arrow" onclick="cprev(\''+oid+'\')">&#8592;</button><div class="cal-mlbl" id="cm-'+oid+'"></div><button type="button" class="cal-arrow" onclick="cnext(\''+oid+'\')">&#8594;</button></div><div class="cal-g" id="cg-'+oid+'"></div><div id="sw-'+oid+'"></div></div>';
       h+='<div class="bk-sel-summary" id="ss-'+oid+'"></div></div>';
       h+='<input type="hidden" id="hd-'+oid+'"/><input type="hidden" id="ht-'+oid+'"/>';
-      h+='<div class="bk-row full"><div class="bk-field"><label class="bk-label">Special Requests</label><textarea class="bk-input" id="nr-'+oid+'" rows="2" placeholder="Accessibility needs, celebrating something special, questions for the operator..."></textarea></div></div>';
+      h+='<div class="bk-row full"><div class="bk-field"><label class="bk-label">Special Requests (optional)</label><textarea class="bk-input" id="nr-'+oid+'" rows="2" placeholder="Accessibility needs, celebrating something special, questions for the operator..."></textarea></div></div>';
       h+='<div class="dep-row"><div><div class="dep-lbl">Refundable Booking Deposit</div><div class="dep-note">Holds your spot &nbsp;&middot;&nbsp; Fully refunded if unavailable &nbsp;&middot;&nbsp; Balance due at experience</div></div><div class="dep-amt">$25.00</div></div>';
       h+='<div class="bk-err" id="err-'+oid+'"></div>';
       h+='<div class="bk-acts"><button type="button" class="btn-cxl" onclick="closeForm(\''+oid+'\')">Cancel</button><button type="button" class="btn-sub" id="sub-'+oid+'" onclick="doBook(\''+oid+'\',\''+esc(cat)+'\',\''+esc(d.title)+'\',\''+esc(op.business)+'\',\''+oid+'\')">Secure My Spot &mdash; $25.00</button></div>';
@@ -399,85 +288,21 @@ function renderPage(){
     });
     h+='</div>';
   } else {
-    h+='<div class="coming-soon"><span class="cs-ico">'+d.icon+'</span><h2 class="cs-title">'+esc(d.title)+' — Coming Soon</h2><p class="cs-sub">We\'re signing local '+esc(d.title.toLowerCase())+' operators right now. Drop your email and we\'ll notify you the moment bookings go live.</p><div class="notify-form"><input class="notify-inp" type="email" id="ni-'+esc(cat)+'" placeholder="your@email.com" autocomplete="email"/><button class="btn-notify" onclick="doNotify(\''+esc(cat)+'\',\''+esc(d.title)+'\')">Notify Me</button></div><div class="notify-done" id="nd-'+esc(cat)+'">Got it! We\'ll email you when '+esc(d.title)+' goes live. &#10003;</div></div>';
+    h+='<div class="coming-soon"><span class="cs-ico">'+d.icon+'</span><h2 class="cs-title">'+esc(d.title)+' — Coming Soon</h2><p class="cs-sub">We\'re signing local operators right now. Drop your email and we\'ll notify you the moment bookings go live.</p><div class="notify-form"><input class="notify-inp" type="email" id="ni-'+esc(cat)+'" placeholder="your@email.com" autocomplete="email"/><button class="btn-notify" onclick="doNotify(\''+esc(cat)+'\',\''+esc(d.title)+'\')">Notify Me</button></div><div class="notify-done" id="nd-'+esc(cat)+'">Got it! We\'ll email you when '+esc(d.title)+' goes live. &#10003;</div></div>';
   }
-
-  h+='<div class="list-cta"><div class="lc-text"><div class="lc-tag">For Local Operators</div><div class="lc-title">Run a '+esc(d.title)+' business in Wilmington?</div><div class="lc-sub">Get listed on ShoreList free. No upfront cost, no monthly fees. Commission only on completed bookings. We put your listing directly in front of thousands of visitors already looking for something to do.</div></div><a href="/join" class="lc-btn">List Your Business Free &rarr;</a></div>';
-
+  h+='<div class="list-cta"><div class="lc-text"><div class="lc-tag">For Local Operators</div><div class="lc-title">Run a '+esc(d.title)+' business in Wilmington?</div><div class="lc-sub">Get listed on ShoreList free. No upfront cost, no monthly fees. Commission only on completed bookings. We put your listing in front of visitors already looking for something to do.</div></div><a href="/join" class="lc-btn">List Your Business Free &rarr;</a></div>';
   h+='<div class="more-sec"><div class="section-label">Keep Exploring</div><h2 class="section-title">More Adventures Await</h2><div class="more-grid">';
-  var shown=0; var keys=Object.keys(CAT_DATA);
-  for(var i=0;i<keys.length&&shown<8;i++){
-    var k=keys[i]; if(k===cat) continue;
-    var cd=CAT_DATA[k]; var live=OPS[k]&&OPS[k].length>0;
-    h+='<a class="more-card" href="/category?cat='+esc(k)+'"><div class="more-ico">'+cd.icon+'</div><div class="more-name">'+esc(cd.title)+'</div>'+(live?'<div class="more-live">Live Now</div>':'')+'</a>';
-    shown++;
-  }
+  var shown=0;var keys=Object.keys(CAT_DATA);
+  for(var i=0;i<keys.length&&shown<8;i++){var k=keys[i];if(k===cat)continue;var cd=CAT_DATA[k];var live=OPS[k]&&OPS[k].length>0;h+='<a class="more-card" href="/category?cat='+esc(k)+'"><div class="more-ico">'+cd.icon+'</div><div class="more-name">'+esc(cd.title)+'</div>'+(live?'<div class="more-live">Live Now</div>':'')+'</a>';shown++;}
   h+='</div></div>';
-
   document.getElementById('mc').innerHTML=h;
-  ops.forEach(function(op){ if(op.schedule) calInit(op.id,op.schedule); });
+  ops.forEach(function(op){if(op.schedule)calInit(op.id,op.schedule);});
 }
-
-function togForm(id){
-  var open=document.getElementById('form-'+id).classList.contains('open');
-  if(open) closeForm(id); else openForm(id);
-}
-function openForm(id){
-  if(AF&&AF!==id) closeForm(AF);
-  var f=document.getElementById('form-'+id);
-  var b=document.getElementById('btn-'+id);
-  if(f){f.classList.add('open');setTimeout(function(){f.scrollIntoView({behavior:'smooth',block:'start'});},60);}
-  if(b) b.textContent='Close Booking Form';
-  AF=id;
-}
-function closeForm(id){
-  var f=document.getElementById('form-'+id);
-  var b=document.getElementById('btn-'+id);
-  var e=document.getElementById('err-'+id);
-  if(f) f.classList.remove('open');
-  if(b) b.innerHTML='Book This Experience &rarr;';
-  if(e) e.style.display='none';
-  AF=null;
-}
-
-function doBook(id,cat,catLabel,opName,opId){
-  var nm=document.getElementById('n-'+id).value.trim();
-  var em=document.getElementById('e-'+id).value.trim();
-  var ph=document.getElementById('p-'+id).value.trim();
-  var ps=document.getElementById('ps-'+id).value;
-  var dt=document.getElementById('hd-'+id).value;
-  var tm=document.getElementById('ht-'+id).value;
-  var nt=document.getElementById('nr-'+id).value.trim();
-  var er=document.getElementById('err-'+id);
-  var bt=document.getElementById('sub-'+id);
-  if(!nm||!em||!ps){er.style.display='block';er.textContent='Please fill in your name, email, and party size.';er.scrollIntoView({behavior:'smooth',block:'nearest'});return;}
-  if(!dt||!tm){er.style.display='block';er.textContent='Please select a date and time on the calendar above.';er.scrollIntoView({behavior:'smooth',block:'nearest'});return;}
-  if(!em.includes('@')||!em.includes('.')){er.style.display='block';er.textContent='Please enter a valid email address.';return;}
-  er.style.display='none';
-  bt.disabled=true;
-  bt.textContent='Securing your spot\u2026';
-  fetch('/.netlify/functions/create-checkout',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({category:cat,categoryLabel:catLabel,operatorName:opName,operatorId:opId,guestName:nm,guestEmail:em,guestPhone:ph,date:dt,timeSlot:tm,partySize:ps,notes:nt,priceInCents:2500})
-  }).then(function(r){return r.json();}).then(function(data){
-    if(data.url){window.location.href=data.url;}
-    else{throw new Error(data.error||'No checkout URL');}
-  }).catch(function(){
-    bt.disabled=false;bt.innerHTML='Secure My Spot &mdash; $25.00';
-    er.style.display='block';er.textContent='Something went wrong. Please try again or email shorelistwilmington@gmail.com';
-  });
-}
-
-function doNotify(cat,title){
-  var inp=document.getElementById('ni-'+cat);
-  var done=document.getElementById('nd-'+cat);
-  if(!inp||!inp.value.trim()){if(inp)inp.focus();return;}
-  fetch('https://formspree.io/f/xeevzzqd',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify({email:inp.value.trim(),category:title})}).catch(function(){});
-  if(inp.parentElement) inp.parentElement.style.display='none';
-  if(done) done.style.display='block';
-}
-
+function togForm(id){var open=document.getElementById('form-'+id).classList.contains('open');if(open)closeForm(id);else openForm(id);}
+function openForm(id){if(AF&&AF!==id)closeForm(AF);var f=document.getElementById('form-'+id);var b=document.getElementById('btn-'+id);if(f){f.classList.add('open');setTimeout(function(){f.scrollIntoView({behavior:'smooth',block:'start'});},60);}if(b)b.textContent='Close Booking Form';AF=id;}
+function closeForm(id){var f=document.getElementById('form-'+id);var b=document.getElementById('btn-'+id);var e=document.getElementById('err-'+id);if(f)f.classList.remove('open');if(b)b.innerHTML='Book This Experience &rarr;';if(e)e.style.display='none';AF=null;}
+function doBook(id,cat,catLabel,opName,opId){var nm=document.getElementById('n-'+id).value.trim();var em=document.getElementById('e-'+id).value.trim();var ph=document.getElementById('p-'+id).value.trim();var ps=document.getElementById('ps-'+id).value;var dt=document.getElementById('hd-'+id).value;var tm=document.getElementById('ht-'+id).value;var nt=document.getElementById('nr-'+id).value.trim();var er=document.getElementById('err-'+id);var bt=document.getElementById('sub-'+id);if(!nm||!em||!ps){er.style.display='block';er.textContent='Please fill in your name, email, and party size.';er.scrollIntoView({behavior:'smooth',block:'nearest'});return;}if(!dt||!tm){er.style.display='block';er.textContent='Please select a date and time on the calendar above.';er.scrollIntoView({behavior:'smooth',block:'nearest'});return;}if(!em.includes('@')||!em.includes('.')){er.style.display='block';er.textContent='Please enter a valid email address.';return;}er.style.display='none';bt.disabled=true;bt.textContent='Securing your spot\u2026';fetch('/.netlify/functions/create-checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({category:cat,categoryLabel:catLabel,operatorName:opName,operatorId:opId,guestName:nm,guestEmail:em,guestPhone:ph,date:dt,timeSlot:tm,partySize:ps,notes:nt,priceInCents:2500})}).then(function(r){return r.json();}).then(function(data){if(data.url){window.location.href=data.url;}else{throw new Error(data.error||'No checkout URL');}}).catch(function(){bt.disabled=false;bt.innerHTML='Secure My Spot &mdash; $25.00';er.style.display='block';er.textContent='Something went wrong. Please try again or email shorelistwilmington@gmail.com';});}
+function doNotify(cat,title){var inp=document.getElementById('ni-'+cat);var done=document.getElementById('nd-'+cat);if(!inp||!inp.value.trim()){if(inp)inp.focus();return;}fetch('https://formspree.io/f/xeevzzqd',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify({email:inp.value.trim(),category:title})}).catch(function(){});if(inp.parentElement)inp.parentElement.style.display='none';if(done)done.style.display='block';}
 document.addEventListener('DOMContentLoaded',renderPage);
 </script>
 </body>
