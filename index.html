@@ -4,9 +4,9 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>ShoreList — Coastal Experiences in Wilmington, NC</title>
-<meta name="description" content="Book unforgettable local experiences in Wilmington, NC. Ghost tours, surf lessons, fishing charters, nature walks and more. Instant booking, $25 refundable deposit."/>
+<meta name="description" content="Book unforgettable local experiences in Wilmington, NC. Ghost tours, surf lessons, fishing charters, nature walks and more. Instant booking. Secure checkout."/>
 <meta property="og:title" content="ShoreList — Wilmington's Coastal Experience Marketplace"/>
-<meta property="og:description" content="Book unforgettable local tours and adventures in Wilmington, NC and the surrounding beaches. Instant booking, curated local operators, fully refundable deposit."/>
+<meta property="og:description" content="Book unforgettable local tours and adventures in Wilmington, NC and the surrounding beaches. Instant booking, curated local operators, secure Stripe checkout."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://shorelist.net"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -291,7 +291,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
       <div class="trust-strip">
         <div class="trust-item">Instant confirmation</div>
         <div class="trust-sep"></div>
-        <div class="trust-item">$25 refundable deposit</div>
+        <div class="trust-item">Secure checkout</div>
         <div class="trust-sep"></div>
         <div class="trust-item">Curated local operators</div>
       </div>
@@ -386,11 +386,11 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
 <div class="trust-bar">
   <div class="tb-item"><span class="tb-icon">⚡</span> Instant Confirmation</div>
   <div class="tb-sep"></div>
-  <div class="tb-item"><span class="tb-icon">💳</span> $25 Refundable Deposit</div>
+  <div class="tb-item"><span class="tb-icon">💳</span> Secure Stripe Checkout</div>
   <div class="tb-sep"></div>
   <div class="tb-item"><span class="tb-icon">🌊</span> Curated Local Operators</div>
   <div class="tb-sep"></div>
-  <div class="tb-item"><span class="tb-icon">🔒</span> Secure Stripe Checkout</div>
+  <div class="tb-item"><span class="tb-icon">🔒</span> SSL Encrypted</div>
   <div class="tb-sep"></div>
   <div class="tb-item"><span class="tb-icon">📍</span> Wilmington, NC &amp; the Beaches</div>
 </div>
@@ -411,7 +411,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
           <span class="feat-star">★</span><span class="feat-star">★</span><span class="feat-star">★</span><span class="feat-star">★</span><span class="feat-star">★</span>
           <span class="feat-rcount">&nbsp;Expert local guide · Sean Austin</span>
         </div>
-        <div class="feat-price">From $25 <span>per person · fully refundable deposit</span></div>
+        <div class="feat-price">From $25 <span>per person · cancel 24hrs for full refund</span></div>
         <a href="/category?cat=ghost-tours" class="btn-fill">Book This Experience &rarr;</a>
       </div>
       <div>
@@ -537,7 +537,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
     <p class="sec-sub">Four steps from landing on this page to standing on Wilmington's most beautiful beaches with a local guide.</p>
     <div class="steps-grid">
       <div class="step"><div class="step-n">01</div><h3>Browse Local Experiences</h3><p>Discover hand-picked tours, charters, and adventures across Wilmington and the surrounding beaches — all in one place.</p></div>
-      <div class="step"><div class="step-n">02</div><h3>Book Instantly</h3><p>Reserve your spot with a $25 refundable deposit. No phone tag, no back-and-forth. Confirmation hits your inbox in seconds.</p></div>
+      <div class="step"><div class="step-n">02</div><h3>Book Instantly</h3><p>Pay securely and your spot is confirmed instantly. No phone tag, no back-and-forth. Confirmation hits your inbox in seconds.</p></div>
       <div class="step"><div class="step-n">03</div><h3>Show Up &amp; Explore</h3><p>All you have to do is arrive. Local operators handle everything else. You just enjoy the coast.</p></div>
       <div class="step"><div class="step-n">04</div><h3>Leave a Review</h3><p>Share your experience to help other visitors discover the best this coast has to offer.</p></div>
     </div>
@@ -655,37 +655,78 @@ document.body.style.overflow='hidden';
   setTimeout(function(){if(DONE)return;DONE=true;var wi=document.getElementById('wave-intro');if(wi)wi.classList.add('hide');document.body.style.overflow='';},5500);
 })();
 
-// ── OCEAN AMBIENT AUDIO ──
+// ── OCEAN AMBIENT AUDIO (Web Audio API) ──
 (function(){
   var AC=window.AudioContext||window.webkitAudioContext;
   if(!AC)return;
   var actx=null,master=null,muted=false,started=false;
+
+  // Pre-generate noise data during wave animation (CPU work, no gesture needed)
+  // This means zero computation delay when user first interacts
+  var RATE=44100;
+  var noiseL=new Float32Array(RATE*8);
+  var noiseR=new Float32Array(RATE*8);
+  var noise2=new Float32Array(RATE*6);
+  (function(){
+    var l=0,r=0,s=0;
+    for(var i=0;i<RATE*8;i++){
+      var wl=Math.random()*2-1,wr=Math.random()*2-1;
+      l=(l+0.022*wl)/1.022;r=(r+0.022*wr)/1.022;
+      noiseL[i]=l*3.8;noiseR[i]=r*3.8;
+    }
+    for(var i=0;i<RATE*6;i++){
+      var w=Math.random()*2-1;s=(s+0.052*w)/1.052;noise2[i]=s*2.4;
+    }
+  })();
+
   function buildOcean(){
     if(started)return;started=true;
     try{
       actx=new AC();
-      var _sb=actx.createBuffer(1,1,22050);var _ss=actx.createBufferSource();_ss.buffer=_sb;_ss.connect(actx.destination);_ss.start(0);
-      actx.resume();
+      // iOS: silent buffer unlock
+      var _sb=actx.createBuffer(1,1,22050);
+      var _ss=actx.createBufferSource();_ss.buffer=_sb;_ss.connect(actx.destination);_ss.start(0);
+
       master=actx.createGain();
-      master.gain.setValueAtTime(0,actx.currentTime);master.gain.linearRampToValueAtTime(0.20,actx.currentTime+4);master.connect(actx.destination);
+      master.gain.setValueAtTime(0,actx.currentTime);
+      master.gain.linearRampToValueAtTime(0.20,actx.currentTime+3);
+      master.connect(actx.destination);
+
       var rate=actx.sampleRate;
-      var buf=actx.createBuffer(2,rate*14,rate);
-      for(var ch=0;ch<2;ch++){var d=buf.getChannelData(ch);var last=0;for(var i=0;i<d.length;i++){var w=Math.random()*2-1;d[i]=(last+0.022*w)/1.022;last=d[i];d[i]*=3.8;}}
+
+      // Copy pre-generated noise into audio buffer — instant, no loop
+      var len1=Math.min(noiseL.length,rate*8);
+      var buf=actx.createBuffer(2,len1,rate);
+      buf.getChannelData(0).set(noiseL.subarray(0,len1));
+      buf.getChannelData(1).set(noiseR.subarray(0,len1));
       var src=actx.createBufferSource();src.buffer=buf;src.loop=true;
       var lp=actx.createBiquadFilter();lp.type='lowpass';lp.frequency.value=700;lp.Q.value=0.7;
       var bp=actx.createBiquadFilter();bp.type='bandpass';bp.frequency.value=220;bp.Q.value=0.55;
       var lfo=actx.createOscillator();lfo.type='sine';lfo.frequency.value=0.085;
       var lfoG=actx.createGain();lfoG.gain.value=0.40;lfo.connect(lfoG);
       var wVol=actx.createGain();wVol.gain.value=0.60;lfoG.connect(wVol.gain);
-      src.connect(lp);lp.connect(bp);bp.connect(wVol);wVol.connect(master);src.start(0);lfo.start(0);
-      var buf2=actx.createBuffer(1,rate*9,rate);var d2=buf2.getChannelData(0);var last2=0;
-      for(var i=0;i<d2.length;i++){var w2=Math.random()*2-1;d2[i]=(last2+0.052*w2)/1.052;last2=d2[i];d2[i]*=2.4;}
+      src.connect(lp);lp.connect(bp);bp.connect(wVol);wVol.connect(master);
+
+      var len2=Math.min(noise2.length,rate*6);
+      var buf2=actx.createBuffer(1,len2,rate);
+      buf2.getChannelData(0).set(noise2.subarray(0,len2));
       var src2=actx.createBufferSource();src2.buffer=buf2;src2.loop=true;
       var hp2=actx.createBiquadFilter();hp2.type='bandpass';hp2.frequency.value=560;hp2.Q.value=1.3;
-      var sg=actx.createGain();sg.gain.value=0.17;src2.connect(hp2);hp2.connect(sg);sg.connect(master);src2.start(0);
-      scheduleSeagull();
+      var sg=actx.createGain();sg.gain.value=0.17;
+      src2.connect(hp2);hp2.connect(sg);sg.connect(master);
+
+      // Resume then start all sources together — no gap
+      actx.resume().then(function(){
+        var t=actx.currentTime;
+        src.start(t);lfo.start(t);src2.start(t);
+        scheduleSeagull();
+      }).catch(function(){
+        src.start(0);lfo.start(0);src2.start(0);
+        scheduleSeagull();
+      });
     }catch(e){}
   }
+
   function scheduleSeagull(){
     if(!actx||!master)return;
     setTimeout(function(){
@@ -699,6 +740,7 @@ document.body.style.overflow='hidden';
       scheduleSeagull();
     },9000+Math.random()*18000);
   }
+
   function cry(now,f,vol){
     var osc=actx.createOscillator();var osc2=actx.createOscillator();
     osc.type='sawtooth';osc2.type='sawtooth';
@@ -710,21 +752,26 @@ document.body.style.overflow='hidden';
     osc2.frequency.setValueAtTime(f1*0.76,now);osc2.frequency.linearRampToValueAtTime(f1*1.015,now+0.07);osc2.frequency.linearRampToValueAtTime(f*0.915,now+0.22);osc2.frequency.linearRampToValueAtTime(f*1.195,now+0.38);osc2.frequency.linearRampToValueAtTime(f2*0.985,now+0.80);
     osc.start(now);osc.stop(now+0.85);osc2.start(now);osc2.stop(now+0.85);
   }
+
   // ── iOS-SAFE AUDIO START ──
   var once=false;
   function startAudio(){
     if(once)return;once=true;
     try{buildOcean();}catch(e){}
+    document.removeEventListener('mousedown',startAudio);
+    document.removeEventListener('pointerdown',startAudio);
     document.removeEventListener('touchend',startAudio);
     document.removeEventListener('click',startAudio);
     var hint=document.getElementById('wi-tap');
     if(hint)hint.classList.add('hidden');
   }
- document.addEventListener('mousedown',startAudio,false);
-document.addEventListener('pointerdown',startAudio,false);
-document.addEventListener('touchend',startAudio,false);
-document.addEventListener('click',startAudio,false);
-  // Try immediately — works on desktop/Android without gesture
+  // mousedown/pointerdown fire on first press — kills desktop delay
+  // touchend required for iOS audio unlock
+  document.addEventListener('mousedown',startAudio,false);
+  document.addEventListener('pointerdown',startAudio,false);
+  document.addEventListener('touchend',startAudio,false);
+  document.addEventListener('click',startAudio,false);
+  // Attempt immediately — works on return visits or permissive browsers
   setTimeout(function(){if(!once)try{startAudio();}catch(e){}},100);
 
   var btn=document.getElementById('mute-btn');
