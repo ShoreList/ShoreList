@@ -20,6 +20,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:fl
 .nav-logo span{color:var(--coral);}
 .nav-back{font-size:0.82rem;font-weight:600;color:rgba(245,232,203,0.5);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
 .nav-back:hover{color:var(--cream);}
+#planner-mute{position:fixed;bottom:22px;left:22px;z-index:8000;background:rgba(0,0,0,0.30);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.14);border-radius:100px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1rem;cursor:pointer;transition:all 0.22s;color:white;}
+#planner-mute:hover{background:rgba(0,0,0,0.50);transform:scale(1.1);}
 .hero{position:relative;z-index:1;padding:140px 48px 60px;text-align:center;max-width:780px;margin:0 auto;}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(233,102,69,0.12);border:1px solid rgba(233,102,69,0.25);border-radius:100px;padding:7px 16px;font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--coral);margin-bottom:24px;}
 .hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,3.8rem);font-weight:900;color:var(--cream2);line-height:1.05;margin-bottom:18px;}
@@ -96,6 +98,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:fl
 </style>
 </head>
 <body>
+<button id="planner-mute" title="Mute ocean sounds" aria-label="Mute ocean sounds">🌊</button>
 <div class="bg"><div class="bg-grad"></div><div class="bg-dots"></div></div>
 <nav>
   <a href="/" class="nav-logo">Shore<span>List</span></a>
@@ -253,6 +256,65 @@ function resetPlanner(){
   window.scrollTo({top:0,behavior:'smooth'});
 }
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+// ── OCEAN AMBIENT AUDIO ──
+(function(){
+  var AC=window.AudioContext||window.webkitAudioContext;
+  if(!AC)return;
+  var actx=null,master=null,muted=false,started=false;
+  function buildOcean(){
+    if(started)return;started=true;
+    try{
+      actx=new AC();master=actx.createGain();
+      master.gain.setValueAtTime(0,actx.currentTime);master.gain.linearRampToValueAtTime(0.16,actx.currentTime+4);master.connect(actx.destination);
+      var rate=actx.sampleRate;
+      var buf=actx.createBuffer(2,rate*14,rate);
+      for(var ch=0;ch<2;ch++){var d=buf.getChannelData(ch);var last=0;for(var i=0;i<d.length;i++){var w=Math.random()*2-1;d[i]=(last+0.022*w)/1.022;last=d[i];d[i]*=3.8;}}
+      var src=actx.createBufferSource();src.buffer=buf;src.loop=true;
+      var lp=actx.createBiquadFilter();lp.type='lowpass';lp.frequency.value=700;lp.Q.value=0.7;
+      var bp=actx.createBiquadFilter();bp.type='bandpass';bp.frequency.value=220;bp.Q.value=0.55;
+      var lfo=actx.createOscillator();lfo.type='sine';lfo.frequency.value=0.085;
+      var lfoG=actx.createGain();lfoG.gain.value=0.40;lfo.connect(lfoG);
+      var wVol=actx.createGain();wVol.gain.value=0.60;lfoG.connect(wVol.gain);
+      src.connect(lp);lp.connect(bp);bp.connect(wVol);wVol.connect(master);src.start(0);lfo.start(0);
+      var buf2=actx.createBuffer(1,rate*9,rate);var d2=buf2.getChannelData(0);var last2=0;
+      for(var i=0;i<d2.length;i++){var w2=Math.random()*2-1;d2[i]=(last2+0.052*w2)/1.052;last2=d2[i];d2[i]*=2.4;}
+      var src2=actx.createBufferSource();src2.buffer=buf2;src2.loop=true;
+      var hp2=actx.createBiquadFilter();hp2.type='bandpass';hp2.frequency.value=560;hp2.Q.value=1.3;
+      var sg=actx.createGain();sg.gain.value=0.15;src2.connect(hp2);hp2.connect(sg);sg.connect(master);src2.start(0);
+      scheduleSeagull();
+    }catch(e){}
+  }
+  function scheduleSeagull(){
+    if(!actx||!master)return;
+    setTimeout(function(){
+      if(!actx||muted){scheduleSeagull();return;}
+      try{
+        var now=actx.currentTime;var f=820+Math.random()*380;
+        cry(now,f,0.048);
+        if(Math.random()>0.45)cry(now+0.9+Math.random()*0.4,f*(0.88+Math.random()*0.25),0.036);
+      }catch(e){}
+      scheduleSeagull();
+    },10000+Math.random()*22000);
+  }
+  function cry(now,f,vol){
+    var osc=actx.createOscillator();var osc2=actx.createOscillator();
+    osc.type='sawtooth';osc2.type='sawtooth';
+    var bpf=actx.createBiquadFilter();bpf.type='bandpass';bpf.frequency.value=f*1.15;bpf.Q.value=1.6;
+    var g=actx.createGain();osc.connect(bpf);osc2.connect(bpf);bpf.connect(g);g.connect(master);
+    g.gain.setValueAtTime(0,now);g.gain.linearRampToValueAtTime(vol*0.65,now+0.06);g.gain.linearRampToValueAtTime(vol*0.30,now+0.20);g.gain.linearRampToValueAtTime(vol,now+0.36);g.gain.linearRampToValueAtTime(vol*0.55,now+0.54);g.gain.linearRampToValueAtTime(0,now+0.80);
+    var f1=f*1.55;var f2=f*0.68;
+    osc.frequency.setValueAtTime(f1*0.75,now);osc.frequency.linearRampToValueAtTime(f1,now+0.07);osc.frequency.linearRampToValueAtTime(f*0.9,now+0.22);osc.frequency.linearRampToValueAtTime(f*1.18,now+0.38);osc.frequency.linearRampToValueAtTime(f2,now+0.80);
+    osc2.frequency.setValueAtTime(f1*0.76,now);osc2.frequency.linearRampToValueAtTime(f1*1.015,now+0.07);osc2.frequency.linearRampToValueAtTime(f*0.915,now+0.22);osc2.frequency.linearRampToValueAtTime(f*1.195,now+0.38);osc2.frequency.linearRampToValueAtTime(f2*0.985,now+0.80);
+    osc.start(now);osc.stop(now+0.85);osc2.start(now);osc2.stop(now+0.85);
+  }
+  var once=false;
+  function startAudio(){if(once)return;once=true;try{buildOcean();}catch(e){}}
+  ['click','scroll','touchstart','keydown'].forEach(function(ev){document.addEventListener(ev,startAudio,{once:true,passive:true});});
+  setTimeout(function(){try{startAudio();}catch(e){}},1500);
+  var mbtn=document.getElementById('planner-mute');
+  if(mbtn){mbtn.addEventListener('click',function(e){e.stopPropagation();muted=!muted;if(master&&actx){master.gain.cancelScheduledValues(actx.currentTime);master.gain.setTargetAtTime(muted?0:0.16,actx.currentTime,0.9);}mbtn.innerHTML=muted?'🔇':'🌊';});}
+})();
 </script>
 </body>
 </html>
