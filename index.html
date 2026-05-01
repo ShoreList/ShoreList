@@ -252,7 +252,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
   <canvas id="wi-canvas"></canvas>
   <div class="wi-logo">Shore<span>List</span></div>
   <div class="wi-sub">Wilmington, NC &amp; the Beaches</div>
-  <div class="wi-tap" id="wi-tap">tap to hear the ocean 🌊</div>
+  <div class="wi-tap" id="wi-tap">click or tap to hear the ocean 🌊</div>
 </div>
 <button id="mute-btn" title="Mute ocean sounds" aria-label="Mute ocean sounds">🌊</button>
 <div id="g-toasts"></div>
@@ -720,8 +720,10 @@ document.body.style.overflow='hidden';
     var hint=document.getElementById('wi-tap');
     if(hint)hint.classList.add('hidden');
   }
-  document.addEventListener('touchend',startAudio,false);
-  document.addEventListener('click',startAudio,false);
+ document.addEventListener('mousedown',startAudio,false);
+document.addEventListener('pointerdown',startAudio,false);
+document.addEventListener('touchend',startAudio,false);
+document.addEventListener('click',startAudio,false);
   // Try immediately — works on desktop/Android without gesture
   setTimeout(function(){if(!once)try{startAudio();}catch(e){}},100);
 
