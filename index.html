@@ -22,8 +22,8 @@ body{font-family:'DM Sans',sans-serif;background:#0A4D5C;color:#FEFCF7;overflow-
 .wi-logo{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:var(--cream2);opacity:0;animation:fadeIn 0.5s ease 0.8s forwards;position:relative;z-index:1;pointer-events:none;text-shadow:0 2px 20px rgba(0,0,0,0.5);}
 .wi-logo span{color:var(--coral);}
 .wi-sub{font-size:0.72rem;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:rgba(245,232,203,0.40);opacity:0;animation:fadeIn 0.5s ease 1.1s forwards;position:relative;z-index:1;pointer-events:none;}
-.wi-tap{position:relative;z-index:2;font-size:0.70rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(245,232,203,0.65);opacity:0;animation:fadeIn 0.6s ease 1.8s forwards;pointer-events:auto;cursor:pointer;margin-top:8px;padding:8px 18px;border:1px solid rgba(245,232,203,0.20);border-radius:100px;background:rgba(255,255,255,0.05);}
-.wi-tap:hover{background:rgba(255,255,255,0.10);border-color:rgba(245,232,203,0.35);}
+.wi-tap{position:relative;z-index:2;font-size:0.70rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(245,232,203,0.75);opacity:0;animation:fadeIn 0.4s ease 0.3s forwards;pointer-events:auto;cursor:pointer;margin-top:12px;padding:9px 22px;border:1px solid rgba(245,232,203,0.30);border-radius:100px;background:rgba(255,255,255,0.08);}
+.wi-tap:hover{background:rgba(255,255,255,0.15);border-color:rgba(245,232,203,0.50);}
 .wi-tap.hidden{opacity:0!important;transition:opacity 0.3s;}
 @keyframes fadeIn{to{opacity:1;}}
 #mute-btn{position:fixed;bottom:22px;left:22px;z-index:8000;background:rgba(0,0,0,0.30);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.14);border-radius:100px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1rem;cursor:pointer;transition:all 0.22s;opacity:0;animation:fadeIn 0.5s ease 3.8s forwards;color:white;}
@@ -173,7 +173,7 @@ h1.hero-title .or{color:var(--coral);font-style:normal;}
 .wk-hd{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px;}
 .wk-link{font-size:0.80rem;font-weight:600;color:var(--coral);text-decoration:none;white-space:nowrap;letter-spacing:0.04em;}
 .wk-link:hover{text-decoration:underline;}
-.wk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.wk-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
 .wk-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px;transition:all 0.20s;text-decoration:none;display:block;}
 .wk-card:hover{background:rgba(233,102,69,0.08);border-color:rgba(233,102,69,0.28);transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,0.2);}
 .wk-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
@@ -190,7 +190,7 @@ h1.hero-title .or{color:var(--coral);font-style:normal;}
 .cat:hover{background:rgba(233,102,69,0.11);border-color:var(--coral);transform:translateY(-4px);}
 .cat-ico{font-size:1.85rem;display:block;margin-bottom:8px;}
 .cat-name{font-size:0.76rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--cream2);}
-.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.reviews-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
 .rv-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:24px;}
 .rv-stars{font-size:0.85rem;color:rgba(245,232,203,0.70);margin-bottom:10px;font-weight:600;}
 .rv-text{font-size:0.88rem;color:rgba(245,232,203,0.72);line-height:1.75;margin-bottom:16px;}
@@ -244,16 +244,16 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
 @keyframes twinkle{0%,100%{opacity:.9;}50%{opacity:.2;}}
 @media(max-width:1020px){.featured-grid{grid-template-columns:1fr;}.reviews-grid{grid-template-columns:1fr 1fr;}.steps-grid{grid-template-columns:1fr 1fr;}.wk-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:900px){.hero-layout{grid-template-columns:1fr;}.hero-right{display:none;}}
-@media(max-width:768px){nav{padding:15px 20px;}.nav-links{display:none!important;}.nav-mob{display:flex;}.hero{padding:95px 20px 0;min-height:auto;}.compass{display:none;}.weather-badge{display:none;}.sec{padding:60px 20px;}.trust-bar{padding:14px 20px;overflow-x:auto;}.tb-item{padding:0 16px;font-size:0.75rem;}.reviews-grid{grid-template-columns:1fr;}.steps-grid{grid-template-columns:1fr 1fr;}.wk-grid{grid-template-columns:1fr;}.cats-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));}footer{padding:24px 20px;flex-direction:column;text-align:center;gap:10px;}.planner-cta{padding:60px 20px;}#g-toasts{max-width:230px;right:10px;bottom:10px;}.hero-stats{gap:16px;}.btn-fill,.btn-ghost{padding:13px 22px;font-size:0.88rem;}.trust-strip{display:none;}}
+@media(max-width:768px){nav{padding:15px 20px;}.nav-links{display:none!important;}.nav-mob{display:flex;}.hero{padding:95px 20px 0;min-height:auto;}.compass{display:none;}.weather-badge{display:none;}.sec{padding:60px 20px;}.trust-bar{padding:14px 20px;overflow-x:auto;}.tb-item{padding:0 16px;font-size:0.75rem;}.reviews-grid{grid-template-columns:1fr;}.steps-grid{grid-template-columns:1fr 1fr;}.wk-grid{grid-template-columns:1fr 1fr;}.cats-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));}footer{padding:24px 20px;flex-direction:column;text-align:center;gap:10px;}.planner-cta{padding:60px 20px;}#g-toasts{max-width:230px;right:10px;bottom:10px;}.hero-stats{gap:16px;}.btn-fill,.btn-ghost{padding:13px 22px;font-size:0.88rem;}.trust-strip{display:none;}}
 @media(max-width:480px){.steps-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
-<div id="wave-intro">
+<div id="wave-intro" onclick="if(window._shorelistAudio)window._shorelistAudio()" style="cursor:pointer;">
   <canvas id="wi-canvas"></canvas>
   <div class="wi-logo">Shore<span>List</span></div>
   <div class="wi-sub">Wilmington, NC &amp; the Beaches</div>
-  <div class="wi-tap" id="wi-tap">click or tap to hear the ocean 🌊</div>
+  <div class="wi-tap" id="wi-tap">▶ Sound On</div>
 </div>
 <button id="mute-btn" title="Mute ocean sounds" aria-label="Mute ocean sounds">🌊</button>
 <div id="g-toasts"></div>
@@ -288,13 +288,13 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
         <span class="bl">to <span class="or">coastal</span></span>
         <span class="bl">adventures.</span>
       </h1>
-      <p class="hero-sub">ShoreList connects visitors with the best local experiences Wilmington has to offer — ghost tours, surf lessons, fishing charters, nature walks, and more. One place. Instant booking.</p>
+      <p class="hero-sub">ShoreList connects visitors with the best local experiences Wilmington has to offer — ghost tours, film location tours, surf lessons, fishing charters, nature walks, and more. One place. Instant booking.</p>
       <div class="trust-strip">
         <div class="trust-item">Instant confirmation</div>
         <div class="trust-sep"></div>
         <div class="trust-item">Secure checkout</div>
         <div class="trust-sep"></div>
-        <div class="trust-item">Curated local operators</div>
+        <div class="trust-item">100% local operators</div>
       </div>
       <div class="hero-btns">
         <a href="#explore" class="btn-fill">Explore Experiences</a>
@@ -346,8 +346,8 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
             <div class="xtt">Live now</div>
           </div>
           <div class="xtoast" id="xt2">
-            <div class="xta xta-f">🏄</div>
-            <div class="xtbody"><div class="xtn">Surf Lessons — Carolina Beach</div><div class="xta2">With Tripp Cox</div></div>
+            <div class="xta xta-f">🎬</div>
+            <div class="xtbody"><div class="xtn">Wilmywood Insider Tours</div><div class="xta2">Film & TV locations · From $45</div></div>
             <div class="xtt">Book now</div>
           </div>
         </div>
@@ -367,21 +367,21 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
 <div class="marquee-bar">
   <div class="marquee">
     <span class="mq-item">Ghost Tours<span class="mq-dot"></span></span>
+    <span class="mq-item">Film &amp; TV Tours<span class="mq-dot"></span></span>
     <span class="mq-item">Fishing Charters<span class="mq-dot"></span></span>
     <span class="mq-item">Kayak Adventures<span class="mq-dot"></span></span>
-    <span class="mq-item">River Cruises<span class="mq-dot"></span></span>
     <span class="mq-item">Surf Lessons<span class="mq-dot"></span></span>
-    <span class="mq-item">Paddleboard Tours<span class="mq-dot"></span></span>
-    <span class="mq-item">Bike Tours<span class="mq-dot"></span></span>
+    <span class="mq-item">River Cruises<span class="mq-dot"></span></span>
     <span class="mq-item">Nature Walks<span class="mq-dot"></span></span>
+    <span class="mq-item">Water Adventures<span class="mq-dot"></span></span>
     <span class="mq-item">Ghost Tours<span class="mq-dot"></span></span>
+    <span class="mq-item">Film &amp; TV Tours<span class="mq-dot"></span></span>
     <span class="mq-item">Fishing Charters<span class="mq-dot"></span></span>
     <span class="mq-item">Kayak Adventures<span class="mq-dot"></span></span>
-    <span class="mq-item">River Cruises<span class="mq-dot"></span></span>
     <span class="mq-item">Surf Lessons<span class="mq-dot"></span></span>
-    <span class="mq-item">Paddleboard Tours<span class="mq-dot"></span></span>
-    <span class="mq-item">Bike Tours<span class="mq-dot"></span></span>
+    <span class="mq-item">River Cruises<span class="mq-dot"></span></span>
     <span class="mq-item">Nature Walks<span class="mq-dot"></span></span>
+    <span class="mq-item">Water Adventures<span class="mq-dot"></span></span>
   </div>
 </div>
 <div class="trust-bar">
@@ -389,7 +389,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
   <div class="tb-sep"></div>
   <div class="tb-item"><span class="tb-icon">💳</span> Secure Stripe Checkout</div>
   <div class="tb-sep"></div>
-  <div class="tb-item"><span class="tb-icon">🌊</span> Curated Local Operators</div>
+  <div class="tb-item"><span class="tb-icon">🌊</span> 100% Local Operators</div>
   <div class="tb-sep"></div>
   <div class="tb-item"><span class="tb-icon">🔒</span> SSL Encrypted</div>
   <div class="tb-sep"></div>
@@ -444,6 +444,12 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
       <a href="#explore" class="wk-link">View All Experiences &rarr;</a>
     </div>
     <div class="wk-grid">
+      <a class="wk-card" href="/category?cat=film-tours">
+        <div class="wk-top"><span class="wk-ico">🎬</span><span class="wk-badge wk-live">Live Now</span></div>
+        <div class="wk-name">Wilmywood Insider Tours</div>
+        <div class="wk-meta">Wed–Sun &nbsp;·&nbsp; 10 AM, 2 PM, 6 PM &nbsp;·&nbsp; Downtown Wilmington</div>
+        <div class="wk-ft"><span class="wk-price">From $45</span><span class="wk-spots">✓ Spots available</span></div>
+      </a>
       <a class="wk-card" href="/category?cat=ghost-tours">
         <div class="wk-top"><span class="wk-ico">👻</span><span class="wk-badge wk-live">Live Now</span></div>
         <div class="wk-name">Wilmington Ghost Walk</div>
@@ -452,8 +458,8 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
       </a>
       <a class="wk-card" href="/category?cat=surf-lessons">
         <div class="wk-top"><span class="wk-ico">🏄</span><span class="wk-badge wk-live">Live Now</span></div>
-        <div class="wk-name">Surf Lessons with Tripp Cox</div>
-        <div class="wk-meta">Sat–Sun &nbsp;·&nbsp; 8 AM–2 PM &nbsp;·&nbsp; Carolina &amp; Wrightsville Beach</div>
+        <div class="wk-name">Carolina Beach Surf Lessons</div>
+        <div class="wk-meta">Daily &nbsp;·&nbsp; 8 AM–2 PM &nbsp;·&nbsp; Carolina Beach</div>
         <div class="wk-ft"><span class="wk-price">From $75</span><span class="wk-spots">✓ Spots available</span></div>
       </a>
       <a class="wk-card" href="/category?cat=nature-walks">
@@ -469,9 +475,10 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
   <div class="sec-inner">
     <div class="sec-label">Explore</div>
     <h2 class="sec-title">Find your next <em>adventure</em></h2>
-    <p class="sec-sub">Browse 20 coastal experience categories. Instantly book our live operators — more coming as we grow across the Wilmington coast.</p>
+    <p class="sec-sub">Browse 20+ coastal experience categories. Instantly book our live operators — more coming as we grow across the Wilmington coast.</p>
     <div class="cats-grid">
       <a class="cat" href="/category?cat=ghost-tours"><span class="cat-ico">👻</span><div class="cat-name">Ghost Tours</div></a>
+      <a class="cat" href="/category?cat=film-tours"><span class="cat-ico">🎬</span><div class="cat-name">Film &amp; TV Tours</div></a>
       <a class="cat" href="/category?cat=fishing-charters"><span class="cat-ico">🎣</span><div class="cat-name">Fishing Charters</div></a>
       <a class="cat" href="/category?cat=kayak-tours"><span class="cat-ico">🚣</span><div class="cat-name">Kayak Tours</div></a>
       <a class="cat" href="/category?cat=river-cruises"><span class="cat-ico">🛥️</span><div class="cat-name">River Cruises</div></a>
@@ -498,8 +505,16 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
   <div class="sec-inner">
     <div class="sec-label">The People Behind ShoreList</div>
     <h2 class="sec-title">Real operators. <em>Real experiences.</em></h2>
-    <p class="sec-sub">ShoreList launched in 2025. We don't have hundreds of reviews yet — and we're not going to fabricate them. What we have is something better: three passionate local operators who know this coast better than anyone, and a platform built to connect them with visitors who are ready to explore.</p>
+    <p class="sec-sub">ShoreList launched in 2025. We don't have hundreds of reviews yet — and we're not going to fabricate them. What we have is something better: four passionate local operators who know this coast better than anyone.</p>
     <div class="reviews-grid">
+      <div class="rv-card">
+        <div class="rv-stars">🎬 Film &amp; TV Location Tours</div>
+        <div class="rv-text" style="font-style:normal;">With over two decades inside the Wilmington film and hospitality industry, our Wilmywood guide knows every set, every story, and every secret location behind the productions that put this city on the map. One Tree Hill. Iron Man 3. Dawson's Creek. This is Wilmington's film history — from the inside.</div>
+        <div class="rv-foot">
+          <div class="rv-avatar" style="background:linear-gradient(135deg,#1a1a2e,#16213e);">🎬</div>
+          <div><div class="rv-name">Wilmywood Insider Tours</div><div class="rv-meta">Film &amp; TV Location Tours &nbsp;·&nbsp; From $45</div></div>
+        </div>
+      </div>
       <div class="rv-card">
         <div class="rv-stars">👻 Ghost &amp; Historic Tours</div>
         <div class="rv-text" style="font-style:normal;">Sean Austin has been guiding Wilmington ghost walks for years, with an encyclopedic knowledge of the city's darkest and most fascinating history. Downtown Wilmington. Thu–Sun evenings.</div>
@@ -510,10 +525,10 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
       </div>
       <div class="rv-card">
         <div class="rv-stars">🏄 Surf Lessons</div>
-        <div class="rv-text" style="font-style:normal;">Tripp Cox is a certified surf instructor and Carolina Beach local. Whether you've never touched a board or want to level up, Tripp makes it happen. Carolina &amp; Wrightsville Beach.</div>
+        <div class="rv-text" style="font-style:normal;">Our certified surf instructor is a Carolina Beach local with years of experience teaching in these exact waters. Whether you've never touched a board or want to level up — this lesson changes everything. Carolina Beach.</div>
         <div class="rv-foot">
           <div class="rv-avatar" style="background:linear-gradient(135deg,#0a3d5c,#1a7585);">🏄</div>
-          <div><div class="rv-name">Tripp Cox</div><div class="rv-meta">Tripp Cox Surf School &nbsp;·&nbsp; From $75</div></div>
+          <div><div class="rv-name">Carolina Beach Surf Co.</div><div class="rv-meta">Surf Lessons &nbsp;·&nbsp; From $75</div></div>
         </div>
       </div>
       <div class="rv-card">
@@ -567,7 +582,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
   </div>
 </footer>
 <script>
-// ── CANVAS WAVE INTRO — BIRD'S EYE VIEW ──
+// ── CANVAS WAVE INTRO ──
 document.body.style.overflow='hidden';
 (function(){
   var canvas=document.getElementById('wi-canvas');
@@ -577,19 +592,16 @@ document.body.style.overflow='hidden';
   var W,H;
   function resize(){W=window.innerWidth;H=window.innerHeight;canvas.width=W*dpr;canvas.height=H*dpr;canvas.style.width=W+'px';canvas.style.height=H+'px';ctx.setTransform(1,0,0,1,0,0);ctx.scale(dpr,dpr);}
   resize();window.addEventListener('resize',resize);
-  var isMobile=W<768;
-  var foam=[];var startTime=null;
+  var isMobile=W<768;var foam=[];var startTime=null;
   var RUSH_DUR=2400;var FADE_START=3400;var FADE_DUR=900;var DONE=false;
   function easeOut(t){return 1-Math.pow(1-t,2.6);}
   function wY(x,t,a,f,ph){return a*Math.sin(x*f+t+ph)+a*0.42*Math.sin(x*f*2.1-t*1.3+ph)+a*0.20*Math.cos(x*f*3.2+t*0.7+ph);}
   function spawnFoam(x,y,n){var count=isMobile?Math.ceil(n/2):n;for(var i=0;i<count;i++){foam.push({x:x+(Math.random()-0.5)*40,y:y+Math.random()*8,vx:(Math.random()-0.5)*4.2,vy:-(Math.random()*3.8+0.6),r:Math.random()*3.8+1.2,life:1,decay:0.013+Math.random()*0.016});}}
   function draw(ts){
-    if(DONE)return;
-    if(!startTime)startTime=ts;
+    if(DONE)return;if(!startTime)startTime=ts;
     var elapsed=ts-startTime;var t=elapsed/1000;
     W=window.innerWidth;H=window.innerHeight;ctx.clearRect(0,0,W,H);
-    var rushP=Math.min(elapsed/RUSH_DUR,1);
-    var wy=(H+100)-easeOut(rushP)*(H+220);
+    var rushP=Math.min(elapsed/RUSH_DUR,1);var wy=(H+100)-easeOut(rushP)*(H+220);
     if(wy>0){
       var sandG=ctx.createLinearGradient(0,0,0,Math.min(wy,H));
       sandG.addColorStop(0,'#0d2530');sandG.addColorStop(0.35,'#0a1e28');sandG.addColorStop(0.75,'#0c2535');sandG.addColorStop(1,'#10404e');
@@ -676,20 +688,13 @@ document.body.style.overflow='hidden';
   }
   var once=false;
   function startAudio(){
-    if(once)return;once=true;
-    try{buildOcean();}catch(e){}
-    document.removeEventListener('mousedown',startAudio);
-    document.removeEventListener('pointerdown',startAudio);
-    document.removeEventListener('touchend',startAudio);
-    document.removeEventListener('wheel',startAudio);
-    document.removeEventListener('click',startAudio);
-    var hint=document.getElementById('wi-tap');
-    if(hint)hint.classList.add('hidden');
+    if(once)return;
+    try{buildOcean();if(actx){once=true;document.removeEventListener('mousedown',startAudio);document.removeEventListener('pointerdown',startAudio);document.removeEventListener('touchend',startAudio);document.removeEventListener('click',startAudio);var hint=document.getElementById('wi-tap');if(hint)hint.classList.add('hidden');}}catch(e){}
   }
+  window._shorelistAudio=startAudio;
   document.addEventListener('mousedown',startAudio,false);
   document.addEventListener('pointerdown',startAudio,false);
   document.addEventListener('touchend',startAudio,false);
-  document.addEventListener('wheel',startAudio,{passive:true});
   document.addEventListener('click',startAudio,false);
   setTimeout(function(){if(!once)try{startAudio();}catch(e){}},100);
   var btn=document.getElementById('mute-btn');
@@ -709,11 +714,11 @@ sT('xt1',2700);hT('xt1',6600);sT('xt2',4000);hT('xt2',7800);
 setTimeout(function(){sT('xt1',0);hT('xt1',3800);sT('xt2',1400);hT('xt2',5200);},12000);
 (function(){var WC={0:'☀️ Clear skies',1:'🌤️ Mostly clear',2:'⛅ Partly cloudy',3:'☁️ Overcast',51:'🌦️ Light drizzle',53:'🌦️ Drizzle',61:'🌧️ Light rain',63:'🌧️ Rain',80:'🌦️ Showers',95:'⛈️ Thunderstorm'};fetch('https://api.open-meteo.com/v1/forecast?latitude=34.2257&longitude=-77.9447&current=temperature_2m,weather_code&temperature_unit=fahrenheit').then(function(r){return r.json();}).then(function(d){var c=d.current||{};var t=c.temperature_2m?Math.round(c.temperature_2m)+'°F':'74°F';var wc=WC[c.weather_code]||'🌤️ Clear skies';var te=document.getElementById('wb-temp');var ce=document.getElementById('wb-cond');if(te)te.textContent=t;if(ce)ce.textContent=wc;}).catch(function(){var ce=document.getElementById('wb-cond');if(ce)ce.textContent='Beautiful coastal weather';});})();
 var TOASTS=[
+  {ico:'🎬',bg:'linear-gradient(135deg,#1a1a2e,#16213e)',name:'Wilmywood Insider Tours',action:'Film & TV location tours · From $45'},
   {ico:'👻',bg:'linear-gradient(135deg,#1a0533,#4a0e8f)',name:'Ghost Walk · Downtown Wilmington',action:'Thu–Sun evenings · From $25'},
-  {ico:'🏄',bg:'linear-gradient(135deg,#0a3d5c,#1a7585)',name:'Surf Lessons · Carolina Beach',action:'With Tripp Cox · From $75'},
+  {ico:'🏄',bg:'linear-gradient(135deg,#0a3d5c,#1a7585)',name:'Surf Lessons · Carolina Beach',action:'Certified local instructor · From $75'},
   {ico:'🌿',bg:'linear-gradient(135deg,#0a2e1a,#1a7a56)',name:'Coastal Nature Walk',action:'Carolina Beach State Park · From $35'},
-  {ico:'👻',bg:'linear-gradient(135deg,#1a0533,#4a0e8f)',name:'Historic Walking Tour',action:'Wilmington\'s most fascinating stories'},
-  {ico:'🏄',bg:'linear-gradient(135deg,#0a3d5c,#1a7585)',name:'Surf · Wrightsville Beach',action:'Premium session · From $125'},
+  {ico:'🎬',bg:'linear-gradient(135deg,#1a1a2e,#16213e)',name:'Wilmywood · One Tree Hill locations',action:'Industry insider guide · Book now'},
   {ico:'🌿',bg:'linear-gradient(135deg,#0a2e1a,#1a7a56)',name:'Nature Walk · Weekend slots open',action:'8 AM, 10 AM and 2 PM available'},
 ];
 var toastIdx=0;var gtc=document.getElementById('g-toasts');
