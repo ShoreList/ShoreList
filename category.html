@@ -4,9 +4,9 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>ShoreList — Wilmington, NC Coastal Experiences</title>
-<meta name="description" content="Book local coastal experiences in Wilmington, NC — ghost tours, fishing charters, surf lessons, kayak tours and more. Instant booking, refundable deposit."/>
+<meta name="description" content="Book local coastal experiences in Wilmington, NC — ghost tours, film location tours, fishing charters, surf lessons, kayak tours and more. Instant booking, secure checkout."/>
 <meta property="og:title" content="ShoreList — Wilmington, NC Coastal Experiences"/>
-<meta property="og:description" content="Book unforgettable local experiences across Wilmington and the NC beaches. Instant booking, curated operators, refundable deposit."/>
+<meta property="og:description" content="Book unforgettable local experiences across Wilmington and the NC beaches. Instant booking, local operators, secure checkout."/>
 <meta property="og:type" content="website"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
@@ -25,7 +25,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 48px;display:fl
 .nav-join:hover{background:var(--coral2);}
 .hero{background:var(--teal);padding:120px 48px 64px;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 80% 50%,rgba(233,102,69,0.08) 0%,transparent 65%);}
-.hero::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;}
+.hero::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);background-size:28px 28px;}
 .hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
 .hero-breadcrumb{font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,232,203,0.4);margin-bottom:20px;}
 .hero-breadcrumb a{color:var(--coral);text-decoration:none;}
@@ -173,10 +173,11 @@ footer{background:var(--teal);padding:28px 48px;display:flex;justify-content:spa
 <script>
 var CAT_DATA={
   'ghost-tours':{icon:'&#128123;',title:'Ghost Tours',sub:'Spine-tingling walks through Wilmington\'s most haunted streets with expert local guides.'},
+  'film-tours':{icon:'&#127916;',title:'Film & TV Location Tours',sub:'Explore the real sets and locations behind Wilmington\'s legendary film and TV history — guided by someone who lived it from the inside.'},
   'fishing-charters':{icon:'&#127907;',title:'Fishing Charters',sub:'Half and full-day offshore charters from Carolina Beach and Wrightsville Beach.'},
   'kayak-tours':{icon:'&#128675;',title:'Kayak Tours',sub:'Guided paddle adventures through tidal creeks, salt marshes, and barrier islands of coastal NC.'},
   'river-cruises':{icon:'&#128741;',title:'River Cruises',sub:'Sunset and sightseeing cruises along the Wilmington waterfront and Cape Fear River.'},
-  'surf-lessons':{icon:'&#127940;',title:'Surf Lessons',sub:'Learn to surf at Carolina or Wrightsville Beach with certified local instructors. All gear included.'},
+  'surf-lessons':{icon:'&#127940;',title:'Surf Lessons',sub:'Learn to surf at Carolina Beach with a certified local instructor. All gear included.'},
   'paddleboard':{icon:'&#127965;',title:'Paddleboard & SUP',sub:'Stand-up paddleboard rentals and guided lessons on the calm coastal waterways.'},
   'bike-tours':{icon:'&#128692;',title:'Bike Tours',sub:'Guided rides through Wilmington\'s historic districts, riverfront, and beachfront communities.'},
   'wildlife-tours':{icon:'&#128044;',title:'Wildlife Tours',sub:'Dolphin watches, birding excursions, and guided nature tours along the NC coast.'},
@@ -194,34 +195,42 @@ var CAT_DATA={
   'wellness':{icon:'&#129496;',title:'Wellness & Spa',sub:'Yoga on the beach, reiki, massage, spas, and mindful coastal retreats on the NC coast.'}
 };
 var OPS={
+  'film-tours':[
+    {id:'ron-film',business:'Wilmywood Insider Tours',operator:'Industry Insider & Local Expert',title:'20+ Years in the Wilmington Film & Hospitality Industry',
+     desc:'Wilmington isn\'t just a beach town — it\'s one of the most filmed cities in America. One Tree Hill. Dawson\'s Creek. Iron Man 3. Safe Haven. A Walk to Remember. Hundreds of productions have called Wilmington home. Your guide has spent over two decades working inside the Wilmington film and hospitality industry and knows the stories behind the sets, the locations, and the legends that most tourists never hear. This isn\'t a bus tour reading from a brochure. This is Wilmywood — from the inside.',
+     price:'$45',priceLabel:'per person',priceCents:4500,
+     tags:['Downtown Wilmington','90 Minutes','All Ages','Film History'],
+     note:'Secure your spot online. Balance due at tour.',
+     schedule:{days:[3,4,5,6,0],slots:['10:00 AM','2:00 PM','6:00 PM']}}
+  ],
   'ghost-tours':[
     {id:'sean-ghost',business:'Wilmington Ghost Walk',operator:'Sean Austin',title:'Professional Ghost Tour Guide',
      desc:'Join Sean Austin for an unforgettable 90-minute guided walk through Wilmington\'s most haunted streets and historic neighborhoods. With deep local expertise, Sean brings the dark and fascinating stories of this 300-year-old city to life — from Civil War spirits to colonial hauntings.',
      price:'$25',priceLabel:'per person',priceCents:2500,
      tags:['Downtown Wilmington','90 Minutes','All Ages','Evening Tours'],
-     note:'$25 refundable deposit holds your spot. No additional booking fee.',
+     note:'Secure your spot online. No additional booking fee.',
      schedule:{days:[4,5,6,0],slots:['7:00 PM','8:30 PM','10:00 PM']}},
     {id:'rj-historic',business:'Historic Wilmington Walking Tours',operator:'RJ Brideau',title:'Local Guide & ShoreList Founder',
      desc:'Explore the remarkable history of Wilmington — one of the most historically significant cities in the American South — with RJ Brideau. Walk through neighborhoods of stunning antebellum homes, hear stories of the city\'s colonial roots, its role in the Civil War, and the powerful personalities who shaped it.',
      price:'$28',priceLabel:'per person',priceCents:2500,
      tags:['Historic District','75 Minutes','All Ages','Daytime & Evening'],
-     note:'$25 refundable deposit holds your spot. Balance due at tour.',
+     note:'Secure your spot online. Balance due at tour.',
      schedule:{days:[3,4,5,6,0],slots:['10:00 AM','2:00 PM','6:00 PM']}}
   ],
   'surf-lessons':[
-    {id:'james-surf',business:'Tripp Cox Surf School',operator:'Tripp Cox',title:'Certified Surf Instructor',
-     desc:'Learn to surf at one of the best beginner beaches on the East Coast with certified instructor Tripp Cox. Whether you\'ve never touched a board or want to level up your skills, Tripp makes learning fun, safe, and unforgettable. All equipment included — board, wetsuit, and rash guard.',
-     price:'$75',priceLabel:'per person',priceCents:2500,
+    {id:'james-surf',business:'Carolina Beach Surf Co.',operator:'Certified Local Instructor',title:'Professional Surf Instructor · 10+ Years Experience',
+     desc:'Learn to surf at one of the best beginner beaches on the East Coast with a certified local instructor who has spent years teaching in these exact waters. Whether you\'ve never touched a board or want to level up your skills, this lesson is fun, safe, and unforgettable. Every session is tailored to your level. All equipment included — board, wetsuit, and rash guard.',
+     price:'$75',priceLabel:'per person',priceCents:7500,
      tags:['Carolina Beach','2 Hours','All Skill Levels','All Gear Included'],
-     note:'$25 refundable deposit holds your spot. $50 balance due at lesson.',
+     note:'Secure your spot online. Balance due at lesson.',
      schedule:{days:[1,2,4,5,6,0],slots:['8:00 AM','10:00 AM','12:00 PM','2:00 PM']}}
   ],
   'nature-walks':[
     {id:'rj-nature',business:'Coastal Carolina Nature Walks',operator:'RJ Brideau',title:'Local Naturalist & Guide',
      desc:'Discover the wild, beautiful natural world of coastal North Carolina with RJ Brideau. From ancient cypress swamps and carnivorous plant bogs of Carolina Beach State Park to pristine maritime forests and tidal marshes, these guided walks reveal the incredible biodiversity that makes this coast so special.',
-     price:'$35',priceLabel:'per person',priceCents:2500,
+     price:'$35',priceLabel:'per person',priceCents:3500,
      tags:['Carolina Beach State Park','2 Hours','Family Friendly','Wildlife & Plants'],
-     note:'$25 refundable deposit holds your spot. $10 balance due at walk.',
+     note:'Secure your spot online. Balance due at walk.',
      schedule:{days:[3,6,0],slots:['8:00 AM','10:00 AM','2:00 PM']}}
   ]
 };
@@ -251,24 +260,24 @@ function renderPage(){
   document.getElementById('hbc').textContent=d.title;
   var ops=OPS[cat]||[];
   var mh='';
-  if(ops.length>0){mh+='<div class="hm-badge live">'+ops.length+' Operator'+(ops.length>1?'s':'')+' Live Now</div>';mh+='<div class="hm-badge">Instant Booking</div>';mh+='<div class="hm-badge">Refundable Deposit</div>';mh+='<div class="hm-badge">Real-Time Availability</div>';}
+  if(ops.length>0){mh+='<div class="hm-badge live">'+ops.length+' Operator'+(ops.length>1?'s':'')+' Live Now</div>';mh+='<div class="hm-badge">Instant Booking</div>';mh+='<div class="hm-badge">Secure Checkout</div>';mh+='<div class="hm-badge">Real-Time Availability</div>';}
   else{mh+='<div class="hm-badge">Coming Soon</div>';mh+='<div class="hm-badge">Notify Me When Live</div>';}
   document.getElementById('hmeta').innerHTML=mh;
   var h='';
   if(ops.length>0){
     h+='<div class="section-label">Ready to Book</div>';
     h+='<h2 class="section-title">Choose Your Experience</h2>';
-    h+='<p class="section-sub">All operators are personally onboarded by ShoreList. Select your date and time — your spot is secured with a $25 fully refundable deposit. Real-time availability. Zero double bookings.</p>';
+    h+='<p class="section-sub">All operators are personally onboarded by ShoreList. Select your date and time — secure your spot instantly. Real-time availability. Zero double bookings.</p>';
     h+='<div class="operator-grid">';
     ops.forEach(function(op){
       var oid=esc(op.id);
       h+='<div class="op-card" id="card-'+oid+'">';
       h+='<div class="op-card-body">';
-      h+='<div class="op-card-header"><div><div class="op-live-badge"><span class="op-live-dot"></span>Live &amp; Taking Bookings</div><div class="op-business-name">'+esc(op.business)+'</div><div class="op-operator-name">with '+esc(op.operator)+' &nbsp;&middot;&nbsp; '+esc(op.title)+'</div></div><div class="op-price-tag"><div class="op-price">'+esc(op.price)+'</div><div class="op-price-label">'+esc(op.priceLabel)+'</div></div></div>';
+      h+='<div class="op-card-header"><div><div class="op-live-badge"><span class="op-live-dot"></span>Live &amp; Taking Bookings</div><div class="op-business-name">'+esc(op.business)+'</div><div class="op-operator-name">'+esc(op.operator)+' &nbsp;&middot;&nbsp; '+esc(op.title)+'</div></div><div class="op-price-tag"><div class="op-price">'+esc(op.price)+'</div><div class="op-price-label">'+esc(op.priceLabel)+'</div></div></div>';
       h+='<p class="op-desc">'+esc(op.desc)+'</p>';
       h+='<div class="op-tags">';op.tags.forEach(function(t){h+='<span class="op-tag">'+esc(t)+'</span>';});h+='</div>';
       h+='<div class="op-divider"></div>';
-      h+='<div class="op-book-row"><div class="op-book-note"><strong>$25 refundable deposit</strong> reserves your spot.<br/>'+esc(op.note)+'</div><button type="button" class="btn-book" id="btn-'+oid+'" onclick="togForm(\''+oid+'\')">Book This Experience &rarr;</button></div>';
+      h+='<div class="op-book-row"><div class="op-book-note">Book securely online.<br/>'+esc(op.note)+'</div><button type="button" class="btn-book" id="btn-'+oid+'" onclick="togForm(\''+oid+'\')">Book This Experience &rarr;</button></div>';
       h+='</div>';
       h+='<div class="book-form-wrap" id="form-'+oid+'">';
       h+='<div class="book-form-title">&#128197;&nbsp; Book with '+esc(op.business)+'</div>';
@@ -278,11 +287,11 @@ function renderPage(){
       h+='<div class="cal-box"><div class="cal-hd"><button type="button" class="cal-arrow" onclick="cprev(\''+oid+'\')">&#8592;</button><div class="cal-mlbl" id="cm-'+oid+'"></div><button type="button" class="cal-arrow" onclick="cnext(\''+oid+'\')">&#8594;</button></div><div class="cal-g" id="cg-'+oid+'"></div><div id="sw-'+oid+'"></div></div>';
       h+='<div class="bk-sel-summary" id="ss-'+oid+'"></div></div>';
       h+='<input type="hidden" id="hd-'+oid+'"/><input type="hidden" id="ht-'+oid+'"/>';
-      h+='<div class="bk-row full"><div class="bk-field"><label class="bk-label">Special Requests (optional)</label><textarea class="bk-input" id="nr-'+oid+'" rows="2" placeholder="Accessibility needs, celebrating something special, questions for the operator..."></textarea></div></div>';
-      h+='<div class="dep-row"><div><div class="dep-lbl">Refundable Booking Deposit</div><div class="dep-note">Holds your spot &nbsp;&middot;&nbsp; Fully refunded if unavailable &nbsp;&middot;&nbsp; Balance due at experience</div></div><div class="dep-amt">$25.00</div></div>';
+      h+='<div class="bk-row full"><div class="bk-field"><label class="bk-label">Special Requests (optional)</label><textarea class="bk-input" id="nr-'+oid+'" rows="2" placeholder="Accessibility needs, celebrating something special, questions..."></textarea></div></div>';
+      h+='<div class="dep-row"><div><div class="dep-lbl">Secure Booking</div><div class="dep-note">Your spot is confirmed instantly &nbsp;&middot;&nbsp; Cancel 24hrs before for full refund</div></div><div class="dep-amt">'+esc(op.price)+'</div></div>';
       h+='<div class="bk-err" id="err-'+oid+'"></div>';
-      h+='<div class="bk-acts"><button type="button" class="btn-cxl" onclick="closeForm(\''+oid+'\')">Cancel</button><button type="button" class="btn-sub" id="sub-'+oid+'" onclick="doBook(\''+oid+'\',\''+esc(cat)+'\',\''+esc(d.title)+'\',\''+esc(op.business)+'\',\''+oid+'\')">Secure My Spot &mdash; $25.00</button></div>';
-      h+='<p class="stripe-line">&#128274;&nbsp; Secure checkout via Stripe &nbsp;&middot;&nbsp; 256-bit SSL encryption &nbsp;&middot;&nbsp; Fully refundable if unavailable</p>';
+      h+='<div class="bk-acts"><button type="button" class="btn-cxl" onclick="closeForm(\''+oid+'\')">Cancel</button><button type="button" class="btn-sub" id="sub-'+oid+'" onclick="doBook(\''+oid+'\',\''+esc(cat)+'\',\''+esc(d.title)+'\',\''+esc(op.business)+'\',\''+oid+'\')">Secure My Spot &mdash; '+esc(op.price)+'</button></div>';
+      h+='<p class="stripe-line">&#128274;&nbsp; Secure checkout via Stripe &nbsp;&middot;&nbsp; 256-bit SSL encryption &nbsp;&middot;&nbsp; Cancel 24hrs for full refund</p>';
       h+='</div>';
       h+='</div>';
     });
@@ -301,7 +310,7 @@ function renderPage(){
 function togForm(id){var open=document.getElementById('form-'+id).classList.contains('open');if(open)closeForm(id);else openForm(id);}
 function openForm(id){if(AF&&AF!==id)closeForm(AF);var f=document.getElementById('form-'+id);var b=document.getElementById('btn-'+id);if(f){f.classList.add('open');setTimeout(function(){f.scrollIntoView({behavior:'smooth',block:'start'});},60);}if(b)b.textContent='Close Booking Form';AF=id;}
 function closeForm(id){var f=document.getElementById('form-'+id);var b=document.getElementById('btn-'+id);var e=document.getElementById('err-'+id);if(f)f.classList.remove('open');if(b)b.innerHTML='Book This Experience &rarr;';if(e)e.style.display='none';AF=null;}
-function doBook(id,cat,catLabel,opName,opId){var nm=document.getElementById('n-'+id).value.trim();var em=document.getElementById('e-'+id).value.trim();var ph=document.getElementById('p-'+id).value.trim();var ps=document.getElementById('ps-'+id).value;var dt=document.getElementById('hd-'+id).value;var tm=document.getElementById('ht-'+id).value;var nt=document.getElementById('nr-'+id).value.trim();var er=document.getElementById('err-'+id);var bt=document.getElementById('sub-'+id);if(!nm||!em||!ps){er.style.display='block';er.textContent='Please fill in your name, email, and party size.';er.scrollIntoView({behavior:'smooth',block:'nearest'});return;}if(!dt||!tm){er.style.display='block';er.textContent='Please select a date and time on the calendar above.';er.scrollIntoView({behavior:'smooth',block:'nearest'});return;}if(!em.includes('@')||!em.includes('.')){er.style.display='block';er.textContent='Please enter a valid email address.';return;}er.style.display='none';bt.disabled=true;bt.textContent='Securing your spot\u2026';fetch('/.netlify/functions/create-checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({category:cat,categoryLabel:catLabel,operatorName:opName,operatorId:opId,guestName:nm,guestEmail:em,guestPhone:ph,date:dt,timeSlot:tm,partySize:ps,notes:nt,priceInCents:2500})}).then(function(r){return r.json();}).then(function(data){if(data.url){window.location.href=data.url;}else{throw new Error(data.error||'No checkout URL');}}).catch(function(){bt.disabled=false;bt.innerHTML='Secure My Spot &mdash; $25.00';er.style.display='block';er.textContent='Something went wrong. Please try again or email shorelistwilmington@gmail.com';});}
+function doBook(id,cat,catLabel,opName,opId){var nm=document.getElementById('n-'+id).value.trim();var em=document.getElementById('e-'+id).value.trim();var ph=document.getElementById('p-'+id).value.trim();var ps=document.getElementById('ps-'+id).value;var dt=document.getElementById('hd-'+id).value;var tm=document.getElementById('ht-'+id).value;var nt=document.getElementById('nr-'+id).value.trim();var er=document.getElementById('err-'+id);var bt=document.getElementById('sub-'+id);if(!nm||!em||!ps){er.style.display='block';er.textContent='Please fill in your name, email, and party size.';er.scrollIntoView({behavior:'smooth',block:'nearest'});return;}if(!dt||!tm){er.style.display='block';er.textContent='Please select a date and time on the calendar above.';er.scrollIntoView({behavior:'smooth',block:'nearest'});return;}if(!em.includes('@')||!em.includes('.')){er.style.display='block';er.textContent='Please enter a valid email address.';return;}er.style.display='none';bt.disabled=true;bt.textContent='Securing your spot\u2026';var op=null;var ops=OPS[cat]||[];for(var i=0;i<ops.length;i++){if(ops[i].id===opId){op=ops[i];break;}}var price=op?op.priceCents:2500;fetch('/.netlify/functions/create-checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({category:cat,categoryLabel:catLabel,operatorName:opName,operatorId:opId,guestName:nm,guestEmail:em,guestPhone:ph,date:dt,timeSlot:tm,partySize:ps,notes:nt,priceInCents:price})}).then(function(r){return r.json();}).then(function(data){if(data.url){window.location.href=data.url;}else{throw new Error(data.error||'No checkout URL');}}).catch(function(){bt.disabled=false;bt.innerHTML='Secure My Spot &mdash; '+(op?op.price:'');er.style.display='block';er.textContent='Something went wrong. Please try again or email shorelistwilmington@gmail.com';});}
 function doNotify(cat,title){var inp=document.getElementById('ni-'+cat);var done=document.getElementById('nd-'+cat);if(!inp||!inp.value.trim()){if(inp)inp.focus();return;}fetch('https://formspree.io/f/xeevzzqd',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify({email:inp.value.trim(),category:title})}).catch(function(){});if(inp.parentElement)inp.parentElement.style.display='none';if(done)done.style.display='block';}
 document.addEventListener('DOMContentLoaded',renderPage);
 </script>
