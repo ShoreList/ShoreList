@@ -143,44 +143,49 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:fl
   <p>ShoreList LLC &nbsp;·&nbsp; Wilmington, NC &nbsp;·&nbsp; <a href="/">Shorelist.net</a> &nbsp;·&nbsp; <a href="mailto:shorelistwilmington@gmail.com">shorelistwilmington@gmail.com</a></p>
 </div>
 <script>
-var CAT_LINKS={
-  'ghost-tours':{url:'/category?cat=ghost-tours',bookable:true},
-  'surf-lessons':{url:'/category?cat=surf-lessons',bookable:true},
-  'nature-walks':{url:'/category?cat=nature-walks',bookable:true},
-  'historic-tours':{url:'/category?cat=ghost-tours',bookable:true},
-  'kayak-tours':{url:'/category?cat=kayak-tours',bookable:false},
-  'fishing-charters':{url:'/category?cat=fishing-charters',bookable:false},
-  'river-cruises':{url:'/category?cat=river-cruises',bookable:false},
-  'paddleboard':{url:'/category?cat=paddleboard',bookable:false},
-  'bike-tours':{url:'/category?cat=bike-tours',bookable:false},
-  'wildlife-tours':{url:'/category?cat=wildlife-tours',bookable:false},
-  'beach-picnics':{url:'/category?cat=beach-picnics',bookable:false},
-  'jet-ski-rentals':{url:'/category?cat=jet-ski-rentals',bookable:false},
-  'golf-cart-rentals':{url:'/category?cat=golf-cart-rentals',bookable:false},
-  'beach-photography':{url:'/category?cat=beach-photography',bookable:false},
-  'wellness':{url:'/category?cat=wellness',bookable:false},
+var CAT_LINKS = {
+  'film-tours':        { url: '/category?cat=film-tours',        bookable: true  },
+  'ghost-tours':       { url: '/category?cat=ghost-tours',       bookable: true  },
+  'surf-lessons':      { url: '/category?cat=surf-lessons',      bookable: true  },
+  'nature-walks':      { url: '/category?cat=nature-walks',      bookable: true  },
+  'historic-tours':    { url: '/category?cat=ghost-tours',       bookable: true  },
+  'kayak-tours':       { url: '/category?cat=kayak-tours',       bookable: false },
+  'fishing-charters':  { url: '/category?cat=fishing-charters',  bookable: false },
+  'river-cruises':     { url: '/category?cat=river-cruises',     bookable: false },
+  'paddleboard':       { url: '/category?cat=paddleboard',       bookable: false },
+  'bike-tours':        { url: '/category?cat=bike-tours',        bookable: false },
+  'wildlife-tours':    { url: '/category?cat=wildlife-tours',    bookable: false },
+  'beach-picnics':     { url: '/category?cat=beach-picnics',     bookable: false },
+  'jet-ski-rentals':   { url: '/category?cat=jet-ski-rentals',   bookable: false },
+  'golf-cart-rentals': { url: '/category?cat=golf-cart-rentals', bookable: false },
+  'beach-photography': { url: '/category?cat=beach-photography', bookable: false },
+  'wellness':          { url: '/category?cat=wellness',          bookable: false },
 };
-function fillChip(el,text){
-  document.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active');});
+
+function fillChip(el, text) {
+  document.querySelectorAll('.chip').forEach(function(c) { c.classList.remove('active'); });
   el.classList.add('active');
-  var inp=document.getElementById('trip-input');
-  inp.value=text;inp.focus();
+  var inp = document.getElementById('trip-input');
+  inp.value = text; inp.focus();
 }
-async function buildPlan(){
-  var input=document.getElementById('trip-input').value.trim();
-  if(!input){document.getElementById('trip-input').focus();return;}
-  var btn=document.getElementById('btn-plan');
-  btn.classList.add('loading');btn.disabled=true;
-  var resultSec=document.getElementById('result-section');
-  var resultContent=document.getElementById('result-content');
+
+async function buildPlan() {
+  var input = document.getElementById('trip-input').value.trim();
+  if (!input) { document.getElementById('trip-input').focus(); return; }
+  var btn = document.getElementById('btn-plan');
+  btn.classList.add('loading'); btn.disabled = true;
+  var resultSec = document.getElementById('result-section');
+  var resultContent = document.getElementById('result-content');
   resultSec.classList.add('show');
-  resultSec.scrollIntoView({behavior:'smooth',block:'start'});
-  resultContent.innerHTML='<div class="loading-state"><div class="loading-wave"><span></span><span></span><span></span><span></span><span></span></div><p class="loading-text">Building your perfect Wilmington day&hellip;<br/>Checking experiences, timing the tides, making it yours.</p></div>';
-  var systemPrompt=`You are ShoreList's AI Trip Planner for Wilmington, NC and the surrounding beaches (Wrightsville Beach, Carolina Beach, Kure Beach). You build personalized day itineraries for visitors based on their interests and group.
+  resultSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  resultContent.innerHTML = '<div class="loading-state"><div class="loading-wave"><span></span><span></span><span></span><span></span><span></span></div><p class="loading-text">Building your perfect Wilmington day&hellip;<br/>Checking experiences, timing the tides, making it yours.</p></div>';
+
+  var systemPrompt = `You are ShoreList's AI Trip Planner for Wilmington, NC and the surrounding beaches (Wrightsville Beach, Carolina Beach, Kure Beach). You build personalized day itineraries for visitors based on their interests and group.
 
 Available bookable experiences on ShoreList:
+- Film & TV Location Tours — Wilmywood Insider Tours, guided by a 20+ year film industry veteran (daytime & evening, downtown Wilmington) - category: film-tours
 - Ghost Tours / Historic Walking Tours (evening, downtown Wilmington) - category: ghost-tours
-- Surf Lessons at Carolina Beach or Wrightsville Beach - category: surf-lessons
+- Surf Lessons at Carolina Beach with a certified local instructor - category: surf-lessons
 - Coastal Carolina Nature Walks (Carolina Beach State Park) - category: nature-walks
 
 Other experiences available on ShoreList (coming soon):
@@ -210,138 +215,166 @@ Rules:
 - 4-6 items per itinerary
 - Match timing realistically
 - Make descriptions personal to the specific group
-- Use "bookable: true" only for ghost-tours, surf-lessons, nature-walks
+- Use "bookable: true" only for film-tours, ghost-tours, surf-lessons, nature-walks
 - Tags should be short: "2 Hours", "Family Friendly", "On the Water", etc.
 - Narrative should feel like a local friend wrote it, not a robot`;
-  try{
-    const response=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:systemPrompt,messages:[{role:'user',content:'Build a Wilmington itinerary for: '+input}]})});
-    const data=await response.json();
-    var raw=(data.content||[]).map(function(b){return b.text||'';}).join('');
-    raw=raw.replace(/```json|```/g,'').trim();
-    var plan=JSON.parse(raw);
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: systemPrompt,
+        messages: [{ role: 'user', content: 'Build a Wilmington itinerary for: ' + input }]
+      })
+    });
+    const data = await response.json();
+    var raw = (data.content || []).map(function(b) { return b.text || ''; }).join('');
+    raw = raw.replace(/```json|```/g, '').trim();
+    var plan = JSON.parse(raw);
     renderPlan(plan);
-  }catch(e){
-    renderPlan({title:'Your Perfect Wilmington Day',narrative:'Wilmington has something incredible for everyone. Here\'s a day we think you\'ll absolutely love — built around the best experiences the coast has to offer.',items:[{time:'9:00 AM',name:'Coastal Carolina Nature Walk',description:'Start your morning in the magic of Carolina Beach State Park. Ancient cypress swamps, carnivorous plants, and the freshest coastal air you\'ve ever breathed.',tags:['2 Hours','Nature & Wildlife','Family Friendly'],category:'nature-walks',bookable:true},{time:'12:00 PM',name:'Wilmington Riverfront Lunch',description:'The Wilmington waterfront is one of the most beautiful lunch spots in the South. Pick a patio, watch the Cape Fear River roll by.',tags:['1.5 Hours','Local Flavor','Cape Fear River'],category:null,bookable:false},{time:'2:00 PM',name:'Surf Lesson at Carolina Beach',description:'The afternoon is made for the ocean. Learn to surf with certified instructor Tripp Cox — all boards included, all skill levels welcome.',tags:['2 Hours','On the Water','All Skill Levels'],category:'surf-lessons',bookable:true},{time:'7:00 PM',name:'Wilmington Ghost Walk',description:'End your evening with a spine-tingling 90-minute walk through the most haunted streets in one of America\'s oldest cities. Stories you won\'t forget.',tags:['90 Minutes','Evening','Downtown'],category:'ghost-tours',bookable:true}]});
+  } catch(e) {
+    renderPlan({
+      title: 'Your Perfect Wilmington Day',
+      narrative: 'Wilmington has something incredible for everyone. Here\'s a day we think you\'ll absolutely love — built around the best experiences the coast has to offer.',
+      items: [
+        { time: '10:00 AM', name: 'Wilmywood Insider Tour', description: 'Start your day with a walk through the real Wilmington — the sets, the stories, the locations behind One Tree Hill, Iron Man 3, and dozens more productions. Your guide has 20+ years inside the industry.', tags: ['90 Minutes', 'Downtown', 'All Ages'], category: 'film-tours', bookable: true },
+        { time: '12:30 PM', name: 'Wilmington Riverfront Lunch', description: 'The Wilmington waterfront is one of the most beautiful lunch spots in the South. Pick a patio, watch the Cape Fear River roll by.', tags: ['1.5 Hours', 'Local Flavor', 'Cape Fear River'], category: null, bookable: false },
+        { time: '2:30 PM', name: 'Surf Lesson at Carolina Beach', description: 'The afternoon is made for the ocean. Learn to surf with a certified local instructor — all boards included, all skill levels welcome.', tags: ['2 Hours', 'On the Water', 'All Skill Levels'], category: 'surf-lessons', bookable: true },
+        { time: '7:00 PM', name: 'Wilmington Ghost Walk', description: 'End your evening with a spine-tingling 90-minute walk through the most haunted streets in one of America\'s oldest cities. Stories you won\'t forget.', tags: ['90 Minutes', 'Evening', 'Downtown'], category: 'ghost-tours', bookable: true }
+      ]
+    });
   }
-  btn.classList.remove('loading');btn.disabled=false;
+  btn.classList.remove('loading'); btn.disabled = false;
 }
-function renderPlan(plan){
-  var resultTitle=document.getElementById('result-title');
-  resultTitle.textContent=plan.title||'Your Wilmington Itinerary';
-  var html='';
-  if(plan.narrative){html+='<div class="itin-narrative">'+esc(plan.narrative)+'</div>';}
-  html+='<div class="itinerary">';
-  (plan.items||[]).forEach(function(item){
-    var catInfo=item.category?CAT_LINKS[item.category]:null;
-    var bookable=item.bookable&&catInfo&&catInfo.bookable;
-    var comingSoon=item.category&&catInfo&&!catInfo.bookable;
-    var bookHtml='';
-    if(bookable&&catInfo){bookHtml='<a href="'+catInfo.url+'" class="itin-book">Book This &rarr;</a>';}
-    else if(comingSoon&&catInfo){bookHtml='<a href="'+catInfo.url+'" class="itin-book coming-soon">Coming Soon</a>';}
-    else{bookHtml='<a href="/" class="itin-book coming-soon">Browse ShoreList</a>';}
-    var tagsHtml=(item.tags||[]).map(function(t){return '<span class="itin-tag">'+esc(t)+'</span>';}).join('');
-    html+='<div class="itin-card">';
-    html+='<div class="itin-top"><div class="itin-time">'+esc(item.time||'')+'</div><div class="itin-content"><div class="itin-name">'+esc(item.name||'')+'</div><div class="itin-desc">'+esc(item.description||'')+'</div></div></div>';
-    html+='<div class="itin-bottom"><div class="itin-tags">'+tagsHtml+'</div>'+bookHtml+'</div>';
-    html+='</div>';
+
+function renderPlan(plan) {
+  var resultTitle = document.getElementById('result-title');
+  resultTitle.textContent = plan.title || 'Your Wilmington Itinerary';
+  var html = '';
+  if (plan.narrative) { html += '<div class="itin-narrative">' + esc(plan.narrative) + '</div>'; }
+  html += '<div class="itinerary">';
+  (plan.items || []).forEach(function(item) {
+    var catInfo = item.category ? CAT_LINKS[item.category] : null;
+    var bookable = item.bookable && catInfo && catInfo.bookable;
+    var comingSoon = item.category && catInfo && !catInfo.bookable;
+    var bookHtml = '';
+    if (bookable && catInfo) { bookHtml = '<a href="' + catInfo.url + '" class="itin-book">Book This &rarr;</a>'; }
+    else if (comingSoon && catInfo) { bookHtml = '<a href="' + catInfo.url + '" class="itin-book coming-soon">Coming Soon</a>'; }
+    else { bookHtml = '<a href="/" class="itin-book coming-soon">Browse ShoreList</a>'; }
+    var tagsHtml = (item.tags || []).map(function(t) { return '<span class="itin-tag">' + esc(t) + '</span>'; }).join('');
+    html += '<div class="itin-card">';
+    html += '<div class="itin-top"><div class="itin-time">' + esc(item.time || '') + '</div><div class="itin-content"><div class="itin-name">' + esc(item.name || '') + '</div><div class="itin-desc">' + esc(item.description || '') + '</div></div></div>';
+    html += '<div class="itin-bottom"><div class="itin-tags">' + tagsHtml + '</div>' + bookHtml + '</div>';
+    html += '</div>';
   });
-  html+='</div>';
-  html+='<div style="margin-top:32px;padding:24px;background:rgba(10,77,92,0.25);border:1px solid rgba(10,77,92,0.5);border-radius:14px;text-align:center;"><p style="font-size:0.9rem;color:rgba(245,232,203,0.55);margin-bottom:14px;">Ready to lock it in? Browse all available experiences.</p><a href="/" style="display:inline-block;background:var(--coral);color:white;text-decoration:none;padding:14px 32px;border-radius:8px;font-weight:700;font-size:0.95rem;">Explore All ShoreList Experiences &rarr;</a></div>';
-  document.getElementById('result-content').innerHTML=html;
+  html += '</div>';
+  html += '<div style="margin-top:32px;padding:24px;background:rgba(10,77,92,0.25);border:1px solid rgba(10,77,92,0.5);border-radius:14px;text-align:center;"><p style="font-size:0.9rem;color:rgba(245,232,203,0.55);margin-bottom:14px;">Ready to lock it in? Browse all available experiences.</p><a href="/" style="display:inline-block;background:var(--coral);color:white;text-decoration:none;padding:14px 32px;border-radius:8px;font-weight:700;font-size:0.95rem;">Explore All ShoreList Experiences &rarr;</a></div>';
+  document.getElementById('result-content').innerHTML = html;
 }
-function resetPlanner(){
+
+function resetPlanner() {
   document.getElementById('result-section').classList.remove('show');
-  document.getElementById('trip-input').value='';
-  document.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active');});
-  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('trip-input').value = '';
+  document.querySelectorAll('.chip').forEach(function(c) { c.classList.remove('active'); });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+function esc(s) { return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
 // ── OCEAN AMBIENT AUDIO ──
 (function(){
-  var AC=window.AudioContext||window.webkitAudioContext;
-  if(!AC)return;
-  var actx=null,master=null,muted=false,started=false;
-  // Pre-generate noise data during page load — zero delay on first interaction
-  var RATE=44100;
-  var noiseL=new Float32Array(RATE*8),noiseR=new Float32Array(RATE*8),noise2=new Float32Array(RATE*6);
+  var AC = window.AudioContext || window.webkitAudioContext;
+  if (!AC) return;
+  var actx = null, master = null, muted = false, started = false;
+  var RATE = 44100;
+  var noiseL = new Float32Array(RATE*8), noiseR = new Float32Array(RATE*8), noise2 = new Float32Array(RATE*6);
   (function(){
-    var l=0,r=0,s=0;
-    for(var i=0;i<RATE*8;i++){var wl=Math.random()*2-1,wr=Math.random()*2-1;l=(l+0.022*wl)/1.022;r=(r+0.022*wr)/1.022;noiseL[i]=l*3.8;noiseR[i]=r*3.8;}
-    for(var i=0;i<RATE*6;i++){var w=Math.random()*2-1;s=(s+0.052*w)/1.052;noise2[i]=s*2.4;}
+    var l=0, r=0, s=0;
+    for (var i=0; i<RATE*8; i++) { var wl=Math.random()*2-1, wr=Math.random()*2-1; l=(l+0.022*wl)/1.022; r=(r+0.022*wr)/1.022; noiseL[i]=l*3.8; noiseR[i]=r*3.8; }
+    for (var i=0; i<RATE*6; i++) { var w=Math.random()*2-1; s=(s+0.052*w)/1.052; noise2[i]=s*2.4; }
   })();
-  function buildOcean(){
-    if(started)return;started=true;
-    try{
-      actx=new AC();
-      var _sb=actx.createBuffer(1,1,22050);var _ss=actx.createBufferSource();_ss.buffer=_sb;_ss.connect(actx.destination);_ss.start(0);
-      master=actx.createGain();
-      master.gain.setValueAtTime(0,actx.currentTime);master.gain.linearRampToValueAtTime(0.16,actx.currentTime+3);master.connect(actx.destination);
-      var rate=actx.sampleRate;
-      var len1=Math.min(noiseL.length,rate*8);
-      var buf=actx.createBuffer(2,len1,rate);buf.getChannelData(0).set(noiseL.subarray(0,len1));buf.getChannelData(1).set(noiseR.subarray(0,len1));
-      var src=actx.createBufferSource();src.buffer=buf;src.loop=true;
-      var lp=actx.createBiquadFilter();lp.type='lowpass';lp.frequency.value=700;lp.Q.value=0.7;
-      var bp=actx.createBiquadFilter();bp.type='bandpass';bp.frequency.value=220;bp.Q.value=0.55;
-      var lfo=actx.createOscillator();lfo.type='sine';lfo.frequency.value=0.085;
-      var lfoG=actx.createGain();lfoG.gain.value=0.40;lfo.connect(lfoG);
-      var wVol=actx.createGain();wVol.gain.value=0.60;lfoG.connect(wVol.gain);
-      src.connect(lp);lp.connect(bp);bp.connect(wVol);wVol.connect(master);
-      var len2=Math.min(noise2.length,rate*6);
-      var buf2=actx.createBuffer(1,len2,rate);buf2.getChannelData(0).set(noise2.subarray(0,len2));
-      var src2=actx.createBufferSource();src2.buffer=buf2;src2.loop=true;
-      var hp2=actx.createBiquadFilter();hp2.type='bandpass';hp2.frequency.value=560;hp2.Q.value=1.3;
-      var sg=actx.createGain();sg.gain.value=0.15;src2.connect(hp2);hp2.connect(sg);sg.connect(master);
+  function buildOcean() {
+    if (started) return; started = true;
+    try {
+      actx = new AC();
+      var _sb = actx.createBuffer(1,1,22050); var _ss = actx.createBufferSource(); _ss.buffer=_sb; _ss.connect(actx.destination); _ss.start(0);
+      master = actx.createGain();
+      master.gain.setValueAtTime(0, actx.currentTime);
+      master.gain.linearRampToValueAtTime(0.16, actx.currentTime+3);
+      master.connect(actx.destination);
+      var rate = actx.sampleRate;
+      var len1 = Math.min(noiseL.length, rate*8);
+      var buf = actx.createBuffer(2, len1, rate); buf.getChannelData(0).set(noiseL.subarray(0,len1)); buf.getChannelData(1).set(noiseR.subarray(0,len1));
+      var src = actx.createBufferSource(); src.buffer=buf; src.loop=true;
+      var lp = actx.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=700; lp.Q.value=0.7;
+      var bp = actx.createBiquadFilter(); bp.type='bandpass'; bp.frequency.value=220; bp.Q.value=0.55;
+      var lfo = actx.createOscillator(); lfo.type='sine'; lfo.frequency.value=0.085;
+      var lfoG = actx.createGain(); lfoG.gain.value=0.40; lfo.connect(lfoG);
+      var wVol = actx.createGain(); wVol.gain.value=0.60; lfoG.connect(wVol.gain);
+      src.connect(lp); lp.connect(bp); bp.connect(wVol); wVol.connect(master);
+      var len2 = Math.min(noise2.length, rate*6);
+      var buf2 = actx.createBuffer(1, len2, rate); buf2.getChannelData(0).set(noise2.subarray(0,len2));
+      var src2 = actx.createBufferSource(); src2.buffer=buf2; src2.loop=true;
+      var hp2 = actx.createBiquadFilter(); hp2.type='bandpass'; hp2.frequency.value=560; hp2.Q.value=1.3;
+      var sg = actx.createGain(); sg.gain.value=0.15; src2.connect(hp2); hp2.connect(sg); sg.connect(master);
       actx.resume().then(function(){
-        var t=actx.currentTime;src.start(t);lfo.start(t);src2.start(t);scheduleSeagull();
-      }).catch(function(){src.start(0);lfo.start(0);src2.start(0);scheduleSeagull();});
-    }catch(e){}
+        var t = actx.currentTime; src.start(t); lfo.start(t); src2.start(t); scheduleSeagull();
+      }).catch(function(){ src.start(0); lfo.start(0); src2.start(0); scheduleSeagull(); });
+    } catch(e) {}
   }
-  function scheduleSeagull(){
-    if(!actx||!master)return;
+  function scheduleSeagull() {
+    if (!actx || !master) return;
     setTimeout(function(){
-      if(!actx||muted){scheduleSeagull();return;}
-      try{
-        var now=actx.currentTime;var f=820+Math.random()*380;
-        cry(now,f,0.048);
-        if(Math.random()>0.45)cry(now+0.9+Math.random()*0.4,f*(0.88+Math.random()*0.25),0.036);
-      }catch(e){}
+      if (!actx || muted) { scheduleSeagull(); return; }
+      try {
+        var now = actx.currentTime; var f = 820+Math.random()*380;
+        cry(now, f, 0.048);
+        if (Math.random()>0.45) cry(now+0.9+Math.random()*0.4, f*(0.88+Math.random()*0.25), 0.036);
+      } catch(e) {}
       scheduleSeagull();
-    },10000+Math.random()*22000);
+    }, 10000+Math.random()*22000);
   }
-  function cry(now,f,vol){
-    var osc=actx.createOscillator();var osc2=actx.createOscillator();
-    osc.type='sawtooth';osc2.type='sawtooth';
-    var bpf=actx.createBiquadFilter();bpf.type='bandpass';bpf.frequency.value=f*1.15;bpf.Q.value=1.6;
-    var g=actx.createGain();osc.connect(bpf);osc2.connect(bpf);bpf.connect(g);g.connect(master);
-    g.gain.setValueAtTime(0,now);g.gain.linearRampToValueAtTime(vol*0.65,now+0.06);g.gain.linearRampToValueAtTime(vol*0.30,now+0.20);g.gain.linearRampToValueAtTime(vol,now+0.36);g.gain.linearRampToValueAtTime(vol*0.55,now+0.54);g.gain.linearRampToValueAtTime(0,now+0.80);
-    var f1=f*1.55;var f2=f*0.68;
-    osc.frequency.setValueAtTime(f1*0.75,now);osc.frequency.linearRampToValueAtTime(f1,now+0.07);osc.frequency.linearRampToValueAtTime(f*0.9,now+0.22);osc.frequency.linearRampToValueAtTime(f*1.18,now+0.38);osc.frequency.linearRampToValueAtTime(f2,now+0.80);
-    osc2.frequency.setValueAtTime(f1*0.76,now);osc2.frequency.linearRampToValueAtTime(f1*1.015,now+0.07);osc2.frequency.linearRampToValueAtTime(f*0.915,now+0.22);osc2.frequency.linearRampToValueAtTime(f*1.195,now+0.38);osc2.frequency.linearRampToValueAtTime(f2*0.985,now+0.80);
-    osc.start(now);osc.stop(now+0.85);osc2.start(now);osc2.stop(now+0.85);
+  function cry(now, f, vol) {
+    var osc=actx.createOscillator(); var osc2=actx.createOscillator();
+    osc.type='sawtooth'; osc2.type='sawtooth';
+    var bpf=actx.createBiquadFilter(); bpf.type='bandpass'; bpf.frequency.value=f*1.15; bpf.Q.value=1.6;
+    var g=actx.createGain(); osc.connect(bpf); osc2.connect(bpf); bpf.connect(g); g.connect(master);
+    g.gain.setValueAtTime(0,now); g.gain.linearRampToValueAtTime(vol*0.65,now+0.06); g.gain.linearRampToValueAtTime(vol*0.30,now+0.20); g.gain.linearRampToValueAtTime(vol,now+0.36); g.gain.linearRampToValueAtTime(vol*0.55,now+0.54); g.gain.linearRampToValueAtTime(0,now+0.80);
+    var f1=f*1.55; var f2=f*0.68;
+    osc.frequency.setValueAtTime(f1*0.75,now); osc.frequency.linearRampToValueAtTime(f1,now+0.07); osc.frequency.linearRampToValueAtTime(f*0.9,now+0.22); osc.frequency.linearRampToValueAtTime(f*1.18,now+0.38); osc.frequency.linearRampToValueAtTime(f2,now+0.80);
+    osc2.frequency.setValueAtTime(f1*0.76,now); osc2.frequency.linearRampToValueAtTime(f1*1.015,now+0.07); osc2.frequency.linearRampToValueAtTime(f*0.915,now+0.22); osc2.frequency.linearRampToValueAtTime(f*1.195,now+0.38); osc2.frequency.linearRampToValueAtTime(f2*0.985,now+0.80);
+    osc.start(now); osc.stop(now+0.85); osc2.start(now); osc2.stop(now+0.85);
   }
-  var once=false;
-  function startAudio(){
-    if(once)return;once=true;
-    try{buildOcean();}catch(e){}
-    document.removeEventListener('mousedown',startAudio);
-    document.removeEventListener('pointerdown',startAudio);
-    document.removeEventListener('touchend',startAudio);
-    document.removeEventListener('click',startAudio);
+  var once = false;
+  function startAudio() {
+    if (once) return;
+    try {
+      buildOcean();
+      if (actx) {
+        once = true;
+        document.removeEventListener('mousedown', startAudio);
+        document.removeEventListener('pointerdown', startAudio);
+        document.removeEventListener('touchend', startAudio);
+        document.removeEventListener('click', startAudio);
+      }
+    } catch(e) {}
   }
-  document.addEventListener('mousedown',startAudio,false);
-  document.addEventListener('pointerdown',startAudio,false);
-  document.addEventListener('touchend',startAudio,false);
-  document.addEventListener('click',startAudio,false);
-  setTimeout(function(){if(!once)try{startAudio();}catch(e){}},100);
-  var mbtn=document.getElementById('planner-mute');
-  if(mbtn){
-    mbtn.addEventListener('click',function(e){
+  document.addEventListener('mousedown', startAudio, false);
+  document.addEventListener('pointerdown', startAudio, false);
+  document.addEventListener('touchend', startAudio, false);
+  document.addEventListener('click', startAudio, false);
+  setTimeout(function(){ if (!once) try { startAudio(); } catch(e) {} }, 100);
+  var mbtn = document.getElementById('planner-mute');
+  if (mbtn) {
+    mbtn.addEventListener('click', function(e){
       e.stopPropagation();
-      if(!once){startAudio();return;}
-      muted=!muted;
-      if(master&&actx){master.gain.cancelScheduledValues(actx.currentTime);master.gain.setTargetAtTime(muted?0:0.16,actx.currentTime,0.9);}
-      mbtn.innerHTML=muted?'🔇':'🌊';
+      if (!once) { startAudio(); return; }
+      muted = !muted;
+      if (master && actx) { master.gain.cancelScheduledValues(actx.currentTime); master.gain.setTargetAtTime(muted?0:0.16, actx.currentTime, 0.9); }
+      mbtn.innerHTML = muted ? '🔇' : '🌊';
     });
   }
 })();
