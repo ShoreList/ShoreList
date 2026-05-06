@@ -4,9 +4,9 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>ShoreList — Coastal Experiences in Wilmington, NC</title>
-<meta name="description" content="Book unforgettable local experiences in Wilmington, NC. Ghost tours, surf lessons, fishing charters, nature walks and more. Instant booking. Secure checkout."/>
+<meta name="description" content="Discover the best local experiences in Wilmington, NC. Ghost tours, film location tours, surf lessons, fishing charters, nature walks and more. Launching June 1st."/>
 <meta property="og:title" content="ShoreList — Wilmington's Coastal Experience Marketplace"/>
-<meta property="og:description" content="Book unforgettable local tours and adventures in Wilmington, NC and the surrounding beaches. Instant booking, curated local operators, secure Stripe checkout."/>
+<meta property="og:description" content="Wilmington's first local experience booking platform. Ghost tours, film location tours, surf lessons, fishing charters and more. Built for Wilmington. Launching June 1st."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://shorelist.net"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -15,20 +15,32 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:#0A4D5C;color:#FEFCF7;overflow-x:hidden;}
-:root{--teal:#0A4D5C;--teal2:#1A7585;--teal3:#073D4A;--coral:#E96645;--coral2:#F07A5A;--cream:#F5E8CB;--cream2:#FEFCF7;--dark:#0D1F25;--mid:#2C4A52;--lgray:#F2F4F3;}
+:root{
+  --teal:#0A4D5C;--teal2:#1A7585;--teal3:#073D4A;
+  --coral:#E96645;--coral2:#F07A5A;
+  --cream:#F5E8CB;--cream2:#FEFCF7;
+  --dark:#0D1F25;--mid:#2C4A52;
+  --lgray:#F2F4F3;
+}
 #wave-intro{position:fixed;inset:0;z-index:9999;background:#041f28;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;transition:opacity 0.9s ease,visibility 0.9s ease;}
 #wave-intro.hide{opacity:0;visibility:hidden;pointer-events:none;}
 #wi-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;}
 .wi-logo{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:var(--cream2);opacity:0;animation:fadeIn 0.5s ease 0.8s forwards;position:relative;z-index:1;pointer-events:none;text-shadow:0 2px 20px rgba(0,0,0,0.5);}
 .wi-logo span{color:var(--coral);}
 .wi-sub{font-size:0.72rem;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:rgba(245,232,203,0.40);opacity:0;animation:fadeIn 0.5s ease 1.1s forwards;position:relative;z-index:1;pointer-events:none;}
+@keyframes fadeIn{to{opacity:1;}}
+.launch-banner{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--coral);padding:8px 20px;display:flex;align-items:center;justify-content:center;gap:12px;height:38px;}
+.launch-banner-badge{background:rgba(255,255,255,0.22);border:1px solid rgba(255,255,255,0.38);border-radius:100px;padding:2px 10px;font-size:0.65rem;font-weight:700;color:white;letter-spacing:0.10em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;}
+.launch-banner-text{font-size:0.78rem;font-weight:600;color:white;}
+.launch-banner-text span{color:rgba(255,255,255,0.80);}
+@media(max-width:600px){.launch-banner-text span{display:none;}.launch-banner{gap:8px;}}
+#mute-btn{position:fixed;bottom:22px;left:22px;z-index:8000;background:rgba(0,0,0,0.30);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.14);border-radius:100px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1rem;cursor:pointer;transition:all 0.22s;opacity:0;animation:fadeIn 0.5s ease 3.8s forwards;color:white;}
+#mute-btn:hover{background:rgba(0,0,0,0.50);transform:scale(1.1);}
 .wi-tap{position:relative;z-index:2;font-size:0.70rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(245,232,203,0.75);opacity:0;animation:fadeIn 0.4s ease 0.3s forwards;pointer-events:auto;cursor:pointer;margin-top:12px;padding:9px 22px;border:1px solid rgba(245,232,203,0.30);border-radius:100px;background:rgba(255,255,255,0.08);}
 .wi-tap:hover{background:rgba(255,255,255,0.15);border-color:rgba(245,232,203,0.50);}
 .wi-tap.hidden{opacity:0!important;transition:opacity 0.3s;}
-@keyframes fadeIn{to{opacity:1;}}
-#mute-btn{position:fixed;bottom:22px;left:22px;z-index:8000;background:rgba(0,0,0,0.30);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.14);border-radius:100px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1rem;cursor:pointer;transition:all 0.22s;opacity:0;animation:fadeIn 0.5s ease 3.8s forwards;color:white;}
-#mute-btn:hover{background:rgba(0,0,0,0.50);transform:scale(1.1);}
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:18px 48px;transition:background 0.35s,backdrop-filter 0.35s;background:transparent;}
+nav{position:fixed;top:38px;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:18px 48px;transition:background 0.35s,backdrop-filter 0.35s;background:transparent;}
+nav.scrolled{background:rgba(10,77,92,0.97);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.06);}
 .logo{font-size:1.65rem;font-weight:900;line-height:1;display:flex;align-items:baseline;text-decoration:none;}
 .logo-s{font-family:'Playfair Display',serif;font-style:italic;color:var(--cream);}
 .logo-l{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--coral);}
@@ -51,7 +63,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .mob-drawer a:last-child{border-bottom:none;}
 .mob-drawer a:hover{color:var(--cream);}
 .mob-cta{margin-top:16px;background:var(--coral)!important;color:white!important;text-align:center;border-radius:8px;padding:15px!important;border-bottom:none!important;font-weight:700!important;}
-.hero{min-height:100vh;background:var(--teal);display:flex;flex-direction:column;justify-content:center;padding:110px 48px 0;position:relative;overflow:hidden;}
+.hero{min-height:100vh;background:var(--teal);display:flex;flex-direction:column;justify-content:center;padding:148px 48px 0;position:relative;overflow:hidden;}
 .hero-grad{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 110% 90% at 45% 0%,#1a8595 0%,var(--teal) 55%);}
 .hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.055) 1px,transparent 1px);background-size:28px 28px;}
 .compass{position:absolute;top:88px;right:56px;width:68px;height:68px;border:1.5px solid rgba(245,232,203,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;animation:spin 32s linear infinite;}
@@ -112,7 +124,7 @@ h1.hero-title .or{color:var(--coral);font-style:normal;}
 .xtimes{display:flex;gap:5px;}
 .xchip{font-size:9px;padding:3px 8px;border-radius:4px;font-weight:600;}
 .xc-avail{background:rgba(255,255,255,0.09);color:rgba(255,255,255,0.7);}
-.xlive{position:absolute;top:-12px;right:2px;background:#22c55e;color:white;font-size:9px;font-weight:700;letter-spacing:1.2px;padding:4px 10px;border-radius:20px;display:flex;align-items:center;gap:5px;z-index:10;opacity:0;animation:fadeUp 0.5s ease forwards 2.2s;box-shadow:0 4px 18px rgba(34,197,94,0.4);}
+.xlive{position:absolute;top:-12px;right:2px;background:var(--teal2);color:white;font-size:9px;font-weight:700;letter-spacing:1.2px;padding:4px 10px;border-radius:20px;display:flex;align-items:center;gap:5px;z-index:10;opacity:0;animation:fadeUp 0.5s ease forwards 2.2s;}
 .xlive-dot{width:5px;height:5px;background:white;border-radius:50%;animation:pulseDot 1.6s ease-in-out infinite;}
 .xtoasts{position:absolute;bottom:-8px;right:-36px;z-index:10;display:flex;flex-direction:column;gap:7px;}
 .xtoast{background:white;border-radius:12px;padding:9px 11px;display:flex;align-items:center;gap:8px;box-shadow:0 8px 28px rgba(0,0,0,0.25);transform:translateX(140%);opacity:0;transition:all 0.46s cubic-bezier(0.34,1.3,0.64,1);min-width:195px;}
@@ -161,13 +173,13 @@ h1.hero-title .or{color:var(--coral);font-style:normal;}
 .feat-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.10);border-radius:18px;padding:28px;}
 .feat-card-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
 .feat-card-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--cream2);}
-.feat-spots{background:rgba(233,102,69,0.12);border:1px solid rgba(233,102,69,0.25);border-radius:100px;padding:4px 12px;font-size:0.70rem;font-weight:700;color:var(--coral);}
+.feat-spots{background:rgba(10,77,92,0.20);border:1px solid rgba(10,77,92,0.35);border-radius:100px;padding:4px 12px;font-size:0.70rem;font-weight:700;color:var(--cream2);}
 .feat-times{display:flex;flex-direction:column;gap:7px;margin-bottom:18px;}
 .feat-row{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.07);background:rgba(255,255,255,0.03);cursor:pointer;transition:all 0.18s;}
 .feat-row:hover{border-color:var(--coral);background:rgba(233,102,69,0.06);}
 .feat-rl{font-size:0.88rem;font-weight:600;color:var(--cream2);}
 .feat-ra{font-size:0.73rem;font-weight:600;}
-.feat-ra.avail{color:#22c55e;}
+.feat-ra.avail{color:#4ade80;}
 .feat-promo{font-size:0.70rem;color:rgba(245,232,203,0.28);text-align:center;margin-top:12px;}
 .feat-promo a{color:var(--coral);text-decoration:none;}
 .wk-hd{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px;}
@@ -179,7 +191,7 @@ h1.hero-title .or{color:var(--coral);font-style:normal;}
 .wk-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
 .wk-ico{font-size:1.75rem;}
 .wk-badge{font-size:0.60rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;padding:3px 9px;border-radius:100px;}
-.wk-live{background:rgba(34,197,94,0.14);color:#22c55e;border:1px solid rgba(34,197,94,0.22);}
+.wk-live{background:rgba(10,77,92,0.20);color:var(--cream2);border:1px solid rgba(10,77,92,0.35);}
 .wk-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream2);margin-bottom:4px;line-height:1.2;}
 .wk-meta{font-size:0.78rem;color:rgba(245,232,203,0.42);margin-bottom:12px;line-height:1.6;}
 .wk-ft{display:flex;align-items:center;justify-content:space-between;}
@@ -226,7 +238,7 @@ h1.hero-title .or{color:var(--coral);font-style:normal;}
 .gt-action{font-size:10.5px;color:#555;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .gt-time{font-size:9.5px;color:#aaa;white-space:nowrap;flex-shrink:0;}
 footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;border-top:1px solid rgba(255,255,255,0.05);}
-.foot-logo{font-size:1.2rem;font-weight:900;display:flex;align-items:baseline;text-decoration:none;}
+.foot-logo{font-size:1.2rem;font-weight:900;display:flex;align-items:baseline;gap:0;text-decoration:none;}
 .foot-s{font-family:'Playfair Display',serif;font-style:italic;color:var(--cream);}
 .foot-l{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--coral);}
 .foot-copy{font-size:0.76rem;color:rgba(245,232,203,0.28);}
@@ -244,11 +256,15 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
 @keyframes twinkle{0%,100%{opacity:.9;}50%{opacity:.2;}}
 @media(max-width:1020px){.featured-grid{grid-template-columns:1fr;}.reviews-grid{grid-template-columns:1fr 1fr;}.steps-grid{grid-template-columns:1fr 1fr;}.wk-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:900px){.hero-layout{grid-template-columns:1fr;}.hero-right{display:none;}}
-@media(max-width:768px){nav{padding:15px 20px;}.nav-links{display:none!important;}.nav-mob{display:flex;}.hero{padding:95px 20px 0;min-height:auto;}.compass{display:none;}.weather-badge{display:none;}.sec{padding:60px 20px;}.trust-bar{padding:14px 20px;overflow-x:auto;}.tb-item{padding:0 16px;font-size:0.75rem;}.reviews-grid{grid-template-columns:1fr;}.steps-grid{grid-template-columns:1fr 1fr;}.wk-grid{grid-template-columns:1fr 1fr;}.cats-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));}footer{padding:24px 20px;flex-direction:column;text-align:center;gap:10px;}.planner-cta{padding:60px 20px;}#g-toasts{max-width:230px;right:10px;bottom:10px;}.hero-stats{gap:16px;}.btn-fill,.btn-ghost{padding:13px 22px;font-size:0.88rem;}.trust-strip{display:none;}}
+@media(max-width:768px){nav{padding:15px 20px;top:38px;}.nav-links{display:none!important;}.nav-mob{display:flex;}.hero{padding:133px 20px 0;min-height:auto;}.compass{display:none;}.weather-badge{display:none;}.sec{padding:60px 20px;}.trust-bar{padding:14px 20px;gap:0;justify-content:flex-start;overflow-x:auto;}.tb-item{padding:0 16px;font-size:0.75rem;}.reviews-grid{grid-template-columns:1fr;}.steps-grid{grid-template-columns:1fr 1fr;}.wk-grid{grid-template-columns:1fr 1fr;}.cats-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));}footer{padding:24px 20px;flex-direction:column;text-align:center;gap:10px;}.planner-cta{padding:60px 20px;}#g-toasts{max-width:230px;right:10px;bottom:10px;}.hero-stats{gap:16px;}.btn-fill,.btn-ghost{padding:13px 22px;font-size:0.88rem;}.trust-strip{display:none;}}
 @media(max-width:480px){.steps-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
+<div class="launch-banner">
+  <div class="launch-banner-badge">🚀 June 1st</div>
+  <div class="launch-banner-text"><strong>ShoreList is launching June 1st.</strong> <span>Bookings open soon — explore the platform and join the waitlist.</span></div>
+</div>
 <div id="wave-intro" onclick="if(window._shorelistAudio)window._shorelistAudio()" style="cursor:pointer;">
   <canvas id="wi-canvas"></canvas>
   <div class="wi-logo">Shore<span>List</span></div>
@@ -263,7 +279,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
     <a href="#explore">Experiences</a>
     <a href="/planner" class="nav-planner">✦ Plan My Trip</a>
     <a href="/join" class="nav-op">Operators</a>
-    <a href="#contact" class="nav-cta">Book Now</a>
+    <a href="/join" class="nav-cta">Join Waitlist</a>
   </div>
   <button class="nav-mob" id="nav-mob" onclick="toggleNav()" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -273,7 +289,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
   <a href="#explore" onclick="closeNav()">Browse Experiences</a>
   <a href="/planner" onclick="closeNav()">✦ AI Trip Planner</a>
   <a href="#how" onclick="closeNav()">How It Works</a>
-  <a href="#contact" class="mob-cta" onclick="closeNav()">Book Now</a>
+  <a href="/join" class="mob-cta" onclick="closeNav()">Join Waitlist</a>
   <a href="/join" onclick="closeNav()" style="font-size:0.80rem;color:rgba(245,232,203,0.30);margin-top:8px;padding:10px 0;border-top:1px solid rgba(255,255,255,0.04);">Are you a local operator? →</a>
 </div>
 <section class="hero" id="hero">
@@ -288,13 +304,13 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
         <span class="bl">to <span class="or">coastal</span></span>
         <span class="bl">adventures.</span>
       </h1>
-      <p class="hero-sub">ShoreList connects visitors with the best local experiences Wilmington has to offer — ghost tours, film location tours, surf lessons, fishing charters, nature walks, and more. One place. Instant booking.</p>
+      <p class="hero-sub">ShoreList connects visitors with the best local experiences Wilmington has to offer — ghost tours, film location tours, surf lessons, fishing charters, nature walks, and more. One platform. Built for Wilmington.</p>
       <div class="trust-strip">
-        <div class="trust-item">Instant confirmation</div>
-        <div class="trust-sep"></div>
-        <div class="trust-item">Secure checkout</div>
+        <div class="trust-item">Launching June 1st</div>
         <div class="trust-sep"></div>
         <div class="trust-item">100% local operators</div>
+        <div class="trust-sep"></div>
+        <div class="trust-item">Secure Stripe checkout</div>
       </div>
       <div class="hero-btns">
         <a href="#explore" class="btn-fill">Explore Experiences</a>
@@ -303,14 +319,14 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
       <div class="hero-stats">
         <div class="hstat"><div class="hstat-num">20+</div><div class="hstat-lbl">Local Experiences</div></div>
         <div class="hstat-divider"></div>
-        <div class="hstat"><div class="hstat-num">4</div><div class="hstat-lbl">Beach Communities</div></div>
+        <div class="hstat"><div class="hstat-num">4</div><div class="hstat-lbl">Live Operators</div></div>
         <div class="hstat-divider"></div>
-        <div class="hstat"><div class="hstat-num">Est.</div><div class="hstat-lbl">2025 · Wilmington, NC</div></div>
+        <div class="hstat"><div class="hstat-num">June 1</div><div class="hstat-lbl">Launch Date</div></div>
       </div>
     </div>
     <div class="hero-right">
       <div class="cluster">
-        <div class="xlive"><div class="xlive-dot"></div>LIVE BOOKINGS</div>
+        <div class="xlive"><div class="xlive-dot"></div>COMING JUNE 1ST</div>
         <div class="xcard xc-bl"></div>
         <div class="xcard xc-br"></div>
         <div class="xcard xc-main">
@@ -324,13 +340,13 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
             <div class="xtitle">Historic Ghost Walk</div>
             <div class="xstars-row">
               <div class="xstars">★★★★★</div>
-              <div class="xreviews">Live &amp; taking bookings</div>
+              <div class="xreviews">Launching June 1st</div>
             </div>
             <div class="xdiv"></div>
             <div class="xrow">
               <div><div class="xdlbl">Duration</div><div class="xdval">90 min</div></div>
               <div><div class="xdlbl">Group</div><div class="xdval">Up to 15</div></div>
-              <button class="xbookbtn" onclick="location='/category?cat=ghost-tours'">Book Now</button>
+              <button class="xbookbtn" style="opacity:0.55;cursor:default;background:#1A7585;" disabled>June 1st</button>
             </div>
             <div class="xtimes">
               <div class="xchip xc-avail">7 PM ✓</div>
@@ -343,12 +359,12 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
           <div class="xtoast" id="xt1">
             <div class="xta xta-g">👻</div>
             <div class="xtbody"><div class="xtn">Ghost Walk — Downtown</div><div class="xta2">Thu–Sun · Evening tours</div></div>
-            <div class="xtt">Live now</div>
+            <div class="xtt">June 1st</div>
           </div>
           <div class="xtoast" id="xt2">
             <div class="xta xta-f">🎬</div>
             <div class="xtbody"><div class="xtn">Wilmywood Insider Tours</div><div class="xta2">Film & TV locations · From $45</div></div>
-            <div class="xtt">Book now</div>
+            <div class="xtt">June 1st</div>
           </div>
         </div>
       </div>
@@ -385,7 +401,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
   </div>
 </div>
 <div class="trust-bar">
-  <div class="tb-item"><span class="tb-icon">⚡</span> Instant Confirmation</div>
+  <div class="tb-item"><span class="tb-icon">🚀</span> Launching June 1st</div>
   <div class="tb-sep"></div>
   <div class="tb-item"><span class="tb-icon">💳</span> Secure Stripe Checkout</div>
   <div class="tb-sep"></div>
@@ -413,20 +429,20 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
           <span class="feat-rcount">&nbsp;Expert local guide · Sean Austin</span>
         </div>
         <div class="feat-price">From $25 <span>per person · cancel 24hrs for full refund</span></div>
-        <a href="/category?cat=ghost-tours" class="btn-fill">Book This Experience &rarr;</a>
+        <a href="/category?cat=ghost-tours" class="btn-fill">Explore This Experience &rarr;</a>
       </div>
       <div>
         <div class="feat-card">
           <div class="feat-card-hd">
             <div class="feat-card-title">Available Time Slots</div>
-            <div class="feat-spots">Book Your Spot</div>
+            <div class="feat-spots">Launching June 1st</div>
           </div>
           <div class="feat-times">
-            <div class="feat-row" onclick="location='/category?cat=ghost-tours'"><span class="feat-rl">7:00 PM</span><span class="feat-ra avail">Available ✓</span></div>
-            <div class="feat-row" onclick="location='/category?cat=ghost-tours'"><span class="feat-rl">8:30 PM</span><span class="feat-ra avail">Available ✓</span></div>
-            <div class="feat-row" onclick="location='/category?cat=ghost-tours'"><span class="feat-rl">10:00 PM</span><span class="feat-ra avail">Available ✓</span></div>
+            <div class="feat-row" onclick="location='/category?cat=ghost-tours'"><span class="feat-rl">7:00 PM</span><span class="feat-ra avail">Available June 1st</span></div>
+            <div class="feat-row" onclick="location='/category?cat=ghost-tours'"><span class="feat-rl">8:30 PM</span><span class="feat-ra avail">Available June 1st</span></div>
+            <div class="feat-row" onclick="location='/category?cat=ghost-tours'"><span class="feat-rl">10:00 PM</span><span class="feat-ra avail">Available June 1st</span></div>
           </div>
-          <a href="/category?cat=ghost-tours" class="btn-fill" style="display:block;text-align:center;width:100%;">Reserve My Spot &rarr;</a>
+          <a href="/category?cat=ghost-tours" class="btn-fill" style="display:block;text-align:center;width:100%;">Join the Waitlist &rarr;</a>
           <p class="feat-promo">Want to be featured here? <a href="/join">Operators — learn more &rarr;</a></p>
         </div>
       </div>
@@ -437,36 +453,36 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
   <div class="sec-inner">
     <div class="wk-hd">
       <div>
-        <div class="sec-label">Book Before It Fills Up</div>
-        <h2 class="sec-title">Available <em>This Weekend</em></h2>
-        <p style="font-size:0.82rem;color:rgba(245,232,203,0.38);margin-top:4px;">Weekends move fast on the NC coast — secure your spot now.</p>
+        <div class="sec-label">Launching June 1st</div>
+        <h2 class="sec-title">Experiences <em>Coming June 1st</em></h2>
+        <p style="font-size:0.82rem;color:rgba(245,232,203,0.38);margin-top:4px;">Explore what's coming. Bookings open June 1st — join the waitlist to be first.</p>
       </div>
       <a href="#explore" class="wk-link">View All Experiences &rarr;</a>
     </div>
     <div class="wk-grid">
       <a class="wk-card" href="/category?cat=film-tours">
-        <div class="wk-top"><span class="wk-ico">🎬</span><span class="wk-badge wk-live">Live Now</span></div>
+        <div class="wk-top"><span class="wk-ico">🎬</span><span class="wk-badge wk-live">June 1st</span></div>
         <div class="wk-name">Wilmywood Insider Tours</div>
         <div class="wk-meta">Wed–Sun &nbsp;·&nbsp; 10 AM, 2 PM, 6 PM &nbsp;·&nbsp; Downtown Wilmington</div>
-        <div class="wk-ft"><span class="wk-price">From $45</span><span class="wk-spots">✓ Spots available</span></div>
+        <div class="wk-ft"><span class="wk-price">From $45</span><span class="wk-spots">Waitlist open</span></div>
       </a>
       <a class="wk-card" href="/category?cat=ghost-tours">
-        <div class="wk-top"><span class="wk-ico">👻</span><span class="wk-badge wk-live">Live Now</span></div>
+        <div class="wk-top"><span class="wk-ico">👻</span><span class="wk-badge wk-live">June 1st</span></div>
         <div class="wk-name">Wilmington Ghost Walk</div>
         <div class="wk-meta">Thu–Sun &nbsp;·&nbsp; 7:00, 8:30, 10:00 PM &nbsp;·&nbsp; Downtown Wilmington</div>
-        <div class="wk-ft"><span class="wk-price">From $25</span><span class="wk-spots">Thu–Sun evenings</span></div>
+        <div class="wk-ft"><span class="wk-price">From $25</span><span class="wk-spots">Waitlist open</span></div>
       </a>
       <a class="wk-card" href="/category?cat=surf-lessons">
-        <div class="wk-top"><span class="wk-ico">🏄</span><span class="wk-badge wk-live">Live Now</span></div>
+        <div class="wk-top"><span class="wk-ico">🏄</span><span class="wk-badge wk-live">June 1st</span></div>
         <div class="wk-name">Carolina Beach Surf Lessons</div>
         <div class="wk-meta">Daily &nbsp;·&nbsp; 8 AM–2 PM &nbsp;·&nbsp; Carolina Beach</div>
-        <div class="wk-ft"><span class="wk-price">From $75</span><span class="wk-spots">✓ Spots available</span></div>
+        <div class="wk-ft"><span class="wk-price">From $75</span><span class="wk-spots">Waitlist open</span></div>
       </a>
       <a class="wk-card" href="/category?cat=nature-walks">
-        <div class="wk-top"><span class="wk-ico">🌿</span><span class="wk-badge wk-live">Live Now</span></div>
+        <div class="wk-top"><span class="wk-ico">🌿</span><span class="wk-badge wk-live">June 1st</span></div>
         <div class="wk-name">Coastal Carolina Nature Walk</div>
-        <div class="wk-meta">Sat–Sun &nbsp;·&nbsp; 8 AM, 10 AM, 2 PM &nbsp;·&nbsp; Carolina Beach State Park</div>
-        <div class="wk-ft"><span class="wk-price">From $35</span><span class="wk-spots">✓ Spots available</span></div>
+        <div class="wk-meta">Wed/Sat/Sun &nbsp;·&nbsp; 8 AM, 10 AM, 2 PM &nbsp;·&nbsp; Carolina Beach State Park</div>
+        <div class="wk-ft"><span class="wk-price">From $35</span><span class="wk-spots">Waitlist open</span></div>
       </a>
     </div>
   </div>
@@ -475,7 +491,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
   <div class="sec-inner">
     <div class="sec-label">Explore</div>
     <h2 class="sec-title">Find your next <em>adventure</em></h2>
-    <p class="sec-sub">Browse 20+ coastal experience categories. Instantly book our live operators — more coming as we grow across the Wilmington coast.</p>
+    <p class="sec-sub">Browse 20+ coastal experience categories. Explore everything ShoreList has to offer across Wilmington and the beaches. Bookings open June 1st.</p>
     <div class="cats-grid">
       <a class="cat" href="/category?cat=ghost-tours"><span class="cat-ico">👻</span><div class="cat-name">Ghost Tours</div></a>
       <a class="cat" href="/category?cat=film-tours"><span class="cat-ico">🎬</span><div class="cat-name">Film &amp; TV Tours</div></a>
@@ -505,7 +521,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
   <div class="sec-inner">
     <div class="sec-label">The People Behind ShoreList</div>
     <h2 class="sec-title">Real operators. <em>Real experiences.</em></h2>
-    <p class="sec-sub">ShoreList launched in 2025. We don't have hundreds of reviews yet — and we're not going to fabricate them. What we have is something better: four passionate local operators who know this coast better than anyone.</p>
+    <p class="sec-sub">ShoreList is launching June 1st. We have four passionate local operators ready to go — and we're not going to fabricate reviews we haven't earned yet. What we have is something better: real people, real expertise, and a platform built to connect them with visitors who are ready to explore.</p>
     <div class="reviews-grid">
       <div class="rv-card">
         <div class="rv-stars">🎬 Film &amp; TV Location Tours</div>
@@ -525,7 +541,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
       </div>
       <div class="rv-card">
         <div class="rv-stars">🏄 Surf Lessons</div>
-        <div class="rv-text" style="font-style:normal;">Our certified surf instructor is a Carolina Beach local with years of experience teaching in these exact waters. Whether you've never touched a board or want to level up — this lesson changes everything. Carolina Beach.</div>
+        <div class="rv-text" style="font-style:normal;">Our certified surf instructor is a Carolina Beach local with years of experience teaching in these exact waters. Whether you've never touched a board or want to level up — this lesson changes everything.</div>
         <div class="rv-foot">
           <div class="rv-avatar" style="background:linear-gradient(135deg,#0a3d5c,#1a7585);">🏄</div>
           <div><div class="rv-name">Carolina Beach Surf Co.</div><div class="rv-meta">Surf Lessons &nbsp;·&nbsp; From $75</div></div>
@@ -541,8 +557,8 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
       </div>
     </div>
     <div class="reviews-cta" style="margin-top:40px;">
-      <p style="font-size:0.95rem;color:rgba(245,232,203,0.65);max-width:580px;margin:0 auto 16px;line-height:1.85;">We're building this the right way — real operators, real bookings, real reviews earned one experience at a time. Be one of our first guests. Your story helps us grow.</p>
-      <a href="#explore" class="btn-fill" style="display:inline-block;">Explore Experiences &rarr;</a>
+      <p style="font-size:0.95rem;color:rgba(245,232,203,0.65);max-width:580px;margin:0 auto 16px;line-height:1.85;">We're building this the right way — real operators, real bookings, real reviews earned one experience at a time. Be one of our first guests on June 1st.</p>
+      <a href="/join" class="btn-fill" style="display:inline-block;">Join the Waitlist &rarr;</a>
     </div>
   </div>
 </section>
@@ -563,7 +579,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
   <div class="pc-inner">
     <div class="pc-tag">✦ AI-Powered &nbsp;·&nbsp; Free</div>
     <h2 class="pc-title">Your perfect Wilmington day,<br/><em>built in seconds.</em></h2>
-    <p class="pc-sub">Tell our AI what you're into — who's coming, what you love, how you like to spend your time — and get a custom itinerary with direct booking links for every stop.</p>
+    <p class="pc-sub">Tell our AI what you're into — who's coming, what you love, how you like to spend your time — and get a custom Wilmington itinerary. Launching June 1st.</p>
     <div class="pc-demo">
       <div class="pc-demo-lbl">Try asking...</div>
       <div class="pc-demo-text" id="typewriter-text"><span class="pc-cursor"></span></div>
@@ -573,7 +589,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
 </section>
 <footer>
   <a href="/" class="foot-logo"><span class="foot-s">Shore</span><span class="foot-l">List</span></a>
-  <div class="foot-copy">© 2025 ShoreList LLC &nbsp;·&nbsp; Wilmington, NC</div>
+  <div class="foot-copy">© 2026 ShoreList LLC &nbsp;·&nbsp; Wilmington, NC</div>
   <div class="foot-links">
     <a href="#explore">Experiences</a>
     <a href="/planner">Trip Planner</a>
@@ -582,7 +598,6 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
   </div>
 </footer>
 <script>
-// ── CANVAS WAVE INTRO ──
 document.body.style.overflow='hidden';
 (function(){
   var canvas=document.getElementById('wi-canvas');
@@ -635,8 +650,6 @@ document.body.style.overflow='hidden';
   requestAnimationFrame(draw);
   setTimeout(function(){if(DONE)return;DONE=true;var wi=document.getElementById('wave-intro');if(wi)wi.classList.add('hide');document.body.style.overflow='';},5500);
 })();
-
-// ── OCEAN AMBIENT AUDIO ──
 (function(){
   var AC=window.AudioContext||window.webkitAudioContext;
   if(!AC)return;
@@ -700,10 +713,8 @@ document.body.style.overflow='hidden';
   var btn=document.getElementById('mute-btn');
   if(btn){btn.addEventListener('click',function(e){e.stopPropagation();if(!once){startAudio();return;}muted=!muted;if(master&&actx){master.gain.cancelScheduledValues(actx.currentTime);master.gain.setTargetAtTime(muted?0:0.20,actx.currentTime,0.9);}btn.innerHTML=muted?'🔇':'🌊';btn.title=muted?'Unmute ocean sounds':'Mute ocean sounds';});}
 })();
-
-// ── NAV ──
 var _nav=document.getElementById('nav');
-window.addEventListener('scroll',function(){if(window.scrollY>60){_nav.style.background='rgba(10,77,92,0.97)';_nav.style.backdropFilter='blur(18px)';}else{_nav.style.background='transparent';_nav.style.backdropFilter='none';}});
+window.addEventListener('scroll',function(){if(window.scrollY>60){_nav.classList.add('scrolled');}else{_nav.classList.remove('scrolled');}});
 function toggleNav(){var b=document.getElementById('nav-mob');var d=document.getElementById('mob-drawer');b.classList.toggle('open');d.classList.toggle('open');document.body.style.overflow=d.classList.contains('open')?'hidden':'';}
 function closeNav(){document.getElementById('nav-mob').classList.remove('open');document.getElementById('mob-drawer').classList.remove('open');document.body.style.overflow='';}
 var sf=document.getElementById('sf');
@@ -718,11 +729,11 @@ var TOASTS=[
   {ico:'👻',bg:'linear-gradient(135deg,#1a0533,#4a0e8f)',name:'Ghost Walk · Downtown Wilmington',action:'Thu–Sun evenings · From $25'},
   {ico:'🏄',bg:'linear-gradient(135deg,#0a3d5c,#1a7585)',name:'Surf Lessons · Carolina Beach',action:'Certified local instructor · From $75'},
   {ico:'🌿',bg:'linear-gradient(135deg,#0a2e1a,#1a7a56)',name:'Coastal Nature Walk',action:'Carolina Beach State Park · From $35'},
-  {ico:'🎬',bg:'linear-gradient(135deg,#1a1a2e,#16213e)',name:'Wilmywood · One Tree Hill locations',action:'Industry insider guide · Book now'},
-  {ico:'🌿',bg:'linear-gradient(135deg,#0a2e1a,#1a7a56)',name:'Nature Walk · Weekend slots open',action:'8 AM, 10 AM and 2 PM available'},
+  {ico:'🎬',bg:'linear-gradient(135deg,#1a1a2e,#16213e)',name:'Wilmywood · One Tree Hill locations',action:'Industry insider guide · June 1st'},
+  {ico:'🌿',bg:'linear-gradient(135deg,#0a2e1a,#1a7a56)',name:'Nature Walk · Launching June 1st',action:'8 AM, 10 AM and 2 PM available'},
 ];
 var toastIdx=0;var gtc=document.getElementById('g-toasts');
-function showGToast(){if(!gtc)return;var d=TOASTS[toastIdx%TOASTS.length];toastIdx++;var el=document.createElement('div');el.className='g-toast';el.innerHTML='<div class="gt-ico" style="background:'+d.bg+'">'+d.ico+'</div><div class="gt-body"><div class="gt-name">'+d.name+'</div><div class="gt-action">'+d.action+'</div></div><div class="gt-time">live</div>';gtc.appendChild(el);setTimeout(function(){el.classList.add('show');},50);setTimeout(function(){el.classList.remove('show');setTimeout(function(){if(el.parentNode)el.parentNode.removeChild(el);},500);},5500);}
+function showGToast(){if(!gtc)return;var d=TOASTS[toastIdx%TOASTS.length];toastIdx++;var el=document.createElement('div');el.className='g-toast';el.innerHTML='<div class="gt-ico" style="background:'+d.bg+'">'+d.ico+'</div><div class="gt-body"><div class="gt-name">'+d.name+'</div><div class="gt-action">'+d.action+'</div></div><div class="gt-time">June 1st</div>';gtc.appendChild(el);setTimeout(function(){el.classList.add('show');},50);setTimeout(function(){el.classList.remove('show');setTimeout(function(){if(el.parentNode)el.parentNode.removeChild(el);},500);},5500);}
 setTimeout(showGToast,4800);setInterval(showGToast,24000);
 var PHRASES=['Romantic weekend for 2. We love sunsets and the water...','Family trip with kids — adventure, nature, and fun...','Bachelor party for 6. Max adrenaline. Flexible budget...','Solo traveler, one day — show me the real Wilmington...',];
 var ti=0,tc=0,td=false;var tel=document.getElementById('typewriter-text');
