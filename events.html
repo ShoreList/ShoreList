@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Things to Do in Wilmington, NC — 2026 Events Guide | ShoreList</title>
+<meta name="description" content="The most complete guide to things to do in Wilmington, NC. Concerts, festivals, outdoor adventures, local markets — 50+ real events for 2026. Your coastal command center for what's happening in Wilmington and the beaches."/>
+<meta property="og:title" content="Things to Do in Wilmington, NC — ShoreList 2026 Events Guide"/>
+<meta property="og:description" content="50+ real Wilmington events across 7 months. Concerts, festivals, outdoor adventures, and local experiences — all in one place."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://shorelist.net/events"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --teal:#0A4D5C;--teal2:#1A7585;--teal3:#073D4A;--teal4:#0c5e70;
+  --coral:#E96645;--coral2:#F07A5A;
+  --cream:#F5E8CB;--cream2:#FEFCF7;
+  --dark:#0D1F25;--mid:#2C4A52;
+  --lgray:#F2F4F3;--border:rgba(10,77,92,0.09);
+  --cat-music-a:#3d1a6e;--cat-music-b:#6c3e9c;
+  --cat-fest-a:#9c2b0e;--cat-fest-b:#e96645;
+  --cat-outdoor-a:#0a3d1a;--cat-outdoor-b:#1a7a4a;
+  --cat-arts-a:#0d2878;--cat-arts-b:#1e64c8;
+  --cat-family-a:#7a4800;--cat-family-b:#c87800;
+  --cat-food-a:#7a1010;--cat-food-b:#c82828;
+  --cat-sports-a:#1a2e50;--cat-sports-b:#2e5080;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream2);color:var(--dark);overflow-x:hidden;}
+.launch-banner{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--coral);padding:0 20px;display:flex;align-items:center;justify-content:center;gap:12px;height:38px;}
+.launch-banner-badge{background:rgba(255,255,255,0.22);border:1px solid rgba(255,255,255,0.38);border-radius:100px;padding:2px 10px;font-size:0.65rem;font-weight:700;color:white;letter-spacing:0.10em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;}
+.launch-banner-text{font-size:0.78rem;font-weight:600;color:white;}
+.launch-banner-text span{color:rgba(255,255,255,0.85);}
+@media(max-width:600px){.launch-banner-text span{display:none;}}
+nav{position:fixed;top:38px;left:0;right:0;z-index:200;padding:15px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,77,92,0.97);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.06);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--cream2);text-decoration:none;font-weight:700;}
+.nav-logo span{color:var(--coral);}
+.nav-right{display:flex;align-items:center;gap:16px;}
+.nav-back{font-size:0.78rem;font-weight:600;color:rgba(245,232,203,0.60);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;white-space:nowrap;}
+.nav-back:hover{color:var(--cream);}
+.nav-book{background:var(--coral);color:white;text-decoration:none;padding:8px 18px;border-radius:6px;font-weight:700;font-size:0.80rem;transition:background 0.2s;white-space:nowrap;min-height:36px;display:inline-flex;align-items:center;}
+.nav-book:hover{background:var(--coral2);}
+.hero{background:var(--teal3);padding:152px 48px 0;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 100% 80% at 100% 100%,rgba(233,102,69,0.08) 0%,transparent 55%);}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.025) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;}
+.hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:flex-end;padding-bottom:56px;}
+.hero-tag{font-size:0.66rem;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(--coral);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.hero-tag::before{content:'';width:22px;height:1px;background:var(--coral);}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:900;color:var(--cream2);line-height:1.03;margin-bottom:14px;}
+.hero-title em{color:var(--coral);font-style:italic;}
+.hero-sub{font-size:0.96rem;color:rgba(245,232,203,0.65);line-height:1.85;max-width:520px;margin-bottom:28px;}
+.hero-stat-row{display:flex;gap:24px;flex-wrap:wrap;}
+.hstat{display:flex;flex-direction:column;}
+.hstat-n{font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:900;color:var(--cream);line-height:1;}
+.hstat-l{font-size:0.65rem;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;color:rgba(245,232,203,0.42);margin-top:3px;}
+.hstat-div{width:1px;background:rgba(245,232,203,0.12);align-self:stretch;}
+.countdown-box{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.10);border-radius:16px;padding:22px 28px;min-width:260px;flex-shrink:0;}
+.cd-label{font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--coral);margin-bottom:8px;}
+.cd-event{font-family:'Playfair Display',serif;font-size:0.96rem;font-weight:700;color:var(--cream2);margin-bottom:14px;line-height:1.3;}
+.cd-timer{display:flex;gap:12px;}
+.cd-unit{text-align:center;}
+.cd-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--cream2);line-height:1;display:block;min-width:36px;}
+.cd-unit-lbl{font-size:0.60rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,232,203,0.40);margin-top:2px;display:block;}
+.cd-sep{font-size:2rem;font-weight:300;color:rgba(245,232,203,0.25);align-self:flex-start;padding-top:2px;}
+.hero-wave{height:56px;overflow:hidden;position:relative;}
+.hero-wave svg{position:absolute;bottom:0;width:100%;}
+.weekend-strip{background:var(--teal);border-bottom:2px solid rgba(255,255,255,0.08);}
+.weekend-inner{max-width:1100px;margin:0 auto;padding:18px 48px;}
+.weekend-hd{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+.weekend-pill{background:var(--coral);color:white;border-radius:100px;padding:4px 14px;font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;flex-shrink:0;display:flex;align-items:center;gap:5px;}
+.weekend-pill-dot{width:6px;height:6px;border-radius:50%;background:white;animation:wd-pulse 1.5s ease infinite;}
+@keyframes wd-pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.7);}}
+.weekend-hd-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--cream2);}
+.weekend-row{display:flex;gap:10px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:2px;}
+.weekend-row::-webkit-scrollbar{display:none;}
+.we-chip{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.10);border-radius:10px;padding:10px 16px;flex-shrink:0;display:flex;align-items:center;gap:10px;text-decoration:none;transition:all 0.18s;min-height:52px;}
+.we-chip:hover{background:rgba(233,102,69,0.14);border-color:rgba(233,102,69,0.35);}
+.we-chip-ico{font-size:1.25rem;line-height:1;}
+.we-chip-name{font-size:0.84rem;font-weight:700;color:var(--cream2);margin-bottom:1px;white-space:nowrap;}
+.we-chip-date{font-size:0.72rem;color:rgba(245,232,203,0.50);white-space:nowrap;}
+.we-none{font-size:0.88rem;color:rgba(245,232,203,0.50);font-style:italic;padding:12px 0;}
+.dont-miss-section{background:var(--dark);padding:52px 48px;}
+.dm-inner{max-width:1100px;margin:0 auto;}
+.section-eyebrow{font-size:0.66rem;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+.section-eyebrow::before{content:'';width:22px;height:1px;background:var(--coral);}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;color:var(--cream2);line-height:1.1;margin-bottom:32px;}
+.section-title em{color:var(--coral);font-style:italic;}
+.dm-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+.dm-card{border-radius:18px;overflow:hidden;position:relative;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;cursor:pointer;transition:transform 0.28s;}
+.dm-card:hover{transform:translateY(-4px);}
+.dm-bg{position:absolute;inset:0;z-index:0;}
+.dm-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(0,0,0,0.88) 0%,rgba(0,0,0,0.30) 60%,transparent 100%);}
+.dm-body{position:relative;z-index:2;padding:24px 24px 22px;}
+.dm-season-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(233,102,69,0.88);border-radius:100px;padding:3px 12px;font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:white;margin-bottom:10px;}
+.dm-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:white;line-height:1.15;margin-bottom:6px;}
+.dm-date{font-size:0.82rem;color:rgba(255,255,255,0.70);margin-bottom:14px;}
+.dm-link{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.25);color:white;text-decoration:none;padding:8px 16px;border-radius:7px;font-size:0.80rem;font-weight:700;transition:all 0.2s;min-height:36px;}
+.dm-link:hover{background:var(--coral);border-color:var(--coral);}
+.month-nav-wrap{background:var(--teal3);border-bottom:1px solid rgba(255,255,255,0.07);position:sticky;top:76px;z-index:100;}
+.month-nav-inner{max-width:1100px;margin:0 auto;padding:0 48px;display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.month-nav-inner::-webkit-scrollbar{display:none;}
+.m-tab{padding:16px 20px;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;border-bottom:3px solid transparent;transition:all 0.2s;flex-shrink:0;}
+.m-tab:hover{border-bottom-color:rgba(233,102,69,0.4);}
+.m-tab.active{border-bottom-color:var(--coral);}
+.m-tab-name{font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,232,203,0.50);transition:color 0.2s;}
+.m-tab.active .m-tab-name,.m-tab:hover .m-tab-name{color:var(--cream2);}
+.m-tab-count{font-size:0.66rem;font-weight:700;color:rgba(233,102,69,0.7);background:rgba(233,102,69,0.12);border-radius:100px;padding:1px 7px;}
+.m-tab.active .m-tab-count{color:var(--coral);background:rgba(233,102,69,0.18);}
+.filter-bar{background:var(--cream2);border-bottom:1px solid var(--border);padding:14px 48px;position:sticky;top:129px;z-index:99;}
+.filter-inner{max-width:1100px;margin:0 auto;display:flex;gap:8px;align-items:center;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.filter-inner::-webkit-scrollbar{display:none;}
+.f-chip{background:transparent;border:1.5px solid rgba(10,77,92,0.12);border-radius:100px;padding:7px 15px;font-size:0.80rem;font-weight:600;color:var(--mid);cursor:pointer;transition:all 0.18s;white-space:nowrap;min-height:36px;display:inline-flex;align-items:center;gap:5px;flex-shrink:0;}
+.f-chip:hover{border-color:var(--teal);color:var(--teal);}
+.f-chip.active{background:var(--teal);border-color:var(--teal);color:white;}
+.f-chip.free-chip.active{background:#1a7a4a;border-color:#1a7a4a;}
+.f-sep{width:1px;height:20px;background:rgba(10,77,92,0.10);flex-shrink:0;margin:0 4px;}
+.main{max-width:1100px;margin:0 auto;padding:40px 48px 80px;}
+.month-section{display:none;}
+.month-section.active{display:block;}
+.m-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px;}
+.m-month-label{font-size:0.66rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--coral);margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.m-month-label::before{content:'';width:18px;height:1px;background:var(--coral);}
+.m-month-title{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--teal);line-height:1.05;}
+.m-month-title em{font-style:italic;color:var(--coral);}
+.m-header-right{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.m-count{font-size:0.80rem;color:rgba(44,74,82,0.45);font-weight:500;}
+.m-heat{display:flex;gap:4px;align-items:center;}
+.m-heat-dot{width:10px;height:10px;border-radius:50%;background:rgba(10,77,92,0.12);}
+.m-heat-dot.on{background:var(--coral);}
+.m-featured{border-radius:20px;overflow:hidden;display:grid;grid-template-columns:1fr 220px;margin-bottom:28px;position:relative;}
+.mf-bg-music{background:linear-gradient(135deg,var(--cat-music-a) 0%,var(--cat-music-b) 100%);}
+.mf-bg-festival{background:linear-gradient(135deg,var(--cat-fest-a) 0%,var(--cat-fest-b) 100%);}
+.mf-bg-outdoor{background:linear-gradient(135deg,var(--cat-outdoor-a) 0%,var(--cat-outdoor-b) 100%);}
+.mf-bg-arts{background:linear-gradient(135deg,var(--cat-arts-a) 0%,var(--cat-arts-b) 100%);}
+.mf-bg-family{background:linear-gradient(135deg,var(--cat-family-a) 0%,var(--cat-family-b) 100%);}
+.mf-bg-food{background:linear-gradient(135deg,var(--cat-food-a) 0%,var(--cat-food-b) 100%);}
+.mf-body{padding:32px 36px;position:relative;}
+.mf-body::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.20);pointer-events:none;}
+.mf-inner{position:relative;z-index:1;}
+.mf-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.28);border-radius:100px;padding:4px 14px;font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:white;margin-bottom:14px;}
+.mf-title{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:900;color:white;line-height:1.1;margin-bottom:8px;}
+.mf-meta{font-size:0.86rem;color:rgba(255,255,255,0.75);line-height:1.75;margin-bottom:16px;}
+.mf-meta strong{color:white;}
+.mf-tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:20px;}
+.mf-tag{background:rgba(255,255,255,0.14);border-radius:5px;padding:4px 10px;font-size:0.74rem;font-weight:600;color:rgba(255,255,255,0.88);}
+.mf-desc{font-size:0.88rem;color:rgba(255,255,255,0.78);line-height:1.78;margin-bottom:20px;max-width:480px;}
+.mf-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.btn-tix{background:white;color:var(--dark);text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:700;font-size:0.88rem;transition:all 0.2s;display:inline-flex;align-items:center;gap:6px;min-height:44px;}
+.btn-tix:hover{background:var(--cream);transform:translateY(-1px);}
+.btn-tix-ghost{background:transparent;color:rgba(255,255,255,0.85);text-decoration:none;padding:12px 20px;border-radius:8px;font-weight:500;font-size:0.88rem;border:1.5px solid rgba(255,255,255,0.28);transition:all 0.2s;display:inline-flex;align-items:center;min-height:44px;}
+.btn-tix-ghost:hover{border-color:rgba(255,255,255,0.60);color:white;}
+.mf-ico-col{display:flex;align-items:center;justify-content:center;font-size:5.5rem;opacity:0.55;padding:24px;}
+.ev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:40px;}
+.ev-card{background:white;border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow 0.22s,transform 0.22s;}
+.ev-card:hover{box-shadow:0 14px 44px rgba(10,77,92,0.11);transform:translateY(-3px);}
+.ev-card-header{height:6px;}
+.ev-card-header.cat-music{background:linear-gradient(90deg,var(--cat-music-a),var(--cat-music-b));}
+.ev-card-header.cat-festival{background:linear-gradient(90deg,var(--cat-fest-a),var(--cat-fest-b));}
+.ev-card-header.cat-outdoor{background:linear-gradient(90deg,var(--cat-outdoor-a),var(--cat-outdoor-b));}
+.ev-card-header.cat-arts{background:linear-gradient(90deg,var(--cat-arts-a),var(--cat-arts-b));}
+.ev-card-header.cat-family{background:linear-gradient(90deg,var(--cat-family-a),var(--cat-family-b));}
+.ev-card-header.cat-food{background:linear-gradient(90deg,var(--cat-food-a),var(--cat-food-b));}
+.ev-card-header.cat-sports{background:linear-gradient(90deg,var(--cat-sports-a),var(--cat-sports-b));}
+.ev-card-body{padding:18px 18px 0;flex:1;}
+.ev-cat-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.ev-badge{border-radius:100px;padding:3px 10px;font-size:0.62rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;display:inline-flex;align-items:center;gap:4px;}
+.eb-music{background:rgba(108,62,156,0.09);color:#6c3e9c;border:1px solid rgba(108,62,156,0.18);}
+.eb-festival{background:rgba(233,102,69,0.09);color:#c45230;border:1px solid rgba(233,102,69,0.18);}
+.eb-outdoor{background:rgba(26,122,74,0.09);color:#1a7a4a;border:1px solid rgba(26,122,74,0.18);}
+.eb-arts{background:rgba(30,100,200,0.09);color:#1e64c8;border:1px solid rgba(30,100,200,0.18);}
+.eb-family{background:rgba(200,120,0,0.09);color:#b07010;border:1px solid rgba(200,120,0,0.18);}
+.eb-food{background:rgba(200,40,40,0.09);color:#b03030;border:1px solid rgba(200,40,40,0.18);}
+.eb-sports{background:rgba(46,80,128,0.09);color:#2e5080;border:1px solid rgba(46,80,128,0.18);}
+.ev-heat{display:flex;gap:2px;}
+.ev-heat-s{font-size:0.7rem;color:#FFD700;}
+.ev-heat-s.off{color:rgba(44,74,82,0.18);}
+.ev-title{font-family:'Playfair Display',serif;font-size:1.04rem;font-weight:900;color:var(--teal);margin-bottom:5px;line-height:1.2;}
+.ev-desc{font-size:0.82rem;color:var(--mid);line-height:1.68;margin-bottom:12px;}
+.ev-details{display:flex;flex-direction:column;gap:5px;}
+.ev-detail{display:flex;align-items:center;gap:7px;font-size:0.80rem;color:rgba(44,74,82,0.60);}
+.ev-detail-ico{width:14px;text-align:center;font-size:0.80rem;flex-shrink:0;}
+.ev-detail strong{color:var(--teal3);font-weight:600;}
+.ev-card-foot{padding:12px 18px;border-top:1px solid rgba(10,77,92,0.06);display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:12px;}
+.ev-price{font-size:0.84rem;font-weight:700;}
+.ev-price.free-p{color:#1a7a4a;}
+.ev-price.paid-p{color:var(--coral);}
+.ev-link{text-decoration:none;padding:8px 14px;border-radius:7px;font-size:0.78rem;font-weight:700;transition:all 0.2s;min-height:36px;display:inline-flex;align-items:center;gap:4px;white-space:nowrap;}
+.ev-link.tix-link{background:var(--teal);color:white;}
+.ev-link.tix-link:hover{background:var(--teal2);}
+.ev-link.free-link{background:rgba(26,122,74,0.10);color:#1a7a4a;border:1px solid rgba(26,122,74,0.22);}
+.ev-link.free-link:hover{background:rgba(26,122,74,0.18);}
+.ev-link.shore-link{background:rgba(233,102,69,0.12);color:var(--coral);border:1px solid rgba(233,102,69,0.25);}
+.ev-link.shore-link:hover{background:var(--coral);color:white;}
+.pairing-card{background:linear-gradient(135deg,var(--teal3) 0%,var(--teal4) 100%);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;border:none;position:relative;}
+.pairing-card::after{content:'';position:absolute;right:-20px;top:-20px;width:100px;height:100px;border-radius:50%;background:rgba(233,102,69,0.12);}
+.pc-body{padding:18px 18px;flex:1;position:relative;z-index:1;}
+.pc-tag{font-size:0.60rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--coral);margin-bottom:8px;}
+.pc-title{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:900;color:var(--cream2);margin-bottom:6px;line-height:1.2;}
+.pc-sub{font-size:0.80rem;color:rgba(245,232,203,0.65);line-height:1.65;margin-bottom:14px;}
+.pc-link{display:inline-flex;align-items:center;background:var(--coral);color:white;text-decoration:none;padding:9px 16px;border-radius:7px;font-size:0.78rem;font-weight:700;transition:background 0.2s;min-height:36px;}
+.pc-link:hover{background:var(--coral2);}
+.recurring-section{margin-bottom:60px;}
+.rec-scroll{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.rec-card{background:white;border:1px solid var(--border);border-radius:14px;padding:22px;display:flex;gap:16px;align-items:flex-start;transition:box-shadow 0.2s,transform 0.2s;}
+.rec-card:hover{box-shadow:0 8px 28px rgba(10,77,92,0.08);transform:translateY(-2px);}
+.rec-ico{font-size:2rem;flex-shrink:0;line-height:1;margin-top:2px;}
+.rec-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:900;color:var(--teal);margin-bottom:3px;}
+.rec-freq{font-size:0.66rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:var(--coral);margin-bottom:6px;}
+.rec-desc{font-size:0.82rem;color:var(--mid);line-height:1.68;margin-bottom:10px;}
+.rec-pills{display:flex;flex-wrap:wrap;gap:5px;}
+.rec-pill{background:var(--lgray);border-radius:5px;padding:3px 9px;font-size:0.73rem;font-weight:600;color:var(--teal);}
+.rec-free{background:rgba(26,122,74,0.09);color:#1a7a4a;}
+.booking-strip{background:var(--teal3);border-radius:24px;padding:52px 60px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;margin-bottom:64px;position:relative;overflow:hidden;}
+.booking-strip::before{content:'';position:absolute;right:-100px;bottom:-100px;width:360px;height:360px;border-radius:50%;background:rgba(233,102,69,0.07);}
+.booking-strip::after{content:'';position:absolute;left:-60px;top:-60px;width:200px;height:200px;border-radius:50%;background:rgba(26,117,133,0.12);}
+.bs-left{position:relative;z-index:1;}
+.bs-tag{font-size:0.64rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;}
+.bs-title{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;color:var(--cream2);line-height:1.1;margin-bottom:10px;}
+.bs-title em{color:var(--coral);font-style:italic;}
+.bs-sub{font-size:0.92rem;color:rgba(245,232,203,0.65);line-height:1.85;max-width:500px;}
+.bs-right{position:relative;z-index:1;display:flex;flex-direction:column;gap:10px;align-items:flex-end;}
+.bs-chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:100px;padding:8px 16px;font-size:0.80rem;font-weight:600;color:rgba(245,232,203,0.85);text-decoration:none;transition:all 0.2s;white-space:nowrap;min-height:40px;}
+.bs-chip:hover{background:rgba(255,255,255,0.14);color:var(--cream2);}
+.bs-cta{background:var(--coral);color:white;text-decoration:none;padding:14px 30px;border-radius:8px;font-weight:700;font-size:0.95rem;transition:all 0.2s;display:inline-flex;align-items:center;gap:7px;min-height:44px;white-space:nowrap;}
+.bs-cta:hover{background:var(--coral2);transform:translateY(-1px);}
+.seo-section{background:white;border:1px solid var(--border);border-radius:16px;padding:40px 48px;margin-bottom:48px;}
+.seo-title{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:900;color:var(--teal);margin-bottom:18px;}
+.seo-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px 40px;}
+.seo-p{font-size:0.88rem;color:var(--mid);line-height:1.90;}
+.seo-p strong{color:var(--teal3);}
+.empty-state{background:white;border:1px solid var(--border);border-radius:14px;padding:52px 32px;text-align:center;grid-column:1/-1;}
+.empty-ico{font-size:3rem;display:block;margin-bottom:16px;}
+.empty-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:var(--teal);margin-bottom:8px;}
+.empty-sub{font-size:0.88rem;color:var(--mid);line-height:1.75;}
+footer{background:var(--dark);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+.foot-logo{font-size:1.2rem;font-weight:900;display:flex;align-items:baseline;text-decoration:none;}
+.foot-s{font-family:'Playfair Display',serif;font-style:italic;color:var(--cream);}
+.foot-l{font-weight:700;color:var(--coral);}
+.foot-copy{font-size:0.76rem;color:rgba(245,232,203,0.32);}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap;}
+.foot-links a{font-size:0.76rem;color:rgba(245,232,203,0.32);text-decoration:none;transition:color 0.2s;}
+.foot-links a:hover{color:var(--coral);}
+@media(max-width:1020px){
+  .dm-grid{grid-template-columns:1fr 1fr;}
+  .dm-grid .dm-card:nth-child(3){grid-column:span 2;}
+  .ev-grid{grid-template-columns:1fr 1fr;}
+  .rec-scroll{grid-template-columns:1fr 1fr;}
+  .booking-strip{grid-template-columns:1fr;padding:36px 32px;}
+  .bs-right{align-items:flex-start;}
+  .seo-grid{grid-template-columns:1fr;}
+  .hero-inner{grid-template-columns:1fr;}
+  .countdown-box{display:none;}
+}
+@media(max-width:768px){
+  nav{padding:14px 20px;top:38px;}
+  .hero{padding:130px 20px 0;}
+  .hero-inner{padding-bottom:36px;}
+  .weekend-inner{padding:14px 20px;}
+  .dont-miss-section{padding:40px 20px;}
+  .dm-grid{grid-template-columns:1fr;}
+  .dm-grid .dm-card:nth-child(3){grid-column:span 1;}
+  .month-nav-inner{padding:0 16px;}
+  .filter-bar{padding:12px 20px;top:112px;}
+  .main{padding:28px 20px 60px;}
+  .m-featured{grid-template-columns:1fr;}
+  .mf-ico-col{display:none;}
+  .mf-body{padding:24px 22px;}
+  .ev-grid{grid-template-columns:1fr;}
+  .rec-scroll{grid-template-columns:1fr;}
+  .booking-strip{padding:28px 22px;border-radius:16px;}
+  .seo-section{padding:28px 22px;}
+  footer{padding:24px 20px;flex-direction:column;text-align:center;}
+  .dm-card{min-height:280px;}
+  .mf-actions{flex-direction:column;}
+  .btn-tix,.btn-tix-ghost{width:100%;justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<div class="launch-banner">
+  <div class="launch-banner-badge">&#128640; June 1st</div>
+  <div class="launch-banner-text"><strong>ShoreList launches June 1st.</strong> <span>Add a local experience to your Wilmington visit &mdash; book via ShoreList.</span></div>
+</div>
+
+<nav>
+  <a href="/" class="nav-logo">Shore<span>List</span></a>
+  <div class="nav-right">
+    <a href="/" class="nav-back">&#8592; ShoreList Home</a>
+    <a href="/waitlist" class="nav-book">Join Waitlist</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">Wilmington, NC &amp; the Beaches &mdash; 2026</div>
+      <h1 class="hero-title">Things to Do in<br/><em>Wilmington, NC</em></h1>
+      <p class="hero-sub">Your coastal command center. <strong style="color:var(--cream2);">50+ real events</strong> across 7 months &mdash; concerts, festivals, outdoor adventures, markets, and every major happening across Wilmington and the beaches.</p>
+      <div class="hero-stat-row">
+        <div class="hstat"><span class="hstat-n">50+</span><span class="hstat-l">Events Listed</span></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><span class="hstat-n">7</span><span class="hstat-l">Months Covered</span></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><span class="hstat-n">6+</span><span class="hstat-l">Event Types</span></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><span class="hstat-n">Free</span><span class="hstat-l">Always</span></div>
+      </div>
+    </div>
+    <div class="countdown-box">
+      <div class="cd-label">&#9201; Next Major Event</div>
+      <div class="cd-event" id="cd-event">Loading...</div>
+      <div class="cd-timer">
+        <div class="cd-unit"><span class="cd-num" id="cd-d">--</span><span class="cd-unit-lbl">Days</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><span class="cd-num" id="cd-h">--</span><span class="cd-unit-lbl">Hrs</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><span class="cd-num" id="cd-m">--</span><span class="cd-unit-lbl">Min</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><span class="cd-num" id="cd-s">--</span><span class="cd-unit-lbl">Sec</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,28 C360,56 720,0 1080,28 C1260,42 1380,14 1440,28 L1440,56 L0,56 Z" fill="#FEFCF7" opacity="0.08"/><path d="M0,42 C240,14 600,56 960,28 C1140,14 1320,42 1440,35 L1440,56 L0,56 Z" fill="#FEFCF7" opacity="0.06"/></svg>
+  </div>
+</section>
+
+<div class="weekend-strip">
+  <div class="weekend-inner">
+    <div class="weekend-hd">
+      <div class="weekend-pill"><div class="weekend-pill-dot"></div>This Weekend</div>
+      <div class="weekend-hd-title" id="weekend-title">Happening Soon in Wilmington</div>
+    </div>
+    <div class="weekend-row" id="weekend-row"></div>
+  </div>
+</div>
+
+<section class="dont-miss-section">
+  <div class="dm-inner">
+    <div class="section-eyebrow">Editors&#39; Picks &mdash; 2026</div>
+    <h2 class="section-title">Don&#39;t Miss <em>This Season</em></h2>
+    <div class="dm-grid">
+      <div class="dm-card">
+        <div class="dm-bg" style="background:linear-gradient(145deg,#2d1060,#4a0e8f,#8b1a1a);"></div>
+        <div class="dm-overlay"></div>
+        <div class="dm-body">
+          <div class="dm-season-badge">&#127925; Major Concert</div>
+          <div class="dm-title">Jelly Roll at Live Oak Bank Pavilion</div>
+          <div class="dm-date">Monday, June 8 &nbsp;&middot;&nbsp; 7:00 PM &nbsp;&middot;&nbsp; Downtown Wilmington</div>
+          <a href="https://www.ticketmaster.com/live-oak-bank-pavilion-tickets-wilmington/venue/369854" target="_blank" rel="noopener" class="dm-link">Get Tickets &#8599;</a>
+        </div>
+      </div>
+      <div class="dm-card">
+        <div class="dm-bg" style="background:linear-gradient(145deg,#073D4A,#0A4D5C,#0d6678);"></div>
+        <div class="dm-overlay"></div>
+        <div class="dm-body">
+          <div class="dm-season-badge">&#127944; Free Festival</div>
+          <div class="dm-title">Wilmington Riverfest</div>
+          <div class="dm-date">October 3 &amp; 4 &nbsp;&middot;&nbsp; All Day &nbsp;&middot;&nbsp; Downtown Riverfront</div>
+          <a href="https://wilmingtonriverfest.com" target="_blank" rel="noopener" class="dm-link">Learn More &#8599;</a>
+        </div>
+      </div>
+      <div class="dm-card">
+        <div class="dm-bg" style="background:linear-gradient(145deg,#1a0533,#4a0e8f,#1a1a2e);"></div>
+        <div class="dm-overlay"></div>
+        <div class="dm-body">
+          <div class="dm-season-badge">&#127914; Arts Festival</div>
+          <div class="dm-title">BAD Day Music &amp; Arts Festival</div>
+          <div class="dm-date">Saturday, November 14 &nbsp;&middot;&nbsp; Brooklyn Arts District</div>
+          <a href="https://www.bad-day.com" target="_blank" rel="noopener" class="dm-link">Learn More &#8599;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="month-nav-wrap">
+  <div class="month-nav-inner" id="month-nav"></div>
+</div>
+
+<div class="filter-bar">
+  <div class="filter-inner">
+    <div class="f-chip active" onclick="setFilter(this,'all')">All</div>
+    <div class="f-chip" onclick="setFilter(this,'music')">&#127925; Music</div>
+    <div class="f-chip" onclick="setFilter(this,'festival')">&#127914; Festivals</div>
+    <div class="f-chip" onclick="setFilter(this,'outdoor')">&#127807; Outdoor</div>
+    <div class="f-chip" onclick="setFilter(this,'arts')">&#127912; Arts &amp; Markets</div>
+    <div class="f-chip" onclick="setFilter(this,'family')">&#128106; Family</div>
+    <div class="f-chip" onclick="setFilter(this,'food')">&#127869; Food &amp; Drink</div>
+    <div class="f-chip" onclick="setFilter(this,'sports')">&#127939; Sports</div>
+    <div class="f-sep"></div>
+    <div class="f-chip free-chip" onclick="toggleFree(this)">&#10003; Free Only</div>
+  </div>
+</div>
+
+<div class="main" id="main-content"></div>
+
+<footer>
+  <a href="/" class="foot-logo"><span class="foot-s">Shore</span><span class="foot-l">List</span></a>
+  <div class="foot-copy">&#169; 2026 ShoreList LLC &nbsp;&middot;&nbsp; Wilmington, NC &nbsp;&middot;&nbsp; Your local guide to coastal adventures</div>
+  <div class="foot-links">
+    <a href="/">Experiences</a>
+    <a href="/planner">Trip Planner</a>
+    <a href="/waitlist">Join Waitlist</a>
+    <a href="/join">Operators</a>
+    <a href="/legal">Privacy &amp; Terms</a>
+  </div>
+</footer>
+
+<script>
+var DB = {
+'2026-05':{
+  label:'May 2026',short:'May',
+  featured:{cat:'festival',ico:'&#127783;',badge:'&#127917; Food Festival',name:'Wilmington Greek Festival',date:'Fri&ndash;Sun, May 15&ndash;17',time:'Various times',venue:'St. Nicholas Greek Orthodox Church',neighborhood:'Wilmington',tags:['Food &amp; Drink','Music','Dancing','Family'],desc:'Three days of authentic Greek food, live music, traditional dancing, and warm coastal hospitality at one of the Cape Fear region\'s most beloved annual festivals. Loukoumades, spanakopita, live rebetiko music, and a genuine sense of community &mdash; this is Wilmington at its most festive.',price:'Free general admission',link:'https://www.stnicholaswilmington.org',tix_text:'Get Info',shorelist_rec:null},
+  events:[
+    {cat:'arts',ico:'&#127963;',name:'Historic Wilmington Preservation Awards',date:'Wed, May 14',time:'6:00 PM',venue:'Downtown Wilmington',neighborhood:'Downtown',desc:'Annual ceremony honoring the stewards of Wilmington\'s landmark architecture and historic legacy.',price:'Free',free:true,heat:1,link:null},
+    {cat:'music',ico:'&#127925;',name:'Earth, Wind &amp; Fire',date:'Sun, May 17',time:'8:30 PM',venue:'Live Oak Bank Pavilion',neighborhood:'Downtown Wilmington',desc:'One of the most legendary bands in American music history brings their iconic catalog to the Wilmington waterfront. Brass, harmonies, and decades of hits under the open sky.',price:'Tickets from ~$55',free:false,heat:3,link:'https://www.ticketmaster.com/live-oak-bank-pavilion-tickets-wilmington/venue/369854'},
+    {cat:'food',ico:'&#127859;',name:'1,000 lb Crawfish Boil',date:'Sat, May 30',time:'Noon',venue:'Downtown Wilmington',neighborhood:'Downtown',desc:'An epic outdoor crawfish boil in the heart of the Port City. One thousand pounds of crawfish, cold drinks, local vendors, and coastal Louisiana energy on the Wilmington waterfront.',price:'Ticketed event',free:false,heat:2,link:null},
+    {cat:'arts',ico:'&#127800;',name:'Orange Street ArtsFest',date:'Sun, May 24',time:'10:00 AM',venue:'Orange Street, Downtown',neighborhood:'Downtown Wilmington',desc:'A beloved annual street arts festival transforming one of downtown Wilmington\'s most charming blocks into an open-air gallery of local and regional artists, makers, and performers.',price:'Free',free:true,heat:2,link:null},
+    {cat:'music',ico:'&#127928;',name:'Jason Mraz',date:'Fri, May 22',time:'7:00 PM',venue:'Wilson Center at CFCC',neighborhood:'Downtown Wilmington',desc:'Grammy-winning singer-songwriter Jason Mraz brings his warm, feel-good acoustic-pop sound to Wilmington\'s premier indoor concert venue.',price:'Tickets from ~$45',free:false,heat:2,link:'https://www.wilsoncentertickets.com'},
+    {cat:'music',ico:'&#127928;',name:'Tribal Seeds',date:'Sat, May 23',time:'8:00 PM',venue:'Live Oak Bank Pavilion',neighborhood:'Downtown Wilmington',desc:'West Coast reggae-rock band Tribal Seeds lights up the Wilmington waterfront for a sun-soaked late-May evening of infectious rhythms.',price:'Tickets from ~$30',free:false,heat:2,link:'https://www.ticketmaster.com/live-oak-bank-pavilion-tickets-wilmington/venue/369854'},
+    {cat:'outdoor',ico:'&#127827;',name:'U-Pick Strawberries &amp; Wildflowers',date:'All Month',time:'Morning&ndash;Afternoon',venue:'Local Farms, Castle Hayne',neighborhood:'Castle Hayne',desc:'Hit the local farms just outside Wilmington to pick your own fresh strawberries and wildflowers. A perfect half-day for families, couples, and anyone who loves something local and seasonal.',price:'Pay by the pound',free:false,heat:1,link:null},
+    {cat:'outdoor',ico:'&#127807;',name:'Venus Flytrap Season &mdash; Carolina Beach State Park',date:'All Month',time:'Dawn&ndash;Dusk',venue:'Carolina Beach State Park',neighborhood:'Carolina Beach',desc:'May is peak season to see wild Venus flytraps in their natural coastal habitat &mdash; one of the most surreal natural attractions in America. Join a ShoreList guided nature walk to see them up close.',price:'From $35 via ShoreList',free:false,heat:2,link:'/category?cat=nature-walks',shore:true}
+  ]
+},
+'2026-06':{
+  label:'June 2026',short:'Jun',
+  featured:{cat:'festival',ico:'&#127944;',badge:'&#127914; Annual Festival',name:'Carolina Beach Music Festival',date:'Saturday, June 6',time:'10:00 AM &mdash; Late Night',venue:'Carolina Beach Boardwalk',neighborhood:'Carolina Beach',tags:['Free Event','Beach Music','Shag Dancing','Family','All Day'],desc:'One of the longest-running music festivals in America &mdash; the Carolina Beach Music Festival has been welcoming summer to the Cape Fear coast for 30+ years. A full day of beach music, shag dancing, food vendors, cold drinks, and genuine coastal good vibes right on the boardwalk.',price:'Free &mdash; pay for parking',link:'https://www.carolinabeach.org',tix_text:'Get Info',shorelist_rec:{ico:'&#127940;',name:'Surf Lesson the Next Day',desc:'Extend your beach weekend with a surf lesson at Carolina Beach. ShoreList certified instructors available daily.',link:'/category?cat=surf-lessons'}},
+  events:[
+    {cat:'music',ico:'&#127909;',name:'Jelly Roll',date:'Mon, June 8',time:'7:00 PM',venue:'Live Oak Bank Pavilion',neighborhood:'Downtown Wilmington',desc:'Country-rap crossover superstar Jelly Roll sold out this venue in 2023 and is back for more. Expect raw emotion, mass singalongs, and one of the most energetic shows of the summer.',price:'Tickets from ~$65',free:false,heat:3,link:'https://www.ticketmaster.com/live-oak-bank-pavilion-tickets-wilmington/venue/369854'},
+    {cat:'music',ico:'&#127928;',name:'Darius Rucker: Songs of Summer Tour',date:'Fri, June 19',time:'7:00 PM',venue:'Live Oak Bank Pavilion',neighborhood:'Downtown Wilmington',desc:'Hootie &amp; the Blowfish frontman and solo country star Darius Rucker brings his summer anthems to the Wilmington waterfront &mdash; the perfect Friday night on the river.',price:'Tickets from ~$40',free:false,heat:3,link:'https://www.ticketmaster.com/live-oak-bank-pavilion-tickets-wilmington/venue/369854'},
+    {cat:'music',ico:'&#127928;',name:'Ella Langley: The Dandelion Tour',date:'Fri, June 26',time:'7:00 PM',venue:'Live Oak Bank Pavilion',neighborhood:'Downtown Wilmington',desc:'Country music\'s breakout voice of 2025 brings her Dandelion Tour to the Wilmington waterfront &mdash; raw, emotional new-era country with one of the genre\'s most exciting young artists.',price:'Tickets from ~$35',free:false,heat:2,link:'https://www.ticketmaster.com/live-oak-bank-pavilion-tickets-wilmington/venue/369854'},
+    {cat:'arts',ico:'&#127978;',name:'The Groove Market at Riverlights',date:'Sat&ndash;Sun, June 27&ndash;28',time:'10:00 AM',venue:'Riverlights Development',neighborhood:'Wilmington',desc:'30+ local makers, food vendors, craft beer, and live music by the river at the scenic Riverlights community. A perfect summer Saturday in Wilmington.',price:'Free',free:true,heat:2,link:null},
+    {cat:'family',ico:'&#127878;',name:'Carolina Beach Boardwalk Fireworks Thursdays',date:'Every Thursday through Labor Day',time:'Dusk',venue:'Carolina Beach Boardwalk',neighborhood:'Carolina Beach',desc:'Every Thursday from Memorial Day through Labor Day, the Carolina Beach boardwalk lights up with live music and fireworks over the ocean. A beloved Wilmington summer tradition.',price:'Free',free:true,heat:2,link:null},
+    {cat:'outdoor',ico:'&#127940;',name:'Peak Surf Season Begins',date:'All Month',time:'Daily',venue:'Carolina &amp; Wrightsville Beach',neighborhood:'Beach Communities',desc:'June kicks off the best surf season on the Carolina coast. ShoreList certified surf instructors offer daily lessons at Carolina Beach &mdash; all gear included, all skill levels welcome.',price:'From $75 via ShoreList',free:false,heat:2,link:'/category?cat=surf-lessons',shore:true}
+  ]
+},
+'2026-07':{
+  label:'July 2026',short:'Jul',
+  featured:{cat:'music',ico:'&#127909;',badge:'&#127925; Country Superstar',name:'Dierks Bentley: Off the Map Tour',date:'Thursday, July 16',time:'7:00 PM',venue:'Live Oak Bank Pavilion',neighborhood:'Downtown Wilmington',tags:['Live Music','Country','Outdoor Amphitheater','Riverfront'],desc:'Multi-platinum country star Dierks Bentley brings his Off the Map Tour to the Wilmington waterfront in peak summer. With the Cape Fear River as a backdrop and a catalog full of anthems, this is peak outdoor concert season at one of the South\'s best music venues.',price:'Tickets from ~$50',link:'https://www.ticketmaster.com/live-oak-bank-pavilion-tickets-wilmington/venue/369854',tix_text:'Get Tickets',shorelist_rec:{ico:'&#128123;',name:'Add a Ghost Tour',desc:'Wilmington has the best ghost tours in the South. Book Sean Austin\'s Famous Ghost Walk before or after the show.',link:'/category?cat=ghost-tours'}},
+  events:[
+    {cat:'family',ico:'&#127878;',name:'4th of July Fireworks &mdash; Carolina Beach',date:'Sat, July 4',time:'Dusk',venue:'Carolina Beach Boardwalk',neighborhood:'Carolina Beach',desc:'The Carolina Beach July 4th fireworks show over the Atlantic Ocean is one of the most stunning Independence Day celebrations on the East Coast. Arrive early &mdash; the boardwalk fills up.',price:'Free',free:true,heat:3,link:null},
+    {cat:'family',ico:'&#127941;',name:'Bald Head Island July 4th Celebration',date:'Sat, July 4',time:'All Day',venue:'Bald Head Island',neighborhood:'Bald Head Island',desc:'The full island celebrates Independence Day with a parade, games, tours, watersports, and a beautiful evening fireworks show over the water. Ferry required &mdash; plan ahead.',price:'Ferry + activities',free:false,heat:2,link:null},
+    {cat:'music',ico:'&#127988;',name:"Jimmy Buffett's Coral Reefer Band",date:'Tue, July 14',time:'7:30 PM',venue:'Live Oak Bank Pavilion',neighborhood:'Downtown Wilmington',desc:"Margaritaville comes to the Wilmington riverfront. Jimmy Buffett's legendary Coral Reefer Band brings the songs, the spirit, and every reason to feel like it's 5 o'clock somewhere.",price:'Tickets from ~$40',free:false,heat:2,link:'https://www.ticketmaster.com/live-oak-bank-pavilion-tickets-wilmington/venue/369854'},
+    {cat:'music',ico:'&#127930;',name:'O.A.R.: Three Decades Tour',date:'Thu, July 30',time:'6:30 PM',venue:'Live Oak Bank Pavilion',neighborhood:'Downtown Wilmington',desc:'Rock-jam legends O.A.R. celebrate three decades of music with a career-spanning set on the Wilmington waterfront. A summer Thursday that will feel like a full festival.',price:'Tickets from ~$35',free:false,heat:2,link:'https://www.ticketmaster.com/live-oak-bank-pavilion-tickets-wilmington/venue/369854'},
+    {cat:'outdoor',ico:'&#127907;',name:'Coast Got-Em-On King Mackerel Classic',date:'July Weekend (TBD)',time:'All Day',venue:'Carolina Beach Marina',neighborhood:'Carolina Beach',desc:'One of the Cape Fear region\'s most beloved fishing tournaments. Watch serious anglers bring in Cape Fear catches while soaking up peak Carolina Beach summer energy.',price:'Free to spectate',free:true,heat:2,link:null},
+    {cat:'outdoor',ico:'&#127757;',name:'Cape Fear River Kayak &amp; Cruise Season',date:'All Month',time:'Daily',venue:'Cape Fear Waterfront',neighborhood:'Wilmington &amp; Beaches',desc:'Peak season for kayak tours, river cruises, and waterfront adventures. ShoreList connects you with the best local guides for paddling, sightseeing, and wildlife excursions.',price:'Book via ShoreList',free:false,heat:2,link:'/category?cat=kayak-tours',shore:true}
+  ]
+},
+'2026-08':{
+  label:'August 2026',short:'Aug',
+  featured:{cat:'music',ico:'&#127928;',badge:'&#127928; Reggae-Rock Double Bill',name:'Slightly Stoopid &amp; Dirty Heads',date:'Thursday, August 20',time:'7:30 PM',venue:'Live Oak Bank Pavilion',neighborhood:'Downtown Wilmington',tags:['Live Music','Reggae-Rock','Outdoor Amphitheater','Waterfront'],desc:'Two of the biggest names in reggae-rock and alternative hip-hop share the Wilmington stage. Slightly Stoopid and Dirty Heads together on the riverfront is about as good as a Thursday night gets in this city &mdash; and it will sell out.',price:'Tickets from ~$40',link:'https://www.ticketmaster.com/live-oak-bank-pavilion-tickets-wilmington/venue/369854',tix_text:'Get Tickets',shorelist_rec:{ico:'&#127940;',name:'Morning Surf Before the Show',desc:'Start the day right &mdash; take a sunrise surf lesson at Carolina Beach before heading downtown for the night.',link:'/category?cat=surf-lessons'}},
+  events:[
+    {cat:'music',ico:'&#127928;',name:'Jordan Davis',date:'Sat, Aug 22',time:'8:00 PM',venue:'Live Oak Bank Pavilion',neighborhood:'Downtown Wilmington',desc:'Hit country-pop songwriter Jordan Davis brings smooth summer country to the Wilmington waterfront &mdash; a late-August Saturday done right.',price:'Tickets from ~$35',free:false,heat:2,link:'https://www.ticketmaster.com/live-oak-bank-pavilion-tickets-wilmington/venue/369854'},
+    {cat:'music',ico:'&#127928;',name:'Port City Rock Jam',date:'August Weekend (TBD)',time:'All Day',venue:'Downtown Wilmington',neighborhood:'Downtown',desc:'12 local Wilmington bands on rotating stages across downtown. All genres, all local, all free. One of the best grassroots music events in the Cape Fear area.',price:'Free',free:true,heat:2,link:null},
+    {cat:'outdoor',ico:'&#127966;',name:'National Lighthouse Day &mdash; Bald Head Island',date:'August 7 Weekend',time:'Daytime',venue:'Old Baldy Lighthouse, Bald Head Island',neighborhood:'Bald Head Island',desc:"Celebrate Old Baldy, one of America's oldest standing lighthouses, with guided tours, history programs, and stunning coastal views. Ferry over for a half-day adventure.",price:'Ferry + admission',free:false,heat:2,link:null},
+    {cat:'family',ico:'&#128044;',name:'NC Aquarium at Fort Fisher &mdash; Summer Programs',date:'All Month',time:'Daily',venue:'NC Aquarium at Fort Fisher',neighborhood:'Kure Beach',desc:"One of North Carolina's most visited attractions. Interactive exhibits, shark tanks, loggerhead sea turtles, and sea turtle rescue programs all summer with special August events.",price:'Admission required',free:false,heat:2,link:null},
+    {cat:'outdoor',ico:'&#127807;',name:'Late Summer Nature Walks &mdash; Carolina Beach SP',date:'Weekends',time:'8:00 AM &amp; 10:00 AM',venue:'Carolina Beach State Park',neighborhood:'Carolina Beach',desc:"August is stunning in Carolina Beach State Park &mdash; the carnivorous plants are thriving and the maritime forest is at peak beauty. ShoreList's local naturalist guides take you off the beaten path.",price:'From $35 via ShoreList',free:false,heat:2,link:'/category?cat=nature-walks',shore:true},
+    {cat:'outdoor',ico:'&#9975;',name:'Battleship NC Living History Programs',date:'Saturdays in August',time:'10:00 AM',venue:'Battleship North Carolina',neighborhood:'Downtown Wilmington',desc:"Go below decks on one of WWII's most legendary battleships. Special Saturday living history programs run throughout summer at this must-see Wilmington landmark.",price:'Admission required',free:false,heat:1,link:null}
+  ]
+},
+'2026-09':{
+  label:'September 2026',short:'Sep',
+  featured:{cat:'music',ico:'&#127928;',badge:'&#11088; Legendary Artist',name:'James Taylor &amp; His All-Star Band',date:'Tuesday, September 15',time:'7:30 PM',venue:'Live Oak Bank Pavilion',neighborhood:'Downtown Wilmington',tags:['Live Music','Classic American Folk','Outdoor Amphitheater','All Ages'],desc:'One of the most beloved singer-songwriters of all time brings his All-Star Band to the Wilmington riverfront for an evening that will stay with you. Fire and Rain. Sweet Baby James. Carolina in My Mind. September evenings at Live Oak Bank Pavilion don\'t get more perfect than this.',price:'Tickets from ~$75',link:'https://www.ticketmaster.com/live-oak-bank-pavilion-tickets-wilmington/venue/369854',tix_text:'Get Tickets',shorelist_rec:{ico:'&#127916;',name:'Film &amp; TV Tour Before the Show',desc:'Make a full day of it &mdash; explore Wilmington\'s film history with a Wilmywood Insider Tour downtown, then head to the pavilion.',link:'/category?cat=film-tours'}},
+  events:[
+    {cat:'music',ico:'&#128247;',name:'Foreigner: Celebrating Fifty Years',date:'Sun, Sep 20',time:'8:00 PM',venue:'Live Oak Bank Pavilion',neighborhood:'Downtown Wilmington',desc:'Cold as Ice. Hot Blooded. Urgent. I Want to Know What Love Is. Classic rock icons Foreigner celebrate five decades with a career-spanning set on the Wilmington waterfront.',price:'Tickets from ~$55',free:false,heat:3,link:'https://www.ticketmaster.com/live-oak-bank-pavilion-tickets-wilmington/venue/369854'},
+    {cat:'music',ico:'&#127928;',name:'Charley Crockett: Age of the Ram Tour',date:'Sun, Sep 21',time:'7:30 PM',venue:'Live Oak Bank Pavilion',neighborhood:'Downtown Wilmington',desc:"True Texas country at its finest. Charley Crockett brings his raw, authentic sound to Wilmington &mdash; the real deal in an era of manufactured country, live on the riverfront.",price:'Tickets from ~$35',free:false,heat:2,link:'https://www.ticketmaster.com/live-oak-bank-pavilion-tickets-wilmington/venue/369854'},
+    {cat:'food',ico:'&#9749;',name:'Wilmington Coffee Fest',date:'Fri&ndash;Sat, Sep 26&ndash;27',time:'Various',venue:'Various Downtown Venues',neighborhood:'Downtown Wilmington',desc:'Local roasters, specialty brews, cold brew tastings, and an entire weekend celebrating Wilmington\'s growing artisan coffee culture. The perfect autumn weekend exploration of downtown.',price:'Ticketed events &amp; free tastings',free:false,heat:2,link:null},
+    {cat:'outdoor',ico:'&#128123;',name:'Ghost Tour Peak Season Begins',date:'Thu&ndash;Sun Evenings',time:'7:00, 8:30, 10:00 PM',venue:'Historic Downtown Wilmington',neighborhood:'Downtown Wilmington',desc:'As the nights cool and Wilmington\'s 300-year-old streets take on an eerie autumn glow, ghost tour season hits its peak. ShoreList\'s Sean Austin leads the most talked-about tour in the city.',price:'From $25 via ShoreList',free:false,heat:3,link:'/category?cat=ghost-tours',shore:true},
+    {cat:'outdoor',ico:'&#127939;',name:'IRONMAN 70.3 North Carolina',date:'Late September / October (TBD)',time:'Early Morning',venue:'Wrightsville Beach to Riverfront Park',neighborhood:'Wrightsville Beach &amp; Downtown',desc:"1.2-mile ocean swim at Wrightsville Beach, 56-mile bike through coastal countryside, 13.1-mile run finishing at Riverfront Park. Spectacular free spectator event even if you're not competing.",price:'Free to spectate',free:true,heat:2,link:null}
+  ]
+},
+'2026-10':{
+  label:'October 2026',short:'Oct',
+  featured:{cat:'festival',ico:'&#127888;',badge:'&#127914; Top 7 NC Festival',name:'Wilmington Riverfest',date:'October 3 &amp; 4, 2026',time:'All Day Both Days',venue:'Historic Downtown Riverfront',neighborhood:'Downtown Wilmington',tags:['Free Festival','Two Stages','200+ Vendors','Fireworks','Family Friendly'],desc:"Named one of North Carolina's Top Seven Festivals, Wilmington Riverfest is the city's biggest celebration. Two days of live music, 200+ craft and food vendors, children's activities, the Invasion of the Pirates, Saturday night fireworks over the Cape Fear River, and the entire historic downtown riverfront transformed into one massive party.",price:'Free to attend',link:'https://wilmingtonriverfest.com',tix_text:'Plan Your Visit',shorelist_rec:{ico:'&#127916;',name:'Film Location Tour During Riverfest Weekend',desc:'Wilmington\'s film heritage is right downtown. Pair a Riverfest visit with a Wilmywood Insider Tour of the film locations surrounding the festival.',link:'/category?cat=film-tours'}},
+  events:[
+    {cat:'music',ico:'&#127928;',name:'The Doobie Brothers',date:'Tue, Oct 6',time:'8:00 PM',venue:'Live Oak Bank Pavilion',neighborhood:'Downtown Wilmington',desc:"Classic rock legends The Doobie Brothers keep the good times rollin' at the Wilmington waterfront. A setlist of undeniable American rock and soul from one of the genre's all-time great bands.",price:'Tickets from ~$65',free:false,heat:3,link:'https://www.ticketmaster.com/live-oak-bank-pavilion-tickets-wilmington/venue/369854'},
+    {cat:'music',ico:'&#127928;',name:'Ty Myers: The Legal Tour',date:'Fri, Oct 16',time:'7:30 PM',venue:'Live Oak Bank Pavilion',neighborhood:'Downtown Wilmington',desc:"Rising R&amp;B-soul artist Ty Myers brings his The Legal Tour to Wilmington &mdash; one of the most exciting young voices in music today, bridging classic soul and contemporary pop.",price:'Tickets from ~$30',free:false,heat:2,link:'https://www.ticketmaster.com/live-oak-bank-pavilion-tickets-wilmington/venue/369854'},
+    {cat:'food',ico:'&#127867;',name:'Lighthouse Beer &amp; Wine Festival',date:'Sat, Oct 24',time:'VIP 12PM &mdash; GA 2PM',venue:'Live Oak Bank Pavilion',neighborhood:'Downtown Wilmington',desc:'100+ craft breweries and wineries at the Wilmington waterfront, benefiting the Carousel Child Advocacy Center. Tasting cup included &mdash; unlimited responsible sampling all afternoon.',price:'VIP and GA tickets available',free:false,heat:3,link:'https://www.lighthousebeerandwine.com'},
+    {cat:'food',ico:'&#127866;',name:'Voracious Rare Beer Festival',date:'October (TBD)',time:'Afternoon',venue:'Downtown Wilmington',neighborhood:'Downtown',desc:"Wilmington's craft beer fans mark this one on the calendar every year. Rare, one-off, and limited-release beers from dozens of breweries &mdash; the one day to discover flavors you won't find anywhere else.",price:'Ticketed event',free:false,heat:2,link:null},
+    {cat:'outdoor',ico:'&#128697;',name:'Wrightsville Beach Outrigger Championship',date:'Oct 4&ndash;5',time:'All Day',venue:'Wrightsville Beach',neighborhood:'Wrightsville Beach',desc:'Paddlers from across the Southeast compete in outrigger canoe racing off the shores of Wrightsville Beach &mdash; a stunning spectacle of athleticism against one of the most beautiful beach backdrops in the South.',price:'Free to watch',free:true,heat:2,link:null},
+    {cat:'outdoor',ico:'&#127970;',name:'Fall Ghost Tour Season &mdash; Peak Demand',date:'Weekends',time:'7 PM, 8:30 PM, 10 PM',venue:'Historic Downtown Wilmington',neighborhood:'Downtown Wilmington',desc:'October is undisputed peak season for ghost tours in Wilmington. Halloween energy, autumn nights, and 300 years of dark history make Sean Austin\'s tours sell out weeks in advance.',price:'From $25 &mdash; Book via ShoreList',free:false,heat:3,link:'/category?cat=ghost-tours',shore:true}
+  ]
+},
+'2026-11':{
+  label:'November 2026',short:'Nov',
+  featured:{cat:'festival',ico:'&#127914;',badge:'&#127912; Arts &amp; Music Festival',name:'BAD Day Music &amp; Arts Festival',date:'Saturday, November 14',time:'12:00 PM &mdash; Late Night',venue:'Brooklyn Arts District (BAD)',neighborhood:'Downtown Wilmington',tags:['Music Festival','Live Mural Art','Street Fair','Brooklyn Arts District','National Headliners'],desc:"Taking over Wilmington's Brooklyn Arts District for one epic day &mdash; two outdoor stages, national headliners in bluegrass, funk, reggae, and beyond, live mural painting by celebrated artists, arts and crafts vendors, incredible local food, and a legendary indoor after-party. This festival is what makes Wilmington's creative community extraordinary.",price:'Tickets required',link:'https://www.bad-day.com',tix_text:'Get Tickets',shorelist_rec:null},
+  events:[
+    {cat:'outdoor',ico:'&#129654;',name:'Cape Fear Kite Festival',date:'Nov 7&ndash;9',time:'All Day',venue:'Fort Fisher State Recreation Area',neighborhood:'Kure Beach',desc:'A kaleidoscope of hundreds of kites filling the coastal sky above Fort Fisher beach. Free, family-friendly, and utterly unlike anything else you\'ll see &mdash; one of the most visually stunning events in the Cape Fear region.',price:'Free',free:true,heat:2,link:null},
+    {cat:'arts',ico:'&#127909;',name:'Cucalorus Film Festival',date:'Nov 10&ndash;14 (approx)',time:'Various',venue:'Various Venues, Downtown Wilmington',neighborhood:'Downtown Wilmington',desc:"30 years strong &mdash; Cucalorus is one of the most respected independent film festivals in the South. Hundreds of indie films, bold stage performances, comedy, music, and Connect Conference entrepreneurship events across multiple downtown venues.",price:'Passes and individual tickets',free:false,heat:3,link:'https://www.cucalorus.org'},
+    {cat:'outdoor',ico:'&#127939;',name:'Battleship Half Marathon, 10K &amp; 5K',date:'Sat, Nov 14',time:'Early Morning',venue:'Downtown Wilmington &amp; Battleship NC',neighborhood:'Downtown Wilmington',desc:'Race through historic downtown, around the Battleship North Carolina, over two bridges, and through Greenfield Park. One of the most scenic race courses anywhere &mdash; run it or cheer from the riverfront.',price:'Registration required',free:false,heat:2,link:null},
+    {cat:'food',ico:'&#127978;',name:'Taste of Wrightsville Beach',date:'Sat, Nov 1',time:'Afternoon',venue:'Wrightsville Beach',neighborhood:'Wrightsville Beach',desc:"Sample signature dishes from Wrightsville Beach's best restaurants at this popular annual food and wine tasting event. Local chefs, live entertainment, and a beautiful fall beach setting.",price:'Ticketed event',free:false,heat:2,link:null},
+    {cat:'outdoor',ico:'&#127881;',name:'NC Holiday Flotilla &mdash; Wrightsville Beach',date:'Late November (TBD)',time:'Evening',venue:'Wrightsville Beach Drawbridge',neighborhood:'Wrightsville Beach',desc:"Decorated and illuminated boats parade through the Intracoastal Waterway at Wrightsville Beach in a magical coastal holiday tradition. One of the most beautiful sights of the year &mdash; bring a blanket and watch from the drawbridge.",price:'Free to watch',free:true,heat:3,link:null}
+  ]
+}
+};
+
+var RECURRING=[
+  {ico:'&#127928;',name:'Rock the Riverwalk',freq:'Alternate Summer Saturdays',desc:'Free live music on the Cape Fear River waterfront. Local and regional bands, cold drinks, and the most scenic outdoor stage in downtown Wilmington. A Wilmington summer institution.',venue:'2 Ann St, Riverfront Park',schedule:'Sat evenings June&ndash;Sep, 6&ndash;9 PM',free:true},
+  {ico:'&#127977;',name:'Second Sunday Market',freq:'Monthly &mdash; Every 2nd Sunday',desc:'Local art, food, jewelry, pottery, vintage finds, and live music at Second Glass Wine Bar. A beloved Wilmington community tradition for locals and visitors alike.',venue:'120 Greenfield St, Downtown',schedule:'2nd Sunday each month, morning&ndash;afternoon',free:true},
+  {ico:'&#127925;',name:'Free Concert Friday',freq:'Summer Fridays',desc:"Wilmington's beloved summer tradition. Free concerts every Friday through the summer &mdash; tribute acts, local bands, and national touring artists at an outdoor family-friendly stage.",venue:"The Eagle's Dare, Downtown",schedule:'Fridays May&ndash;August, evenings',free:true},
+  {ico:'&#127917;',name:'Dead Crow Comedy Room',freq:'Weekly Shows',desc:"Wilmington's premier comedy venue, featuring local and touring stand-up comedians weekly. Thursday open mic nights are free and some of the best laughs in the Southeast.",venue:'511 N 3rd St, Downtown',schedule:'Thursdays (free open mic) + weekend headliners year-round',free:false},
+  {ico:'&#127928;',name:'Seven Mile Post Live Music',freq:'Fri, Sat &amp; Sun Year-Round',desc:"Wilmington's live music heartbeat &mdash; free shows almost every weekend at this beloved local bar. 12 drafts, great sound, and a rotating lineup of local and regional acts.",venue:'7219 Market St, Ogden',schedule:'Fri/Sat/Sun evenings &mdash; most shows free',free:true},
+  {ico:'&#127878;',name:'Carolina Beach Boardwalk Fireworks',freq:'Every Thursday &mdash; Memorial Day to Labor Day',desc:'Live music and fireworks over the Atlantic Ocean every Thursday night all summer long on the Carolina Beach boardwalk. Free, family-friendly, and one of the defining Wilmington summer experiences.',venue:'Carolina Beach Boardwalk',schedule:'Thursdays June&ndash;Labor Day, dusk',free:true}
+];
+
+var COUNTDOWN_TARGETS=[
+  {date:'2026-05-17T20:30:00',name:'Earth, Wind &amp; Fire &mdash; Live Oak Bank Pavilion'},
+  {date:'2026-06-06T10:00:00',name:'Carolina Beach Music Festival'},
+  {date:'2026-06-08T19:00:00',name:'Jelly Roll &mdash; Live Oak Bank Pavilion'},
+  {date:'2026-06-19T19:00:00',name:'Darius Rucker &mdash; Live Oak Bank Pavilion'},
+  {date:'2026-07-16T19:00:00',name:'Dierks Bentley &mdash; Live Oak Bank Pavilion'},
+  {date:'2026-08-20T19:30:00',name:'Slightly Stoopid + Dirty Heads &mdash; Live Oak Bank Pavilion'},
+  {date:'2026-09-15T19:30:00',name:'James Taylor &mdash; Live Oak Bank Pavilion'},
+  {date:'2026-09-20T20:00:00',name:'Foreigner &mdash; Live Oak Bank Pavilion'},
+  {date:'2026-10-03T10:00:00',name:'Wilmington Riverfest'},
+  {date:'2026-10-06T20:00:00',name:'The Doobie Brothers &mdash; Live Oak Bank Pavilion'},
+  {date:'2026-10-24T12:00:00',name:'Lighthouse Beer &amp; Wine Festival'},
+  {date:'2026-11-14T12:00:00',name:'BAD Day Music &amp; Arts Festival'}
+];
+
+var MONTHS=Object.keys(DB);
+var currentMonth='';
+var currentFilter='all';
+var freeOnly=false;
+
+document.addEventListener('DOMContentLoaded',function(){
+  var now=new Date();
+  var key=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0');
+  currentMonth=MONTHS.indexOf(key)>=0?key:MONTHS[0];
+  buildMonthNav();buildMain();buildWeekend();buildCountdown();
+  setInterval(tickCountdown,1000);
+});
+
+var countdownTarget=null;
+function buildCountdown(){
+  var now=Date.now();
+  for(var i=0;i<COUNTDOWN_TARGETS.length;i++){
+    var t=new Date(COUNTDOWN_TARGETS[i].date).getTime();
+    if(t>now+3600000){countdownTarget=COUNTDOWN_TARGETS[i];break;}
+  }
+  if(!countdownTarget)return;
+  var el=document.getElementById('cd-event');
+  if(el)el.innerHTML=countdownTarget.name;
+  tickCountdown();
+}
+function tickCountdown(){
+  if(!countdownTarget)return;
+  var diff=new Date(countdownTarget.date).getTime()-Date.now();
+  if(diff<=0){buildCountdown();return;}
+  var d=Math.floor(diff/86400000);
+  var h=Math.floor((diff%86400000)/3600000);
+  var m=Math.floor((diff%3600000)/60000);
+  var s=Math.floor((diff%60000)/1000);
+  var set=function(id,v){var el=document.getElementById(id);if(el)el.textContent=String(v).padStart(2,'0');};
+  set('cd-d',d);set('cd-h',h);set('cd-m',m);set('cd-s',s);
+}
+
+function buildWeekend(){
+  var now=new Date();
+  var upcoming=[];
+  MONTHS.forEach(function(mkey){
+    (DB[mkey].events||[]).forEach(function(ev){
+      if(!ev.date||ev.date.toLowerCase().indexOf('all')!==-1||ev.date.toLowerCase().indexOf('tbd')!==-1)return;
+      var ds=ev.date.replace(/[A-Za-z]+,\s*/,'').replace(/&amp;/g,'&').replace(/&ndash;/g,'-');
+      var parts=ds.match(/(\w+)\s+(\d+)/);
+      if(!parts)return;
+      var months={January:0,February:1,March:2,April:3,May:4,June:5,July:6,August:7,September:8,October:9,November:10,December:11,Jan:0,Feb:1,Mar:2,Apr:3,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
+      var mIdx=months[parts[1]];if(mIdx===undefined)return;
+      var yr=parseInt(mkey.split('-')[0]);
+      var evDate=new Date(yr,mIdx,parseInt(parts[2]));
+      var diff=evDate-now;
+      if(diff>-86400000&&diff<10*86400000)upcoming.push({ev:ev,date:evDate});
+    });
+  });
+  upcoming.sort(function(a,b){return a.date-b.date;});
+  var row=document.getElementById('weekend-row');
+  var title=document.getElementById('weekend-title');
+  if(!upcoming.length){row.innerHTML='<div class="we-none">Check back soon &mdash; great events are coming to Wilmington.</div>';return;}
+  title.textContent='Coming Up in Wilmington &mdash; '+upcoming[0].date.toLocaleDateString('en-US',{month:'long',day:'numeric'});
+  var html='';
+  upcoming.slice(0,8).forEach(function(item){
+    var ev=item.ev;
+    var url=ev.shore?ev.link:(ev.link&&!ev.link.startsWith('http')?ev.link:'#');
+    var isExt=ev.link&&ev.link.startsWith('http')&&!ev.shore;
+    html+='<a href="'+url+'"'+(isExt?' target="_blank" rel="noopener"':'')+' class="we-chip">';
+    html+='<span class="we-chip-ico">'+ev.ico+'</span>';
+    html+='<div><div class="we-chip-name">'+ev.name+'</div><div class="we-chip-date">'+ev.date+(ev.time?' &middot; '+ev.time:'')+'</div></div>';
+    html+='</a>';
+  });
+  row.innerHTML=html;
+}
+
+function buildMonthNav(){
+  var nav=document.getElementById('month-nav');
+  var html='';
+  MONTHS.forEach(function(key){
+    var d=DB[key];
+    var count=(d.events||[]).length+1;
+    html+='<div class="m-tab'+(key===currentMonth?' active':'')+'" onclick="switchMonth(\''+key+'\')" id="mtab-'+key+'">';
+    html+='<span class="m-tab-name">'+d.short+'</span><span class="m-tab-count">'+count+'</span></div>';
+  });
+  nav.innerHTML=html;
+}
+
+function switchMonth(key){
+  currentMonth=key;
+  MONTHS.forEach(function(k){
+    var t=document.getElementById('mtab-'+k);if(t)t.classList.toggle('active',k===key);
+    var s=document.getElementById('msec-'+k);if(s)s.classList.toggle('active',k===key);
+  });
+  var main=document.getElementById('main-content');
+  if(main)main.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function setFilter(el,cat){
+  currentFilter=cat;
+  document.querySelectorAll('.f-chip:not(.free-chip)').forEach(function(c){c.classList.remove('active');});
+  el.classList.add('active');updateAllGrids();
+}
+function toggleFree(el){
+  freeOnly=!freeOnly;el.classList.toggle('active',freeOnly);updateAllGrids();
+}
+function updateAllGrids(){
+  MONTHS.forEach(function(key){
+    var grid=document.getElementById('egrid-'+key);
+    if(!grid)return;
+    grid.innerHTML=buildEventCards(DB[key].events||[],key);
+  });
+}
+
+function buildMain(){
+  var main=document.getElementById('main-content');
+  var html='';
+  MONTHS.forEach(function(key){
+    var d=DB[key];
+    var isActive=key===currentMonth;
+    html+='<div class="month-section'+(isActive?' active':'')+'" id="msec-'+key+'">';
+    html+=buildMonthHeader(d);
+    html+=buildFeaturedCard(d.featured);
+    html+='<div class="ev-grid" id="egrid-'+key+'">'+buildEventCards(d.events||[],key)+'</div>';
+    html+='</div>';
+  });
+  html+=buildRecurringSection();
+  html+=buildBookingStrip();
+  html+=buildSEOSection();
+  main.innerHTML=html;
+}
+
+function buildMonthHeader(d){
+  var count=(d.events||[]).length+1;
+  var heat=Math.min(3,Math.ceil(count/3));
+  var dots='';for(var i=1;i<=3;i++)dots+='<div class="m-heat-dot'+(i<=heat?' on':'')+'"></div>';
+  return '<div class="m-header"><div><div class="m-month-label">Events &amp; Things To Do</div><h2 class="m-month-title">'+d.short+' <em>2026</em></h2></div><div class="m-header-right"><span class="m-count">'+count+' events</span><div class="m-heat">'+dots+'</div></div></div>';
+}
+
+var CAT_GRAD={music:'mf-bg-music',festival:'mf-bg-festival',outdoor:'mf-bg-outdoor',arts:'mf-bg-arts',family:'mf-bg-family',food:'mf-bg-food',sports:'mf-bg-sports'};
+var CAT_HEAD={music:'cat-music',festival:'cat-festival',outdoor:'cat-outdoor',arts:'cat-arts',family:'cat-family',food:'cat-food',sports:'cat-sports'};
+var CAT_BADGE={music:'eb-music',festival:'eb-festival',outdoor:'eb-outdoor',arts:'eb-arts',family:'eb-family',food:'eb-food',sports:'eb-sports'};
+
+function buildFeaturedCard(f){
+  if(!f)return'';
+  var tagsHtml=(f.tags||[]).map(function(t){return'<span class="mf-tag">'+t+'</span>';}).join('');
+  var recHtml='';
+  if(f.shorelist_rec){var r=f.shorelist_rec;recHtml='<div class="mf-tag" style="background:rgba(233,102,69,0.22);border:1px solid rgba(233,102,69,0.40);">&#128205; ShoreList Rec: '+r.ico+' <a href="'+r.link+'" style="color:white;font-weight:700;">'+r.name+'</a></div>';}
+  var actHtml='';
+  if(f.link&&f.link.startsWith('/')){actHtml='<a href="'+f.link+'" class="btn-tix">'+(f.tix_text||'Learn More')+' &#8594;</a><a href="/waitlist" class="btn-tix-ghost">Join ShoreList Waitlist</a>';}
+  else if(f.link){actHtml='<a href="'+f.link+'" target="_blank" rel="noopener" class="btn-tix">'+(f.tix_text||'Get Tickets')+' &#8599;</a><a href="/waitlist" class="btn-tix-ghost">Join ShoreList Waitlist</a>';}
+  return'<div class="m-featured '+(CAT_GRAD[f.cat]||'mf-bg-music')+'">'+'<div class="mf-body"><div class="mf-inner">'+'<div class="mf-badge">'+f.badge+'</div>'+'<h3 class="mf-title">'+f.name+'</h3>'+'<div class="mf-meta"><strong>'+f.date+'</strong> &nbsp;&middot;&nbsp; '+f.time+'<br/>'+f.venue+' &nbsp;&middot;&nbsp; '+f.neighborhood+'<br/>'+f.price+'</div>'+'<div class="mf-tags">'+tagsHtml+(recHtml?'<br/>'+recHtml:'')+'</div>'+'<p class="mf-desc">'+f.desc+'</p>'+'<div class="mf-actions">'+actHtml+'</div>'+'</div></div>'+'<div class="mf-ico-col">'+f.ico+'</div></div>';
+}
+
+var PAIRINGS=[
+  {ico:'&#128123;',tag:'ShoreList Experience',name:'Wilmington Ghost Walk',sub:"Wilmington's most acclaimed ghost tour. Perfect for any evening in the city. From $25.",link:'/category?cat=ghost-tours'},
+  {ico:'&#127916;',tag:'ShoreList Experience',name:'Film &amp; TV Location Tours',sub:'Explore the sets of One Tree Hill, Iron Man 3, and dozens more. From $45.',link:'/category?cat=film-tours'},
+  {ico:'&#127940;',tag:'ShoreList Experience',name:'Surf Lessons &mdash; Carolina Beach',sub:'Certified local instructor. All gear. All levels. The best way to start any beach day. From $75.',link:'/category?cat=surf-lessons'},
+  {ico:'&#127807;',tag:'ShoreList Experience',name:'Coastal Nature Walks',sub:'Wild Venus flytraps, cypress swamps, maritime forest. Carolina Beach State Park. From $35.',link:'/category?cat=nature-walks'}
+];
+var pairingIdx=0;
+
+function buildEventCards(events,key){
+  if(!events.length)return'<div class="empty-state"><span class="empty-ico">&#128300;</span><h3 class="empty-title">No events match your filter</h3><p class="empty-sub">Try "All Events" or switch to another month &mdash; there\'s always something happening in Wilmington.</p></div>';
+  var pi=0;var html='';var shown=0;
+  events.forEach(function(ev){
+    if(currentFilter!=='all'&&ev.cat!==currentFilter)return;
+    if(freeOnly&&!ev.free)return;
+    shown++;
+    var bClass=CAT_BADGE[ev.cat]||'eb-music';
+    var hClass=CAT_HEAD[ev.cat]||'cat-music';
+    var stars='<div class="ev-heat">';
+    for(var i=1;i<=3;i++)stars+='<span class="ev-heat-s'+(i>ev.heat?' off':'')+'">&#9733;</span>';
+    stars+='</div>';
+    var linkHtml='';
+    if(ev.shore&&ev.link){linkHtml='<a href="'+ev.link+'" class="ev-link shore-link">Book ShoreList &#8594;</a>';}
+    else if(ev.link&&ev.link.startsWith('http')){linkHtml='<a href="'+ev.link+'" target="_blank" rel="noopener" class="ev-link tix-link">Get Tickets &#8599;</a>';}
+    else if(ev.free){linkHtml='<span class="ev-link free-link">Free Event &#10003;</span>';}
+    else{linkHtml='<span class="ev-link free-link">Check Dates</span>';}
+    html+='<div class="ev-card"><div class="ev-card-header '+hClass+'"></div>'+'<div class="ev-card-body"><div class="ev-cat-row"><span class="ev-badge '+bClass+'">'+ev.ico+' '+ev.cat.charAt(0).toUpperCase()+ev.cat.slice(1)+'</span>'+stars+'</div>'+'<div class="ev-title">'+ev.name+'</div><div class="ev-desc">'+ev.desc+'</div>'+'<div class="ev-details"><div class="ev-detail"><span class="ev-detail-ico">&#128197;</span><span><strong>'+ev.date+'</strong>'+(ev.time?' &nbsp;&middot;&nbsp; '+ev.time:'')+'</span></div>'+'<div class="ev-detail"><span class="ev-detail-ico">&#128205;</span><span>'+ev.venue+' &nbsp;&middot;&nbsp; '+ev.neighborhood+'</span></div></div></div>'+'<div class="ev-card-foot"><div class="ev-price '+(ev.free?'free-p':'paid-p')+'">'+ev.price+'</div>'+linkHtml+'</div></div>';
+    if(shown%5===0&&PAIRINGS[pi%PAIRINGS.length]){
+      var p=PAIRINGS[pi%PAIRINGS.length];pi++;
+      html+='<div class="ev-card pairing-card"><div class="ev-card-header" style="background:linear-gradient(90deg,rgba(233,102,69,0.5),rgba(233,102,69,0.8));height:6px;"></div><div class="pc-body"><div class="pc-tag">&#128205; '+p.tag+'</div><div class="pc-title">'+p.ico+' '+p.name+'</div><div class="pc-sub">'+p.sub+'</div><a href="'+p.link+'" class="pc-link">Book This &#8594;</a></div></div>';
+    }
+  });
+  if(!shown)return'<div class="empty-state"><span class="empty-ico">&#128300;</span><h3 class="empty-title">No events match this filter</h3><p class="empty-sub">Try "All Events" &mdash; there is always something to do in Wilmington.</p></div>';
+  return html;
+}
+
+function buildRecurringSection(){
+  var html='<div class="recurring-section"><div class="m-header"><div><div class="m-month-label">Year-Round &amp; Weekly</div><h2 class="m-month-title">Recurring <em>Events</em></h2></div></div><div class="rec-scroll">';
+  RECURRING.forEach(function(r){
+    html+='<div class="rec-card"><div class="rec-ico">'+r.ico+'</div><div><div class="rec-name">'+r.name+'</div><div class="rec-freq">'+r.freq+'</div><div class="rec-desc">'+r.desc+'</div><div class="rec-pills"><span class="rec-pill">&#128205; '+r.venue+'</span><span class="rec-pill">&#128197; '+r.schedule+'</span><span class="rec-pill rec-free">'+(r.free?'&#10003; Free':'Ticketed')+'</span></div></div></div>';
+  });
+  return html+'</div></div>';
+}
+
+function buildBookingStrip(){
+  return'<div class="booking-strip"><div class="bs-left"><div class="bs-tag">While You\'re in Wilmington</div><h3 class="bs-title">Make your visit<br/><em>unforgettable.</em></h3><p class="bs-sub">The event brings you to Wilmington. ShoreList makes sure you experience everything the coast has to offer while you\'re here. Ghost tours, film location tours, surf lessons, nature walks &mdash; launching June 1st.</p></div><div class="bs-right"><a href="/category?cat=ghost-tours" class="bs-chip">&#128123; Ghost Tours &mdash; From $25</a><a href="/category?cat=film-tours" class="bs-chip">&#127916; Film &amp; TV Tours &mdash; From $45</a><a href="/category?cat=surf-lessons" class="bs-chip">&#127940; Surf Lessons &mdash; From $75</a><a href="/category?cat=nature-walks" class="bs-chip">&#127807; Nature Walks &mdash; From $35</a><a href="/waitlist" class="bs-cta">Join the ShoreList Waitlist &#8594;</a></div></div>';
+}
+
+function buildSEOSection(){
+  return'<div class="seo-section"><h3 class="seo-title">Your Complete Guide to Things to Do in Wilmington, NC</h3><div class="seo-grid"><p class="seo-p"><strong>Wilmington, NC</strong> sits at the heart of one of the most vibrant coastal communities on the East Coast. From a packed summer concert season at <strong>Live Oak Bank Pavilion</strong> on the riverfront &mdash; drawing 7,200-person crowds for Earth Wind &amp; Fire, Jelly Roll, Dierks Bentley, and James Taylor &mdash; to beloved annual festivals like the NC Azalea Festival, Wilmington Riverfest, and the Carolina Beach Music Festival, there is genuinely something to do in Wilmington every week of the year.<br/><br/>The <strong>Wilson Center at Cape Fear Community College</strong> brings world-class touring artists to a beautiful intimate indoor venue downtown. The <strong>Greenfield Lake Amphitheater</strong> hosts lakeside concerts in one of the most scenic settings in coastal North Carolina. And <strong>Dead Crow Comedy Room</strong> and <strong>Seven Mile Post</strong> keep local and live entertainment humming year-round.</p><p class="seo-p"><strong>Wilmington\'s arts scene</strong> is alive, local, and growing. The Brooklyn Arts District hosts the monthly BAD Day arts festival and the flagship BAD Day Music &amp; Arts Festival each November. The <strong>Second Sunday Market</strong> draws local makers, food vendors, and live music every month. <strong>Rock the Riverwalk</strong> lights up the riverfront on summer Saturdays. And the <strong>Cucalorus Film Festival</strong> &mdash; 30 years strong &mdash; is one of the South\'s most respected independent film celebrations.<br/><br/><strong>ShoreList</strong> connects visitors and locals with the best local guides &mdash; ghost tours, film location tours, surf lessons, nature walks through Carolina Beach State Park (home to wild Venus flytraps), and more. Browse this guide, find your next adventure, and book a local ShoreList experience to go with it. Launching June 1st, 2026.</p></div></div>';
+}
+</script>
+</body>
+</html>
