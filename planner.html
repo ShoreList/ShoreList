@@ -18,12 +18,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream2)
 .launch-banner{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--coral);padding:8px 20px;display:flex;align-items:center;justify-content:center;gap:12px;height:38px;}
 .launch-banner-badge{background:rgba(255,255,255,0.22);border:1px solid rgba(255,255,255,0.38);border-radius:100px;padding:2px 10px;font-size:0.65rem;font-weight:700;color:white;letter-spacing:0.10em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;}
 .launch-banner-text{font-size:0.78rem;font-weight:600;color:white;}
-.launch-banner-text span{color:rgba(255,255,255,0.80);}
+.launch-banner-text span{color:rgba(255,255,255,0.85);}
 @media(max-width:600px){.launch-banner-text span{display:none;}.launch-banner{gap:8px;}}
 nav{position:fixed;top:38px;left:0;right:0;z-index:100;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(13,31,37,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.05);}
 .nav-logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--cream2);text-decoration:none;font-weight:700;}
 .nav-logo span{color:var(--coral);}
-.nav-back{font-size:0.82rem;font-weight:600;color:rgba(245,232,203,0.5);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
+.nav-back{font-size:0.82rem;font-weight:600;color:rgba(245,232,203,0.65);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
 .nav-back:hover{color:var(--cream);}
 #planner-mute{position:fixed;bottom:22px;left:22px;z-index:8000;background:rgba(0,0,0,0.30);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.14);border-radius:100px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1rem;cursor:pointer;transition:all 0.22s;color:white;}
 #planner-mute:hover{background:rgba(0,0,0,0.50);transform:scale(1.1);}
@@ -31,20 +31,20 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;padding:18px 48px;display
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(233,102,69,0.12);border:1px solid rgba(233,102,69,0.25);border-radius:100px;padding:7px 16px;font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--coral);margin-bottom:24px;}
 .hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,3.8rem);font-weight:900;color:var(--cream2);line-height:1.05;margin-bottom:18px;}
 .hero-title em{color:var(--coral);font-style:italic;}
-.hero-sub{font-size:1rem;color:rgba(245,232,203,0.55);line-height:1.9;max-width:540px;margin:0 auto;}
+.hero-sub{font-size:1rem;color:rgba(245,232,203,0.70);line-height:1.9;max-width:540px;margin:0 auto;}
 .chips-section{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:0 48px 48px;}
-.chips-label{font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,232,203,0.35);margin-bottom:14px;text-align:center;}
+.chips-label{font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,232,203,0.50);margin-bottom:14px;text-align:center;}
 .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
-.chip{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.10);border-radius:100px;padding:9px 18px;font-size:0.84rem;font-weight:500;color:rgba(245,232,203,0.7);cursor:pointer;transition:all 0.2s;white-space:nowrap;}
+.chip{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.10);border-radius:100px;padding:9px 18px;font-size:0.84rem;font-weight:500;color:rgba(245,232,203,0.75);cursor:pointer;transition:all 0.2s;white-space:nowrap;}
 .chip:hover{background:rgba(233,102,69,0.12);border-color:rgba(233,102,69,0.35);color:var(--coral);}
 .chip.active{background:rgba(233,102,69,0.15);border-color:var(--coral);color:var(--coral);}
 .input-section{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:0 48px 64px;}
 .input-wrap{position:relative;background:rgba(255,255,255,0.04);border:1.5px solid rgba(255,255,255,0.10);border-radius:20px;overflow:hidden;transition:border-color 0.3s,box-shadow 0.3s;}
 .input-wrap:focus-within{border-color:rgba(233,102,69,0.5);box-shadow:0 0 0 4px rgba(233,102,69,0.06);}
 .trip-input{width:100%;background:transparent;border:none;padding:24px 28px 20px;font-family:'DM Sans',sans-serif;font-size:1rem;color:var(--cream2);outline:none;resize:none;line-height:1.7;min-height:140px;}
-.trip-input::placeholder{color:rgba(245,232,203,0.25);}
+.trip-input::placeholder{color:rgba(245,232,203,0.30);}
 .input-footer{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-top:1px solid rgba(255,255,255,0.06);}
-.input-hint{font-size:0.78rem;color:rgba(245,232,203,0.30);}
+.input-hint{font-size:0.78rem;color:rgba(245,232,203,0.40);}
 .btn-plan{background:var(--coral);color:white;border:none;padding:13px 28px;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:0.92rem;font-weight:700;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:8px;white-space:nowrap;}
 .btn-plan:hover{background:var(--coral2);transform:translateY(-1px);}
 .btn-plan:disabled{opacity:0.5;cursor:not-allowed;transform:none;}
@@ -56,7 +56,7 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;padding:18px 48px;display
 .result-section.show{display:block;}
 .result-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;gap:16px;}
 .result-title{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:var(--cream2);}
-.btn-reset{background:transparent;border:1px solid rgba(255,255,255,0.15);color:rgba(245,232,203,0.6);padding:9px 18px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.82rem;cursor:pointer;transition:all 0.2s;}
+.btn-reset{background:transparent;border:1px solid rgba(255,255,255,0.15);color:rgba(245,232,203,0.70);padding:9px 18px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.82rem;cursor:pointer;transition:all 0.2s;}
 .btn-reset:hover{border-color:rgba(255,255,255,0.3);color:var(--cream2);}
 .itinerary{display:flex;flex-direction:column;gap:16px;}
 .itin-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;animation:slideUp 0.4s ease both;}
@@ -70,15 +70,15 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;padding:18px 48px;display
 .itin-time{background:rgba(233,102,69,0.12);border:1px solid rgba(233,102,69,0.20);border-radius:8px;padding:6px 12px;font-size:0.72rem;font-weight:700;color:var(--coral);letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;margin-top:3px;}
 .itin-content{flex:1;}
 .itin-name{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--cream2);margin-bottom:5px;line-height:1.2;}
-.itin-desc{font-size:0.88rem;color:rgba(245,232,203,0.60);line-height:1.75;}
+.itin-desc{font-size:0.88rem;color:rgba(245,232,203,0.70);line-height:1.75;}
 .itin-bottom{padding:14px 24px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;gap:12px;}
 .itin-tags{display:flex;gap:7px;flex-wrap:wrap;}
-.itin-tag{background:rgba(255,255,255,0.06);border-radius:5px;padding:3px 10px;font-size:0.72rem;font-weight:600;color:rgba(245,232,203,0.55);}
+.itin-tag{background:rgba(255,255,255,0.06);border-radius:5px;padding:3px 10px;font-size:0.72rem;font-weight:600;color:rgba(245,232,203,0.65);}
 .itin-book{background:var(--coral);color:white;text-decoration:none;padding:9px 20px;border-radius:7px;font-size:0.82rem;font-weight:700;white-space:nowrap;transition:all 0.2s;display:inline-flex;align-items:center;gap:6px;}
 .itin-book:hover{background:var(--coral2);transform:translateY(-1px);}
-.itin-book.coming-soon{background:rgba(255,255,255,0.07);color:rgba(245,232,203,0.45);cursor:default;}
+.itin-book.coming-soon{background:rgba(255,255,255,0.07);color:rgba(245,232,203,0.55);cursor:default;}
 .itin-book.coming-soon:hover{transform:none;background:rgba(255,255,255,0.07);}
-.itin-narrative{background:rgba(10,77,92,0.25);border:1px solid rgba(10,77,92,0.5);border-radius:14px;padding:22px 24px;margin-bottom:20px;font-size:0.93rem;color:rgba(245,232,203,0.70);line-height:1.85;}
+.itin-narrative{background:rgba(10,77,92,0.25);border:1px solid rgba(10,77,92,0.5);border-radius:14px;padding:22px 24px;margin-bottom:20px;font-size:0.93rem;color:rgba(245,232,203,0.80);line-height:1.85;}
 .loading-state{text-align:center;padding:48px 24px;}
 .loading-wave{display:flex;align-items:center;justify-content:center;gap:5px;margin-bottom:20px;}
 .loading-wave span{display:inline-block;width:4px;height:24px;background:var(--coral);border-radius:2px;animation:wave-load 1.2s ease infinite;}
@@ -87,10 +87,10 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;padding:18px 48px;display
 .loading-wave span:nth-child(4){animation-delay:0.45s;}
 .loading-wave span:nth-child(5){animation-delay:0.60s;}
 @keyframes wave-load{0%,100%{height:8px;opacity:0.4;}50%{height:28px;opacity:1;}}
-.loading-text{font-size:0.92rem;color:rgba(245,232,203,0.50);line-height:1.7;}
+.loading-text{font-size:0.92rem;color:rgba(245,232,203,0.65);line-height:1.7;}
 .planner-footer{position:relative;z-index:1;text-align:center;padding:0 48px 48px;}
-.planner-footer p{font-size:0.78rem;color:rgba(245,232,203,0.25);line-height:1.7;}
-.planner-footer a{color:rgba(245,232,203,0.40);text-decoration:none;}
+.planner-footer p{font-size:0.78rem;color:rgba(245,232,203,0.40);line-height:1.7;}
+.planner-footer a{color:rgba(245,232,203,0.55);text-decoration:none;}
 .planner-footer a:hover{color:var(--coral);}
 @media(max-width:768px){
   nav{padding:16px 20px;top:38px;}
@@ -149,7 +149,7 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:100;padding:18px 48px;display
   <div id="result-content"></div>
 </div>
 <div class="planner-footer">
-  <p>ShoreList LLC &nbsp;·&nbsp; Wilmington, NC &nbsp;·&nbsp; <a href="/">Shorelist.net</a> &nbsp;·&nbsp; <a href="mailto:shorelistwilmington@gmail.com">shorelistwilmington@gmail.com</a></p>
+  <p>ShoreList LLC &nbsp;·&nbsp; Wilmington, NC &nbsp;·&nbsp; <a href="/">Shorelist.net</a> &nbsp;·&nbsp; <a href="mailto:shorelistwilmington@gmail.com">shorelistwilmington@gmail.com</a> &nbsp;·&nbsp; <a href="/legal">Privacy &amp; Terms</a></p>
 </div>
 <script>
 var CAT_LINKS={
@@ -275,7 +275,7 @@ function renderPlan(plan){
     html+='</div>';
   });
   html+='</div>';
-  html+='<div style="margin-top:32px;padding:24px;background:rgba(10,77,92,0.25);border:1px solid rgba(10,77,92,0.5);border-radius:14px;text-align:center;"><p style="font-size:0.9rem;color:rgba(245,232,203,0.55);margin-bottom:14px;">Bookings open June 1st. Join the waitlist to be first in line.</p><a href="/join" style="display:inline-block;background:var(--coral);color:white;text-decoration:none;padding:14px 32px;border-radius:8px;font-weight:700;font-size:0.95rem;">Join the Waitlist &rarr;</a></div>';
+  html+='<div style="margin-top:32px;padding:24px;background:rgba(10,77,92,0.25);border:1px solid rgba(10,77,92,0.5);border-radius:14px;text-align:center;"><p style="font-size:0.9rem;color:rgba(245,232,203,0.70);margin-bottom:14px;">Bookings open June 1st. Join the waitlist to be first in line.</p><a href="/join" style="display:inline-block;background:var(--coral);color:white;text-decoration:none;padding:14px 32px;border-radius:8px;font-weight:700;font-size:0.95rem;">Join the Waitlist &rarr;</a></div>';
   document.getElementById('result-content').innerHTML=html;
 }
 function resetPlanner(){
