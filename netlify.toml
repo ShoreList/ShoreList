@@ -22,6 +22,26 @@
   status = 200
 
 [[redirects]]
+  from = "/planner"
+  to = "/planner.html"
+  status = 200
+
+[[redirects]]
+  from = "/legal"
+  to = "/legal.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacy"
+  to = "/legal.html"
+  status = 200
+
+[[redirects]]
+  from = "/terms"
+  to = "/legal.html"
+  status = 200
+
+[[redirects]]
   from = "/cancel"
   to = "/index.html"
   status = 302
