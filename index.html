@@ -4,9 +4,9 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>ShoreList — Coastal Experiences in Wilmington, NC</title>
-<meta name="description" content="Discover the best local experiences in Wilmington, NC. Ghost tours, film location tours, surf lessons, fishing charters, nature walks and more. Launching June 1st."/>
+<meta name="description" content="Discover and book unforgettable local experiences in Wilmington, NC. Ghost tours, film location tours, surf lessons, fishing charters, nature walks and more. Launching June 1st."/>
 <meta property="og:title" content="ShoreList — Wilmington's Coastal Experience Marketplace"/>
-<meta property="og:description" content="Wilmington's first local experience booking platform. Ghost tours, film location tours, surf lessons, fishing charters and more. Built for Wilmington. Launching June 1st."/>
+<meta property="og:description" content="Wilmington's first local experience booking platform. Ghost tours, surf lessons, fishing charters and more. Built for Wilmington. Launching June 1st."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://shorelist.net"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -15,13 +15,7 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:#0A4D5C;color:#FEFCF7;overflow-x:hidden;}
-:root{
-  --teal:#0A4D5C;--teal2:#1A7585;--teal3:#073D4A;
-  --coral:#E96645;--coral2:#F07A5A;
-  --cream:#F5E8CB;--cream2:#FEFCF7;
-  --dark:#0D1F25;--mid:#2C4A52;
-  --lgray:#F2F4F3;
-}
+:root{--teal:#0A4D5C;--teal2:#1A7585;--teal3:#073D4A;--coral:#E96645;--coral2:#F07A5A;--cream:#F5E8CB;--cream2:#FEFCF7;--dark:#0D1F25;--mid:#2C4A52;--lgray:#F2F4F3;}
 #wave-intro{position:fixed;inset:0;z-index:9999;background:#041f28;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;transition:opacity 0.9s ease,visibility 0.9s ease;}
 #wave-intro.hide{opacity:0;visibility:hidden;pointer-events:none;}
 #wi-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;}
@@ -32,7 +26,7 @@ body{font-family:'DM Sans',sans-serif;background:#0A4D5C;color:#FEFCF7;overflow-
 .launch-banner{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--coral);padding:8px 20px;display:flex;align-items:center;justify-content:center;gap:12px;height:38px;}
 .launch-banner-badge{background:rgba(255,255,255,0.22);border:1px solid rgba(255,255,255,0.38);border-radius:100px;padding:2px 10px;font-size:0.65rem;font-weight:700;color:white;letter-spacing:0.10em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;}
 .launch-banner-text{font-size:0.78rem;font-weight:600;color:white;}
-.launch-banner-text span{color:rgba(255,255,255,0.80);}
+.launch-banner-text span{color:rgba(255,255,255,0.85);}
 @media(max-width:600px){.launch-banner-text span{display:none;}.launch-banner{gap:8px;}}
 #mute-btn{position:fixed;bottom:22px;left:22px;z-index:8000;background:rgba(0,0,0,0.30);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.14);border-radius:100px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1rem;cursor:pointer;transition:all 0.22s;opacity:0;animation:fadeIn 0.5s ease 3.8s forwards;color:white;}
 #mute-btn:hover{background:rgba(0,0,0,0.50);transform:scale(1.1);}
@@ -114,7 +108,7 @@ h1.hero-title .or{color:var(--coral);font-style:normal;}
 .xtitle{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--cream);line-height:1.2;}
 .xstars-row{display:flex;align-items:center;gap:5px;}
 .xstars{color:#FFD700;font-size:11px;letter-spacing:1px;}
-.xreviews{font-size:11px;color:rgba(255,255,255,0.5);}
+.xreviews{font-size:11px;color:rgba(255,255,255,0.4);}
 .xdiv{height:1px;background:rgba(255,255,255,0.08);}
 .xrow{display:flex;align-items:center;justify-content:space-between;}
 .xdlbl{font-size:9px;color:rgba(255,255,255,0.42);margin-bottom:2px;letter-spacing:0.05em;}
@@ -162,9 +156,9 @@ h1.hero-title .or{color:var(--coral);font-style:normal;}
 .featured-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
 .feat-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(233,102,69,0.14);border:1px solid rgba(233,102,69,0.30);border-radius:100px;padding:5px 14px;font-size:0.66rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--coral);margin-bottom:16px;}
 .feat-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.3rem);font-weight:900;color:var(--cream2);line-height:1.1;margin-bottom:10px;}
-.feat-sub{font-size:0.9rem;color:rgba(245,232,203,0.60);line-height:1.85;margin-bottom:18px;}
+.feat-sub{font-size:0.9rem;color:rgba(245,232,203,0.65);line-height:1.85;margin-bottom:18px;}
 .feat-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
-.feat-tag{background:rgba(255,255,255,0.06);border-radius:6px;padding:5px 12px;font-size:0.76rem;font-weight:600;color:rgba(245,232,203,0.60);}
+.feat-tag{background:rgba(255,255,255,0.06);border-radius:6px;padding:5px 12px;font-size:0.76rem;font-weight:600;color:rgba(245,232,203,0.65);}
 .feat-stars{display:flex;align-items:center;gap:6px;margin-bottom:16px;}
 .feat-star{color:#FFD700;font-size:1.05rem;}
 .feat-rcount{font-size:0.80rem;color:rgba(245,232,203,0.55);}
@@ -204,13 +198,12 @@ h1.hero-title .or{color:var(--coral);font-style:normal;}
 .cat-name{font-size:0.76rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--cream2);}
 .reviews-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
 .rv-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:24px;}
-.rv-stars{font-size:0.85rem;color:rgba(245,232,203,0.70);margin-bottom:10px;font-weight:600;}
+.rv-stars{font-size:0.85rem;color:rgba(245,232,203,0.80);margin-bottom:10px;font-weight:600;}
 .rv-text{font-size:0.88rem;color:rgba(245,232,203,0.72);line-height:1.75;margin-bottom:16px;}
 .rv-foot{display:flex;align-items:center;gap:10px;}
 .rv-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
 .rv-name{font-size:0.82rem;font-weight:700;color:var(--cream2);}
 .rv-meta{font-size:0.72rem;color:rgba(245,232,203,0.38);}
-.reviews-cta{text-align:center;margin-top:32px;}
 .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
 .step{padding:40px 28px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);transition:background 0.25s;}
 .step:hover{background:rgba(233,102,69,0.07);}
@@ -223,9 +216,9 @@ h1.hero-title .or{color:var(--coral);font-style:normal;}
 .pc-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(233,102,69,0.12);border:1px solid rgba(233,102,69,0.24);border-radius:100px;padding:5px 14px;font-size:0.66rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--coral);margin-bottom:20px;}
 .pc-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.8vw,2.9rem);font-weight:900;color:var(--cream2);line-height:1.1;margin-bottom:12px;}
 .pc-title em{color:var(--coral);font-style:italic;}
-.pc-sub{font-size:0.93rem;color:rgba(245,232,203,0.52);line-height:1.85;margin-bottom:32px;}
+.pc-sub{font-size:0.93rem;color:rgba(245,232,203,0.65);line-height:1.85;margin-bottom:32px;}
 .pc-demo{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:16px 20px;margin-bottom:26px;text-align:left;}
-.pc-demo-lbl{font-size:0.64rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,232,203,0.27);margin-bottom:7px;}
+.pc-demo-lbl{font-size:0.64rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,232,203,0.40);margin-bottom:7px;}
 .pc-demo-text{font-size:0.90rem;color:rgba(245,232,203,0.68);line-height:1.6;font-style:italic;min-height:22px;}
 .pc-cursor{display:inline-block;width:2px;height:0.9em;background:var(--coral);margin-left:1px;animation:blink 1s step-end infinite;vertical-align:text-bottom;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
@@ -256,14 +249,14 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
 @keyframes twinkle{0%,100%{opacity:.9;}50%{opacity:.2;}}
 @media(max-width:1020px){.featured-grid{grid-template-columns:1fr;}.reviews-grid{grid-template-columns:1fr 1fr;}.steps-grid{grid-template-columns:1fr 1fr;}.wk-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:900px){.hero-layout{grid-template-columns:1fr;}.hero-right{display:none;}}
-@media(max-width:768px){nav{padding:15px 20px;top:38px;}.nav-links{display:none!important;}.nav-mob{display:flex;}.hero{padding:133px 20px 0;min-height:auto;}.compass{display:none;}.weather-badge{display:none;}.sec{padding:60px 20px;}.trust-bar{padding:14px 20px;gap:0;justify-content:flex-start;overflow-x:auto;}.tb-item{padding:0 16px;font-size:0.75rem;}.reviews-grid{grid-template-columns:1fr;}.steps-grid{grid-template-columns:1fr 1fr;}.wk-grid{grid-template-columns:1fr 1fr;}.cats-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));}footer{padding:24px 20px;flex-direction:column;text-align:center;gap:10px;}.planner-cta{padding:60px 20px;}#g-toasts{max-width:230px;right:10px;bottom:10px;}.hero-stats{gap:16px;}.btn-fill,.btn-ghost{padding:13px 22px;font-size:0.88rem;}.trust-strip{display:none;}}
+@media(max-width:768px){nav{padding:15px 20px;top:38px;}.nav-links{display:none!important;}.nav-mob{display:flex;}.hero{padding:133px 20px 0;min-height:auto;}.compass{display:none;}.weather-badge{display:none;}.sec{padding:60px 20px;}.trust-bar{padding:14px 20px;gap:0;justify-content:flex-start;overflow-x:auto;}.tb-item{padding:0 16px;font-size:0.75rem;}.reviews-grid{grid-template-columns:1fr;}.steps-grid{grid-template-columns:1fr 1fr;}.wk-grid{grid-template-columns:1fr;}.cats-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));}footer{padding:24px 20px;flex-direction:column;text-align:center;gap:10px;}.planner-cta{padding:60px 20px;}#g-toasts{max-width:230px;right:10px;bottom:10px;}.hero-stats{gap:16px;}.btn-fill,.btn-ghost{padding:13px 22px;font-size:0.88rem;}.trust-strip{display:none;}}
 @media(max-width:480px){.steps-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
 <div class="launch-banner">
   <div class="launch-banner-badge">🚀 June 1st</div>
-  <div class="launch-banner-text"><strong>ShoreList is launching June 1st.</strong> <span>Bookings open soon — explore the platform and join the waitlist.</span></div>
+  <div class="launch-banner-text"><strong>ShoreList is launching June 1st.</strong> <span>Bookings open soon — explore and join the waitlist.</span></div>
 </div>
 <div id="wave-intro" onclick="if(window._shorelistAudio)window._shorelistAudio()" style="cursor:pointer;">
   <canvas id="wi-canvas"></canvas>
@@ -279,7 +272,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
     <a href="#explore">Experiences</a>
     <a href="/planner" class="nav-planner">✦ Plan My Trip</a>
     <a href="/join" class="nav-op">Operators</a>
-    <a href="/join" class="nav-cta">Join Waitlist</a>
+    <a href="/waitlist" class="nav-cta">Join Waitlist</a>
   </div>
   <button class="nav-mob" id="nav-mob" onclick="toggleNav()" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -289,7 +282,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
   <a href="#explore" onclick="closeNav()">Browse Experiences</a>
   <a href="/planner" onclick="closeNav()">✦ AI Trip Planner</a>
   <a href="#how" onclick="closeNav()">How It Works</a>
-  <a href="/join" class="mob-cta" onclick="closeNav()">Join Waitlist</a>
+  <a href="/waitlist" class="mob-cta" onclick="closeNav()">Join Waitlist</a>
   <a href="/join" onclick="closeNav()" style="font-size:0.80rem;color:rgba(245,232,203,0.30);margin-top:8px;padding:10px 0;border-top:1px solid rgba(255,255,255,0.04);">Are you a local operator? →</a>
 </div>
 <section class="hero" id="hero">
@@ -442,7 +435,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
             <div class="feat-row" onclick="location='/category?cat=ghost-tours'"><span class="feat-rl">8:30 PM</span><span class="feat-ra avail">Available June 1st</span></div>
             <div class="feat-row" onclick="location='/category?cat=ghost-tours'"><span class="feat-rl">10:00 PM</span><span class="feat-ra avail">Available June 1st</span></div>
           </div>
-          <a href="/category?cat=ghost-tours" class="btn-fill" style="display:block;text-align:center;width:100%;">Join the Waitlist &rarr;</a>
+          <a href="/waitlist" class="btn-fill" style="display:block;text-align:center;width:100%;">Join the Waitlist &rarr;</a>
           <p class="feat-promo">Want to be featured here? <a href="/join">Operators — learn more &rarr;</a></p>
         </div>
       </div>
@@ -556,9 +549,9 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
         </div>
       </div>
     </div>
-    <div class="reviews-cta" style="margin-top:40px;">
+    <div style="text-align:center;margin-top:40px;">
       <p style="font-size:0.95rem;color:rgba(245,232,203,0.65);max-width:580px;margin:0 auto 16px;line-height:1.85;">We're building this the right way — real operators, real bookings, real reviews earned one experience at a time. Be one of our first guests on June 1st.</p>
-      <a href="/join" class="btn-fill" style="display:inline-block;">Join the Waitlist &rarr;</a>
+      <a href="/waitlist" class="btn-fill" style="display:inline-block;">Join the Waitlist &rarr;</a>
     </div>
   </div>
 </section>
@@ -568,7 +561,7 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
     <h2 class="sec-title">How <em>ShoreList</em> works</h2>
     <p class="sec-sub">Four steps from landing on this page to standing on Wilmington's most beautiful beaches with a local guide.</p>
     <div class="steps-grid">
-      <div class="step"><div class="step-n">01</div><h3>Browse Local Experiences</h3><p>Discover hand-picked tours, charters, and adventures across Wilmington and the surrounding beaches — all in one place.</p></div>
+      <div class="step"><div class="step-n">01</div><h3>Browse Local Experiences</h3><p>Discover local tours, charters, and adventures across Wilmington and the surrounding beaches — all in one place.</p></div>
       <div class="step"><div class="step-n">02</div><h3>Book Instantly</h3><p>Pay securely and your spot is confirmed instantly. No phone tag, no back-and-forth. Confirmation hits your inbox in seconds.</p></div>
       <div class="step"><div class="step-n">03</div><h3>Show Up &amp; Explore</h3><p>All you have to do is arrive. Local operators handle everything else. You just enjoy the coast.</p></div>
       <div class="step"><div class="step-n">04</div><h3>Leave a Review</h3><p>Share your experience to help other visitors discover the best this coast has to offer.</p></div>
@@ -618,32 +611,9 @@ document.body.style.overflow='hidden';
     var elapsed=ts-startTime;var t=elapsed/1000;
     W=window.innerWidth;H=window.innerHeight;ctx.clearRect(0,0,W,H);
     var rushP=Math.min(elapsed/RUSH_DUR,1);var wy=(H+100)-easeOut(rushP)*(H+220);
-    if(wy>0){
-      var sandG=ctx.createLinearGradient(0,0,0,Math.min(wy,H));
-      sandG.addColorStop(0,'#0d2530');sandG.addColorStop(0.35,'#0a1e28');sandG.addColorStop(0.75,'#0c2535');sandG.addColorStop(1,'#10404e');
-      ctx.fillStyle=sandG;ctx.fillRect(0,0,W,Math.min(wy,H));
-      if(!isMobile&&wy>40){for(var r=0;r<6;r++){var ry=wy*0.12+r*(wy*0.13);if(ry<0||ry>wy)continue;ctx.beginPath();ctx.moveTo(0,ry);for(var x=0;x<=W;x+=6){ctx.lineTo(x,ry+wY(x,0,2.5,0.012,r*2.1));}ctx.strokeStyle='rgba(255,255,255,'+(0.04-r*0.004)+')';ctx.lineWidth=1;ctx.stroke();}}
-    }
-    if(wy<H){
-      var og=ctx.createLinearGradient(0,Math.max(wy+90,0),0,H);
-      og.addColorStop(0,'rgba(28,165,205,0.88)');og.addColorStop(0.15,'rgba(10,105,145,0.97)');og.addColorStop(0.45,'#052535');og.addColorStop(1,'#020c15');
-      ctx.fillStyle=og;ctx.fillRect(0,Math.max(0,wy+90),W,H);
-      if(!isMobile){for(var layer=0;layer<3;layer++){var xb=W*(0.10+layer*0.38);var sy=Math.max(wy+95,0);ctx.beginPath();ctx.moveTo(xb,sy);for(var yy=sy;yy<=H;yy+=5){ctx.lineTo(xb+wY(yy,t*0.65,13,0.026,layer*1.9),yy);}ctx.lineTo(xb+22,H);ctx.lineTo(xb-22,sy);ctx.closePath();ctx.fillStyle='rgba(22,125,158,'+(0.09-layer*0.024)+')';ctx.fill();}}
-    }
-    if(wy>-100&&wy<H+100){
-      var bandH=H*0.11+50;
-      ctx.beginPath();ctx.moveTo(0,wy+bandH+wY(0,t*3.0,12,0.016,0));
-      for(var x=0;x<=W;x+=4){ctx.lineTo(x,wy+bandH+wY(x,t*3.0,12,0.016,0));}
-      for(var x=W;x>=0;x-=4){ctx.lineTo(x,wy-28+wY(x,t*2.4,20,0.014,2.2));}
-      ctx.closePath();
-      var wgY=ctx.createLinearGradient(0,wy-32,0,wy+bandH+16);
-      wgY.addColorStop(0,'rgba(145,228,255,0.68)');wgY.addColorStop(0.22,'rgba(215,248,255,0.88)');wgY.addColorStop(0.52,'rgba(255,255,255,0.98)');wgY.addColorStop(0.80,'rgba(70,195,230,0.88)');wgY.addColorStop(1,'rgba(18,130,170,0.72)');
-      ctx.fillStyle=wgY;ctx.fill();
-      ctx.beginPath();for(var x=0;x<=W;x+=3){var cy=wy+wY(x,t*3.0,12,0.016,0);if(x===0)ctx.moveTo(x,cy);else ctx.lineTo(x,cy);}
-      ctx.strokeStyle='rgba(255,255,255,0.97)';ctx.lineWidth=7;ctx.lineCap='round';ctx.lineJoin='round';ctx.stroke();
-      for(var w=1;w<=5;w++){ctx.beginPath();var ws=false;for(var x=0;x<=W;x+=5){var py=wy-w*15+wY(x,t*1.9,7,0.019,w*1.4);if(!ws){ctx.moveTo(x,py);ws=true;}else ctx.lineTo(x,py);}ctx.strokeStyle='rgba(255,255,255,'+(0.48-w*0.08)+')';ctx.lineWidth=Math.max(3.2-w*0.55,0.4);ctx.stroke();}
-      if(wy>0&&wy<H&&elapsed%46<18){var fpx=Math.random()*W;var fpy=wy+wY(fpx,t*3.0,12,0.016,0);spawnFoam(fpx,fpy,isMobile?3:5);}
-    }
+    if(wy>0){var sandG=ctx.createLinearGradient(0,0,0,Math.min(wy,H));sandG.addColorStop(0,'#0d2530');sandG.addColorStop(0.35,'#0a1e28');sandG.addColorStop(0.75,'#0c2535');sandG.addColorStop(1,'#10404e');ctx.fillStyle=sandG;ctx.fillRect(0,0,W,Math.min(wy,H));if(!isMobile&&wy>40){for(var r=0;r<6;r++){var ry=wy*0.12+r*(wy*0.13);if(ry<0||ry>wy)continue;ctx.beginPath();ctx.moveTo(0,ry);for(var x=0;x<=W;x+=6){ctx.lineTo(x,ry+wY(x,0,2.5,0.012,r*2.1));}ctx.strokeStyle='rgba(255,255,255,'+(0.04-r*0.004)+')';ctx.lineWidth=1;ctx.stroke();}}}
+    if(wy<H){var og=ctx.createLinearGradient(0,Math.max(wy+90,0),0,H);og.addColorStop(0,'rgba(28,165,205,0.88)');og.addColorStop(0.15,'rgba(10,105,145,0.97)');og.addColorStop(0.45,'#052535');og.addColorStop(1,'#020c15');ctx.fillStyle=og;ctx.fillRect(0,Math.max(0,wy+90),W,H);if(!isMobile){for(var layer=0;layer<3;layer++){var xb=W*(0.10+layer*0.38);var sy=Math.max(wy+95,0);ctx.beginPath();ctx.moveTo(xb,sy);for(var yy=sy;yy<=H;yy+=5){ctx.lineTo(xb+wY(yy,t*0.65,13,0.026,layer*1.9),yy);}ctx.lineTo(xb+22,H);ctx.lineTo(xb-22,sy);ctx.closePath();ctx.fillStyle='rgba(22,125,158,'+(0.09-layer*0.024)+')';ctx.fill();}}}
+    if(wy>-100&&wy<H+100){var bandH=H*0.11+50;ctx.beginPath();ctx.moveTo(0,wy+bandH+wY(0,t*3.0,12,0.016,0));for(var x=0;x<=W;x+=4){ctx.lineTo(x,wy+bandH+wY(x,t*3.0,12,0.016,0));}for(var x=W;x>=0;x-=4){ctx.lineTo(x,wy-28+wY(x,t*2.4,20,0.014,2.2));}ctx.closePath();var wgY=ctx.createLinearGradient(0,wy-32,0,wy+bandH+16);wgY.addColorStop(0,'rgba(145,228,255,0.68)');wgY.addColorStop(0.22,'rgba(215,248,255,0.88)');wgY.addColorStop(0.52,'rgba(255,255,255,0.98)');wgY.addColorStop(0.80,'rgba(70,195,230,0.88)');wgY.addColorStop(1,'rgba(18,130,170,0.72)');ctx.fillStyle=wgY;ctx.fill();ctx.beginPath();for(var x=0;x<=W;x+=3){var cy=wy+wY(x,t*3.0,12,0.016,0);if(x===0)ctx.moveTo(x,cy);else ctx.lineTo(x,cy);}ctx.strokeStyle='rgba(255,255,255,0.97)';ctx.lineWidth=7;ctx.lineCap='round';ctx.lineJoin='round';ctx.stroke();for(var w=1;w<=5;w++){ctx.beginPath();var ws=false;for(var x=0;x<=W;x+=5){var py=wy-w*15+wY(x,t*1.9,7,0.019,w*1.4);if(!ws){ctx.moveTo(x,py);ws=true;}else ctx.lineTo(x,py);}ctx.strokeStyle='rgba(255,255,255,'+(0.48-w*0.08)+')';ctx.lineWidth=Math.max(3.2-w*0.55,0.4);ctx.stroke();}if(wy>0&&wy<H&&elapsed%46<18){var fpx=Math.random()*W;var fpy=wy+wY(fpx,t*3.0,12,0.016,0);spawnFoam(fpx,fpy,isMobile?3:5);}}
     for(var i=foam.length-1;i>=0;i--){var p=foam[i];p.x+=p.vx;p.y+=p.vy;p.vy+=0.075;p.vx*=0.97;p.life-=p.decay;if(p.life<=0||p.y<-20||p.y>H){foam.splice(i,1);continue;}ctx.beginPath();ctx.arc(p.x,p.y,p.r*p.life,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,'+(p.life*0.74)+')';ctx.fill();}
     if(elapsed>FADE_START){var fp=Math.min((elapsed-FADE_START)/FADE_DUR,1);ctx.fillStyle='rgba(4,31,40,'+fp+')';ctx.fillRect(0,0,W,H);if(fp>=1){DONE=true;var wi=document.getElementById('wave-intro');if(wi)wi.classList.add('hide');document.body.style.overflow='';return;}}
     requestAnimationFrame(draw);
@@ -660,51 +630,12 @@ document.body.style.overflow='hidden';
   (function(){var l=0,r=0,s=0;for(var i=0;i<RATE*8;i++){var wl=Math.random()*2-1,wr=Math.random()*2-1;l=(l+0.022*wl)/1.022;r=(r+0.022*wr)/1.022;noiseL[i]=l*3.8;noiseR[i]=r*3.8;}for(var i=0;i<RATE*6;i++){var w=Math.random()*2-1;s=(s+0.052*w)/1.052;noise2[i]=s*2.4;}})();
   function buildOcean(){
     if(started)return;started=true;
-    try{
-      actx=new AC();
-      var _sb=actx.createBuffer(1,1,22050);var _ss=actx.createBufferSource();_ss.buffer=_sb;_ss.connect(actx.destination);_ss.start(0);
-      master=actx.createGain();master.gain.setValueAtTime(0,actx.currentTime);master.gain.linearRampToValueAtTime(0.20,actx.currentTime+3);master.connect(actx.destination);
-      var rate=actx.sampleRate;
-      var len1=Math.min(noiseL.length,rate*8);
-      var buf=actx.createBuffer(2,len1,rate);buf.getChannelData(0).set(noiseL.subarray(0,len1));buf.getChannelData(1).set(noiseR.subarray(0,len1));
-      var src=actx.createBufferSource();src.buffer=buf;src.loop=true;
-      var lp=actx.createBiquadFilter();lp.type='lowpass';lp.frequency.value=700;lp.Q.value=0.7;
-      var bp=actx.createBiquadFilter();bp.type='bandpass';bp.frequency.value=220;bp.Q.value=0.55;
-      var lfo=actx.createOscillator();lfo.type='sine';lfo.frequency.value=0.085;
-      var lfoG=actx.createGain();lfoG.gain.value=0.40;lfo.connect(lfoG);
-      var wVol=actx.createGain();wVol.gain.value=0.60;lfoG.connect(wVol.gain);
-      src.connect(lp);lp.connect(bp);bp.connect(wVol);wVol.connect(master);
-      var len2=Math.min(noise2.length,rate*6);
-      var buf2=actx.createBuffer(1,len2,rate);buf2.getChannelData(0).set(noise2.subarray(0,len2));
-      var src2=actx.createBufferSource();src2.buffer=buf2;src2.loop=true;
-      var hp2=actx.createBiquadFilter();hp2.type='bandpass';hp2.frequency.value=560;hp2.Q.value=1.3;
-      var sg=actx.createGain();sg.gain.value=0.17;src2.connect(hp2);hp2.connect(sg);sg.connect(master);
-      actx.resume().then(function(){var t=actx.currentTime;src.start(t);lfo.start(t);src2.start(t);scheduleSeagull();}).catch(function(){src.start(0);lfo.start(0);src2.start(0);scheduleSeagull();});
-    }catch(e){}
+    try{actx=new AC();var _sb=actx.createBuffer(1,1,22050);var _ss=actx.createBufferSource();_ss.buffer=_sb;_ss.connect(actx.destination);_ss.start(0);master=actx.createGain();master.gain.setValueAtTime(0,actx.currentTime);master.gain.linearRampToValueAtTime(0.20,actx.currentTime+3);master.connect(actx.destination);var rate=actx.sampleRate;var len1=Math.min(noiseL.length,rate*8);var buf=actx.createBuffer(2,len1,rate);buf.getChannelData(0).set(noiseL.subarray(0,len1));buf.getChannelData(1).set(noiseR.subarray(0,len1));var src=actx.createBufferSource();src.buffer=buf;src.loop=true;var lp=actx.createBiquadFilter();lp.type='lowpass';lp.frequency.value=700;lp.Q.value=0.7;var bp=actx.createBiquadFilter();bp.type='bandpass';bp.frequency.value=220;bp.Q.value=0.55;var lfo=actx.createOscillator();lfo.type='sine';lfo.frequency.value=0.085;var lfoG=actx.createGain();lfoG.gain.value=0.40;lfo.connect(lfoG);var wVol=actx.createGain();wVol.gain.value=0.60;lfoG.connect(wVol.gain);src.connect(lp);lp.connect(bp);bp.connect(wVol);wVol.connect(master);var len2=Math.min(noise2.length,rate*6);var buf2=actx.createBuffer(1,len2,rate);buf2.getChannelData(0).set(noise2.subarray(0,len2));var src2=actx.createBufferSource();src2.buffer=buf2;src2.loop=true;var hp2=actx.createBiquadFilter();hp2.type='bandpass';hp2.frequency.value=560;hp2.Q.value=1.3;var sg=actx.createGain();sg.gain.value=0.17;src2.connect(hp2);hp2.connect(sg);sg.connect(master);actx.resume().then(function(){var t=actx.currentTime;src.start(t);lfo.start(t);src2.start(t);scheduleSeagull();}).catch(function(){src.start(0);lfo.start(0);src2.start(0);scheduleSeagull();});}catch(e){}
   }
-  function scheduleSeagull(){
-    if(!actx||!master)return;
-    setTimeout(function(){
-      if(!actx||muted){scheduleSeagull();return;}
-      try{var now=actx.currentTime;var baseF=820+Math.random()*380;cry(now,baseF,0.055);if(Math.random()>0.38)cry(now+0.9+Math.random()*0.4,baseF*(0.88+Math.random()*0.25),0.042);if(Math.random()>0.60)cry(now+2.0+Math.random()*0.7,baseF*(0.72+Math.random()*0.40),0.026);}catch(e){}
-      scheduleSeagull();
-    },9000+Math.random()*18000);
-  }
-  function cry(now,f,vol){
-    var osc=actx.createOscillator();var osc2=actx.createOscillator();osc.type='sawtooth';osc2.type='sawtooth';
-    var bpf=actx.createBiquadFilter();bpf.type='bandpass';bpf.frequency.value=f*1.15;bpf.Q.value=1.6;
-    var g=actx.createGain();osc.connect(bpf);osc2.connect(bpf);bpf.connect(g);g.connect(master);
-    g.gain.setValueAtTime(0,now);g.gain.linearRampToValueAtTime(vol*0.65,now+0.06);g.gain.linearRampToValueAtTime(vol*0.30,now+0.20);g.gain.linearRampToValueAtTime(vol,now+0.36);g.gain.linearRampToValueAtTime(vol*0.55,now+0.54);g.gain.linearRampToValueAtTime(0,now+0.80);
-    var f1=f*1.55;var f2=f*0.68;
-    osc.frequency.setValueAtTime(f1*0.75,now);osc.frequency.linearRampToValueAtTime(f1,now+0.07);osc.frequency.linearRampToValueAtTime(f*0.9,now+0.22);osc.frequency.linearRampToValueAtTime(f*1.18,now+0.38);osc.frequency.linearRampToValueAtTime(f2,now+0.80);
-    osc2.frequency.setValueAtTime(f1*0.76,now);osc2.frequency.linearRampToValueAtTime(f1*1.015,now+0.07);osc2.frequency.linearRampToValueAtTime(f*0.915,now+0.22);osc2.frequency.linearRampToValueAtTime(f*1.195,now+0.38);osc2.frequency.linearRampToValueAtTime(f2*0.985,now+0.80);
-    osc.start(now);osc.stop(now+0.85);osc2.start(now);osc2.stop(now+0.85);
-  }
+  function scheduleSeagull(){if(!actx||!master)return;setTimeout(function(){if(!actx||muted){scheduleSeagull();return;}try{var now=actx.currentTime;var baseF=820+Math.random()*380;cry(now,baseF,0.055);if(Math.random()>0.38)cry(now+0.9+Math.random()*0.4,baseF*(0.88+Math.random()*0.25),0.042);if(Math.random()>0.60)cry(now+2.0+Math.random()*0.7,baseF*(0.72+Math.random()*0.40),0.026);}catch(e){}scheduleSeagull();},9000+Math.random()*18000);}
+  function cry(now,f,vol){var osc=actx.createOscillator();var osc2=actx.createOscillator();osc.type='sawtooth';osc2.type='sawtooth';var bpf=actx.createBiquadFilter();bpf.type='bandpass';bpf.frequency.value=f*1.15;bpf.Q.value=1.6;var g=actx.createGain();osc.connect(bpf);osc2.connect(bpf);bpf.connect(g);g.connect(master);g.gain.setValueAtTime(0,now);g.gain.linearRampToValueAtTime(vol*0.65,now+0.06);g.gain.linearRampToValueAtTime(vol*0.30,now+0.20);g.gain.linearRampToValueAtTime(vol,now+0.36);g.gain.linearRampToValueAtTime(vol*0.55,now+0.54);g.gain.linearRampToValueAtTime(0,now+0.80);var f1=f*1.55;var f2=f*0.68;osc.frequency.setValueAtTime(f1*0.75,now);osc.frequency.linearRampToValueAtTime(f1,now+0.07);osc.frequency.linearRampToValueAtTime(f*0.9,now+0.22);osc.frequency.linearRampToValueAtTime(f*1.18,now+0.38);osc.frequency.linearRampToValueAtTime(f2,now+0.80);osc2.frequency.setValueAtTime(f1*0.76,now);osc2.frequency.linearRampToValueAtTime(f1*1.015,now+0.07);osc2.frequency.linearRampToValueAtTime(f*0.915,now+0.22);osc2.frequency.linearRampToValueAtTime(f*1.195,now+0.38);osc2.frequency.linearRampToValueAtTime(f2*0.985,now+0.80);osc.start(now);osc.stop(now+0.85);osc2.start(now);osc2.stop(now+0.85);}
   var once=false;
-  function startAudio(){
-    if(once)return;
-    try{buildOcean();if(actx){once=true;document.removeEventListener('mousedown',startAudio);document.removeEventListener('pointerdown',startAudio);document.removeEventListener('touchend',startAudio);document.removeEventListener('click',startAudio);var hint=document.getElementById('wi-tap');if(hint)hint.classList.add('hidden');}}catch(e){}
-  }
+  function startAudio(){if(once)return;try{buildOcean();if(actx){once=true;document.removeEventListener('mousedown',startAudio);document.removeEventListener('pointerdown',startAudio);document.removeEventListener('touchend',startAudio);document.removeEventListener('click',startAudio);var hint=document.getElementById('wi-tap');if(hint)hint.classList.add('hidden');}}catch(e){}}
   window._shorelistAudio=startAudio;
   document.addEventListener('mousedown',startAudio,false);
   document.addEventListener('pointerdown',startAudio,false);
@@ -725,14 +656,7 @@ function hT(id,d){setTimeout(function(){var e=document.getElementById(id);if(e)e
 sT('xt1',2700);hT('xt1',6600);sT('xt2',4000);hT('xt2',7800);
 setTimeout(function(){sT('xt1',0);hT('xt1',3800);sT('xt2',1400);hT('xt2',5200);},12000);
 (function(){var WC={0:'☀️ Clear skies',1:'🌤️ Mostly clear',2:'⛅ Partly cloudy',3:'☁️ Overcast',51:'🌦️ Light drizzle',53:'🌦️ Drizzle',61:'🌧️ Light rain',63:'🌧️ Rain',80:'🌦️ Showers',95:'⛈️ Thunderstorm'};fetch('https://api.open-meteo.com/v1/forecast?latitude=34.2257&longitude=-77.9447&current=temperature_2m,weather_code&temperature_unit=fahrenheit').then(function(r){return r.json();}).then(function(d){var c=d.current||{};var t=c.temperature_2m?Math.round(c.temperature_2m)+'°F':'74°F';var wc=WC[c.weather_code]||'🌤️ Clear skies';var te=document.getElementById('wb-temp');var ce=document.getElementById('wb-cond');if(te)te.textContent=t;if(ce)ce.textContent=wc;}).catch(function(){var ce=document.getElementById('wb-cond');if(ce)ce.textContent='Beautiful coastal weather';});})();
-var TOASTS=[
-  {ico:'🎬',bg:'linear-gradient(135deg,#1a1a2e,#16213e)',name:'Wilmywood Insider Tours',action:'Film & TV location tours · From $45'},
-  {ico:'👻',bg:'linear-gradient(135deg,#1a0533,#4a0e8f)',name:'Ghost Walk · Downtown Wilmington',action:'Thu–Sun evenings · From $25'},
-  {ico:'🏄',bg:'linear-gradient(135deg,#0a3d5c,#1a7585)',name:'Surf Lessons · Carolina Beach',action:'Certified local instructor · From $75'},
-  {ico:'🌿',bg:'linear-gradient(135deg,#0a2e1a,#1a7a56)',name:'Coastal Nature Walk',action:'Carolina Beach State Park · From $35'},
-  {ico:'🎬',bg:'linear-gradient(135deg,#1a1a2e,#16213e)',name:'Wilmywood · One Tree Hill locations',action:'Industry insider guide · June 1st'},
-  {ico:'🌿',bg:'linear-gradient(135deg,#0a2e1a,#1a7a56)',name:'Nature Walk · Launching June 1st',action:'8 AM, 10 AM and 2 PM available'},
-];
+var TOASTS=[{ico:'🎬',bg:'linear-gradient(135deg,#1a1a2e,#16213e)',name:'Wilmywood Insider Tours',action:'Film & TV location tours · From $45'},{ico:'👻',bg:'linear-gradient(135deg,#1a0533,#4a0e8f)',name:'Ghost Walk · Downtown Wilmington',action:'Thu–Sun evenings · From $25'},{ico:'🏄',bg:'linear-gradient(135deg,#0a3d5c,#1a7585)',name:'Surf Lessons · Carolina Beach',action:'Certified local instructor · From $75'},{ico:'🌿',bg:'linear-gradient(135deg,#0a2e1a,#1a7a56)',name:'Coastal Nature Walk',action:'Carolina Beach State Park · From $35'},{ico:'🎬',bg:'linear-gradient(135deg,#1a1a2e,#16213e)',name:'Wilmywood · One Tree Hill locations',action:'Industry insider guide · June 1st'},{ico:'🌿',bg:'linear-gradient(135deg,#0a2e1a,#1a7a56)',name:'Nature Walk · Launching June 1st',action:'8 AM, 10 AM and 2 PM available'},];
 var toastIdx=0;var gtc=document.getElementById('g-toasts');
 function showGToast(){if(!gtc)return;var d=TOASTS[toastIdx%TOASTS.length];toastIdx++;var el=document.createElement('div');el.className='g-toast';el.innerHTML='<div class="gt-ico" style="background:'+d.bg+'">'+d.ico+'</div><div class="gt-body"><div class="gt-name">'+d.name+'</div><div class="gt-action">'+d.action+'</div></div><div class="gt-time">June 1st</div>';gtc.appendChild(el);setTimeout(function(){el.classList.add('show');},50);setTimeout(function(){el.classList.remove('show');setTimeout(function(){if(el.parentNode)el.parentNode.removeChild(el);},500);},5500);}
 setTimeout(showGToast,4800);setInterval(showGToast,24000);
