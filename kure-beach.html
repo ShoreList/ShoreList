@@ -8,9 +8,9 @@
 <link rel="canonical" href="https://shorelist.net/kure-beach"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>Kure Beach NC &#8212; Things To Do, Fort Fisher &amp; Guide | ShoreList</title>
-<meta name="description" content="The complete guide to Kure Beach, NC. Fort Fisher State Historic Site, NC Aquarium at Fort Fisher, wild coastline, nature walks, and the most unspoiled stretch of NC beach."/>
+<meta name="description" content="The complete guide to Kure Beach, NC. Fort Fisher State Historic Site, coastal nature walks, wild Atlantic beach, and everything to do on Pleasure Island while the NC Aquarium undergoes its $65M expansion."/>
 <meta property="og:title" content="Kure Beach NC &#8212; Things To Do | ShoreList"/>
-<meta property="og:description" content="Fort Fisher, the NC Aquarium, wild coastal nature walks and the most unspoiled stretch of NC beach. The complete Kure Beach visitor guide from ShoreList."/>
+<meta property="og:description" content="Fort Fisher, wild coastline, coastal nature walks and Pleasure Island adventures. The complete Kure Beach visitor guide from ShoreList."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://shorelist.net/kure-beach"/>
 <meta property="og:image" content="https://shorelist.net/og-kure-beach.jpg"/>
@@ -72,6 +72,20 @@ h1.hero-title em{color:var(--coral);font-style:italic;}
 .wb-cam{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.10);border-radius:7px;padding:7px 14px;font-size:0.78rem;font-weight:600;color:rgba(245,232,203,0.80);text-decoration:none;transition:all 0.18s;display:inline-flex;align-items:center;gap:5px;min-height:36px;}
 .wb-cam:hover{background:rgba(233,102,69,0.18);border-color:rgba(233,102,69,0.35);color:var(--coral);}
 @media(max-width:768px){.webcam-bar{padding:12px 20px;}}
+/* AQUARIUM ALERT BANNER */
+.aquarium-alert{background:rgba(10,77,92,0.04);border-top:3px solid var(--teal);border-bottom:1px solid rgba(10,77,92,0.12);padding:20px 48px;}
+.aa-inner{max-width:1100px;margin:0 auto;display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;}
+.aa-icon{font-size:1.8rem;flex-shrink:0;margin-top:2px;}
+.aa-body{flex:1;min-width:240px;}
+.aa-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:900;color:var(--teal);margin-bottom:6px;}
+.aa-text{font-size:0.86rem;color:var(--mid);line-height:1.80;}
+.aa-text strong{color:var(--teal);}
+.aa-text a{color:var(--coral);font-weight:700;text-decoration:none;}
+.aa-text a:hover{text-decoration:underline;}
+.aa-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+.aa-tag{background:rgba(10,77,92,0.08);border:1px solid rgba(10,77,92,0.15);border-radius:100px;padding:4px 12px;font-size:0.72rem;font-weight:600;color:var(--teal);}
+.aa-tag-coral{background:rgba(233,102,69,0.08);border-color:rgba(233,102,69,0.20);color:var(--coral);}
+@media(max-width:768px){.aquarium-alert{padding:16px 20px;}}
 .sec{padding:72px 48px;background:#FEFCF7;}
 .sec-teal{background:var(--teal);}
 .sec-alt{background:var(--cream2);}
@@ -82,7 +96,7 @@ h1.hero-title em{color:var(--coral);font-style:italic;}
 .sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:900;color:var(--teal);line-height:1.1;margin-bottom:8px;}
 .sec-title em{color:var(--coral);font-style:italic;}
 .sec-title-light{color:#FEFCF7;}
-.sec-sub{font-size:0.92rem;color:var(--mid);line-height:1.85;margin-bottom:40px;max-width:520px;}
+.sec-sub{font-size:0.92rem;color:var(--mid);line-height:1.85;margin-bottom:40px;max-width:560px;}
 .exp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
 .exp-card{background:white;border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:box-shadow 0.22s,transform 0.22s;display:flex;flex-direction:column;}
 .exp-card:hover{box-shadow:0 16px 48px rgba(10,77,92,0.10);transform:translateY(-3px);}
@@ -90,13 +104,37 @@ h1.hero-title em{color:var(--coral);font-style:italic;}
 .exp-body{padding:24px;flex:1;}
 .exp-ico{font-size:2rem;margin-bottom:12px;display:block;}
 .exp-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:var(--teal);margin-bottom:6px;line-height:1.2;}
-.exp-desc{font-size:0.86rem;color:var(--mid);line-height:1.75;margin-bottom:16px;}
-.exp-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;}
+.exp-desc{font-size:0.86rem;color:var(--mid);line-height:1.75;margin-bottom:14px;}
+.exp-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;}
 .exp-tag{background:var(--lgray);border-radius:5px;padding:4px 10px;font-size:0.74rem;font-weight:600;color:var(--teal);}
 .exp-foot{padding:16px 24px;border-top:1px solid rgba(10,77,92,0.06);display:flex;align-items:center;justify-content:space-between;gap:8px;}
 .exp-price{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:var(--coral);}
 .exp-price span{font-size:0.72rem;font-family:'DM Sans',sans-serif;font-weight:400;color:rgba(44,74,82,0.40);}
-.exp-free{color:#1a7a4a;}
+.exp-price-free{font-size:0.88rem;font-weight:700;color:#1a7a4a;}
+/* AQUARIUM CARD */
+.aquarium-card{background:white;border:2px solid rgba(10,77,92,0.18);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;grid-column:span 2;}
+.aq-header{background:linear-gradient(135deg,var(--teal3),var(--teal));padding:22px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.aq-h-left{display:flex;align-items:center;gap:14px;}
+.aq-ico{font-size:2.2rem;flex-shrink:0;}
+.aq-h-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:900;color:#FEFCF7;margin-bottom:2px;}
+.aq-h-sub{font-size:0.78rem;color:rgba(245,232,203,0.65);}
+.aq-status{background:rgba(233,102,69,0.22);border:1px solid rgba(233,102,69,0.42);border-radius:100px;padding:6px 16px;font-size:0.70rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:#ffb49a;white-space:nowrap;display:flex;align-items:center;gap:6px;flex-shrink:0;}
+.aq-status-dot{width:7px;height:7px;border-radius:50%;background:#E96645;animation:pulse 1.5s infinite;flex-shrink:0;}
+.aq-body{padding:24px 28px;}
+.aq-notice{background:rgba(233,102,69,0.06);border:1px solid rgba(233,102,69,0.18);border-radius:10px;padding:14px 18px;margin-bottom:18px;display:flex;align-items:flex-start;gap:10px;}
+.aq-notice-ico{font-size:1.1rem;flex-shrink:0;margin-top:1px;}
+.aq-notice-text{font-size:0.84rem;color:#7a3520;line-height:1.75;}
+.aq-notice-text strong{color:#c45230;}
+.aq-notice-text a{color:var(--coral);font-weight:700;text-decoration:none;}
+.aq-desc{font-size:0.86rem;color:var(--mid);line-height:1.80;margin-bottom:18px;}
+.aq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:18px;}
+.aq-block{background:#FAFCFC;border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.aq-block-label{font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(44,74,82,0.40);margin-bottom:6px;}
+.aq-block-value{font-size:0.86rem;font-weight:600;color:var(--teal);line-height:1.55;}
+.aq-block-value a{color:var(--coral);text-decoration:none;font-weight:700;}
+.aq-foot{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-top:16px;border-top:1px solid var(--border);}
+.aq-foot-text{font-size:0.80rem;color:rgba(44,74,82,0.55);flex:1;min-width:200px;}
+.aq-foot-text strong{color:var(--teal);}
 .facts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
 .fact{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.10);border-radius:12px;padding:22px;text-align:center;}
 .fact-n{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--coral);margin-bottom:4px;}
@@ -132,7 +170,15 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
 .foot-links{display:flex;gap:18px;flex-wrap:wrap;}
 .foot-links a{font-size:0.76rem;color:rgba(245,232,203,0.28);text-decoration:none;transition:color 0.2s;}
 .foot-links a:hover{color:var(--coral);}
-@media(max-width:768px){.sec{padding:48px 20px;}.exp-grid{grid-template-columns:1fr;}.facts-grid{grid-template-columns:1fr 1fr;}.other-towns{grid-template-columns:1fr 1fr;}footer{padding:24px 20px;flex-direction:column;text-align:center;}}
+@media(max-width:768px){
+  .sec{padding:48px 20px;}
+  .exp-grid{grid-template-columns:1fr;}
+  .aquarium-card{grid-column:span 1;}
+  .aq-grid{grid-template-columns:1fr;}
+  .facts-grid{grid-template-columns:1fr 1fr;}
+  .other-towns{grid-template-columns:1fr 1fr;}
+  footer{padding:24px 20px;flex-direction:column;text-align:center;}
+}
 @media(max-width:480px){.facts-grid{grid-template-columns:1fr;}.other-towns{grid-template-columns:1fr;}}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -157,13 +203,13 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
       <div class="hero-bc"><a href="/">ShoreList</a> &nbsp;&#8250;&nbsp; <a href="/map">Wilmington &amp; the Beaches</a> &nbsp;&#8250;&nbsp; Kure Beach</div>
       <div class="hero-tag">Pleasure Island &nbsp;&middot;&nbsp; Southern NC Coast</div>
       <h1 class="hero-title">Kure Beach, NC<br/><em>Where the Cape Fear Meets the Atlantic.</em></h1>
-      <p class="hero-sub">The quiet one. Wild dunes, undisturbed coastline, the site of the Civil War&rsquo;s largest sea-land battle, one of North Carolina&rsquo;s finest aquariums, and a stretch of beach that feels like it belongs to a different era. Kure Beach rewards the visitors who seek it out.</p>
+      <p class="hero-sub">The quiet one. Wild dunes, undisturbed coastline, the site of the Civil War&rsquo;s largest sea-land battle, and a stretch of beach that feels like it belongs to a different era. The NC Aquarium is undergoing a once-in-a-generation $65M expansion &mdash; meaning the hundreds of thousands of visitors who come to Pleasure Island now have every reason to discover what ShoreList knows: there is plenty more here.</p>
       <div class="hero-badges">
         <div class="hb">&#9975; Fort Fisher Historic Site</div>
-        <div class="hb">&#128013; NC Aquarium at Fort Fisher</div>
         <div class="hb">&#127807; Coastal Nature Walks</div>
         <div class="hb">&#129654; Cape Fear Kite Festival</div>
         <div class="hb">&#127790; Wild Atlantic Beach</div>
+        <div class="hb">&#128013; Aquarium Expanding</div>
       </div>
       <div class="hero-btns">
         <a href="#experiences" class="btn-fill">Book a Kure Beach Experience &#8594;</a>
@@ -190,19 +236,35 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
     <a href="https://www.surfchex.com/cams/kure-beach-web-cam/" target="_blank" rel="noopener noreferrer" class="wb-cam">&#128247; Kure Beach Live Cam</a>
   </div>
 </div>
+<div class="aquarium-alert">
+  <div class="aa-inner">
+    <div class="aa-icon">&#128679;</div>
+    <div class="aa-body">
+      <div class="aa-title">NC Aquarium at Fort Fisher &mdash; Closed for $65 Million Expansion</div>
+      <div class="aa-text">
+        The main aquarium at 900 Loggerhead Road <strong>closed May 26, 2026</strong> for a major renovation estimated to take approximately 30 months. When complete, it will be the <strong>largest aquarium in North Carolina</strong>. During construction, the aquarium team has opened <strong>Discovery Cove</strong> &mdash; a satellite location at Independence Mall in Wilmington with animal encounters, marine life habitats, and education programs. Free admission. <a href="https://www.ncaquariums.com/fort-fisher" target="_blank" rel="noopener noreferrer">Check ncaquariums.com for current details &#8599;</a>
+      </div>
+      <div class="aa-tags">
+        <span class="aa-tag">&#128683; Fort Fisher Location Closed May 26, 2026</span>
+        <span class="aa-tag">&#128336; Reopening approx. late 2028</span>
+        <span class="aa-tag aa-tag-coral">&#127791; Discovery Cove at Independence Mall &mdash; Open &amp; Free</span>
+      </div>
+    </div>
+  </div>
+</div>
 <section class="sec" id="experiences">
   <div class="sec-inner">
     <div class="sec-label">ShoreList Experiences at Kure Beach</div>
     <h2 class="sec-title">Book a Local <em>Experience</em></h2>
-    <p class="sec-sub">These are the experiences available at Kure Beach and the Fort Fisher area through ShoreList. Every operator is personally verified, licensed, and insured. Bookings open June 1st.</p>
+    <p class="sec-sub">The aquarium is closed for renovations &mdash; ShoreList has everything else Kure Beach and the Fort Fisher area has to offer. Every operator is personally verified, licensed, and insured. Bookings open June 1st.</p>
     <div class="exp-grid">
       <div class="exp-card">
         <div class="exp-bar" style="background:#1a7a4a;"></div>
         <div class="exp-body">
           <span class="exp-ico">&#127807;</span>
           <div class="exp-name">Coastal Carolina Nature Walks</div>
-          <div class="exp-desc">The Kure Beach and Fort Fisher area sits at one of the most biologically rich points on the entire East Coast. Guided nature walks through maritime forest, coastal dunes, and tidal wetlands reveal the extraordinary diversity of species that thrive here. Wild Venus flytraps in nearby Carolina Beach State Park included on select tours.</div>
-          <div class="exp-tags"><span class="exp-tag">Fort Fisher Area</span><span class="exp-tag">2 Hours</span><span class="exp-tag">Family Friendly</span><span class="exp-tag">Wildlife</span></div>
+          <div class="exp-desc">The Fort Fisher and Kure Beach area sits at one of the most biologically rich points on the East Coast. Guided walks through maritime forest, coastal dunes, and tidal wetlands reveal an extraordinary diversity of species. Wild Venus flytraps at nearby Carolina Beach State Park are included on select tours. Led by ShoreList founder RJ Brideau.</div>
+          <div class="exp-tags"><span class="exp-tag">Fort Fisher Area</span><span class="exp-tag">2 Hours</span><span class="exp-tag">Family Friendly</span><span class="exp-tag">Venus Flytraps</span></div>
         </div>
         <div class="exp-foot">
           <div class="exp-price">From $35 <span>per person</span></div>
@@ -214,25 +276,12 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
         <div class="exp-body">
           <span class="exp-ico">&#9975;</span>
           <div class="exp-name">Fort Fisher State Historic Site</div>
-          <div class="exp-desc">Fort Fisher was the last major Confederate fortification to fall in the Civil War, defending the Cape Fear River&rsquo;s strategic supply route until January 1865. The site contains original earthworks, a museum, and sweeping views of the coast where the Union fleet assembled for the war&rsquo;s largest combined naval and land attack.</div>
+          <div class="exp-desc">Fort Fisher was the last major Confederate fortification to fall in the Civil War &mdash; defending the Cape Fear River&rsquo;s supply route until January 1865. The site contains original earthworks, a museum, and sweeping Atlantic views where the Union fleet assembled for the war&rsquo;s largest combined naval and land attack.</div>
           <div class="exp-tags"><span class="exp-tag">Fort Fisher</span><span class="exp-tag">Civil War History</span><span class="exp-tag">Self-Guided</span><span class="exp-tag">Free Admission</span></div>
         </div>
         <div class="exp-foot">
-          <div class="exp-price exp-free">Free Admission</div>
+          <div class="exp-price-free">Free Admission</div>
           <a href="https://www.ncdcr.gov/about/history/division-historical-resources/nc-historic-sites/fort-fisher" target="_blank" rel="noopener noreferrer" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;background:var(--teal);">Visit Site &#8599;</a>
-        </div>
-      </div>
-      <div class="exp-card">
-        <div class="exp-bar" style="background:#0066aa;"></div>
-        <div class="exp-body">
-          <span class="exp-ico">&#128013;</span>
-          <div class="exp-name">NC Aquarium at Fort Fisher</div>
-          <div class="exp-desc">One of North Carolina&rsquo;s finest aquariums sits right at the southern tip of Pleasure Island. Loggerhead sea turtles, shark tanks, stingray touch pools, and an active sea turtle rescue program. The aquarium partners with state wildlife officials to rehabilitate injured marine animals &mdash; you can see them during treatment.</div>
-          <div class="exp-tags"><span class="exp-tag">Fort Fisher</span><span class="exp-tag">Sea Turtles</span><span class="exp-tag">Family Friendly</span><span class="exp-tag">Rain or Shine</span></div>
-        </div>
-        <div class="exp-foot">
-          <div class="exp-price">Admission charged</div>
-          <a href="https://www.ncaquariums.com/fort-fisher" target="_blank" rel="noopener noreferrer" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;background:var(--teal);">Visit Aquarium &#8599;</a>
         </div>
       </div>
       <div class="exp-card">
@@ -240,12 +289,55 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
         <div class="exp-body">
           <span class="exp-ico">&#127758;</span>
           <div class="exp-name">Fort Fisher State Recreation Area</div>
-          <div class="exp-desc">Four miles of wild, undeveloped Atlantic beach at the southern end of Pleasure Island. Protected habitat for nesting loggerhead sea turtles and imperiled shorebirds. No development, no crowds &mdash; just the Atlantic Ocean the way it looked a hundred years ago.</div>
+          <div class="exp-desc">Four miles of wild, undeveloped Atlantic beach at the southern tip of Pleasure Island. Protected nesting habitat for loggerhead sea turtles and imperiled shorebirds. No development, no crowds &mdash; just the Atlantic the way it looked a hundred years ago.</div>
           <div class="exp-tags"><span class="exp-tag">Wild Atlantic Beach</span><span class="exp-tag">Sea Turtles</span><span class="exp-tag">Undeveloped</span><span class="exp-tag">Free</span></div>
         </div>
         <div class="exp-foot">
-          <div class="exp-price exp-free">Free Beach Access</div>
+          <div class="exp-price-free">Free Beach Access</div>
           <a href="/map" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;background:var(--teal);">View on Map &#8594;</a>
+        </div>
+      </div>
+      <div class="aquarium-card">
+        <div class="aq-header">
+          <div class="aq-h-left">
+            <span class="aq-ico">&#128013;</span>
+            <div>
+              <div class="aq-h-title">NC Aquarium at Fort Fisher</div>
+              <div class="aq-h-sub">900 Loggerhead Road, Kure Beach &nbsp;&middot;&nbsp; Closed for renovation &amp; expansion</div>
+            </div>
+          </div>
+          <div class="aq-status"><div class="aq-status-dot"></div>Under Construction</div>
+        </div>
+        <div class="aq-body">
+          <div class="aq-notice">
+            <span class="aq-notice-ico">&#128679;</span>
+            <div class="aq-notice-text">
+              <strong>The Fort Fisher Aquarium closed May 26, 2026</strong> for a $65 million renovation and expansion expected to take approximately 30 months. During this time, visit <strong>Discovery Cove</strong> &mdash; the aquarium&rsquo;s satellite location at Independence Mall in Wilmington featuring animal encounters, marine life habitats, and education programs. Free admission. <a href="https://www.ncaquariums.com/fort-fisher" target="_blank" rel="noopener noreferrer">ncaquariums.com &#8599;</a>
+            </div>
+          </div>
+          <div class="aq-desc">When it reopens, the NC Aquarium at Fort Fisher will be the <strong>largest aquarium in North Carolina</strong> &mdash; featuring a 400,000-gallon sand tiger shark habitat, a Pacific live coral reef, an interactive shark and ray touch pool, a state-of-the-art education center, and a rooftop sky deck overlooking the Atlantic. Its first major renovation in 20 years. Worth coming back for.</div>
+          <div class="aq-grid">
+            <div class="aq-block">
+              <div class="aq-block-label">Fort Fisher Location Status</div>
+              <div class="aq-block-value">Closed from May 26, 2026<br/>Reopening approx. late 2028</div>
+            </div>
+            <div class="aq-block">
+              <div class="aq-block-label">Discovery Cove (During Renovation)</div>
+              <div class="aq-block-value">Open at Independence Mall, Wilmington<br/>Animal encounters &middot; <strong>Free admission</strong></div>
+            </div>
+            <div class="aq-block">
+              <div class="aq-block-label">What the Expansion Includes</div>
+              <div class="aq-block-value">400K-gal shark habitat &middot; Live coral reef &middot; Rooftop sky deck &middot; NC&rsquo;s largest aquarium</div>
+            </div>
+            <div class="aq-block">
+              <div class="aq-block-label">Latest Official Updates</div>
+              <div class="aq-block-value"><a href="https://www.ncaquariums.com/fort-fisher" target="_blank" rel="noopener noreferrer">ncaquariums.com &#8599;</a><br/>Always check before visiting</div>
+            </div>
+          </div>
+          <div class="aq-foot">
+            <div class="aq-foot-text"><strong>Visiting Kure Beach while the aquarium is closed?</strong> ShoreList has the best experiences on Pleasure Island right now &mdash; nature walks, Fort Fisher history, wild beaches, and more.</div>
+            <a href="#experiences" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;">See What&rsquo;s Open &#8594;</a>
+          </div>
         </div>
       </div>
     </div>
@@ -256,12 +348,12 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
     <div class="sec-label" style="color:var(--coral);">By the Numbers</div>
     <h2 class="sec-title sec-title-light">Kure Beach <em>at a Glance</em></h2>
     <div class="facts-grid" style="margin-top:28px;">
-      <div class="fact"><div class="fact-n">1865</div><div class="fact-l">Fort Fisher falls, Civil War ends</div></div>
-      <div class="fact"><div class="fact-n">4 mi</div><div class="fact-l">of wild undeveloped beach</div></div>
-      <div class="fact"><div class="fact-n">65K+</div><div class="fact-l">NC Aquarium visitors yearly</div></div>
-      <div class="fact"><div class="fact-n">Free</div><div class="fact-l">Fort Fisher Historic Site</div></div>
+      <div class="fact"><div class="fact-n">1865</div><div class="fact-l">Fort Fisher falls, ending the Civil War</div></div>
+      <div class="fact"><div class="fact-n">4 mi</div><div class="fact-l">of wild undeveloped Atlantic beach</div></div>
+      <div class="fact"><div class="fact-n">$65M</div><div class="fact-l">Aquarium expansion investment</div></div>
+      <div class="fact"><div class="fact-n">Free</div><div class="fact-l">Fort Fisher Historic Site always</div></div>
       <div class="fact"><div class="fact-n">20 min</div><div class="fact-l">from downtown Wilmington</div></div>
-      <div class="fact"><div class="fact-n">1 ferry</div><div class="fact-l">to Bald Head Island nearby</div></div>
+      <div class="fact"><div class="fact-n">Late 2028</div><div class="fact-l">Aquarium reopening as NC&rsquo;s largest</div></div>
     </div>
   </div>
 </section>
@@ -273,23 +365,23 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
     <div class="events-list">
       <div class="ev-row">
         <div class="er-ico">&#129654;</div>
-        <div class="er-body"><div class="er-name">Cape Fear Kite Festival</div><div class="er-meta">November 6&#8211;8, 2026 &nbsp;&middot;&nbsp; Fort Fisher State Recreation Area &nbsp;&middot;&nbsp; Hundreds of kites over the Atlantic</div></div>
+        <div class="er-body"><div class="er-name">Cape Fear Kite Festival</div><div class="er-meta">November 6&ndash;8, 2026 &nbsp;&middot;&nbsp; Fort Fisher State Recreation Area &nbsp;&middot;&nbsp; Hundreds of kites over the Atlantic &nbsp;&middot;&nbsp; Free to attend</div></div>
         <span class="er-badge er-free">Free</span>
       </div>
       <div class="ev-row">
         <div class="er-ico">&#9975;</div>
-        <div class="er-body"><div class="er-name">Fort Fisher Civil War Living History</div><div class="er-meta">October 2026 &nbsp;&middot;&nbsp; Fort Fisher Historic Site &nbsp;&middot;&nbsp; Re-enactors demonstrate Civil War infantry tactics and camp life</div></div>
+        <div class="er-body"><div class="er-name">Fort Fisher Civil War Living History</div><div class="er-meta">October 2026 &nbsp;&middot;&nbsp; Fort Fisher Historic Site &nbsp;&middot;&nbsp; Re-enactors, artillery demonstrations, and camp life</div></div>
         <span class="er-badge er-free">Free</span>
       </div>
       <div class="ev-row">
         <div class="er-ico">&#127881;</div>
-        <div class="er-body"><div class="er-name">America&rsquo;s 250th Birthday &mdash; July 4th</div><div class="er-meta">Saturday, July 4, 2026 &nbsp;&middot;&nbsp; Kure Beach &amp; Fort Fisher area &nbsp;&middot;&nbsp; Celebrations across Pleasure Island</div></div>
+        <div class="er-body"><div class="er-name">America&rsquo;s 250th Birthday &mdash; July 4th, 2026</div><div class="er-meta">Saturday, July 4 &nbsp;&middot;&nbsp; Kure Beach &amp; Pleasure Island &nbsp;&middot;&nbsp; Fireworks and celebrations across the island</div></div>
         <span class="er-badge er-free">Free</span>
       </div>
       <div class="ev-row">
         <div class="er-ico">&#128013;</div>
-        <div class="er-body"><div class="er-name">NC Aquarium Sea Turtle Programs</div><div class="er-meta">Year-round &nbsp;&middot;&nbsp; NC Aquarium at Fort Fisher &nbsp;&middot;&nbsp; Sea turtle rescue, rehabilitation &amp; educational programs</div></div>
-        <span class="er-badge er-paid">Admission Required</span>
+        <div class="er-body"><div class="er-name">Discovery Cove &mdash; NC Aquarium at Independence Mall</div><div class="er-meta">Year-round &nbsp;&middot;&nbsp; Independence Mall, Wilmington &nbsp;&middot;&nbsp; Satellite aquarium during Fort Fisher renovation &nbsp;&middot;&nbsp; Free admission</div></div>
+        <span class="er-badge er-free">Free</span>
       </div>
     </div>
     <div style="margin-top:20px;text-align:center;">
