@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="theme-color" content="#0A4D5C"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-title" content="ShoreList Map"/>
+<link rel="canonical" href="https://shorelist.net/map"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Wilmington NC Interactive Map &#8212; Things To Do | ShoreList</title>
+<meta name="description" content="The most complete interactive map of Wilmington NC and the beaches. 50+ pinned locations including ShoreList experiences, beaches, historic sites, parks, and entertainment venues."/>
+<meta property="og:title" content="Wilmington NC Interactive Map | ShoreList"/>
+<meta property="og:description" content="Explore 50+ pinned locations across Wilmington, Carolina Beach, Wrightsville Beach &amp; Kure Beach. The most complete coastal visitor guide map anywhere."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://shorelist.net/map"/>
+<meta property="og:image" content="https://shorelist.net/og-map.jpg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:#FEFCF7;color:#0D1F25;overflow-x:hidden;}
+:root{
+  --teal:#0A4D5C;--teal2:#1A7585;--teal3:#073D4A;
+  --coral:#E96645;--coral2:#F07A5A;
+  --cream:#F5E8CB;--cream2:#FEFCF7;
+  --dark:#0D1F25;--mid:#2C4A52;
+  --lgray:#F2F4F3;--border:rgba(10,77,92,0.10);
+  --c-exp:#E96645;--c-beach:#0A4D5C;--c-hist:#6c3e9c;
+  --c-nature:#1a7a4a;--c-ent:#1e64c8;--c-food:#c87800;
+}
+/* LAUNCH BANNER */
+.launch-banner{position:fixed;top:0;left:0;right:0;z-index:400;background:var(--coral);padding:0 20px;display:flex;align-items:center;justify-content:center;gap:12px;height:38px;}
+.launch-banner-badge{background:rgba(255,255,255,0.22);border:1px solid rgba(255,255,255,0.38);border-radius:100px;padding:2px 10px;font-size:0.65rem;font-weight:700;color:white;letter-spacing:0.10em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;}
+.launch-banner-text{font-size:0.78rem;font-weight:600;color:white;}
+.launch-banner-text span{color:rgba(255,255,255,0.85);}
+@media(max-width:600px){.launch-banner-text span{display:none;}}
+/* NAV */
+nav{position:fixed;top:38px;left:0;right:0;z-index:300;padding:14px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,77,92,0.97);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.07);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:#FEFCF7;text-decoration:none;font-weight:700;}
+.nav-logo span{color:var(--coral);}
+.nav-right{display:flex;align-items:center;gap:16px;}
+.nav-back{font-size:0.78rem;font-weight:600;color:rgba(245,232,203,0.60);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;white-space:nowrap;}
+.nav-back:hover{color:#F5E8CB;}
+.nav-book{background:var(--coral);color:white;text-decoration:none;padding:8px 18px;border-radius:6px;font-weight:700;font-size:0.80rem;transition:background 0.2s;white-space:nowrap;min-height:36px;display:inline-flex;align-items:center;}
+.nav-book:hover{background:var(--coral2);}
+@media(max-width:768px){nav{padding:14px 20px;top:38px;}.nav-back{display:none;}}
+/* HERO */
+.map-hero{background:var(--teal3);padding:120px 48px 40px;position:relative;overflow:hidden;}
+.map-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 100% at 80% 100%,rgba(233,102,69,0.08) 0%,transparent 60%);}
+.map-hero::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.03) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;}
+.mh-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+.mh-tag{font-size:0.66rem;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+.mh-tag::before{content:'';width:22px;height:1px;background:var(--coral);}
+.mh-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;color:#FEFCF7;line-height:1.05;margin-bottom:10px;}
+.mh-title em{color:var(--coral);font-style:italic;}
+.mh-sub{font-size:0.95rem;color:rgba(245,232,203,0.65);line-height:1.85;max-width:580px;margin-bottom:20px;}
+.mh-stats{display:flex;gap:12px;flex-wrap:wrap;}
+.mh-stat{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.10);border-radius:8px;padding:8px 14px;display:flex;align-items:center;gap:8px;font-size:0.80rem;font-weight:600;color:rgba(245,232,203,0.80);}
+.mh-stat-n{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:var(--coral);}
+@media(max-width:768px){.map-hero{padding:100px 20px 28px;}.mh-stat{font-size:0.72rem;padding:6px 10px;}}
+/* FILTER BAR */
+.filter-bar{background:white;border-bottom:2px solid var(--border);position:sticky;top:102px;z-index:200;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.filter-bar::-webkit-scrollbar{display:none;}
+.filter-inner{display:flex;gap:8px;padding:12px 48px;white-space:nowrap;align-items:center;}
+.fc{border:2px solid var(--border);background:white;border-radius:100px;padding:8px 16px;font-size:0.82rem;font-weight:600;cursor:pointer;transition:all 0.18s;font-family:'DM Sans',sans-serif;white-space:nowrap;min-height:40px;display:inline-flex;align-items:center;gap:6px;color:var(--mid);}
+.fc:hover{border-color:var(--teal);color:var(--teal);}
+.fc.active{color:white;}
+.fc-all.active{background:var(--teal);border-color:var(--teal);}
+.fc-exp.active{background:var(--c-exp);border-color:var(--c-exp);}
+.fc-beach.active{background:var(--c-beach);border-color:var(--c-beach);}
+.fc-hist.active{background:var(--c-hist);border-color:var(--c-hist);}
+.fc-nature.active{background:var(--c-nature);border-color:var(--c-nature);}
+.fc-ent.active{background:var(--c-ent);border-color:var(--c-ent);}
+.fc-food.active{background:var(--c-food);border-color:var(--c-food);}
+@media(max-width:768px){.filter-inner{padding:10px 16px;gap:6px;}.fc{font-size:0.74rem;padding:7px 12px;}}
+/* MAP */
+.map-wrap{position:relative;background:#e8f4f8;}
+#shore-map{height:65vh;min-height:380px;width:100%;display:block;}
+.map-legend{position:absolute;bottom:20px;right:20px;background:white;border-radius:12px;padding:14px 16px;box-shadow:0 4px 24px rgba(0,0,0,0.14);z-index:400;min-width:160px;}
+.ml-title{font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(44,74,82,0.45);margin-bottom:10px;}
+.ml-item{display:flex;align-items:center;gap:8px;margin-bottom:7px;font-size:0.76rem;font-weight:600;color:var(--mid);}
+.ml-item:last-child{margin-bottom:0;}
+.ml-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0;border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,0.20);}
+.count-bar{background:var(--teal3);padding:10px 48px;display:flex;gap:0;align-items:center;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.count-bar::-webkit-scrollbar{display:none;}
+.cb-item{display:flex;align-items:center;gap:6px;padding:0 18px;font-size:0.78rem;font-weight:600;color:rgba(245,232,203,0.70);white-space:nowrap;border-right:1px solid rgba(255,255,255,0.08);}
+.cb-item:last-child{border-right:none;}
+.cb-n{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:var(--coral);}
+@media(max-width:768px){#shore-map{height:55vh;min-height:320px;}.map-legend{display:none;}.count-bar{padding:10px 16px;}.cb-item{padding:0 12px;font-size:0.70rem;}}
+/* POPUP */
+.leaflet-popup-content-wrapper{border-radius:14px!important;box-shadow:0 12px 40px rgba(0,0,0,0.18)!important;border:none!important;padding:0!important;}
+.leaflet-popup-content{margin:0!important;padding:0!important;}
+.mp{font-family:'DM Sans',sans-serif;overflow:hidden;border-radius:14px;min-width:230px;max-width:280px;}
+.mp-top{padding:14px 16px 12px;}
+.mp-cat{font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;}
+.mp-name{font-family:'Playfair Display',serif;font-size:0.97rem;font-weight:900;color:#0D1F25;margin-bottom:5px;line-height:1.2;}
+.mp-desc{font-size:0.78rem;color:#2C4A52;line-height:1.6;margin-bottom:10px;}
+.mp-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:4px;}
+.mp-tag{background:#F2F4F3;border-radius:4px;padding:3px 8px;font-size:0.68rem;font-weight:600;color:#2C4A52;}
+.mp-tag-free{background:rgba(26,122,74,0.10);color:#1a7a4a;}
+.mp-foot{display:flex;gap:8px;padding:10px 16px;border-top:1px solid rgba(10,77,92,0.08);background:#FAFCFC;}
+.mp-btn{flex:1;text-align:center;text-decoration:none;padding:8px 12px;border-radius:7px;font-size:0.76rem;font-weight:700;transition:all 0.2s;min-height:36px;display:inline-flex;align-items:center;justify-content:center;color:white;}
+.mp-btn:hover{opacity:0.88;}
+/* PINS GRID */
+.pins-section{padding:48px 48px 32px;}
+.ps-inner{max-width:1100px;margin:0 auto;}
+.ps-hd{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px;}
+.ps-label{font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--coral);margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.ps-label::before{content:'';width:18px;height:1px;background:var(--coral);}
+.ps-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--teal);line-height:1.1;}
+.ps-title em{color:var(--coral);font-style:italic;}
+.ps-count{font-size:0.80rem;color:rgba(44,74,82,0.45);}
+.pins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.pin-card{background:white;border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:box-shadow 0.22s,transform 0.22s;cursor:pointer;}
+.pin-card:hover{box-shadow:0 10px 32px rgba(10,77,92,0.10);transform:translateY(-2px);}
+.pin-card-bar{height:4px;}
+.pin-card-body{padding:16px;}
+.pcb-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;gap:8px;}
+.pcb-badge{font-size:0.62rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:3px 9px;border-radius:100px;display:inline-flex;align-items:center;gap:4px;flex-shrink:0;}
+.pcb-exp{background:rgba(233,102,69,0.09);color:#c45230;border:1px solid rgba(233,102,69,0.18);}
+.pcb-beach{background:rgba(10,77,92,0.09);color:#0A4D5C;border:1px solid rgba(10,77,92,0.18);}
+.pcb-hist{background:rgba(108,62,156,0.09);color:#6c3e9c;border:1px solid rgba(108,62,156,0.18);}
+.pcb-nature{background:rgba(26,122,74,0.09);color:#1a7a4a;border:1px solid rgba(26,122,74,0.18);}
+.pcb-ent{background:rgba(30,100,200,0.09);color:#1e64c8;border:1px solid rgba(30,100,200,0.18);}
+.pcb-food{background:rgba(200,120,0,0.09);color:#c87800;border:1px solid rgba(200,120,0,0.18);}
+.pcb-area{font-size:0.68rem;color:rgba(44,74,82,0.45);font-weight:500;text-align:right;line-height:1.3;}
+.pc-name{font-family:'Playfair Display',serif;font-size:0.94rem;font-weight:700;color:var(--teal);margin-bottom:5px;line-height:1.2;}
+.pc-desc{font-size:0.79rem;color:var(--mid);line-height:1.65;margin-bottom:12px;}
+.pc-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+.pc-fee{font-size:0.76rem;font-weight:700;}
+.pc-fee-free{color:#1a7a4a;}
+.pc-fee-paid{color:var(--coral);}
+.pc-link{font-size:0.75rem;font-weight:700;color:var(--teal2);text-decoration:none;transition:color 0.2s;white-space:nowrap;}
+.pc-link:hover{color:var(--coral);}
+.no-results{grid-column:1/-1;background:white;border:1px solid var(--border);border-radius:12px;padding:52px;text-align:center;}
+.nr-ico{font-size:3rem;display:block;margin-bottom:16px;}
+.nr-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;color:var(--teal);margin-bottom:8px;}
+/* TOWN LINKS */
+.towns-section{background:var(--teal3);padding:52px 48px;}
+.towns-inner{max-width:1100px;margin:0 auto;}
+.towns-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px;}
+.town-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:24px 20px;text-decoration:none;display:block;transition:all 0.22s;}
+.town-card:hover{background:rgba(233,102,69,0.14);border-color:rgba(233,102,69,0.35);transform:translateY(-3px);}
+.tc-ico{font-size:2.2rem;display:block;margin-bottom:12px;}
+.tc-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:900;color:#FEFCF7;margin-bottom:4px;}
+.tc-sub{font-size:0.78rem;color:rgba(245,232,203,0.55);line-height:1.5;margin-bottom:12px;}
+.tc-link{font-size:0.75rem;font-weight:700;color:var(--coral);display:inline-flex;align-items:center;gap:4px;}
+/* SEO */
+.seo-section{padding:64px 48px;background:white;}
+.seo-inner{max-width:1100px;margin:0 auto;}
+.seo-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+.seo-h2{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--teal);margin-bottom:16px;}
+.seo-h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--teal);margin:22px 0 8px;}
+.seo-p{font-size:0.88rem;color:var(--mid);line-height:1.90;margin-bottom:14px;}
+.seo-p a{color:var(--coral);text-decoration:none;font-weight:600;}
+/* STICKY CTA */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:500;background:var(--teal);border-top:2px solid rgba(255,255,255,0.10);padding:12px 20px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;transform:translateY(110%);transition:transform 0.38s cubic-bezier(0.4,0,0.2,1);}
+.sticky-cta.show{transform:translateY(0);}
+.sc-text{font-size:0.82rem;font-weight:600;color:rgba(245,232,203,0.80);}
+.sc-text strong{color:#FEFCF7;}
+.sc-btn{background:var(--coral);color:white;text-decoration:none;padding:10px 22px;border-radius:7px;font-weight:700;font-size:0.84rem;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center;transition:background 0.2s;flex-shrink:0;}
+.sc-btn:hover{background:var(--coral2);}
+@media(min-width:769px){.sticky-cta{display:none;}}
+/* FOOTER */
+footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;border-top:1px solid rgba(255,255,255,0.05);}
+.foot-logo{font-size:1.2rem;font-weight:900;display:flex;align-items:baseline;text-decoration:none;}
+.foot-s{font-family:'Playfair Display',serif;font-style:italic;color:#F5E8CB;}
+.foot-l{font-weight:700;color:var(--coral);}
+.foot-copy{font-size:0.76rem;color:rgba(245,232,203,0.28);}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap;}
+.foot-links a{font-size:0.76rem;color:rgba(245,232,203,0.28);text-decoration:none;transition:color 0.2s;}
+.foot-links a:hover{color:var(--coral);}
+/* RESPONSIVE */
+@media(max-width:900px){.pins-grid{grid-template-columns:1fr 1fr;}.towns-grid{grid-template-columns:1fr 1fr;}.seo-grid{grid-template-columns:1fr;}}
+@media(max-width:768px){.pins-section{padding:32px 20px;}.towns-section{padding:40px 20px;}.seo-section{padding:40px 20px;}.pins-grid{grid-template-columns:1fr;}.towns-grid{grid-template-columns:1fr 1fr;}footer{padding:24px 20px;flex-direction:column;text-align:center;}}
+@media(max-width:480px){.towns-grid{grid-template-columns:1fr;}}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+</head>
+<body>
+<div class="launch-banner">
+  <div class="launch-banner-badge">&#128640; June 1st</div>
+  <div class="launch-banner-text"><strong>ShoreList launches June 1st.</strong> <span>Book local experiences &mdash; ghost tours, surf lessons, film tours &amp; more.</span></div>
+</div>
+<nav>
+  <a href="/" class="nav-logo">Shore<span>List</span></a>
+  <div class="nav-right">
+    <a href="/events" style="font-size:0.78rem;font-weight:700;color:var(--coral);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;transition:color 0.2s;">Events Guide</a>
+    <a href="/" class="nav-back">&#8592; All Experiences</a>
+    <a href="/waitlist" class="nav-book">Join Waitlist</a>
+  </div>
+</nav>
+<section class="map-hero">
+  <div class="mh-inner">
+    <div class="mh-tag">Interactive Visitor Guide</div>
+    <h1 class="mh-title">The Complete<br/><em>Wilmington, NC Map</em></h1>
+    <p class="mh-sub">Every beach, ShoreList experience, historic attraction, park, and entertainment venue across Wilmington and the NC coast &mdash; all pinned, filterable, and clickable. The most detailed visitor guide map for this region anywhere.</p>
+    <div class="mh-stats">
+      <div class="mh-stat"><span class="mh-stat-n">50+</span>&nbsp;Pins</div>
+      <div class="mh-stat"><span class="mh-stat-n">7</span>&nbsp;Categories</div>
+      <div class="mh-stat"><span class="mh-stat-n">4</span>&nbsp;Communities</div>
+      <div class="mh-stat"><span class="mh-stat-n">Free</span>&nbsp;Always</div>
+    </div>
+  </div>
+</section>
+<div class="filter-bar" id="filter-bar">
+  <div class="filter-inner">
+    <button class="fc fc-all active" onclick="setFilter(this,'all')">&#127758; All</button>
+    <button class="fc fc-exp" onclick="setFilter(this,'exp')">&#127940; ShoreList Experiences</button>
+    <button class="fc fc-beach" onclick="setFilter(this,'beach')">&#127754; Beaches</button>
+    <button class="fc fc-hist" onclick="setFilter(this,'hist')">&#127963; Historic &amp; Landmarks</button>
+    <button class="fc fc-nature" onclick="setFilter(this,'nature')">&#127807; Parks &amp; Nature</button>
+    <button class="fc fc-ent" onclick="setFilter(this,'ent')">&#127925; Entertainment</button>
+    <button class="fc fc-food" onclick="setFilter(this,'food')">&#127869; Food &amp; More</button>
+  </div>
+</div>
+<div class="map-wrap">
+  <div id="shore-map"></div>
+  <div class="map-legend">
+    <div class="ml-title">Map Key</div>
+    <div class="ml-item"><div class="ml-dot" style="background:#E96645;"></div>ShoreList Experiences</div>
+    <div class="ml-item"><div class="ml-dot" style="background:#0A4D5C;"></div>Beaches</div>
+    <div class="ml-item"><div class="ml-dot" style="background:#6c3e9c;"></div>Historic &amp; Landmarks</div>
+    <div class="ml-item"><div class="ml-dot" style="background:#1a7a4a;"></div>Parks &amp; Nature</div>
+    <div class="ml-item"><div class="ml-dot" style="background:#1e64c8;"></div>Entertainment</div>
+    <div class="ml-item"><div class="ml-dot" style="background:#c87800;"></div>Food &amp; More</div>
+  </div>
+</div>
+<div class="count-bar">
+  <div class="cb-item"><span class="cb-n" id="ct-shown">50</span>&nbsp;Shown</div>
+  <div class="cb-item"><span class="cb-n">12</span>&nbsp;Experiences</div>
+  <div class="cb-item"><span class="cb-n">6</span>&nbsp;Beaches</div>
+  <div class="cb-item"><span class="cb-n">9</span>&nbsp;Historic</div>
+  <div class="cb-item"><span class="cb-n">6</span>&nbsp;Nature</div>
+  <div class="cb-item"><span class="cb-n">7</span>&nbsp;Entertainment</div>
+  <div class="cb-item"><span class="cb-n">4</span>&nbsp;Food &amp; More</div>
+</div>
+<section class="pins-section">
+  <div class="ps-inner">
+    <div class="ps-hd">
+      <div>
+        <div class="ps-label">Browse Every Location</div>
+        <h2 class="ps-title">All <em>Pins</em></h2>
+      </div>
+      <div class="ps-count" id="pins-count">Showing all 50+ locations</div>
+    </div>
+    <div class="pins-grid" id="pins-grid"></div>
+  </div>
+</section>
+<section class="towns-section">
+  <div class="towns-inner">
+    <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;display:flex;align-items:center;gap:8px;"><span style="width:18px;height:1px;background:var(--coral);display:inline-block;"></span>Explore by Community</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;color:#FEFCF7;line-height:1.1;margin-bottom:8px;">ShoreList <em style="color:var(--coral);font-style:italic;">Town Guides</em></h2>
+    <p style="font-size:0.90rem;color:rgba(245,232,203,0.55);max-width:520px;line-height:1.80;">Every community along the coast has its own personality. Dive deep into each one with its own dedicated ShoreList guide.</p>
+    <div class="towns-grid">
+      <a href="/downtown" class="town-card">
+        <span class="tc-ico">&#127963;</span>
+        <div class="tc-name">Downtown Wilmington</div>
+        <div class="tc-sub">Ghost tours, film history, river cruises &amp; 300 years of stories on the Cape Fear.</div>
+        <div class="tc-link">Explore Downtown &#8594;</div>
+      </a>
+      <a href="/wrightsville-beach" class="town-card">
+        <span class="tc-ico">&#127940;</span>
+        <div class="tc-name">Wrightsville Beach</div>
+        <div class="tc-sub">NC's premier surf beach. Paddleboard, wildlife tours &amp; crystal-clear Atlantic water.</div>
+        <div class="tc-link">Explore Wrightsville &#8594;</div>
+      </a>
+      <a href="/carolina-beach" class="town-card">
+        <span class="tc-ico">&#127787;</span>
+        <div class="tc-name">Carolina Beach</div>
+        <div class="tc-sub">Boardwalk, wild Venus flytraps, surf lessons &amp; genuine Pleasure Island energy.</div>
+        <div class="tc-link">Explore Carolina Beach &#8594;</div>
+      </a>
+      <a href="/kure-beach" class="town-card">
+        <span class="tc-ico">&#127790;</span>
+        <div class="tc-name">Kure Beach</div>
+        <div class="tc-sub">Fort Fisher, the NC Aquarium &amp; the wildest, most untouched stretch of NC coastline.</div>
+        <div class="tc-link">Explore Kure Beach &#8594;</div>
+      </a>
+    </div>
+  </div>
+</section>
+<section class="seo-section">
+  <div class="seo-inner">
+    <div class="seo-grid">
+      <div>
+        <h2 class="seo-h2">Things to Do in Wilmington, NC</h2>
+        <p class="seo-p">Wilmington, NC is one of the most diverse and historically rich coastal cities on the East Coast. From the 300-year-old streets of historic downtown to three distinct beach communities along the Atlantic, the Wilmington &amp; the Beaches region offers more than most visitors expect.</p>
+        <h3 class="seo-h3">Historic Downtown Wilmington</h3>
+        <p class="seo-p"><a href="/downtown">Downtown Wilmington</a> sits along the Cape Fear River and contains one of the largest intact collections of antebellum architecture in NC. The Battleship North Carolina sits across the river. Thalian Hall, built in 1858, still hosts live performances. <a href="/category?cat=ghost-tours">Wilmington Ghost Walk</a> takes you through 300 years of dark history every Thursday through Sunday evening.</p>
+        <h3 class="seo-h3">America's Film Capital East of Hollywood</h3>
+        <p class="seo-p">Wilmington is home to EUE/Screen Gems Studios &mdash; the largest film studio east of Hollywood. One Tree Hill, Iron Man 3, Dawson's Creek, Safe Haven &mdash; all filmed here. <a href="/category?cat=film-tours">Wilmywood Insider Tours</a> take you to the actual filming locations with a guide who spent decades inside the industry.</p>
+        <h3 class="seo-h3">Carolina Beach &amp; Pleasure Island</h3>
+        <p class="seo-p"><a href="/carolina-beach">Carolina Beach</a> and Kure Beach form Pleasure Island. Carolina Beach State Park contains one of the only wild Venus flytrap habitats in the world &mdash; entirely unique to the southeastern NC coastal plain. The Carolina Beach Boardwalk is one of the few classic American boardwalks still standing.</p>
+      </div>
+      <div>
+        <h3 class="seo-h3">Wrightsville Beach</h3>
+        <p class="seo-p"><a href="/wrightsville-beach">Wrightsville Beach</a> is consistently ranked among the best beaches in North Carolina. The water is clearer than most East Coast beaches, surf is excellent for beginners, and Johnnie Mercer's Pier offers one of the most scenic experiences in the region.</p>
+        <h3 class="seo-h3">Kure Beach &amp; Fort Fisher</h3>
+        <p class="seo-p"><a href="/kure-beach">Kure Beach</a> sits at the southern tip of Pleasure Island near Fort Fisher State Historic Site &mdash; site of the largest sea-land battle of the Civil War. The NC Aquarium at Fort Fisher is one of the state's finest, featuring loggerhead sea turtles and sea turtle rescue programs.</p>
+        <h3 class="seo-h3">Book a Local Experience</h3>
+        <p class="seo-p">ShoreList is Wilmington's first hyperlocal experience booking platform. Every operator is personally verified, licensed, and insured. <a href="/waitlist">Join the waitlist</a> to be first when bookings open June 1st, 2026. Explore our <a href="/">full experience catalog</a> or use the <a href="/planner">AI Trip Planner</a> to build your perfect Wilmington itinerary.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <a href="/" class="foot-logo"><span class="foot-s">Shore</span><span class="foot-l">List</span></a>
+  <div class="foot-copy">&#169; 2026 ShoreList LLC &nbsp;&middot;&nbsp; Wilmington, NC &nbsp;&middot;&nbsp; Your local guide to coastal adventures</div>
+  <div class="foot-links">
+    <a href="/">Experiences</a>
+    <a href="/events">Events Guide</a>
+    <a href="/map" style="color:var(--coral);">Map</a>
+    <a href="/planner">Trip Planner</a>
+    <a href="/waitlist">Join Waitlist</a>
+    <a href="/join">Operators</a>
+    <a href="/legal">Privacy &amp; Terms</a>
+  </div>
+</footer>
+<div class="sticky-cta" id="sticky-cta">
+  <div class="sc-text"><strong>Bookings open June 1st</strong> &mdash; join the waitlist now</div>
+  <a href="/waitlist" class="sc-btn">Get Early Access &#8594;</a>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WLEo=" crossorigin=""></script>
+<script>
+var PINS=[
+  {cat:'exp',lat:34.2257,lng:-77.9447,name:'Wilmington Ghost Walk',area:'Downtown',desc:'90-min historic ghost tour through 300-year-old haunted streets. Expert guide Sean Austin.',fee:'From $25',link:'/category?cat=ghost-tours',btn:'Book This'},
+  {cat:'exp',lat:34.2220,lng:-77.9430,name:'Historic Wilmington Walking Tours',area:'Downtown',desc:"Guided walk through Wilmington's most historically significant blocks. Revolutionary War to the Civil War.",fee:'From $28',link:'/category?cat=ghost-tours',btn:'Book This'},
+  {cat:'exp',lat:34.2284,lng:-77.9460,name:'Wilmywood Film Location Tours',area:'Downtown',desc:'One Tree Hill, Iron Man 3, Dawson\'s Creek filmed here. Industry insider guide with 20+ years in the business.',fee:'From $45',link:'/category?cat=film-tours',btn:'Book This'},
+  {cat:'exp',lat:34.2263,lng:-77.9476,name:'Cape Fear River Kayak Tours',area:'Downtown',desc:'Guided kayak tours on the Cape Fear River waterfront. All gear provided.',fee:'From $55',link:'/category?cat=kayak-tours',btn:'Book This'},
+  {cat:'exp',lat:34.2240,lng:-77.9454,name:'Sunset Sails & River Cruises',area:'Downtown',desc:'Sunset sailboat rides and guided river cruises on the Cape Fear. Unforgettable.',fee:'From $45',link:'/category?cat=sailboat-rides',btn:'Book This'},
+  {cat:'exp',lat:34.0345,lng:-77.8976,name:'Surf Lessons - Carolina Beach',area:'Carolina Beach',desc:'Certified instructors, all gear included, all skill levels. The best surf lesson on the NC coast.',fee:'From $75',link:'/category?cat=surf-lessons',btn:'Book This'},
+  {cat:'exp',lat:34.0256,lng:-77.8946,name:'Fishing Charters',area:'Carolina Beach Marina',desc:'Half and full-day offshore fishing charters from Carolina Beach Marina. Experienced captains.',fee:'From $85',link:'/category?cat=fishing-charters',btn:'Book This'},
+  {cat:'exp',lat:34.0580,lng:-77.9068,name:'Venus Flytrap Nature Walk',area:'Carolina Beach State Park',desc:'Wild carnivorous plants found only in NC coastal plain. Guided nature tour through ancient cypress swamp.',fee:'From $35',link:'/category?cat=nature-walks',btn:'Book This'},
+  {cat:'exp',lat:34.2097,lng:-77.7964,name:'Paddleboard - Wrightsville Beach',area:'Wrightsville Beach',desc:'Guided SUP tours and rentals on the ICW and Atlantic Ocean. Great for beginners.',fee:'From $45',link:'/category?cat=paddleboard',btn:'Book This'},
+  {cat:'exp',lat:34.1580,lng:-77.8620,name:'Wildlife & Dolphin Tours',area:'Masonboro Island',desc:'Masonboro Island eco-tours. Bottlenose dolphins, nesting birds, and undisturbed barrier island.',fee:'From $65',link:'/category?cat=wildlife-tours',btn:'Book This'},
+  {cat:'exp',lat:34.0320,lng:-77.8930,name:'Jet Ski & E-Bike Rentals',area:'Carolina Beach',desc:'Coastal adventure rentals from Carolina Beach. Hit the Atlantic or ride the island.',fee:'From $55',link:'/category?cat=jet-ski-rentals',btn:'Book This'},
+  {cat:'exp',lat:34.0390,lng:-77.8960,name:'Beach Photography Sessions',area:'Carolina Beach',desc:'Professional beach portraits and golden-hour sessions. Family, couples, and engagement photos.',fee:'From $95',link:'/category?cat=beach-photography',btn:'Book This'},
+  {cat:'beach',lat:34.0396,lng:-77.8974,name:'Carolina Beach',area:'Pleasure Island',desc:'Classic boardwalk, family-friendly surf, and the most energetic beach town on the NC coast. July 4th fireworks every year.',fee:'Free',link:'/carolina-beach',btn:'Town Guide'},
+  {cat:'beach',lat:34.2097,lng:-77.7964,name:'Wrightsville Beach',area:'Greater Wilmington',desc:"NC's premier beach community. Clear water, excellent surf, Johnnie Mercer's Pier, and Banks Channel paddling.",fee:'Free',link:'/wrightsville-beach',btn:'Town Guide'},
+  {cat:'beach',lat:33.9940,lng:-77.9068,name:'Kure Beach',area:'Pleasure Island',desc:'Quiet, wild coastline near Fort Fisher. Among the most pristine and uncrowded beaches in NC.',fee:'Free',link:'/kure-beach',btn:'Town Guide'},
+  {cat:'beach',lat:34.1580,lng:-77.8620,name:'Masonboro Island Reserve',area:'Intracoastal Waterway',desc:"NC's largest undeveloped barrier island. Accessible only by boat. Sea turtles, shorebirds, and total silence.",fee:'Free',link:'/map',btn:'See on Map'},
+  {cat:'beach',lat:34.2115,lng:-77.7944,name:"Johnnie Mercer's Pier",area:'Wrightsville Beach',desc:'Iconic 1,000-foot pier extending into the Atlantic. Best sunrise views in the Wilmington area.',fee:'Small fee for fishing',link:'/wrightsville-beach',btn:'Town Guide'},
+  {cat:'beach',lat:34.0350,lng:-77.8962,name:'Carolina Beach Pier Area',area:'Carolina Beach',desc:'Heart of the Carolina Beach scene. Boardwalk, arcades, seafood shacks, and live music by the ocean.',fee:'Free',link:'/carolina-beach',btn:'Town Guide'},
+  {cat:'hist',lat:34.2365,lng:-77.9514,name:'Battleship North Carolina',area:'Downtown Wilmington',desc:'The most decorated US battleship of World War II. Self-guided tours aboard this National Historic Landmark across the Cape Fear River from downtown.',fee:'Admission charged',link:'https://www.battleshipnc.com',btn:'Learn More'},
+  {cat:'hist',lat:33.9560,lng:-77.9210,name:'Fort Fisher State Historic Site',area:'Kure Beach',desc:'Site of the largest sea-land attack of the Civil War in January 1865. The last Confederate fortification to fall.',fee:'Free',link:'/kure-beach',btn:'Town Guide'},
+  {cat:'hist',lat:34.1851,lng:-77.8693,name:'Airlie Gardens',area:'Wilmington',desc:'67 acres of stunning coastal gardens. Home to the 500-year-old Airlie Oak and one of the finest azalea collections in the South. Live music in summer.',fee:'Admission charged',link:'https://www.airliegardens.org',btn:'Learn More'},
+  {cat:'hist',lat:34.2255,lng:-77.9436,name:'Thalian Hall',area:'Downtown Wilmington',desc:'Built in 1858, Thalian Hall is one of the most beautiful historic theaters in America. Still hosting Broadway shows, ballet, and live music.',fee:'Ticketed shows',link:'https://www.thalianhall.org',btn:'Learn More'},
+  {cat:'hist',lat:34.2284,lng:-77.9416,name:'Bellamy Mansion',area:'Downtown Wilmington',desc:"One of the finest antebellum mansions in the South, built 1859. A National Historic Landmark on Market Street.",fee:'Admission charged',link:'https://www.bellamymansion.org',btn:'Learn More'},
+  {cat:'hist',lat:34.2252,lng:-77.9445,name:'Burgwin-Wright House',area:'Downtown Wilmington',desc:"1771 colonial home. Lord Cornwallis's headquarters during the American Revolution. One of the oldest surviving structures in Wilmington.",fee:'Admission charged',link:'https://www.burgwinwrighthouse.com',btn:'Learn More'},
+  {cat:'hist',lat:34.4548,lng:-78.1119,name:"Moore's Creek National Battlefield",area:'Currie, NC',desc:"Site of the first Patriot victory in NC (February 27, 1776). Essential America 250 destination. 20 miles from Wilmington. Free NPS site.",fee:'Free (NPS)',link:'https://www.nps.gov/mocr/index.htm',btn:'Learn More'},
+  {cat:'hist',lat:34.0700,lng:-77.9980,name:'Brunswick Town / Fort Anderson',area:'Winnabow, NC',desc:'Ruins of colonial Brunswick Town and Civil War earthworks. One of NC\'s most haunting and historically significant sites. Free and almost unknown.',fee:'Free',link:'https://www.ncdcr.gov',btn:'Learn More'},
+  {cat:'hist',lat:34.2376,lng:-77.9490,name:'USS North Carolina Memorial',area:'Downtown Wilmington',desc:'The cape fear riverfront memorial area and approach to the Battleship. Stunning waterfront views and public art.',fee:'Free',link:'https://www.battleshipnc.com',btn:'Learn More'},
+  {cat:'nature',lat:34.0580,lng:-77.9068,name:'Carolina Beach State Park',area:'Carolina Beach',desc:"Wild Venus flytraps, ancient cypress swamps, maritime forest trails, and ICW access. One of NC's most unique state parks.",fee:'Free',link:'/carolina-beach',btn:'Town Guide'},
+  {cat:'nature',lat:34.1975,lng:-77.9345,name:'Greenfield Park & Lake',area:'Wilmington',desc:'160-acre urban park with a stunning lake, cypress swamp boardwalk, and 5-mile paved trail loop. One of Wilmington\'s best kept secrets.',fee:'Free',link:'/downtown',btn:'Town Guide'},
+  {cat:'nature',lat:33.9400,lng:-77.9250,name:'Fort Fisher State Recreation Area',area:'Kure Beach',desc:'4 miles of wild, undeveloped Atlantic beach. Protected habitat for nesting sea turtles and shorebirds.',fee:'Free',link:'/kure-beach',btn:'Town Guide'},
+  {cat:'nature',lat:34.2120,lng:-77.8840,name:'Halyburton Park',area:'Wilmington',desc:'58 acres of natural area with 5 miles of trails through pine savanna and rare Venus flytrap habitat close to the city.',fee:'Free',link:'/map',btn:'See on Map'},
+  {cat:'nature',lat:33.9575,lng:-77.9208,name:'NC Aquarium at Fort Fisher',area:'Kure Beach',desc:"One of NC's finest aquariums. Loggerhead sea turtles, shark tanks, coastal exhibits, and an active sea turtle rescue program.",fee:'Admission charged',link:'/kure-beach',btn:'Town Guide'},
+  {cat:'nature',lat:34.0530,lng:-77.9030,name:"Snow's Cut - ICW Crossing",area:'Carolina Beach',desc:'Where the Cape Fear River meets the Intracoastal Waterway. Excellent kayaking, fishing, and boat watching.',fee:'Free',link:'/carolina-beach',btn:'Town Guide'},
+  {cat:'ent',lat:34.2346,lng:-77.9522,name:'Live Oak Bank Pavilion',area:'Downtown Wilmington',desc:'Premier outdoor amphitheater on the Cape Fear River. 7,000 capacity. Bob Dylan, Jelly Roll, Dierks Bentley, James Taylor and 15+ major acts all summer 2026.',fee:'Ticketed events',link:'/events',btn:'See Events'},
+  {cat:'ent',lat:34.1970,lng:-77.9345,name:'Greenfield Lake Amphitheater',area:'Wilmington',desc:'Intimate outdoor amphitheater on a stunning lake. 3,000 capacity. Rising national acts in a genuinely beautiful setting.',fee:'Ticketed events',link:'/events',btn:'See Events'},
+  {cat:'ent',lat:34.2273,lng:-77.9453,name:'Wilson Center at CFCC',area:'Downtown Wilmington',desc:'1,700-seat performing arts center in the heart of downtown. Broadway touring shows, concerts, and special events.',fee:'Ticketed events',link:'/events',btn:'See Events'},
+  {cat:'ent',lat:34.2310,lng:-77.9435,name:'Dead Crow Comedy Room',area:'Downtown Wilmington',desc:"Wilmington's premier stand-up comedy venue. Local and national touring comedians weekly. Thursday open mic nights.",fee:'Ticketed shows',link:'https://www.deadcrowcomedy.com',btn:'Learn More'},
+  {cat:'ent',lat:34.2312,lng:-77.9518,name:'Brooklyn Arts District (BAD)',area:'Downtown Wilmington',desc:"Wilmington's arts and culture hub. Galleries, studios, live music venues, and home to the annual BAD Day Music Festival.",fee:'Free to explore',link:'/downtown',btn:'Town Guide'},
+  {cat:'ent',lat:34.2290,lng:-77.9490,name:'Wilmington Riverwalk',area:'Downtown Wilmington',desc:'1.75 miles of beautifully maintained riverside walkway. Outdoor dining, live music, shops, and direct views of the Battleship NC.',fee:'Free',link:'/downtown',btn:'Town Guide'},
+  {cat:'ent',lat:34.0396,lng:-77.8974,name:'Carolina Beach Boardwalk',area:'Carolina Beach',desc:'Live music and fireworks every Thursday from Memorial Day through Labor Day. A genuine classic American boardwalk still in its prime.',fee:'Free to attend',link:'/carolina-beach',btn:'Town Guide'},
+  {cat:'food',lat:34.2290,lng:-77.9490,name:'Cape Fear Riverfront Dining',area:'Downtown Wilmington',desc:'Dozens of restaurants with waterfront patios along the Riverwalk. Fresh NC seafood, craft cocktails, and Cape Fear River sunsets.',fee:'Varies',link:'/downtown',btn:'Town Guide'},
+  {cat:'food',lat:34.0396,lng:-77.8974,name:'Carolina Beach Boardwalk Food',area:'Carolina Beach',desc:'Seafood shacks, beach bars, and classic boardwalk food. Nothing pretentious &mdash; everything delicious.',fee:'Varies',link:'/carolina-beach',btn:'Town Guide'},
+  {cat:'food',lat:34.2025,lng:-77.8290,name:'Wrightsville Beach Brewery',area:'Wrightsville Beach',desc:'One of the best craft taprooms in the Wilmington area. Cold beer, beach vibes, and regulars who know every wave.',fee:'Varies',link:'/wrightsville-beach',btn:'Town Guide'},
+  {cat:'food',lat:34.2120,lng:-77.8620,name:'Mayfaire Town Center',area:'Wilmington',desc:'Wilmington\'s premier dining and entertainment district. Dozens of restaurants, a movie theater, and convenient location between downtown and the beach.',fee:'Varies',link:'/map',btn:'See on Map'},
+];
+
+var CAT_COLORS={exp:'#E96645',beach:'#0A4D5C',hist:'#6c3e9c',nature:'#1a7a4a',ent:'#1e64c8',food:'#c87800'};
+var CAT_LABELS={exp:'ShoreList Experience',beach:'Beach',hist:'Historic & Landmark',nature:'Park & Nature',ent:'Entertainment',food:'Food & More'};
+var CAT_BADGE={exp:'pcb-exp',beach:'pcb-beach',hist:'pcb-hist',nature:'pcb-nature',ent:'pcb-ent',food:'pcb-food'};
+
+var currentFilter='all';
+var allMarkers=[];
+var MAP;
+
+function initMap(){
+  MAP=L.map('shore-map',{center:[34.10,-77.91],zoom:11,zoomControl:true,scrollWheelZoom:false,tap:false});
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener noreferrer">OpenStreetMap</a>'}).addTo(MAP);
+
+  PINS.forEach(function(pin){
+    var color=CAT_COLORS[pin.cat]||'#555';
+    var icon=L.divIcon({html:'<div style="width:14px;height:14px;border-radius:50%;background:'+color+';border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.30);cursor:pointer;"></div>',className:'',iconSize:[14,14],iconAnchor:[7,7],popupAnchor:[0,-10]});
+    var isFree=pin.fee.toLowerCase().indexOf('free')>=0;
+    var isExt=pin.link&&pin.link.indexOf('http')===0;
+    var btnAttr=isExt?' target="_blank" rel="noopener noreferrer"':'';
+    var ph='<div class="mp">'
+      +'<div class="mp-top">'
+      +'<div class="mp-cat" style="color:'+color+';">'+CAT_LABELS[pin.cat]+'</div>'
+      +'<div class="mp-name">'+pin.name+'</div>'
+      +'<div class="mp-desc">'+pin.desc+'</div>'
+      +'<div class="mp-tags"><span class="mp-tag">'+pin.area+'</span><span class="mp-tag'+(isFree?' mp-tag-free':'')+'" >'+pin.fee+'</span></div>'
+      +'</div>'
+      +'<div class="mp-foot"><a href="'+pin.link+'"'+btnAttr+' class="mp-btn" style="background:'+color+';">'+pin.btn+' &#8594;</a></div>'
+      +'</div>';
+    var m=L.marker([pin.lat,pin.lng],{icon:icon}).bindPopup(ph,{maxWidth:280,closeButton:true,autoPan:true});
+    m._pinCat=pin.cat;m._pinLat=pin.lat;m._pinLng=pin.lng;
+    allMarkers.push(m);m.addTo(MAP);
+  });
+  renderGrid('all');
+  updateCount('all');
+}
+
+function setFilter(btn,cat){
+  document.querySelectorAll('.fc').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  currentFilter=cat;
+  allMarkers.forEach(function(m){
+    if(cat==='all'||m._pinCat===cat)m.addTo(MAP);else MAP.removeLayer(m);
+  });
+  renderGrid(cat);
+  updateCount(cat);
+  var vis=PINS.filter(function(p){return cat==='all'||p.cat===cat;});
+  if(vis.length>0){var b=L.latLngBounds(vis.map(function(p){return[p.lat,p.lng];}));MAP.fitBounds(b,{padding:[30,30],maxZoom:13});}
+}
+
+function updateCount(cat){
+  var n=cat==='all'?PINS.length:PINS.filter(function(p){return p.cat===cat;}).length;
+  var el=document.getElementById('ct-shown');if(el)el.textContent=n;
+  var ce=document.getElementById('pins-count');if(ce)ce.textContent='Showing '+n+' location'+(n!==1?'s':'');
+}
+
+function renderGrid(cat){
+  var grid=document.getElementById('pins-grid');if(!grid)return;
+  var filtered=cat==='all'?PINS:PINS.filter(function(p){return p.cat===cat;});
+  if(!filtered.length){grid.innerHTML='<div class="no-results"><span class="nr-ico">&#128205;</span><h3 class="nr-title">No pins in this category</h3></div>';return;}
+  grid.innerHTML=filtered.map(function(pin){
+    var isFree=pin.fee.toLowerCase().indexOf('free')>=0;
+    var isExt=pin.link&&pin.link.indexOf('http')===0;
+    var color=CAT_COLORS[pin.cat]||'#555';
+    var bc=CAT_BADGE[pin.cat]||'pcb-hist';
+    return '<div class="pin-card" onclick="flyTo('+pin.lat+','+pin.lng+')">'
+      +'<div class="pin-card-bar" style="background:'+color+';"></div>'
+      +'<div class="pin-card-body">'
+      +'<div class="pcb-top"><span class="pcb-badge '+bc+'">'+CAT_LABELS[pin.cat]+'</span><span class="pcb-area">'+pin.area+'</span></div>'
+      +'<div class="pc-name">'+pin.name+'</div>'
+      +'<div class="pc-desc">'+pin.desc+'</div>'
+      +'<div class="pc-foot"><span class="pc-fee '+(isFree?'pc-fee-free':'pc-fee-paid')+'">'+pin.fee+'</span>'
+      +'<a href="'+pin.link+'"'+(isExt?' target="_blank" rel="noopener noreferrer"':'')+' class="pc-link" onclick="event.stopPropagation();">'+pin.btn+' &#8594;</a>'
+      +'</div></div></div>';
+  }).join('');
+}
+
+function flyTo(lat,lng){
+  if(!MAP)return;
+  MAP.flyTo([lat,lng],15,{duration:1.2});
+  window.scrollTo({top:document.querySelector('.map-wrap').offsetTop-120,behavior:'smooth'});
+  allMarkers.forEach(function(m){
+    if(Math.abs(m._pinLat-lat)<0.0001&&Math.abs(m._pinLng-lng)<0.0001){
+      setTimeout(function(){m.openPopup();},1300);
+    }
+  });
+}
+
+(function(){
+  var cta=document.getElementById('sticky-cta');if(!cta)return;
+  var shown=false;
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>400&&!shown){shown=true;cta.classList.add('show');}
+    else if(window.scrollY<=100&&shown){shown=false;cta.classList.remove('show');}
+  },{passive:true});
+})();
+
+document.addEventListener('DOMContentLoaded',initMap);
+</script>
+</body>
+</html>
