@@ -24,16 +24,16 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
-/* ── ACCESSIBILITY: skip link ── */
+/* -- ACCESSIBILITY: skip link -- */
 .skip-link{position:absolute;top:-100px;left:50%;transform:translateX(-50%);background:var(--coral);color:white;padding:14px 24px;border-radius:8px;font-weight:700;font-size:0.92rem;text-decoration:none;z-index:9999;transition:top 0.18s;}
 .skip-link:focus{top:14px;outline:3px solid var(--cream);outline-offset:2px;}
-/* ── ACCESSIBILITY: focus states ── */
+/* -- ACCESSIBILITY: focus states -- */
 :focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:3px;}
-/* ── ACCESSIBILITY: reduced motion ── */
+/* -- ACCESSIBILITY: reduced motion -- */
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}
 }
-/* ── COLOR CONTRAST FIXES (WCAG AA) ── */
+/* -- COLOR CONTRAST FIXES (WCAG AA) -- */
 .foot-txt{color:rgba(245,232,203,0.62)!important;}
 
 :root{--teal:#0A4D5C;--teal2:#1A7585;--coral:#E96645;--coral2:#F07A5A;--cream:#F5E8CB;--cream2:#FEFCF7;--dark:#0D1F25;--mid:#2C4A52;--lgray:#F2F4F3;--border:rgba(10,77,92,0.10);}
@@ -107,6 +107,62 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 48px;display:fl
 .plc-done{display:none;font-size:0.88rem;font-weight:600;color:#4ade80;padding:12px 0;}
 .op-book-note-pre{font-size:0.82rem;color:rgba(44,74,82,0.55);line-height:1.65;}
 .op-book-note-pre strong{color:var(--teal);}
+.bk-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+.bk-row.full{grid-template-columns:1fr;}
+.bk-field{display:flex;flex-direction:column;gap:7px;}
+.bk-label{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(10,77,92,0.5);}
+.bk-input{width:100%;background:white;border:1px solid rgba(10,77,92,0.12);border-radius:8px;padding:13px 15px;font-family:'DM Sans',sans-serif;font-size:1rem;color:var(--dark);outline:none;transition:border-color 0.2s,box-shadow 0.2s;-webkit-appearance:none;appearance:none;}
+.bk-input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(10,77,92,0.08);}
+.bk-input::placeholder{color:rgba(44,74,82,0.30);}
+.bk-input option{background:white;color:var(--dark);}
+textarea.bk-input{resize:vertical;min-height:80px;line-height:1.6;}
+
+/* -- CALENDAR -- */
+.cal-section{margin-bottom:16px;}
+.cal-lbl{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(10,77,92,0.5);margin-bottom:12px;}
+.cal-box{background:white;border:1px solid rgba(10,77,92,0.12);border-radius:12px;padding:20px 18px;}
+.cal-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+.cal-arrow{background:white;border:1px solid rgba(10,77,92,0.12);border-radius:7px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:0.85rem;color:var(--teal);transition:all 0.15s;flex-shrink:0;}
+.cal-arrow:hover{background:var(--teal);color:white;border-color:var(--teal);}
+.cal-mlbl{font-size:0.95rem;font-weight:700;color:var(--teal);}
+.cal-g{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;}
+.cal-dh{text-align:center;font-size:0.62rem;font-weight:700;color:rgba(44,74,82,0.38);letter-spacing:0.06em;padding:4px 0 8px;}
+.cal-d{aspect-ratio:1;border-radius:7px;border:1.5px solid transparent;display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:500;color:var(--dark);position:relative;transition:all 0.12s;}
+.cal-d.empty,.cal-d.past{color:rgba(44,74,82,0.18);cursor:default;}
+.cal-d.no{color:rgba(44,74,82,0.22);cursor:default;}
+.cal-d.yes{cursor:pointer;border-color:rgba(10,77,92,0.08);background:rgba(10,77,92,0.02);}
+.cal-d.yes:hover{border-color:var(--teal);background:rgba(10,77,92,0.07);transform:scale(1.06);}
+.cal-d.yes::after{content:'';position:absolute;bottom:3px;left:50%;transform:translateX(-50%);width:4px;height:4px;border-radius:50%;background:#22c55e;}
+.cal-d.today-ring:not(.picked){border-color:var(--coral);color:var(--coral);font-weight:700;}
+.cal-d.picked{background:var(--teal)!important;border-color:var(--teal)!important;color:white!important;font-weight:700;}
+.cal-d.picked::after{background:rgba(255,255,255,0.6);}
+
+/* TIME SLOTS */
+.slots-area{margin-top:16px;padding-top:16px;border-top:1px solid rgba(10,77,92,0.07);}
+.slots-for{font-size:0.85rem;font-weight:600;color:var(--teal);margin-bottom:12px;}
+.slots-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:8px;}
+.slt{padding:11px 8px;border-radius:8px;border:1.5px solid rgba(10,77,92,0.12);background:white;font-family:'DM Sans',sans-serif;font-size:0.84rem;font-weight:600;color:var(--teal);cursor:pointer;transition:all 0.15s;text-align:center;line-height:1.3;}
+.slt:hover:not(.slt-taken){border-color:var(--coral);color:var(--coral);background:rgba(233,102,69,0.04);}
+.slt.slt-picked{background:var(--coral);border-color:var(--coral);color:white;}
+.slt.slt-taken{background:rgba(44,74,82,0.04);border-color:transparent;color:rgba(44,74,82,0.25);cursor:not-allowed;font-size:0.78rem;}
+.slt-sub{font-size:0.60rem;opacity:0.6;display:block;margin-top:2px;}
+
+.bk-sel-summary{display:none;margin-top:14px;padding:11px 15px;background:rgba(10,77,92,0.06);border:1px solid rgba(10,77,92,0.12);border-radius:8px;font-size:0.87rem;color:var(--teal);font-weight:600;}
+.bk-sel-summary.on{display:flex;align-items:center;gap:8px;}
+
+.dep-row{background:white;border:1px solid rgba(233,102,69,0.18);border-radius:10px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;margin:18px 0;}
+.dep-lbl{font-size:0.85rem;font-weight:600;color:var(--mid);}
+.dep-note{font-size:0.73rem;color:rgba(44,74,82,0.45);margin-top:2px;line-height:1.5;}
+.dep-amt{font-size:1.3rem;font-weight:700;color:var(--coral);}
+.bk-err{background:rgba(200,70,42,0.07);border:1px solid rgba(200,70,42,0.18);border-radius:7px;padding:11px 14px;font-size:0.84rem;color:#c8462a;margin-top:8px;display:none;}
+.bk-acts{display:flex;gap:12px;align-items:center;margin-top:6px;}
+.btn-sub{background:var(--teal);color:white;border:none;padding:16px 32px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;cursor:pointer;transition:all 0.2s;flex:1;}
+.btn-sub:hover{background:var(--teal2);}
+.btn-sub:disabled{opacity:0.48;cursor:not-allowed;}
+.btn-cxl{background:transparent;border:1px solid rgba(10,77,92,0.14);color:var(--mid);padding:16px 22px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.9rem;cursor:pointer;transition:all 0.2s;white-space:nowrap;}
+.btn-cxl:hover{background:rgba(10,77,92,0.04);}
+.stripe-line{font-size:0.72rem;color:rgba(44,74,82,0.38);text-align:center;margin-top:12px;line-height:1.6;}
+
 .coming-soon{background:white;border:1px solid var(--border);border-radius:16px;padding:64px 48px;text-align:center;margin-bottom:48px;}
 .cs-ico{font-size:4rem;margin-bottom:20px;display:block;}
 .cs-title{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:900;color:var(--teal);margin-bottom:14px;}
@@ -142,19 +198,28 @@ footer{background:var(--dark);padding:40px 48px;text-align:center;}
 @media(max-width:900px){.more-grid{grid-template-columns:repeat(2,1fr);}.list-cta{flex-direction:column;padding:36px 28px;gap:28px;text-align:center;}.list-cta::before{display:none;}}
 @media(max-width:768px){
   .nav-ev-link{display:none;}
-  .nav-join{display:none;}nav{padding:16px 20px;top:0;}.hero{padding:105px 20px 48px;}.main{padding:40px 20px 80px;}.op-card-body{padding:24px 20px;}.op-card-header{flex-direction:column;gap:8px;}.hero-top{flex-direction:column;gap:16px;}.notify-form{flex-direction:column;}.coming-soon{padding:40px 24px;}
-}
+  .nav-join{display:none;}nav{padding:16px 20px;top:0;}.hero{padding:105px 20px 48px;}.main{padding:40px 20px 80px;}.op-card-body{padding:24px 20px;}.book-form-wrap{padding:24px 20px;}.op-card-header{flex-direction:column;gap:8px;}.bk-row{grid-template-columns:1fr;}.hero-top{flex-direction:column;gap:16px;}.notify-form{flex-direction:column;}.bk-acts{flex-direction:column;}.btn-sub,.btn-cxl{width:100%;}.slots-row{grid-template-columns:repeat(2,1fr);}.coming-soon{padding:40px 24px;}}
 
-/* ── TOUCH TARGETS ── */
-.nav-join,.plc-btn,.btn-notify,.lc-btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;}
+/* -- SAVE TO FAVORITES -- */
+.fav-btn{position:absolute;top:14px;right:14px;background:rgba(255,255,255,0.92);border:none;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.1rem;transition:all 0.2s;box-shadow:0 2px 8px rgba(0,0,0,0.12);z-index:2;}
+.fav-btn:hover{background:white;transform:scale(1.1);}
+.fav-btn.saved{background:var(--coral);color:white;}
+.fav-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--teal);color:white;padding:10px 22px;border-radius:100px;font-size:0.82rem;font-weight:600;opacity:0;transition:all 0.3s;z-index:9000;pointer-events:none;}
+.fav-toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
-/* ── SHORELIST GUARANTEE ── */
+
+/* -- TOUCH TARGETS -- */
+.btn-fill,.btn-ghost,.btn-ghost-sm,.nav-cta,.nav-cta-sm,.nav-join,.nav-book{min-height:44px;display:inline-flex;align-items:center;justify-content:center;}
+.wl-submit,.plc-btn,.btn-notify,.btn-plan,.btn-reset,.bs-cta,.dm-link,.shore-popup-btn{min-height:44px;}
+
+
+/* -- SHORELIST GUARANTEE -- */
 .guarantee-bar{background:rgba(26,122,74,0.08);border:1px solid rgba(26,122,74,0.18);border-radius:10px;padding:12px 18px;display:flex;align-items:center;gap:10px;margin-bottom:20px;flex-wrap:wrap;}
 .gb-ico{font-size:1.2rem;flex-shrink:0;}
 .gb-text{font-size:0.82rem;color:#1a5c32;font-weight:600;line-height:1.5;}
 .gb-text span{font-weight:400;color:rgba(26,92,50,0.70);}
 
-/* ── PROGRESS STEPS ── */
+/* -- PROGRESS STEPS -- */
 .booking-steps{display:flex;align-items:center;gap:0;margin-bottom:28px;background:rgba(10,77,92,0.03);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
 .bs-step{flex:1;padding:10px 14px;display:flex;align-items:center;gap:6px;font-size:0.72rem;font-weight:600;color:rgba(44,74,82,0.45);border-right:1px solid var(--border);justify-content:center;white-space:nowrap;}
 .bs-step:last-child{border-right:none;}
@@ -162,6 +227,7 @@ footer{background:var(--dark);padding:40px 48px;text-align:center;}
 .bs-step-n{font-size:0.65rem;background:rgba(44,74,82,0.15);border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;}
 .bs-step.active .bs-step-n{background:rgba(255,255,255,0.25);}
 @media(max-width:600px){.bs-step span:not(.bs-step-n){display:none;}.bs-step{padding:10px 8px;}}
+
 
 /* PARANORMAL GHOST TOURS THEME */
 .cat-ghost-banner{background:linear-gradient(135deg,rgba(26,5,51,0.95),rgba(74,14,143,0.90));border:1px solid rgba(108,62,156,0.40);border-radius:14px;padding:20px 24px;margin-bottom:24px;position:relative;overflow:hidden;}
@@ -183,8 +249,6 @@ footer{background:var(--dark);padding:40px 48px;text-align:center;}
   nav{padding:14px 16px;}
   .nav-back{font-size:0.70rem;letter-spacing:0.05em;}
 }
-
-/* SVG ICON SYSTEM */
 .ico,.ico-xs,.ico-sm,.ico-md,.ico-lg{display:inline-block;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle;flex-shrink:0;}
 .ico{width:1.6rem;height:1.6rem;}
 .ico-xs{width:0.95rem;height:0.95rem;stroke-width:1.8;}
@@ -195,15 +259,18 @@ footer{background:var(--dark);padding:40px 48px;text-align:center;}
 .cgb-svg{width:2.4rem;height:2.4rem;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;color:#c084fc;}
 .more-ico svg{width:1.9rem;height:1.9rem;color:var(--teal);stroke-width:1.5;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;}
 .more-card:hover .more-ico svg{color:var(--coral);}
+
 .hero-icon{display:inline-flex;}
 .hero-icon svg{width:2.4rem;height:2.4rem;color:var(--cream);stroke-width:1.4;}
 .cs-ico{display:inline-flex;justify-content:center;width:100%;margin-bottom:20px;}
 .cs-ico svg{width:3.5rem;height:3.5rem;color:var(--teal);stroke-width:1.3;}
 .more-ico{display:inline-flex;}
+.cd-svg{color:var(--cream);}
 .cgb-ico{display:inline-flex;}
 .cgb-ico svg{width:2.2rem;height:2.2rem;color:#c084fc;stroke-width:1.4;}
 .gb-ico{display:inline-flex;align-items:center;}
 .gb-ico svg{width:1.2rem;height:1.2rem;color:#1a7a4a;stroke-width:1.7;}
+
 </style>
 <!-- ── ANALYTICS: Replace G-XXXXXXXXXX with your GA4 Measurement ID from analytics.google.com ── -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -219,7 +286,7 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
 </script>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="i-ghost" viewBox="0 0 24 24"><path d="M5 9a7 7 0 0 1 14 0v11l-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5Z"/><circle cx="9.5" cy="11" r="0.9" fill="currentColor" stroke="none"/><circle cx="14.5" cy="11" r="0.9" fill="currentColor" stroke="none"/></symbol><symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="1"/><path d="M3 11h18"/><path d="M7.5 6l-2 5"/><path d="M11.5 6l-2 5"/><path d="M15.5 6l-2 5"/><path d="M19.5 6l-2 5"/></symbol><symbol id="i-fish" viewBox="0 0 24 24"><path d="M3 12c3-4 7-4 11 0-4 4-8 4-11 0z"/><path d="M14 12l4-3v6z"/><circle cx="7" cy="11" r="0.6" fill="currentColor" stroke="none"/></symbol><symbol id="i-kayak" viewBox="0 0 24 24"><path d="M4 13c1 3 4 5 8 5s7-2 8-5"/><path d="M4 13l1-2h14l1 2"/><path d="M9 4l-3 7"/><path d="M15 4l3 7"/></symbol><symbol id="i-ship" viewBox="0 0 24 24"><path d="M3 17c2 1 4 1 6 0s4-1 6 0 4 1 6 0"/><path d="M4 14l8-3 8 3"/><path d="M8 14V9h8v5"/><path d="M11 9V6h2v3"/></symbol><symbol id="i-surf" viewBox="0 0 24 24"><path d="M2 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M16 3c-4 1-9 5-11 9l3 1c2-4 5-8 9-9z"/></symbol><symbol id="i-paddleboard" viewBox="0 0 24 24"><ellipse cx="12" cy="16" rx="9" ry="3"/><path d="M13 16V7l-2-3"/></symbol><symbol id="i-bike" viewBox="0 0 24 24"><circle cx="6" cy="16" r="3.5"/><circle cx="18" cy="16" r="3.5"/><path d="M6 16l5-8h4l3 8"/><path d="M9 8h4"/></symbol><symbol id="i-dolphin" viewBox="0 0 24 24"><path d="M3 14c2-5 7-7 12-6 2 0 4-1 6-3-1 5-3 8-6 9-3 4-7 5-12 0z"/><circle cx="16" cy="11" r="0.7" fill="currentColor" stroke="none"/></symbol><symbol id="i-ebike" viewBox="0 0 24 24"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17l3-5h2l-2 4h4l-2 5"/><path d="M14 12l3 5"/></symbol><symbol id="i-scooter" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 18h10l3-9h-3"/><path d="M14 9l-2-5h-2"/></symbol><symbol id="i-jetski" viewBox="0 0 24 24"><path d="M3 16c1 2 3 3 5 3h10c3 0 5-1 6-3l-5-5h-7l-3 4z"/><path d="M11 14V8h2"/><path d="M3 19c2 1 4 1 6 0"/></symbol><symbol id="i-golf" viewBox="0 0 24 24"><path d="M7 21V4"/><path d="M7 4l11 3-11 3"/><circle cx="7" cy="21" r="0.8" fill="currentColor" stroke="none"/></symbol><symbol id="i-sailboat" viewBox="0 0 24 24"><path d="M12 3v15"/><path d="M12 4l-7 14h14z"/><path d="M3 18c2 2 4 3 6 3h6c2 0 4-1 6-3"/></symbol><symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.3C15.5 5 17 4 19 2c1 2 2 5 2 8a7 7 0 0 1-7 7"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></symbol><symbol id="i-camera" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l2-3h4l2 3"/><circle cx="12" cy="13.5" r="3.5"/></symbol><symbol id="i-basket" viewBox="0 0 24 24"><path d="M4 10h16l-1 10H5z"/><path d="M7 10a5 5 0 0 1 10 0"/><path d="M4 14h16"/></symbol><symbol id="i-umbrella" viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M2 11a10 10 0 0 1 20 0c-1.5-1.2-3-1.5-5-1.5s-3.5 1-5 2c-1.5-1-3-2-5-2s-3.5.3-5 1.5z"/></symbol><symbol id="i-lotus" viewBox="0 0 24 24"><path d="M12 4c-1.5 3-4 5-7 6 3 1 5.5 3 7 6 1.5-3 4-5 7-6-3-1-5.5-3-7-6z"/><path d="M12 11c-2 0-3.5 1.5-3.5 3 1 1 2 1.5 3.5 1.5s2.5-.5 3.5-1.5c0-1.5-1.5-3-3.5-3z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></symbol><symbol id="i-hotel" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 8h.01M12 8h.01M16 8h.01M8 12h.01M12 12h.01M16 12h.01M10 21v-5h4v5"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></symbol><symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5.6 5.6l4.2 4.2M14.2 14.2l4.2 4.2M5.6 18.4l4.2-4.2M14.2 9.8l4.2-4.2"/></symbol><symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 10c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></symbol><symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 16l3-7 5 5z"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></symbol><symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.5 3-6 6-6s6 2.5 6 6"/><circle cx="17" cy="10" r="2.5"/><path d="M15 16c2-1 4-1 6 1"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 7 9-7"/></symbol></defs></svg>
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="i-ghost" viewBox="0 0 24 24"><path d="M5 9a7 7 0 0 1 14 0v11l-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5Z"/><circle cx="9.5" cy="11" r="0.9" fill="currentColor" stroke="none"/><circle cx="14.5" cy="11" r="0.9" fill="currentColor" stroke="none"/></symbol><symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="1"/><path d="M3 11h18"/><path d="M7.5 6l-2 5"/><path d="M11.5 6l-2 5"/><path d="M15.5 6l-2 5"/><path d="M19.5 6l-2 5"/></symbol><symbol id="i-fish" viewBox="0 0 24 24"><path d="M3 12c3-4 7-4 11 0-4 4-8 4-11 0z"/><path d="M14 12l4-3v6z"/><circle cx="7" cy="11" r="0.6" fill="currentColor" stroke="none"/></symbol><symbol id="i-kayak" viewBox="0 0 24 24"><path d="M4 13c1 3 4 5 8 5s7-2 8-5"/><path d="M4 13l1-2h14l1 2"/><path d="M9 4l-3 7"/><path d="M15 4l3 7"/></symbol><symbol id="i-ship" viewBox="0 0 24 24"><path d="M3 17c2 1 4 1 6 0s4-1 6 0 4 1 6 0"/><path d="M4 14l8-3 8 3"/><path d="M8 14V9h8v5"/><path d="M11 9V6h2v3"/></symbol><symbol id="i-surf" viewBox="0 0 24 24"><path d="M2 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M16 3c-4 1-9 5-11 9l3 1c2-4 5-8 9-9z"/></symbol><symbol id="i-paddleboard" viewBox="0 0 24 24"><ellipse cx="12" cy="16" rx="9" ry="3"/><path d="M13 16V7l-2-3"/></symbol><symbol id="i-bike" viewBox="0 0 24 24"><circle cx="6" cy="16" r="3.5"/><circle cx="18" cy="16" r="3.5"/><path d="M6 16l5-8h4l3 8"/><path d="M9 8h4"/></symbol><symbol id="i-dolphin" viewBox="0 0 24 24"><path d="M3 14c2-5 7-7 12-6 2 0 4-1 6-3-1 5-3 8-6 9-3 4-7 5-12 0z"/><circle cx="16" cy="11" r="0.7" fill="currentColor" stroke="none"/></symbol><symbol id="i-ebike" viewBox="0 0 24 24"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17l3-5h2l-2 4h4l-2 5"/><path d="M14 12l3 5"/></symbol><symbol id="i-scooter" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 18h10l3-9h-3"/><path d="M14 9l-2-5h-2"/></symbol><symbol id="i-jetski" viewBox="0 0 24 24"><path d="M3 16c1 2 3 3 5 3h10c3 0 5-1 6-3l-5-5h-7l-3 4z"/><path d="M11 14V8h2"/><path d="M3 19c2 1 4 1 6 0"/></symbol><symbol id="i-golf" viewBox="0 0 24 24"><path d="M7 21V4"/><path d="M7 4l11 3-11 3"/><circle cx="7" cy="21" r="0.8" fill="currentColor" stroke="none"/></symbol><symbol id="i-sailboat" viewBox="0 0 24 24"><path d="M12 3v15"/><path d="M12 4l-7 14h14z"/><path d="M3 18c2 2 4 3 6 3h6c2 0 4-1 6-3"/></symbol><symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.3C15.5 5 17 4 19 2c1 2 2 5 2 8a7 7 0 0 1-7 7"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></symbol><symbol id="i-camera" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l2-3h4l2 3"/><circle cx="12" cy="13.5" r="3.5"/></symbol><symbol id="i-basket" viewBox="0 0 24 24"><path d="M4 10h16l-1 10H5z"/><path d="M7 10a5 5 0 0 1 10 0"/><path d="M4 14h16"/></symbol><symbol id="i-umbrella" viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M2 11a10 10 0 0 1 20 0c-1.5-1.2-3-1.5-5-1.5s-3.5 1-5 2c-1.5-1-3-2-5-2s-3.5.3-5 1.5z"/></symbol><symbol id="i-lotus" viewBox="0 0 24 24"><path d="M12 4c-1.5 3-4 5-7 6 3 1 5.5 3 7 6 1.5-3 4-5 7-6-3-1-5.5-3-7-6z"/><path d="M12 11c-2 0-3.5 1.5-3.5 3 1 1 2 1.5 3.5 1.5s2.5-.5 3.5-1.5c0-1.5-1.5-3-3.5-3z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></symbol><symbol id="i-hotel" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 8h.01M12 8h.01M16 8h.01M8 12h.01M12 12h.01M16 12h.01M10 21v-5h4v5"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></symbol><symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5.6 5.6l4.2 4.2M14.2 14.2l4.2 4.2M5.6 18.4l4.2-4.2M14.2 9.8l4.2-4.2"/></symbol><symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 10c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></symbol><symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 16l3-7 5 5z"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></symbol><symbol id="i-volume" viewBox="0 0 24 24"><path d="M11 5L6 9H3v6h3l5 4z"/><path d="M15 9c1.5 1.5 1.5 4.5 0 6"/><path d="M18 6c3 3 3 9 0 12"/></symbol><symbol id="i-volume-off" viewBox="0 0 24 24"><path d="M11 5L6 9H3v6h3l5 4z"/><path d="M22 9l-6 6M16 9l6 6"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z" fill="currentColor" stroke="none"/></symbol><symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol><symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.5 3-6 6-6s6 2.5 6 6"/><circle cx="17" cy="10" r="2.5"/><path d="M15 16c2-1 4-1 6 1"/></symbol><symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="0.8" fill="currentColor" stroke="none"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 7 9-7"/></symbol><symbol id="i-tv" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M8 22h8"/><path d="M12 19v3"/></symbol><symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 22c5 0 8-3 8-7 0-3-2-5-3-7-1 2-3 2-3-1 0-2-1-4-3-5-1 4-5 6-5 12 0 5 3 8 6 8z"/></symbol></defs></svg>
 
 <a href="#main" class="skip-link">Skip to content</a>
 
@@ -294,87 +361,207 @@ var OPS={
   'film-tours':[
     {id:'ron-film',business:'Wilmywood Insider Tours',operator:'Industry Insider & Local Expert',title:'20+ Years in the Wilmington Film & Hospitality Industry',
      desc:'Wilmington isn\'t just a beach town &#8212; it\'s one of the most filmed cities in America. One Tree Hill. Dawson\'s Creek. Iron Man 3. Safe Haven. A Walk to Remember. Hundreds of productions have called Wilmington home. Your guide has spent over two decades working inside the Wilmington film and hospitality industry and knows the stories behind the sets, the locations, and the legends that most tourists never hear. This isn\'t a bus tour reading from a brochure. This is Wilmywood &#8212; from the inside.',
-     price:'$45',priceLabel:'per person',
-     tags:['Downtown Wilmington','90 Minutes','All Ages','Film History']}
+     price:'$45',priceLabel:'per person',priceCents:4500,
+     tags:['Downtown Wilmington','90 Minutes','All Ages','Film History'],
+     note:'Secure your spot online. Balance due at tour.',
+     schedule:{days:[3,4,5,6,0],slots:['10:00 AM','2:00 PM','6:00 PM']}}
   ],
   'ghost-tours':[
-    {id:'sean-ghost',business:'Wilmington Paranormal Investigations',operator:'Sean Austin',title:'Netflix & Travel Channel Paranormal Investigator',
-     desc:'Sean Austin is one of America&rsquo;s most recognized paranormal investigators &mdash; star of <em>28 Days Haunted</em> on Netflix, lead investigator on <em>Ghost Loop</em> on Travel Channel/Discovery+, and featured on <em>The Demon Files</em>. Trained demonologist. Psychic medium. Published author of <em>Shadow Chaser</em>. Founder of the Spirit Phone Innovations (SPI) App. His guided paranormal investigations of Wilmington&rsquo;s most historically haunted sites are available <strong>exclusively on ShoreList</strong> &mdash; you will not find this anywhere else.',
-     price:'$25',priceLabel:'per person',
-     tags:['Netflix','Travel Channel','16+ Years Experience','Exclusive to ShoreList','Downtown Wilmington']},
+    {id:'sean-ghost',business:'Sean Austin\'s Wilmington Ghost Walk',operator:'Sean Austin',title:'Led by a Netflix &amp; Travel Channel Paranormal Investigator',
+     desc:'This is the most unforgettable ghost walk in Wilmington &mdash; 90 minutes through the haunted heart of one of America&rsquo;s oldest cities, led by Sean Austin: star of Netflix&rsquo;s <em>28 Days Haunted</em>, lead investigator on Travel Channel&rsquo;s <em>Ghost Loop</em> (now on Discovery+), and featured on <em>The Demon Files</em>. Trained demonologist, psychic medium, and published author of <em>Shadow Chaser</em>, Sean brings 16+ years of real paranormal investigation to the city&rsquo;s most haunted streets, antebellum mansions, and burial grounds. Family-friendly, endlessly fascinating, and impossible to forget &mdash; available <strong>exclusively on ShoreList</strong>.',
+     price:'$30',priceLabel:'per person',priceCents:3000,
+     tags:['Netflix','Travel Channel','90 Minutes','All Ages','Exclusive to ShoreList','Downtown Wilmington'],
+     note:'Led by Sean Austin &mdash; nationally recognized paranormal TV investigator. Secure your spot online. Exclusive to ShoreList.',
+     schedule:{days:[4,5,6,0],slots:['7:00 PM','8:30 PM','10:00 PM']}},
     {id:'rj-historic',business:'Historic Wilmington Walking Tours',operator:'RJ Brideau',title:'Local Guide & ShoreList Founder',
      desc:'Explore the remarkable history of Wilmington &#8212; one of the most historically significant cities in the American South &#8212; with RJ Brideau. Walk through neighborhoods of stunning antebellum homes, hear stories of the city\'s colonial roots, its role in the Civil War, and the powerful personalities who shaped it.',
-     price:'$28',priceLabel:'per person',
-     tags:['Historic District','75 Minutes','All Ages','Daytime & Evening']}
+     price:'$28',priceLabel:'per person',priceCents:2800,
+     tags:['Historic District','75 Minutes','All Ages','Daytime & Evening'],
+     note:'Secure your spot online. Balance due at tour.',
+     schedule:{days:[3,4,5,6,0],slots:['10:00 AM','2:00 PM','6:00 PM']}}
   ],
   'surf-lessons':[
     {id:'james-surf',business:'Carolina Beach Surf Co.',operator:'Certified Local Instructor',title:'Professional Surf Instructor &middot; 10+ Years Experience',
      desc:'Learn to surf at one of the best beginner beaches on the East Coast with a certified local instructor who has spent years teaching in these exact waters. Whether you\'ve never touched a board or want to level up your skills, this lesson is fun, safe, and unforgettable. Every session is tailored to your level. All equipment included &#8212; board, wetsuit, and rash guard.',
-     price:'$75',priceLabel:'per person',
-     tags:['Carolina Beach','2 Hours','All Skill Levels','All Gear Included']}
+     price:'$100',priceLabel:'per person',priceCents:10000,
+     tags:['Carolina Beach','2 Hours','All Skill Levels','All Gear Included'],
+     note:'Secure your spot online. Balance due at lesson.',
+     schedule:{days:[1,2,4,5,6,0],slots:['8:00 AM','10:00 AM','12:00 PM','2:00 PM']}}
   ],
   'nature-walks':[
     {id:'rj-nature',business:'Coastal Carolina Nature Walks',operator:'RJ Brideau',title:'Local Naturalist & Guide',
      desc:'Discover the wild, beautiful natural world of coastal North Carolina with RJ Brideau. From ancient cypress swamps and carnivorous plant bogs of Carolina Beach State Park to pristine maritime forests and tidal marshes, these guided walks reveal the incredible biodiversity that makes this coast so special.',
-     price:'$35',priceLabel:'per person',
-     tags:['Carolina Beach State Park','2 Hours','Family Friendly','Wildlife & Plants']}
+     price:'$35',priceLabel:'per person',priceCents:3500,
+     tags:['Carolina Beach State Park','2 Hours','Family Friendly','Wildlife & Plants'],
+     note:'Secure your spot online. Balance due at walk.',
+     schedule:{days:[3,6,0],slots:['8:00 AM','10:00 AM','2:00 PM']}}
   ]
 };
 
+/* CALENDAR ENGINE */
+var CS={};
+var MN=['January','February','March','April','May','June','July','August','September','October','November','December'];
+var DW=['Su','Mo','Tu','We','Th','Fr','Sa'];
+
+function calInit(id,sched){
+  var n=new Date();
+  CS[id]={y:n.getFullYear(),m:n.getMonth(),date:null,slot:null,sched:sched,booked:{},loaded:{}};
+  calDraw(id);
+  calLoad(id,n.getFullYear(),n.getMonth()+1);
+}
+
+function calDraw(id){
+  var s=CS[id]; if(!s) return;
+  var ml=document.getElementById('cm-'+id); if(ml) ml.textContent=MN[s.m]+' '+s.y;
+  var g=document.getElementById('cg-'+id); if(!g) return;
+  var today=new Date(); today.setHours(0,0,0,0);
+  var tmrw=new Date(today); tmrw.setDate(tmrw.getDate()+1);
+  var first=new Date(s.y,s.m,1);
+  var dim=new Date(s.y,s.m+1,0).getDate();
+  var fdow=first.getDay();
+  var h=''; DW.forEach(function(d){h+='<div class="cal-dh">'+d+'</div>';}); 
+  for(var i=0;i<fdow;i++) h+='<div class="cal-d empty"></div>';
+  for(var day=1;day<=dim;day++){
+    var dt=new Date(s.y,s.m,day); dt.setHours(0,0,0,0);
+    var ds=pad(s.y)+'-'+pad(s.m+1)+'-'+pad(day);
+    var dow=dt.getDay();
+    var past=dt<tmrw;
+    var avail=!past&&s.sched.days.indexOf(dow)!==-1;
+    var sel=s.date===ds;
+    var tod=dt.getTime()===today.getTime();
+    var cls='cal-d'+(past?' past':avail?' yes':' no')+(sel?' picked':'')+(tod&&!sel?' today-ring':'');
+    var oc=avail?' onclick="cpick(\''+id+'\',\''+ds+'\')\"':'';
+    h+='<div class="'+cls+'"'+oc+'>'+day+'</div>';
+  }
+  g.innerHTML=h;
+  if(s.date) slotDraw(id);
+}
+
+function cpick(id,ds){
+  var s=CS[id]; if(!s) return;
+  s.date=ds; s.slot=null;
+  document.getElementById('hd-'+id).value='';
+  document.getElementById('ht-'+id).value='';
+  sumHide(id);
+  calDraw(id);
+  slotDraw(id);
+}
+
+function slotDraw(id){
+  var s=CS[id]; if(!s||!s.date) return;
+  var w=document.getElementById('sw-'+id); if(!w) return;
+  var taken=s.booked[s.date]||[];
+  var do2=new Date(s.date+'T12:00:00');
+  var lbl=do2.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
+  var h='<div class="slots-area"><div class="slots-for">Available times for <strong>'+lbl+'</strong></div><div class="slots-row">';
+  s.sched.slots.forEach(function(sl){
+    var tk=taken.indexOf(sl)!==-1;
+    var pk=s.slot===sl;
+    var cls='slt'+(tk?' slt-taken':'')+(pk?' slt-picked':'');
+    var oc=tk?'':' onclick="spick(\''+id+'\',\''+sl.replace(/'/g,"\\'")+'\')"';
+    h+='<button type="button" class="'+cls+'"'+oc+'>'+sl+(tk?'<span class="slt-sub">Sold Out</span>':'')+'</button>';
+  });
+  h+='</div></div>';
+  w.innerHTML=h;
+}
+
+function spick(id,sl){
+  var s=CS[id]; if(!s) return;
+  s.slot=sl;
+  document.getElementById('hd-'+id).value=s.date;
+  document.getElementById('ht-'+id).value=sl;
+  sumShow(id);
+  slotDraw(id);
+  var sum=document.getElementById('ss-'+id);
+  if(sum) setTimeout(function(){sum.scrollIntoView({behavior:'smooth',block:'nearest'});},60);
+}
+
+function sumShow(id){
+  var s=CS[id]; var el=document.getElementById('ss-'+id); if(!el||!s||!s.date||!s.slot) return;
+  var do2=new Date(s.date+'T12:00:00');
+  var fmt=do2.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
+  el.innerHTML='&#10003;&nbsp; <strong>'+fmt+' at '+s.slot+'</strong> selected &#8212; tap below to confirm';
+  el.classList.add('on');
+}
+function sumHide(id){var el=document.getElementById('ss-'+id); if(el) el.classList.remove('on');}
+
+function cprev(id){var s=CS[id];if(!s)return;if(s.m===0){s.m=11;s.y--;}else s.m--;s.date=null;s.slot=null;var sw=document.getElementById('sw-'+id);if(sw)sw.innerHTML='';sumHide(id);calDraw(id);calLoad(id,s.y,s.m+1);}
+function cnext(id){var s=CS[id];if(!s)return;if(s.m===11){s.m=0;s.y++;}else s.m++;s.date=null;s.slot=null;var sw=document.getElementById('sw-'+id);if(sw)sw.innerHTML='';sumHide(id);calDraw(id);calLoad(id,s.y,s.m+1);}
+
+function calLoad(id,y,m){
+  var key=y+'-'+m; var s=CS[id]; if(!s||s.loaded[key]) return;
+  s.loaded[key]=true;
+  fetch('/.netlify/functions/get-availability?operatorId='+encodeURIComponent(id)+'&year='+y+'&month='+m)
+    .then(function(r){return r.json();})
+    .then(function(data){
+      (data.booked||[]).forEach(function(b){
+        if(!b.date||!b.timeSlot) return;
+        if(!s.booked[b.date]) s.booked[b.date]=[];
+        if(s.booked[b.date].indexOf(b.timeSlot)===-1) s.booked[b.date].push(b.timeSlot);
+      });
+      calDraw(id);
+    }).catch(function(){});
+}
+
+function pad(n){return String(n).padStart(2,'0');}
+
+/* FORM */
+  // Calendar init - bookings coming soon
 function getCat(){return new URLSearchParams(window.location.search).get('cat')||'';}
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
 function renderPage(){
   var cat=getCat(); var d=CAT_DATA[cat]; if(!d){window.location.href='/';return;}
-  document.title=d.title+' — ShoreList Wilmington, NC';
+  document.title=d.title+' &#8212; ShoreList Wilmington, NC';
   document.getElementById('hico').innerHTML=d.icon;
   document.getElementById('htitle').textContent=d.title;
   document.getElementById('hsub').textContent=d.sub;
   document.getElementById('hbc').textContent=d.title;
   var ops=OPS[cat]||[];
   var mh='';
-  if(ops.length>0){mh+='<div class="hm-badge live">'+ops.length+' Operator'+(ops.length>1?'s':'')+' Lined Up</div>';mh+='<div class="hm-badge">Waitlist Open Now</div>';mh+='<div class="hm-badge">Bookings Opening Soon</div>';mh+='<div class="hm-badge">Secure Checkout via Stripe</div>';}
+  if(ops.length>0){mh+='<div class="hm-badge live">'+ops.length+' Operator'+(ops.length>1?'s':'')+' Ready to Book</div>';mh+='<div class="hm-badge">Waitlist Open Now</div>';mh+='<div class="hm-badge">Bookings Opening Soon</div>';mh+='<div class="hm-badge">Secure Checkout via Stripe</div>';}
   else{mh+='<div class="hm-badge">Coming Soon</div>';mh+='<div class="hm-badge">Notify Me</div>';}
   document.getElementById('hmeta').innerHTML=mh;
 
   var h='';
   if(ops.length>0){
-    h+='<div class="section-label">Reserve Priority Access</div>';
+    h+='<div class="section-label">Book an Experience</div>';
     h+='<h2 class="section-title">Our <em>Local Operators</em></h2>';
     h+='<p class="section-sub">Bookings open soon. Drop your email below or <a href="/waitlist" style="color:var(--coral);font-weight:600;">join the full waitlist</a> to tell us more about your trip.</p>';
-    h+='<div class="guarantee-bar">';
-    h+='<span class="gb-ico" style="color:#1a7a4a;display:inline-flex;align-items:center;"><svg class="ico-sm" aria-hidden="true" focusable="false"><use href="#i-shield" xlink:href="#i-shield"/></svg></span>';
-    h+='<div class="gb-text">ShoreList Guarantee &nbsp;&mdash;&nbsp; <span>Operators we know personally. Full refund if you cancel 24+ hours before your experience.</span></div>';
+    h+='<div class=\"guarantee-bar\">';
+    h+='<span class=\"gb-ico\" style=\"color:#1a7a4a;display:inline-flex;align-items:center;\"><svg class=\"ico-sm\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-shield\" xlink:href=\"#i-shield\"/></svg></span>';
+    h+='<div class=\"gb-text\">ShoreList Guarantee &nbsp;&mdash;&nbsp; <span>Operators we know personally. Full refund if you cancel 24+ hours before your experience.</span></div>';
     h+='</div>';
-    h+='<div class="booking-steps">';
-    h+='<div class="bs-step"><span class="bs-step-n">1</span><span>Browse</span></div>';
-    h+='<div class="bs-step active"><span class="bs-step-n">2</span><span>Experience</span></div>';
-    h+='<div class="bs-step"><span class="bs-step-n">3</span><span>Reserve Securely</span></div>';
-    h+='<div class="bs-step"><span class="bs-step-n">4</span><span>Show Up &amp; Enjoy</span></div>';
+    h+='<div class=\"booking-steps\">';
+    h+='<div class=\"bs-step\"><span class=\"bs-step-n\">1</span><span>Browse</span></div>';
+    h+='<div class=\"bs-step active\"><span class=\"bs-step-n\">2</span><span>Experience</span></div>';
+    h+='<div class=\"bs-step\"><span class=\"bs-step-n\">3</span><span>Book Securely</span></div>';
+    h+='<div class=\"bs-step\"><span class=\"bs-step-n\">4</span><span>Show Up &amp; Enjoy</span></div>';
     h+='</div>';
-    h+='<div class="operator-grid">';
+    h+='<div class=\"operator-grid\">';
     ops.forEach(function(op){
       var oid=esc(op.id);
       h+='<div class="op-card" id="card-'+oid+'">';
       h+='<div class="op-card-body">';
-      h+='<div class="op-card-header"><div><div class="op-live-badge"><span class="op-live-dot"></span>Lined Up for Launch</div><div class="op-business-name">'+esc(op.business)+'</div><div class="op-operator-name">'+esc(op.operator)+' &nbsp;&middot;&nbsp; '+esc(op.title)+'</div></div><div class="op-price-tag"><div class="op-price">'+esc(op.price)+'</div><div class="op-price-label">'+esc(op.priceLabel)+'</div></div></div>';
+      h+='<div class="op-card-header"><div><div class="op-live-badge"><span class="op-live-dot"></span>Available to Book</div><div class="op-business-name">'+esc(op.business)+'</div><div class="op-operator-name">'+esc(op.operator)+' &nbsp;&middot;&nbsp; '+esc(op.title)+'</div></div><div class="op-price-tag"><div class="op-price">'+esc(op.price)+'</div><div class="op-price-label">'+esc(op.priceLabel)+'</div></div></div>';
       h+='<p class="op-desc">'+esc(op.desc)+'</p>';
       h+='<div class="op-tags">'; op.tags.forEach(function(t){h+='<span class="op-tag">'+esc(t)+'</span>';}); h+='</div>';
       h+='<div class="op-divider"></div>';
       h+='<div class="op-book-row"><div class="op-book-note-pre">Bookings open <strong>June 1st</strong> &#8212; drop your email below to be first in line when we launch.</div></div>';
       h+='<div style="font-size:0.75rem;color:rgba(44,74,82,0.45);margin-top:8px;line-height:1.6;">By booking through ShoreList you acknowledge activities involve inherent risks and agree to our <a href="/legal#risk" style="color:var(--teal2);">Terms &amp; Assumption of Risk</a>. Full refunds available with 24+ hours cancellation notice. Operators are independent contractors, not employees of ShoreList.</div>';
-      h+='</div>';
+      h+='</div>'; // end op-card-body
+      // Pre-launch capture card
       h+='<div style="padding:0 40px 32px;">';
       h+='<div class="prelaunch-card">';
-      h+='<div class="plc-left"><div class="plc-tag">&#10022; Reserve Priority Access</div><div class="plc-title">Reserve with '+esc(op.business)+'</div><div class="plc-sub">Drop your email. We\'ll notify you the moment bookings go live &#8212; before we announce it anywhere else.</div></div>';
-      h+='<div class="plc-form"><input class="plc-input" type="email" id="plc-'+oid+'" placeholder="your@email.com" autocomplete="email" aria-label="Your email address"/><button class="plc-btn" onclick="doPrelaunch(\''+oid+'\',\''+esc(op.business)+'\')">Notify Me &#8594;</button><div class="plc-done" id="plcd-'+oid+'">&#10003; You\'re on the list!</div></div>';
+      h+='<div class="plc-left"><div class="plc-tag">&#10022; Reserve Early</div><div class="plc-title">Reserve with '+esc(op.business)+'</div><div class="plc-sub">Drop your email. We\'ll notify you the moment bookings go live &#8212; before we announce it anywhere else.</div></div>';
+      h+='<div class="plc-form"><input class="plc-input" type="email" id="plc-'+oid+'" placeholder="your@email.com" autocomplete="email"/><button class="plc-btn" onclick="doPrelaunch(\''+oid+'\',\''+esc(op.business)+'\')">Notify Me &#8594;</button><div class="plc-done" id="plcd-'+oid+'">&#10003; You\'re on the list!</div></div>';
       h+='</div>';
       h+='</div>';
-      h+='</div>';
+      h+='</div>'; // end op-card
     });
-    h+='</div>';
+    h+='</div>'; // end operator-grid
   } else {
-    h+='<div class="coming-soon"><span class="cs-ico">'+d.icon+'</span><h2 class="cs-title">'+esc(d.title)+' &#8212; Coming Soon</h2><p class="cs-sub">We\'re signing local '+esc(d.title.toLowerCase())+' operators right now. Drop your email and we\'ll notify you the moment bookings go live.</p><div class="notify-form"><input class="notify-inp" type="email" id="ni-'+esc(cat)+'" placeholder="your@email.com" autocomplete="email" aria-label="Your email address"/><button class="btn-notify" onclick="doNotify(\''+esc(cat)+'\',\''+esc(d.title)+'\')">Notify Me</button></div><div class="notify-done" id="nd-'+esc(cat)+'">Got it! We\'ll email you when '+esc(d.title)+' goes live. &#10003;</div></div>';
+    h+='<div class="coming-soon"><span class="cs-ico">'+d.icon+'</span><h2 class="cs-title">'+esc(d.title)+' &#8212; Coming Soon</h2><p class="cs-sub">We\'re signing local '+esc(d.title.toLowerCase())+' operators right now. Drop your email and we\'ll notify you the moment bookings go live.</p><div class="notify-form"><input class="notify-inp" type="email" id="ni-'+esc(cat)+'" placeholder="your@email.com" autocomplete="email"/><button class="btn-notify" onclick="doNotify(\''+esc(cat)+'\',\''+esc(d.title)+'\')">Notify Me</button></div><div class="notify-done" id="nd-'+esc(cat)+'">Got it! We\'ll email you when '+esc(d.title)+' goes live. &#10003;</div></div>';
   }
 
   h+='<div class="list-cta"><div class="lc-text"><div class="lc-tag">For Local Operators</div><div class="lc-title">Run a '+esc(d.title)+' business in Wilmington?</div><div class="lc-sub">Get listed on ShoreList free. No upfront cost, no monthly fees. Commission only on completed bookings. We put your listing directly in front of thousands of visitors already looking for something to do.</div></div><a href="/join" class="lc-btn">List Your Business Free &rarr;</a></div>';
@@ -390,6 +577,7 @@ function renderPage(){
   h+='</div></div>';
 
   document.getElementById('mc').innerHTML=h;
+  // Calendar init disabled &#8212; bookings coming soon
 }
 
 function doPrelaunch(id,business){
@@ -414,8 +602,8 @@ function doNotify(cat,title){
 
 document.addEventListener('DOMContentLoaded',renderPage);
 </script>
-
 <!-- favorites feature removed — no UI affordance -->
+
 
 <script>
 /* Show paranormal banner when ghost-tours loaded */
@@ -423,30 +611,69 @@ document.addEventListener('DOMContentLoaded',renderPage);
   var params=new URLSearchParams(window.location.search);
   var cat=params.get('cat')||'';
   if(cat==='ghost-tours'){
+    var container=document.getElementById('op-container')||document.querySelector('.sec-inner');
+    if(container){
+      var banner=document.createElement('div');
+      banner.className='cat-ghost-banner';
+      banner.innerHTML='<div class="cgb-inner">'
+        +'<span class="cgb-ico"><svg class="cgb-svg"><use href="#i-ghost" xlink:href="#i-ghost"/></svg></span>'
+        +'<div class="cgb-body">'
+        +'<div class="cgb-title">&#9889; The Most Unforgettable Ghost Walk in Wilmington</div>'
+        +'<div class="cgb-sub">Sean Austin &mdash; star of Netflix&rsquo;s <strong>28 Days Haunted</strong> and Travel Channel&rsquo;s <strong>Ghost Loop</strong> &mdash; leads his Wilmington Ghost Walk exclusively through ShoreList. A real paranormal TV investigator guiding you through the city&rsquo;s most haunted streets. <a href="https://www.seandaustin.com" target="_blank" rel="noopener noreferrer">Learn more at seandaustin.com &#8599;</a></div>'
+        +'<div class="cgb-badges">'
+        +'<span class="cgb-badge">Netflix</span>'
+        +'<span class="cgb-badge">Travel Channel</span>'
+        +'<span class="cgb-badge">Paranormal Investigator</span>'
+        +'<span class="cgb-badge">Demonologist</span>'
+        +'<span class="cgb-badge cgb-badge-coral">Exclusive to ShoreList</span>'
+        +'</div>'
+        +'</div>'
+        +'</div>';
+      container.insertBefore(banner,container.firstChild);
+    }
+    /* Trigger creepy sound + particles after 1.5s */
     setTimeout(function(){
-      var container=document.querySelector('#mc');
-      if(container){
-        var banner=document.createElement('div');
-        banner.className='cat-ghost-banner';
-        banner.innerHTML='<div class="cgb-inner">'
-          +'<span class="cgb-ico"><svg class="cgb-svg" aria-hidden="true" focusable="false"><use href="#i-ghost" xlink:href="#i-ghost"/></svg></span>'
-          +'<div class="cgb-body">'
-          +'<div class="cgb-title">&#9889; You&rsquo;ve Found Something Rare</div>'
-          +'<div class="cgb-sub">Sean Austin &mdash; star of Netflix&rsquo;s <strong>28 Days Haunted</strong> and Travel Channel&rsquo;s <strong>Ghost Loop</strong> &mdash; offers his guided paranormal investigations of Wilmington exclusively through ShoreList. This is not available anywhere else. <a href="https://www.seandaustin.com" target="_blank" rel="noopener noreferrer">Learn more at seandaustin.com &#8599;</a></div>'
-          +'<div class="cgb-badges">'
-          +'<span class="cgb-badge">Netflix</span>'
-          +'<span class="cgb-badge">Travel Channel</span>'
-          +'<span class="cgb-badge">Paranormal Investigator</span>'
-          +'<span class="cgb-badge">Demonologist</span>'
-          +'<span class="cgb-badge cgb-badge-coral">Exclusive to ShoreList</span>'
-          +'</div>'
-          +'</div>'
-          +'</div>';
-        container.insertBefore(banner,container.firstChild);
-      }
-    },200);
+      try{
+        var AC=window.AudioContext||window.webkitAudioContext;
+        if(AC){
+          var ctx=new AC();
+          var osc=ctx.createOscillator();var gain=ctx.createGain();
+          osc.connect(gain);gain.connect(ctx.destination);
+          osc.type='sawtooth';
+          osc.frequency.setValueAtTime(70,ctx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(30,ctx.currentTime+0.9);
+          gain.gain.setValueAtTime(0,ctx.currentTime);
+          gain.gain.linearRampToValueAtTime(0.06,ctx.currentTime+0.05);
+          gain.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.9);
+          osc.start(ctx.currentTime);osc.stop(ctx.currentTime+0.9);
+        }
+      }catch(e){}
+    },1500);
   }
 })();
+
+/* Booking button paranormal effect */
+function seanEffect(e){
+  try{
+    var AC=window.AudioContext||window.webkitAudioContext;
+    if(AC){
+      var ctx=new AC();var osc=ctx.createOscillator();var gain=ctx.createGain();
+      osc.connect(gain);gain.connect(ctx.destination);osc.type='sawtooth';
+      osc.frequency.setValueAtTime(85,ctx.currentTime);osc.frequency.exponentialRampToValueAtTime(35,ctx.currentTime+1.0);
+      gain.gain.setValueAtTime(0,ctx.currentTime);gain.gain.linearRampToValueAtTime(0.08,ctx.currentTime+0.06);
+      gain.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+1.0);
+      osc.start(ctx.currentTime);osc.stop(ctx.currentTime+1.0);
+    }
+  }catch(err){}
+  var g=['✨','✦','✧'];
+  for(var i=0;i<5;i++){(function(idx){setTimeout(function(){
+    var p=document.createElement('div');p.className='ghost-p';p.innerHTML=g[idx%g.length];
+    var x=(e?e.clientX:window.innerWidth/2)+(Math.random()-0.5)*60;var y=e?e.clientY:window.innerHeight/2;
+    p.style.cssText='position:fixed;left:'+x+'px;top:'+y+'px;pointer-events:none;font-size:1.3rem;z-index:9999;animation:gRise 1.4s ease-out forwards;';
+    document.body.appendChild(p);setTimeout(function(){if(p.parentNode)p.parentNode.removeChild(p);},1500);
+  },idx*90);})(i);}
+  if(navigator.vibrate)navigator.vibrate([40,20,40]);
+}
 </script>
 </body>
 </html>
