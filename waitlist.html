@@ -5,59 +5,75 @@
 <meta name="theme-color" content="#0A4D5C"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-title" content="ShoreList"/>
+<meta name="robots" content="index,follow"/>
 <link rel="canonical" href="https://shorelist.net/waitlist"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>Join the Waitlist — ShoreList Wilmington, NC</title>
-<meta name="description" content="Be first in line when ShoreList launches June 1st. Join the waitlist for ghost tours, film location tours, surf lessons, fishing charters and more in Wilmington, NC."/>
-<meta property="og:title" content="Join the ShoreList Waitlist | Launching June 1st"/>
-<meta property="og:description" content="Get early access to Wilmington's first local experience booking platform. Launching June 1st, 2026."/>
+<meta name="description" content="Be first in line when ShoreList launches June 1, 2026. Join the waitlist for ghost tours with Sean Austin (Netflix), film & TV location tours, surf lessons, fishing charters, kayak tours, and nature walks in Wilmington, NC."/>
+<meta property="og:title" content="Join the ShoreList Waitlist | Launching June 1, 2026"/>
+<meta property="og:description" content="Get early access to Wilmington's first hyperlocal experience booking platform. Launching June 1, 2026."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://shorelist.net/waitlist"/>
 <meta property="og:image" content="https://shorelist.net/og-waitlist.jpg"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
+<meta property="og:site_name" content="ShoreList"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<!-- ── ANALYTICS: Replace G-XXXXXXXXXX with your GA4 Measurement ID from analytics.google.com ── -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Join the ShoreList Waitlist","url":"https://shorelist.net/waitlist","description":"Get early access to Wilmington's first hyperlocal experience booking platform.","publisher":{"@type":"Organization","name":"ShoreList LLC","url":"https://shorelist.net","email":"shorelistwilmington@gmail.com"},"inLanguage":"en-US"}
+</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
+
+/* ── ACCESSIBILITY: skip link ── */
+.skip-link{position:absolute;top:-100px;left:50%;transform:translateX(-50%);background:var(--coral);color:white;padding:14px 24px;border-radius:8px;font-weight:700;font-size:0.92rem;text-decoration:none;z-index:9999;transition:top 0.18s;}
+.skip-link:focus{top:14px;outline:3px solid var(--cream);outline-offset:2px;}
+/* ── ACCESSIBILITY: focus states ── */
+:focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:3px;}
+/* ── ACCESSIBILITY: reduced motion ── */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}
+}
+
 :root{--teal:#0A4D5C;--teal2:#1A7585;--teal3:#073D4A;--coral:#E96645;--coral2:#F07A5A;--cream:#F5E8CB;--cream2:#FEFCF7;--dark:#0D1F25;--mid:#2C4A52;}
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream2);overflow-x:hidden;min-height:100vh;}
-
-/* BACKGROUND */
 .bg{position:fixed;inset:0;z-index:0;}
 .bg-grad{position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 10% 30%,rgba(10,77,92,0.90) 0%,var(--dark) 65%),radial-gradient(ellipse 60% 80% at 90% 80%,rgba(233,102,69,0.06) 0%,transparent 60%);}
 .bg-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(245,232,203,0.04) 1px,transparent 1px);background-size:28px 28px;}
 
-/* LAUNCH BANNER */
-.launch-banner{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--coral);padding:8px 20px;display:flex;align-items:center;justify-content:center;gap:12px;height:38px;}
-.launch-banner-badge{background:rgba(255,255,255,0.22);border:1px solid rgba(255,255,255,0.38);border-radius:100px;padding:2px 10px;font-size:0.65rem;font-weight:700;color:white;letter-spacing:0.10em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;}
-.launch-banner-text{font-size:0.78rem;font-weight:600;color:white;}
-.launch-banner-text span{color:rgba(255,255,255,0.85);}
-@media(max-width:600px){.launch-banner-text span{display:none;}}
-
-/* NAV */
-nav{position:fixed;top:38px;left:0;right:0;z-index:200;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(13,31,37,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.05);}
+/* NAV (banner removed) */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(13,31,37,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.05);}
 .nav-logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--cream2);text-decoration:none;font-weight:700;}
 .nav-logo span{color:var(--coral);}
 .nav-back{font-size:0.82rem;font-weight:600;color:rgba(245,232,203,0.65);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
 .nav-back:hover{color:var(--cream);}
-
-/* PAGE */
-.page{position:relative;z-index:1;max-width:640px;margin:0 auto;padding:140px 32px 80px;}
+.page{position:relative;z-index:1;max-width:640px;margin:0 auto;padding:120px 32px 80px;}
 
 /* HERO */
 .wl-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(233,102,69,0.12);border:1px solid rgba(233,102,69,0.28);border-radius:100px;padding:6px 16px;font-size:0.70rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--coral);margin-bottom:20px;}
+.wl-tag svg{width:0.85rem;height:0.85rem;}
 .wl-title{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.4rem);font-weight:900;color:var(--cream2);line-height:1.06;margin-bottom:14px;}
 .wl-title em{color:var(--coral);font-style:italic;}
 .wl-sub{font-size:0.97rem;color:rgba(245,232,203,0.65);line-height:1.85;margin-bottom:10px;}
-.wl-launch{display:flex;align-items:center;gap:8px;font-size:0.84rem;font-weight:600;color:rgba(245,232,203,0.50);margin-bottom:36px;}
+.wl-launch{display:flex;align-items:center;gap:8px;font-size:0.84rem;font-weight:600;color:rgba(245,232,203,0.55);margin-bottom:36px;}
 .wl-launch-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;animation:pulse 2s infinite;flex-shrink:0;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.7);}}
 
-/* PROOF STRIP */
+/* SOCIAL PROOF STRIP */
 .proof-strip{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:36px;}
-.proof-chip{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.09);border-radius:100px;padding:6px 14px;font-size:0.78rem;font-weight:500;color:rgba(245,232,203,0.65);display:flex;align-items:center;gap:5px;}
+.proof-chip{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.09);border-radius:100px;padding:6px 14px;font-size:0.78rem;font-weight:500;color:rgba(245,232,203,0.70);display:inline-flex;align-items:center;gap:6px;}
+.proof-chip svg{width:0.95rem;height:0.95rem;color:var(--coral);}
+.proof-chip strong{color:var(--cream2);font-weight:700;}
 
 /* FORM CARD */
 .wl-card{background:rgba(255,255,255,0.04);border:1.5px solid rgba(255,255,255,0.09);border-radius:20px;overflow:hidden;}
@@ -68,22 +84,24 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:200;padding:18px 48px;display
 .wl-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
 .wl-row.full{grid-template-columns:1fr;}
 .wl-field{display:flex;flex-direction:column;gap:6px;}
-.wl-label{font-size:0.78rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:rgba(245,232,203,0.55);}
+.wl-label{font-size:0.78rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:rgba(245,232,203,0.62);}
 .wl-label .req{color:var(--coral);}
-.wl-input{background:rgba(255,255,255,0.06);border:1.5px solid rgba(255,255,255,0.10);border-radius:10px;padding:13px 16px;font-family:'DM Sans',sans-serif;font-size:1rem;color:var(--cream2);outline:none;transition:border-color 0.2s,box-shadow 0.2s;width:100%;min-height:44px;}
-.wl-input::placeholder{color:rgba(245,232,203,0.28);}
-.wl-input:focus{border-color:rgba(233,102,69,0.55);box-shadow:0 0 0 3px rgba(233,102,69,0.08);}
-.wl-select{background:rgba(255,255,255,0.06);border:1.5px solid rgba(255,255,255,0.10);border-radius:10px;padding:13px 16px;font-family:'DM Sans',sans-serif;font-size:1rem;color:var(--cream2);outline:none;transition:border-color 0.2s;width:100%;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(245,232,203,0.4)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;min-height:44px;}
-.wl-select:focus{border-color:rgba(233,102,69,0.55);}
+.wl-label .optional{color:rgba(245,232,203,0.40);font-weight:400;text-transform:none;letter-spacing:0;font-size:0.78rem;}
+.wl-input,.wl-select{background:rgba(255,255,255,0.06);border:1.5px solid rgba(255,255,255,0.10);border-radius:10px;padding:13px 16px;font-family:'DM Sans',sans-serif;font-size:1rem;color:var(--cream2);outline:none;transition:border-color 0.2s,box-shadow 0.2s;width:100%;}
+.wl-input::placeholder{color:rgba(245,232,203,0.30);}
+.wl-input:focus,.wl-select:focus{border-color:rgba(233,102,69,0.55);box-shadow:0 0 0 3px rgba(233,102,69,0.08);}
+.wl-select{cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(245,232,203,0.4)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;}
 .wl-select option{background:#073D4A;color:#FEFCF7;}
 
 /* EXPERIENCE CHIPS */
-.chips-label{font-size:0.78rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:rgba(245,232,203,0.55);margin-bottom:10px;}
+.chips-label{font-size:0.78rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:rgba(245,232,203,0.62);margin-bottom:10px;}
 .chips-label .req{color:var(--coral);}
+.chips-label .optional{color:rgba(245,232,203,0.40);font-weight:400;text-transform:none;letter-spacing:0;}
 .exp-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
-.exp-chip{background:rgba(255,255,255,0.05);border:1.5px solid rgba(255,255,255,0.09);border-radius:100px;padding:10px 16px;font-size:0.85rem;min-height:44px;display:flex;align-items:center;font-weight:500;color:rgba(245,232,203,0.65);cursor:pointer;transition:all 0.18s;user-select:none;}
-.exp-chip:hover{background:rgba(233,102,69,0.08);border-color:rgba(233,102,69,0.30);color:rgba(245,232,203,0.90);}
-.exp-chip.sel{background:rgba(233,102,69,0.15);border-color:var(--coral);color:var(--coral);font-weight:600;}
+.exp-chip{background:rgba(255,255,255,0.05);border:1.5px solid rgba(255,255,255,0.09);border-radius:100px;padding:10px 16px;font-size:0.85rem;min-height:44px;display:inline-flex;align-items:center;gap:7px;font-weight:500;color:rgba(245,232,203,0.72);cursor:pointer;transition:all 0.18s;user-select:none;font-family:'DM Sans',sans-serif;}
+.exp-chip:hover{background:rgba(233,102,69,0.08);border-color:rgba(233,102,69,0.30);color:rgba(245,232,203,0.95);}
+.exp-chip[aria-pressed="true"]{background:rgba(233,102,69,0.15);border-color:var(--coral);color:var(--coral);font-weight:600;}
+.exp-chip svg{width:1rem;height:1rem;flex-shrink:0;}
 
 /* DIVIDER */
 .wl-divider{height:1px;background:rgba(255,255,255,0.06);margin:18px 0;}
@@ -96,32 +114,37 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:200;padding:18px 48px;display
 .wl-submit.loading .wl-btn-text{display:none;}
 .wl-submit.loading .wl-spinner{display:block;}
 @keyframes spin{to{transform:rotate(360deg);}}
-.wl-note{font-size:0.76rem;color:rgba(245,232,203,0.32);text-align:center;margin-top:10px;line-height:1.6;}
-.wl-note a{color:rgba(245,232,203,0.42);text-decoration:none;}
+.wl-note{font-size:0.76rem;color:rgba(245,232,203,0.42);text-align:center;margin-top:10px;line-height:1.6;}
+.wl-note a{color:rgba(245,232,203,0.55);text-decoration:none;}
 .wl-note a:hover{color:var(--coral);}
 .wl-err{display:none;background:rgba(233,102,69,0.12);border:1px solid rgba(233,102,69,0.30);border-radius:8px;padding:11px 16px;font-size:0.83rem;color:var(--coral2);margin-bottom:14px;}
 
-/* SUCCESS */
+/* SUCCESS STATE */
 .wl-success{display:none;text-align:center;padding:52px 28px;}
 .wl-success.show{display:block;}
-.success-ico{font-size:3.5rem;display:block;margin-bottom:16px;}
+.success-ico{display:inline-flex;justify-content:center;align-items:center;margin-bottom:16px;}
+.success-ico svg{width:3.5rem;height:3.5rem;color:var(--coral);}
 .success-title{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:900;color:var(--cream2);margin-bottom:10px;}
 .success-title em{color:var(--coral);font-style:italic;}
 .success-sub{font-size:0.93rem;color:rgba(245,232,203,0.65);line-height:1.85;margin-bottom:28px;max-width:400px;margin-left:auto;margin-right:auto;}
+.success-exp{display:inline-flex;align-items:center;gap:8px;background:rgba(233,102,69,0.12);border:1px solid rgba(233,102,69,0.25);border-radius:100px;padding:8px 18px;font-size:0.80rem;font-weight:600;color:var(--coral);margin-bottom:28px;}
+.success-exp svg{width:0.95rem;height:0.95rem;}
 .success-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
-.btn-fill{background:var(--coral);color:white;text-decoration:none;padding:13px 26px;border-radius:8px;font-weight:700;font-size:0.90rem;transition:all 0.2s;display:inline-block;}
+.btn-fill{background:var(--coral);color:white;text-decoration:none;padding:13px 26px;border-radius:8px;font-weight:700;font-size:0.90rem;transition:all 0.2s;display:inline-flex;align-items:center;justify-content:center;min-height:44px;}
 .btn-fill:hover{background:var(--coral2);transform:translateY(-1px);}
-.btn-ghost-sm{background:transparent;color:rgba(245,232,203,0.70);text-decoration:none;padding:13px 26px;border-radius:8px;font-weight:500;font-size:0.90rem;border:1.5px solid rgba(255,255,255,0.15);transition:all 0.2s;display:inline-block;}
-.btn-ghost-sm:hover{border-color:rgba(255,255,255,0.35);color:var(--cream2);}
+.btn-ghost{background:transparent;color:rgba(245,232,203,0.75);text-decoration:none;padding:13px 26px;border-radius:8px;font-weight:500;font-size:0.90rem;border:1.5px solid rgba(255,255,255,0.18);transition:all 0.2s;display:inline-flex;align-items:center;justify-content:center;min-height:44px;}
+.btn-ghost:hover{border-color:rgba(255,255,255,0.40);color:var(--cream2);}
 
 /* OPERATOR LINK */
 .op-note{text-align:center;padding:28px 32px;border-top:1px solid rgba(255,255,255,0.05);}
-.op-note p{font-size:0.82rem;color:rgba(245,232,203,0.38);line-height:1.7;}
+.op-note p{font-size:0.82rem;color:rgba(245,232,203,0.55);line-height:1.7;}
 .op-note a{color:var(--coral);text-decoration:none;font-weight:600;}
 .op-note a:hover{text-decoration:underline;}
 
 /* WHAT HAPPENS NEXT */
-.what-next{background:white;border:1px solid rgba(10,77,92,0.09);border-radius:20px;padding:40px 48px;max-width:640px;margin:32px auto 0;}
+.what-next{background:white;border:1px solid rgba(10,77,92,0.09);border-radius:20px;padding:40px 48px;max-width:820px;margin:48px auto 40px;color:var(--dark);position:relative;z-index:1;}
+.wn-label{font-size:0.66rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--coral);margin-bottom:8px;}
+.wn-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--teal);}
 .wn-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:28px;}
 .wn-step{text-align:center;}
 .wn-num{width:40px;height:40px;border-radius:50%;background:var(--coral);color:white;font-weight:900;font-size:1rem;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;}
@@ -129,134 +152,155 @@ nav{position:fixed;top:38px;left:0;right:0;z-index:200;padding:18px 48px;display
 .wn-step-desc{font-size:0.82rem;color:var(--mid);line-height:1.7;}
 
 /* SHARE SECTION */
-.wl-share{background:var(--teal3);border-radius:14px;padding:24px;max-width:640px;margin:20px auto 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
-.wl-share-text{font-size:0.88rem;color:rgba(245,232,203,0.80);font-weight:500;}
+.wl-share{position:relative;z-index:1;background:var(--teal3);border-radius:14px;padding:24px;max-width:820px;margin:0 auto 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.wl-share-text{font-size:0.88rem;color:rgba(245,232,203,0.85);font-weight:500;}
 .wl-share-text strong{color:var(--cream2);}
-.wl-share-btn{background:var(--coral);color:white;border:none;padding:10px 20px;border-radius:7px;font-weight:700;font-size:0.82rem;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s;min-height:44px;}
+.wl-share-btn{background:var(--coral);color:white;border:none;padding:10px 20px;border-radius:7px;font-weight:700;font-size:0.82rem;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s;min-height:44px;display:inline-flex;align-items:center;justify-content:center;}
 .wl-share-btn:hover{background:var(--coral2);}
 
 /* FOOTER */
-footer{position:relative;z-index:1;background:rgba(0,0,0,0.30);padding:24px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(255,255,255,0.05);margin-top:60px;}
-.foot-logo{font-size:1.1rem;font-weight:900;display:flex;align-items:baseline;text-decoration:none;}
+footer{position:relative;z-index:1;background:rgba(0,0,0,0.30);padding:32px 48px;border-top:1px solid rgba(255,255,255,0.05);margin-top:40px;text-align:center;}
+.foot-logo{font-size:1.2rem;font-weight:900;display:inline-flex;align-items:baseline;text-decoration:none;margin-bottom:8px;}
 .foot-s{font-family:'Playfair Display',serif;font-style:italic;color:var(--cream);}
-.foot-l{font-weight:700;color:var(--coral);}
-.foot-copy{font-size:0.76rem;color:rgba(245,232,203,0.30);}
-.foot-links{display:flex;gap:16px;flex-wrap:wrap;}
-.foot-links a{font-size:0.76rem;color:rgba(245,232,203,0.30);text-decoration:none;transition:color 0.2s;}
+.foot-l{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--coral);}
+.foot-copy{font-size:0.78rem;color:rgba(245,232,203,0.55);margin-bottom:14px;}
+.foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;}
+.foot-links a{font-size:0.80rem;color:rgba(245,232,203,0.55);text-decoration:none;transition:color 0.2s;}
 .foot-links a:hover{color:var(--coral);}
 
+@media(max-width:768px){
+  nav{padding:14px 20px;}
+  .what-next{padding:28px 22px;}
+  .wn-steps{grid-template-columns:1fr;}
+}
 @media(max-width:640px){
-  nav{padding:16px 20px;top:38px;}
-  .page{padding:128px 16px 60px;}
+  .nav-ev-link{display:none;}
+  nav{padding:16px 20px;}
+  .page{padding:108px 16px 60px;}
   .wl-row{grid-template-columns:1fr!important;}
   .wl-form{padding:20px 16px;}
   .wl-title{font-size:2rem;}
   .exp-chip{font-size:0.85rem;padding:10px 14px;}
-  footer{padding:20px;flex-direction:column;text-align:center;}
+  footer{padding:24px 20px;}
   .success-btns{flex-direction:column;}
-  .btn-fill,.btn-ghost-sm{width:100%;text-align:center;}
-  .what-next{padding:28px 22px;}
-  .wn-steps{grid-template-columns:1fr;}
+  .btn-fill,.btn-ghost{width:100%;}
 }
+
+/* SVG ICON SYSTEM */
+.ico,.ico-xs,.ico-sm,.ico-md,.ico-lg{display:inline-block;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle;flex-shrink:0;}
+.ico{width:1.6rem;height:1.6rem;}
+.ico-xs{width:0.95rem;height:0.95rem;stroke-width:1.8;}
+.ico-sm{width:1.2rem;height:1.2rem;stroke-width:1.7;}
+.ico-md{width:1.65rem;height:1.65rem;}
+.ico-lg{width:2.4rem;height:2.4rem;stroke-width:1.5;}
 </style>
-<!-- GA4 — Replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
-</script>
 </head>
 <body>
 
-<div class="launch-banner">
-  <div class="launch-banner-badge">&#128640; June 1st</div>
-  <div class="launch-banner-text"><strong>ShoreList launches June 1st.</strong> <span>Join the waitlist &mdash; be first to book.</span></div>
-</div>
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs>
+<symbol id="i-ghost" viewBox="0 0 24 24"><path d="M5 9a7 7 0 0 1 14 0v11l-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5Z"/><circle cx="9.5" cy="11" r="0.9" fill="currentColor" stroke="none"/><circle cx="14.5" cy="11" r="0.9" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="1"/><path d="M3 11h18"/><path d="M7.5 6l-2 5"/><path d="M11.5 6l-2 5"/><path d="M15.5 6l-2 5"/><path d="M19.5 6l-2 5"/></symbol>
+<symbol id="i-fish" viewBox="0 0 24 24"><path d="M3 12c3-4 7-4 11 0-4 4-8 4-11 0z"/><path d="M14 12l4-3v6z"/><circle cx="7" cy="11" r="0.6" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-kayak" viewBox="0 0 24 24"><path d="M4 13c1 3 4 5 8 5s7-2 8-5"/><path d="M4 13l1-2h14l1 2"/><path d="M9 4l-3 7"/><path d="M15 4l3 7"/></symbol>
+<symbol id="i-ship" viewBox="0 0 24 24"><path d="M3 17c2 1 4 1 6 0s4-1 6 0 4 1 6 0"/><path d="M4 14l8-3 8 3"/><path d="M8 14V9h8v5"/><path d="M11 9V6h2v3"/></symbol>
+<symbol id="i-surf" viewBox="0 0 24 24"><path d="M2 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M16 3c-4 1-9 5-11 9l3 1c2-4 5-8 9-9z"/></symbol>
+<symbol id="i-bike" viewBox="0 0 24 24"><circle cx="6" cy="16" r="3.5"/><circle cx="18" cy="16" r="3.5"/><path d="M6 16l5-8h4l3 8"/><path d="M9 8h4"/></symbol>
+<symbol id="i-dolphin" viewBox="0 0 24 24"><path d="M3 14c2-5 7-7 12-6 2 0 4-1 6-3-1 5-3 8-6 9-3 4-7 5-12 0z"/><circle cx="16" cy="11" r="0.7" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.3C15.5 5 17 4 19 2c1 2 2 5 2 8a7 7 0 0 1-7 7"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></symbol>
+<symbol id="i-camera" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l2-3h4l2 3"/><circle cx="12" cy="13.5" r="3.5"/></symbol>
+<symbol id="i-lotus" viewBox="0 0 24 24"><path d="M12 4c-1.5 3-4 5-7 6 3 1 5.5 3 7 6 1.5-3 4-5 7-6-3-1-5.5-3-7-6z"/><path d="M12 11c-2 0-3.5 1.5-3.5 3 1 1 2 1.5 3.5 1.5s2.5-.5 3.5-1.5c0-1.5-1.5-3-3.5-3z"/></symbol>
+<symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 10c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></symbol>
+<symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5.6 5.6l4.2 4.2M14.2 14.2l4.2 4.2M5.6 18.4l4.2-4.2M14.2 9.8l4.2-4.2"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></symbol>
+<symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</defs></svg>
 
-<div class="bg"><div class="bg-grad"></div><div class="bg-dots"></div></div>
+<a href="#main" class="skip-link">Skip to content</a>
 
-<nav>
-  <a href="/" class="nav-logo">Shore<span>List</span></a>
+<div class="bg" aria-hidden="true"><div class="bg-grad"></div><div class="bg-dots"></div></div>
+
+<nav aria-label="Primary">
+  <a href="/" class="nav-logo" aria-label="ShoreList home">Shore<span>List</span></a>
   <div style="display:flex;align-items:center;gap:20px;">
-    <a href="/events" style="font-size:0.76rem;font-weight:700;color:var(--coral);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;">Events Guide</a>
+    <a href="/events" class="nav-ev-link" style="font-size:0.76rem;font-weight:700;color:var(--coral);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;">Events Guide</a>
     <a href="/" class="nav-back">&#8592; Browse Experiences</a>
   </div>
 </nav>
 
+<main id="main">
 <div class="page">
-  <div class="wl-tag">&#128640; Launching June 1st</div>
+  <div class="wl-tag"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-sparkle" xlink:href="#i-sparkle"/></svg> Launching June 1, 2026</div>
   <h1 class="wl-title">Be first in line<br/>when we <em>launch.</em></h1>
-  <p class="wl-sub">ShoreList is Wilmington's first local experience booking platform. Ghost tours, film location tours, surf lessons, fishing charters, nature walks &mdash; all in one place, all 100% local. We launch June 1st.</p>
+  <p class="wl-sub">ShoreList is Wilmington's first hyperlocal experience booking platform. Ghost tours, film location tours, surf lessons, fishing charters, nature walks &mdash; all in one place, all 100% local. We launch June 1, 2026.</p>
   <div class="wl-launch">
     <div class="wl-launch-dot"></div>
     Waitlist members get first access to bookings before we open to the public
   </div>
-
-  <div class="proof-strip">
-    <div class="proof-chip">&#127916; Film &amp; TV Tours</div>
-    <div class="proof-chip">&#128123; Ghost Tours</div>
-    <div class="proof-chip">&#127940; Surf Lessons</div>
-    <div class="proof-chip">&#127907; Fishing Charters</div>
-    <div class="proof-chip">&#127807; Nature Walks</div>
-    <div class="proof-chip">&#128675; Kayak Tours</div>
+  <div class="proof-strip" aria-label="Experience categories">
+    <div class="proof-chip"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-film" xlink:href="#i-film"/></svg> Film &amp; TV Tours</div>
+    <div class="proof-chip"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-ghost" xlink:href="#i-ghost"/></svg> Ghost Tours</div>
+    <div class="proof-chip"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-surf" xlink:href="#i-surf"/></svg> Surf Lessons</div>
+    <div class="proof-chip"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-fish" xlink:href="#i-fish"/></svg> Fishing Charters</div>
+    <div class="proof-chip"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-leaf" xlink:href="#i-leaf"/></svg> Nature Walks</div>
+    <div class="proof-chip"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-kayak" xlink:href="#i-kayak"/></svg> Kayak Tours</div>
   </div>
 
-  <div class="wl-card">
+  <section class="wl-card" aria-labelledby="wl-form-heading">
     <div class="wl-card-hd">
-      <div class="wl-card-title">Join the ShoreList Waitlist</div>
-      <div class="wl-card-sub">60 seconds &middot; No credit card &middot; First access on June 1st</div>
+      <div class="wl-card-title" id="wl-form-heading">Join the ShoreList Waitlist</div>
+      <div class="wl-card-sub">60 seconds &middot; No credit card &middot; First access on June 1, 2026</div>
     </div>
 
     <div class="wl-form" id="wl-form">
-      <div class="wl-err" id="wl-err"></div>
+      <div class="wl-err" id="wl-err" role="alert"></div>
 
       <div class="wl-row">
         <div class="wl-field">
-          <label class="wl-label">First Name <span class="req">*</span></label>
-          <input class="wl-input" type="text" id="wl-fname" placeholder="Your first name" autocomplete="given-name"/>
+          <label class="wl-label" for="wl-fname">First Name <span class="req" aria-hidden="true">*</span></label>
+          <input class="wl-input" type="text" id="wl-fname" name="first_name" placeholder="Your first name" autocomplete="given-name" required aria-required="true"/>
         </div>
         <div class="wl-field">
-          <label class="wl-label">Last Name</label>
-          <input class="wl-input" type="text" id="wl-lname" placeholder="Last name" autocomplete="family-name"/>
-        </div>
-      </div>
-
-      <div class="wl-row full">
-        <div class="wl-field">
-          <label class="wl-label">Email Address <span class="req">*</span></label>
-          <input class="wl-input" type="email" id="wl-email" placeholder="your@email.com" autocomplete="email"/>
+          <label class="wl-label" for="wl-lname">Last Name</label>
+          <input class="wl-input" type="text" id="wl-lname" name="last_name" placeholder="Last name" autocomplete="family-name"/>
         </div>
       </div>
 
       <div class="wl-row full">
         <div class="wl-field">
-          <label class="wl-label">Phone Number <span style="color:rgba(245,232,203,0.30);font-weight:400;text-transform:none;letter-spacing:0;">(optional &mdash; we'll text you when we launch)</span></label>
-          <input class="wl-input" type="tel" id="wl-phone" placeholder="(910) 000-0000" autocomplete="tel"/>
+          <label class="wl-label" for="wl-email">Email Address <span class="req" aria-hidden="true">*</span></label>
+          <input class="wl-input" type="email" id="wl-email" name="email" placeholder="your@email.com" autocomplete="email" required aria-required="true"/>
+        </div>
+      </div>
+
+      <div class="wl-row full">
+        <div class="wl-field">
+          <label class="wl-label" for="wl-phone">Phone Number <span class="optional">(optional &mdash; we'll text you when we launch)</span></label>
+          <input class="wl-input" type="tel" id="wl-phone" name="phone" placeholder="(910) 000-0000" autocomplete="tel"/>
         </div>
       </div>
 
       <div class="wl-divider"></div>
 
-      <div class="chips-label">What are you most interested in? <span class="req">*</span> <span style="color:rgba(245,232,203,0.30);font-weight:400;text-transform:none;letter-spacing:0;">(pick all that apply)</span></div>
-      <div class="exp-chips" id="exp-chips">
-        <div class="exp-chip" onclick="toggleChip(this)" data-val="Ghost &amp; Historic Tours">&#128123; Ghost Tours</div>
-        <div class="exp-chip" onclick="toggleChip(this)" data-val="Film &amp; TV Location Tours">&#127916; Film &amp; TV Tours</div>
-        <div class="exp-chip" onclick="toggleChip(this)" data-val="Surf Lessons">&#127940; Surf Lessons</div>
-        <div class="exp-chip" onclick="toggleChip(this)" data-val="Fishing Charters">&#127907; Fishing Charters</div>
-        <div class="exp-chip" onclick="toggleChip(this)" data-val="Kayak &amp; Water Tours">&#128675; Kayak &amp; Water Tours</div>
-        <div class="exp-chip" onclick="toggleChip(this)" data-val="Nature Walks">&#127807; Nature Walks</div>
-        <div class="exp-chip" onclick="toggleChip(this)" data-val="River &amp; Boat Tours">&#128741; River &amp; Boat Tours</div>
-        <div class="exp-chip" onclick="toggleChip(this)" data-val="Wildlife Tours">&#128044; Wildlife Tours</div>
-        <div class="exp-chip" onclick="toggleChip(this)" data-val="Bike &amp; E-Bike Tours">&#128692; Bike Tours</div>
-        <div class="exp-chip" onclick="toggleChip(this)" data-val="Beach Photography">&#128248; Beach Photography</div>
-        <div class="exp-chip" onclick="toggleChip(this)" data-val="Wellness &amp; Yoga">&#129496; Wellness &amp; Yoga</div>
-        <div class="exp-chip" onclick="toggleChip(this)" data-val="Surprise me">&#127754; Surprise Me</div>
+      <div class="chips-label" id="exp-label">What are you most interested in? <span class="req" aria-hidden="true">*</span> <span class="optional">(pick all that apply)</span></div>
+      <div class="exp-chips" id="exp-chips" role="group" aria-labelledby="exp-label">
+        <button type="button" class="exp-chip" onclick="toggleChip(this)" data-val="Ghost &amp; Historic Tours" aria-pressed="false"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-ghost" xlink:href="#i-ghost"/></svg> Ghost Tours</button>
+        <button type="button" class="exp-chip" onclick="toggleChip(this)" data-val="Film &amp; TV Location Tours" aria-pressed="false"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-film" xlink:href="#i-film"/></svg> Film &amp; TV Tours</button>
+        <button type="button" class="exp-chip" onclick="toggleChip(this)" data-val="Surf Lessons" aria-pressed="false"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-surf" xlink:href="#i-surf"/></svg> Surf Lessons</button>
+        <button type="button" class="exp-chip" onclick="toggleChip(this)" data-val="Fishing Charters" aria-pressed="false"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-fish" xlink:href="#i-fish"/></svg> Fishing Charters</button>
+        <button type="button" class="exp-chip" onclick="toggleChip(this)" data-val="Kayak &amp; Water Tours" aria-pressed="false"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-kayak" xlink:href="#i-kayak"/></svg> Kayak &amp; Water Tours</button>
+        <button type="button" class="exp-chip" onclick="toggleChip(this)" data-val="Nature Walks" aria-pressed="false"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-leaf" xlink:href="#i-leaf"/></svg> Nature Walks</button>
+        <button type="button" class="exp-chip" onclick="toggleChip(this)" data-val="River Cruises &amp; Boat Tours" aria-pressed="false"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-ship" xlink:href="#i-ship"/></svg> River &amp; Boat Tours</button>
+        <button type="button" class="exp-chip" onclick="toggleChip(this)" data-val="Wildlife Tours" aria-pressed="false"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-dolphin" xlink:href="#i-dolphin"/></svg> Wildlife Tours</button>
+        <button type="button" class="exp-chip" onclick="toggleChip(this)" data-val="Bike &amp; E-Bike Tours" aria-pressed="false"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-bike" xlink:href="#i-bike"/></svg> Bike Tours</button>
+        <button type="button" class="exp-chip" onclick="toggleChip(this)" data-val="Beach Photography" aria-pressed="false"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-camera" xlink:href="#i-camera"/></svg> Beach Photography</button>
+        <button type="button" class="exp-chip" onclick="toggleChip(this)" data-val="Wellness &amp; Yoga" aria-pressed="false"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-lotus" xlink:href="#i-lotus"/></svg> Wellness &amp; Yoga</button>
+        <button type="button" class="exp-chip" onclick="toggleChip(this)" data-val="Surprise me &mdash; I'm open to anything" aria-pressed="false"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-wave" xlink:href="#i-wave"/></svg> Surprise Me</button>
       </div>
 
       <div class="wl-row">
         <div class="wl-field">
-          <label class="wl-label">When are you visiting?</label>
-          <select class="wl-select" id="wl-when">
+          <label class="wl-label" for="wl-when">When are you visiting?</label>
+          <select class="wl-select" id="wl-when" name="visiting_when">
             <option value="" disabled selected>Select a timeframe</option>
             <option>June 2026</option>
             <option>July 2026</option>
@@ -268,8 +312,8 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
           </select>
         </div>
         <div class="wl-field">
-          <label class="wl-label">Group size</label>
-          <select class="wl-select" id="wl-group">
+          <label class="wl-label" for="wl-group">Group size</label>
+          <select class="wl-select" id="wl-group" name="group_size">
             <option value="" disabled selected>How many people?</option>
             <option>Just me</option>
             <option>2 people</option>
@@ -282,8 +326,8 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
 
       <div class="wl-row full">
         <div class="wl-field">
-          <label class="wl-label">How did you hear about ShoreList?</label>
-          <select class="wl-select" id="wl-source">
+          <label class="wl-label" for="wl-source">How did you hear about ShoreList?</label>
+          <select class="wl-select" id="wl-source" name="how_heard">
             <option value="" disabled selected>Optional</option>
             <option>Instagram / Social Media</option>
             <option>Friend or family recommendation</option>
@@ -299,45 +343,45 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
 
       <div class="wl-divider"></div>
 
-      <button class="wl-submit" id="wl-submit" onclick="submitWaitlist()">
+      <button type="button" class="wl-submit" id="wl-submit" onclick="submitWaitlist()">
         <span class="wl-btn-text">Join the Waitlist &rarr;</span>
-        <div class="wl-spinner"></div>
+        <span class="wl-spinner" aria-hidden="true"></span>
       </button>
       <div class="wl-note">
-        By joining you agree to our <a href="/legal">Privacy Policy &amp; Terms</a>. We'll email you when bookings open June 1st. No spam, ever. Unsubscribe anytime.
+        Secure &nbsp;&middot;&nbsp; No spam, ever &nbsp;&middot;&nbsp; Unsubscribe anytime &nbsp;&middot;&nbsp; <a href="/legal">Privacy Policy</a>
       </div>
     </div>
 
-    <div class="wl-success" id="wl-success">
-      <span class="success-ico">&#127754;</span>
+    <div class="wl-success" id="wl-success" role="status" aria-live="polite">
+      <span class="success-ico" aria-hidden="true"><svg class="ico-lg"><use href="#i-check" xlink:href="#i-check"/></svg></span>
       <h2 class="success-title">You're on the list,<br/><em>officially.</em></h2>
-      <p class="success-sub">We'll email you the moment bookings go live on June 1st &mdash; before we announce it anywhere else. Welcome to the ShoreList community.</p>
+      <p class="success-sub">We'll email you the moment bookings go live on June 1, 2026 &mdash; before we announce it anywhere else. Welcome to the ShoreList community.</p>
+      <div class="success-exp" id="success-exp"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-wave" xlink:href="#i-wave"/></svg>&nbsp;Wilmington's coastal adventures are waiting.</div>
       <div class="success-btns">
         <a href="/" class="btn-fill">Explore Experiences &rarr;</a>
-        <a href="/planner" class="btn-ghost-sm">&#10022; Build My Itinerary</a>
+        <a href="/planner" class="btn-ghost">Build My Itinerary</a>
       </div>
     </div>
 
     <div class="op-note">
       <p>Are you a local operator? <a href="/join">List your experience on ShoreList free &rarr;</a></p>
     </div>
-  </div>
+  </section>
 </div>
 
-<!-- WHAT HAPPENS NEXT -->
-<div class="what-next">
-  <div style="font-size:0.66rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--coral);margin-bottom:8px;">After You Join</div>
-  <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--teal);">What Happens Next</div>
+<section class="what-next" aria-labelledby="wn-heading">
+  <div class="wn-label">After You Join</div>
+  <div class="wn-title" id="wn-heading">What Happens Next</div>
   <div class="wn-steps">
     <div class="wn-step">
       <div class="wn-num">1</div>
       <div class="wn-step-title">Confirmation Email</div>
-      <div class="wn-step-desc">You'll receive a confirmation within 24 hours. Check your spam folder if you don't see it &mdash; add us to contacts.</div>
+      <div class="wn-step-desc">You&rsquo;ll receive a confirmation within 24 hours. Check your spam folder if you don&rsquo;t see it &mdash; add us to contacts.</div>
     </div>
     <div class="wn-step">
       <div class="wn-num">2</div>
       <div class="wn-step-title">Early Access Invite</div>
-      <div class="wn-step-desc">On June 1st, waitlist members get first access &mdash; before the platform opens to the public. Browse and book before the crowds.</div>
+      <div class="wn-step-desc">On June 1, 2026, waitlist members get first access &mdash; before the platform opens to the public. Browse and book before the crowds.</div>
     </div>
     <div class="wn-step">
       <div class="wn-num">3</div>
@@ -345,31 +389,36 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
       <div class="wn-step-desc">Exclusive launch discounts on select experiences, only for waitlist members. Your spot on the coast, secured at a better price.</div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- SHARE -->
 <div class="wl-share">
-  <div class="wl-share-text"><strong>Know someone visiting Wilmington?</strong> Share ShoreList with them &mdash; help them experience the coast the right way.</div>
-  <button class="wl-share-btn" onclick="shareShoreList()">Share ShoreList &#8594;</button>
+  <div class="wl-share-text"><strong>Know someone visiting Wilmington?</strong> Share ShoreList with them &mdash; and help them experience the coast the right way.</div>
+  <button type="button" class="wl-share-btn" onclick="shareShoreList()">Share ShoreList &rarr;</button>
 </div>
+</main>
 
 <footer>
-  <a href="/" class="foot-logo"><span class="foot-s">Shore</span><span class="foot-l">List</span></a>
+  <a href="/" class="foot-logo" aria-label="ShoreList home"><span class="foot-s">Shore</span><span class="foot-l">List</span></a>
   <div class="foot-copy">&copy; 2026 ShoreList LLC &nbsp;&middot;&nbsp; Wilmington, NC</div>
-  <div class="foot-links">
+  <nav class="foot-links" aria-label="Footer">
     <a href="/">Experiences</a>
     <a href="/events">Events Guide</a>
     <a href="/planner">Trip Planner</a>
     <a href="/join">Operators</a>
+    <a href="mailto:shorelistwilmington@gmail.com">Contact</a>
     <a href="/legal">Privacy &amp; Terms</a>
-  </div>
+    <a href="/legal#accessibility">Accessibility</a>
+  </nav>
 </footer>
 
 <script>
-function toggleChip(el){el.classList.toggle('sel');}
+function toggleChip(el){
+  var pressed = el.getAttribute('aria-pressed') === 'true';
+  el.setAttribute('aria-pressed', pressed ? 'false' : 'true');
+}
 
 function getSelectedExperiences(){
-  var chips=document.querySelectorAll('.exp-chip.sel');
+  var chips=document.querySelectorAll('.exp-chip[aria-pressed="true"]');
   return Array.from(chips).map(function(c){return c.getAttribute('data-val');}).join(', ');
 }
 
@@ -378,14 +427,34 @@ function submitWaitlist(){
   var email=document.getElementById('wl-email').value.trim();
   var experiences=getSelectedExperiences();
   var err=document.getElementById('wl-err');
+
   err.style.display='none';
-  if(!fname){err.textContent='Please enter your first name.';err.style.display='block';document.getElementById('wl-fname').focus();return;}
-  if(!email||!email.includes('@')||!email.includes('.')){err.textContent='Please enter a valid email address.';err.style.display='block';document.getElementById('wl-email').focus();return;}
-  if(!experiences){err.textContent='Please select at least one experience you\'re interested in.';err.style.display='block';document.getElementById('exp-chips').scrollIntoView({behavior:'smooth',block:'center'});return;}
+
+  if(!fname){
+    err.textContent='Please enter your first name.';
+    err.style.display='block';
+    document.getElementById('wl-fname').focus();
+    return;
+  }
+  if(!email||!email.includes('@')||!email.includes('.')){
+    err.textContent='Please enter a valid email address.';
+    err.style.display='block';
+    document.getElementById('wl-email').focus();
+    return;
+  }
+  if(!experiences){
+    err.textContent='Please select at least one experience you\'re interested in.';
+    err.style.display='block';
+    document.getElementById('exp-chips').scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+
   var btn=document.getElementById('wl-submit');
-  btn.classList.add('loading');btn.disabled=true;
+  btn.classList.add('loading');
+  btn.disabled=true;
+
   var data={
-    _subject:'ShoreList Waitlist: '+fname+' \u2014 '+experiences.split(',')[0],
+    _subject:'ShoreList Waitlist: '+fname+' - '+experiences.split(',')[0],
     type:'guest-waitlist',
     first_name:fname,
     last_name:document.getElementById('wl-lname').value.trim(),
@@ -394,9 +463,15 @@ function submitWaitlist(){
     experiences_interested:experiences,
     visiting_when:document.getElementById('wl-when').value||'Not specified',
     group_size:document.getElementById('wl-group').value||'Not specified',
-    how_heard:document.getElementById('wl-source').value||'Not specified',
+    how_heard:document.getElementById('wl-source').value||'Not specified'
   };
-  fetch('https://formspree.io/f/xeevzzqd',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(data)}).catch(function(){});
+
+  fetch('https://formspree.io/f/xeevzzqd',{
+    method:'POST',
+    headers:{'Accept':'application/json','Content-Type':'application/json'},
+    body:JSON.stringify(data)
+  }).catch(function(){});
+
   setTimeout(function(){
     document.getElementById('wl-form').style.display='none';
     var success=document.getElementById('wl-success');
@@ -407,12 +482,13 @@ function submitWaitlist(){
 
 function shareShoreList(){
   var url='https://shorelist.net/waitlist';
+  var text='ShoreList is launching June 1, 2026 - the first hyperlocal experience booking platform for Wilmington, NC. Ghost tours, surf lessons, kayaking, film location tours and more. Join the waitlist:';
   if(navigator.share){
-    navigator.share({title:'ShoreList \u2014 Wilmington Coastal Experiences',text:'ShoreList is launching June 1st \u2014 the first local experience booking platform for Wilmington, NC. Ghost tours, surf lessons, kayaking, film location tours and more.',url:url}).catch(function(){});
-  }else{
+    navigator.share({title:'ShoreList - Wilmington Coastal Experiences',text:text,url:url}).catch(function(){});
+  }else if(navigator.clipboard){
     navigator.clipboard.writeText(url).then(function(){
       var btn=document.querySelector('.wl-share-btn');
-      if(btn){btn.innerHTML='Link Copied! &#10003;';setTimeout(function(){btn.innerHTML='Share ShoreList &#8594;';},2500);}
+      if(btn){btn.innerHTML='Link Copied! &#10003;';setTimeout(function(){btn.innerHTML='Share ShoreList &rarr;';},2500);}
     });
   }
 }
