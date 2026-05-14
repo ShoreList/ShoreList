@@ -5,21 +5,60 @@
 <meta name="theme-color" content="#0A4D5C"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-title" content="ShoreList"/>
+<meta name="robots" content="index,follow"/>
 <link rel="canonical" href="https://shorelist.net/join"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>List Your Business — ShoreList Wilmington, NC</title>
-<meta name="description" content="Join ShoreList and get your tours, charters, and experiences in front of thousands of Wilmington visitors. Free to list. Commission only. Go live in 48 hours."/>
-<meta property="og:title" content="List Your Experience on ShoreList | Wilmington, NC"/>
-<meta property="og:description" content="Reach thousands of Wilmington visitors. Free to list. Commission only when you earn. Go live in 48 hours."/>
+<meta name="description" content="Join ShoreList and get your tours, charters, and experiences in front of Wilmington visitors. Free to list. Commission only on completed bookings. No upfront cost."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<meta property="og:title" content="List Your Business — ShoreList Wilmington Operator Partner Program"/>
+<meta property="og:description" content="Free to list. Commission only on completed bookings. The hyperlocal experience platform for Wilmington, NC operators."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://shorelist.net/join"/>
 <meta property="og:image" content="https://shorelist.net/og-join.jpg"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<meta property="og:site_name" content="ShoreList"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+
+/* ── ACCESSIBILITY: skip link ── */
+.skip-link{position:absolute;top:-100px;left:50%;transform:translateX(-50%);background:var(--coral);color:white;padding:14px 24px;border-radius:8px;font-weight:700;font-size:0.92rem;text-decoration:none;z-index:9999;transition:top 0.18s;}
+.skip-link:focus{top:14px;outline:3px solid var(--cream);outline-offset:2px;}
+/* ── ACCESSIBILITY: focus states ── */
+:focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:3px;}
+/* ── ACCESSIBILITY: reduced motion ── */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}
+}
+/* ── COLOR CONTRAST (WCAG AA) ── */
+.hero-note{color:rgba(245,232,203,0.55)!important;}
+.foot-copy{color:rgba(245,232,203,0.60)!important;}
+.foot-links a{color:rgba(245,232,203,0.60)!important;}
+
+/* ── SVG ICON SYSTEM ── */
+.ico,.ico-xs,.ico-sm,.ico-md,.ico-lg{display:inline-block;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle;flex-shrink:0;}
+.ico{width:1.6rem;height:1.6rem;}
+.ico-xs{width:0.95rem;height:0.95rem;stroke-width:1.8;}
+.ico-sm{width:1.2rem;height:1.2rem;stroke-width:1.7;}
+.ico-md{width:1.65rem;height:1.65rem;}
+.ico-lg{width:2.4rem;height:2.4rem;stroke-width:1.5;}
+.vp-icon svg{width:2rem;height:2rem;color:var(--coral);}
+.mp-loc svg{width:0.85rem;height:0.85rem;color:var(--teal);vertical-align:middle;margin-right:3px;}
+.mp-ico svg{width:1.4rem;height:1.4rem;color:var(--teal);}
+.success-icon svg{width:3.5rem;height:3.5rem;color:#4ade80;}
+
+/* ── NATIVE FAQ DETAILS ── */
+details.faq-item{margin-bottom:8px;}
+details.faq-item summary{list-style:none;cursor:pointer;}
+details.faq-item summary::-webkit-details-marker{display:none;}
+details.faq-item summary::marker{display:none;}
+details.faq-item .faq-arrow{transition:transform 0.18s;display:inline-block;margin-left:8px;}
+details.faq-item[open] .faq-arrow{transform:rotate(180deg);}
+
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:#0A4D5C;color:#FEFCF7;overflow-x:hidden;}
 :root{
@@ -27,28 +66,20 @@ body{font-family:'DM Sans',sans-serif;background:#0A4D5C;color:#FEFCF7;overflow-
   --coral:#E96645;--coral2:#F07A5A;
   --cream:#F5E8CB;--cream2:#FEFCF7;
   --dark:#0D1F25;--lgray:#F2F4F3;
-  --border:rgba(10,77,92,0.10);
 }
 
-/* LAUNCH BANNER */
-.launch-banner{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--coral);padding:0 20px;display:flex;align-items:center;justify-content:center;gap:12px;height:38px;}
-.launch-banner-badge{background:rgba(255,255,255,0.22);border:1px solid rgba(255,255,255,0.38);border-radius:100px;padding:2px 10px;font-size:0.65rem;font-weight:700;color:white;letter-spacing:0.10em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;}
-.launch-banner-text{font-size:0.78rem;font-weight:600;color:white;}
-.launch-banner-text span{color:rgba(255,255,255,0.85);}
-@media(max-width:600px){.launch-banner-text span{display:none;}}
-
-/* NAV */
+/* ── NAV ── */
 nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:18px 48px;background:rgba(10,77,92,0.98);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.07);}
 .logo{font-size:1.6rem;font-weight:900;display:flex;align-items:baseline;text-decoration:none;}
 .logo-s{font-family:'Playfair Display',serif;font-style:italic;color:var(--cream);}
 .logo-l{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--coral);}
 .nav-r{display:flex;align-items:center;gap:18px;}
-.nav-back{font-size:0.78rem;font-weight:600;color:rgba(245,232,203,0.50);text-decoration:none;letter-spacing:0.07em;text-transform:uppercase;transition:color 0.2s;}
+.nav-back{font-size:0.78rem;font-weight:600;color:rgba(245,232,203,0.65);text-decoration:none;letter-spacing:0.07em;text-transform:uppercase;transition:color 0.2s;}
 .nav-back:hover{color:var(--cream);}
-.nav-cta-sm{background:var(--coral);color:white;text-decoration:none;padding:9px 20px;border-radius:6px;font-weight:700;font-size:0.80rem;transition:background 0.2s;white-space:nowrap;}
+.nav-cta-sm{background:var(--coral);color:white;text-decoration:none;padding:9px 20px;border-radius:6px;font-weight:700;font-size:0.80rem;transition:background 0.2s;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center;}
 .nav-cta-sm:hover{background:var(--coral2);}
 
-/* HERO */
+/* ── HERO ── */
 .hero{background:var(--teal3);padding:88px 48px 80px;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 70% 50%,rgba(233,102,69,0.07) 0%,transparent 60%);}
 .hero::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);background-size:28px 28px;}
@@ -58,300 +89,314 @@ nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
 .hero-h{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;margin-bottom:18px;color:var(--cream2);}
 .hero-h em{font-style:italic;color:var(--coral);}
-.hero-sub{font-size:0.97rem;color:rgba(245,232,203,0.65);line-height:1.85;margin-bottom:32px;max-width:460px;}
+.hero-sub{font-size:0.97rem;color:rgba(245,232,203,0.70);line-height:1.85;margin-bottom:32px;max-width:460px;}
 .hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px;}
-.hb{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.10);border-radius:100px;padding:7px 14px;font-size:0.76rem;font-weight:600;color:rgba(245,232,203,0.75);}
+.hb{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.10);border-radius:100px;padding:7px 14px;font-size:0.76rem;font-weight:600;color:rgba(245,232,203,0.80);}
 .hb.green{background:rgba(34,197,94,0.12);border-color:rgba(34,197,94,0.25);color:#4ade80;}
 .hero-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px;}
-.btn-fill{background:var(--coral);color:white;padding:15px 34px;border-radius:7px;font-weight:700;font-size:0.95rem;text-decoration:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;display:inline-block;transition:all 0.2s;white-space:nowrap;min-height:44px;}
+.btn-fill{background:var(--coral);color:white;padding:15px 34px;border-radius:7px;font-weight:700;font-size:0.95rem;text-decoration:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;display:inline-flex;align-items:center;justify-content:center;transition:all 0.2s;white-space:nowrap;min-height:44px;}
 .btn-fill:hover{background:var(--coral2);transform:translateY(-2px);}
-.btn-ghost{background:transparent;color:var(--cream);padding:15px 34px;border-radius:7px;font-weight:500;font-size:0.95rem;text-decoration:none;display:inline-block;border:1.5px solid rgba(245,232,203,0.25);transition:all 0.2s;white-space:nowrap;min-height:44px;}
+.btn-ghost{background:transparent;color:var(--cream);padding:15px 34px;border-radius:7px;font-weight:500;font-size:0.95rem;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;border:1.5px solid rgba(245,232,203,0.25);transition:all 0.2s;white-space:nowrap;min-height:44px;}
 .btn-ghost:hover{border-color:rgba(245,232,203,0.50);transform:translateY(-2px);}
-.hero-note{font-size:0.76rem;color:rgba(245,232,203,0.32);}
+.hero-note{font-size:0.76rem;color:rgba(245,232,203,0.55);}
 
-/* HERO STATS CARD */
+/* Stats card on right side of hero */
 .hero-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.10);border-radius:18px;overflow:hidden;}
 .hc-head{background:var(--teal2);padding:20px 26px;}
-.hc-head-title{font-size:0.70rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(245,232,203,0.60);}
-.hc-row{display:flex;justify-content:space-between;align-items:center;padding:18px 26px;border-bottom:1px solid rgba(255,255,255,0.05);}
+.hc-head-title{font-size:0.70rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(245,232,203,0.75);}
+.hc-rows{padding:8px 26px 18px;}
+.hc-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:0.88rem;}
 .hc-row:last-child{border-bottom:none;}
-.hc-label{font-size:0.86rem;color:rgba(245,232,203,0.60);}
-.hc-val{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:900;color:var(--coral);}
+.hc-label{color:rgba(245,232,203,0.65);}
+.hc-val{font-weight:700;color:var(--cream2);}
 .hc-val.green{color:#4ade80;}
-.hc-val.white{color:var(--cream2);font-size:0.95rem;font-family:'DM Sans',sans-serif;font-weight:600;}
+.hc-val.white{color:var(--cream2);}
 
-/* SECTIONS */
-.sec{padding:96px 48px;background:var(--teal);}
+/* ── SECTIONS ── */
+.sec{padding:80px 48px;}
 .sec-alt{background:var(--teal3);}
-.sec-light{background:var(--cream2);}
 .sec-inner{max-width:1100px;margin:0 auto;}
-.sec-label{font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
-.sec-label::before{content:'';width:20px;height:1px;background:var(--coral);}
-.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.2vw,2.6rem);font-weight:900;line-height:1.1;margin-bottom:10px;color:var(--cream2);}
-.sec-title em{color:var(--coral);font-style:italic;}
-.sec-title.dark{color:var(--teal);}
-.sec-sub{font-size:0.92rem;color:rgba(245,232,203,0.55);line-height:1.85;margin-bottom:44px;max-width:520px;}
+.sec-label{font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px;}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:18px;color:var(--cream2);}
+.sec-title em{font-style:italic;color:var(--coral);}
+.sec-sub{font-size:0.95rem;color:rgba(245,232,203,0.70);line-height:1.85;max-width:680px;margin-bottom:48px;}
 
-/* VALUE PROPS */
-.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px;}
-.value-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
-.vp{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:28px 24px;}
-.vp-icon{font-size:2rem;margin-bottom:14px;display:block;}
-.vp-title{font-size:1rem;font-weight:700;color:var(--cream2);margin-bottom:8px;}
-.vp-sub{font-size:0.86rem;color:rgba(245,232,203,0.58);line-height:1.75;}
-.vp-sub strong{color:var(--cream2);font-weight:600;}
+/* Value props grid */
+.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:24px;}
+.value-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:760px;margin:0 auto;}
+.vp{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:30px 24px;}
+.vp-icon{display:block;margin-bottom:14px;}
+.vp-title{font-family:'Playfair Display',serif;font-size:1.20rem;font-weight:900;color:var(--cream2);margin-bottom:10px;line-height:1.2;}
+.vp-sub{font-size:0.87rem;color:rgba(245,232,203,0.70);line-height:1.75;}
+.vp-sub strong{color:var(--cream2);}
 
-/* PHONE MOCKUP */
-.mockup-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
-.mockup-phone{background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.55);max-width:340px;margin:0 auto;}
-.mp-header{background:var(--teal2);padding:18px 18px 14px;color:white;}
-.mp-loc{font-size:0.68rem;font-weight:500;opacity:0.7;margin-bottom:3px;}
-.mp-q{font-size:1.2rem;font-weight:700;line-height:1.2;}
-.mp-tabs{display:flex;gap:14px;margin-top:10px;}
-.mp-tab{font-size:0.65rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.45);padding-bottom:3px;}
-.mp-tab.active{color:white;border-bottom:2px solid var(--coral);}
-.mp-item{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid #f0f0f0;background:white;}
+/* Mockup */
+.mockup-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.mockup-left{}
+.mockup-phone{background:white;border-radius:28px;padding:0;overflow:hidden;max-width:340px;margin:0 auto;color:var(--dark);box-shadow:0 30px 80px rgba(0,0,0,0.40);}
+.mp-header{padding:20px 22px;border-bottom:1px solid #eef0f1;}
+.mp-loc{font-size:0.72rem;font-weight:600;color:var(--teal);margin-bottom:8px;display:inline-flex;align-items:center;}
+.mp-q{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:900;color:var(--dark);margin-bottom:14px;line-height:1.2;}
+.mp-tabs{display:flex;gap:16px;font-size:0.72rem;font-weight:600;}
+.mp-tab{padding:6px 0;color:rgba(13,31,37,0.4);border-bottom:2px solid transparent;}
+.mp-tab.active{color:var(--coral);border-color:var(--coral);}
+.mp-item{display:flex;align-items:center;gap:12px;padding:14px 22px;border-bottom:1px solid #f5f5f5;}
 .mp-item:last-child{border-bottom:none;}
-.mp-ico{width:40px;height:40px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
-.mp-name{font-size:0.88rem;font-weight:600;color:#1a1a1a;margin-bottom:2px;}
-.mp-meta{font-size:0.72rem;color:#888;}
-.mp-price{font-family:'Playfair Display',serif;font-size:1rem;font-weight:900;color:var(--coral);}
-.mockup-caption{text-align:center;padding:18px;font-size:0.82rem;line-height:1.7;color:rgba(245,232,203,0.55);background:var(--dark);}
-.mockup-bullets{display:flex;flex-direction:column;gap:16px;margin-top:28px;}
-.mb-item{display:flex;gap:12px;align-items:flex-start;}
-.mb-dot{width:20px;height:20px;border-radius:50%;background:rgba(233,102,69,0.18);border:1px solid rgba(233,102,69,0.38);display:flex;align-items:center;justify-content:center;font-size:0.65rem;color:var(--coral);flex-shrink:0;margin-top:2px;}
-.mb-text{font-size:0.87rem;line-height:1.65;color:rgba(245,232,203,0.65);}
+.mp-ico{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.mp-name{font-weight:600;font-size:0.84rem;color:var(--dark);}
+.mp-meta{font-size:0.70rem;color:rgba(13,31,37,0.55);margin-top:2px;}
+.mp-price{font-size:0.95rem;font-weight:700;color:var(--coral);}
+
+.mockup-caption{margin-top:20px;font-size:0.78rem;color:rgba(245,232,203,0.55);line-height:1.7;text-align:center;}
+.mockup-right{}
+.mockup-bullets{margin-top:28px;display:flex;flex-direction:column;gap:14px;}
+.mb-item{display:flex;align-items:flex-start;gap:14px;}
+.mb-dot{width:24px;height:24px;border-radius:50%;background:rgba(34,197,94,0.20);color:#4ade80;font-size:0.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.mb-text{font-size:0.88rem;color:rgba(245,232,203,0.70);line-height:1.7;}
 .mb-text strong{color:var(--cream2);font-weight:600;}
 
-/* COMMISSION TABLE */
-.commission-wrap{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;}
-.commission-table{width:100%;border-collapse:collapse;}
-.commission-table thead tr{background:var(--teal2);}
-.commission-table th{padding:14px 20px;text-align:left;font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,232,203,0.60);}
-.commission-table td{padding:14px 20px;font-size:0.88rem;color:rgba(245,232,203,0.75);border-bottom:1px solid rgba(255,255,255,0.05);}
-.commission-table tbody tr:hover td{background:rgba(255,255,255,0.03);}
-.commission-table tbody tr:last-child td{border-bottom:none;}
-.commission-rate{font-weight:700;color:var(--coral);}
-.commission-note{font-size:0.78rem;color:rgba(245,232,203,0.35);margin-top:12px;line-height:1.65;}
+/* Commission table */
+.commission-wrap{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.10);border-radius:14px;overflow:hidden;}
+.commission-table{width:100%;border-collapse:collapse;font-size:0.90rem;}
+.commission-table th{background:var(--teal2);color:var(--cream2);text-align:left;padding:16px 24px;font-weight:600;font-size:0.78rem;letter-spacing:0.04em;text-transform:uppercase;}
+.commission-table td{padding:14px 24px;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(245,232,203,0.85);}
+.commission-table tr:last-child td{border-bottom:none;}
+.commission-table tr:hover td{background:rgba(255,255,255,0.03);}
+.commission-rate{color:var(--coral);font-weight:700;}
+.commission-note{font-size:0.78rem;color:rgba(245,232,203,0.50);line-height:1.7;margin-top:20px;}
 
 /* FAQ */
-.faq{display:flex;flex-direction:column;gap:2px;}
-.faq-item{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:10px;overflow:hidden;}
-.faq-q{width:100%;text-align:left;background:none;border:none;padding:18px 22px;font-family:'DM Sans',sans-serif;font-size:0.92rem;font-weight:600;color:var(--cream2);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:background 0.2s;min-height:44px;}
-.faq-q:hover{background:rgba(255,255,255,0.03);}
-.faq-arrow{font-size:0.8rem;color:var(--coral);transition:transform 0.25s;flex-shrink:0;}
-.faq-a{max-height:0;overflow:hidden;transition:max-height 0.32s ease,padding 0.32s ease;font-size:0.87rem;color:rgba(245,232,203,0.65);line-height:1.8;padding:0 22px;}
-.faq-item.open .faq-a{max-height:300px;padding:0 22px 18px;}
-.faq-item.open .faq-arrow{transform:rotate(180deg);}
+.faq{display:flex;flex-direction:column;gap:8px;}
+.faq-q{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:18px 22px;text-align:left;color:var(--cream2);font-family:'DM Sans',sans-serif;font-size:0.92rem;font-weight:600;cursor:pointer;transition:all 0.2s;display:flex;justify-content:space-between;align-items:center;line-height:1.4;}
+.faq-q:hover{background:rgba(255,255,255,0.07);}
+.faq-a{padding:16px 22px 22px;color:rgba(245,232,203,0.70);font-size:0.88rem;line-height:1.8;}
+details.faq-item[open] .faq-q{border-bottom-left-radius:0;border-bottom-right-radius:0;}
 
-/* FORM */
-.form-steps{display:flex;gap:0;margin-bottom:40px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;overflow:hidden;}
-.fs-step{flex:1;padding:14px 16px;text-align:center;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,232,203,0.35);border-right:1px solid rgba(255,255,255,0.06);cursor:pointer;transition:all 0.2s;}
-.fs-step:last-child{border-right:none;}
-.fs-step.active{background:var(--coral);color:white;}
-.fs-step.done{color:rgba(245,232,203,0.60);}
-.fs-step.done::before{content:'\2713\00a0';}
+/* Form */
+.form-steps{display:flex;align-items:center;justify-content:center;margin-bottom:36px;gap:0;}
+.fs-step{padding:10px 22px;font-size:0.78rem;font-weight:700;letter-spacing:0.05em;color:rgba(245,232,203,0.40);border-bottom:2px solid rgba(255,255,255,0.08);text-transform:uppercase;display:flex;align-items:center;flex:1;justify-content:center;}
+.fs-step.active{color:var(--coral);border-color:var(--coral);}
+.fs-step.done{color:rgba(245,232,203,0.50);border-color:rgba(245,232,203,0.20);}
 .form-panel{display:none;}
 .form-panel.active{display:block;}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
 .form-grid.full{grid-template-columns:1fr;}
-.form-field{display:flex;flex-direction:column;gap:7px;}
-.form-label{font-size:0.66rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:rgba(245,232,203,0.42);}
-.form-input{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:13px 15px;font-family:'DM Sans',sans-serif;font-size:1rem;color:var(--cream2);outline:none;transition:border-color 0.2s,box-shadow 0.2s;width:100%;-webkit-appearance:none;min-height:44px;}
-.form-input:focus{border-color:var(--coral);box-shadow:0 0 0 3px rgba(233,102,69,0.10);}
-.form-input::placeholder{color:rgba(245,232,203,0.22);}
-.form-input option{background:var(--teal3);color:var(--cream2);}
-textarea.form-input{resize:vertical;min-height:90px;line-height:1.65;}
-.form-select{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:13px 15px;font-family:'DM Sans',sans-serif;font-size:1rem;color:var(--cream2);outline:none;width:100%;-webkit-appearance:none;appearance:none;cursor:pointer;min-height:44px;}
-.form-select:focus{border-color:var(--coral);}
-.form-checkbox{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;}
-.form-checkbox input{margin-top:3px;accent-color:var(--coral);width:16px;height:16px;flex-shrink:0;cursor:pointer;}
-.form-checkbox label{font-size:0.85rem;color:rgba(245,232,203,0.65);line-height:1.6;cursor:pointer;}
-.form-checkbox label a{color:var(--coral);text-decoration:none;}
-.form-actions{display:flex;gap:12px;align-items:center;margin-top:18px;}
-.btn-back-form{background:transparent;border:1px solid rgba(255,255,255,0.14);color:rgba(245,232,203,0.55);padding:14px 22px;border-radius:7px;font-family:'DM Sans',sans-serif;font-size:0.9rem;cursor:pointer;transition:all 0.2s;min-height:44px;}
-.btn-back-form:hover{border-color:rgba(255,255,255,0.28);color:var(--cream);}
-.form-err{font-size:0.82rem;color:#f87171;margin-top:8px;display:none;}
-.commission-display{background:rgba(233,102,69,0.10);border:1px solid rgba(233,102,69,0.22);border-radius:8px;padding:12px 16px;margin-top:10px;font-size:0.84rem;color:var(--coral);font-weight:600;display:none;}
-
-/* AGREEMENT */
-.agreement-wrap{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;margin-bottom:20px;}
-.agreement-header{background:rgba(255,255,255,0.05);padding:16px 22px;display:flex;align-items:center;justify-content:space-between;}
-.agreement-header-title{font-size:0.84rem;font-weight:700;color:var(--cream2);}
-.agreement-header-badge{font-size:0.66rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,232,203,0.40);background:rgba(255,255,255,0.06);padding:3px 10px;border-radius:4px;}
-.agreement-body{padding:24px;max-height:320px;overflow-y:auto;font-size:0.84rem;color:rgba(245,232,203,0.62);line-height:1.8;}
-.agreement-body h3{font-size:0.88rem;font-weight:700;color:var(--cream2);margin:16px 0 8px;}
+.form-field{display:flex;flex-direction:column;gap:6px;}
+.form-label .optional{color:rgba(245,232,203,0.40);font-weight:400;text-transform:none;letter-spacing:0;font-size:0.78rem;}
+.form-label{font-size:0.74rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:rgba(245,232,203,0.60);}
+.form-input,.form-select{background:rgba(255,255,255,0.06);border:1.5px solid rgba(255,255,255,0.10);border-radius:8px;padding:13px 16px;font-family:'DM Sans',sans-serif;font-size:0.95rem;color:var(--cream2);outline:none;transition:border-color 0.2s,box-shadow 0.2s;width:100%;}
+.form-input::placeholder{color:rgba(245,232,203,0.30);}
+.form-input:focus,.form-select:focus{border-color:rgba(233,102,69,0.55);box-shadow:0 0 0 3px rgba(233,102,69,0.08);}
+.form-select{cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(245,232,203,0.4)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;}
+.form-select option{background:#073D4A;color:#FEFCF7;}
+textarea.form-input{resize:vertical;min-height:80px;font-family:'DM Sans',sans-serif;}
+.commission-display{display:none;margin-top:8px;padding:10px 14px;background:rgba(233,102,69,0.10);border:1px solid rgba(233,102,69,0.22);border-radius:7px;font-size:0.80rem;color:var(--coral);font-weight:600;}
+.commission-display.show{display:block;}
+.form-checkbox{display:flex;gap:12px;align-items:flex-start;font-size:0.86rem;color:rgba(245,232,203,0.75);line-height:1.6;}
+.form-checkbox input[type=checkbox]{width:18px;height:18px;margin-top:2px;flex-shrink:0;cursor:pointer;accent-color:var(--coral);}
+.form-checkbox label{cursor:pointer;}
+.agreement-wrap{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:0;margin-bottom:24px;overflow:hidden;}
+.agreement-header{background:rgba(255,255,255,0.05);padding:18px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.agreement-header-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:900;color:var(--cream2);}
+.agreement-header-badge{font-size:0.68rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:var(--coral);background:rgba(233,102,69,0.10);padding:5px 12px;border-radius:100px;}
+.agreement-body{padding:24px;font-size:0.82rem;color:rgba(245,232,203,0.75);line-height:1.85;max-height:320px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,0.20) transparent;}
+.agreement-body::-webkit-scrollbar{width:6px;}
+.agreement-body::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.20);border-radius:3px;}
+.agreement-body h3{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:900;color:var(--cream2);margin:18px 0 8px;}
 .agreement-body h3:first-child{margin-top:0;}
-.agreement-body ul{margin-left:18px;margin-bottom:8px;}
+.agreement-body ul{margin-left:20px;}
 .agreement-body li{margin-bottom:5px;}
-.agreement-body::-webkit-scrollbar{width:4px;}
-.agreement-body::-webkit-scrollbar-track{background:rgba(255,255,255,0.04);}
-.agreement-body::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.form-err{display:none;padding:11px 16px;background:rgba(233,102,69,0.10);border:1px solid rgba(233,102,69,0.30);border-radius:7px;font-size:0.82rem;color:var(--coral2);margin-top:14px;}
+.form-err[style*="block"]{display:block;}
+.form-actions{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-top:24px;}
+.btn-back-form{background:transparent;color:rgba(245,232,203,0.65);padding:13px 22px;border:1px solid rgba(255,255,255,0.15);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:500;cursor:pointer;transition:all 0.2s;min-height:44px;}
+.btn-back-form:hover{color:var(--cream2);border-color:rgba(255,255,255,0.30);}
 
-/* SUCCESS */
-.success-screen{display:none;text-align:center;padding:48px 32px;}
+.success-screen{display:none;background:rgba(34,197,94,0.07);border:1px solid rgba(34,197,94,0.22);border-radius:14px;padding:48px 32px;text-align:center;}
 .success-screen.show{display:block;}
-.success-icon{font-size:3.5rem;margin-bottom:20px;display:block;}
+.success-icon{display:inline-flex;align-items:center;justify-content:center;margin-bottom:16px;}
 .success-title{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:900;color:var(--cream2);margin-bottom:10px;}
-.success-sub{font-size:0.92rem;color:rgba(245,232,203,0.55);line-height:1.85;max-width:440px;margin:0 auto 28px;}
+.success-sub{font-size:0.92rem;color:rgba(245,232,203,0.75);line-height:1.85;margin-bottom:24px;max-width:440px;margin-left:auto;margin-right:auto;}
 
-/* EARNINGS CALCULATOR */
-.calc-section{background:var(--teal3);padding:64px 48px;}
-.calc-inner{max-width:900px;margin:0 auto;}
-.calc-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:40px;}
-.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
-.calc-control{margin-bottom:28px;}
-.calc-label{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,232,203,0.60);margin-bottom:8px;display:flex;justify-content:space-between;}
-.calc-label span{color:var(--coral);font-size:0.88rem;font-weight:900;letter-spacing:0;}
-.calc-slider{width:100%;-webkit-appearance:none;appearance:none;height:5px;border-radius:3px;background:rgba(255,255,255,0.15);outline:none;}
-.calc-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;background:var(--coral);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);}
-.calc-result{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:28px;}
-.calc-result-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.07);}
-.calc-result-row:last-child{border-bottom:none;}
-.calc-result-label{font-size:0.82rem;color:rgba(245,232,203,0.60);}
-.calc-result-val{font-size:0.88rem;font-weight:700;color:var(--cream2);}
-.calc-result-val.highlight{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:#4ade80;}
-.calc-annual{text-align:center;margin-top:20px;padding:16px;background:rgba(74,222,128,0.10);border:1px solid rgba(74,222,128,0.25);border-radius:10px;}
-.calc-annual-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:#4ade80;}
-.calc-annual-label{font-size:0.76rem;color:rgba(245,232,203,0.55);margin-top:4px;}
-.calc-note{font-size:0.70rem;color:rgba(245,232,203,0.35);margin-top:12px;text-align:center;line-height:1.6;}
+/* ── EARNINGS CALCULATOR ── */
+.calc-section{background:var(--teal3);padding:80px 48px;}
+.calc-inner{max-width:1100px;margin:0 auto;}
+.calc-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.10);border-radius:18px;padding:40px;}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.calc-controls{display:flex;flex-direction:column;gap:22px;}
+.calc-control{}
+.calc-label{font-size:0.78rem;font-weight:700;letter-spacing:0.06em;color:rgba(245,232,203,0.75);margin-bottom:8px;display:flex;justify-content:space-between;}
+.calc-label span{color:var(--coral);font-weight:800;}
+.calc-slider{width:100%;-webkit-appearance:none;appearance:none;height:6px;border-radius:3px;background:rgba(255,255,255,0.10);outline:none;cursor:pointer;}
+.calc-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;background:var(--coral);cursor:pointer;border:2px solid var(--cream2);}
+.calc-slider::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--coral);cursor:pointer;border:2px solid var(--cream2);}
+.calc-result{background:rgba(0,0,0,0.20);border-radius:12px;padding:24px;}
+.calc-result-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.08);font-size:0.88rem;}
+.calc-result-label{color:rgba(245,232,203,0.65);}
+.calc-result-val{font-weight:700;color:var(--cream2);}
+.calc-result-val.highlight{color:#4ade80;font-size:1.6rem;font-family:'Playfair Display',serif;font-weight:900;}
+.calc-annual{margin-top:18px;padding:18px;background:rgba(233,102,69,0.10);border:1px solid rgba(233,102,69,0.25);border-radius:10px;text-align:center;}
+.calc-annual-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--coral);line-height:1;margin-bottom:4px;}
+.calc-annual-label{font-size:0.78rem;color:rgba(245,232,203,0.70);}
+.calc-note{margin-top:16px;font-size:0.74rem;color:rgba(245,232,203,0.45);line-height:1.6;text-align:center;}
 
-/* COMPARISON TABLE */
-.compare-section{background:var(--cream2);padding:64px 48px;}
-.compare-inner{max-width:900px;margin:0 auto;}
-.compare-table{width:100%;border-radius:14px;overflow:hidden;border:1px solid var(--border);}
-.compare-table th{padding:16px 20px;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:var(--teal3);color:rgba(245,232,203,0.60);}
-.compare-table th.highlight-col{background:var(--teal);color:var(--coral);}
-.compare-table td{padding:14px 20px;font-size:0.88rem;border-bottom:1px solid var(--border);}
-.compare-table tr:last-child td{border-bottom:none;}
-.compare-table td:first-child{font-weight:600;color:var(--teal);}
-.compare-table td.yes{color:#1a7a4a;font-weight:700;}
-.compare-table td.no{color:#c45230;}
-.compare-table td.highlight-col{background:rgba(10,77,92,0.04);font-weight:700;color:var(--teal);}
-.compare-table tr:hover td{background:rgba(10,77,92,0.02);}
+/* ── COMPARE TABLE ── */
+.compare-section{padding:80px 48px;background:var(--cream2);color:var(--dark);}
+.compare-inner{max-width:1100px;margin:0 auto;}
+.compare-table{width:100%;background:white;border-radius:14px;overflow:hidden;border-collapse:collapse;box-shadow:0 12px 32px rgba(10,77,92,0.08);}
+.compare-table th,.compare-table td{padding:18px 22px;text-align:left;font-size:0.88rem;border-bottom:1px solid rgba(10,77,92,0.07);}
+.compare-table thead th{background:var(--teal);color:var(--cream2);font-weight:700;text-align:center;letter-spacing:0.04em;}
+.compare-table thead th:first-child{text-align:left;background:var(--teal3);}
+.compare-table tbody td{vertical-align:top;}
+.compare-table tbody td:first-child{font-weight:600;color:var(--teal);background:rgba(10,77,92,0.02);}
+.compare-table tbody td.yes{color:#1a7a4a;font-weight:600;text-align:center;}
+.compare-table tbody td.no{color:#c84922;font-weight:500;text-align:center;}
+.compare-table tbody td.highlight-col{background:rgba(233,102,69,0.07);border-left:2px solid var(--coral);border-right:2px solid var(--coral);}
+.compare-table tbody tr:last-child td.highlight-col{border-bottom:2px solid var(--coral);}
+.compare-table thead th.highlight-col{background:var(--coral);}
 
-/* FOOTER */
-footer{background:#0b1a1f;padding:28px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(255,255,255,0.05);}
-.foot-logo{font-size:1.2rem;font-weight:900;display:flex;align-items:baseline;text-decoration:none;}
+/* ── FOOTER ── */
+footer{background:var(--dark);padding:40px 48px;text-align:center;}
+.foot-logo{font-size:1.4rem;font-weight:900;display:inline-flex;align-items:baseline;text-decoration:none;}
 .foot-s{font-family:'Playfair Display',serif;font-style:italic;color:var(--cream);}
-.foot-l{font-weight:700;color:var(--coral);}
-.foot-copy{font-size:0.74rem;color:rgba(245,232,203,0.27);}
-.foot-links a{font-size:0.74rem;color:rgba(245,232,203,0.27);text-decoration:none;margin-left:18px;transition:color 0.2s;}
+.foot-l{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--coral);}
+.foot-copy{font-size:0.80rem;color:rgba(245,232,203,0.60);margin:14px 0;}
+.foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;}
+.foot-links a{font-size:0.80rem;color:rgba(245,232,203,0.60);text-decoration:none;transition:color 0.2s;}
 .foot-links a:hover{color:var(--coral);}
 
-/* RESPONSIVE */
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}.mockup-grid{grid-template-columns:1fr;}.value-grid{grid-template-columns:1fr 1fr;}.calc-grid{grid-template-columns:1fr;}}
-@media(max-width:768px){
-  nav{padding:15px 20px;}.hero{padding:56px 20px 60px;}.sec{padding:56px 20px;}
-  .form-grid{grid-template-columns:1fr;}.value-grid{grid-template-columns:1fr;}.value-grid-2{grid-template-columns:1fr;}
-  .compare-section{padding:40px 20px;}.calc-section{padding:40px 20px;}
-  .compare-table th,.compare-table td{padding:10px 12px;font-size:0.78rem;}
-  footer{padding:22px 20px;flex-direction:column;text-align:center;}
+@media(max-width:900px){
+  .hero-grid,.mockup-grid,.calc-grid{grid-template-columns:1fr;gap:40px;}
+  .value-grid,.value-grid-2{grid-template-columns:1fr;}
+  .hero{padding:60px 24px 60px;}
+  .sec,.calc-section,.compare-section{padding:60px 24px;}
+  nav{padding:14px 20px;}
+  .form-grid{grid-template-columns:1fr;}
+  .commission-table{font-size:0.80rem;}
+  .commission-table th,.commission-table td{padding:12px 14px;}
+  .compare-table{font-size:0.78rem;}
+  .compare-table th,.compare-table td{padding:12px 14px;}
 }
 </style>
-<!-- GA4 — Replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"ShoreList Operator Partner Program","url":"https://shorelist.net/join","description":"Local operators apply to list tours, charters, and experiences on ShoreList. Free to list. Commission only.","publisher":{"@type":"Organization","name":"ShoreList LLC","url":"https://shorelist.net","email":"shorelistwilmington@gmail.com"},"inLanguage":"en-US"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://shorelist.net","name":"ShoreList LLC","url":"https://shorelist.net","email":"shorelistwilmington@gmail.com","areaServed":{"@type":"Place","name":"Wilmington, NC & the Beaches"},"address":{"@type":"PostalAddress","addressLocality":"Wilmington","addressRegion":"NC","addressCountry":"US"},"foundingDate":"2026"}
 </script>
 </head>
 <body>
 
-<div class="launch-banner">
-  <div class="launch-banner-badge">&#128640; June 1st</div>
-  <div class="launch-banner-text"><strong>ShoreList launches June 1st.</strong> <span>Add a local experience to your Wilmington visit &mdash; book via ShoreList.</span></div>
-</div>
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs>
+<symbol id="i-ghost" viewBox="0 0 24 24"><path d="M5 9a7 7 0 0 1 14 0v11l-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5Z"/><circle cx="9.5" cy="11" r="0.9" fill="currentColor" stroke="none"/><circle cx="14.5" cy="11" r="0.9" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-fish" viewBox="0 0 24 24"><path d="M3 12c3-4 7-4 11 0-4 4-8 4-11 0z"/><path d="M14 12l4-3v6z"/><circle cx="7" cy="11" r="0.6" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-surf" viewBox="0 0 24 24"><path d="M2 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M16 3c-4 1-9 5-11 9l3 1c2-4 5-8 9-9z"/></symbol>
+<symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.3C15.5 5 17 4 19 2c1 2 2 5 2 8a7 7 0 0 1-7 7"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></symbol>
+<symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 10c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+<symbol id="i-dollar" viewBox="0 0 24 24"><path d="M12 3v18M7 8c0-2 2-3 5-3s5 1 5 3-2 3-5 3-5 1-5 3 2 3 5 3 5-1 5-3"/></symbol>
+<symbol id="i-trending" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></symbol>
+<symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5.6 5.6l4.2 4.2M14.2 14.2l4.2 4.2M5.6 18.4l4.2-4.2M14.2 9.8l4.2-4.2"/></symbol>
+<symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+</defs></svg>
 
-<nav>
-  <a href="/" class="logo"><span class="logo-s">Shore</span><span class="logo-l">List</span></a>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav aria-label="Primary">
+  <a href="/" class="logo" aria-label="ShoreList home"><span class="logo-s">Shore</span><span class="logo-l">List</span></a>
   <div class="nav-r">
     <a href="/" class="nav-back">&#8592; Back to ShoreList</a>
     <a href="#apply" class="nav-cta-sm">Apply Now</a>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
+<main id="main">
+
+<!-- ── HERO ── -->
+<section class="hero" aria-label="Page header">
   <div class="hero-inner">
     <div class="hero-tag">Operator Partner Program</div>
     <div class="hero-grid">
       <div>
         <h1 class="hero-h">Grow your bookings.<br/><em>Zero upfront cost.</em></h1>
-        <p class="hero-sub">ShoreList puts your tours, charters, and experiences directly in front of thousands of Wilmington visitors already searching for something to do. Free to list. Commission only. We only make money when you do.</p>
+        <p class="hero-sub">ShoreList puts your tours, charters, and experiences directly in front of Wilmington visitors already searching for something to do. Free to list. Commission only. We only make money when you do.</p>
         <div class="hero-badges">
           <div class="hb green">$0 to list</div>
           <div class="hb">15&ndash;20% commission</div>
-          <div class="hb">Live in 48 hours</div>
+          <div class="hb">Fast onboarding</div>
           <div class="hb">No long-term contract</div>
         </div>
         <div class="hero-cta-row">
           <a href="#apply" class="btn-fill">Apply to List Your Business &rarr;</a>
           <a href="#why" class="btn-ghost">See How It Works</a>
         </div>
-        <p class="hero-note">RJ Brideau will personally reach out within 24 hours to finalize your listing.</p>
+        <p class="hero-note">&#10003; RJ responds personally within 24 hours &nbsp;&middot;&nbsp; Typically live within 48&ndash;72 hours &nbsp;&middot;&nbsp; No contract required</p>
       </div>
       <div>
         <div class="hero-card">
           <div class="hc-head"><div class="hc-head-title">Why ShoreList Works &mdash; At a Glance</div></div>
-          <div class="hc-row"><span class="hc-label">Cost to list</span><span class="hc-val green">$0</span></div>
-          <div class="hc-row"><span class="hc-label">Monthly fees</span><span class="hc-val green">$0</span></div>
-          <div class="hc-row"><span class="hc-label">Commission per booking</span><span class="hc-val">15&ndash;20%</span></div>
-          <div class="hc-row"><span class="hc-label">Time to go live</span><span class="hc-val white">48 hours</span></div>
-          <div class="hc-row"><span class="hc-label">Long-term contract</span><span class="hc-val green">None</span></div>
-          <div class="hc-row"><span class="hc-label">You keep your brand</span><span class="hc-val green">Always</span></div>
+          <div class="hc-rows">
+            <div class="hc-row"><span class="hc-label">Cost to list</span><span class="hc-val green">$0</span></div>
+            <div class="hc-row"><span class="hc-label">Monthly fees</span><span class="hc-val green">$0</span></div>
+            <div class="hc-row"><span class="hc-label">Commission per booking</span><span class="hc-val">15&ndash;20%</span></div>
+            <div class="hc-row"><span class="hc-label">Time to go live</span><span class="hc-val white">48-72 hrs</span></div>
+            <div class="hc-row"><span class="hc-label">Long-term contract</span><span class="hc-val green">None</span></div>
+            <div class="hc-row"><span class="hc-label">You keep your brand</span><span class="hc-val green">Always</span></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY LIST -->
-<section class="sec" id="why">
+<!-- ── WHY LIST ── -->
+<section class="sec" id="why" aria-labelledby="why-heading">
   <div class="sec-inner">
     <div class="sec-label">The Opportunity</div>
-    <h2 class="sec-title">Wilmington gets <em>millions of visitors.</em><br/>Most never find the best experiences.</h2>
+    <h2 class="sec-title" id="why-heading">Wilmington gets <em>millions of visitors.</em><br/>Most never find the best experiences.</h2>
     <p class="sec-sub">ShoreList is the only platform built exclusively for Wilmington's coastal experience market. We put your business where visitors are already looking &mdash; and we only earn when you do.</p>
     <div class="value-grid">
       <div class="vp">
-        <span class="vp-icon">&#127754;</span>
+        <span class="vp-icon" aria-hidden="true"><svg class="ico-md" aria-hidden="true" focusable="false"><use href="#i-wave" xlink:href="#i-wave"/></svg></span>
         <div class="vp-title">Local-First Platform</div>
         <div class="vp-sub">No competing with operators from other cities. Every listing is a Wilmington-area business. Visitors searching for coastal experiences land directly on your listing.</div>
       </div>
       <div class="vp">
-        <span class="vp-icon">&#128205;</span>
+        <span class="vp-icon" aria-hidden="true"><svg class="ico-md" aria-hidden="true" focusable="false"><use href="#i-pin" xlink:href="#i-pin"/></svg></span>
         <div class="vp-title">STR &amp; Hotel Placement</div>
         <div class="vp-sub">ShoreList materials go directly into vacation rentals and hotel properties across the region &mdash; reaching guests at the exact moment they're looking for something to do.</div>
       </div>
       <div class="vp">
-        <span class="vp-icon">&#128176;</span>
+        <span class="vp-icon" aria-hidden="true"><svg class="ico-md" aria-hidden="true" focusable="false"><use href="#i-dollar" xlink:href="#i-dollar"/></svg></span>
         <div class="vp-title">Lowest Commission Around</div>
         <div class="vp-sub"><strong>Viator charges 20&ndash;30%.</strong> GetYourGuide charges up to 30%. ShoreList charges 15&ndash;20% &mdash; and we know your market far better than they ever will.</div>
       </div>
     </div>
     <div class="value-grid-2">
       <div class="vp">
-        <span class="vp-icon">&#128200;</span>
+        <span class="vp-icon" aria-hidden="true"><svg class="ico-md" aria-hidden="true" focusable="false"><use href="#i-trending" xlink:href="#i-trending"/></svg></span>
         <div class="vp-title">Ground Floor Opportunity</div>
         <div class="vp-sub">You're joining early. Early operators get <strong>best placement, most visibility,</strong> and a direct relationship with our team as we expand across the NC coast and beyond.</div>
       </div>
       <div class="vp">
-        <span class="vp-icon">&#9889;</span>
-        <div class="vp-title">Instant Booking Infrastructure</div>
-        <div class="vp-sub">Real-time availability calendar, Stripe payments, automated confirmation emails &mdash; all built and maintained by us. <strong>Zero tech required on your end.</strong></div>
+        <span class="vp-icon" aria-hidden="true"><svg class="ico-md" aria-hidden="true" focusable="false"><use href="#i-bolt" xlink:href="#i-bolt"/></svg></span>
+        <div class="vp-title">Booking Infrastructure</div>
+        <div class="vp-sub">Real-time availability calendar, Stripe payments, automated confirmation emails, and a full operator dashboard &mdash; all built and maintained by us. <strong>Zero tech required on your end.</strong></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHAT GUESTS SEE -->
-<section class="sec sec-alt">
+<!-- ── WHAT GUESTS SEE ── -->
+<section class="sec sec-alt" aria-labelledby="mockup-heading">
   <div class="sec-inner">
     <div class="mockup-grid">
-      <div>
-        <div class="mockup-phone">
+      <div class="mockup-left">
+        <div class="mockup-phone" aria-hidden="true">
           <div class="mp-header">
-            <div class="mp-loc">&#128205; Wilmington, NC</div>
+            <div class="mp-loc"><svg aria-hidden="true" focusable="false"><use href="#i-pin" xlink:href="#i-pin"/></svg>Wilmington, NC</div>
             <div class="mp-q">What do you want to do today?</div>
             <div class="mp-tabs">
               <div class="mp-tab active">Explore</div>
@@ -359,42 +404,42 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
               <div class="mp-tab">Saved</div>
             </div>
           </div>
-          <div class="mp-item"><div class="mp-ico" style="background:#eef6f6;">&#128123;</div><div style="flex:1"><div class="mp-name">Historic Ghost Walk</div><div class="mp-meta">Downtown &middot; 90 min &middot; &#11088; 4.9</div></div><div class="mp-price">$25</div></div>
-          <div class="mp-item"><div class="mp-ico" style="background:#eef8f0;">&#127940;</div><div style="flex:1"><div class="mp-name">Surf Lesson &mdash; Carolina Beach Surf Co.</div><div class="mp-meta">Carolina Beach &middot; 2 hrs &middot; Certified Instructor</div></div><div class="mp-price">$75</div></div>
-          <div class="mp-item"><div class="mp-ico" style="background:#fef4ee;">&#127907;</div><div style="flex:1"><div class="mp-name">Offshore Fishing Charter</div><div class="mp-meta">Carolina Beach &middot; Full Day &middot; &#11088; 4.9</div></div><div class="mp-price">$195</div></div>
-          <div class="mp-item"><div class="mp-ico" style="background:#f0fef4;">&#127807;</div><div style="flex:1"><div class="mp-name">Coastal Nature Walk</div><div class="mp-meta">Carolina Beach SP &middot; 2 hrs &middot; &#11088; 5.0</div></div><div class="mp-price">$35</div></div>
+          <div class="mp-item"><div class="mp-ico" style="background:#eef6f6;" aria-hidden="true"><svg aria-hidden="true" focusable="false"><use href="#i-ghost" xlink:href="#i-ghost"/></svg></div><div style="flex:1"><div class="mp-name">Historic Ghost Walk</div><div class="mp-meta">Downtown &middot; 90 min &middot; &#9733; 4.9</div></div><div class="mp-price">$25</div></div>
+          <div class="mp-item"><div class="mp-ico" style="background:#eef8f0;" aria-hidden="true"><svg aria-hidden="true" focusable="false"><use href="#i-surf" xlink:href="#i-surf"/></svg></div><div style="flex:1"><div class="mp-name">Surf Lesson &mdash; Carolina Beach Surf Co.</div><div class="mp-meta">Carolina Beach &middot; 2 hrs &middot; Certified Instructor</div></div><div class="mp-price">$75</div></div>
+          <div class="mp-item"><div class="mp-ico" style="background:#fef4ee;" aria-hidden="true"><svg aria-hidden="true" focusable="false"><use href="#i-fish" xlink:href="#i-fish"/></svg></div><div style="flex:1"><div class="mp-name">Offshore Fishing Charter</div><div class="mp-meta">Carolina Beach &middot; Full Day &middot; &#9733; 4.9</div></div><div class="mp-price">$195</div></div>
+          <div class="mp-item"><div class="mp-ico" style="background:#f0fef4;" aria-hidden="true"><svg aria-hidden="true" focusable="false"><use href="#i-leaf" xlink:href="#i-leaf"/></svg></div><div style="flex:1"><div class="mp-name">Coastal Nature Walk</div><div class="mp-meta">Carolina Beach SP &middot; 2 hrs &middot; &#9733; 5.0</div></div><div class="mp-price">$35</div></div>
         </div>
         <div class="mockup-caption">Guests scan a QR code from a ShoreList pamphlet in their Airbnb or hotel, land here, and book in under 60 seconds.</div>
       </div>
-      <div>
+      <div class="mockup-right">
         <div class="sec-label">What Your Guests Experience</div>
-        <h2 class="sec-title">A booking experience<br/>guests <em>actually enjoy.</em></h2>
-        <p style="font-size:0.90rem;color:rgba(245,232,203,0.55);line-height:1.85;">When guests land on your ShoreList listing, they see a beautifully designed booking page with real-time availability and a secure $25 deposit checkout that takes under 60 seconds.</p>
+        <h2 class="sec-title" id="mockup-heading">A booking experience<br/>guests <em>actually enjoy.</em></h2>
+        <p style="font-size:0.90rem;color:rgba(245,232,203,0.70);line-height:1.85;">When guests land on your ShoreList listing, they see a beautifully designed booking page with your experience, real-time availability, and a secure full-payment checkout that takes under 60 seconds.</p>
         <div class="mockup-bullets">
-          <div class="mb-item"><div class="mb-dot">&#10003;</div><div class="mb-text"><strong>Real-time calendar.</strong> Guests see exactly which time slots are available. No double bookings. Ever.</div></div>
-          <div class="mb-item"><div class="mb-dot">&#10003;</div><div class="mb-text"><strong>Instant confirmation.</strong> Guests receive an email confirmation the moment they book. You get notified too.</div></div>
-          <div class="mb-item"><div class="mb-dot">&#10003;</div><div class="mb-text"><strong>Refundable deposit model.</strong> A $25 deposit holds the spot. Low barrier for the guest. Pre-committed booking for you.</div></div>
-          <div class="mb-item"><div class="mb-dot">&#10003;</div><div class="mb-text"><strong>Stripe-powered checkout.</strong> The most trusted payment processor in the world.</div></div>
-          <div class="mb-item"><div class="mb-dot">&#10003;</div><div class="mb-text"><strong>Your brand stays front and center.</strong> Your name, your description, your prices. We send the guests. You run the show.</div></div>
+          <div class="mb-item"><div class="mb-dot" aria-hidden="true">&#10003;</div><div class="mb-text"><strong>Real-time calendar.</strong> Guests see exactly which time slots are available. No double bookings. Ever.</div></div>
+          <div class="mb-item"><div class="mb-dot" aria-hidden="true">&#10003;</div><div class="mb-text"><strong>Instant confirmation.</strong> Guests receive an email confirmation the moment they book. You get notified too.</div></div>
+          <div class="mb-item"><div class="mb-dot" aria-hidden="true">&#10003;</div><div class="mb-text"><strong>Full upfront payment.</strong> Guests pay the full booking price at checkout via Stripe. You see committed, paid bookings &mdash; not tentative holds. Clear 24-hour cancellation policy means no surprises for anyone.</div></div>
+          <div class="mb-item"><div class="mb-dot" aria-hidden="true">&#10003;</div><div class="mb-text"><strong>Stripe-powered checkout.</strong> Card, bank transfer, or Klarna. The most trusted payment processor in the world.</div></div>
+          <div class="mb-item"><div class="mb-dot" aria-hidden="true">&#10003;</div><div class="mb-text"><strong>Your brand stays front and center.</strong> Your business name, your description, your prices. We send the guests. You run the show.</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COMMISSION TABLE -->
-<section class="sec" id="commission">
+<!-- ── COMMISSION TABLE ── -->
+<section class="sec" id="commission" aria-labelledby="commission-heading">
   <div class="sec-inner">
     <div class="sec-label">Transparent Rates</div>
-    <h2 class="sec-title">No surprises. <em>Ever.</em></h2>
-    <p class="sec-sub">Your commission rate is locked in at sign-up and never changes without your agreement. Commission is deducted from the guest deposit before payout &mdash; no invoicing, no manual calculation.</p>
+    <h2 class="sec-title" id="commission-heading">No surprises. <em>Ever.</em></h2>
+    <p class="sec-sub">Your commission rate is locked in at sign-up and never changes without your agreement. Commission is deducted from the guest payment before payout &mdash; no invoicing, no manual calculation.</p>
     <div class="commission-wrap">
       <table class="commission-table">
         <thead>
           <tr>
             <th>Experience Category</th>
             <th>ShoreList Commission</th>
-            <th>You Receive (on $25 deposit)</th>
+            <th>Your Share (per $25 booking)</th>
           </tr>
         </thead>
         <tbody>
@@ -411,56 +456,56 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
         </tbody>
       </table>
     </div>
-    <p class="commission-note">* The balance of the booking price is paid directly to you by the guest at the time of the experience. There are no additional ShoreList fees beyond the commission on the deposit.</p>
+    <p class="commission-note">* Commission is calculated on the full booking price paid by the guest at checkout through ShoreList. Your net payout is remitted within 5 business days of the completed experience. No invoicing required.</p>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="sec sec-alt">
+<!-- ── FAQ ── -->
+<section class="sec sec-alt" aria-labelledby="faq-heading">
   <div class="sec-inner">
     <div class="sec-label">Common Questions</div>
-    <h2 class="sec-title">Everything you want to know.</h2>
-    <p class="sec-sub" style="margin-bottom:32px;">Can't find your answer? Email us at <a href="mailto:shorelistwilmington@gmail.com" style="color:var(--coral);">shorelistwilmington@gmail.com</a></p>
+    <h2 class="sec-title" id="faq-heading">Everything you want to know.</h2>
+    <p class="sec-sub" style="margin-bottom:32px;">Can't find your answer here? Email us at <a href="mailto:shorelistwilmington@gmail.com" style="color:var(--coral);">shorelistwilmington@gmail.com</a>.</p>
     <div class="faq">
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">How does ShoreList handle payments? <span class="faq-arrow">&#9662;</span></button>
-        <div class="faq-a">Guests pay a $25 refundable booking deposit through our secure Stripe checkout. Once you confirm the booking and deliver the experience, ShoreList remits your net payout within 5 business days. Simple, automatic, no invoicing required. The balance of your booking price is paid directly to you by the guest on the day.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">What if I need to cancel a booking? <span class="faq-arrow">&#9662;</span></button>
+      <details class="faq-item">
+        <summary class="faq-q">How does ShoreList handle payments? <span class="faq-arrow" aria-hidden="true">&#9662;</span></summary>
+        <div class="faq-a">Guests pay the full booking price through our secure Stripe checkout at the time of reservation. Once you deliver the experience, ShoreList remits your net payout (full price minus the agreed commission) within 5 business days. Simple, automatic, no invoicing required.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What if I need to cancel a booking? <span class="faq-arrow" aria-hidden="true">&#9662;</span></summary>
         <div class="faq-a">Life happens. If you need to cancel, notify us as soon as possible and we'll handle the guest communication and refund. We ask that cancellations be rare &mdash; frequent cancellations affect your listing visibility and placement.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">Do I need to change how I run my business? <span class="faq-arrow">&#9662;</span></button>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Do I need to change how I run my business? <span class="faq-arrow" aria-hidden="true">&#9662;</span></summary>
         <div class="faq-a">Not at all. ShoreList drives guests to you. You run your experience exactly as you always have. We handle the booking infrastructure &mdash; you handle the magic. Your availability, your pricing, your experience.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">What licenses and insurance do I need? <span class="faq-arrow">&#9662;</span></button>
-        <div class="faq-a">You need to hold all required licenses and permits to legally operate your business in North Carolina. We require operators to carry general liability insurance before going live on ShoreList. We'll discuss your specific coverage during onboarding.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">Can I be on ShoreList AND other platforms? <span class="faq-arrow">&#9662;</span></button>
-        <div class="faq-a">Yes. ShoreList is a non-exclusive partnership. You can list on Viator, GetYourGuide, or any other platform simultaneously. We just ask that you don't direct ShoreList-referred guests to book outside our platform for the same experience.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">How long does it take to go live? <span class="faq-arrow">&#9662;</span></button>
-        <div class="faq-a">Once your agreement is signed and your listing information is submitted, we'll have your business live on ShoreList.net within 48 hours. RJ will reach out personally to make sure everything looks perfect before launch.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">What is the Featured Spotlight and how do I get it? <span class="faq-arrow">&#9662;</span></button>
-        <div class="faq-a">The Featured Spotlight is premium placement on the ShoreList homepage &mdash; the first thing every visitor sees. It includes your availability calendar, star rating, and a direct book button. Featured spots are available for $50/week on a first-come, first-served basis. Contact us at shorelistwilmington@gmail.com to reserve yours.</div>
-      </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What licenses and insurance do I need? <span class="faq-arrow" aria-hidden="true">&#9662;</span></summary>
+        <div class="faq-a">You need to hold all required licenses and permits to legally operate your business in North Carolina. We recommend operators carry general liability insurance appropriate for their activity type &mdash; we'll discuss your specific coverage during onboarding. It's not a barrier to getting listed.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can I be on ShoreList AND other platforms? <span class="faq-arrow" aria-hidden="true">&#9662;</span></summary>
+        <div class="faq-a">Yes. ShoreList is a non-exclusive partnership. You can list on Viator, GetYourGuide, or any other platform simultaneously. We just ask that you don't direct ShoreList-referred guests to book outside our platform for the same experience during this agreement and for 12 months after termination.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How long does it take to go live? <span class="faq-arrow" aria-hidden="true">&#9662;</span></summary>
+        <div class="faq-a">Once your agreement is signed (via SignWell e-signature) and your listing information is submitted, we'll typically have your business live on ShoreList.net within 48-72 hours. RJ will reach out personally to make sure everything looks perfect before launch.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What is the &ldquo;Featured Spotlight&rdquo; and how do I get it? <span class="faq-arrow" aria-hidden="true">&#9662;</span></summary>
+        <div class="faq-a">The Featured Spotlight is a premium placement on the ShoreList homepage &mdash; the first thing every visitor sees. It includes your availability calendar, star rating, and a direct book button. Featured spots are available for $50/week and are sold on a first-come, first-served basis. Contact us at shorelistwilmington@gmail.com to reserve yours.</div>
+      </details>
     </div>
   </div>
 </section>
 
-<!-- APPLICATION FORM -->
-<section class="sec" id="apply">
+<!-- ── APPLICATION FORM ── -->
+<section class="sec" id="apply" aria-labelledby="apply-heading">
   <div class="sec-inner">
     <div style="max-width:720px;margin:0 auto;">
       <div class="sec-label">Apply Now</div>
-      <h2 class="sec-title">Let's get you <em>listed.</em></h2>
-      <p class="sec-sub">Fill out the form below. RJ will reach out within 24 hours to confirm your listing details and get you live. <strong style="color:var(--coral);">ShoreList launches June 1st</strong> &mdash; get listed before we go public.</p>
+      <h2 class="sec-title" id="apply-heading">Let's get you <em>listed.</em></h2>
+      <p class="sec-sub">Fill out the form below. RJ will reach out within 24 hours to confirm your listing details and get you live. <strong style="color:var(--coral);">ShoreList launches June 1, 2026</strong> &mdash; get listed before we go public.</p>
 
       <div class="form-steps" id="form-steps">
         <div class="fs-step active" id="fs1">1&nbsp; Your Details</div>
@@ -468,27 +513,28 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
         <div class="fs-step" id="fs3">3&nbsp; Sign &amp; Submit</div>
       </div>
 
-      <div class="success-screen" id="success-screen">
-        <span class="success-icon">&#127881;</span>
+      <!-- Success screen -->
+      <div class="success-screen" id="success-screen" role="status" aria-live="polite">
+        <span class="success-icon" aria-hidden="true"><svg aria-hidden="true" focusable="false"><use href="#i-check" xlink:href="#i-check"/></svg></span>
         <div class="success-title">You're on ShoreList!</div>
-        <p class="success-sub">Your application is submitted. RJ will reach out within 24 hours to finalize your listing and get you live within 48 hours. Check your email &mdash; your agreement copy is on its way.</p>
+        <p class="success-sub">Your application is submitted. RJ will reach out within 24 hours to finalize your listing and get you live typically within 48-72 hours. Check your email &mdash; your agreement copy is on its way via SignWell.</p>
         <a href="/" class="btn-fill">Back to ShoreList &rarr;</a>
       </div>
 
-      <!-- Step 1 -->
+      <!-- Step 1: Your Details -->
       <div class="form-panel active" id="panel-1">
         <div class="form-grid">
-          <div class="form-field"><label class="form-label">Business Name *</label><input class="form-input" type="text" id="f-biz" placeholder="Your business name" autocomplete="organization"/></div>
-          <div class="form-field"><label class="form-label">Your Full Name *</label><input class="form-input" type="text" id="f-name" placeholder="First and last name" autocomplete="name"/></div>
+          <div class="form-field"><label class="form-label" for="f-biz">Business Name <span aria-hidden="true">*</span></label><input class="form-input" type="text" id="f-biz" required aria-required="true" placeholder="Your business name" autocomplete="organization"/></div>
+          <div class="form-field"><label class="form-label" for="f-name">Your Full Name <span aria-hidden="true">*</span></label><input class="form-input" type="text" id="f-name" required aria-required="true" placeholder="First and last name" autocomplete="name"/></div>
         </div>
         <div class="form-grid">
-          <div class="form-field"><label class="form-label">Email Address *</label><input class="form-input" type="email" id="f-email" placeholder="your@email.com" autocomplete="email"/></div>
-          <div class="form-field"><label class="form-label">Phone Number *</label><input class="form-input" type="tel" id="f-phone" placeholder="(910) 000-0000" autocomplete="tel"/></div>
+          <div class="form-field"><label class="form-label" for="f-email">Email Address <span aria-hidden="true">*</span></label><input class="form-input" type="email" id="f-email" required aria-required="true" placeholder="your@email.com" autocomplete="email"/></div>
+          <div class="form-field"><label class="form-label" for="f-phone">Phone Number <span aria-hidden="true">*</span></label><input class="form-input" type="tel" id="f-phone" required aria-required="true" placeholder="(910) 000-0000" autocomplete="tel"/></div>
         </div>
         <div class="form-grid">
           <div class="form-field">
-            <label class="form-label">Experience Category *</label>
-            <select class="form-select" id="f-cat" onchange="showCommission()">
+            <label class="form-label" for="f-cat">Experience Category <span aria-hidden="true">*</span></label>
+            <select class="form-select" id="f-cat" required aria-required="true" onchange="showCommission()">
               <option value="" disabled selected>Select your category</option>
               <option value="fishing|15">Fishing Charters &mdash; 15%</option>
               <option value="sailing|15">Sunset Sails &amp; River Cruises &mdash; 15%</option>
@@ -505,8 +551,8 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
             <div class="commission-display" id="commission-display"></div>
           </div>
           <div class="form-field">
-            <label class="form-label">Primary Service Location *</label>
-            <select class="form-select" id="f-loc">
+            <label class="form-label" for="f-loc">Primary Service Location <span aria-hidden="true">*</span></label>
+            <select class="form-select" id="f-loc" required aria-required="true">
               <option value="" disabled selected>Select your main area</option>
               <option>Wilmington</option>
               <option>Wrightsville Beach</option>
@@ -520,17 +566,17 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
           </div>
         </div>
         <div class="form-grid full">
-          <div class="form-field"><label class="form-label">Tell Us About Your Business *</label><textarea class="form-input" id="f-desc" rows="3" placeholder="Describe your experience, what makes it special, pricing, and anything else you'd like us to know..."></textarea></div>
+          <div class="form-field"><label class="form-label" for="f-desc">Tell Us About Your Business <span aria-hidden="true">*</span></label><textarea class="form-input" id="f-desc" required aria-required="true" rows="3" placeholder="Describe your experience, what makes it special, pricing, and anything else you'd like us to know..."></textarea></div>
         </div>
         <div class="form-grid">
-          <div class="form-field"><label class="form-label">Website (optional)</label><input class="form-input" type="url" id="f-web" placeholder="https://yourwebsite.com"/></div>
+          <div class="form-field"><label class="form-label" for="f-web">Website <span class="optional">(optional)</span></label><input class="form-input" type="url" id="f-web" placeholder="https://yourwebsite.com"/></div>
           <div class="form-field">
-            <label class="form-label">EIN or SSN (Tax ID) *</label>
-            <input class="form-input" type="text" id="f-ein" placeholder="XX-XXXXXXX or XXX-XX-XXXX" autocomplete="off"/>
-            <div style="font-size:0.72rem;color:rgba(245,232,203,0.45);margin-top:5px;line-height:1.5;">Required for IRS tax reporting (Form 1099-K). Stored securely and never displayed publicly. See our <a href="/legal#tax" style="color:var(--coral);">Tax &amp; 1099 policy</a>.</div>
+            <label class="form-label" for="f-ein">EIN or Social Security Number (Tax ID) <span aria-hidden="true">*</span></label>
+            <input class="form-input" type="text" id="f-ein" required aria-required="true" placeholder="XX-XXXXXXX or XXX-XX-XXXX" autocomplete="off"/>
+            <div style="font-size:0.72rem;color:rgba(245,232,203,0.55);margin-top:5px;line-height:1.5;">Required for IRS tax reporting (Form 1099-K). Used solely for federal tax purposes. Stored securely and never displayed publicly. See our <a href="/legal#tax" style="color:var(--coral);">Tax &amp; 1099 policy</a>.</div>
           </div>
           <div class="form-field">
-            <label class="form-label">Are You Licensed to Operate?</label>
+            <label class="form-label" for="f-lic">Are You Licensed to Operate?</label>
             <select class="form-select" id="f-lic">
               <option value="" disabled selected>Select one</option>
               <option>Yes &mdash; I hold all required licenses and permits</option>
@@ -539,49 +585,67 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
             </select>
           </div>
         </div>
-        <div id="form-err-1" class="form-err"></div>
+        <div id="form-err-1" class="form-err" role="alert"></div>
         <div class="form-actions">
-          <button class="btn-fill" onclick="goStep(2)">Continue to Agreement &rarr;</button>
+          <button type="button" class="btn-fill" onclick="goStep(2)">Continue to Agreement &rarr;</button>
         </div>
       </div>
 
-      <!-- Step 2 -->
+      <!-- Step 2: Agreement -->
       <div class="form-panel" id="panel-2">
         <div class="agreement-wrap">
           <div class="agreement-header">
             <div class="agreement-header-title">ShoreList LLC &mdash; Operator Listing Agreement</div>
             <div class="agreement-header-badge">Plain English &middot; Fair Terms</div>
           </div>
-          <div class="agreement-body">
+          <div class="agreement-body" id="agreement-body" tabindex="0">
             <h3>1. Platform Services</h3>
-            <p>ShoreList LLC agrees to list your business on Shorelist.net, market your experiences to visitors through our website and physical promotional materials, process guest booking deposits on your behalf, notify you of all new bookings by email, and remit your net payout within 5 business days of a completed experience.</p>
+            <p>ShoreList LLC agrees to list your business on Shorelist.net, market your experiences to visitors through our website and physical promotional materials, process guest payments on your behalf via Stripe, notify you of all new bookings by email, and remit your net payout within 5 business days of a completed experience.</p>
+
             <h3>2. Your Obligations as an Operator</h3>
             <ul>
               <li>Respond to booking notifications within 24 hours.</li>
               <li>Maintain all required licenses, permits, and certifications to legally operate your business.</li>
-              <li>Carry commercial general liability insurance with minimum coverage of <strong>$1,000,000 per occurrence and $2,000,000 aggregate</strong>, naming ShoreList LLC as an additional insured.</li>
-              <li>Provide accurate, honest descriptions of your experiences including pricing, duration, and safety requirements.</li>
+              <li>Carry <strong>commercial general liability insurance with minimum coverage of $1,000,000 per occurrence and $2,000,000 aggregate</strong>, naming ShoreList LLC as an additional insured. Proof of insurance must be provided to ShoreList upon request and before your listing goes live.</li>
+              <li>Provide accurate, honest descriptions of your experiences including pricing, duration, and any safety requirements.</li>
               <li>Deliver confirmed bookings as described.</li>
               <li>Notify ShoreList within 48 hours of any pricing or availability changes.</li>
               <li>Treat all ShoreList-referred guests professionally and courteously.</li>
               <li>Not solicit ShoreList-referred guests to bypass our platform during this agreement and for 12 months after termination.</li>
             </ul>
+
             <h3>3. Commission &amp; Payment</h3>
-            <p>ShoreList earns a commission on every completed booking. There are no listing fees, monthly fees, or setup charges. ShoreList earns only when you earn. Payouts are processed within 5 business days of the completed experience.</p>
+            <p>ShoreList earns a commission on every completed booking. The commission rate applicable to your category is confirmed in your signed listing agreement. There are no listing fees, monthly fees, or setup charges. ShoreList earns only when you earn. Payouts are processed within 5 business days of the completed experience via your preferred payment method.</p>
+
             <h3>4. Refunds &amp; Cancellations</h3>
-            <p><strong>If you cancel:</strong> Guests receive a full refund. You receive no payment for cancelled bookings. <strong>If a guest cancels:</strong> ShoreList's standard cancellation policy applies. <strong>No-shows:</strong> You retain the booking deposit for confirmed no-shows.</p>
+            <p><strong>If you cancel:</strong> Guests receive a full refund. You receive no payment for cancelled bookings.</p>
+            <p><strong>If a guest cancels:</strong> ShoreList's standard cancellation policy applies. You are paid only for delivered experiences.</p>
+            <p><strong>No-shows:</strong> You retain the full booking payment for confirmed no-shows where you honored your commitment and the guest did not appear.</p>
+            <p><strong>Disputes:</strong> ShoreList will notify you of any guest dispute and give you a reasonable opportunity to respond before any refund decision.</p>
+
             <h3>5. Representations &amp; Warranties</h3>
-            <p>By signing, you confirm that you have legal authority to enter this agreement, all information you provide is accurate, your experiences comply with all applicable laws, and you will maintain all required operating licenses.</p>
+            <p>By signing, you confirm that you have legal authority to enter this agreement, all information you provide is accurate and complete, your experiences comply with all applicable North Carolina and federal laws, and you will maintain all required operating licenses.</p>
+
             <h3>6. Intellectual Property</h3>
-            <p>You grant ShoreList a limited, non-exclusive license to use your business name, photos, and descriptions solely to promote your listings on our platform. You retain full ownership of all your content.</p>
+            <p>You grant ShoreList a limited, non-exclusive license to use your business name, photos, and descriptions solely to promote your listings on our platform. You retain full ownership of all your content and may revoke this license with 30 days written notice.</p>
+
             <h3>7. Liability &amp; Indemnification</h3>
-            <p>ShoreList is a booking marketplace and does not operate or supervise experiences. You agree to indemnify ShoreList LLC against third-party claims arising from your business operations. ShoreList's total liability to you is limited to 3 months of commissions paid in the preceding period.</p>
+            <p>ShoreList is a booking marketplace &mdash; we facilitate reservations but do not operate or supervise experiences. ShoreList is not responsible for events occurring during the delivery of your experience. You agree to indemnify ShoreList LLC, its officers and employees against third-party claims arising from your business operations. ShoreList's total liability to you is limited to 3 months of commissions paid in the preceding period.</p>
+
             <h3>8. Term &amp; Termination</h3>
-            <p>This agreement runs month-to-month from the date of signing. Either party may terminate with 30 days written notice. ShoreList may terminate immediately for cause including violation of any applicable law or repeated failure to honor confirmed bookings.</p>
-            <h3>9. Tax Reporting &mdash; IRS Form 1099-K &amp; W-9</h3>
-            <p>ShoreList is required by federal law to report payments to operators. <strong>If you receive $600 or more in gross payments through ShoreList in any calendar year, ShoreList will issue you an IRS Form 1099-K.</strong> You are solely responsible for reporting your ShoreList income on your own tax returns.</p>
-            <h3>10. Governing Law</h3>
-            <p>This agreement is governed by the laws of the State of North Carolina. You and ShoreList are independent contractors. Any unresolved disputes are subject to good-faith mediation in New Hanover County, NC before litigation.</p>
+            <p>This agreement runs month-to-month from the date of signing. Either party may terminate with 30 days written notice. ShoreList may terminate immediately for cause including: violation of any applicable law, posing a safety risk to guests, or repeated failure to honor confirmed bookings.</p>
+
+            <h3>9. Confidentiality</h3>
+            <p>Both parties agree to keep non-public business information &mdash; including booking data, guest personal information, and negotiated commission rates &mdash; strictly confidential during and after the term of this agreement.</p>
+
+            <h3>10. Tax Reporting &mdash; IRS Form 1099-K &amp; W-9</h3>
+            <p>ShoreList is required by federal law to report payments to operators. <strong>If you receive payments through ShoreList that meet or exceed the applicable IRS reporting threshold in any calendar year, ShoreList will issue you an IRS Form 1099-K.</strong> The current federal reporting threshold is set by the IRS and may change from year to year. By submitting this application, you confirm that the EIN or SSN you provide is accurate and that you authorize ShoreList to use it solely for IRS tax reporting purposes.</p>
+            <p>You are solely responsible for reporting your ShoreList income on your tax returns. Failure to provide a valid tax ID may result in backup withholding of 24% on your payouts as required by IRS regulations.</p>
+
+            <h3>11. Governing Law</h3>
+            <p>This agreement is governed by the laws of the State of North Carolina. You and ShoreList are independent contractors &mdash; not partners, employees, joint venturers, or agents of each other. Any unresolved disputes are subject to good-faith mediation in New Hanover County, NC before litigation.</p>
+
+            <p style="margin-top:16px;font-size:0.80rem;color:rgba(245,232,203,0.50);">ShoreList LLC recommends that all parties consult qualified legal counsel before signing any business agreement. Final agreement is delivered and signed via SignWell e-signature. This agreement is intended to be readable, fair, and protective of both parties.</p>
           </div>
         </div>
         <div class="form-checkbox">
@@ -594,57 +658,57 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
         </div>
         <div class="form-checkbox" style="margin-top:10px;">
           <input type="checkbox" id="f-tax"/>
-          <label for="f-tax">I understand that ShoreList will issue a Form 1099-K if I receive $600 or more through the platform in a calendar year. I confirm the Tax ID I provided is accurate.</label>
+          <label for="f-tax">I understand that ShoreList is required to report payments to the IRS and will issue a Form 1099-K if I receive payments meeting or exceeding the applicable IRS reporting threshold in a calendar year. I confirm that the Tax ID (EIN or SSN) I provided is accurate.</label>
         </div>
-        <div id="form-err-2" class="form-err"></div>
+        <div id="form-err-2" class="form-err" role="alert"></div>
         <div class="form-actions">
-          <button class="btn-back-form" onclick="goStep(1)">&#8592; Back</button>
-          <button class="btn-fill" onclick="goStep(3)">Continue to Sign &amp; Submit &rarr;</button>
+          <button type="button" class="btn-back-form" onclick="goStep(1)">&#8592; Back</button>
+          <button type="button" class="btn-fill" onclick="goStep(3)">Continue to Sign &amp; Submit &rarr;</button>
         </div>
       </div>
 
-      <!-- Step 3 -->
+      <!-- Step 3: Review & Submit -->
       <div class="form-panel" id="panel-3">
-        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:24px;margin-bottom:24px;">
-          <div style="font-size:0.70rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,232,203,0.35);margin-bottom:16px;">Review Your Details</div>
-          <div id="review-content" style="font-size:0.88rem;color:rgba(245,232,203,0.70);line-height:1.8;"></div>
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:12px;padding:24px;margin-bottom:24px;" id="review-summary">
+          <div style="font-size:0.70rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,232,203,0.55);margin-bottom:16px;">Review Your Details</div>
+          <div id="review-content" style="font-size:0.88rem;color:rgba(245,232,203,0.80);line-height:1.8;"></div>
         </div>
-        <p style="font-size:0.84rem;color:rgba(245,232,203,0.50);line-height:1.75;margin-bottom:22px;">Everything look correct above? By clicking Submit, you confirm your details are accurate and you agree to the ShoreList Operator Listing Agreement. RJ will reach out within 24 hours to finalize your listing.</p>
-        <div id="form-err-3" class="form-err"></div>
+        <p style="font-size:0.84rem;color:rgba(245,232,203,0.65);line-height:1.75;margin-bottom:22px;">Everything look correct above? By clicking Submit, you confirm your details are accurate and you agree to the ShoreList Operator Listing Agreement. RJ will reach out within 24 hours and the final agreement will be sent for e-signature via SignWell.</p>
+        <div id="form-err-3" class="form-err" role="alert"></div>
         <div class="form-actions">
-          <button class="btn-back-form" onclick="goStep(2)">&#8592; Back</button>
-          <button class="btn-fill" id="submit-btn" onclick="submitForm()">Submit My Application &rarr;</button>
+          <button type="button" class="btn-back-form" onclick="goStep(2)">&#8592; Back</button>
+          <button type="button" class="btn-fill" id="submit-btn" onclick="submitForm()">Submit My Application &rarr;</button>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- EARNINGS CALCULATOR -->
-<section class="calc-section">
+<section class="calc-section" aria-labelledby="calc-heading">
   <div class="calc-inner">
     <div style="margin-bottom:36px;">
       <div style="font-size:0.66rem;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;">ShoreList Partner Tool</div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--cream2);line-height:1.1;">Estimate Your <em style="color:var(--coral);font-style:italic;">Monthly Earnings</em></h2>
-      <p style="font-size:0.90rem;color:rgba(245,232,203,0.65);margin-top:10px;max-width:500px;">See exactly what you could earn as a ShoreList partner. No upfront cost. Commission only when you earn.</p>
+      <h2 id="calc-heading" style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--cream2);line-height:1.1;">Estimate Your <em style="color:var(--coral);font-style:italic;">Monthly Earnings</em></h2>
+      <p style="font-size:0.90rem;color:rgba(245,232,203,0.70);margin-top:10px;max-width:500px;">See exactly what you could earn as a ShoreList partner. No upfront cost. Commission only when you earn.</p>
     </div>
     <div class="calc-card">
       <div class="calc-grid">
-        <div>
+        <div class="calc-controls">
           <div class="calc-control">
-            <div class="calc-label">Sessions per Week <span id="c-sessions-val">3</span></div>
+            <div class="calc-label"><label for="c-sessions">Sessions per Week</label> <span id="c-sessions-val">3</span></div>
             <input type="range" class="calc-slider" id="c-sessions" min="1" max="20" value="3" oninput="calcUpdate()"/>
           </div>
           <div class="calc-control">
-            <div class="calc-label">Price per Session <span id="c-price-val">$89</span></div>
+            <div class="calc-label"><label for="c-price">Price per Session</label> <span id="c-price-val">$89</span></div>
             <input type="range" class="calc-slider" id="c-price" min="25" max="500" value="89" step="5" oninput="calcUpdate()"/>
           </div>
           <div class="calc-control">
-            <div class="calc-label">Avg Group Size <span id="c-group-val">4 people</span></div>
+            <div class="calc-label"><label for="c-group">Avg Group Size</label> <span id="c-group-val">4 people</span></div>
             <input type="range" class="calc-slider" id="c-group" min="1" max="20" value="4" oninput="calcUpdate()"/>
           </div>
           <div class="calc-control">
-            <div class="calc-label">Experience Type</div>
+            <div class="calc-label"><label for="c-type">Experience Type</label></div>
             <select id="c-type" onchange="calcUpdate()" style="width:100%;padding:10px 14px;border:1px solid rgba(255,255,255,0.15);border-radius:8px;background:rgba(255,255,255,0.08);color:var(--cream2);font-size:0.88rem;font-family:'DM Sans',sans-serif;">
               <option value="15">Fishing Charter / Sunset Sail / Photography (15%)</option>
               <option value="18" selected>Kayak / Surf / Nature / Activity (18%)</option>
@@ -654,28 +718,39 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
         </div>
         <div>
           <div class="calc-result">
-            <div class="calc-result-row"><div class="calc-result-label">Monthly Sessions</div><div class="calc-result-val" id="cr-sessions">48</div></div>
-            <div class="calc-result-row"><div class="calc-result-label">Gross Monthly Revenue</div><div class="calc-result-val" id="cr-gross">$17,136</div></div>
-            <div class="calc-result-row"><div class="calc-result-label">ShoreList Commission</div><div class="calc-result-val" id="cr-comm" style="color:rgba(245,232,203,0.45);">$3,084 (18%)</div></div>
-            <div class="calc-result-row" style="border-bottom:none;"><div class="calc-result-label" style="font-weight:700;color:rgba(245,232,203,0.90);">You Receive Monthly</div><div class="calc-result-val highlight" id="cr-net">$14,052</div></div>
+            <div class="calc-result-row">
+              <div class="calc-result-label">Monthly Sessions</div>
+              <div class="calc-result-val" id="cr-sessions">48</div>
+            </div>
+            <div class="calc-result-row">
+              <div class="calc-result-label">Gross Monthly Revenue</div>
+              <div class="calc-result-val" id="cr-gross">$17,136</div>
+            </div>
+            <div class="calc-result-row">
+              <div class="calc-result-label">ShoreList Commission</div>
+              <div class="calc-result-val" id="cr-comm" style="color:rgba(245,232,203,0.55);">$3,084 (18%)</div>
+            </div>
+            <div class="calc-result-row" style="border-bottom:none;">
+              <div class="calc-result-label" style="font-weight:700;color:rgba(245,232,203,0.90);">You Receive Monthly</div>
+              <div class="calc-result-val highlight" id="cr-net">$14,052</div>
+            </div>
           </div>
           <div class="calc-annual">
             <div class="calc-annual-num" id="cr-annual">$168,624</div>
             <div class="calc-annual-label">estimated annual earnings at this rate</div>
           </div>
-          <div class="calc-note">Based on sessions &#215; group size &#215; price. Actual earnings vary by demand, season, and cancellations. ShoreList never charges for listing &mdash; commission applies only when bookings occur.</div>
+          <div class="calc-note">Based on sessions &times; group size &times; price. Actual earnings vary by demand, season, and cancellations. ShoreList never charges for listing &mdash; commission applies only when bookings occur.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COMPARISON TABLE -->
-<section class="compare-section">
+<section class="compare-section" aria-labelledby="compare-heading">
   <div class="compare-inner">
     <div style="margin-bottom:36px;text-align:center;">
       <div style="font-size:0.66rem;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;">Why ShoreList</div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--teal);">ShoreList vs. The <em style="color:var(--coral);font-style:italic;">Alternatives</em></h2>
+      <h2 id="compare-heading" style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--teal);">ShoreList vs. The <em style="color:var(--coral);font-style:italic;">Alternatives</em></h2>
     </div>
     <table class="compare-table">
       <thead>
@@ -687,31 +762,68 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
         </tr>
       </thead>
       <tbody>
-        <tr><td>Commission Rate</td><td class="highlight-col yes">15&ndash;20%</td><td class="no">20&ndash;30%</td><td class="yes">0% &mdash; but you find your own guests</td></tr>
-        <tr><td>Local Wilmington Focus</td><td class="highlight-col yes">&#10003; 100% local &amp; coastal</td><td class="no">&#10007; Global marketplace only</td><td class="yes">&#10003; Your own brand</td></tr>
-        <tr><td>Upfront Cost to List</td><td class="highlight-col yes">&#10003; Free forever</td><td class="yes">&#10003; Free to list</td><td class="yes">&#10003; Free</td></tr>
-        <tr><td>Marketing to Visitors</td><td class="highlight-col yes">&#10003; Targeted coastal audience</td><td class="yes">&#10003; Large global traffic</td><td class="no">&#10007; Self-managed</td></tr>
-        <tr><td>Setup Speed</td><td class="highlight-col yes">&#10003; Live in 48 hours</td><td class="no">&#10007; 1&ndash;4 weeks</td><td class="yes">&#10003; Immediate</td></tr>
-        <tr><td>Dedicated Operator Support</td><td class="highlight-col yes">&#10003; Direct contact with ShoreList team</td><td class="no">&#10007; Generic ticket system</td><td class="yes">&#10003; You are the support</td></tr>
-        <tr><td>Booking Deposit System</td><td class="highlight-col yes">&#10003; $25 refundable &mdash; no-shows reduced</td><td class="no">&#10007; No deposit model</td><td class="no">&#10007; Your problem to solve</td></tr>
+        <tr>
+          <td>Commission Rate</td>
+          <td class="highlight-col yes">15&ndash;20%</td>
+          <td class="no">20&ndash;30%</td>
+          <td class="yes">0% &mdash; but you find your own guests</td>
+        </tr>
+        <tr>
+          <td>Local Wilmington Focus</td>
+          <td class="highlight-col yes">&#10003; 100% local &amp; coastal</td>
+          <td class="no">&#10007; Global marketplace only</td>
+          <td class="yes">&#10003; Your own brand</td>
+        </tr>
+        <tr>
+          <td>Upfront Cost to List</td>
+          <td class="highlight-col yes">&#10003; Free forever</td>
+          <td class="yes">&#10003; Free to list</td>
+          <td class="yes">&#10003; Free</td>
+        </tr>
+        <tr>
+          <td>Marketing to Visitors</td>
+          <td class="highlight-col yes">&#10003; Targeted coastal audience</td>
+          <td class="yes">&#10003; Large global traffic</td>
+          <td class="no">&#10007; Self-managed</td>
+        </tr>
+        <tr>
+          <td>Setup Speed</td>
+          <td class="highlight-col yes">&#10003; Live in 48-72 hours</td>
+          <td class="no">&#10007; 1&ndash;4 weeks</td>
+          <td class="yes">&#10003; Immediate</td>
+        </tr>
+        <tr>
+          <td>Dedicated Operator Support</td>
+          <td class="highlight-col yes">&#10003; Direct contact with ShoreList team</td>
+          <td class="no">&#10007; Generic ticket system</td>
+          <td class="yes">&#10003; You are the support</td>
+        </tr>
+        <tr>
+          <td>Payment &amp; Cancellation</td>
+          <td class="highlight-col yes">&#10003; Full upfront payment &mdash; 24hr cancellation policy</td>
+          <td class="no">&#10007; Varies &mdash; inconsistent refund policies</td>
+          <td class="no">&#10007; You set and enforce your own policy</td>
+        </tr>
       </tbody>
     </table>
   </div>
 </section>
 
-<!-- FOOTER -->
+</main>
+
 <footer>
-  <a href="/" class="foot-logo"><span class="foot-s">Shore</span><span class="foot-l">List</span></a>
-  <div class="foot-copy">&copy; 2026 ShoreList LLC &nbsp;&middot;&nbsp; Wilmington, NC</div>
-  <div class="foot-links">
-    <a href="/">For Guests</a>
+  <a href="/" class="foot-logo" aria-label="ShoreList home"><span class="foot-s">Shore</span><span class="foot-l">List</span></a>
+  <div class="foot-copy">&copy; 2026 ShoreList LLC &nbsp;&middot;&nbsp; Wilmington, NC &amp; the Beaches</div>
+  <nav class="foot-links" aria-label="Footer">
+    <a href="/">Experiences</a>
     <a href="/events">Events Guide</a>
     <a href="/planner">Trip Planner</a>
     <a href="/waitlist">Join Waitlist</a>
-    <a href="/join">Operators</a>
-    <a href="mailto:shorelistwilmington@gmail.com">Contact RJ</a>
+    <a href="/join" aria-current="page">Operators</a>
+    <a href="mailto:shorelistwilmington@gmail.com">Contact</a>
     <a href="/legal">Privacy &amp; Terms</a>
-  </div>
+    <a href="/legal#accessibility">Accessibility</a>
+  </nav>
 </footer>
 
 <script>
@@ -719,21 +831,21 @@ var STEP=1;
 
 function goStep(n){
   if(n>STEP){
-    if(STEP===1&&!validateStep1())return;
-    if(STEP===2&&!validateStep2())return;
+    if(STEP===1&&!validateStep1()) return;
+    if(STEP===2&&!validateStep2()) return;
   }
   STEP=n;
   [1,2,3].forEach(function(i){
     var el=document.getElementById('fs'+i);
     el.classList.remove('active','done');
-    if(i<n)el.classList.add('done');
-    if(i===n)el.classList.add('active');
+    if(i<n) el.classList.add('done');
+    if(i===n) el.classList.add('active');
   });
   ['panel-1','panel-2','panel-3'].forEach(function(id,i){
     var p=document.getElementById(id);
     if(p){p.classList.remove('active');if(i===n-1)p.classList.add('active');}
   });
-  if(n===3)buildReview();
+  if(n===3) buildReview();
   document.getElementById('apply').scrollIntoView({behavior:'smooth',block:'start'});
 }
 
@@ -745,32 +857,63 @@ function validateStep1(){
   var cat=document.getElementById('f-cat').value;
   var desc=document.getElementById('f-desc').value.trim();
   var ein=document.getElementById('f-ein').value.trim();
-  if(!biz||!name||!email||!cat||!desc){err.style.display='block';err.textContent='Please fill in all required fields.';return false;}
-  if(!ein){err.style.display='block';err.textContent='Please provide your EIN or SSN (Tax ID) \u2014 required for IRS reporting.';return false;}
-  if(!email.includes('@')||!email.includes('.')){err.style.display='block';err.textContent='Please enter a valid email address.';return false;}
-  err.style.display='none';return true;
+  if(!biz||!name||!email||!cat||!desc){
+    err.style.display='block';
+    err.textContent='Please fill in all required fields (Business Name, Your Name, Email, Category, and Business Description).';
+    return false;
+  }
+  if(!ein){
+    err.style.display='block';
+    err.innerHTML='Please provide your EIN or SSN (Tax ID) &mdash; required for IRS reporting.';
+    return false;
+  }
+  if(!email.includes('@')||!email.includes('.')){
+    err.style.display='block';
+    err.textContent='Please enter a valid email address.';
+    return false;
+  }
+  err.style.display='none';
+  return true;
 }
 
 function validateStep2(){
   var err=document.getElementById('form-err-2');
-  if(!document.getElementById('f-agree').checked){err.style.display='block';err.textContent='Please read and check the operator agreement box before continuing.';return false;}
-  if(!document.getElementById('f-insurance').checked){err.style.display='block';err.textContent='Please confirm your insurance coverage before continuing.';return false;}
-  if(!document.getElementById('f-tax').checked){err.style.display='block';err.textContent='Please confirm your tax ID acknowledgment before continuing.';return false;}
-  err.style.display='none';return true;
+  var agreed=document.getElementById('f-agree').checked;
+  var insured=document.getElementById('f-insurance').checked;
+  var taxed=document.getElementById('f-tax').checked;
+  if(!agreed){
+    err.style.display='block';
+    err.textContent='Please read and check the operator agreement box before continuing.';
+    return false;
+  }
+  if(!insured){
+    err.style.display='block';
+    err.textContent='Please confirm your insurance coverage before continuing.';
+    return false;
+  }
+  if(!taxed){
+    err.style.display='block';
+    err.textContent='Please confirm your tax ID acknowledgment before continuing.';
+    return false;
+  }
+  err.style.display='none';
+  return true;
 }
 
 function buildReview(){
   var catEl=document.getElementById('f-cat');
   var catText=catEl.options[catEl.selectedIndex].text;
   var locEl=document.getElementById('f-loc');
-  var html='<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;">';
+  var locText=locEl.value||'Not selected';
+  var html='';
+  html+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;">';
   html+='<div><strong style="color:#FEFCF7;">Business:</strong> '+esc(document.getElementById('f-biz').value)+'</div>';
   html+='<div><strong style="color:#FEFCF7;">Contact:</strong> '+esc(document.getElementById('f-name').value)+'</div>';
   html+='<div><strong style="color:#FEFCF7;">Email:</strong> '+esc(document.getElementById('f-email').value)+'</div>';
   html+='<div><strong style="color:#FEFCF7;">Phone:</strong> '+esc(document.getElementById('f-phone').value||'Not provided')+'</div>';
   html+='<div><strong style="color:#FEFCF7;">Category:</strong> '+esc(catText)+'</div>';
-  html+='<div><strong style="color:#FEFCF7;">Tax ID:</strong> '+esc(document.getElementById('f-ein').value?'\u2713 Provided':'Not provided')+'</div>';
-  html+='<div><strong style="color:#FEFCF7;">Location:</strong> '+esc(locEl.value||'Not selected')+'</div>';
+  html+='<div><strong style="color:#FEFCF7;">Tax ID:</strong> '+(document.getElementById('f-ein').value ? '&#10003; Provided' : 'Not provided')+'</div>';
+  html+='<div><strong style="color:#FEFCF7;">Location:</strong> '+esc(locText)+'</div>';
   html+='</div>';
   html+='<div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.06);"><strong style="color:#FEFCF7;">Description:</strong><br/>'+esc(document.getElementById('f-desc').value)+'</div>';
   document.getElementById('review-content').innerHTML=html;
@@ -778,7 +921,8 @@ function buildReview(){
 
 function submitForm(){
   var btn=document.getElementById('submit-btn');
-  btn.disabled=true;btn.textContent='Submitting...';
+  btn.disabled=true;
+  btn.textContent='Submitting...';
   var data={
     business:document.getElementById('f-biz').value,
     contact:document.getElementById('f-name').value,
@@ -789,12 +933,19 @@ function submitForm(){
     description:document.getElementById('f-desc').value,
     website:document.getElementById('f-web').value,
     licensed:document.getElementById('f-lic').value,
-    ein_provided:document.getElementById('f-ein').value?'Yes \u2014 Tax ID provided':'Not provided',
+    ein_provided:document.getElementById('f-ein').value ? 'Yes - Tax ID provided' : 'Not provided',
     _subject:'ShoreList Operator Application: '+document.getElementById('f-biz').value
   };
-  fetch('https://formspree.io/f/xeevzzqd',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(data)}).then(function(){}).catch(function(){});
+  fetch('https://formspree.io/f/xeevzzqd',{
+    method:'POST',
+    headers:{'Accept':'application/json','Content-Type':'application/json'},
+    body:JSON.stringify(data)
+  }).then(function(){}).catch(function(){});
   setTimeout(function(){
-    ['panel-1','panel-2','panel-3'].forEach(function(id){var p=document.getElementById(id);if(p)p.classList.remove('active');});
+    ['panel-1','panel-2','panel-3'].forEach(function(id){
+      var p=document.getElementById(id);
+      if(p)p.classList.remove('active');
+    });
     document.getElementById('form-steps').style.display='none';
     document.getElementById('success-screen').classList.add('show');
     document.getElementById('apply').scrollIntoView({behavior:'smooth',block:'start'});
@@ -805,19 +956,16 @@ function showCommission(){
   var el=document.getElementById('f-cat');
   var disp=document.getElementById('commission-display');
   if(!el.value){disp.style.display='none';return;}
-  var parts=el.value.split('|');var rate=parts[1]||'20';
-  var payout=(25*(1-parseInt(rate)/100)).toFixed(2);
+  var parts=el.value.split('|');
+  var rate=parts[1]||'20';
   disp.style.display='block';
-  disp.textContent='Your commission rate: '+rate+'% \u00b7 You receive $'+payout+' per $25 deposit';
+  disp.textContent='Your commission rate: '+rate+'% \u2014 ShoreList remits '+(100-parseInt(rate))+'% of every booking to you.';
 }
 
-function toggleFaq(btn){
-  var item=btn.parentElement;
-  var isOpen=item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
-  if(!isOpen)item.classList.add('open');
-}
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+</script>
 
+<script>
 function calcUpdate(){
   var sessions=parseInt(document.getElementById('c-sessions').value);
   var price=parseInt(document.getElementById('c-price').value);
@@ -838,8 +986,6 @@ function calcUpdate(){
   document.getElementById('cr-annual').textContent='$'+Math.round(annual).toLocaleString();
 }
 calcUpdate();
-
-function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 </script>
 </body>
 </html>
