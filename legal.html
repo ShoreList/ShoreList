@@ -5,511 +5,551 @@
 <meta name="theme-color" content="#0A4D5C"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-title" content="ShoreList"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta name="robots" content="index,follow"/>
 <link rel="canonical" href="https://shorelist.net/legal"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Privacy Policy &amp; Terms of Service — ShoreList</title>
-<meta name="description" content="ShoreList Privacy Policy and Terms of Service. How we collect, use, and protect your information."/>
-<meta property="og:title" content="Privacy Policy &amp; Terms | ShoreList"/>
-<meta property="og:description" content="ShoreList privacy policy and terms of service for Wilmington coastal experience bookings."/>
+<title>Privacy Policy &amp; Terms of Service — ShoreList Wilmington, NC</title>
+<meta name="description" content="ShoreList Privacy Policy and Terms of Service. Plain-English transparency about how we collect, use, and protect your information. Last updated May 2026."/>
+<meta property="og:title" content="Privacy Policy &amp; Terms — ShoreList Wilmington NC"/>
+<meta property="og:description" content="Plain-English privacy policy and terms of service for ShoreList's coastal experience booking platform in Wilmington, NC."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://shorelist.net/legal"/>
-<meta property="og:image" content="https://shorelist.net/og-home.jpg"/>
+<meta property="og:image" content="https://shorelist.net/og-legal.jpg"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
+<meta property="og:site_name" content="ShoreList"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{
-  --teal:#0A4D5C;--teal2:#1A7585;--teal3:#073D4A;
-  --coral:#E96645;--coral2:#F07A5A;
-  --cream:#F5E8CB;--cream2:#FEFCF7;
-  --dark:#0D1F25;--mid:#2C4A52;
-  --border:rgba(10,77,92,0.10);
-}
-html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--cream2);color:var(--dark);overflow-x:hidden;}
-
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,77,92,0.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.06);}
-.nav-logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--cream2);text-decoration:none;font-weight:700;}
-.nav-logo span{color:var(--coral);}
-.nav-back{font-size:0.82rem;font-weight:600;color:rgba(245,232,203,0.6);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
-.nav-back:hover{color:var(--cream);}
-
-/* HERO */
-.hero{background:var(--teal3);padding:120px 48px 64px;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(233,102,69,0.07) 0%,transparent 60%);}
-.hero::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.03) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;}
-.hero-inner{max-width:860px;margin:0 auto;position:relative;z-index:1;}
-.hero-tag{font-size:0.70rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--coral);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
-.hero-tag::before{content:'';width:22px;height:1px;background:var(--coral);}
-.hero-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--cream2);line-height:1.08;margin-bottom:16px;}
-.hero-title em{color:var(--coral);font-style:italic;}
-.hero-sub{font-size:0.95rem;color:rgba(245,232,203,0.60);line-height:1.85;max-width:560px;margin-bottom:28px;}
-.hero-meta{display:flex;gap:10px;flex-wrap:wrap;}
-.hero-badge{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:100px;padding:6px 14px;font-size:0.75rem;font-weight:600;color:rgba(245,232,203,0.70);}
-
-/* TABLE OF CONTENTS */
-.toc-bar{background:var(--teal);border-bottom:1px solid rgba(255,255,255,0.06);overflow-x:auto;}
-.toc-inner{max-width:860px;margin:0 auto;display:flex;gap:0;}
-.toc-link{font-size:0.72rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:rgba(245,232,203,0.55);text-decoration:none;padding:14px 20px;white-space:nowrap;border-bottom:2px solid transparent;transition:all 0.2s;}
-.toc-link:hover{color:var(--cream);border-bottom-color:var(--coral);}
-
-/* MAIN */
-.main{max-width:860px;margin:0 auto;padding:60px 48px 100px;}
-
-/* SECTIONS */
-.doc-section{margin-bottom:56px;padding-bottom:56px;border-bottom:1px solid var(--border);}
-.doc-section:last-child{border-bottom:none;}
-.sec-eyebrow{font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
-.sec-eyebrow::before{content:'';width:18px;height:1px;background:var(--coral);}
-.sec-title{font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:900;color:var(--teal);line-height:1.1;margin-bottom:18px;}
-.sec-title em{color:var(--coral);font-style:italic;}
-.sec-updated{font-size:0.75rem;color:rgba(44,74,82,0.45);margin-bottom:28px;}
-
-/* PROSE */
-.prose p{font-size:0.93rem;color:var(--mid);line-height:1.90;margin-bottom:18px;}
-.prose p strong{color:var(--teal3);font-weight:700;}
-.prose h3{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--teal);margin:32px 0 12px;}
-.prose h4{font-size:0.85rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--teal2);margin:24px 0 10px;}
-.prose ul{margin:0 0 18px 0;padding-left:0;list-style:none;}
-.prose ul li{font-size:0.93rem;color:var(--mid);line-height:1.80;margin-bottom:8px;padding-left:22px;position:relative;}
-.prose ul li::before{content:'\2192';position:absolute;left:0;color:var(--coral);font-weight:700;font-size:0.80rem;}
-.prose a{color:var(--teal2);text-decoration:underline;text-decoration-color:rgba(26,117,133,0.35);transition:all 0.2s;}
-.prose a:hover{color:var(--coral);text-decoration-color:var(--coral);}
-
-/* DATA TABLE */
-.data-table{width:100%;border-collapse:collapse;margin:24px 0 28px;font-size:0.88rem;}
-.data-table th{background:var(--teal);color:var(--cream2);font-weight:700;font-size:0.72rem;letter-spacing:0.10em;text-transform:uppercase;padding:10px 14px;text-align:left;}
-.data-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--mid);vertical-align:top;line-height:1.65;}
-.data-table tr:last-child td{border-bottom:none;}
-.data-table tr:nth-child(even) td{background:rgba(10,77,92,0.03);}
-
-/* HIGHLIGHT BOX */
-.highlight{background:linear-gradient(135deg,rgba(10,77,92,0.06) 0%,rgba(10,77,92,0.03) 100%);border:1px solid rgba(10,77,92,0.12);border-left:4px solid var(--teal);border-radius:0 8px 8px 0;padding:18px 20px;margin:24px 0;font-size:0.90rem;color:var(--mid);line-height:1.80;}
-.highlight strong{color:var(--teal3);font-weight:700;}
-.highlight.coral{border-left-color:var(--coral);background:rgba(233,102,69,0.05);border-color:rgba(233,102,69,0.15);}
-.highlight.coral strong{color:var(--coral);}
-
-/* CONTACT CARD */
-.contact-card{background:var(--teal);border-radius:12px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:40px;}
-.cc-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;color:var(--cream2);margin-bottom:6px;}
-.cc-sub{font-size:0.85rem;color:rgba(245,232,203,0.60);line-height:1.65;}
-.cc-links{display:flex;flex-direction:column;gap:6px;}
-.cc-link{font-size:0.85rem;font-weight:600;color:var(--coral);text-decoration:none;}
-.cc-link:hover{text-decoration:underline;}
-
-/* FOOTER */
-footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;border-top:1px solid rgba(255,255,255,0.05);}
-.foot-logo{font-size:1.2rem;font-weight:900;display:flex;align-items:baseline;text-decoration:none;}
-.foot-s{font-family:'Playfair Display',serif;font-style:italic;color:var(--cream);}
-.foot-l{font-weight:700;color:var(--coral);}
-.foot-copy{font-size:0.76rem;color:rgba(245,232,203,0.28);}
-.foot-links{display:flex;gap:20px;flex-wrap:wrap;}
-.foot-links a{font-size:0.76rem;color:rgba(245,232,203,0.28);text-decoration:none;transition:color 0.2s;}
-.foot-links a:hover{color:var(--coral);}
-.foot-links a.active{color:var(--coral);}
-
-@media(max-width:768px){
-  nav{padding:16px 20px;}
-  .hero{padding:100px 20px 48px;}
-  .main{padding:40px 20px 80px;}
-  .contact-card{flex-direction:column;}
-  footer{padding:24px 20px;flex-direction:column;text-align:center;}
-  .toc-inner{padding:0 4px;}
-  .toc-link{padding:12px 14px;font-size:0.66rem;}
-  .data-table{font-size:0.78rem;}
-  .data-table th,.data-table td{padding:8px 10px;}
-}
-</style>
-<!-- GA4 — Replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com -->
+<!-- ANALYTICS: replace G-XXXXXXXXXX with your real GA4 Measurement ID from analytics.google.com -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-XXXXXXXXXX');
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Privacy Policy & Terms of Service","url":"https://shorelist.net/legal","description":"ShoreList's privacy policy and terms of service.","publisher":{"@type":"Organization","name":"ShoreList LLC","url":"https://shorelist.net","email":"shorelistwilmington@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Wilmington","addressRegion":"NC","addressCountry":"US"}},"inLanguage":"en-US","dateModified":"2026-05-13"}
+</script>
+<style>
+:root{
+  --teal:#0A4D5C; --teal2:#1A7585; --teal3:#073D4A;
+  --coral:#E96645; --coral2:#F07A5A;
+  --cream:#F5E8CB; --cream2:#FEFCF7;
+  --dark:#0D1F25; --mid:#2C4A52;
+  --light:rgba(10,77,92,0.10);
+  --lighter:rgba(10,77,92,0.05);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--cream2);color:var(--dark);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+.skip-link{position:absolute;top:-100px;left:50%;transform:translateX(-50%);background:var(--coral);color:white;padding:14px 24px;border-radius:8px;font-weight:700;font-size:0.92rem;text-decoration:none;z-index:9999;transition:top 0.18s;}
+.skip-link:focus{top:14px;outline:3px solid var(--cream);outline-offset:2px;}
+:focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:3px;}
+nav.site-nav{position:sticky;top:0;background:rgba(10,77,92,0.97);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.08);padding:16px 32px;z-index:100;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-size:1.4rem;font-weight:900;text-decoration:none;line-height:1;}
+.nav-logo .s{font-family:'Playfair Display',serif;font-style:italic;color:var(--cream);}
+.nav-logo .l{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--coral);}
+.nav-back{font-size:0.80rem;font-weight:600;text-decoration:none;color:rgba(245,232,203,0.7);letter-spacing:0.04em;padding:8px 14px;border-radius:6px;transition:color 0.2s,background 0.2s;}
+.nav-back:hover,.nav-back:focus{color:var(--cream);background:rgba(255,255,255,0.06);}
+.hero{background:linear-gradient(180deg,var(--teal) 0%,var(--teal3) 100%);color:var(--cream2);padding:72px 32px 64px;text-align:center;position:relative;}
+.hero::after{content:'';position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);background-size:24px 24px;}
+.hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1;}
+.hero-tag{font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:18px;color:var(--cream2);}
+.hero h1 em{font-style:italic;color:var(--coral);}
+.hero-sub{font-size:1rem;font-weight:400;line-height:1.75;color:rgba(245,232,203,0.75);max-width:600px;margin:0 auto 24px;}
+.hero-meta{display:inline-flex;flex-wrap:wrap;gap:8px 20px;justify-content:center;font-size:0.78rem;color:rgba(245,232,203,0.55);padding-top:18px;border-top:1px solid rgba(255,255,255,0.10);}
+.hero-meta strong{color:var(--cream);font-weight:600;}
+.plain-summary{max-width:760px;margin:-28px auto 36px;background:var(--cream);border:1px solid rgba(10,77,92,0.10);border-radius:14px;padding:22px 30px;box-shadow:0 14px 36px rgba(10,77,92,0.10);position:relative;z-index:2;}
+.plain-summary h2{font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;}
+.plain-summary p{font-size:0.95rem;color:var(--dark);line-height:1.75;}
+.toc{max-width:760px;margin:0 auto 56px;padding:24px 30px;background:white;border:1px solid var(--light);border-radius:14px;}
+.toc-title{font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--coral);margin-bottom:14px;}
+.toc-group{font-family:'Playfair Display',serif;font-style:italic;font-size:0.78rem;font-weight:700;color:var(--mid);letter-spacing:0.02em;margin:14px 0 8px;padding-top:12px;border-top:1px solid var(--light);}
+.toc-group:first-of-type{padding-top:0;border-top:none;margin-top:0;}
+.toc-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:2px 24px;}
+.toc-list li{counter-increment:toc-counter;}
+.toc-list a{display:block;font-size:0.88rem;color:var(--teal);text-decoration:none;padding:5px 0;font-weight:500;transition:color 0.15s;}
+.toc-list a:hover,.toc-list a:focus{color:var(--coral);}
+.toc-list a::before{content:counter(toc-counter) ".";display:inline-block;width:22px;color:var(--mid);font-weight:700;font-size:0.78rem;}
+.toc{counter-reset:toc-counter;}
+.toc-list[start="10"]{counter-reset:toc-counter 9;}
+.toc-list[start="16"]{counter-reset:toc-counter 15;}
+.toc-list[start="18"]{counter-reset:toc-counter 17;}
+main{max-width:760px;margin:0 auto;padding:0 30px 80px;counter-reset:section-counter;}
+section.legal-section{scroll-margin-top:88px;margin-bottom:56px;counter-increment:section-counter;}
+.section-label{font-family:'DM Sans',sans-serif;font-size:0.66rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;}
+.section-label::before{content:"Section " counter(section-counter);}
+.legal-section h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.6vw,2rem);font-weight:900;color:var(--teal);line-height:1.15;letter-spacing:-0.5px;margin-bottom:20px;}
+.legal-section h2 em{font-style:italic;color:var(--coral);}
+.legal-section h3{font-family:'DM Sans',sans-serif;font-size:1.05rem;font-weight:700;color:var(--teal);margin:24px 0 10px;letter-spacing:-0.01em;}
+.legal-section p{margin-bottom:14px;color:var(--dark);}
+.legal-section strong{color:var(--teal);font-weight:600;}
+.legal-section ul{margin:10px 0 18px 24px;}
+.legal-section ul li{margin-bottom:8px;color:var(--dark);}
+.legal-section a{color:var(--teal2);text-decoration:underline;text-underline-offset:2px;}
+.legal-section a:hover,.legal-section a:focus{color:var(--coral);}
+.legal-section em{font-style:italic;}
+.section-date{font-size:0.82rem;color:var(--mid);font-weight:500;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--light);}
+.table-wrap{overflow-x:auto;margin:18px -4px;padding:0 4px;}
+.legal-table{width:100%;border-collapse:collapse;font-size:0.90rem;background:white;border:1px solid var(--light);border-radius:8px;overflow:hidden;}
+.legal-table th,.legal-table td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--light);vertical-align:top;line-height:1.55;}
+.legal-table tr:last-child td{border-bottom:none;}
+.legal-table th{background:var(--cream);font-weight:700;color:var(--teal);font-size:0.82rem;letter-spacing:0.02em;}
+.legal-table td:first-child{font-weight:600;color:var(--teal);}
+.callout{background:var(--cream);border-left:4px solid var(--coral);border-radius:6px;padding:16px 22px;margin:20px 0;}
+.callout strong{color:var(--coral);}
+.legal-allcaps{background:rgba(10,77,92,0.04);border-left:3px solid var(--teal);padding:16px 20px;border-radius:4px;margin:18px 0;font-size:0.84rem;letter-spacing:0.02em;line-height:1.7;color:var(--dark);}
+footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px;text-align:center;font-size:0.82rem;line-height:1.85;}
+.foot-logo{font-size:1.2rem;font-weight:900;margin-bottom:6px;display:inline-block;text-decoration:none;line-height:1;}
+.foot-logo .s{font-family:'Playfair Display',serif;font-style:italic;color:var(--cream);}
+.foot-logo .l{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--coral);}
+.foot-copy{margin:6px 0 14px;font-size:0.78rem;color:rgba(245,232,203,0.35);}
+.foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;}
+.foot-links a{color:rgba(245,232,203,0.55);text-decoration:none;font-size:0.80rem;transition:color 0.2s;}
+.foot-links a:hover,.foot-links a:focus{color:var(--coral);}
+@media print{
+  nav.site-nav,footer,.toc,.skip-link{display:none;}
+  body{background:white;color:black;font-size:11pt;line-height:1.5;}
+  .hero{background:white;color:black;padding:0 0 18pt;border-bottom:2px solid black;text-align:left;}
+  .hero h1,.legal-section h2,.legal-section h3{color:black;page-break-after:avoid;}
+  .hero h1 em,.legal-section h2 em{color:black;}
+  .hero-tag,.section-label{color:#555;}
+  .hero-sub,.section-date{color:#333;}
+  .legal-section{page-break-inside:avoid;margin-bottom:18pt;}
+  .plain-summary{background:#f5f5f5;border:1px solid #ccc;}
+  .callout,.legal-allcaps{background:#f9f9f9;border-left-color:black;}
+  a{color:black;text-decoration:underline;}
+  a[href^="http"]::after,a[href^="mailto:"]::after{content:" (" attr(href) ")";font-size:9pt;color:#666;}
+  .legal-table th{background:#f0f0f0;color:black;}
+}
+@media (max-width:768px){
+  nav.site-nav{padding:14px 18px;}
+  .hero{padding:56px 22px 48px;}
+  .plain-summary{margin:-20px 18px 30px;padding:18px 22px;}
+  .toc{margin:0 18px 40px;padding:20px 22px;}
+  .toc-list{grid-template-columns:1fr;}
+  main{padding:0 22px 60px;}
+  .legal-section{margin-bottom:44px;}
+  .legal-table{font-size:0.84rem;}
+  .legal-table th,.legal-table td{padding:10px 12px;}
+  .foot-links{font-size:0.78rem;}
+}
+@media (max-width:480px){
+  .hero h1{font-size:1.65rem;}
+  .legal-section h2{font-size:1.4rem;}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}
+}
+</style>
 </head>
 <body>
 
-<nav>
-  <a href="/" class="nav-logo">Shore<span>List</span></a>
-  <a href="/" class="nav-back">&#8592; Back to ShoreList</a>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav class="site-nav" aria-label="Primary">
+  <a href="/" class="nav-logo" aria-label="ShoreList home"><span class="s">Shore</span><span class="l">List</span></a>
+  <a href="/" class="nav-back">&larr; Back to ShoreList</a>
 </nav>
 
-<section class="hero">
+<header class="hero">
   <div class="hero-inner">
     <div class="hero-tag">Legal &amp; Privacy</div>
-    <h1 class="hero-title">Privacy Policy &amp;<br/><em>Terms of Service</em></h1>
+    <h1>Privacy Policy &amp; <em>Terms of Service</em></h1>
     <p class="hero-sub">We believe you deserve to know exactly how your information is used. No legal jargon walls. No surprises. Just honest, plain-English transparency &mdash; the ShoreList way.</p>
     <div class="hero-meta">
-      <span class="hero-badge">Last Updated: May 10, 2026</span>
-      <span class="hero-badge">Effective: May 10, 2026</span>
-      <span class="hero-badge">Governing Law: North Carolina</span>
+      <span>Last Updated: <strong>May 13, 2026</strong></span>
+      <span>Effective: <strong>May 13, 2026</strong></span>
+      <span>Governing Law: <strong>North Carolina</strong></span>
     </div>
+  </div>
+</header>
+
+<aside class="plain-summary" role="note" aria-label="Plain English summary">
+  <h2>Plain English Summary</h2>
+  <p>ShoreList is a booking platform for local coastal experiences in Wilmington, NC. When you use our site, we collect information needed to make bookings work. <strong>We do not sell your personal data.</strong> We do not share it with third parties except the operator you book with and Stripe for payment processing. You can ask us to delete your data at any time.</p>
+</aside>
+
+<nav class="toc" aria-label="Table of contents">
+  <div class="toc-title">Table of Contents</div>
+  <div class="toc-group">Privacy Policy</div>
+  <ol class="toc-list">
+    <li><a href="#privacy">Privacy Policy</a></li>
+    <li><a href="#data">Data We Collect</a></li>
+    <li><a href="#how-we-use">How We Use Your Data</a></li>
+    <li><a href="#stripe">Payments &amp; Stripe</a></li>
+    <li><a href="#sharing">Data Sharing</a></li>
+    <li><a href="#rights">Your Rights</a></li>
+    <li><a href="#security">Data Security</a></li>
+    <li><a href="#retention">Data Retention</a></li>
+    <li><a href="#cookies">Cookies &amp; Tracking</a></li>
+  </ol>
+  <div class="toc-group">Terms of Service</div>
+  <ol class="toc-list" start="10">
+    <li><a href="#terms">Terms of Service</a></li>
+    <li><a href="#operators">For Operators</a></li>
+    <li><a href="#risk">Assumption of Risk</a></li>
+    <li><a href="#arbitration">Arbitration &amp; Class Action Waiver</a></li>
+    <li><a href="#weather">Weather &amp; Cancellations</a></li>
+    <li><a href="#tax">Tax Reporting &amp; 1099-K</a></li>
+  </ol>
+  <div class="toc-group">Additional Policies</div>
+  <ol class="toc-list" start="16">
+    <li><a href="#ai-planner">AI Planner Disclaimer</a></li>
+    <li><a href="#accessibility">Accessibility Statement</a></li>
+  </ol>
+  <div class="toc-group">Administrative</div>
+  <ol class="toc-list" start="18">
+    <li><a href="#updates">Policy Updates</a></li>
+    <li><a href="#contact-legal">Contact Us</a></li>
+  </ol>
+</nav>
+
+<main id="main">
+
+<section class="legal-section" id="privacy">
+  <div class="section-label"></div>
+  <h2>Privacy <em>Policy</em></h2>
+  <p class="section-date">Last Updated: May 13, 2026 &middot; Effective: May 13, 2026</p>
+  <p>ShoreList LLC (&ldquo;ShoreList,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) operates the website located at <strong>shorelist.net</strong> (the &ldquo;Site&rdquo;). This Privacy Policy explains how we collect, use, disclose, and protect your personal information when you visit or use our Site.</p>
+  <p>By using the Site, you agree to the collection and use of information in accordance with this Privacy Policy. If you do not agree, please do not use the Site.</p>
+  <h3>Who We Are</h3>
+  <p>ShoreList LLC is a North Carolina limited liability company headquartered in Wilmington, NC. We operate an online marketplace connecting visitors with local experience operators &mdash; tours, surf lessons, fishing charters, nature walks, and more &mdash; in the Wilmington, NC coastal region.</p>
+  <p>For privacy-related questions, contact us at: <a href="mailto:shorelistwilmington@gmail.com"><strong>shorelistwilmington@gmail.com</strong></a></p>
+</section>
+
+<section class="legal-section" id="data">
+  <div class="section-label"></div>
+  <h2>Data We <em>Collect</em></h2>
+  <h3>Information You Give Us Directly</h3>
+  <div class="table-wrap">
+    <table class="legal-table">
+      <thead><tr><th>Type of Data</th><th>When We Collect It</th><th>Why We Need It</th></tr></thead>
+      <tbody>
+        <tr><td>Name</td><td>Booking, waitlist signup</td><td>Confirm your reservation and communicate with the operator</td></tr>
+        <tr><td>Email address</td><td>Booking, waitlist, operator application</td><td>Booking confirmation, launch notifications, account communication</td></tr>
+        <tr><td>Phone number</td><td>Booking checkout</td><td>For the operator to contact you if needed on the day of your experience</td></tr>
+        <tr><td>Party size &amp; special requests</td><td>Booking checkout</td><td>To prepare the operator for your group</td></tr>
+        <tr><td>Payment information</td><td>Checkout</td><td>Processed entirely by Stripe &mdash; we never see or store your card number</td></tr>
+        <tr><td>Business information</td><td>Operator application (shorelist.net/join)</td><td>To set up your operator listing on the platform</td></tr>
+        <tr><td>Waitlist email</td><td>Pre-launch capture forms</td><td>To notify you when bookings open</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>Information We Collect Automatically</h3>
+  <p>When you visit the Site, we automatically receive certain technical information including your IP address, browser type, device type, operating system, referring URL, pages visited, and time spent on the Site. This information helps us understand how the Site is used and improve the experience.</p>
+  <h3>Information We Do Not Collect</h3>
+  <p>We do not collect or knowingly retain sensitive personal data including Social Security numbers (except Tax ID from operators for IRS reporting), government-issued ID numbers, health information, or biometric data. We do not collect information from children under 13.</p>
+</section>
+
+<section class="legal-section" id="how-we-use">
+  <div class="section-label"></div>
+  <h2>How We <em>Use</em> Your Data</h2>
+  <p>We use the information we collect for the following purposes:</p>
+  <ul>
+    <li><strong>To process and confirm bookings</strong> &mdash; your name, email, phone, and booking details are shared with the operator you book with</li>
+    <li><strong>To process payments</strong> &mdash; payment data is sent to Stripe for processing. ShoreList does not store payment card data on our servers</li>
+    <li><strong>To send booking confirmations and receipts</strong> &mdash; via email immediately after checkout</li>
+    <li><strong>To send launch notifications</strong> &mdash; if you joined our waitlist, we will email you when bookings go live. You can unsubscribe at any time</li>
+    <li><strong>To improve the platform</strong> &mdash; aggregate, anonymized usage data helps us understand what works and what doesn't</li>
+    <li><strong>To prevent fraud and maintain security</strong></li>
+    <li><strong>To comply with legal obligations</strong> &mdash; including tax reporting, dispute resolution, and law enforcement requests where required</li>
+  </ul>
+  <div class="callout">
+    <p><strong>We do not sell your personal data.</strong> We do not rent, trade, or sell your personal information to third-party marketers, data brokers, or advertisers &mdash; ever.</p>
   </div>
 </section>
 
-<div class="toc-bar">
-  <div class="toc-inner">
-    <a href="#privacy" class="toc-link">Privacy Policy</a>
-    <a href="#data" class="toc-link">Data We Collect</a>
-    <a href="#stripe" class="toc-link">Payments</a>
-    <a href="#rights" class="toc-link">Your Rights</a>
-    <a href="#terms" class="toc-link">Terms of Service</a>
-    <a href="#operators" class="toc-link">Operators</a>
-    <a href="#risk" class="toc-link">Risk &amp; Safety</a>
-    <a href="#arbitration" class="toc-link">Arbitration</a>
-    <a href="#force-majeure" class="toc-link">Weather &amp; Cancellation</a>
-    <a href="#tax" class="toc-link">Tax &amp; 1099</a>
-    <a href="#contact-legal" class="toc-link">Contact</a>
+<section class="legal-section" id="stripe">
+  <div class="section-label"></div>
+  <h2>Payments &amp; <em>Stripe</em></h2>
+  <p>All payment processing on ShoreList is handled by <strong>Stripe, Inc.</strong>, a PCI-DSS Level 1 certified third-party payment processor. When you enter payment information at checkout, that information is transmitted directly to Stripe using encrypted connections (TLS/SSL). ShoreList never sees, receives, or stores your full credit card number, CVV, or payment account credentials.</p>
+  <p>Stripe processes your payment, charges the applicable amount, and remits the operator's portion to their account. Stripe retains transaction data in accordance with their own privacy policy, available at <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer">stripe.com/privacy</a>.</p>
+  <h3>Cancellations &amp; Refunds</h3>
+  <p>Guests who cancel at least <strong>24 hours before</strong> their scheduled experience are entitled to a full refund processed through Stripe back to the original payment method. Refunds typically appear within 5&ndash;10 business days depending on your card issuer.</p>
+</section>
+
+<section class="legal-section" id="sharing">
+  <div class="section-label"></div>
+  <h2>Data <em>Sharing</em></h2>
+  <div class="table-wrap">
+    <table class="legal-table">
+      <thead><tr><th>Who We Share With</th><th>What We Share</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>The operator you book with</td><td>Your name, email, phone, booking date/time, party size, and special requests</td><td>So they can prepare for your experience and contact you if needed</td></tr>
+        <tr><td>Stripe, Inc.</td><td>Payment data, email, booking amount</td><td>To process your payment securely</td></tr>
+        <tr><td>Formspree</td><td>Email address from waitlist signups</td><td>To deliver waitlist form submissions to ShoreList's inbox</td></tr>
+        <tr><td>Law enforcement or courts</td><td>As legally required</td><td>To comply with valid legal process, court orders, or government requests</td></tr>
+        <tr><td>Business successors</td><td>All data in the event of merger, acquisition, or sale</td><td>You will be notified if this occurs and given options regarding your data</td></tr>
+      </tbody>
+    </table>
   </div>
-</div>
+  <p>We do not share your data with social media platforms, advertisers, or data brokers. ShoreList does not run advertising and has no advertising partners.</p>
+</section>
 
-<div class="main">
+<section class="legal-section" id="rights">
+  <div class="section-label"></div>
+  <h2>Your <em>Rights</em></h2>
+  <h3>Right to Access</h3>
+  <p>You may request a copy of all personal data ShoreList holds about you. We will respond within 30 days.</p>
+  <h3>Right to Correction</h3>
+  <p>If any information we hold about you is inaccurate, you may request that we correct it.</p>
+  <h3>Right to Deletion</h3>
+  <p>You may request that we delete your personal data. We will do so promptly unless we are required to retain it for legal, tax, or fraud prevention purposes. To delete your data, email <a href="mailto:shorelistwilmington@gmail.com"><strong>shorelistwilmington@gmail.com</strong></a> with the subject line &ldquo;Data Deletion Request.&rdquo;</p>
+  <h3>Right to Opt Out of Marketing</h3>
+  <p>Every email we send includes an unsubscribe link. You may also email us directly at any time to be removed from all communications. We will process opt-out requests within 10 business days.</p>
+  <h3>California Residents &mdash; CCPA Rights</h3>
+  <p>If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA), including the right to know what personal information is collected, the right to opt out of the sale of personal information (note: we do not sell personal information), and the right to non-discrimination for exercising your privacy rights. To exercise your CCPA rights, contact us at <a href="mailto:shorelistwilmington@gmail.com"><strong>shorelistwilmington@gmail.com</strong></a>.</p>
+  <h3>Children's Privacy &mdash; COPPA Compliance</h3>
+  <p>ShoreList does not knowingly collect personal information from children under the age of 13. The Site is not directed to children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately and we will delete that information promptly.</p>
+</section>
 
-  <!-- INTRO -->
-  <div class="doc-section" id="intro">
-    <div class="highlight">
-      <strong>Plain English Summary:</strong> ShoreList is a booking platform for local coastal experiences in Wilmington, NC. When you use our site, we collect information needed to make bookings work. We do not sell your personal data. We do not share it with third parties except the operator you book with and Stripe for payment processing. You can ask us to delete your data at any time.
-    </div>
+<section class="legal-section" id="security">
+  <div class="section-label"></div>
+  <h2>Data <em>Security</em></h2>
+  <p>We take reasonable and appropriate measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. These measures include:</p>
+  <ul>
+    <li><strong>SSL/TLS encryption</strong> on all pages of the Site (HTTPS enforced)</li>
+    <li><strong>Stripe's PCI-DSS Level 1 certified payment processing</strong> &mdash; we never handle raw payment card data</li>
+    <li><strong>Netlify's secure hosting infrastructure</strong> for platform reliability and security</li>
+    <li><strong>Limited data access</strong> &mdash; only authorized ShoreList personnel can access booking data</li>
+  </ul>
+  <p>No method of transmission over the internet or electronic storage is 100% secure. In the event of a data breach that affects your personal information, we will notify you promptly in accordance with applicable law.</p>
+</section>
+
+<section class="legal-section" id="retention">
+  <div class="section-label"></div>
+  <h2>Data <em>Retention</em></h2>
+  <ul>
+    <li><strong>Booking records</strong> &mdash; retained for 7 years for tax and accounting purposes in compliance with IRS requirements</li>
+    <li><strong>Waitlist email addresses</strong> &mdash; retained until the launch date and then either converted to active user accounts or deleted within 90 days unless you opt in to further communications</li>
+    <li><strong>Operator application data</strong> &mdash; retained for the duration of the operator relationship plus 3 years</li>
+    <li><strong>Web server logs</strong> &mdash; retained for 90 days then automatically purged</li>
+  </ul>
+</section>
+
+<section class="legal-section" id="cookies">
+  <div class="section-label"></div>
+  <h2>Cookies &amp; <em>Tracking</em></h2>
+  <p>ShoreList uses a minimal cookie footprint. We do not use third-party advertising cookies, behavioral tracking pixels, or cross-site tracking technologies.</p>
+  <h3>Cookies We Use</h3>
+  <ul>
+    <li><strong>Session cookies</strong> &mdash; to maintain your browsing session as you navigate the Site. These expire when you close your browser.</li>
+    <li><strong>Stripe cookies</strong> &mdash; set by Stripe during checkout for fraud prevention and security. Required for payment processing to function.</li>
+    <li><strong>Google Analytics</strong> &mdash; we use Google Analytics 4 to understand how visitors use the Site in aggregate. Google Analytics is configured to anonymize IP addresses. You may opt out of Google Analytics tracking using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out Browser Add-on</a>.</li>
+  </ul>
+  <h3>Why We Do Not Display a Cookie Banner</h3>
+  <p>The European Union's GDPR and the United Kingdom's PECR require explicit consent for non-essential cookies. ShoreList does not deploy non-essential cookies (no advertising trackers, no social media pixels, no cross-site tracking). Strictly necessary cookies (session, security) do not require consent under GDPR Article 5(3). Analytics cookies use anonymized IP addresses and aggregate reporting only, falling under our legitimate interest basis. We will introduce a cookie consent mechanism if our cookie usage materially expands in the future.</p>
+  <p>You may disable cookies in your browser settings, but doing so may affect the functionality of the checkout process.</p>
+</section>
+
+<section class="legal-section" id="terms">
+  <div class="section-label"></div>
+  <h2>Terms of <em>Service</em></h2>
+  <p class="section-date">Last Updated: May 13, 2026</p>
+  <p>These Terms of Service (&ldquo;Terms&rdquo;) govern your use of the ShoreList website and platform. By accessing or using ShoreList, you agree to be bound by these Terms. If you do not agree, do not use the platform.</p>
+  <h3>The ShoreList Platform</h3>
+  <p>ShoreList is an online marketplace that connects guests with local experience operators in the Wilmington, NC coastal region. ShoreList facilitates the discovery and booking of experiences but is not itself the operator of any experience. All experiences are conducted by independent third-party operators who are individually responsible for their services.</p>
+  <h3>User Accounts &amp; Eligibility</h3>
+  <p>You must be at least 18 years old to make a booking on ShoreList. By using the platform, you represent and warrant that you are at least 18 years of age and have the legal capacity to enter into a binding agreement. If booking on behalf of a minor or other person, you represent that you have authority to bind them to these Terms.</p>
+  <h3>Bookings &amp; Payments</h3>
+  <p>When you book an experience through ShoreList, you are entering into a direct agreement with the individual operator for that experience. ShoreList facilitates the transaction but is not a party to the service agreement between you and the operator. Full payment is required at the time of booking. All prices are in US dollars.</p>
+  <h3>Cancellation &amp; Refund Policy</h3>
+  <p>Guests may cancel a booking and receive a <strong>full refund</strong> if cancellation is made at least <strong>24 hours before</strong> the scheduled start time of the experience. Cancellations made less than 24 hours before the experience are non-refundable unless the operator agrees otherwise. In the event an operator cancels or materially changes a booked experience, guests are entitled to a full refund. To cancel a booking, contact ShoreList at <a href="mailto:shorelistwilmington@gmail.com">shorelistwilmington@gmail.com</a> with your booking confirmation number.</p>
+  <h3>Operator Liability</h3>
+  <p>Each experience operator is an independent contractor, not an employee or agent of ShoreList. ShoreList does not control or supervise how operators conduct their experiences. Operators are solely responsible for the safety, quality, and legality of their services. ShoreList is not liable for any injury, loss, damage, or dissatisfaction arising from an operator's experience.</p>
+  <h3>User Conduct</h3>
+  <p>You agree not to use the ShoreList platform to:</p>
+  <ul>
+    <li>Submit false, misleading, or fraudulent booking information</li>
+    <li>Use the platform for any unlawful purpose</li>
+    <li>Attempt to circumvent ShoreList's booking system by arranging direct payments with operators to avoid platform fees</li>
+    <li>Harass, threaten, or harm ShoreList staff, operators, or other users</li>
+    <li>Scrape, copy, or otherwise reproduce platform content without written permission</li>
+  </ul>
+  <h3>Intellectual Property</h3>
+  <p>All content on the ShoreList platform &mdash; including but not limited to text, design, graphics, logos, and the &ldquo;ShoreList&rdquo; name and branding &mdash; is the property of ShoreList LLC and is protected by applicable intellectual property laws.</p>
+  <h3>Disclaimer of Warranties</h3>
+  <p>The ShoreList platform is provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo; without warranties of any kind, express or implied. ShoreList does not warrant that the platform will be uninterrupted, error-free, or free of viruses or other harmful components.</p>
+  <h3>Limitation of Liability</h3>
+  <div class="legal-allcaps">
+    <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE NORTH CAROLINA AND FEDERAL LAW, SHORELIST LLC, ITS OFFICERS, MEMBERS, EMPLOYEES, AND AGENTS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE PLATFORM OR ANY EXPERIENCE BOOKED THROUGH IT. SHORELIST'S TOTAL AGGREGATE LIABILITY FOR ANY AND ALL CLAIMS SHALL NOT EXCEED THE TOTAL AMOUNT YOU PAID FOR THE SPECIFIC BOOKING GIVING RISE TO THE CLAIM.</p>
   </div>
+  <h3>Indemnification</h3>
+  <p>You agree to indemnify, defend, and hold harmless ShoreList LLC and its officers, members, and agents from any claims, liabilities, damages, losses, and expenses (including reasonable attorneys' fees) arising from your use of the platform, your violation of these Terms, or your violation of any third-party rights.</p>
+  <h3>Governing Law &amp; Dispute Resolution</h3>
+  <p>These Terms are governed by the laws of the State of North Carolina, without regard to its conflict of law provisions. Any dispute arising from these Terms or your use of the platform shall be resolved in accordance with Section 13 (Arbitration) below, or in the state or federal courts located in New Hanover County, North Carolina where arbitration does not apply.</p>
+  <h3>Changes to These Terms</h3>
+  <p>ShoreList reserves the right to modify these Terms at any time. We will provide notice of material changes by posting the updated Terms on this page with a new effective date. Your continued use of the platform after any changes constitutes acceptance of the updated Terms.</p>
+</section>
 
-  <!-- PRIVACY POLICY -->
-  <div class="doc-section" id="privacy">
-    <div class="sec-eyebrow">Section 1</div>
-    <h2 class="sec-title">Privacy <em>Policy</em></h2>
-    <div class="sec-updated">Last Updated: May 10, 2026 &nbsp;&middot;&nbsp; Effective: May 10, 2026</div>
-    <div class="prose">
-      <p>ShoreList LLC (&ldquo;ShoreList,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) operates the website located at <strong>shorelist.net</strong> (the &ldquo;Site&rdquo;). This Privacy Policy explains how we collect, use, disclose, and protect your personal information when you visit or use our Site.</p>
-      <p>By using the Site, you agree to the collection and use of information in accordance with this Privacy Policy. If you do not agree, please do not use the Site.</p>
-      <h3>Who We Are</h3>
-      <p>ShoreList LLC is a North Carolina limited liability company headquartered in Wilmington, NC. We operate an online marketplace connecting visitors with local experience operators &mdash; tours, surf lessons, fishing charters, nature walks, and more &mdash; in the Wilmington, NC coastal region.</p>
-      <p>For privacy-related questions, contact us at: <strong>shorelistwilmington@gmail.com</strong></p>
-    </div>
+<section class="legal-section" id="operators">
+  <div class="section-label"></div>
+  <h2>For <em>Operators</em></h2>
+  <p>If you apply to list your business on ShoreList through the operator application at <strong>shorelist.net/join</strong>, you are subject to the ShoreList Operator Listing Agreement in addition to these Terms. Key points for operators:</p>
+  <ul>
+    <li><strong>Your listing data</strong> &mdash; business name, description, pricing, photos, and availability are visible to the public on the ShoreList platform</li>
+    <li><strong>Guest data you receive</strong> &mdash; when a guest books your experience, you receive their name, email, phone, booking details, and special requests. You may use this information only to fulfill the booked experience and must not use it for unsolicited marketing</li>
+    <li><strong>Insurance requirement</strong> &mdash; as a condition of listing, operators must self-certify that they maintain commercial general liability insurance with minimum coverage of <strong>$1,000,000 per occurrence and $2,000,000 aggregate</strong>, and must provide a current Certificate of Insurance (COI) naming ShoreList LLC as an additional insured upon request. ShoreList reserves the right to suspend any listing pending COI verification.</li>
+    <li><strong>Removal</strong> &mdash; you may request removal of your listing and associated data at any time by contacting <a href="mailto:shorelistwilmington@gmail.com">shorelistwilmington@gmail.com</a></li>
+  </ul>
+  <p><strong>Operator applications and listing agreements are governed by the ShoreList Operator Listing Agreement,</strong> a separate document provided during the onboarding process. The Operator Listing Agreement takes precedence over these Terms with respect to the operator relationship.</p>
+</section>
+
+<section class="legal-section" id="risk">
+  <div class="section-label"></div>
+  <h2>Assumption of <em>Risk</em></h2>
+  <div class="callout">
+    <p><strong>Important:</strong> By booking any physical activity through ShoreList, you voluntarily assume all inherent risks. Please read this section carefully before booking.</p>
   </div>
+  <p>Outdoor and physical activities &mdash; including but not limited to surfing, kayaking, fishing, nature walks, and cycling &mdash; involve inherent risks that cannot be eliminated regardless of the care taken by operators or ShoreList. These risks include, but are not limited to: drowning, collision, overexertion, exposure to weather, animal encounters, falls, equipment failure, and other hazards that may result in physical injury, illness, or death.</p>
+  <p>By completing a booking on ShoreList you acknowledge that:</p>
+  <ul>
+    <li>You have read and understood this assumption of risk</li>
+    <li>You are voluntarily participating in the activity at your own risk</li>
+    <li>You release ShoreList LLC and the individual operator from liability for injuries arising from participation, including those caused by ordinary negligence</li>
+    <li>You are physically capable of participating in the activity you are booking</li>
+    <li>You will comply with all safety instructions given by the operator</li>
+    <li>If booking for a minor or other person, you have authority to bind them to these terms</li>
+  </ul>
+  <p>Nothing in this section shall be construed to release any party from liability for gross negligence, willful misconduct, or intentional acts.</p>
+</section>
 
-  <!-- DATA WE COLLECT -->
-  <div class="doc-section" id="data">
-    <div class="sec-eyebrow">Section 2</div>
-    <h2 class="sec-title">Data We <em>Collect</em></h2>
-    <div class="prose">
-      <h3>Information You Give Us Directly</h3>
-      <table class="data-table">
-        <thead>
-          <tr><th>Type of Data</th><th>When We Collect It</th><th>Why We Need It</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Name</strong></td><td>When you make a booking or join the waitlist</td><td>To confirm your reservation and communicate with the operator</td></tr>
-          <tr><td><strong>Email address</strong></td><td>Booking, waitlist signup, operator application</td><td>Booking confirmation, launch notifications, account communication</td></tr>
-          <tr><td><strong>Phone number</strong></td><td>When you make a booking</td><td>For the operator to contact you if needed on the day of your experience</td></tr>
-          <tr><td><strong>Party size &amp; special requests</strong></td><td>At booking checkout</td><td>To prepare the operator for your group</td></tr>
-          <tr><td><strong>Payment information</strong></td><td>At checkout</td><td>Processed entirely by Stripe &mdash; we never see or store your card number</td></tr>
-          <tr><td><strong>Business information</strong></td><td>Operator application (shorelist.net/join)</td><td>To set up your operator listing on the platform</td></tr>
-          <tr><td><strong>Waitlist email</strong></td><td>Pre-launch capture forms</td><td>To notify you when bookings open June 1st</td></tr>
-        </tbody>
-      </table>
-      <h3>Information We Collect Automatically</h3>
-      <p>When you visit the Site, we automatically receive certain technical information including your IP address, browser type, device type, operating system, referring URL, pages visited, and time spent on the Site. This information helps us understand how the Site is used and improve the experience.</p>
-      <h3>Cookies</h3>
-      <p>The Site uses minimal cookies. We may use session cookies to maintain your browsing session. Stripe, our payment processor, uses cookies as part of its fraud prevention and security processes. You may disable cookies in your browser settings, but doing so may affect the functionality of the checkout process.</p>
-      <h3>Information We Do Not Collect</h3>
-      <p>We do not collect or knowingly retain sensitive personal data including Social Security numbers (except Tax ID from operators for IRS reporting), government-issued ID numbers, health information, or biometric data. We do not collect information from children under 13.</p>
-    </div>
+<section class="legal-section" id="arbitration">
+  <div class="section-label"></div>
+  <h2>Arbitration &amp; <em>Class Action Waiver</em></h2>
+  <div class="callout">
+    <p><strong>Please read this section carefully.</strong> It affects your legal rights and contains a mandatory arbitration provision and class action waiver.</p>
   </div>
-
-  <!-- HOW WE USE DATA -->
-  <div class="doc-section" id="use">
-    <div class="sec-eyebrow">Section 3</div>
-    <h2 class="sec-title">How We <em>Use</em> Your Data</h2>
-    <div class="prose">
-      <p>We use the information we collect for the following purposes:</p>
-      <ul>
-        <li><strong>To process and confirm bookings</strong> &mdash; your name, email, phone, and booking details are shared with the operator you book with</li>
-        <li><strong>To process payments</strong> &mdash; payment data is sent to Stripe for processing. ShoreList does not store payment card data on our servers</li>
-        <li><strong>To send booking confirmations and receipts</strong> &mdash; via email immediately after checkout</li>
-        <li><strong>To send launch notifications</strong> &mdash; if you joined our waitlist, we will email you when bookings go live on June 1st. You can unsubscribe at any time</li>
-        <li><strong>To improve the platform</strong> &mdash; aggregate, anonymized usage data helps us understand what works and what doesn't</li>
-        <li><strong>To prevent fraud and maintain security</strong></li>
-        <li><strong>To comply with legal obligations</strong> &mdash; including tax reporting, dispute resolution, and law enforcement requests where required</li>
-      </ul>
-      <div class="highlight">
-        <strong>We do not sell your personal data.</strong> We do not rent, trade, or sell your personal information to third-party marketers, data brokers, or advertisers &mdash; ever.
-      </div>
-    </div>
+  <h3>Mandatory Arbitration</h3>
+  <p>Any dispute, controversy, or claim arising out of or relating to these Terms, the Privacy Policy, your use of ShoreList, or any experience booked through our platform shall be resolved exclusively through final and binding individual arbitration administered by the <strong>American Arbitration Association (AAA)</strong> under its Consumer Arbitration Rules, rather than in a court of law.</p>
+  <p>Exceptions to arbitration: you may assert claims in small claims court if your claims qualify; or either party may seek emergency injunctive relief in any court of competent jurisdiction to prevent irreparable harm pending arbitration.</p>
+  <p>The arbitration will be conducted in Wilmington, North Carolina, or by telephone or videoconference at your election. The arbitrator shall apply North Carolina law. Filing fees are governed by AAA rules. ShoreList will pay AAA fees for disputes under $10,000 where you are the claimant and the claim is not frivolous.</p>
+  <h3>Class Action Waiver</h3>
+  <div class="legal-allcaps">
+    <p>YOU AND SHORELIST AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS ACTION, COLLECTIVE ACTION, PRIVATE ATTORNEY GENERAL ACTION, OR OTHER REPRESENTATIVE PROCEEDING.</p>
   </div>
+  <h3>Opt-Out Right</h3>
+  <p>You may opt out of this arbitration agreement by notifying ShoreList in writing at <a href="mailto:shorelistwilmington@gmail.com">shorelistwilmington@gmail.com</a> within <strong>60 days</strong> of the date you first use the ShoreList platform. Your opt-out notice must include your name, address, and a clear statement that you opt out of arbitration. Opting out of arbitration does not affect any other provision of these Terms.</p>
+</section>
 
-  <!-- PAYMENTS -->
-  <div class="doc-section" id="stripe">
-    <div class="sec-eyebrow">Section 4</div>
-    <h2 class="sec-title">Payments &amp; <em>Stripe</em></h2>
-    <div class="prose">
-      <p>All payment processing on ShoreList is handled by <strong>Stripe, Inc.</strong>, a third-party payment processor. When you enter payment information at checkout, that information is transmitted directly to Stripe using encrypted connections (TLS/SSL). ShoreList never sees, receives, or stores your full credit card number, CVV, or payment account credentials.</p>
-      <p>Stripe processes your payment, charges the applicable amount, and remits the operator's portion to their account. Stripe retains transaction data in accordance with their own privacy policy, available at <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer">stripe.com/privacy</a>.</p>
-      <h4>Cancellations &amp; Refunds</h4>
-      <p>Guests who cancel at least <strong>24 hours before</strong> their scheduled experience are entitled to a full refund processed through Stripe back to the original payment method. Refunds typically appear within 5&ndash;10 business days depending on your card issuer.</p>
-    </div>
+<section class="legal-section" id="weather">
+  <div class="section-label"></div>
+  <h2>Weather, Cancellations &amp; <em>Force Majeure</em></h2>
+  <h3>Force Majeure Events</h3>
+  <p>Neither ShoreList nor any operator shall be liable for cancellations, delays, or failure to perform caused by circumstances beyond their reasonable control, including but not limited to:</p>
+  <ul>
+    <li>Hurricanes, tropical storms, tornadoes, flooding, lightning, or other severe weather events</li>
+    <li>Acts of God or nature, including earthquakes, wildfires, or extreme weather</li>
+    <li>Epidemic, pandemic, or public health emergencies declared by a government authority</li>
+    <li>Government orders, mandatory evacuations, curfews, or beach closures</li>
+    <li>Power outages or utility failures affecting the operator's ability to deliver the experience</li>
+  </ul>
+  <h3>Guest Refunds for Force Majeure</h3>
+  <p>If a booked experience is cancelled due to a Force Majeure Event, guests will receive a <strong>full refund</strong> of all amounts paid. Refunds will be processed through Stripe within 5&ndash;10 business days.</p>
+  <h3>Operator-Initiated Cancellations</h3>
+  <p>If an operator cancels a confirmed booking for reasons other than Force Majeure, the guest will receive a full refund. Operators who cancel confirmed bookings without cause may be subject to suspension or removal from the ShoreList platform at ShoreList's sole discretion.</p>
+  <h3>Weather Policy for Outdoor Activities</h3>
+  <p>For outdoor activities affected by weather short of a Force Majeure Event, the cancellation decision rests with the operator based on their professional judgment and safety standards. Guests who are concerned about weather should contact ShoreList at <a href="mailto:shorelistwilmington@gmail.com">shorelistwilmington@gmail.com</a> at least 24 hours before their scheduled experience.</p>
+</section>
+
+<section class="legal-section" id="tax">
+  <div class="section-label"></div>
+  <h2>Tax Reporting &amp; <em>1099-K</em></h2>
+  <p>This section applies to operators who receive payments through the ShoreList platform.</p>
+  <h3>IRS Form 1099-K</h3>
+  <p>ShoreList LLC is a third-party payment settlement entity under IRS regulations. As required by federal law, ShoreList will issue IRS Form 1099-K to any operator whose gross payments processed through ShoreList meet or exceed the applicable reporting threshold in any calendar year. Operators should consult a tax professional regarding their specific obligations.</p>
+  <h3>W-9 Requirement</h3>
+  <p>Before ShoreList processes any payout to an operator, the operator must provide a completed <strong>IRS Form W-9</strong> (or W-8BEN for non-US persons), including their legal name, business name (if applicable), address, and taxpayer identification number (EIN or SSN). Failure to provide a valid W-9 may result in ShoreList withholding <strong>24% backup withholding</strong> from operator payouts as required by IRS regulations.</p>
+  <h3>Operator Tax Responsibilities</h3>
+  <p>Operators are solely responsible for reporting their ShoreList income on their own federal and state tax returns. ShoreList does not provide tax advice. ShoreList recommends that all operators consult a qualified tax professional.</p>
+  <div class="callout">
+    <p><strong>For operators:</strong> Your EIN or SSN provided during signup is used solely for IRS tax reporting purposes. It is stored securely and never displayed publicly on the ShoreList platform.</p>
   </div>
+</section>
 
-  <!-- DATA SHARING -->
-  <div class="doc-section" id="sharing">
-    <div class="sec-eyebrow">Section 5</div>
-    <h2 class="sec-title">Data <em>Sharing</em></h2>
-    <div class="prose">
-      <table class="data-table">
-        <thead>
-          <tr><th>Who We Share With</th><th>What We Share</th><th>Why</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>The operator you book with</strong></td><td>Your name, email, phone, booking date/time, party size, and special requests</td><td>So they can prepare for your experience and contact you if needed</td></tr>
-          <tr><td><strong>Stripe, Inc.</strong></td><td>Payment data, email, booking amount</td><td>To process your payment securely</td></tr>
-          <tr><td><strong>Formspree</strong></td><td>Email address from waitlist signups</td><td>To deliver waitlist form submissions to ShoreList's inbox</td></tr>
-          <tr><td><strong>Law enforcement or courts</strong></td><td>As legally required</td><td>To comply with valid legal process, court orders, or government requests</td></tr>
-          <tr><td><strong>Business successors</strong></td><td>All data in the event of merger, acquisition, or sale</td><td>You will be notified if this occurs and given options regarding your data</td></tr>
-        </tbody>
-      </table>
-      <div class="highlight">
-        We do not share your data with social media platforms, advertisers, or data brokers. ShoreList does not run advertising and has no advertising partners.
-      </div>
-    </div>
+<section class="legal-section" id="ai-planner">
+  <div class="section-label"></div>
+  <h2>AI Trip Planner <em>Disclaimer</em></h2>
+  <p>The ShoreList AI Trip Planner located at <a href="/planner">shorelist.net/planner</a> generates suggested coastal itineraries based on your inputs using an automated large language model.</p>
+  <h3>AI Output Is Not a Guarantee</h3>
+  <p>Itineraries produced by the AI Trip Planner are <strong>suggestions only</strong>. They are not guarantees of:</p>
+  <ul>
+    <li>Operator availability on the dates suggested</li>
+    <li>Pricing accuracy &mdash; prices may have changed since the AI was last updated</li>
+    <li>Weather, surf, or water conditions</li>
+    <li>Operating hours, seasonal closures, or schedule changes</li>
+    <li>Operator quality, suitability, or safety for your specific group or needs</li>
+  </ul>
+  <h3>Verify Before You Travel</h3>
+  <p>Always verify availability, pricing, weather conditions, and operating status with each operator before traveling. Use the AI Trip Planner as a starting point, not a final source of truth.</p>
+  <h3>Limitation of Liability for AI Output</h3>
+  <p>ShoreList is not liable for AI-generated suggestions that prove inaccurate, unavailable, outdated, or unsuitable for your circumstances. By using the AI Trip Planner you acknowledge that AI output may contain errors and you will exercise your own judgment when making travel decisions. The limitation of liability provisions in Section 10 apply in full to AI Trip Planner output.</p>
+</section>
+
+<section class="legal-section" id="accessibility">
+  <div class="section-label"></div>
+  <h2>Accessibility <em>Statement</em></h2>
+  <p>ShoreList LLC is committed to providing a website that is accessible to the widest possible audience, regardless of technology or ability.</p>
+  <h3>Our Commitment</h3>
+  <p>We are actively working to ensure shorelist.net meets the Web Content Accessibility Guidelines (WCAG) 2.2 Level AA standards. This includes:</p>
+  <ul>
+    <li>Alternative text for informative images</li>
+    <li>Keyboard navigation throughout the site</li>
+    <li>Sufficient color contrast for text against backgrounds</li>
+    <li>Semantic HTML structure for screen reader compatibility</li>
+    <li>Visible focus indicators for keyboard users</li>
+    <li>Respect for the <code>prefers-reduced-motion</code> setting</li>
+    <li>Form labels and error messages that are programmatically associated with their fields</li>
+  </ul>
+  <h3>Reporting an Accessibility Issue</h3>
+  <p>If you experience difficulty accessing any portion of our website, please email <a href="mailto:shorelistwilmington@gmail.com?subject=Accessibility%20Feedback"><strong>shorelistwilmington@gmail.com</strong></a> with the subject line &ldquo;Accessibility Feedback&rdquo; and a description of the issue including:</p>
+  <ul>
+    <li>The page URL where you encountered the issue</li>
+    <li>The device, browser, and assistive technology (if any) you were using</li>
+    <li>A description of what you were trying to do</li>
+  </ul>
+  <p>We will acknowledge your message within 2 business days and work to resolve the issue within a reasonable timeframe.</p>
+  <p class="section-date" style="margin-top:18px;border-bottom:none;padding-bottom:0;">This statement was last updated on May 13, 2026.</p>
+</section>
+
+<section class="legal-section" id="updates">
+  <div class="section-label"></div>
+  <h2>Policy <em>Updates</em></h2>
+  <p>We may update this Privacy Policy and Terms of Service from time to time as the platform evolves. When we make material changes, we will update the &ldquo;Last Updated&rdquo; date at the top of this page. For significant changes, we will notify registered users by email.</p>
+  <p>Your continued use of ShoreList after any changes to this policy constitutes your acceptance of the updated terms.</p>
+</section>
+
+<section class="legal-section" id="contact-legal">
+  <div class="section-label"></div>
+  <h2>Contact <em>Us</em></h2>
+  <p>For any privacy-related questions, data requests, or concerns about these Terms, contact us:</p>
+  <div class="callout">
+    <p><strong>ShoreList LLC &mdash; Privacy &amp; Legal</strong></p>
+    <p>RJ Brideau, Founder &amp; Member<br/>
+    Wilmington, North Carolina 28412<br/>
+    <a href="mailto:shorelistwilmington@gmail.com">shorelistwilmington@gmail.com</a><br/>
+    <a href="https://shorelist.net">shorelist.net</a></p>
   </div>
+</section>
 
-  <!-- YOUR RIGHTS -->
-  <div class="doc-section" id="rights">
-    <div class="sec-eyebrow">Section 6</div>
-    <h2 class="sec-title">Your <em>Rights</em></h2>
-    <div class="prose">
-      <h3>Right to Access</h3>
-      <p>You may request a copy of all personal data ShoreList holds about you. We will respond within 30 days.</p>
-      <h3>Right to Correction</h3>
-      <p>If any information we hold about you is inaccurate, you may request that we correct it.</p>
-      <h3>Right to Deletion</h3>
-      <p>You may request that we delete your personal data. We will do so promptly unless we are required to retain it for legal, tax, or fraud prevention purposes. To delete your data, email <strong>shorelistwilmington@gmail.com</strong> with the subject line &ldquo;Data Deletion Request.&rdquo;</p>
-      <h3>Right to Opt Out of Marketing</h3>
-      <p>Every email we send includes an unsubscribe link. You may also email us directly at any time to be removed from all communications. We will process opt-out requests within 10 business days.</p>
-      <h3>California Residents &mdash; CCPA Rights</h3>
-      <p>If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA), including the right to know what personal information is collected, the right to opt out of the sale of personal information (note: we do not sell personal information), and the right to non-discrimination for exercising your privacy rights. To exercise your CCPA rights, contact us at <strong>shorelistwilmington@gmail.com</strong>.</p>
-      <h3>Children's Privacy &mdash; COPPA Compliance</h3>
-      <p>ShoreList does not knowingly collect personal information from children under the age of 13. The Site is not directed to children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately at <strong>shorelistwilmington@gmail.com</strong> and we will delete that information promptly.</p>
-    </div>
-  </div>
-
-  <!-- DATA SECURITY -->
-  <div class="doc-section" id="security">
-    <div class="sec-eyebrow">Section 7</div>
-    <h2 class="sec-title">Data <em>Security</em></h2>
-    <div class="prose">
-      <p>We take reasonable and appropriate measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. These measures include:</p>
-      <ul>
-        <li><strong>SSL/TLS encryption</strong> on all pages of the Site (HTTPS)</li>
-        <li><strong>Stripe's PCI-DSS compliant payment processing</strong> &mdash; we never handle raw payment card data</li>
-        <li><strong>Netlify's secure hosting infrastructure</strong> for platform reliability and security</li>
-        <li><strong>Limited data access</strong> &mdash; only authorized ShoreList personnel can access booking data</li>
-      </ul>
-      <p>No method of transmission over the internet or electronic storage is 100% secure. In the event of a data breach that affects your personal information, we will notify you promptly in accordance with applicable law.</p>
-    </div>
-  </div>
-
-  <!-- DATA RETENTION -->
-  <div class="doc-section" id="retention">
-    <div class="sec-eyebrow">Section 8</div>
-    <h2 class="sec-title">Data <em>Retention</em></h2>
-    <div class="prose">
-      <ul>
-        <li><strong>Booking records</strong> &mdash; retained for 7 years for tax and accounting purposes in compliance with IRS requirements</li>
-        <li><strong>Waitlist email addresses</strong> &mdash; retained until the launch date (June 1, 2026) and then either converted to active user accounts or deleted within 90 days unless you opt in to further communications</li>
-        <li><strong>Operator application data</strong> &mdash; retained for the duration of the operator relationship plus 3 years</li>
-        <li><strong>Web server logs</strong> &mdash; retained for 90 days then automatically purged</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- TERMS OF SERVICE -->
-  <div class="doc-section" id="terms">
-    <div class="sec-eyebrow">Section 9</div>
-    <h2 class="sec-title">Terms of <em>Service</em></h2>
-    <div class="sec-updated">Last Updated: May 10, 2026</div>
-    <div class="prose">
-      <p>These Terms of Service (&ldquo;Terms&rdquo;) govern your use of the ShoreList website and platform. By accessing or using ShoreList, you agree to be bound by these Terms. If you do not agree, do not use the platform.</p>
-      <h3>The ShoreList Platform</h3>
-      <p>ShoreList is an online marketplace that connects guests with local experience operators in the Wilmington, NC coastal region. ShoreList facilitates the discovery and booking of experiences but is not itself the operator of any experience. All experiences are conducted by independent third-party operators who are individually responsible for their services.</p>
-      <h3>User Accounts &amp; Eligibility</h3>
-      <p>You must be at least 18 years old to make a booking on ShoreList. By using the platform, you represent and warrant that you are at least 18 years of age and have the legal capacity to enter into a binding agreement.</p>
-      <h3>Bookings &amp; Payments</h3>
-      <p>When you book an experience through ShoreList, you are entering into a direct agreement with the individual operator for that experience. ShoreList facilitates the transaction but is not a party to the service agreement between you and the operator. Full payment is required at the time of booking. All prices are in US dollars.</p>
-      <h3>Cancellation &amp; Refund Policy</h3>
-      <p>Guests may cancel a booking and receive a <strong>full refund</strong> if cancellation is made at least <strong>24 hours before</strong> the scheduled start time of the experience. Cancellations made less than 24 hours before the experience are non-refundable unless the operator agrees otherwise. In the event an operator cancels or materially changes a booked experience, guests are entitled to a full refund. To cancel a booking, contact ShoreList at <strong>shorelistwilmington@gmail.com</strong> with your booking confirmation number.</p>
-      <h3>Assumption of Risk</h3>
-      <p>BY BOOKING ANY EXPERIENCE THROUGH SHORELIST THAT INVOLVES PHYSICAL ACTIVITY &mdash; INCLUDING BUT NOT LIMITED TO SURF LESSONS, KAYAK TOURS, NATURE WALKS, FISHING CHARTERS, GHOST TOURS, OR ANY OTHER OUTDOOR OR PHYSICAL ACTIVITY &mdash; YOU VOLUNTARILY AND KNOWINGLY ASSUME ALL INHERENT RISKS ASSOCIATED WITH SUCH ACTIVITY, INCLUDING THE RISK OF PHYSICAL INJURY, ILLNESS, DEATH, OR PROPERTY DAMAGE.</p>
-      <h3>Operator Liability</h3>
-      <p>Each experience operator is an independent contractor, not an employee or agent of ShoreList. ShoreList does not control or supervise how operators conduct their experiences. Operators are solely responsible for the safety, quality, and legality of their services. ShoreList is not liable for any injury, loss, damage, or dissatisfaction arising from an operator's experience.</p>
-      <h3>User Conduct</h3>
-      <p>You agree not to use the ShoreList platform to:</p>
-      <ul>
-        <li>Submit false, misleading, or fraudulent booking information</li>
-        <li>Use the platform for any unlawful purpose</li>
-        <li>Attempt to circumvent ShoreList's booking system by arranging direct payments with operators to avoid platform fees</li>
-        <li>Harass, threaten, or harm ShoreList staff, operators, or other users</li>
-        <li>Scrape, copy, or otherwise reproduce platform content without written permission</li>
-      </ul>
-      <h3>Intellectual Property</h3>
-      <p>All content on the ShoreList platform &mdash; including but not limited to text, design, graphics, logos, and the &ldquo;ShoreList&rdquo; name and branding &mdash; is the property of ShoreList LLC and is protected by applicable intellectual property laws.</p>
-      <h3>Disclaimer of Warranties</h3>
-      <p>The ShoreList platform is provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo; without warranties of any kind, express or implied. ShoreList does not warrant that the platform will be uninterrupted, error-free, or free of viruses or other harmful components.</p>
-      <h3>Limitation of Liability</h3>
-      <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE NORTH CAROLINA AND FEDERAL LAW, SHORELIST LLC, ITS OFFICERS, MEMBERS, EMPLOYEES, AND AGENTS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE PLATFORM OR ANY EXPERIENCE BOOKED THROUGH IT. SHORELIST'S TOTAL AGGREGATE LIABILITY FOR ANY AND ALL CLAIMS SHALL NOT EXCEED THE TOTAL AMOUNT YOU PAID FOR THE SPECIFIC BOOKING GIVING RISE TO THE CLAIM.</p>
-      <h3>Indemnification</h3>
-      <p>You agree to indemnify, defend, and hold harmless ShoreList LLC and its officers, members, and agents from any claims, liabilities, damages, losses, and expenses (including reasonable attorneys' fees) arising from your use of the platform, your violation of these Terms, or your violation of any third-party rights.</p>
-      <h3>Governing Law &amp; Dispute Resolution</h3>
-      <p>These Terms are governed by the laws of the State of North Carolina, without regard to its conflict of law provisions. Any dispute arising from these Terms or your use of the platform shall be resolved in the state or federal courts located in New Hanover County, North Carolina.</p>
-      <h3>Changes to These Terms</h3>
-      <p>ShoreList reserves the right to modify these Terms at any time. We will provide notice of material changes by posting the updated Terms on this page with a new effective date. Your continued use of the platform after any changes constitutes acceptance of the updated Terms.</p>
-    </div>
-  </div>
-
-  <!-- OPERATORS -->
-  <div class="doc-section" id="operators">
-    <div class="sec-eyebrow">Section 10</div>
-    <h2 class="sec-title">For <em>Operators</em></h2>
-    <div class="prose">
-      <p>If you apply to list your business on ShoreList through the operator application at <strong>shorelist.net/join</strong>, you are subject to the ShoreList Operator Listing Agreement in addition to these Terms. Key points for operators:</p>
-      <ul>
-        <li><strong>Your listing data</strong> &mdash; business name, description, pricing, photos, and availability are visible to the public on the ShoreList platform</li>
-        <li><strong>Guest data you receive</strong> &mdash; when a guest books your experience, you receive their name, email, phone, booking details, and special requests. You may use this information only to fulfill the booked experience and must not use it for unsolicited marketing</li>
-        <li><strong>Insurance requirement</strong> &mdash; as a condition of listing, operators must maintain commercial general liability insurance with minimum coverage of <strong>$1,000,000 per occurrence and $2,000,000 aggregate</strong>, naming ShoreList LLC as an additional insured</li>
-        <li><strong>Removal</strong> &mdash; you may request removal of your listing and associated data at any time by contacting <strong>shorelistwilmington@gmail.com</strong></li>
-      </ul>
-      <div class="highlight coral">
-        <strong>Operator applications and listing agreements are governed by the ShoreList Operator Listing Agreement,</strong> a separate document provided during the onboarding process. The Operator Listing Agreement takes precedence over these Terms with respect to the operator relationship.
-      </div>
-    </div>
-  </div>
-
-  <!-- ASSUMPTION OF RISK -->
-  <div class="doc-section" id="risk">
-    <div class="sec-eyebrow">Section 12</div>
-    <h2 class="sec-title">Assumption of <em>Risk</em></h2>
-    <div class="prose">
-      <div class="highlight coral">
-        <strong>Important:</strong> By booking any physical activity through ShoreList, you voluntarily assume all inherent risks. Please read this section carefully before booking.
-      </div>
-      <p>Outdoor and physical activities &mdash; including but not limited to surfing, kayaking, fishing, nature walks, and cycling &mdash; involve inherent risks that cannot be eliminated regardless of the care taken by operators or ShoreList. These risks include, but are not limited to: drowning, collision, overexertion, exposure to weather, animal encounters, falls, equipment failure, and other hazards that may result in physical injury, illness, or death.</p>
-      <p>By completing a booking on ShoreList you acknowledge that:</p>
-      <ul>
-        <li>You have read and understood this assumption of risk</li>
-        <li>You are voluntarily participating in the activity at your own risk</li>
-        <li>You release ShoreList LLC and the individual operator from liability for injuries arising from participation, including those caused by ordinary negligence</li>
-        <li>You are physically capable of participating in the activity you are booking</li>
-        <li>You will comply with all safety instructions given by the operator</li>
-        <li>If booking for a minor or other person, you have authority to bind them to these terms</li>
-      </ul>
-      <p>Nothing in this section shall be construed to release any party from liability for gross negligence, willful misconduct, or intentional acts.</p>
-    </div>
-  </div>
-
-  <!-- ARBITRATION -->
-  <div class="doc-section" id="arbitration">
-    <div class="sec-eyebrow">Section 13</div>
-    <h2 class="sec-title">Arbitration &amp; <em>Class Action Waiver</em></h2>
-    <div class="prose">
-      <div class="highlight coral">
-        <strong>Please read this section carefully. It affects your legal rights and contains a mandatory arbitration provision and class action waiver.</strong>
-      </div>
-      <h3>Mandatory Arbitration</h3>
-      <p>Any dispute, controversy, or claim arising out of or relating to these Terms, the Privacy Policy, your use of ShoreList, or any experience booked through our platform shall be resolved exclusively through final and binding individual arbitration administered by the <strong>American Arbitration Association (AAA)</strong> under its Consumer Arbitration Rules, rather than in a court of law.</p>
-      <p>Exceptions to arbitration: you may assert claims in small claims court if your claims qualify; or either party may seek emergency injunctive relief in any court of competent jurisdiction to prevent irreparable harm pending arbitration.</p>
-      <p>The arbitration will be conducted in Wilmington, North Carolina, or by telephone or videoconference at your election. The arbitrator shall apply North Carolina law. Filing fees are governed by AAA rules. ShoreList will pay AAA fees for disputes under $10,000 where you are the claimant and the claim is not frivolous.</p>
-      <h3>Class Action Waiver</h3>
-      <p style="font-weight:700;color:var(--teal3);text-transform:uppercase;font-size:0.85rem;letter-spacing:0.04em;">YOU AND SHORELIST AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS ACTION, COLLECTIVE ACTION, PRIVATE ATTORNEY GENERAL ACTION, OR OTHER REPRESENTATIVE PROCEEDING.</p>
-      <h3>Opt-Out Right</h3>
-      <p>You may opt out of this arbitration agreement by notifying ShoreList in writing at <strong>shorelistwilmington@gmail.com</strong> within <strong>30 days</strong> of the date you first use the ShoreList platform. Your opt-out notice must include your name, address, and a clear statement that you opt out of arbitration.</p>
-    </div>
-  </div>
-
-  <!-- FORCE MAJEURE -->
-  <div class="doc-section" id="force-majeure">
-    <div class="sec-eyebrow">Section 14</div>
-    <h2 class="sec-title">Weather, Cancellations &amp; <em>Force Majeure</em></h2>
-    <div class="prose">
-      <h3>Force Majeure Events</h3>
-      <p>Neither ShoreList nor any operator shall be liable for cancellations, delays, or failure to perform caused by circumstances beyond their reasonable control, including but not limited to:</p>
-      <ul>
-        <li>Hurricanes, tropical storms, tornadoes, flooding, lightning, or other severe weather events</li>
-        <li>Acts of God or nature, including earthquakes, wildfires, or extreme weather</li>
-        <li>Epidemic, pandemic, or public health emergencies declared by a government authority</li>
-        <li>Government orders, mandatory evacuations, curfews, or beach closures</li>
-        <li>Power outages or utility failures affecting the operator's ability to deliver the experience</li>
-      </ul>
-      <h3>Guest Refunds for Force Majeure</h3>
-      <p>If a booked experience is cancelled due to a Force Majeure Event, guests will receive a <strong>full refund</strong> of all amounts paid. Refunds will be processed through Stripe within 5&ndash;10 business days.</p>
-      <h3>Operator-Initiated Cancellations</h3>
-      <p>If an operator cancels a confirmed booking for reasons other than Force Majeure, the guest will receive a full refund. Operators who cancel confirmed bookings without cause may be subject to suspension or removal from the ShoreList platform at ShoreList's sole discretion.</p>
-      <h3>Weather Policy for Outdoor Activities</h3>
-      <p>For outdoor activities affected by weather short of a Force Majeure Event, the cancellation decision rests with the operator based on their professional judgment and safety standards. Guests who are concerned about weather should contact ShoreList at <strong>shorelistwilmington@gmail.com</strong> at least 24 hours before their scheduled experience.</p>
-    </div>
-  </div>
-
-  <!-- TAX REPORTING -->
-  <div class="doc-section" id="tax">
-    <div class="sec-eyebrow">Section 15</div>
-    <h2 class="sec-title">Tax Reporting &amp; <em>1099-K</em></h2>
-    <div class="prose">
-      <p>This section applies to operators who receive payments through the ShoreList platform.</p>
-      <h3>IRS Form 1099-K</h3>
-      <p>ShoreList LLC is a third-party payment settlement entity under IRS regulations. As required by federal law, ShoreList will issue IRS Form 1099-K to any operator whose gross payments processed through ShoreList meet or exceed the applicable reporting threshold in any calendar year. As of 2024, the IRS threshold is <strong>$600 in gross payments</strong>. Operators should consult a tax professional regarding their specific obligations.</p>
-      <h3>W-9 Requirement</h3>
-      <p>Before ShoreList processes any payout to an operator, the operator must provide a completed <strong>IRS Form W-9</strong> (or W-8BEN for non-US persons), including their legal name, business name (if applicable), address, and taxpayer identification number (EIN or SSN). Failure to provide a valid W-9 may result in ShoreList withholding <strong>24% backup withholding</strong> from operator payouts as required by IRS regulations.</p>
-      <h3>Operator Tax Responsibilities</h3>
-      <p>Operators are solely responsible for reporting their ShoreList income on their own federal and state tax returns. ShoreList does not provide tax advice. ShoreList recommends that all operators consult a qualified tax professional.</p>
-      <div class="highlight">
-        <strong>For operators:</strong> Your EIN or SSN provided during signup is used solely for IRS tax reporting purposes. It is stored securely and never displayed publicly on the ShoreList platform.
-      </div>
-    </div>
-  </div>
-
-  <!-- POLICY UPDATES -->
-  <div class="doc-section" id="changes">
-    <div class="sec-eyebrow">Section 16</div>
-    <h2 class="sec-title">Policy <em>Updates</em></h2>
-    <div class="prose">
-      <p>We may update this Privacy Policy and Terms of Service from time to time as the platform evolves. When we make material changes, we will update the &ldquo;Last Updated&rdquo; date at the top of this page. For significant changes, we will notify registered users by email.</p>
-      <p>Your continued use of ShoreList after any changes to this policy constitutes your acceptance of the updated terms.</p>
-    </div>
-  </div>
-
-  <!-- CONTACT -->
-  <div class="doc-section" id="contact-legal">
-    <div class="sec-eyebrow">Section 17</div>
-    <h2 class="sec-title">Contact <em>Us</em></h2>
-    <div class="prose">
-      <p>For any privacy-related questions, data requests, or concerns about these Terms, contact us:</p>
-    </div>
-    <div class="contact-card">
-      <div>
-        <div class="cc-title">ShoreList LLC &mdash; Privacy &amp; Legal</div>
-        <div class="cc-sub">RJ Brideau, Founder &amp; Member<br/>Wilmington, North Carolina 28412</div>
-      </div>
-      <div class="cc-links">
-        <a href="mailto:shorelistwilmington@gmail.com" class="cc-link">shorelistwilmington@gmail.com</a>
-        <a href="https://shorelist.net" class="cc-link" rel="noopener noreferrer" target="_blank">shorelist.net</a>
-      </div>
-    </div>
-  </div>
-
-</div>
+</main>
 
 <footer>
-  <a href="/" class="foot-logo"><span class="foot-s">Shore</span><span class="foot-l">List</span></a>
-  <div class="foot-copy">&copy; 2026 ShoreList LLC &nbsp;&middot;&nbsp; Wilmington, NC</div>
-  <div class="foot-links">
+  <a href="/" class="foot-logo" aria-label="ShoreList home"><span class="s">Shore</span><span class="l">List</span></a>
+  <div class="foot-copy">&copy; 2026 ShoreList LLC &middot; Wilmington, NC &middot; Your local guide to coastal adventures</div>
+  <nav class="foot-links" aria-label="Footer">
     <a href="/">Experiences</a>
     <a href="/events">Events Guide</a>
     <a href="/planner">Trip Planner</a>
     <a href="/waitlist">Join Waitlist</a>
+    <a href="/join">Operators</a>
     <a href="mailto:shorelistwilmington@gmail.com">Contact</a>
-    <a href="/legal" class="active">Privacy &amp; Terms</a>
-    <a href="/join">List Your Business</a>
-  </div>
+    <a href="/legal" aria-current="page">Privacy &amp; Terms</a>
+  </nav>
 </footer>
 
 </body>
