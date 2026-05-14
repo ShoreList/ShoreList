@@ -5,18 +5,37 @@
 <meta name="theme-color" content="#0A4D5C"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-title" content="ShoreList"/>
+<meta name="robots" content="index,follow"/>
 <link rel="canonical" href="https://shorelist.net/category"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>ShoreList — Wilmington, NC Coastal Experiences</title>
-<meta name="description" content="Book local coastal experiences in Wilmington, NC — ghost tours, fishing charters, surf lessons, kayak tours and more. Instant booking, secure checkout."/>
+<meta name="description" content="Explore local coastal experiences in Wilmington, NC — ghost tours with Sean Austin (Netflix), film & TV location tours, surf lessons, fishing charters, kayak tours, nature walks and more. Launching June 1, 2026."/>
 <meta property="og:title" content="ShoreList — Wilmington, NC Coastal Experiences"/>
-<meta property="og:description" content="Book unforgettable local experiences across Wilmington and the NC beaches. Instant booking, verified operators, secure checkout."/>
+<meta property="og:description" content="Discover unforgettable local experiences across Wilmington and the NC beaches. Independent local operators. Secure Stripe checkout. Launching June 1, 2026."/>
 <meta property="og:type" content="website"/>
 <meta property="og:image" content="https://shorelist.net/og-category.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:site_name" content="ShoreList"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
+
+/* ── ACCESSIBILITY: skip link ── */
+.skip-link{position:absolute;top:-100px;left:50%;transform:translateX(-50%);background:var(--coral);color:white;padding:14px 24px;border-radius:8px;font-weight:700;font-size:0.92rem;text-decoration:none;z-index:9999;transition:top 0.18s;}
+.skip-link:focus{top:14px;outline:3px solid var(--cream);outline-offset:2px;}
+/* ── ACCESSIBILITY: focus states ── */
+:focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:3px;}
+/* ── ACCESSIBILITY: reduced motion ── */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}
+}
+/* ── COLOR CONTRAST FIXES (WCAG AA) ── */
+.foot-txt{color:rgba(245,232,203,0.62)!important;}
+
 :root{--teal:#0A4D5C;--teal2:#1A7585;--coral:#E96645;--coral2:#F07A5A;--cream:#F5E8CB;--cream2:#FEFCF7;--dark:#0D1F25;--mid:#2C4A52;--lgray:#F2F4F3;--border:rgba(10,77,92,0.10);}
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:var(--cream2);color:var(--dark);overflow-x:hidden;}
@@ -47,7 +66,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 48px;display:fl
 .main{max-width:1100px;margin:0 auto;padding:64px 48px 100px;}
 .section-label{font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;}
 .section-title{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:900;color:var(--teal);line-height:1.1;margin-bottom:8px;}
-.section-title em{font-style:italic;color:var(--coral);}
 .section-sub{font-size:0.95rem;color:var(--mid);line-height:1.8;margin-bottom:40px;max-width:560px;}
 .operator-grid{display:flex;flex-direction:column;gap:28px;margin-bottom:72px;}
 .op-card{background:white;border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:box-shadow 0.25s,transform 0.25s;}
@@ -70,11 +88,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 48px;display:fl
 .op-book-note strong{color:var(--teal);font-weight:600;}
 .btn-book{background:var(--coral);color:white;border:none;padding:14px 32px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;cursor:pointer;transition:all 0.2s;white-space:nowrap;}
 .btn-book:hover{background:var(--coral2);transform:translateY(-1px);}
+.book-form-wrap{background:var(--lgray);border-radius:0 0 16px 16px;padding:36px 40px;border-top:1px solid rgba(10,77,92,0.08);display:none;}
+.book-form-wrap.open{display:block;}
+.book-form-title{font-size:1.1rem;font-weight:700;color:var(--teal);margin-bottom:28px;}
+
 .prelaunch-card{background:linear-gradient(135deg,var(--teal) 0%,#0d5e70 100%);border-radius:12px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:8px;}
+.plc-left{}
 .plc-tag{font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--coral);margin-bottom:8px;}
 .plc-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:900;color:white;line-height:1.2;margin-bottom:6px;}
 .plc-sub{font-size:0.82rem;color:rgba(245,232,203,0.65);line-height:1.6;}
 .plc-form{display:flex;gap:10px;align-items:center;flex-shrink:0;flex-wrap:wrap;}
+@media(max-width:600px){.plc-form{flex-direction:column;width:100%;}.plc-input{width:100%;}.plc-btn{width:100%;}}
 .plc-input{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);border-radius:8px;padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:1rem;color:white;outline:none;width:220px;transition:border-color 0.2s;}
 .plc-input::placeholder{color:rgba(255,255,255,0.45);}
 .plc-input:focus{border-color:rgba(255,255,255,0.55);}
@@ -108,15 +132,38 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 48px;display:fl
 .more-card:hover{transform:translateY(-3px);border-color:rgba(10,77,92,0.18);box-shadow:0 12px 32px rgba(10,77,92,0.08);}
 .more-ico{font-size:1.9rem;}
 .more-name{font-size:0.82rem;font-weight:600;color:var(--teal);line-height:1.3;}
+.more-live{font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1a7a4a;background:rgba(26,122,74,0.10);border-radius:4px;padding:2px 8px;}
 footer{background:var(--dark);padding:40px 48px;text-align:center;}
 .foot-logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--cream2);margin-bottom:8px;}
 .foot-logo span{color:var(--coral);}
 .foot-txt{font-size:0.82rem;color:rgba(245,232,203,0.35);line-height:1.8;}
 .foot-txt a{color:rgba(245,232,203,0.50);text-decoration:none;}
 .foot-txt a:hover{color:var(--coral);}
+@media(max-width:900px){.more-grid{grid-template-columns:repeat(2,1fr);}.list-cta{flex-direction:column;padding:36px 28px;gap:28px;text-align:center;}.list-cta::before{display:none;}}
+@media(max-width:768px){
+  .nav-ev-link{display:none;}
+  .nav-join{display:none;}nav{padding:16px 20px;top:0;}.hero{padding:105px 20px 48px;}.main{padding:40px 20px 80px;}.op-card-body{padding:24px 20px;}.op-card-header{flex-direction:column;gap:8px;}.hero-top{flex-direction:column;gap:16px;}.notify-form{flex-direction:column;}.coming-soon{padding:40px 24px;}
+}
+
+/* ── TOUCH TARGETS ── */
+.nav-join,.plc-btn,.btn-notify,.lc-btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;}
+
+/* ── SHORELIST GUARANTEE ── */
 .guarantee-bar{background:rgba(26,122,74,0.08);border:1px solid rgba(26,122,74,0.18);border-radius:10px;padding:12px 18px;display:flex;align-items:center;gap:10px;margin-bottom:20px;flex-wrap:wrap;}
+.gb-ico{font-size:1.2rem;flex-shrink:0;}
 .gb-text{font-size:0.82rem;color:#1a5c32;font-weight:600;line-height:1.5;}
 .gb-text span{font-weight:400;color:rgba(26,92,50,0.70);}
+
+/* ── PROGRESS STEPS ── */
+.booking-steps{display:flex;align-items:center;gap:0;margin-bottom:28px;background:rgba(10,77,92,0.03);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.bs-step{flex:1;padding:10px 14px;display:flex;align-items:center;gap:6px;font-size:0.72rem;font-weight:600;color:rgba(44,74,82,0.45);border-right:1px solid var(--border);justify-content:center;white-space:nowrap;}
+.bs-step:last-child{border-right:none;}
+.bs-step.active{background:var(--teal);color:white;}
+.bs-step-n{font-size:0.65rem;background:rgba(44,74,82,0.15);border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;}
+.bs-step.active .bs-step-n{background:rgba(255,255,255,0.25);}
+@media(max-width:600px){.bs-step span:not(.bs-step-n){display:none;}.bs-step{padding:10px 8px;}}
+
+/* PARANORMAL GHOST TOURS THEME */
 .cat-ghost-banner{background:linear-gradient(135deg,rgba(26,5,51,0.95),rgba(74,14,143,0.90));border:1px solid rgba(108,62,156,0.40);border-radius:14px;padding:20px 24px;margin-bottom:24px;position:relative;overflow:hidden;}
 .cat-ghost-banner::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(108,62,156,0.10) 1px,transparent 1px);background-size:22px 22px;pointer-events:none;}
 .cgb-inner{position:relative;z-index:1;display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;}
@@ -128,31 +175,68 @@ footer{background:var(--dark);padding:40px 48px;text-align:center;}
 .cgb-badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
 .cgb-badge{background:rgba(108,62,156,0.22);border:1px solid rgba(108,62,156,0.40);border-radius:100px;padding:4px 12px;font-size:0.70rem;font-weight:700;color:#c084fc;letter-spacing:0.08em;}
 .cgb-badge-coral{background:rgba(233,102,69,0.18);border-color:rgba(233,102,69,0.35);color:var(--coral);}
+/* Ghost particle */
 .ghost-p{position:fixed;pointer-events:none;z-index:9999;animation:gRise 1.4s ease-out forwards;}
 @keyframes gRise{0%{opacity:1;transform:translateY(0) scale(1);}100%{opacity:0;transform:translateY(-120px) scale(1.5);}}
-@media(max-width:900px){.more-grid{grid-template-columns:repeat(2,1fr);}.list-cta{flex-direction:column;padding:36px 28px;gap:28px;text-align:center;}.list-cta::before{display:none;}}
-@media(max-width:768px){nav{padding:16px 20px;}.nav-back{display:none;}.nav-join{font-size:0.72rem;padding:8px 14px;}.hero{padding:105px 20px 48px;}.main{padding:40px 20px 80px;}.op-card-body{padding:24px 20px;}.op-card-header{flex-direction:column;gap:8px;}.hero-top{flex-direction:column;gap:16px;}.notify-form{flex-direction:column;}.coming-soon{padding:40px 24px;}}
-@media(max-width:600px){.plc-form{flex-direction:column;width:100%;}.plc-input{width:100%;}.plc-btn{width:100%;}.prelaunch-card{padding:22px 20px;}}
-.btn-book,.nav-join,.plc-btn,.btn-notify,.lc-btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;}
+
+@media(max-width:480px){
+  nav{padding:14px 16px;}
+  .nav-back{font-size:0.70rem;letter-spacing:0.05em;}
+}
+
+/* SVG ICON SYSTEM */
+.ico,.ico-xs,.ico-sm,.ico-md,.ico-lg{display:inline-block;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle;flex-shrink:0;}
+.ico{width:1.6rem;height:1.6rem;}
+.ico-xs{width:0.95rem;height:0.95rem;stroke-width:1.8;}
+.ico-sm{width:1.2rem;height:1.2rem;stroke-width:1.7;}
+.ico-md{width:1.65rem;height:1.65rem;}
+.ico-lg{width:2.4rem;height:2.4rem;stroke-width:1.5;}
+.cd-svg{color:var(--cream);}
+.cgb-svg{width:2.4rem;height:2.4rem;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;color:#c084fc;}
+.more-ico svg{width:1.9rem;height:1.9rem;color:var(--teal);stroke-width:1.5;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;}
+.more-card:hover .more-ico svg{color:var(--coral);}
+.hero-icon{display:inline-flex;}
+.hero-icon svg{width:2.4rem;height:2.4rem;color:var(--cream);stroke-width:1.4;}
+.cs-ico{display:inline-flex;justify-content:center;width:100%;margin-bottom:20px;}
+.cs-ico svg{width:3.5rem;height:3.5rem;color:var(--teal);stroke-width:1.3;}
+.more-ico{display:inline-flex;}
+.cgb-ico{display:inline-flex;}
+.cgb-ico svg{width:2.2rem;height:2.2rem;color:#c084fc;stroke-width:1.4;}
+.gb-ico{display:inline-flex;align-items:center;}
+.gb-ico svg{width:1.2rem;height:1.2rem;color:#1a7a4a;stroke-width:1.7;}
 </style>
+<!-- ── ANALYTICS: Replace G-XXXXXXXXXX with your GA4 Measurement ID from analytics.google.com ── -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"ShoreList Coastal Experiences","url":"https://shorelist.net/category","description":"Browse and book local coastal experiences in Wilmington, NC.","publisher":{"@type":"Organization","name":"ShoreList LLC","url":"https://shorelist.net","email":"shorelistwilmington@gmail.com"},"inLanguage":"en-US"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://shorelist.net","name":"ShoreList","url":"https://shorelist.net","email":"shorelistwilmington@gmail.com","areaServed":{"@type":"Place","name":"Wilmington, NC & the Beaches"},"address":{"@type":"PostalAddress","addressLocality":"Wilmington","addressRegion":"NC","addressCountry":"US"},"priceRange":"$$","foundingDate":"2026"}
+</script>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="i-ghost" viewBox="0 0 24 24"><path d="M5 9a7 7 0 0 1 14 0v11l-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5Z"/><circle cx="9.5" cy="11" r="0.9" fill="currentColor" stroke="none"/><circle cx="14.5" cy="11" r="0.9" fill="currentColor" stroke="none"/></symbol><symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="1"/><path d="M3 11h18"/><path d="M7.5 6l-2 5"/><path d="M11.5 6l-2 5"/><path d="M15.5 6l-2 5"/><path d="M19.5 6l-2 5"/></symbol><symbol id="i-fish" viewBox="0 0 24 24"><path d="M3 12c3-4 7-4 11 0-4 4-8 4-11 0z"/><path d="M14 12l4-3v6z"/><circle cx="7" cy="11" r="0.6" fill="currentColor" stroke="none"/></symbol><symbol id="i-kayak" viewBox="0 0 24 24"><path d="M4 13c1 3 4 5 8 5s7-2 8-5"/><path d="M4 13l1-2h14l1 2"/><path d="M9 4l-3 7"/><path d="M15 4l3 7"/></symbol><symbol id="i-ship" viewBox="0 0 24 24"><path d="M3 17c2 1 4 1 6 0s4-1 6 0 4 1 6 0"/><path d="M4 14l8-3 8 3"/><path d="M8 14V9h8v5"/><path d="M11 9V6h2v3"/></symbol><symbol id="i-surf" viewBox="0 0 24 24"><path d="M2 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M16 3c-4 1-9 5-11 9l3 1c2-4 5-8 9-9z"/></symbol><symbol id="i-paddleboard" viewBox="0 0 24 24"><ellipse cx="12" cy="16" rx="9" ry="3"/><path d="M13 16V7l-2-3"/></symbol><symbol id="i-bike" viewBox="0 0 24 24"><circle cx="6" cy="16" r="3.5"/><circle cx="18" cy="16" r="3.5"/><path d="M6 16l5-8h4l3 8"/><path d="M9 8h4"/></symbol><symbol id="i-dolphin" viewBox="0 0 24 24"><path d="M3 14c2-5 7-7 12-6 2 0 4-1 6-3-1 5-3 8-6 9-3 4-7 5-12 0z"/><circle cx="16" cy="11" r="0.7" fill="currentColor" stroke="none"/></symbol><symbol id="i-ebike" viewBox="0 0 24 24"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17l3-5h2l-2 4h4l-2 5"/><path d="M14 12l3 5"/></symbol><symbol id="i-scooter" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 18h10l3-9h-3"/><path d="M14 9l-2-5h-2"/></symbol><symbol id="i-jetski" viewBox="0 0 24 24"><path d="M3 16c1 2 3 3 5 3h10c3 0 5-1 6-3l-5-5h-7l-3 4z"/><path d="M11 14V8h2"/><path d="M3 19c2 1 4 1 6 0"/></symbol><symbol id="i-golf" viewBox="0 0 24 24"><path d="M7 21V4"/><path d="M7 4l11 3-11 3"/><circle cx="7" cy="21" r="0.8" fill="currentColor" stroke="none"/></symbol><symbol id="i-sailboat" viewBox="0 0 24 24"><path d="M12 3v15"/><path d="M12 4l-7 14h14z"/><path d="M3 18c2 2 4 3 6 3h6c2 0 4-1 6-3"/></symbol><symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.3C15.5 5 17 4 19 2c1 2 2 5 2 8a7 7 0 0 1-7 7"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></symbol><symbol id="i-camera" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l2-3h4l2 3"/><circle cx="12" cy="13.5" r="3.5"/></symbol><symbol id="i-basket" viewBox="0 0 24 24"><path d="M4 10h16l-1 10H5z"/><path d="M7 10a5 5 0 0 1 10 0"/><path d="M4 14h16"/></symbol><symbol id="i-umbrella" viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M2 11a10 10 0 0 1 20 0c-1.5-1.2-3-1.5-5-1.5s-3.5 1-5 2c-1.5-1-3-2-5-2s-3.5.3-5 1.5z"/></symbol><symbol id="i-lotus" viewBox="0 0 24 24"><path d="M12 4c-1.5 3-4 5-7 6 3 1 5.5 3 7 6 1.5-3 4-5 7-6-3-1-5.5-3-7-6z"/><path d="M12 11c-2 0-3.5 1.5-3.5 3 1 1 2 1.5 3.5 1.5s2.5-.5 3.5-1.5c0-1.5-1.5-3-3.5-3z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></symbol><symbol id="i-hotel" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 8h.01M12 8h.01M16 8h.01M8 12h.01M12 12h.01M16 12h.01M10 21v-5h4v5"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></symbol><symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5.6 5.6l4.2 4.2M14.2 14.2l4.2 4.2M5.6 18.4l4.2-4.2M14.2 9.8l4.2-4.2"/></symbol><symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 10c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></symbol><symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 16l3-7 5 5z"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></symbol><symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.5 3-6 6-6s6 2.5 6 6"/><circle cx="17" cy="10" r="2.5"/><path d="M15 16c2-1 4-1 6 1"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 7 9-7"/></symbol></defs></svg>
 
-<nav>
-  <a href="/" class="nav-logo">Shore<span>List</span></a>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav aria-label="Primary">
+  <a href="/" class="nav-logo" aria-label="ShoreList home">Shore<span>List</span></a>
   <div class="nav-right">
-    <a href="/" class="nav-back">&larr; All Experiences</a>
+    <a href="/" class="nav-back">&#8592; All Experiences</a>
+    <a href="/events" class="nav-ev-link" style="font-size:0.78rem;font-weight:600;color:var(--coral);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;transition:color 0.2s;">Events Guide</a>
     <a href="/join" class="nav-join">List Your Business</a>
   </div>
 </nav>
-
-<section class="hero">
+<main id="main">
+<section class="hero" aria-label="Page header">
   <div class="hero-inner">
-    <div class="hero-breadcrumb"><a href="/">ShoreList</a> &nbsp;&rsaquo;&nbsp; <span id="hbc">Experiences</span></div>
+    <div class="hero-breadcrumb"><a href="/">ShoreList</a> &nbsp;&#8250;&nbsp; <span id="hbc">Experiences</span></div>
     <div class="hero-top">
-      <div class="hero-icon" id="hico">🌎</div>
+      <div class="hero-icon" id="hico"><svg class="ico-lg" aria-hidden="true" focusable="false" style="color:var(--cream);"><use href="#i-compass" xlink:href="#i-compass"/></svg></div>
       <div>
         <div class="hero-tag">Wilmington, NC &amp; the Beaches</div>
         <h1 class="hero-title" id="htitle">Loading...</h1>
@@ -165,55 +249,67 @@ footer{background:var(--dark);padding:40px 48px;text-align:center;}
 
 <div class="main" id="mc"></div>
 
+</main>
+
 <footer>
-  <a href="/" style="text-decoration:none;"><div class="foot-logo">Shore<span>List</span></div></a>
-  <p class="foot-txt">&copy; 2026 ShoreList LLC &nbsp;&middot;&nbsp; Wilmington, NC &amp; the Beaches &nbsp;&middot;&nbsp; <a href="/">Shorelist.net</a> &nbsp;&middot;&nbsp; <a href="/events">Events Guide</a> &nbsp;&middot;&nbsp; <a href="/planner">Trip Planner</a> &nbsp;&middot;&nbsp; <a href="/waitlist">Join Waitlist</a> &nbsp;&middot;&nbsp; <a href="https://instagram.com/ShoreList" target="_blank" rel="noopener">Instagram</a> &nbsp;&middot;&nbsp; <a href="mailto:shorelistwilmington@gmail.com">Contact</a> &nbsp;&middot;&nbsp; <a href="/legal">Privacy &amp; Terms</a></p>
+  <a href="/" style="text-decoration:none;" aria-label="ShoreList home"><div class="foot-logo">Shore<span>List</span></div></a>
+  <p class="foot-txt">&copy; 2026 ShoreList LLC &nbsp;&middot;&nbsp; Wilmington, NC &amp; the Beaches</p>
+  <nav class="foot-links" aria-label="Footer" style="margin-top:14px;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;font-size:0.80rem;">
+    <a href="/" style="color:rgba(245,232,203,0.62);text-decoration:none;">Experiences</a>
+    <a href="/events" style="color:rgba(245,232,203,0.62);text-decoration:none;">Events Guide</a>
+    <a href="/planner" style="color:rgba(245,232,203,0.62);text-decoration:none;">Trip Planner</a>
+    <a href="/waitlist" style="color:rgba(245,232,203,0.62);text-decoration:none;">Join Waitlist</a>
+    <a href="/join" style="color:rgba(245,232,203,0.62);text-decoration:none;">Operators</a>
+    <a href="mailto:shorelistwilmington@gmail.com" style="color:rgba(245,232,203,0.62);text-decoration:none;">Contact</a>
+    <a href="/legal" style="color:rgba(245,232,203,0.62);text-decoration:none;">Privacy &amp; Terms</a>
+    <a href="/legal#accessibility" style="color:rgba(245,232,203,0.62);text-decoration:none;">Accessibility</a>
+  </nav>
 </footer>
 
 <script>
 var CAT_DATA={
-  'ghost-tours':{icon:'👻',title:'Ghost Tours',sub:"Spine-tingling paranormal investigations of Wilmington's most haunted streets with Sean Austin — Netflix, Travel Channel, exclusive to ShoreList."},
-  'film-tours':{icon:'🎬',title:'Film & TV Location Tours',sub:"Explore the real sets and locations behind Wilmington's legendary film and TV history — guided by someone who lived it from the inside."},
-  'fishing-charters':{icon:'🎣',title:'Fishing Charters',sub:'Half and full-day offshore charters from Carolina Beach and Wrightsville Beach.'},
-  'kayak-tours':{icon:'🛶',title:'Kayak Tours',sub:'Guided paddle adventures through tidal creeks, salt marshes, and barrier islands of coastal NC.'},
-  'river-cruises':{icon:'🚢',title:'River Cruises',sub:'Sunset and sightseeing cruises along the Wilmington waterfront and Cape Fear River.'},
-  'surf-lessons':{icon:'🏄',title:'Surf Lessons',sub:'Learn to surf at Wrightsville Beach with certified local instructors. All gear included.'},
-  'paddleboard':{icon:'🌊',title:'Paddleboard & SUP',sub:'Stand-up paddleboard rentals and guided lessons on the calm coastal waterways.'},
-  'bike-tours':{icon:'🚴',title:'Bike Tours',sub:"Guided rides through Wilmington's historic districts, riverfront, and beachfront communities."},
-  'wildlife-tours':{icon:'🐬',title:'Wildlife Tours',sub:'Dolphin watches, birding excursions, and guided nature tours along the NC coast.'},
-  'ebike-rentals':{icon:'⚡',title:'E-Bike Rentals',sub:'Explore the islands and beach communities on electric bikes. No sweat required.'},
-  'scooter-rentals':{icon:'🛵',title:'Scooter Rentals',sub:'Zip around the beach towns at your own pace. The best way to cover the coast.'},
-  'fat-bike-rentals':{icon:'🚲',title:'Fat Bike Rentals',sub:'Wide-tire bikes built for the sand. Ride the beach the way the locals do.'},
-  'sailboat-rides':{icon:'⛵',title:'Sailboat Rides',sub:'Private and group sailing experiences along the breathtaking North Carolina coastline.'},
-  'nature-walks':{icon:'🌿',title:'Nature Walking Tours',sub:'Guided walks through maritime forests, cypress swamps, and coastal trails.'},
-  'beach-photography':{icon:'📸',title:'Beach Photography',sub:'Family portraits, engagement sessions, and couples photos on the beach at golden hour.'},
-  'beach-picnics':{icon:'🧺',title:'Beach Picnics',sub:'Fully set-up private picnic experiences delivered to the beach. You just show up.'},
-  'beach-chairs':{icon:'🏖️',title:'Beach Chair Rentals',sub:'Chairs, umbrellas, and beach gear delivered and set up before you arrive.'},
-  'jet-ski-rentals':{icon:'🚤',title:'Jet Ski Rentals',sub:'Hit the open water on a jet ski. Rentals available at Carolina Beach and Wrightsville Beach.'},
-  'golf-cart-rentals':{icon:'⛳',title:'Golf Cart Rentals',sub:'Cruise the beach communities in a golf cart. The most fun way to explore the island.'},
-  'wellness':{icon:'🧘',title:'Wellness & Spa',sub:'Yoga on the beach, reiki, massage, spas, and mindful coastal retreats on the NC coast.'}
+  'ghost-tours':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-ghost" xlink:href="#i-ghost"/></svg>',title:'Ghost Tours',sub:'Spine-tingling walks through Wilmington\'s most haunted streets with expert local guides.'},
+  'film-tours':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-film" xlink:href="#i-film"/></svg>',title:'Film & TV Location Tours',sub:'Explore the real sets and locations behind Wilmington\'s legendary film and TV history &#8212; guided by someone who lived it from the inside.'},
+  'fishing-charters':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-fish" xlink:href="#i-fish"/></svg>',title:'Fishing Charters',sub:'Half and full-day offshore charters from Carolina Beach and Wrightsville Beach.'},
+  'kayak-tours':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-kayak" xlink:href="#i-kayak"/></svg>',title:'Kayak Tours',sub:'Guided paddle adventures through tidal creeks, salt marshes, and barrier islands of coastal NC.'},
+  'river-cruises':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-ship" xlink:href="#i-ship"/></svg>',title:'River Cruises',sub:'Sunset and sightseeing cruises along the Wilmington waterfront and Cape Fear River.'},
+  'surf-lessons':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-surf" xlink:href="#i-surf"/></svg>',title:'Surf Lessons',sub:'Learn to surf at Wrightsville Beach with certified local instructors. All gear included.'},
+  'paddleboard':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-paddleboard" xlink:href="#i-paddleboard"/></svg>',title:'Paddleboard & SUP',sub:'Stand-up paddleboard rentals and guided lessons on the calm coastal waterways.'},
+  'bike-tours':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-bike" xlink:href="#i-bike"/></svg>',title:'Bike Tours',sub:'Guided rides through Wilmington\'s historic districts, riverfront, and beachfront communities.'},
+  'wildlife-tours':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-dolphin" xlink:href="#i-dolphin"/></svg>',title:'Wildlife Tours',sub:'Dolphin watches, birding excursions, and guided nature tours along the NC coast.'},
+  'ebike-rentals':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-ebike" xlink:href="#i-ebike"/></svg>',title:'E-Bike Rentals',sub:'Explore the islands and beach communities on electric bikes. No sweat required.'},
+  'scooter-rentals':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-scooter" xlink:href="#i-scooter"/></svg>',title:'Scooter Rentals',sub:'Zip around the beach towns at your own pace. The best way to cover the coast.'},
+  'fat-bike-rentals':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-bike" xlink:href="#i-bike"/></svg>',title:'Fat Bike Rentals',sub:'Wide-tire bikes built for the sand. Ride the beach the way the locals do.'},
+  'sailboat-rides':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-sailboat" xlink:href="#i-sailboat"/></svg>',title:'Sailboat Rides',sub:'Private and group sailing experiences along the breathtaking North Carolina coastline.'},
+  'nature-walks':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-leaf" xlink:href="#i-leaf"/></svg>',title:'Nature Walking Tours',sub:'Guided walks through maritime forests, cypress swamps, and coastal trails.'},
+  'beach-photography':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-camera" xlink:href="#i-camera"/></svg>',title:'Beach Photography',sub:'Family portraits, engagement sessions, and couples photos on the beach at golden hour.'},
+  'beach-picnics':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-basket" xlink:href="#i-basket"/></svg>',title:'Beach Picnics',sub:'Fully set-up private picnic experiences delivered to the beach. You just show up.'},
+  'beach-chairs':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-umbrella" xlink:href="#i-umbrella"/></svg>',title:'Beach Chair Rentals',sub:'Chairs, umbrellas, and beach gear delivered and set up before you arrive.'},
+  'jet-ski-rentals':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-jetski" xlink:href="#i-jetski"/></svg>',title:'Jet Ski Rentals',sub:'Hit the open water on a jet ski. Rentals available at Carolina Beach and Wrightsville Beach.'},
+  'golf-cart-rentals':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-golf" xlink:href="#i-golf"/></svg>',title:'Golf Cart Rentals',sub:'Cruise the beach communities in a golf cart. The most fun way to explore the island.'},
+  'wellness':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-lotus" xlink:href="#i-lotus"/></svg>',title:'Wellness & Spa',sub:'Yoga on the beach, reiki, massage, spas, and mindful coastal retreats on the NC coast.'}
 };
 
 var OPS={
   'film-tours':[
     {id:'ron-film',business:'Wilmywood Insider Tours',operator:'Industry Insider & Local Expert',title:'20+ Years in the Wilmington Film & Hospitality Industry',
-     desc:"Wilmington isn't just a beach town — it's one of the most filmed cities in America. One Tree Hill. Dawson's Creek. Iron Man 3. Safe Haven. A Walk to Remember. Hundreds of productions have called Wilmington home. Your guide has spent over two decades working inside the Wilmington film and hospitality industry and knows the stories behind the sets, the locations, and the legends that most tourists never hear.",
+     desc:'Wilmington isn\'t just a beach town &#8212; it\'s one of the most filmed cities in America. One Tree Hill. Dawson\'s Creek. Iron Man 3. Safe Haven. A Walk to Remember. Hundreds of productions have called Wilmington home. Your guide has spent over two decades working inside the Wilmington film and hospitality industry and knows the stories behind the sets, the locations, and the legends that most tourists never hear. This isn\'t a bus tour reading from a brochure. This is Wilmywood &#8212; from the inside.',
      price:'$45',priceLabel:'per person',
      tags:['Downtown Wilmington','90 Minutes','All Ages','Film History']}
   ],
   'ghost-tours':[
     {id:'sean-ghost',business:'Wilmington Paranormal Investigations',operator:'Sean Austin',title:'Netflix & Travel Channel Paranormal Investigator',
-     desc:"Sean Austin is one of America's most recognized paranormal investigators — star of <em>28 Days Haunted</em> on Netflix, lead investigator on <em>Ghost Loop</em> on Travel Channel/Discovery+, and featured on <em>The Demon Files</em>. Trained demonologist. Psychic medium. Published author of <em>Shadow Chaser</em>. Founder of the Spirit Phone Innovations (SPI) App. His guided paranormal investigations of Wilmington's most historically haunted sites are available <strong>exclusively on ShoreList</strong> — you will not find this anywhere else.",
+     desc:'Sean Austin is one of America&rsquo;s most recognized paranormal investigators &mdash; star of <em>28 Days Haunted</em> on Netflix, lead investigator on <em>Ghost Loop</em> on Travel Channel/Discovery+, and featured on <em>The Demon Files</em>. Trained demonologist. Psychic medium. Published author of <em>Shadow Chaser</em>. Founder of the Spirit Phone Innovations (SPI) App. His guided paranormal investigations of Wilmington&rsquo;s most historically haunted sites are available <strong>exclusively on ShoreList</strong> &mdash; you will not find this anywhere else.',
      price:'$25',priceLabel:'per person',
      tags:['Netflix','Travel Channel','16+ Years Experience','Exclusive to ShoreList','Downtown Wilmington']},
     {id:'rj-historic',business:'Historic Wilmington Walking Tours',operator:'RJ Brideau',title:'Local Guide & ShoreList Founder',
-     desc:"Explore the remarkable history of Wilmington — one of the most historically significant cities in the American South — with RJ Brideau. Walk through neighborhoods of stunning antebellum homes, hear stories of the city's colonial roots, its role in the Civil War, and the powerful personalities who shaped it.",
+     desc:'Explore the remarkable history of Wilmington &#8212; one of the most historically significant cities in the American South &#8212; with RJ Brideau. Walk through neighborhoods of stunning antebellum homes, hear stories of the city\'s colonial roots, its role in the Civil War, and the powerful personalities who shaped it.',
      price:'$28',priceLabel:'per person',
      tags:['Historic District','75 Minutes','All Ages','Daytime & Evening']}
   ],
   'surf-lessons':[
-    {id:'james-surf',business:'Carolina Beach Surf Co.',operator:'Certified Local Instructor',title:'Professional Surf Instructor · 10+ Years Experience',
-     desc:"Learn to surf at one of the best beginner beaches on the East Coast with a certified local instructor who has spent years teaching in these exact waters. Whether you've never touched a board or want to level up your skills, this lesson is fun, safe, and unforgettable. Every session is tailored to your level. All equipment included — board, wetsuit, and rash guard.",
+    {id:'james-surf',business:'Carolina Beach Surf Co.',operator:'Certified Local Instructor',title:'Professional Surf Instructor &middot; 10+ Years Experience',
+     desc:'Learn to surf at one of the best beginner beaches on the East Coast with a certified local instructor who has spent years teaching in these exact waters. Whether you\'ve never touched a board or want to level up your skills, this lesson is fun, safe, and unforgettable. Every session is tailored to your level. All equipment included &#8212; board, wetsuit, and rash guard.',
      price:'$75',priceLabel:'per person',
      tags:['Carolina Beach','2 Hours','All Skill Levels','All Gear Included']}
   ],
@@ -229,7 +325,7 @@ function getCat(){return new URLSearchParams(window.location.search).get('cat')|
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
 function renderPage(){
-  var cat=getCat();var d=CAT_DATA[cat];if(!d){window.location.href='/';return;}
+  var cat=getCat(); var d=CAT_DATA[cat]; if(!d){window.location.href='/';return;}
   document.title=d.title+' — ShoreList Wilmington, NC';
   document.getElementById('hico').innerHTML=d.icon;
   document.getElementById('htitle').textContent=d.title;
@@ -237,55 +333,58 @@ function renderPage(){
   document.getElementById('hbc').textContent=d.title;
   var ops=OPS[cat]||[];
   var mh='';
-  if(ops.length>0){
-    mh+='<div class="hm-badge live">'+ops.length+' Local Operator'+(ops.length>1?'s':'')+'</div>';
-    mh+='<div class="hm-badge">Verified &amp; Insured</div>';
-    mh+='<div class="hm-badge">Stripe Checkout Ready</div>';
-  } else {
-    mh+='<div class="hm-badge">Coming Soon</div>';
-    mh+='<div class="hm-badge">Notify Me</div>';
-  }
+  if(ops.length>0){mh+='<div class="hm-badge live">'+ops.length+' Operator'+(ops.length>1?'s':'')+' Lined Up</div>';mh+='<div class="hm-badge">Waitlist Open Now</div>';mh+='<div class="hm-badge">Bookings Opening Soon</div>';mh+='<div class="hm-badge">Secure Checkout via Stripe</div>';}
+  else{mh+='<div class="hm-badge">Coming Soon</div>';mh+='<div class="hm-badge">Notify Me</div>';}
   document.getElementById('hmeta').innerHTML=mh;
 
   var h='';
   if(ops.length>0){
-    h+='<div class="section-label">Featured Operators</div>';
+    h+='<div class="section-label">Reserve Priority Access</div>';
     h+='<h2 class="section-title">Our <em>Local Operators</em></h2>';
-    h+='<p class="section-sub">Personally verified. Locally owned. Every operator below has been hand-picked by RJ. Drop your email on any card to get priority booking access.</p>';
-    h+='<div class="guarantee-bar"><span style="font-size:1.2rem;">🛡️</span><div class="gb-text">ShoreList Guarantee &mdash; <span>Every operator is personally verified, licensed, and insured. Full refund if you cancel 24+ hours before your experience.</span></div></div>';
+    h+='<p class="section-sub">Bookings open soon. Drop your email below or <a href="/waitlist" style="color:var(--coral);font-weight:600;">join the full waitlist</a> to tell us more about your trip.</p>';
+    h+='<div class="guarantee-bar">';
+    h+='<span class="gb-ico" style="color:#1a7a4a;display:inline-flex;align-items:center;"><svg class="ico-sm" aria-hidden="true" focusable="false"><use href="#i-shield" xlink:href="#i-shield"/></svg></span>';
+    h+='<div class="gb-text">ShoreList Guarantee &nbsp;&mdash;&nbsp; <span>Operators we know personally. Full refund if you cancel 24+ hours before your experience.</span></div>';
+    h+='</div>';
+    h+='<div class="booking-steps">';
+    h+='<div class="bs-step"><span class="bs-step-n">1</span><span>Browse</span></div>';
+    h+='<div class="bs-step active"><span class="bs-step-n">2</span><span>Experience</span></div>';
+    h+='<div class="bs-step"><span class="bs-step-n">3</span><span>Reserve Securely</span></div>';
+    h+='<div class="bs-step"><span class="bs-step-n">4</span><span>Show Up &amp; Enjoy</span></div>';
+    h+='</div>';
     h+='<div class="operator-grid">';
     ops.forEach(function(op){
       var oid=esc(op.id);
       h+='<div class="op-card" id="card-'+oid+'">';
       h+='<div class="op-card-body">';
-      h+='<div class="op-card-header"><div><div class="op-live-badge"><span class="op-live-dot"></span>Live Operator</div><div class="op-business-name">'+op.business+'</div><div class="op-operator-name">'+op.operator+' &middot; '+op.title+'</div></div><div class="op-price-tag"><div class="op-price">'+esc(op.price)+'</div><div class="op-price-label">'+esc(op.priceLabel)+'</div></div></div>';
-      h+='<p class="op-desc">'+op.desc+'</p>';
-      h+='<div class="op-tags">';op.tags.forEach(function(t){h+='<span class="op-tag">'+esc(t)+'</span>';});h+='</div>';
+      h+='<div class="op-card-header"><div><div class="op-live-badge"><span class="op-live-dot"></span>Lined Up for Launch</div><div class="op-business-name">'+esc(op.business)+'</div><div class="op-operator-name">'+esc(op.operator)+' &nbsp;&middot;&nbsp; '+esc(op.title)+'</div></div><div class="op-price-tag"><div class="op-price">'+esc(op.price)+'</div><div class="op-price-label">'+esc(op.priceLabel)+'</div></div></div>';
+      h+='<p class="op-desc">'+esc(op.desc)+'</p>';
+      h+='<div class="op-tags">'; op.tags.forEach(function(t){h+='<span class="op-tag">'+esc(t)+'</span>';}); h+='</div>';
       h+='<div class="op-divider"></div>';
-      h+='<div class="op-book-row"><div class="op-book-note-pre">Reserve early &mdash; drop your email below for priority booking access. &nbsp;🌊</div></div>';
-      h+='<div style="font-size:0.75rem;color:rgba(44,74,82,0.45);margin-top:8px;line-height:1.6;">By booking through ShoreList you acknowledge activities involve inherent risks and agree to our <a href="/legal#risk" style="color:var(--teal2);">Terms &amp; Assumption of Risk</a>. Full refunds available with 24+ hours cancellation notice.</div>';
+      h+='<div class="op-book-row"><div class="op-book-note-pre">Bookings open <strong>June 1st</strong> &#8212; drop your email below to be first in line when we launch.</div></div>';
+      h+='<div style="font-size:0.75rem;color:rgba(44,74,82,0.45);margin-top:8px;line-height:1.6;">By booking through ShoreList you acknowledge activities involve inherent risks and agree to our <a href="/legal#risk" style="color:var(--teal2);">Terms &amp; Assumption of Risk</a>. Full refunds available with 24+ hours cancellation notice. Operators are independent contractors, not employees of ShoreList.</div>';
       h+='</div>';
       h+='<div style="padding:0 40px 32px;">';
       h+='<div class="prelaunch-card">';
-      h+='<div class="plc-left"><div class="plc-tag">&#10022; Featured</div><div class="plc-title">Reserve with '+esc(op.business)+'</div><div class="plc-sub">Drop your email. We\'ll send you priority booking access.</div></div>';
-      h+='<div class="plc-form"><input class="plc-input" type="email" id="plc-'+oid+'" placeholder="your@email.com" autocomplete="email"/><button class="plc-btn" onclick="doPrelaunch(\''+oid+'\',\''+esc(op.business)+'\')">Notify Me &rarr;</button><div class="plc-done" id="plcd-'+oid+'">&#10003; You\'re on the list!</div></div>';
+      h+='<div class="plc-left"><div class="plc-tag">&#10022; Reserve Priority Access</div><div class="plc-title">Reserve with '+esc(op.business)+'</div><div class="plc-sub">Drop your email. We\'ll notify you the moment bookings go live &#8212; before we announce it anywhere else.</div></div>';
+      h+='<div class="plc-form"><input class="plc-input" type="email" id="plc-'+oid+'" placeholder="your@email.com" autocomplete="email" aria-label="Your email address"/><button class="plc-btn" onclick="doPrelaunch(\''+oid+'\',\''+esc(op.business)+'\')">Notify Me &#8594;</button><div class="plc-done" id="plcd-'+oid+'">&#10003; You\'re on the list!</div></div>';
       h+='</div>';
       h+='</div>';
       h+='</div>';
     });
     h+='</div>';
   } else {
-    h+='<div class="coming-soon"><span class="cs-ico">'+d.icon+'</span><h2 class="cs-title">'+esc(d.title)+' &mdash; Coming Soon</h2><p class="cs-sub">We\'re signing local '+esc(d.title.toLowerCase())+' operators right now. Drop your email and we\'ll notify you the moment bookings go live.</p><div class="notify-form"><input class="notify-inp" type="email" id="ni-'+esc(cat)+'" placeholder="your@email.com" autocomplete="email"/><button class="btn-notify" onclick="doNotify(\''+esc(cat)+'\',\''+esc(d.title)+'\')">Notify Me</button></div><div class="notify-done" id="nd-'+esc(cat)+'">Got it! We\'ll email you when '+esc(d.title)+' goes live. &#10003;</div></div>';
+    h+='<div class="coming-soon"><span class="cs-ico">'+d.icon+'</span><h2 class="cs-title">'+esc(d.title)+' &#8212; Coming Soon</h2><p class="cs-sub">We\'re signing local '+esc(d.title.toLowerCase())+' operators right now. Drop your email and we\'ll notify you the moment bookings go live.</p><div class="notify-form"><input class="notify-inp" type="email" id="ni-'+esc(cat)+'" placeholder="your@email.com" autocomplete="email" aria-label="Your email address"/><button class="btn-notify" onclick="doNotify(\''+esc(cat)+'\',\''+esc(d.title)+'\')">Notify Me</button></div><div class="notify-done" id="nd-'+esc(cat)+'">Got it! We\'ll email you when '+esc(d.title)+' goes live. &#10003;</div></div>';
   }
 
   h+='<div class="list-cta"><div class="lc-text"><div class="lc-tag">For Local Operators</div><div class="lc-title">Run a '+esc(d.title)+' business in Wilmington?</div><div class="lc-sub">Get listed on ShoreList free. No upfront cost, no monthly fees. Commission only on completed bookings. We put your listing directly in front of thousands of visitors already looking for something to do.</div></div><a href="/join" class="lc-btn">List Your Business Free &rarr;</a></div>';
 
   h+='<div class="more-sec"><div class="section-label">Keep Exploring</div><h2 class="section-title">More Adventures Await</h2><div class="more-grid">';
-  var shown=0;var keys=Object.keys(CAT_DATA);
+  var shown=0; var keys=Object.keys(CAT_DATA);
   for(var i=0;i<keys.length&&shown<8;i++){
-    var k=keys[i];if(k===cat)continue;
-    var cd=CAT_DATA[k];
-    h+='<a class="more-card" href="/category?cat='+esc(k)+'"><div class="more-ico">'+cd.icon+'</div><div class="more-name">'+esc(cd.title)+'</div></a>';
+    var k=keys[i]; if(k===cat) continue;
+    var cd=CAT_DATA[k]; var live=OPS[k]&&OPS[k].length>0;
+    h+='<a class="more-card" href="/category?cat='+esc(k)+'"><div class="more-ico">'+cd.icon+'</div><div class="more-name">'+esc(cd.title)+'</div>'+(live?'<div class="more-live">Live Soon</div>':'')+'</a>';
     shown++;
   }
   h+='</div></div>';
@@ -298,13 +397,12 @@ function doPrelaunch(id,business){
   var done=document.getElementById('plcd-'+id);
   if(!inp||!inp.value.trim()){if(inp)inp.focus();return;}
   if(!inp.value.includes('@')){inp.style.borderColor='rgba(233,102,69,0.8)';inp.focus();return;}
-  fetch('https://formspree.io/f/xeevzzqd',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify({email:inp.value.trim(),type:'priority-booking',experience:business})}).catch(function(){});
+  fetch('https://formspree.io/f/xeevzzqd',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify({email:inp.value.trim(),type:'guest-waitlist',experience:business})}).catch(function(){});
   inp.style.display='none';
   var btn=inp.parentElement.querySelector('.plc-btn');
   if(btn)btn.style.display='none';
   if(done)done.style.display='block';
 }
-
 function doNotify(cat,title){
   var inp=document.getElementById('ni-'+cat);
   var done=document.getElementById('nd-'+cat);
@@ -317,80 +415,38 @@ function doNotify(cat,title){
 document.addEventListener('DOMContentLoaded',renderPage);
 </script>
 
+<!-- favorites feature removed — no UI affordance -->
+
 <script>
+/* Show paranormal banner when ghost-tours loaded */
 (function(){
   var params=new URLSearchParams(window.location.search);
   var cat=params.get('cat')||'';
   if(cat==='ghost-tours'){
-    document.addEventListener('DOMContentLoaded',function(){
-      var container=document.getElementById('mc');
+    setTimeout(function(){
+      var container=document.querySelector('#mc');
       if(container){
         var banner=document.createElement('div');
         banner.className='cat-ghost-banner';
-        banner.style.cssText='margin-bottom:24px;';
         banner.innerHTML='<div class="cgb-inner">'
-          +'<span class="cgb-ico">👻</span>'
+          +'<span class="cgb-ico"><svg class="cgb-svg" aria-hidden="true" focusable="false"><use href="#i-ghost" xlink:href="#i-ghost"/></svg></span>'
           +'<div class="cgb-body">'
-          +'<div class="cgb-title">⚡ You\'ve Found Something Rare</div>'
-          +'<div class="cgb-sub">Sean Austin — star of Netflix\'s <strong>28 Days Haunted</strong> and Travel Channel\'s <strong>Ghost Loop</strong> — offers his guided paranormal investigations of Wilmington exclusively through ShoreList. This is not available anywhere else. <a href="https://www.seandaustin.com" target="_blank" rel="noopener noreferrer">Learn more at seandaustin.com &#8599;</a></div>'
+          +'<div class="cgb-title">&#9889; You&rsquo;ve Found Something Rare</div>'
+          +'<div class="cgb-sub">Sean Austin &mdash; star of Netflix&rsquo;s <strong>28 Days Haunted</strong> and Travel Channel&rsquo;s <strong>Ghost Loop</strong> &mdash; offers his guided paranormal investigations of Wilmington exclusively through ShoreList. This is not available anywhere else. <a href="https://www.seandaustin.com" target="_blank" rel="noopener noreferrer">Learn more at seandaustin.com &#8599;</a></div>'
           +'<div class="cgb-badges">'
-          +'<span class="cgb-badge">🅽 Netflix</span>'
-          +'<span class="cgb-badge">📺 Travel Channel</span>'
-          +'<span class="cgb-badge">🔮 Paranormal Investigator</span>'
+          +'<span class="cgb-badge">Netflix</span>'
+          +'<span class="cgb-badge">Travel Channel</span>'
+          +'<span class="cgb-badge">Paranormal Investigator</span>'
           +'<span class="cgb-badge">Demonologist</span>'
-          +'<span class="cgb-badge cgb-badge-coral">🎁 Exclusive to ShoreList</span>'
+          +'<span class="cgb-badge cgb-badge-coral">Exclusive to ShoreList</span>'
           +'</div>'
           +'</div>'
           +'</div>';
         container.insertBefore(banner,container.firstChild);
       }
-    });
-    setTimeout(function(){
-      try{
-        var AC=window.AudioContext||window.webkitAudioContext;
-        if(AC){
-          var ctx=new AC();
-          var osc=ctx.createOscillator();var gain=ctx.createGain();
-          osc.connect(gain);gain.connect(ctx.destination);
-          osc.type='sawtooth';
-          osc.frequency.setValueAtTime(70,ctx.currentTime);
-          osc.frequency.exponentialRampToValueAtTime(30,ctx.currentTime+0.9);
-          gain.gain.setValueAtTime(0,ctx.currentTime);
-          gain.gain.linearRampToValueAtTime(0.06,ctx.currentTime+0.05);
-          gain.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.9);
-          osc.start(ctx.currentTime);osc.stop(ctx.currentTime+0.9);
-        }
-      }catch(e){}
-    },1500);
+    },200);
   }
 })();
-
-function seanEffect(e){
-  try{
-    var AC=window.AudioContext||window.webkitAudioContext;
-    if(AC){
-      var ctx=new AC();var osc=ctx.createOscillator();var gain=ctx.createGain();
-      osc.connect(gain);gain.connect(ctx.destination);osc.type='sawtooth';
-      osc.frequency.setValueAtTime(85,ctx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(35,ctx.currentTime+1.0);
-      gain.gain.setValueAtTime(0,ctx.currentTime);
-      gain.gain.linearRampToValueAtTime(0.08,ctx.currentTime+0.06);
-      gain.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+1.0);
-      osc.start(ctx.currentTime);osc.stop(ctx.currentTime+1.0);
-    }
-  }catch(err){}
-  var g=['👻','✨','🔮'];
-  for(var i=0;i<5;i++){(function(idx){setTimeout(function(){
-    var p=document.createElement('div');p.className='ghost-p';p.innerHTML=g[idx%g.length];
-    var x=(e?e.clientX:window.innerWidth/2)+(Math.random()-0.5)*60;
-    var y=e?e.clientY:window.innerHeight/2;
-    p.style.cssText='position:fixed;left:'+x+'px;top:'+y+'px;pointer-events:none;font-size:1.3rem;z-index:9999;animation:gRise 1.4s ease-out forwards;';
-    document.body.appendChild(p);
-    setTimeout(function(){if(p.parentNode)p.parentNode.removeChild(p);},1500);
-  },idx*90);})(i);}
-  if(navigator.vibrate)navigator.vibrate([40,20,40]);
-}
 </script>
-
 </body>
 </html>
