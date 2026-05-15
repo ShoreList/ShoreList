@@ -21,18 +21,19 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-<!-- ANALYTICS: replace G-XXXXXXXXXX with your real GA4 Measurement ID from analytics.google.com -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<!-- ANALYTICS: replace G-EN91RH3PZV with your real GA4 Measurement ID from analytics.google.com -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
 <script>
 window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());
-gtag('config','G-XXXXXXXXXX');
+gtag('config','G-EN91RH3PZV');
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","name":"Privacy Policy & Terms of Service","url":"https://shorelist.net/legal","description":"ShoreList's privacy policy and terms of service.","publisher":{"@type":"Organization","name":"ShoreList LLC","url":"https://shorelist.net","email":"shorelistwilmington@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Wilmington","addressRegion":"NC","addressCountry":"US"}},"inLanguage":"en-US","dateModified":"2026-05-13"}
 </script>
 <style>
+/* ── DESIGN TOKENS ── */
 :root{
   --teal:#0A4D5C; --teal2:#1A7585; --teal3:#073D4A;
   --coral:#E96645; --coral2:#F07A5A;
@@ -43,48 +44,170 @@ gtag('config','G-XXXXXXXXXX');
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
-body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--cream2);color:var(--dark);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
-.skip-link{position:absolute;top:-100px;left:50%;transform:translateX(-50%);background:var(--coral);color:white;padding:14px 24px;border-radius:8px;font-weight:700;font-size:0.92rem;text-decoration:none;z-index:9999;transition:top 0.18s;}
+body{
+  font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--cream2);
+  color:var(--dark);
+  line-height:1.65;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* ── ACCESSIBILITY: skip link ── */
+.skip-link{
+  position:absolute;top:-100px;left:50%;transform:translateX(-50%);
+  background:var(--coral);color:white;
+  padding:14px 24px;border-radius:8px;
+  font-weight:700;font-size:0.92rem;text-decoration:none;
+  z-index:9999;transition:top 0.18s;
+}
 .skip-link:focus{top:14px;outline:3px solid var(--cream);outline-offset:2px;}
+
+/* ── ACCESSIBILITY: focus states ── */
 :focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:3px;}
-nav.site-nav{position:sticky;top:0;background:rgba(10,77,92,0.97);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.08);padding:16px 32px;z-index:100;display:flex;align-items:center;justify-content:space-between;}
+
+/* ── NAV ── */
+nav.site-nav{
+  position:sticky;top:0;
+  background:rgba(10,77,92,0.97);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  padding:16px 32px;
+  z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+}
 .nav-logo{font-size:1.4rem;font-weight:900;text-decoration:none;line-height:1;}
 .nav-logo .s{font-family:'Playfair Display',serif;font-style:italic;color:var(--cream);}
 .nav-logo .l{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--coral);}
-.nav-back{font-size:0.80rem;font-weight:600;text-decoration:none;color:rgba(245,232,203,0.7);letter-spacing:0.04em;padding:8px 14px;border-radius:6px;transition:color 0.2s,background 0.2s;}
+.nav-back{
+  font-size:0.80rem;font-weight:600;text-decoration:none;
+  color:rgba(245,232,203,0.7);letter-spacing:0.04em;
+  padding:8px 14px;border-radius:6px;
+  transition:color 0.2s,background 0.2s;
+}
 .nav-back:hover,.nav-back:focus{color:var(--cream);background:rgba(255,255,255,0.06);}
-.hero{background:linear-gradient(180deg,var(--teal) 0%,var(--teal3) 100%);color:var(--cream2);padding:72px 32px 64px;text-align:center;position:relative;}
-.hero::after{content:'';position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);background-size:24px 24px;}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(180deg,var(--teal) 0%,var(--teal3) 100%);
+  color:var(--cream2);
+  padding:72px 32px 64px;
+  text-align:center;
+  position:relative;
+}
+.hero::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);
+  background-size:24px 24px;
+}
 .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1;}
-.hero-tag{font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--coral);margin-bottom:14px;}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:18px;color:var(--cream2);}
+.hero-tag{
+  font-size:0.68rem;font-weight:700;letter-spacing:0.22em;
+  text-transform:uppercase;color:var(--coral);margin-bottom:14px;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,4vw,2.8rem);
+  font-weight:900;line-height:1.1;letter-spacing:-1px;
+  margin-bottom:18px;color:var(--cream2);
+}
 .hero h1 em{font-style:italic;color:var(--coral);}
-.hero-sub{font-size:1rem;font-weight:400;line-height:1.75;color:rgba(245,232,203,0.75);max-width:600px;margin:0 auto 24px;}
-.hero-meta{display:inline-flex;flex-wrap:wrap;gap:8px 20px;justify-content:center;font-size:0.78rem;color:rgba(245,232,203,0.55);padding-top:18px;border-top:1px solid rgba(255,255,255,0.10);}
+.hero-sub{
+  font-size:1rem;font-weight:400;line-height:1.75;
+  color:rgba(245,232,203,0.75);
+  max-width:600px;margin:0 auto 24px;
+}
+.hero-meta{
+  display:inline-flex;flex-wrap:wrap;gap:8px 20px;justify-content:center;
+  font-size:0.78rem;color:rgba(245,232,203,0.55);
+  padding-top:18px;border-top:1px solid rgba(255,255,255,0.10);
+}
 .hero-meta strong{color:var(--cream);font-weight:600;}
-.plain-summary{max-width:760px;margin:-28px auto 36px;background:var(--cream);border:1px solid rgba(10,77,92,0.10);border-radius:14px;padding:22px 30px;box-shadow:0 14px 36px rgba(10,77,92,0.10);position:relative;z-index:2;}
-.plain-summary h2{font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;}
+
+/* ── PLAIN ENGLISH SUMMARY ── */
+.plain-summary{
+  max-width:760px;margin:-28px auto 36px;
+  background:var(--cream);
+  border:1px solid rgba(10,77,92,0.10);
+  border-radius:14px;
+  padding:22px 30px;
+  box-shadow:0 14px 36px rgba(10,77,92,0.10);
+  position:relative;z-index:2;
+}
+.plain-summary h2{
+  font-size:0.68rem;font-weight:700;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--coral);margin-bottom:10px;
+}
 .plain-summary p{font-size:0.95rem;color:var(--dark);line-height:1.75;}
-.toc{max-width:760px;margin:0 auto 56px;padding:24px 30px;background:white;border:1px solid var(--light);border-radius:14px;}
-.toc-title{font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--coral);margin-bottom:14px;}
-.toc-group{font-family:'Playfair Display',serif;font-style:italic;font-size:0.78rem;font-weight:700;color:var(--mid);letter-spacing:0.02em;margin:14px 0 8px;padding-top:12px;border-top:1px solid var(--light);}
+
+/* ── TABLE OF CONTENTS ── */
+.toc{
+  max-width:760px;margin:0 auto 56px;
+  padding:24px 30px;
+  background:white;
+  border:1px solid var(--light);
+  border-radius:14px;
+}
+.toc-title{
+  font-size:0.68rem;font-weight:700;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--coral);margin-bottom:14px;
+}
+.toc-group{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:0.78rem;font-weight:700;color:var(--mid);
+  letter-spacing:0.02em;
+  margin:14px 0 8px;padding-top:12px;
+  border-top:1px solid var(--light);
+}
 .toc-group:first-of-type{padding-top:0;border-top:none;margin-top:0;}
 .toc-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:2px 24px;}
 .toc-list li{counter-increment:toc-counter;}
-.toc-list a{display:block;font-size:0.88rem;color:var(--teal);text-decoration:none;padding:5px 0;font-weight:500;transition:color 0.15s;}
+.toc-list a{
+  display:block;font-size:0.88rem;color:var(--teal);
+  text-decoration:none;padding:5px 0;font-weight:500;
+  transition:color 0.15s;
+}
 .toc-list a:hover,.toc-list a:focus{color:var(--coral);}
-.toc-list a::before{content:counter(toc-counter) ".";display:inline-block;width:22px;color:var(--mid);font-weight:700;font-size:0.78rem;}
+.toc-list a::before{
+  content:counter(toc-counter) ".";
+  display:inline-block;width:22px;
+  color:var(--mid);font-weight:700;font-size:0.78rem;
+}
 .toc{counter-reset:toc-counter;}
 .toc-list[start="10"]{counter-reset:toc-counter 9;}
 .toc-list[start="16"]{counter-reset:toc-counter 15;}
 .toc-list[start="18"]{counter-reset:toc-counter 17;}
+
+/* ── MAIN CONTENT ── */
 main{max-width:760px;margin:0 auto;padding:0 30px 80px;counter-reset:section-counter;}
-section.legal-section{scroll-margin-top:88px;margin-bottom:56px;counter-increment:section-counter;}
-.section-label{font-family:'DM Sans',sans-serif;font-size:0.66rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;}
+
+section.legal-section{
+  scroll-margin-top:88px;
+  margin-bottom:56px;
+  counter-increment:section-counter;
+}
+.section-label{
+  font-family:'DM Sans',sans-serif;
+  font-size:0.66rem;font-weight:700;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--coral);
+  margin-bottom:10px;
+}
 .section-label::before{content:"Section " counter(section-counter);}
-.legal-section h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.6vw,2rem);font-weight:900;color:var(--teal);line-height:1.15;letter-spacing:-0.5px;margin-bottom:20px;}
+.legal-section h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.6rem,2.6vw,2rem);
+  font-weight:900;color:var(--teal);
+  line-height:1.15;letter-spacing:-0.5px;
+  margin-bottom:20px;
+}
 .legal-section h2 em{font-style:italic;color:var(--coral);}
-.legal-section h3{font-family:'DM Sans',sans-serif;font-size:1.05rem;font-weight:700;color:var(--teal);margin:24px 0 10px;letter-spacing:-0.01em;}
+.legal-section h3{
+  font-family:'DM Sans',sans-serif;
+  font-size:1.05rem;font-weight:700;color:var(--teal);
+  margin:24px 0 10px;letter-spacing:-0.01em;
+}
 .legal-section p{margin-bottom:14px;color:var(--dark);}
 .legal-section strong{color:var(--teal);font-weight:600;}
 .legal-section ul{margin:10px 0 18px 24px;}
@@ -92,28 +215,87 @@ section.legal-section{scroll-margin-top:88px;margin-bottom:56px;counter-incremen
 .legal-section a{color:var(--teal2);text-decoration:underline;text-underline-offset:2px;}
 .legal-section a:hover,.legal-section a:focus{color:var(--coral);}
 .legal-section em{font-style:italic;}
-.section-date{font-size:0.82rem;color:var(--mid);font-weight:500;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--light);}
+
+.section-date{
+  font-size:0.82rem;color:var(--mid);font-weight:500;
+  margin-bottom:20px;padding-bottom:14px;
+  border-bottom:1px solid var(--light);
+}
+
+/* ── TABLES ── */
 .table-wrap{overflow-x:auto;margin:18px -4px;padding:0 4px;}
-.legal-table{width:100%;border-collapse:collapse;font-size:0.90rem;background:white;border:1px solid var(--light);border-radius:8px;overflow:hidden;}
-.legal-table th,.legal-table td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--light);vertical-align:top;line-height:1.55;}
+.legal-table{
+  width:100%;border-collapse:collapse;
+  font-size:0.90rem;
+  background:white;
+  border:1px solid var(--light);
+  border-radius:8px;
+  overflow:hidden;
+}
+.legal-table th,.legal-table td{
+  padding:12px 14px;text-align:left;
+  border-bottom:1px solid var(--light);
+  vertical-align:top;line-height:1.55;
+}
 .legal-table tr:last-child td{border-bottom:none;}
-.legal-table th{background:var(--cream);font-weight:700;color:var(--teal);font-size:0.82rem;letter-spacing:0.02em;}
+.legal-table th{
+  background:var(--cream);
+  font-weight:700;color:var(--teal);
+  font-size:0.82rem;letter-spacing:0.02em;
+}
 .legal-table td:first-child{font-weight:600;color:var(--teal);}
-.callout{background:var(--cream);border-left:4px solid var(--coral);border-radius:6px;padding:16px 22px;margin:20px 0;}
+
+/* ── CALLOUTS ── */
+.callout{
+  background:var(--cream);
+  border-left:4px solid var(--coral);
+  border-radius:6px;
+  padding:16px 22px;margin:20px 0;
+}
 .callout strong{color:var(--coral);}
-.legal-allcaps{background:rgba(10,77,92,0.04);border-left:3px solid var(--teal);padding:16px 20px;border-radius:4px;margin:18px 0;font-size:0.84rem;letter-spacing:0.02em;line-height:1.7;color:var(--dark);}
-footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px;text-align:center;font-size:0.82rem;line-height:1.85;}
-.foot-logo{font-size:1.2rem;font-weight:900;margin-bottom:6px;display:inline-block;text-decoration:none;line-height:1;}
+
+.legal-allcaps{
+  background:rgba(10,77,92,0.04);
+  border-left:3px solid var(--teal);
+  padding:16px 20px;border-radius:4px;
+  margin:18px 0;
+  font-size:0.84rem;letter-spacing:0.02em;
+  line-height:1.7;color:var(--dark);
+}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--dark);
+  color:rgba(245,232,203,0.5);
+  padding:38px 32px 32px;
+  text-align:center;
+  font-size:0.82rem;line-height:1.85;
+}
+.foot-logo{
+  font-size:1.2rem;font-weight:900;
+  margin-bottom:6px;display:inline-block;
+  text-decoration:none;line-height:1;
+}
 .foot-logo .s{font-family:'Playfair Display',serif;font-style:italic;color:var(--cream);}
 .foot-logo .l{font-family:'DM Sans',sans-serif;font-weight:700;color:var(--coral);}
 .foot-copy{margin:6px 0 14px;font-size:0.78rem;color:rgba(245,232,203,0.35);}
 .foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;}
-.foot-links a{color:rgba(245,232,203,0.55);text-decoration:none;font-size:0.80rem;transition:color 0.2s;}
+.foot-links a{
+  color:rgba(245,232,203,0.55);
+  text-decoration:none;
+  font-size:0.80rem;
+  transition:color 0.2s;
+}
 .foot-links a:hover,.foot-links a:focus{color:var(--coral);}
+
+/* ── PRINT STYLESHEET ── */
 @media print{
   nav.site-nav,footer,.toc,.skip-link{display:none;}
   body{background:white;color:black;font-size:11pt;line-height:1.5;}
-  .hero{background:white;color:black;padding:0 0 18pt;border-bottom:2px solid black;text-align:left;}
+  .hero{
+    background:white;color:black;padding:0 0 18pt;
+    border-bottom:2px solid black;text-align:left;
+  }
   .hero h1,.legal-section h2,.legal-section h3{color:black;page-break-after:avoid;}
   .hero h1 em,.legal-section h2 em{color:black;}
   .hero-tag,.section-label{color:#555;}
@@ -122,9 +304,13 @@ footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px
   .plain-summary{background:#f5f5f5;border:1px solid #ccc;}
   .callout,.legal-allcaps{background:#f9f9f9;border-left-color:black;}
   a{color:black;text-decoration:underline;}
-  a[href^="http"]::after,a[href^="mailto:"]::after{content:" (" attr(href) ")";font-size:9pt;color:#666;}
+  a[href^="http"]::after,a[href^="mailto:"]::after{
+    content:" (" attr(href) ")";font-size:9pt;color:#666;
+  }
   .legal-table th{background:#f0f0f0;color:black;}
 }
+
+/* ── MOBILE ── */
 @media (max-width:768px){
   nav.site-nav{padding:14px 18px;}
   .hero{padding:56px 22px 48px;}
@@ -141,8 +327,14 @@ footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px
   .hero h1{font-size:1.65rem;}
   .legal-section h2{font-size:1.4rem;}
 }
+
+/* ── REDUCED MOTION ── */
 @media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}
+  *,*::before,*::after{
+    animation-duration:0.01ms!important;
+    transition-duration:0.01ms!important;
+    scroll-behavior:auto!important;
+  }
 }
 </style>
 </head>
@@ -175,6 +367,7 @@ footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px
 
 <nav class="toc" aria-label="Table of contents">
   <div class="toc-title">Table of Contents</div>
+
   <div class="toc-group">Privacy Policy</div>
   <ol class="toc-list">
     <li><a href="#privacy">Privacy Policy</a></li>
@@ -187,6 +380,7 @@ footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px
     <li><a href="#retention">Data Retention</a></li>
     <li><a href="#cookies">Cookies &amp; Tracking</a></li>
   </ol>
+
   <div class="toc-group">Terms of Service</div>
   <ol class="toc-list" start="10">
     <li><a href="#terms">Terms of Service</a></li>
@@ -196,11 +390,13 @@ footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px
     <li><a href="#weather">Weather &amp; Cancellations</a></li>
     <li><a href="#tax">Tax Reporting &amp; 1099-K</a></li>
   </ol>
+
   <div class="toc-group">Additional Policies</div>
   <ol class="toc-list" start="16">
     <li><a href="#ai-planner">AI Planner Disclaimer</a></li>
     <li><a href="#accessibility">Accessibility Statement</a></li>
   </ol>
+
   <div class="toc-group">Administrative</div>
   <ol class="toc-list" start="18">
     <li><a href="#updates">Policy Updates</a></li>
@@ -210,6 +406,7 @@ footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px
 
 <main id="main">
 
+<!-- ═══════════════ §1 PRIVACY POLICY ═══════════════ -->
 <section class="legal-section" id="privacy">
   <div class="section-label"></div>
   <h2>Privacy <em>Policy</em></h2>
@@ -221,13 +418,17 @@ footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px
   <p>For privacy-related questions, contact us at: <a href="mailto:shorelistwilmington@gmail.com"><strong>shorelistwilmington@gmail.com</strong></a></p>
 </section>
 
+<!-- ═══════════════ §2 DATA WE COLLECT ═══════════════ -->
 <section class="legal-section" id="data">
   <div class="section-label"></div>
   <h2>Data We <em>Collect</em></h2>
+
   <h3>Information You Give Us Directly</h3>
   <div class="table-wrap">
     <table class="legal-table">
-      <thead><tr><th>Type of Data</th><th>When We Collect It</th><th>Why We Need It</th></tr></thead>
+      <thead>
+        <tr><th>Type of Data</th><th>When We Collect It</th><th>Why We Need It</th></tr>
+      </thead>
       <tbody>
         <tr><td>Name</td><td>Booking, waitlist signup</td><td>Confirm your reservation and communicate with the operator</td></tr>
         <tr><td>Email address</td><td>Booking, waitlist, operator application</td><td>Booking confirmation, launch notifications, account communication</td></tr>
@@ -239,12 +440,15 @@ footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px
       </tbody>
     </table>
   </div>
+
   <h3>Information We Collect Automatically</h3>
   <p>When you visit the Site, we automatically receive certain technical information including your IP address, browser type, device type, operating system, referring URL, pages visited, and time spent on the Site. This information helps us understand how the Site is used and improve the experience.</p>
+
   <h3>Information We Do Not Collect</h3>
   <p>We do not collect or knowingly retain sensitive personal data including Social Security numbers (except Tax ID from operators for IRS reporting), government-issued ID numbers, health information, or biometric data. We do not collect information from children under 13.</p>
 </section>
 
+<!-- ═══════════════ §3 HOW WE USE ═══════════════ -->
 <section class="legal-section" id="how-we-use">
   <div class="section-label"></div>
   <h2>How We <em>Use</em> Your Data</h2>
@@ -263,6 +467,7 @@ footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px
   </div>
 </section>
 
+<!-- ═══════════════ §4 STRIPE ═══════════════ -->
 <section class="legal-section" id="stripe">
   <div class="section-label"></div>
   <h2>Payments &amp; <em>Stripe</em></h2>
@@ -272,12 +477,15 @@ footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px
   <p>Guests who cancel at least <strong>24 hours before</strong> their scheduled experience are entitled to a full refund processed through Stripe back to the original payment method. Refunds typically appear within 5&ndash;10 business days depending on your card issuer.</p>
 </section>
 
+<!-- ═══════════════ §5 DATA SHARING ═══════════════ -->
 <section class="legal-section" id="sharing">
   <div class="section-label"></div>
   <h2>Data <em>Sharing</em></h2>
   <div class="table-wrap">
     <table class="legal-table">
-      <thead><tr><th>Who We Share With</th><th>What We Share</th><th>Why</th></tr></thead>
+      <thead>
+        <tr><th>Who We Share With</th><th>What We Share</th><th>Why</th></tr>
+      </thead>
       <tbody>
         <tr><td>The operator you book with</td><td>Your name, email, phone, booking date/time, party size, and special requests</td><td>So they can prepare for your experience and contact you if needed</td></tr>
         <tr><td>Stripe, Inc.</td><td>Payment data, email, booking amount</td><td>To process your payment securely</td></tr>
@@ -290,23 +498,31 @@ footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px
   <p>We do not share your data with social media platforms, advertisers, or data brokers. ShoreList does not run advertising and has no advertising partners.</p>
 </section>
 
+<!-- ═══════════════ §6 YOUR RIGHTS ═══════════════ -->
 <section class="legal-section" id="rights">
   <div class="section-label"></div>
   <h2>Your <em>Rights</em></h2>
+
   <h3>Right to Access</h3>
   <p>You may request a copy of all personal data ShoreList holds about you. We will respond within 30 days.</p>
+
   <h3>Right to Correction</h3>
   <p>If any information we hold about you is inaccurate, you may request that we correct it.</p>
+
   <h3>Right to Deletion</h3>
   <p>You may request that we delete your personal data. We will do so promptly unless we are required to retain it for legal, tax, or fraud prevention purposes. To delete your data, email <a href="mailto:shorelistwilmington@gmail.com"><strong>shorelistwilmington@gmail.com</strong></a> with the subject line &ldquo;Data Deletion Request.&rdquo;</p>
+
   <h3>Right to Opt Out of Marketing</h3>
   <p>Every email we send includes an unsubscribe link. You may also email us directly at any time to be removed from all communications. We will process opt-out requests within 10 business days.</p>
+
   <h3>California Residents &mdash; CCPA Rights</h3>
   <p>If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA), including the right to know what personal information is collected, the right to opt out of the sale of personal information (note: we do not sell personal information), and the right to non-discrimination for exercising your privacy rights. To exercise your CCPA rights, contact us at <a href="mailto:shorelistwilmington@gmail.com"><strong>shorelistwilmington@gmail.com</strong></a>.</p>
+
   <h3>Children's Privacy &mdash; COPPA Compliance</h3>
   <p>ShoreList does not knowingly collect personal information from children under the age of 13. The Site is not directed to children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately and we will delete that information promptly.</p>
 </section>
 
+<!-- ═══════════════ §7 SECURITY ═══════════════ -->
 <section class="legal-section" id="security">
   <div class="section-label"></div>
   <h2>Data <em>Security</em></h2>
@@ -320,6 +536,7 @@ footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px
   <p>No method of transmission over the internet or electronic storage is 100% secure. In the event of a data breach that affects your personal information, we will notify you promptly in accordance with applicable law.</p>
 </section>
 
+<!-- ═══════════════ §8 RETENTION ═══════════════ -->
 <section class="legal-section" id="retention">
   <div class="section-label"></div>
   <h2>Data <em>Retention</em></h2>
@@ -331,36 +548,47 @@ footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px
   </ul>
 </section>
 
+<!-- ═══════════════ §9 COOKIES (NEW SECTION) ═══════════════ -->
 <section class="legal-section" id="cookies">
   <div class="section-label"></div>
   <h2>Cookies &amp; <em>Tracking</em></h2>
   <p>ShoreList uses a minimal cookie footprint. We do not use third-party advertising cookies, behavioral tracking pixels, or cross-site tracking technologies.</p>
+
   <h3>Cookies We Use</h3>
   <ul>
     <li><strong>Session cookies</strong> &mdash; to maintain your browsing session as you navigate the Site. These expire when you close your browser.</li>
     <li><strong>Stripe cookies</strong> &mdash; set by Stripe during checkout for fraud prevention and security. Required for payment processing to function.</li>
     <li><strong>Google Analytics</strong> &mdash; we use Google Analytics 4 to understand how visitors use the Site in aggregate. Google Analytics is configured to anonymize IP addresses. You may opt out of Google Analytics tracking using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out Browser Add-on</a>.</li>
   </ul>
+
   <h3>Why We Do Not Display a Cookie Banner</h3>
   <p>The European Union's GDPR and the United Kingdom's PECR require explicit consent for non-essential cookies. ShoreList does not deploy non-essential cookies (no advertising trackers, no social media pixels, no cross-site tracking). Strictly necessary cookies (session, security) do not require consent under GDPR Article 5(3). Analytics cookies use anonymized IP addresses and aggregate reporting only, falling under our legitimate interest basis. We will introduce a cookie consent mechanism if our cookie usage materially expands in the future.</p>
+
   <p>You may disable cookies in your browser settings, but doing so may affect the functionality of the checkout process.</p>
 </section>
 
+<!-- ═══════════════ §10 TERMS OF SERVICE ═══════════════ -->
 <section class="legal-section" id="terms">
   <div class="section-label"></div>
   <h2>Terms of <em>Service</em></h2>
   <p class="section-date">Last Updated: May 13, 2026</p>
   <p>These Terms of Service (&ldquo;Terms&rdquo;) govern your use of the ShoreList website and platform. By accessing or using ShoreList, you agree to be bound by these Terms. If you do not agree, do not use the platform.</p>
+
   <h3>The ShoreList Platform</h3>
   <p>ShoreList is an online marketplace that connects guests with local experience operators in the Wilmington, NC coastal region. ShoreList facilitates the discovery and booking of experiences but is not itself the operator of any experience. All experiences are conducted by independent third-party operators who are individually responsible for their services.</p>
+
   <h3>User Accounts &amp; Eligibility</h3>
   <p>You must be at least 18 years old to make a booking on ShoreList. By using the platform, you represent and warrant that you are at least 18 years of age and have the legal capacity to enter into a binding agreement. If booking on behalf of a minor or other person, you represent that you have authority to bind them to these Terms.</p>
+
   <h3>Bookings &amp; Payments</h3>
   <p>When you book an experience through ShoreList, you are entering into a direct agreement with the individual operator for that experience. ShoreList facilitates the transaction but is not a party to the service agreement between you and the operator. Full payment is required at the time of booking. All prices are in US dollars.</p>
+
   <h3>Cancellation &amp; Refund Policy</h3>
   <p>Guests may cancel a booking and receive a <strong>full refund</strong> if cancellation is made at least <strong>24 hours before</strong> the scheduled start time of the experience. Cancellations made less than 24 hours before the experience are non-refundable unless the operator agrees otherwise. In the event an operator cancels or materially changes a booked experience, guests are entitled to a full refund. To cancel a booking, contact ShoreList at <a href="mailto:shorelistwilmington@gmail.com">shorelistwilmington@gmail.com</a> with your booking confirmation number.</p>
+
   <h3>Operator Liability</h3>
   <p>Each experience operator is an independent contractor, not an employee or agent of ShoreList. ShoreList does not control or supervise how operators conduct their experiences. Operators are solely responsible for the safety, quality, and legality of their services. ShoreList is not liable for any injury, loss, damage, or dissatisfaction arising from an operator's experience.</p>
+
   <h3>User Conduct</h3>
   <p>You agree not to use the ShoreList platform to:</p>
   <ul>
@@ -370,22 +598,29 @@ footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px
     <li>Harass, threaten, or harm ShoreList staff, operators, or other users</li>
     <li>Scrape, copy, or otherwise reproduce platform content without written permission</li>
   </ul>
+
   <h3>Intellectual Property</h3>
   <p>All content on the ShoreList platform &mdash; including but not limited to text, design, graphics, logos, and the &ldquo;ShoreList&rdquo; name and branding &mdash; is the property of ShoreList LLC and is protected by applicable intellectual property laws.</p>
+
   <h3>Disclaimer of Warranties</h3>
   <p>The ShoreList platform is provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo; without warranties of any kind, express or implied. ShoreList does not warrant that the platform will be uninterrupted, error-free, or free of viruses or other harmful components.</p>
+
   <h3>Limitation of Liability</h3>
   <div class="legal-allcaps">
     <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE NORTH CAROLINA AND FEDERAL LAW, SHORELIST LLC, ITS OFFICERS, MEMBERS, EMPLOYEES, AND AGENTS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE PLATFORM OR ANY EXPERIENCE BOOKED THROUGH IT. SHORELIST'S TOTAL AGGREGATE LIABILITY FOR ANY AND ALL CLAIMS SHALL NOT EXCEED THE TOTAL AMOUNT YOU PAID FOR THE SPECIFIC BOOKING GIVING RISE TO THE CLAIM.</p>
   </div>
+
   <h3>Indemnification</h3>
   <p>You agree to indemnify, defend, and hold harmless ShoreList LLC and its officers, members, and agents from any claims, liabilities, damages, losses, and expenses (including reasonable attorneys' fees) arising from your use of the platform, your violation of these Terms, or your violation of any third-party rights.</p>
+
   <h3>Governing Law &amp; Dispute Resolution</h3>
   <p>These Terms are governed by the laws of the State of North Carolina, without regard to its conflict of law provisions. Any dispute arising from these Terms or your use of the platform shall be resolved in accordance with Section 13 (Arbitration) below, or in the state or federal courts located in New Hanover County, North Carolina where arbitration does not apply.</p>
+
   <h3>Changes to These Terms</h3>
   <p>ShoreList reserves the right to modify these Terms at any time. We will provide notice of material changes by posting the updated Terms on this page with a new effective date. Your continued use of the platform after any changes constitutes acceptance of the updated Terms.</p>
 </section>
 
+<!-- ═══════════════ §11 FOR OPERATORS (gap fixed, COI clarified) ═══════════════ -->
 <section class="legal-section" id="operators">
   <div class="section-label"></div>
   <h2>For <em>Operators</em></h2>
@@ -399,6 +634,7 @@ footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px
   <p><strong>Operator applications and listing agreements are governed by the ShoreList Operator Listing Agreement,</strong> a separate document provided during the onboarding process. The Operator Listing Agreement takes precedence over these Terms with respect to the operator relationship.</p>
 </section>
 
+<!-- ═══════════════ §12 RISK ═══════════════ -->
 <section class="legal-section" id="risk">
   <div class="section-label"></div>
   <h2>Assumption of <em>Risk</em></h2>
@@ -418,27 +654,33 @@ footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px
   <p>Nothing in this section shall be construed to release any party from liability for gross negligence, willful misconduct, or intentional acts.</p>
 </section>
 
+<!-- ═══════════════ §13 ARBITRATION ═══════════════ -->
 <section class="legal-section" id="arbitration">
   <div class="section-label"></div>
   <h2>Arbitration &amp; <em>Class Action Waiver</em></h2>
   <div class="callout">
     <p><strong>Please read this section carefully.</strong> It affects your legal rights and contains a mandatory arbitration provision and class action waiver.</p>
   </div>
+
   <h3>Mandatory Arbitration</h3>
   <p>Any dispute, controversy, or claim arising out of or relating to these Terms, the Privacy Policy, your use of ShoreList, or any experience booked through our platform shall be resolved exclusively through final and binding individual arbitration administered by the <strong>American Arbitration Association (AAA)</strong> under its Consumer Arbitration Rules, rather than in a court of law.</p>
   <p>Exceptions to arbitration: you may assert claims in small claims court if your claims qualify; or either party may seek emergency injunctive relief in any court of competent jurisdiction to prevent irreparable harm pending arbitration.</p>
   <p>The arbitration will be conducted in Wilmington, North Carolina, or by telephone or videoconference at your election. The arbitrator shall apply North Carolina law. Filing fees are governed by AAA rules. ShoreList will pay AAA fees for disputes under $10,000 where you are the claimant and the claim is not frivolous.</p>
+
   <h3>Class Action Waiver</h3>
   <div class="legal-allcaps">
     <p>YOU AND SHORELIST AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS ACTION, COLLECTIVE ACTION, PRIVATE ATTORNEY GENERAL ACTION, OR OTHER REPRESENTATIVE PROCEEDING.</p>
   </div>
+
   <h3>Opt-Out Right</h3>
   <p>You may opt out of this arbitration agreement by notifying ShoreList in writing at <a href="mailto:shorelistwilmington@gmail.com">shorelistwilmington@gmail.com</a> within <strong>60 days</strong> of the date you first use the ShoreList platform. Your opt-out notice must include your name, address, and a clear statement that you opt out of arbitration. Opting out of arbitration does not affect any other provision of these Terms.</p>
 </section>
 
+<!-- ═══════════════ §14 WEATHER ═══════════════ -->
 <section class="legal-section" id="weather">
   <div class="section-label"></div>
   <h2>Weather, Cancellations &amp; <em>Force Majeure</em></h2>
+
   <h3>Force Majeure Events</h3>
   <p>Neither ShoreList nor any operator shall be liable for cancellations, delays, or failure to perform caused by circumstances beyond their reasonable control, including but not limited to:</p>
   <ul>
@@ -448,22 +690,29 @@ footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px
     <li>Government orders, mandatory evacuations, curfews, or beach closures</li>
     <li>Power outages or utility failures affecting the operator's ability to deliver the experience</li>
   </ul>
+
   <h3>Guest Refunds for Force Majeure</h3>
   <p>If a booked experience is cancelled due to a Force Majeure Event, guests will receive a <strong>full refund</strong> of all amounts paid. Refunds will be processed through Stripe within 5&ndash;10 business days.</p>
+
   <h3>Operator-Initiated Cancellations</h3>
   <p>If an operator cancels a confirmed booking for reasons other than Force Majeure, the guest will receive a full refund. Operators who cancel confirmed bookings without cause may be subject to suspension or removal from the ShoreList platform at ShoreList's sole discretion.</p>
+
   <h3>Weather Policy for Outdoor Activities</h3>
   <p>For outdoor activities affected by weather short of a Force Majeure Event, the cancellation decision rests with the operator based on their professional judgment and safety standards. Guests who are concerned about weather should contact ShoreList at <a href="mailto:shorelistwilmington@gmail.com">shorelistwilmington@gmail.com</a> at least 24 hours before their scheduled experience.</p>
 </section>
 
+<!-- ═══════════════ §15 TAX ═══════════════ -->
 <section class="legal-section" id="tax">
   <div class="section-label"></div>
   <h2>Tax Reporting &amp; <em>1099-K</em></h2>
   <p>This section applies to operators who receive payments through the ShoreList platform.</p>
+
   <h3>IRS Form 1099-K</h3>
   <p>ShoreList LLC is a third-party payment settlement entity under IRS regulations. As required by federal law, ShoreList will issue IRS Form 1099-K to any operator whose gross payments processed through ShoreList meet or exceed the applicable reporting threshold in any calendar year. Operators should consult a tax professional regarding their specific obligations.</p>
+
   <h3>W-9 Requirement</h3>
   <p>Before ShoreList processes any payout to an operator, the operator must provide a completed <strong>IRS Form W-9</strong> (or W-8BEN for non-US persons), including their legal name, business name (if applicable), address, and taxpayer identification number (EIN or SSN). Failure to provide a valid W-9 may result in ShoreList withholding <strong>24% backup withholding</strong> from operator payouts as required by IRS regulations.</p>
+
   <h3>Operator Tax Responsibilities</h3>
   <p>Operators are solely responsible for reporting their ShoreList income on their own federal and state tax returns. ShoreList does not provide tax advice. ShoreList recommends that all operators consult a qualified tax professional.</p>
   <div class="callout">
@@ -471,10 +720,12 @@ footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px
   </div>
 </section>
 
+<!-- ═══════════════ §16 AI PLANNER DISCLAIMER (NEW) ═══════════════ -->
 <section class="legal-section" id="ai-planner">
   <div class="section-label"></div>
   <h2>AI Trip Planner <em>Disclaimer</em></h2>
   <p>The ShoreList AI Trip Planner located at <a href="/planner">shorelist.net/planner</a> generates suggested coastal itineraries based on your inputs using an automated large language model.</p>
+
   <h3>AI Output Is Not a Guarantee</h3>
   <p>Itineraries produced by the AI Trip Planner are <strong>suggestions only</strong>. They are not guarantees of:</p>
   <ul>
@@ -484,16 +735,20 @@ footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px
     <li>Operating hours, seasonal closures, or schedule changes</li>
     <li>Operator quality, suitability, or safety for your specific group or needs</li>
   </ul>
+
   <h3>Verify Before You Travel</h3>
   <p>Always verify availability, pricing, weather conditions, and operating status with each operator before traveling. Use the AI Trip Planner as a starting point, not a final source of truth.</p>
+
   <h3>Limitation of Liability for AI Output</h3>
   <p>ShoreList is not liable for AI-generated suggestions that prove inaccurate, unavailable, outdated, or unsuitable for your circumstances. By using the AI Trip Planner you acknowledge that AI output may contain errors and you will exercise your own judgment when making travel decisions. The limitation of liability provisions in Section 10 apply in full to AI Trip Planner output.</p>
 </section>
 
+<!-- ═══════════════ §17 ACCESSIBILITY (NEW) ═══════════════ -->
 <section class="legal-section" id="accessibility">
   <div class="section-label"></div>
   <h2>Accessibility <em>Statement</em></h2>
   <p>ShoreList LLC is committed to providing a website that is accessible to the widest possible audience, regardless of technology or ability.</p>
+
   <h3>Our Commitment</h3>
   <p>We are actively working to ensure shorelist.net meets the Web Content Accessibility Guidelines (WCAG) 2.2 Level AA standards. This includes:</p>
   <ul>
@@ -505,6 +760,7 @@ footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px
     <li>Respect for the <code>prefers-reduced-motion</code> setting</li>
     <li>Form labels and error messages that are programmatically associated with their fields</li>
   </ul>
+
   <h3>Reporting an Accessibility Issue</h3>
   <p>If you experience difficulty accessing any portion of our website, please email <a href="mailto:shorelistwilmington@gmail.com?subject=Accessibility%20Feedback"><strong>shorelistwilmington@gmail.com</strong></a> with the subject line &ldquo;Accessibility Feedback&rdquo; and a description of the issue including:</p>
   <ul>
@@ -513,9 +769,11 @@ footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px
     <li>A description of what you were trying to do</li>
   </ul>
   <p>We will acknowledge your message within 2 business days and work to resolve the issue within a reasonable timeframe.</p>
+
   <p class="section-date" style="margin-top:18px;border-bottom:none;padding-bottom:0;">This statement was last updated on May 13, 2026.</p>
 </section>
 
+<!-- ═══════════════ §18 UPDATES ═══════════════ -->
 <section class="legal-section" id="updates">
   <div class="section-label"></div>
   <h2>Policy <em>Updates</em></h2>
@@ -523,10 +781,12 @@ footer{background:var(--dark);color:rgba(245,232,203,0.5);padding:38px 32px 32px
   <p>Your continued use of ShoreList after any changes to this policy constitutes your acceptance of the updated terms.</p>
 </section>
 
+<!-- ═══════════════ §19 CONTACT ═══════════════ -->
 <section class="legal-section" id="contact-legal">
   <div class="section-label"></div>
   <h2>Contact <em>Us</em></h2>
   <p>For any privacy-related questions, data requests, or concerns about these Terms, contact us:</p>
+
   <div class="callout">
     <p><strong>ShoreList LLC &mdash; Privacy &amp; Legal</strong></p>
     <p>RJ Brideau, Founder &amp; Member<br/>
