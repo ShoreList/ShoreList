@@ -9,9 +9,9 @@
 <link rel="canonical" href="https://shorelist.net/category"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>ShoreList — Wilmington, NC Coastal Experiences</title>
-<meta name="description" content="Explore local coastal experiences in Wilmington, NC — ghost tours with Sean Austin (Netflix), film & TV location tours, surf lessons, fishing charters, kayak tours, nature walks and more. Launching June 1, 2026."/>
+<meta name="description" content="Explore local coastal experiences in Wilmington, NC — ghost tours with Sean Austin (Netflix), film & TV location tours, surf lessons, fishing charters, kayak tours, nature walks and more. Launching Summer 2026."/>
 <meta property="og:title" content="ShoreList — Wilmington, NC Coastal Experiences"/>
-<meta property="og:description" content="Discover unforgettable local experiences across Wilmington and the NC beaches. Independent local operators. Secure Stripe checkout. Launching June 1, 2026."/>
+<meta property="og:description" content="Discover unforgettable local experiences across Wilmington and the NC beaches. Independent local operators. Secure Stripe checkout. Launching Summer 2026."/>
 <meta property="og:type" content="website"/>
 <meta property="og:image" content="https://shorelist.net/og-category.jpg"/>
 <meta property="og:image:width" content="1200"/>
@@ -336,6 +336,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 <script>
 var CAT_DATA={
   'ghost-tours':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-ghost" xlink:href="#i-ghost"/></svg>',title:'Ghost Tours',sub:'Spine-tingling walks through Wilmington\'s most haunted streets with expert local guides.'},
+  'walking-tours':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-compass" xlink:href="#i-compass"/></svg>',title:'Walking & History Tours',sub:'Guided historic strolls through downtown Wilmington and Carolina Beach — architecture, art, prohibition history, and coastal stories with Founding Partner Amanda Leese.'},
   'film-tours':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-film" xlink:href="#i-film"/></svg>',title:'Film & TV Location Tours',sub:'Explore the real sets and locations behind Wilmington\'s legendary film and TV history &#8212; guided by someone who lived it from the inside.'},
   'fishing-charters':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-fish" xlink:href="#i-fish"/></svg>',title:'Fishing Charters',sub:'Half and full-day offshore charters from Carolina Beach and Wrightsville Beach.'},
   'kayak-tours':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-kayak" xlink:href="#i-kayak"/></svg>',title:'Kayak Tours',sub:'Guided paddle adventures through tidal creeks, salt marshes, and barrier islands of coastal NC.'},
@@ -358,6 +359,44 @@ var CAT_DATA={
 };
 
 var OPS={
+  'walking-tours':[
+    {id:'wwt-original',business:'The Original History & Architecture Tour',operator:'Wilmington Walking Tours',title:'Led by Amanda Leese',
+     desc:'Wilmington 101, from the 1730s to today. Over a relaxed 1.5-mile loop through the Historic District, you\'ll trace the city\'s colonial roots, its industry and its complicated past, and the architecture still lining these streets — Colonial, Greek Revival, Queen Anne, and Italianate. The original tour, and still the best place to start.',
+     price:'$25',priceLabel:'per person',priceCents:2500,
+     tags:['Wilmington Historic District','1.75 Hours','1.5-Mile Loop','All Ages','ShoreList Founding Partner'],
+     note:'Starts at Front Street Inn. Offered daily except Tuesdays. Secure your spot online.',
+     schedule:{days:[1,3,5,6],slots:['10:00 AM']}},
+    {id:'wwt-happyhour',business:'Historic Happy Hour Tour',operator:'Wilmington Walking Tours',title:'Led by Amanda Leese',
+     desc:'A little history, a little libation. This stroll pairs a mini history lesson — from Wilmington\'s founding through the 20th century — with three 25-minute stops at downtown bars. Begin at the Gazebo Bar, wind through The Vine, and finish at the Wine Knot Sky Bar. Drinks are on you.',
+     price:'$30',priceLabel:'per person',priceCents:3000,
+     tags:['Wilmington Historic District','21+','Every Other Friday','Three Bar Stops','ShoreList Founding Partner'],
+     note:'Drinks not included. Every other Friday — times vary seasonally.',
+     schedule:{days:[5],slots:['Evening']}},
+    {id:'wwt-speakeasy',business:'Speakeasy & Prohibition Walking Tour',operator:'Wilmington Walking Tours',title:'Led by Amanda Leese',
+     desc:'Step into Wilmington from the 1880s to the 1930s — the days of Barbary Row and the secret watering holes hidden inside today\'s restored downtown buildings. The route starts at The Ivey in the Alley, with stops at Underfront Co. and the Blind Elephant. Prohibition never looked so good.',
+     price:'$30',priceLabel:'per person',priceCents:3000,
+     tags:['Wilmington Historic District','21+','Every Other Friday','Prohibition Era','ShoreList Founding Partner'],
+     note:'Drinks not included. Every other Friday — times vary seasonally.',
+     schedule:{days:[5],slots:['Evening']}},
+    {id:'wwt-candlelight',business:'Christmas Candlelight Victorians Walk',operator:'Wilmington Walking Tours',title:'Led by Amanda Leese',
+     desc:'A Wilmington holiday tradition. By the glow of provided candles, this gentle one-mile walk takes in the Historic District\'s decorated Victorian homes and the holiday customs of the era. About 90 minutes of seasonal magic downtown.',
+     price:'$20',priceLabel:'per person',priceCents:2000,
+     tags:['Wilmington Historic District','Seasonal · December','1.5 Hours','Family Friendly','ShoreList Founding Partner'],
+     note:'Starts at Front Street Inn. December only — 4:30 PM or 6:15 PM.',
+     schedule:{days:[1,3,5,6],slots:['4:30 PM','6:15 PM']}},
+    {id:'cbt-mural',business:'Carolina Beach History & Mural Walk',operator:'Carolina Beach Tours',title:'Led by Amanda Leese',
+     desc:'Pleasure Island\'s story, told through its art. This easygoing 1.5-mile stroll from Carolina Beach Lake Park weaves coastal history together with the Carolina Beach Mural Project — the surf and shag-culture murals that color the town. Your ticket includes a $5 donation to the Mural Project.',
+     price:'$30',priceLabel:'per person',priceCents:3000,
+     tags:['Carolina Beach','Seasonal · May–Sep','1.5 Hours','Family Friendly','ShoreList Founding Partner'],
+     note:'Starts at CB Lake Park. Includes a $5 Mural Project donation.',
+     schedule:{days:[2],slots:['9:30 AM']}},
+    {id:'cbt-divebar',business:'Carolina Beach History & Dive Bar Tour',operator:'Carolina Beach Tours',title:'Led by Amanda Leese',
+     desc:'The gritty, colorful side of Pleasure Island. Over about two hours and a mile, you\'ll hit the local spots that built Carolina Beach — starting at The Sea Witch, with stops at the Silver Dollar and the legendary Fat Pelican. History with a little salt.',
+     price:'$30',priceLabel:'per person',priceCents:3000,
+     tags:['Carolina Beach','21+','Seasonal · May–Sep','2 Hours','ShoreList Founding Partner'],
+     note:'Drinks not included. Starts at The Sea Witch.',
+     schedule:{days:[3],slots:['5:30 PM']}}
+  ],
   'film-tours':[
     {id:'ron-film',business:'Wilmywood Insider Tours',operator:'Industry Insider & Local Expert',title:'20+ Years in the Wilmington Film & Hospitality Industry',
      desc:'Wilmington isn\'t just a beach town &#8212; it\'s one of the most filmed cities in America. One Tree Hill. Dawson\'s Creek. Iron Man 3. Safe Haven. A Walk to Remember. Hundreds of productions have called Wilmington home. Your guide has spent over two decades working inside the Wilmington film and hospitality industry and knows the stories behind the sets, the locations, and the legends that most tourists never hear. This isn\'t a bus tour reading from a brochure. This is Wilmywood &#8212; from the inside.',
@@ -372,13 +411,7 @@ var OPS={
      price:'$30',priceLabel:'per person',priceCents:3000,
      tags:['Netflix','Travel Channel','90 Minutes','All Ages','Exclusive to ShoreList','Downtown Wilmington'],
      note:'Led by Sean Austin &mdash; nationally recognized paranormal TV investigator. Secure your spot online. Exclusive to ShoreList.',
-     schedule:{days:[4,5,6,0],slots:['7:00 PM','8:30 PM','10:00 PM']}},
-    {id:'historic-walk',business:'Historic Wilmington Walking Tours',operator:'',title:'Coming Soon &mdash; Operator Joining Shorelist',
-     desc:'Explore the remarkable history of Wilmington &#8212; one of the most historically significant cities in the American South. Walk through neighborhoods of stunning antebellum homes, hear stories of the city\'s colonial roots, its role in the Civil War, and the powerful personalities who shaped it. This experience is launching soon on Shorelist &#8212; tap to be notified when bookings open.',
-     price:'$28',priceLabel:'per person',priceCents:2800,
-     tags:['Historic District','75 Minutes','All Ages','Coming Soon'],
-     note:'Secure your spot online. Balance due at tour.',
-     schedule:{days:[3,4,5,6,0],slots:['10:00 AM','2:00 PM','6:00 PM']}}
+     schedule:{days:[4,5,6,0],slots:['7:00 PM','8:30 PM','10:00 PM']}}
   ],
   'surf-lessons':[
     {id:'james-surf',business:'Carolina Beach Surf Co.',operator:'Certified Local Instructor',title:'Professional Surf Instructor &middot; 10+ Years Experience',
@@ -547,7 +580,7 @@ function renderPage(){
       h+='<p class="op-desc">'+esc(op.desc)+'</p>';
       h+='<div class="op-tags">'; op.tags.forEach(function(t){h+='<span class="op-tag">'+esc(t)+'</span>';}); h+='</div>';
       h+='<div class="op-divider"></div>';
-      h+='<div class="op-book-row"><div class="op-book-note-pre">Bookings open <strong>June 1st</strong> &#8212; drop your email below to be first in line when we launch.</div></div>';
+      h+='<div class="op-book-row"><div class="op-book-note-pre">Bookings open <strong>soon</strong> &#8212; drop your email below to be first in line when we launch.</div></div>';
       h+='<div style="font-size:0.75rem;color:rgba(44,74,82,0.45);margin-top:8px;line-height:1.6;">By booking through ShoreList you acknowledge activities involve inherent risks and agree to our <a href="/legal#risk" style="color:var(--teal2);">Terms &amp; Assumption of Risk</a>. Full refunds available with 24+ hours cancellation notice. Operators are independent contractors, not employees of ShoreList.</div>';
       h+='</div>'; // end op-card-body
       // Pre-launch capture card
@@ -650,6 +683,33 @@ document.addEventListener('DOMContentLoaded',renderPage);
       }catch(e){}
     },1500);
   }
+})();
+
+/* Founding Partner banner when walking-tours loaded */
+(function(){
+  var cat=new URLSearchParams(window.location.search).get('cat')||'';
+  if(cat!=='walking-tours')return;
+  function inject(tries){
+    var container=document.getElementById('op-container')||document.querySelector('.sec-inner');
+    if(!container){if((tries||0)<10){setTimeout(function(){inject((tries||0)+1);},150);}return;}
+    if(document.getElementById('fp-banner'))return;
+    var b=document.createElement('div');
+    b.id='fp-banner';
+    b.style.cssText='background:linear-gradient(135deg,#fffdf7 0%,#f5e8cb 100%);border:1px solid rgba(10,77,92,0.18);border-radius:14px;padding:26px 30px;margin-bottom:28px;box-shadow:0 1px 3px rgba(10,77,92,0.06);';
+    b.innerHTML='<div style="display:flex;align-items:center;gap:26px;flex-wrap:wrap;">'
+      +'<div style="display:flex;gap:18px;align-items:center;flex:none;">'
+      +'<img src="/wilmington-walking-tours.png" alt="Wilmington Walking Tours" style="height:76px;width:auto;" loading="lazy"/>'
+      +'<img src="/carolina-beach-tours.png" alt="Carolina Beach Tours" style="height:76px;width:auto;" loading="lazy"/>'
+      +'</div>'
+      +'<div style="flex:1;min-width:250px;">'
+      +'<div style="font-size:0.66rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#E96645;margin-bottom:7px;">&#9733; ShoreList Founding Partner</div>'
+      +'<div style="font-family:\'Playfair Display\',serif;font-size:1.4rem;font-weight:800;color:#0A4D5C;line-height:1.15;margin-bottom:8px;">Wilmington Walking Tours &amp; Carolina Beach Tours</div>'
+      +'<div style="font-size:0.9rem;color:#3a5a61;line-height:1.6;">Led by Amanda Leese &mdash; a 2024 Wilmington &amp; Beaches Tourism Star &mdash; these guided strolls bring the history, architecture, art, and local flavor of Wilmington &amp; the Beaches to life. Six tours across downtown and Carolina Beach, now on ShoreList.</div>'
+      +'</div>'
+      +'</div>';
+    container.insertBefore(b,container.firstChild);
+  }
+  if(document.readyState!=='loading')inject(0);else document.addEventListener('DOMContentLoaded',function(){inject(0);});
 })();
 
 /* Booking button paranormal effect */
