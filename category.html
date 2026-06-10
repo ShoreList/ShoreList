@@ -47,20 +47,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 48px;display:fl
 .nav-back:hover{color:var(--cream);}
 .nav-join{background:var(--coral);color:white;text-decoration:none;padding:9px 20px;border-radius:6px;font-weight:700;font-size:0.82rem;transition:background 0.2s;white-space:nowrap;}
 .nav-join:hover{background:var(--coral2);}
-.hero{background:var(--teal);padding:130px 48px 64px;position:relative;overflow:hidden;}
+.hero{background:radial-gradient(circle at 84% 18%,rgba(255,160,80,0.34),transparent 60%),linear-gradient(168deg,#FDF4E3 0%,#E9F7F6 54%,#FCEAD6 100%);padding:130px 48px 64px;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 80% 50%,rgba(233,102,69,0.08) 0%,transparent 65%);}
 .hero::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;}
 .hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
-.hero-breadcrumb{font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,232,203,0.4);margin-bottom:20px;}
+.hero-breadcrumb{font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--teal2);margin-bottom:20px;}
 .hero-breadcrumb a{color:var(--coral);text-decoration:none;}
 .hero-top{display:flex;align-items:flex-start;gap:24px;margin-bottom:16px;}
-.hero-icon{font-size:3.2rem;line-height:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.10);border-radius:16px;padding:16px;flex-shrink:0;}
+.hero-icon{font-size:3.2rem;line-height:1;background:var(--teal);border:none;border-radius:16px;padding:16px;flex-shrink:0;box-shadow:0 10px 26px rgba(10,77,92,0.22);}
 .hero-tag{font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;}
-.hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3.2rem);font-weight:900;color:var(--cream2);line-height:1.05;margin-bottom:12px;}
-.hero-sub{font-size:1rem;color:rgba(245,232,203,0.65);line-height:1.8;max-width:580px;}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3.2rem);font-weight:900;color:var(--teal);line-height:1.05;margin-bottom:12px;}
+.hero-sub{font-size:1rem;color:var(--teal2);line-height:1.8;max-width:580px;}
 .hero-meta{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;}
-.hm-badge{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.10);border-radius:100px;padding:6px 14px;font-size:0.78rem;font-weight:600;color:rgba(245,232,203,0.7);}
-.hm-badge.live{background:rgba(26,122,74,0.20);border-color:rgba(26,122,74,0.40);color:#4ade80;}
+.hm-badge{background:rgba(10,77,92,0.06);border:1px solid rgba(10,77,92,0.12);border-radius:100px;padding:6px 14px;font-size:0.78rem;font-weight:600;color:var(--teal2);}
+.hm-badge.live{background:rgba(26,122,74,0.12);border-color:rgba(26,122,74,0.35);color:#15803d;}
 .hm-badge.live::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:#4ade80;margin-right:6px;animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
 .main{max-width:1100px;margin:0 auto;padding:64px 48px 100px;}
@@ -409,7 +409,7 @@ var OPS={
     {id:'sean-ghost',business:'Sean Austin\'s Wilmington Ghost Walk',operator:'Sean Austin',title:'Led by a Netflix &amp; Travel Channel Paranormal Investigator',
      desc:'This is the most unforgettable ghost walk in Wilmington &mdash; 90 minutes through the haunted heart of one of America&rsquo;s oldest cities, led by Sean Austin: star of Netflix&rsquo;s <em>28 Days Haunted</em>, lead investigator on Travel Channel&rsquo;s <em>Ghost Loop</em> (now on Discovery+), and featured on <em>The Demon Files</em>. Trained demonologist, psychic medium, and published author of <em>Shadow Chaser</em>, Sean brings 16+ years of real paranormal investigation to the city&rsquo;s most haunted streets, antebellum mansions, and burial grounds. Family-friendly, endlessly fascinating, and impossible to forget &mdash; available <strong>exclusively on ShoreList</strong>.',
      price:'$30',priceLabel:'per person',priceCents:3000,
-     tags:['Netflix','Travel Channel','90 Minutes','All Ages','Exclusive to ShoreList','Downtown Wilmington'],
+     tags:['ShoreList Founding Partner','Netflix','Travel Channel','90 Minutes','All Ages','Exclusive to ShoreList','Downtown Wilmington'],
      note:'Led by Sean Austin &mdash; nationally recognized paranormal TV investigator. Secure your spot online. Exclusive to ShoreList.',
      schedule:{days:[4,5,6,0],slots:['7:00 PM','8:30 PM','10:00 PM']}}
   ],
@@ -655,7 +655,7 @@ document.addEventListener('DOMContentLoaded',renderPage);
         +'<div class="cgb-title">&#9889; The Most Unforgettable Ghost Walk in Wilmington</div>'
         +'<div class="cgb-sub">Sean Austin &mdash; star of Netflix&rsquo;s <strong>28 Days Haunted</strong> and Travel Channel&rsquo;s <strong>Ghost Loop</strong> &mdash; leads his Wilmington Ghost Walk exclusively through ShoreList. A real paranormal TV investigator guiding you through the city&rsquo;s most haunted streets. <a href="https://www.seandaustin.com" target="_blank" rel="noopener noreferrer">Learn more at seandaustin.com &#8599;</a></div>'
         +'<div class="cgb-badges">'
-        +'<span class="cgb-badge">Netflix</span>'
+        +'<span class="cgb-badge cgb-badge-coral">&#9733; Founding Partner</span>'+'<span class="cgb-badge">Netflix</span>'
         +'<span class="cgb-badge">Travel Channel</span>'
         +'<span class="cgb-badge">Paranormal Investigator</span>'
         +'<span class="cgb-badge">Demonologist</span>'
