@@ -48,7 +48,7 @@ body{font-family:'DM Sans',sans-serif;background:#0A4D5C;color:#FEFCF7;overflow-
 .wk-spots{color:rgba(245,232,203,0.55)!important;}
 .foot-copy{color:rgba(245,232,203,0.55)!important;}
 
-:root{
+:root{--sand:#FBF3E2;--seaglass:#8FD3DE;--sky:#E4F5F6;--sunset1:#FF8A5B;--sunset2:#FFB24C;--gold:#FFC95E;
   --teal:#0A4D5C;--teal2:#1A7585;--teal3:#073D4A;
   --coral:#E96645;--coral2:#F07A5A;
   --cream:#F5E8CB;--cream2:#FEFCF7;
@@ -125,9 +125,9 @@ nav.scrolled{background:rgba(10,77,92,0.99);}
   padding:120px 48px 0;
   position:relative;overflow:hidden;
 }
-.hero-grad{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 110% 90% at 45% 0%,#1a8595 0%,var(--teal) 55%);}
-.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,0.055) 1px,transparent 1px);background-size:28px 28px;}
-.compass{position:absolute;top:88px;right:56px;width:68px;height:68px;border:1.5px solid rgba(245,232,203,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;animation:spin 32s linear infinite;}
+.hero-grad{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 82% 12%,rgba(255,160,80,0.42),rgba(255,193,94,0.12) 45%,transparent 64%),linear-gradient(168deg,#FDF4E3 0%,#E9F7F6 52%,#FCEAD6 100%);}
+.hero-dots{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(10,77,92,0.05) 1px,transparent 1px);background-size:28px 28px;}
+.compass{position:absolute;top:88px;right:56px;width:68px;height:68px;border:1.5px solid rgba(10,77,92,0.18);border-radius:50%;display:flex;align-items:center;justify-content:center;animation:spin 32s linear infinite;}
 .compass-inner{font-size:1.3rem;color:var(--coral);animation:spin 32s linear infinite reverse;}
 @keyframes spin{to{transform:rotate(360deg);}}
 
@@ -149,28 +149,28 @@ nav.scrolled{background:rgba(10,77,92,0.99);}
 .hero-inner{position:relative;z-index:2;}
 .hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:0.70rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--coral);margin-bottom:22px;animation:fadeUp 0.6s ease both;}
 .hero-tag::before{content:'';width:26px;height:1px;background:var(--coral);}
-h1.hero-title{font-family:'Playfair Display',serif;font-size:clamp(3rem,5.5vw,5rem);line-height:1.03;letter-spacing:-2px;margin-bottom:20px;animation:fadeUp 0.6s 0.08s ease both;color:var(--cream2);}
-h1.hero-title .it{font-style:italic;color:var(--cream);}
+h1.hero-title{font-family:'Playfair Display',serif;font-size:clamp(3rem,5.5vw,5rem);line-height:1.03;letter-spacing:-2px;margin-bottom:20px;animation:fadeUp 0.6s 0.08s ease both;color:var(--teal);}
+h1.hero-title .it{font-style:italic;color:var(--teal);}
 h1.hero-title .bl{display:block;}
 h1.hero-title .or{color:var(--coral);font-style:normal;}
-.hero-sub{font-size:0.97rem;font-weight:300;line-height:1.8;color:rgba(245,232,203,0.72);max-width:440px;margin-bottom:32px;animation:fadeUp 0.6s 0.15s ease both;}
+.hero-sub{font-size:0.97rem;font-weight:300;line-height:1.8;color:var(--teal2);max-width:440px;margin-bottom:32px;animation:fadeUp 0.6s 0.15s ease both;}
 
 /* Trust strip — right below description, before buttons */
 .trust-strip{display:flex;align-items:center;gap:0;margin-bottom:32px;animation:fadeUp 0.6s 0.22s ease both;flex-wrap:wrap;gap:8px;}
-.trust-item{display:flex;align-items:center;gap:6px;font-size:0.75rem;font-weight:600;color:rgba(245,232,203,0.65);}
+.trust-item{display:flex;align-items:center;gap:6px;font-size:0.75rem;font-weight:600;color:var(--teal2);}
 .trust-item::before{content:'\2713';color:#22c55e;font-weight:700;}
-.trust-sep{width:1px;height:12px;background:rgba(245,232,203,0.15);margin:0 6px;}
+.trust-sep{width:1px;height:12px;background:rgba(10,77,92,0.18);margin:0 6px;}
 
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp 0.6s 0.28s ease both;margin-bottom:40px;}
 .btn-fill{background:var(--coral);color:white;padding:15px 34px;border-radius:7px;font-weight:700;font-size:0.95rem;text-decoration:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;display:inline-block;transition:all 0.2s;white-space:nowrap;}
 .btn-fill:hover{background:var(--coral2);transform:translateY(-2px);}
-.btn-ghost{background:transparent;color:var(--cream);padding:15px 34px;border-radius:7px;font-weight:500;font-size:0.95rem;text-decoration:none;display:inline-block;border:1.5px solid rgba(245,232,203,0.28);transition:all 0.2s;white-space:nowrap;}
+.btn-ghost{background:#fff;color:var(--teal);padding:15px 34px;border-radius:7px;font-weight:600;font-size:0.95rem;text-decoration:none;display:inline-block;border:1.5px solid rgba(10,77,92,0.2);transition:all 0.2s;white-space:nowrap;box-shadow:0 6px 18px rgba(10,77,92,0.08);}
 .btn-ghost:hover{border-color:rgba(245,232,203,0.55);transform:translateY(-2px);}
 .hero-stats{display:flex;gap:24px;animation:fadeUp 0.6s 0.38s ease both;}
 .hstat{text-align:left;}
-.hstat-num{font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:900;color:var(--cream);line-height:1;}
-.hstat-lbl{font-size:0.68rem;color:rgba(245,232,203,0.42);margin-top:3px;font-weight:500;letter-spacing:0.05em;}
-.hstat-divider{width:1px;background:rgba(245,232,203,0.14);align-self:stretch;}
+.hstat-num{font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:900;color:var(--teal);line-height:1;}
+.hstat-lbl{font-size:0.68rem;color:var(--teal2);margin-top:3px;font-weight:500;letter-spacing:0.05em;}
+.hstat-divider{width:1px;background:rgba(10,77,92,0.14);align-self:stretch;}
 
 /* Hero right — animated booking card */
 .hero-right{position:relative;display:flex;align-items:center;justify-content:center;height:480px;}
@@ -551,7 +551,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://shorelist.net","name":"ShoreList","description":"Wilmington NCs local coastal experience booking platform - ghost tours, surf lessons, film location tours, kayaking, and more.","url":"https://shorelist.net","email":"shorelistwilmington@gmail.com","areaServed":{"@type":"Place","name":"Wilmington, NC & the Beaches"},"address":{"@type":"PostalAddress","addressLocality":"Wilmington","addressRegion":"NC","addressCountry":"US"},"openingHours":"Mo-Su 00:00-24:00","sameAs":["https://instagram.com/ShoreList"],"priceRange":"$$","foundingDate":"2026","hasOfferCatalog":{"@type":"OfferCatalog","name":"Coastal Experiences","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Ghost Tours"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Surf Lessons"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Film Location Tours"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Kayak Tours"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Nature Walks"}}]}}
 </script>
-</head>
+<style>.hero .cd-num{color:var(--teal);}.hero .cd-sep{color:var(--teal2);}.sunset-divider{height:6px;background:linear-gradient(90deg,var(--coral),var(--sunset1),var(--sunset2),var(--gold),var(--sunset1));background-size:200% 100%;animation:sunsetShift 7s linear infinite;}@keyframes sunsetShift{to{background-position:200% 0;}}</style></head>
 <body>
 <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="i-ghost" viewBox="0 0 24 24"><path d="M5 9a7 7 0 0 1 14 0v11l-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5Z"/><circle cx="9.5" cy="11" r="0.9" fill="currentColor" stroke="none"/><circle cx="14.5" cy="11" r="0.9" fill="currentColor" stroke="none"/></symbol><symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="1"/><path d="M3 11h18"/><path d="M7.5 6l-2 5"/><path d="M11.5 6l-2 5"/><path d="M15.5 6l-2 5"/><path d="M19.5 6l-2 5"/></symbol><symbol id="i-fish" viewBox="0 0 24 24"><path d="M3 12c3-4 7-4 11 0-4 4-8 4-11 0z"/><path d="M14 12l4-3v6z"/><circle cx="7" cy="11" r="0.6" fill="currentColor" stroke="none"/></symbol><symbol id="i-kayak" viewBox="0 0 24 24"><path d="M4 13c1 3 4 5 8 5s7-2 8-5"/><path d="M4 13l1-2h14l1 2"/><path d="M9 4l-3 7"/><path d="M15 4l3 7"/></symbol><symbol id="i-ship" viewBox="0 0 24 24"><path d="M3 17c2 1 4 1 6 0s4-1 6 0 4 1 6 0"/><path d="M4 14l8-3 8 3"/><path d="M8 14V9h8v5"/><path d="M11 9V6h2v3"/></symbol><symbol id="i-surf" viewBox="0 0 24 24"><path d="M2 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M16 3c-4 1-9 5-11 9l3 1c2-4 5-8 9-9z"/></symbol><symbol id="i-paddleboard" viewBox="0 0 24 24"><ellipse cx="12" cy="16" rx="9" ry="3"/><path d="M13 16V7l-2-3"/></symbol><symbol id="i-bike" viewBox="0 0 24 24"><circle cx="6" cy="16" r="3.5"/><circle cx="18" cy="16" r="3.5"/><path d="M6 16l5-8h4l3 8"/><path d="M9 8h4"/></symbol><symbol id="i-dolphin" viewBox="0 0 24 24"><path d="M3 14c2-5 7-7 12-6 2 0 4-1 6-3-1 5-3 8-6 9-3 4-7 5-12 0z"/><circle cx="16" cy="11" r="0.7" fill="currentColor" stroke="none"/></symbol><symbol id="i-ebike" viewBox="0 0 24 24"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17l3-5h2l-2 4h4l-2 5"/><path d="M14 12l3 5"/></symbol><symbol id="i-scooter" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 18h10l3-9h-3"/><path d="M14 9l-2-5h-2"/></symbol><symbol id="i-jetski" viewBox="0 0 24 24"><path d="M3 16c1 2 3 3 5 3h10c3 0 5-1 6-3l-5-5h-7l-3 4z"/><path d="M11 14V8h2"/><path d="M3 19c2 1 4 1 6 0"/></symbol><symbol id="i-golf" viewBox="0 0 24 24"><path d="M7 21V4"/><path d="M7 4l11 3-11 3"/><circle cx="7" cy="21" r="0.8" fill="currentColor" stroke="none"/></symbol><symbol id="i-sailboat" viewBox="0 0 24 24"><path d="M12 3v15"/><path d="M12 4l-7 14h14z"/><path d="M3 18c2 2 4 3 6 3h6c2 0 4-1 6-3"/></symbol><symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.3C15.5 5 17 4 19 2c1 2 2 5 2 8a7 7 0 0 1-7 7"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></symbol><symbol id="i-camera" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l2-3h4l2 3"/><circle cx="12" cy="13.5" r="3.5"/></symbol><symbol id="i-basket" viewBox="0 0 24 24"><path d="M4 10h16l-1 10H5z"/><path d="M7 10a5 5 0 0 1 10 0"/><path d="M4 14h16"/></symbol><symbol id="i-umbrella" viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M2 11a10 10 0 0 1 20 0c-1.5-1.2-3-1.5-5-1.5s-3.5 1-5 2c-1.5-1-3-2-5-2s-3.5.3-5 1.5z"/></symbol><symbol id="i-lotus" viewBox="0 0 24 24"><path d="M12 4c-1.5 3-4 5-7 6 3 1 5.5 3 7 6 1.5-3 4-5 7-6-3-1-5.5-3-7-6z"/><path d="M12 11c-2 0-3.5 1.5-3.5 3 1 1 2 1.5 3.5 1.5s2.5-.5 3.5-1.5c0-1.5-1.5-3-3.5-3z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></symbol><symbol id="i-hotel" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 8h.01M12 8h.01M16 8h.01M8 12h.01M12 12h.01M16 12h.01M10 21v-5h4v5"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></symbol><symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5.6 5.6l4.2 4.2M14.2 14.2l4.2 4.2M5.6 18.4l4.2-4.2M14.2 9.8l4.2-4.2"/></symbol><symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 10c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></symbol><symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 16l3-7 5 5z"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></symbol><symbol id="i-volume" viewBox="0 0 24 24"><path d="M11 5L6 9H3v6h3l5 4z"/><path d="M15 9c1.5 1.5 1.5 4.5 0 6"/><path d="M18 6c3 3 3 9 0 12"/></symbol><symbol id="i-volume-off" viewBox="0 0 24 24"><path d="M11 5L6 9H3v6h3l5 4z"/><path d="M22 9l-6 6M16 9l6 6"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z" fill="currentColor" stroke="none"/></symbol><symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol><symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.5 3-6 6-6s6 2.5 6 6"/><circle cx="17" cy="10" r="2.5"/><path d="M15 16c2-1 4-1 6 1"/></symbol><symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="0.8" fill="currentColor" stroke="none"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 7 9-7"/></symbol><symbol id="i-tv" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M8 22h8"/><path d="M12 19v3"/></symbol><symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 22c5 0 8-3 8-7 0-3-2-5-3-7-1 2-3 2-3-1 0-2-1-4-3-5-1 4-5 6-5 12 0 5 3 8 6 8z"/></symbol></defs></svg>
 
@@ -613,15 +613,6 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
   <div class="hero-layout">
     <div class="hero-inner">
       <div class="hero-tag">Wilmington, NC &amp; the Beaches</div>
-      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;max-width:100%;background:#fffdf7;border-radius:14px;padding:10px 16px;margin:0 0 22px;box-shadow:0 10px 30px rgba(0,0,0,0.28);animation:fadeUp 0.7s ease both 0.15s;">
-        <img src="/wilmington-walking-tours.png" alt="Wilmington Walking Tours" style="height:46px;width:auto;"/>
-        <img src="/carolina-beach-tours.png" alt="Carolina Beach Tours" style="height:46px;width:auto;"/>
-        <div style="border-left:1px solid rgba(10,77,92,0.15);padding-left:14px;min-width:0;">
-          <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#E96645;">&#9733; Founding Partner</div>
-          <div style="font-size:0.82rem;font-weight:700;color:#0A4D5C;line-height:1.2;">Wilmington Walking &amp; Carolina Beach Tours</div>
-          <div style="font-size:0.68rem;color:#6b8483;margin-top:1px;">4.9&#9733; &middot; now booking on ShoreList</div>
-        </div>
-      </div>
       <h1 class="hero-title">
         <span class="it">Your local guide</span>
         <span class="bl">to <span class="or">coastal</span></span>
@@ -738,6 +729,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 <!-- ── TRUST BAR ── -->
 
 
+<div class="sunset-divider"></div>
 <style>
 #founding-partner .feat-tag{background:rgba(10,77,92,0.07);color:#0A4D5C;}
 #founding-partner .feat-rl{color:#0A4D5C;}
@@ -793,7 +785,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
   <div class="sec-inner">
     <div class="featured-grid">
       <div>
-        <div class="feat-badge">✦ Featured Experience</div>
+        <div class="feat-badge">★ Founding Partner</div>
         <h2 class="feat-title" id="featured-heading">Sean Austin's Wilmington Ghost Walk</h2>
         <p class="feat-sub">The most unforgettable ghost walk in Wilmington &mdash; 90 minutes through the haunted heart of one of America&rsquo;s oldest cities, led by <strong>Sean Austin</strong>. You&rsquo;ve seen him on <strong>Netflix&rsquo;s <em>28 Days Haunted</em></strong> and <strong>Travel Channel&rsquo;s <em>Ghost Loop</em></strong>. Demonologist, psychic medium, published author, and founder of the <strong>SPI paranormal app</strong>, Sean brings 16+ years of real paranormal investigation to Wilmington&rsquo;s most haunted streets, antebellum mansions, and burial grounds. Family-friendly and impossible to forget. <strong>Available exclusively on ShoreList.</strong></p>
         <div class="feat-tags">
@@ -886,7 +878,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 
 
 <!-- ── EXPLORE / CATEGORIES ── -->
-<section class="sec sec-alt" id="explore" aria-labelledby="explore-heading">
+<style>#explore{background:linear-gradient(180deg,#FFFDF8 0%,#FBF3E2 100%);}#explore .sec-title{color:var(--teal);}#explore .sec-sub{color:var(--teal2);}#explore .cat{background:#fff;border:1px solid rgba(10,77,92,0.10);box-shadow:0 6px 16px rgba(10,77,92,0.06);}#explore .cat:hover{background:#fff;border-color:var(--coral);box-shadow:0 16px 34px rgba(10,77,92,0.16);transform:translateY(-5px);}#explore .cat-name{color:var(--teal);}#explore .cat-ico{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;}#explore .cat-ico svg{color:#fff;width:1.5rem;height:1.5rem;}#explore .cat:nth-child(7n+1) .cat-ico{background:linear-gradient(135deg,#6C3E9C,#9B5DE5);}#explore .cat:nth-child(7n+2) .cat-ico{background:linear-gradient(135deg,#1A7585,#5FBFD0);}#explore .cat:nth-child(7n+3) .cat-ico{background:linear-gradient(135deg,#E96645,#FFB24C);}#explore .cat:nth-child(7n+4) .cat-ico{background:linear-gradient(135deg,#2E9CCA,#7FD4E0);}#explore .cat:nth-child(7n+5) .cat-ico{background:linear-gradient(135deg,#3FA66A,#9BD17E);}#explore .cat:nth-child(7n+6) .cat-ico{background:linear-gradient(135deg,#1B6CA8,#5FBFD0);}#explore .cat:nth-child(7n) .cat-ico{background:linear-gradient(135deg,#F2994A,#FFC95E);}</style><section class="sec sec-alt" id="explore" aria-labelledby="explore-heading">
   <div class="sec-inner">
     <div class="sec-label">Explore</div>
     <h2 class="sec-title" id="explore-heading">Find your next <em>adventure</em></h2>
@@ -937,7 +929,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
         <div class="rv-text" style="font-style:normal;">Netflix. Travel Channel. Discovery+. Sean Austin is one of America&rsquo;s most recognized paranormal investigators &mdash; star of <em>28 Days Haunted</em> (Netflix), lead investigator on <em>Ghost Loop</em> (Travel Channel/Discovery+), trained demonologist, psychic medium, and published author of <em>Shadow Chaser</em>. Now he leads <strong>Sean Austin&rsquo;s Wilmington Ghost Walk</strong> &mdash; a 90-minute walk through the city&rsquo;s most haunted streets, available <strong>exclusively on ShoreList</strong>.</div>
         <div class="rv-foot">
           <div class="rv-avatar" style="background:linear-gradient(135deg,#1a0533,#4a0e8f);"><svg class="ico-sm" aria-hidden="true" focusable="false"><use href="#i-ghost" xlink:href="#i-ghost"/></svg></div>
-          <div><div class="rv-name">Sean Austin&rsquo;s Wilmington Ghost Walk</div><div class="rv-meta" style="line-height:1.6;">Netflix &middot; Travel Channel &middot; Paranormal Investigator &nbsp;&middot;&nbsp; From $30 &nbsp;&middot;&nbsp; <a href="https://www.seandaustin.com" target="_blank" rel="noopener noreferrer" style="color:var(--coral);text-decoration:none;">seandaustin.com &#8599;</a></div></div>
+          <div><div class="rv-name">Sean Austin&rsquo;s Wilmington Ghost Walk</div><div class="rv-meta" style="line-height:1.6;">ShoreList Founding Partner &nbsp;&middot;&nbsp; Netflix &middot; Travel Channel &middot; Paranormal Investigator &nbsp;&middot;&nbsp; From $30 &nbsp;&middot;&nbsp; <a href="https://www.seandaustin.com" target="_blank" rel="noopener noreferrer" style="color:var(--coral);text-decoration:none;">seandaustin.com &#8599;</a></div></div>
         </div>
       </div>
       <div class="rv-card">
@@ -1031,7 +1023,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
   </div>
 </section>
 
-<section class="sec sec-alt" id="how" aria-labelledby="how-heading">
+<style>#how{background:linear-gradient(180deg,#FBF3E2 0%,#FFFDF8 100%);}#how .sec-title{color:var(--teal);}#how .sec-sub{color:var(--teal2);}#how .step{background:#fff;border:1px solid rgba(10,77,92,0.10);box-shadow:0 6px 16px rgba(10,77,92,0.06);border-radius:10px;}#how .step h3{color:var(--teal);}#how .step p{color:var(--teal2);}#how .step-n{color:rgba(233,102,69,0.9);}</style><section class="sec sec-alt" id="how" aria-labelledby="how-heading">
   <div class="sec-inner">
     <div class="sec-label">Simple Process</div>
     <h2 class="sec-title" id="how-heading">How <em>ShoreList</em> works</h2>
