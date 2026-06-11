@@ -1,0 +1,113 @@
+/* ============================================================
+   ShoreList — Canonical Theme  (shorelist.css)
+   SINGLE SOURCE OF TRUTH for the bright coastal look.
+   Linked LAST in every page's <head>. Edit THIS file to
+   restyle the entire site. Every text/background pairing is
+   chosen for guaranteed contrast (no invisible text).
+   ============================================================ */
+
+:root{
+  /* core brand (locked) */
+  --teal:#0A4D5C;   --teal2:#1A7585;   --teal3:#073D4A;
+  --coral:#E96645;  --coral2:#F07A5A;
+  --cream:#F5E8CB;  --cream2:#FEFCF7;
+  /* bright coastal palette */
+  --sand:#FBF3E2;   --seaglass:#8FD3DE; --sky:#E4F5F6;
+  --sunset1:#FF8A5B;--sunset2:#FFB24C;  --gold:#FFC95E;
+  /* neutrals */
+  --ink:#0D1F25;    --mid:#2C4A52;      --dark:#0D1F25;
+  --line:rgba(10,77,92,0.12);
+}
+
+/* ---- BASE ---------------------------------------------------- */
+body{ background:var(--sand)!important; color:var(--teal)!important; }
+h1,h2,h3,h4{ color:var(--teal); }
+
+/* ---- HERO: bright coastal ----------------------------------- */
+.hero{
+  background:
+    radial-gradient(circle at 85% 14%,rgba(255,160,80,0.40),rgba(255,193,94,0.10) 46%,transparent 64%),
+    linear-gradient(160deg,#FDF4E3 0%,#E9F7F6 55%,#FCEAD6 100%)!important;
+}
+.hero::before,.hero::after{ background-image:none!important; background:transparent!important; }
+/* dark→bright wave transition strip */
+.hero-wave{ background:var(--sand)!important; }
+/* hero text → dark on light (visible) */
+.hero-title,.hero-h,.hero h1{ color:var(--teal)!important; }
+.hero-title em,.hero-h em{ color:var(--coral)!important; }
+.hero-sub,.hero-bc,.hero-note{ color:var(--teal2)!important; }
+.hero-bc a{ color:var(--teal)!important; }
+.hero-tag{ color:var(--coral)!important; }
+/* hero stat row */
+.hstat-n,.hstat-num{ color:var(--teal)!important; }
+.hstat-l,.hstat-lbl{ color:var(--teal2)!important; }
+.hstat-div,.hstat-divider{ background:var(--line)!important; }
+
+/* hero badge pills → white pill, teal text */
+.hero-badges .hb,.hb{
+  background:rgba(255,255,255,0.78)!important; color:var(--teal)!important;
+  border:1px solid var(--line)!important;
+}
+.hb svg{ color:var(--coral)!important; }
+
+/* hero buttons */
+.btn-fill,.btn-primary,.btn-book{
+  background:var(--coral)!important; color:#fff!important; border:none!important;
+}
+.btn-ghost{
+  background:transparent!important; color:var(--teal)!important;
+  border:1.5px solid var(--teal)!important;
+}
+.btn-ghost svg{ color:var(--teal)!important; }
+
+/* weather card embedded in hero → solid teal accent, light text (always legible) */
+.weather-card{ background:var(--teal)!important; color:var(--cream)!important; border:1px solid rgba(255,255,255,0.14)!important; }
+.wc-temp{ color:#fff!important; }
+.wc-label,.wc-loc,.wc-cond,.wc-live{ color:rgba(245,232,203,0.85)!important; }
+
+/* ---- SECTIONS ----------------------------------------------- */
+.sec{ background:var(--cream2)!important; }
+.sec-alt{ background:var(--sand)!important; }
+.sec-title,.sec-title-light{ color:var(--teal)!important; }
+.sec-title em{ color:var(--coral)!important; }
+.sec-sub{ color:var(--teal2)!important; }
+.sec-label{ color:var(--coral)!important; }
+
+/* ---- CARDS (generic) ---------------------------------------- */
+.card,.exp-card,.wk-card,.tc-card,.rv-card{
+  background:var(--cream2); color:var(--teal); border:1px solid var(--line);
+}
+
+/* ---- FOOTER: consistent dark-teal accent, light text -------- */
+footer{ background:var(--teal3)!important; color:rgba(245,232,203,0.82)!important; }
+footer a,.foot-links a{ color:rgba(245,232,203,0.70)!important; text-decoration:none; }
+footer a:hover,.foot-links a:hover{ color:var(--cream)!important; }
+.foot-l,.foot-logo span{ color:var(--coral)!important; }
+.foot-copy{ color:rgba(245,232,203,0.6)!important; }
+
+/* ---- ACCENT BAND (CTAs): warm sunset, white text ------------ */
+.cta-band,.pitch,.proof-band{
+  background:linear-gradient(120deg,var(--coral) 0%,var(--sunset1) 56%,var(--sunset2) 100%)!important;
+  color:#fff!important;
+}
+
+/* ============================================================
+   WIDGETS originally designed for a DARK background.
+   Now that pages are bright, give them solid light surfaces
+   and dark text so nothing blends. (Used by town-guide pages.)
+   ============================================================ */
+.ot, .fact{ background:#fff!important; border:1px solid var(--line)!important; box-shadow:0 6px 16px rgba(10,77,92,0.06)!important; }
+.ot-name, .sc-text strong{ color:var(--teal)!important; }
+.ot-sub, .sc-text, .fact-l{ color:var(--mid)!important; }
+.fact-n{ color:var(--coral)!important; }
+.sec-sub-light{ color:var(--teal2)!important; }
+.wb-cam{ color:var(--teal)!important; }
+.wb-cam:hover, .wb-live{ color:var(--coral)!important; }
+.er-free{ color:#15803d!important; }   /* darker green reads on its light tint */
+.er-paid{ color:#c2410c!important; }   /* darker coral reads on its light tint */
+
+/* breadcrumb class varies by page (.hero-bc vs .hero-breadcrumb) — cover both */
+.hero-breadcrumb{ color:var(--teal2)!important; }
+.hero-breadcrumb a{ color:var(--teal)!important; }
+/* belt-and-suspenders: element+class hero title selectors */
+h1.hero-title, .hero-title{ color:var(--teal)!important; }

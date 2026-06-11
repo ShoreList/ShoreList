@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Shore Picks — Best Local Restaurants, Cafés & Shops in Wilmington & the Beaches | ShoreList</title>
+<meta name="description" content="Shore Picks is ShoreList's handpicked guide to the best local restaurants, cafés, and shops in Wilmington, NC and the beaches — curated by locals, never pay-to-play in secret."/>
+<meta property="og:title" content="Shore Picks — Curated Local Favorites | ShoreList"/>
+<meta property="og:description" content="The locals' guide to where to eat, drink, and explore in Wilmington & the Beaches. Handpicked, honest, and always updated."/>
+<meta property="og:type" content="website"/>
+<link rel="canonical" href="https://shorelist.net/shore-picks"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,800&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","name":"Shore Picks — Best of Wilmington & the Beaches","itemListElement":[
+{"@type":"ListItem","position":1,"item":{"@type":"Restaurant","name":"Caprice Bistro","servesCuisine":"French-Belgian","address":"10 Market St, Wilmington, NC"}},
+{"@type":"ListItem","position":2,"item":{"@type":"Restaurant","name":"The Basics","servesCuisine":"Southern","address":"319 N Front St, Wilmington, NC"}},
+{"@type":"ListItem","position":3,"item":{"@type":"CafeOrCoffeeShop","name":"Bitty & Beau's Coffee","address":"4949 New Centre Dr, Wilmington, NC"}}
+]}
+</script>
+<style>
+:root{
+  --teal:#0A4D5C;--teal2:#1A7585;--coral:#E96645;--coral2:#F07A5A;
+  --cream:#F5E8CB;--cream2:#FEFCF7;--sand:#FBF3E2;--seaglass:#8FD3DE;--sky:#E4F5F6;
+  --sunset1:#FF8A5B;--sunset2:#FFB24C;--gold:#FFC95E;--ink:#0D1F25;--mid:#2C4A52;--line:rgba(10,77,92,0.12);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;font-family:'DM Sans',sans-serif;color:var(--teal);background:var(--sand);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{color:inherit;}
+.wrap{max-width:1140px;margin:0 auto;padding:0 26px;}
+em{font-style:italic;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:16px 26px;max-width:1140px;margin:0 auto;backdrop-filter:saturate(1.1) blur(8px);}
+nav.scrolled{background:rgba(251,243,226,0.92);box-shadow:0 2px 20px rgba(10,77,92,0.07);}
+.brand{font-family:'Playfair Display',serif;font-weight:900;font-size:1.5rem;color:var(--teal);text-decoration:none;letter-spacing:-0.5px;}
+.brand span{color:var(--coral);}
+.nav-links{display:flex;align-items:center;gap:26px;}
+.nav-links a{text-decoration:none;font-weight:600;font-size:0.9rem;color:var(--teal);opacity:0.82;}
+.nav-links a:hover{opacity:1;color:var(--coral);}
+.nav-cta{background:var(--coral);color:#fff!important;padding:10px 20px;border-radius:100px;font-weight:700;font-size:0.85rem;opacity:1!important;box-shadow:0 6px 18px rgba(233,102,69,0.32);}
+@media(max-width:760px){.nav-links a:not(.nav-cta){display:none;}}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;border-radius:0 0 38px 38px;
+  background:radial-gradient(circle at 84% 14%,rgba(255,160,80,0.42),rgba(255,193,94,0.12) 46%,transparent 64%),
+  linear-gradient(168deg,#FDF4E3 0%,#E9F7F6 54%,#FCEAD6 100%);}
+.hero-inner{position:relative;padding:64px 0 72px;text-align:center;max-width:820px;margin:0 auto;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(26,117,133,0.12);color:var(--teal2);
+  font-weight:700;font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;padding:7px 16px;border-radius:100px;margin-bottom:18px;}
+.hero h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(2.6rem,6vw,4.2rem);line-height:1.0;margin:0 0 14px;color:var(--teal);letter-spacing:-1px;}
+.hero h1 .pick{color:var(--coral);position:relative;white-space:nowrap;}
+.hero h1 .pick::after{content:"";position:absolute;left:2%;right:2%;bottom:6px;height:9px;border-radius:6px;
+  background:linear-gradient(90deg,var(--sunset1),var(--gold));opacity:0.32;z-index:-1;}
+.hero p.lede{font-size:1.12rem;line-height:1.6;color:var(--teal2);max-width:560px;margin:0 auto 14px;}
+.hero .trust-note{font-size:0.86rem;color:var(--mid);font-weight:600;opacity:0.8;}
+.hero .trust-note b{color:var(--coral);}
+.hero-cats{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:26px;}
+.hero-cats a{background:#fff;border:1px solid var(--line);border-radius:100px;padding:9px 18px;text-decoration:none;
+  font-weight:700;font-size:0.86rem;color:var(--teal);transition:transform .18s,box-shadow .18s,border-color .18s;}
+.hero-cats a:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(10,77,92,0.12);border-color:var(--coral);}
+
+/* SUNSET RULE */
+.rule{height:5px;background:linear-gradient(90deg,var(--coral),var(--sunset1),var(--sunset2),var(--gold),var(--sunset1));
+  background-size:200% 100%;animation:shift 8s linear infinite;}
+@keyframes shift{to{background-position:200% 0;}}
+
+/* HOW WE PICK */
+.criteria{padding:52px 0 8px;}
+.criteria h2{font-family:'Playfair Display',serif;text-align:center;font-size:1.7rem;font-weight:800;margin:0 0 6px;color:var(--teal);}
+.criteria .sub{text-align:center;color:var(--teal2);margin:0 auto 30px;max-width:560px;font-size:0.96rem;line-height:1.6;}
+.crit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+@media(max-width:820px){.crit-grid{grid-template-columns:repeat(2,1fr);}}
+.crit{background:var(--cream2);border:1px solid var(--line);border-radius:16px;padding:22px 20px;text-align:center;}
+.crit .ic{width:48px;height:48px;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;background:linear-gradient(135deg,var(--teal),var(--teal2));}
+.crit h3{font-size:0.98rem;margin:0 0 6px;color:var(--teal);}
+.crit p{font-size:0.82rem;color:var(--mid);line-height:1.5;margin:0;}
+
+/* FILTER BAR */
+.filterbar{position:sticky;top:64px;z-index:40;background:rgba(251,243,226,0.94);backdrop-filter:blur(8px);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;margin-top:46px;}
+.fb-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.fb-label{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);margin-right:2px;}
+.chip{background:#fff;border:1px solid var(--line);border-radius:100px;padding:8px 15px;font-weight:600;font-size:0.83rem;
+  color:var(--teal);cursor:pointer;transition:all .16s;user-select:none;}
+.chip:hover{border-color:var(--coral);}
+.chip.active{background:var(--teal);color:#fff;border-color:var(--teal);}
+.chip.vibe.active{background:var(--coral);border-color:var(--coral);}
+.fb-count{margin-left:auto;font-size:0.82rem;color:var(--mid);font-weight:600;}
+
+/* SECTIONS */
+.sec{padding:54px 0;}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:26px;flex-wrap:wrap;}
+.sec-head h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.3rem);font-weight:900;margin:0;color:var(--teal);}
+.sec-head h2 em{color:var(--coral);}
+.sec-head p{margin:4px 0 0;color:var(--teal2);font-size:0.92rem;}
+
+/* FEATURED SPOTLIGHT */
+.spotlight{background:linear-gradient(135deg,var(--teal) 0%,#073D4A 100%);border-radius:26px;overflow:hidden;
+  display:grid;grid-template-columns:1.1fr 1fr;color:var(--cream);box-shadow:0 26px 60px rgba(10,77,92,0.28);}
+@media(max-width:820px){.spotlight{grid-template-columns:1fr;}}
+.sl-img{position:relative;min-height:300px;background:linear-gradient(150deg,#2C6E7C,#0A4D5C);display:flex;align-items:center;justify-content:center;}
+.sl-img .ph{font-size:4.5rem;opacity:0.9;}
+.sl-cap{position:absolute;bottom:12px;left:14px;right:14px;font-size:0.72rem;color:rgba(245,232,203,0.6);font-style:italic;}
+.sl-body{padding:40px 38px;}
+.sl-badge{display:inline-flex;align-items:center;gap:6px;background:var(--coral);color:#fff;font-size:0.66rem;font-weight:800;
+  letter-spacing:0.12em;text-transform:uppercase;padding:6px 13px;border-radius:100px;margin-bottom:14px;}
+.sl-body h3{font-family:'Playfair Display',serif;font-size:2.1rem;margin:0 0 4px;color:#fff;}
+.sl-meta{font-size:0.85rem;color:rgba(245,232,203,0.7);margin-bottom:16px;}
+.sl-why{font-size:1rem;line-height:1.7;color:rgba(245,232,203,0.92);margin-bottom:18px;}
+.sl-why b{color:var(--gold);}
+.sl-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
+.sl-tags span{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:100px;padding:5px 12px;font-size:0.78rem;}
+.sl-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-fill{background:var(--coral);color:#fff;padding:13px 24px;border-radius:100px;font-weight:800;text-decoration:none;font-size:0.92rem;display:inline-block;box-shadow:0 10px 24px rgba(233,102,69,0.4);}
+.btn-out{background:transparent;color:var(--cream);padding:13px 22px;border-radius:100px;font-weight:700;text-decoration:none;border:1.5px solid rgba(245,232,203,0.35);}
+
+/* CARD GRID */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+@media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:620px){.grid{grid-template-columns:1fr;}}
+.card{background:var(--cream2);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .2s,box-shadow .2s;position:relative;}
+.card:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(10,77,92,0.15);}
+.card.feat{border:1.5px solid rgba(233,102,69,0.4);box-shadow:0 12px 30px rgba(233,102,69,0.1);}
+.card.feat.grid-span{grid-column:span 2;}
+@media(max-width:620px){.card.feat.grid-span{grid-column:span 1;}}
+.c-img{height:168px;position:relative;display:flex;align-items:center;justify-content:center;}
+.c-img .ph{font-size:3rem;filter:drop-shadow(0 4px 10px rgba(0,0,0,0.18));}
+.c-img .cap{position:absolute;bottom:8px;left:12px;right:12px;font-size:0.68rem;font-style:italic;color:rgba(255,255,255,0.85);}
+.c-badge{position:absolute;top:12px;left:12px;background:var(--coral);color:#fff;font-size:0.62rem;font-weight:800;
+  letter-spacing:0.1em;text-transform:uppercase;padding:5px 11px;border-radius:100px;}
+.c-badge.std{background:rgba(10,77,92,0.85);}
+.c-price{position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.92);color:var(--teal);font-size:0.74rem;font-weight:800;padding:4px 10px;border-radius:100px;}
+.c-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1;}
+.c-name{font-family:'Playfair Display',serif;font-size:1.28rem;font-weight:800;color:var(--teal);margin:0 0 2px;line-height:1.15;}
+.c-meta{font-size:0.8rem;color:var(--teal2);font-weight:600;margin-bottom:10px;}
+.c-meta .verified{color:#15803d;}
+.c-why{font-size:0.9rem;line-height:1.55;color:var(--mid);margin:0 0 14px;}
+.c-why .lbl{display:block;font-size:0.66rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--coral);margin-bottom:3px;}
+.c-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+.c-tags span{background:rgba(10,77,92,0.06);border-radius:100px;padding:4px 11px;font-size:0.74rem;font-weight:600;color:var(--teal);}
+.c-actions{margin-top:auto;display:flex;gap:10px;align-items:center;}
+.c-link{color:var(--coral);font-weight:800;text-decoration:none;font-size:0.86rem;}
+.c-link:hover{text-decoration:underline;}
+.c-dir{color:var(--teal2);font-weight:600;text-decoration:none;font-size:0.82rem;}
+.editor-note{background:rgba(255,201,94,0.16);border:1px solid rgba(255,193,76,0.4);border-radius:10px;
+  padding:8px 12px;font-size:0.78rem;color:#8a5a16;margin-top:12px;}
+.hidden{display:none!important;}
+
+/* COMMUNITY */
+.community{background:var(--cream2);border-radius:26px;padding:46px;text-align:center;border:1px solid var(--line);}
+.community h2{font-family:'Playfair Display',serif;font-size:1.9rem;margin:0 0 8px;color:var(--teal);}
+.community p{color:var(--teal2);max-width:520px;margin:0 auto 22px;line-height:1.6;}
+.vote-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+
+/* BECOME A SHORE PICK */
+.pitch{background:linear-gradient(120deg,var(--coral) 0%,var(--sunset1) 56%,var(--sunset2) 100%);border-radius:28px;
+  padding:50px;color:#fff;position:relative;overflow:hidden;}
+.pitch h2{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4vw,2.6rem);margin:0 0 10px;}
+.pitch .psub{font-size:1.04rem;opacity:0.96;max-width:560px;margin:0 0 26px;line-height:1.6;}
+.pitch-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:start;}
+@media(max-width:820px){.pitch-grid{grid-template-columns:1fr;}}
+.perks{list-style:none;padding:0;margin:0;display:grid;gap:10px;}
+.perks li{display:flex;gap:10px;align-items:flex-start;font-size:0.95rem;font-weight:600;}
+.perks li b{font-weight:800;}
+.perks .ck{flex-shrink:0;}
+.form{background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.25);border-radius:18px;padding:24px;}
+.form label{display:block;font-size:0.78rem;font-weight:700;margin:0 0 4px;letter-spacing:0.04em;}
+.form input,.form select{width:100%;padding:11px 13px;border-radius:9px;border:none;margin-bottom:14px;font-family:inherit;font-size:0.92rem;color:var(--ink);}
+.form button{width:100%;background:#fff;color:var(--coral);border:none;padding:14px;border-radius:100px;font-weight:800;font-size:0.96rem;cursor:pointer;font-family:inherit;}
+.form .fine{font-size:0.72rem;opacity:0.85;margin:12px 0 0;text-align:center;}
+
+/* FOOTER */
+footer{text-align:center;padding:52px 26px 40px;}
+.foot-logo{font-family:'Playfair Display',serif;font-weight:900;font-size:1.4rem;color:var(--teal);}
+.foot-logo span{color:var(--coral);}
+.foot-txt{color:var(--mid);font-size:0.82rem;margin-top:8px;}
+.foot-links{margin-top:16px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px;font-size:0.82rem;}
+.foot-links a{color:var(--teal);text-decoration:none;opacity:0.78;}
+.foot-links a:hover{opacity:1;color:var(--coral);}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" class="brand">Shore<span>List</span></a>
+  <div class="nav-links">
+    <a href="/#explore">Experiences</a>
+    <a href="/events">Events</a>
+    <a href="/shore-picks" style="color:var(--coral);opacity:1;">Shore Picks</a>
+    <a href="/planner">Plan My Trip</a>
+    <a href="/join" class="nav-cta">List Your Business</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap"><div class="hero-inner">
+    <span class="eyebrow">&#9733; The Locals' Guide &middot; Wilmington &amp; the Beaches</span>
+    <h1>Where the locals<br/>actually go. <span class="pick">Shore&nbsp;Picks.</span></h1>
+    <p class="lede">A handpicked guide to the best places to eat, sip, and wander across Wilmington &amp; the beaches &mdash; chosen on merit, kept honest, and updated with the seasons.</p>
+    <p class="trust-note">Curated by locals. Featured spots are always labeled <b>&mdash; never a secret pay-to-play.</b></p>
+    <div class="hero-cats">
+      <a href="#eat">&#127869;&#65039; Eat &amp; Drink</a>
+      <a href="#coffee">&#9749; Coffee &amp; Cafés</a>
+      <a href="#community">&#11088; Nominate a Spot</a>
+      <a href="#pitch">&#128226; Get Featured</a>
+    </div>
+  </div></div>
+</header>
+<div class="rule"></div>
+
+<!-- HOW WE PICK -->
+<section class="criteria"><div class="wrap">
+  <h2>How a place earns a <em style="color:var(--coral);">Shore Pick</em></h2>
+  <p class="sub">No mystery, no pay-for-praise. Every spot here clears the same bar &mdash; whether they pay for featured placement or not.</p>
+  <div class="crit-grid">
+    <div class="crit"><div class="ic">&#128483;&#65039;</div><h3>Locals vouch for it</h3><p>It's a place real Wilmingtonians send their out-of-town friends.</p></div>
+    <div class="crit"><div class="ic">&#9989;</div><h3>We verify the facts</h3><p>Address, hours, and details checked before it ever goes live.</p></div>
+    <div class="crit"><div class="ic">&#10024;</div><h3>It has a soul</h3><p>Character over chains. A reason to choose it over the easy option.</p></div>
+    <div class="crit"><div class="ic">&#127757;</div><h3>Honestly labeled</h3><p>Paid "Featured" spots are tagged as such. Curation stays real.</p></div>
+  </div>
+</div></section>
+
+<!-- FILTER BAR -->
+<div class="filterbar"><div class="wrap">
+  <div class="fb-row">
+    <span class="fb-label">Show</span>
+    <span class="chip cat active" data-cat="all">All</span>
+    <span class="chip cat" data-cat="eat">Eat &amp; Drink</span>
+    <span class="chip cat" data-cat="coffee">Coffee &amp; Cafés</span>
+    <span class="fb-label" style="margin-left:10px;">Vibe</span>
+    <span class="chip vibe" data-vibe="date">Date Night</span>
+    <span class="chip vibe" data-vibe="dog">Dog-Friendly</span>
+    <span class="chip vibe" data-vibe="waterfront">Waterfront</span>
+    <span class="chip vibe" data-vibe="budget">Budget-Friendly</span>
+    <span class="fb-count" id="count"></span>
+  </div>
+</div></div>
+
+<!-- FEATURED SPOTLIGHT -->
+<section class="sec" id="eat"><div class="wrap">
+  <div class="sec-head">
+    <div><h2>Featured <em>Shore Pick</em></h2><p>This week's premium spotlight &mdash; the top of the page.</p></div>
+  </div>
+  <div class="spotlight">
+    <div class="sl-img"><span class="ph">&#127837;</span><div class="sl-cap">Photo placeholder: warm dining room, steak frites &amp; the upstairs sofa bar</div></div>
+    <div class="sl-body">
+      <span class="sl-badge">&#9733; Featured Shore Pick</span>
+      <h3>Caprice Bistro</h3>
+      <div class="sl-meta">French-Belgian &middot; 10 Market St, Downtown &middot; <span style="color:#7be0a4;">&#10003; Verified</span></div>
+      <p class="sl-why">A genuine pocket of France on Market Street &mdash; steak frites, mussels, and an upstairs sofa bar that regulars guard like a secret. <b>We picked it because it's the room locals book when the night actually matters.</b></p>
+      <div class="sl-tags"><span>Date Night</span><span>French-Belgian</span><span>Cozy</span><span>Downtown</span><span>$$$</span></div>
+      <div class="sl-actions">
+        <a class="btn-fill" href="#" rel="nofollow">Visit Website &rarr;</a>
+        <a class="btn-out" href="#" rel="nofollow">Get Directions</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- EAT & DRINK GRID -->
+<section class="sec" style="padding-top:0;"><div class="wrap">
+  <div class="sec-head"><div><h2>Eat &amp; <em>Drink</em></h2><p>From riverfront seafood to the date-night classics.</p></div></div>
+  <div class="grid" id="grid">
+
+    <article class="card feat" data-cat="eat" data-vibe="date budget">
+      <div class="c-img" style="background:linear-gradient(150deg,#F2994A,#FFC95E);"><span class="ph">&#127858;</span><span class="cap">Photo: brick-walled room, shrimp &amp; grits</span></div>
+      <span class="c-badge">&#9733; Featured</span><span class="c-price">$$</span>
+      <div class="c-body">
+        <h3 class="c-name">The Basics</h3>
+        <div class="c-meta">Southern &middot; 319 N Front St &middot; <span class="verified">&#10003; Verified</span></div>
+        <p class="c-why"><span class="lbl">Why we picked it</span>Southern comfort done right in the heart of downtown &mdash; the kind of room that feels like Sunday dinner at a friend's.</p>
+        <div class="c-tags"><span>Southern</span><span>Cozy</span><span>Downtown</span></div>
+        <div class="c-actions"><a class="c-link" href="#" rel="nofollow">Visit &rarr;</a><a class="c-dir" href="#" rel="nofollow">Directions</a></div>
+      </div>
+    </article>
+
+    <article class="card feat" data-cat="eat" data-vibe="date">
+      <div class="c-img" style="background:linear-gradient(150deg,#6C3E9C,#9B5DE5);"><span class="ph">&#127864;</span><span class="cap">Photo: low-lit cocktail room</span></div>
+      <span class="c-badge">&#9733; Featured</span><span class="c-price">$$$</span>
+      <div class="c-body">
+        <h3 class="c-name">Dram Yard</h3>
+        <div class="c-meta">Cocktails &amp; Small Plates &middot; Downtown &middot; <span class="verified">&#10003; Verified</span></div>
+        <p class="c-why"><span class="lbl">Why we picked it</span>Craft cocktails and an elevated bar menu in a handsome room &mdash; where downtown goes when it wants to feel grown-up.</p>
+        <div class="c-tags"><span>Cocktails</span><span>Date Night</span><span>Upscale</span></div>
+        <div class="c-actions"><a class="c-link" href="#" rel="nofollow">Visit &rarr;</a><a class="c-dir" href="#" rel="nofollow">Directions</a></div>
+      </div>
+    </article>
+
+    <article class="card feat" data-cat="eat" data-vibe="date">
+      <div class="c-img" style="background:linear-gradient(150deg,#1A7585,#5FBFD0);"><span class="ph">&#127869;&#65039;</span><span class="cap">Photo: modern plated dish</span></div>
+      <span class="c-badge">&#9733; Featured</span><span class="c-price">$$$</span>
+      <div class="c-body">
+        <h3 class="c-name">Olivero</h3>
+        <div class="c-meta">Modern &middot; Downtown &middot; <span style="color:#b8860b;">&#9873; Award &mdash; verify source</span></div>
+        <p class="c-why"><span class="lbl">Why we picked it</span>Ingredient-driven and one of the most talked-about tables in town. A standout for a special occasion.</p>
+        <div class="c-tags"><span>Modern</span><span>Date Night</span><span>Chef-Driven</span></div>
+        <div class="c-actions"><a class="c-link" href="#" rel="nofollow">Visit &rarr;</a><a class="c-dir" href="#" rel="nofollow">Directions</a></div>
+        <div class="editor-note">Editor: confirm the specific "USA TODAY 2025" award + source before publishing this badge.</div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="eat" data-vibe="date">
+      <div class="c-img" style="background:linear-gradient(150deg,#2C6E7C,#0A4D5C);"><span class="ph">&#129371;</span><span class="cap">Photo: tapas spread &amp; wine</span></div>
+      <span class="c-badge std">Shore Pick</span><span class="c-price">$$$</span>
+      <div class="c-body">
+        <h3 class="c-name">Circa 1922</h3>
+        <div class="c-meta">Tapas &amp; Small Plates &middot; Downtown</div>
+        <p class="c-why">Small plates, big nights. Built for lingering &mdash; an easy go-to for an anniversary or a "we should do this more often."</p>
+        <div class="c-tags"><span>Tapas</span><span>Date Night</span><span>Downtown</span></div>
+        <div class="c-actions"><a class="c-link" href="#" rel="nofollow">Visit &rarr;</a><a class="c-dir" href="#" rel="nofollow">Directions</a></div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="eat" data-vibe="waterfront">
+      <div class="c-img" style="background:linear-gradient(150deg,#1B6CA8,#5FBFD0);"><span class="ph">&#127844;</span><span class="cap">Photo: riverfront seafood &amp; Cape Fear view</span></div>
+      <span class="c-badge std">Shore Pick</span><span class="c-price">$$$</span>
+      <div class="c-body">
+        <h3 class="c-name">Michael's on the Waterfront</h3>
+        <div class="c-meta">Seafood &middot; Riverfront, Downtown</div>
+        <p class="c-why">Riverfront seafood with a view of the Cape Fear &mdash; old-school in the best way.</p>
+        <div class="c-tags"><span>Seafood</span><span>Waterfront</span><span>Views</span></div>
+        <div class="c-actions"><a class="c-link" href="#" rel="nofollow">Visit &rarr;</a><a class="c-dir" href="#" rel="nofollow">Directions</a></div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="eat" data-vibe="dog">
+      <div class="c-img" style="background:linear-gradient(150deg,#E96645,#FFB24C);"><span class="ph">&#127858;</span><span class="cap">Photo: lantern-lit garden patio</span></div>
+      <span class="c-badge std">Shore Pick</span><span class="c-price">$$</span>
+      <div class="c-body">
+        <h3 class="c-name">Indochine</h3>
+        <div class="c-meta">Thai &amp; Vietnamese &middot; Midtown</div>
+        <p class="c-why">The garden-patio favorite locals send every visitor to &mdash; a lantern-lit setting that feels worlds away from the river.</p>
+        <div class="c-tags"><span>Thai</span><span>Vietnamese</span><span>Patio</span><span>Dog-Friendly</span></div>
+        <div class="c-actions"><a class="c-link" href="#" rel="nofollow">Visit &rarr;</a><a class="c-dir" href="#" rel="nofollow">Directions</a></div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="eat" data-vibe="dog budget">
+      <div class="c-img" style="background:linear-gradient(150deg,#3FA66A,#9BD17E);"><span class="ph">&#129372;</span><span class="cap">Photo: bright French brasserie &amp; patio</span></div>
+      <span class="c-badge std">Shore Pick</span><span class="c-price">$$</span>
+      <div class="c-body">
+        <h3 class="c-name">Brasserie du Soleil</h3>
+        <div class="c-meta">French &middot; Lumina Station, Midtown</div>
+        <p class="c-why">An airy French brasserie &mdash; oysters, frites, and weekend brunch on a sunny, dog-welcoming patio.</p>
+        <div class="c-tags"><span>French</span><span>Brunch</span><span>Patio</span><span>Dog-Friendly</span></div>
+        <div class="c-actions"><a class="c-link" href="#" rel="nofollow">Visit &rarr;</a><a class="c-dir" href="#" rel="nofollow">Directions</a></div>
+      </div>
+    </article>
+
+  </div>
+</div></section>
+
+<!-- COFFEE & CAFES -->
+<section class="sec" id="coffee" style="padding-top:0;"><div class="wrap">
+  <div class="sec-head"><div><h2>Coffee &amp; <em>Cafés</em></h2><p>Your morning, sorted &mdash; from feel-good icons to quiet pour-over corners.</p></div></div>
+  <div class="grid">
+
+    <article class="card feat grid-span" data-cat="coffee" data-vibe="dog budget">
+      <div class="c-img" style="height:200px;background:linear-gradient(150deg,#FF8A5B,#FFC95E);"><span class="ph">&#9749;</span><span class="cap">Photo: bright, joyful café counter &amp; staff</span></div>
+      <span class="c-badge">&#9733; Featured</span><span class="c-price">$</span>
+      <div class="c-body">
+        <h3 class="c-name">Bitty &amp; Beau's Coffee</h3>
+        <div class="c-meta">Coffee &middot; 4949 New Centre Dr &middot; <span class="verified">&#10003; Verified</span></div>
+        <p class="c-why"><span class="lbl">Why we picked it</span>More than a coffee shop &mdash; a movement that started right here in Wilmington, employing people with intellectual and developmental disabilities and pouring some of the warmest service on the coast. Bring a visitor here and watch the trip change.</p>
+        <div class="c-tags"><span>Inclusive</span><span>Feel-Good</span><span>Dog-Friendly</span><span>Local Icon</span></div>
+        <div class="c-actions"><a class="c-link" href="#" rel="nofollow">Visit &rarr;</a><a class="c-dir" href="#" rel="nofollow">Directions</a></div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="coffee" data-vibe="budget">
+      <div class="c-img" style="background:linear-gradient(150deg,#2C6E7C,#0A4D5C);"><span class="ph">&#9748;</span><span class="cap">Photo: minimalist downtown bar &amp; pour-over</span></div>
+      <span class="c-badge std">Shore Pick</span><span class="c-price">$</span>
+      <div class="c-body">
+        <h3 class="c-name">Current Coffee</h3>
+        <div class="c-meta">Coffee &middot; Downtown</div>
+        <p class="c-why">Minimalist, downtown, and serious about the bean &mdash; the kind of pour-over spot locals quietly call their office.</p>
+        <div class="c-tags"><span>Minimalist</span><span>Work-Friendly</span><span>Downtown</span></div>
+        <div class="c-actions"><a class="c-link" href="#" rel="nofollow">Visit &rarr;</a><a class="c-dir" href="#" rel="nofollow">Directions</a></div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="coffee" data-vibe="budget">
+      <div class="c-img" style="background:linear-gradient(150deg,#8FD3DE,#5FBFD0);"><span class="ph">&#127861;</span><span class="cap">Photo: cozy neighborhood café</span></div>
+      <span class="c-badge std">Shore Pick</span><span class="c-price">$</span>
+      <div class="c-body">
+        <h3 class="c-name">Bespoke Coffee</h3>
+        <div class="c-meta">Coffee &amp; Roaster &middot; Downtown</div>
+        <p class="c-why">A small-batch local roaster with a neighborhood feel &mdash; the regulars-know-your-name kind of place.</p>
+        <div class="c-tags"><span>Roaster</span><span>Cozy</span><span>Local</span></div>
+        <div class="c-actions"><a class="c-link" href="#" rel="nofollow">Visit &rarr;</a><a class="c-dir" href="#" rel="nofollow">Directions</a></div>
+        <div class="editor-note">Editor: confirm current address &amp; hours before publishing.</div>
+      </div>
+    </article>
+
+  </div>
+</div></section>
+
+<!-- COMMUNITY -->
+<section class="sec" id="community"><div class="wrap">
+  <div class="community">
+    <h2>Know a spot we're missing?</h2>
+    <p>Shore Picks is built by the people who live here. Nominate your favorite hidden gem &mdash; if locals back it and it clears the bar, it earns its place.</p>
+    <div class="vote-row">
+      <a class="btn-fill" href="#pitch" style="box-shadow:0 10px 24px rgba(233,102,69,0.3);">Nominate a Local Favorite &rarr;</a>
+    </div>
+  </div>
+</div></section>
+
+<!-- BECOME A SHORE PICK -->
+<section class="sec" id="pitch" style="padding-top:0;"><div class="wrap">
+  <div class="pitch">
+    <div class="pitch-grid">
+      <div>
+        <h2>Get Featured on Shore Picks</h2>
+        <p class="psub">Reach the visitors and locals already searching for where to go &mdash; with a premium placement that's honest, beautiful, and built to convert. No commissions, ever. Just a clean monthly feature.</p>
+        <ul class="perks">
+          <li><span class="ck">&#10003;</span><span><b>Top-of-category placement</b> &mdash; you show first when people browse.</span></li>
+          <li><span class="ck">&#10003;</span><span><b>A larger, photo-led card</b> with your story and a "Why we picked it" feature.</span></li>
+          <li><span class="ck">&#10003;</span><span><b>Verified badge &amp; direct links</b> to your site, menu, and directions.</span></li>
+          <li><span class="ck">&#10003;</span><span><b>Monthly performance recap</b> &mdash; views and clicks to your business.</span></li>
+          <li><span class="ck">&#10003;</span><span><b>Spotlights</b> in the ShoreList newsletter &amp; Instagram rotation.</span></li>
+        </ul>
+      </div>
+      <div class="form">
+        <label for="biz">Business name</label>
+        <input id="biz" type="text" placeholder="e.g. The Basics"/>
+        <label for="cat">Category</label>
+        <select id="cat"><option>Restaurant</option><option>Café / Coffee</option><option>Bar / Cocktails</option><option>Shop / Boutique</option><option>Stay / Lodging</option><option>Service</option><option>Other</option></select>
+        <label for="email">Your email</label>
+        <input id="email" type="email" placeholder="you@business.com"/>
+        <button id="applyBtn" type="button">Apply to be a Shore Pick &rarr;</button>
+        <p class="fine">We review every application against the same editorial bar. Featured spots are clearly labeled.</p>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<footer>
+  <a href="/" style="text-decoration:none;"><div class="foot-logo">Shore<span>List</span></div></a>
+  <p class="foot-txt">&copy; 2026 ShoreList LLC &middot; Wilmington, NC &amp; the Beaches</p>
+  <nav class="foot-links" aria-label="Footer">
+    <a href="/">Home</a><a href="/#explore">Experiences</a><a href="/events">Events</a>
+    <a href="/shore-picks">Shore Picks</a><a href="/planner">Plan My Trip</a><a href="/join">List Your Business</a><a href="/legal">Legal</a>
+  </nav>
+</footer>
+
+<script>
+// sticky nav shadow
+var nav=document.getElementById('nav');
+addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>10);});
+
+// filters
+var cards=[].slice.call(document.querySelectorAll('.card'));
+var activeCat='all', activeVibes=[];
+function apply(){
+  var shown=0;
+  cards.forEach(function(c){
+    var cat=c.getAttribute('data-cat');
+    var vibes=(c.getAttribute('data-vibe')||'').split(' ');
+    var catOk = activeCat==='all' || cat===activeCat;
+    var vibeOk = activeVibes.every(function(v){return vibes.indexOf(v)>-1;});
+    var show = catOk && vibeOk;
+    c.classList.toggle('hidden',!show);
+    if(show) shown++;
+  });
+  var el=document.getElementById('count');
+  if(el) el.textContent=shown+' '+(shown===1?'spot':'spots');
+}
+document.querySelectorAll('.chip.cat').forEach(function(ch){
+  ch.addEventListener('click',function(){
+    document.querySelectorAll('.chip.cat').forEach(function(x){x.classList.remove('active');});
+    ch.classList.add('active'); activeCat=ch.getAttribute('data-cat'); apply();
+  });
+});
+document.querySelectorAll('.chip.vibe').forEach(function(ch){
+  ch.addEventListener('click',function(){
+    ch.classList.toggle('active');
+    var v=ch.getAttribute('data-vibe'); var i=activeVibes.indexOf(v);
+    if(i>-1) activeVibes.splice(i,1); else activeVibes.push(v);
+    apply();
+  });
+});
+apply();
+
+// apply form -> opens email (swap for Formspree/Netlify when ready)
+document.getElementById('applyBtn').addEventListener('click',function(){
+  var biz=encodeURIComponent(document.getElementById('biz').value||'');
+  var cat=encodeURIComponent(document.getElementById('cat').value||'');
+  var email=encodeURIComponent(document.getElementById('email').value||'');
+  var body='Business: '+decodeURIComponent(biz)+'%0D%0ACategory: '+decodeURIComponent(cat)+'%0D%0AEmail: '+decodeURIComponent(email)+'%0D%0A%0D%0AI%27d like to be considered for a Featured Shore Pick.';
+  window.location.href='mailto:rj@shorelist.net?subject=Shore%20Picks%20Application%20-%20'+biz+'&body='+body;
+});
+</script>
+</body>
+</html>
