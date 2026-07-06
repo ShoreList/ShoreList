@@ -89,6 +89,14 @@ exports.handler = async (event) => {
   p.set('line_items[0][price_data][product_data][description]', `${data.date || ''}${data.timeSlot ? ' at ' + data.timeSlot : ''} — Free cancellation 24+ hrs before`);
   p.set('line_items[0][price_data][unit_amount]', String(unitAmount));
   p.set('line_items[0][quantity]', String(qty));
+
+  // NC sales tax — 7% (4.75% state + 2.25% New Hanover County), sourced to event location
+  const TAX_RATE = 0.07;
+  const taxCents = Math.round(unitAmount * qty * TAX_RATE);
+  p.set('line_items[1][price_data][currency]', 'usd');
+  p.set('line_items[1][price_data][product_data][name]', 'NC Sales Tax (7%)');
+  p.set('line_items[1][price_data][unit_amount]', String(taxCents));
+  p.set('line_items[1][quantity]', '1');
   p.set('mode', 'payment');
   p.set('customer_email', data.guestEmail || '');
   p.set('success_url', `${siteUrl}/success?session_id={CHECKOUT_SESSION_ID}`);
@@ -106,6 +114,7 @@ exports.handler = async (event) => {
     date:          data.date          || '',
     timeSlot:      data.timeSlot      || '',
     partySize:     String(qty),
+      taxCents:      String(taxCents),
     notes:         (data.notes || '').substring(0, 490),
     yearMonth:     yearMonth,
     dateSlot:      `${data.date || ''}|${data.timeSlot || ''}`,
