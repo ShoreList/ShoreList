@@ -49,8 +49,16 @@ exports.handler = async (event) => {
   }
   const qty = Math.min(Math.max(parseInt(data.partySize, 10) || 1, 1), 12);
 
-  // Capacity check — max guests per tour time slot (internal limit, not published)
-  const SLOT_CAP = 25;
+  // Capacity check — max guests per tour time slot (internal limits, not published)
+  const CAPS = {
+    'wwt-original':    24,
+    'wwt-happyhour':   16,
+    'wwt-speakeasy':   16,
+    'wwt-candlelight': 24,
+    'cbt-mural':       24,
+    'cbt-divebar':     20,
+  };
+  const SLOT_CAP = CAPS[data.operatorId] || 25;
   if (data.date && data.timeSlot) {
     try {
       const capQuery = `metadata["operatorId"]:"${data.operatorId}" AND metadata["dateSlot"]:"${data.date}|${data.timeSlot}"`;
