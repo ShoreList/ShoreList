@@ -30,13 +30,57 @@ exports.handler = async (event) => {
   const siteUrl = process.env.URL || 'https://shorelist.net';
   const yearMonth = (data.date || '').substring(0, 7);
 
+  // Server-side price list — never trust the amount sent by the browser
+  const PRICES = {
+    'wwt-original':    2500,
+    'wwt-happyhour':   3000,
+    'wwt-speakeasy':   3000,
+    'wwt-candlelight': 2000,
+    'cbt-mural':       3000,
+    'cbt-divebar':     3000,
+    'ron-film':        4500,
+    'sean-ghost':      3000,
+    'james-surf':      10000,
+    'nature-walk':     3500,
+  };
+  const unitAmount = PRICES[data.operatorId];
+  if (!unitAmount) {
+    return { statusCode: 400, headers, body: JSON.stringify({ error: 'Unknown experience — please refresh and try again.' }) };
+  }
+  const qty = Math.min(Math.max(parseInt(data.partySize, 10) || 1, 1), 12);
+
+  // Capacity check — max guests per tour time slot (internal limit, not published)
+  const SLOT_CAP = 25;
+  if (data.date && data.timeSlot) {
+    try {
+      const capQuery = `metadata["operatorId"]:"${data.operatorId}" AND metadata["dateSlot"]:"${data.date}|${data.timeSlot}"`;
+      const capRes = await fetch(`https://api.stripe.com/v1/checkout/sessions/search?query=${encodeURIComponent(capQuery)}&limit=100`, {
+        headers: { 'Authorization': `Bearer ${STRIPE_KEY}` },
+      });
+      const capData = await capRes.json();
+      if (capRes.ok) {
+        const bookedGuests = (capData.data || [])
+          .filter(s => s.status === 'complete' || s.payment_status === 'paid')
+          .reduce((sum, s) => sum + (parseInt(s.metadata?.partySize, 10) || 1), 0);
+        if (bookedGuests >= SLOT_CAP) {
+          return { statusCode: 409, headers, body: JSON.stringify({ error: 'That time is now sold out — please choose a different date or time.' }) };
+        }
+        if (bookedGuests + qty > SLOT_CAP) {
+          return { statusCode: 409, headers, body: JSON.stringify({ error: 'Not enough spots remain at that time for your party size — please pick a different time or reduce your party size.' }) };
+        }
+      }
+    } catch (e) {
+      console.log('Capacity check skipped:', e.message);
+    }
+  }
+
   const p = new URLSearchParams();
   p.set('payment_method_types[0]', 'card');
   p.set('line_items[0][price_data][currency]', 'usd');
   p.set('line_items[0][price_data][product_data][name]', `${data.categoryLabel || 'Experience'} · ${data.operatorName || 'ShoreList'}`);
-  p.set('line_items[0][price_data][product_data][description]', `${data.partySize || '1'} guest(s) · ${data.date || ''}${data.timeSlot ? ' at ' + data.timeSlot : ''} — Fully refundable deposit`);
-  p.set('line_items[0][price_data][unit_amount]', String(data.priceInCents || 2500));
-  p.set('line_items[0][quantity]', '1');
+  p.set('line_items[0][price_data][product_data][description]', `${data.date || ''}${data.timeSlot ? ' at ' + data.timeSlot : ''} — Free cancellation 24+ hrs before`);
+  p.set('line_items[0][price_data][unit_amount]', String(unitAmount));
+  p.set('line_items[0][quantity]', String(qty));
   p.set('mode', 'payment');
   p.set('customer_email', data.guestEmail || '');
   p.set('success_url', `${siteUrl}/success?session_id={CHECKOUT_SESSION_ID}`);
@@ -53,7 +97,7 @@ exports.handler = async (event) => {
     guestPhone:    data.guestPhone    || '',
     date:          data.date          || '',
     timeSlot:      data.timeSlot      || '',
-    partySize:     String(data.partySize || ''),
+    partySize:     String(qty),
     notes:         (data.notes || '').substring(0, 490),
     yearMonth:     yearMonth,
     dateSlot:      `${data.date || ''}|${data.timeSlot || ''}`,

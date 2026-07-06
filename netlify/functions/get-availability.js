@@ -42,13 +42,23 @@ exports.handler = async (event) => {
       return { statusCode: 200, headers, body: JSON.stringify({ booked: [] }) };
     }
 
-    const booked = (data.data || [])
+    // Aggregate total guests per date + time slot (capacity is enforced, not published)
+    const tally = {};
+    (data.data || [])
       .filter(s => s.status === 'complete' || s.payment_status === 'paid')
-      .map(s => ({
-        date:     s.metadata?.date     || '',
-        timeSlot: s.metadata?.timeSlot || '',
-      }))
-      .filter(b => b.date && b.timeSlot);
+      .forEach(s => {
+        const date = s.metadata?.date || '';
+        const timeSlot = s.metadata?.timeSlot || '';
+        if (!date || !timeSlot) return;
+        const guests = parseInt(s.metadata?.partySize, 10) || 1;
+        const key = `${date}|${timeSlot}`;
+        tally[key] = (tally[key] || 0) + guests;
+      });
+
+    const booked = Object.entries(tally).map(([key, guests]) => {
+      const [date, timeSlot] = key.split('|');
+      return { date, timeSlot, guests };
+    });
 
     return {
       statusCode: 200,

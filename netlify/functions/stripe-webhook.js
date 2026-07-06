@@ -26,7 +26,7 @@ async function sendOperatorEmail(meta, amount) {
   </div>
   <div style="padding:36px 28px 28px;">
     <h1 style="margin:0 0 6px;font-size:32px;font-weight:900;color:#E96645;">New Booking! 🎉</h1>
-    <p style="margin:0 0 28px;font-size:15px;color:rgba(245,232,203,0.65);line-height:1.6;">A guest has paid their deposit. Here are the details:</p>
+    <p style="margin:0 0 28px;font-size:15px;color:rgba(245,232,203,0.65);line-height:1.6;">A guest has booked and paid. Here are the details:</p>
     <table style="width:100%;border-collapse:collapse;background:rgba(255,255,255,0.04);border-radius:10px;overflow:hidden;">
       <tr><td style="${tdLabel}">Experience</td><td style="${tdVal}">${meta.categoryLabel || ''}</td></tr>
       <tr><td style="${tdLabel}">Operator</td><td style="${tdVal}">${meta.operatorName || ''}</td></tr>
@@ -40,8 +40,8 @@ async function sendOperatorEmail(meta, amount) {
     </table>
     <div style="margin-top:20px;padding:16px 20px;background:rgba(233,102,69,0.12);border:1px solid rgba(233,102,69,0.3);border-radius:10px;display:flex;align-items:center;justify-content:space-between;">
       <div>
-        <p style="margin:0;font-size:13px;font-weight:700;color:#E96645;">Deposit Collected</p>
-        <p style="margin:3px 0 0;font-size:12px;color:rgba(245,232,203,0.5);">Refundable · Balance due at experience</p>
+        <p style="margin:0;font-size:13px;font-weight:700;color:#E96645;">Payment Collected</p>
+        <p style="margin:3px 0 0;font-size:12px;color:rgba(245,232,203,0.5);">Paid in full via Stripe · Free cancellation 24+ hrs before</p>
       </div>
       <p style="margin:0;font-size:22px;font-weight:900;color:#E96645;">${amountFormatted}</p>
     </div>
