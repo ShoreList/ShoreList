@@ -741,7 +741,7 @@ function renderPage(){
         h+='</select></div>';
         h+='</div>';
         h+='<div class="bk-row full"><div class="bk-field"><label class="bk-label" for="bo-'+oid+'">Notes for Your Guide (optional)</label><textarea class="bk-input" id="bo-'+oid+'" placeholder="Anything we should know? Mobility needs, celebrations, questions&hellip;"></textarea></div></div>';
-        h+='<div class="dep-row"><div><div class="dep-lbl">Total &#8212; <span id="bqty-'+oid+'">1 guest</span></div><div class="dep-note">Paid securely via Stripe &middot; Full refund if you cancel 24+ hours before</div></div><div class="dep-amt" id="btot-'+oid+'">'+esc(op.price)+'</div></div>';
+        h+='<div class="dep-row"><div><div class="dep-lbl">Total &#8212; <span id="bqty-'+oid+'">1 guest</span></div><div class="dep-note">Includes 7% NC sales tax &middot; Paid securely via Stripe &middot; Full refund if you cancel 24+ hours before</div></div><div class="dep-amt" id="btot-'+oid+'">'+esc(op.price)+'</div></div>';
         h+='<div class="bk-err" id="berr-'+oid+'"></div>';
         h+='<div class="bk-acts"><button type="button" class="btn-sub" id="bb-'+oid+'" onclick="doBook(\''+oid+'\')">Confirm &amp; Pay '+esc(op.price)+' &#8594;</button></div>';
         h+='</div>';
@@ -786,16 +786,20 @@ function toggleBook(id){
   if(b&&op)b.innerHTML=open?'Hide Booking Form &#8593;':'Book This Experience &#8212; '+esc(op.price)+' <span style="opacity:0.75;font-weight:600;">'+esc(op.priceLabel)+'</span>';
   if(open){
     if(!CS[id]&&op)calInit(id,op.schedule);
+    updTotal(id);
     setTimeout(function(){f.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
   }
 }
 function fmtUsd(c){return '$'+(c%100===0?(c/100):(c/100).toFixed(2));}
+var TAX_RATE=0.07; // NC sales tax: 4.75% state + 2.25% New Hanover County
 function updTotal(id){
   var op=getOp(id); if(!op)return;
   var sel=document.getElementById('bs-'+id);
   var n=sel?parseInt(sel.value,10)||1:1;
-  var tot=op.priceCents*n;
-  var q=document.getElementById('bqty-'+id); if(q)q.textContent=n+' guest'+(n>1?'s':'')+(n>1?' \u00d7 '+op.price:'');
+  var sub=op.priceCents*n;
+  var tax=Math.round(sub*TAX_RATE);
+  var tot=sub+tax;
+  var q=document.getElementById('bqty-'+id); if(q)q.textContent=n+' guest'+(n>1?'s':'')+' \u00d7 '+op.price+' + '+fmtUsd(tax)+' tax';
   var t=document.getElementById('btot-'+id); if(t)t.textContent=fmtUsd(tot);
   var bb=document.getElementById('bb-'+id); if(bb&&!bb.disabled)bb.innerHTML='Confirm &amp; Pay '+fmtUsd(tot)+' &#8594;';
 }
