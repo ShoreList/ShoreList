@@ -124,7 +124,7 @@ nav{width:100%;max-width:700px;display:flex;align-items:center;justify-content:s
     </div>
     <div class="info-item">
       <div class="info-icon">&#128666;</div>
-      <div class="info-text"><strong>Need to cancel?</strong> Your $25 deposit is fully refundable. Email <strong>shorelistwilmington@gmail.com</strong> at least 24 hours before your experience.</div>
+      <div class="info-text"><strong>Need to cancel?</strong> Your payment is fully refundable. Email <strong>shorelistwilmington@gmail.com</strong> at least 24 hours before your experience.</div>
     </div>
   </div>
 
@@ -171,7 +171,7 @@ function buildGCalUrl(b){
         var hs=String(h).padStart(2,'0'),eh=String((h+2)%24).padStart(2,'0');
         var s2=y+mo+day+'T'+hs+min+'00',e2=y+mo+day+'T'+eh+min+'00';
         var title=encodeURIComponent((b.categoryLabel||'ShoreList Experience')+' with '+(b.operatorName||'Local Operator'));
-        var desc=encodeURIComponent('Booked via ShoreList.net\nOperator: '+(b.operatorName||'')+'\nDeposit paid: '+fmtAmt(b.amount));
+        var desc=encodeURIComponent('Booked via ShoreList.net\nOperator: '+(b.operatorName||'')+'\nAmount paid: '+fmtAmt(b.amount));
         return 'https://calendar.google.com/calendar/r/eventedit?text='+title+'&dates='+s2+'/'+e2+'&location='+encodeURIComponent('Wilmington, NC')+'&details='+desc;
       }
     }
@@ -193,7 +193,7 @@ function renderBooking(b){
   h+='<div class="bc-item"><div class="bc-item-label">Confirmation sent to</div><div class="bc-item-value">'+(b.guestEmail||'Your email')+'</div></div>';
   if(b.notes){h+='<div class="bc-item full"><div class="bc-item-label">Special Requests</div><div class="bc-item-value">'+b.notes+'</div></div>';}
   h+='</div>';
-  h+='<div class="bc-paid"><div><div class="bc-paid-label">Deposit Paid &#10003;</div><div class="bc-paid-note">Fully refundable &nbsp;&middot;&nbsp; Balance due at experience</div></div><div class="bc-paid-amt">'+fmtAmt(b.amount)+'</div></div>';
+  h+='<div class="bc-paid"><div><div class="bc-paid-label">Payment Confirmed &#10003;</div><div class="bc-paid-note">Paid in full &nbsp;&middot;&nbsp; Free cancellation 24+ hrs before</div></div><div class="bc-paid-amt">'+fmtAmt(b.amount)+'</div></div>';
   card.innerHTML=h;
   var ar=document.getElementById('action-row');
   ar.style.display='flex';
@@ -228,12 +228,12 @@ if(sessionId&&sessionId.startsWith('cs_')){
     })
     .catch(function(){
       var card=document.getElementById('booking-card');
-      card.innerHTML='<div class="bc-tag">Your Booking</div><div class="bc-experience">Experience Confirmed!</div><div class="bc-operator" style="margin-bottom:20px;">Your confirmation details will arrive by email shortly.</div><div class="bc-paid"><div><div class="bc-paid-label">Deposit Paid &#10003;</div><div class="bc-paid-note">Fully refundable &nbsp;&middot;&nbsp; Balance due at experience</div></div><div class="bc-paid-amt">$25.00</div></div>';
+      card.innerHTML='<div class="bc-tag">Your Booking</div><div class="bc-experience">Experience Confirmed!</div><div class="bc-operator" style="margin-bottom:20px;">Your confirmation details will arrive by email shortly.</div><div class="bc-paid"><div><div class="bc-paid-label">Payment Confirmed &#10003;</div><div class="bc-paid-note">Paid in full &nbsp;&middot;&nbsp; Free cancellation 24+ hrs before</div></div><div class="bc-paid-amt">Paid</div></div>';
       document.getElementById('action-row').style.display='flex';
     });
 } else {
   var card=document.getElementById('booking-card');
-  card.innerHTML='<div class="bc-tag">Booking Confirmed</div><div class="bc-experience">Your spot is reserved!</div><div class="bc-operator" style="margin-bottom:20px;">Check your email for confirmation details.</div><div class="bc-paid"><div><div class="bc-paid-label">Deposit Paid &#10003;</div><div class="bc-paid-note">Fully refundable &nbsp;&middot;&nbsp; Balance due at experience</div></div><div class="bc-paid-amt">$25.00</div></div>';
+  card.innerHTML='<div class="bc-tag">Booking Confirmed</div><div class="bc-experience">Your spot is reserved!</div><div class="bc-operator" style="margin-bottom:20px;">Check your email for confirmation details.</div><div class="bc-paid"><div><div class="bc-paid-label">Payment Confirmed &#10003;</div><div class="bc-paid-note">Paid in full &nbsp;&middot;&nbsp; Free cancellation 24+ hrs before</div></div><div class="bc-paid-amt">Paid</div></div>';
 }
 
 (function(){
