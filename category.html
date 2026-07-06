@@ -472,37 +472,37 @@ var OPS={
      price:'$25',priceLabel:'per person',priceCents:2500,
      tags:['Wilmington Historic District','1.75 Hours','1.5-Mile Loop','All Ages','ShoreList Founding Partner'],
      note:'Starts at Front Street Inn. Offered daily except Tuesdays. Secure your spot online.',
-     schedule:{days:[1,3,5,6],slots:['10:00 AM']}},
+     schedule:{days:[0,1,3,4,5,6],slots:['9:00 AM'],rules:[{mdFrom:'03-15',mdUntil:'11-14',slots:['9:00 AM']},{slots:['11:30 AM']}],cap:24}},
     {id:'wwt-happyhour',business:'Historic Happy Hour Tour',operator:'Wilmington Walking Tours',live:true,title:'Led by Amanda Leese',
      desc:'A little history, a little libation. This stroll pairs a mini history lesson — from Wilmington\'s founding through the 20th century — with three 25-minute stops at downtown bars. Begin at the Gazebo Bar, wind through The Vine, and finish at the Wine Knot Sky Bar. Drinks are on you.',
      price:'$30',priceLabel:'per person',priceCents:3000,
      tags:['Wilmington Historic District','21+','Every Other Friday','Three Bar Stops','ShoreList Founding Partner'],
      note:'Drinks not included. Every other Friday — times vary seasonally.',
-     schedule:{days:[5],slots:['Evening']}},
+     schedule:{days:[5],slots:['6:00 PM'],rules:[{until:'2026-09-04',slots:['6:00 PM']},{slots:['5:00 PM']}],cap:16}},
     {id:'wwt-speakeasy',business:'Speakeasy & Prohibition Walking Tour',operator:'Wilmington Walking Tours',live:true,title:'Led by Amanda Leese',
      desc:'Step into Wilmington from the 1880s to the 1930s — the days of Barbary Row and the secret watering holes hidden inside today\'s restored downtown buildings. The route starts at The Ivey in the Alley, with stops at Underfront Co. and the Blind Elephant. Prohibition never looked so good.',
      price:'$30',priceLabel:'per person',priceCents:3000,
      tags:['Wilmington Historic District','21+','Every Other Friday','Prohibition Era','ShoreList Founding Partner'],
      note:'Drinks not included. Every other Friday — times vary seasonally.',
-     schedule:{days:[5],slots:['Evening']}},
+     schedule:{days:[5],slots:['6:00 PM'],rules:[{until:'2026-09-04',slots:['6:00 PM']},{slots:['5:00 PM']}],cap:16}},
     {id:'wwt-candlelight',business:'Christmas Candlelight Victorians Walk',operator:'Wilmington Walking Tours',live:true,title:'Led by Amanda Leese',
      desc:'A Wilmington holiday tradition. By the glow of provided candles, this gentle one-mile walk takes in the Historic District\'s decorated Victorian homes and the holiday customs of the era. About 90 minutes of seasonal magic downtown.',
      price:'$20',priceLabel:'per person',priceCents:2000,
      tags:['Wilmington Historic District','Seasonal · December','1.5 Hours','Family Friendly','ShoreList Founding Partner'],
      note:'Starts at Front Street Inn. December only — 4:30 PM or 6:15 PM.',
-     schedule:{days:[1,3,5,6],slots:['4:30 PM','6:15 PM'],months:[11]}},
+     schedule:{days:[1,3,5,6],slots:['4:30 PM','6:15 PM'],months:[11],cap:24}},
     {id:'cbt-mural',business:'Carolina Beach History & Mural Walk',operator:'Carolina Beach Tours',live:true,title:'Led by Amanda Leese',
      desc:'Pleasure Island\'s story, told through its art. This easygoing 1.5-mile stroll from Carolina Beach Lake Park weaves coastal history together with the Carolina Beach Mural Project — the surf and shag-culture murals that color the town. Your ticket includes a $5 donation to the Mural Project.',
      price:'$30',priceLabel:'per person',priceCents:3000,
      tags:['Carolina Beach','Seasonal · May–Sep','1.5 Hours','Family Friendly','ShoreList Founding Partner'],
      note:'Starts at CB Lake Park. Includes a $5 Mural Project donation.',
-     schedule:{days:[2],slots:['9:30 AM'],months:[4,5,6,7,8]}},
+     schedule:{days:[2],slots:['9:30 AM'],months:[4,5,6,7,8],cap:24}},
     {id:'cbt-divebar',business:'Carolina Beach History & Dive Bar Tour',operator:'Carolina Beach Tours',live:true,title:'Led by Amanda Leese',
      desc:'The gritty, colorful side of Pleasure Island. Over about two hours and a mile, you\'ll hit the local spots that built Carolina Beach — starting at The Sea Witch, with stops at the Silver Dollar and the legendary Fat Pelican. History with a little salt.',
      price:'$30',priceLabel:'per person',priceCents:3000,
      tags:['Carolina Beach','21+','Seasonal · May–Sep','2 Hours','ShoreList Founding Partner'],
      note:'Drinks not included. Starts at The Sea Witch.',
-     schedule:{days:[3],slots:['5:30 PM'],months:[4,5,6,7,8]}}
+     schedule:{days:[3],slots:['5:30 PM'],months:[4,5,6,7,8],cap:20}}
   ],
   'film-tours':[
     {id:'ron-film',business:'Wilmywood Insider Tours',operator:'Industry Insider & Local Expert',title:'20+ Years in the Wilmington Film & Hospitality Industry',
@@ -588,6 +588,22 @@ function cpick(id,ds){
   slotDraw(id);
 }
 
+function getSlots(sched,dateStr){
+  if(sched.rules&&dateStr){
+    for(var i=0;i<sched.rules.length;i++){var r=sched.rules[i];
+      if(r.mdFrom&&r.mdUntil){
+        var md=dateStr.slice(5);
+        var hit=r.mdFrom<=r.mdUntil?(md>=r.mdFrom&&md<=r.mdUntil):(md>=r.mdFrom||md<=r.mdUntil);
+        if(hit)return r.slots;
+      } else {
+        if(r.from&&dateStr<r.from)continue;
+        if(r.until&&dateStr>r.until)continue;
+        return r.slots;
+      }
+    }
+  }
+  return sched.slots;
+}
 function slotDraw(id){
   var s=CS[id]; if(!s||!s.date) return;
   var w=document.getElementById('sw-'+id); if(!w) return;
@@ -595,8 +611,10 @@ function slotDraw(id){
   var do2=new Date(s.date+'T12:00:00');
   var lbl=do2.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
   var h='<div class="slots-area"><div class="slots-for">Available times for <strong>'+lbl+'</strong></div><div class="slots-row">';
-  s.sched.slots.forEach(function(sl){
-    var tk=(taken[sl]||0)>=SLOT_CAP;
+  var slotsForDate=getSlots(s.sched,s.date);
+  var slotCap=s.sched.cap||SLOT_CAP;
+  slotsForDate.forEach(function(sl){
+    var tk=(taken[sl]||0)>=slotCap;
     var pk=s.slot===sl;
     var cls='slt'+(tk?' slt-taken':'')+(pk?' slt-picked':'');
     var oc=tk?'':' onclick="spick(\''+id+'\',\''+sl.replace(/'/g,"\\'")+'\')"';
