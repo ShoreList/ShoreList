@@ -553,7 +553,8 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 </script>
 <style>.hero .cd-num{color:var(--teal);}.hero .cd-sep{color:var(--teal2);}.sunset-divider{height:6px;background:linear-gradient(90deg,var(--coral),var(--sunset1),var(--sunset2),var(--gold),var(--sunset1));background-size:200% 100%;animation:sunsetShift 7s linear infinite;}@keyframes sunsetShift{to{background-position:200% 0;}}</style></head>
 <body>
-<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="i-ghost" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 10h.01" />
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="i-train" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3.1V7a4 4 0 0 0 8 0V3.1" /><path d="m9 15-1-1" /><path d="m15 15 1-1" /><path d="M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5Z" /><path d="m8 19-2 3" /><path d="m16 19 2 3" /></g></symbol>
+<symbol id="i-ghost" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 10h.01" />
   <path d="M15 10h.01" />
   <path d="M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 19l2.5 2.5L17 19l3 3V10a8 8 0 0 0-8-8z" /></g></symbol><symbol id="i-film" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" />
   <path d="M7 3v18" />
@@ -948,7 +949,13 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       </div>
       <a href="#explore" class="wk-link">View All Experiences &rarr;</a>
     </div>
-    <div class="wk-grid">
+    <div class="wk-grid" id="wkTrack" aria-label="Featured experiences carousel">
+      <a class="wk-card" href="/wilmington-railroad-museum">
+        <div class="wk-top"><span class="wk-ico"><svg class="ico-md" aria-hidden="true" focusable="false"><use href="#i-train" xlink:href="#i-train"/></svg></span><span class="wk-badge wk-live">Official Partner</span></div>
+        <div class="wk-name">Wilmington Railroad Museum</div>
+        <div class="wk-meta">Open Daily &nbsp;·&nbsp; 505 Nutt St &nbsp;·&nbsp; Downtown Wilmington</div>
+        <div class="wk-ft"><span class="wk-price">From $8</span><span class="wk-spots">All ages · Rain or shine</span></div>
+      </a>
       <a class="wk-card" href="/category?cat=walking-tours">
         <div class="wk-top"><span class="wk-ico"><svg class="ico-md" aria-hidden="true" focusable="false"><use href="#i-compass" xlink:href="#i-compass"/></svg></span><span class="wk-badge wk-live">Founding Partner</span></div>
         <div class="wk-name">Wilmington Walking &amp; Carolina Beach Tours</div>
@@ -979,6 +986,11 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
         <div class="wk-meta">Sat–Sun &nbsp;·&nbsp; 8 AM, 10 AM, 2 PM &nbsp;·&nbsp; Carolina Beach State Park</div>
         <div class="wk-ft"><span class="wk-price">From $35</span><span class="wk-spots">Available Soon</span></div>
       </a>
+    </div>
+    <div class="wk-controls" aria-hidden="false">
+      <button class="wk-arrow" id="wkPrev" aria-label="Previous experiences" type="button">&#8592;</button>
+      <div class="wk-dots" id="wkDots" role="tablist" aria-label="Carousel position"></div>
+      <button class="wk-arrow" id="wkNext" aria-label="Next experiences" type="button">&#8594;</button>
     </div>
   </div>
 </section>
@@ -1718,6 +1730,63 @@ window.addEventListener('scroll', function(){
     if(m)m.textContent=pad(Math.floor((diff%3600000)/60000));
   }
   tick();setInterval(tick,1000);
+})();
+</script>
+<style>
+#weekend .wk-grid{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:6px;}
+#weekend .wk-grid::-webkit-scrollbar{display:none;}
+#weekend .wk-card{flex:0 0 min(300px,82vw);scroll-snap-align:start;}
+.wk-controls{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:16px;}
+.wk-arrow{background:rgba(255,255,255,0.08);border:1px solid rgba(245,232,203,0.25);color:#F5E8CB;width:38px;height:38px;border-radius:50%;font-size:1rem;cursor:pointer;transition:all .2s;}
+.wk-arrow:hover{background:var(--coral);border-color:var(--coral);}
+.wk-dots{display:flex;gap:8px;}
+.wk-dot{width:8px;height:8px;border-radius:50%;background:rgba(245,232,203,0.28);border:none;padding:0;cursor:pointer;transition:all .25s;}
+.wk-dot.on{background:var(--coral);width:22px;border-radius:100px;}
+@media(max-width:640px){.wk-arrow{display:none;}}
+</style>
+<script>
+(function(){
+  var track=document.getElementById('wkTrack');
+  var dotsBox=document.getElementById('wkDots');
+  if(!track||!dotsBox) return;
+  var cards=[].slice.call(track.querySelectorAll('.wk-card'));
+  if(!cards.length) return;
+  var idx=0, timer=null, paused=false;
+  var reduce=(typeof matchMedia==='function')&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  cards.forEach(function(c,i){
+    var d=document.createElement('button');
+    d.className='wk-dot'+(i===0?' on':'');
+    d.type='button';
+    d.setAttribute('aria-label','Go to experience '+(i+1));
+    d.addEventListener('click',function(){go(i);restart();});
+    dotsBox.appendChild(d);
+  });
+  var dots=[].slice.call(dotsBox.children);
+  function go(i){
+    idx=(i+cards.length)%cards.length;
+    var x=cards[idx].offsetLeft-track.offsetLeft;
+    if(typeof track.scrollTo==='function'){track.scrollTo({left:x,behavior:'smooth'});}
+    else{track.scrollLeft=x;}
+    mark();
+  }
+  function mark(){dots.forEach(function(d,i){d.classList.toggle('on',i===idx);});}
+  function tick(){if(!paused){go(idx+1);}}
+  function restart(){if(reduce)return;if(timer)clearInterval(timer);timer=setInterval(tick,4500);}
+  var prev=document.getElementById('wkPrev'), next=document.getElementById('wkNext');
+  if(prev)prev.addEventListener('click',function(){go(idx-1);restart();});
+  if(next)next.addEventListener('click',function(){go(idx+1);restart();});
+  ['mouseenter','touchstart','focusin'].forEach(function(e){track.addEventListener(e,function(){paused=true;},{passive:true});});
+  ['mouseleave','focusout'].forEach(function(e){track.addEventListener(e,function(){paused=false;});});
+  var st=null;
+  track.addEventListener('scroll',function(){
+    if(st)clearTimeout(st);
+    st=setTimeout(function(){
+      var best=0,bd=Infinity;
+      cards.forEach(function(c,i){var d=Math.abs((c.offsetLeft-track.offsetLeft)-track.scrollLeft);if(d<bd){bd=d;best=i;}});
+      idx=best;mark();
+    },120);
+  },{passive:true});
+  restart();
 })();
 </script>
 </body>
