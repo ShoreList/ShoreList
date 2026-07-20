@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /success
+Disallow: /wilmington-railroad-museum%20(3).html
+
+Sitemap: https://shorelist.net/sitemap.xml
