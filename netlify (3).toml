@@ -1,0 +1,92 @@
+[build]
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/category"
+  to = "/category.html"
+  status = 200
+
+[[redirects]]
+  from = "/join"
+  to = "/join.html"
+  status = 200
+
+[[redirects]]
+  from = "/success"
+  to = "/success.html"
+  status = 200
+
+[[redirects]]
+  from = "/dashboard"
+  to = "/dashboard.html"
+  status = 200
+
+[[redirects]]
+  from = "/planner"
+  to = "/planner.html"
+  status = 200
+
+[[redirects]]
+  from = "/waitlist"
+  to = "/waitlist.html"
+  status = 200
+
+[[redirects]]
+  from = "/legal"
+  to = "/legal.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacy"
+  to = "/legal.html"
+  status = 200
+
+[[redirects]]
+  from = "/terms"
+  to = "/legal.html"
+  status = 200
+
+[[redirects]]
+  from = "/cancel"
+  to = "/index.html"
+  status = 302
+
+[[redirects]]
+  from = "/downtown"
+  to = "/downtown.html"
+  status = 200
+
+[[redirects]]
+  from = "/events"
+  to = "/events.html"
+  status = 200
+
+[[redirects]]
+  from = "/shore-picks"
+  to = "/shore-picks.html"
+  status = 200
+
+[[redirects]]
+  from = "/carolina-beach"
+  to = "/carolina-beach.html"
+  status = 200
+
+[[redirects]]
+  from = "/kure-beach"
+  to = "/kure-beach.html"
+  status = 200
+
+[[redirects]]
+  from = "/wrightsville-beach"
+  to = "/wrightsville-beach.html"
+  status = 200
+
+[[redirects]]
+  from = "/map"
+  to = "/map.html"
+  status = 200
+
+[[redirects]]
+  from = "/wilmington-railroad-museum"
+  to = "/wilmington-railroad-museum.html"
+  status = 200
