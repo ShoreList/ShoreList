@@ -57,6 +57,24 @@
       ],
       "cut": "unisex",
       "store": "fourthwall"
+    },
+    {
+      "id": "pennant-dad-hat",
+      "collection": "classics",
+      "name": "Pennant Embroidered Dad Hat",
+      "url": "https://shorelist-shop.fourthwall.com/products/pennant-embroidered-dad-hat",
+      "img": "https://imgproxy.fourthwall.dev/Y9dw8YEednbCJiJA-iPSySv94hDjwuVlp3d0mM7jBzA/w:1920/sm:1/enc/8AkH3Zo4bmoirBEI/f3PcCTa3gQjWOedI/AfSofSARng3gzrNh/t8epkac0FJ6R-SdE/rtuspQJpW63i-5qL/C3FqVGsILOb1WvfZ/hbZYeQwlh446twLK/vzY8Q983gz4SlQ1t/8en7zMt_VSy9lPmQ/f0e9Gn3NvbLvBOQ_/Rt1VYOw2QMKnGMeT/t3EHpuWhRMME9dRq/aO4cTB7OBkF0txLI/_-maEA.jpg",
+      "lookbook": "https://imgproxy.fourthwall.dev/Y9dw8YEednbCJiJA-iPSySv94hDjwuVlp3d0mM7jBzA/w:1920/sm:1/enc/8AkH3Zo4bmoirBEI/f3PcCTa3gQjWOedI/AfSofSARng3gzrNh/t8epkac0FJ6R-SdE/rtuspQJpW63i-5qL/C3FqVGsILOb1WvfZ/hbZYeQwlh446twLK/vzY8Q983gz4SlQ1t/8en7zMt_VSy9lPmQ/f0e9Gn3NvbLvBOQ_/Rt1VYOw2QMKnGMeT/t3EHpuWhRMME9dRq/aO4cTB7OBkF0txLI/_-maEA.jpg",
+      "alt": "Man in a black ShoreList pennant embroidered dad hat on a Carolina Beach pier",
+      "meta": "Yupoong 6245CM chino twill, embroidered. Navy, Black, Khaki.",
+      "cta": "Choose options and buy",
+      "price": 42,
+      "scenes": [
+        "beach",
+        "boardwalk"
+      ],
+      "cut": "unisex",
+      "store": "fourthwall"
     }
   ],
   "scenes": [
