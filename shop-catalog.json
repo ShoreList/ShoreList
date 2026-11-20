@@ -93,6 +93,24 @@
       ],
       "cut": "unisex",
       "store": "fourthwall"
+    },
+    {
+      "id": "sunset-sail-hoodie",
+      "collection": "classics",
+      "name": "Sunset Sail Relaxed Hoodie",
+      "url": "https://shorelist-shop.fourthwall.com/products/sunset-sail-relaxed-hoodie",
+      "img": "https://imgproxy.fourthwall.dev/rZoDATRpSAA3kE1ICRU9FAu0WaaR-ItRrI0LaQd216I/w:1920/sm:1/enc/COROmyMZDM6rLyJX/nlfkGoByQg9pWJpQ/XlXiK4oXu92YO7W8/eTlE5_022XeKsLr8/pPpM3MKMaMPTpAb7/o8xP-b0ESIBqOB3-/XfF-7mTnpVWnme6N/qkdKalW4vHLYthsW/bca4W5gAVHoRwG9R/UhNahQfBwbvekN37/2qir3A6oT6tjvPnr/Siibwaq3VxqWELEQ/Z6xyY2WFiuaFIHdV/Jh_HNw.jpg",
+      "lookbook": "https://imgproxy.fourthwall.dev/rZoDATRpSAA3kE1ICRU9FAu0WaaR-ItRrI0LaQd216I/w:1920/sm:1/enc/COROmyMZDM6rLyJX/nlfkGoByQg9pWJpQ/XlXiK4oXu92YO7W8/eTlE5_022XeKsLr8/pPpM3MKMaMPTpAb7/o8xP-b0ESIBqOB3-/XfF-7mTnpVWnme6N/qkdKalW4vHLYthsW/bca4W5gAVHoRwG9R/UhNahQfBwbvekN37/2qir3A6oT6tjvPnr/Siibwaq3VxqWELEQ/Z6xyY2WFiuaFIHdV/Jh_HNw.jpg",
+      "alt": "Man in a black Sunset Sail hoodie at the end of a Wrightsville Beach dock at dusk",
+      "meta": "AS Colour 5161, 9.4 oz relaxed fit, lined hood with no drawcord. Forest, Black.",
+      "cta": "Choose options and buy",
+      "price": 74,
+      "scenes": [
+        "harbor-night",
+        "beach"
+      ],
+      "cut": "unisex",
+      "store": "fourthwall"
     }
   ],
   "scenes": [
