@@ -39,7 +39,26 @@
       "art": "tide-line"
     }
   ],
-  "items": [],
+  "items": [
+    {
+      "id": "sunset-sail-tee",
+      "collection": "classics",
+      "name": "Sunset Sail Garment-Dyed Tee",
+      "url": "https://shorelist-shop.fourthwall.com/products/sunset-sail-garment-dyed-tee",
+      "img": "https://imgproxy.fourthwall.dev/_n-WUogbMwEgVvl9bngY3yYmY07Zt_00uUnf4Job0QM/w:1920/sm:1/enc/WxPu79HNp7Xnc2i0/FgX4usbhUKVO7JnQ/rXQw9YTfP_Wj1wFz/XjbIAG2O_JcIP6g4/niaahkIutHZeI5d2/JTeDvcEMjsyc8zZn/FbU3tWYbu60gg6td/sHNqoOYZbREcBHLY/uYkdXbiIYpp0W70o/xmMYK79bJK5Oc92b/YhVPYLwwVWGlMr7J/nMIeqvOh5bu14DLK/X9LyaER261H5LCl3/iP8c5Q.jpg",
+      "lookbook": "https://imgproxy.fourthwall.dev/_n-WUogbMwEgVvl9bngY3yYmY07Zt_00uUnf4Job0QM/w:1920/sm:1/enc/WxPu79HNp7Xnc2i0/FgX4usbhUKVO7JnQ/rXQw9YTfP_Wj1wFz/XjbIAG2O_JcIP6g4/niaahkIutHZeI5d2/JTeDvcEMjsyc8zZn/FbU3tWYbu60gg6td/sHNqoOYZbREcBHLY/uYkdXbiIYpp0W70o/xmMYK79bJK5Oc92b/YhVPYLwwVWGlMr7J/nMIeqvOh5bu14DLK/X9LyaER261H5LCl3/iP8c5Q.jpg",
+      "alt": "Man in a khaki Sunset Sail tee on a Wrightsville Beach marina dock",
+      "meta": "Comfort Colors 1717 heavyweight. Khaki, Sandstone, Bay, Ivory. Sloop on the back, pennant on the chest.",
+      "cta": "Choose options and buy",
+      "price": 48,
+      "scenes": [
+        "harbor-night",
+        "beach"
+      ],
+      "cut": "unisex",
+      "store": "fourthwall"
+    }
+  ],
   "scenes": [
     {
       "id": "beach",
@@ -65,6 +84,12 @@
       "name": "ShoreList Shop",
       "url": "https://shorelist.shop",
       "carries": "Accessories, stickers, totes, local guides (Shopify + Printify)"
+    },
+    {
+      "id": "fourthwall",
+      "name": "ShoreList Gear",
+      "url": "https://shorelist-shop.fourthwall.com",
+      "carries": "Apparel and gear (Fourthwall)"
     }
   ],
   "allowedHosts": [
