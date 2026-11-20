@@ -5,32 +5,38 @@
     {
       "id": "classics",
       "name": "Cape Fear Classics",
-      "blurb": "Flagship heavyweight hoodies, zips, crews, tees and the surf cap, in quiet coastal colors with a small ShoreList mark."
+      "blurb": "Flagship heavyweight hoodies, zips, crews, tees and the surf cap, in quiet coastal colors with a small ShoreList mark.",
+      "art": "lighthouse"
     },
     {
       "id": "sea-oats",
       "name": "Salt & Sea Oats",
-      "blurb": "Women's cuts with dune-grass and tide-line details drawn for the Carolina coast."
+      "blurb": "Women's cuts with dune-grass and tide-line details drawn for the Carolina coast.",
+      "art": "sea-oats"
     },
     {
       "id": "tide-line",
       "name": "Tide Line",
-      "blurb": "Tumblers, bottles, journals, cases and sleeves for the boat, the boardwalk and the beach bag."
+      "blurb": "Tumblers, bottles, journals, cases and sleeves for the boat, the boardwalk and the beach bag.",
+      "art": "tide-line"
     },
     {
       "id": "shore-gear",
       "name": "Shore Gear",
-      "blurb": "Engraved lights, mugs and small tech for the dock, the campsite and the night walk."
+      "blurb": "Engraved lights, mugs and small tech for the dock, the campsite and the night walk.",
+      "art": "lighthouse"
     },
     {
       "id": "boardwalk",
       "name": "Boardwalk",
-      "blurb": "Youth sizes, socks and small souvenirs for the whole family."
+      "blurb": "Youth sizes, socks and small souvenirs for the whole family.",
+      "art": "pelican"
     },
     {
       "id": "harbor-capsules",
       "name": "Harbor Capsules",
-      "blurb": "Limited editions. Small runs, one drop at a time."
+      "blurb": "Limited editions. Small runs, one drop at a time.",
+      "art": "tide-line"
     }
   ],
   "items": [],

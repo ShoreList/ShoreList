@@ -12,6 +12,11 @@
 <meta property="og:description" content="Coastal Carolina apparel, beach goods and souvenirs from ShoreList."/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="ShoreList"/>
+<meta property="og:url" content="https://shorelist.net/shop"/>
+<meta property="og:image" content="https://shorelist.net/shop-art/hero-tide.svg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="preload" as="image" href="/shop-art/hero-tide.svg"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://shorelist.net/#org","name":"ShoreList","url":"https://shorelist.net/","logo":"https://shorelist.net/icons/icon-512.png","areaServed":"Wilmington, North Carolina"},{"@type":"Brand","@id":"https://shorelist.net/shop#brand","name":"ShoreList","slogan":"Your Shore Thing"},{"@type":"CollectionPage","@id":"https://shorelist.net/shop#page","url":"https://shorelist.net/shop","name":"The ShoreList Shop","description":"Coastal Carolina apparel, drinkware and beach goods designed for Wilmington and the NC beaches, made to order.","isPartOf":{"@id":"https://shorelist.net/#org"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shorelist.net/"},{"@type":"ListItem","position":2,"name":"Shop","item":"https://shorelist.net/shop"}]}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Who ships my order?","acceptedAnswer":{"@type":"Answer","text":"Our print partner makes and ships each order. Size, color and shipping are chosen at checkout."}},{"@type":"Question","name":"Is everything made to order?","acceptedAnswer":{"@type":"Answer","text":"Yes. Items are printed or engraved after you order, so allow production time before shipping."}},{"@type":"Question","name":"What if something arrives wrong?","acceptedAnswer":{"@type":"Answer","text":"Sales are final, but if a file is broken or an item is not as described, we will fix it or refund within 14 days."}}]}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
@@ -66,6 +71,20 @@ footer a{color:var(--cream);margin:0 10px}
 .pick{border:1px solid var(--border);border-radius:12px;padding:12px;font-size:.88rem}.pick a{color:var(--coral);font-weight:700;text-decoration:none}
 .setup label{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:.92rem}.setup .tot{font-weight:700;margin-top:12px;color:var(--teal)}
 details{background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px 18px;margin-bottom:10px}summary{font-weight:700;cursor:pointer;color:var(--teal)}details p{margin-top:8px;color:var(--mid)}
+
+:root{color-scheme:light dark}
+@media(prefers-color-scheme:dark){:root{--cream2:#0D1F25;--dark:#F5E8CB;--mid:#B9C9C6;--border:rgba(245,232,203,.14);--teal:#7FC3CF}body{background:var(--cream2)}nav{background:rgba(13,31,37,.9)}.card,.col,.styl,details,.chip{background:#12303a}.chip[aria-pressed=true]{background:var(--coral);border-color:var(--coral);color:#fff}.logo{color:var(--cream)}.navr a{color:var(--cream)}.navr a.cta{color:#fff}}
+.hero{position:relative;overflow:hidden;padding:110px 22px 150px;background:#0A4D5C}
+.hero>*{position:relative;z-index:1}.hero .art{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover}
+.hero .trust{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}.hero .trust span{border:1px solid rgba(245,232,203,.35);border-radius:100px;padding:6px 14px;backdrop-filter:blur(6px);background:rgba(13,31,37,.25)}
+.coord{font-variant-numeric:tabular-nums;letter-spacing:.18em;font-size:.7rem;opacity:.8;margin-bottom:10px;text-transform:uppercase}
+.col{position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}.col:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(10,77,92,.18)}
+.col img{width:54px;height:72px;float:right;margin:-4px -4px 8px 12px;color:var(--teal);opacity:.9}
+.card{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}.card:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(10,77,92,.2)}
+.card .ph{background:linear-gradient(135deg,var(--cream),#fff)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}.reveal.in{opacity:1;transform:none}
+.proof{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:48px}.proof div{border-top:2px solid var(--coral);padding-top:10px;font-size:.9rem;color:var(--mid)}.proof b{display:block;color:var(--teal);font-family:'Playfair Display',serif;font-size:1.05rem}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.col,.card{transition:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
@@ -76,9 +95,12 @@ details{background:#fff;border:1px solid var(--border);border-radius:12px;paddin
   <div class="navr"><a href="/category">Experiences</a><a href="/events">Events</a><a href="/waitlist" class="cta">Join Waitlist</a></div>
 </nav>
 <header class="hero">
+  <img class="art" src="/shop-art/hero-tide.svg" alt="" width="1440" height="520" fetchpriority="high"/>
+  <div class="coord">34.2257&deg; N &middot; 77.9447&deg; W</div>
   <div class="eyebrow">The ShoreList Shop</div>
   <h1>Coastal Carolina, <em>made to wear</em> and take to the beach</h1>
-  <p>Heavyweight apparel, beach goods and small souvenirs designed for Wilmington and the NC beaches.</p>
+  <p>Heavyweight apparel, drinkware and beach goods drawn for Wilmington and the NC beaches. Made to order, shipped to your door.</p>
+  <div class="trust"><span>Heavyweight blanks</span><span>Original designs</span><span>Made to order</span><span>Secure checkout</span></div>
 </header>
 <main id="main" class="wrap">
   <div id="chips" class="chips" role="group" aria-label="Filter by collection" hidden></div>
@@ -94,6 +116,7 @@ details{background:#fff;border:1px solid var(--border);border-radius:12px;paddin
   <section id="stylSec" class="sec" hidden><h2>ShoreList Stylist</h2><p>Pick a scene and a cut. We'll pull a look from what's in the shop.</p>
     <div class="styl"><div class="row" id="scenes" role="group" aria-label="Scene"></div><div class="row" id="cuts" role="group" aria-label="Cut"><button class="chip" type="button" data-cut="unisex" aria-pressed="true">Unisex</button><button class="chip" type="button" data-cut="womens" aria-pressed="false">Women's</button><button class="chip" type="button" id="another">Show another look</button></div><div id="picks" class="picks" aria-live="polite"></div></div></section>
   <section id="setupSec" class="sec setup" hidden><h2>Build your setup</h2><p>Tick the pieces you want. The total is a plain sum of starting prices.</p><div id="setup"></div><div class="tot" id="tot">0 pieces</div></section>
+  <section class="proof" aria-label="Why ShoreList"><div><b>Drawn locally</b>Sea oats, tide lines and the Cape Fear coast, all original art.</div><div><b>Built to last</b>Heavyweight, tightly checked blanks. Weak ones never ship.</div><div><b>No inventory waste</b>Everything is printed or engraved after you order.</div><div><b>Clear terms</b>14 day fix or refund if it arrives wrong.</div></section>
   <section class="sec" id="faq"><h2>Questions</h2>
     <details><summary>Who ships my order?</summary><p>Our print partner makes and ships each order. Size, color and shipping are chosen at checkout.</p></details>
     <details><summary>Is everything made to order?</summary><p>Yes. Items are printed or engraved after you order, so allow production time before shipping.</p></details>
@@ -129,6 +152,11 @@ details{background:#fff;border:1px solid var(--border);border-radius:12px;paddin
     box.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;current=b.getAttribute('data-c');box.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});render();});
   }
 
+  function jsonld(live){
+    var s=document.createElement('script');s.type='application/ld+json';
+    s.textContent=JSON.stringify({'@context':'https://schema.org','@type':'ItemList','itemListElement':live.map(function(i,k){var p={'@type':'Product','name':i.name,'brand':{'@type':'Brand','name':'ShoreList'},'url':i.url};if(i.img)p.image=new URL(i.img,location.href).href;if(typeof i.price==='number')p.offers={'@type':'Offer','priceCurrency':'USD','price':i.price.toFixed(2),'url':i.url,'availability':'https://schema.org/InStock'};return {'@type':'ListItem','position':k+1,'item':p};})});
+    document.head.appendChild(s);
+  }
   function extras(){
     var live=data.items.filter(function(i){return i.url&&safeUrl(i.url);});
     var lk=live.filter(function(i){return i.lookbook;});
@@ -155,14 +183,15 @@ details{background:#fff;border:1px solid var(--border);border-radius:12px;paddin
   fetch('/shop-catalog.json').then(function(r){return r.json();}).catch(function(){return data;}).then(function(j){
     data=j||data;
     var live=(data.items||[]).filter(function(i){return i.url&&safeUrl(i.url);});
-    if(live.length){show('chips',true);show('grid',true);show('note',true);chips();render();extras();}
+    if(live.length){show('chips',true);show('grid',true);show('note',true);chips();render();extras();jsonld(live);}
     else{
-      document.getElementById('cols').innerHTML=(data.collections||[]).map(function(c){return '<div class="col"><h3>'+esc(c.name)+'</h3><p>'+esc(c.blurb)+'</p></div>';}).join('');
+      document.getElementById('cols').innerHTML=(data.collections||[]).map(function(c){return '<div class="col reveal">'+(c.art?'<img alt="" src="/shop-art/'+esc(c.art)+'.svg" width="54" height="72" loading="lazy"/>':'')+'<h3>'+esc(c.name)+'</h3><p>'+esc(c.blurb)+'</p></div>';}).join('');
       show('soon',true);
     }
   });
 })();
 </script>
+<script>(function(){try{var els=document.querySelectorAll('.sec,.proof,.col');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px'});els.forEach(function(e){e.classList.add('reveal');io.observe(e)});}catch(e){}})();</script>
 <script src="/shore-plus.js" defer></script>
 </body>
 </html>
