@@ -180,6 +180,23 @@
       ],
       "cut": "oversized",
       "store": "fourthwall"
+    },
+    {
+      "id": "salt-wash-market-tote",
+      "collection": "shore-gear",
+      "name": "Salt Wash Organic Cotton Market Tote",
+      "url": "https://shorelist-shop.fourthwall.com/products/salt-wash-organic-cotton-market-tote",
+      "img": "https://imgproxy.fourthwall.dev/TZt3re_wDyZ0W16_4JbSgpMdKwOMYBzAwPsa2r3eqHA/w:1920/sm:1/enc/Pk5QPfjBEPCd6iv4/jzgR6bKsy7yyQSZv/n5nrwFsWvAAQyQVI/e3FznjKMNn4uGwsZ/xM5ia2wEXu6YZSfz/TuQbjJhrMqgnSt5p/M86zkfeYUuJkpP4U/Ep3Y89lpVKKlf5b7/nrschLQbJeecVVMi/aEvtdTJMIptcL7yO/lIdn7xEV_W8hJdaP/x6JU_2u2-_tiXm_x/KdGjIviHRxutI_um/KWy8ww.jpg",
+      "lookbook": "https://imgproxy.fourthwall.dev/TZt3re_wDyZ0W16_4JbSgpMdKwOMYBzAwPsa2r3eqHA/w:1920/sm:1/enc/Pk5QPfjBEPCd6iv4/jzgR6bKsy7yyQSZv/n5nrwFsWvAAQyQVI/e3FznjKMNn4uGwsZ/xM5ia2wEXu6YZSfz/TuQbjJhrMqgnSt5p/M86zkfeYUuJkpP4U/Ep3Y89lpVKKlf5b7/nrschLQbJeecVVMi/aEvtdTJMIptcL7yO/lIdn7xEV_W8hJdaP/x6JU_2u2-_tiXm_x/KdGjIviHRxutI_um/KWy8ww.jpg",
+      "alt": "Woman holding a natural organic cotton Salt Wash sloop tote on the Wrightsville Beach boardwalk",
+      "meta": "Econscious organic cotton twill tote, 20 x 14 x 5 in, with a small hand-painted watercolor sloop. Natural.",
+      "cta": "Choose options and buy",
+      "price": 48,
+      "scenes": [
+        "beach"
+      ],
+      "cut": "unisex",
+      "store": "fourthwall"
     }
   ],
   "scenes": [
