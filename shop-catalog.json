@@ -1,0 +1,11 @@
+{
+  "v": 1,
+  "note": "Only add an item here after it passes the shop gates: real supplier mockup of the exact colorway, lining/inside color checked, art at print resolution, Fourthwall product URL returns 200 signed out. Run: node tools/check-shop-links.mjs",
+  "collections": [
+    { "id": "classics", "name": "Cape Fear Classics", "blurb": "Heavyweight hoodies, crews and tees in quiet coastal colors, with a small ShoreList mark." },
+    { "id": "sea-oats", "name": "Salt & Sea Oats", "blurb": "Women's cuts with dune-grass and tide-line details drawn for the Carolina coast." },
+    { "id": "tide-line", "name": "Tide Line", "blurb": "Bottles, tumblers, journals and cases for the boat, the boardwalk and the beach bag." },
+    { "id": "boardwalk", "name": "Boardwalk", "blurb": "Youth sizes and small souvenirs for the whole family." }
+  ],
+  "items": []
+}

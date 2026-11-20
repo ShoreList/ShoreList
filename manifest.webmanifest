@@ -1,0 +1,24 @@
+{
+  "name": "ShoreList: Wilmington & NC Beaches Experiences",
+  "short_name": "ShoreList",
+  "description": "Book local tours, rentals and experiences in Wilmington and the NC beaches. Find events, picks and plans.",
+  "id": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0A4D5C",
+  "theme_color": "#0A4D5C",
+  "categories": ["travel", "lifestyle", "entertainment"],
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Events", "url": "/events?source=pwa-shortcut" },
+    { "name": "Experiences", "url": "/category?source=pwa-shortcut" },
+    { "name": "Plan my day", "url": "/planner?source=pwa-shortcut" },
+    { "name": "Map", "url": "/map?source=pwa-shortcut" }
+  ]
+}
