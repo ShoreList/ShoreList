@@ -59,6 +59,13 @@ h1 em{color:var(--coral);font-style:italic}
 .note{font-size:.8rem;color:var(--mid);text-align:center;margin-top:28px}
 footer{background:var(--dark);color:rgba(245,232,203,.7);text-align:center;padding:30px 20px;font-size:.85rem}
 footer a{color:var(--cream);margin:0 10px}
+
+.sec{margin-top:56px}.sec h2{font-family:'Playfair Display',serif;color:var(--teal);font-size:1.6rem;margin-bottom:6px}.sec>p{color:var(--mid);margin-bottom:16px}
+.look{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}.look a{display:block;position:relative;border-radius:14px;overflow:hidden;background:var(--cream);aspect-ratio:4/5;color:#fff;text-decoration:none}.look img{width:100%;height:100%;object-fit:cover}.look span{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 10px;background:linear-gradient(transparent,rgba(13,31,37,.75));font-size:.82rem;font-weight:600}
+.styl{background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px}.styl .row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}.picks{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:6px}
+.pick{border:1px solid var(--border);border-radius:12px;padding:12px;font-size:.88rem}.pick a{color:var(--coral);font-weight:700;text-decoration:none}
+.setup label{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:.92rem}.setup .tot{font-weight:700;margin-top:12px;color:var(--teal)}
+details{background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px 18px;margin-bottom:10px}summary{font-weight:700;cursor:pointer;color:var(--teal)}details p{margin-top:8px;color:var(--mid)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
@@ -82,6 +89,15 @@ footer a{color:var(--cream);margin:0 10px}
     <div id="cols" class="cols"></div>
     <a class="btn" href="/waitlist">Join the waitlist</a>
   </section>
+  
+  <section id="lookSec" class="sec" hidden><h2>The Lookbook</h2><p>35mm photos shot on the Cape Fear coast. Tap one to see the piece.</p><div id="look" class="look"></div></section>
+  <section id="stylSec" class="sec" hidden><h2>ShoreList Stylist</h2><p>Pick a scene and a cut. We'll pull a look from what's in the shop.</p>
+    <div class="styl"><div class="row" id="scenes" role="group" aria-label="Scene"></div><div class="row" id="cuts" role="group" aria-label="Cut"><button class="chip" type="button" data-cut="unisex" aria-pressed="true">Unisex</button><button class="chip" type="button" data-cut="womens" aria-pressed="false">Women's</button><button class="chip" type="button" id="another">Show another look</button></div><div id="picks" class="picks" aria-live="polite"></div></div></section>
+  <section id="setupSec" class="sec setup" hidden><h2>Build your setup</h2><p>Tick the pieces you want. The total is a plain sum of starting prices.</p><div id="setup"></div><div class="tot" id="tot">0 pieces</div></section>
+  <section class="sec" id="faq"><h2>Questions</h2>
+    <details><summary>Who ships my order?</summary><p>Our print partner makes and ships each order. Size, color and shipping are chosen at checkout.</p></details>
+    <details><summary>Is everything made to order?</summary><p>Yes. Items are printed or engraved after you order, so allow production time before shipping.</p></details>
+    <details><summary>What if something arrives wrong?</summary><p>Sales are final, but if a file is broken or an item isn't as described, we'll fix it or refund within 14 days. See the refund policy at checkout.</p></details></section>
   <p class="note" id="note" hidden>Checkout is handled securely by our print partner. Colors and sizes are shown on each product page.</p>
 </main>
 <footer>
@@ -112,10 +128,34 @@ footer a{color:var(--cream);margin:0 10px}
     box.innerHTML=html;
     box.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;current=b.getAttribute('data-c');box.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});render();});
   }
+
+  function extras(){
+    var live=data.items.filter(function(i){return i.url&&safeUrl(i.url);});
+    var lk=live.filter(function(i){return i.lookbook;});
+    if(lk.length){show('lookSec',true);document.getElementById('look').innerHTML=lk.map(function(i){return '<a target="_blank" rel="noopener" href="'+esc(i.url)+'"><img loading="lazy" src="'+esc(i.lookbook)+'" alt="'+esc(i.alt||i.name)+'"/><span>'+esc(i.name)+'</span></a>';}).join('');}
+    var sc=data.scenes||[],scene=sc[0]&&sc[0].id,cut='unisex',n=0;
+    if(sc.length&&live.some(function(i){return i.scenes;})){
+      show('stylSec',true);
+      var sb=document.getElementById('scenes');
+      sb.innerHTML=sc.map(function(s,k){return '<button class="chip" type="button" data-s="'+esc(s.id)+'" aria-pressed="'+(k?'false':'true')+'">'+esc(s.name)+'</button>';}).join('');
+      function picks(){
+        var pool=live.filter(function(i){return (i.scenes||[]).indexOf(scene)>-1&&(cut==='womens'?i.cut==='womens':i.cut!=='womens');});
+        var out=[];for(var k=0;k<Math.min(3,pool.length);k++)out.push(pool[(n+k)%pool.length]);
+        document.getElementById('picks').innerHTML=out.length?out.map(function(i){return '<div class="pick"><b>'+esc(i.name)+'</b><br><a target="_blank" rel="noopener" href="'+esc(i.url)+'">View</a></div>';}).join(''):'<p>Nothing in this scene yet.</p>';
+      }
+      sb.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;scene=b.getAttribute('data-s');n=0;sb.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});picks();});
+      document.getElementById('cuts').addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;if(b.id==='another'){n++;}else{cut=b.getAttribute('data-cut');n=0;document.querySelectorAll('#cuts [data-cut]').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});}picks();});
+      picks();
+    }
+    var pr=live.filter(function(i){return typeof i.price==='number'&&isFinite(i.price);});
+    if(pr.length){show('setupSec',true);var box=document.getElementById('setup');
+      box.innerHTML=pr.map(function(i,k){return '<label><input type="checkbox" data-k="'+k+'"/> '+esc(i.name)+' <span style="margin-left:auto">From $'+i.price.toFixed(2)+'</span></label>';}).join('');
+      box.addEventListener('change',function(){var t=0,c=0;box.querySelectorAll('input:checked').forEach(function(x){t+=pr[+x.getAttribute('data-k')].price;c++;});document.getElementById('tot').textContent=c+' piece'+(c===1?'':'s')+', $'+t.toFixed(2);});}
+  }
   fetch('/shop-catalog.json').then(function(r){return r.json();}).catch(function(){return data;}).then(function(j){
     data=j||data;
     var live=(data.items||[]).filter(function(i){return i.url&&safeUrl(i.url);});
-    if(live.length){show('chips',true);show('grid',true);show('note',true);chips();render();}
+    if(live.length){show('chips',true);show('grid',true);show('note',true);chips();render();extras();}
     else{
       document.getElementById('cols').innerHTML=(data.collections||[]).map(function(c){return '<div class="col"><h3>'+esc(c.name)+'</h3><p>'+esc(c.blurb)+'</p></div>';}).join('');
       show('soon',true);

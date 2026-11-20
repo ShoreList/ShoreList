@@ -2,10 +2,55 @@
   "v": 1,
   "note": "Only add an item here after it passes the shop gates: real supplier mockup of the exact colorway, lining/inside color checked, art at print resolution, Fourthwall product URL returns 200 signed out. Run: node tools/check-shop-links.mjs",
   "collections": [
-    { "id": "classics", "name": "Cape Fear Classics", "blurb": "Heavyweight hoodies, crews and tees in quiet coastal colors, with a small ShoreList mark." },
-    { "id": "sea-oats", "name": "Salt & Sea Oats", "blurb": "Women's cuts with dune-grass and tide-line details drawn for the Carolina coast." },
-    { "id": "tide-line", "name": "Tide Line", "blurb": "Bottles, tumblers, journals and cases for the boat, the boardwalk and the beach bag." },
-    { "id": "boardwalk", "name": "Boardwalk", "blurb": "Youth sizes and small souvenirs for the whole family." }
+    {
+      "id": "classics",
+      "name": "Cape Fear Classics",
+      "blurb": "Flagship heavyweight hoodies, zips, crews, tees and the surf cap, in quiet coastal colors with a small ShoreList mark."
+    },
+    {
+      "id": "sea-oats",
+      "name": "Salt & Sea Oats",
+      "blurb": "Women's cuts with dune-grass and tide-line details drawn for the Carolina coast."
+    },
+    {
+      "id": "tide-line",
+      "name": "Tide Line",
+      "blurb": "Tumblers, bottles, journals, cases and sleeves for the boat, the boardwalk and the beach bag."
+    },
+    {
+      "id": "shore-gear",
+      "name": "Shore Gear",
+      "blurb": "Engraved lights, mugs and small tech for the dock, the campsite and the night walk."
+    },
+    {
+      "id": "boardwalk",
+      "name": "Boardwalk",
+      "blurb": "Youth sizes, socks and small souvenirs for the whole family."
+    },
+    {
+      "id": "harbor-capsules",
+      "name": "Harbor Capsules",
+      "blurb": "Limited editions. Small runs, one drop at a time."
+    }
   ],
-  "items": []
+  "items": [],
+  "scenes": [
+    {
+      "id": "beach",
+      "name": "Beach"
+    },
+    {
+      "id": "boardwalk",
+      "name": "Boardwalk"
+    },
+    {
+      "id": "riverwalk",
+      "name": "Riverwalk"
+    },
+    {
+      "id": "harbor-night",
+      "name": "Harbor night"
+    }
+  ],
+  "item_fields": "id, collection, name, url (Fourthwall, https), img, alt, meta, cta, price (number, optional, only after RJ approves), scenes[] (beach|boardwalk|riverwalk|harbor-night), cut (unisex|womens), lookbook (image url)"
 }
