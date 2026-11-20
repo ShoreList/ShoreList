@@ -65,6 +65,7 @@ h1 em{color:var(--coral);font-style:italic}
 footer{background:var(--navy);color:rgba(245,232,203,.7);text-align:center;padding:30px 20px;font-size:.85rem}
 footer a{color:var(--cream);margin:0 10px}
 
+.stores{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}.stores a{border:1px solid var(--border);border-radius:100px;padding:8px 16px;font-size:.85rem;color:var(--teal);text-decoration:none;background:#fff}.stores a b{color:var(--coral)}
 .sec{margin-top:56px}.sec h2{font-family:'Playfair Display',serif;color:var(--teal);font-size:1.6rem;margin-bottom:6px}.sec>p{color:var(--mid);margin-bottom:16px}
 .look{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}.look a{display:block;position:relative;border-radius:14px;overflow:hidden;background:var(--cream);aspect-ratio:4/5;color:#fff;text-decoration:none}.look img{width:100%;height:100%;object-fit:cover}.look span{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 10px;background:linear-gradient(transparent,rgba(13,31,37,.75));font-size:.82rem;font-weight:600}
 .styl{background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px}.styl .row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}.picks{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:6px}
@@ -103,6 +104,7 @@ details{background:#fff;border:1px solid var(--border);border-radius:12px;paddin
   <div class="trust"><span>Heavyweight blanks</span><span>Original designs</span><span>Made to order</span><span>Secure checkout</span></div>
 </header>
 <main id="main" class="wrap">
+  <div id="stores" class="stores" hidden></div>
   <div id="chips" class="chips" role="group" aria-label="Filter by collection" hidden></div>
   <div id="grid" class="grid" hidden></div>
   <section id="soon" class="soon" hidden>
@@ -130,7 +132,7 @@ details{background:#fff;border:1px solid var(--border);border-radius:12px;paddin
 <script>
 (function(){
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];});}
-  function safeUrl(u){return /^https:\/\/[a-z0-9.-]+\//i.test(u||'')?u:'';}
+  var allowed=[];function safeUrl(u){var m=/^https:\/\/([a-z0-9.-]+)\//i.exec(u||'');if(!m)return '';var h=m[1].toLowerCase();if(!allowed.length)return u;return allowed.some(function(a){return h===a||h.slice(-a.length-1)==='.'+a;})?u:'';}
   var data={collections:[],items:[]}, current='all';
   function show(id,on){var e=document.getElementById(id);if(e)e.hidden=!on;}
   function render(){
@@ -181,8 +183,10 @@ details{background:#fff;border:1px solid var(--border);border-radius:12px;paddin
       box.addEventListener('change',function(){var t=0,c=0;box.querySelectorAll('input:checked').forEach(function(x){t+=pr[+x.getAttribute('data-k')].price;c++;});document.getElementById('tot').textContent=c+' piece'+(c===1?'':'s')+', $'+t.toFixed(2);});}
   }
   fetch('/shop-catalog.json').then(function(r){return r.json();}).catch(function(){return data;}).then(function(j){
-    data=j||data;
+    data=j||data;allowed=(data.allowedHosts||[]).map(function(x){return String(x).toLowerCase();});
+    var st=(data.stores||[]).filter(function(s){return s.url&&safeUrl(s.url.replace(/\/?$/,'/'));});
     var live=(data.items||[]).filter(function(i){return i.url&&safeUrl(i.url);});
+    if(live.length&&st.length>1){var sb2=document.getElementById('stores');sb2.innerHTML=st.map(function(s){return '<a target="_blank" rel="noopener" href="'+esc(s.url)+'"><b>'+esc(s.name)+'</b> '+esc(s.carries||'')+'</a>';}).join('');show('stores',true);}
     if(live.length){show('chips',true);show('grid',true);show('note',true);chips();render();extras();jsonld(live);}
     else{
       document.getElementById('cols').innerHTML=(data.collections||[]).map(function(c){return '<div class="col reveal">'+(c.art?'<img alt="" src="/shop-art/'+esc(c.art)+'.svg" width="54" height="72" loading="lazy"/>':'')+'<h3>'+esc(c.name)+'</h3><p>'+esc(c.blurb)+'</p></div>';}).join('');
