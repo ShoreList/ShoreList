@@ -163,6 +163,23 @@
       ],
       "cut": "unisex",
       "store": "fourthwall"
+    },
+    {
+      "id": "salt-wash-organic-crewneck",
+      "collection": "sea-oats",
+      "name": "Salt Wash Organic Crewneck",
+      "url": "https://shorelist-shop.fourthwall.com/products/salt-wash-organic-crewneck",
+      "img": "https://imgproxy.fourthwall.dev/Oig_jV44WqPbJK9ojY9qhMKlLkr7tW06BTiERk75iKE/w:1920/sm:1/enc/fg2KSOd8rpa4ylXU/xlcVJJEFrlLv9qp2/aOhHjE0HcAVWg7-x/S1xO-skFzepu9HnU/kcwEAGDwuARVUmob/80QT3sSS20ZNsHzs/vaIJLoGOOYPLoT81/D4cXsvUpGba8UB9w/UXawcOksv1CqeMyH/NIpGPLO374JhNwVP/yvdjg1VJOKVxTuB0/dM-tnFROA3TN1yPi/69_jqCZSyXCQoLWr/13g1ag.jpg",
+      "lookbook": "https://imgproxy.fourthwall.dev/Oig_jV44WqPbJK9ojY9qhMKlLkr7tW06BTiERk75iKE/w:1920/sm:1/enc/fg2KSOd8rpa4ylXU/xlcVJJEFrlLv9qp2/aOhHjE0HcAVWg7-x/S1xO-skFzepu9HnU/kcwEAGDwuARVUmob/80QT3sSS20ZNsHzs/vaIJLoGOOYPLoT81/D4cXsvUpGba8UB9w/UXawcOksv1CqeMyH/NIpGPLO374JhNwVP/yvdjg1VJOKVxTuB0/dM-tnFROA3TN1yPi/69_jqCZSyXCQoLWr/13g1ag.jpg",
+      "alt": "Man in a heather grey Salt Wash crewneck beside blue hydrangeas and a cedar-shingle cottage in Wilmington",
+      "meta": "Stanley/Stella organic oversized crewneck with a small hand-painted watercolor sloop. White, Heather Grey.",
+      "cta": "Choose options and buy",
+      "price": 78,
+      "scenes": [
+        "riverwalk"
+      ],
+      "cut": "oversized",
+      "store": "fourthwall"
     }
   ],
   "scenes": [
