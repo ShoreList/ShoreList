@@ -111,6 +111,24 @@
       ],
       "cut": "unisex",
       "store": "fourthwall"
+    },
+    {
+      "id": "sunset-sail-crewneck",
+      "collection": "classics",
+      "name": "Sunset Sail Organic Crewneck",
+      "url": "https://shorelist-shop.fourthwall.com/products/sunset-sail-organic-crewneck",
+      "img": "https://imgproxy.fourthwall.dev/pBSQDDLUi6fJsnqrsqFhjznDzoq1chzgrrNoP5zHdQU/w:1920/sm:1/enc/29lq8enywc854CKl/HWlNLi2pRzAEZyKQ/krmWwFVQLXIlI0Ri/RKc4OVA_mzaNIH6g/DyG-JTRU_pAk_KTX/3dNxc5tlhcSXKLvH/I46T1cCWo8JBJmGW/cp_XpM8FFsSRj3vV/7NuPh6Zsk--fN2OL/TMs2UrHnpQjZH1SH/BVBwtfFmVF5pW85-/Q7qAF_Qoe6JqqetD/xCprLbD6vD5Z3sK8/WhWigg.jpg",
+      "lookbook": "https://imgproxy.fourthwall.dev/pBSQDDLUi6fJsnqrsqFhjznDzoq1chzgrrNoP5zHdQU/w:1920/sm:1/enc/29lq8enywc854CKl/HWlNLi2pRzAEZyKQ/krmWwFVQLXIlI0Ri/RKc4OVA_mzaNIH6g/DyG-JTRU_pAk_KTX/3dNxc5tlhcSXKLvH/I46T1cCWo8JBJmGW/cp_XpM8FFsSRj3vV/7NuPh6Zsk--fN2OL/TMs2UrHnpQjZH1SH/BVBwtfFmVF5pW85-/Q7qAF_Qoe6JqqetD/xCprLbD6vD5Z3sK8/WhWigg.jpg",
+      "alt": "Woman in a black Sunset Sail crewneck on a Wrightsville Beach dock at sunset",
+      "meta": "Stanley/Stella organic oversized crewneck, brushed organic cotton. Black, Navy.",
+      "cta": "Choose options and buy",
+      "price": 84,
+      "scenes": [
+        "harbor-night",
+        "beach"
+      ],
+      "cut": "unisex",
+      "store": "fourthwall"
     }
   ],
   "scenes": [
