@@ -134,12 +134,6 @@
   "item_fields": "id, collection, name, url (Fourthwall, https), img, alt, meta, cta, price (number, optional, only after RJ approves), scenes[] (beach|boardwalk|riverwalk|harbor-night), cut (unisex|womens), lookbook (image url); store (shopify|fourthwall)",
   "stores": [
     {
-      "id": "shopify",
-      "name": "ShoreList Shop",
-      "url": "https://shorelist.shop",
-      "carries": "Accessories, stickers, totes, local guides (Shopify + Printify)"
-    },
-    {
       "id": "fourthwall",
       "name": "ShoreList Gear",
       "url": "https://shorelist-shop.fourthwall.com",
@@ -151,5 +145,5 @@
     "myshopify.com",
     "fourthwall.com"
   ],
-  "stores_note": "Add the Fourthwall store here as {id:'fourthwall',name:'ShoreList Gear',url:'https://...'} once it exists. Items link out to whichever store sells them."
+  "stores_note": "Re-add the Shopify store ({id:'shopify',name:'ShoreList Shop',url:'https://shorelist.shop',carries:'Accessories, stickers, totes, local guides'}) once shorelist.shop is live. Chips show only when 2+ stores exist."
 }
