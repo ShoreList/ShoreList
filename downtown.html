@@ -150,6 +150,15 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
 .foot-links a:hover{color:var(--coral);}
 @media(max-width:768px){.sec{padding:48px 20px;}.exp-grid{grid-template-columns:1fr;}.facts-grid{grid-template-columns:1fr 1fr;}.other-towns{grid-template-columns:1fr 1fr;}footer{padding:24px 20px;flex-direction:column;text-align:center;}}
 @media(max-width:480px){.facts-grid{grid-template-columns:1fr;}.other-towns{grid-template-columns:1fr;}}
+
+/* Real-photo hero and gallery (Wikimedia Commons, credited) */
+.hero .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%;z-index:0;transform:scale(1.04)}
+.hero.has-photo::before{z-index:0;background:linear-gradient(100deg,rgba(13,26,48,.92) 6%,rgba(13,26,48,.66) 50%,rgba(13,26,48,.28) 100%)}
+.hero-credit{position:absolute;right:18px;bottom:10px;z-index:2;font-size:.75rem;color:rgba(245,232,203,.8);margin:0}.hero-credit a{color:#FFB199;text-decoration:underline}
+.dt-gal{padding:72px 24px;background:#F4F1EA}.dt-gal .in{max-width:1180px;margin:0 auto}.dt-gal h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:900;color:#0A4D5C;margin:0 0 8px;line-height:1.1}.dt-gal h2 em{color:#C0412A}.dt-gal .sub{color:#1A7585;margin:0 0 26px;max-width:640px;line-height:1.6}
+.dt-grid{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:auto auto;gap:14px}.dt-grid figure{margin:0;position:relative;overflow:hidden;border-radius:22px;background:#0E1F33;box-shadow:0 16px 40px rgba(14,31,51,.16)}.dt-grid figure:first-child{grid-row:span 2}.dt-grid img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1);min-height:240px}.dt-grid figure:hover img{transform:scale(1.05)}
+.dt-grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 12px;background:linear-gradient(180deg,transparent,rgba(14,31,51,.88));color:#F4F1EA;font-size:.8rem;line-height:1.45}.dt-grid figcaption b{display:block;font-family:'Playfair Display',serif;font-size:1.05rem;margin-bottom:2px}.dt-grid figcaption a{color:#FFB199;text-decoration:underline}
+@media(max-width:760px){.dt-grid{grid-template-columns:1fr}.dt-grid figure:first-child{grid-row:auto}.hero-credit{position:static;padding:10px 0 0}}
 </style>
 <!-- ANALYTICS: GA4 (Google Analytics 4) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
@@ -300,7 +309,8 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
   </div>
 </nav>
 <main id="main">
-<section class="hero">
+<section class="hero has-photo">
+  <img class="hero-photo" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bridge_1920x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bridge_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bridge_1920x.webp 1920w" sizes="100vw" alt="The Wilmington Riverwalk at sunset with the Cape Fear Memorial Bridge lit in the distance" fetchpriority="high" decoding="async"/>
   <div class="hero-inner">
     <div>
       <div class="hero-bc"><a href="/">ShoreList</a> &nbsp;&#8250;&nbsp; <a href="/map">Wilmington &amp; the Beaches</a> &nbsp;&#8250;&nbsp; Downtown Wilmington</div>
@@ -327,12 +337,26 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
       <div class="wc-live"><div class="wc-dot"></div>Real-time weather</div>
     </div>
   </div>
+<p class="hero-credit">Photo: Unexpected Snacks, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Wilmington,_NC_Riverwalk_and_Cape_Fear_Memorial_Bridge_at_Sunset.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></p>
 </section>
 <div class="hero-wave">
   <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="#FEFCF7"/>
   </svg>
 </div>
+<section class="dt-gal" aria-labelledby="dt-gal-h">
+  <div class="in">
+    <div class="hero-tag" style="color:#C0412A">Real Downtown</div>
+    <h2 id="dt-gal-h">The Riverwalk, <em>as it really looks</em></h2>
+    <p class="sub">Photographs of the real Downtown waterfront from the Wikimedia Commons community, used with credit under their open licenses.</p>
+    <div class="dt-grid">
+      <figure><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-riverwalk_1000x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-riverwalk_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-riverwalk_1920x.webp 1920w" sizes="(max-width:768px) 100vw, 360px" alt="Shops and restaurants along the Wilmington Riverwalk beside the Cape Fear River" loading="lazy" decoding="async"/><figcaption><b>Along the Riverwalk</b>Photo: Jason W. Smith, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener license">CC BY-SA 3.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Wilmington_Riverwalk.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure>
+      <figure><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-trolley_1000x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-trolley_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-trolley_1920x.webp 1920w" sizes="(max-width:768px) 100vw, 360px" alt="A trolley on the Wilmington Riverwalk" loading="lazy" decoding="async"/><figcaption><b>Downtown by trolley</b>Photo: APK, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener license">CC BY 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Trolley_on_the_Wilmington_Riverwalk.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure>
+      <figure><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bench_1000x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bench_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bench_1920x.webp 1920w" sizes="(max-width:768px) 100vw, 360px" alt="A bench on the Wilmington Riverwalk at sunset" loading="lazy" decoding="async"/><figcaption><b>Sunset on the river</b>Photo: Unexpected Snacks, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Wilmington,_NC_Riverwalk_Bench_at_Sunset.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure>
+    </div>
+  </div>
+</section>
+
 <section class="sec" id="experiences">
   <div class="sec-inner">
     <div class="sec-label">ShoreList Experiences in Downtown Wilmington</div>
