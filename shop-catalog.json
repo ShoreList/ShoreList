@@ -5,7 +5,7 @@
   {
    "id": "local-icons",
    "name": "Local Icons",
-   "blurb": "One small embroidered icon and the letters locals read right away: WB, CB, KB, ILM. Real stitching on garment-dyed Comfort Colors crewnecks, no big prints.",
+   "blurb": "One small embroidered icon and the letters locals read right away: WB, CB, KB, ILM. Real stitching on garment-dyed crewnecks and corduroy caps, no big prints.",
    "art": "lighthouse"
   },
   {
@@ -141,6 +141,78 @@
    "store": "shopify",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/252732908222325248_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-embroidered-crewneck-wilmington_1920x.webp"
+  },
+  {
+   "id": "the-sloop-corduroy-cap-wrightsville-beach",
+   "collection": "local-icons",
+   "name": "The Sloop Corduroy Cap, Wrightsville Beach",
+   "url": "https://shorelist.myshopify.com/products/the-sloop-corduroy-cap-wrightsville-beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-corduroy-cap-wrightsville-beach_1000x.webp",
+   "alt": "Man at the helm of a wooden sailboat wearing a navy corduroy cap with a small embroidered sailboat",
+   "meta": "A little sloop embroidered on the front of a corduroy cap, with WB stitched on the back.",
+   "cta": "Choose colour",
+   "price": 49,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7042525475132206278_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-corduroy-cap-wrightsville-beach_1920x.webp"
+  },
+  {
+   "id": "the-pelican-corduroy-cap-carolina-beach",
+   "collection": "local-icons",
+   "name": "The Pelican Corduroy Cap, Carolina Beach",
+   "url": "https://shorelist.myshopify.com/products/the-pelican-corduroy-cap-carolina-beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-corduroy-cap-carolina-beach_1000x.webp",
+   "alt": "Woman on an autumn beach wearing an olive corduroy cap with a small embroidered pelican",
+   "meta": "A brown pelican embroidered on the front of a corduroy cap, with CB stitched on the back.",
+   "cta": "Choose colour",
+   "price": 49,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/554477750588018687_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-corduroy-cap-carolina-beach_1920x.webp"
+  },
+  {
+   "id": "the-blue-crab-corduroy-cap-kure-beach",
+   "collection": "local-icons",
+   "name": "The Blue Crab Corduroy Cap, Kure Beach",
+   "url": "https://shorelist.myshopify.com/products/the-blue-crab-corduroy-cap-kure-beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-corduroy-cap-kure-beach_1000x.webp",
+   "alt": "Man on a wooden fishing pier wearing a brown corduroy cap with a small embroidered blue crab",
+   "meta": "A blue crab embroidered on the front of a corduroy cap, with KB stitched on the back.",
+   "cta": "Choose colour",
+   "price": 49,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3503163223785382366_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-corduroy-cap-kure-beach_1920x.webp"
+  },
+  {
+   "id": "the-live-oak-corduroy-cap-wilmington",
+   "collection": "local-icons",
+   "name": "The Live Oak Corduroy Cap, Wilmington",
+   "url": "https://shorelist.myshopify.com/products/the-live-oak-corduroy-cap-wilmington",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-corduroy-cap-wilmington_1000x.webp",
+   "alt": "Woman on a historic downtown street wearing a burgundy corduroy cap with a small embroidered live oak",
+   "meta": "A live oak embroidered on the front of a corduroy cap, with ILM stitched on the back.",
+   "cta": "Choose colour",
+   "price": 49,
+   "scenes": [
+    "riverwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4211854548687384211_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-corduroy-cap-wilmington_1920x.webp"
   },
   {
    "id": "wrightsville-beach-varsity-crewneck",
