@@ -107,7 +107,7 @@
     var path = pts.map(function (p, i) { return (i ? 'L' : 'M') + X(p.t).toFixed(1) + ' ' + Y(p.v).toFixed(1); }).join(' ');
     var area = path + ' L' + X(pts[pts.length - 1].t).toFixed(1) + ' ' + H + ' L' + X(pts[0].t).toFixed(1) + ' ' + H + ' Z';
     var nowX = X(d.now), lab = '';
-    n.hilo.filter(function (p) { return p.t >= from && p.t <= to; }).forEach(function (p) { lab += '<text x="' + Math.min(W - 24, Math.max(24, X(p.t))).toFixed(0) + '" y="' + (p.type === 'H' ? Math.max(9, Y(p.v) - 4) : Math.min(H - 2, Y(p.v) + 11)).toFixed(0) + '" text-anchor="middle">' + (p.type === 'H' ? 'H ' : 'L ') + t12(p.t).replace(':00', '').replace(' ', '') + '</text>'; });
+    n.hilo.filter(function (p) { return p.t >= from && p.t <= to; }).forEach(function (p) { lab += '<text x="' + Math.min(W - 34, Math.max(34, X(p.t))).toFixed(0) + '" y="' + (p.type === 'H' ? Math.max(9, Y(p.v) - 4) : Math.min(H - 2, Y(p.v) + 11)).toFixed(0) + '" text-anchor="middle">' + (p.type === 'H' ? 'H ' : 'L ') + t12(p.t).replace(':00', '').replace(' ', '') + '</text>'; });
     return '<svg class="tide-svg" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Tide chart for the next 18 hours"><path class="ta" d="' + area + '"/><path class="tl" d="' + path + '"/><line class="tn" x1="' + nowX.toFixed(1) + '" x2="' + nowX.toFixed(1) + '" y1="0" y2="' + H + '"/><circle class="td" cx="' + nowX.toFixed(1) + '" cy="' + Y(d.tide && d.tide.height != null ? d.tide.height : vs[0]).toFixed(1) + '" r="4"/>' + lab + '</svg>';
   }
   function flagHtml(d) {
