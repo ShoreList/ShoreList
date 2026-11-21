@@ -101,3 +101,25 @@
     if(d.querySelector('script[src*="widgets.js"]')){var s=d.createElement('script');s.src='/shorescore.js';s.defer=true;d.body.appendChild(s);}
   });
 })();
+
+/* Unified site header: every page gets the same logo, links and call to action.
+   The page's own <nav> stays in the HTML as the no-script fallback. */
+(function(){
+  'use strict';
+  var d=document,p=location.pathname.replace(/\.html$/,'').replace(/\/$/,'')||'/';
+  if(p==='/'||p==='/index'||/^\/(dashboard|success|offline)/.test(p))return;
+  var go=function(){
+    var navs=d.querySelectorAll('nav'),nav=null;
+    for(var i=0;i<navs.length;i++){var n=navs[i];if(n.closest('footer')||/foot-links|links/.test(n.className)&&!/site-nav/.test(n.className))continue;nav=n;break;}
+    if(!nav||nav.classList.contains('sl-hdr'))return;
+    var L=[['/things-to-do','Things to Do'],['/events','Events'],['/shore-picks','Shore Picks'],['/shop','Shop'],['/map','Map'],['/planner','Plan My Trip']];
+    var h='<a href="/" class="sl-logo" aria-label="ShoreList home">Shore<span>List</span></a><div class="sl-links" id="sl-links">';
+    for(var j=0;j<L.length;j++){var on=p===L[j][0]||p.indexOf(L[j][0]+'/')===0;h+='<a href="'+L[j][0]+'"'+(on?' aria-current="page"':'')+'>'+L[j][1]+'</a>';}
+    h+='<a href="/things-to-do" class="sl-cta">Book Experiences</a></div><button type="button" class="sl-burger" aria-label="Open menu" aria-expanded="false" aria-controls="sl-links"><span></span><span></span><span></span></button>';
+    nav.innerHTML=h;nav.classList.add('sl-hdr');if(nav.getBoundingClientRect().width<d.documentElement.clientWidth-4&&nav.parentNode!==d.body){d.body.insertBefore(nav,d.body.firstChild);}nav.setAttribute('aria-label','Primary');
+    var b=nav.querySelector('.sl-burger');
+    b.addEventListener('click',function(){var o=nav.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Close menu':'Open menu');});
+    d.addEventListener('keydown',function(e){if(e.key==='Escape'&&nav.classList.contains('open')){nav.classList.remove('open');b.setAttribute('aria-expanded','false');b.focus();}});
+  };
+  if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',go);else go();
+})();
