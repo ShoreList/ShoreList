@@ -270,12 +270,15 @@ const GUIDES = {
   'wilmington-in-three-days': { title: 'Wilmington in Three Days', cents: 1400, file: 'wilmington-in-three-days.pdf', pages: 16 },
   'wilmington-with-kids':     { title: 'Wilmington with Kids', cents: 1400, file: 'wilmington-with-kids.pdf', pages: 17 },
   'winter-in-wilmington':     { title: 'Winter in Wilmington', cents: 1400, file: 'winter-in-wilmington.pdf', pages: 16 },
+  'wilmington-holidays-2026': { title: "Wilmington Holidays 2026", cents: 1400, file: 'wilmington-holidays-2026.pdf', pages: 17 },
 };
+// The bundle is the original four guides only; later guides are sold singly.
+const BUNDLE_IDS = ['beach-day-field-guide', 'wilmington-in-three-days', 'wilmington-with-kids', 'winter-in-wilmington'];
 const GUIDE_BUNDLE = { id: 'guide-bundle', title: 'Wilmington Guide Bundle (all four guides)', cents: 3900 };
 function getGuide(id) { return typeof id === 'string' && Object.prototype.hasOwnProperty.call(GUIDES, id) ? GUIDES[id] : null; }
 // A purchasable product id (one guide or the bundle) -> { title, cents, ids }, else null.
 function getGuideProduct(id) {
-  if (id === GUIDE_BUNDLE.id) return { title: GUIDE_BUNDLE.title, cents: GUIDE_BUNDLE.cents, ids: Object.keys(GUIDES) };
+  if (id === GUIDE_BUNDLE.id) return { title: GUIDE_BUNDLE.title, cents: GUIDE_BUNDLE.cents, ids: BUNDLE_IDS.slice() };
   const g = getGuide(id);
   return g ? { title: g.title, cents: g.cents, ids: [id] } : null;
 }
