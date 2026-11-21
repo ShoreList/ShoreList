@@ -38,11 +38,18 @@ exports.handler = async (event) => {
   p.set('line_items[0][price_data][product_data][description]', 'PDF download, November 2026 edition. Digital product: nothing ships.');
   p.set('line_items[0][price_data][unit_amount]', String(product.cents));
   p.set('line_items[0][quantity]', '1');
+  // NC sales tax on digital books and publications: 7% (4.75% state + 2.25% New Hanover County).
+  const taxCents = Math.round(product.cents * 0.07);
+  p.set('line_items[1][price_data][currency]', 'usd');
+  p.set('line_items[1][price_data][product_data][name]', 'NC Sales Tax (7%)');
+  p.set('line_items[1][price_data][unit_amount]', String(taxCents));
+  p.set('line_items[1][quantity]', '1');
   p.set('success_url', `${siteUrl}/guide-success.html?session_id={CHECKOUT_SESSION_ID}`);
   p.set('cancel_url', `${siteUrl}/guides`);
   p.set('metadata[kind]', 'guide');
   p.set('metadata[product]', data.product);
   p.set('metadata[guideIds]', product.ids.join(','));
+  p.set('metadata[taxCents]', String(taxCents));
 
   try {
     const res = await fetch('https://api.stripe.com/v1/checkout/sessions', {
