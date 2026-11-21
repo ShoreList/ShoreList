@@ -20,162 +20,220 @@
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:#FEFCF7;color:#0D1F25;overflow-x:hidden;}
 :root{
   --teal:#0A4D5C;--teal2:#1A7585;--teal3:#073D4A;
   --coral:#E96645;--coral2:#F07A5A;
   --cream:#F5E8CB;--cream2:#FEFCF7;
   --dark:#0D1F25;--mid:#2C4A52;
-  --lgray:#F2F4F3;--border:rgba(10,77,92,0.10);
+  --lgray:#F2F4F3;--border:rgba(14,31,51,0.12);
+  --navy:#0E1F33;--sail:#F4F1EA;--sand:#D9C7A3;--glass:#9FC3B8;--ink:#16303A;--soft:#2A4850;--red:#B93C24;
   --c-exp:#E96645;--c-beach:#0A4D5C;--c-hist:#6c3e9c;
   --c-nature:#1a7a4a;--c-ent:#1e64c8;--c-food:#c87800;
+  --hdr:102px;--bar:68px;
 }
+body{font-family:'DM Sans',sans-serif;background:var(--sail);color:var(--ink);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+:focus-visible{outline:3px solid #C0412A;outline-offset:3px;border-radius:6px;}
+.map-hero :focus-visible,.towns-section :focus-visible,footer :focus-visible{outline-color:#F4F1EA;}
+.skip-link{position:absolute;top:-100px;left:50%;transform:translateX(-50%);background:#C0412A;color:#fff;padding:14px 24px;border-radius:8px;font-weight:700;font-size:.92rem;text-decoration:none;z-index:9999;}
+.skip-link:focus{top:14px;}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;}
 /* LAUNCH BANNER */
-.launch-banner{position:fixed;top:0;left:0;right:0;z-index:400;background:var(--coral);padding:0 20px;display:flex;align-items:center;justify-content:center;gap:12px;height:38px;}
-.launch-banner-badge{background:rgba(255,255,255,0.22);border:1px solid rgba(255,255,255,0.38);border-radius:100px;padding:2px 10px;font-size:0.65rem;font-weight:700;color:white;letter-spacing:0.10em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;}
-.launch-banner-text{font-size:0.78rem;font-weight:600;color:white;}
-.launch-banner-text span{color:rgba(255,255,255,0.85);}
+.launch-banner{position:fixed;top:0;left:0;right:0;z-index:400;background:#B93C24;padding:0 20px;display:flex;align-items:center;justify-content:center;gap:12px;height:38px;}
+.launch-banner-badge{background:rgba(0,0,0,0.22);border:1px solid rgba(255,255,255,0.38);border-radius:100px;padding:2px 10px;font-size:0.75rem;font-weight:700;color:white;letter-spacing:0.10em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;}
+.launch-banner-text{font-size:0.8rem;font-weight:600;color:white;}
 @media(max-width:600px){.launch-banner-text span{display:none;}}
-/* NAV */
-nav{position:fixed;top:38px;left:0;right:0;z-index:300;padding:14px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,77,92,0.97);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.07);}
+/* NAV (replaced by the shared header at runtime) */
+nav{position:fixed;top:38px;left:0;right:0;z-index:300;padding:14px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(14,31,51,0.97);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.07);}
 .nav-logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:#FEFCF7;text-decoration:none;font-weight:700;}
-.nav-logo span{color:var(--coral);}
+.nav-logo span{color:#FF9B7B;}
 .nav-right{display:flex;align-items:center;gap:16px;}
-.nav-back{font-size:0.78rem;font-weight:600;color:rgba(245,232,203,0.60);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;white-space:nowrap;}
-.nav-back:hover{color:#F5E8CB;}
-.nav-book{background:var(--coral);color:white;text-decoration:none;padding:8px 18px;border-radius:6px;font-weight:700;font-size:0.80rem;transition:background 0.2s;white-space:nowrap;min-height:36px;display:inline-flex;align-items:center;}
-.nav-book:hover{background:var(--coral2);}
-@media(max-width:768px){nav{padding:14px 20px;top:38px;}.nav-back{display:none;}}
+.nav-right a{min-height:44px;display:inline-flex;align-items:center;}
+.nav-back{font-size:0.8rem;font-weight:600;color:rgba(245,232,203,0.86);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;}
+.nav-ev{font-size:0.8rem;font-weight:700;color:#FFB199;text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;}
+.nav-book{background:#C0412A;color:white;text-decoration:none;padding:8px 18px;border-radius:100px;font-weight:700;font-size:0.82rem;white-space:nowrap;}
+@media(max-width:768px){nav{padding:14px 20px;}.nav-back{display:none;}}
 /* HERO */
-.map-hero{background:var(--teal3);padding:120px 48px 40px;position:relative;overflow:hidden;}
-.map-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 100% at 80% 100%,rgba(233,102,69,0.08) 0%,transparent 60%);}
-.map-hero::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.03) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;}
-.mh-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
-.mh-tag{font-size:0.66rem;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;display:flex;align-items:center;gap:10px;}
-.mh-tag::before{content:'';width:22px;height:1px;background:var(--coral);}
-.mh-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;color:#FEFCF7;line-height:1.05;margin-bottom:10px;}
-.mh-title em{color:var(--coral);font-style:italic;}
-.mh-sub{font-size:0.95rem;color:rgba(245,232,203,0.65);line-height:1.85;max-width:580px;margin-bottom:20px;}
-.mh-stats{display:flex;gap:12px;flex-wrap:wrap;}
-.mh-stat{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.10);border-radius:8px;padding:8px 14px;display:flex;align-items:center;gap:8px;font-size:0.80rem;font-weight:600;color:rgba(245,232,203,0.80);}
-.mh-stat-n{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:var(--coral);}
-@media(max-width:768px){.map-hero{padding:100px 20px 28px;}.mh-stat{font-size:0.72rem;padding:6px 10px;}}
+.map-hero{position:relative;overflow:hidden;color:var(--sail);padding:calc(var(--hdr) + 46px) 28px 40px;background:radial-gradient(900px 420px at 90% 0%,rgba(159,195,184,.2),transparent 62%),linear-gradient(165deg,#0E1F33 0%,#10314A 100%);}
+.mh-inner{max-width:1400px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px 48px;align-items:end;}
+.mh-tag{font-size:0.76rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--glass);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.mh-tag::before{content:'';width:9px;height:9px;border-radius:50%;background:var(--glass);}
+.mh-title{font-family:'Playfair Display',serif;font-size:clamp(2.1rem,4.6vw,3.6rem);font-weight:900;color:#fff;line-height:1.03;letter-spacing:-.6px;margin-bottom:12px;}
+.mh-title em{color:#FFB39A;font-style:italic;}
+.mh-sub{font-size:1.02rem;color:rgba(244,241,234,0.88);line-height:1.65;max-width:640px;}
+.mh-stats{display:grid;grid-template-columns:repeat(4,auto);gap:10px;list-style:none;}
+.mh-stat{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-radius:16px;padding:12px 18px;display:flex;flex-direction:column;font-size:0.8rem;font-weight:600;color:rgba(244,241,234,0.88);min-width:96px;}
+.mh-stat-n{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:#fff;line-height:1.1;}
 /* FILTER BAR */
-.filter-bar{background:white;border-bottom:2px solid var(--border);position:sticky;top:102px;z-index:200;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.filter-bar{background:rgba(255,255,255,.96);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);position:sticky;top:var(--hdr);z-index:200;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;box-shadow:0 8px 24px rgba(14,31,51,.06);}
 .filter-bar::-webkit-scrollbar{display:none;}
-.filter-inner{display:flex;gap:8px;padding:12px 48px;white-space:nowrap;align-items:center;}
-.fc{border:2px solid var(--border);background:white;border-radius:100px;padding:8px 16px;font-size:0.82rem;font-weight:600;cursor:pointer;transition:all 0.18s;font-family:'DM Sans',sans-serif;white-space:nowrap;min-height:40px;display:inline-flex;align-items:center;gap:6px;color:var(--mid);}
-.fc:hover{border-color:var(--teal);color:var(--teal);}
-.fc.active{color:white;}
-.fc-all.active{background:var(--teal);border-color:var(--teal);}
-.fc-exp.active{background:var(--c-exp);border-color:var(--c-exp);}
-.fc-beach.active{background:var(--c-beach);border-color:var(--c-beach);}
-.fc-hist.active{background:var(--c-hist);border-color:var(--c-hist);}
-.fc-nature.active{background:var(--c-nature);border-color:var(--c-nature);}
-.fc-ent.active{background:var(--c-ent);border-color:var(--c-ent);}
-.fc-food.active{background:var(--c-food);border-color:var(--c-food);}
-@media(max-width:768px){.filter-inner{padding:10px 16px;gap:6px;}.fc{font-size:0.74rem;padding:7px 12px;}}
-/* MAP */
-.map-wrap{position:relative;background:#e8f4f8;}
-#shore-map{height:65vh;min-height:380px;width:100%;display:block;}
-.map-legend{position:absolute;bottom:20px;right:20px;background:white;border-radius:12px;padding:14px 16px;box-shadow:0 4px 24px rgba(0,0,0,0.14);z-index:400;min-width:160px;}
-.ml-title{font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(44,74,82,0.45);margin-bottom:10px;}
-.ml-item{display:flex;align-items:center;gap:8px;margin-bottom:7px;font-size:0.76rem;font-weight:600;color:var(--mid);}
+.filter-inner{display:flex;gap:8px;padding:12px 28px;white-space:nowrap;align-items:center;max-width:1456px;margin:0 auto;}
+.fc{border:1.5px solid rgba(14,31,51,.22);background:#fff;border-radius:100px;padding:0 16px 0 12px;font-size:0.9rem;font-weight:700;cursor:pointer;transition:background .18s,border-color .18s,color .18s;font-family:'DM Sans',sans-serif;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center;gap:8px;color:var(--navy);}
+.fc:hover{border-color:var(--navy);}
+.fc-dot{width:12px;height:12px;border-radius:50%;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px rgba(14,31,51,.25);}
+.fc-all .fc-dot{background:conic-gradient(#E96645 0 16%,#0A4D5C 0 33%,#6c3e9c 0 50%,#1a7a4a 0 66%,#1e64c8 0 83%,#c87800 0);}
+.fc-n{font-size:.78rem;font-weight:800;color:var(--soft);background:var(--sail);border-radius:100px;padding:2px 8px;min-width:26px;text-align:center;}
+.fc[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff;box-shadow:0 6px 16px rgba(14,31,51,.25);}
+.fc[aria-pressed="true"]::before{content:"";width:12px;height:7px;border-left:2.5px solid #fff;border-bottom:2.5px solid #fff;transform:rotate(-45deg) translateY(-2px);flex:none;margin-left:2px;}
+.fc[aria-pressed="true"] .fc-n{background:rgba(255,255,255,.18);color:#fff;}
+/* MAP + LIST */
+.mapx{display:grid;grid-template-columns:minmax(0,1fr);max-width:1456px;margin:0 auto;}
+.map-wrap{position:relative;background:#DCE9EC;}
+#shore-map{height:60vh;height:60svh;min-height:340px;width:100%;display:block;z-index:1;}
+.map-legend{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.96);border-radius:16px;padding:14px 16px;box-shadow:0 10px 30px rgba(14,31,51,0.18);z-index:400;min-width:170px;}
+.ml-title{font-size:0.75rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--soft);margin-bottom:8px;}
+.ml-item{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:0.8rem;font-weight:600;color:var(--ink);}
 .ml-item:last-child{margin-bottom:0;}
-.ml-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0;border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,0.20);}
-.count-bar{background:var(--teal3);padding:10px 48px;display:flex;gap:0;align-items:center;overflow-x:auto;-webkit-overflow-scrolling:touch;}
-.count-bar::-webkit-scrollbar{display:none;}
-.cb-item{display:flex;align-items:center;gap:6px;padding:0 18px;font-size:0.78rem;font-weight:600;color:rgba(245,232,203,0.70);white-space:nowrap;border-right:1px solid rgba(255,255,255,0.08);}
-.cb-item:last-child{border-right:none;}
-.cb-n{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:var(--coral);}
-@media(max-width:768px){#shore-map{height:55vh;min-height:320px;}.map-legend{display:none;}.count-bar{padding:10px 16px;}.cb-item{padding:0 12px;font-size:0.70rem;}}
+.ml-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,0.3);}
+.pin-hit{display:grid;place-items:center;cursor:pointer;border-radius:50%;}
+.pin-dot{display:block;width:18px;height:18px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.35);transition:transform .2s;}
+.pin-hit:hover .pin-dot,.pin-hit:focus-visible .pin-dot{transform:scale(1.35);}
+.pin-hit:focus-visible{outline:3px solid #0E1F33;outline-offset:-8px;}
+.leaflet-touch .leaflet-bar a,.leaflet-bar a{width:44px!important;height:44px!important;line-height:44px!important;font-size:22px!important;color:#0E1F33!important;}
+.leaflet-container a.leaflet-popup-close-button{width:44px;height:44px;font:700 22px/44px 'DM Sans',sans-serif;color:#16303A;top:0;right:0;}
+.leaflet-container .leaflet-control-attribution{font-size:12px;}
+.leaflet-container .leaflet-control-attribution a{color:#0A4D5C;}
 /* POPUP */
-.leaflet-popup-content-wrapper{border-radius:14px!important;box-shadow:0 12px 40px rgba(0,0,0,0.18)!important;border:none!important;padding:0!important;}
+.leaflet-popup-content-wrapper{border-radius:18px!important;box-shadow:0 16px 44px rgba(14,31,51,0.24)!important;border:none!important;padding:0!important;}
 .leaflet-popup-content{margin:0!important;padding:0!important;}
-.mp{font-family:'DM Sans',sans-serif;overflow:hidden;border-radius:14px;min-width:230px;max-width:280px;}
-.mp-top{padding:14px 16px 12px;}
-.mp-cat{font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;}
-.mp-name{font-family:'Playfair Display',serif;font-size:0.97rem;font-weight:900;color:#0D1F25;margin-bottom:5px;line-height:1.2;}
-.mp-desc{font-size:0.78rem;color:#2C4A52;line-height:1.6;margin-bottom:10px;}
+.mp{font-family:'DM Sans',sans-serif;overflow:hidden;border-radius:18px;min-width:230px;max-width:280px;}
+.mp-top{padding:16px 44px 12px 16px;}
+.mp-cat{font-size:0.75rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;}
+.mp-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:#0E1F33;margin-bottom:6px;line-height:1.2;}
+.mp-desc{font-size:0.88rem;color:#2A4850;line-height:1.55;margin-bottom:10px;}
 .mp-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:4px;}
-.mp-tag{background:#F2F4F3;border-radius:4px;padding:3px 8px;font-size:0.68rem;font-weight:600;color:#2C4A52;}
-.mp-tag-free{background:rgba(26,122,74,0.10);color:#1a7a4a;}
-.mp-foot{display:flex;gap:8px;padding:10px 16px;border-top:1px solid rgba(10,77,92,0.08);background:#FAFCFC;}
-.mp-btn{flex:1;text-align:center;text-decoration:none;padding:8px 12px;border-radius:7px;font-size:0.76rem;font-weight:700;transition:all 0.2s;min-height:36px;display:inline-flex;align-items:center;justify-content:center;color:white;}
-.mp-btn:hover{opacity:0.88;}
-/* PINS GRID */
-.pins-section{padding:48px 48px 32px;}
-.ps-inner{max-width:1100px;margin:0 auto;}
-.ps-hd{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px;}
-.ps-label{font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--coral);margin-bottom:8px;display:flex;align-items:center;gap:8px;}
-.ps-label::before{content:'';width:18px;height:1px;background:var(--coral);}
-.ps-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--teal);line-height:1.1;}
-.ps-title em{color:var(--coral);font-style:italic;}
-.ps-count{font-size:0.80rem;color:rgba(44,74,82,0.45);}
-.pins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-.pin-card{background:white;border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:box-shadow 0.22s,transform 0.22s;cursor:pointer;}
-.pin-card:hover{box-shadow:0 10px 32px rgba(10,77,92,0.10);transform:translateY(-2px);}
-.pin-card-bar{height:4px;}
-.pin-card-body{padding:16px;}
-.pcb-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;gap:8px;}
-.pcb-badge{font-size:0.62rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:3px 9px;border-radius:100px;display:inline-flex;align-items:center;gap:4px;flex-shrink:0;}
-.pcb-exp{background:rgba(233,102,69,0.09);color:#c45230;border:1px solid rgba(233,102,69,0.18);}
-.pcb-beach{background:rgba(10,77,92,0.09);color:#0A4D5C;border:1px solid rgba(10,77,92,0.18);}
-.pcb-hist{background:rgba(108,62,156,0.09);color:#6c3e9c;border:1px solid rgba(108,62,156,0.18);}
-.pcb-nature{background:rgba(26,122,74,0.09);color:#1a7a4a;border:1px solid rgba(26,122,74,0.18);}
-.pcb-ent{background:rgba(30,100,200,0.09);color:#1e64c8;border:1px solid rgba(30,100,200,0.18);}
-.pcb-food{background:rgba(200,120,0,0.09);color:#c87800;border:1px solid rgba(200,120,0,0.18);}
-.pcb-area{font-size:0.68rem;color:rgba(44,74,82,0.45);font-weight:500;text-align:right;line-height:1.3;}
-.pc-name{font-family:'Playfair Display',serif;font-size:0.94rem;font-weight:700;color:var(--teal);margin-bottom:5px;line-height:1.2;}
-.pc-desc{font-size:0.79rem;color:var(--mid);line-height:1.65;margin-bottom:12px;}
-.pc-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;}
-.pc-fee{font-size:0.76rem;font-weight:700;}
-.pc-fee-free{color:#1a7a4a;}
-.pc-fee-paid{color:var(--coral);}
-.pc-link{font-size:0.75rem;font-weight:700;color:var(--teal2);text-decoration:none;transition:color 0.2s;white-space:nowrap;}
-.pc-link:hover{color:var(--coral);}
-.no-results{grid-column:1/-1;background:white;border:1px solid var(--border);border-radius:12px;padding:52px;text-align:center;}
+.mp-tag{background:#F4F1EA;border-radius:100px;padding:3px 10px;font-size:0.78rem;font-weight:600;color:#2A4850;}
+.mp-tag-free{background:rgba(26,122,74,0.12);color:#14633B;}
+.mp-foot{display:flex;gap:8px;padding:10px 16px 14px;}
+.leaflet-container a.mp-btn,.mp-btn{flex:1;text-align:center;text-decoration:none;padding:8px 12px;border-radius:100px;font-size:0.88rem;font-weight:800;min-height:44px;display:inline-flex;align-items:center;justify-content:center;color:#fff;}
+.mp-btn:hover{opacity:0.9;}
+/* PINS LIST */
+.pins-section{padding:36px 28px 56px;}
+.ps-hd{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:10px;}
+.ps-label{font-size:0.76rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:8px;display:flex;align-items:center;gap:10px;}
+.ps-label::before{content:'';width:26px;height:2px;border-radius:2px;background:currentColor;opacity:.7;}
+.ps-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.2rem);font-weight:900;color:var(--navy);line-height:1.1;}
+.ps-title em{color:var(--red);font-style:italic;}
+.ps-count{font-size:0.9rem;font-weight:700;color:var(--soft);background:#fff;border:1px solid var(--border);border-radius:100px;padding:6px 14px;}
+.ps-hint{font-size:.9rem;color:var(--soft);margin:-8px 0 18px;}
+.pins-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;}
+.pin-card{position:relative;background:#fff;border:1px solid rgba(14,31,51,.08);border-radius:20px;overflow:hidden;transition:box-shadow 0.25s,transform 0.25s;cursor:pointer;display:flex;flex-direction:column;box-shadow:0 6px 18px rgba(14,31,51,.05);}
+.pin-card:hover{box-shadow:0 18px 40px rgba(14,31,51,0.14);transform:translateY(-3px);}
+.pin-card-bar{height:5px;flex:none;}
+.pin-card-body{padding:16px 18px 14px;display:flex;flex-direction:column;flex:1;}
+.pcb-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;}
+.pcb-badge{font-size:0.75rem;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;padding:4px 10px;border-radius:100px;display:inline-flex;align-items:center;gap:4px;flex-shrink:0;}
+.pcb-exp{background:rgba(233,102,69,0.1);color:#9E3118;}
+.pcb-beach{background:rgba(10,77,92,0.1);color:#0A4D5C;}
+.pcb-hist{background:rgba(108,62,156,0.1);color:#5B3389;}
+.pcb-nature{background:rgba(26,122,74,0.1);color:#14633B;}
+.pcb-ent{background:rgba(30,100,200,0.1);color:#1A55AB;}
+.pcb-food{background:rgba(200,120,0,0.12);color:#7A4A00;}
+.pcb-area{font-size:0.8rem;color:var(--soft);font-weight:600;text-align:right;line-height:1.3;}
+.pc-name{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:900;color:var(--navy);margin-bottom:6px;line-height:1.2;}
+.pc-desc{font-size:0.92rem;color:var(--soft);line-height:1.5;margin-bottom:14px;}
+.pc-fee{font-size:0.88rem;font-weight:800;flex:1 1 auto;}
+.pc-fee-free{color:#14633B;}
+.pc-fee-paid{color:var(--red);}
+.pc-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:8px;margin-top:auto;padding-top:12px;border-top:1px solid rgba(14,31,51,.08);}
+.pc-map,.pin-card a.pc-link{flex:none;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:100px;font:800 .86rem 'DM Sans',sans-serif;text-decoration:none;white-space:nowrap;cursor:pointer;padding:0 12px;transition:background .2s,color .2s;}
+.pc-map{background:transparent;border:1.5px solid rgba(14,31,51,.25);color:var(--navy);}
+.pc-map:hover{background:var(--navy);color:#fff;}
+.pc-map svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.pin-card a.pc-link{background:var(--navy);border:1.5px solid var(--navy);color:#fff;}
+.pc-link:hover{background:#10314A;}
+.no-results{grid-column:1/-1;background:white;border:1px solid var(--border);border-radius:20px;padding:52px;text-align:center;}
 .nr-ico{font-size:3rem;display:block;margin-bottom:16px;}
-.nr-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;color:var(--teal);margin-bottom:8px;}
-/* TOWN LINKS */
-.towns-section{background:var(--teal3);padding:52px 48px;}
-.towns-inner{max-width:1100px;margin:0 auto;}
-.towns-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px;}
-.town-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:24px 20px;text-decoration:none;display:block;transition:all 0.22s;}
-.town-card:hover{background:rgba(233,102,69,0.14);border-color:rgba(233,102,69,0.35);transform:translateY(-3px);}
-.tc-ico{font-size:2.2rem;display:block;margin-bottom:12px;}
-.tc-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:900;color:#FEFCF7;margin-bottom:4px;}
-.tc-sub{font-size:0.78rem;color:rgba(245,232,203,0.55);line-height:1.5;margin-bottom:12px;}
-.tc-link{font-size:0.75rem;font-weight:700;color:var(--coral);display:inline-flex;align-items:center;gap:4px;}
-/* SEO */
-.seo-section{padding:64px 48px;background:white;}
-.seo-inner{max-width:1100px;margin:0 auto;}
-.seo-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
-.seo-h2{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--teal);margin-bottom:16px;}
-.seo-h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--teal);margin:22px 0 8px;}
-.seo-p{font-size:0.88rem;color:var(--mid);line-height:1.90;margin-bottom:14px;}
-.seo-p a{color:var(--coral);text-decoration:none;font-weight:600;}
+.nr-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;color:var(--navy);margin-bottom:8px;}
+/* TOWN GUIDES */
+.towns-section{background:var(--navy);color:var(--sail);padding:76px 28px;}
+.towns-inner{max-width:1180px;margin:0 auto;}
+.tw-label{font-size:0.76rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--glass);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.tw-label::before{content:'';width:26px;height:2px;border-radius:2px;background:currentColor;opacity:.7;}
+.tw-title{font-family:'Playfair Display',serif;font-size:clamp(1.85rem,3.6vw,2.7rem);font-weight:900;color:#fff;line-height:1.08;margin-bottom:10px;}
+.tw-title em{color:#FFC9B5;font-style:italic;}
+.tw-sub{font-size:1.02rem;color:rgba(244,241,234,0.86);max-width:560px;line-height:1.65;}
+.towns-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:30px;}
+.mtown{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;min-height:340px;padding:20px;border-radius:22px;overflow:hidden;text-decoration:none;background:#10314A;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s;}
+.mtown:hover{transform:translateY(-5px);box-shadow:0 28px 60px rgba(0,0,0,.4);}
+.mtown img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.4s cubic-bezier(.2,.7,.2,1);}
+.mtown:hover img{transform:scale(1.07);}
+.mtown::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,18,30,.05) 0%,rgba(6,18,30,.3) 36%,rgba(6,18,30,.92) 100%);}
+.tc-name{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:#fff;margin-bottom:6px;line-height:1.1;text-shadow:0 2px 12px rgba(0,0,0,.4);}
+.tc-sub{font-size:0.9rem;color:rgba(255,255,255,0.92);line-height:1.5;margin-bottom:14px;}
+.tc-link{font-size:0.84rem;font-weight:800;color:#fff;display:inline-flex;align-items:center;align-self:flex-start;gap:4px;min-height:40px;padding:0 16px;border-radius:100px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);}
+.tw-note{font-size:.8rem;color:rgba(244,241,234,.82);margin-top:16px;max-width:820px;line-height:1.55;}
+.tw-note a{color:#FFC9B5;}
+/* GUIDE TEXT */
+.seo-section{padding:80px 28px;background:#fff;}
+.seo-inner{max-width:1180px;margin:0 auto;}
+.seo-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+.seo-h2{font-family:'Playfair Display',serif;font-size:clamp(1.85rem,3.6vw,2.6rem);font-weight:900;color:var(--navy);margin-bottom:16px;line-height:1.1;}
+.seo-h3{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:var(--navy);margin:26px 0 8px;}
+.seo-grid>div:nth-child(2)>.seo-h3:first-child{margin-top:0;}
+.seo-p{font-size:1rem;color:var(--soft);line-height:1.75;margin-bottom:14px;max-width:62ch;}
+.seo-p a{color:var(--red);text-decoration:underline;text-underline-offset:3px;font-weight:700;}
 /* STICKY CTA */
-.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:500;background:var(--teal);border-top:2px solid rgba(255,255,255,0.10);padding:12px 20px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;transform:translateY(110%);transition:transform 0.38s cubic-bezier(0.4,0,0.2,1);}
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:500;background:var(--navy);border-top:2px solid rgba(255,255,255,0.10);padding:12px 20px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;transform:translateY(110%);transition:transform 0.38s cubic-bezier(0.4,0,0.2,1);}
 .sticky-cta.show{transform:translateY(0);}
-.sc-text{font-size:0.82rem;font-weight:600;color:rgba(245,232,203,0.80);}
-.sc-text strong{color:#FEFCF7;}
-.sc-btn{background:var(--coral);color:white;text-decoration:none;padding:10px 22px;border-radius:7px;font-weight:700;font-size:0.84rem;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center;transition:background 0.2s;flex-shrink:0;}
-.sc-btn:hover{background:var(--coral2);}
+.sc-text{font-size:0.84rem;font-weight:600;color:rgba(244,241,234,0.9);}
+.sc-text strong{color:#fff;}
+.sc-btn{background:#C0412A;color:white;text-decoration:none;padding:10px 22px;border-radius:100px;font-weight:700;font-size:0.86rem;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center;flex-shrink:0;}
 @media(min-width:769px){.sticky-cta{display:none;}}
 /* FOOTER */
-footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;border-top:1px solid rgba(255,255,255,0.05);}
-.foot-logo{font-size:1.2rem;font-weight:900;display:flex;align-items:baseline;text-decoration:none;}
+footer{background:#0A1626;padding:36px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;border-top:1px solid rgba(255,255,255,0.05);}
+.foot-logo{font-size:1.2rem;font-weight:900;display:flex;align-items:center;min-height:44px;text-decoration:none;}
 .foot-s{font-family:'Playfair Display',serif;font-style:italic;color:#F5E8CB;}
-.foot-l{font-weight:700;color:var(--coral);}
-.foot-copy{font-size:0.76rem;color:rgba(245,232,203,0.28);}
-.foot-links{display:flex;gap:18px;flex-wrap:wrap;}
-.foot-links a{font-size:0.76rem;color:rgba(245,232,203,0.28);text-decoration:none;transition:color 0.2s;}
-.foot-links a:hover{color:var(--coral);}
-/* RESPONSIVE */
-@media(max-width:900px){.pins-grid{grid-template-columns:1fr 1fr;}.towns-grid{grid-template-columns:1fr 1fr;}.seo-grid{grid-template-columns:1fr;}}
-@media(max-width:768px){.pins-section{padding:32px 20px;}.towns-section{padding:40px 20px;}.seo-section{padding:40px 20px;}.pins-grid{grid-template-columns:1fr;}.towns-grid{grid-template-columns:1fr 1fr;}footer{padding:24px 20px;flex-direction:column;text-align:center;}}
-@media(max-width:480px){.towns-grid{grid-template-columns:1fr;}}
+.foot-l{font-weight:700;color:#FF9B7B;}
+.foot-copy{font-size:0.82rem;color:rgba(245,232,203,0.78);}
+.foot-links{display:flex;gap:4px 20px;flex-wrap:wrap;}
+footer nav.foot-links a{font-size:0.86rem;color:rgba(245,232,203,0.82);text-decoration:none;min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center;padding:0;}
+.foot-links a:hover,.foot-links a[aria-current="page"]{color:#FFB199;}
+/* LAYOUT */
+@media(min-width:1024px){
+  .mapx{grid-template-columns:minmax(0,1fr) 420px;align-items:start;}
+  .map-wrap{position:sticky;top:calc(var(--hdr) + var(--bar));}
+  #shore-map{height:calc(100vh - var(--hdr) - var(--bar));min-height:420px;}
+  .pins-section{padding:28px 24px 56px;}
+  .pins-grid{grid-template-columns:1fr;}
+}
+@media(min-width:1320px){
+  .mapx{grid-template-columns:minmax(0,1fr) 640px;}
+  .pins-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:1023px){
+  .mh-inner{grid-template-columns:1fr;}
+  .mh-stats{grid-template-columns:repeat(4,minmax(0,1fr));}
+  .mh-stat{min-width:0;padding:10px 12px;}
+  .towns-grid{grid-template-columns:1fr 1fr;}
+  .seo-grid{grid-template-columns:1fr;gap:0;}
+  .seo-grid>div:nth-child(2)>.seo-h3:first-child{margin-top:26px;}
+}
+@media(max-width:768px){
+  :root{--bar:64px;}
+  .map-hero{padding:calc(var(--hdr) + 30px) 18px 26px;}
+  .mh-sub{font-size:.96rem;}
+  .mh-stats{gap:8px;}
+  .mh-stat{font-size:.75rem;padding:8px 8px;border-radius:12px;overflow-wrap:anywhere;}
+  .mh-stats{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .mh-stat{flex-direction:row;align-items:baseline;gap:8px;}
+  .mh-stat-n{font-size:1.25rem;}
+  .filter-inner{padding:10px 14px;}
+  #shore-map{height:56vh;height:56svh;min-height:320px;max-height:520px;}
+  .map-legend{display:none;}
+  .pins-section{padding:28px 16px 44px;}
+  .towns-section{padding:56px 18px;}
+  .seo-section{padding:56px 18px;}
+  .mtown{min-height:240px;padding:16px;}
+  .tc-name{font-size:1.2rem;}
+  footer{padding:28px 20px 96px;flex-direction:column;text-align:center;}
+  .foot-links{justify-content:center;}
+}
+@media(max-width:480px){.towns-grid{grid-template-columns:1fr;}.mtown{min-height:200px;}}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;}
+  .pin-card:hover,.mtown:hover,.mtown:hover img{transform:none;}
+}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EN91RH3PZV');</script>
@@ -186,44 +244,49 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
 <script src="/luxe.js" defer></script>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to content</a>
 <div class="launch-banner">
   <div class="launch-banner-badge">Now booking</div>
   <div class="launch-banner-text"><strong>ShoreList is live.</strong> <span>Book local tours and experiences across Wilmington and the beaches.</span></div>
 </div>
-<nav>
-  <a href="/" class="nav-logo">Shore<span>List</span></a>
+<nav aria-label="Primary">
+  <a href="/" class="nav-logo" aria-label="ShoreList home">Shore<span>List</span></a>
   <div class="nav-right">
-    <a href="/events" style="font-size:0.78rem;font-weight:700;color:var(--coral);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;transition:color 0.2s;">Events Guide</a>
+    <a href="/events" class="nav-ev">Events Guide</a>
     <a href="/" class="nav-back">&#8592; All Experiences</a>
     <a href="/things-to-do" class="nav-book">Book Experiences</a>
   </div>
 </nav>
+<main id="main">
 <section class="map-hero">
   <div class="mh-inner">
-    <div class="mh-tag">Interactive Visitor Guide</div>
-    <h1 class="mh-title">The Complete<br/><em>Wilmington, NC Map</em></h1>
-    <p class="mh-sub">Every beach, ShoreList experience, historic attraction, park, and entertainment venue across Wilmington and the NC coast &mdash; all pinned, filterable, and clickable. The most detailed visitor guide map for this region anywhere.</p>
-    <div class="mh-stats">
-      <div class="mh-stat"><span class="mh-stat-n">50+</span>&nbsp;Pins</div>
-      <div class="mh-stat"><span class="mh-stat-n">7</span>&nbsp;Categories</div>
-      <div class="mh-stat"><span class="mh-stat-n">4</span>&nbsp;Communities</div>
-      <div class="mh-stat"><span class="mh-stat-n">Free</span>&nbsp;Always</div>
+    <div>
+      <div class="mh-tag">Interactive Visitor Guide</div>
+      <h1 class="mh-title">The Complete<br/><em>Wilmington, NC Map</em></h1>
+      <p class="mh-sub">Every beach, ShoreList experience, historic attraction, park, and entertainment venue across Wilmington and the NC coast &mdash; all pinned, filterable, and clickable. The most detailed visitor guide map for this region anywhere.</p>
     </div>
+    <ul class="mh-stats">
+      <li class="mh-stat"><span class="mh-stat-n">44</span>Pins</li>
+      <li class="mh-stat"><span class="mh-stat-n">6</span>Categories</li>
+      <li class="mh-stat"><span class="mh-stat-n">4</span>Communities</li>
+      <li class="mh-stat"><span class="mh-stat-n">Free</span>Always</li>
+    </ul>
   </div>
 </section>
 <div class="filter-bar" id="filter-bar">
-  <div class="filter-inner">
-    <button class="fc fc-all active" onclick="setFilter(this,'all')">&#127758; All</button>
-    <button class="fc fc-exp" onclick="setFilter(this,'exp')">&#127940; ShoreList Experiences</button>
-    <button class="fc fc-beach" onclick="setFilter(this,'beach')">&#127754; Beaches</button>
-    <button class="fc fc-hist" onclick="setFilter(this,'hist')">&#127963; Historic &amp; Landmarks</button>
-    <button class="fc fc-nature" onclick="setFilter(this,'nature')">&#127807; Parks &amp; Nature</button>
-    <button class="fc fc-ent" onclick="setFilter(this,'ent')">&#127925; Entertainment</button>
-    <button class="fc fc-food" onclick="setFilter(this,'food')">&#127869; Food &amp; More</button>
+  <div class="filter-inner" role="group" aria-label="Filter map pins by category">
+    <button type="button" class="fc fc-all active" aria-pressed="true" onclick="setFilter(this,'all')"><span class="fc-dot" aria-hidden="true"></span>All <span class="fc-n">44<span class="sr"> places</span></span></button>
+    <button type="button" class="fc fc-exp" aria-pressed="false" onclick="setFilter(this,'exp')"><span class="fc-dot" style="background:var(--c-exp);" aria-hidden="true"></span>ShoreList Experiences <span class="fc-n">12<span class="sr"> places</span></span></button>
+    <button type="button" class="fc fc-beach" aria-pressed="false" onclick="setFilter(this,'beach')"><span class="fc-dot" style="background:var(--c-beach);" aria-hidden="true"></span>Beaches <span class="fc-n">6<span class="sr"> places</span></span></button>
+    <button type="button" class="fc fc-hist" aria-pressed="false" onclick="setFilter(this,'hist')"><span class="fc-dot" style="background:var(--c-hist);" aria-hidden="true"></span>Historic &amp; Landmarks <span class="fc-n">9<span class="sr"> places</span></span></button>
+    <button type="button" class="fc fc-nature" aria-pressed="false" onclick="setFilter(this,'nature')"><span class="fc-dot" style="background:var(--c-nature);" aria-hidden="true"></span>Parks &amp; Nature <span class="fc-n">6<span class="sr"> places</span></span></button>
+    <button type="button" class="fc fc-ent" aria-pressed="false" onclick="setFilter(this,'ent')"><span class="fc-dot" style="background:var(--c-ent);" aria-hidden="true"></span>Entertainment <span class="fc-n">7<span class="sr"> places</span></span></button>
+    <button type="button" class="fc fc-food" aria-pressed="false" onclick="setFilter(this,'food')"><span class="fc-dot" style="background:var(--c-food);" aria-hidden="true"></span>Food &amp; More <span class="fc-n">4<span class="sr"> places</span></span></button>
   </div>
 </div>
+<div class="mapx">
 <div class="map-wrap">
-  <div id="shore-map"></div>
+  <div id="shore-map" role="region" aria-label="Map of Wilmington and the beaches"></div>
   <div class="map-legend">
     <div class="ml-title">Map Key</div>
     <div class="ml-item"><div class="ml-dot" style="background:#E96645;"></div>ShoreList Experiences</div>
@@ -234,58 +297,52 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
     <div class="ml-item"><div class="ml-dot" style="background:#c87800;"></div>Food &amp; More</div>
   </div>
 </div>
-<div class="count-bar">
-  <div class="cb-item"><span class="cb-n" id="ct-shown">50</span>&nbsp;Shown</div>
-  <div class="cb-item"><span class="cb-n">12</span>&nbsp;Experiences</div>
-  <div class="cb-item"><span class="cb-n">6</span>&nbsp;Beaches</div>
-  <div class="cb-item"><span class="cb-n">9</span>&nbsp;Historic</div>
-  <div class="cb-item"><span class="cb-n">6</span>&nbsp;Nature</div>
-  <div class="cb-item"><span class="cb-n">7</span>&nbsp;Entertainment</div>
-  <div class="cb-item"><span class="cb-n">4</span>&nbsp;Food &amp; More</div>
-</div>
-<section class="pins-section">
+<section class="pins-section" aria-labelledby="pins-h">
   <div class="ps-inner">
     <div class="ps-hd">
       <div>
         <div class="ps-label">Browse Every Location</div>
-        <h2 class="ps-title">All <em>Pins</em></h2>
+        <h2 class="ps-title" id="pins-h">All <em>Pins</em></h2>
       </div>
-      <div class="ps-count" id="pins-count">Showing all 50+ locations</div>
+      <div class="ps-count" id="pins-count" role="status" aria-live="polite">Showing all 44 locations</div>
     </div>
+    <p class="ps-hint">Select a card, or its <b>Map</b> button, to fly to the pin and open its details.</p>
     <div class="pins-grid" id="pins-grid"></div>
   </div>
 </section>
+</div>
 <section class="towns-section">
   <div class="towns-inner">
-    <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;display:flex;align-items:center;gap:8px;"><span style="width:18px;height:1px;background:var(--coral);display:inline-block;"></span>Explore by Community</div>
-    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;color:#FEFCF7;line-height:1.1;margin-bottom:8px;">ShoreList <em style="color:var(--coral);font-style:italic;">Town Guides</em></h2>
-    <p style="font-size:0.90rem;color:rgba(245,232,203,0.55);max-width:520px;line-height:1.80;">Every community along the coast has its own personality. Dive deep into each one with its own dedicated ShoreList guide.</p>
+    <div class="tw-label">Explore by Community</div>
+    <h2 class="tw-title">ShoreList <em>Town Guides</em></h2>
+    <p class="tw-sub">Every community along the coast has its own personality. Dive deep into each one with its own dedicated ShoreList guide.</p>
     <div class="towns-grid">
-      <a href="/downtown" class="town-card">
-        <span class="tc-ico">&#127963;</span>
+      <a href="/downtown" class="mtown">
+        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bridge_1000x.webp" width="1000" height="714" alt="" loading="lazy" decoding="async"/>
         <div class="tc-name">Downtown Wilmington</div>
         <div class="tc-sub">Ghost tours, film history, river cruises &amp; 300 years of stories on the Cape Fear.</div>
         <div class="tc-link">Explore Downtown &#8594;</div>
       </a>
-      <a href="/wrightsville-beach" class="town-card">
-        <span class="tc-ico">&#127940;</span>
+      <a href="/wrightsville-beach" class="mtown">
+        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-wrightsville_1000x.webp" width="1000" height="558" alt="" loading="lazy" decoding="async"/>
         <div class="tc-name">Wrightsville Beach</div>
         <div class="tc-sub">NC's premier surf beach. Paddleboard, wildlife tours &amp; crystal-clear Atlantic water.</div>
         <div class="tc-link">Explore Wrightsville &#8594;</div>
       </a>
-      <a href="/carolina-beach" class="town-card">
-        <span class="tc-ico">&#127787;</span>
+      <a href="/carolina-beach" class="mtown">
+        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1000x.webp" width="1000" height="558" alt="" loading="lazy" decoding="async"/>
         <div class="tc-name">Carolina Beach</div>
         <div class="tc-sub">Boardwalk, wild Venus flytraps, surf lessons &amp; genuine Pleasure Island energy.</div>
         <div class="tc-link">Explore Carolina Beach &#8594;</div>
       </a>
-      <a href="/kure-beach" class="town-card">
-        <span class="tc-ico">&#127790;</span>
+      <a href="/kure-beach" class="mtown">
+        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1000x.webp" width="1000" height="558" alt="" loading="lazy" decoding="async"/>
         <div class="tc-name">Kure Beach</div>
         <div class="tc-sub">Fort Fisher, the NC Aquarium &amp; the wildest, most untouched stretch of NC coastline.</div>
         <div class="tc-link">Explore Kure Beach &#8594;</div>
       </a>
     </div>
+    <p class="tw-note">Beach photos are styled scenes, not pictures of the exact spot. Downtown photo by Unexpected Snacks, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Wilmington,_NC_Riverwalk_and_Cape_Fear_Memorial_Bridge_at_Sunset.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</p>
   </div>
 </section>
 <section class="seo-section">
@@ -312,22 +369,28 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
     </div>
   </div>
 </section>
+</main>
 <footer>
-  <a href="/" class="foot-logo"><span class="foot-s">Shore</span><span class="foot-l">List</span></a>
+  <a href="/" class="foot-logo" aria-label="ShoreList home"><span class="foot-s">Shore</span><span class="foot-l">List</span></a>
   <div class="foot-copy">&#169; 2026 ShoreList LLC &nbsp;&middot;&nbsp; Wilmington, NC &nbsp;&middot;&nbsp; Your local guide to coastal adventures</div>
-  <div class="foot-links">
+  <nav class="foot-links" aria-label="Footer">
     <a href="/things-to-do">Things to Do</a>
     <a href="/plan-your-trip">Plan Your Trip</a>
     <a href="/">Experiences</a>
     <a href="/events">Events Guide</a>
+    <a href="/wilmington-weather">Wilmington Weather</a>
+    <a href="/where-to-stay">Where to Stay</a>
+    <a href="/shore-picks">Shore Picks</a>
     <a href="/weekly">The Shore Report</a>
-    <a href="/map" style="color:var(--coral);">Map</a>
+    <a href="/map" aria-current="page">Map</a>
     <a href="/planner">Trip Planner</a>
     <a href="/waitlist">Join Waitlist</a>
     <a href="/join">Operators</a>
     <a href="/advertise">Advertise</a>
+    <a href="mailto:shorelistwilmington@gmail.com">Contact</a>
     <a href="/legal">Privacy &amp; Terms</a>
-  </div>
+    <a href="/legal#accessibility">Accessibility</a>
+  </nav>
 </footer>
 <div class="sticky-cta" id="sticky-cta">
   <div class="sc-text"><strong>Tours are bookable now</strong> &mdash; see what is open this week</div>
@@ -384,6 +447,7 @@ var PINS=[
 
 var CAT_COLORS={exp:'#E96645',beach:'#0A4D5C',hist:'#6c3e9c',nature:'#1a7a4a',ent:'#1e64c8',food:'#c87800'};
 var CAT_LABELS={exp:'ShoreList Experience',beach:'Beach',hist:'Historic & Landmark',nature:'Park & Nature',ent:'Entertainment',food:'Food & More'};
+var CAT_TEXT={exp:'#B93C24',beach:'#0A4D5C',hist:'#5B3389',nature:'#14633B',ent:'#1A55AB',food:'#7A4A00'};
 var CAT_BADGE={exp:'pcb-exp',beach:'pcb-beach',hist:'pcb-hist',nature:'pcb-nature',ent:'pcb-ent',food:'pcb-food'};
 
 var currentFilter='all';
@@ -396,20 +460,23 @@ function initMap(){
 
   PINS.forEach(function(pin){
     var color=CAT_COLORS[pin.cat]||'#555';
-    var icon=L.divIcon({html:'<div style="width:14px;height:14px;border-radius:50%;background:'+color+';border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.30);cursor:pointer;"></div>',className:'',iconSize:[14,14],iconAnchor:[7,7],popupAnchor:[0,-10]});
+    var ink=CAT_TEXT[pin.cat]||'#16303A';
+    /* 44px hit area around an 18px dot; the anchor stays on the dot centre so positions are unchanged */
+    var icon=L.divIcon({html:'<span class="pin-dot" style="background:'+color+';"></span>',className:'pin-hit',iconSize:[44,44],iconAnchor:[22,22],popupAnchor:[0,-12]});
     var isFree=pin.fee.toLowerCase().indexOf('free')>=0;
     var isExt=pin.link&&pin.link.indexOf('http')===0;
     var btnAttr=isExt?' target="_blank" rel="noopener noreferrer"':'';
     var ph='<div class="mp">'
       +'<div class="mp-top">'
-      +'<div class="mp-cat" style="color:'+color+';">'+CAT_LABELS[pin.cat]+'</div>'
+      +'<div class="mp-cat" style="color:'+ink+';">'+CAT_LABELS[pin.cat]+'</div>'
       +'<div class="mp-name">'+pin.name+'</div>'
       +'<div class="mp-desc">'+pin.desc+'</div>'
       +'<div class="mp-tags"><span class="mp-tag">'+pin.area+'</span><span class="mp-tag'+(isFree?' mp-tag-free':'')+'" >'+pin.fee+'</span></div>'
       +'</div>'
-      +'<div class="mp-foot"><a href="'+pin.link+'"'+btnAttr+' class="mp-btn" style="background:'+color+';">'+pin.btn+' &#8594;</a></div>'
+      +'<div class="mp-foot"><a href="'+pin.link+'"'+btnAttr+' class="mp-btn" style="background:'+ink+';">'+pin.btn+' &#8594;</a></div>'
       +'</div>';
-    var m=L.marker([pin.lat,pin.lng],{icon:icon}).bindPopup(ph,{maxWidth:280,closeButton:true,autoPan:true});
+    var m=L.marker([pin.lat,pin.lng],{icon:icon,title:pin.name,alt:pin.name}).bindPopup(ph,{maxWidth:280,closeButton:true,autoPan:true});
+    m.on('add',function(){var el=m.getElement();if(el)el.setAttribute('aria-label',pin.name+', '+CAT_LABELS[pin.cat]);});
     m._pinCat=pin.cat;m._pinLat=pin.lat;m._pinLng=pin.lng;
     allMarkers.push(m);m.addTo(MAP);
   });
@@ -418,8 +485,8 @@ function initMap(){
 }
 
 function setFilter(btn,cat){
-  document.querySelectorAll('.fc').forEach(function(b){b.classList.remove('active');});
-  btn.classList.add('active');
+  document.querySelectorAll('.fc').forEach(function(b){b.classList.remove('active');b.setAttribute('aria-pressed','false');});
+  btn.classList.add('active');btn.setAttribute('aria-pressed','true');
   currentFilter=cat;
   allMarkers.forEach(function(m){
     if(cat==='all'||m._pinCat===cat)m.addTo(MAP);else MAP.removeLayer(m);
@@ -445,22 +512,25 @@ function renderGrid(cat){
     var isExt=pin.link&&pin.link.indexOf('http')===0;
     var color=CAT_COLORS[pin.cat]||'#555';
     var bc=CAT_BADGE[pin.cat]||'pcb-hist';
-    return '<div class="pin-card" onclick="flyTo('+pin.lat+','+pin.lng+')">'
+    return '<article class="pin-card" onclick="flyTo('+pin.lat+','+pin.lng+')">'
       +'<div class="pin-card-bar" style="background:'+color+';"></div>'
       +'<div class="pin-card-body">'
       +'<div class="pcb-top"><span class="pcb-badge '+bc+'">'+CAT_LABELS[pin.cat]+'</span><span class="pcb-area">'+pin.area+'</span></div>'
-      +'<div class="pc-name">'+pin.name+'</div>'
+      +'<h3 class="pc-name">'+pin.name+'</h3>'
       +'<div class="pc-desc">'+pin.desc+'</div>'
       +'<div class="pc-foot"><span class="pc-fee '+(isFree?'pc-fee-free':'pc-fee-paid')+'">'+pin.fee+'</span>'
-      +'<a href="'+pin.link+'"'+(isExt?' target="_blank" rel="noopener noreferrer"':'')+' class="pc-link" onclick="event.stopPropagation();">'+pin.btn+' &#8594;</a>'
-      +'</div></div></div>';
+      +'<button type="button" class="pc-map" onclick="event.stopPropagation();flyTo('+pin.lat+','+pin.lng+')"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>Map<span class="sr">: show '+pin.name+' on the map</span></button>'
+      +'<a href="'+pin.link+'"'+(isExt?' target="_blank" rel="noopener noreferrer"':'')+' class="pc-link" onclick="event.stopPropagation();">'+pin.btn+' &#8594;<span class="sr"> '+pin.name+(isExt?' (opens in a new tab)':'')+'</span></a>'
+      +'</div></div></article>';
   }).join('');
 }
 
 function flyTo(lat,lng){
   if(!MAP)return;
   MAP.flyTo([lat,lng],15,{duration:1.2});
-  window.scrollTo({top:document.querySelector('.map-wrap').offsetTop-120,behavior:'smooth'});
+  var wrap=document.querySelector('.map-wrap'),r=wrap.getBoundingClientRect(),bar=document.getElementById('filter-bar'),off=102+(bar?bar.offsetHeight:0);
+  /* only scroll when the map is not already in view (on wide screens it stays pinned beside the list) */
+  if(r.top<off-4||r.bottom>window.innerHeight+4)window.scrollTo({top:window.scrollY+r.top-off,behavior:'smooth'});
   allMarkers.forEach(function(m){
     if(Math.abs(m._pinLat-lat)<0.0001&&Math.abs(m._pinLng-lng)<0.0001){
       setTimeout(function(){m.openPopup();},1300);
