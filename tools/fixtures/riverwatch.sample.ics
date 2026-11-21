@@ -1,0 +1,41 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Cape Fear River Watch - ECPv6.4//NONSGML v1.0//EN
+X-WR-CALNAME:Cape Fear River Watch
+X-SHORELIST-FIXTURE:synthetic sample in The Events Calendar (Tribe) ICS format; replace with a captured payload
+BEGIN:VEVENT
+DTSTART;TZID=America/New_York:20261205T090000
+DTEND;TZID=America/New_York:20261205T120000
+DTSTAMP:20261101T120000Z
+UID:5231-1796482800-1796493600@capefearriverwatch.org
+SUMMARY:Greenfield Lake Cleanup
+DESCRIPTION:Join us for a paddle and cleanup.
+LOCATION:Greenfield Lake\, 1941 Amphitheater Dr\, Wilmington\, NC
+URL:https://capefearriverwatch.org/event/greenfield-lake-cleanup/
+CATEGORIES:Cleanup
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=America/New_York:20261212T100000
+DTEND;TZID=America/New_York:20261212T130000
+UID:5232-1797069600-1797080400@capefearriverwatch.org
+SUMMARY:Masonboro Island Beach Sweep
+LOCATION:Carolina Beach\, NC
+URL:https://capefearriverwatch.org/event/masonboro-beach-sweep/
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=America/New_York:20261210T180000
+DTEND;TZID=America/New_York:20261210T190000
+UID:5233-1796900000-1796903600@capefearriverwatch.org
+SUMMARY:Water Quality Webinar
+LOCATION:Virtual
+URL:https://capefearriverwatch.org/event/water-quality-webinar/
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=America/New_York:20261215T100000
+DTEND;TZID=America/New_York:20261215T120000
+UID:5234-1797328800-1797336000@capefearriverwatch.org
+SUMMARY:Haywood County Stream Day
+LOCATION:Waynesville\, NC
+URL:https://capefearriverwatch.org/event/haywood-stream-day/
+END:VEVENT
+END:VCALENDAR

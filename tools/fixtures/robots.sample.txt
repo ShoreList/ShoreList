@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /iCalendar.aspx?private
+Allow: /iCalendar.aspx
+
+User-agent: BadBot
+Disallow: /
