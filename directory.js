@@ -21,6 +21,11 @@
     '.ld-card h4{font-family:"Playfair Display",serif;font-size:1.1rem;font-weight:800;margin:0;color:var(--teal,#0A4D5C);line-height:1.2}.ld-card p{margin:0;font-size:.9rem;line-height:1.55;color:#2A4850}' +
     '.ld-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px}.ld-row a{display:inline-flex;align-items:center;min-height:40px;padding:0 15px;border-radius:100px;font-weight:800;font-size:.84rem;text-decoration:none}' +
     '.ld-web{background:#C9452A;color:#fff}.ld-call{background:#C9452A;color:#fff}.ld-soc{border:1.5px solid rgba(10,77,92,.2);color:var(--teal,#0A4D5C);font-weight:700}.ld-soc:hover{border-color:var(--coral,#E96645)}' +
+
+    '.ld-lead{margin:30px 0 0;background:linear-gradient(135deg,#0E1F33,#0A4D5C);color:#F4F1EA;border-radius:20px;padding:26px 24px;display:grid;gap:14px}.ld-lead h3{font-family:"Playfair Display",serif;font-size:1.35rem;margin:0;color:#fff}.ld-lead p{margin:0;font-size:.92rem;line-height:1.55;color:#E6EEF0}' +
+    '.ld-lead form{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.ld-lead input,.ld-lead textarea{font:inherit;font-size:.92rem;min-height:44px;padding:10px 14px;border-radius:12px;border:1.5px solid rgba(255,255,255,.3);background:rgba(255,255,255,.1);color:#fff}.ld-lead input::placeholder,.ld-lead textarea::placeholder{color:#C9D8DB}.ld-lead textarea{grid-column:1/-1;min-height:80px}' +
+    '.ld-lead button{font:inherit;font-weight:800;min-height:44px;border-radius:100px;border:0;background:#fff;color:#8E2D1F;cursor:pointer;padding:0 22px}.ld-lead .ld-fine{grid-column:1/-1;font-size:.76rem;color:#D4E0E3;margin:0}.ld-lead .ld-ok{font-weight:700}' +
+    '.ld-spon{border:1.5px dashed rgba(10,77,92,.3);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px;background:#F4F1EA}.ld-spon b{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:#6B4A12}.ld-spon a{font-weight:800;color:#8E2D1F}' +
     '.ld-note{font-size:.78rem;color:var(--mid,#2C4A52);opacity:.85;margin:6px 0 0;line-height:1.55}';
   function card(b) {
     var h = '<article class="ld-card"><h4>' + esc(b.n) + '</h4><p>' + esc(b.d) + '</p><div class="ld-row">';
@@ -53,6 +58,27 @@
     });
     return s;
   }
+
+  function lead() {
+    var f = d.createElement('div'); f.className = 'ld-lead';
+    f.innerHTML = '<h3>Planning a group, wedding or private trip?</h3><p>Tell us what you need and we will pass your request to a few local businesses in this category who can help.</p>' +
+      '<form action="https://formspree.io/f/xeevzzqd" method="POST"><input type="hidden" name="list" value="Local lead: ' + esc(cat) + '"><input name="name" required placeholder="Your name" aria-label="Your name" autocomplete="name"><input name="email" type="email" required placeholder="Email" aria-label="Email" autocomplete="email"><input name="date" placeholder="Date or month" aria-label="Date or month"><input name="size" placeholder="Group size" aria-label="Group size"><textarea name="details" placeholder="What are you looking for?" aria-label="Details"></textarea><button type="submit">Send my request</button>' +
+      '<p class="ld-fine">By sending, you agree we may share this request with relevant local businesses so they can contact you. We never sell your email to advertisers.</p></form>';
+    var fm = f.querySelector('form');
+    fm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var b = fm.querySelector('button'); b.disabled = true; b.textContent = 'Sending...';
+      fetch(fm.action, { method: 'POST', body: new FormData(fm), headers: { Accept: 'application/json' } }).then(function (r) {
+        if (!r.ok) throw 0; track('generate_lead', { cat: cat }); fm.innerHTML = '<p class="ld-ok">Thank you. We will be in touch soon.</p>';
+      }).catch(function () { b.disabled = false; b.textContent = 'Send my request'; });
+    });
+    return f;
+  }
+  function spon() {
+    var a = d.createElement('article'); a.className = 'ld-spon';
+    a.innerHTML = '<b>Sponsored spot available</b><p>Own a business in this category? Featured spots are clearly labeled and reach visitors who are planning right now.</p><a href="/advertise">See partner options</a>';
+    return a;
+  }
   function place(sec) {
     var tries = 0, t = setInterval(function () {
       var anchor = d.querySelector('.list-cta') || d.querySelector('.more-sec');
@@ -65,7 +91,7 @@
       var list = all.filter(function (b) { return b.c.indexOf(cat) > -1; });
       if (!list.length) return;
       var st = d.createElement('style'); st.textContent = CSS; d.head.appendChild(st);
-      place(build(list));
+      var sec = build(list); var g = sec.querySelector('.ld-grid'); if (g) g.appendChild(spon()); sec.appendChild(lead()); place(sec);
     }).catch(function () {});
   }
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', go); else go();
