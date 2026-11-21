@@ -67,7 +67,7 @@ var OPS={
      desc:'Wilmington isn\'t just a beach town &#8212; it\'s one of the most filmed cities in America. One Tree Hill. Dawson\'s Creek. Iron Man 3. Safe Haven. A Walk to Remember. Hundreds of productions have called Wilmington home. Your guide has spent over two decades working inside the Wilmington film and hospitality industry and knows the stories behind the sets, the locations, and the legends that most tourists never hear. This isn\'t a bus tour reading from a brochure. This is Wilmywood &#8212; from the inside.',
      price:'$45',priceLabel:'per person',priceCents:4500,
      tags:['Downtown Wilmington','90 Minutes','All Ages','Film History'],
-     note:'Secure your spot online. Balance due at tour.',
+     note:'Secure your spot online. Pay in full at checkout.',
      schedule:{days:[3,4,5,6,0],slots:['10:00 AM','2:00 PM','6:00 PM']}}
   ],
   'ghost-tours':[
@@ -83,7 +83,7 @@ var OPS={
      desc:'Learn to surf at one of the best beginner beaches on the East Coast with a certified local instructor who has spent years teaching in these exact waters. Whether you\'ve never touched a board or want to level up your skills, this lesson is fun, safe, and unforgettable. Every session is tailored to your level. All equipment included &#8212; board, wetsuit, and rash guard.',
      price:'$100',priceLabel:'per person',priceCents:10000,
      tags:['Carolina Beach','2 Hours','All Skill Levels','All Gear Included'],
-     note:'Secure your spot online. Balance due at lesson.',
+     note:'Secure your spot online. Pay in full at checkout.',
      schedule:{days:[1,2,4,5,6,0],slots:['8:00 AM','10:00 AM','12:00 PM','2:00 PM']}}
   ],
   'nature-walks':[
@@ -91,7 +91,7 @@ var OPS={
      desc:'Discover the wild, beautiful natural world of coastal North Carolina. From ancient cypress swamps and carnivorous plant bogs of Carolina Beach State Park to pristine maritime forests and tidal marshes, these guided walks reveal the incredible biodiversity that makes this coast so special. This experience is launching soon on Shorelist &#8212; tap to be notified when bookings open.',
      price:'$35',priceLabel:'per person',priceCents:3500,
      tags:['Carolina Beach State Park','2 Hours','Family Friendly','Coming Soon'],
-     note:'Secure your spot online. Balance due at walk.',
+     note:'Secure your spot online. Pay in full at checkout.',
      schedule:{days:[3,6,0],slots:['8:00 AM','10:00 AM','2:00 PM']}}
   ]
 };
