@@ -23,8 +23,28 @@
     var A = K[ORDER[i]], B = K[ORDER[(i + 1) % 4]];
     return { top: mixv(A.top, B.top, s), hor: mixv(A.hor, B.hor, s), sun: mixv(A.sun, B.sun, s), deep: mixv(A.deep, B.deep, s), lite: mixv(A.lite, B.lite, s), sy: mix(A.sy, B.sy, s), st: mix(A.st, B.st, s) };
   }
-  function phaseNow() { var h = new Date().getHours() + new Date().getMinutes() / 60;
-    if (h < 5.5) return 3.4; if (h < 8) return 0.3; if (h < 16) return 1.0; if (h < 19.5) return 2.0; return 3.2; }
+  // Real sun for Wilmington, NC (NOAA sunrise equation): no network needed.
+  var LAT = 34.2257, LON = -77.9447, RAD = Math.PI / 180;
+  function sunDay(ms) {
+    var jd = ms / 86400000 + 2440587.5, n = Math.ceil(jd - 2451545.0 + 0.0008), js = n - LON / 360;
+    var M = (357.5291 + 0.98560028 * js) % 360, C = 1.9148 * Math.sin(M * RAD) + 0.02 * Math.sin(2 * M * RAD) + 0.0003 * Math.sin(3 * M * RAD);
+    var L = (M + C + 180 + 102.9372) % 360, tr = 2451545.0 + js + 0.0053 * Math.sin(M * RAD) - 0.0069 * Math.sin(2 * L * RAD);
+    var dec = Math.asin(Math.sin(L * RAD) * Math.sin(23.4397 * RAD));
+    var w = Math.acos((Math.sin(-0.833 * RAD) - Math.sin(LAT * RAD) * Math.sin(dec)) / (Math.cos(LAT * RAD) * Math.cos(dec))) / RAD;
+    function ms2(j) { return (j - 2440587.5) * 86400000; }
+    return { rise: ms2(tr - w / 360), noon: ms2(tr), set: ms2(tr + w / 360) };
+  }
+  function phaseAt(ms) {
+    var pts = [], H = 3600000;
+    for (var i = -1; i <= 1; i++) { var d = sunDay(ms + i * 86400000); pts.push([d.rise - 1.0 * H, 4 * (i - 1) + 3], [d.rise, 4 * i], [d.noon, 4 * i + 1], [d.set - 0.4 * H, 4 * i + 2], [d.set + 0.9 * H, 4 * i + 3]); }
+    pts.sort(function (a, b) { return a[0] - b[0]; });
+    for (var k = 0; k < pts.length - 1; k++) {
+      if (ms >= pts[k][0] && ms < pts[k + 1][0]) { var f = (ms - pts[k][0]) / (pts[k + 1][0] - pts[k][0]); return (((pts[k][1] + f * (pts[k + 1][1] - pts[k][1])) % 4) + 4) % 4; }
+    }
+    return 1;
+  }
+  function phaseNow() { return phaseAt(Date.now()); }
+  var autoMode = true;
 
   var cv = document.createElement('canvas');
   cv.className = 'scene-cv'; cv.setAttribute('aria-hidden', 'true');
@@ -72,7 +92,7 @@
   var loc = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
   var U = {}; ['R', 'T', 'top', 'hor', 'sun', 'deep', 'lite', 'sy', 'st', 'M'].forEach(function (n) { U[n] = gl.getUniformLocation(pr, n); });
 
-  var scale = Math.min(window.devicePixelRatio || 1, 1.5), cur = phaseNow(), target = cur, mx = 0, my = 0, tmx = 0, tmy = 0;
+  var scale = Math.min(window.devicePixelRatio || 1, 2), cur = phaseNow(), target = cur, mx = 0, my = 0, tmx = 0, tmy = 0;
   var visible = true, t0 = performance.now(), last = t0, slow = 0, frames = 0;
   function size() { var r = host.getBoundingClientRect(); cv.width = Math.max(2, Math.floor(r.width * scale)); cv.height = Math.max(2, Math.floor(r.height * scale)); gl.viewport(0, 0, cv.width, cv.height); }
   function draw(now) {
@@ -102,9 +122,11 @@
   else requestAnimationFrame(loop);
 
   window.ShoreScene = {
-    set: function (name) { var i = ORDER.indexOf(name); if (i < 0) return; target = i; if (reduce) { cur = i; draw(performance.now()); } host.setAttribute('data-tod', name); document.dispatchEvent(new CustomEvent('shorescene', { detail: name })); },
-    auto: function () { var p = phaseNow(); return ORDER[Math.round(p) % 4]; },
+    set: function (name) { var i = ORDER.indexOf(name); if (i < 0) return; autoMode = false; target = i; if (reduce) { cur = i; draw(performance.now()); } host.setAttribute('data-tod', name); document.dispatchEvent(new CustomEvent('shorescene', { detail: name })); },
+    live: function () { autoMode = true; target = phaseNow(); host.setAttribute('data-tod', 'live'); if (reduce) { cur = target; draw(performance.now()); } document.dispatchEvent(new CustomEvent('shorescene', { detail: 'live' })); },
+    auto: function () { return 'live'; },
     names: ORDER
   };
-  host.setAttribute('data-tod', window.ShoreScene.auto()); window.ShoreScene.set(window.ShoreScene.auto());
+  setInterval(function () { if (autoMode) target = phaseNow(); }, 20000);
+  host.setAttribute('data-tod', 'live');
 })();

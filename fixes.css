@@ -1,0 +1,10 @@
+/* Small-screen guards: nothing may push the page wider than the viewport. */
+html,body{max-width:100%;overflow-x:clip}
+@media(max-width:700px){
+  footer{padding:28px 20px!important}
+  .foot-links{flex-wrap:wrap;gap:10px 16px}
+  .foot-l,.foot-copy,.foot-logo{max-width:100%;overflow-wrap:anywhere}
+  .compare-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .navr{gap:10px;flex-wrap:wrap;justify-content:flex-end}
+  .navr a:not(.cta){display:none}
+}
