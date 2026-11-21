@@ -9,15 +9,16 @@ import { CATS, TOWNS, PHOTO } from './seo-data.mjs';
 
 const SITE = 'https://shorelist.net';
 const tpl = fs.readFileSync('category.html', 'utf8');
+const app = fs.readFileSync('category-app.js', 'utf8'); // booking app + live data (CAT_DATA, OPS)
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const strip = (s) => String(s || '').replace(/<[^>]*>/g, '').replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n)).replace(/&amp;/g, '&').replace(/&mdash;/g, '—').replace(/&rsquo;/g, '’').replace(/\s+/g, ' ').trim();
 const today = new Date().toISOString().slice(0, 10);
 
 // live data from the template
-const a = tpl.indexOf('var CAT_DATA='), o = tpl.indexOf('var OPS={');
-const rest = tpl.slice(o + 5), m = rest.search(/\n(var |function |const |let )/);
+const a = app.indexOf('var CAT_DATA='), o = app.indexOf('var OPS={');
+const rest = app.slice(o + 5), m = rest.search(/\n(var |function |const |let )/);
 const ctx = {}; vm.createContext(ctx);
-vm.runInContext(tpl.slice(a, o + 5 + m) + ';this.CAT_DATA=CAT_DATA;this.OPS=OPS;', ctx);
+vm.runInContext(app.slice(a, o + 5 + m) + ';this.CAT_DATA=CAT_DATA;this.OPS=OPS;', ctx);
 const slugs = Object.keys(ctx.CAT_DATA);
 for (const s of slugs) if (!CATS[s]) throw new Error('missing copy for ' + s);
 
@@ -115,7 +116,7 @@ ${liveHtml}
 // ---------- shell for hub + guide (template without the booking app) ----------
 function shell({ url, title, desc, image, lds, bodyAttr, breadcrumb, tag, h1, sub, main }) {
   let h = head(tpl, { url, title, desc, image, extraLd: lds });
-  const s1 = h.indexOf('<script>', h.indexOf('</footer>')), s2 = h.indexOf('<script src="/sound.js"');
+  const s1 = h.indexOf('<script src="/category-app.js">', h.indexOf('</footer>')), s2 = h.indexOf('<script src="/sound.js"');
   h = h.slice(0, s1) + h.slice(s2);                       // drop the booking scripts
   h = h.replace('<body>', `<body ${bodyAttr || ''}>`)
     .replace('<span id="hbc">Experiences</span>', breadcrumb)
@@ -237,7 +238,7 @@ const tripMain = `
 fs.writeFileSync('plan-your-trip.html', shell({
   url: '/plan-your-trip', title: 'Planning a Trip to Wilmington, NC & the Beaches | ShoreList Guide',
   desc: 'Plan a trip to Wilmington, NC: when to go, where to stay, how far the beaches are, a three-day itinerary and answers to common questions, from a local guide.',
-  image: 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb3-golden_1200x630_crop_center.webp',
+  image: 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb4-golden_1200x630_crop_center.webp',
   lds: [
     { '@context': 'https://schema.org', '@type': 'Article', headline: 'Planning a Trip to Wilmington, NC and the Beaches', url: SITE + '/plan-your-trip', inLanguage: 'en-US', datePublished: '2026-11-20', dateModified: today, author: ORG, publisher: ORG, about: { '@type': 'TouristDestination', name: 'Wilmington, North Carolina' } },
     crumbs([['ShoreList', '/'], ['Plan Your Trip', '/plan-your-trip']]),
