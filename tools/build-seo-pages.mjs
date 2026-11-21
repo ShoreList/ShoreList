@@ -83,7 +83,7 @@ for (const slug of slugs) {
   ];
   if (live.length) lds.push({ '@context': 'https://schema.org', '@type': 'ItemList', name: c.h1, itemListElement: live.map((x, i) => ({ '@type': 'ListItem', position: i + 1, item: Object.assign({ '@type': 'TouristTrip', name: strip(x.business), description: strip(x.desc).slice(0, 400), url: SITE + url, provider: { '@type': 'LocalBusiness', name: strip(x.operator || x.business) } }, x.priceCents ? { offers: { '@type': 'Offer', price: (x.priceCents / 100).toFixed(2), priceCurrency: 'USD', url: SITE + url, availability: 'https://schema.org/InStock' } } : {}) })) });
 
-  let h = head(tpl, { url, title: c.title + ' | ShoreList', desc: c.desc, image: og(slug), extraLd: lds });
+  let h = head(tpl, { url, title: c.title.length > 50 ? c.title : c.title + ' | ShoreList', desc: c.desc, image: og(slug), extraLd: lds });
   h = h.replace('<body>', `<body data-cat="${slug}">`)
     .replace('<span id="hbc">Experiences</span>', `<a href="/things-to-do">Things to Do</a> &nbsp;&#8250;&nbsp; <span id="hbc">${esc(strip(d.title))}</span>`)
     .replace('<h1 class="hero-title" id="htitle">Loading...</h1>', `<h1 class="hero-title" id="htitle">${esc(c.h1)}</h1>`)
@@ -236,7 +236,7 @@ const tripMain = `
   ${chips([['/things-to-do', 'All things to do'], ['/events', 'Events'], ['/map', 'Map'], ['/planner', 'AI trip planner'], ['/shore-picks', 'Where to eat'], ['/shop', 'Beach gear']])}
 </section>`;
 fs.writeFileSync('plan-your-trip.html', shell({
-  url: '/plan-your-trip', title: 'Planning a Trip to Wilmington, NC & the Beaches | ShoreList Guide',
+  url: '/plan-your-trip', title: 'Plan a Trip to Wilmington, NC & the Beaches | ShoreList',
   desc: 'Plan a trip to Wilmington, NC: when to go, where to stay, how far the beaches are, a three-day itinerary and answers to common questions, from a local guide.',
   image: 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb4-golden_1200x630_crop_center.webp',
   lds: [
