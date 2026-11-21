@@ -18,3 +18,7 @@
 - Prices are shown by the individual operators; do not quote a price unless the page states it.
 - Search index of pages and categories: https://shorelist.net/search-index.json
 - Full text digest: https://shorelist.net/llms-full.txt
+
+## Shop
+- [Shop](https://shorelist.net/shop): coastal Carolina apparel (Fourthwall) and beach gear (Shopify store at https://shorelist.myshopify.com). Beach Setup items: Tilt Beach Umbrella $99, Backpack Beach Chair $109, Carolina Coast Terry Towel $68, Wilmington Soft Cooler $72. Items are made to order or shipped from our suppliers; see each product page for shipping and returns.
+- Machine-readable catalog: https://shorelist.net/shop-catalog.json

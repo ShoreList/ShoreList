@@ -371,7 +371,8 @@
         "beach"
       ],
       "cut": "unisex",
-      "store": "shopify"
+      "store": "shopify",
+      "buy": "https://shorelist.myshopify.com/cart/48569723617364:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now"
     },
     {
       "id": "backpack-beach-chair",
@@ -387,7 +388,8 @@
         "beach"
       ],
       "cut": "unisex",
-      "store": "shopify"
+      "store": "shopify",
+      "buy": "https://shorelist.myshopify.com/cart/48569729744980:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now"
     },
     {
       "id": "carolina-coast-towel",
@@ -403,7 +405,8 @@
         "beach"
       ],
       "cut": "unisex",
-      "store": "shopify"
+      "store": "shopify",
+      "buy": "https://shorelist.myshopify.com/cart/48569495519316:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now"
     },
     {
       "id": "coastal-soft-cooler",
@@ -419,7 +422,8 @@
         "beach"
       ],
       "cut": "unisex",
-      "store": "shopify"
+      "store": "shopify",
+      "buy": "https://shorelist.myshopify.com/cart/48569330499668:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now"
     }
   ],
   "scenes": [
@@ -440,7 +444,7 @@
       "name": "Harbor night"
     }
   ],
-  "item_fields": "id, collection, name, url (Fourthwall, https), img, alt, meta, cta, price (number, optional, only after RJ approves), scenes[] (beach|boardwalk|riverwalk|harbor-night), cut (unisex|womens), lookbook (image url); store (shopify|fourthwall)",
+  "item_fields": "id, collection, name, url (Fourthwall, https), img, alt, meta, cta, price (number, optional, only after RJ approves), scenes[] (beach|boardwalk|riverwalk|harbor-night), cut (unisex|womens), lookbook (image url); store (shopify|fourthwall), buy (optional https cart permalink for one-tap checkout)",
   "stores": [
     {
       "id": "fourthwall",
