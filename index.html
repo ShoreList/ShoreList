@@ -1153,34 +1153,48 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 
 <section id="sp-promo" aria-labelledby="sp-promo-h">
 <style>
-#sp-promo{padding:60px 20px;}
-#sp-promo .sp-band{max-width:1060px;margin:0 auto;border-radius:28px;position:relative;overflow:hidden;border:1px solid rgba(10,77,92,0.12);padding:46px 44px;display:grid;grid-template-columns:1.15fr 1fr;gap:34px;align-items:center;background:radial-gradient(circle at 88% 14%,rgba(255,160,80,0.34),transparent 58%),linear-gradient(150deg,#FDF4E3 0%,#E9F7F6 60%,#FCEAD6 100%);}
-#sp-promo .sp-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(233,102,69,0.13);color:#E96645;font-weight:800;font-size:0.66rem;letter-spacing:0.16em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:15px;}
-#sp-promo h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:900;color:#0A4D5C;margin:0 0 11px;line-height:1.05;letter-spacing:-0.5px;}
-#sp-promo h2 em{color:#E96645;font-style:italic;}
-#sp-promo p{color:#1A7585;font-size:1.02rem;line-height:1.6;margin:0 0 24px;max-width:440px;}
-#sp-promo .sp-btn{display:inline-block;background:#E96645;color:#fff;padding:14px 28px;border-radius:100px;font-weight:800;text-decoration:none;box-shadow:0 12px 28px rgba(233,102,69,0.34);transition:transform .18s,box-shadow .18s;}
-#sp-promo .sp-btn:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(233,102,69,0.44);}
-#sp-promo .sp-pills{display:flex;flex-direction:column;gap:12px;}
-#sp-promo .sp-pill{display:flex;align-items:center;gap:15px;background:#fff;border:1px solid rgba(10,77,92,0.10);border-radius:16px;padding:14px 18px;box-shadow:0 6px 18px rgba(10,77,92,0.06);transition:transform .18s,box-shadow .18s;text-decoration:none;}
-#sp-promo .sp-pill:hover{transform:translateX(6px);box-shadow:0 12px 26px rgba(10,77,92,0.12);}
-#sp-promo .sp-pill .e{font-size:1.7rem;line-height:1;}
-#sp-promo .sp-pill .t{font-weight:800;color:#0A4D5C;font-size:0.96rem;display:block;}
-#sp-promo .sp-pill .d{font-size:0.8rem;color:#2C4A52;}
-@media(max-width:760px){#sp-promo .sp-band{grid-template-columns:1fr;padding:34px 26px;}}
+#sp-promo{padding:70px 20px;background:#F4F1EA}
+#sp-promo .sp-band{max-width:1180px;margin:0 auto;border-radius:30px;position:relative;overflow:hidden;isolation:isolate;padding:64px 56px;display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:center;color:#F4F1EA;background:#0E1F33;box-shadow:0 30px 70px rgba(14,31,51,.28)}
+#sp-promo .sp-bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+#sp-promo .sp-band:hover .sp-bg{transform:scale(1.12)}
+#sp-promo .sp-band::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(14,31,51,.94) 8%,rgba(14,31,51,.7) 52%,rgba(14,31,51,.38) 100%)}
+#sp-promo .sp-eyebrow{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(244,241,234,.38);color:#F4F1EA;font-weight:800;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;padding:8px 16px;border-radius:100px;margin-bottom:20px;backdrop-filter:blur(6px);background:rgba(244,241,234,.08)}
+#sp-promo .sp-eyebrow i{width:7px;height:7px;border-radius:50%;background:#9FC3B8;box-shadow:0 0 0 0 rgba(159,195,184,.7);animation:spPulse 2.2s infinite}
+@keyframes spPulse{70%{box-shadow:0 0 0 9px rgba(159,195,184,0)}100%{box-shadow:0 0 0 0 rgba(159,195,184,0)}}
+#sp-promo h2{font-family:'Playfair Display',serif;font-size:clamp(2.1rem,4.4vw,3.5rem);font-weight:900;color:#F4F1EA;margin:0 0 16px;line-height:1.02;letter-spacing:-.8px}
+#sp-promo h2 em{color:#FF9B7B;font-style:italic}
+#sp-promo p{color:rgba(244,241,234,.86);font-size:1.08rem;line-height:1.65;margin:0 0 28px;max-width:470px}
+#sp-promo .sp-btn{display:inline-flex;align-items:center;gap:10px;background:#C0412A;color:#fff;padding:0 30px;min-height:54px;border-radius:100px;font-weight:800;text-decoration:none;box-shadow:0 14px 30px rgba(192,65,42,.4);transition:transform .25s,box-shadow .25s}
+#sp-promo .sp-btn:hover{transform:translateY(-3px);box-shadow:0 20px 40px rgba(192,65,42,.5)}
+#sp-promo .sp-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s}
+#sp-promo .sp-btn:hover svg{transform:translateX(4px)}
+#sp-promo .sp-pills{display:flex;flex-direction:column;gap:14px}
+#sp-promo .sp-pill{display:flex;align-items:center;gap:18px;background:rgba(244,241,234,.1);border:1px solid rgba(244,241,234,.22);border-radius:20px;padding:18px 22px;backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);transition:transform .3s cubic-bezier(.2,.7,.2,1),background .3s,border-color .3s;text-decoration:none;color:inherit}
+#sp-promo .sp-pill:hover{transform:translateX(8px);background:rgba(244,241,234,.18);border-color:rgba(255,155,123,.7)}
+#sp-promo .sp-ic{flex:none;width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(145deg,#9FC3B8,#5E9A8D)}
+#sp-promo .sp-ic svg{width:26px;height:26px;fill:none;stroke:#0E1F33;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#sp-promo .sp-pill .t{font-family:'Playfair Display',serif;font-weight:800;color:#F4F1EA;font-size:1.2rem;display:block;line-height:1.2}
+#sp-promo .sp-pill .d{font-size:.92rem;color:rgba(244,241,234,.78)}
+#sp-promo .sp-go{margin-left:auto;flex:none;width:34px;height:34px;border-radius:50%;border:1px solid rgba(244,241,234,.4);display:grid;place-items:center}
+#sp-promo .sp-go svg{width:15px;height:15px;fill:none;stroke:#F4F1EA;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+#sp-promo .sp-note{grid-column:1/-1;margin:0;font-size:.78rem;color:rgba(244,241,234,.66);max-width:none}
+@media(max-width:860px){#sp-promo .sp-band{grid-template-columns:1fr;padding:40px 24px;gap:30px}#sp-promo{padding:44px 14px}}
+@media(prefers-reduced-motion:reduce){#sp-promo .sp-bg,#sp-promo .sp-eyebrow i{transition:none;animation:none}}
 </style>
 <div class="sp-band">
+  <img class="sp-bg" alt="" loading="lazy" decoding="async" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-wrightsville_1920x.webp">
   <div>
-    <span class="sp-eyebrow">&#9733; New &middot; Shore Picks</span>
+    <span class="sp-eyebrow"><i></i>New &middot; Shore Picks</span>
     <h2 id="sp-promo-h">Done exploring? Now <em>eat like a local.</em></h2>
-    <p>Shore Picks is our handpicked guide to the best restaurants, caf&eacute;s, and shops in Wilmington &amp; the Beaches &mdash; chosen on merit, kept honest, and always labeled.</p>
-    <a class="sp-btn" href="/shore-picks">Explore Shore Picks &rarr;</a>
+    <p>Our handpicked guide to the best restaurants, caf&eacute;s and shops in Wilmington &amp; the Beaches. Chosen on merit, kept honest, always labeled. Filter by town, vibe and category, then save your list.</p>
+    <a class="sp-btn" href="/shore-picks">Explore Shore Picks <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
   <div class="sp-pills">
-    <a class="sp-pill" href="/shore-picks#eat"><span class="e">&#127869;&#65039;</span><span><span class="t">Eat &amp; Drink</span><span class="d">Date-night classics to riverfront seafood</span></span></a>
-    <a class="sp-pill" href="/shore-picks#coffee"><span class="e">&#9749;</span><span><span class="t">Coffee &amp; Caf&eacute;s</span><span class="d">Where locals start the morning</span></span></a>
-    <a class="sp-pill" href="/shore-picks#community"><span class="e">&#11088;</span><span><span class="t">Locals&rsquo; Favorites</span><span class="d">Nominate a hidden gem</span></span></a>
+    <a class="sp-pill" href="/shore-picks#eat"><span class="sp-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v8a2 2 0 0 0 2 2v8M11 3v8a2 2 0 0 1-2 2M9 3v6M17 21V3c-2.2 1.2-3 4-3 7v3h3"/></svg></span><span><span class="t">Eat &amp; Drink</span><span class="d">Date-night classics to riverfront seafood</span></span><span class="sp-go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="sp-pill" href="/shore-picks#coffee"><span class="sp-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3c0 1.5 1.5 1.5 1.5 3M12 3c0 1.5 1.5 1.5 1.5 3"/></svg></span><span><span class="t">Coffee &amp; Caf&eacute;s</span><span class="d">Where locals start the morning</span></span><span class="sp-go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="sp-pill" href="/shore-picks#community"><span class="sp-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></span><span><span class="t">Locals&rsquo; Favorites</span><span class="d">Nominate a hidden gem</span></span><span class="sp-go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
   </div>
+  <p class="sp-note">Background is a styled scene, not a photo of a specific venue.</p>
 </div>
 </section>
 
