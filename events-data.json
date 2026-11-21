@@ -1,0 +1,61 @@
+{
+ "updated": "2026-11-21",
+ "events": [
+  {
+   "id": "farmers-market-weekly",
+   "title": "Riverfront Farmers Market",
+   "start": "2026-11-21",
+   "end": "2026-12-31",
+   "venue": "Dock Street, Downtown",
+   "area": "Downtown",
+   "cat": "Markets",
+   "url": "https://www.wilmingtondowntown.com/events/",
+   "source": "curated",
+   "recurring": "Saturdays"
+  },
+  {
+   "id": "holiday-market-2026-11-28",
+   "title": "Really Cool Stuff Holiday Market",
+   "start": "2026-11-28",
+   "end": "2026-11-28",
+   "venue": "Downtown Wilmington",
+   "area": "Downtown",
+   "cat": "Markets",
+   "url": "https://www.wilmingtondowntown.com/events/",
+   "source": "curated"
+  },
+  {
+   "id": "uso-85-2026-12-05",
+   "title": "Hannah Block Historic USO 85th Anniversary Celebration",
+   "start": "2026-12-05",
+   "end": "2026-12-05",
+   "venue": "Hannah Block Historic USO / Community Arts Center",
+   "area": "Downtown",
+   "cat": "History",
+   "url": "https://www.wilmingtondowntown.com/events/",
+   "source": "curated"
+  },
+  {
+   "id": "drones-2026-12-05",
+   "title": "Holidays on Water Drone Shows",
+   "start": "2026-12-05",
+   "end": "2026-12-05",
+   "venue": "Wilmington Riverwalk",
+   "area": "Downtown",
+   "cat": "Holiday",
+   "url": "https://www.wilmingtondowntown.com/events/",
+   "source": "curated"
+  },
+  {
+   "id": "candlelight-2026-12-05",
+   "title": "Old Wilmington Candlelight Tours",
+   "start": "2026-12-05",
+   "end": "2026-12-05",
+   "venue": "Latimer House",
+   "area": "Downtown",
+   "cat": "History",
+   "url": "https://www.wilmingtondowntown.com/events/",
+   "source": "curated"
+  }
+ ]
+}
