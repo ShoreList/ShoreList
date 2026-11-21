@@ -82,6 +82,27 @@ async function sendOperatorEmail(meta, amount) {
   }
 }
 
+// Guide (PDF) orders have no date, party or operator: send a short sale notice instead of the booking email.
+async function sendGuideSaleEmail(meta, amount) {
+  const RESEND_KEY = process.env.RESEND_API_KEY;
+  if (!RESEND_KEY) { console.log('No RESEND_API_KEY set, skipping email'); return; }
+  const amountFormatted = Number.isFinite(amount) ? `$${(amount / 100).toFixed(2)}` : 'see Stripe';
+  const e = (v) => escapeHtml(String(v == null ? '' : v).slice(0, 200));
+  try {
+    const r = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${RESEND_KEY}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        from: 'ShoreList Bookings <onboarding@resend.dev>',
+        to: ['shorelistwilmington@gmail.com'],
+        subject: 'Guide sold: ' + String(meta.product || 'guide').replace(/[^a-z0-9-]/gi, '').slice(0, 60),
+        html: `<p>A guide was bought and paid: <strong>${e(meta.product)}</strong> (${e(amountFormatted)}). Buyer details are in Stripe.</p>`,
+      }),
+    });
+    if (!r.ok) console.error('Resend error (guide):', r.status);
+  } catch (err) { console.error('Email send failed (guide):', err.message); }
+}
+
 const TOLERANCE_SECONDS = 300; // Stripe's standard replay window
 
 // Stripe-Signature: t=<unix seconds>,v1=<hex hmac>[,v1=<hex hmac>...]
@@ -158,6 +179,11 @@ exports.handler = async (event) => {
     }
     const meta   = session.metadata || {};
     const amount = session.amount_total;
+    if (meta.kind === 'guide') {
+      console.log('Guide order completed:', session.id, meta.product);
+      await sendGuideSaleEmail(meta, amount);
+      return { statusCode: 200, body: JSON.stringify({ received: true }) };
+    }
     console.log('Booking completed:', session.id, meta.operatorId, meta.date, meta.timeSlot);
     await sendOperatorEmail(meta, amount);
   }

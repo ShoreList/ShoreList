@@ -4,7 +4,7 @@ import vm from 'node:vm';
 const fails = [];
 const bad = (m) => fails.push(m);
 const pages = fs.readdirSync('.').filter((f) => f.endsWith('.html')).concat(fs.existsSync('things-to-do') ? fs.readdirSync('things-to-do').filter((f) => f.endsWith('.html')).map((f) => 'things-to-do/' + f) : []);
-const noindex = new Set(['404.html', 'offline.html', 'dashboard.html', 'success.html']);
+const noindex = new Set(['404.html', 'offline.html', 'dashboard.html', 'success.html', 'guide-success.html']);
 
 for (const f of pages) {
   const h = fs.readFileSync(f, 'utf8');
