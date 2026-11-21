@@ -477,27 +477,31 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
 
 
 /* TOWN EXPLORER GRID */
-.town-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
-.town-card{position:relative;border-radius:18px;overflow:hidden;text-decoration:none;display:block;min-height:280px;transition:transform 0.28s,box-shadow 0.28s;box-shadow:0 4px 16px rgba(10,77,92,0.08);}
-.town-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(10,77,92,0.18);}
-.town-downtown{background:linear-gradient(135deg,#1a0a30 0%,#3d2860 50%,#0A4D5C 100%);}
-.town-wb{background:linear-gradient(135deg,#0a3d5c 0%,#1A7585 50%,#22c55e 100%);}
-.town-cb{background:linear-gradient(135deg,#073D4A 0%,#0A4D5C 40%,#E96645 100%);}
-.town-kb{background:linear-gradient(135deg,#1a0a30 0%,#073D4A 50%,#1A7585 100%);}
-.tc-overlay{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.06) 1px,transparent 1px);background-size:22px 22px;pointer-events:none;}
-.tc-content{position:relative;z-index:1;padding:28px 30px;height:100%;display:flex;flex-direction:column;}
-.tc-icon{font-size:2.4rem;line-height:1;margin-bottom:14px;}
-.tc-name{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:900;color:#FEFCF7;line-height:1.1;margin-bottom:6px;}
-.tc-tagline{font-size:0.85rem;color:rgba(245,232,203,0.75);font-weight:500;margin-bottom:16px;font-style:italic;}
-.tc-points{list-style:none;padding:0;margin:0 0 18px;flex:1;}
-.tc-points li{font-size:0.82rem;color:rgba(245,232,203,0.85);padding:5px 0;padding-left:18px;position:relative;line-height:1.55;}
-.tc-points li::before{content:'';position:absolute;left:0;top:13px;width:10px;height:1px;background:var(--coral);}
-.tc-cta{font-size:0.84rem;font-weight:700;color:var(--coral);letter-spacing:0.04em;margin-top:auto;}
-@media(max-width:768px){.town-grid{grid-template-columns:1fr;gap:14px;}.tc-content{padding:24px 22px;}.town-card{min-height:auto;}}
-
-
-/* SVG ICON SYSTEM */
-.ico,.ico-xs,.ico-sm,.ico-md,.ico-lg{display:inline-block;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle;flex-shrink:0;}
+.town-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;perspective:1400px;}
+.town-card{position:relative;border-radius:22px;overflow:hidden;text-decoration:none;display:flex;align-items:flex-end;min-height:380px;background:#0E1F33;box-shadow:0 10px 30px rgba(10,40,60,0.16);transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s;isolation:isolate;}
+.town-card:hover,.town-card:focus-visible{box-shadow:0 30px 70px rgba(10,40,60,0.34);}
+.town-card:focus-visible{outline:3px solid #F4F1EA;outline-offset:3px;}
+.town-card .tc-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transform:scale(1.04);transition:transform 1.6s cubic-bezier(.2,.7,.2,1);}
+.town-card:hover .tc-photo,.town-card:focus-visible .tc-photo{transform:scale(1.12);}
+.tc-scrim{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(4,18,30,.10) 0%,rgba(4,18,30,.08) 34%,rgba(4,18,30,.62) 66%,rgba(4,18,30,.90) 100%);}
+.tc-glare{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:0;transition:opacity .4s;background:radial-gradient(420px circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.20),transparent 60%);}
+.town-card:hover .tc-glare{opacity:1;}
+.tc-live{position:absolute;top:16px;left:16px;z-index:1;display:inline-flex;align-items:center;gap:8px;padding:8px 13px 8px 11px;border-radius:100px;background:rgba(8,24,38,.55);-webkit-backdrop-filter:blur(10px) saturate(1.4);backdrop-filter:blur(10px) saturate(1.4);border:1px solid rgba(255,255,255,.22);color:#fff;font-size:.78rem;font-weight:700;letter-spacing:.01em;}
+.tc-live[hidden]{display:none;}
+.tc-live::before{content:'';width:8px;height:8px;border-radius:50%;background:#5BE3A0;box-shadow:0 0 0 0 rgba(91,227,160,.7);animation:tcPulse 2.2s infinite;}
+@keyframes tcPulse{70%{box-shadow:0 0 0 8px rgba(91,227,160,0);}100%{box-shadow:0 0 0 0 rgba(91,227,160,0);}}
+.tc-content{position:relative;z-index:1;padding:26px 28px 26px;width:100%;transform:translateZ(30px);}
+.tc-name{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.4vw,1.95rem);font-weight:900;color:#fff;line-height:1.08;margin-bottom:6px;text-shadow:0 2px 14px rgba(0,0,0,.35);}
+.tc-tagline{font-size:.95rem;color:rgba(255,255,255,.9);font-weight:500;margin-bottom:14px;font-style:italic;}
+.tc-points{list-style:none;padding:0;margin:0 0 18px;display:flex;flex-wrap:wrap;gap:7px;}
+.tc-points li{font-size:.78rem;font-weight:700;color:#fff;padding:6px 12px;border-radius:100px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.26);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);line-height:1.3;}
+.town-card .tc-cta{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:0 22px;border-radius:100px;font-size:.9rem;font-weight:800;letter-spacing:.02em;line-height:1;}
+.town-card .tc-cta svg{transition:transform .3s;}
+.town-card:hover .tc-cta svg{transform:translateX(4px);}
+.tc-note{font-size:.76rem;color:var(--mid);margin:14px 2px 0;opacity:.85;}
+@media(max-width:768px){.town-grid{grid-template-columns:1fr;gap:14px;}.tc-content{padding:22px 20px;}.town-card{min-height:330px;}}
+@media(prefers-reduced-motion:reduce){.town-card,.town-card .tc-photo{transition:none;}.tc-live::before{animation:none;}}
+.ico-lg{display:inline-block;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle;flex-shrink:0;}
 .ico{width:1.6rem;height:1.6rem;}
 .ico-xs{width:0.95rem;height:0.95rem;stroke-width:1.8;}
 .ico-sm{width:1.2rem;height:1.2rem;stroke-width:1.7;}
@@ -1098,63 +1102,52 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
     <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:900;color:var(--teal);line-height:1.1;margin-bottom:8px;">Find Experiences <em style="color:var(--coral);font-style:italic;">by Location</em></h2>
     <p style="font-size:0.92rem;color:var(--mid);margin-bottom:32px;line-height:1.75;max-width:560px;">Each town along the Wilmington coast has its own character. Pick your spot &mdash; we&rsquo;ll show you what&rsquo;s there.</p>
     <div class="town-grid">
-      <a href="/downtown" class="town-card town-downtown">
-        <div class="tc-overlay"></div>
+      <a href="/downtown" class="town-card town-downtown" data-town="downtown">
+        <img class="tc-photo" loading="lazy" decoding="async" width="1920" height="1072" alt="A riverwalk at blue hour with lamp posts and brick buildings" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-town-downtown_1000x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-town-downtown_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-town-downtown_1920x.webp 1920w" sizes="(max-width:768px) 100vw, 560px"/>
+        <span class="tc-scrim" aria-hidden="true"></span><span class="tc-glare" aria-hidden="true"></span>
+        <span class="tc-live" data-tc-wx="city" hidden></span>
         <div class="tc-content">
-          <div class="tc-icon"><svg class="ico-lg" aria-hidden="true" focusable="false"><use href="#i-hotel" xlink:href="#i-hotel"/></svg></div>
           <div class="tc-name">Downtown Wilmington</div>
           <div class="tc-tagline">Historic. Haunted. Hollywood South.</div>
-          <ul class="tc-points">
-            <li>Sean Austin's Wilmington Ghost Walk</li>
-            <li>Wilmywood film &amp; TV tours</li>
-            <li>Cape Fear River cruises</li>
-          </ul>
-          <div class="tc-cta">Explore Downtown &rarr;</div>
+          <ul class="tc-points"><li>Ghost walks</li><li>Film &amp; TV tours</li><li>River cruises</li></ul>
+          <div class="tc-cta"><span>Explore Downtown</span><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         </div>
       </a>
-      <a href="/wrightsville-beach" class="town-card town-wb">
-        <div class="tc-overlay"></div>
+      <a href="/wrightsville-beach" class="town-card town-wb" data-town="wb">
+        <img class="tc-photo" loading="lazy" decoding="async" width="1920" height="1072" alt="A wide beach with clear water and sea oats on a bright morning" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-wrightsville_1000x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-wrightsville_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-wrightsville_1920x.webp 1920w" sizes="(max-width:768px) 100vw, 560px"/>
+        <span class="tc-scrim" aria-hidden="true"></span><span class="tc-glare" aria-hidden="true"></span>
+        <span class="tc-live" data-tc-wx="0" hidden></span>
         <div class="tc-content">
-          <div class="tc-icon"><svg class="ico-lg" aria-hidden="true" focusable="false"><use href="#i-surf" xlink:href="#i-surf"/></svg></div>
           <div class="tc-name">Wrightsville Beach</div>
-          <div class="tc-tagline">NC&rsquo;s premier surf beach.</div>
-          <ul class="tc-points">
-            <li>Surf lessons &amp; rentals</li>
-            <li>Paddleboard tours</li>
-            <li>Live beach cams</li>
-          </ul>
-          <div class="tc-cta">Explore Wrightsville &rarr;</div>
+          <div class="tc-tagline">Clear water, surf town energy.</div>
+          <ul class="tc-points"><li>Surf lessons</li><li>Paddleboard tours</li><li>Live beach cams</li></ul>
+          <div class="tc-cta"><span>Explore Wrightsville</span><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         </div>
       </a>
-      <a href="/carolina-beach" class="town-card town-cb">
-        <div class="tc-overlay"></div>
+      <a href="/carolina-beach" class="town-card town-cb" data-town="cb">
+        <img class="tc-photo" loading="lazy" decoding="async" width="1920" height="1072" alt="A wooden walkway over the dunes at golden hour" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1000x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1920x.webp 1920w" sizes="(max-width:768px) 100vw, 560px"/>
+        <span class="tc-scrim" aria-hidden="true"></span><span class="tc-glare" aria-hidden="true"></span>
+        <span class="tc-live" data-tc-wx="1" hidden></span>
         <div class="tc-content">
-          <div class="tc-icon"><svg class="ico-lg" aria-hidden="true" focusable="false"><use href="#i-wave" xlink:href="#i-wave"/></svg></div>
           <div class="tc-name">Carolina Beach</div>
           <div class="tc-tagline">Boardwalk. Venus flytraps. Pure coastal fun.</div>
-          <ul class="tc-points">
-            <li>Carolina Beach State Park</li>
-            <li>Fishing charters from the marina</li>
-            <li>Wild Venus flytrap nature walks</li>
-          </ul>
-          <div class="tc-cta">Explore Carolina Beach &rarr;</div>
+          <ul class="tc-points"><li>State park trails</li><li>Fishing charters</li><li>Flytrap nature walks</li></ul>
+          <div class="tc-cta"><span>Explore Carolina Beach</span><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         </div>
       </a>
-      <a href="/kure-beach" class="town-card town-kb">
-        <div class="tc-overlay"></div>
+      <a href="/kure-beach" class="town-card town-kb" data-town="kb">
+        <img class="tc-photo" loading="lazy" decoding="async" width="1920" height="1072" alt="A quiet beach at sunrise with coquina rocks at the waterline" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1000x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1920x.webp 1920w" sizes="(max-width:768px) 100vw, 560px"/>
+        <span class="tc-scrim" aria-hidden="true"></span><span class="tc-glare" aria-hidden="true"></span>
+        <span class="tc-live" data-tc-wx="2" hidden></span>
         <div class="tc-content">
-          <div class="tc-icon"><svg class="ico-lg" aria-hidden="true" focusable="false"><use href="#i-sailboat" xlink:href="#i-sailboat"/></svg></div>
           <div class="tc-name">Kure Beach</div>
-          <div class="tc-tagline">Where the Cape Fear meets the Atlantic.</div>
-          <ul class="tc-points">
-            <li>Fort Fisher State Historic Site</li>
-            <li>4 miles of wild Atlantic beach</li>
-            <li>NC Aquarium expansion 2028</li>
-          </ul>
-          <div class="tc-cta">Explore Kure Beach &rarr;</div>
+          <div class="tc-tagline">Where the Cape Fear River meets the Atlantic.</div>
+          <ul class="tc-points"><li>Fort Fisher</li><li>Miles of quiet beach</li><li>NC Aquarium</li></ul>
+          <div class="tc-cta"><span>Explore Kure Beach</span><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         </div>
       </a>
     </div>
+    <p class="tc-note">Live readings from NOAA and open-meteo. Photos are styled scenes, not pictures of the exact spot.</p>
   </div>
 </section>
 
@@ -1629,6 +1622,35 @@ window.addEventListener('scroll', function(){
     },120);
   },{passive:true});
   restart();
+})();
+</script>
+<script>
+/* Town cards: live conditions chips and pointer tilt */
+(function(){
+  var cards=[].slice.call(document.querySelectorAll('.town-card'));if(!cards.length)return;
+  var fine=window.matchMedia&&matchMedia('(hover:hover) and (pointer:fine)').matches,reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(fine&&!reduce)cards.forEach(function(c){
+    c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+      c.style.transform='rotateX('+((.5-y)*5).toFixed(2)+'deg) rotateY('+((x-.5)*6).toFixed(2)+'deg) translateY(-4px)';
+      c.style.setProperty('--gx',(x*100).toFixed(1)+'%');c.style.setProperty('--gy',(y*100).toFixed(1)+'%');});
+    c.addEventListener('pointerleave',function(){c.style.transform='';});
+  });
+  cards.forEach(function(c){c.addEventListener('click',function(){try{if(typeof gtag==='function')gtag('event','town_card_click',{town:c.getAttribute('data-town')});}catch(e){}});});
+  function word(c){return c===0?'Clear':c<4?'Partly cloudy':c<50?'Foggy':c<70?'Rain':c<80?'Snow':c<95?'Showers':'Storms';}
+  function fill(){
+    if(!window.ShoreWX)return;
+    document.querySelectorAll('[data-tc-wx]').forEach(function(el){
+      var k=el.getAttribute('data-tc-wx'),city=k==='city';
+      ShoreWX.get(city?0:+k).then(function(d){
+        if(d.temp==null)return;var t=Math.round(d.temp)+'\u00B0 '+word(d.code);
+        if(!city){if(d.waterF!=null)t+=' \u00B7 Water '+Math.round(d.waterF)+'\u00B0';if(d.waveFt!=null)t+=' \u00B7 Surf '+d.waveFt.toFixed(1)+' ft';}
+        el.textContent=(city?'Now ':'Live ')+t;el.hidden=false;
+      }).catch(function(){});
+    });
+  }
+  var seen=false,grid=document.querySelector('.town-grid');
+  function go(){if(seen)return;seen=true;var n=0;(function wait(){if(window.ShoreWX)fill();else if(n++<40)setTimeout(wait,250);})();}
+  if(grid&&'IntersectionObserver'in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();go();}},{rootMargin:'300px'});io.observe(grid);}else addEventListener('load',go);
 })();
 </script>
 <script src="/scene.js" defer></script>
