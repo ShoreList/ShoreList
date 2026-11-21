@@ -3,7 +3,30 @@
 
 [[redirects]]
   from = "/category"
-  to = "/category.html"
+  to = "/things-to-do/:cat"
+  status = 301
+  force = true
+  query = {cat = ":cat"}
+
+[[redirects]]
+  from = "/category"
+  to = "/things-to-do"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/things-to-do"
+  to = "/things-to-do/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/things-to-do/:slug"
+  to = "/things-to-do/:slug.html"
+  status = 200
+
+[[redirects]]
+  from = "/plan-your-trip"
+  to = "/plan-your-trip.html"
   status = 200
 
 [[redirects]]

@@ -15,19 +15,21 @@ const items = [];
 for (const [slug, c] of Object.entries(ctx.CAT_DATA)) {
   const ops = (ctx.OPS[slug] || []);
   const live = ops.filter((x) => x.live);
-  items.push({ t: 'cat', title: strip(c.title), sub: strip(c.sub), url: '/category?cat=' + slug, live: live.length, slug });
+  items.push({ t: 'cat', title: strip(c.title), sub: strip(c.sub), url: '/things-to-do/' + slug, live: live.length, slug });
 }
 for (const [slug, arr] of Object.entries(ctx.OPS)) {
   for (const x of arr) {
     if (!x.live) continue;
     items.push({
       t: 'tour', title: strip(x.business), sub: strip(x.operator) + (x.title ? ' · ' + strip(x.title) : ''),
-      url: '/category?cat=' + slug, price: x.price || '', per: x.priceLabel || '',
+      url: '/things-to-do/' + slug, price: x.price || '', per: x.priceLabel || '',
       tags: (x.tags || []).map(strip), slug,
     });
   }
 }
 const pages = [
+  ['Things to do in Wilmington, NC', 'Every tour, activity and rental category for Wilmington and the beaches', '/things-to-do', 'things to do activities tours attractions what to do'],
+  ['Plan your trip to Wilmington, NC', 'When to go, where to stay, how far the beaches are and a three-day itinerary', '/plan-your-trip', 'plan trip visit vacation when to go where to stay airport itinerary guide'],
   ['Events', 'Concerts, festivals, holiday events and things to do', '/events', 'event events concert festival holiday show music tonight weekend'],
   ['Shore Picks', 'Restaurants, coffee and drinks that locals pick', '/shore-picks', 'eat food restaurant coffee cafe bar drinks brunch dinner lunch'],
   ['Plan my day', 'Build a coastal itinerary', '/planner', 'plan planner itinerary day trip schedule'],
