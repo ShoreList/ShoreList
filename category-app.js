@@ -188,16 +188,16 @@ function renderMuseumsCategory(){
   var container=document.getElementById('mc');
   if(!container) return;
   var h='';
-  h+='<div class="section-label">Featured Partner</div>';
+  h+='<div class="section-label">Downtown Museum</div>';
   h+='<h2 class="section-title">Wilmington\u2019s <em>Museums</em></h2>';
-  h+='<p class="section-sub">Real local institutions, partnered with ShoreList &mdash; explore what makes this coast worth remembering.</p>';
+  h+='<p class="section-sub">Real local institutions &mdash; explore what makes this coast worth remembering.</p>';
   h+='<div class="operator-grid">';
   h+='<div class="op-card" id="card-railroad-museum"><div class="op-card-body">';
-  h+='<div class="op-card-header"><div><div class="op-live-badge"><span class="op-live-dot"></span>Official ShoreList Partner</div><div class="op-business-name">Wilmington Railroad Museum</div><div class="op-operator-name">505 Nutt Street &nbsp;&middot;&nbsp; Downtown Wilmington &nbsp;&middot;&nbsp; Since 1979</div></div><div class="op-price-tag"><div class="op-price">From $8</div><div class="op-price-label">per person</div></div></div>';
+  h+='<div class="op-card-header"><div><div class="op-live-badge"><span class="op-live-dot"></span>Downtown Museum</div><div class="op-business-name">Wilmington Railroad Museum</div><div class="op-operator-name">505 Nutt Street &nbsp;&middot;&nbsp; Downtown Wilmington &nbsp;&middot;&nbsp; Since 1979</div></div><div class="op-price-tag"><div class="op-price">From $8</div><div class="op-price-label">per person</div></div></div>';
   h+='<p class="op-desc">Climb aboard a real 1911 Baldwin steam locomotive, walk through a life-size caboose, and watch 20+ model trains run through a 1,600 sq ft layout &mdash; all inside an authentic 1883 freight warehouse from Wilmington\u2019s days as headquarters of the Atlantic Coast Line Railroad. A 501(c)(3) nonprofit, fun for every age, and one of the best rain-or-shine things to do downtown.</p>';
-  h+='<div class="op-tags"><span class="op-tag">Official Partner</span><span class="op-tag">All Ages</span><span class="op-tag">Rain or Shine</span><span class="op-tag">1911 Steam Locomotive</span><span class="op-tag">20+ Model Trains</span><span class="op-tag">Downtown</span></div>';
+  h+='<div class="op-tags"><span class="op-tag">All Ages</span><span class="op-tag">Rain or Shine</span><span class="op-tag">1911 Steam Locomotive</span><span class="op-tag">20+ Model Trains</span><span class="op-tag">Downtown</span></div>';
   h+='<div class="op-divider"></div>';
-  h+='<div style="display:flex;flex-wrap:wrap;gap:16px;font-size:0.78rem;color:#3a5a61;font-weight:600;margin:0 0 14px;"><span>&#10003; Tickets online &amp; at the door</span><span>&#10003; Supports a local nonprofit</span><span>&#10003; Museum events posted here first</span></div>';
+  h+='<div style="display:flex;flex-wrap:wrap;gap:16px;font-size:0.78rem;color:#3a5a61;font-weight:600;margin:0 0 14px;"><span>&#10003; Tickets at the door</span><span>&#10003; Supports a local nonprofit</span></div>';
   h+='<div class="op-book-row"><a href="/wilmington-railroad-museum" class="btn-sub" style="width:100%;font-size:1rem;display:block;text-align:center;text-decoration:none;box-sizing:border-box;">View Tickets, Hours &amp; Events &#8594;</a></div>';
   h+='</div></div>';
   h+='</div>';
@@ -425,7 +425,7 @@ if(document.readyState!=='loading')startPage();else document.addEventListener('D
         +'<div class="cgb-body">'
         +'<div class="cgb-title">Also Haunted: The Wilmington Railroad Museum</div>'
         +'<div class="cgb-sub">An authentic 1883 freight warehouse with a haunted reputation of its own &mdash; explore the steam locomotive and model trains by day, and keep an eye out for after-dark events. <a href="/wilmington-railroad-museum">View tickets, hours &amp; events &#8599;</a></div>'
-        +'<div class="cgb-badges"><span class="cgb-badge cgb-badge-coral">&#9733; Official Partner</span><span class="cgb-badge">1883 Freight Warehouse</span><span class="cgb-badge">Downtown</span><span class="cgb-badge">Open Daily</span></div>'
+        +'<div class="cgb-badges"><span class="cgb-badge">1883 Freight Warehouse</span><span class="cgb-badge">Downtown</span><span class="cgb-badge">Open Daily</span></div>'
         +'</div></div>';
       container.appendChild(x);
     }catch(e){}

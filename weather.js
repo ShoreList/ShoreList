@@ -51,7 +51,7 @@
   function suggest(c) {
     var t = c.temperature_2m, wind = c.wind_speed_10m, code = c.weather_code, wet = code >= 51, day = c.is_day, out = [];
     function add(href, title, why) { out.push({ href: href, title: title, why: why }); }
-    if (code >= 95) add('/things-to-do/museums', 'Head indoors', 'Thunderstorms nearby. Museums and the aquarium are the smart call.');
+    if (code >= 95) add('/things-to-do/museums', 'Head indoors', 'Thunderstorms nearby. Museums are the smart call.');
     if (wet) { add('/things-to-do/museums', 'Museums and history', 'A wet day is a good day for the Battleship, the railroad museum and galleries.'); add('/shore-picks', 'A long lunch', 'Rain passes faster over good food. See our Shore Picks.'); }
     if (!wet && day && t >= 74) add('/things-to-do/beach-chairs', 'Beach day', Math.round(t) + '°F and dry. Chairs and umbrellas, delivered.');
     if (!wet && day && wind < 10 && t >= 62) add('/things-to-do/paddleboard', 'Paddleboarding', 'Light ' + Math.round(wind) + ' mph wind means flat, easy water.');
