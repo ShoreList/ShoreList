@@ -1,8 +1,8 @@
-// Regenerates search-index.json from the live data in category.html (CAT_DATA + OPS) plus the static page list.
+// Regenerates search-index.json from the live data in category-app.js (CAT_DATA + OPS) plus the static page list.
 // Run after editing operators/tours:  node tools/build-search-index.mjs
 import fs from 'node:fs';
 import vm from 'node:vm';
-const html = fs.readFileSync(new URL('../category.html', import.meta.url), 'utf8');
+const html = fs.readFileSync(new URL('../category-app.js', import.meta.url), 'utf8');
 const a = html.indexOf('var CAT_DATA=');
 const o = html.indexOf('var OPS={');
 const rest = html.slice(o + 5);
