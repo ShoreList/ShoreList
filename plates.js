@@ -1,5 +1,5 @@
-/* ShoreList hero photo plates: four photographs of one shoreline (dawn, midday, golden hour, night)
-   crossfaded by the real sun at Wilmington. Slow drift and pointer parallax; click the water for ripples.
+/* ShoreList hero photo plates: four styled beach scenes (dawn, midday, golden hour, night),
+   one shown at a time and chosen by the real sun at Wilmington. Slow drift and pointer parallax; click the water for ripples.
    If the photos fail to load, the live shader scene underneath stays visible. */
 (function () {
   'use strict';
@@ -9,7 +9,7 @@
   var NAMES = ['dawn', 'midday', 'golden', 'night'], ALT = ['Beach and fishing pier at dawn', 'Beach and fishing pier at midday', 'Beach and fishing pier at golden hour', 'Beach and fishing pier under a full moon'];
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var sun = window.ShoreSun;
-  function nowPhase() { return sun ? sun.now() : 1; }
+  function nowPhase() { return sun ? Math.round(sun.now()) % 4 : 1; } // snap to one photo: blending two different photos ghosts the scene
   var cur = nowPhase(), target = cur, auto = true, loaded = 0, raf = 0;
 
   var wrap = document.createElement('div'); wrap.className = 'plates'; wrap.setAttribute('aria-hidden', 'true');
