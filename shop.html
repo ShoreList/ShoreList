@@ -118,7 +118,7 @@ dialog#qv{border:0;border-radius:20px;padding:0;max-width:min(860px,94vw);width:
 <main id="main" class="wrap">
   <div id="stores" class="stores" hidden></div>
   <div id="chips" class="chips" role="group" aria-label="Filter by collection" hidden></div>
-  <div id="tools" class="tools" hidden><input id="q" type="search" placeholder="Search tees, gear, beaches" aria-label="Search the shop" autocomplete="off"/><select id="sort" aria-label="Sort"><option value="feat">Featured</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option></select><span class="cnt" id="cnt" aria-live="polite"></span></div>
+  <div id="tools" class="tools" hidden><input id="q" type="search" placeholder="Search tees, gear, beaches" aria-label="Search the shop" autocomplete="off"/><select id="sort" aria-label="Sort"><option value="feat">Featured</option><option value="you">For you</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option></select><span class="cnt" id="cnt" aria-live="polite"></span></div>
   <div id="grid" class="grid" hidden></div>
   <section id="soon" class="soon" hidden>
     <h2>The shop is opening soon</h2>
@@ -156,6 +156,8 @@ dialog#qv{border:0;border-radius:20px;padding:0;max-width:min(860px,94vw);width:
   function show(id,on){var e=document.getElementById(id);if(e)e.hidden=!on;}
   var q='',sortBy='feat',saved=[];
   try{saved=JSON.parse(localStorage.getItem('slSaved')||'[]')||[];}catch(e){saved=[];}
+  function views(){try{return JSON.parse(localStorage.getItem('slViews')||'{}')||{};}catch(e){return {};}}
+  function bump(id,n){try{var v=views();v[id]=(v[id]||0)+n;localStorage.setItem('slViews',JSON.stringify(v));}catch(e){}}
   function persist(){try{localStorage.setItem('slSaved',JSON.stringify(saved));}catch(e){}}
   function byId(id){return data.items.filter(function(i){return i.id===id;})[0];}
   function money(i){return typeof i.price==='number'&&isFinite(i.price)?'$'+i.price.toFixed(0):'';}
@@ -167,11 +169,12 @@ dialog#qv{border:0;border-radius:20px;padding:0;max-width:min(860px,94vw);width:
     var sum=its.reduce(function(a,i){return a+(typeof i.price==='number'?i.price:0);},0);
     t.innerHTML='<h3>Your list</h3>'+its.map(function(i){return '<a target="_blank" rel="noopener" href="'+esc(i.url)+'">'+(i.img?'<img alt="" src="'+esc(i.img)+'"/>':'')+'<span>'+esc(i.name)+' <b>'+esc(money(i))+'</b></span></a>';}).join('')+'<div class="tt">'+its.length+' item'+(its.length===1?'':'s')+', about $'+sum.toFixed(0)+' before shipping</div>';
   }
-  function toggle(id){var k=saved.indexOf(id);if(k>-1)saved.splice(k,1);else saved.push(id);persist();trayRender();render();}
+  function toggle(id){bump(id,3);var k=saved.indexOf(id);if(k>-1)saved.splice(k,1);else saved.push(id);persist();trayRender();render();}
   function render(){
     var items=data.items.filter(function(i){return i.url&&safeUrl(i.url)&&(current==='all'||i.collection===current);});
     var needle=q.trim().toLowerCase();
     if(needle)items=items.filter(function(i){return (i.name+' '+(i.meta||'')+' '+(i.alt||'')).toLowerCase().indexOf(needle)>-1;});
+    if(sortBy==='you'){var v=views();items=items.slice().sort(function(a,b){return (v[b.id]||0)-(v[a.id]||0);});}
     if(sortBy==='lo')items=items.slice().sort(function(a,b){return (a.price||0)-(b.price||0);});
     if(sortBy==='hi')items=items.slice().sort(function(a,b){return (b.price||0)-(a.price||0);});
     document.getElementById('cnt').textContent=items.length+' piece'+(items.length===1?'':'s');
@@ -198,7 +201,7 @@ dialog#qv{border:0;border-radius:20px;padding:0;max-width:min(860px,94vw);width:
     document.getElementById('sort').addEventListener('change',function(e){sortBy=e.target.value;render();});
     document.getElementById('grid').addEventListener('click',function(e){
       var h=e.target.closest('[data-h]');if(h){e.preventDefault();toggle(h.getAttribute('data-h'));return;}
-      var v=e.target.closest('[data-qv]');if(v){openQv(v.getAttribute('data-qv'));}});
+      var v=e.target.closest('[data-qv]');if(v){bump(v.getAttribute('data-qv'),1);openQv(v.getAttribute('data-qv'));}});
     var d=document.getElementById('qv');
     document.getElementById('qvx').addEventListener('click',function(){d.close?d.close():d.removeAttribute('open');});
     d.addEventListener('click',function(e){if(e.target===d&&d.close)d.close();});
@@ -274,6 +277,7 @@ dialog#qv{border:0;border-radius:20px;padding:0;max-width:min(860px,94vw);width:
 })();
 </script>
 <script>(function(){try{var els=document.querySelectorAll('.sec,.proof,.col');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px'});els.forEach(function(e){e.classList.add('reveal');io.observe(e)});}catch(e){}})();</script>
+<script src="/sound.js" defer></script>
 <script src="/widgets.js" defer></script>
 <script src="/shore-plus.js" defer></script>
 <script>(function(){var P=[["Downtown Wilmington","34.23\u00b0 N \u00b7 77.94\u00b0 W"],["The Historic District","34.24\u00b0 N \u00b7 77.95\u00b0 W"],["Wrightsville Beach","34.21\u00b0 N \u00b7 77.80\u00b0 W"],["Carolina Beach","34.03\u00b0 N \u00b7 77.89\u00b0 W"],["Kure Beach","33.99\u00b0 N \u00b7 77.91\u00b0 W"]],i=0,e=document.getElementById("placeRot"),n=document.getElementById("placeName"),c=document.getElementById("placeCoord");if(!e||!n||!c||window.matchMedia("(prefers-reduced-motion:reduce)").matches)return;setInterval(function(){e.classList.add("fade");setTimeout(function(){i=(i+1)%P.length;n.textContent=P[i][0];c.textContent=P[i][1];e.classList.remove("fade")},650)},3600)})();</script>

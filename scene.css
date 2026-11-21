@@ -55,3 +55,35 @@ body:not(:has(.hero-cine)) .cc-fab{right:auto;left:16px}body:not(:has(.hero-cine
 @media(max-width:820px){.hero.hero-cine .hero-title{font-size:2.5rem}.hero-cine .hero-layout{padding-bottom:250px}}
 .hero.hero-cine{min-height:calc(100svh - 80px)}
 @media(max-width:820px){.hero.hero-cine{min-height:calc(100svh - 98px)}.cc-fab{width:48px;height:48px;padding:0;justify-content:center;font-size:0}.cc-fab span{font-size:1.2rem}.cc{bottom:72px}}
+/* Shore AI */
+.orb{display:inline-block;width:18px;height:18px;border-radius:50%;background:conic-gradient(from 0deg,#8fd3de,#ffb089,#ffc95e,#8fd3de);filter:saturate(1.2);animation:orbspin 5s linear infinite;box-shadow:0 0 14px rgba(143,211,222,.8)}
+.orb.big{width:34px;height:34px;flex:none;box-shadow:0 0 22px rgba(143,211,222,.9)}
+@keyframes orbspin{to{transform:rotate(360deg)}}
+.cc-fab{background:linear-gradient(135deg,#073d4a,#0a4d5c);border:1px solid rgba(143,211,222,.45)}
+.cc{border:1px solid rgba(143,211,222,.5);box-shadow:0 0 0 1px rgba(143,211,222,.25),0 24px 70px rgba(4,24,32,.45),0 0 60px rgba(143,211,222,.18)}
+.cc header{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#052a35,#0a4d5c)}
+.cc header>div{flex:1}.cc .spk{border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:100px;width:34px;height:34px;cursor:pointer}.cc .spk[aria-pressed=true]{background:#fff}
+.cc .mic{border:1px solid rgba(10,77,92,.25)!important;background:#fff!important;color:var(--teal);width:40px;border-radius:50%!important;padding:0!important}.cc .mic.on{background:var(--coral)!important;color:#fff;animation:pulse 1s infinite}
+.think{display:inline-flex;gap:5px;padding:4px 0}.think i{width:7px;height:7px;border-radius:50%;background:var(--teal2);animation:thk 1s infinite ease-in-out}.think i:nth-child(2){animation-delay:.15s}.think i:nth-child(3){animation-delay:.3s}
+@keyframes thk{0%,80%,100%{transform:scale(.5);opacity:.4}40%{transform:scale(1);opacity:1}}
+@media(prefers-reduced-motion:reduce){.orb,.think i,.cc .mic.on{animation:none}}
+@media(max-width:820px){.cc-fab .lbl{display:none}.cc-fab{width:48px;height:48px;padding:0;justify-content:center}.cc-fab .orb{width:22px;height:22px}}
+/* sound control + dock + float */
+.snd{position:fixed;left:22px;bottom:22px;z-index:8000;display:flex;align-items:center;gap:0;border-radius:100px;background:rgba(4,24,32,.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);color:#fff;overflow:hidden;transition:background .2s}
+.snd-b{display:flex;align-items:center;gap:8px;border:0;background:transparent;color:#fff;padding:11px 14px;font:600 .78rem 'DM Sans',sans-serif;cursor:pointer}
+.snd-r{width:0;opacity:0;transition:width .3s,opacity .3s,margin .3s;accent-color:#ffb089;margin:0}
+.snd:hover .snd-r,.snd:focus-within .snd-r{width:84px;opacity:1;margin:0 14px 0 0}
+.snd.live .snd-b svg{animation:sndp 2.4s ease-in-out infinite}
+@keyframes sndp{50%{transform:scale(1.15)}}
+.dock{position:fixed;right:14px;top:50%;transform:translate(80px,-50%);z-index:60;display:flex;flex-direction:column;gap:10px;opacity:0;transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .35s;pointer-events:none}
+.dock.show{transform:translate(0,-50%);opacity:1;pointer-events:auto}
+.dock a{position:relative;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:rgba(4,24,32,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;text-decoration:none;font-size:1.15rem;border:1px solid rgba(255,255,255,.25);transition:transform .2s,background .2s;animation:fl 5s ease-in-out infinite}
+.dock a:nth-child(2){animation-delay:.6s}.dock a:nth-child(3){animation-delay:1.2s}.dock a:nth-child(4){animation-delay:1.8s}
+.dock a:hover,.dock a:focus-visible{background:var(--coral);transform:scale(1.12)}
+.dock a span{position:absolute;right:56px;white-space:nowrap;background:rgba(4,24,32,.9);color:#fff;font:600 .75rem 'DM Sans',sans-serif;padding:6px 10px;border-radius:8px;opacity:0;transform:translateX(6px);transition:.2s;pointer-events:none}
+.dock a:hover span,.dock a:focus-visible span{opacity:1;transform:none}
+@keyframes fl{50%{translate:0 -4px}}
+.path{animation:fl 6s ease-in-out infinite}.path:nth-child(2){animation-delay:.8s}.path:nth-child(3){animation-delay:1.6s}
+.path{transform-style:preserve-3d}
+@media(max-width:820px){.dock{display:none}.snd{left:12px;bottom:14px}.snd-b .snd-l{display:none}.snd-b{padding:12px}}
+@media(prefers-reduced-motion:reduce){.dock a,.path,.snd.live .snd-b svg{animation:none}}
