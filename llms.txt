@@ -3,7 +3,7 @@
 > ShoreList is a hyperlocal booking marketplace for tours and experiences in Wilmington, North Carolina and the nearby beaches (Wrightsville Beach, Carolina Beach, Kure Beach). It also runs a coastal Carolina apparel and beach goods shop.
 
 ## Key pages
-- [Experiences by category](https://shorelist.net/category): browse tours and activities
+- [Experiences by category](https://shorelist.net/#explore): browse tours and activities
 - [Downtown Wilmington](https://shorelist.net/downtown)
 - [Wrightsville Beach](https://shorelist.net/wrightsville-beach)
 - [Carolina Beach](https://shorelist.net/carolina-beach)
