@@ -243,6 +243,44 @@ function checkDateSlot(tour, date, slot) {
   return '';
 }
 
+// ---------- Digital guides (PDF downloads) ----------
+// Server-side catalog. Prices, names and file names come ONLY from here: the
+// browser sends a product id and nothing else. `file` is a name inside
+// netlify/guides-private/ (never published; see netlify.toml). Keep the copy
+// in step with guides.html.
+const GUIDES = {
+  'beach-day-field-guide':    { title: 'The Beach Day Field Guide', cents: 1400, file: 'beach-day-field-guide.pdf', pages: 16 },
+  'wilmington-in-three-days': { title: 'Wilmington in Three Days', cents: 1400, file: 'wilmington-in-three-days.pdf', pages: 16 },
+  'wilmington-with-kids':     { title: 'Wilmington with Kids', cents: 1400, file: 'wilmington-with-kids.pdf', pages: 17 },
+  'winter-in-wilmington':     { title: 'Winter in Wilmington', cents: 1400, file: 'winter-in-wilmington.pdf', pages: 16 },
+};
+const GUIDE_BUNDLE = { id: 'guide-bundle', title: 'Wilmington Guide Bundle (all four guides)', cents: 3900 };
+function getGuide(id) { return typeof id === 'string' && Object.prototype.hasOwnProperty.call(GUIDES, id) ? GUIDES[id] : null; }
+// A purchasable product id (one guide or the bundle) -> { title, cents, ids }, else null.
+function getGuideProduct(id) {
+  if (id === GUIDE_BUNDLE.id) return { title: GUIDE_BUNDLE.title, cents: GUIDE_BUNDLE.cents, ids: Object.keys(GUIDES) };
+  const g = getGuide(id);
+  return g ? { title: g.title, cents: g.cents, ids: [id] } : null;
+}
+
+const SESSION_ID_RE = /^cs_(test|live)_[A-Za-z0-9]{8,250}$/;
+// Asks Stripe (never the browser) whether this Checkout Session is PAID and is a
+// guide order. Returns { ok:true, ids, session } with ids = guide ids the buyer
+// owns (from the metadata our own create-guide-checkout wrote, filtered through
+// GUIDES), or { ok:false }. Unpaid, open, expired, tour and unknown sessions
+// are all just { ok:false }. Throws only if Stripe cannot be reached.
+async function paidGuideSession(stripeKey, id) {
+  if (typeof id !== 'string' || !SESSION_ID_RE.test(id)) return { ok: false };
+  const res = await fetch('https://api.stripe.com/v1/checkout/sessions/' + id, { headers: { 'Authorization': `Bearer ${stripeKey}` } });
+  if (res.status >= 500) throw new Error('stripe ' + res.status);
+  const session = await res.json();
+  if (!res.ok || !session || session.payment_status !== 'paid') return { ok: false };
+  const meta = session.metadata || {};
+  if (meta.kind !== 'guide') return { ok: false };
+  const ids = String(meta.guideIds || '').split(',').filter((g, i, a) => getGuide(g) && a.indexOf(g) === i);
+  return ids.length ? { ok: true, ids, session } : { ok: false };
+}
+
 // Completed Checkout Sessions, newest first, every page. Stripe has no search
 // endpoint for Checkout Sessions (the old /search call always failed, so the
 // capacity check never ran); the list endpoint is exact and read-after-write
@@ -273,6 +311,7 @@ module.exports = {
   BOOKING_HORIZON_DAYS, listCompleteSessions, capacityWindowStart,
   getBlobStore, setBlobStoreFactory, blobUpdate, rateLimitDurable, aiDailyCap, aiDailyCheck, AI_CAP_BODY,
   reserveSlot, releaseSlot,
+  GUIDES, GUIDE_BUNDLE, getGuide, getGuideProduct, SESSION_ID_RE, paidGuideSession,
 };
 
 // Netlify publishes every file in this folder as a function; this one has nothing to serve.

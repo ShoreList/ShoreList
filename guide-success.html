@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta name="theme-color" content="#0E1F33"/>
+<meta name="robots" content="noindex"/>
+<title>Your Guides - ShoreList</title>
+<link rel="icon" href="/favicon.ico"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/events.css"/>
+<style>
+.gs{max-width:680px;margin:0 auto;padding:clamp(32px,6vw,64px) 18px 72px;color:var(--ev-ink)}
+.gs h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2rem,5vw,2.8rem);color:var(--ev-navy);line-height:1.1;margin:0 0 10px}
+.gs p{line-height:1.6;margin:0 0 14px}
+.gs-list{list-style:none;margin:22px 0;padding:0;display:grid;gap:12px}
+.gs-item{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;background:#fff;border:1px solid var(--ev-line);border-radius:14px;padding:14px 16px}
+.gs-item strong{font-size:1.05rem;color:var(--ev-navy)}
+.gs-item span{display:block;font-size:.85rem;color:var(--ev-mute)}
+.gs-dl{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 20px;border-radius:999px;background:var(--ev-red);color:#fff;font-weight:700;text-decoration:none}
+.gs-dl:hover{background:var(--ev-red2)}.gs-dl:focus-visible{outline:3px solid var(--ev-navy);outline-offset:2px}
+.gs-box{background:rgba(14,31,51,.05);border-radius:12px;padding:14px 16px;font-size:.95rem}
+.gs-err{color:var(--ev-red);font-weight:700}
+</style>
+</head>
+<body class="ev-page">
+<nav class="ev-nav" aria-label="Primary"><a class="nav-logo" href="/" aria-label="ShoreList home">Shore<span>List</span></a><div class="nav-right"><a href="/guides">Guides</a><a class="nav-book" href="/things-to-do">Book Experiences</a></div></nav>
+<main class="gs" id="main">
+  <div id="gs-loading" role="status">Confirming your payment...</div>
+  <div id="gs-ok" hidden>
+    <h1>Thank you. Your guides are ready.</h1>
+    <p>Your payment went through. Download each file below and save it to your device.</p>
+    <ul class="gs-list" id="gs-list"></ul>
+    <p class="gs-box" id="gs-paid"></p>
+    <p class="gs-box">Save the files before you close this page. You can also bookmark this page: its address is how we confirm your order.</p>
+    <p class="gs-box"><strong>Receipt.</strong> Stripe sends your receipt to the email you entered at checkout. If it does not arrive, or a file will not download, email <a href="mailto:rj@shorelist.net">rj@shorelist.net</a> with the time of your order and we will help.</p>
+    <p class="gs-box">Hours, prices, events and rules change. These guides are the November 2026 edition; confirm with each place before you go.</p>
+    <p><a href="/guides">Back to the guides</a> &middot; <a href="/things-to-do">Browse things to do</a></p>
+  </div>
+  <div id="gs-bad" hidden>
+    <h1>We could not confirm that order</h1>
+    <p class="gs-err" id="gs-msg">This page needs the link Stripe sent you to after payment.</p>
+    <p>If you were charged, email <a href="mailto:rj@shorelist.net">rj@shorelist.net</a> and we will sort it out. Otherwise you can <a href="/guides">go back to the guides</a>.</p>
+  </div>
+</main>
+<script>
+(function(){
+  var id=new URLSearchParams(location.search).get('session_id')||'';
+  var $=function(x){return document.getElementById(x);};
+  function bad(m){$('gs-loading').hidden=true;$('gs-ok').hidden=true;if(m)$('gs-msg').textContent=m;$('gs-bad').hidden=false;}
+  if(!/^cs_(test|live)_[A-Za-z0-9]{8,250}$/.test(id)){bad();return;}
+  fetch('/.netlify/functions/get-guide-session?session_id='+encodeURIComponent(id),{headers:{'Accept':'application/json'}})
+    .then(function(r){return r.json().then(function(d){return {ok:r.ok,d:d};});})
+    .then(function(x){
+      if(!x.ok||!x.d||!x.d.paid||!Array.isArray(x.d.guides)||!x.d.guides.length){bad(x.d&&x.d.error&&/Too many/.test(x.d.error)?x.d.error:'');return;}
+      var ul=$('gs-list');
+      x.d.guides.forEach(function(g){
+        if(!g||!/^[a-z0-9-]{1,60}$/.test(g.id))return;
+        var li=document.createElement('li');li.className='gs-item';
+        var t=document.createElement('div');var s=document.createElement('strong');s.textContent=String(g.title||'');
+        var sp=document.createElement('span');sp.textContent='PDF'+(g.pages?' · '+Number(g.pages)+' pages':'');
+        t.appendChild(s);t.appendChild(sp);
+        var a=document.createElement('a');a.className='gs-dl';a.textContent='Download PDF';
+        a.href='/.netlify/functions/guide-download?session_id='+encodeURIComponent(id)+'&file='+encodeURIComponent(g.id);
+        a.setAttribute('download','');
+        a.setAttribute('aria-label','Download '+String(g.title||'')+' as a PDF');
+        li.appendChild(t);li.appendChild(a);ul.appendChild(li);
+      });
+      if(typeof x.d.amount==='number')$('gs-paid').textContent='Paid in full: $'+(x.d.amount/100).toFixed(2)+' (USD).';else $('gs-paid').hidden=true;
+      $('gs-loading').hidden=true;$('gs-ok').hidden=false;
+    })
+    .catch(function(){bad('We could not reach the server. Please reload this page in a moment.');});
+})();
+</script>
+</body>
+</html>
