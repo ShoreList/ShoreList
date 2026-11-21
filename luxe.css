@@ -1,0 +1,61 @@
+/* ShoreList "Luxe" standards layer: one shared polish pass for every button, card, image,
+   focus state and page transition. Linked after the page styles. Additive and safe without JS. */
+:root{--lx-ease:cubic-bezier(.22,.7,.2,1);--lx-gold:#FFC95E;--lx-shadow:0 1px 2px rgba(7,35,45,.08),0 8px 24px -10px rgba(7,35,45,.28);--lx-shadow-hi:0 2px 4px rgba(7,35,45,.10),0 22px 44px -14px rgba(7,35,45,.40)}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent;text-rendering:optimizeLegibility}
+::selection{background:#E96645;color:#fff}
+/* keyboard focus: one consistent, visible ring */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--lx-gold);outline-offset:3px;border-radius:8px;box-shadow:0 0 0 5px rgba(233,102,69,.28)}
+/* buttons */
+.btn-fill,.btn-ghost,.btn-primary,.btn-book,.btn-sub,.btn-tix,.btn-tix-ghost,.btn-back-form,.sc-btn,.tix-btn,.wc-btn,.xbookbtn,.tc-cta,.ev-action-btn,.nav-cta,.navr a.cta,.filter-btn,.sticky-cta a{position:relative;overflow:hidden;min-height:44px;transition:transform .25s var(--lx-ease),box-shadow .25s var(--lx-ease),background-color .25s,border-color .25s,color .25s;cursor:pointer;-webkit-user-select:none;user-select:none}
+.btn-fill,.btn-primary,.btn-book,.btn-sub,.btn-tix,.nav-cta,.navr a.cta,.tc-cta{box-shadow:0 6px 18px -8px rgba(233,102,69,.7)}
+.btn-fill::after,.btn-primary::after,.btn-book::after,.btn-sub::after,.btn-tix::after,.nav-cta::after,.navr a.cta::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.38) 50%,transparent 70%);transform:translateX(-120%);pointer-events:none}
+@media(hover:hover){
+ .btn-fill:hover,.btn-primary:hover,.btn-book:hover,.btn-sub:hover,.btn-tix:hover,.nav-cta:hover,.navr a.cta:hover,.tc-cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px -10px rgba(233,102,69,.85)}
+ .btn-fill:hover::after,.btn-primary:hover::after,.btn-book:hover::after,.btn-sub:hover::after,.btn-tix:hover::after,.nav-cta:hover::after,.navr a.cta:hover::after{transform:translateX(120%);transition:transform .9s var(--lx-ease)}
+ .btn-ghost:hover,.btn-tix-ghost:hover,.sc-btn:hover,.wc-btn:hover,.filter-btn:hover,.ev-action-btn:hover{transform:translateY(-2px)}
+}
+.btn-fill:active,.btn-primary:active,.btn-book:active,.btn-ghost:active,.btn-sub:active,.btn-tix:active,.sc-btn:active,.tix-btn:active,.filter-btn:active{transform:translateY(0) scale(.98);transition-duration:.08s}
+button:disabled,.btn-fill[aria-disabled=true]{opacity:.55;cursor:not-allowed;transform:none!important}
+/* chips and pills */
+.chip,.exp-chip,.f-chip,.bs-chip,.xchip,.sp-pill,.rec-pill,.proof-chip{transition:transform .2s var(--lx-ease),background-color .2s,border-color .2s,color .2s}
+@media(hover:hover){.chip:hover,.exp-chip:hover,.f-chip:hover,.bs-chip:hover,.xchip:hover{transform:translateY(-1px)}}
+/* cards */
+.card,.exp-card,.town-card,.wk-card,.rec-card,.rv-card,.ev-card,.xcard,.visit-card,.tix-card,.feat-card,.stat-card,.op-card,.dm-card,.more-tile,.wc-card{transition:transform .35s var(--lx-ease),box-shadow .35s var(--lx-ease),border-color .35s;will-change:transform}
+@media(hover:hover){.card:hover,.exp-card:hover,.town-card:hover,.wk-card:hover,.rec-card:hover,.ev-card:hover,.xcard:hover,.visit-card:hover,.feat-card:hover,.more-tile:hover{transform:translateY(-4px);box-shadow:var(--lx-shadow-hi)}}
+.card img,.exp-card img,.town-card img,.xcard img,.ev-card img,.feat-card img{transition:transform .8s var(--lx-ease)}
+@media(hover:hover){.card:hover img,.exp-card:hover img,.town-card:hover img,.xcard:hover img,.ev-card:hover img,.feat-card:hover img{transform:scale(1.04)}}
+.card,.exp-card,.town-card,.xcard,.ev-card,.feat-card{overflow:hidden}
+/* images: shimmer while loading, soft fade-in once decoded (classes are added by luxe.js only) */
+img.lx-pending{opacity:0;background:linear-gradient(100deg,rgba(143,211,222,.18) 30%,rgba(255,255,255,.34) 50%,rgba(143,211,222,.18) 70%) 0 0/200% 100%;animation:lx-shimmer 1.4s linear infinite}
+img.lx-in{animation:lx-fade .7s var(--lx-ease) both}
+@keyframes lx-shimmer{to{background-position:-200% 0}}
+@keyframes lx-fade{from{opacity:0;filter:blur(8px)}to{opacity:1;filter:none}}
+/* generic skeleton blocks any widget can use */
+.lx-skel{position:relative;overflow:hidden;border-radius:12px;background:rgba(143,211,222,.16);min-height:1em}
+.lx-skel::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);animation:lx-sweep 1.3s linear infinite}
+@keyframes lx-sweep{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+/* scroll reveal (hidden state only exists when luxe.js has marked the element) */
+.lx-rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--lx-ease),transform .8s var(--lx-ease)}
+.lx-rv.lx-on{opacity:1;transform:none}
+/* top progress bar for navigation */
+#lx-bar{position:fixed;left:0;top:0;height:3px;width:100%;z-index:100000;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,#E96645,#FFC95E,#8FD3DE);box-shadow:0 0 12px rgba(255,201,94,.7);pointer-events:none;opacity:0}
+#lx-bar.go{opacity:1;transform:scaleX(.82);transition:transform 6s cubic-bezier(.1,.7,.1,1)}
+#lx-bar.done{opacity:0;transform:scaleX(1);transition:transform .25s,opacity .5s .25s}
+/* branded first-visit splash */
+#lx-splash{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:radial-gradient(circle at 50% 40%,#0f5f70,#073D4A 60%,#04252d);color:#F5E8CB;transition:opacity .7s var(--lx-ease),visibility .7s;font-family:'Playfair Display',Georgia,serif}
+#lx-splash.out{opacity:0;visibility:hidden}
+#lx-splash b{font-size:2.2rem;font-style:italic;font-weight:700;letter-spacing:.01em}
+#lx-splash b span{color:#E96645}
+#lx-splash svg{width:54px;height:54px;animation:lx-spin 3.2s var(--lx-ease) infinite}
+#lx-splash i{display:block;width:120px;height:2px;border-radius:2px;background:rgba(245,232,203,.2);overflow:hidden}
+#lx-splash i::after{content:"";display:block;height:100%;width:40%;background:#FFC95E;animation:lx-sweep 1s ease-in-out infinite}
+@keyframes lx-spin{0%{transform:rotate(0)}60%,100%{transform:rotate(360deg)}}
+/* page entrance */
+body{animation:lx-page .6s var(--lx-ease) both}
+@keyframes lx-page{from{opacity:.0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+ .lx-rv{opacity:1;transform:none}
+ #lx-splash{display:none}
+}
