@@ -5,8 +5,8 @@
   'use strict';
   var host = document.querySelector('[data-scene]');
   if (!host) return;
-  var BASE = 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb3-', V = '';
-  var NAMES = ['dawn', 'midday', 'golden', 'night'], ALT = ['Beach and fishing pier at dawn', 'Beach and fishing pier at midday', 'Beach and fishing pier at golden hour', 'Beach and fishing pier under a full moon'];
+  var BASE = 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb4-', V = '';
+  var NAMES = ['dawn', 'midday', 'golden', 'night'], ALT = ['People walking a beach by a fishing pier at sunrise', 'Families enjoying a beach by a fishing pier at midday', 'People on a beach by a fishing pier at golden hour', 'Friends on a moonlit beach by a fishing pier'];
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var sun = window.ShoreSun;
   function nowPhase() { return sun ? Math.round(sun.now()) % 4 : 1; } // snap to one photo: blending two different photos ghosts the scene
@@ -18,7 +18,7 @@
     im.sizes = '100vw'; im.setAttribute('data-p', i); wrap.appendChild(im); return im;
   });
   host.insertBefore(wrap, host.firstChild);
-  function src(i) { var b = BASE + NAMES[i]; return { s: b + '_1000x.webp' + V + ' 1000w, ' + b + '_1920x.webp' + V + ' 1920w, ' + b + '.webp' + V + ' 3840w', f: b + '.webp' + V }; }
+  function src(i) { var b = BASE + NAMES[i]; return { s: b + '_1000x.webp' + V + ' 1000w, ' + b + '_1920x.webp' + V + ' 1920w, ' + b + '_2752x.webp' + V + ' 2752w', f: b + '_1920x.webp' + V }; }
   function load(i, high) { var im = imgs[i]; if (im.src || im.getAttribute('data-l')) return; im.setAttribute('data-l', 1); var u = src(i); if (high) im.fetchPriority = 'high'; im.srcset = u.s; im.src = u.f; im.addEventListener('load', function () { loaded++; im.classList.add('ok'); paint(); if (loaded >= 1) host.classList.add('plates-on'); }); im.addEventListener('error', function () { im.removeAttribute('src'); im.removeAttribute('srcset'); }); }
   function weights(p) { return NAMES.map(function (_, i) { var d = Math.abs(p - i); d = Math.min(d, 4 - d); var w = Math.max(0, 1 - d); return w * w * (3 - 2 * w); }); }
   function paint() {
