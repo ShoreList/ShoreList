@@ -193,23 +193,26 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
 <link rel="stylesheet" href="/luxe.css"/>
 <script src="/luxe.js" defer></script>
 <style id="scene-hero">
-.scene-cv{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0;opacity:0;transition:opacity 1.2s ease}
-.scene-ready .scene-cv{opacity:1}
-section.hero[data-scene]{background:linear-gradient(180deg,#123a5c 0%,#2f7fa6 46%,#0d4a5c 47%,#08303c 100%)!important;min-height:min(78vh,720px);display:flex;align-items:center}
-section.hero[data-scene]>.hero-inner{position:relative;z-index:2;width:100%}
-section.hero[data-scene] .scene-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(4,18,30,.50) 0%,rgba(4,18,30,.28) 52%,rgba(4,18,30,.04) 100%)}
-section.hero[data-scene] h1.hero-title,section.hero[data-scene] .hero-title{color:#fff!important;text-shadow:0 2px 22px rgba(0,0,0,.4)}
-section.hero[data-scene] h1.hero-title em{color:#FFB39A!important}
-section.hero[data-scene] .hero-sub{color:rgba(255,255,255,.9)!important;text-shadow:0 1px 12px rgba(0,0,0,.45)}
-section.hero[data-scene] .hero-bc,section.hero[data-scene] .hero-bc a,section.hero[data-scene] .hero-breadcrumb,section.hero[data-scene] .hero-breadcrumb a{color:rgba(255,255,255,.82)!important}
-section.hero[data-scene] .hero-tag{color:#FFD9A8!important}
-section.hero[data-scene] .hero-badges .hb,section.hero[data-scene] .hb{background:rgba(255,255,255,.14)!important;border:1px solid rgba(255,255,255,.34)!important;color:#fff!important;backdrop-filter:blur(6px)}
-section.hero[data-scene] .hb svg{color:#fff!important}
-section.hero[data-scene] .btn-ghost{background:rgba(255,255,255,.12)!important;border:1px solid rgba(255,255,255,.5)!important;color:#fff!important;backdrop-filter:blur(6px)}
-section.hero[data-scene] .btn-ghost svg{color:#fff!important}
-section.hero[data-scene] .weather-card{background:rgba(6,28,40,.55)!important;border:1px solid rgba(255,255,255,.22)!important;backdrop-filter:blur(10px)}
-@media(max-width:768px){section.hero[data-scene]{min-height:0}}
+.hero-photo{position:absolute;left:-2%;top:-2%;width:104%;height:104%;max-width:none;object-fit:cover;object-position:50% 60%;z-index:0;animation:heroDrift 60s ease-in-out infinite alternate}
+@keyframes heroDrift{from{transform:scale(1) translate3d(0,0,0)}to{transform:scale(1.06) translate3d(-1.2%,-.8%,0)}}
+@media(max-width:768px){.hero-photo{object-position:38% 60%}}
+@media(prefers-reduced-motion:reduce){.hero-photo{animation:none}}
+section.hero[data-photo]{background:linear-gradient(180deg,#123a5c 0%,#2f7fa6 46%,#0d4a5c 47%,#08303c 100%)!important;min-height:min(78vh,720px);display:flex;align-items:center}
+section.hero[data-photo]>.hero-inner{position:relative;z-index:2;width:100%}
+section.hero[data-photo] .scene-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(4,18,30,.62) 0%,rgba(4,18,30,.36) 50%,rgba(4,18,30,.06) 100%)}
+section.hero[data-photo] h1.hero-title,section.hero[data-photo] .hero-title{color:#fff!important;text-shadow:0 2px 22px rgba(0,0,0,.4)}
+section.hero[data-photo] h1.hero-title em{color:#FFB39A!important}
+section.hero[data-photo] .hero-sub{color:rgba(255,255,255,.9)!important;text-shadow:0 1px 12px rgba(0,0,0,.45)}
+section.hero[data-photo] .hero-bc,section.hero[data-photo] .hero-bc a,section.hero[data-photo] .hero-breadcrumb,section.hero[data-photo] .hero-breadcrumb a{color:rgba(255,255,255,.82)!important}
+section.hero[data-photo] .hero-tag{color:#FFD9A8!important}
+section.hero[data-photo] .hero-badges .hb,section.hero[data-photo] .hb{background:rgba(255,255,255,.14)!important;border:1px solid rgba(255,255,255,.34)!important;color:#fff!important;backdrop-filter:blur(6px)}
+section.hero[data-photo] .hb svg{color:#fff!important}
+section.hero[data-photo] .btn-ghost{background:rgba(255,255,255,.12)!important;border:1px solid rgba(255,255,255,.5)!important;color:#fff!important;backdrop-filter:blur(6px)}
+section.hero[data-photo] .btn-ghost svg{color:#fff!important}
+section.hero[data-photo] .weather-card{background:rgba(6,28,40,.55)!important;border:1px solid rgba(255,255,255,.22)!important;backdrop-filter:blur(10px)}
+@media(max-width:768px){section.hero[data-photo]{min-height:0}}
 </style>
+<link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1920x.webp" imagesrcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1920x.webp 1920w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_3840x.webp 3840w" imagesizes="100vw" fetchpriority="high"/>
 </head>
 <body>
 
@@ -347,7 +350,8 @@ section.hero[data-scene] .weather-card{background:rgba(6,28,40,.55)!important;bo
 </nav>
 <main id="main">
 
-<section class="hero" data-scene>
+<section class="hero" data-photo>
+  <img class="hero-photo" alt="" decoding="async" fetchpriority="high" sizes="100vw" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1920x.webp 1920w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_3840x.webp 3840w" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1920x.webp"/>
   <div class="scene-scrim" aria-hidden="true"></div>
   <div class="hero-inner">
     <div>
@@ -582,7 +586,6 @@ section.hero[data-scene] .weather-card{background:rgba(6,28,40,.55)!important;bo
 })();
 </script>
 <script src="/sound.js" defer></script>
-<script src="/scene.js" defer></script>
 <script src="/beachwx.js" defer></script>
 <script src="/widgets.js" defer></script>
 <script src="/shore-plus.js" defer></script>
