@@ -553,6 +553,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 </script>
 <style>.hero .cd-num{color:var(--teal);}.hero .cd-sep{color:var(--teal2);}.sunset-divider{height:6px;background:linear-gradient(90deg,var(--coral),var(--sunset1),var(--sunset2),var(--gold),var(--sunset1));background-size:200% 100%;animation:sunsetShift 7s linear infinite;}@keyframes sunsetShift{to{background-position:200% 0;}}</style><link rel="manifest" href="/manifest.webmanifest"/>
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
+<link rel="stylesheet" href="/scene.css"/>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="i-train" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3.1V7a4 4 0 0 0 8 0V3.1" /><path d="m9 15-1-1" /><path d="m15 15 1-1" /><path d="M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5Z" /><path d="m8 19-2 3" /><path d="m16 19 2 3" /></g></symbol>
@@ -717,10 +718,12 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 
 <!-- ── HERO ── -->
 <main id="main">
-<section class="hero" id="hero" aria-label="Hero">
+<section class="hero hero-cine" id="hero" aria-label="Hero" data-scene>
   <div class="hero-grad"></div>
   <div class="hero-dots"></div>
   <div class="compass"><span class="compass-inner">✦</span></div>
+  <div class="tod" id="tod" role="group" aria-label="Time of day"><button type="button" data-t="dawn" aria-pressed="false">Dawn</button><button type="button" data-t="noon" aria-pressed="false">Midday</button><button type="button" data-t="golden" aria-pressed="false">Golden hour</button><button type="button" data-t="night" aria-pressed="false">Night</button></div>
+  <div class="cond" id="cond" hidden aria-label="Live beach conditions"><span class="dot" aria-hidden="true"></span><span class="stats" aria-live="polite"></span><span role="group" aria-label="Beach"><button type="button" data-b="0" aria-pressed="false">Wrightsville</button> <button type="button" data-b="1" aria-pressed="true">Carolina</button> <button type="button" data-b="2" aria-pressed="false">Kure</button></span><button type="button" class="sur">Surprise me</button><div class="tip"></div></div>
 
   <div class="hero-layout">
     <div class="hero-inner">
@@ -738,9 +741,10 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
         <div class="trust-sep"></div>
         <div class="trust-item">100% local operators</div>
       </div>
-      <div class="hero-btns">
-        <a href="#explore" class="btn-fill">Explore Experiences</a>
-        <a href="/planner" class="btn-ghost">✦ Plan My Trip</a>
+      <div class="paths" role="navigation" aria-label="Start here">
+        <a href="#explore" class="path p-main" data-p="tours"><i aria-hidden="true">&#9875;</i><b>Tours</b><span>Book local experiences</span></a>
+        <a href="/events" class="path" data-p="events"><i aria-hidden="true">&#9733;</i><b>Events</b><span>What's on this week</span></a>
+        <a href="/shop" class="path" data-p="shop"><i aria-hidden="true">&#9728;</i><b>Shop</b><span>Coastal apparel and gear</span></a>
       </div>
       <div class="hero-stats">
         <div class="hstat"><div class="hstat-num">20+</div><div class="hstat-lbl">Local Experiences</div></div>
@@ -1795,6 +1799,8 @@ window.addEventListener('scroll', function(){
   restart();
 })();
 </script>
+<script src="/scene.js" defer></script>
+<script src="/widgets.js" defer></script>
 <script src="/shore-plus.js" defer></script>
 </body>
 </html>
