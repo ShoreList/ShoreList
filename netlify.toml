@@ -1,6 +1,11 @@
 [build]
   functions = "netlify/functions"
 
+# Every function loads the server-only tour table (prices, capacities, operators) through _shared.js.
+# (guide-download never touches it: the table loads lazily, on first use.)
+[functions]
+  included_files = ["data/operators.json"]
+
 # The paid PDF guides are bundled into the guide-download function only.
 [functions."guide-download"]
   included_files = ["netlify/guides-private/**"]
@@ -9,6 +14,13 @@
 # private PDFs and function source) from the public web. Must stay first, and forced.
 [[redirects]]
   from = "/netlify/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+# data/ holds server-only fields (capacities, payout ids); the browser reads /operators-public.json instead.
+[[redirects]]
+  from = "/data/*"
   to = "/404.html"
   status = 404
   force = true

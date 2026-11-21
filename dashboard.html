@@ -298,9 +298,9 @@ function csvCell(v){
 
 function exportCSV(){
   if(!ALL_BOOKINGS.length) return;
-  var rows=[['Guest Name','Email','Phone','Experience','Operator','Date','Time','Party','Amount','Status','Notes','Booked On']];
+  var rows=[['Guest Name','Email','Phone','Experience','Operator','Date','Time','Party','Amount','Status','Notes','Booked On','Source','Medium','Campaign','Ref','Landing page','Referrer']];
   ALL_BOOKINGS.forEach(function(b){
-    rows.push([b.guestName||'',b.guestEmail||'',b.guestPhone||'',b.category||'',b.operator||'',b.date||'',b.timeSlot||'',b.partySize||'',b.amount?((b.amount/100).toFixed(2)):'25.00',b.status||'paid',b.notes||'',b.created?new Date(b.created*1000).toLocaleDateString():'']);
+    rows.push([b.guestName||'',b.guestEmail||'',b.guestPhone||'',b.category||'',b.operator||'',b.date||'',b.timeSlot||'',b.partySize||'',b.amount?((b.amount/100).toFixed(2)):'25.00',b.status||'paid',b.notes||'',b.created?new Date(b.created*1000).toLocaleDateString():'',b.source||'',b.medium||'',b.campaign||'',b.ref||'',b.landing||'',b.referrerHost||'']);
   });
   var csv=rows.map(function(r){return r.map(csvCell).join(',');}).join('\r\n');
   var blob=new Blob([csv],{type:'text/csv'});

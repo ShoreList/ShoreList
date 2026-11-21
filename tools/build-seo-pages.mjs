@@ -5,6 +5,7 @@
 // Run after editing category.html or the copy:  node tools/build-seo-pages.mjs
 import fs from 'node:fs';
 import vm from 'node:vm';
+import { loadOperators, toPublic } from './operators-lib.mjs';
 import { CATS, TOWNS, PHOTO } from './seo-data.mjs';
 
 const SITE = 'https://shorelist.net';
@@ -19,6 +20,7 @@ const a = app.indexOf('var CAT_DATA='), o = app.indexOf('var OPS={');
 const rest = app.slice(o + 5), m = rest.search(/\n(var |function |const |let )/);
 const ctx = {}; vm.createContext(ctx);
 vm.runInContext(app.slice(a, o + 5 + m) + ';this.CAT_DATA=CAT_DATA;this.OPS=OPS;', ctx);
+ctx.OPS = toPublic(loadOperators()).categories; // operators now live in data/operators.json
 const slugs = Object.keys(ctx.CAT_DATA);
 for (const s of slugs) if (!CATS[s]) throw new Error('missing copy for ' + s);
 

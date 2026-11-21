@@ -69,6 +69,12 @@ exports.handler = async (event) => {
       timeSlot:    s.metadata?.timeSlot      || '',
       partySize:   s.metadata?.partySize     || '',
       notes:       s.metadata?.notes         || '',
+      source:      s.metadata?.attr_utm_source    || '',
+      medium:      s.metadata?.attr_utm_medium    || '',
+      campaign:    s.metadata?.attr_utm_campaign  || '',
+      ref:         s.metadata?.attr_ref           || '',
+      landing:     s.metadata?.attr_landing       || '',
+      referrerHost: s.metadata?.attr_referrer_host || '',
       status:      s.payment_status,
     }));
 
