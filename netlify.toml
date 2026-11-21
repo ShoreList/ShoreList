@@ -90,6 +90,16 @@
   status = 200
 
 [[redirects]]
+  from = "/wilmington-nc-faq"
+  to = "/wilmington-nc-faq.html"
+  status = 200
+
+[[redirects]]
+  from = "/faq"
+  to = "/wilmington-nc-faq"
+  status = 301
+
+[[redirects]]
   from = "/wilmington-weather"
   to = "/wilmington-weather.html"
   status = 200

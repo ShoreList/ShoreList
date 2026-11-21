@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://shorelist.net/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://shorelist.net/</loc><lastmod>2026-11-21</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://shorelist.net/things-to-do</loc><lastmod>2026-11-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://shorelist.net/plan-your-trip</loc><lastmod>2026-11-20</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://shorelist.net/things-to-do/ghost-tours</loc><lastmod>2026-11-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -25,20 +25,21 @@
   <url><loc>https://shorelist.net/things-to-do/jet-ski-rentals</loc><lastmod>2026-11-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://shorelist.net/things-to-do/golf-cart-rentals</loc><lastmod>2026-11-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://shorelist.net/things-to-do/wellness</loc><lastmod>2026-11-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://shorelist.net/downtown</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://shorelist.net/wrightsville-beach</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://shorelist.net/carolina-beach</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://shorelist.net/kure-beach</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://shorelist.net/shore-picks</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://shorelist.net/downtown</loc><lastmod>2026-11-21</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://shorelist.net/wrightsville-beach</loc><lastmod>2026-11-21</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://shorelist.net/carolina-beach</loc><lastmod>2026-11-21</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://shorelist.net/kure-beach</loc><lastmod>2026-11-21</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://shorelist.net/shore-picks</loc><lastmod>2026-11-21</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://shorelist.net/events</loc><lastmod>2026-11-20</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://shorelist.net/wilmington-railroad-museum</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://shorelist.net/wilmington-railroad-museum</loc><lastmod>2026-11-21</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://shorelist.net/shop</loc><lastmod>2026-11-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://shorelist.net/planner</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://shorelist.net/map</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shorelist.net/join</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://shorelist.net/waitlist</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://shorelist.net/legal</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
-  <url><loc>https://shorelist.net/weekly</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://shorelist.net/wilmington-weather</loc><changefreq>hourly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://shorelist.net/advertise</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/planner</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://shorelist.net/map</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/join</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://shorelist.net/waitlist</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/legal</loc><lastmod>2026-11-21</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://shorelist.net/weekly</loc><lastmod>2026-11-21</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://shorelist.net/wilmington-nc-faq</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://shorelist.net/wilmington-weather</loc><lastmod>2026-11-21</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://shorelist.net/advertise</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
 </urlset>

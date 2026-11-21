@@ -1,12 +1,12 @@
-/* ShoreList hero photo plates: four styled beach scenes (dawn, midday, golden hour, night),
+/* ShoreList hero photo plates: four real photos of Wrightsville Beach (twilight, midday, sunset; credits on the homepage),
    one shown at a time and chosen by the real sun at Wilmington. Slow drift and pointer parallax; click the water for ripples.
    If the photos fail to load, the live shader scene underneath stays visible. */
 (function () {
   'use strict';
   var host = document.querySelector('[data-scene]');
   if (!host) return;
-  var BASE = 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb4-', V = '';
-  var NAMES = ['dawn', 'midday', 'golden', 'night'], ALT = ['People walking a beach by a fishing pier at sunrise', 'Families enjoying a beach by a fishing pier at midday', 'People on a beach by a fishing pier at golden hour', 'Friends on a moonlit beach by a fishing pier'];
+  var BASE = 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb5-', V = '';
+  var NAMES = ['dawn', 'midday', 'golden', 'night'], ALT = ['Wrightsville Beach at twilight', 'Beachgoers at Wrightsville Beach on a sunny day', 'Sunset over Wrightsville Beach', 'Wrightsville Beach at dusk'];
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var sun = window.ShoreSun;
   function nowPhase() { return sun ? Math.round(sun.now()) % 4 : 1; } // snap to one photo: blending two different photos ghosts the scene
@@ -18,7 +18,8 @@
     im.sizes = '100vw'; im.setAttribute('data-p', i); wrap.appendChild(im); return im;
   });
   host.insertBefore(wrap, host.firstChild);
-  function src(i) { var b = BASE + NAMES[i]; return { s: b + '_1000x.webp' + V + ' 1000w, ' + b + '_1920x.webp' + V + ' 1920w, ' + b + '_2752x.webp' + V + ' 2752w', f: b + '_1920x.webp' + V }; }
+  var FILES = ['night', 'midday', 'golden', 'night']; // dawn and night share the twilight photo; night is darkened in CSS
+  function src(i) { var b = BASE + FILES[i], c = '_crop_center.webp' + V; return { s: b + '_1000x563' + c + ' 1000w, ' + b + '_1920x1080' + c + ' 1920w, ' + b + '_2752x1548' + c + ' 2752w', f: b + '_1920x1080' + c }; }
   function load(i, high) { var im = imgs[i]; if (im.src || im.getAttribute('data-l')) return; im.setAttribute('data-l', 1); var u = src(i); if (high) im.fetchPriority = 'high'; im.srcset = u.s; im.src = u.f; im.addEventListener('load', function () { loaded++; im.classList.add('ok'); paint(); if (loaded >= 1) host.classList.add('plates-on'); }); im.addEventListener('error', function () { im.removeAttribute('src'); im.removeAttribute('srcset'); }); }
   function weights(p) { return NAMES.map(function (_, i) { var d = Math.abs(p - i); d = Math.min(d, 4 - d); var w = Math.max(0, 1 - d); return w * w * (3 - 2 * w); }); }
   function paint() {

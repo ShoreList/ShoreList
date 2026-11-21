@@ -29,6 +29,9 @@ for (const [slug, arr] of Object.entries(ctx.OPS)) {
 }
 const pages = [
   ['Things to do in Wilmington, NC', 'Every tour, activity and rental category for Wilmington and the beaches', '/things-to-do', 'things to do activities tours attractions what to do'],
+  ['Wilmington, NC weather', 'Live conditions, hourly and 7-day forecast, beach, surf and tide report', '/wilmington-weather', 'weather forecast rain temperature surf tide water temp wind beach conditions today'],
+  ['Wilmington, NC visitor FAQ', 'Short answers about beaches, parking, kids, nightlife, festivals and getting around', '/wilmington-nc-faq', 'faq questions parking dogs kids free festivals ferry film sunset'],
+  ['The Shore Report newsletter', 'Free weekly events, itinerary and beach conditions', '/weekly', 'newsletter weekly email shore report subscribe'],
   ['Plan your trip to Wilmington, NC', 'When to go, where to stay, how far the beaches are and a three-day itinerary', '/plan-your-trip', 'plan trip visit vacation when to go where to stay airport itinerary guide'],
   ['Events', 'Concerts, festivals, holiday events and things to do', '/events', 'event events concert festival holiday show music tonight weekend'],
   ['Shore Picks', 'Restaurants, coffee and drinks that locals pick', '/shore-picks', 'eat food restaurant coffee cafe bar drinks brunch dinner lunch'],

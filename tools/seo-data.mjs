@@ -27,7 +27,7 @@ export const CATS = {
   },
   'walking-tours': {
     h1: 'Walking & History Tours in Wilmington, NC',
-    title: 'Wilmington, NC Walking Tours | History & Architecture Tours',
+    title: 'Wilmington, NC Walking Tours | History & Architecture',
     desc: 'Guided walking and history tours of downtown Wilmington, NC and Carolina Beach. Architecture, port history and local stories, bookable on ShoreList.',
     intro: 'The easiest way to understand Wilmington is on foot. The downtown historic district is one of the largest in North Carolina, with Colonial, Greek Revival, Italianate and Queen Anne homes on streets you can cover in an afternoon. Guided walking tours add the stories: the port, the railroad, the Civil War blockade runners and the people who built the city.',
     where: 'Downtown Wilmington historic district and Carolina Beach.',
@@ -51,7 +51,7 @@ export const CATS = {
   },
   'film-tours': {
     h1: 'Film & TV Location Tours in Wilmington, NC',
-    title: 'Wilmington, NC Film & TV Location Tours | One Tree Hill & More',
+    title: 'Wilmington, NC Film & TV Location Tours | One Tree Hill',
     desc: 'Film and TV location tours in Wilmington, NC, the city behind One Tree Hill, Dawson\'s Creek and hundreds of productions. Plan a tour on ShoreList.',
     intro: 'Wilmington has been a working film town since the 1980s, with a major studio complex and hundreds of film and television credits. Fans come for the locations from One Tree Hill and Dawson\'s Creek, and many of those spots are in walking distance of each other downtown and along the river.',
     where: 'Downtown Wilmington, the Riverwalk and nearby neighborhoods.',
@@ -63,7 +63,7 @@ export const CATS = {
   },
   'fishing-charters': {
     h1: 'Fishing Charters near Wilmington, NC',
-    title: 'Fishing Charters in Wilmington, Carolina Beach & Wrightsville Beach, NC',
+    title: 'Fishing Charters in Wilmington & Carolina Beach, NC',
     desc: 'Inshore and offshore fishing charters from Carolina Beach and Wrightsville Beach, NC. What to expect, what bites when, and charters on ShoreList.',
     intro: 'The waters around Wilmington offer two very different days of fishing. Inshore trips work the marshes, creeks and the Intracoastal Waterway for red drum, flounder and speckled trout. Offshore trips run out of the inlets for king mackerel, mahi and other bluewater fish, with longer runs toward the Gulf Stream on full-day charters.',
     where: 'Charters leave from Carolina Beach and Wrightsville Beach marinas.',
@@ -87,7 +87,7 @@ export const CATS = {
   },
   'river-cruises': {
     h1: 'River Cruises in Wilmington, NC',
-    title: 'Cape Fear River Cruises in Wilmington, NC | Sunset & Sightseeing',
+    title: 'Cape Fear River Cruises in Wilmington, NC | Sunset Cruises',
     desc: 'Sunset and sightseeing river cruises on the Cape Fear River in downtown Wilmington, NC. See the skyline, the battleship and the bridges from the water.',
     intro: 'Downtown Wilmington sits right on the Cape Fear River, and a cruise is the easiest way to see it: the Riverwalk, the Battleship North Carolina across the water and the bridges at sunset. Boats leave from the downtown waterfront, a short walk from restaurants and hotels.',
     where: 'Downtown Wilmington waterfront on the Cape Fear River.',
@@ -111,7 +111,7 @@ export const CATS = {
   },
   paddleboard: {
     h1: 'Paddleboard Rentals & SUP Tours near Wilmington, NC',
-    title: 'Paddleboarding in Wrightsville Beach, NC | SUP Rentals & Lessons',
+    title: 'Paddleboarding in Wrightsville Beach, NC | SUP Rentals',
     desc: 'Stand-up paddleboard rentals, lessons and tours near Wilmington, NC. Calm sound-side water at Wrightsville Beach is ideal for beginners.',
     intro: 'The sound side of Wrightsville Beach is flat, protected water, which is why it has become a stand-up paddleboarding hub. You can rent a board and explore the channels and marsh on your own, take a lesson, or join a guided paddle. The calmest water is usually early in the morning.',
     where: 'Sound-side Wrightsville Beach, Carolina Beach and local lakes.',
@@ -135,7 +135,7 @@ export const CATS = {
   },
   'wildlife-tours': {
     h1: 'Dolphin & Wildlife Tours near Wilmington, NC',
-    title: 'Dolphin & Wildlife Tours in Wrightsville Beach & Carolina Beach, NC',
+    title: 'Dolphin & Wildlife Tours near Wilmington, NC',
     desc: 'Dolphin cruises, birding trips and wildlife tours near Wilmington, NC. See bottlenose dolphins, shorebirds and sea turtle nesting beaches.',
     intro: 'Bottlenose dolphins live in the waters around Wilmington all year, and they are often seen in the inlets and the Intracoastal Waterway. Wildlife tours by boat or kayak also visit undeveloped barrier islands where shorebirds nest and sea turtles come ashore in summer.',
     where: 'Wrightsville Beach, Masonboro Island, Carolina Beach and Fort Fisher.',
@@ -147,7 +147,7 @@ export const CATS = {
   },
   'ebike-rentals': {
     h1: 'E-Bike Rentals near Wilmington, NC',
-    title: 'E-Bike Rentals in Wrightsville Beach, Carolina Beach & Wilmington, NC',
+    title: 'E-Bike Rentals in Wilmington & Wrightsville Beach, NC',
     desc: 'Electric bike rentals near Wilmington, NC. Cover the beach towns and island neighborhoods without the effort. Find rentals on ShoreList.',
     intro: 'An electric bike turns a hot, flat beach town into an easy afternoon. With pedal assist you can ride the length of the island, reach the quieter beach accesses and skip the hunt for parking.',
     where: 'Wrightsville Beach, Carolina Beach, Kure Beach and Wilmington.',
@@ -195,7 +195,7 @@ export const CATS = {
   },
   'nature-walks': {
     h1: 'Nature Walks & Guided Hikes near Wilmington, NC',
-    title: 'Nature Walks near Wilmington, NC | Carolina Beach State Park & More',
+    title: 'Nature Walks near Wilmington, NC | State Park Trails',
     desc: 'Guided nature walks near Wilmington, NC: maritime forest, cypress swamps and Carolina Beach State Park, home of the wild Venus flytrap.',
     intro: 'The Wilmington area is one of the few places on earth where Venus flytraps grow wild, and Carolina Beach State Park is the best place to see them. Guided walks also explore maritime forest, salt marsh boardwalks and cypress-lined lakes, all on flat, easy trails.',
     where: 'Carolina Beach State Park, Fort Fisher, and parks and gardens around Wilmington.',
@@ -207,7 +207,7 @@ export const CATS = {
   },
   'beach-photography': {
     h1: 'Beach Photographers near Wilmington, NC',
-    title: 'Beach Photographers in Wrightsville Beach, Carolina Beach & Kure Beach, NC',
+    title: 'Beach Photographers near Wilmington & Wrightsville Beach, NC',
     desc: 'Beach photography sessions near Wilmington, NC: family portraits, engagements and couples at golden hour. Find photographers on ShoreList.',
     intro: 'A beach trip is when the whole family is finally in one place, which is why sunset portrait sessions are so popular here. Photographers work the hour before sunset, when the light is soft and the sand and sea oats glow.',
     where: 'Wrightsville Beach, Carolina Beach, Kure Beach and Fort Fisher.',
@@ -219,7 +219,7 @@ export const CATS = {
   },
   'beach-picnics': {
     h1: 'Luxury Beach Picnics near Wilmington, NC',
-    title: 'Luxury Beach Picnics in Wrightsville Beach & Carolina Beach, NC',
+    title: 'Luxury Beach Picnics in Wrightsville & Carolina Beach, NC',
     desc: 'Private, fully set-up beach picnics near Wilmington, NC for proposals, birthdays and date nights. Find picnic experiences on ShoreList.',
     intro: 'A styled beach picnic is set up before you arrive: low table, cushions, place settings and decor, timed for sunset. They are popular for proposals, anniversaries, birthdays and bachelorette weekends.',
     where: 'Wrightsville Beach, Carolina Beach and Kure Beach.',
@@ -231,7 +231,7 @@ export const CATS = {
   },
   'beach-chairs': {
     h1: 'Beach Chair & Umbrella Rentals near Wilmington, NC',
-    title: 'Beach Chair & Umbrella Rentals in Wrightsville, Carolina & Kure Beach, NC',
+    title: 'Beach Chair & Umbrella Rentals near Wilmington, NC',
     desc: 'Beach chair and umbrella rentals near Wilmington, NC, delivered and set up before you arrive. Plus beach gear to buy from the ShoreList Shop.',
     intro: 'Skip hauling gear from the car. Beach rental services deliver chairs and umbrellas and set them up on the sand before you get there, then collect them at the end of the day. If you would rather own your setup, the ShoreList Shop carries chairs, umbrellas, towels and coolers.',
     where: 'Wrightsville Beach, Carolina Beach and Kure Beach.',
@@ -267,7 +267,7 @@ export const CATS = {
   },
   wellness: {
     h1: 'Beach Yoga, Spa & Wellness near Wilmington, NC',
-    title: 'Beach Yoga, Spas & Wellness in Wilmington & Wrightsville Beach, NC',
+    title: 'Beach Yoga, Spas & Wellness in Wilmington, NC',
     desc: 'Beach yoga, massage, spas and wellness experiences near Wilmington, NC. Slow down on the coast with experiences from ShoreList.',
     intro: 'The coast is a good place to slow down. Sunrise yoga on the sand, massage and spa days fit easily around a beach trip, and they are a calm option when the surf is rough or the weather turns.',
     where: 'Wrightsville Beach, Carolina Beach, Kure Beach and Wilmington.',
