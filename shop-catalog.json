@@ -75,6 +75,22 @@
    "store": "fourthwall"
   },
   {
+   "id": "airlie-oak-crewneck",
+   "collection": "landmarks",
+   "name": "The Airlie Oak Embroidered Crewneck",
+   "url": "https://shorelist-shop.fourthwall.com/products/the-airlie-oak-embroidered-crewneck",
+   "img": "https://imgproxy.fourthwall.dev/gvkjYCy2ARGqiUAd3Ma5tgaUKLgFF-fI8XAC424yDbM/w:720/sm:1/enc/ZRAWkba93sQrD4Y4/0dQAngX9oculu4LT/8NASxILWnChLU2Mr/bw_ty9p_rHnjTlj7/OGgxxvrUpMjBoXfo/222X2_vdQS9YOuwN/MvLITtjxAlp4Cuub/cEBEjmIqnsAS8qkA/gYVSYev6772U0cqH/rUMY9yM08jY0772T/kZ9RAgESWiI8vvaK/0NKOJuv3ss-jAyUw/krRazealfPQC89wE/PIf28QfVjcVuq4s3/6LP3UnfQyYQ.jpg",
+   "alt": "Crewneck sweatshirt with the Airlie Oak embroidered small on the chest in two greens",
+   "meta": "The real Airlie Oak stitched small on the chest in two greens, with quiet engraved-style lettering. Organic cotton crewneck.",
+   "cta": "Choose options and buy",
+   "price": 84,
+   "scenes": [
+    "riverwalk"
+   ],
+   "cut": "unisex",
+   "store": "fourthwall"
+  },
+  {
    "id": "sunset-sail-tee",
    "collection": "classics",
    "name": "Sunset Sail Garment-Dyed Tee",
