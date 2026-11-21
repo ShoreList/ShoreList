@@ -268,6 +268,12 @@
   /* public hooks so pages can open the palette (e.g. a hero button: onclick="ShorePlus.open('hero')") */
   window.ShorePlus = { open: open, close: close, search: search };
 
-  function init() { build(); load(); }
+  /* living coast layer (gulls, surf, fin): loaded after the page is interactive */
+  function ambient() {
+    var go = function () { var s = document.createElement('script'); s.src = '/ambient.js'; s.defer = true; document.head.appendChild(s); };
+    if ('requestIdleCallback' in window) requestIdleCallback(go, { timeout: 2500 }); else setTimeout(go, 1200);
+  }
+
+  function init() { build(); load(); ambient(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
