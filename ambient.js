@@ -58,6 +58,8 @@
       '<path class="s3" fill="' + col + '" d="' + wavePath(8, 58, 5) + close + '"/>' +
       '<path class="foam" d="' + wavePath(8, 58, 5) + '"/></svg>';
     foot.parentNode.insertBefore(surf, foot);
+    var prev = surf.previousElementSibling;
+    if (prev && prev.classList && prev.classList.contains('sl-lead')) surf.style.background = '#0E1F33';
     if (reduce) return;
     finBtn = d.createElement('button'); finBtn.type = 'button'; finBtn.className = 'sl-fin';
     finBtn.setAttribute('aria-label', 'A fin in the surf. Tap to send it under.'); finBtn.tabIndex = -1;
