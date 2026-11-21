@@ -316,6 +316,23 @@
       ],
       "cut": "unisex",
       "store": "fourthwall"
+    },
+    {
+      "id": "wrightsville-golf-tee",
+      "collection": "shore-gear",
+      "name": "Wrightsville Golf Tee",
+      "url": "https://shorelist-shop.fourthwall.com/products/wrightsville-golf-tee",
+      "img": "https://imgproxy.fourthwall.dev/LhRPFTaKVnuQEDAKi4APR7YRfp_KaBThjX1xVEPUT8M/w:1920/sm:1/enc/9Ok-2UVJZ3jxo9zr/F31cBIiuaVRJ4Zqj/OUQsJO-B0TV4rps1/cjLz5fOklBBTpBnG/zKXeqNSLWKyhOhB3/8KLNYQ5cz73q3r6I/NogGpSIuSszqsqaU/Du6lImRfZUJw7VUO/SoYZvH6A-2WNOC86/_FhilIeEktGGBA_G/CSAEzavNcW6osMW8/nIABPyeQISK_FLgS/jX8pfcAF_RCJkPrk/77-lnw.webp",
+      "lookbook": "https://imgproxy.fourthwall.dev/LhRPFTaKVnuQEDAKi4APR7YRfp_KaBThjX1xVEPUT8M/w:1920/sm:1/enc/9Ok-2UVJZ3jxo9zr/F31cBIiuaVRJ4Zqj/OUQsJO-B0TV4rps1/cjLz5fOklBBTpBnG/zKXeqNSLWKyhOhB3/8KLNYQ5cz73q3r6I/NogGpSIuSszqsqaU/Du6lImRfZUJw7VUO/SoYZvH6A-2WNOC86/_FhilIeEktGGBA_G/CSAEzavNcW6osMW8/nIABPyeQISK_FLgS/jX8pfcAF_RCJkPrk/77-lnw.webp",
+      "alt": "Woman in a light blue Wrightsville Beach Golf tee and straw visor on a coastal fairway under live oaks",
+      "meta": "Comfort Colors 1717 garment-dyed tee with a navy Wrightsville Beach Golf lockup. Chambray.",
+      "cta": "Choose options and buy",
+      "price": 46,
+      "scenes": [
+        "beach"
+      ],
+      "cut": "unisex",
+      "store": "fourthwall"
     }
   ],
   "scenes": [
