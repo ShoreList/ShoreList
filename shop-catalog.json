@@ -5,7 +5,7 @@
   {
    "id": "local-icons",
    "name": "Local Icons",
-   "blurb": "One small embroidered icon and the letters locals read right away: WB, CB, KB, ILM. Real stitching on garment-dyed crewnecks and corduroy caps, no big prints.",
+   "blurb": "One small embroidered icon and the letters locals read right away: WB, CB, KB, ILM. Real stitching on garment-dyed crewnecks, corduroy caps and cuffed beanies, no big prints.",
    "art": "lighthouse"
   },
   {
@@ -213,6 +213,60 @@
    "store": "shopify",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4211854548687384211_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-corduroy-cap-wilmington_1920x.webp"
+  },
+  {
+   "id": "the-sloop-cuffed-beanie-wrightsville-beach",
+   "collection": "local-icons",
+   "name": "The Sloop Cuffed Beanie, Wrightsville Beach",
+   "url": "https://shorelist.myshopify.com/products/the-sloop-cuffed-beanie-wrightsville-beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-cuffed-beanie-wrightsville-beach_1000x.webp",
+   "alt": "Blonde woman on a marina dock wearing a navy cuffed beanie embroidered with a small sailboat and the letters WB",
+   "meta": "A little sloop and WB embroidered on the cuff of a classic knit beanie.",
+   "cta": "Choose colour",
+   "price": 42,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6062137644770390613_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-cuffed-beanie-wrightsville-beach_1920x.webp"
+  },
+  {
+   "id": "the-pelican-cuffed-beanie-carolina-beach",
+   "collection": "local-icons",
+   "name": "The Pelican Cuffed Beanie, Carolina Beach",
+   "url": "https://shorelist.myshopify.com/products/the-pelican-cuffed-beanie-carolina-beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-cuffed-beanie-carolina-beach_1000x.webp",
+   "alt": "Man on a winter beach wearing a green cuffed beanie embroidered with a small pelican and the letters CB",
+   "meta": "A brown pelican and CB embroidered on the cuff of a classic knit beanie.",
+   "cta": "Choose colour",
+   "price": 42,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2987194900095621589_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-cuffed-beanie-carolina-beach_1920x.webp"
+  },
+  {
+   "id": "the-live-oak-cuffed-beanie-wilmington",
+   "collection": "local-icons",
+   "name": "The Live Oak Cuffed Beanie, Wilmington",
+   "url": "https://shorelist.myshopify.com/products/the-live-oak-cuffed-beanie-wilmington",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-cuffed-beanie-wilmington_1000x.webp",
+   "alt": "Brunette woman on a historic downtown street wearing a navy cuffed beanie embroidered with a small live oak and the letters ILM",
+   "meta": "A live oak and ILM embroidered on the cuff of a classic knit beanie.",
+   "cta": "Choose colour",
+   "price": 42,
+   "scenes": [
+    "riverwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5126613936494193933_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-cuffed-beanie-wilmington_1920x.webp"
   },
   {
    "id": "wrightsville-beach-varsity-crewneck",
