@@ -28,7 +28,8 @@
     '.slbag-btn b{background:#E96645;color:#fff;border-radius:100px;min-width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:.8rem;padding:0 6px}' +
     'dialog.slbag{border:0;padding:0;background:#FEFCF7;color:#0D1F25;font-family:"DM Sans",system-ui,sans-serif;box-shadow:0 30px 80px rgba(0,0,0,.45)}' +
     'dialog.slbag::backdrop{background:rgba(6,18,24,.6)}' +
-    'dialog.slbag-pick{border-radius:20px;width:min(480px,94vw);max-height:92vh}' +
+    'dialog.slbag-pick{margin:auto;border-radius:20px;width:min(480px,94vw);max-height:92vh}' +
+    '.slbag-btn[hidden]{display:none}' +
     'dialog.slbag-drawer{margin:0 0 0 auto;height:100vh;max-height:100vh;width:min(420px,100vw);border-radius:0}' +
     '.slbag-in{padding:22px;display:flex;flex-direction:column;gap:14px}' +
     '.slbag-drawer .slbag-in{height:100%;box-sizing:border-box}' +
