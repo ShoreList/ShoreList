@@ -85,6 +85,11 @@
   status = 200
 
 [[redirects]]
+  from = "/weekly"
+  to = "/weekly.html"
+  status = 200
+
+[[redirects]]
   from = "/shore-picks"
   to = "/shore-picks.html"
   status = 200
