@@ -105,6 +105,16 @@
   status = 200
 
 [[redirects]]
+  from = "/surf"
+  to = "/surf.html"
+  status = 200
+
+[[redirects]]
+  from = "/surf/:slug"
+  to = "/surf/:slug.html"
+  status = 200
+
+[[redirects]]
   from = "/wilmington-nc-faq"
   to = "/wilmington-nc-faq.html"
   status = 200
