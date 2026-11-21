@@ -73,7 +73,7 @@ body{animation:lx-page .6s var(--lx-ease) both}
 }
 
 /* accessibility: contrast-safe brand colors (WCAG AA) */
-.btn-fill,.btn-primary,.btn-book,.btn-sub,.btn-tix,.nav-cta,.navr a.cta,.tc-cta,.buy,.weekend-pill,.mq-item.hot,.ss-cta{background-color:#C9452A!important;color:#fff!important}
+.btn-fill,.btn-primary,.btn-book,.btn-sub,.btn-tix,.nav-cta,.navr a.cta,.tc-cta,.buy,.weekend-pill,.mq-item.hot,.ss-cta{background-color:#C0412A!important;color:#fff!important}
 .mq-item{--lx-mq:1}
 .feat-badge,.section-eyebrow,.wb-live,.fact-n,.wc-btn,.sec-label[style*="coral"],.hero-tag,.eyebrow{color:#FFB199!important}
 .sec-label{color:#B93C24}
@@ -82,7 +82,7 @@ body{animation:lx-page .6s var(--lx-ease) both}
 .wc-live-badge{background:#C62F2F!important}
 a[href*="seandaustin"]{text-decoration:underline!important;text-underline-offset:3px}
 .cc-fab{min-height:44px;min-width:44px}
-.marquee-bar{background:#C9452A!important}
+.marquee-bar{background:#C0412A!important}
 
 /* ===== Photo tiles: real cinematic photography replaces icon circles ===== */
 [href$="/things-to-do/ghost-tours"],body[data-cat="ghost-tours"]{--ph:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-ghost-tours_800x.webp);--phl:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-ghost-tours_1920x.webp)}
@@ -160,7 +160,7 @@ nav.sl-hdr .sl-links{display:flex;align-items:center;gap:clamp(12px,2vw,26px)}
 nav.sl-hdr .sl-links a{color:rgba(245,232,203,.86);text-decoration:none;font-size:.76rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;white-space:nowrap;padding:8px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
 nav.sl-hdr .sl-links a:hover,nav.sl-hdr .sl-links a:focus-visible{color:#FFC95E}
 nav.sl-hdr .sl-links a[aria-current="page"]{color:#FFC95E;border-bottom-color:#FFC95E}
-nav.sl-hdr .sl-links a.sl-cta{background:#C9452A;color:#fff!important;border:0;border-radius:999px;padding:11px 18px;box-shadow:0 6px 18px -8px rgba(233,102,69,.7)}
+nav.sl-hdr .sl-links a.sl-cta{background:#C0412A;color:#fff!important;border:0;border-radius:999px;padding:11px 18px;box-shadow:0 6px 18px -8px rgba(233,102,69,.7)}
 nav.sl-hdr .sl-links a.sl-cta:hover{background:#E96645}
 nav.sl-hdr .sl-burger{display:none;background:none;border:0;width:44px;height:44px;padding:11px 9px;cursor:pointer}
 nav.sl-hdr .sl-burger span{display:block;height:2px;background:#F5E8CB;border-radius:2px;margin:5px 0;transition:transform .25s,opacity .2s}
@@ -184,7 +184,9 @@ nav .logo-l,nav a.nav-planner,.list-cta .lc-tag,.list-cta em,.rv-stars,.wk-price
 .list-cta .lc-btn{color:#fff!important}
 /* tap targets: give inline text links in nav/footer a 24px+ hit area */
 nav a,footer a,.foot-links a,.nav-links a,.sl-links a{display:inline-block;padding-top:4px;padding-bottom:4px;min-height:24px}
-a.sl-logo{display:inline-flex;align-items:center;min-height:32px}
+a.sl-logo{display:inline-flex;align-items:center;min-height:44px}
+/* footer link groups: 44px rows */
+footer a,.foot-links a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding-top:0;padding-bottom:0}
 /* tiny text floors */
 kbd{font-size:.75rem}
 .sec-label,.hero-tag,.wc-label,.wc-live,.er-badge,.mq-item,.feat-badge,.exp-tag,.ot-sub,.wi-sub,.wi-tap,.nav-op{font-size:max(.75rem,12px)}

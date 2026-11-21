@@ -70,7 +70,7 @@ body:not(:has(.hero-cine)) .cc-fab{right:auto;left:16px}body:not(:has(.hero-cine
 @media(max-width:820px){.cc-fab .lbl{display:none}.cc-fab{width:48px;height:48px;padding:0;justify-content:center}.cc-fab .orb{width:22px;height:22px}}
 /* sound control + dock + float */
 .snd{position:fixed;left:22px;bottom:22px;z-index:8000;display:flex;align-items:center;gap:0;border-radius:100px;background:rgba(4,24,32,.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);color:#fff;overflow:hidden;transition:background .2s}
-.snd-b{display:flex;align-items:center;gap:8px;border:0;background:transparent;color:#fff;padding:11px 14px;font:600 .78rem 'DM Sans',sans-serif;cursor:pointer}
+.snd-b{min-width:44px;min-height:44px;justify-content:center;display:flex;align-items:center;gap:8px;border:0;background:transparent;color:#fff;padding:11px 14px;font:600 .78rem 'DM Sans',sans-serif;cursor:pointer}
 .snd-r{width:0;opacity:0;transition:width .3s,opacity .3s,margin .3s;accent-color:#ffb089;margin:0}
 .snd:hover .snd-r,.snd:focus-within .snd-r{width:84px;opacity:1;margin:0 14px 0 0}
 .snd.live .snd-b svg{animation:sndp 2.4s ease-in-out infinite}
