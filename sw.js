@@ -3,7 +3,7 @@
    - HTML: network first, falls back to cache, then /offline.html
    - static files: stale-while-revalidate
    Bump VERSION on each deploy that changes cached shell files. */
-const VERSION = 'sl-v45-2026-11-21';
+const VERSION = 'sl-v46-2026-11-21';
 const SHELL = ['/offline.html', '/shore-plus.js', '/search-index.json', '/icons/icon-192.png'];
 const SKIP = /^\/(\.netlify|dashboard|success|api)\b/;
 
