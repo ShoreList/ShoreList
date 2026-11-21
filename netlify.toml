@@ -90,6 +90,21 @@
   status = 200
 
 [[redirects]]
+  from = "/where-to-stay"
+  to = "/where-to-stay.html"
+  status = 200
+
+[[redirects]]
+  from = "/hotels"
+  to = "/where-to-stay"
+  status = 301
+
+[[redirects]]
+  from = "/events/:slug"
+  to = "/events/:slug.html"
+  status = 200
+
+[[redirects]]
   from = "/wilmington-nc-faq"
   to = "/wilmington-nc-faq.html"
   status = 200

@@ -55,11 +55,12 @@
     mount.innerHTML = '<div class="ef-in"><div class="ef-eye">Updated automatically</div><h2>What&rsquo;s on <em>in Wilmington</em></h2><p class="ef-sub">Upcoming events, refreshed daily. Past events drop off on their own.</p><div class="ef-chips" role="group" aria-label="Filter events"><button type="button" class="ef-chip" data-f="all" aria-pressed="true">All events</button><button type="button" class="ef-chip" data-f="weekend" aria-pressed="false">This weekend</button>' +
       areas.map(function (a) { return '<button type="button" class="ef-chip" data-f="' + esc(a) + '" aria-pressed="false">' + esc(a) + '</button>'; }).join('') + '</div><div class="ef-grid"></div><p class="ef-note">Event details come from public community calendars and can change. Confirm dates, times and tickets with the organizer before you go. Last refreshed ' + esc(data.updated || '') + '.</p></div>';
     mount.hidden = false; render();
+    mount.querySelector('.ef-note').insertAdjacentHTML('beforebegin', '<p class="ef-note" style="font-size:.92rem">By area: <a href="/events/downtown-wilmington">Downtown Wilmington</a> &middot; <a href="/events/wrightsville-beach">Wrightsville Beach</a> &middot; <a href="/events/carolina-beach">Carolina Beach</a> &middot; <a href="/events/kure-beach">Kure Beach</a> &middot; <a href="/events/this-weekend">This weekend</a></p>');
     mount.addEventListener('click', function (ev) {
       var c = ev.target.closest && ev.target.closest('.ef-chip'); if (c) { state.f = c.getAttribute('data-f'); render(); track('events_filter', { f: state.f }); return; }
       var b = ev.target.closest && ev.target.closest('[data-ics]'); if (b) { var e = all.filter(function (x) { return x.id === b.getAttribute('data-ics'); })[0]; if (e) { download(e); track('events_add_calendar', { id: e.id }); } return; }
       var a = ev.target.closest && ev.target.closest('.ef-act a'); if (a) track('events_click', { id: a.getAttribute('data-id') });
     });
-    try { var ld = all.slice(0, 40).map(function (e) { return { '@type': 'Event', name: e.title, startDate: e.start, endDate: e.end, eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode', location: { '@type': 'Place', name: e.venue, address: { '@type': 'PostalAddress', addressLocality: 'Wilmington', addressRegion: 'NC', addressCountry: 'US' } }, url: e.url }; }); var s = d.createElement('script'); s.type = 'application/ld+json'; s.textContent = JSON.stringify(ld); d.head.appendChild(s); } catch (e) {}
+    // Event structured data is rendered into the HTML at build time (tools/build-events-pages.mjs)
   }).catch(function () {});
 })();
