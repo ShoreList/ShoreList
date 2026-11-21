@@ -86,6 +86,7 @@ details{background:#fff;border:1px solid var(--border);border-radius:12px;paddin
 .proof{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:48px}.proof div{border-top:2px solid var(--fade);padding-top:10px;font-size:.9rem;color:var(--mid)}.proof b{display:block;color:var(--teal);font-family:'Playfair Display',serif;font-size:1.05rem}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.col,.card{transition:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.coord{transition:opacity .6s ease}.coord.fade{opacity:0}@media (prefers-reduced-motion:reduce){.coord{transition:none}}
 </style>
 </head>
 <body>
@@ -96,7 +97,7 @@ details{background:#fff;border:1px solid var(--border);border-radius:12px;paddin
 </nav>
 <header class="hero">
   <img class="art" src="/shop-art/hero-tide.svg" alt="" width="1440" height="520" fetchpriority="high"/>
-  <div class="coord">34.2257&deg; N &middot; 77.9447&deg; W</div>
+  <div class="coord" id="placeRot" aria-live="off"><span id="placeName">Downtown Wilmington</span> &middot; <span id="placeCoord">34.23&deg; N &middot; 77.94&deg; W</span></div>
   <div class="eyebrow">The ShoreList Shop</div>
   <h1>Coastal Carolina, <em>made to wear</em> and take to the beach</h1>
   <p>Heavyweight apparel, drinkware and beach goods drawn for Wilmington and the NC beaches. Made to order, shipped to your door.</p>
@@ -196,5 +197,6 @@ details{background:#fff;border:1px solid var(--border);border-radius:12px;paddin
 </script>
 <script>(function(){try{var els=document.querySelectorAll('.sec,.proof,.col');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px'});els.forEach(function(e){e.classList.add('reveal');io.observe(e)});}catch(e){}})();</script>
 <script src="/shore-plus.js" defer></script>
+<script>(function(){var P=[["Downtown Wilmington","34.23\u00b0 N \u00b7 77.94\u00b0 W"],["The Historic District","34.24\u00b0 N \u00b7 77.95\u00b0 W"],["Wrightsville Beach","34.21\u00b0 N \u00b7 77.80\u00b0 W"],["Carolina Beach","34.03\u00b0 N \u00b7 77.89\u00b0 W"],["Kure Beach","33.99\u00b0 N \u00b7 77.91\u00b0 W"]],i=0,e=document.getElementById("placeRot"),n=document.getElementById("placeName"),c=document.getElementById("placeCoord");if(!e||!n||!c||window.matchMedia("(prefers-reduced-motion:reduce)").matches)return;setInterval(function(){e.classList.add("fade");setTimeout(function(){i=(i+1)%P.length;n.textContent=P[i][0];c.textContent=P[i][1];e.classList.remove("fade")},650)},3600)})();</script>
 </body>
 </html>
