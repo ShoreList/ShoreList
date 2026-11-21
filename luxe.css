@@ -175,3 +175,21 @@ nav.sl-hdr .sl-burger span{display:block;height:2px;background:#F5E8CB;border-ra
  nav.sl-hdr.open .sl-burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 }
 @media (prefers-reduced-motion:reduce){nav.sl-hdr *{transition:none!important}}
+
+/* ===== Audit polish: contrast, tap targets, readable small text ===== */
+:root{--coral:#C0412A;--coral2:#CC4F34}
+.skip-link,.btn-notify,.lc-btn,.sp-btn,.mob-cta{background-color:#C0412A!important;color:#fff!important}
+/* coral text on dark teal needs a lighter coral */
+nav .logo-l,nav a.nav-planner,.list-cta .lc-tag,.list-cta em,.rv-stars,.wk-price,.wk-link,.feat-spots,.sec-label[style*="coral"]{color:#FF9B7B}
+.list-cta .lc-btn{color:#fff!important}
+/* tap targets: give inline text links in nav/footer a 24px+ hit area */
+nav a,footer a,.foot-links a,.nav-links a,.sl-links a{display:inline-block;padding-top:4px;padding-bottom:4px;min-height:24px}
+a.sl-logo{display:inline-flex;align-items:center;min-height:32px}
+/* tiny text floors */
+kbd{font-size:.75rem}
+.sec-label,.hero-tag,.wc-label,.wc-live,.er-badge,.mq-item,.feat-badge,.exp-tag,.ot-sub,.wi-sub,.wi-tap,.nav-op{font-size:max(.75rem,12px)}
+/* footer links were 28% opacity */
+.foot-links a{color:rgba(245,232,203,.72)!important}
+.foot-links a:hover{color:#FF9B7B!important}
+kbd{font-size:.75rem!important}
+a.wk-link,a.more,a.pc-link,a.c-link,a.c-dir{display:inline-block;padding:5px 0}
