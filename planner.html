@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="theme-color" content="#0A4D5C"/>
+<meta name="theme-color" content="#0E1F33"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-title" content="ShoreList"/>
 <meta name="robots" content="index,follow"/>
@@ -14,155 +14,210 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-
-/* ── ACCESSIBILITY: skip link ── */
-.skip-link{position:absolute;top:-100px;left:50%;transform:translateX(-50%);background:var(--coral);color:white;padding:14px 24px;border-radius:8px;font-weight:700;font-size:0.92rem;text-decoration:none;z-index:9999;transition:top 0.18s;}
-.skip-link:focus{top:14px;outline:3px solid var(--cream);outline-offset:2px;}
-/* ── ACCESSIBILITY: focus states ── */
-:focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:3px;}
-/* ── ACCESSIBILITY: reduced motion ── */
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}
-}
-/* ── SVG ICON SYSTEM ── */
-.ico,.ico-xs,.ico-sm,.ico-md{display:inline-block;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle;flex-shrink:0;}
-.ico{width:1.5rem;height:1.5rem;}
-.ico-xs{width:0.95rem;height:0.95rem;stroke-width:1.9;}
-.ico-sm{width:1.2rem;height:1.2rem;stroke-width:1.8;}
-.ico-md{width:1.5rem;height:1.5rem;}
-#planner-mute svg{width:1.15rem;height:1.15rem;color:white;}
-
-
-:root{
-  --teal:#0A4D5C;--teal2:#1A7585;--teal3:#0D3D4A;
-  --coral:#E96645;--coral2:#F07A5A;
-  --cream:#F5E8CB;--cream2:#FEFCF7;
-  --dark:#0D1F25;--mid:#2C4A52;
-  --lgray:#F2F4F3;--border:rgba(10,77,92,0.10);
-}
-html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--cream2);overflow-x:hidden;min-height:100vh;}
-
-/* ANIMATED BACKGROUND */
-.bg{position:fixed;inset:0;z-index:0;overflow:hidden;}
-.bg-grad{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 40%,rgba(10,77,92,0.8) 0%,var(--dark) 60%),radial-gradient(ellipse 60% 80% at 80% 60%,rgba(233,102,69,0.06) 0%,transparent 60%);}
-.bg-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(245,232,203,0.04) 1px,transparent 1px);background-size:32px 32px;}
-.wave-bg{position:absolute;bottom:0;left:0;right:0;height:300px;opacity:0.04;}
-.wave-bg svg{width:100%;height:100%;}
-
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(13,31,37,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.05);}
-.nav-logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--cream2);text-decoration:none;font-weight:700;}
-.nav-logo span{color:var(--coral);}
-.nav-back{font-size:0.82rem;font-weight:600;color:rgba(245,232,203,0.5);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
-.nav-back:hover{color:var(--cream);}
+:root{--navy:#0E1F33;--navy2:#16304A;--sail:#F4F1EA;--sand:#D9C7A3;--glass:#9FC3B8;--red:#C9452A;--red-t:#B93C24;--coral:#FF9B7B;--teal:#0A4D5C;--ink:#16303A;--mid:#2A4850;--line:rgba(14,31,51,.12)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--sail);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:6px}
+.pl-hero :focus-visible,.pl-side :focus-visible,footer :focus-visible{outline-color:var(--coral)}
+.skip-link{position:absolute;left:-999px;top:8px;background:var(--red);color:#fff;padding:12px 18px;border-radius:8px;font-weight:700;text-decoration:none;z-index:9999}
+.skip-link:focus{left:12px}
+nav.pl-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:rgba(14,31,51,.96);border-bottom:1px solid rgba(244,241,234,.12)}
+.pl-logo{font-family:'Playfair Display',serif;font-weight:900;font-size:1.5rem;text-decoration:none;color:var(--sail)}.pl-logo span{font-style:italic;color:var(--coral)}
+nav.pl-nav .r{display:flex;gap:20px;align-items:center}nav.pl-nav .r a{color:rgba(244,241,234,.88);text-decoration:none;font-weight:600;font-size:.9rem;padding:8px 0}
+.wrap{max-width:1180px;margin:0 auto}
 
 /* HERO */
-.hero{position:relative;z-index:1;padding:140px 48px 60px;text-align:center;max-width:780px;margin:0 auto;}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(233,102,69,0.12);border:1px solid rgba(233,102,69,0.25);border-radius:100px;padding:7px 16px;font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--coral);margin-bottom:24px;}
-.hero-badge::before{content:'\2726';font-size:0.7rem;}
-.hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,3.8rem);font-weight:900;color:var(--cream2);line-height:1.05;margin-bottom:18px;}
-.hero-title em{color:var(--coral);font-style:italic;}
-.hero-sub{font-size:1rem;color:rgba(245,232,203,0.55);line-height:1.9;max-width:540px;margin:0 auto;}
+.pl-hero{position:relative;isolation:isolate;overflow:hidden;background:var(--navy);color:var(--sail);padding:84px 24px 30px}
+.pl-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%;z-index:-2}
+.pl-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(14,31,51,.94) 0%,rgba(14,31,51,.8) 46%,rgba(14,31,51,.5) 100%),linear-gradient(180deg,rgba(14,31,51,0) 55%,rgba(14,31,51,.9) 100%)}
+.pl-hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:56px;align-items:center}
+.pl-eye{display:inline-flex;gap:10px;align-items:center;font-size:.78rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--glass);margin-bottom:18px}
+.pl-eye i{width:7px;height:7px;border-radius:50%;background:var(--glass)}
+.pl-hero h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(2.5rem,5.6vw,4.5rem);line-height:1.02;letter-spacing:-.02em;margin-bottom:20px;color:#fff}
+.pl-hero h1 em{color:var(--coral);font-style:italic}
+.pl-lede{font-size:1.14rem;max-width:560px;color:rgba(244,241,234,.92);margin-bottom:26px}
+.pl-cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.pl-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:54px;padding:0 28px;border-radius:100px;border:0;background:var(--red);color:#fff;font:inherit;font-weight:700;font-size:1rem;text-decoration:none;cursor:pointer;box-shadow:0 14px 30px -12px rgba(201,69,42,.8);transition:transform .25s cubic-bezier(.2,.7,.2,1),background .2s}
+.pl-btn:hover{transform:translateY(-2px);background:#B93C24}
+.pl-btn[disabled]{opacity:.65;cursor:progress;transform:none}
+.pl-btn.ghost{background:rgba(244,241,234,.1);border:1.5px solid rgba(244,241,234,.4);box-shadow:none;color:var(--sail)}
+.pl-btn.ghost:hover{background:rgba(244,241,234,.18)}
+.pl-btn.line{background:#fff;color:var(--navy);border:1.5px solid var(--line);box-shadow:none;min-height:48px;padding:0 22px;font-size:.94rem}
+.pl-btn.line:hover{background:var(--sail);border-color:rgba(14,31,51,.3)}
+.pl-live{display:inline-flex;align-items:center;gap:8px;min-height:34px;margin-top:22px;padding:6px 14px;border-radius:100px;background:rgba(244,241,234,.1);border:1px solid rgba(244,241,234,.22);font-size:.86rem;font-weight:600;color:var(--sail);text-decoration:none}
+[hidden]{display:none!important}
+.pl-live i{width:7px;height:7px;border-radius:50%;background:#7DDBA3}
+.pl-live-slot{min-height:56px}
+/* preview card */
+.pl-prev{border-radius:26px;padding:26px;background:rgba(244,241,234,.1);border:1px solid rgba(244,241,234,.24);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 30px 70px rgba(0,0,0,.35)}
+.pl-prev h2{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:900;color:#fff;line-height:1.15;margin-bottom:4px}
+.pl-prev .k{font-size:.74rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--glass);margin-bottom:8px}
+.pl-prev>p{font-size:.93rem;color:rgba(244,241,234,.86);margin-bottom:18px}
+.pl-mini{list-style:none;display:grid;gap:10px;margin-bottom:16px}
+.pl-mini li{display:grid;grid-template-columns:74px 1fr;gap:14px;align-items:start;padding:12px 14px;border-radius:16px;background:rgba(14,31,51,.5);border:1px solid rgba(244,241,234,.14)}
+.pl-mini time{font-weight:700;font-size:.8rem;color:var(--coral);padding-top:2px;white-space:nowrap}
+.pl-mini b{display:block;font-size:.98rem;color:#fff;line-height:1.3}
+.pl-mini span{display:block;font-size:.84rem;color:rgba(244,241,234,.8)}
+.pl-gets{list-style:none;display:grid;gap:7px;font-size:.9rem;color:rgba(244,241,234,.9)}
+.pl-gets li{padding-left:24px;position:relative}
+.pl-gets li::before{content:"";position:absolute;left:2px;top:.5em;width:11px;height:6px;border-left:2px solid var(--glass);border-bottom:2px solid var(--glass);transform:rotate(-45deg)}
+.pl-credit{margin-top:34px;font-size:.76rem;color:rgba(244,241,234,.78)}
+.pl-credit a{color:rgba(244,241,234,.92)}
 
-/* QUICK CHIPS */
-.chips-section{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:0 48px 48px;}
-.chips-label{font-size:0.78rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,232,203,0.35);margin-bottom:14px;text-align:center;}
-.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
-.chip{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.10);border-radius:100px;padding:9px 18px;font-size:0.84rem;font-weight:500;color:rgba(245,232,203,0.7);cursor:pointer;transition:all 0.2s;white-space:nowrap;}
-.chip:hover{background:rgba(233,102,69,0.12);border-color:rgba(233,102,69,0.35);color:var(--coral);}
-.chip.active{background:rgba(233,102,69,0.15);border-color:var(--coral);color:var(--coral);}
-
-/* INPUT AREA */
-.input-section{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:0 48px 64px;}
-.input-wrap{position:relative;background:rgba(255,255,255,0.04);border:1.5px solid rgba(255,255,255,0.10);border-radius:20px;overflow:hidden;transition:border-color 0.3s,box-shadow 0.3s;}
-.input-wrap:focus-within{border-color:rgba(233,102,69,0.5);box-shadow:0 0 0 4px rgba(233,102,69,0.06);}
-.trip-input{width:100%;background:transparent;border:none;padding:24px 28px 20px;font-family:'DM Sans',sans-serif;font-size:1rem;color:var(--cream2);outline:none;resize:none;line-height:1.7;min-height:140px;}
-.trip-input::placeholder{color:rgba(245,232,203,0.25);}
-.input-footer{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-top:1px solid rgba(255,255,255,0.06);}
-.input-hint{font-size:0.80rem;color:rgba(245,232,203,0.30);}
-.btn-plan{background:var(--coral);color:white;border:none;padding:13px 28px;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:0.92rem;font-weight:700;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:8px;white-space:nowrap;}
-.btn-plan:hover{background:var(--coral2);transform:translateY(-1px);}
-.btn-plan:disabled{opacity:0.5;cursor:not-allowed;transform:none;}
-.btn-plan .spinner{width:16px;height:16px;border:2px solid rgba(255,255,255,0.3);border-top-color:white;border-radius:50%;animation:spin 0.7s linear infinite;display:none;}
-.btn-plan.loading .btn-text{display:none;}
-.btn-plan.loading .spinner{display:block;}
-@keyframes spin{to{transform:rotate(360deg);}}
+/* BUILDER */
+.pl-sec{padding:72px 24px}
+.pl-sec h2.t{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.8vw,2.7rem);font-weight:900;color:var(--navy);line-height:1.1;margin-bottom:10px}
+.pl-sec h2.t em{color:var(--red-t);font-style:italic}
+.pl-sub{color:var(--mid);max-width:640px;margin-bottom:30px;font-size:1.02rem}
+.pl-build{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:24px;align-items:start}
+.pl-steps{display:grid;gap:16px}
+.pl-step{border:1px solid var(--line);background:#fff;border-radius:24px;padding:26px 26px 28px;box-shadow:0 8px 22px rgba(14,31,51,.06);min-width:0}
+.pl-step legend{float:left;width:100%;display:flex;align-items:center;gap:14px;margin-bottom:6px;font-family:'Playfair Display',serif;font-weight:900;font-size:1.4rem;color:var(--navy);line-height:1.2}
+.pl-step legend+*{clear:both}
+.pl-num{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:var(--sail);font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:700;transition:background .25s}
+.pl-step.done .pl-num{background:#1F6F5C}
+.pl-hint{font-size:.92rem;color:var(--mid);margin:0 0 16px 52px}
+.pl-chips{display:flex;flex-wrap:wrap;gap:10px}
+.pl-chip{font:inherit;font-weight:600;font-size:.98rem;min-height:50px;padding:0 20px;border-radius:100px;border:1.5px solid rgba(14,31,51,.22);background:#fff;color:var(--navy);cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:transform .2s,background .2s,border-color .2s,color .2s}
+.pl-chip:hover{border-color:var(--navy);transform:translateY(-1px)}
+.pl-chip[aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:var(--sail)}
+.pl-chip[aria-pressed=true]::before{content:"";width:11px;height:6px;border-left:2px solid var(--glass);border-bottom:2px solid var(--glass);transform:rotate(-45deg) translateY(-2px)}
+.pl-lab{display:block;font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin:20px 0 10px}
+span.pl-lab:first-of-type{margin-top:0}
+.pl-notes{width:100%;min-height:96px;padding:14px 16px;border-radius:16px;border:1.5px solid rgba(14,31,51,.22);background:#fff;font:inherit;font-size:1rem;color:var(--ink);resize:vertical;line-height:1.5}
+.pl-notes::placeholder{color:#5B7078}
+.pl-notes:focus{outline:3px solid var(--red);outline-offset:2px;border-color:var(--navy)}
+.pl-count{font-size:.82rem;color:var(--mid);margin-top:6px;text-align:right}
+/* side summary */
+.pl-side{position:sticky;top:86px;border-radius:26px;padding:26px;background:var(--navy);color:var(--sail);box-shadow:0 24px 50px rgba(14,31,51,.28)}
+.pl-side h3{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;color:#fff;margin-bottom:4px}
+.pl-side .k{font-size:.74rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--glass);margin-bottom:8px}
+.pl-prog{display:flex;gap:6px;margin:14px 0 16px}
+.pl-prog i{flex:1;height:5px;border-radius:5px;background:rgba(244,241,234,.2);transition:background .3s}
+.pl-prog i.on{background:var(--glass)}
+.pl-brief{min-height:118px;padding:14px 16px;border-radius:16px;background:rgba(244,241,234,.08);border:1px solid rgba(244,241,234,.18);font-size:.95rem;color:rgba(244,241,234,.95);line-height:1.55;overflow-wrap:anywhere}
+.pl-brief.empty{color:rgba(244,241,234,.78);font-style:italic}
+.pl-side .pl-btn{width:100%;margin-top:16px}
+.pl-err{display:none;margin-top:12px;padding:11px 14px;border-radius:12px;background:#FCE9E4;color:#8A2413;font-weight:600;font-size:.92rem}
+.pl-err.show{display:block}
+.pl-fine{font-size:.82rem;color:rgba(244,241,234,.82);margin-top:14px;line-height:1.55}
+.pl-fine a{color:#fff}
+.pl-wxnote{display:none;margin-top:12px;font-size:.84rem;color:var(--glass);font-weight:600}
+.pl-wxnote.show{display:block}
 
 /* RESULT */
-.result-section{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:0 48px 80px;display:none;}
-.result-section.show{display:block;}
-.result-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;gap:16px;}
-.result-title{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:var(--cream2);}
-.btn-reset{background:transparent;border:1px solid rgba(255,255,255,0.15);color:rgba(245,232,203,0.6);padding:9px 18px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.82rem;cursor:pointer;transition:all 0.2s;}
-.btn-reset:hover{border-color:rgba(255,255,255,0.3);color:var(--cream2);}
+#result-section{display:none;scroll-margin-top:80px}
+#result-section.show{display:block}
+.pl-res-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:22px}
+.pl-res-head .k{font-size:.76rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red-t);margin-bottom:8px}
+.pl-res-head h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.8vw,2.7rem);font-weight:900;color:var(--navy);line-height:1.1}
+.pl-res-actions{display:flex;gap:10px;flex-wrap:wrap}
+.pl-alert{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;padding:20px 22px;border-radius:20px;background:#FFF6E3;border:1px solid #E5C98A;color:#4A3610;margin-bottom:22px}
+.pl-alert svg{width:28px;height:28px;stroke:#8A5A00;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+.pl-alert b{display:block;font-size:1.05rem;color:#3A2A08;margin-bottom:2px}
+.pl-alert p{font-size:.95rem}
+.pl-alert .pl-btn{margin-top:12px}
+.pl-narr{padding:22px 24px;border-radius:20px;background:var(--navy);color:rgba(244,241,234,.95);font-size:1.05rem;line-height:1.65;margin-bottom:26px}
+.pl-days{list-style:none;position:relative;display:grid;gap:14px}
+.pl-days::before{content:"";position:absolute;left:109px;top:26px;bottom:26px;width:2px;background:linear-gradient(180deg,var(--sand),rgba(217,199,163,.25))}
+.pl-day{display:grid;grid-template-columns:96px 28px minmax(0,1fr);align-items:start}
+.pl-day time{font-family:'Playfair Display',serif;font-weight:900;font-size:1.12rem;color:var(--navy);text-align:right;padding-top:24px;line-height:1.1}
+.pl-day .dot{position:relative;z-index:1;width:14px;height:14px;border-radius:50%;background:var(--red);border:3px solid var(--sail);box-shadow:0 0 0 2px var(--sand);margin:27px auto 0}
+.pl-dcard{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px 24px;box-shadow:0 8px 22px rgba(14,31,51,.06);display:grid;gap:10px;min-width:0}
+.pl-dcard h3{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:var(--navy);line-height:1.2}
+.pl-dcard p{color:var(--mid);font-size:.98rem}
+.pl-tags{display:flex;flex-wrap:wrap;gap:6px}
+.pl-tags span{font-size:.8rem;font-weight:600;padding:4px 11px;border-radius:100px;background:#EAE4D6;color:var(--navy)}
+.pl-tags span.ok{background:#DDEFE7;color:#17513F}
+.pl-dlinks{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:2px}
+.pl-dlinks a{display:inline-flex;align-items:center;min-height:44px;font-weight:700;color:var(--red-t);text-decoration:none;border-bottom:2px solid transparent}
+.pl-dlinks a:hover{border-bottom-color:var(--red-t)}
+.pl-dlinks a.main{padding:0 20px;border-radius:100px;background:var(--red);color:#fff;border:0}
+.pl-dlinks a.main:hover{background:#B93C24}
+@keyframes plIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.pl-day{animation:plIn .5s cubic-bezier(.2,.7,.2,1) both}
+.pl-day:nth-child(2){animation-delay:.07s}.pl-day:nth-child(3){animation-delay:.14s}.pl-day:nth-child(4){animation-delay:.21s}.pl-day:nth-child(5){animation-delay:.28s}.pl-day:nth-child(6){animation-delay:.35s}
+/* loading */
+.pl-load{padding:8px 0}
+.pl-load-msg{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--navy);font-size:1.05rem;margin-bottom:18px}
+.pl-load-msg i{width:18px;height:18px;border-radius:50%;border:3px solid rgba(14,31,51,.18);border-top-color:var(--red);animation:plSpin .8s linear infinite}
+@keyframes plSpin{to{transform:rotate(360deg)}}
+.pl-sk{height:132px;border-radius:22px;background:#fff;border:1px solid var(--line);margin-bottom:14px;position:relative;overflow:hidden}
+.pl-sk::before,.pl-sk::after{content:"";position:absolute;left:24px;border-radius:8px;background:#EAE4D6;animation:plPulse 1.4s ease-in-out infinite}
+.pl-sk::before{top:26px;width:42%;height:20px}.pl-sk::after{top:62px;width:74%;height:40px}
+.pl-sk:nth-child(3)::before,.pl-sk:nth-child(3)::after{animation-delay:.2s}.pl-sk:nth-child(4)::before,.pl-sk:nth-child(4)::after{animation-delay:.4s}
+@keyframes plPulse{50%{opacity:.45}}
+/* before you go */
+.pl-go{margin-top:34px}
+.pl-go h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:var(--navy);margin-bottom:4px}
+.pl-go>p{color:var(--mid);margin-bottom:16px}
+.pl-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.pl-tile{display:flex;flex-direction:column;gap:6px;min-height:150px;padding:22px;border-radius:22px;background:var(--navy);color:var(--sail);text-decoration:none;transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.pl-tile:hover{transform:translateY(-4px)}
+.pl-tile small{font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--glass);min-height:1.3em}
+.pl-tile b{font-family:'Playfair Display',serif;font-size:1.3rem;line-height:1.2;color:#fff}
+.pl-tile span{font-size:.92rem;color:rgba(244,241,234,.86)}
+.pl-tile u{margin-top:auto;text-decoration:none;font-weight:700;color:var(--coral);font-size:.92rem}
+.pl-disc{margin-top:26px;font-size:.86rem;color:var(--mid);line-height:1.6;max-width:820px}
+.pl-disc a{color:var(--red-t);font-weight:700}
 
-/* ITINERARY CARDS */
-.itinerary{display:flex;flex-direction:column;gap:16px;}
-.itin-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;animation:slideUp 0.4s ease both;}
-@keyframes slideUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
-.itin-card:nth-child(1){animation-delay:0.05s;}
-.itin-card:nth-child(2){animation-delay:0.12s;}
-.itin-card:nth-child(3){animation-delay:0.19s;}
-.itin-card:nth-child(4){animation-delay:0.26s;}
-.itin-card:nth-child(5){animation-delay:0.33s;}
-.itin-top{padding:22px 24px 18px;display:flex;align-items:flex-start;gap:16px;}
-.itin-time{background:rgba(233,102,69,0.12);border:1px solid rgba(233,102,69,0.20);border-radius:8px;padding:6px 12px;font-size:0.72rem;font-weight:700;color:var(--coral);letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;margin-top:3px;}
-.itin-content{flex:1;}
-.itin-name{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--cream2);margin-bottom:5px;line-height:1.2;}
-.itin-desc{font-size:0.88rem;color:rgba(245,232,203,0.60);line-height:1.75;}
-.itin-bottom{padding:14px 24px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;gap:12px;}
-.itin-tags{display:flex;gap:7px;flex-wrap:wrap;}
-.itin-tag{background:rgba(255,255,255,0.06);border-radius:5px;padding:3px 10px;font-size:0.72rem;font-weight:600;color:rgba(245,232,203,0.55);}
-.itin-book{background:var(--coral);color:white;text-decoration:none;padding:9px 20px;border-radius:7px;font-size:0.82rem;font-weight:700;white-space:nowrap;transition:all 0.2s;display:inline-flex;align-items:center;gap:6px;}
-.itin-book:hover{background:var(--coral2);transform:translateY(-1px);}
-.itin-book.coming-soon{background:rgba(255,255,255,0.07);color:rgba(245,232,203,0.45);cursor:default;}
-.itin-book.coming-soon:hover{transform:none;background:rgba(255,255,255,0.07);}
+/* HOW */
+.pl-alt{background:#EAE4D6}
+.pl-how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.pl-hcard{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 8px 22px rgba(14,31,51,.06)}
+.pl-hcard .n{font-family:'Playfair Display',serif;font-weight:900;font-size:2rem;color:var(--red-t);line-height:1;margin-bottom:10px}
+.pl-hcard h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--navy);margin-bottom:6px;line-height:1.2}
+.pl-hcard p{font-size:.96rem;color:var(--mid)}
+.pl-browse{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.pl-browse a{display:flex;flex-direction:column;justify-content:flex-end;gap:4px;min-height:120px;padding:20px;border-radius:20px;background:#fff;border:1px solid var(--line);text-decoration:none;color:var(--navy);box-shadow:0 8px 22px rgba(14,31,51,.06);transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s}
+.pl-browse a:hover{transform:translateY(-4px);border-color:rgba(14,31,51,.35)}
+.pl-browse b{font-family:'Playfair Display',serif;font-size:1.2rem;line-height:1.2}
+.pl-browse span{font-size:.9rem;color:var(--mid)}
+footer.pl-foot{background:var(--navy);color:rgba(244,241,234,.85);padding:40px 24px;text-align:center;font-size:.9rem}
+footer.pl-foot a{color:rgba(244,241,234,.9);margin:0 10px;text-decoration:none;display:inline-block;padding:12px 0}
+footer.pl-foot a:hover{color:var(--coral)}
+footer.pl-foot a[aria-current]{color:var(--coral);font-weight:700}
 
-/* NARRATIVE */
-.itin-narrative{background:rgba(10,77,92,0.25);border:1px solid rgba(10,77,92,0.5);border-radius:14px;padding:22px 24px;margin-bottom:20px;font-size:0.93rem;color:rgba(245,232,203,0.70);line-height:1.85;}
-.itin-narrative strong{color:var(--cream2);}
-
-/* LOADING STATE */
-.loading-state{text-align:center;padding:48px 24px;}
-.loading-wave{display:flex;align-items:center;justify-content:center;gap:5px;margin-bottom:20px;}
-.loading-wave span{display:inline-block;width:4px;height:24px;background:var(--coral);border-radius:2px;animation:wave-load 1.2s ease infinite;}
-.loading-wave span:nth-child(2){animation-delay:0.15s;}
-.loading-wave span:nth-child(3){animation-delay:0.30s;}
-.loading-wave span:nth-child(4){animation-delay:0.45s;}
-.loading-wave span:nth-child(5){animation-delay:0.60s;}
-@keyframes wave-load{0%,100%{height:8px;opacity:0.4;}50%{height:28px;opacity:1;}}
-.loading-text{font-size:0.92rem;color:rgba(245,232,203,0.50);line-height:1.7;}
-
-/* DIVIDER */
-.or-divider{display:flex;align-items:center;gap:14px;margin-bottom:20px;}
-.or-line{flex:1;height:1px;background:rgba(255,255,255,0.08);}
-.or-text{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;color:rgba(245,232,203,0.25);text-transform:uppercase;}
-
-/* FOOTER */
-.planner-footer{position:relative;z-index:1;text-align:center;padding:0 48px 48px;}
-.planner-footer p{font-size:0.78rem;color:rgba(245,232,203,0.45);line-height:1.7;}
-.planner-footer a{color:rgba(245,232,203,0.60);text-decoration:none;}
-.planner-footer a:hover{color:var(--coral);}
-#planner-mute{position:fixed;bottom:22px;left:22px;z-index:8000;background:rgba(0,0,0,0.30);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.14);border-radius:100px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1rem;cursor:pointer;transition:all 0.22s;color:white;}
-#planner-mute:hover{background:rgba(0,0,0,0.50);transform:scale(1.1);}
-
-@media(max-width:768px){
-  .nav-ev-link{display:none;}
-  nav{top:0;padding:16px 20px;}
-  .hero{padding:110px 20px 40px;}
-  .chips-section,.input-section,.result-section,.planner-footer{padding-left:20px;padding-right:20px;}
-  .itin-top{flex-direction:column;gap:10px;}
-  .itin-bottom{flex-direction:column;align-items:flex-start;}
-  .itin-book{width:100%;justify-content:center;}
+@media(max-width:980px){
+  .pl-hero-grid{grid-template-columns:1fr;gap:34px}
+  .pl-build{grid-template-columns:1fr}
+  .pl-side{position:static}
+  .pl-how{grid-template-columns:1fr}
+  .pl-browse{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pl-tiles{grid-template-columns:1fr}
+  .pl-tile{min-height:0}
 }
-/* launch-banner removed */
-
-/* ── TOUCH TARGETS ── */
-.btn-fill,.btn-ghost,.btn-ghost-sm,.nav-cta,.nav-cta-sm,.nav-join,.nav-book{min-height:44px;display:inline-flex;align-items:center;justify-content:center;}
-.wl-submit,.plc-btn,.btn-notify,.btn-plan,.btn-reset,.bs-cta,.dm-link,.shore-popup-btn{min-height:44px;}
-
+@media(max-width:640px){
+  nav.pl-nav{padding:12px 16px}nav.pl-nav .r a:not(.cta){display:none}
+  .pl-hero{padding:52px 16px 24px}
+  .pl-sec{padding:52px 16px}
+  .pl-prev{padding:20px;border-radius:22px}
+  .pl-step{padding:20px 16px 22px;border-radius:20px}
+  .pl-step legend{font-size:1.25rem}
+  .pl-hint{margin-left:0}
+  .pl-chip{min-height:50px;padding:0 16px;font-size:.95rem}
+  .pl-side{padding:20px;border-radius:22px}
+  .pl-days::before{left:6px;top:10px;bottom:20px}
+  .pl-day{grid-template-columns:14px minmax(0,1fr);column-gap:14px}
+  .pl-day time{grid-column:2;text-align:left;padding-top:0;margin-bottom:8px;font-size:1.05rem}
+  .pl-day .dot{grid-column:1;grid-row:1;margin:4px 0 0}
+  .pl-dcard{grid-column:2;padding:18px}
+  .pl-res-actions{width:100%}.pl-res-actions .pl-btn{flex:1}
+  .pl-alert{grid-template-columns:1fr}
+  .pl-browse a{min-height:104px;padding:16px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media print{
+  html body>*:not(#main),.pl-hero,#builder,#how,#browse,.pl-res-actions,.pl-alert .pl-btn{display:none!important}
+  body{background:#fff;color:#000}
+  #result-section{display:block;padding:0}
+  .pl-narr{background:#fff;color:#000;border:1px solid #999}
+  .pl-dcard,.pl-tile{box-shadow:none;border:1px solid #999;background:#fff;color:#000;break-inside:avoid}
+  .pl-tile b,.pl-tile span,.pl-tile small,.pl-tile u{color:#000}
+  .pl-day{animation:none}
+}
 </style>
 <!-- ── ANALYTICS: Replace G-EN91RH3PZV with your GA4 Measurement ID from analytics.google.com ── -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
@@ -189,335 +244,339 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 <script src="/luxe.js" defer></script>
 </head>
 <body>
-
-<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs>
-<symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 10c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></symbol>
-<symbol id="i-mute" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></symbol>
-<symbol id="i-sound" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a9 9 0 0 1 0 14"/></symbol>
-<symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5.6 5.6l4.2 4.2M14.2 14.2l4.2 4.2M5.6 18.4l4.2-4.2M14.2 9.8l4.2-4.2"/></symbol>
-</defs></svg>
-
 <a href="#main" class="skip-link">Skip to content</a>
 
-<button id="planner-mute" title="Mute ocean sounds" aria-label="Mute ocean sounds"><svg aria-hidden="true" focusable="false"><use href="#i-sound" xlink:href="#i-sound"/></svg></button>
-
-<div class="bg">
-  <div class="bg-grad"></div>
-  <div class="bg-dots"></div>
-  <div class="wave-bg">
-    <svg viewBox="0 0 1440 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,192L60,176C120,160,240,128,360,138.7C480,149,600,203,720,213.3C840,224,960,192,1080,165.3C1200,139,1320,117,1380,106.7L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z" fill="white"/>
-    </svg>
-  </div>
-</div>
-
-<nav aria-label="Primary">
-  <a href="/" class="nav-logo" aria-label="ShoreList home">Shore<span>List</span></a>
-  <div style="display:flex;align-items:center;gap:20px;">
-    <a href="/events" class="nav-ev-link" style="font-size:0.78rem;font-weight:700;color:var(--coral);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;">Events Guide</a>
-    <a href="/" class="nav-back">&#8592; All Experiences</a>
-  </div>
+<nav class="pl-nav" aria-label="Primary">
+  <a href="/" class="pl-logo" aria-label="ShoreList home">Shore<span>List</span></a>
+  <div class="r"><a href="/things-to-do">Things to Do</a><a href="/events">Events</a><a href="/shore-picks">Shore Picks</a><a href="/wilmington-weather">Weather</a></div>
 </nav>
 
 <main id="main">
 
-<section class="hero">
-  <div class="hero-badge">AI Trip Planner &nbsp;&mdash;&nbsp; Wilmington, NC</div>
-  <h1 class="hero-title">Your perfect coastal day,<br/><em>built in seconds.</em></h1>
-  <p class="hero-sub">Tell us who you're with, what you're into, and how you like to spend your time. We'll build a custom Wilmington itinerary with everything you need — and direct links to book it all.</p>
+<header class="pl-hero">
+  <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bridge_1920x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bridge_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bridge_1920x.webp 1920w" sizes="100vw" width="1920" height="1371" alt="The Wilmington Riverwalk at sunset with the Cape Fear Memorial Bridge lit in the distance" fetchpriority="high" decoding="async"/>
+  <div class="wrap">
+    <div class="pl-hero-grid">
+      <div>
+        <div class="pl-eye"><i></i>AI trip planner &middot; Wilmington, NC</div>
+        <h1>Your Wilmington day, <em>drafted in seconds.</em></h1>
+        <p class="pl-lede">Tell us who is coming, what you like and when. An AI model drafts a one-day plan of four to six timed stops, and we link each stop to the matching ShoreList page so you can see what is open to book.</p>
+        <div class="pl-cta-row">
+          <a class="pl-btn" href="#builder">Start my plan</a>
+          <a class="pl-btn ghost" href="#how">How it works</a>
+        </div>
+        <div class="pl-live-slot"><a class="pl-live" id="pl-live" href="/wilmington-weather" hidden><i></i><span id="pl-live-t"></span></a></div>
+      </div>
+      <aside class="pl-prev" aria-labelledby="pl-prev-h">
+        <div class="k">What you will get</div>
+        <h2 id="pl-prev-h">A one-day plan you can act on</h2>
+        <p>The layout below is an example of the format, not a real result.</p>
+        <ol class="pl-mini" aria-label="Example itinerary layout">
+          <li><time>9:00 AM</time><div><b>A morning stop</b><span>Two sentences on why it suits your group</span></div></li>
+          <li><time>1:00 PM</time><div><b>An afternoon stop</b><span>Short tags such as length and pace</span></div></li>
+          <li><time>7:00 PM</time><div><b>An evening stop</b><span>A link to the matching ShoreList page</span></div></li>
+        </ol>
+        <ul class="pl-gets">
+          <li>A title and a short intro written for your group</li>
+          <li>Four to six stops with suggested times</li>
+          <li>Links to tours and rentals, Shore Picks, weekend events and the live forecast</li>
+          <li>Suggestions only. Nothing is booked and times are not checked against operators.</li>
+        </ul>
+      </aside>
+    </div>
+    <p class="pl-credit">Photo: Unexpected Snacks, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Wilmington,_NC_Riverwalk_and_Cape_Fear_Memorial_Bridge_at_Sunset.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></p>
+  </div>
+</header>
+
+<section class="pl-sec" id="builder" aria-labelledby="builder-h">
+  <div class="wrap">
+    <h2 class="t" id="builder-h">Three quick questions, <em>then your plan</em></h2>
+    <p class="pl-sub">Tap what fits. Your answers become a short brief, shown on the right, and that brief is all the planner sees.</p>
+    <div class="pl-build">
+      <div class="pl-steps">
+        <fieldset class="pl-step" id="step-who">
+          <legend><span class="pl-num" aria-hidden="true">1</span>Who is coming?</legend>
+          <p class="pl-hint">Pick one.</p>
+          <div class="pl-chips" data-group="who" data-mode="one">
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="a couple">Couple</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="a family with kids">Family with kids</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="a solo traveler">Just me</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="a group of friends">Friends</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="a bachelor or bachelorette party">Bachelor or bachelorette</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="a work team outing">Work team</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="pl-step" id="step-like">
+          <legend><span class="pl-num" aria-hidden="true">2</span>What do you like?</legend>
+          <p class="pl-hint">Pick as many as you want.</p>
+          <div class="pl-chips" data-group="like" data-mode="many">
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="time on the water">On the water</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="beach time">Beach time</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="history and ghost stories">History and ghost stories</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="film and TV locations">Film and TV locations</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="nature and wildlife">Nature and wildlife</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="good food and drink">Food and drink</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="active, high-energy things">Active and high energy</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="a relaxed, easygoing pace">Easygoing pace</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="pl-step" id="step-when">
+          <legend><span class="pl-num" aria-hidden="true">3</span>When?</legend>
+          <p class="pl-hint">The planner drafts one day at a time.</p>
+          <span class="pl-lab" id="lab-day">Which day</span>
+          <div class="pl-chips" data-group="day" data-mode="one" role="group" aria-labelledby="lab-day">
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="today">Today</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="tomorrow">Tomorrow</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="this weekend">This weekend</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="on a future trip">A future trip</button>
+          </div>
+          <span class="pl-lab" id="lab-part">How much of the day</span>
+          <div class="pl-chips" data-group="part" data-mode="one" role="group" aria-labelledby="lab-part">
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="a full day">Full day</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="the morning only">Morning</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="the afternoon and evening">Afternoon and evening</button>
+          </div>
+          <label class="pl-lab" for="trip-input">Anything else? (optional)</label>
+          <textarea class="pl-notes" id="trip-input" maxlength="280" placeholder="Ages of kids, budget, mobility needs, a must-see, where you are staying"></textarea>
+          <p class="pl-count"><span id="pl-count">0</span> / 280</p>
+        </fieldset>
+      </div>
+
+      <aside class="pl-side" aria-labelledby="pl-side-h">
+        <div class="k">Your brief</div>
+        <h3 id="pl-side-h">What the planner will read</h3>
+        <div class="pl-prog" aria-hidden="true"><i></i><i></i><i></i></div>
+        <p class="pl-brief empty" id="pl-brief" aria-live="polite">Tap a few answers and your brief appears here.</p>
+        <p class="pl-wxnote" id="pl-wxnote"></p>
+        <button class="pl-btn" id="btn-plan" type="button">Draft my itinerary</button>
+        <p class="pl-err" id="pl-err" role="alert"></p>
+        <p class="pl-fine">AI-assisted suggestions, not bookings. The planner does not check live availability or prices.</p>
+      </aside>
+    </div>
+  </div>
 </section>
 
-<div class="chips-section">
-  <p class="chips-label">Quick starters — tap one to fill it in</p>
-  <div class="chips">
-    <div class="chip" onclick="fillChip(this,'Romantic weekend for 2. We love the water, great food, and sunsets. Not too intense — relaxed coastal vibes.')">Romantic Getaway</div>
-    <div class="chip" onclick="fillChip(this,'Family trip with 2 adults and 2 kids ages 8 and 11. We want outdoor adventures, something educational, and a fun evening activity.')">Family Adventure</div>
-    <div class="chip" onclick="fillChip(this,'Solo traveler, one full day in Wilmington. I love history, nature, and local culture. Show me the real Wilmington.')">Solo Explorer</div>
-    <div class="chip" onclick="fillChip(this,'Bachelor party, 6 guys, we want adrenaline, water sports, something at night, and maximum fun. Budget is flexible.')">Bachelor Party</div>
-    <div class="chip" onclick="fillChip(this,'Corporate team outing for 10 people. We want something active, social, and unique. Not a boring dinner.')">Team Outing</div>
-    <div class="chip" onclick="fillChip(this,'Bachelorette party for 8 ladies. We want something beautiful, Instagrammable, fun, and ideally involves the beach or water.')">Bachelorette</div>
-  </div>
-</div>
-
-<div class="input-section">
-  <div class="input-wrap">
-    <textarea class="trip-input" id="trip-input" placeholder="Tell us about your trip... Who's coming? What do you love to do? Budget? Days visiting? The more detail, the better your itinerary." rows="4"></textarea>
-    <div class="input-footer">
-      <span class="input-hint">AI-assisted &nbsp;&middot;&nbsp; Suggestions, not bookings</span>
-      <button class="btn-plan" id="btn-plan" onclick="buildPlan()">
-        <span class="btn-text">Build My Itinerary &#8594;</span>
-        <div class="spinner"></div>
-      </button>
-    </div>
-  </div>
-</div>
-
-<p class="ai-disclaimer" style="position:relative;z-index:1;max-width:780px;margin:-44px auto 0;padding:0 48px 48px;font-size:0.76rem;color:rgba(245,232,203,0.38);line-height:1.7;text-align:center;">Itineraries are generated by AI and provided as suggestions only. Times, availability, pricing, and operating details are not guaranteed &mdash; always confirm directly with each experience operator before making plans. See our <a href="/legal#ai-trip-planner" style="color:rgba(245,232,203,0.55);">AI Trip Planner Disclaimer</a> for details.</p>
-
-<div class="result-section" id="result-section" role="region" aria-label="Your generated itinerary">
-  <div class="result-header">
-    <h2 class="result-title" id="result-title">Your Wilmington Itinerary</h2>
-    <button class="btn-reset" onclick="resetPlanner()">&#8592; Start Over</button>
-  </div>
-  <div id="result-content" aria-live="polite"></div>
-</div>
-
-<div class="planner-footer">
-  <p>ShoreList LLC &nbsp;·&nbsp; Wilmington, NC &nbsp;·&nbsp; <a href="/">Shorelist.net</a> &nbsp;·&nbsp; <a href="mailto:shorelistwilmington@gmail.com">shorelistwilmington@gmail.com</a> &nbsp;·&nbsp; <a href="/legal">Privacy &amp; Terms</a></p>
-</div>
-
-<script>
-var CAT_LINKS = {
-  'film-tours':        { url: '/things-to-do/film-tours',        bookable: true  },
-  'ghost-tours':       { url: '/things-to-do/ghost-tours',       bookable: true  },
-  'surf-lessons':      { url: '/things-to-do/surf-lessons',       bookable: true  },
-  'nature-walks':      { url: '/things-to-do/nature-walks',       bookable: true  },
-  'historic-tours':    { url: '/things-to-do/ghost-tours',        bookable: true  },
-  'kayak-tours':       { url: '/things-to-do/kayak-tours',        bookable: false },
-  'fishing-charters':  { url: '/things-to-do/fishing-charters',   bookable: false },
-  'river-cruises':     { url: '/things-to-do/river-cruises',      bookable: false },
-  'paddleboard':       { url: '/things-to-do/paddleboard',        bookable: false },
-  'bike-tours':        { url: '/things-to-do/bike-tours',         bookable: false },
-  'wildlife-tours':    { url: '/things-to-do/wildlife-tours',     bookable: false },
-  'beach-picnics':     { url: '/things-to-do/beach-picnics',      bookable: false },
-  'jet-ski-rentals':   { url: '/things-to-do/jet-ski-rentals',    bookable: false },
-  'golf-cart-rentals': { url: '/things-to-do/golf-cart-rentals',  bookable: false },
-  'beach-photography': { url: '/things-to-do/beach-photography',  bookable: false },
-  'wellness':          { url: '/things-to-do/wellness',           bookable: false },
-};
-
-function fillChip(el, text) {
-  document.querySelectorAll('.chip').forEach(function(c) { c.classList.remove('active'); });
-  el.classList.add('active');
-  var inp = document.getElementById('trip-input');
-  inp.value = text;
-  inp.focus();
-}
-
-async function buildPlan() {
-  var input = document.getElementById('trip-input').value.trim();
-  if (!input) {
-    document.getElementById('trip-input').focus();
-    return;
-  }
-
-  var btn = document.getElementById('btn-plan');
-  btn.classList.add('loading');
-  btn.disabled = true;
-
-  var resultSec = document.getElementById('result-section');
-  var resultContent = document.getElementById('result-content');
-  resultSec.classList.add('show');
-  resultSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-  resultContent.innerHTML = `
-    <div class="loading-state">
-      <div class="loading-wave">
-        <span></span><span></span><span></span><span></span><span></span>
+<section class="pl-sec" id="result-section" aria-labelledby="result-title" style="padding-top:0">
+  <div class="wrap">
+    <div class="pl-res-head">
+      <div><div class="k" id="result-kicker">Your itinerary</div><h2 id="result-title" tabindex="-1">Your Wilmington Itinerary</h2></div>
+      <div class="pl-res-actions">
+        <button class="pl-btn line" type="button" id="btn-print">Print</button>
+        <button class="pl-btn line" type="button" id="btn-reset">Start over</button>
       </div>
-      <p class="loading-text">Building your perfect Wilmington day&hellip;<br/>Checking experiences, timing the tides, making it yours.</p>
     </div>
-  `;
+    <p id="result-status" role="status" aria-live="polite" style="position:absolute;left:-9999px"></p>
+    <div id="result-content"></div>
+    <div class="pl-go" id="pl-go" hidden>
+      <h3>Before you go</h3>
+      <p>The plan above is a draft. These three pages have the live details it cannot see.</p>
+      <div class="pl-tiles">
+        <a class="pl-tile" href="/wilmington-weather"><small id="tile-wx">Forecast</small><b>Check the weather</b><span>Hourly and 7-day forecast, plus surf, tides and water temperature for the beaches.</span><u>Wilmington weather &rarr;</u></a>
+        <a class="pl-tile" href="/events/this-weekend"><small id="tile-ev">Events</small><b>See what is on this weekend</b><span>Concerts, markets and festivals around Wilmington and the beaches.</span><u>This weekend &rarr;</u></a>
+        <a class="pl-tile" href="/shore-picks"><small>Food and drink</small><b>Pick where to eat</b><span>Shore Picks is our guide to local restaurants, coffee and bars for the gaps between stops.</span><u>Shore Picks &rarr;</u></a>
+      </div>
+      <p class="pl-disc">Itineraries are generated by AI and provided as suggestions only. Times, availability, pricing, and operating details are not guaranteed &mdash; always confirm directly with each experience operator before making plans. See our <a href="/legal#ai-planner">AI Trip Planner Disclaimer</a> for details.</p>
+    </div>
+  </div>
+</section>
 
-  try {
-    const response = await fetch('/.netlify/functions/plan-itinerary', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ input: input })
-    });
-    if (!response.ok) throw new Error('planner ' + response.status);
-    var plan = await response.json();
-    renderPlan(plan);
+<section class="pl-sec pl-alt" id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <h2 class="t" id="how-h">How the planner <em>works</em></h2>
+    <p class="pl-sub">A plain description, so you know what you are getting.</p>
+    <div class="pl-how">
+      <div class="pl-hcard"><div class="n">1</div><h3>You describe the day</h3><p>Your taps and any note you add become one short brief of up to 600 characters. That text is the only thing sent to the planner.</p></div>
+      <div class="pl-hcard"><div class="n">2</div><h3>An AI model drafts it</h3><p>The model works from a list of experience types on ShoreList, such as ghost tours, film tours, surf lessons and nature walks, and writes four to six timed stops for one day.</p></div>
+      <div class="pl-hcard"><div class="n">3</div><h3>You check and book</h3><p>Each stop links to its ShoreList page, where you can see what is bookable now. The planner does not look up availability, prices, tides or opening hours, so confirm before you go.</p></div>
+    </div>
+  </div>
+</section>
 
-  } catch(e) {
-    console.error('Planner error:', e);
-    // Fallback itinerary
-    renderPlan({
-      title: 'Your Perfect Wilmington Day',
-      narrative: 'Wilmington has something incredible for everyone. Here\'s a day we think you\'ll absolutely love &#8212; built around the best experiences the coast has to offer.',
-      items: [
-        { time: '9:00 AM', name: 'Coastal Carolina Nature Walk', description: 'Start your morning in the magic of Carolina Beach State Park. Ancient cypress swamps, carnivorous plants, and the freshest coastal air you\'ve ever breathed.', tags: ['2 Hours', 'Nature & Wildlife', 'Family Friendly'], category: 'nature-walks', bookable: true },
-        { time: '12:00 PM', name: 'Wilmington Riverfront Lunch', description: 'The Wilmington waterfront is one of the most beautiful lunch spots in the South. Pick a patio, watch the Cape Fear River roll by.', tags: ['1.5 Hours', 'Local Flavor', 'Cape Fear River'], category: null, bookable: false },
-        { time: '2:00 PM', name: 'Surf Lesson at Carolina Beach', description: 'The afternoon is made for the ocean. Learn to surf with a certified local instructor who knows these waters &#8212; all boards included, all skill levels welcome.', tags: ['2 Hours', 'On the Water', 'All Skill Levels'], category: 'surf-lessons', bookable: true },
-        { time: '7:00 PM', name: 'Wilmington Ghost Walk', description: 'End your evening with a spine-tingling 90-minute walk through the most haunted streets in one of America\'s oldest cities. Stories you won\'t forget.', tags: ['90 Minutes', 'Evening', 'Downtown'], category: 'ghost-tours', bookable: true }
-      ]
-    });
-  }
-
-  btn.classList.remove('loading');
-  btn.disabled = false;
-}
-
-function renderPlan(plan) {
-  var resultTitle = document.getElementById('result-title');
-  resultTitle.textContent = plan.title || 'Your Wilmington Itinerary';
-
-  var html = '';
-
-  if (plan.narrative) {
-    html += '<div class="itin-narrative">' + esc(plan.narrative) + '</div>';
-  }
-
-  html += '<div class="itinerary">';
-
-  (plan.items || []).forEach(function(item) {
-    var catInfo = item.category ? CAT_LINKS[item.category] : null;
-    var bookable = item.bookable && catInfo && catInfo.bookable;
-    var comingSoon = item.category && catInfo && !catInfo.bookable;
-    var bookHtml = '';
-
-    if (bookable && catInfo) {
-      bookHtml = '<a href="/waitlist" class="itin-book">Join Waitlist &rarr;</a>';
-    } else if (comingSoon && catInfo) {
-      bookHtml = '<a href="' + catInfo.url + '" class="itin-book coming-soon">Coming Soon</a>';
-    } else {
-      bookHtml = '<a href="/" class="itin-book coming-soon">Browse ShoreList</a>';
-    }
-
-    var tagsHtml = (item.tags || []).map(function(t) {
-      return '<span class="itin-tag">' + esc(t) + '</span>';
-    }).join('');
-
-    html += '<div class="itin-card">';
-    html += '<div class="itin-top">';
-    html += '<div class="itin-time">' + esc(item.time || '') + '</div>';
-    html += '<div class="itin-content">';
-    html += '<div class="itin-name">' + esc(item.name || '') + '</div>';
-    html += '<div class="itin-desc">' + esc(item.description || '') + '</div>';
-    html += '</div></div>';
-    html += '<div class="itin-bottom"><div class="itin-tags">' + tagsHtml + '</div>' + bookHtml + '</div>';
-    html += '</div>';
-  });
-
-  html += '</div>';
-
-  // Add "book everything" CTA
-  html += '<div style="margin-top:32px;padding:24px;background:rgba(10,77,92,0.25);border:1px solid rgba(10,77,92,0.5);border-radius:14px;text-align:center;">';
-  html += '<p style="font-size:0.9rem;color:rgba(245,232,203,0.70);margin-bottom:14px;">This one is not bookable online yet. Join the waitlist and we will tell you the day it opens.</p>';
-  html += '<a href="/waitlist" style="display:inline-block;background:var(--coral);color:white;text-decoration:none;padding:14px 32px;border-radius:8px;font-weight:700;font-size:0.95rem;">Join the Waitlist &rarr;</a>';
-  html += '</div>';
-
-  document.getElementById('result-content').innerHTML = html;
-}
-
-function resetPlanner() {
-  document.getElementById('result-section').classList.remove('show');
-  document.getElementById('trip-input').value = '';
-  document.querySelectorAll('.chip').forEach(function(c) { c.classList.remove('active'); });
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function esc(s) {
-  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-// ── OCEAN AMBIENT AUDIO ──
-(function(){
-  var AC=window.AudioContext||window.webkitAudioContext;
-  if(!AC)return;
-  var actx=null,master=null,muted=false,started=false;
-  // Pre-generate noise data during page load &#8212; zero delay on first interaction
-  var RATE=44100;
-  var noiseL=new Float32Array(RATE*8),noiseR=new Float32Array(RATE*8),noise2=new Float32Array(RATE*6);
-  (function(){var l=0,r=0,s=0;for(var i=0;i<RATE*8;i++){var wl=Math.random()*2-1,wr=Math.random()*2-1;l=(l+0.022*wl)/1.022;r=(r+0.022*wr)/1.022;noiseL[i]=l*3.8;noiseR[i]=r*3.8;}for(var i=0;i<RATE*6;i++){var w=Math.random()*2-1;s=(s+0.052*w)/1.052;noise2[i]=s*2.4;}})();
-  function buildOcean(){
-    if(started)return;started=true;
-    try{
-      actx=new AC();
-      var _sb=actx.createBuffer(1,1,22050);var _ss=actx.createBufferSource();_ss.buffer=_sb;_ss.connect(actx.destination);_ss.start(0);
-      master=actx.createGain();
-      master.gain.setValueAtTime(0,actx.currentTime);master.gain.linearRampToValueAtTime(0.16,actx.currentTime+3);master.connect(actx.destination);
-      var rate=actx.sampleRate;
-      var len1=Math.min(noiseL.length,rate*8);
-      var buf=actx.createBuffer(2,len1,rate);buf.getChannelData(0).set(noiseL.subarray(0,len1));buf.getChannelData(1).set(noiseR.subarray(0,len1));
-      var src=actx.createBufferSource();src.buffer=buf;src.loop=true;
-      var lp=actx.createBiquadFilter();lp.type='lowpass';lp.frequency.value=700;lp.Q.value=0.7;
-      var bp=actx.createBiquadFilter();bp.type='bandpass';bp.frequency.value=220;bp.Q.value=0.55;
-      var lfo=actx.createOscillator();lfo.type='sine';lfo.frequency.value=0.085;
-      var lfoG=actx.createGain();lfoG.gain.value=0.40;lfo.connect(lfoG);
-      var wVol=actx.createGain();wVol.gain.value=0.60;lfoG.connect(wVol.gain);
-      src.connect(lp);lp.connect(bp);bp.connect(wVol);wVol.connect(master);
-      var len2=Math.min(noise2.length,rate*6);
-      var buf2=actx.createBuffer(1,len2,rate);buf2.getChannelData(0).set(noise2.subarray(0,len2));
-      var src2=actx.createBufferSource();src2.buffer=buf2;src2.loop=true;
-      var hp2=actx.createBiquadFilter();hp2.type='bandpass';hp2.frequency.value=560;hp2.Q.value=1.3;
-      var sg=actx.createGain();sg.gain.value=0.15;src2.connect(hp2);hp2.connect(sg);sg.connect(master);
-      actx.resume().then(function(){var t=actx.currentTime;src.start(t);lfo.start(t);src2.start(t);scheduleSeagull();}).catch(function(){src.start(0);lfo.start(0);src2.start(0);scheduleSeagull();});
-    }catch(e){}
-  }
-  function scheduleSeagull(){
-    if(!actx||!master)return;
-    setTimeout(function(){
-      if(!actx||muted){scheduleSeagull();return;}
-      try{
-        var now=actx.currentTime;var f=820+Math.random()*380;
-        cry(now,f,0.048);
-        if(Math.random()>0.45)cry(now+0.9+Math.random()*0.4,f*(0.88+Math.random()*0.25),0.036);
-      }catch(e){}
-      scheduleSeagull();
-    },10000+Math.random()*22000);
-  }
-  function cry(now,f,vol){
-    var osc=actx.createOscillator();var osc2=actx.createOscillator();
-    osc.type='sawtooth';osc2.type='sawtooth';
-    var bpf=actx.createBiquadFilter();bpf.type='bandpass';bpf.frequency.value=f*1.15;bpf.Q.value=1.6;
-    var g=actx.createGain();osc.connect(bpf);osc2.connect(bpf);bpf.connect(g);g.connect(master);
-    g.gain.setValueAtTime(0,now);g.gain.linearRampToValueAtTime(vol*0.65,now+0.06);g.gain.linearRampToValueAtTime(vol*0.30,now+0.20);g.gain.linearRampToValueAtTime(vol,now+0.36);g.gain.linearRampToValueAtTime(vol*0.55,now+0.54);g.gain.linearRampToValueAtTime(0,now+0.80);
-    var f1=f*1.55;var f2=f*0.68;
-    osc.frequency.setValueAtTime(f1*0.75,now);osc.frequency.linearRampToValueAtTime(f1,now+0.07);osc.frequency.linearRampToValueAtTime(f*0.9,now+0.22);osc.frequency.linearRampToValueAtTime(f*1.18,now+0.38);osc.frequency.linearRampToValueAtTime(f2,now+0.80);
-    osc2.frequency.setValueAtTime(f1*0.76,now);osc2.frequency.linearRampToValueAtTime(f1*1.015,now+0.07);osc2.frequency.linearRampToValueAtTime(f*0.915,now+0.22);osc2.frequency.linearRampToValueAtTime(f*1.195,now+0.38);osc2.frequency.linearRampToValueAtTime(f2*0.985,now+0.80);
-    osc.start(now);osc.stop(now+0.85);osc2.start(now);osc2.stop(now+0.85);
-  }
-  var once=false;
-  function startAudio(){if(once)return;once=true;try{buildOcean();}catch(e){}document.removeEventListener('touchend',startAudio);document.removeEventListener('click',startAudio);}
-  document.addEventListener('touchend',startAudio,false);
-  document.addEventListener('click',startAudio,false);
-  setTimeout(function(){if(!once)try{startAudio();}catch(e){}},1800);
-  var mbtn=document.getElementById('planner-mute');
-  if(mbtn){mbtn.addEventListener('click',function(e){e.stopPropagation();muted=!muted;if(master&&actx){master.gain.cancelScheduledValues(actx.currentTime);master.gain.setTargetAtTime(muted?0:0.16,actx.currentTime,0.9);}mbtn.innerHTML=muted?'<svg aria-hidden=\'true\' focusable=\'false\'><use href=\'#i-mute\' xlink:href=\'#i-mute\'/></svg>':'<svg aria-hidden=\'true\' focusable=\'false\'><use href=\'#i-sound\' xlink:href=\'#i-sound\'/></svg>';});}
-})();
-</script>
+<section class="pl-sec" id="browse" aria-labelledby="browse-h">
+  <div class="wrap">
+    <h2 class="t" id="browse-h">Prefer to <em>browse?</em></h2>
+    <p class="pl-sub">Everything the planner links to is one tap away.</p>
+    <div class="pl-browse">
+      <a href="/things-to-do"><b>Things to Do</b><span>Tours, lessons and rentals by category</span></a>
+      <a href="/events/this-weekend"><b>This Weekend</b><span>Events around Wilmington and the beaches</span></a>
+      <a href="/shore-picks"><b>Shore Picks</b><span>Where to eat and drink</span></a>
+      <a href="/wilmington-weather"><b>Weather</b><span>Live forecast and beach conditions</span></a>
+    </div>
+    <p class="pl-disc">Itineraries are generated by AI and provided as suggestions only. Times, availability, pricing, and operating details are not guaranteed &mdash; always confirm directly with each experience operator before making plans. See our <a href="/legal#ai-planner">AI Trip Planner Disclaimer</a> for details.</p>
+  </div>
+</section>
 
 </main>
 
-<!-- FOOTER -->
-<footer style="background:var(--dark);padding:28px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;">
-  <a href="/" aria-label="ShoreList home" style="font-size:1.2rem;font-weight:900;display:flex;align-items:baseline;text-decoration:none;"><span style="font-family:'Playfair Display',serif;font-style:italic;color:var(--cream);">Shore</span><span style="font-weight:700;color:var(--coral);">List</span></a>
-  <div style="font-size:0.76rem;color:rgba(245,232,203,0.50);">&copy; 2026 ShoreList LLC &nbsp;&middot;&nbsp; Wilmington, NC &amp; the Beaches</div>
-  <nav aria-label="Footer" style="display:flex;gap:16px;flex-wrap:wrap;">
-    <a href="/" style="font-size:0.76rem;color:rgba(245,232,203,0.55);text-decoration:none;">Experiences</a>
-    <a href="/events" style="font-size:0.76rem;color:rgba(245,232,203,0.55);text-decoration:none;">Events Guide</a>
-    <a href="/planner" aria-current="page" style="font-size:0.76rem;color:var(--coral);text-decoration:none;font-weight:700;">Trip Planner</a>
-    <a href="/waitlist" style="font-size:0.76rem;color:rgba(245,232,203,0.55);text-decoration:none;">Join Waitlist</a>
-    <a href="/join" style="font-size:0.76rem;color:rgba(245,232,203,0.55);text-decoration:none;">Operators</a>
-    <a href="mailto:shorelistwilmington@gmail.com" style="font-size:0.76rem;color:rgba(245,232,203,0.55);text-decoration:none;">Contact</a>
-    <a href="/legal" style="font-size:0.76rem;color:rgba(245,232,203,0.55);text-decoration:none;">Privacy &amp; Terms</a>
-    <a href="/legal#accessibility" style="font-size:0.76rem;color:rgba(245,232,203,0.55);text-decoration:none;">Accessibility</a>
-  </nav>
+<footer class="pl-foot">
+  <div>&copy; 2026 ShoreList LLC &middot; Wilmington, NC &amp; the Beaches</div>
+  <nav aria-label="Footer"><a href="/">Experiences</a><a href="/events">Events Guide</a><a href="/planner" aria-current="page">Trip Planner</a><a href="/waitlist">Join Waitlist</a><a href="/join">Operators</a><a href="mailto:shorelistwilmington@gmail.com">Contact</a><a href="/legal">Privacy &amp; Terms</a><a href="/legal#accessibility">Accessibility</a></nav>
 </footer>
+
 <script>
-function sharePlan() {
-  var output = document.getElementById('plan-output') || document.getElementById('plan-result') || document.querySelector('[class*="result"]');
-  var text = output ? output.innerText : 'Check out my Wilmington itinerary from ShoreList!';
-  if (navigator.share) {
-    navigator.share({title:'My Wilmington Itinerary &#8212; ShoreList', text: text.substring(0,300) + '...', url:'https://shorelist.net/planner'}).catch(function(){});
-  } else {
-    navigator.clipboard.writeText('Check out ShoreList for Wilmington coastal experiences: https://shorelist.net').then(function(){
-      alert('Link copied to clipboard!');
-    });
+(function(){
+  'use strict';
+  var d=document, $=function(id){return d.getElementById(id);};
+  var ENDPOINT='/.netlify/functions/plan-itinerary';
+  /* Category keys the planner function may return, mapped to pages that exist on the site. */
+  var CATS={'film-tours':1,'ghost-tours':1,'surf-lessons':1,'nature-walks':1,'walking-tours':1,'kayak-tours':1,'fishing-charters':1,'river-cruises':1,'paddleboard':1,'bike-tours':1,'wildlife-tours':1,'beach-picnics':1,'jet-ski-rentals':1,'golf-cart-rentals':1,'beach-photography':1,'sailboat-rides':1,'wellness':1,'museums':1,'beach-chairs':1,'ebike-rentals':1};
+  var ALIAS={'historic-tours':'walking-tours','sup':'paddleboard','spa':'wellness'};
+  var sel={who:[],like:[],day:[],part:[]}, live=null, liveText='', liveCat={}, busy=false, lastBrief='';
+
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];});}
+  function track(n,p){try{if(typeof window.gtag==='function')window.gtag('event',n,p||{});}catch(e){}}
+  function list(a){return a.length<2?a.join(''):a.slice(0,-1).join(', ')+' and '+a[a.length-1];}
+
+  /* ---- brief ---- */
+  function brief(){
+    var s=[], notes=$('trip-input').value.replace(/\s+/g,' ').trim();
+    if(sel.who.length)s.push('Group: '+sel.who[0]+'.');
+    if(sel.like.length)s.push('We like '+list(sel.like)+'.');
+    if(sel.day.length||sel.part.length)s.push('Visiting '+(sel.day[0]||'soon')+(sel.part.length?', planning '+sel.part[0]:'')+'.');
+    if(notes)s.push('Notes: '+notes);
+    if(s.length&&sel.day[0]==='today'&&liveText)s.push('Conditions right now: '+liveText+'.');
+    return s.join(' ').slice(0,600);
   }
-}
-function printPlan() {
-  window.print();
-}
+  function paint(){
+    var b=brief(), el=$('pl-brief'), done=[sel.who.length>0,sel.like.length>0,(sel.day.length+sel.part.length)>0];
+    el.textContent=b||'Tap a few answers and your brief appears here.';
+    el.classList.toggle('empty',!b);
+    var bars=d.querySelectorAll('.pl-prog i');
+    ['step-who','step-like','step-when'].forEach(function(id,i){$(id).classList.toggle('done',done[i]);if(bars[i])bars[i].classList.toggle('on',done[i]);});
+    var wn=$('pl-wxnote'), on=!!(b&&sel.day[0]==='today'&&liveText);
+    wn.classList.toggle('show',on);
+    wn.textContent=on?'Live conditions at Wrightsville Beach are included because you picked today.':'';
+    $('pl-count').textContent=$('trip-input').value.length;
+    if(b)$('pl-err').classList.remove('show');
+  }
+  d.querySelectorAll('.pl-chips').forEach(function(g){
+    var key=g.getAttribute('data-group'), one=g.getAttribute('data-mode')==='one';
+    g.addEventListener('click',function(e){
+      var b=e.target.closest&&e.target.closest('.pl-chip'); if(!b)return;
+      var on=b.getAttribute('aria-pressed')==='true';
+      if(one)g.querySelectorAll('.pl-chip').forEach(function(x){x.setAttribute('aria-pressed','false');});
+      b.setAttribute('aria-pressed',on?'false':'true');
+      sel[key]=[].map.call(g.querySelectorAll('.pl-chip[aria-pressed=true]'),function(x){return x.getAttribute('data-v');});
+      paint();
+    });
+  });
+  $('trip-input').addEventListener('input',paint);
+
+  /* ---- live helpers (real data already on the site; each one fails quietly) ---- */
+  function wxWord(c){return c===0?'clear':c<4?'partly cloudy':c<50?'foggy':c<70?'rain':c<80?'snow':c<95?'showers':'storms';}
+  function tryWX(n){
+    if(!window.ShoreWX){if(n<40)setTimeout(function(){tryWX(n+1);},250);return;}
+    window.ShoreWX.get(0).then(function(x){
+      if(!x||x.temp==null)return;
+      live=x;
+      liveText=Math.round(x.temp)+'F and '+wxWord(x.code==null?0:x.code)+' at Wrightsville Beach, wind '+Math.round(x.wind||0)+' mph'+(x.waveFt!=null?', surf '+x.waveFt.toFixed(1)+' ft':'');
+      var chip=Math.round(x.temp)+'° and '+wxWord(x.code==null?0:x.code)+' at Wrightsville Beach right now';
+      $('pl-live-t').textContent=chip; $('pl-live').hidden=false;
+      $('tile-wx').textContent='Now '+Math.round(x.temp)+'°, '+wxWord(x.code==null?0:x.code);
+      paint();
+    }).catch(function(){});
+  }
+  tryWX(0);
+  fetch('/search-index.json',{credentials:'same-origin'}).then(function(r){return r.json();}).then(function(j){
+    (j.items||[]).forEach(function(it){if(it.t==='cat'&&it.slug)liveCat[it.slug]=+it.live||0;});
+  }).catch(function(){});
+  fetch('/events-data.json',{credentials:'same-origin'}).then(function(r){return r.json();}).then(function(j){
+    /* count events that overlap the coming Friday to Sunday (or the weekend in progress) */
+    var now=new Date(), dow=now.getDay(), iso=function(t){return t.getFullYear()+'-'+('0'+(t.getMonth()+1)).slice(-2)+'-'+('0'+t.getDate()).slice(-2);};
+    var from=new Date(now), to=new Date(now);
+    if(dow>=1&&dow<=4)from.setDate(now.getDate()+(5-dow));      /* Mon to Thu: the coming Friday */
+    to.setTime(from.getTime()); to.setDate(from.getDate()+(from.getDay()===0?0:7-from.getDay()));   /* through Sunday */
+    var a=iso(from), b=iso(to), n=0;
+    (j.events||[]).forEach(function(e){if(e.start&&e.start<=b&&(e.end||e.start)>=a)n++;});
+    if(n>0)$('tile-ev').textContent=n+(n===1?' event':' events')+' listed this weekend';
+  }).catch(function(){});
+
+  /* ---- sample itinerary: every link is a page that exists on ShoreList ---- */
+  var SAMPLE={
+    title:'A sample Wilmington day',
+    narrative:'This is a ready-made example, not a plan written for your group. It follows a simple shape that works for most visitors: outdoors in the morning, downtown at midday, the beach in the afternoon and a walking tour after dark.',
+    items:[
+      {time:'9:00 AM',name:'Start outside with a nature walk',description:'Mornings are the cooler, quieter part of the day for trails and marsh views. Browse guided nature walks and see what is offered.',tags:['Morning','Outdoors'],category:'nature-walks'},
+      {time:'11:30 AM',name:'Walk the Riverwalk and stop for lunch',description:'Head downtown and follow the Riverwalk along the Cape Fear River. Shore Picks lists local places to eat nearby.',tags:['Midday','Downtown'],links:[['/downtown','Downtown guide'],['/shore-picks','Shore Picks']]},
+      {time:'2:00 PM',name:'Beach time at Wrightsville Beach',description:'Check surf, tides and the estimated flag before you drive out, then settle in for the afternoon.',tags:['Afternoon','Beach'],links:[['/wrightsville-beach','Wrightsville Beach guide'],['/wilmington-weather','Live conditions']]},
+      {time:'4:30 PM',name:'Try a surf lesson',description:'If the water looks friendly, a lesson is a good way to finish the beach day. See surf lesson options on ShoreList.',tags:['Late afternoon','On the water'],category:'surf-lessons'},
+      {time:'7:30 PM',name:'Ghost tour through the historic district',description:'Ghost tours here are walking tours after dark through downtown. Wear comfortable shoes for the brick streets.',tags:['Evening','Downtown'],category:'ghost-tours'}
+    ]
+  };
+
+  /* ---- render ---- */
+  function catOf(item){var c=String(item.category||'').toLowerCase().trim(); c=ALIAS[c]||c; return CATS[c]?c:null;}
+  function render(plan,mode){
+    var isSample=mode!=='ok', h='';
+    $('result-kicker').textContent=isSample?'Sample itinerary':'Your itinerary';
+    $('result-title').textContent=plan.title||'Your Wilmington Itinerary';
+    if(mode==='down'){
+      h+='<div class="pl-alert" role="alert"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4.5M12 17.5v.5"/></svg><div><b>The planner is not reachable right now</b><p>We could not get a custom plan back, and nothing you entered was lost. Here is a ready-made sample day in the meantime. You can try again, or browse <a href="/things-to-do">things to do</a> and <a href="/events/this-weekend">this weekend\'s events</a> directly.</p><button type="button" class="pl-btn line" id="btn-retry">Try again</button></div></div>';
+    }
+    if(plan.narrative)h+='<p class="pl-narr">'+esc(plan.narrative)+'</p>';
+    h+='<ol class="pl-days">';
+    (plan.items||[]).slice(0,8).forEach(function(item){
+      var c=catOf(item), tags=(item.tags||[]).slice(0,4).map(function(t){return '<span>'+esc(t)+'</span>';}).join(''), links='';
+      if(c){
+        if(liveCat[c]>0)tags='<span class="ok">Bookable on ShoreList now</span>'+tags;
+        links+='<a class="main" href="/things-to-do/'+c+'">'+(liveCat[c]>0?'See times and book':'See options')+' &rarr;</a>';
+      }
+      (item.links||[]).forEach(function(l){links+='<a href="'+esc(l[0])+'">'+esc(l[1])+' &rarr;</a>';});
+      if(!links)links='<a href="/things-to-do">Browse things to do &rarr;</a><a href="/shore-picks">Shore Picks &rarr;</a>';
+      h+='<li class="pl-day"><time>'+esc(item.time||'')+'</time><span class="dot" aria-hidden="true"></span><article class="pl-dcard"><h3>'+esc(item.name||'')+'</h3>'+(item.description?'<p>'+esc(item.description)+'</p>':'')+(tags?'<div class="pl-tags">'+tags+'</div>':'')+'<div class="pl-dlinks">'+links+'</div></article></li>';
+    });
+    h+='</ol>';
+    $('result-content').innerHTML=h;
+    $('pl-go').hidden=false;
+    $('result-status').textContent=mode==='ok'?'Your itinerary is ready.':'The planner could not be reached. A sample itinerary is shown instead.';
+    var r=$('btn-retry'); if(r)r.addEventListener('click',function(){build(lastBrief);});
+    try{$('result-title').focus({preventScroll:true});}catch(e){}
+  }
+  function loading(){
+    $('result-kicker').textContent='Working on it';
+    $('result-title').textContent='Drafting your day';
+    $('pl-go').hidden=true;
+    $('result-content').innerHTML='<div class="pl-load"><p class="pl-load-msg"><i aria-hidden="true"></i><span id="pl-load-t">Sending your brief to the planner</span></p><div class="pl-sk"></div><div class="pl-sk"></div><div class="pl-sk"></div></div>';
+    $('result-status').textContent='Drafting your itinerary. This usually takes a few seconds.';
+  }
+  function show(){var s=$('result-section'); s.classList.add('show'); s.style.paddingTop=''; try{s.scrollIntoView({behavior:'smooth',block:'start'});}catch(e){s.scrollIntoView();}}
+
+  function build(text){
+    if(busy)return;
+    var input=text||brief(), err=$('pl-err');
+    if(input.replace(/\s+/g,' ').trim().length<3){
+      err.textContent='Pick at least one answer, or add a note, so the planner has something to work with.';
+      err.classList.add('show');
+      var first=d.querySelector('#step-who .pl-chip'); if(first)first.focus();
+      return;
+    }
+    err.classList.remove('show');
+    lastBrief=input; busy=true;
+    var btn=$('btn-plan'); btn.disabled=true; btn.textContent='Drafting your day';
+    loading(); show();
+    var msgs=['Sending your brief to the planner','Drafting your stops','Matching stops to ShoreList pages'], mi=0;
+    var tick=setInterval(function(){var t=$('pl-load-t'); if(t&&mi<msgs.length-1)t.textContent=msgs[++mi];},2600);
+    var ctl=('AbortController' in window)?new AbortController():null, to=setTimeout(function(){if(ctl)ctl.abort();},30000);
+    fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({input:input}),signal:ctl?ctl.signal:undefined})
+      .then(function(r){if(!r.ok)throw new Error('planner '+r.status);return r.json();})
+      .then(function(plan){if(!plan||!Array.isArray(plan.items)||!plan.items.length)throw new Error('empty plan');render(plan,'ok');track('planner_result',{items:plan.items.length});})
+      .catch(function(e){render(SAMPLE,'down');track('planner_fallback',{reason:String(e&&e.message||e).slice(0,60)});})
+      .then(function(){clearInterval(tick);clearTimeout(to);busy=false;btn.disabled=false;btn.textContent='Draft my itinerary';});
+  }
+  $('btn-plan').addEventListener('click',function(){build();});
+  $('btn-print').addEventListener('click',function(){window.print();});
+  $('btn-reset').addEventListener('click',function(){
+    $('result-section').classList.remove('show'); $('result-content').innerHTML=''; $('pl-go').hidden=true;
+    d.querySelectorAll('.pl-chip').forEach(function(c){c.setAttribute('aria-pressed','false');});
+    sel={who:[],like:[],day:[],part:[]}; $('trip-input').value=''; paint();
+    try{$('builder').scrollIntoView({behavior:'smooth',block:'start'});}catch(e){}
+    var first=d.querySelector('#step-who .pl-chip'); if(first)first.focus({preventScroll:true});
+  });
+  paint();
+})();
 </script>
-<style>
-@media print {
-  nav, .hero-badge, .quick-starts, .input-area, footer, #planner-mute { display:none!important; }
-  body { background:white; color:black; }
-  .plan-result { max-width:100%; padding:20px; }
-}
-</style>
 <script src="/sound.js" defer></script>
 <script src="/beachwx.js" defer></script>
 <script src="/widgets.js" defer></script>

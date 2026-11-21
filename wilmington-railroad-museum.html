@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="theme-color" content="#0A4D5C"/>
+<meta name="theme-color" content="#0E1F33"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>Wilmington Railroad Museum: Tickets, Hours &amp; Events | ShoreList</title>
 <meta name="description" content="Wilmington Railroad Museum tickets, hours and events. A family-friendly stop in downtown Wilmington, NC, rain or shine. Book on ShoreList."/>
@@ -30,127 +30,146 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{--teal:#0A4D5C;--teal2:#1A7585;--coral:#E96645;--coral2:#F07A5A;--cream:#F5E8CB;--cream2:#FEFCF7;--dark:#0D1F25;--mid:#2C4A52;--lgray:#F2F4F3;--border:rgba(10,77,92,0.10);}
-html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--cream2);color:var(--dark);overflow-x:hidden;}
-:focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:3px;}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#0E1F33;--navy2:#132A42;--sail:#F4F1EA;--sand:#D9C7A3;--glass:#9FC3B8;--red:#C9452A;--red-t:#B93C24;--coral:#FF9B7B;--teal:#0A4D5C;--teal2:#1A7585;--ink:#16303A;--mid:#2A4850;--border:rgba(14,31,51,.12)}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--sail);color:var(--ink);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:6px}
+.hero :focus-visible,.sec-teal :focus-visible,footer :focus-visible,nav :focus-visible{outline-color:var(--coral)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.skip-link{position:absolute;left:-999px;top:8px;background:var(--red);color:#fff;padding:12px 18px;border-radius:8px;font-weight:700;text-decoration:none;z-index:9999}
+.skip-link:focus{left:12px}
 
-/* PREVIEW RIBBON */
-.preview-bar{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--coral);color:white;text-align:center;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:7px 16px;}
-nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:16px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,77,92,0.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.06);}
-.nav-logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--cream2);text-decoration:none;font-weight:700;}
-.nav-logo span{color:var(--coral);}
-.nav-right{display:flex;align-items:center;gap:16px;}
-.nav-back{font-size:0.78rem;font-weight:600;color:rgba(245,232,203,0.60);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;white-space:nowrap;}
-.nav-back:hover{color:#F5E8CB;}
-.nav-book{background:var(--coral);color:white;text-decoration:none;padding:8px 18px;border-radius:6px;font-weight:700;font-size:0.80rem;white-space:nowrap;min-height:36px;display:inline-flex;align-items:center;transition:background 0.2s;}
-.nav-book:hover{background:var(--coral2);}
-@media(max-width:768px){nav{padding:14px 20px;}.nav-back{display:none;}}
+nav.rm-nav{position:sticky;top:0;z-index:200;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;background:rgba(14,31,51,.96);border-bottom:1px solid rgba(244,241,234,.12)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--sail);text-decoration:none;font-weight:900}
+.nav-logo span{color:var(--coral);font-style:italic}
+.nav-right{display:flex;align-items:center;gap:18px}
+.nav-back{font-size:.9rem;font-weight:600;color:rgba(244,241,234,.88);text-decoration:none;white-space:nowrap;padding:8px 0}
+.nav-book{background:var(--red);color:#fff;text-decoration:none;padding:0 20px;border-radius:100px;font-weight:700;font-size:.9rem;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
+@media(max-width:768px){nav.rm-nav{padding:12px 16px}.nav-back{display:none}}
 
-/* HERO — deep night-rail gradient */
-.hero{background:linear-gradient(145deg,#1a120d 0%,#33201a 35%,#4a2e22 65%,#0A4D5C 130%);padding:130px 48px 64px;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 100% 80% at 0% 100%,rgba(233,102,69,0.14) 0%,transparent 55%);}
-.hero::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.04) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;}
-.hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;}
-.hero-tag{font-size:0.66rem;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(--coral);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
-.hero-tag::before{content:'';width:22px;height:1px;background:var(--coral);}
-.hero-bc{font-size:0.75rem;color:rgba(245,232,203,0.40);margin-bottom:10px;}
-.hero-bc a{color:var(--coral);text-decoration:none;}
-h1.hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:900;color:#FEFCF7;line-height:1.05;margin-bottom:12px;}
-h1.hero-title em{color:var(--coral);font-style:italic;}
-.hero-sub{font-size:0.97rem;color:rgba(245,232,203,0.70);line-height:1.85;max-width:540px;margin-bottom:24px;}
-.hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;}
-.hb{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);border-radius:100px;padding:6px 14px;font-size:0.76rem;font-weight:600;color:rgba(245,232,203,0.80);}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
-.btn-fill{background:var(--coral);color:white;padding:14px 32px;border-radius:7px;font-weight:700;font-size:0.92rem;text-decoration:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;display:inline-flex;align-items:center;gap:8px;transition:all 0.2s;white-space:nowrap;min-height:44px;}
-.btn-fill:hover{background:var(--coral2);transform:translateY(-1px);}
-.btn-ghost{background:transparent;color:rgba(245,232,203,0.85);padding:14px 28px;border-radius:7px;font-weight:500;font-size:0.92rem;text-decoration:none;display:inline-flex;align-items:center;border:1.5px solid rgba(245,232,203,0.25);transition:all 0.2s;white-space:nowrap;min-height:44px;}
-.btn-ghost:hover{border-color:rgba(245,232,203,0.50);}
-.hours-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:22px 26px;min-width:240px;}
-.hc-label{font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,232,203,0.40);margin-bottom:12px;}
-.hc-row{display:flex;justify-content:space-between;gap:18px;font-size:0.82rem;color:rgba(245,232,203,0.80);padding:4px 0;}
-.hc-row strong{color:#FEFCF7;font-weight:600;}
-.hc-note{font-size:0.70rem;color:rgba(245,232,203,0.45);margin-top:10px;line-height:1.5;}
-@media(max-width:900px){.hero-inner{grid-template-columns:1fr;}.hours-card{display:none;}}
-@media(max-width:768px){.hero{padding:110px 20px 48px;}}
+/* HERO */
+.hero{position:relative;isolation:isolate;overflow:hidden;background:var(--navy);color:var(--sail);padding:72px 24px 30px}
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(14,31,51,.95) 0%,rgba(14,31,51,.84) 50%,rgba(14,31,51,.58) 100%),linear-gradient(180deg,rgba(14,31,51,0) 55%,rgba(14,31,51,.92) 100%)}
+.hero-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,380px);gap:56px;align-items:center}
+.hero-bc{font-size:.86rem;color:rgba(244,241,234,.82);margin-bottom:22px}
+.hero-bc a{color:var(--sail);text-decoration:none;font-weight:600;display:inline-block;padding:12px 0}
+.hero-bc a:hover{text-decoration:underline}
+.hero-tag{font-size:.78rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--glass);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.hero-tag::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--glass);flex:none}
+h1.hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5.4vw,4.3rem);font-weight:900;color:#fff;line-height:1.03;letter-spacing:-.02em;margin-bottom:18px}
+h1.hero-title em{color:var(--coral);font-style:italic}
+.hero-sub{font-size:1.08rem;color:rgba(244,241,234,.92);line-height:1.7;max-width:600px;margin-bottom:22px}
+.hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.hb{background:rgba(244,241,234,.1);border:1px solid rgba(244,241,234,.24);border-radius:100px;padding:8px 15px;font-size:.86rem;font-weight:600;color:var(--sail)}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-fill,.btn-ghost{min-height:54px;padding:0 28px;border-radius:100px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .25s cubic-bezier(.2,.7,.2,1),background .2s,border-color .2s;font-family:inherit}
+.btn-fill{background:var(--red);color:#fff;border:none;box-shadow:0 14px 30px -12px rgba(201,69,42,.8)}
+.btn-fill:hover{transform:translateY(-2px)}
+.btn-ghost{background:rgba(244,241,234,.1);color:var(--sail);border:1.5px solid rgba(244,241,234,.4)}
+.btn-ghost:hover{border-color:var(--sail)}
+.hours-card{background:rgba(244,241,234,.1);border:1px solid rgba(244,241,234,.24);border-radius:26px;padding:26px;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 30px 70px rgba(0,0,0,.35)}
+.hc-label{font-size:.76rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--glass);margin-bottom:14px}
+.hc-row{display:flex;justify-content:space-between;align-items:baseline;gap:18px;font-size:1rem;color:rgba(244,241,234,.92);padding:14px 16px;border-radius:16px;background:rgba(14,31,51,.5);border:1px solid rgba(244,241,234,.14);margin-bottom:8px}
+.hc-row strong{color:#fff;font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+.hc-note{font-size:.88rem;color:rgba(244,241,234,.86);margin-top:12px;line-height:1.55}
+.hero-credit{max-width:1180px;margin:34px auto 0;font-size:.76rem;color:rgba(244,241,234,.78)}
+.hero-credit a{color:rgba(244,241,234,.92)}
 
-.sec{padding:72px 48px;background:#FEFCF7;}
-.sec-teal{background:var(--teal);}
-.sec-alt{background:var(--cream2);}
-.sec-inner{max-width:1100px;margin:0 auto;}
-.sec-label{font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
-.sec-label::before{content:'';width:18px;height:1px;background:var(--coral);}
-.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:900;color:var(--teal);line-height:1.1;margin-bottom:8px;}
-.sec-title em{color:var(--coral);font-style:italic;}
-.sec-title-light{color:#FEFCF7;}
-.sec-sub{font-size:0.92rem;color:var(--mid);line-height:1.85;margin-bottom:40px;max-width:560px;}
-@media(max-width:768px){.sec{padding:52px 20px;}}
+.sec{padding:72px 24px;background:var(--sail)}
+.sec-alt{background:#EAE4D6}
+.sec-teal{background:var(--navy);color:var(--sail);position:relative;overflow:hidden}
+.sec-teal::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 420px at 85% -10%,rgba(159,195,184,.2),transparent 60%);pointer-events:none}
+.sec-inner{max-width:1180px;margin:0 auto;position:relative}
+.sec-label{font-size:.78rem!important;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red-t)!important;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.sec-teal .sec-label{color:var(--glass)!important}
+.sec-alt .sec-label{color:#A5321D!important}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.8vw,2.7rem);font-weight:900;color:var(--navy);line-height:1.1;margin-bottom:10px}
+.sec-title em{color:var(--red-t);font-style:italic}
+.sec-title-light{color:#fff}
+.sec-title-light em{color:var(--coral)}
+.sec-sub{font-size:1.02rem;color:var(--mid);line-height:1.7;margin-bottom:30px;max-width:640px}
 
 /* TICKETS */
-.tix-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-@media(max-width:860px){.tix-grid{grid-template-columns:1fr;}}
-.tix-card{background:white;border:1px solid var(--border);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow 0.22s,transform 0.22s;}
-.tix-card:hover{box-shadow:0 16px 48px rgba(10,77,92,0.10);transform:translateY(-3px);}
-.tix-bar{height:6px;background:var(--coral);}
-.tix-body{padding:26px 24px;flex:1;}
-.tix-name{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:900;color:var(--teal);margin-bottom:4px;}
-.tix-who{font-size:0.80rem;color:rgba(44,74,82,0.55);margin-bottom:14px;}
-.tix-price{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;color:var(--coral);line-height:1;}
-.tix-price span{font-size:0.74rem;font-family:'DM Sans',sans-serif;font-weight:400;color:rgba(44,74,82,0.40);}
-.tix-foot{padding:16px 24px;border-top:1px solid rgba(10,77,92,0.06);}
-.tix-btn{display:block;text-align:center;background:var(--coral);color:white;text-decoration:none;padding:12px 20px;border-radius:7px;font-weight:700;font-size:0.86rem;transition:background 0.2s;}
-.tix-btn:hover{background:var(--coral2);}
-.tix-note{text-align:center;margin-top:22px;font-size:0.80rem;color:rgba(44,74,82,0.55);line-height:1.7;}
+.tix-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.tix-card{background:#fff;border:1px solid var(--border);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 22px rgba(14,31,51,.06);transition:box-shadow .3s,transform .3s cubic-bezier(.2,.7,.2,1)}
+.tix-card:hover{box-shadow:0 20px 50px rgba(14,31,51,.12);transform:translateY(-4px)}
+.tix-bar{display:none}
+.tix-body{padding:28px 26px 22px;flex:1}
+.tix-name{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--navy);margin-bottom:2px;line-height:1.2}
+.tix-who{font-size:.94rem;color:var(--mid);margin-bottom:18px}
+.tix-price{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:var(--navy);line-height:1;font-variant-numeric:tabular-nums}
+.tix-price span{font-size:.9rem;font-family:'DM Sans',sans-serif;font-weight:500;color:var(--mid)}
+.tix-foot{padding:0 26px 26px}
+.tix-btn{display:flex;align-items:center;justify-content:center;text-align:center;min-height:50px;background:var(--red);color:#fff;text-decoration:none;padding:0 20px;border-radius:100px;font-weight:700;font-size:.96rem;transition:background .2s}
+.tix-btn[aria-disabled="true"]{background:#EAE4D6!important;color:var(--navy)!important;box-shadow:none!important;border:1px solid rgba(14,31,51,.16)}
+.tix-note{margin-top:22px;font-size:.94rem;color:var(--mid);line-height:1.65;max-width:760px}
 
 /* EXPERIENCE CARDS */
-.exp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
-@media(max-width:860px){.exp-grid{grid-template-columns:1fr;}}
-.exp-card{background:white;border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:box-shadow 0.22s,transform 0.22s;display:flex;flex-direction:column;}
-.exp-card:hover{box-shadow:0 16px 48px rgba(10,77,92,0.10);transform:translateY(-3px);}
-.exp-bar{height:6px;}
-.exp-body{padding:24px;flex:1;}
-.exp-ico{font-size:2rem;margin-bottom:12px;display:block;}
-.exp-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:var(--teal);margin-bottom:6px;line-height:1.2;}
-.exp-desc{font-size:0.86rem;color:var(--mid);line-height:1.75;}
-.exp-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px;}
-.exp-tag{background:var(--lgray);border-radius:5px;padding:4px 10px;font-size:0.74rem;font-weight:600;color:var(--teal);}
+.exp-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;counter-reset:exp}
+.exp-card{background:#fff;border:1px solid var(--border);border-radius:24px;overflow:hidden;box-shadow:0 8px 22px rgba(14,31,51,.06);transition:box-shadow .3s,transform .3s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column;counter-increment:exp}
+.exp-card:hover{box-shadow:0 20px 50px rgba(14,31,51,.12);transform:translateY(-4px)}
+.exp-bar{display:none}
+.exp-body{padding:28px 26px;flex:1}
+.exp-body::before{content:"0" counter(exp);display:block;font-family:'Playfair Display',serif;font-weight:900;font-size:1.5rem;color:var(--red-t);line-height:1;margin-bottom:12px}
+.exp-name{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--navy);margin-bottom:8px;line-height:1.2}
+.exp-desc{font-size:.98rem;color:var(--mid);line-height:1.7}
+.exp-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}
+.exp-tag{background:#EAE4D6;border-radius:100px;padding:5px 12px;font-size:.82rem!important;font-weight:600;color:var(--navy)}
 
 /* FACTS */
-.facts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-@media(max-width:860px){.facts-grid{grid-template-columns:repeat(2,1fr);}}
-.fact{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.10);border-radius:12px;padding:22px;text-align:center;}
-.fact-n{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--coral);margin-bottom:4px;}
-.fact-l{font-size:0.82rem;font-weight:600;color:rgba(245,232,203,0.65);}
+.facts-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.fact{background:rgba(244,241,234,.07);border:1px solid rgba(244,241,234,.18);border-radius:22px;padding:24px;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.fact-n{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:900;color:var(--coral);margin-bottom:6px;line-height:1;font-variant-numeric:tabular-nums}
+.fact-l{font-size:.96rem;font-weight:500;color:rgba(244,241,234,.9);line-height:1.45}
 
 /* EVENTS */
-.events-list{display:flex;flex-direction:column;gap:10px;}
-.ev-row{background:white;border:1px solid var(--border);border-radius:10px;padding:16px 20px;display:flex;align-items:center;gap:16px;transition:box-shadow 0.2s;}
-.ev-row:hover{box-shadow:0 4px 20px rgba(10,77,92,0.08);}
-.er-ico{font-size:1.5rem;flex-shrink:0;width:40px;text-align:center;}
-.er-body{flex:1;}
-.er-name{font-weight:700;color:var(--teal);margin-bottom:2px;font-size:0.92rem;}
-.er-meta{font-size:0.78rem;color:rgba(44,74,82,0.55);}
-.er-badge{font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:4px 10px;border-radius:100px;flex-shrink:0;white-space:nowrap;background:rgba(233,102,69,0.10);color:#C7492A;border:1px solid rgba(233,102,69,0.20);}
+.events-list{display:flex;flex-direction:column;gap:12px}
+.ev-row{background:#fff;border:1px solid var(--border);border-radius:20px;padding:20px 24px;display:flex;align-items:center;gap:18px;box-shadow:0 8px 22px rgba(14,31,51,.06)}
+.er-body{flex:1;min-width:0}
+.er-name{font-family:'Playfair Display',serif;font-weight:900;color:var(--navy);margin-bottom:2px;font-size:1.2rem;line-height:1.25}
+.er-meta{font-size:.94rem;color:var(--mid)}
+.er-badge{font-size:.78rem!important;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:7px 13px;border-radius:100px;flex-shrink:0;white-space:nowrap;background:#F7E3DC;color:#8A2A16;border:1px solid #E7B9AB}
 
 /* VISIT */
-.visit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
-@media(max-width:860px){.visit-grid{grid-template-columns:1fr;}}
-.visit-card{background:white;border:1px solid var(--border);border-radius:16px;padding:26px;}
-.visit-card h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:900;color:var(--teal);margin-bottom:10px;}
-.visit-card p{font-size:0.86rem;color:var(--mid);line-height:1.8;}
+.visit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.visit-card{background:#fff;border:1px solid var(--border);border-radius:24px;padding:28px 26px;box-shadow:0 8px 22px rgba(14,31,51,.06)}
+.visit-card h3{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;color:var(--navy);margin-bottom:8px}
+.visit-card p{font-size:.98rem;color:var(--mid);line-height:1.7}
+.visit-links{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px}
+.visit-links a{display:inline-flex;align-items:center;min-height:44px;font-weight:700;color:var(--red-t);text-decoration:none;border-bottom:2px solid transparent}
+.visit-links a:hover{border-bottom-color:var(--red-t)}
 
-/* PREVIEW NOTE */
-.preview-note{background:var(--cream);border:1.5px dashed var(--coral);border-radius:14px;padding:24px 28px;max-width:760px;margin:0 auto;}
-.preview-note h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:var(--teal);margin-bottom:8px;}
-.preview-note p{font-size:0.88rem;color:var(--mid);line-height:1.8;}
+.preview-note{background:#fff;border:1px solid var(--border);border-left:5px solid var(--red);border-radius:20px;padding:26px 28px;max-width:860px}
+.preview-note h3{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:var(--navy);margin-bottom:8px}
+.preview-note p{font-size:.98rem;color:var(--mid);line-height:1.7}
 
-footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;border-top:1px solid rgba(255,255,255,0.05);}
-.foot-logo{font-size:1.2rem;font-weight:900;display:flex;align-items:baseline;text-decoration:none;}
-.foot-s{font-family:'Playfair Display',serif;font-style:italic;color:#F5E8CB;}
-.foot-l{font-weight:700;color:var(--coral);}
-.foot-copy{font-size:0.76rem;color:rgba(245,232,203,0.45);}
+footer{background:var(--navy);padding:36px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.foot-logo{font-size:1.3rem;font-weight:900;display:flex;align-items:baseline;text-decoration:none;padding:8px 0}
+.foot-s{font-family:'Playfair Display',serif;font-style:italic;color:var(--sail)}
+.foot-l{font-weight:700;color:var(--coral)}
+.foot-copy{font-size:.88rem;color:rgba(244,241,234,.82)}
+
+@media(max-width:980px){
+  .hero-inner{grid-template-columns:1fr;gap:30px}
+  .tix-grid,.visit-grid{grid-template-columns:1fr}
+  .exp-grid{grid-template-columns:1fr}
+  .facts-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:640px){
+  .hero{padding:40px 16px 24px}
+  .sec{padding:52px 16px}
+  .hero-btns .btn-fill,.hero-btns .btn-ghost{width:100%}
+  .hours-card{padding:20px;border-radius:22px}
+  .hc-row{flex-direction:column;gap:2px;align-items:flex-start}
+  .hc-row strong{text-align:left}
+  .fact{padding:18px}.fact-n{font-size:2rem}
+  .ev-row{flex-direction:column;align-items:flex-start;gap:12px;padding:20px}
+  .tix-card{flex-direction:row;flex-wrap:wrap;align-items:center}
+  .tix-foot{width:100%}
+  footer{padding:30px 16px;justify-content:center;text-align:center}
+}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
 <script>
@@ -164,8 +183,9 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 <script src="/luxe.js" defer></script>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to content</a>
 
-<nav aria-label="Main">
+<nav class="rm-nav" aria-label="Main">
   <a href="https://shorelist.net" class="nav-logo">Shore<span>List</span></a>
   <div class="nav-right">
     <a class="nav-back" href="https://shorelist.net/downtown">&#8592; Downtown Wilmington</a>
@@ -173,7 +193,9 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
   </div>
 </nav>
 
+<main id="main">
 <header class="hero">
+  <img class="hero-photo" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-trolley_1920x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-trolley_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-trolley_1920x.webp 1920w" sizes="100vw" width="1920" height="1352" alt="A trolley on the Wilmington Riverwalk" fetchpriority="high" decoding="async"/>
   <div class="hero-inner">
     <div>
       <div class="hero-bc"><a href="https://shorelist.net">ShoreList</a> &nbsp;/&nbsp; <a href="https://shorelist.net/downtown">Downtown Wilmington</a> &nbsp;/&nbsp; Railroad Museum</div>
@@ -199,6 +221,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       <div class="hc-note">Winter (Labor Day&ndash;Memorial Day): Mon&ndash;Sat 10&ndash;4, closed Sundays. Arrive 45 min before close to see it all.</div>
     </div>
   </div>
+  <p class="hero-credit">Background photo shows the downtown Wilmington Riverwalk, not the museum. Photo: APK, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener license">CC BY 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Trolley_on_the_Wilmington_Riverwalk.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></p>
 </header>
 
 <section class="sec" id="tickets">
@@ -210,7 +233,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       <div class="tix-card">
         <div class="tix-bar"></div>
         <div class="tix-body">
-          <div class="tix-name">Adult</div>
+          <h3 class="tix-name">Adult</h3>
           <div class="tix-who">Ages 13 and up</div>
           <div class="tix-price">$12 <span>per person</span></div>
         </div>
@@ -219,7 +242,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       <div class="tix-card">
         <div class="tix-bar" style="background:var(--teal);"></div>
         <div class="tix-body">
-          <div class="tix-name">Senior &amp; Military</div>
+          <h3 class="tix-name">Senior &amp; Military</h3>
           <div class="tix-who">With valid ID</div>
           <div class="tix-price">$10 <span>per person</span></div>
         </div>
@@ -228,7 +251,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       <div class="tix-card">
         <div class="tix-bar" style="background:var(--teal2);"></div>
         <div class="tix-body">
-          <div class="tix-name">Child</div>
+          <h3 class="tix-name">Child</h3>
           <div class="tix-who">Ages 2&ndash;12 &middot; Under 2 free</div>
           <div class="tix-price">$8 <span>per person</span></div>
         </div>
@@ -247,8 +270,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       <div class="exp-card">
         <div class="exp-bar" style="background:var(--coral);"></div>
         <div class="exp-body">
-          <span class="exp-ico">&#128642;</span>
-          <div class="exp-name">Climb Aboard a 1911 Baldwin Steam Locomotive</div>
+          <h3 class="exp-name">Climb Aboard a 1911 Baldwin Steam Locomotive</h3>
           <div class="exp-desc">Step into the cab of a real steam engine, ring the bell, and stand where Wilmington&rsquo;s railroaders stood. Outside the museum entrance, the old locomotive is one of downtown&rsquo;s most photographed landmarks.</div>
           <div class="exp-tags"><span class="exp-tag">Hands-On</span><span class="exp-tag">Photo Favorite</span></div>
         </div>
@@ -256,8 +278,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       <div class="exp-card">
         <div class="exp-bar" style="background:var(--teal);"></div>
         <div class="exp-body">
-          <span class="exp-ico">&#128646;</span>
-          <div class="exp-name">Walk Through a Life-Size Caboose</div>
+          <h3 class="exp-name">Walk Through a Life-Size Caboose</h3>
           <div class="exp-desc">Explore an authentic caboose and see how crews lived and worked on the line &mdash; part of a collection of artifacts, photographs, and exhibits tracing the Atlantic Coast Line era and the railroad&rsquo;s role in building Wilmington.</div>
           <div class="exp-tags"><span class="exp-tag">Real Rolling Stock</span><span class="exp-tag">ACL History</span></div>
         </div>
@@ -265,8 +286,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       <div class="exp-card">
         <div class="exp-bar" style="background:var(--teal2);"></div>
         <div class="exp-body">
-          <span class="exp-ico">&#128506;&#65039;</span>
-          <div class="exp-name">20+ Running Model Trains</div>
+          <h3 class="exp-name">20+ Running Model Trains</h3>
           <div class="exp-desc">The grand finale: a 1,600-square-foot model railroad with more than twenty trains running through miniature towns and coastal scenery &mdash; with plenty of buttons for kids (and adults) to press.</div>
           <div class="exp-tags"><span class="exp-tag">1,600 Sq Ft Layout</span><span class="exp-tag">Interactive</span></div>
         </div>
@@ -274,8 +294,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       <div class="exp-card">
         <div class="exp-bar" style="background:#1e64c8;"></div>
         <div class="exp-body">
-          <span class="exp-ico">&#129513;</span>
-          <div class="exp-name">Scavenger Hunts &amp; Children&rsquo;s Play Area</div>
+          <h3 class="exp-name">Scavenger Hunts &amp; Children&rsquo;s Play Area</h3>
           <div class="exp-desc">In-museum scavenger hunts, hands-on displays, a small theater with railroad films, and a sensory-safe wooden train play area make this an easy win for families &mdash; most visits run about an hour.</div>
           <div class="exp-tags"><span class="exp-tag">Family Favorite</span><span class="exp-tag">~1 Hour Visit</span></div>
         </div>
@@ -286,7 +305,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 
 <section class="sec sec-teal">
   <div class="sec-inner">
-    <div class="sec-label" style="color:var(--coral);">By the Numbers</div>
+    <div class="sec-label">By the Numbers</div>
     <h2 class="sec-title sec-title-light">The Railroad Museum <em>at a Glance</em></h2>
     <div class="facts-grid" style="margin-top:28px;">
       <div class="fact"><div class="fact-n">1883</div><div class="fact-l">authentic ACL freight warehouse home</div></div>
@@ -306,13 +325,11 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
     <p class="sec-sub">Every museum event gets posted to ShoreList&rsquo;s Wilmington events calendar with tickets available the moment it&rsquo;s announced. A sample of what that looks like:</p>
     <div class="events-list">
       <div class="ev-row">
-        <div class="er-ico">&#127876;</div>
-        <div class="er-body"><div class="er-name">Christmas Train &amp; Light Spectacular</div><div class="er-meta">Holiday Season &nbsp;&middot;&nbsp; Over 35,000 twinkling lights &mdash; a Wilmington family tradition</div></div>
+        <div class="er-body"><h3 class="er-name">Christmas Train &amp; Light Spectacular</h3><div class="er-meta">Holiday Season &nbsp;&middot;&nbsp; Over 35,000 twinkling lights &mdash; a Wilmington family tradition</div></div>
         <span class="er-badge">Tickets on ShoreList</span>
       </div>
       <div class="ev-row">
-        <div class="er-ico">&#128643;</div>
-        <div class="er-body"><div class="er-name">Your Next Museum Event Here</div><div class="er-meta">Fundraisers, family days, after-hours events &mdash; posted &amp; ticketed the day you announce</div></div>
+        <div class="er-body"><h3 class="er-name">Your Next Museum Event Here</h3><div class="er-meta">Fundraisers, family days, after-hours events &mdash; posted &amp; ticketed the day you announce</div></div>
         <span class="er-badge">Tickets on ShoreList</span>
       </div>
     </div>
@@ -325,18 +342,19 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
     <h2 class="sec-title">Getting <em>There</em></h2>
     <div class="visit-grid" style="margin-top:28px;">
       <div class="visit-card">
-        <h3>&#128205; Location</h3>
+        <h3>Location</h3>
         <p>505 Nutt Street, Wilmington, NC 28401 &mdash; at the north end of downtown, an easy walk from the Riverwalk and the Cotton Exchange. (910) 763-2634.</p>
       </div>
       <div class="visit-card">
-        <h3>&#128337; Hours</h3>
+        <h3>Hours</h3>
         <p>Summer (Memorial Day&ndash;Labor Day): Mon&ndash;Sat 10&ndash;5, Sun 1&ndash;5. Winter: Mon&ndash;Sat 10&ndash;4, closed Sundays. Arrive 45 minutes before close to see everything.</p>
       </div>
       <div class="visit-card">
-        <h3>&#128663; Parking &amp; Trolley</h3>
+        <h3>Parking &amp; Trolley</h3>
         <p>Limited free parking in designated spots in front of and behind the old locomotive, plus nearby garages and metered parking. The free downtown trolley stops right in front of the museum.</p>
       </div>
     </div>
+    <div class="visit-links"><a href="/downtown">Downtown Wilmington guide &rarr;</a><a href="/things-to-do/museums">More museums and attractions &rarr;</a><a href="/events">Wilmington events calendar &rarr;</a><a href="/wilmington-weather">Today&rsquo;s weather &rarr;</a></div>
   </div>
 </section>
 
@@ -348,6 +366,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
     </div>
   </div>
 </section>
+</main>
 
 <footer>
   <a href="https://shorelist.net" class="foot-logo"><span class="foot-s">Shore</span><span class="foot-l">List</span></a>

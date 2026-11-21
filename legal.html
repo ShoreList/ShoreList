@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="theme-color" content="#0A4D5C"/>
+<meta name="theme-color" content="#0E1F33"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-title" content="ShoreList"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
@@ -336,6 +336,124 @@ footer{
     scroll-behavior:auto!important;
   }
 }
+
+/* ══════════ READING LAYER (layout, type and colour only; no wording changed) ══════════ */
+:root{--navy:#0E1F33;--sail:#F4F1EA;--glass:#9FC3B8;--red-t:#B93C24;--ink:#16303A;--rule:rgba(14,31,51,.14)}
+body{background:var(--sail);color:var(--ink);font-size:17px;line-height:1.75}
+:focus-visible{outline:3px solid var(--red-t);outline-offset:3px;border-radius:6px}
+nav.site-nav :focus-visible,.hero :focus-visible,footer :focus-visible{outline-color:#FF9B7B}
+nav.site-nav{background:rgba(14,31,51,.96);padding:14px 28px}
+.nav-back{color:rgba(244,241,234,.9);font-size:.9rem;min-height:44px;display:inline-flex;align-items:center}
+.hero{background:var(--navy);padding:72px 24px 84px;text-align:left;overflow:hidden}
+.hero::after{background:radial-gradient(900px 420px at 88% -10%,rgba(159,195,184,.24),transparent 60%),radial-gradient(700px 380px at 0% 120%,rgba(185,60,36,.22),transparent 60%)}
+.hero-inner{max-width:1180px}
+.hero-tag{color:var(--glass);font-size:.78rem;letter-spacing:.2em}
+.hero h1{font-size:clamp(2.3rem,5vw,3.8rem);letter-spacing:-.02em;line-height:1.04;color:#fff;max-width:16ch}
+.hero h1 em{color:#FF9B7B}
+.hero-sub{margin:0 0 26px;max-width:62ch;color:rgba(244,241,234,.92);font-size:1.08rem;line-height:1.7}
+.hero-meta{justify-content:flex-start;gap:10px;border-top:0;padding-top:0;font-size:.88rem;color:rgba(244,241,234,.9)}
+.hero-meta span{padding:8px 14px;border-radius:100px;background:rgba(244,241,234,.1);border:1px solid rgba(244,241,234,.22)}
+.hero-meta strong{color:#fff}
+.legal-shell{max-width:1180px;margin:0 auto;padding:0 24px}
+.plain-summary{max-width:none;margin:-44px 0 40px;background:#fff;border:1px solid var(--rule);border-left:5px solid var(--red-t);border-radius:22px;padding:26px 30px;box-shadow:0 20px 50px rgba(14,31,51,.12)}
+.plain-summary h2{color:var(--red-t);font-size:.8rem;letter-spacing:.18em}
+.plain-summary p{color:var(--ink);font-size:1.04rem;line-height:1.75;max-width:78ch}
+.plain-summary strong{color:var(--navy)}
+.legal-layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:56px;align-items:start}
+.toc{max-width:none;margin:0;position:sticky;top:84px;max-height:calc(100vh - 104px);overflow-y:auto;padding:22px 20px;border-radius:22px;border:1px solid var(--rule);background:#fff;box-shadow:0 8px 22px rgba(14,31,51,.06);scrollbar-width:thin;scroll-margin-top:84px}
+.toc-title{color:var(--red-t);font-size:.8rem}
+.toc-group{color:var(--navy);font-size:.92rem;margin:12px 0 4px;padding-top:12px;border-top-color:var(--rule)}
+.toc-list{grid-template-columns:1fr;gap:0}
+.toc-list a{color:var(--ink);font-size:.93rem;padding:9px 10px;border-radius:10px;line-height:1.35;display:flex;gap:4px}
+.toc-list a::before{flex:none;color:#4A5F68;font-size:.84rem}
+.toc-list a:hover,.toc-list a:focus{color:var(--navy);background:var(--sail)}
+.toc-list a[aria-current="true"]{background:var(--navy);color:var(--sail);font-weight:700}
+.toc-list a[aria-current="true"]::before{color:var(--glass)}
+.toc-jump{display:none}
+main{max-width:690px;margin:0;padding:0 0 88px}
+section.legal-section{margin-bottom:64px;padding-top:4px}
+section.legal-section+section.legal-section{border-top:1px solid var(--rule);padding-top:44px}
+.section-label{color:var(--red-t);font-size:.78rem}
+.legal-section h2{color:var(--navy);font-size:clamp(1.75rem,3vw,2.3rem);line-height:1.12;margin-bottom:18px}
+.legal-section h2 em{color:var(--red-t)}
+.legal-section h3{font-family:'Playfair Display',serif;font-weight:900;color:var(--navy);font-size:1.28rem;line-height:1.25;margin:34px 0 10px}
+.legal-section p{color:var(--ink);margin-bottom:16px}
+.legal-section strong{color:var(--navy);font-weight:700}
+.legal-section ul{margin:10px 0 20px 22px}
+.legal-section ul li{color:var(--ink);margin-bottom:9px;padding-left:4px}
+.legal-section a{color:#0A5566;text-decoration-thickness:1.5px;text-underline-offset:3px;overflow-wrap:anywhere}
+.legal-section a:hover,.legal-section a:focus{color:var(--red-t)}
+.section-date{color:#3A525B;border-bottom-color:var(--rule);font-size:.9rem}
+.table-wrap{border:1px solid var(--rule);border-radius:16px;margin:20px 0;padding:0;background:#fff}
+.table-wrap:focus-visible{outline-offset:2px}
+.legal-table{border:0;border-radius:0;font-size:.95rem}
+.legal-table th{background:var(--navy);color:var(--sail);font-size:.84rem;letter-spacing:.04em}
+.legal-table td:first-child{color:var(--navy)}
+.legal-table th,.legal-table td{border-bottom-color:var(--rule)}
+.callout{background:#fff;border:1px solid var(--rule);border-left:5px solid var(--red-t);border-radius:16px;padding:20px 24px;margin:24px 0}
+.callout strong{color:var(--red-t)}
+.callout p:last-child{margin-bottom:0}
+.legal-allcaps{background:#EAE4D6;border-left:5px solid var(--navy);border-radius:14px;padding:20px 22px;font-size:.9rem;line-height:1.75;margin:22px 0}
+footer{background:var(--navy);color:rgba(244,241,234,.85);padding:40px 24px}
+.foot-copy{color:rgba(244,241,234,.82);font-size:.88rem}
+.foot-links{gap:0 20px}
+.foot-links a{color:rgba(244,241,234,.9);font-size:.9rem;padding:12px 0!important;display:inline-block}
+.foot-links a:hover,.foot-links a:focus{color:#FF9B7B}
+.foot-links a[aria-current]{color:#FF9B7B;font-weight:700}
+@media (max-width:1023px){
+  .legal-layout{display:block}
+  .toc{position:static;max-height:none;margin:0 0 44px;padding:22px}
+  .toc-list{grid-template-columns:1fr 1fr;gap:0 18px}
+  .toc-list a{min-height:44px;align-items:center}
+  main{margin:0 auto}
+  .toc-jump{display:flex;position:sticky;top:64px;z-index:60;align-items:center;justify-content:space-between;gap:12px;min-height:46px;margin:0 -24px 28px;padding:0 24px;background:rgba(244,241,234,.96);border-bottom:1px solid var(--rule);color:var(--navy);font-weight:700;font-size:.92rem;text-decoration:none}
+  .toc-jump span{color:var(--red-t)}
+  section.legal-section{scroll-margin-top:124px}
+}
+@media (max-width:768px){
+  nav.site-nav{padding:12px 16px}
+  .hero{padding:48px 16px 72px}
+  .legal-shell{padding:0 16px}
+  .plain-summary{margin:-40px 0 28px;padding:22px 20px;border-radius:20px}
+  .toc{margin:0 0 36px;padding:20px 16px}
+  .toc-jump{margin:0 -16px 24px;padding:0 16px}
+  main{padding:0 0 64px}
+  body{font-size:16.5px}
+  .legal-table{font-size:.9rem}
+}
+@media (max-width:560px){.toc-list{grid-template-columns:1fr}}
+@media print{
+  @page{margin:18mm 16mm}
+  html body>*:not(.hero):not(.legal-shell),.toc,.toc-jump{display:none!important}
+  .hero-inner{max-width:none}.plain-summary p{max-width:none}
+  html,body{background:#fff!important;color:#000!important;font-size:10.5pt;line-height:1.5}
+  .legal-shell{max-width:none;padding:0}
+  .legal-layout{display:block}
+  main{max-width:none;padding:0}
+  .hero{background:#fff!important;color:#000;padding:0 0 12pt;border-bottom:2px solid #000;text-align:left}
+  .hero::after{display:none}
+  .hero h1{font-size:22pt;max-width:none;color:#000}
+  .hero h1 em,.legal-section h2 em{color:#000}
+  .hero-tag,.section-label,.plain-summary h2{color:#444}
+  .hero-sub,.hero-meta,.hero-meta strong,.section-date{color:#222}
+  .hero-meta span{background:none;border:0;padding:0 12pt 0 0}
+  .plain-summary{margin:12pt 0;box-shadow:none;background:#fff;border:1px solid #999;border-radius:0}
+  section.legal-section{page-break-inside:auto;break-inside:auto;margin-bottom:14pt}
+  section.legal-section+section.legal-section{border-top:1px solid #bbb;padding-top:12pt}
+  .legal-section h2{font-size:15pt;color:#000}
+  .legal-section h3{font-size:11.5pt;color:#000;margin:12pt 0 4pt}
+  .legal-section h2,.legal-section h3,.section-label{break-after:avoid;page-break-after:avoid}
+  .legal-section p,.legal-section li{color:#000;orphans:3;widows:3}
+  .legal-section strong,.callout strong,.legal-table td:first-child{color:#000}
+  .callout,.legal-allcaps,.legal-table tr{break-inside:avoid;page-break-inside:avoid}
+  .callout,.legal-allcaps{background:#fff;border:1px solid #999;border-left:3px solid #000;border-radius:0}
+  .table-wrap{overflow:visible;border:0;border-radius:0}
+  .legal-table{border:1px solid #999}
+  .legal-table th{background:#eee;color:#000}
+  .legal-section a{color:#000}
+  a[href^="http"]::after,a[href^="mailto:"]::after{content:" (" attr(href) ")";font-size:8.5pt;color:#444}
+  a[href^="mailto:"]::after{content:""}
+}
 </style>
 <link rel="manifest" href="/manifest.webmanifest"/>
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
@@ -365,12 +483,14 @@ footer{
   </div>
 </header>
 
+<div class="legal-shell">
 <aside class="plain-summary" role="note" aria-label="Plain English summary">
   <h2>Plain English Summary</h2>
   <p>ShoreList is a booking platform for local coastal experiences in Wilmington, NC. When you use our site, we collect information needed to make bookings work. <strong>We do not sell your personal data.</strong> We do not share it with third parties except the operator you book with and Stripe for payment processing. You can ask us to delete your data at any time.</p>
 </aside>
 
-<nav class="toc" aria-label="Table of contents">
+<div class="legal-layout">
+<nav class="toc" id="toc" aria-label="Table of contents">
   <div class="toc-title">Table of Contents</div>
 
   <div class="toc-group">Privacy Policy</div>
@@ -410,6 +530,7 @@ footer{
 </nav>
 
 <main id="main">
+<a class="toc-jump" href="#toc" id="toc-jump"><b id="toc-now">Privacy Policy &amp; Terms</b><span>Contents &uarr;</span></a>
 
 <!-- ═══════════════ §1 PRIVACY POLICY ═══════════════ -->
 <section class="legal-section" id="privacy">
@@ -802,6 +923,8 @@ footer{
 </section>
 
 </main>
+</div>
+</div>
 
 <footer>
   <a href="/" class="foot-logo" aria-label="ShoreList home"><span class="s">Shore</span><span class="l">List</span></a>
@@ -821,6 +944,30 @@ footer{
   </nav>
 </footer>
 
+<script>
+/* Contents: mark the section being read. Purely presentational. */
+(function(){
+  var links={},cur=null,now=document.getElementById('toc-now');
+  [].forEach.call(document.querySelectorAll('.toc-list a[href^="#"]'),function(a){links[a.getAttribute('href').slice(1)]=a;});
+  var secs=[].slice.call(document.querySelectorAll('section.legal-section[id]'));
+  if(!secs.length)return;
+  [].forEach.call(document.querySelectorAll('.table-wrap'),function(t){if(t.scrollWidth>t.clientWidth+2){t.tabIndex=0;t.setAttribute('role','region');t.setAttribute('aria-label','Scrollable table');}});
+  function mark(){
+    var y=140,pick=secs[0];
+    for(var i=0;i<secs.length;i++){if(secs[i].getBoundingClientRect().top<=y)pick=secs[i];else break;}
+    if(pick===cur)return;cur=pick;
+    for(var k in links)links[k].removeAttribute('aria-current');
+    var a=links[pick.id];if(!a)return;
+    a.setAttribute('aria-current','true');
+    if(now)now.textContent=a.textContent;
+    var toc=document.getElementById('toc');
+    if(toc&&toc.scrollHeight>toc.clientHeight+4){var r=a.getBoundingClientRect(),t=toc.getBoundingClientRect();if(r.top<t.top||r.bottom>t.bottom)toc.scrollTop+=r.top-t.top-toc.clientHeight/2;}
+  }
+  var tick=false;
+  addEventListener('scroll',function(){if(tick)return;tick=true;requestAnimationFrame(function(){tick=false;mark();});},{passive:true});
+  addEventListener('resize',mark);mark();
+})();
+</script>
 <script src="/sound.js" defer></script>
 <script src="/beachwx.js" defer></script>
 <script src="/widgets.js" defer></script>
