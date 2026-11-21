@@ -171,16 +171,22 @@ dialog#qv{border:0;border-radius:20px;padding:0;max-width:min(860px,94vw);width:
   function bump(id,n){try{var v=views();v[id]=(v[id]||0)+n;localStorage.setItem('slViews',JSON.stringify(v));}catch(e){}}
   function persist(){try{localStorage.setItem('slSaved',JSON.stringify(saved));}catch(e){}}
   function byId(id){return data.items.filter(function(i){return i.id===id;})[0];}
-  function money(i){return typeof i.price==='number'&&isFinite(i.price)?'$'+i.price.toFixed(0):'';}
+  function fmt(n){return '$'+(Math.round(n*100)%100===0?n.toFixed(0):n.toFixed(2));}
+  function money(i){return typeof i.price==='number'&&isFinite(i.price)?fmt(i.price):'';}
+  function priceLabel(i){var m=money(i);return m?(i.from===true?'From '+m:m):'';}
+  function gaItem(i){var o={item_id:i.id,item_name:i.name};if(typeof i.price==='number'&&isFinite(i.price))o.price=i.price;return o;}
   function trayRender(){
     var b=document.getElementById('savedBtn'),t=document.getElementById('tray');
     var its=saved.map(byId).filter(Boolean);
     b.hidden=!its.length;b.textContent='Saved ('+its.length+')';
     if(!its.length){t.hidden=true;b.setAttribute('aria-expanded','false');}
     var sum=its.reduce(function(a,i){return a+(typeof i.price==='number'?i.price:0);},0);
-    t.innerHTML='<h3>Your list</h3>'+its.map(function(i){return '<a target="_blank" rel="noopener" href="'+esc(i.url)+'">'+(i.img?'<img alt="" src="'+esc(i.img)+'" width="40" height="52" decoding="async"/>':'')+'<span>'+esc(i.name)+' <b>'+esc(money(i))+'</b></span></a>';}).join('')+'<div class="tt">'+its.length+' item'+(its.length===1?'':'s')+', about $'+sum.toFixed(0)+' before shipping</div>';
+    t.innerHTML='<h3>Your list</h3>'+its.map(function(i){return '<a target="_blank" rel="noopener" href="'+esc(i.url)+'">'+(i.img?'<img alt="" src="'+esc(i.img)+'" width="40" height="52" decoding="async"/>':'')+'<span>'+esc(i.name)+' <b>'+esc(priceLabel(i))+'</b></span></a>';}).join('')+'<div class="tt">'+its.length+' item'+(its.length===1?'':'s')+', about '+fmt(sum)+' before shipping</div>';
   }
-  function toggle(id){bump(id,3);var k=saved.indexOf(id);try{if(k<0)gtag('event','add_to_wishlist',{item_id:id});}catch(e){}if(k>-1)saved.splice(k,1);else saved.push(id);persist();trayRender();render();}
+  function toggle(id){bump(id,3);var k=saved.indexOf(id),it=byId(id);try{if(k<0)gtag('event','add_to_wishlist',it?{item_id:id,currency:'USD',value:it.price,items:[gaItem(it)]}:{item_id:id});}catch(e){}if(k>-1)saved.splice(k,1);else saved.push(id);persist();trayRender();
+    var ae=document.activeElement,grid=document.getElementById('grid'),back=ae&&grid.contains(ae)&&ae.getAttribute('data-h')===id;
+    render();
+    if(back){var hs=grid.querySelectorAll('[data-h]');for(var x=0;x<hs.length;x++){if(hs[x].getAttribute('data-h')===id){hs[x].focus();break;}}}}
   function render(){
     var items=data.items.filter(function(i){return i.url&&safeUrl(i.url)&&(current==='all'||i.collection===current);});
     var needle=q.trim().toLowerCase();
@@ -194,15 +200,15 @@ dialog#qv{border:0;border-radius:20px;padding:0;max-width:min(860px,94vw);width:
     grid.innerHTML=items.map(function(i){
       var on=saved.indexOf(i.id)>-1;
       var img=i.img?'<div class="ph" data-qv="'+esc(i.id)+'"><img src="'+esc(i.img)+'" alt="'+esc(i.alt||i.name)+'" loading="lazy" decoding="async" width="600" height="800"/><button class="heart" type="button" data-h="'+esc(i.id)+'" aria-pressed="'+on+'" aria-label="Save '+esc(i.name)+'">'+(on?'\u2665':'\u2661')+'</button><button class="qvb" type="button" data-qv="'+esc(i.id)+'">Quick view</button></div>':'<div class="ph"></div>';
-      return '<article class="card">'+img+'<div class="bd"><h3>'+esc(i.name)+'</h3>'+(money(i)?'<div class="price">'+esc(money(i))+'</div>':'')+(i.meta?'<div class="meta">'+esc(i.meta)+'</div>':'')+
+      return '<article class="card">'+img+'<div class="bd"><h3>'+esc(i.name)+'</h3>'+(money(i)?'<div class="price">'+esc(priceLabel(i))+'</div>':'')+(i.meta?'<div class="meta">'+esc(i.meta)+'</div>':'')+
         (i.buy&&safeUrl(i.buy)?'<a class="buy" target="_blank" rel="noopener" href="'+esc(i.buy)+'" data-id="'+esc(i.id)+'">Buy now</a><a class="more" target="_blank" rel="noopener" href="'+esc(i.url)+'">Details</a>':'<a class="buy" target="_blank" rel="noopener" href="'+esc(i.url)+'" data-id="'+esc(i.id)+'">'+esc(i.cta||'Choose options and buy')+'</a>')+'</div></article>';
     }).join('');
-    grid.querySelectorAll('.buy').forEach(function(a){a.addEventListener('click',function(){try{gtag('event','select_item',{item_id:a.getAttribute('data-id')});}catch(e){}});});
+    grid.querySelectorAll('.buy').forEach(function(a){a.addEventListener('click',function(){try{var id=a.getAttribute('data-id'),it=byId(id);gtag('event','select_item',it?{item_id:id,items:[gaItem(it)]}:{item_id:id});}catch(e){}});});
   }
   var qvCur=null;
-  function openQv(id){var i=byId(id);if(!i)return;qvCur=id;try{gtag('event','view_item',{item_id:id,item_name:i.name,value:i.price,currency:'USD'});}catch(e){}var d=document.getElementById('qv');
+  function openQv(id){var i=byId(id);if(!i)return;qvCur=id;try{gtag('event','view_item',{item_id:id,item_name:i.name,value:i.price,currency:'USD',items:[gaItem(i)]});}catch(e){}var d=document.getElementById('qv');
     document.getElementById('qvi').src=i.lookbook||i.img||'';document.getElementById('qvi').alt=i.alt||i.name;
-    document.getElementById('qvn').textContent=i.name;document.getElementById('qvp').textContent=money(i)?'From '+money(i):'';
+    document.getElementById('qvn').textContent=i.name;document.getElementById('qvp').textContent=priceLabel(i);
     document.getElementById('qvm').textContent=i.meta||'';document.getElementById('qvb').href=i.url;
     var h=document.getElementById('qvh');var on=saved.indexOf(id)>-1;h.setAttribute('aria-pressed',on);h.textContent=on?'Saved \u2665':'Save to my list';
     if(d.showModal)d.showModal();else d.setAttribute('open','');}
@@ -229,62 +235,90 @@ dialog#qv{border:0;border-radius:20px;padding:0;max-width:min(860px,94vw);width:
     box.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;current=b.getAttribute('data-c');box.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});render();});
   }
 
-  var PL={where:[["Wrightsville Beach","Wrightsville","34.21\u00b0 N \u00b7 77.80\u00b0 W"],["Carolina Beach","Carolina Beach","34.03\u00b0 N \u00b7 77.89\u00b0 W"],["Kure Beach","Kure","33.99\u00b0 N \u00b7 77.91\u00b0 W"],["Downtown Wilmington","Wilmington","34.23\u00b0 N \u00b7 77.94\u00b0 W"]],what:[["Surf","surf"],["Pickleball","pickleball"],["Tennis","tennis"],["Golf","golf"],["Chill and sail","sail"],["Any day","any"]]};
+  var PL={where:[["Wrightsville Beach",/wrightsville/,"34.21° N · 77.80° W"],["Carolina Beach",/carolina beach(?!es)/,"34.03° N · 77.89° W"],["Kure Beach",/kure beach/,"33.99° N · 77.91° W"],["Downtown Wilmington",/wilmington|\bilm\b/,"34.23° N · 77.94° W"]],what:[["Surf",/\bsurf/],["Pickleball",/pickleball/],["Tennis",/tennis/],["Golf",/golf/],["Chill and sail",/\bsail(s|ing|boat)?\b|pennant|yacht|harbor/],["Any day",null]]};
   function planner(live){
-    var pw=0,pa=5,sec=document.getElementById('planSec');if(!sec)return;sec.hidden=false;
+    var ANY=PL.what.length-1,pw=0,pa=ANY,sec=document.getElementById('planSec');if(!sec)return;sec.hidden=false;
     var W=document.getElementById('plWhere'),A=document.getElementById('plWhat');
-    function chipsH(arr,sel,attr){return arr.map(function(x,k){return '<button class="chip" type="button" '+attr+'="'+k+'" aria-pressed="'+(k===sel)+'">'+esc(x[0])+'</button>';}).join('');}
-    function go(){
-      W.innerHTML=chipsH(PL.where,pw,'data-w');A.innerHTML=chipsH(PL.what,pa,'data-a');
-      var wh=PL.where[pw],wa=PL.what[pa],key=wa[1];
-      var hit=live.filter(function(i){var t=(i.name+' '+(i.meta||'')).toLowerCase();return (key==='any'||t.indexOf(key)>-1||(key==='sail'&&/sail|pennant|yacht|harbor/.test(t)))&&(pw===3||t.indexOf(wh[1].toLowerCase())>-1||wh[1]==='Wilmington');});
-      if(hit.length<3){hit=hit.concat(live.filter(function(i){return hit.indexOf(i)<0;}));}
+    function txt(i){return (i.name+' '+(i.meta||'')).toLowerCase();}
+    function inTown(i,w){return PL.where[w][1].test(i.name.toLowerCase());}
+    function fits(i,a){var re=PL.what[a][1];return !re||re.test(txt(i));}
+    function has(w,a){return live.some(function(i){return inTown(i,w)&&fits(i,a);});}
+    function go(focusAttr){
+      if(!has(pw,pa))pa=ANY;
+      W.innerHTML=PL.where.map(function(x,k){return '<button class="chip" type="button" data-w="'+k+'" aria-pressed="'+(k===pw)+'">'+esc(x[0])+'</button>';}).join('');
+      A.innerHTML=PL.what.map(function(x,k){return (k===ANY||has(pw,k))?'<button class="chip" type="button" data-a="'+k+'" aria-pressed="'+(k===pa)+'">'+esc(x[0])+'</button>':'';}).join('');
+      var wh=PL.where[pw],wa=PL.what[pa];
+      var town=live.filter(function(i){return inTown(i,pw);});
+      var hit=town.filter(function(i){return fits(i,pa);});
+      if(hit.length<3)hit=hit.concat(town.filter(function(i){return hit.indexOf(i)<0;}));
+      if(hit.length<3)hit=hit.concat(live.filter(function(i){return hit.indexOf(i)<0;}));
       hit=hit.slice(0,4);
-      document.getElementById('plHead').textContent=wh[0]+' \u00b7 '+wh[2]+' \u00b7 '+wa[0];
-      document.getElementById('plOut').innerHTML=hit.map(function(i){return '<a target="_blank" rel="noopener" href="'+esc(i.url)+'">'+(i.img?'<img loading="lazy" decoding="async" width="600" height="800" alt="'+esc(i.alt||i.name)+'" src="'+esc(i.img)+'"/>':'')+'<span><b>'+esc(i.name)+'</b><br>'+esc(money(i))+'</span></a>';}).join('');
+      document.getElementById('plHead').textContent=wh[0]+' · '+wh[2]+' · '+wa[0];
+      document.getElementById('plOut').innerHTML=hit.map(function(i){return '<a target="_blank" rel="noopener" href="'+esc(i.url)+'">'+(i.img?'<img loading="lazy" decoding="async" width="600" height="800" alt="'+esc(i.alt||i.name)+'" src="'+esc(i.img)+'"/>':'')+'<span><b>'+esc(i.name)+'</b><br>'+esc(priceLabel(i))+'</span></a>';}).join('');
+      if(focusAttr){var f=sec.querySelector('.chip['+focusAttr+'][aria-pressed="true"]');if(f)f.focus();}
     }
-    sec.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;if(b.hasAttribute('data-w'))pw=+b.getAttribute('data-w');if(b.hasAttribute('data-a'))pa=+b.getAttribute('data-a');go();});
+    sec.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;var fa='';if(b.hasAttribute('data-w')){pw=+b.getAttribute('data-w');fa='data-w';}if(b.hasAttribute('data-a')){pa=+b.getAttribute('data-a');fa='data-a';}go(fa);});
     go();
   }
   function jsonld(live){
-    var s=document.createElement('script');s.type='application/ld+json';
-    s.textContent=JSON.stringify({'@context':'https://schema.org','@type':'ItemList','itemListElement':live.map(function(i,k){var p={'@type':'Product','name':i.name,'brand':{'@type':'Brand','name':'ShoreList'},'url':i.url};if(i.img)p.image=new URL(i.img,location.href).href;if(typeof i.price==='number')p.offers={'@type':'Offer','priceCurrency':'USD','price':i.price.toFixed(2),'url':i.url,'availability':'https://schema.org/InStock'};return {'@type':'ListItem','position':k+1,'item':p};})});
+    var s=document.createElement('script');s.type='application/ld+json';s.id='shopItemList';
+    s.textContent=JSON.stringify({'@context':'https://schema.org','@type':'ItemList','itemListElement':live.map(function(i,k){var p={'@type':'Product','name':i.name,'brand':{'@type':'Brand','name':'ShoreList'},'url':i.url};if(i.img)p.image=new URL(i.img,location.href).href;if(typeof i.price==='number')p.offers=i.from===true?{'@type':'AggregateOffer','priceCurrency':'USD','lowPrice':i.price.toFixed(2),'url':i.url}:{'@type':'Offer','priceCurrency':'USD','price':i.price.toFixed(2),'url':i.url};return {'@type':'ListItem','position':k+1,'item':p};})});
     document.head.appendChild(s);
   }
   function extras(){
     var live=data.items.filter(function(i){return i.url&&safeUrl(i.url);});
     var lk=live.filter(function(i){return i.lookbook;});
     if(lk.length){show('lookSec',true);document.getElementById('look').innerHTML=lk.map(function(i){return '<a target="_blank" rel="noopener" href="'+esc(i.url)+'"><img loading="lazy" decoding="async" width="800" height="1000" src="'+esc(i.lookbook)+'" alt="'+esc(i.alt||i.name)+'"/><span>'+esc(i.name)+'</span></a>';}).join('');}
-    var sc=data.scenes||[],scene=sc[0]&&sc[0].id,cut='unisex',n=0;
+    var sc=data.scenes||[],scene=sc[0]&&sc[0].id,n=0;
     if(sc.length&&live.some(function(i){return i.scenes;})){
       show('stylSec',true);
       var sb=document.getElementById('scenes');
       sb.innerHTML=sc.map(function(s,k){return '<button class="chip" type="button" data-s="'+esc(s.id)+'" aria-pressed="'+(k?'false':'true')+'">'+esc(s.name)+'</button>';}).join('');
       function picks(){
-        var pool=live.filter(function(i){return (i.scenes||[]).indexOf(scene)>-1&&(cut==='womens'?i.cut==='womens':i.cut!=='womens');});
+        var pool=live.filter(function(i){return (i.scenes||[]).indexOf(scene)>-1;});
         var out=[];for(var k=0;k<Math.min(3,pool.length);k++)out.push(pool[(n+k)%pool.length]);
         document.getElementById('picks').innerHTML=out.length?out.map(function(i){return '<div class="pick"><b>'+esc(i.name)+'</b><br><a target="_blank" rel="noopener" href="'+esc(i.url)+'">View</a></div>';}).join(''):'<p>Nothing in this scene yet.</p>';
       }
       sb.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;scene=b.getAttribute('data-s');n=0;sb.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});picks();});
-      document.getElementById('cuts').addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;if(b.id==='another'){n++;}else{cut=b.getAttribute('data-cut');n=0;document.querySelectorAll('#cuts [data-cut]').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});}picks();});
+      document.getElementById('another').addEventListener('click',function(){n++;picks();});
       picks();
     }
-    var pr=live.filter(function(i){return typeof i.price==='number'&&isFinite(i.price);});
-    if(pr.length){show('setupSec',true);var box=document.getElementById('setup');
-      box.innerHTML=pr.map(function(i,k){return '<label><input type="checkbox" data-k="'+k+'"/> '+esc(i.name)+' <span style="margin-left:auto">From $'+i.price.toFixed(2)+'</span></label>';}).join('');
-      box.addEventListener('change',function(){var t=0,c=0;box.querySelectorAll('input:checked').forEach(function(x){t+=pr[+x.getAttribute('data-k')].price;c++;});document.getElementById('tot').textContent=c+' piece'+(c===1?'':'s')+', $'+t.toFixed(2);});}
   }
-  fetch('/shop-catalog.json').then(function(r){return r.json();}).catch(function(){return data;}).then(function(j){
-    data=j||data;allowed=(data.allowedHosts||[]).map(function(x){return String(x).toLowerCase();});
+  var started=false;
+  function boot(j){
+    data=j;allowed=(data.allowedHosts||[]).map(function(x){return String(x).toLowerCase();});
     var st=(data.stores||[]).filter(function(s){return s.url&&safeUrl(s.url.replace(/\/?$/,'/'));});
-    var live=(data.items||[]).filter(function(i){return i.url&&safeUrl(i.url);});
+    var live=data.items.filter(function(i){return i.url&&safeUrl(i.url);});
     if(live.length&&st.length>1){var sb2=document.getElementById('stores');sb2.innerHTML=st.map(function(s){return '<a target="_blank" rel="noopener" href="'+esc(s.url)+'"><b>'+esc(s.name)+'</b> '+esc(s.carries||'')+'</a>';}).join('');show('stores',true);}
-    if(live.length){show('chips',true);show('grid',true);show('note',true);chips();wire();render();extras();planner(live);jsonld(live);}
+    if(live.length){show('chips',true);show('gridH',true);show('grid',true);show('note',true);chips();wire();render();extras();planner(live);jsonld(live);}
     else{
-      document.getElementById('cols').innerHTML=(data.collections||[]).map(function(c){return '<div class="col reveal">'+(c.art?'<img alt="" src="/shop-art/'+esc(c.art)+'.svg" width="54" height="72" loading="lazy" decoding="async"/>':'')+'<h3>'+esc(c.name)+'</h3><p>'+esc(c.blurb)+'</p></div>';}).join('');
+      document.getElementById('cols').innerHTML=(data.collections||[]).map(function(c){return '<div class="col reveal in">'+(c.art?'<img alt="" src="/shop-art/'+esc(c.art)+'.svg" width="54" height="72" loading="lazy" decoding="async"/>':'')+'<h3>'+esc(c.name)+'</h3><p>'+esc(c.blurb)+'</p></div>';}).join('');
       show('soon',true);
     }
-  });
+  }
+  /* A failed or broken catalog is an error with a retry, never the "opening soon" state. */
+  function load(isRetry){
+    var rb=document.getElementById('loadRetry'),msg=document.getElementById('loadErrMsg');
+    if(isRetry){rb.disabled=true;msg.textContent='Trying again.';}
+    fetch('/shop-catalog.json',isRetry?{cache:'reload'}:undefined).then(function(r){if(!r.ok)throw new Error('http '+r.status);return r.json();}).then(function(j){
+      if(!j||typeof j!=='object'||!Array.isArray(j.items))throw new Error('shape');
+      return j;
+    }).then(function(j){
+      rb.disabled=false;
+      var hadFocus=isRetry&&document.activeElement===rb;
+      show('loadErr',false);
+      if(started)return;started=true;
+      boot(j);
+      if(hadFocus){var t=document.getElementById('q');if(t&&!document.getElementById('tools').hidden)t.focus();}
+    },function(){
+      rb.disabled=false;
+      msg.textContent=isRetry?'Still not loading. Check your connection and try again, or go straight to our store.':'The product list did not load. Check your connection and try again, or go straight to our store.';
+      show('loadErr',true);
+      if(isRetry)rb.focus();
+    });
+  }
+  document.getElementById('loadRetry').addEventListener('click',function(){load(true);});
+  load(false);
 })();
 </script>
 <script>(function(){try{var els=document.querySelectorAll('.sec,.proof,.col');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px'});els.forEach(function(e){e.classList.add('reveal');io.observe(e)});}catch(e){}})();</script>
@@ -296,8 +330,11 @@ dialog#qv{border:0;border-radius:20px;padding:0;max-width:min(860px,94vw);width:
 <script>(function(){var P=[["Downtown Wilmington","34.23\u00b0 N \u00b7 77.94\u00b0 W"],["The Historic District","34.24\u00b0 N \u00b7 77.95\u00b0 W"],["Wrightsville Beach","34.21\u00b0 N \u00b7 77.80\u00b0 W"],["Carolina Beach","34.03\u00b0 N \u00b7 77.89\u00b0 W"],["Kure Beach","33.99\u00b0 N \u00b7 77.91\u00b0 W"]],i=0,e=document.getElementById("placeRot"),n=document.getElementById("placeName"),c=document.getElementById("placeCoord");if(!e||!n||!c||window.matchMedia("(prefers-reduced-motion:reduce)").matches)return;setInterval(function(){e.classList.add("fade");setTimeout(function(){i=(i+1)%P.length;n.textContent=P[i][0];c.textContent=P[i][1];e.classList.remove("fade")},650)},3600)})();</script>
 <script>
 (function(){var f=document.getElementById('dropForm');if(!f)return;var m=document.getElementById('dropMsg'),i=document.getElementById('dropEmail'),busy=false;
+function ok(v){return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);}
+/* Runs before the site-wide submit tracker (document, capture), so a submit that fails validation is not counted as a lead. */
+window.addEventListener('submit',function(e){if(e.target!==f)return;if(busy){e.preventDefault();e.stopPropagation();return;}if(!ok((i.value||'').trim())){e.preventDefault();e.stopPropagation();m.textContent='Please enter a valid email address.';i.focus();}},true);
 f.addEventListener('submit',function(e){e.preventDefault();if(busy)return;var v=(i.value||'').trim();
-if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)){m.textContent='Please enter a valid email address.';i.focus();return;}
+if(!ok(v)){m.textContent='Please enter a valid email address.';i.focus();return;}
 busy=true;m.textContent='Adding you to the list.';
 fetch('https://formspree.io/f/xeevzzqd',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify({email:v,list:'Shop drop list',source:location.pathname,_subject:'ShoreList shop drop list signup'})})
 .then(function(r){if(!r.ok)throw new Error('bad');m.textContent="You're on the list. We'll email you when the next drop goes live.";f.reset();})
