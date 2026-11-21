@@ -23,78 +23,10 @@ var CAT_DATA={
   'wellness':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-lotus" xlink:href="#i-lotus"/></svg>',title:'Wellness & Spa',sub:'Yoga on the beach, reiki, massage, spas, and mindful coastal retreats on the NC coast.'}
 };
 
-var OPS={
-  'walking-tours':[
-    {id:'wwt-original',business:'The Original History & Architecture Tour',operator:'Wilmington Walking Tours',live:true,title:'Led by Amanda Leese',
-     desc:'Wilmington 101, from the 1730s to today. Over a relaxed 1.5-mile loop through the Historic District, you\'ll trace the city\'s colonial roots, its industry and its complicated past, and the architecture still lining these streets — Colonial, Greek Revival, Queen Anne, and Italianate. The original tour, and still the best place to start.',
-     price:'$25',priceLabel:'per person',priceCents:2500,
-     tags:['Wilmington Historic District','1.75 Hours','1.5-Mile Loop','All Ages','ShoreList Founding Partner'],
-     note:'Starts at Front Street Inn. Offered daily except Tuesdays. Secure your spot online.',
-     schedule:{days:[0,1,3,4,5,6],slots:['9:00 AM'],rules:[{mdFrom:'03-15',mdUntil:'11-14',slots:['9:00 AM']},{slots:['11:30 AM']}],cap:24}},
-    {id:'wwt-happyhour',business:'Historic Happy Hour Tour',operator:'Wilmington Walking Tours',live:true,title:'Led by Amanda Leese',
-     desc:'A little history, a little libation. This stroll pairs a mini history lesson — from Wilmington\'s founding through the 20th century — with three 25-minute stops at downtown bars. Begin at the Gazebo Bar, wind through The Vine, and finish at the Wine Knot Sky Bar. Drinks are on you.',
-     price:'$30',priceLabel:'per person',priceCents:3000,
-     tags:['Wilmington Historic District','21+','Every Other Friday','Three Bar Stops','ShoreList Founding Partner'],
-     note:'Drinks not included. Every other Friday — times vary seasonally.',
-     schedule:{days:[5],slots:['6:00 PM'],rules:[{until:'2026-09-04',slots:['6:00 PM']},{slots:['5:00 PM']}],cap:16}},
-    {id:'wwt-speakeasy',business:'Speakeasy & Prohibition Walking Tour',operator:'Wilmington Walking Tours',live:true,title:'Led by Amanda Leese',
-     desc:'Step into Wilmington from the 1880s to the 1930s — the days of Barbary Row and the secret watering holes hidden inside today\'s restored downtown buildings. The route starts at The Ivey in the Alley, with stops at Underfront Co. and the Blind Elephant. Prohibition never looked so good.',
-     price:'$30',priceLabel:'per person',priceCents:3000,
-     tags:['Wilmington Historic District','21+','Every Other Friday','Prohibition Era','ShoreList Founding Partner'],
-     note:'Drinks not included. Every other Friday — times vary seasonally.',
-     schedule:{days:[5],slots:['6:00 PM'],rules:[{until:'2026-09-04',slots:['6:00 PM']},{slots:['5:00 PM']}],cap:16}},
-    {id:'wwt-candlelight',business:'Christmas Candlelight Victorians Walk',operator:'Wilmington Walking Tours',live:true,title:'Led by Amanda Leese',
-     desc:'A Wilmington holiday tradition. By the glow of provided candles, this gentle one-mile walk takes in the Historic District\'s decorated Victorian homes and the holiday customs of the era. About 90 minutes of seasonal magic downtown.',
-     price:'$20',priceLabel:'per person',priceCents:2000,
-     tags:['Wilmington Historic District','Seasonal · December','1.5 Hours','Family Friendly','ShoreList Founding Partner'],
-     note:'Starts at Front Street Inn. December only — 4:30 PM or 6:15 PM.',
-     schedule:{days:[1,3,5,6],slots:['4:30 PM','6:15 PM'],months:[11],cap:24}},
-    {id:'cbt-mural',business:'Carolina Beach History & Mural Walk',operator:'Carolina Beach Tours',live:true,title:'Led by Amanda Leese',
-     desc:'Pleasure Island\'s story, told through its art. This easygoing 1.5-mile stroll from Carolina Beach Lake Park weaves coastal history together with the Carolina Beach Mural Project — the surf and shag-culture murals that color the town. Your ticket includes a $5 donation to the Mural Project.',
-     price:'$30',priceLabel:'per person',priceCents:3000,
-     tags:['Carolina Beach','Seasonal · May–Sep','1.5 Hours','Family Friendly','ShoreList Founding Partner'],
-     note:'Starts at CB Lake Park. Includes a $5 Mural Project donation.',
-     schedule:{days:[2],slots:['9:30 AM'],months:[4,5,6,7,8],cap:24}},
-    {id:'cbt-divebar',business:'Carolina Beach History & Dive Bar Tour',operator:'Carolina Beach Tours',live:true,title:'Led by Amanda Leese',
-     desc:'The gritty, colorful side of Pleasure Island. Over about two hours and a mile, you\'ll hit the local spots that built Carolina Beach — starting at The Sea Witch, with stops at the Silver Dollar and the legendary Fat Pelican. History with a little salt.',
-     price:'$30',priceLabel:'per person',priceCents:3000,
-     tags:['Carolina Beach','21+','Seasonal · May–Sep','2 Hours','ShoreList Founding Partner'],
-     note:'Drinks not included. Starts at The Sea Witch.',
-     schedule:{days:[3],slots:['5:30 PM'],months:[4,5,6,7,8],cap:20}}
-  ],
-  'film-tours':[
-    {id:'ron-film',business:'Wilmywood Insider Tours',operator:'Industry Insider & Local Expert',title:'20+ Years in the Wilmington Film & Hospitality Industry',
-     desc:'Wilmington isn\'t just a beach town &#8212; it\'s one of the most filmed cities in America. One Tree Hill. Dawson\'s Creek. Iron Man 3. Safe Haven. A Walk to Remember. Hundreds of productions have called Wilmington home. Your guide has spent over two decades working inside the Wilmington film and hospitality industry and knows the stories behind the sets, the locations, and the legends that most tourists never hear. This isn\'t a bus tour reading from a brochure. This is Wilmywood &#8212; from the inside.',
-     price:'$45',priceLabel:'per person',priceCents:4500,
-     tags:['Downtown Wilmington','90 Minutes','All Ages','Film History'],
-     note:'Secure your spot online. Pay in full at checkout.',
-     schedule:{days:[3,4,5,6,0],slots:['10:00 AM','2:00 PM','6:00 PM']}}
-  ],
-  'ghost-tours':[
-    {id:'sean-ghost',business:'Sean Austin\'s Wilmington Ghost Walk',operator:'Sean Austin',title:'Led by a Netflix &amp; Travel Channel Paranormal Investigator',
-     desc:'This is the most unforgettable ghost walk in Wilmington &mdash; 90 minutes through the haunted heart of one of America&rsquo;s oldest cities, led by Sean Austin: star of Netflix&rsquo;s <em>28 Days Haunted</em>, lead investigator on Travel Channel&rsquo;s <em>Ghost Loop</em> (now on Discovery+), and featured on <em>The Demon Files</em>. Trained demonologist, psychic medium, and published author of <em>Shadow Chaser</em>, Sean brings 16+ years of real paranormal investigation to the city&rsquo;s most haunted streets, antebellum mansions, and burial grounds. Family-friendly, endlessly fascinating, and impossible to forget &mdash; available <strong>exclusively on ShoreList</strong>.',
-     price:'$30',priceLabel:'per person',priceCents:3000,
-     tags:['ShoreList Founding Partner','Netflix','Travel Channel','90 Minutes','All Ages','Exclusive to ShoreList','Downtown Wilmington'],
-     note:'Led by Sean Austin &mdash; nationally recognized paranormal TV investigator. Secure your spot online. Exclusive to ShoreList.',
-     schedule:{days:[4,5,6,0],slots:['7:00 PM','8:30 PM','10:00 PM']}}
-  ],
-  'surf-lessons':[
-    {id:'james-surf',business:'Carolina Beach Surf Co.',operator:'Certified Local Instructor',title:'Professional Surf Instructor &middot; 10+ Years Experience',
-     desc:'Learn to surf at one of the best beginner beaches on the East Coast with a certified local instructor who has spent years teaching in these exact waters. Whether you\'ve never touched a board or want to level up your skills, this lesson is fun, safe, and unforgettable. Every session is tailored to your level. All equipment included &#8212; board, wetsuit, and rash guard.',
-     price:'$100',priceLabel:'per person',priceCents:10000,
-     tags:['Carolina Beach','2 Hours','All Skill Levels','All Gear Included'],
-     note:'Secure your spot online. Pay in full at checkout.',
-     schedule:{days:[1,2,4,5,6,0],slots:['8:00 AM','10:00 AM','12:00 PM','2:00 PM']}}
-  ],
-  'nature-walks':[
-    {id:'nature-walk',business:'Coastal Carolina Nature Walks',operator:'',title:'Coming Soon &mdash; Operator Joining Shorelist',
-     desc:'Discover the wild, beautiful natural world of coastal North Carolina. From ancient cypress swamps and carnivorous plant bogs of Carolina Beach State Park to pristine maritime forests and tidal marshes, these guided walks reveal the incredible biodiversity that makes this coast so special. This experience is launching soon on Shorelist &#8212; tap to be notified when bookings open.',
-     price:'$35',priceLabel:'per person',priceCents:3500,
-     tags:['Carolina Beach State Park','2 Hours','Family Friendly','Coming Soon'],
-     note:'Secure your spot online. Pay in full at checkout.',
-     schedule:{days:[3,6,0],slots:['8:00 AM','10:00 AM','2:00 PM']}}
-  ]
-};
+/* Bookable experiences come from /operators-public.json (built from data/operators.json by
+   tools/build-operators-public.mjs; see data/README.md). Prices are display-only: the server prices every order. */
+var OPS={};
+var CANCEL_H=24; // overwritten from the data file
 
 /* CALENDAR ENGINE */
 var SLOT_CAP=25; // max guests per tour time slot — enforced again server-side
@@ -287,7 +219,7 @@ function renderPage(){
   var ops=OPS[cat]||[];
   var mh='';
   var liveOps=ops.filter(function(o){return o.live;});
-  if(liveOps.length>0){mh+='<div class="hm-badge live">Bookings Open Now</div>';mh+='<div class="hm-badge">'+liveOps.length+' Experience'+(liveOps.length>1?'s':'')+' Live</div>';mh+='<div class="hm-badge">Secure Checkout via Stripe</div>';mh+='<div class="hm-badge">Free Cancellation 24hrs+</div>';}
+  if(liveOps.length>0){mh+='<div class="hm-badge live">Bookings Open Now</div>';mh+='<div class="hm-badge">'+liveOps.length+' Experience'+(liveOps.length>1?'s':'')+' Live</div>';mh+='<div class="hm-badge">Secure Checkout via Stripe</div>';mh+='<div class="hm-badge">Free Cancellation '+CANCEL_H+'hrs+</div>';}
   else if(ops.length>0){mh+='<div class="hm-badge live">'+ops.length+' Operator'+(ops.length>1?'s':'')+' Ready to Book</div>';mh+='<div class="hm-badge">Waitlist Open Now</div>';mh+='<div class="hm-badge">Bookings Opening Soon</div>';mh+='<div class="hm-badge">Secure Checkout via Stripe</div>';}
   else{mh+='<div class="hm-badge">Coming Soon</div>';mh+='<div class="hm-badge">Notify Me</div>';}
   document.getElementById('hmeta').innerHTML=mh;
@@ -297,11 +229,11 @@ function renderPage(){
     h+='<div class="section-label">Book an Experience</div>';
     h+='<h2 class="section-title">Our <em>Local Operators</em></h2>';
     h+= liveOps.length>0
-      ? '<p class="section-sub">Pick your experience, choose a date and time, and book securely online. Checkout is powered by Stripe &#8212; full refund if you cancel 24+ hours before your experience.</p>'
+      ? '<p class="section-sub">Pick your experience, choose a date and time, and book securely online. Checkout is powered by Stripe &#8212; full refund if you cancel '+CANCEL_H+'+ hours before your experience.</p>'
       : '<p class="section-sub">Bookings open soon. Drop your email below or <a href="/waitlist" style="color:var(--coral);font-weight:600;">join the full waitlist</a> to tell us more about your trip.</p>';
     h+='<div class=\"guarantee-bar\">';
     h+='<span class=\"gb-ico\" style=\"color:#1a7a4a;display:inline-flex;align-items:center;\"><svg class=\"ico-sm\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-shield\" xlink:href=\"#i-shield\"/></svg></span>';
-    h+='<div class=\"gb-text\">ShoreList Guarantee &nbsp;&mdash;&nbsp; <span>Operators we know personally. Full refund if you cancel 24+ hours before your experience.</span></div>';
+    h+='<div class=\"gb-text\">ShoreList Guarantee &nbsp;&mdash;&nbsp; <span>Operators we know personally. Full refund if you cancel '+CANCEL_H+'+ hours before your experience.</span></div>';
     h+='</div>';
     h+='<div class=\"booking-steps\">';
     h+='<div class=\"bs-step\"><span class=\"bs-step-n\">1</span><span>Browse</span></div>';
@@ -318,13 +250,13 @@ function renderPage(){
       h+='<p class="op-desc">'+rich(op.desc)+'</p>';
       h+='<div class="op-tags">'; op.tags.forEach(function(t){h+='<span class="op-tag">'+esc(t)+'</span>';}); h+='</div>';
       h+='<div class="op-divider"></div>';
-      h+='<div style="display:flex;flex-wrap:wrap;gap:16px;font-size:0.78rem;color:#3a5a61;font-weight:600;margin:0 0 14px;"><span>&#10003; Free cancellation 24hrs</span><span>&#10003; Local Wilmington operator</span><span>&#10003; Secure checkout</span></div>';
+      h+='<div style="display:flex;flex-wrap:wrap;gap:16px;font-size:0.78rem;color:#3a5a61;font-weight:600;margin:0 0 14px;"><span>&#10003; Free cancellation '+CANCEL_H+'hrs</span><span>&#10003; Local Wilmington operator</span><span>&#10003; Secure checkout</span></div>';
       if(op.live){
         h+='<div class="op-book-row"><button type="button" class="btn-sub" style="width:100%;font-size:1rem;" id="ob-'+oid+'" aria-expanded="false" aria-controls="bf-'+oid+'" onclick="toggleBook(\''+oid+'\')">Book This Experience &#8212; '+esc(op.price)+' <span style="opacity:0.75;font-weight:600;">'+esc(op.priceLabel)+'</span></button></div>';
       } else {
         h+='<div class="op-book-row"><div class="op-book-note-pre">Bookings open <strong>soon</strong> &#8212; join the early list to lock your spot before we open to the public.</div></div>';
       }
-      h+='<div style="font-size:0.75rem;color:rgba(44,74,82,0.45);margin-top:8px;line-height:1.6;">By booking through ShoreList you acknowledge activities involve inherent risks and agree to our <a href="/legal#risk" style="color:var(--teal2);">Terms &amp; Assumption of Risk</a>. Full refunds available with 24+ hours cancellation notice. Operators are independent contractors, not employees of ShoreList.</div>';
+      h+='<div style="font-size:0.75rem;color:rgba(44,74,82,0.45);margin-top:8px;line-height:1.6;">By booking through ShoreList you acknowledge activities involve inherent risks and agree to our <a href="/legal#risk" style="color:var(--teal2);">Terms &amp; Assumption of Risk</a>. Full refunds available with '+CANCEL_H+'+ hours cancellation notice. Operators are independent contractors, not employees of ShoreList.</div>';
       h+='</div>'; // end op-card-body
       if(op.live){
         h+='<div class="book-form-wrap" id="bf-'+oid+'">';
@@ -349,7 +281,7 @@ function renderPage(){
         h+='</select></div>';
         h+='</div>';
         h+='<div class="bk-row full"><div class="bk-field"><label class="bk-label" for="bo-'+oid+'">Notes for Your Guide (optional)</label><textarea class="bk-input" id="bo-'+oid+'" placeholder="Anything we should know? Mobility needs, celebrations, questions&hellip;"></textarea></div></div>';
-        h+='<div class="dep-row"><div><div class="dep-lbl">Total &#8212; <span id="bqty-'+oid+'">1 guest</span></div><div class="dep-note">Includes 7% NC sales tax &middot; Paid securely via Stripe &middot; Full refund if you cancel 24+ hours before</div></div><div class="dep-amt" id="btot-'+oid+'">'+esc(op.price)+'</div></div>';
+        h+='<div class="dep-row"><div><div class="dep-lbl">Total &#8212; <span id="bqty-'+oid+'">1 guest</span></div><div class="dep-note">Includes 7% NC sales tax &middot; Paid securely via Stripe &middot; Full refund if you cancel '+CANCEL_H+'+ hours before</div></div><div class="dep-amt" id="btot-'+oid+'">'+esc(op.price)+'</div></div>';
         h+='<div class="bk-err" id="berr-'+oid+'" role="alert"></div>';
         h+='<div class="bk-acts"><button type="button" class="btn-sub" id="bb-'+oid+'" onclick="doBook(\''+oid+'\')">Confirm &amp; Pay '+esc(op.price)+' &#8594;</button></div>';
         h+='</div>';
@@ -400,7 +332,7 @@ function toggleBook(id){
   }
 }
 function fmtUsd(c){return '$'+(c%100===0?(c/100):(c/100).toFixed(2));}
-var TAX_RATE=0.07; // NC sales tax: 4.75% state + 2.25% New Hanover County
+var TAX_RATE=0.07; // overwritten from the data file (NC: 4.75% state + 2.25% New Hanover County)
 function updTotal(id){
   var op=getOp(id); if(!op)return;
   var sel=document.getElementById('bs-'+id);
@@ -432,7 +364,7 @@ function doBook(id){
   if(btn){btn.disabled=true;btn.textContent='Opening secure checkout\u2026';}
   fetch('/.netlify/functions/create-checkout',{
     method:'POST',headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({operatorId:id,operatorName:op.operator,category:getCat(),categoryLabel:op.business,guestName:name,guestEmail:email,guestPhone:phone,date:date,timeSlot:slot,partySize:size,notes:notes,priceInCents:op.priceCents})
+    body:JSON.stringify({operatorId:id,operatorName:op.operator,category:getCat(),categoryLabel:op.business,guestName:name,guestEmail:email,guestPhone:phone,date:date,timeSlot:slot,partySize:size,notes:notes,priceInCents:op.priceCents,attrib:window.ShoreAttrib?window.ShoreAttrib.get():undefined})
   }).then(function(r){return r.json().then(function(d){return {ok:r.ok,d:d};});})
   .then(function(res){
     if(res.ok&&res.d&&res.d.url){window.location.href=res.d.url;}
@@ -463,7 +395,19 @@ function doNotify(cat,title){
   if(done)done.style.display='block';
 }
 
-document.addEventListener('DOMContentLoaded',renderPage);
+var OPS_FAILED=false;
+var OPS_READY=fetch('/operators-public.json',{credentials:'omit'}).then(function(r){if(!r.ok)throw new Error('http '+r.status);return r.json();}).then(function(d){
+  OPS=d.categories||{};
+  if(d.cancellationHours>=0)CANCEL_H=d.cancellationHours;
+  if(d.taxRate>=0&&d.taxRate<1)TAX_RATE=d.taxRate;
+}).catch(function(e){OPS_FAILED=true;if(window.console)console.warn('operators-public.json failed',e);});
+function startPage(){
+  OPS_READY.then(function(){
+    renderPage();
+    if(OPS_FAILED){var mc=document.getElementById('mc');if(mc)mc.insertAdjacentHTML('afterbegin','<p class="section-sub" role="alert">We could not load the experiences just now. Please refresh the page to try again.</p>');}
+  });
+}
+if(document.readyState!=='loading')startPage();else document.addEventListener('DOMContentLoaded',startPage);
 /* Ghost Tours cross-promo: the haunted museum */
 (function(){
   function injectMuseumPromo(n){

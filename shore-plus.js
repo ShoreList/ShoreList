@@ -6,6 +6,9 @@
   if (window.__shorePlus) return;
   window.__shorePlus = true;
 
+  /* first-touch booking-source capture on every page (pages that start checkout load attrib.js themselves) */
+  if (!window.ShoreAttrib) { try { var at = document.createElement('script'); at.src = '/attrib.js'; at.async = true; document.head.appendChild(at); } catch (e) {} }
+
   var INDEX = null, loading = null;
   var deferredInstall = null;
 

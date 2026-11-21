@@ -1,7 +1,7 @@
 // ShoreList — Stripe Checkout Function
 // No npm dependencies — uses native fetch (Node 18+, Netlify default)
 
-const { corsHeaders, getTour, checkDateSlot, listCompleteSessions, capacityWindowStart, reserveSlot, releaseSlot } = require('./_shared.js');
+const { corsHeaders, attribMetadata, CITY, getTour, checkDateSlot, listCompleteSessions, capacityWindowStart, reserveSlot, releaseSlot } = require('./_shared.js');
 
 // Free text typed by the guest: one line, no control characters, bounded length.
 const clean = (v, max) => String(v == null ? '' : v).replace(/[\u0000-\u001f\u007f]+/g, ' ').trim().slice(0, max);
@@ -54,36 +54,16 @@ exports.handler = async (event) => {
   const siteUrl = process.env.URL || 'https://shorelist.net';
   const yearMonth = date.substring(0, 7);
 
-  // Server-side price list — never trust the amount sent by the browser
-  const PRICES = {
-    'wwt-original':    2500,
-    'wwt-happyhour':   3000,
-    'wwt-speakeasy':   3000,
-    'wwt-candlelight': 2000,
-    'cbt-mural':       3000,
-    'cbt-divebar':     3000,
-    'ron-film':        4500,
-    'sean-ghost':      3000,
-    'james-surf':      10000,
-    'nature-walk':     3500,
-  };
-  const unitAmount = PRICES[operatorId];
+  // Price comes from the server table (data/operators.json) — never trust the amount sent by the browser
+  const unitAmount = tour.priceCents;
   if (!unitAmount) {
     return bad('Unknown experience — please refresh and try again.');
   }
   const qty = Number(data.partySize);
   if (!Number.isInteger(qty) || qty < 1 || qty > 12) return bad('Please choose a party size between 1 and 12.');
 
-  // Capacity check — max guests per tour time slot (internal limits, not published)
-  const CAPS = {
-    'wwt-original':    24,
-    'wwt-happyhour':   16,
-    'wwt-speakeasy':   16,
-    'wwt-candlelight': 24,
-    'cbt-mural':       24,
-    'cbt-divebar':     20,
-  };
-  const SLOT_CAP = CAPS[operatorId] || 25;
+  // Capacity check — max guests per tour time slot (internal limit from data/operators.json, default for the city)
+  const SLOT_CAP = tour.capacity;
   // Count paid guests already booked on this tour, date and time. Fails CLOSED:
   // if Stripe cannot be read we refuse rather than risk overselling the slot.
   let hold = null; // slot reservation (Netlify Blobs); null when Blobs is unavailable
@@ -115,15 +95,15 @@ exports.handler = async (event) => {
   p.set('payment_method_types[0]', 'card');
   p.set('line_items[0][price_data][currency]', 'usd');
   p.set('line_items[0][price_data][product_data][name]', `${tour.label} · ${tour.operator || 'ShoreList'}`);
-  p.set('line_items[0][price_data][product_data][description]', `${date} at ${timeSlot} — Free cancellation 24+ hrs before`);
+  p.set('line_items[0][price_data][product_data][description]', `${date} at ${timeSlot} — Free cancellation ${CITY.defaults.cancellationHours}+ hrs before`);
   p.set('line_items[0][price_data][unit_amount]', String(unitAmount));
   p.set('line_items[0][quantity]', String(qty));
 
-  // NC sales tax — 7% (4.75% state + 2.25% New Hanover County), sourced to event location
-  const TAX_RATE = 0.07;
+  // Sales tax rate and label come from the city data (NC: 4.75% state + 2.25% New Hanover County = 7%, sourced to event location)
+  const TAX_RATE = CITY.defaults.tax.rate;
   const taxCents = Math.round(unitAmount * qty * TAX_RATE);
   p.set('line_items[1][price_data][currency]', 'usd');
-  p.set('line_items[1][price_data][product_data][name]', 'NC Sales Tax (7%)');
+  p.set('line_items[1][price_data][product_data][name]', CITY.defaults.tax.label);
   p.set('line_items[1][price_data][unit_amount]', String(taxCents));
   p.set('line_items[1][quantity]', '1');
   p.set('mode', 'payment');
@@ -151,6 +131,7 @@ exports.handler = async (event) => {
     dateSlot:      dateSlot,
   };
   if (hold) meta.holdId = hold.holdId;
+  Object.assign(meta, attribMetadata(data.attrib)); // booking source: allowlisted, capped, sanitized; never overrides the fields above
 
   Object.entries(meta).forEach(([k, v]) => p.set(`metadata[${k}]`, v));
 

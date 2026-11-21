@@ -180,34 +180,51 @@ async function releaseSlot(event, operatorId, dateSlot, holdId) {
   try { await blobUpdate(store, holdKey(operatorId, dateSlot), (cur) => { let l = []; try { l = JSON.parse(cur || '[]'); } catch (e) {} return JSON.stringify(l.filter((h) => h && h.id !== holdId)); }); } catch (e) { console.error('releaseSlot:', e.message); }
 }
 
-// Server-side copy of the bookable tours (same ids, names and schedules as OPS
-// in category-app.js). Names shown at checkout, on receipts and in emails come
-// from here, never from the browser. Keep in step with category-app.js.
+// ---------- Bookable tours: loaded from data/operators.json (the one source of truth) ----------
+// Names shown at checkout, on receipts and in emails, prices, capacities and schedules
+// come from there, never from the browser. The browser gets a public subset,
+// operators-public.json, built by tools/build-operators-public.mjs. See data/README.md.
 // days: 0 = Sunday. months: 0 = January. rules pick the slots for a given date.
-const TOURS = {
-  'wwt-original':    { category: 'walking-tours', label: 'The Original History & Architecture Tour', operator: 'Wilmington Walking Tours', live: true,
-                       days: [0, 1, 3, 4, 5, 6], slots: ['9:00 AM'], rules: [{ mdFrom: '03-15', mdUntil: '11-14', slots: ['9:00 AM'] }, { slots: ['11:30 AM'] }] },
-  'wwt-happyhour':   { category: 'walking-tours', label: 'Historic Happy Hour Tour', operator: 'Wilmington Walking Tours', live: true,
-                       days: [5], slots: ['6:00 PM'], rules: [{ until: '2026-09-04', slots: ['6:00 PM'] }, { slots: ['5:00 PM'] }] },
-  'wwt-speakeasy':   { category: 'walking-tours', label: 'Speakeasy & Prohibition Walking Tour', operator: 'Wilmington Walking Tours', live: true,
-                       days: [5], slots: ['6:00 PM'], rules: [{ until: '2026-09-04', slots: ['6:00 PM'] }, { slots: ['5:00 PM'] }] },
-  'wwt-candlelight': { category: 'walking-tours', label: 'Christmas Candlelight Victorians Walk', operator: 'Wilmington Walking Tours', live: true,
-                       days: [1, 3, 5, 6], slots: ['4:30 PM', '6:15 PM'], months: [11] },
-  'cbt-mural':       { category: 'walking-tours', label: 'Carolina Beach History & Mural Walk', operator: 'Carolina Beach Tours', live: true,
-                       days: [2], slots: ['9:30 AM'], months: [4, 5, 6, 7, 8] },
-  'cbt-divebar':     { category: 'walking-tours', label: 'Carolina Beach History & Dive Bar Tour', operator: 'Carolina Beach Tours', live: true,
-                       days: [3], slots: ['5:30 PM'], months: [4, 5, 6, 7, 8] },
-  // Not live on the site yet: checkout refuses these until live is true here too.
-  'ron-film':        { category: 'film-tours', label: 'Wilmywood Insider Tours', operator: 'Industry Insider & Local Expert', live: false,
-                       days: [3, 4, 5, 6, 0], slots: ['10:00 AM', '2:00 PM', '6:00 PM'] },
-  'sean-ghost':      { category: 'ghost-tours', label: "Sean Austin's Wilmington Ghost Walk", operator: 'Sean Austin', live: false,
-                       days: [4, 5, 6, 0], slots: ['7:00 PM', '8:30 PM', '10:00 PM'] },
-  'james-surf':      { category: 'surf-lessons', label: 'Carolina Beach Surf Co.', operator: 'Certified Local Instructor', live: false,
-                       days: [1, 2, 4, 5, 6, 0], slots: ['8:00 AM', '10:00 AM', '12:00 PM', '2:00 PM'] },
-  'nature-walk':     { category: 'nature-walks', label: 'Coastal Carolina Nature Walks', operator: '', live: false,
-                       days: [3, 6, 0], slots: ['8:00 AM', '10:00 AM', '2:00 PM'] },
-};
-function getTour(id) { return typeof id === 'string' && Object.prototype.hasOwnProperty.call(TOURS, id) ? TOURS[id] : null; }
+const fs = require('fs');
+const path = require('path');
+function readOperatorData() {
+  // netlify.toml bundles data/operators.json (included_files); try the likely layouts.
+  const dirs = [path.join(__dirname, '..', '..', 'data'), path.join(__dirname, 'data'), path.join(process.env.LAMBDA_TASK_ROOT || '/var/task', 'data'), path.join(process.cwd(), 'data')];
+  for (const d of dirs) { try { return JSON.parse(fs.readFileSync(path.join(d, 'operators.json'), 'utf8')); } catch (e) { /* try the next one */ } }
+  try { return require('../../data/operators.json'); } catch (e) { /* static require lets the bundler inline it if the file layout differs */ }
+  throw new Error('data/operators.json not found (check included_files in netlify.toml)');
+}
+const isInt = (n, lo, hi) => Number.isInteger(n) && n >= lo && n <= hi;
+function buildCity(data) {
+  const fail = (m) => { throw new Error('operators.json: ' + m); };
+  if (!data || data.schemaVersion !== 1 || !Array.isArray(data.operators) || !Array.isArray(data.tours) || !data.defaults) fail('bad shape');
+  const d = data.defaults;
+  if (!isInt(d.capacity, 1, 1000) || !isInt(d.cancellationHours, 0, 720) || !d.tax || !(d.tax.rate >= 0 && d.tax.rate < 1) || typeof d.tax.label !== 'string') fail('bad defaults');
+  const ops = new Map();
+  for (const o of data.operators) { if (!o || typeof o.id !== 'string' || typeof o.name !== 'string' || ops.has(o.id)) fail('bad operator ' + (o && o.id)); ops.set(o.id, o); }
+  const tours = {};
+  for (const t of data.tours) {
+    if (!t || typeof t.id !== 'string' || Object.prototype.hasOwnProperty.call(tours, t.id)) fail('bad or duplicate tour ' + (t && t.id));
+    const op = ops.get(t.operatorId), sch = t.schedule;
+    if (!op) fail(t.id + ': unknown operator');
+    if (typeof t.category !== 'string' || typeof t.name !== 'string' || typeof t.live !== 'boolean') fail(t.id + ': bad fields');
+    if (!isInt(t.priceCents, 1, 10000000)) fail(t.id + ': bad price');
+    if (t.capacity != null && !isInt(t.capacity, 1, 1000)) fail(t.id + ': bad capacity');
+    const slotsOk = (a) => Array.isArray(a) && a.length > 0 && a.every((x) => typeof x === 'string' && x);
+    if (!sch || !Array.isArray(sch.days) || !sch.days.every((x) => isInt(x, 0, 6)) || !slotsOk(sch.slots)) fail(t.id + ': bad schedule');
+    if (sch.months && !(Array.isArray(sch.months) && sch.months.every((x) => isInt(x, 0, 11)))) fail(t.id + ': bad months');
+    if (sch.rules && !(Array.isArray(sch.rules) && sch.rules.every((r) => r && slotsOk(r.slots)))) fail(t.id + ': bad rules');
+    const tour = { category: t.category, label: t.name, operator: op.name, live: t.live, days: sch.days, slots: sch.slots, priceCents: t.priceCents, capacity: t.capacity || d.capacity };
+    if (sch.rules) tour.rules = sch.rules;
+    if (sch.months) tour.months = sch.months;
+    tours[t.id] = tour;
+  }
+  return { id: String(data.city), name: String(data.name || ''), timezone: String(data.timezone || 'America/New_York'), defaults: d, tours };
+}
+// Loaded on first use, so functions that never touch tours (guide downloads) do not need the file.
+let cityCache = null;
+function city() { return cityCache || (cityCache = buildCity(readOperatorData())); }
+function getTour(id) { const T = city().tours; return typeof id === 'string' && Object.prototype.hasOwnProperty.call(T, id) ? T[id] : null; }
 
 // Same rule order as getSlots() in category-app.js.
 function slotsFor(tour, dateStr) {
@@ -263,6 +280,37 @@ function getGuideProduct(id) {
   return g ? { title: g.title, cents: g.cents, ids: [id] } : null;
 }
 
+// ---------- Booking-source attribution (first touch, captured by attrib.js) ----------
+// Allowlist + length caps + sanitize. No personal data: campaign tags, a landing path and a referrer host only.
+// Stored as Stripe metadata attr_<field>; anything else the browser sends is dropped.
+const ATTRIB_FIELDS = { utm_source: 60, utm_medium: 60, utm_campaign: 80, ref: 60, landing: 100, referrer_host: 80 };
+function cleanAttrib(raw) {
+  const out = {};
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return out;
+  for (const [k, max] of Object.entries(ATTRIB_FIELDS)) {
+    const v = raw[k];
+    if (typeof v !== 'string') continue;
+    const c = v.toLowerCase().replace(/[^a-z0-9._~:\/ +-]+/g, '').replace(/\s+/g, ' ').trim().slice(0, max);
+    if (c) out[k] = c;
+  }
+  return out;
+}
+// { attr_utm_source: '...', ... } ready to merge into Stripe metadata.
+function attribMetadata(raw) {
+  const m = {}, a = cleanAttrib(raw);
+  for (const k of Object.keys(a)) m['attr_' + k] = a[k];
+  return m;
+}
+// One human line from a session's metadata, for the owner email: "google / organic / spring · ref x · landing /path · via host".
+function attribSummary(meta) {
+  const g = (k) => (meta && typeof meta['attr_' + k] === 'string' ? meta['attr_' + k] : '');
+  const parts = [[g('utm_source'), g('utm_medium'), g('utm_campaign')].filter(Boolean).join(' / ')];
+  if (g('ref')) parts.push('ref ' + g('ref'));
+  if (g('landing')) parts.push('landing ' + g('landing'));
+  if (g('referrer_host')) parts.push('via ' + g('referrer_host'));
+  return parts.filter(Boolean).join(' · ');
+}
+
 const SESSION_ID_RE = /^cs_(test|live)_[A-Za-z0-9]{8,250}$/;
 // Asks Stripe (never the browser) whether this Checkout Session is PAID and is a
 // guide order. Returns { ok:true, ids, session } with ids = guide ids the buyer
@@ -307,10 +355,11 @@ function capacityWindowStart() { return Date.now() / 1000 - (BOOKING_HORIZON_DAY
 
 module.exports = {
   ORIGINS, allowedOrigins, header, requestOrigin, originAllowed, corsHeaders, escapeHtml, clientIp,
-  rateLimit, rateRecord, rateReset, TOURS, getTour, slotsFor, checkDateSlot, todayNY, addDays,
+  rateLimit, rateRecord, rateReset, get CITY() { return city(); }, get TOURS() { return city().tours; }, getTour, slotsFor, checkDateSlot, todayNY, addDays,
   BOOKING_HORIZON_DAYS, listCompleteSessions, capacityWindowStart,
   getBlobStore, setBlobStoreFactory, blobUpdate, rateLimitDurable, aiDailyCap, aiDailyCheck, AI_CAP_BODY,
   reserveSlot, releaseSlot,
+  cleanAttrib, attribMetadata, attribSummary,
   GUIDES, GUIDE_BUNDLE, getGuide, getGuideProduct, SESSION_ID_RE, paidGuideSession,
 };
 
