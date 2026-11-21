@@ -162,6 +162,97 @@
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-ilm-crewneck_1920x.webp"
   },
   {
+   "id": "wrightsville-beach-varsity-hoodie",
+   "collection": "heritage",
+   "name": "Wrightsville Beach Varsity Hoodie",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-varsity-hoodie",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-varsity-hoodie_1000x.webp",
+   "alt": "Man on the beach at sunrise with a surfboard wearing the navy Wrightsville Beach varsity hoodie",
+   "meta": "WRIGHTSVILLE arched over BEACH in cream varsity lettering on a heavyweight garment-dyed hoodie, with 1899, the year the town was incorporated.",
+   "cta": "Choose colour and size",
+   "price": 92,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2208554389027895019_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-varsity-hoodie_1920x.webp"
+  },
+  {
+   "id": "carolina-beach-varsity-hoodie",
+   "collection": "heritage",
+   "name": "Carolina Beach Varsity Hoodie",
+   "url": "https://shorelist.myshopify.com/products/carolina-beach-varsity-hoodie",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-varsity-hoodie_1000x.webp",
+   "alt": "Woman leaning on a boardwalk railing at golden hour wearing the navy Carolina Beach varsity hoodie",
+   "meta": "CAROLINA arched over BEACH in cream varsity lettering on a heavyweight garment-dyed hoodie, with 1925, the year the town was incorporated.",
+   "cta": "Choose colour and size",
+   "price": 92,
+   "scenes": [
+    "boardwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15832602661171854122_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-varsity-hoodie_1920x.webp"
+  },
+  {
+   "id": "kure-beach-varsity-hoodie",
+   "collection": "heritage",
+   "name": "Kure Beach Varsity Hoodie",
+   "url": "https://shorelist.myshopify.com/products/kure-beach-varsity-hoodie",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-varsity-hoodie_1000x.webp",
+   "alt": "Man on a truck tailgate by the dunes with a coffee wearing the navy Kure Beach varsity hoodie",
+   "meta": "KURE BEACH arched over N.C. in cream varsity lettering on a heavyweight garment-dyed hoodie, with Pleasure Island and 1947.",
+   "cta": "Choose colour and size",
+   "price": 92,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13251640658457528931_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-varsity-hoodie_1920x.webp"
+  },
+  {
+   "id": "wilmington-varsity-hoodie",
+   "collection": "heritage",
+   "name": "Wilmington Varsity Hoodie",
+   "url": "https://shorelist.myshopify.com/products/wilmington-varsity-hoodie",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wilmington-varsity-hoodie_1000x.webp",
+   "alt": "Woman walking a brick riverfront street at dusk wearing the navy Wilmington varsity hoodie",
+   "meta": "WILMINGTON arched over N.C. in cream varsity lettering on a heavyweight garment-dyed hoodie, with The Port City and 1739.",
+   "cta": "Choose colour and size",
+   "price": 92,
+   "scenes": [
+    "riverwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11153637541025147618_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wilmington-varsity-hoodie_1920x.webp"
+  },
+  {
+   "id": "ilm-hoodie",
+   "collection": "heritage",
+   "name": "ILM Hoodie",
+   "url": "https://shorelist.myshopify.com/products/ilm-hoodie",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-ilm-hoodie_1000x.webp",
+   "alt": "Man with a leather weekender outside a small airport wearing the navy ILM hoodie",
+   "meta": "The airport code every local knows, set in a fine serif on a heavyweight garment-dyed hoodie.",
+   "cta": "Choose colour and size",
+   "price": 92,
+   "scenes": [
+    "riverwalk",
+    "harbor-night"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6346132088776174040_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-ilm-hoodie_1920x.webp"
+  },
+  {
    "id": "wrightsville-beach-pier-embroidered-crewneck",
    "collection": "stitched",
    "name": "Wrightsville Beach Pier Embroidered Crewneck",
