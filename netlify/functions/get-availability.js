@@ -1,13 +1,11 @@
 // ShoreList — Get Availability
-// Queries Stripe Checkout Sessions to find booked slots for a given operator + month
+// Lists paid Stripe Checkout Sessions to find booked slots for a given operator + month
 // This prevents double bookings without any external database
 
+const { corsHeaders, getTour, listCompleteSessions, capacityWindowStart } = require('./_shared.js');
+
 exports.handler = async (event) => {
-  const headers = {
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
-    'Cache-Control': 'no-cache, no-store',
-  };
+  const headers = corsHeaders(event, { 'Cache-Control': 'no-cache, no-store' });
 
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 200, headers, body: '' };
@@ -25,22 +23,17 @@ exports.handler = async (event) => {
     return { statusCode: 400, headers, body: JSON.stringify({ error: 'Missing required params: operatorId, year, month' }) };
   }
 
-  const yearMonth = `${year}-${String(month).padStart(2, '0')}`;
+  // Only known tours and real months: nothing from the query string reaches Stripe.
+  const y = Number(year), m = Number(month);
+  if (!getTour(operatorId) || !Number.isInteger(y) || y < 2024 || y > 2100 || !Number.isInteger(m) || m < 1 || m > 12) {
+    return { statusCode: 400, headers, body: JSON.stringify({ error: 'Invalid params' }) };
+  }
+  const yearMonth = `${y}-${String(m).padStart(2, '0')}`;
 
   try {
-    const query = `metadata["operatorId"]:"${operatorId}" AND metadata["yearMonth"]:"${yearMonth}"`;
-    const searchUrl = `https://api.stripe.com/v1/checkout/sessions/search?query=${encodeURIComponent(query)}&limit=100`;
-
-    const res = await fetch(searchUrl, {
-      headers: { 'Authorization': `Bearer ${STRIPE_KEY}` },
-    });
-
-    const data = await res.json();
-
-    if (!res.ok) {
-      console.log('Stripe search unavailable:', data.error?.message);
-      return { statusCode: 200, headers, body: JSON.stringify({ booked: [] }) };
-    }
+    // Display only: on error the calendar shows everything open and create-checkout still enforces capacity.
+    const sessions = await listCompleteSessions(STRIPE_KEY, capacityWindowStart());
+    const data = { data: sessions.filter(s => s.metadata && s.metadata.operatorId === operatorId && s.metadata.yearMonth === yearMonth) };
 
     // Aggregate total guests per date + time slot (capacity is enforced, not published)
     const tally = {};

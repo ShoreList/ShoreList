@@ -179,6 +179,7 @@ function doLogin(){
     .then(function(r){return r.json();})
     .then(function(data){
       if(data.error&&data.error==='Unauthorized'){err.style.display='block';err.textContent='Incorrect password. Please try again.';PASS='';return;}
+      if(data.error&&/^Too many attempts/.test(data.error)){err.style.display='block';err.textContent='Too many attempts. Please wait a few minutes and try again.';PASS='';return;}
       if(data.error){throw new Error(data.error);}
       showDash(data);
     })

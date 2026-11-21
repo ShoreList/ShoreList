@@ -2,6 +2,13 @@
 // Password-protected endpoint that returns all bookings from Stripe
 
 const crypto = require('crypto');
+const { clientIp, rateLimit, rateRecord, rateReset, listCompleteSessions } = require('./_shared.js');
+
+// Wrong-password limit: 5 misses per IP in 15 minutes, then that IP waits. Counted in this
+// instance's memory (best effort, see _shared.js). It expires by itself, so the owner is
+// never locked out for good, and a correct login clears it.
+const FAILS = { max: 5, windowMs: 15 * 60000 };
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 function safeEqual(a, b) {
   const ha = crypto.createHash('sha256').update(String(a || '')).digest();
@@ -31,20 +38,24 @@ exports.handler = async (event) => {
 
   // Password is sent in a header, never in the URL (URLs end up in logs and history).
   const sent = (event.headers && (event.headers['x-dashboard-key'] || event.headers['X-Dashboard-Key'])) || '';
+  const failKey = 'dash-fail:' + clientIp(event);
+  const gate = rateLimit(failKey, FAILS.max, FAILS.windowMs, { peek: true });
+  if (!gate.ok) {
+    return { statusCode: 429, headers: { ...headers, 'Retry-After': String(gate.retryAfter) }, body: JSON.stringify({ error: 'Too many attempts. Please wait a few minutes and try again.' }) };
+  }
   if (!safeEqual(sent, DASH_PASS)) {
+    rateRecord(failKey, FAILS.windowMs);
+    console.warn('get-bookings: failed dashboard login');
+    await sleep(600); // slows guessing; one miss by the owner costs under a second
     return { statusCode: 401, headers, body: JSON.stringify({ error: 'Unauthorized' }) };
   }
+  rateReset(failKey);
 
   try {
-    const res = await fetch(
-      'https://api.stripe.com/v1/checkout/sessions?limit=100&status=complete',
-      { headers: { 'Authorization': `Bearer ${STRIPE_KEY}` } }
-    );
+    // Every page of completed sessions, so totals stay right past 100 bookings.
+    const sessions = await listCompleteSessions(STRIPE_KEY);
 
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error?.message || 'Stripe error');
-
-    const bookings = (data.data || []).map(s => ({
+    const bookings = sessions.map(s => ({
       id:          s.id,
       created:     s.created,
       amount:      s.amount_total,
@@ -86,7 +97,7 @@ exports.handler = async (event) => {
     return {
       statusCode: 500,
       headers,
-      body: JSON.stringify({ error: err.message }),
+      body: JSON.stringify({ error: 'Could not load bookings' }),
     };
   }
 };
