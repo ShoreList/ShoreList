@@ -271,6 +271,8 @@ const GUIDES = {
   'wilmington-with-kids':     { title: 'Wilmington with Kids', cents: 1400, file: 'wilmington-with-kids.pdf', pages: 17 },
   'winter-in-wilmington':     { title: 'Winter in Wilmington', cents: 1400, file: 'winter-in-wilmington.pdf', pages: 16 },
   'wilmington-holidays-2026': { title: "Wilmington Holidays 2026", cents: 1400, file: 'wilmington-holidays-2026.pdf', pages: 17 },
+  'dog-friendly-wilmington': { title: "Dog-Friendly Wilmington", cents: 1400, file: 'dog-friendly-wilmington.pdf', pages: 21 },
+  'free-and-low-cost-wilmington': { title: "Free & Low-Cost Wilmington", cents: 1400, file: 'free-and-low-cost-wilmington.pdf', pages: 17 },
 };
 // The bundle is the original four guides only; later guides are sold singly.
 const BUNDLE_IDS = ['beach-day-field-guide', 'wilmington-in-three-days', 'wilmington-with-kids', 'winter-in-wilmington'];
