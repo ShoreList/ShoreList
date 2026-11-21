@@ -704,7 +704,7 @@ function renderMuseumsCategory(){
   container.innerHTML=h;
 }
 function renderPage(){
-  var cat=getCat(); var d=CAT_DATA[cat]; if(!d){window.location.href='/';return;}
+  var cat=getCat(); var d=CAT_DATA[cat]; if(!d){window.location.replace('/#explore');return;}
   document.title=d.title+' &#8212; ShoreList Wilmington, NC';
   document.getElementById('hico').innerHTML=d.icon;
   document.getElementById('htitle').textContent=d.title;
