@@ -28,6 +28,7 @@
   }
   fetch('/events-data.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (data) {
     var today = ymd(new Date()), all = (data.events || []).filter(function (e) { return e.end >= today; });
+    all.sort(function (x, y) { var a = x.start < today ? today : x.start, b = y.start < today ? today : y.start; if (a !== b) return a < b ? -1 : 1; var mx = x.end !== x.start, my = y.end !== y.start; return mx === my ? 0 : (mx ? 1 : -1); });
     if (!all.length) return;
     var st = d.createElement('style'); st.textContent = CSS; d.head.appendChild(st);
     var areas = []; all.forEach(function (e) { if (areas.indexOf(e.area) < 0) areas.push(e.area); });
@@ -42,7 +43,9 @@
     function card(e) {
       var s = parse(e.start < today ? today : e.start), multi = e.end !== e.start;
       var when = e.recurring ? 'Every ' + e.recurring.replace(/s$/, '') : (multi ? MON[parse(e.start).getMonth()] + ' ' + parse(e.start).getDate() + ' to ' + MON[parse(e.end).getMonth()] + ' ' + parse(e.end).getDate() : DOW[s.getDay()] + ', ' + MON[s.getMonth()] + ' ' + s.getDate());
-      return '<article class="ef-card"><div class="ef-date" aria-hidden="true"><span>' + MON[s.getMonth()] + '</span><b>' + s.getDate() + '</b><span>' + DOW[s.getDay()] + '</span></div><div><h3>' + esc(e.title) + '</h3><p class="ef-meta"><span class="ef-tag">' + esc(e.cat) + '</span>' + esc(when) + '<br>' + esc(e.venue) + '</p><div class="ef-act"><a href="' + esc(e.url) + '" target="_blank" rel="noopener" data-id="' + esc(e.id) + '">Details</a><button type="button" data-ics="' + esc(e.id) + '">Add to calendar</button></div></div></article>';
+      if (e.time && !multi) when += ', ' + e.time;
+      var extra = (e.sched ? '<br>' + esc(e.sched) : '') + (e.tickets ? '<br><em>' + esc(e.tickets) + '</em>' : '');
+      return '<article class="ef-card"><div class="ef-date" aria-hidden="true"><span>' + MON[s.getMonth()] + '</span><b>' + s.getDate() + '</b><span>' + DOW[s.getDay()] + '</span></div><div><h3>' + esc(e.title) + '</h3><p class="ef-meta"><span class="ef-tag">' + esc(e.cat) + '</span>' + esc(when) + '<br>' + esc(e.venue) + extra + '</p><div class="ef-act"><a href="' + esc(e.url) + '" target="_blank" rel="noopener" data-id="' + esc(e.id) + '">Details</a><button type="button" data-ics="' + esc(e.id) + '">Add to calendar</button></div></div></article>';
     }
     function render() {
       var list = all.filter(match);
@@ -57,6 +60,6 @@
       var b = ev.target.closest && ev.target.closest('[data-ics]'); if (b) { var e = all.filter(function (x) { return x.id === b.getAttribute('data-ics'); })[0]; if (e) { download(e); track('events_add_calendar', { id: e.id }); } return; }
       var a = ev.target.closest && ev.target.closest('.ef-act a'); if (a) track('events_click', { id: a.getAttribute('data-id') });
     });
-    try { var ld = all.slice(0, 20).map(function (e) { return { '@type': 'Event', name: e.title, startDate: e.start, endDate: e.end, eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode', location: { '@type': 'Place', name: e.venue, address: { '@type': 'PostalAddress', addressLocality: 'Wilmington', addressRegion: 'NC', addressCountry: 'US' } }, url: e.url }; }); var s = d.createElement('script'); s.type = 'application/ld+json'; s.textContent = JSON.stringify(ld); d.head.appendChild(s); } catch (e) {}
+    try { var ld = all.slice(0, 40).map(function (e) { return { '@type': 'Event', name: e.title, startDate: e.start, endDate: e.end, eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode', location: { '@type': 'Place', name: e.venue, address: { '@type': 'PostalAddress', addressLocality: 'Wilmington', addressRegion: 'NC', addressCountry: 'US' } }, url: e.url }; }); var s = d.createElement('script'); s.type = 'application/ld+json'; s.textContent = JSON.stringify(ld); d.head.appendChild(s); } catch (e) {}
   }).catch(function () {});
 })();
