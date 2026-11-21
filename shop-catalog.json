@@ -37,6 +37,12 @@
       "name": "Harbor Capsules",
       "blurb": "Limited editions. Small runs, one drop at a time.",
       "art": "tide-line"
+    },
+    {
+      "id": "beach-setup",
+      "name": "Beach Setup",
+      "blurb": "The chair, the shade, the towel and the cooler. Everything for a full day on Wrightsville, Carolina Beach or Kure.",
+      "art": "tide-line"
     }
   ],
   "items": [
@@ -350,6 +356,70 @@
       ],
       "cut": "unisex",
       "store": "fourthwall"
+    },
+    {
+      "id": "tilt-beach-umbrella",
+      "collection": "beach-setup",
+      "name": "ShoreList Tilt Beach Umbrella",
+      "url": "https://shorelist.myshopify.com/products/shorelist-tilt-beach-umbrella-6-5-ft-upf-50",
+      "img": "https://shorelist.myshopify.com/cdn/shop/files/896e91258188456b9739f40519a8211b.webp",
+      "alt": "Turquoise 6.5 ft tilt beach umbrella with carry sleeve",
+      "meta": "6.5 ft tilting canopy with UPF 50+ shade and a carry sleeve.",
+      "cta": "Shop beach gear",
+      "price": 99,
+      "scenes": [
+        "beach"
+      ],
+      "cut": "unisex",
+      "store": "shopify"
+    },
+    {
+      "id": "backpack-beach-chair",
+      "collection": "beach-setup",
+      "name": "ShoreList Backpack Beach Chair",
+      "url": "https://shorelist.myshopify.com/products/shorelist-aluminum-backpack-beach-chair-mint-stripe",
+      "img": "https://shorelist.myshopify.com/cdn/shop/files/e4e9481e914347868d7fc04ab6c9e261.webp",
+      "alt": "Mint stripe aluminum backpack beach chair with wooden armrests",
+      "meta": "Four-position aluminum frame, wooden armrests, pillow and pockets. Mint stripe.",
+      "cta": "Shop beach gear",
+      "price": 109,
+      "scenes": [
+        "beach"
+      ],
+      "cut": "unisex",
+      "store": "shopify"
+    },
+    {
+      "id": "carolina-coast-towel",
+      "collection": "beach-setup",
+      "name": "Carolina Coast Terry Beach Towel",
+      "url": "https://shorelist.myshopify.com/products/beach-towel",
+      "img": "https://shorelist.myshopify.com/cdn/shop/files/carolina-coast-towel-lookbook.png",
+      "alt": "Woman wrapped in a Carolina Coast terry beach towel on the beach at sunrise",
+      "meta": "Oversized terry beach towel with the Carolina Coast design.",
+      "cta": "Shop beach gear",
+      "price": 68,
+      "scenes": [
+        "beach"
+      ],
+      "cut": "unisex",
+      "store": "shopify"
+    },
+    {
+      "id": "coastal-soft-cooler",
+      "collection": "beach-setup",
+      "name": "Wilmington Coastal Soft Cooler",
+      "url": "https://shorelist.myshopify.com/products/wilmington-coastal-soft-cooler-bag",
+      "img": "https://shorelist.myshopify.com/cdn/shop/files/1136021536200041722_2048.jpg",
+      "alt": "Gray Wilmington soft cooler bag with zippered front pocket",
+      "meta": "18-can soft cooler with water-resistant lining and shoulder strap.",
+      "cta": "Shop beach gear",
+      "price": 72,
+      "scenes": [
+        "beach"
+      ],
+      "cut": "unisex",
+      "store": "shopify"
     }
   ],
   "scenes": [
@@ -377,6 +447,12 @@
       "name": "ShoreList Gear",
       "url": "https://shorelist-shop.fourthwall.com",
       "carries": "Apparel and gear (Fourthwall)"
+    },
+    {
+      "id": "shopify",
+      "name": "ShoreList Shop",
+      "url": "https://shorelist.myshopify.com",
+      "carries": "Beach chairs, umbrellas, towels and coolers"
     }
   ],
   "allowedHosts": [
