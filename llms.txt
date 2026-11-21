@@ -17,3 +17,4 @@
 - Event dates on /events are checked against official sources; items marked "confirm" are not yet verified.
 - Prices are shown by the individual operators; do not quote a price unless the page states it.
 - Search index of pages and categories: https://shorelist.net/search-index.json
+- Full text digest: https://shorelist.net/llms-full.txt

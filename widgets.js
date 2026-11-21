@@ -44,19 +44,19 @@
       if (wet) tip = 'Wet one. A museum or an evening <a href="/category?cat=ghost-tours">ghost walk</a> fits.';
       else if (waves != null && waves >= 2) tip = 'Good swell. Try a <a href="/category?cat=surf-lessons">surf lesson</a>.';
       else if (d.temp < 55) tip = 'Layer up and see <a href="/shop">the coastal shop</a>, then a <a href="/events">local event</a>.';
-      else tip = 'Easy beach day. Browse <a href="/category">tours</a> or <a href="/shop">beach gear</a>.';
+      else tip = 'Easy beach day. Browse <a href="/category">experiences</a> or <a href="/shop">beach gear</a>.';
       cond.querySelector('.stats').innerHTML = '<b>' + Math.round(d.temp) + '&deg;F</b> ' + esc(WX(d.code)) + (d.wind != null ? ' &middot; wind ' + Math.round(d.wind) + ' mph' : '') + (waves != null ? ' &middot; waves ' + waves.toFixed(1) + ' ft' : '') + (d.sst != null ? ' &middot; water ' + Math.round(d.sst * 9 / 5 + 32) + '&deg;F' : '') + (d.set ? ' &middot; sunset ' + esc(t12(d.set)) : '');
       cond.querySelector('.tip').innerHTML = tip;
     }
     function get(i) {
-      if (cache[i]) return paint(cache[i]);
+      if (cache[i]) { paint(cache[i]); if (window.__shoreCtx) window.__shoreCtx(cache[i], B[i][0]); return; }
       var b = B[i], q = b[1] + '&longitude=' + b[2];
       var wx = fetch('https://api.open-meteo.com/v1/forecast?latitude=' + q + '&current=temperature_2m,weather_code,wind_speed_10m&daily=sunset&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=America%2FNew_York&forecast_days=1').then(function (r) { return r.json(); });
       var mr = fetch('https://marine-api.open-meteo.com/v1/marine?latitude=' + q + '&current=wave_height,sea_surface_temperature&timezone=America%2FNew_York').then(function (r) { return r.json(); }).catch(function () { return {}; });
       Promise.all([wx, mr]).then(function (r) {
         var c = r[0].current || {}, m = r[1].current || {};
         cache[i] = { temp: c.temperature_2m, code: c.weather_code, wind: c.wind_speed_10m, wave: m.wave_height, sst: m.sea_surface_temperature, set: r[0].daily && r[0].daily.sunset && r[0].daily.sunset[0] };
-        if (cache[i].temp != null) { cond.hidden = false; paint(cache[i]); }
+        if (cache[i].temp != null) { cond.hidden = false; paint(cache[i]); if (window.__shoreCtx) window.__shoreCtx(cache[i], B[i][0]); }
       }).catch(function () {});
     }
     cond.querySelectorAll('[data-b]').forEach(function (b) {
@@ -73,41 +73,103 @@
     get(cur);
   }
 
-  // ---------- concierge ----------
+  // ---------- concierge ("Shore AI") ----------
+  // Answer path: on-device model (Chrome Prompt API, private, no key) -> server model -> site search.
+  var ctx = { text: '' };
+  function setCtx(d, beach) { try { document.dispatchEvent(new CustomEvent('shore:cond', { detail: d })); } catch (e) {} ctx.text = beach + ': ' + Math.round(d.temp) + 'F, ' + WXs(d.code) + (d.wave != null ? ', waves ' + (d.wave * 3.281).toFixed(1) + ' ft' : '') + (d.set ? ', sunset ' + new Date(d.set).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }) : ''); }
+  function WXs(c) { return c === 0 ? 'clear' : c < 4 ? 'partly cloudy' : c < 50 ? 'foggy' : c < 70 ? 'rain' : c < 95 ? 'showers' : 'storms'; }
+  window.__shoreCtx = setCtx;
   var fab = document.createElement('button');
   fab.className = 'cc-fab'; fab.type = 'button'; fab.setAttribute('aria-expanded', 'false'); fab.setAttribute('aria-controls', 'cc');
-  fab.innerHTML = '<span aria-hidden="true">&#10022;</span> Ask the concierge';
+  fab.innerHTML = '<span class="orb" aria-hidden="true"></span><span class="lbl">Shore AI</span>';
   var box = document.createElement('div');
-  box.className = 'cc'; box.id = 'cc'; box.hidden = true; box.setAttribute('role', 'dialog'); box.setAttribute('aria-label', 'ShoreList concierge');
-  box.innerHTML = '<header>Shore Concierge<small>Tours, events and shop picks for Wilmington and the beaches</small></header><div class="log" id="ccl" aria-live="polite"><div class="m bot">Hi! Tell me what you feel like doing and I\'ll point you to the right tour, event or shop pick.</div></div><div class="chips" id="ccc"><button type="button">Rainy day plans</button><button type="button">Surf lesson</button><button type="button">Ghost tour</button><button type="button">Beach gear</button></div><form id="ccf"><input id="cci" type="text" maxlength="200" placeholder="Ask anything about the coast" aria-label="Your question" autocomplete="off"/><button type="submit">Ask</button></form>';
+  box.className = 'cc'; box.id = 'cc'; box.hidden = true; box.setAttribute('role', 'dialog'); box.setAttribute('aria-label', 'Shore AI concierge');
+  box.innerHTML = '<header><span class="orb big" aria-hidden="true"></span><div>Shore AI<small id="ccs">Experiences, events and shop picks, tuned to right now</small></div><button type="button" class="spk" id="ccsp" aria-pressed="false" title="Read answers aloud">&#128266;</button></header><div class="log" id="ccl" aria-live="polite"><div class="m bot">Hi, I\'m Shore AI. Ask me anything about Wilmington and the beaches, or tap the mic.</div></div><div class="chips" id="ccc"></div><form id="ccf"><input id="cci" type="text" maxlength="200" placeholder="Ask anything about the coast" aria-label="Your question" autocomplete="off"/><button type="button" id="ccm" class="mic" aria-label="Speak your question" hidden>&#127908;</button><button type="submit">Ask</button></form>';
   document.body.appendChild(fab); document.body.appendChild(box);
-  var log = box.querySelector('#ccl');
+  var log = box.querySelector('#ccl'), speakOn = false;
   function add(cls, html) { var d = document.createElement('div'); d.className = 'm ' + cls; d.innerHTML = html; log.appendChild(d); log.scrollTop = log.scrollHeight; return d; }
-  function section(it) { return it.t === 'cat' ? 'Tours' : /shop/.test(it.url) ? 'Shop' : /event/.test(it.url) ? 'Events' : 'Guide'; }
+  function section(it) { return it.t === 'cat' ? 'Experiences' : /shop/.test(it.url) ? 'Shop' : /event/.test(it.url) ? 'Events' : 'Guide'; }
+  function chipsNow() {
+    var c = ['Plan my day', 'Surf lesson', 'Ghost tour', 'Beach gear'];
+    var t = ctx.text;
+    if (/rain|shower|storm/.test(t)) c.unshift('Rainy day ideas');
+    else if (/waves (\d+\.\d)/.test(t) && parseFloat(RegExp.$1) >= 2) c.unshift('Is it good for surfing?');
+    else c.unshift('What is on this weekend?');
+    box.querySelector('#ccc').innerHTML = c.slice(0, 5).map(function (x) { return '<button type="button">' + esc(x) + '</button>'; }).join('');
+  }
+  chipsNow();
+  function typeInto(el, text, cb) {
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) { el.textContent = text; cb && cb(); return; }
+    var i = 0; (function step() { el.textContent = text.slice(0, i); i += 2; log.scrollTop = log.scrollHeight; if (i <= text.length + 1) setTimeout(step, 14); else { el.textContent = text; cb && cb(); } })();
+  }
+  var local = null;
+  function onDevice(q, hits) {
+    if (!window.LanguageModel || !LanguageModel.create) return Promise.reject();
+    return (local || (local = LanguageModel.create({ initialPrompts: [{ role: 'system', content: 'You are the ShoreList concierge for Wilmington NC and Wrightsville, Carolina and Kure Beach. Answer in at most 2 short warm sentences using only the options given. Never invent prices or dates.' }] }))).then(function (s) {
+      return s.prompt('Now: ' + ctx.text + '\nVisitor asks: ' + q + '\nOptions:\n' + hits.map(function (h) { return '- ' + h.title + ': ' + (h.sub || ''); }).join('\n'));
+    });
+  }
   function ask(q) {
     q = q.trim(); if (q.length < 2) return; track('concierge_ask');
     add('me', esc(q));
-    var wait = add('bot', 'Looking&hellip;');
+    var wait = add('bot', '<span class="think"><i></i><i></i><i></i></span>');
     loadIndex().then(function () {
-      var hits = find(q, 4);
-      var extra = [];
+      var hits = find(q, 4), extra = [];
       if (/shop|gear|shirt|tee|hat|apparel|merch|tote|chair|umbrella|towel/i.test(q)) extra.push({ title: 'ShoreList Shop', sub: 'Coastal tees, totes and beach gear', url: '/shop' });
       if (/event|tonight|weekend|festival|music|this week|today/i.test(q)) extra.push({ title: 'Events Guide', sub: 'Dated local events, updated regularly', url: '/events' });
+      if (/plan|itinerary|day|trip/i.test(q)) extra.push({ title: 'AI Trip Planner', sub: 'Build a full day for your group', url: '/planner' });
       hits = extra.concat(hits).slice(0, 4);
-      var fallback = hits.length ? 'Here are the closest matches:' : 'I couldn\'t find an exact match. Try browsing tours, events or the shop:';
-      if (!hits.length) hits = [{ title: 'Browse tours', sub: 'All experiences', url: '/category' }, { title: 'Events Guide', sub: 'What is on', url: '/events' }, { title: 'Shop', sub: 'Coastal apparel and gear', url: '/shop' }];
+      var fallback = hits.length ? 'Here are the closest matches:' : 'I could not find an exact match. Try experiences, events or the shop:';
+      if (!hits.length) hits = [{ title: 'Browse experiences', sub: 'All experiences', url: '/category' }, { title: 'Events Guide', sub: 'What is on', url: '/events' }, { title: 'Shop', sub: 'Coastal apparel and gear', url: '/shop' }];
       function show(text) {
-        wait.innerHTML = esc(text) + '<div class="links">' + hits.map(function (h) { return '<a href="' + esc(h.url) + '">' + esc(h.title) + ' <small>' + esc(section(h)) + (h.sub ? ' &middot; ' + esc(String(h.sub).slice(0, 80)) : '') + '</small></a>'; }).join('') + '</div>';
-        log.scrollTop = log.scrollHeight;
+        wait.innerHTML = '<span class="tx"></span><div class="links">' + hits.map(function (h) { return '<a href="' + esc(h.url) + '">' + esc(h.title) + ' <small>' + esc(section(h)) + (h.sub ? ' &middot; ' + esc(String(h.sub).slice(0, 80)) : '') + '</small></a>'; }).join('') + '</div>';
+        typeInto(wait.querySelector('.tx'), text, function () { if (speakOn && window.speechSynthesis) { try { speechSynthesis.cancel(); speechSynthesis.speak(new SpeechSynthesisUtterance(text)); } catch (e) {} } });
       }
-      fetch('/.netlify/functions/concierge', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ q: q, candidates: hits.map(function (h) { return { title: h.title, sub: h.sub }; }) }) })
-        .then(function (r) { if (!r.ok) throw 0; return r.json(); })
-        .then(function (d) { show(d.text || fallback); })
-        .catch(function () { show(fallback); });
+      onDevice(q, hits).then(function (t) { box.querySelector('#ccs').textContent = 'Answered on your device'; show(String(t).slice(0, 500)); })
+        .catch(function () {
+          return fetch('/.netlify/functions/concierge', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ q: q, context: ctx.text, candidates: hits.map(function (h) { return { title: h.title, sub: h.sub }; }) }) })
+            .then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (d) { show(d.text || fallback); }).catch(function () { show(fallback); });
+        });
     });
   }
-  fab.addEventListener('click', function () { box.hidden = !box.hidden; fab.setAttribute('aria-expanded', String(!box.hidden)); if (!box.hidden) { loadIndex(); box.querySelector('#cci').focus(); track('concierge_open'); } });
+  fab.addEventListener('click', function () { box.hidden = !box.hidden; fab.setAttribute('aria-expanded', String(!box.hidden)); if (!box.hidden) { loadIndex(); chipsNow(); box.querySelector('#cci').focus(); track('concierge_open'); } });
   box.querySelector('#ccf').addEventListener('submit', function (e) { e.preventDefault(); var i = box.querySelector('#cci'); var v = i.value; i.value = ''; ask(v); });
   box.querySelector('#ccc').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) ask(b.textContent); });
+  box.querySelector('#ccsp').addEventListener('click', function () { speakOn = !speakOn; this.setAttribute('aria-pressed', String(speakOn)); if (!speakOn && window.speechSynthesis) speechSynthesis.cancel(); });
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition, mic = box.querySelector('#ccm');
+  if (SR) { mic.hidden = false; mic.addEventListener('click', function () { try { var r = new SR(); r.lang = 'en-US'; r.interimResults = false; mic.classList.add('on'); r.onresult = function (e) { var t = e.results[0][0].transcript; speakOn = true; box.querySelector('#ccsp').setAttribute('aria-pressed', 'true'); ask(t); }; r.onend = function () { mic.classList.remove('on'); }; r.onerror = r.onend; r.start(); } catch (e) { mic.classList.remove('on'); } }); }
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !box.hidden) { box.hidden = true; fab.setAttribute('aria-expanded', 'false'); fab.focus(); } });
+  document.addEventListener('shore:ask', function (e) { box.hidden = false; fab.setAttribute('aria-expanded', 'true'); ask(String(e.detail || '')); });
+
+
+  // ---------- floating quick dock + tilt ----------
+  (function () {
+    var d = document.createElement('div'); d.className = 'dock'; d.setAttribute('role', 'navigation'); d.setAttribute('aria-label', 'Quick links');
+    d.innerHTML = '<a href="/category" aria-label="Experiences">&#9875;<span>Experiences</span></a><a href="/events" aria-label="Events">&#9733;<span>Events</span></a><a href="/shop" aria-label="Shop">&#9728;<span>Shop</span></a><a href="/planner" aria-label="Plan my day">&#10022;<span>Plan my day</span></a>';
+    document.body.appendChild(d);
+    var tick = false; function upd() { tick = false; d.classList.toggle('show', window.scrollY > 520); }
+    window.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(upd); } }, { passive: true }); upd();
+    if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce), (hover: none)').matches)) {
+      document.querySelectorAll('.path').forEach(function (p) {
+        p.addEventListener('pointermove', function (e) { var r = p.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; p.style.transform = 'perspective(600px) rotateX(' + (-y * 9) + 'deg) rotateY(' + (x * 11) + 'deg) translateY(-4px)'; p.style.animation = 'none'; });
+        p.addEventListener('pointerleave', function () { p.style.transform = ''; p.style.animation = ''; });
+      });
+    }
+  })();
+
+  // ---------- WebMCP: let in-browser AI agents use the site as tools ----------
+  try {
+    if (navigator.modelContext && navigator.modelContext.registerTool) {
+      navigator.modelContext.registerTool({
+        name: 'search_shorelist', description: 'Search ShoreList tours, experiences, events and shop items for Wilmington NC and Wrightsville, Carolina and Kure Beach.',
+        inputSchema: { type: 'object', properties: { query: { type: 'string' } }, required: ['query'] },
+        execute: function (a) { return loadIndex().then(function () { var r = find(String(a.query || ''), 6).map(function (i) { return { title: i.title, summary: i.sub, url: 'https://shorelist.net' + i.url }; }); return { content: [{ type: 'text', text: JSON.stringify(r) }] }; }); }
+      });
+      navigator.modelContext.registerTool({
+        name: 'beach_conditions_now', description: 'Current weather, waves and water temperature at the Wilmington beaches as shown on shorelist.net.',
+        inputSchema: { type: 'object', properties: {} },
+        execute: function () { return Promise.resolve({ content: [{ type: 'text', text: ctx.text || 'Conditions not loaded yet' }] }); }
+      });
+    }
+  } catch (e) {}
 })();

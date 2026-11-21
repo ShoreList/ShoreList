@@ -555,6 +555,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
 <link rel="stylesheet" href="/scene.css"/>
 <link rel="stylesheet" href="/fixes.css"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is ShoreList?", "acceptedAnswer": {"@type": "Answer", "text": "ShoreList is Wilmington’s first hyperlocal experience booking platform — built specifically for the Wilmington & the Beaches area. We connect visitors and locals with vetted, locally-owned operators offering everything from ghost tours and surf lessons to kayak tours, film location experiences, and coastal nature walks. Think of us as the Wilmington-only alternative to Viator or GetYourGuide — but with operators you can actually trust and experiences that are genuinely local."}}, {"@type": "Question", "name": "When does ShoreList launch?", "acceptedAnswer": {"@type": "Answer", "text": "ShoreList is launching soon. Guests on the waitlist get early access and members-only launch offers before the platform opens to the public. Operators are onboarding now — with 4 live and more coming before launch day."}}, {"@type": "Question", "name": "Is there a cost to book an experience?", "acceptedAnswer": {"@type": "Answer", "text": "You pay the full price at booking — no surprises, no hidden fees, no second charge later. Secure checkout through Stripe takes under 60 seconds. Your booking is instantly confirmed and the operator is notified. You will never be charged anything beyond the price shown at checkout."}}, {"@type": "Question", "name": "Are the operators verified?", "acceptedAnswer": {"@type": "Answer", "text": "Every ShoreList operator is personally reviewed before going live. We verify their business license, confirm they carry appropriate liability insurance, and require them to sign a formal operator agreement. We only work with operators we’d personally recommend to a friend visiting Wilmington for the first time."}}, {"@type": "Question", "name": "What types of experiences are available?", "acceptedAnswer": {"@type": "Answer", "text": "ShoreList covers 18 categories of local coastal experiences: ghost & history tours, surf lessons, film & TV location tours, kayak & paddleboard tours, sunset sails, fishing charters, nature walks (including wild Venus flytraps), e-bike rentals, beach photography, dolphin watch cruises, wine & food experiences, and more. Every category features Wilmington-area operators only — no national chains."}}, {"@type": "Question", "name": "What is your cancellation policy?", "acceptedAnswer": {"@type": "Answer", "text": "Cancel at least 24 hours before your experience and you receive a full refund, no questions asked. Cancellations made less than 24 hours before the experience are non-refundable. Weather-related cancellations — including operator-initiated cancellations due to unsafe conditions — always receive a full refund. All refunds are processed through Stripe and typically appear within 5–10 business days."}}]}</script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="i-train" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3.1V7a4 4 0 0 0 8 0V3.1" /><path d="m9 15-1-1" /><path d="m15 15 1-1" /><path d="M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5Z" /><path d="m8 19-2 3" /><path d="m16 19 2 3" /></g></symbol>
@@ -674,7 +675,6 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
   <div class="wi-sub">Wilmington, NC &amp; the Beaches</div>
   <div class="wi-tap" id="wi-tap">▶ Sound On</div>
 </div>
-<button id="mute-btn" title="Mute ocean sounds" aria-label="Mute ocean sounds"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-volume" xlink:href="#i-volume"/></svg></button>
 
 <!-- ── GLOBAL BOOKING TOASTS ── -->
 <div id="g-toasts"></div>
@@ -743,7 +743,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
         <div class="trust-item">100% local operators</div>
       </div>
       <div class="paths" role="navigation" aria-label="Start here">
-        <a href="#explore" class="path p-main" data-p="tours"><i aria-hidden="true">&#9875;</i><b>Tours</b><span>Book local experiences</span></a>
+        <a href="#explore" class="path p-main" data-p="tours"><i aria-hidden="true">&#9875;</i><b>Experiences</b><span>Book local tours and adventures</span></a>
         <a href="/events" class="path" data-p="events"><i aria-hidden="true">&#9733;</i><b>Events</b><span>What's on this week</span></a>
         <a href="/shop" class="path" data-p="shop"><i aria-hidden="true">&#9728;</i><b>Shop</b><span>Coastal apparel and gear</span></a>
       </div>
@@ -1435,183 +1435,6 @@ document.body.style.overflow='hidden';
   setTimeout(function(){if(DONE)return;DONE=true;var wi=document.getElementById('wave-intro');if(wi)wi.classList.add('hide');document.body.style.overflow='';},5500);
 })();
 
-// &#9472;&#9472; OCEAN AMBIENT AUDIO (Web Audio API) &#9472;&#9472;
-(function(){
-  var AC=window.AudioContext||window.webkitAudioContext;
-  if(!AC)return;
-  var actx=null,master=null,muted=false,started=false;
-
-  // &#9472;&#9472; PRE-GENERATE noise data during wave animation (CPU work, no gesture needed) &#9472;&#9472;
-  // This means zero computation delay when user first interacts
-  var RATE=44100; // standard sample rate assumption
-  var noiseL=new Float32Array(RATE*8);
-  var noiseR=new Float32Array(RATE*8);
-  var noise2=new Float32Array(RATE*6);
-  (function(){
-    var l=0,r=0,s=0;
-    for(var i=0;i<RATE*8;i++){
-      var wl=Math.random()*2-1,wr=Math.random()*2-1;
-      l=(l+0.022*wl)/1.022;r=(r+0.022*wr)/1.022;
-      noiseL[i]=l*3.8;noiseR[i]=r*3.8;
-    }
-    for(var i=0;i<RATE*6;i++){
-      var w=Math.random()*2-1;s=(s+0.052*w)/1.052;noise2[i]=s*2.4;
-    }
-  })();
-
-  function buildOcean(){
-    if(started)return;started=true;
-    try{
-      actx=new AC();
-      // iOS: silent buffer unlock + explicit resume
-      var _sb=actx.createBuffer(1,1,22050);
-      var _ss=actx.createBufferSource();_ss.buffer=_sb;_ss.connect(actx.destination);_ss.start(0);
-
-      master=actx.createGain();
-      master.gain.setValueAtTime(0,actx.currentTime);
-      master.gain.linearRampToValueAtTime(0.20,actx.currentTime+3);
-      master.connect(actx.destination);
-
-      var rate=actx.sampleRate;
-
-      // Brown noise &#8212; copy pre-generated data into audio buffer (instant, no loop)
-      var len1=Math.min(noiseL.length,rate*8);
-      var buf=actx.createBuffer(2,len1,rate);
-      buf.getChannelData(0).set(noiseL.subarray(0,len1));
-      buf.getChannelData(1).set(noiseR.subarray(0,len1));
-      var src=actx.createBufferSource();src.buffer=buf;src.loop=true;
-      var lp=actx.createBiquadFilter();lp.type='lowpass';lp.frequency.value=700;lp.Q.value=0.7;
-      var bp=actx.createBiquadFilter();bp.type='bandpass';bp.frequency.value=220;bp.Q.value=0.55;
-      var lfo=actx.createOscillator();lfo.type='sine';lfo.frequency.value=0.085;
-      var lfoG=actx.createGain();lfoG.gain.value=0.40;lfo.connect(lfoG);
-      var wVol=actx.createGain();wVol.gain.value=0.60;lfoG.connect(wVol.gain);
-      src.connect(lp);lp.connect(bp);bp.connect(wVol);wVol.connect(master);
-
-      // Surf texture &#8212; copy pre-generated data
-      var len2=Math.min(noise2.length,rate*6);
-      var buf2=actx.createBuffer(1,len2,rate);
-      buf2.getChannelData(0).set(noise2.subarray(0,len2));
-      var src2=actx.createBufferSource();src2.buffer=buf2;src2.loop=true;
-      var hp2=actx.createBiquadFilter();hp2.type='bandpass';hp2.frequency.value=560;hp2.Q.value=1.3;
-      var sg=actx.createGain();sg.gain.value=0.17;
-      src2.connect(hp2);hp2.connect(sg);sg.connect(master);
-
-      // Resume context then start all sources together &#8212; no gap
-      actx.resume().then(function(){
-        var t=actx.currentTime;
-        src.start(t);lfo.start(t);src2.start(t);
-        scheduleSeagull();
-      }).catch(function(){
-        src.start(0);lfo.start(0);src2.start(0);
-        scheduleSeagull();
-      });
-    }catch(e){}
-  }
-
-  function scheduleSeagull(){
-    if(!actx||!master)return;
-    setTimeout(function(){
-      if(!actx||muted){scheduleSeagull();return;}
-      try{
-        var now=actx.currentTime;
-        var baseF=820+Math.random()*380; // lower base &#8212; seagulls aren't as high as whistle
-
-        cry(now,baseF,0.055);
-        if(Math.random()>0.38)cry(now+0.9+Math.random()*0.4,baseF*(0.88+Math.random()*0.25),0.042);
-        if(Math.random()>0.60)cry(now+2.0+Math.random()*0.7,baseF*(0.72+Math.random()*0.40),0.026);
-      }catch(e){}
-      scheduleSeagull();
-    },9000+Math.random()*18000);
-  }
-
-  // Real seagull sound:
-  // - sawtooth wave (harsh harmonics, not a whistle)
-  // - bandpass filter for nasal quality
-  // - kee-YAW pitch pattern (up-down, not pure whistle)
-  // - two oscillators slightly detuned for natural thickness
-  function cry(now,f,vol){
-    var osc=actx.createOscillator();
-    var osc2=actx.createOscillator();
-    osc.type='sawtooth';    // harsh, raspy &#8212; NOT sine (which sounds like a whistle)
-    osc2.type='sawtooth';
-
-    // Bandpass: nasal resonance chamber quality
-    var bpf=actx.createBiquadFilter();
-    bpf.type='bandpass';bpf.frequency.value=f*1.15;bpf.Q.value=1.6;
-
-    var g=actx.createGain();
-    osc.connect(bpf);osc2.connect(bpf);bpf.connect(g);g.connect(master);
-
-    // Volume envelope: kee (short) &#8212; YAW (longer, louder)
-    g.gain.setValueAtTime(0,now);
-    g.gain.linearRampToValueAtTime(vol*0.65,now+0.06);
-    g.gain.linearRampToValueAtTime(vol*0.30,now+0.20);
-    g.gain.linearRampToValueAtTime(vol,now+0.36);
-    g.gain.linearRampToValueAtTime(vol*0.55,now+0.54);
-    g.gain.linearRampToValueAtTime(0,now+0.80);
-
-    // Pitch: "kee" = short high burst, "YAW" = longer lower fall
-    // This is the correct seagull pattern &#8212; not a whistle
-    var f1=f*1.55; // kee peak
-    var f2=f*0.68; // yaw bottom
-    osc.frequency.setValueAtTime(f1*0.75,now);
-    osc.frequency.linearRampToValueAtTime(f1,now+0.07);
-    osc.frequency.linearRampToValueAtTime(f*0.9,now+0.22);
-    osc.frequency.linearRampToValueAtTime(f*1.18,now+0.38);
-    osc.frequency.linearRampToValueAtTime(f2,now+0.80);
-
-    // Slight detune on osc2 for natural thickness
-    osc2.frequency.setValueAtTime(f1*0.76,now);
-    osc2.frequency.linearRampToValueAtTime(f1*1.015,now+0.07);
-    osc2.frequency.linearRampToValueAtTime(f*0.915,now+0.22);
-    osc2.frequency.linearRampToValueAtTime(f*1.195,now+0.38);
-    osc2.frequency.linearRampToValueAtTime(f2*0.985,now+0.80);
-
-    osc.start(now);osc.stop(now+0.85);
-    osc2.start(now);osc2.stop(now+0.85);
-  }
-
-  // &#9472;&#9472; AUDIO START &#8212; fires on any user interaction &#9472;&#9472;
-  var once=false;
-  function startAudio(){
-    if(once)return;
-    try{
-      buildOcean();
-      // Only lock if AudioContext actually created and running/resuming
-      if(actx){
-        once=true;
-        document.removeEventListener('mousedown',startAudio);
-        document.removeEventListener('pointerdown',startAudio);
-        document.removeEventListener('touchend',startAudio);
-        document.removeEventListener('click',startAudio);
-        var hint=document.getElementById('wi-tap');
-        if(hint)hint.classList.add('hidden');
-      }
-    }catch(e){}
-  }
-  window._shorelistAudio=startAudio;
-  document.addEventListener('mousedown',startAudio,false);
-  document.addEventListener('pointerdown',startAudio,false);
-  document.addEventListener('touchend',startAudio,false);
-  document.addEventListener('click',startAudio,false);
-  setTimeout(function(){if(!once)try{startAudio();}catch(e){}},100);
-
-  // Mute button &#8212; also triggers audio start on first tap (iOS users often tap this)
-  var btn=document.getElementById('mute-btn');
-  if(btn){
-    btn.addEventListener('click',function(e){
-      e.stopPropagation();
-      if(!once){startAudio();return;}
-
-      muted=!muted;
-      if(master&&actx){master.gain.cancelScheduledValues(actx.currentTime);master.gain.setTargetAtTime(muted?0:0.20,actx.currentTime,0.9);}
-      btn.innerHTML=muted?'<svg class="ico" aria-hidden="true" focusable="false"><use href="#i-volume-off" xlink:href="#i-volume-off"/></svg>':'<svg class="ico" aria-hidden="true" focusable="false"><use href="#i-volume" xlink:href="#i-volume"/></svg>';
-      btn.title=muted?'Unmute ocean sounds':'Mute ocean sounds';
-    });
-  }
-})();
-
-
 // -- NAV --
 var _nav=document.getElementById('nav');
 window.addEventListener('scroll',function(){
@@ -1801,6 +1624,7 @@ window.addEventListener('scroll', function(){
 })();
 </script>
 <script src="/scene.js" defer></script>
+<script src="/sound.js" defer></script>
 <script src="/widgets.js" defer></script>
 <script src="/shore-plus.js" defer></script>
 </body>

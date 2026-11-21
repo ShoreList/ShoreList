@@ -53,7 +53,7 @@
   if (!gl) { host.classList.add('scene-fallback'); return; }
 
   var VS = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
-  var FS = 'precision mediump float;uniform vec2 R;uniform float T;uniform vec3 top,hor,sun,deep,lite;uniform float sy,st;uniform vec2 M;' +
+  var FS = 'precision mediump float;uniform vec2 R;uniform float T;uniform vec3 top,hor,sun,deep,lite;uniform float sy,st;uniform vec2 M;uniform vec3 RP[4];' +
   'float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}' +
   'float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}' +
   'float fbm(vec2 p){float a=.5,s=0.;for(int i=0;i<4;i++){s+=a*n(p);p=p*2.03+vec2(1.7,9.2);a*=.5;}return s;}' +
@@ -75,7 +75,7 @@
     'float refl=exp(-pow((q.x-sp.x+rf*3.)*(2.4+k*9.),2.))*pow(1.-k,1.4);sea+=sun*refl*(.55+1.2*smoothstep(.45,.75,w))*(1.-st*.65);' +
     'float sparkle=smoothstep(.78,.95,w)*(1.-k)*.25;sea+=sun*sparkle*(1.-st*.8);' +
     'float shore=smoothstep(.0,.06,.12-k);float line=sin(k*38.-T*.9+w*3.)*.5+.5;float foam=smoothstep(.55,.95,line)*smoothstep(.16,.0,k)*(.5+.5*n(wp*8.));' +
-    'sea=mix(sea,vec3(1.),foam*.55);' +
+    'sea=mix(sea,vec3(1.),foam*.55);float rp=0.;for(int i=0;i<4;i++){vec3 r=RP[i];if(r.z>0.){float ag=T-r.z;vec2 dv=(uv-r.xy)*vec2(asp,1.9);float dd=length(dv);rp+=sin((dd-ag*.55)*60.)*exp(-ag*1.15)*exp(-abs(dd-ag*.55)*10.);}}sea+=vec3(rp*.16)*(1.-st*.55)+sun*max(rp,0.)*.25*(1.-st*.7);' +
     'float wet=smoothstep(.07,.0,k);sea=mix(sea,mix(vec3(.82,.72,.56),hor,.22)*(.35+.65*(1.-st*.8)),smoothstep(.045,.0,k-.0));' +
     'col=sea;}' +
   'float vg=smoothstep(1.25,.25,length((uv-.5)*vec2(1.,1.15)));col*=mix(.74,1.,vg);' +
@@ -90,8 +90,10 @@
   var buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
   var loc = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
-  var U = {}; ['R', 'T', 'top', 'hor', 'sun', 'deep', 'lite', 'sy', 'st', 'M'].forEach(function (n) { U[n] = gl.getUniformLocation(pr, n); });
+  var U = {}; ['R', 'T', 'top', 'hor', 'sun', 'deep', 'lite', 'sy', 'st', 'M', 'RP'].forEach(function (n) { U[n] = gl.getUniformLocation(pr, n); });
 
+  var rips = new Float32Array(12), ripI = 0, lastRip = 0;
+  function ripple(x, y) { var now = (performance.now() - t0) / 1000; rips[ripI * 3] = x; rips[ripI * 3 + 1] = y; rips[ripI * 3 + 2] = now; ripI = (ripI + 1) % 4; }
   var scale = Math.min(window.devicePixelRatio || 1, 2), cur = phaseNow(), target = cur, mx = 0, my = 0, tmx = 0, tmy = 0;
   var visible = true, t0 = performance.now(), last = t0, slow = 0, frames = 0;
   function size() { var r = host.getBoundingClientRect(); cv.width = Math.max(2, Math.floor(r.width * scale)); cv.height = Math.max(2, Math.floor(r.height * scale)); gl.viewport(0, 0, cv.width, cv.height); }
@@ -99,7 +101,7 @@
     var s = blend(cur);
     gl.uniform2f(U.R, cv.width, cv.height); gl.uniform1f(U.T, (now - t0) / 1000);
     gl.uniform3fv(U.top, s.top); gl.uniform3fv(U.hor, s.hor); gl.uniform3fv(U.sun, s.sun); gl.uniform3fv(U.deep, s.deep); gl.uniform3fv(U.lite, s.lite);
-    gl.uniform1f(U.sy, s.sy); gl.uniform1f(U.st, s.st); gl.uniform2f(U.M, mx, my);
+    gl.uniform1f(U.sy, s.sy); gl.uniform1f(U.st, s.st); gl.uniform2f(U.M, mx, my); gl.uniform3fv(U.RP, rips);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
   }
   function loop(now) {
@@ -115,7 +117,8 @@
     if (frames === 3) host.classList.add('scene-ready');
   }
   window.addEventListener('resize', size);
-  host.addEventListener('pointermove', function (e) { var r = host.getBoundingClientRect(); tmx = (e.clientX - r.left) / r.width - .5; tmy = (e.clientY - r.top) / r.height - .5; });
+  host.addEventListener('pointerdown', function (e) { if (e.target.closest('a,button,input,select,textarea,.cond,.tod,.paths')) return; var r = host.getBoundingClientRect(); ripple((e.clientX - r.left) / r.width, 1 - (e.clientY - r.top) / r.height); });
+  host.addEventListener('pointermove', function (e) { var n = performance.now(); if (n - lastRip > 420) { var r0 = host.getBoundingClientRect(), yy = 1 - (e.clientY - r0.top) / r0.height; if (yy < 0.4) { lastRip = n; ripple((e.clientX - r0.left) / r0.width, yy); } } var r = host.getBoundingClientRect(); tmx = (e.clientX - r.left) / r.width - .5; tmy = (e.clientY - r.top) / r.height - .5; });
   if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { visible = en[0].isIntersecting; }).observe(host);
   size();
   if (reduce) { draw(performance.now()); host.classList.add('scene-ready'); }
@@ -125,6 +128,7 @@
     set: function (name) { var i = ORDER.indexOf(name); if (i < 0) return; autoMode = false; target = i; if (reduce) { cur = i; draw(performance.now()); } host.setAttribute('data-tod', name); document.dispatchEvent(new CustomEvent('shorescene', { detail: name })); },
     live: function () { autoMode = true; target = phaseNow(); host.setAttribute('data-tod', 'live'); if (reduce) { cur = target; draw(performance.now()); } document.dispatchEvent(new CustomEvent('shorescene', { detail: 'live' })); },
     auto: function () { return 'live'; },
+    night: function () { return blend(cur).st; },
     names: ORDER
   };
   setInterval(function () { if (autoMode) target = phaseNow(); }, 20000);
