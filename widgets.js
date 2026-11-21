@@ -48,15 +48,22 @@
       cond.querySelector('.stats').innerHTML = '<b>' + Math.round(d.temp) + '&deg;F</b> ' + esc(WX(d.code)) + (d.wind != null ? ' &middot; wind ' + Math.round(d.wind) + ' mph' : '') + (waves != null ? ' &middot; waves ' + waves.toFixed(1) + ' ft' : '') + (d.sst != null ? ' &middot; water ' + Math.round(d.sst * 9 / 5 + 32) + '&deg;F' : '') + (d.set ? ' &middot; sunset ' + esc(t12(d.set)) : '');
       cond.querySelector('.tip').innerHTML = tip;
     }
+    function paintWX(d) {
+      var waves = d.waveFt, tip, wet = d.code >= 50;
+      if (d.flag.level === 'red') tip = 'Rough water today. Stay out of the surf and see <a href="/category">things to do on land</a>.';
+      else if (wet) tip = 'Wet one. A museum or an evening <a href="/category?cat=ghost-tours">ghost walk</a> fits.';
+      else if (waves != null && waves >= 2) tip = 'Good swell. Try a <a href="/category?cat=surf-lessons">surf lesson</a>.';
+      else if (d.temp < 55) tip = 'Layer up and see <a href="/shop">the coastal shop</a>, then a <a href="/events">local event</a>.';
+      else tip = 'Easy beach day. Browse <a href="/category">experiences</a> or <a href="/shop">beach gear</a>.';
+      var col = { green: '#1fa35c', yellow: '#f2b705', red: '#d93025' }[d.flag.level];
+      cond.querySelector('.stats').innerHTML = '<span class="fl" title="Estimated from live data, not an official lifeguard flag"><i style="background:' + col + '"></i>' + esc(d.flag.label) + '</span> &middot; <b>' + Math.round(d.temp) + '&deg;F</b> ' + esc(WX(d.code)) + (d.wind != null ? ' &middot; wind ' + Math.round(d.wind) + ' mph' : '') + (waves != null ? ' &middot; waves ' + waves.toFixed(1) + ' ft' : '') + (d.waterF != null ? ' &middot; water ' + Math.round(d.waterF) + '&deg;F' : '') + (d.sunset ? ' &middot; sunset ' + esc(t12(d.sunset)) : '');
+      cond.querySelector('.tip').innerHTML = tip;
+    }
     function get(i) {
-      if (cache[i]) { paint(cache[i]); if (window.__shoreCtx) window.__shoreCtx(cache[i], B[i][0]); return; }
-      var b = B[i], q = b[1] + '&longitude=' + b[2];
-      var wx = fetch('https://api.open-meteo.com/v1/forecast?latitude=' + q + '&current=temperature_2m,weather_code,wind_speed_10m&daily=sunset&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=America%2FNew_York&forecast_days=1').then(function (r) { return r.json(); });
-      var mr = fetch('https://marine-api.open-meteo.com/v1/marine?latitude=' + q + '&current=wave_height,sea_surface_temperature&timezone=America%2FNew_York').then(function (r) { return r.json(); }).catch(function () { return {}; });
-      Promise.all([wx, mr]).then(function (r) {
-        var c = r[0].current || {}, m = r[1].current || {};
-        cache[i] = { temp: c.temperature_2m, code: c.weather_code, wind: c.wind_speed_10m, wave: m.wave_height, sst: m.sea_surface_temperature, set: r[0].daily && r[0].daily.sunset && r[0].daily.sunset[0] };
-        if (cache[i].temp != null) { cond.hidden = false; paint(cache[i]); if (window.__shoreCtx) window.__shoreCtx(cache[i], B[i][0]); }
+      if (!window.ShoreWX) return;
+      ShoreWX.get(i).then(function (d) {
+        cond.hidden = false; paintWX(d);
+        if (window.__shoreCtx) window.__shoreCtx({ temp: d.temp, code: d.code, wave: d.waveFt != null ? d.waveFt / 3.281 : null, set: d.sunset, flag: d.flag.label, water: d.waterF }, B[i][0]);
       }).catch(function () {});
     }
     cond.querySelectorAll('[data-b]').forEach(function (b) {
@@ -75,8 +82,8 @@
 
   // ---------- concierge ("Shore AI") ----------
   // Answer path: on-device model (Chrome Prompt API, private, no key) -> server model -> site search.
-  var ctx = { text: '' };
-  function setCtx(d, beach) { try { document.dispatchEvent(new CustomEvent('shore:cond', { detail: d })); } catch (e) {} ctx.text = beach + ': ' + Math.round(d.temp) + 'F, ' + WXs(d.code) + (d.wave != null ? ', waves ' + (d.wave * 3.281).toFixed(1) + ' ft' : '') + (d.set ? ', sunset ' + new Date(d.set).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }) : ''); }
+  var ctx = { text: '' }, ctxExtra = '';
+  function setCtx(d, beach) { ctxExtra = (d.flag ? ', estimated ' + d.flag : '') + (d.water != null ? ', water ' + Math.round(d.water) + 'F' : ''); try { document.dispatchEvent(new CustomEvent('shore:cond', { detail: d })); } catch (e) {} ctx.text = beach + ': ' + Math.round(d.temp) + 'F, ' + WXs(d.code) + (d.wave != null ? ', waves ' + (d.wave * 3.281).toFixed(1) + ' ft' : '') + (d.set ? ', sunset ' + new Date(d.set).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }) : '') + ctxExtra; }
   function WXs(c) { return c === 0 ? 'clear' : c < 4 ? 'partly cloudy' : c < 50 ? 'foggy' : c < 70 ? 'rain' : c < 95 ? 'showers' : 'storms'; }
   window.__shoreCtx = setCtx;
   var fab = document.createElement('button');

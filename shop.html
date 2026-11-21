@@ -278,6 +278,7 @@ dialog#qv{border:0;border-radius:20px;padding:0;max-width:min(860px,94vw);width:
 </script>
 <script>(function(){try{var els=document.querySelectorAll('.sec,.proof,.col');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px'});els.forEach(function(e){e.classList.add('reveal');io.observe(e)});}catch(e){}})();</script>
 <script src="/sound.js" defer></script>
+<script src="/beachwx.js" defer></script>
 <script src="/widgets.js" defer></script>
 <script src="/shore-plus.js" defer></script>
 <script>(function(){var P=[["Downtown Wilmington","34.23\u00b0 N \u00b7 77.94\u00b0 W"],["The Historic District","34.24\u00b0 N \u00b7 77.95\u00b0 W"],["Wrightsville Beach","34.21\u00b0 N \u00b7 77.80\u00b0 W"],["Carolina Beach","34.03\u00b0 N \u00b7 77.89\u00b0 W"],["Kure Beach","33.99\u00b0 N \u00b7 77.91\u00b0 W"]],i=0,e=document.getElementById("placeRot"),n=document.getElementById("placeName"),c=document.getElementById("placeCoord");if(!e||!n||!c||window.matchMedia("(prefers-reduced-motion:reduce)").matches)return;setInterval(function(){e.classList.add("fade");setTimeout(function(){i=(i+1)%P.length;n.textContent=P[i][0];c.textContent=P[i][1];e.classList.remove("fade")},650)},3600)})();</script>
