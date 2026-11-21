@@ -44,6 +44,7 @@
     return 1;
   }
   function phaseNow() { return phaseAt(Date.now()); }
+  window.ShoreSun = { phaseAt: phaseAt, now: phaseNow };
   var autoMode = true;
 
   var cv = document.createElement('canvas');
@@ -106,7 +107,7 @@
   }
   function loop(now) {
     requestAnimationFrame(loop);
-    if (!visible || document.hidden) { last = now; return; }
+    if (!visible || document.hidden || host.classList.contains('plates-on')) { last = now; return; }
     var dt = now - last; last = now;
     if (dt > 34) slow++; else if (slow > 0) slow -= .5;
     if (slow > 30 && scale > .6) { scale = Math.max(.6, scale - .25); slow = 0; size(); }
