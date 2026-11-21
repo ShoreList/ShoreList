@@ -1,9 +1,9 @@
 /* ShoreList service worker. Deliberately conservative:
    - never touches checkout, dashboard, success, Stripe or any serverless function
    - HTML: network first, falls back to cache, then /offline.html
-   - static files: stale-while-revalidate
+   - scripts, styles and JSON: network first with cache fallback; images and fonts: cache first
    Bump VERSION on each deploy that changes cached shell files. */
-const VERSION = 'sl-v77-2026-11-21';
+const VERSION = 'sl-v83-2026-11-21';
 const SHELL = ['/offline.html', '/shore-plus.js', '/search-index.json', '/icons/icon-192.png'];
 const SKIP = /^\/(\.netlify|dashboard|success|api)\b/;
 
@@ -39,7 +39,20 @@ self.addEventListener('fetch', (e) => {
     return;
   }
 
-  if (/\.(css|js|png|jpg|jpeg|webp|svg|ico|json|webmanifest|woff2?)$/i.test(url.pathname)) {
+  // Code and data: network first, so a deploy never pairs new HTML with old scripts, styles or JSON. Cache is the offline fallback.
+  if (/\.(css|js|json|webmanifest)$/i.test(url.pathname)) {
+    e.respondWith(
+      fetch(req)
+        .then((res) => {
+          if (res.ok) { const copy = res.clone(); caches.open(VERSION).then((c) => c.put(req, copy)); }
+          return res;
+        })
+        .catch(() => caches.match(req))
+    );
+    return;
+  }
+  // Images and fonts: cache first, refreshed in the background.
+  if (/\.(png|jpg|jpeg|webp|svg|ico|woff2?)$/i.test(url.pathname)) {
     e.respondWith(
       caches.match(req).then((hit) => {
         const net = fetch(req).then((res) => {

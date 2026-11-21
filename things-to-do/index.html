@@ -43,33 +43,8 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 <link rel="stylesheet" href="/scene.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
 <script src="/luxe.js" defer></script>
-<style>
-.seo{max-width:880px;margin:0 auto;padding:8px 24px 72px;color:var(--mid);font-size:1rem;line-height:1.75}
-.seo h2{font-family:'Playfair Display',serif;color:var(--teal);font-size:1.7rem;line-height:1.2;margin:44px 0 14px}
-.seo h3{color:var(--teal);font-size:1.05rem;margin:26px 0 6px}
-.seo p{margin:0 0 14px}.seo a{color:#B93C24;font-weight:600}
-.seo ul{margin:0 0 14px 20px}.seo li{margin:4px 0}
-.seo .where{font-weight:600;color:var(--teal)}
-.seo details{border-top:1px solid var(--border);padding:14px 0}.seo details:last-of-type{border-bottom:1px solid var(--border)}
-.seo summary{cursor:pointer;font-weight:700;color:var(--teal);font-size:1.02rem}
-.seo details p{margin:10px 0 0}
-.seo .chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0;padding:0;list-style:none}
-.seo .chips a{display:inline-block;padding:9px 16px;border:1px solid var(--border);border-radius:100px;text-decoration:none;color:var(--teal);font-size:.9rem;background:#fff}
-.seo .chips a:hover{border-color:var(--coral);color:#B93C24}
-.seo table{width:100%;border-collapse:collapse;margin:8px 0 18px;font-size:.95rem}
-.seo th,.seo td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}
-.seo th{color:var(--teal);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
-.hub-grid{max-width:1160px;margin:0 auto;padding:40px 24px 8px}
-#explore .cats-grid{display:grid}
-#explore .cats-grid .cat{text-decoration:none;cursor:pointer}
-#explore .cats-grid .cat::after{content:"\2192";position:absolute}
-.town-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0}
-.town-row a{display:block;padding:18px;border-radius:14px;background:var(--teal);color:#fff!important;text-decoration:none;font-weight:700}
-.town-row a small{display:block;font-weight:400;opacity:.8;margin-top:4px;font-size:.84rem}
-@media(max-width:700px){.seo{padding:0 18px 56px}.seo h2{font-size:1.4rem}.hub-grid{padding:24px 14px 0}}
-</style>
 </head>
-<body data-cat="wildlife-tours">
+<body class="pg">
 <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="i-ghost" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 10h.01" />
   <path d="M15 10h.01" />
   <path d="M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 19l2.5 2.5L17 19l3 3V10a8 8 0 0 0-8-8z" /></g></symbol><symbol id="i-train" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3.1V7a4 4 0 0 0 8 0V3.1" /><path d="m9 15-1-1" /><path d="m15 15 1-1" /><path d="M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5Z" /><path d="m8 19-2 3" /><path d="m16 19 2 3" /></g></symbol><symbol id="i-film" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" />
@@ -189,7 +164,8 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
   </div>
 </nav>
 <main id="main">
-<section class="hero" aria-label="Page header">
+<section class="hero ph tall" aria-label="Page header">
+  <img class="hero-photo" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-wildlife-tours_1920x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-wildlife-tours_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-wildlife-tours_1920x.webp 1920w" sizes="100vw" width="1920" height="1072" alt="" fetchpriority="high" decoding="async"/>
   <div class="hero-inner">
     <div class="hero-breadcrumb"><a href="/">ShoreList</a> &nbsp;&#8250;&nbsp; <span>Things to Do</span></div>
     <div class="hero-top">
@@ -199,62 +175,193 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
         <p class="hero-sub">Tours, water sports, museums, rentals and local experiences across downtown Wilmington, Wrightsville Beach, Carolina Beach and Kure Beach.</p>
       </div>
     </div>
-    <div class="hero-meta" id="hmeta"></div>
+    <a class="wx-chip" id="wxchip" href="/wilmington-weather"><i aria-hidden="true"></i><span>Live weather and beach report</span><b aria-hidden="true">&rarr;</b></a>
+    <div class="hero-jump" role="navigation" aria-label="Jump to a section"><a href="#tours-and-history">Tours and history</a><a href="#on-the-water">On the water</a><a href="#on-the-sand">On the sand</a><a href="#nature-and-wildlife">Nature and wildlife</a><a href="#wheels">Wheels</a></div>
   </div>
 </section>
 
 
-<section id="explore" class="hub-grid" aria-label="Categories">
-  <div class="cats-grid">
-      <a class="cat" href="/things-to-do/ghost-tours"><div class="cat-name">Ghost Tours</div></a>
-      <a class="cat" href="/things-to-do/museums"><div class="cat-name">Museums &amp; Attractions</div></a>
-      <a class="cat" href="/things-to-do/walking-tours"><div class="cat-name">Walking &amp; History Tours</div></a>
-      <a class="cat" href="/things-to-do/film-tours"><div class="cat-name">Film &amp; TV Location Tours</div></a>
-      <a class="cat" href="/things-to-do/fishing-charters"><div class="cat-name">Fishing Charters</div></a>
-      <a class="cat" href="/things-to-do/kayak-tours"><div class="cat-name">Kayak Tours</div></a>
-      <a class="cat" href="/things-to-do/river-cruises"><div class="cat-name">River Cruises</div></a>
-      <a class="cat" href="/things-to-do/surf-lessons"><div class="cat-name">Surf Lessons</div></a>
-      <a class="cat" href="/things-to-do/paddleboard"><div class="cat-name">Paddleboard &amp; SUP</div></a>
-      <a class="cat" href="/things-to-do/bike-tours"><div class="cat-name">Bike Tours</div></a>
-      <a class="cat" href="/things-to-do/wildlife-tours"><div class="cat-name">Wildlife Tours</div></a>
-      <a class="cat" href="/things-to-do/ebike-rentals"><div class="cat-name">E-Bike Rentals</div></a>
-      <a class="cat" href="/things-to-do/scooter-rentals"><div class="cat-name">Scooter Rentals</div></a>
-      <a class="cat" href="/things-to-do/fat-bike-rentals"><div class="cat-name">Fat Bike Rentals</div></a>
-      <a class="cat" href="/things-to-do/sailboat-rides"><div class="cat-name">Sailboat Rides</div></a>
-      <a class="cat" href="/things-to-do/nature-walks"><div class="cat-name">Nature Walking Tours</div></a>
-      <a class="cat" href="/things-to-do/beach-photography"><div class="cat-name">Beach Photography</div></a>
-      <a class="cat" href="/things-to-do/beach-picnics"><div class="cat-name">Beach Picnics</div></a>
-      <a class="cat" href="/things-to-do/beach-chairs"><div class="cat-name">Beach Chair Rentals</div></a>
-      <a class="cat" href="/things-to-do/jet-ski-rentals"><div class="cat-name">Jet Ski Rentals</div></a>
-      <a class="cat" href="/things-to-do/golf-cart-rentals"><div class="cat-name">Golf Cart Rentals</div></a>
-      <a class="cat" href="/things-to-do/wellness"><div class="cat-name">Wellness &amp; Spa</div></a>
+<div class="tp-wrap">
+<section id="today-plan" class="tp-strip" aria-label="Best things to do right now">
+  <div class="tp-in tp-fallback">
+    <div class="tp-eye"><i></i>Any-day ideas</div>
+    <h2>Best bets <em>right now</em></h2>
+    <p class="tp-now">Live picks load here, ranked from the wind, surf and weather at Wrightsville Beach. Until they do, these work in most conditions.</p>
+    <div class="tp-grid">
+      <a class="tp-card" href="/things-to-do/museums"><div class="tp-top"><span class="tp-fit">Indoors</span></div><h3>Museums</h3><p>A good indoor option any day.</p><span class="tp-go">See options &rarr;</span></a>
+      <a class="tp-card" href="/things-to-do/wellness"><div class="tp-top"><span class="tp-fit">Any day</span></div><h3>Wellness and spa</h3><p>A calm option any day.</p><span class="tp-go">See options &rarr;</span></a>
+      <a class="tp-card" href="/wilmington-weather"><div class="tp-top"><span class="tp-fit">Check first</span></div><h3>Live weather</h3><p>Current conditions, forecast, surf, tides and water temperature.</p><span class="tp-go">Open the weather page &rarr;</span></a>
+      <a class="tp-card" href="/events/this-weekend"><div class="tp-top"><span class="tp-fit">This weekend</span></div><h3>Events</h3><p>What is happening in Wilmington and the beaches this weekend.</p><span class="tp-go">See the list &rarr;</span></a>
+    </div>
+    <p class="tp-note">These four are everyday suggestions, not a live ranking. Always follow posted beach flags and operator guidance.</p>
   </div>
 </section>
-<section class="seo" aria-label="Guide">
-  <h2>Things to do in Wilmington, NC and the beaches</h2>
-  <p>Wilmington is a river city with three ocean beaches within a half hour: Wrightsville Beach, Carolina Beach and Kure Beach. That mix is what makes it easy to plan. You can spend the morning on the sand, the afternoon in a 250-year-old historic district, and the evening on the Cape Fear River.</p>
-  <p>ShoreList is the local guide and booking marketplace for the area. Every category above has its own page with what to expect, where it happens and what you can book today, and the live beach report on each beach page shows surf, tide, water temperature and an estimated flag.</p>
-  <h3>Explore by area</h3>
-  <div class="town-row">
-    <a href="/downtown">Downtown Wilmington<small>Riverwalk, history, film locations</small></a>
-    <a href="/wrightsville-beach">Wrightsville Beach<small>Surf, paddle, island life</small></a>
-    <a href="/carolina-beach">Carolina Beach<small>Boardwalk, state park, fishing</small></a>
-    <a href="/kure-beach">Kure Beach<small>Quiet sand, pier, Fort Fisher</small></a>
-  </div>
-  <h3>By type of trip</h3>
-  <ul>
-    <li><strong>On the water:</strong> <a href="/things-to-do/surf-lessons">surf lessons</a>, <a href="/things-to-do/paddleboard">paddleboarding</a>, <a href="/things-to-do/kayak-tours">kayak tours</a>, <a href="/things-to-do/fishing-charters">fishing charters</a>, <a href="/things-to-do/sailboat-rides">sunset sails</a>, <a href="/things-to-do/river-cruises">river cruises</a> and <a href="/things-to-do/jet-ski-rentals">jet skis</a>.</li>
-    <li><strong>History and stories:</strong> <a href="/things-to-do/walking-tours">walking tours</a>, <a href="/things-to-do/ghost-tours">ghost tours</a>, <a href="/things-to-do/film-tours">film and TV location tours</a> and <a href="/things-to-do/museums">museums</a>.</li>
-    <li><strong>Nature:</strong> <a href="/things-to-do/wildlife-tours">dolphin and wildlife tours</a> and <a href="/things-to-do/nature-walks">nature walks</a>, including the wild Venus flytraps at Carolina Beach State Park.</li>
-    <li><strong>Getting around:</strong> <a href="/things-to-do/golf-cart-rentals">golf carts</a>, <a href="/things-to-do/ebike-rentals">e-bikes</a>, <a href="/things-to-do/bike-tours">bike tours</a>, <a href="/things-to-do/fat-bike-rentals">fat bikes</a> and <a href="/things-to-do/scooter-rentals">scooters</a>.</li>
-    <li><strong>Beach day extras:</strong> <a href="/things-to-do/beach-chairs">chair and umbrella rentals</a>, <a href="/things-to-do/beach-picnics">beach picnics</a>, <a href="/things-to-do/beach-photography">beach photographers</a> and <a href="/things-to-do/wellness">yoga and wellness</a>.</li>
-  </ul>
-  <p>Planning the whole visit? Start with the <a href="/plan-your-trip">Wilmington trip planning guide</a>, see <a href="/events">what is on this week</a>, find <a href="/shore-picks">where locals eat</a>, or let the <a href="/planner">AI trip planner</a> build a day for you.</p>
-  <h2>Common questions</h2>
-  <details><summary>What are the best things to do in Wilmington, NC?</summary><p>Walk the Riverwalk and the historic district downtown, tour the Battleship North Carolina, take a river cruise at sunset, and spend a day at Wrightsville Beach, Carolina Beach or Kure Beach. Ghost tours, film location tours, surf lessons, kayak trips and fishing charters are the most popular guided experiences.</p></details>
+</div>
+<div class="pg-in">
+
+  <section class="hub-sec" id="tours-and-history" aria-labelledby="h-tours-and-history">
+    <div class="hub-head"><div><p class="pg-eye">4 categories</p><h2 id="h-tours-and-history">Tours and history</h2></div><p class="pg-sub">Walking tours, ghost tours, film locations and museums.</p></div>
+    <div class="cat-cards n4">
+      <a class="kc" href="/things-to-do/walking-tours">
+        <span class="kc-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-walking-tours_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-walking-tours_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-walking-tours_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 112px, (max-width:1000px) 46vw, 380px" width="640" height="400" alt="Walking &amp; History Tours near Wilmington, NC" loading="lazy" decoding="async"/></span>
+        <div class="kc-body"><span class="kc-live">Bookable now</span><h3>Walking &amp; History Tours</h3><p>Guided historic strolls through downtown Wilmington and Carolina Beach — architecture, art, prohibition history, and coastal stories with Founding Partner Amanda Leese.</p><span class="kc-go" aria-hidden="true">Explore &rarr;</span></div>
+      </a>
+      <a class="kc" href="/things-to-do/ghost-tours">
+        <span class="kc-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-ghost-tours_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-ghost-tours_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-ghost-tours_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 112px, (max-width:1000px) 46vw, 380px" width="640" height="400" alt="Ghost Tours near Wilmington, NC" loading="lazy" decoding="async"/></span>
+        <div class="kc-body"><h3>Ghost Tours</h3><p>Spine-tingling walks through Wilmington's most haunted streets with expert local guides.</p><span class="kc-go" aria-hidden="true">Explore &rarr;</span></div>
+      </a>
+      <a class="kc" href="/things-to-do/film-tours">
+        <span class="kc-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-film-tours_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-film-tours_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-film-tours_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 112px, (max-width:1000px) 46vw, 380px" width="640" height="400" alt="Film &amp; TV Location Tours near Wilmington, NC" loading="lazy" decoding="async"/></span>
+        <div class="kc-body"><h3>Film &amp; TV Location Tours</h3><p>Explore the real sets and locations behind Wilmington's legendary film and TV history — guided by someone who lived it from the inside.</p><span class="kc-go" aria-hidden="true">Explore &rarr;</span></div>
+      </a>
+      <a class="kc" href="/things-to-do/museums">
+        <span class="kc-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-museums_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-museums_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-museums_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 112px, (max-width:1000px) 46vw, 380px" width="640" height="400" alt="Museums &amp; Attractions near Wilmington, NC" loading="lazy" decoding="async"/></span>
+        <div class="kc-body"><h3>Museums &amp; Attractions</h3><p>Wilmington's must-see museums and historic attractions — tickets, hours, and events, all on ShoreList.</p><span class="kc-go" aria-hidden="true">Explore &rarr;</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="hub-sec" id="on-the-water" aria-labelledby="h-on-the-water">
+    <div class="hub-head"><div><p class="pg-eye">7 categories</p><h2 id="h-on-the-water">On the water</h2></div><p class="pg-sub">Surf, paddle, fish, sail and cruise.</p></div>
+    <div class="cat-cards n7">
+      <a class="kc" href="/things-to-do/surf-lessons">
+        <span class="kc-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-surf-lessons_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-surf-lessons_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-surf-lessons_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 112px, (max-width:1000px) 94vw, 570px" width="640" height="400" alt="Surf Lessons near Wilmington, NC" loading="lazy" decoding="async"/></span>
+        <div class="kc-body"><h3>Surf Lessons</h3><p>Learn to surf at Wrightsville Beach with certified local instructors. All gear included.</p><span class="kc-go" aria-hidden="true">Explore &rarr;</span></div>
+      </a>
+      <a class="kc" href="/things-to-do/kayak-tours">
+        <span class="kc-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-kayak-tours_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-kayak-tours_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-kayak-tours_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 112px, (max-width:1000px) 46vw, 380px" width="640" height="400" alt="Kayak Tours near Wilmington, NC" loading="lazy" decoding="async"/></span>
+        <div class="kc-body"><h3>Kayak Tours</h3><p>Guided paddle adventures through tidal creeks, salt marshes, and barrier islands of coastal NC.</p><span class="kc-go" aria-hidden="true">Explore &rarr;</span></div>
+      </a>
+      <a class="kc" href="/things-to-do/paddleboard">
+        <span class="kc-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-paddleboard_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-paddleboard_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-paddleboard_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 112px, (max-width:1000px) 46vw, 380px" width="640" height="400" alt="Paddleboard &amp; SUP near Wilmington, NC" loading="lazy" decoding="async"/></span>
+        <div class="kc-body"><h3>Paddleboard &amp; SUP</h3><p>Stand-up paddleboard rentals and guided lessons on the calm coastal waterways.</p><span class="kc-go" aria-hidden="true">Explore &rarr;</span></div>
+      </a>
+      <a class="kc" href="/things-to-do/fishing-charters">
+        <span class="kc-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-fishing-charters_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-fishing-charters_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-fishing-charters_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 112px, (max-width:1000px) 46vw, 380px" width="640" height="400" alt="Fishing Charters near Wilmington, NC" loading="lazy" decoding="async"/></span>
+        <div class="kc-body"><h3>Fishing Charters</h3><p>Half and full-day offshore charters from Carolina Beach and Wrightsville Beach.</p><span class="kc-go" aria-hidden="true">Explore &rarr;</span></div>
+      </a>
+      <a class="kc" href="/things-to-do/sailboat-rides">
+        <span class="kc-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-sailboat-rides_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-sailboat-rides_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-sailboat-rides_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 112px, (max-width:1000px) 46vw, 380px" width="640" height="400" alt="Sailboat Rides near Wilmington, NC" loading="lazy" decoding="async"/></span>
+        <div class="kc-body"><h3>Sailboat Rides</h3><p>Private and group sailing experiences along the breathtaking North Carolina coastline.</p><span class="kc-go" aria-hidden="true">Explore &rarr;</span></div>
+      </a>
+      <a class="kc" href="/things-to-do/river-cruises">
+        <span class="kc-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-river-cruises-2_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-river-cruises-2_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-river-cruises-2_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 112px, (max-width:1000px) 46vw, 380px" width="640" height="400" alt="River Cruises near Wilmington, NC" loading="lazy" decoding="async"/></span>
+        <div class="kc-body"><h3>River Cruises</h3><p>Sunset and sightseeing cruises along the Wilmington waterfront and Cape Fear River.</p><span class="kc-go" aria-hidden="true">Explore &rarr;</span></div>
+      </a>
+      <a class="kc" href="/things-to-do/jet-ski-rentals">
+        <span class="kc-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-jet-ski-rentals_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-jet-ski-rentals_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-jet-ski-rentals_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 112px, (max-width:1000px) 46vw, 380px" width="640" height="400" alt="Jet Ski Rentals near Wilmington, NC" loading="lazy" decoding="async"/></span>
+        <div class="kc-body"><h3>Jet Ski Rentals</h3><p>Hit the open water on a jet ski. Rentals available at Carolina Beach and Wrightsville Beach.</p><span class="kc-go" aria-hidden="true">Explore &rarr;</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="hub-sec" id="on-the-sand" aria-labelledby="h-on-the-sand">
+    <div class="hub-head"><div><p class="pg-eye">4 categories</p><h2 id="h-on-the-sand">On the sand</h2></div><p class="pg-sub">Beach day setups, picnics, photos and wellness.</p></div>
+    <div class="cat-cards n4">
+      <a class="kc" href="/things-to-do/beach-chairs">
+        <span class="kc-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-beach-chairs-2_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-beach-chairs-2_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-beach-chairs-2_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 112px, (max-width:1000px) 46vw, 380px" width="640" height="400" alt="Beach Chair Rentals near Wilmington, NC" loading="lazy" decoding="async"/></span>
+        <div class="kc-body"><h3>Beach Chair Rentals</h3><p>Chairs, umbrellas, and beach gear delivered and set up before you arrive.</p><span class="kc-go" aria-hidden="true">Explore &rarr;</span></div>
+      </a>
+      <a class="kc" href="/things-to-do/beach-picnics">
+        <span class="kc-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-beach-picnics_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-beach-picnics_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-beach-picnics_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 112px, (max-width:1000px) 46vw, 380px" width="640" height="400" alt="Beach Picnics near Wilmington, NC" loading="lazy" decoding="async"/></span>
+        <div class="kc-body"><h3>Beach Picnics</h3><p>Fully set-up private picnic experiences delivered to the beach. You just show up.</p><span class="kc-go" aria-hidden="true">Explore &rarr;</span></div>
+      </a>
+      <a class="kc" href="/things-to-do/beach-photography">
+        <span class="kc-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-beach-photography_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-beach-photography_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-beach-photography_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 112px, (max-width:1000px) 46vw, 380px" width="640" height="400" alt="Beach Photography near Wilmington, NC" loading="lazy" decoding="async"/></span>
+        <div class="kc-body"><h3>Beach Photography</h3><p>Family portraits, engagement sessions, and couples photos on the beach at golden hour.</p><span class="kc-go" aria-hidden="true">Explore &rarr;</span></div>
+      </a>
+      <a class="kc" href="/things-to-do/wellness">
+        <span class="kc-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-wellness-2_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-wellness-2_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-wellness-2_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 112px, (max-width:1000px) 46vw, 380px" width="640" height="400" alt="Wellness &amp; Spa near Wilmington, NC" loading="lazy" decoding="async"/></span>
+        <div class="kc-body"><h3>Wellness &amp; Spa</h3><p>Yoga on the beach, reiki, massage, spas, and mindful coastal retreats on the NC coast.</p><span class="kc-go" aria-hidden="true">Explore &rarr;</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="hub-sec" id="nature-and-wildlife" aria-labelledby="h-nature-and-wildlife">
+    <div class="hub-head"><div><p class="pg-eye">2 categories</p><h2 id="h-nature-and-wildlife">Nature and wildlife</h2></div><p class="pg-sub">Dolphins, birds, marsh creeks and maritime forest.</p></div>
+    <div class="cat-cards n2">
+      <a class="kc" href="/things-to-do/wildlife-tours">
+        <span class="kc-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-wildlife-tours_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-wildlife-tours_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-wildlife-tours_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 112px, (max-width:1000px) 94vw, 570px" width="640" height="400" alt="Wildlife Tours near Wilmington, NC" loading="lazy" decoding="async"/></span>
+        <div class="kc-body"><h3>Wildlife Tours</h3><p>Dolphin watches, birding excursions, and guided nature tours along the NC coast.</p><span class="kc-go" aria-hidden="true">Explore &rarr;</span></div>
+      </a>
+      <a class="kc" href="/things-to-do/nature-walks">
+        <span class="kc-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-nature-walks_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-nature-walks_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-nature-walks_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 112px, (max-width:1000px) 94vw, 570px" width="640" height="400" alt="Nature Walking Tours near Wilmington, NC" loading="lazy" decoding="async"/></span>
+        <div class="kc-body"><h3>Nature Walking Tours</h3><p>Guided walks through maritime forests, cypress swamps, and coastal trails.</p><span class="kc-go" aria-hidden="true">Explore &rarr;</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="hub-sec" id="wheels" aria-labelledby="h-wheels">
+    <div class="hub-head"><div><p class="pg-eye">5 categories</p><h2 id="h-wheels">Wheels</h2></div><p class="pg-sub">Bikes, e-bikes, scooters and golf carts for getting around.</p></div>
+    <div class="cat-cards n5">
+      <a class="kc" href="/things-to-do/golf-cart-rentals">
+        <span class="kc-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-golf-cart-rentals_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-golf-cart-rentals_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-golf-cart-rentals_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 112px, (max-width:1000px) 94vw, 570px" width="640" height="400" alt="Golf Cart Rentals near Wilmington, NC" loading="lazy" decoding="async"/></span>
+        <div class="kc-body"><h3>Golf Cart Rentals</h3><p>Cruise the beach communities in a golf cart. The most fun way to explore the island.</p><span class="kc-go" aria-hidden="true">Explore &rarr;</span></div>
+      </a>
+      <a class="kc" href="/things-to-do/ebike-rentals">
+        <span class="kc-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-ebike-rentals_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-ebike-rentals_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-ebike-rentals_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 112px, (max-width:1000px) 94vw, 570px" width="640" height="400" alt="E-Bike Rentals near Wilmington, NC" loading="lazy" decoding="async"/></span>
+        <div class="kc-body"><h3>E-Bike Rentals</h3><p>Explore the islands and beach communities on electric bikes. No sweat required.</p><span class="kc-go" aria-hidden="true">Explore &rarr;</span></div>
+      </a>
+      <a class="kc" href="/things-to-do/bike-tours">
+        <span class="kc-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-bike-tours_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-bike-tours_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-bike-tours_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 112px, (max-width:1000px) 46vw, 380px" width="640" height="400" alt="Bike Tours near Wilmington, NC" loading="lazy" decoding="async"/></span>
+        <div class="kc-body"><h3>Bike Tours</h3><p>Guided rides through Wilmington's historic districts, riverfront, and beachfront communities.</p><span class="kc-go" aria-hidden="true">Explore &rarr;</span></div>
+      </a>
+      <a class="kc" href="/things-to-do/fat-bike-rentals">
+        <span class="kc-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-fat-bike-rentals_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-fat-bike-rentals_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-fat-bike-rentals_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 112px, (max-width:1000px) 46vw, 380px" width="640" height="400" alt="Fat Bike Rentals near Wilmington, NC" loading="lazy" decoding="async"/></span>
+        <div class="kc-body"><h3>Fat Bike Rentals</h3><p>Wide-tire bikes built for the sand. Ride the beach the way the locals do.</p><span class="kc-go" aria-hidden="true">Explore &rarr;</span></div>
+      </a>
+      <a class="kc" href="/things-to-do/scooter-rentals">
+        <span class="kc-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-scooter-rentals_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-scooter-rentals_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-scooter-rentals_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 112px, (max-width:1000px) 46vw, 380px" width="640" height="400" alt="Scooter Rentals near Wilmington, NC" loading="lazy" decoding="async"/></span>
+        <div class="kc-body"><h3>Scooter Rentals</h3><p>Zip around the beach towns at your own pace. The best way to cover the coast.</p><span class="kc-go" aria-hidden="true">Explore &rarr;</span></div>
+      </a>
+    </div>
+  </section>
+</div>
+<div class="pg-in">
+  <section class="tiles-sec" aria-labelledby="h-area">
+    <p class="pg-eye">Plan around it</p>
+    <h2 id="h-area">Explore by area</h2>
+    <ul class="tiles">
+      <li><a class="tile dark" href="/downtown"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#i-pin"/></svg><span><b>Downtown Wilmington</b><small>Riverwalk, history, film locations</small></span></a></li>
+      <li><a class="tile dark" href="/wrightsville-beach"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#i-wave"/></svg><span><b>Wrightsville Beach</b><small>Surf, paddle, island life</small></span></a></li>
+      <li><a class="tile dark" href="/carolina-beach"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#i-wave"/></svg><span><b>Carolina Beach</b><small>Boardwalk, state park, fishing</small></span></a></li>
+      <li><a class="tile dark" href="/kure-beach"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#i-wave"/></svg><span><b>Kure Beach</b><small>Quiet sand, pier, Fort Fisher</small></span></a></li>
+      <li><a class="tile" href="/events/this-weekend"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#i-calendar"/></svg><span><b>Events this weekend</b><small>What is on, Friday to Sunday</small></span></a></li>
+      <li><a class="tile" href="/where-to-stay"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#i-hotel"/></svg><span><b>Where to stay</b><small>Choosing your base</small></span></a></li>
+      <li><a class="tile" href="/wilmington-weather"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#i-compass"/></svg><span><b>Weather</b><small>Live forecast and beach conditions</small></span></a></li>
+      <li><a class="tile" href="/plan-your-trip"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#i-sparkle"/></svg><span><b>Trip planning guide</b><small>When to go and a three-day plan</small></span></a></li>
+    </ul>
+  </section>
+</div>
+<section class="seo-band" aria-label="Guide" style="margin-top:72px">
+<div class="seo">
+  <div class="seo-cols">
+    <div>
+      <p class="pg-eye">Local guide</p>
+      <h2>Things to do in Wilmington, NC and the beaches</h2>
+      <p>Wilmington is a river city with three ocean beaches within a half hour: Wrightsville Beach, Carolina Beach and Kure Beach. That mix is what makes it easy to plan. You can spend the morning on the sand, the afternoon in a 250-year-old historic district, and the evening on the Cape Fear River.</p>
+      <p>ShoreList is the local guide and booking marketplace for the area. Every category above has its own page with what to expect, where it happens and what you can book today, and the live beach report on each beach page shows surf, tide, water temperature and an estimated flag.</p>
+      <h3>By type of trip</h3>
+      <ul>
+        <li><strong>On the water:</strong> <a href="/things-to-do/surf-lessons">surf lessons</a>, <a href="/things-to-do/paddleboard">paddleboarding</a>, <a href="/things-to-do/kayak-tours">kayak tours</a>, <a href="/things-to-do/fishing-charters">fishing charters</a>, <a href="/things-to-do/sailboat-rides">sunset sails</a>, <a href="/things-to-do/river-cruises">river cruises</a> and <a href="/things-to-do/jet-ski-rentals">jet skis</a>.</li>
+        <li><strong>History and stories:</strong> <a href="/things-to-do/walking-tours">walking tours</a>, <a href="/things-to-do/ghost-tours">ghost tours</a>, <a href="/things-to-do/film-tours">film and TV location tours</a> and <a href="/things-to-do/museums">museums</a>.</li>
+        <li><strong>Nature:</strong> <a href="/things-to-do/wildlife-tours">dolphin and wildlife tours</a> and <a href="/things-to-do/nature-walks">nature walks</a>, including the wild Venus flytraps at Carolina Beach State Park.</li>
+        <li><strong>Getting around:</strong> <a href="/things-to-do/golf-cart-rentals">golf carts</a>, <a href="/things-to-do/ebike-rentals">e-bikes</a>, <a href="/things-to-do/bike-tours">bike tours</a>, <a href="/things-to-do/fat-bike-rentals">fat bikes</a> and <a href="/things-to-do/scooter-rentals">scooters</a>.</li>
+        <li><strong>Beach day extras:</strong> <a href="/things-to-do/beach-chairs">chair and umbrella rentals</a>, <a href="/things-to-do/beach-picnics">beach picnics</a>, <a href="/things-to-do/beach-photography">beach photographers</a> and <a href="/things-to-do/wellness">yoga and wellness</a>.</li>
+      </ul>
+      <p>Planning the whole visit? Start with the <a href="/plan-your-trip">Wilmington trip planning guide</a>, see <a href="/events">what is on this week</a>, find <a href="/shore-picks">where locals eat</a>, or let the <a href="/planner">AI trip planner</a> build a day for you.</p>
+    </div>
+    <div id="faq">
+      <p class="pg-eye">Before you go</p>
+      <h2>Common questions</h2>
+      <details><summary>What are the best things to do in Wilmington, NC?</summary><p>Walk the Riverwalk and the historic district downtown, tour the Battleship North Carolina, take a river cruise at sunset, and spend a day at Wrightsville Beach, Carolina Beach or Kure Beach. Ghost tours, film location tours, surf lessons, kayak trips and fishing charters are the most popular guided experiences.</p></details>
 <details><summary>How far are the beaches from downtown Wilmington?</summary><p>Wrightsville Beach is about 20 minutes east of downtown. Carolina Beach is about 30 minutes south, and Kure Beach is just beyond it on the same island. Allow extra time on summer weekends.</p></details>
 <details><summary>What is there to do in Wilmington when it rains?</summary><p>Museums such as the Wilmington Railroad Museum, historic house tours, film location tours, and spa and wellness experiences all work in bad weather.</p></details>
 <details><summary>Which beach near Wilmington is best?</summary><p>Wrightsville Beach is closest and best for surfing, paddleboarding and clear water. Carolina Beach has the boardwalk, a state park and a lively family atmosphere. Kure Beach is the quietest, with a fishing pier and Fort Fisher nearby.</p></details>
+      <p class="ph-note">Photos set the scene and may not show the exact tour, operator or location.</p>
+    </div>
+  </div>
+</div>
 </section>
 
 </main>
@@ -281,6 +388,10 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 <script src="/beachwx.js" defer></script>
 <script src="/widgets.js" defer></script>
 <script src="/shore-plus.js" defer></script>
-<script src="/directory.js" defer></script>
+<script src="/today.js" defer></script>
+<script>
+window.addEventListener('load',function(){var c=document.getElementById('wxchip');if(!c||!window.ShoreWX)return;
+window.ShoreWX.get(0).then(function(x){if(x==null||x.temp==null)return;var t='Wrightsville Beach now: '+Math.round(x.temp)+'°F, wind '+Math.round(x.wind||0)+' mph'+(x.waveFt!=null?', surf '+x.waveFt.toFixed(1)+' ft':'');c.querySelector('span').textContent=t;}).catch(function(){});});
+</script>
 </body>
 </html>

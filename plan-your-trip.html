@@ -42,33 +42,8 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 <link rel="stylesheet" href="/scene.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
 <script src="/luxe.js" defer></script>
-<style>
-.seo{max-width:880px;margin:0 auto;padding:8px 24px 72px;color:var(--mid);font-size:1rem;line-height:1.75}
-.seo h2{font-family:'Playfair Display',serif;color:var(--teal);font-size:1.7rem;line-height:1.2;margin:44px 0 14px}
-.seo h3{color:var(--teal);font-size:1.05rem;margin:26px 0 6px}
-.seo p{margin:0 0 14px}.seo a{color:#B93C24;font-weight:600}
-.seo ul{margin:0 0 14px 20px}.seo li{margin:4px 0}
-.seo .where{font-weight:600;color:var(--teal)}
-.seo details{border-top:1px solid var(--border);padding:14px 0}.seo details:last-of-type{border-bottom:1px solid var(--border)}
-.seo summary{cursor:pointer;font-weight:700;color:var(--teal);font-size:1.02rem}
-.seo details p{margin:10px 0 0}
-.seo .chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0;padding:0;list-style:none}
-.seo .chips a{display:inline-block;padding:9px 16px;border:1px solid var(--border);border-radius:100px;text-decoration:none;color:var(--teal);font-size:.9rem;background:#fff}
-.seo .chips a:hover{border-color:var(--coral);color:#B93C24}
-.seo table{width:100%;border-collapse:collapse;margin:8px 0 18px;font-size:.95rem}
-.seo th,.seo td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}
-.seo th{color:var(--teal);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
-.hub-grid{max-width:1160px;margin:0 auto;padding:40px 24px 8px}
-#explore .cats-grid{display:grid}
-#explore .cats-grid .cat{text-decoration:none;cursor:pointer}
-#explore .cats-grid .cat::after{content:"\2192";position:absolute}
-.town-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0}
-.town-row a{display:block;padding:18px;border-radius:14px;background:var(--teal);color:#fff!important;text-decoration:none;font-weight:700}
-.town-row a small{display:block;font-weight:400;opacity:.8;margin-top:4px;font-size:.84rem}
-@media(max-width:700px){.seo{padding:0 18px 56px}.seo h2{font-size:1.4rem}.hub-grid{padding:24px 14px 0}}
-</style>
 </head>
-<body data-cat="sailboat-rides">
+<body class="pg">
 <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="i-ghost" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 10h.01" />
   <path d="M15 10h.01" />
   <path d="M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 19l2.5 2.5L17 19l3 3V10a8 8 0 0 0-8-8z" /></g></symbol><symbol id="i-train" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3.1V7a4 4 0 0 0 8 0V3.1" /><path d="m9 15-1-1" /><path d="m15 15 1-1" /><path d="M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5Z" /><path d="m8 19-2 3" /><path d="m16 19 2 3" /></g></symbol><symbol id="i-film" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" />
@@ -188,7 +163,8 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
   </div>
 </nav>
 <main id="main">
-<section class="hero" aria-label="Page header">
+<section class="hero ph tall" aria-label="Page header">
+  <img class="hero-photo" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-sailboat-rides_1920x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-sailboat-rides_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-sailboat-rides_1920x.webp 1920w" sizes="100vw" width="1920" height="1072" alt="" fetchpriority="high" decoding="async"/>
   <div class="hero-inner">
     <div class="hero-breadcrumb"><a href="/">ShoreList</a> &nbsp;&#8250;&nbsp; <span>Plan Your Trip</span></div>
     <div class="hero-top">
@@ -198,57 +174,101 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
         <p class="hero-sub">When to go, where to stay, how the beaches differ and a three-day plan for Wilmington, Wrightsville Beach, Carolina Beach and Kure Beach.</p>
       </div>
     </div>
-    <div class="hero-meta" id="hmeta"></div>
+    <a class="wx-chip" id="wxchip" href="/wilmington-weather"><i aria-hidden="true"></i><span>Live weather and beach report</span><b aria-hidden="true">&rarr;</b></a>
   </div>
 </section>
 
 
-<section class="seo" aria-label="Trip guide">
-  <h2>Wilmington at a glance</h2>
-  <p>Wilmington sits on the Cape Fear River in southeastern North Carolina, with the Atlantic a few miles east. Visitors get a historic river city and three distinct beach towns in one trip, all within about half an hour of each other.</p>
-  <table>
-    <tr><th>Area</th><th>Best for</th><th>From downtown</th></tr>
-    <tr><td><a href="/downtown">Downtown Wilmington</a></td><td>Riverwalk, historic district, restaurants, nightlife, film locations</td><td>You are here</td></tr>
-    <tr><td><a href="/wrightsville-beach">Wrightsville Beach</a></td><td>Surfing, paddleboarding, clear water, an active island</td><td>About 20 minutes</td></tr>
-    <tr><td><a href="/carolina-beach">Carolina Beach</a></td><td>Boardwalk, families, fishing charters, Carolina Beach State Park</td><td>About 30 minutes</td></tr>
-    <tr><td><a href="/kure-beach">Kure Beach</a></td><td>Quiet beach days, the pier, Fort Fisher</td><td>About 35 to 40 minutes</td></tr>
-  </table>
+<div class="pg-in">
+  <section class="trip-sec" aria-labelledby="h-glance">
+    <p class="pg-eye">The short version</p>
+    <h2 id="h-glance">Wilmington at a glance</h2>
+    <p class="pg-sub" style="max-width:760px">Wilmington sits on the Cape Fear River in southeastern North Carolina, with the Atlantic a few miles east. Visitors get a historic river city and three distinct beach towns in one trip, all within about half an hour of each other.</p>
+    <ul class="stats">
+      <li><span>Fly into</span><b>ILM, about 10 minutes from downtown</b></li>
+      <li><span>To the beaches</span><b>About 20 to 40 minutes from downtown</b></li>
+      <li><span>How long</span><b>Three days covers the essentials</b></li>
+      <li><span>Getting around</span><b>A car, for most trips</b></li>
+    </ul>
+    <table class="areas">
+      <tr><th>Area</th><th>Best for</th><th>From downtown</th></tr>
+      <tr><td><a href="/downtown">Downtown Wilmington</a></td><td>Riverwalk, historic district, restaurants, nightlife, film locations</td><td data-l="From downtown">You are here</td></tr>
+      <tr><td><a href="/wrightsville-beach">Wrightsville Beach</a></td><td>Surfing, paddleboarding, clear water, an active island</td><td data-l="From downtown">About 20 minutes</td></tr>
+      <tr><td><a href="/carolina-beach">Carolina Beach</a></td><td>Boardwalk, families, fishing charters, Carolina Beach State Park</td><td data-l="From downtown">About 30 minutes</td></tr>
+      <tr><td><a href="/kure-beach">Kure Beach</a></td><td>Quiet beach days, the pier, Fort Fisher</td><td data-l="From downtown">About 35 to 40 minutes</td></tr>
+    </table>
+    <ul class="tiles t3" style="margin-top:14px">
+      <li><a class="tile" href="/where-to-stay"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#i-hotel"/></svg><span><b>Where to stay</b><small>Downtown or one of the beach towns</small></span></a></li>
+      <li><a class="tile" href="/events/this-weekend"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#i-calendar"/></svg><span><b>Events this weekend</b><small>What is on, Friday to Sunday</small></span></a></li>
+      <li><a class="tile" href="/wilmington-weather"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#i-compass"/></svg><span><b>Weather</b><small>Live forecast and beach conditions</small></span></a></li>
+    </ul>
+  </section>
 
-  <h2>When to go</h2>
-  <ul>
-    <li><strong>Spring (March to May):</strong> mild days, gardens in bloom and the North Carolina Azalea Festival in April. The ocean is still cool.</li>
-    <li><strong>Summer (June to August):</strong> peak beach season, warm water and the busiest weekends. Book lodging and tours early, and expect afternoon thunderstorms.</li>
-    <li><strong>Fall (September to November):</strong> warm water into October, fewer crowds and good fishing. It is also the heart of hurricane season, so keep plans flexible.</li>
-    <li><strong>Winter (December to February):</strong> quiet and mild, with holiday events and lower lodging rates. A good time for downtown, museums and long beach walks.</li>
-  </ul>
-  <p>See <a href="/events">what is happening this week</a> before you pick dates.</p>
+  <section class="trip-sec" aria-labelledby="h-when">
+    <p class="pg-eye">Season by season</p>
+    <h2 id="h-when">When to go</h2>
+    <ul class="seasons">
+      <li><strong>Spring (March to May):</strong> mild days, gardens in bloom and the North Carolina Azalea Festival in April. The ocean is still cool.</li>
+      <li><strong>Summer (June to August):</strong> peak beach season, warm water and the busiest weekends. Book lodging and tours early, and expect afternoon thunderstorms.</li>
+      <li><strong>Fall (September to November):</strong> warm water into October, fewer crowds and good fishing. It is also the heart of hurricane season, so keep plans flexible.</li>
+      <li><strong>Winter (December to February):</strong> quiet and mild, with holiday events and lower lodging rates. A good time for downtown, museums and long beach walks.</li>
+    </ul>
+    <p class="pg-sub">See <a class="txt" href="/events">what is happening this week</a> before you pick dates.</p>
+  </section>
 
-  <h2>Getting here and getting around</h2>
-  <p>Wilmington International Airport (ILM) is about 10 minutes from downtown. By road, Interstate 40 ends in Wilmington, and Raleigh is roughly two hours away. Once you are here, downtown is walkable, and each beach town is easy by bike, <a href="/things-to-do/ebike-rentals">e-bike</a> or <a href="/things-to-do/golf-cart-rentals">golf cart</a>, but you will want a car to move between them. Beach parking is paid in season, and lots fill early on summer weekends.</p>
+  <section class="trip-sec" aria-labelledby="h-plan">
+    <p class="pg-eye">Itinerary</p>
+    <h2 id="h-plan">A simple three-day plan</h2>
+    <div class="days seo-days">
+      <article class="day">
+        <div class="day-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-walking-tours_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-walking-tours_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-walking-tours_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 92vw, (max-width:1000px) 38vw, 360px" width="640" height="400" alt="Walking tour scene for a day in downtown Wilmington" loading="lazy" decoding="async"/><span class="day-n" aria-hidden="true"><small>Day</small>1</span></div>
+        <div class="day-body"><h3>Day 1: Downtown and the river</h3><p>Start with a <a class="txt" href="/things-to-do/walking-tours">guided walking tour</a> of the historic district, visit the <a class="txt" href="/wilmington-railroad-museum">Wilmington Railroad Museum</a> or cross the river to the Battleship North Carolina, then take a <a class="txt" href="/things-to-do/river-cruises">sunset river cruise</a>. After dark, try a <a class="txt" href="/things-to-do/ghost-tours">ghost tour</a>.</p></div>
+      </article>
+      <article class="day">
+        <div class="day-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-surf-lessons_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-surf-lessons_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-surf-lessons_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 92vw, (max-width:1000px) 38vw, 360px" width="640" height="400" alt="Surf scene for a day at Wrightsville Beach" loading="lazy" decoding="async"/><span class="day-n" aria-hidden="true"><small>Day</small>2</span></div>
+        <div class="day-body"><h3>Day 2: Wrightsville Beach</h3><p>Check the <a class="txt" href="/wrightsville-beach">live beach report</a>, then take a <a class="txt" href="/things-to-do/surf-lessons">surf lesson</a> or <a class="txt" href="/things-to-do/paddleboard">paddleboard</a> the sound side in the morning. In the afternoon, a <a class="txt" href="/things-to-do/kayak-tours">kayak</a> or <a class="txt" href="/things-to-do/wildlife-tours">wildlife tour</a> gets you out toward Masonboro Island, and a <a class="txt" href="/things-to-do/sailboat-rides">sunset sail</a> ends the day.</p></div>
+      </article>
+      <article class="day">
+        <div class="day-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-nature-walks_640x400_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-nature-walks_640x400_crop_center.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-nature-walks_1280x800_crop_center.webp 1280w" sizes="(max-width:680px) 92vw, (max-width:1000px) 38vw, 360px" width="640" height="400" alt="Nature walk scene for a day at Carolina Beach and Kure Beach" loading="lazy" decoding="async"/><span class="day-n" aria-hidden="true"><small>Day</small>3</span></div>
+        <div class="day-body"><h3>Day 3: Carolina Beach and Kure Beach</h3><p>Walk the flytrap trail at Carolina Beach State Park on a <a class="txt" href="/things-to-do/nature-walks">nature walk</a>, spend midday on the sand and the boardwalk, then continue south to Kure Beach and Fort Fisher. Anglers can swap the morning for a <a class="txt" href="/things-to-do/fishing-charters">fishing charter</a>.</p></div>
+      </article>
+    </div>
+    <p class="pg-sub" style="max-width:760px">Want a plan built around your group? The <a class="txt" href="/planner">ShoreList trip planner</a> builds one in seconds, and <a class="txt" href="/shore-picks">Shore Picks</a> covers where to eat.</p>
+  </section>
 
-  <h2>A simple three-day plan</h2>
-  <h3>Day 1: Downtown and the river</h3>
-  <p>Start with a <a href="/things-to-do/walking-tours">guided walking tour</a> of the historic district, visit the <a href="/wilmington-railroad-museum">Wilmington Railroad Museum</a> or cross the river to the Battleship North Carolina, then take a <a href="/things-to-do/river-cruises">sunset river cruise</a>. After dark, try a <a href="/things-to-do/ghost-tours">ghost tour</a>.</p>
-  <h3>Day 2: Wrightsville Beach</h3>
-  <p>Check the <a href="/wrightsville-beach">live beach report</a>, then take a <a href="/things-to-do/surf-lessons">surf lesson</a> or <a href="/things-to-do/paddleboard">paddleboard</a> the sound side in the morning. In the afternoon, a <a href="/things-to-do/kayak-tours">kayak</a> or <a href="/things-to-do/wildlife-tours">wildlife tour</a> gets you out toward Masonboro Island, and a <a href="/things-to-do/sailboat-rides">sunset sail</a> ends the day.</p>
-  <h3>Day 3: Carolina Beach and Kure Beach</h3>
-  <p>Walk the flytrap trail at Carolina Beach State Park on a <a href="/things-to-do/nature-walks">nature walk</a>, spend midday on the sand and the boardwalk, then continue south to Kure Beach and Fort Fisher. Anglers can swap the morning for a <a href="/things-to-do/fishing-charters">fishing charter</a>.</p>
-  <p>Want a plan built around your group? The <a href="/planner">ShoreList trip planner</a> builds one in seconds, and <a href="/shore-picks">Shore Picks</a> covers where to eat.</p>
-
-  <h2>What to pack</h2>
-  <p>Sun protection, a hat, sandals and a light layer for evenings on the water. For the beach, bring or rent chairs and shade: you can <a href="/things-to-do/beach-chairs">rent a setup</a> or pick up chairs, umbrellas, towels and coolers from the <a href="/shop">ShoreList Shop</a>.</p>
-
-  <h2>Trip planning questions</h2>
-  <details><summary>What is the best time of year to visit Wilmington, NC?</summary><p>Late spring and early fall are the sweet spots: warm weather, swimmable water and thinner crowds. Summer is peak beach season. Spring brings the azaleas and the North Carolina Azalea Festival in April, and winter is quiet and mild, with holiday events downtown.</p></details>
+  <section class="trip-sec trip-2" aria-label="Practical notes">
+    <div class="pcard">
+      <h2>Getting here and getting around</h2>
+      <p>Wilmington International Airport (ILM) is about 10 minutes from downtown. By road, Interstate 40 ends in Wilmington, and Raleigh is roughly two hours away. Once you are here, downtown is walkable, and each beach town is easy by bike, <a class="txt" href="/things-to-do/ebike-rentals">e-bike</a> or <a class="txt" href="/things-to-do/golf-cart-rentals">golf cart</a>, but you will want a car to move between them. Beach parking is paid in season, and lots fill early on summer weekends.</p>
+    </div>
+    <div class="pcard">
+      <h2>What to pack</h2>
+      <p>Sun protection, a hat, sandals and a light layer for evenings on the water. For the beach, bring or rent chairs and shade: you can <a class="txt" href="/things-to-do/beach-chairs">rent a setup</a> or pick up chairs, umbrellas, towels and coolers from the <a class="txt" href="/shop">ShoreList Shop</a>.</p>
+    </div>
+  </section>
+</div>
+<section class="seo-band" aria-label="Trip planning questions" style="margin-top:72px">
+<div class="seo">
+  <div class="seo-cols">
+    <div id="faq">
+      <p class="pg-eye">Before you go</p>
+      <h2>Trip planning questions</h2>
+      <details><summary>What is the best time of year to visit Wilmington, NC?</summary><p>Late spring and early fall are the sweet spots: warm weather, swimmable water and thinner crowds. Summer is peak beach season. Spring brings the azaleas and the North Carolina Azalea Festival in April, and winter is quiet and mild, with holiday events downtown.</p></details>
 <details><summary>How many days do you need in Wilmington?</summary><p>Three days covers the essentials: one for downtown and the riverfront, one for Wrightsville Beach, and one for Carolina Beach, Kure Beach and Fort Fisher. A week lets you slow down and add fishing, paddling and day trips.</p></details>
 <details><summary>Which airport do you fly into for Wilmington, NC?</summary><p>Wilmington International Airport (ILM) is about 10 minutes from downtown and around 20 to 30 minutes from the beaches. Raleigh-Durham (RDU) is roughly two hours away by car on Interstate 40.</p></details>
 <details><summary>Should I stay downtown or at the beach?</summary><p>Stay downtown for restaurants, nightlife, history and walkability. Stay at Wrightsville Beach for an upscale beach base close to the city, at Carolina Beach for a classic family beach town with a boardwalk, or at Kure Beach for quiet.</p></details>
 <details><summary>Do you need a car in Wilmington, NC?</summary><p>Yes, for most trips. Downtown is walkable and the beach towns are easy to get around by bike or golf cart, but you will want a car to move between them.</p></details>
 <details><summary>When is hurricane season on the North Carolina coast?</summary><p>Atlantic hurricane season runs from June 1 to November 30, with the most activity usually in August, September and early October. Trip insurance is worth considering for those months.</p></details>
 <details><summary>Is the ocean warm enough to swim?</summary><p>Ocean water is warmest from June through September. ShoreList shows the current water temperature, surf and an estimated flag for each beach.</p></details>
-
-  <h2>Start planning</h2>
-  <ul class="chips"><li><a href="/things-to-do">All things to do</a></li><li><a href="/events">Events</a></li><li><a href="/map">Map</a></li><li><a href="/planner">AI trip planner</a></li><li><a href="/shore-picks">Where to eat</a></li><li><a href="/shop">Beach gear</a></li></ul>
+    </div>
+    <div>
+      <p class="pg-eye">Next steps</p>
+      <h2>Start planning</h2>
+      <ul class="chips"><li><a href="/things-to-do">All things to do</a></li><li><a href="/where-to-stay">Where to stay</a></li><li><a href="/events">Events</a></li><li><a href="/wilmington-weather">Weather</a></li><li><a href="/map">Map</a></li><li><a href="/planner">AI trip planner</a></li><li><a href="/shore-picks">Where to eat</a></li><li><a href="/shop">Beach gear</a></li></ul>
+      <p class="ph-note">Photos set the scene and may not show the exact tour, operator or location.</p>
+    </div>
+  </div>
+</div>
 </section>
 
 </main>
@@ -275,6 +295,9 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 <script src="/beachwx.js" defer></script>
 <script src="/widgets.js" defer></script>
 <script src="/shore-plus.js" defer></script>
-<script src="/directory.js" defer></script>
+<script>
+window.addEventListener('load',function(){var c=document.getElementById('wxchip');if(!c||!window.ShoreWX)return;
+window.ShoreWX.get(0).then(function(x){if(x==null||x.temp==null)return;var t='Wrightsville Beach now: '+Math.round(x.temp)+'°F, wind '+Math.round(x.wind||0)+' mph'+(x.waveFt!=null?', surf '+x.waveFt.toFixed(1)+' ft':'');c.querySelector('span').textContent=t;}).catch(function(){});});
+</script>
 </body>
 </html>
