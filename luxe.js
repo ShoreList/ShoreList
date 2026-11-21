@@ -61,6 +61,40 @@
       d.head.appendChild(sp);
     }
   }catch(e){}
+  /* photo tiles: pointer-tracked light and tilt, plus a live "right now" chip from the conditions feed */
+  (function(){
+    var grid=d.querySelector('#explore .cats-grid');if(!grid)return;
+    var fine=window.matchMedia&&matchMedia('(hover:hover) and (pointer:fine)').matches;
+    grid.querySelectorAll('.cat').forEach(function(c){var s=d.createElement('span');s.className='cat-sheen';s.setAttribute('aria-hidden','true');c.appendChild(s);});
+    if(fine&&!rm){
+      var raf=0;
+      grid.addEventListener('pointermove',function(e){
+        var c=e.target.closest&&e.target.closest('.cat');if(!c)return;
+        if(raf)cancelAnimationFrame(raf);
+        raf=requestAnimationFrame(function(){
+          var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+          c.style.setProperty('--mx',(x*100).toFixed(1)+'%');c.style.setProperty('--my',(y*100).toFixed(1)+'%');
+          c.style.setProperty('--ry',((x-.5)*7).toFixed(2)+'deg');c.style.setProperty('--rx',((.5-y)*7).toFixed(2)+'deg');
+        });
+      });
+      grid.addEventListener('pointerout',function(e){var c=e.target.closest&&e.target.closest('.cat');if(c&&!c.contains(e.relatedTarget)){c.style.setProperty('--rx','0deg');c.style.setProperty('--ry','0deg');}});
+    }
+    function chip(slug,text){
+      var c=grid.querySelector('.cat[href$="cat='+slug+'"]');if(!c)return;
+      var el=c.querySelector('.cat-live');if(!el){el=d.createElement('span');el.className='cat-live';c.appendChild(el);}
+      el.textContent=text;requestAnimationFrame(function(){el.classList.add('on');});
+    }
+    d.addEventListener('shore:cond',function(e){
+      var c=e.detail||{};if(c.temp==null)return;
+      grid.querySelectorAll('.cat-live').forEach(function(n){n.remove();});
+      var ft=c.wave!=null?c.wave*3.281:null,rain=c.code!=null&&c.code>=50,red=/red/i.test(String(c.flag||'')),now=Date.now(),set=c.set?new Date(c.set).getTime():0;
+      if(rain){chip('museums','Rainy-day pick');chip('film-tours','Rainy-day pick');chip('wellness','Rainy-day pick');return;}
+      if(ft!=null&&ft>=2&&!red)chip('surf-lessons','Surf up · '+ft.toFixed(1)+' ft');
+      if(ft!=null&&ft<1.5){chip('paddleboard','Calm water now');chip('kayak-tours','Calm water now');}
+      if(set&&now<set&&set-now<2.5*36e5){chip('river-cruises','Golden hour soon');chip('sailboat-rides','Golden hour soon');chip('beach-photography','Golden hour soon');}
+      if(set&&now>set)chip('ghost-tours','After-dark favorite');
+    });
+  })();
   /* Shore Score widget on pages that carry the live conditions */
   addEventListener('load',function(){
     if(d.querySelector('script[src*="widgets.js"]')){var s=d.createElement('script');s.src='/shorescore.js';s.defer=true;d.body.appendChild(s);}
