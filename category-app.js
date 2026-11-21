@@ -225,7 +225,8 @@ function pad(n){return String(n).padStart(2,'0');}
 /* FORM */
   // Calendar init - bookings coming soon
 function getCat(){return window.__CAT||new URLSearchParams(window.location.search).get('cat')||'';}
-function esc(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function rich(s){return esc(s).replace(/&lt;(\/?)(em|strong)&gt;/g,'<$1$2>');}
+function esc(s){return String(s).replace(/&(?!#?\w+;)/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
 function renderMuseumsCategory(){
   var mh='<div class="hm-badge live">Official Partner On Board</div>'
@@ -294,7 +295,7 @@ function renderPage(){
       h+='<div class="op-card" id="card-'+oid+'">';
       h+='<div class="op-card-body">';
       h+='<div class="op-card-header"><div><div class="op-live-badge"><span class="op-live-dot"></span>Available to Book</div><div class="op-business-name">'+esc(op.business)+'</div><div class="op-operator-name">'+esc(op.operator)+' &nbsp;&middot;&nbsp; '+esc(op.title)+'</div></div><div class="op-price-tag"><div class="op-price">'+esc(op.price)+'</div><div class="op-price-label">'+esc(op.priceLabel)+'</div></div></div>';
-      h+='<p class="op-desc">'+esc(op.desc)+'</p>';
+      h+='<p class="op-desc">'+rich(op.desc)+'</p>';
       h+='<div class="op-tags">'; op.tags.forEach(function(t){h+='<span class="op-tag">'+esc(t)+'</span>';}); h+='</div>';
       h+='<div class="op-divider"></div>';
       h+='<div style="display:flex;flex-wrap:wrap;gap:16px;font-size:0.78rem;color:#3a5a61;font-weight:600;margin:0 0 14px;"><span>&#10003; Free cancellation 24hrs</span><span>&#10003; Local Wilmington operator</span><span>&#10003; Secure checkout</span></div>';
