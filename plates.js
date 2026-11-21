@@ -5,7 +5,7 @@
   'use strict';
   var host = document.querySelector('[data-scene]');
   if (!host) return;
-  var BASE = 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-beach-', V = '?v=1795227314';
+  var BASE = 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-beach4k-', V = '';
   var NAMES = ['dawn', 'midday', 'golden', 'night'], ALT = ['Beach and fishing pier at dawn', 'Beach and fishing pier at midday', 'Beach and fishing pier at golden hour', 'Beach and fishing pier under a full moon'];
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var sun = window.ShoreSun;
@@ -18,7 +18,7 @@
     im.sizes = '100vw'; im.setAttribute('data-p', i); wrap.appendChild(im); return im;
   });
   host.insertBefore(wrap, host.firstChild);
-  function src(i) { var b = BASE + NAMES[i]; return { s: b + '_1000x.webp' + V + ' 1000w, ' + b + '_1920x.webp' + V + ' 1920w', f: b + '.webp' + V }; }
+  function src(i) { var b = BASE + NAMES[i]; return { s: b + '_1000x.webp' + V + ' 1000w, ' + b + '_1920x.webp' + V + ' 1920w, ' + b + '.webp' + V + ' 3840w', f: b + '.webp' + V }; }
   function load(i, high) { var im = imgs[i]; if (im.src || im.getAttribute('data-l')) return; im.setAttribute('data-l', 1); var u = src(i); if (high) im.fetchPriority = 'high'; im.srcset = u.s; im.src = u.f; im.addEventListener('load', function () { loaded++; im.classList.add('ok'); paint(); if (loaded >= 1) host.classList.add('plates-on'); }); im.addEventListener('error', function () { im.removeAttribute('src'); im.removeAttribute('srcset'); }); }
   function weights(p) { return NAMES.map(function (_, i) { var d = Math.abs(p - i); d = Math.min(d, 4 - d); var w = Math.max(0, 1 - d); return w * w * (3 - 2 * w); }); }
   function paint() {

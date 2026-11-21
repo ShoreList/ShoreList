@@ -116,3 +116,10 @@ body:not(:has(.hero-cine)) .cc-fab{right:auto;left:16px}body:not(:has(.hero-cine
 @keyframes rpl{to{width:360px;height:140px;margin:-70px 0 0 -180px;opacity:0;border-width:.5px}}
 @media(max-width:820px){.plates img{object-position:30% 50%}}
 @media(prefers-reduced-motion:reduce){.plates img{animation:none}.ripple{display:none}}
+
+/* cinematic grade: grain, bloom, vignette, light shimmer */
+.plates::before{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background:radial-gradient(120% 90% at 50% 45%,transparent 55%,rgba(2,12,22,.42) 100%)}
+.plates::after{content:"";position:absolute;inset:-50%;z-index:4;pointer-events:none;opacity:.07;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1.2 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");animation:grain .9s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+.plates img{filter:contrast(1.06) saturate(1.08) brightness(1.01)}
+@media(prefers-reduced-motion:reduce){.plates::after{animation:none}}
