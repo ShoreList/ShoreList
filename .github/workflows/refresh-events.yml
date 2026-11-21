@@ -14,12 +14,14 @@ jobs:
         with:
           node-version: 22
       - run: node tools/refresh-events.mjs
+      - run: node tools/build-events-pages.mjs
+      - run: node tools/build-llms.mjs
       - name: Commit if changed
         run: |
-          if ! git diff --quiet events-data.json; then
+          if [ -n "$(git status --porcelain events-data.json events.html events llms-full.txt)" ]; then
             git config user.name "ShoreList events bot"
             git config user.email "noreply@shorelist.net"
-            git add events-data.json
+            git add events-data.json events.html events llms-full.txt
             git commit -m "Refresh events feed"
             git push
           fi

@@ -29,6 +29,12 @@ for (const [slug, arr] of Object.entries(ctx.OPS)) {
 }
 const pages = [
   ['Things to do in Wilmington, NC', 'Every tour, activity and rental category for Wilmington and the beaches', '/things-to-do', 'things to do activities tours attractions what to do'],
+  ['Where to stay in Wilmington, NC', 'Choosing between downtown, Wrightsville Beach, Carolina Beach, Kure Beach and midtown', '/where-to-stay', 'hotels lodging stay resort rental inn bed breakfast oceanfront riverfront accommodation'],
+  ['Wilmington events this weekend', 'What is on this Friday to Sunday', '/events/this-weekend', 'weekend events tonight saturday sunday friday'],
+  ['Wrightsville Beach events', 'Upcoming events on the island', '/events/wrightsville-beach', 'wrightsville events flotilla'],
+  ['Carolina Beach events', 'Boardwalk, lake and seasonal events', '/events/carolina-beach', 'carolina beach events boardwalk'],
+  ['Kure Beach events', 'Markets and community events', '/events/kure-beach', 'kure beach events'],
+  ['Downtown Wilmington events', 'Concerts, theater, markets and parades', '/events/downtown-wilmington', 'downtown events concerts theater'],
   ['Wilmington, NC weather', 'Live conditions, hourly and 7-day forecast, beach, surf and tide report', '/wilmington-weather', 'weather forecast rain temperature surf tide water temp wind beach conditions today'],
   ['Wilmington, NC visitor FAQ', 'Short answers about beaches, parking, kids, nightlife, festivals and getting around', '/wilmington-nc-faq', 'faq questions parking dogs kids free festivals ferry film sunset'],
   ['The Shore Report newsletter', 'Free weekly events, itinerary and beach conditions', '/weekly', 'newsletter weekly email shore report subscribe'],

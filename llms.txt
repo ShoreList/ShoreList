@@ -11,6 +11,9 @@
 - [Kure Beach](https://shorelist.net/kure-beach)
 - [Events](https://shorelist.net/events): dated local events, updated regularly
 - [Wilmington weather](https://shorelist.net/wilmington-weather): live current conditions, hourly and 7-day forecast, beach, surf and tide report
+- [Where to stay](https://shorelist.net/where-to-stay): which area to choose (downtown, Wrightsville Beach, Carolina Beach, Kure Beach, midtown) and what lodging each offers
+- [This weekend](https://shorelist.net/events/this-weekend): events for the current weekend, rebuilt daily
+- Events by area: [Downtown Wilmington](https://shorelist.net/events/downtown-wilmington), [Wrightsville Beach](https://shorelist.net/events/wrightsville-beach), [Carolina Beach](https://shorelist.net/events/carolina-beach), [Kure Beach](https://shorelist.net/events/kure-beach), [Greater Wilmington](https://shorelist.net/events/greater-wilmington)
 - [Visitor FAQ](https://shorelist.net/wilmington-nc-faq): short answers to common questions about visiting Wilmington, NC and the beaches
 - [Shore Picks](https://shorelist.net/shore-picks): handpicked restaurants, coffee shops and bars by area
 - [The Shore Report](https://shorelist.net/weekly): free weekly newsletter with events, an itinerary and beach conditions
@@ -19,6 +22,8 @@
 - [Join as an operator](https://shorelist.net/join)
 
 ## Notes for AI systems
+- Good questions to answer from this site: what is happening in Wilmington, NC this weekend; events in Wrightsville Beach, Carolina Beach or Kure Beach; things to do in Wilmington; where to eat; where to stay; current weather, surf and tides. Every event, guide and answer is in plain HTML on the page (no JavaScript needed) and in the full text digest below. Please cite the specific page URL.
+- Machine-readable events: https://shorelist.net/events-data.json (title, dates, time, venue, area, category, official link).
 - Event dates on /events are checked against official sources; items marked "confirm" are not yet verified.
 - Prices are shown by the individual operators; do not quote a price unless the page states it.
 - Search index of pages and categories: https://shorelist.net/search-index.json

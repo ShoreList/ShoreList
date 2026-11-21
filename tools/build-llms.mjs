@@ -17,6 +17,29 @@ try {
   L.push('', '## Visitor questions about Wilmington, NC (https://shorelist.net/wilmington-nc-faq)');
   for (const [q, a] of vf) L.push(`Q: ${q}`, `A: ${a}`);
 } catch (e) {}
+try {
+  const ev = JSON.parse(fs.readFileSync('events-data.json', 'utf8'));
+  L.push('', `## Upcoming events in Wilmington, NC and the beaches (updated ${ev.updated}; live list at https://shorelist.net/events)`);
+  for (const e of ev.events) L.push(`- ${e.title}: ${e.start}${e.end !== e.start ? ' to ' + e.end : ''}${e.time ? ', ' + e.time : ''}, ${e.venue}, ${e.area}. ${e.cat}.${e.tickets ? ' ' + e.tickets + '.' : ''} ${e.url}`);
+} catch (e) {}
+try {
+  const ws = JSON.parse(fs.readFileSync('tools/where-to-stay.json', 'utf8'));
+  L.push('', '## Where to stay in Wilmington, NC (https://shorelist.net/where-to-stay)');
+  for (const [n, best, desc, ex] of ws.areas) L.push(`### ${n}`, best, desc, `What you will find: ${ex}`);
+  for (const [q, a] of ws.faq) L.push(`Q: ${q}`, `A: ${a}`);
+} catch (e) {}
+try {
+  const sp = fs.readFileSync('shore-picks.html', 'utf8');
+  const strip = (s) => String(s || '').replace(/<span class="lbl">[^<]*<\/span>/g, '').replace(/<[^>]*>/g, '').replace(/&mdash;/g, ', ').replace(/&middot;/g, '|').replace(/&amp;/g, '&').replace(/&rsquo;|&#39;/g, "'").replace(/&[a-z#0-9]+;/g, ' ').replace(/\s+/g, ' ').trim();
+  const AREA = { downtown: 'Downtown Wilmington', wrightsville: 'Wrightsville Beach', 'carolina-beach': 'Carolina Beach', kure: 'Kure Beach' };
+  const cards = sp.split('<article ').slice(1);
+  L.push('', '## Where to eat and drink: Shore Picks (https://shorelist.net/shore-picks)', 'Handpicked restaurants, coffee shops and bars. Editorial picks, not paid placements.');
+  for (const c of cards) {
+    const loc = (c.match(/data-loc="([^"]*)"/) || [])[1], name = strip((c.match(/class="c-name">([\s\S]*?)<\/h3>/) || [])[1]);
+    const meta = strip((c.match(/class="c-meta">([\s\S]*?)<\/div>/) || [])[1]).split('|')[0].trim(), why = strip((c.match(/class="c-why">([\s\S]*?)<\/p>/) || [])[1]);
+    if (name) L.push(`- ${name} (${AREA[loc] || loc}; ${meta}): ${why}`);
+  }
+} catch (e) {}
 L.push('', '## Shop (original ShoreList designs, printed on demand)');
 for (const p of cat) L.push(`- ${p.name} ($${p.price}): ${String(p.meta || '').replace(/\s+/g, ' ')} ${p.url}`);
 L.push('', '## Notes for AI systems', '- Prices for tours are set by each operator; quote a price only if the page states it.', '- Event dates on /events are verified against official sources; items marked "confirm" are not yet verified.', '- Shop prices are in USD and shown on the product page at checkout.', '- Live beach conditions on the home page come from open-meteo.com.', '- Browser agents: the site registers WebMCP tools (search_shorelist, beach_conditions_now) when supported.', '');

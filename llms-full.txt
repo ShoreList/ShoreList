@@ -32,6 +32,12 @@ ShoreList (shorelist.net) is a hyperlocal booking marketplace for tours and expe
 - Carolina Beach History & Mural Walk: Carolina Beach Tours · Led by Amanda Leese https://shorelist.net/things-to-do/walking-tours
 - Carolina Beach History & Dive Bar Tour: Carolina Beach Tours · Led by Amanda Leese https://shorelist.net/things-to-do/walking-tours
 - Things to do in Wilmington, NC: Every tour, activity and rental category for Wilmington and the beaches https://shorelist.net/things-to-do
+- Where to stay in Wilmington, NC: Choosing between downtown, Wrightsville Beach, Carolina Beach, Kure Beach and midtown https://shorelist.net/where-to-stay
+- Wilmington events this weekend: What is on this Friday to Sunday https://shorelist.net/events/this-weekend
+- Wrightsville Beach events: Upcoming events on the island https://shorelist.net/events/wrightsville-beach
+- Carolina Beach events: Boardwalk, lake and seasonal events https://shorelist.net/events/carolina-beach
+- Kure Beach events: Markets and community events https://shorelist.net/events/kure-beach
+- Downtown Wilmington events: Concerts, theater, markets and parades https://shorelist.net/events/downtown-wilmington
 - Wilmington, NC weather: Live conditions, hourly and 7-day forecast, beach, surf and tide report https://shorelist.net/wilmington-weather
 - Wilmington, NC visitor FAQ: Short answers about beaches, parking, kids, nightlife, festivals and getting around https://shorelist.net/wilmington-nc-faq
 - The Shore Report newsletter: Free weekly events, itinerary and beach conditions https://shorelist.net/weekly
@@ -270,6 +276,167 @@ Q: What is ShoreList?
 A: ShoreList is a local guide and booking marketplace for Wilmington, NC and the beaches. You can book tours and experiences with local operators, check live beach conditions, find events and plan your trip in one place.
 Q: How do I find out what is happening this week?
 A: The events page lists upcoming events and refreshes daily, and the free Shore Report newsletter sends a weekly roundup with an itinerary and beach conditions.
+
+## Upcoming events in Wilmington, NC and the beaches (updated 2026-11-21; live list at https://shorelist.net/events)
+- Rooted in Memory: The Gullah Geechee Vision of Jonathan Green: 2026-06-19 to 2027-01-24, Cameron Art Museum, Greater Wilmington. Arts. Museum admission. https://cameronartmuseum.org/exhibitions/
+- A Drag Queen Christmas: 2026-11-21, Wilson Center at Cape Fear Community College, Downtown. Arts. Tickets required. https://www.wilsoncentertickets.com/events/detail/a-drag-queen-christmas-1467266
+- Kure Beach Holiday Market: 2026-11-21 to 2026-11-28, 9:00 AM, Ocean Front Park and Pavilion, Kure Beach. Markets. Free to browse. https://www.townofkurebeach.org/recreation/ocean-front-park-and-pavilion/activities-events
+- Riverfront Farmers Market: 2026-11-21 to 2026-11-28, Dock Street, Downtown, Downtown. Markets. https://www.wilmingtondowntown.com/events/
+- Wilmington Symphony Youth Orchestras Concert: 2026-11-22, 4:00 PM, Kenan Auditorium, Greater Wilmington. Music. https://www.wilmingtonsymphony.org/concerts
+- Downtown Wilmington Holiday Tree Lighting: 2026-11-27, 5:30 PM, Water Street and Market Street, Downtown. Holiday. Free. https://www.wilmingtonnc.gov/Events-directory/Holiday-Tree-Lighting
+- Enchanted Airlie: 2026-11-27 to 2026-12-21, 5:30 PM, Airlie Gardens, Greater Wilmington. Holiday. Advance tickets required, $35 per carload; page currently marked SOLD OUT. https://airliegardens.org/events/enchanted-airlie/
+- Wrightsville Beach Christmas Kick-Off and Tree Lighting: 2026-11-27, 5:30 PM, Wrightsville Beach Park, Wrightsville Beach. Holiday. Free (no admission mentioned). https://www.townofwrightsvillebeach.com/484/Christmas-Season-Kickoff
+- Festival in the Park (NC Holiday Flotilla): 2026-11-28, 10:00 AM, Wrightsville Beach Park, Wrightsville Beach. Festival. https://www.ncholidayflotilla.org/
+- North Carolina Holiday Flotilla and Fireworks: 2026-11-28, 6:00 PM, Banks Channel, Wrightsville Beach. Holiday. Free to watch from public areas (cost not stated on sources). https://www.ncholidayflotilla.org/
+- Really Cool Stuff Holiday Market: 2026-11-28, Downtown Wilmington, Downtown. Markets. https://www.wilmingtondowntown.com/events/
+- Wilmington Holiday Parade: 2026-11-29, 6:00 PM, Front Street, Downtown. Holiday. Free. https://www.wilmingtonnc.gov/Events-directory/Holiday-Parade-2026
+- Sing We Now of Christmas: A Joyful Celebration of the Season: 2026-12-02, Wilson Center at Cape Fear Community College, Downtown. Music. Tickets required. https://www.wilsoncentertickets.com/events/detail/sing-we-now-of-christmas-1575279
+- Jazz at CAM: Yolanda Rabun: 2026-12-03, Cameron Art Museum, Greater Wilmington. Music. Tickets required per prior Jazz at CAM concerts; price not on listing. https://cameronartmuseum.org/event/jazz-at-cam-yolanda-rabun/
+- A Charlie Brown Christmas: 2026-12-04, Wilson Center at Cape Fear Community College, Downtown. Family. Tickets required. https://www.wilsoncentertickets.com/events/detail/a-charlie-brown-christmas-1694955
+- Carolina Beach Christmas Parade: 2026-12-04, 7:00 PM, Lake Park Blvd., Carolina Beach. Holiday. Free to watch (cost not listed). https://www.carolinabeach.gov/196/Recreation-Programs
+- Movies in the Park: The Santa Clause: 2026-12-04, 6:00 PM, Town of Wrightsville Beach park (exact location not stated on source), Wrightsville Beach. Family. https://townofwrightsvillebeach.com/465/Annual-Events
+- Night Tour at the Burgwin-Wright House: 2026-12-04, Burgwin-Wright House and Gardens, Downtown. History. Tickets required (price not stated). https://www.burgwinwrighthouse.com/
+- A Colonial Apparition River Cruise: 2026-12-05, Wilmington Water Tours, Downtown. History. Tickets required. https://www.burgwinwrighthouse.com/
+- Cape Fear Museum Holiday Gift Workshop: 2026-12-05, Cape Fear Museum, Downtown. Family. https://capefearmuseum.com/Calendar.aspx
+- Carolina Beach Holiday Market: 2026-12-05, 9:00 AM, Carolina Beach Lake Park, Carolina Beach. Markets. https://www.carolinabeach.gov/196/Recreation-Programs
+- City Ballet's The Nutcracker: 2026-12-05 to 2026-12-06, Wilson Center at Cape Fear Community College, Downtown. Arts. Tickets required. https://www.wilsoncentertickets.com/events/detail/the-nutcracker-1613796
+- Hannah Block Historic USO 85th Anniversary Celebration: 2026-12-05, Hannah Block Historic USO / Community Arts Center, Downtown. History. https://www.wilmingtondowntown.com/events/
+- Holidays on Water Drone Shows: 2026-12-05, Wilmington Riverwalk, Downtown. Holiday. https://www.wilmingtondowntown.com/events/
+- Old Wilmington Candlelight Tours: 2026-12-05, Latimer House, Downtown. History. https://www.wilmingtondowntown.com/events/
+- Wilmington Historic Half Marathon, 10K and 5K: 2026-12-05, Downtown Wilmington, Downtown. Sports. Registration required. https://runsignup.com/Race/NC/Wilmington/RunHistoricWilmington
+- Pearl Harbor Day Remembrance at Battleship North Carolina: 2026-12-07, 9:00 AM, Battleship North Carolina, Downtown. History. Free with Battleship admission. https://events.dncr.nc.gov/event/battleship-north-carolina-pearl-harbor-day-and-veterans-dayremembrances
+- Cape Fear Festival of Trees: 2026-12-08 to 2027-01-03, Discovery Bay at Independence Mall, Greater Wilmington. Holiday. Free. https://lifecare.org/ways-to-give/foundation-events/festival-of-trees/
+- Colonial Wilmington and The Revolution Walking Tour: 2026-12-11, Burgwin-Wright House and Gardens, Downtown. History. Tickets required (price not stated). https://www.burgwinwrighthouse.com/
+- Holiday Light Spectacular at the Wilmington Railroad Museum: 2026-12-11 to 2026-12-20, 6:30 PM, Wilmington Railroad Museum, Downtown. Holiday. $5 per person at the door; under 2 free. https://www.wrrm.org/events-and-tours.html
+- Miracle on 34th Street (Thalian Association Community Theatre): 2026-12-11 to 2026-12-20, 7:30 PM, Thalian Hall Main Stage, Downtown. Arts. Tickets required. https://www.thalianhall.org/tact-miracle34-26
+- Holiday Movie at the Lake: A Christmas Story: 2026-12-12, 5:00 PM, Carolina Beach Lake Park, Carolina Beach. Family. https://www.carolinabeach.gov/196/Recreation-Programs
+- Kids@CAM: Minnie Evans Birthday: 2026-12-12, Cameron Art Museum, Greater Wilmington. Family. https://cameronartmuseum.org/event/kidscam-minnie-evans-birthday/
+- Polar Express Reading with Santa: 2026-12-12 to 2026-12-20, 3:30 PM, Wilmington Railroad Museum, Downtown. Family. $5 per person, advance tickets required; under 2 free. https://www.wrrm.org/events-and-tours.html
+- WCFA's The Nutcracker: 2026-12-12 to 2026-12-13, Wilson Center at Cape Fear Community College, Downtown. Arts. Tickets required. https://www.wilsoncentertickets.com/events/detail/the-nutcracker-1603066
+- Leslie Odom, Jr.: The Christmas Tour: 2026-12-17, 7:30 PM, Wilson Center at Cape Fear Community College, Downtown. Music. Tickets required. https://www.wilsoncentertickets.com/events/detail/leslie-odom-jr-1442850
+- Kure Beach Holiday Whoobie Whatty: 2026-12-18, 6:00 PM, Ocean Front Park and Pavilion, Kure Beach. Holiday. Free; donations go to the Help Center of Federal Point. https://www.townofkurebeach.org/recreation/ocean-front-park-and-pavilion/activities-events
+- Holiday Story Time by the Sea: 2026-12-19, 11:00 AM, Ocean Front Park and Pavilion, Kure Beach. Family. https://www.townofkurebeach.org/recreation/ocean-front-park-and-pavilion/activities-events
+- Home Alone in Concert (Wilmington Symphony Orchestra): 2026-12-19, 2:30 PM, Wilson Center at Cape Fear Community College, Downtown. Music. Tickets required. https://www.wilsoncentertickets.com/events/detail/home-alone-in-concert-1518393
+- Santa by the Sea: 2026-12-19, 5:00 PM, Carolina Beach Lake Park, Carolina Beach. Holiday. https://www.carolinabeach.gov/196/Recreation-Programs
+- New Year's Eve Gala at Thalian Hall: 2026-12-31, 6:00 PM, Thalian Hall, Downtown. Holiday. Tickets required. https://www.thalianhall.org/calendar
+- New Year's Noon at the Children's Museum of Wilmington: 2026-12-31, 9:00 AM, Children's Museum of Wilmington, Downtown. Family. Tickets required: $15 general, $5 members. https://www.playwilmington.org/new-years-noon
+- Carolina Beach State Park Trail Half Marathon and 5K: 2027-01-02, Carolina Beach State Park, Carolina Beach. Sports. Registration required; price not listed. https://runsignup.com/Race/NC/CarolinaBeach/CarolinaBeachStateParkTrailRace
+- Jazz at CAM: Le'Andra McPhatter: 2027-01-07, Cameron Art Museum, Greater Wilmington. Music. Tickets required per prior Jazz at CAM concerts; price not on listing. https://cameronartmuseum.org/event/jazz-at-cam-leandra-mcphatter/
+- Tig Notaro: 2027-01-08, Wilson Center at Cape Fear Community College, Downtown. Arts. Tickets required. https://www.wilsoncentertickets.com/events/detail/tig-notaro-1645199
+- Wilmington Symphony Orchestra: Bernstein Chichester Psalms and Still Symphony No. 1: 2027-01-16, 7:30 PM, Wilson Center at Cape Fear Community College, Downtown. Music. Tickets required. https://www.wilmingtonsymphony.org/concerts
+- Baz Luhrmann's Romeo + Juliet in Concert: 2027-01-19, Wilson Center at Cape Fear Community College, Downtown. Music. Tickets required. https://www.wilsoncentertickets.com/events/detail/romeo-juliet-in-concert-1602489
+- A Beautiful Noise: The Neil Diamond Musical: 2027-01-22 to 2027-01-24, Wilson Center at Cape Fear Community College, Downtown. Arts. Tickets required. https://www.wilsoncentertickets.com/pnc-broadway-series/shows
+- 47th Annual North Carolina Jazz Festival: 2027-02-04 to 2027-02-06, 7:30 PM, Hotel Ballast, Downtown. Music. Tickets required, $65 per night; packages available. https://ncjazzfestival.org
+- Music at CAM: Dear MariBella and the Pigkickers: 2027-02-04, Cameron Art Museum, Greater Wilmington. Music. https://cameronartmuseum.org/event/music-at-cam-dear-maribella-and-the-pigkickers/
+- The Wiz: 2027-02-06 to 2027-02-07, Wilson Center at Cape Fear Community College, Downtown. Arts. Tickets required. https://www.wilsoncentertickets.com/events/detail/the-wiz-1438319
+- Jazz at CAM: Brandon Mitchell Quartet: 2027-02-11, Cameron Art Museum, Greater Wilmington. Music. Tickets required per prior Jazz at CAM concerts; price not on listing. https://cameronartmuseum.org/event/jazz-at-cam-brandon-mitchell-quartet/
+- Jefferson Starship and John Waite: 2027-02-20, Wilson Center at Cape Fear Community College, Downtown. Music. Tickets required. https://www.wilsoncentertickets.com/events/detail/jefferson-starship-and-john-waite-1617089
+- Special Olympics Polar Plunge and Run: 2027-02-20, 1:00 PM, Kure Beach Pavilion, Kure Beach. Outdoors. Registration required, $25 to $35. https://runsignup.com/Race/NC/KureBeach/PolarPlungeNC
+- Wilmington Symphony Young People's Concert: 2027-02-21, 4:00 PM, Wilson Center at Cape Fear Community College, Downtown. Family. Tickets required. https://www.wilmingtonsymphony.org/concerts
+- Water for Elephants: 2027-02-23 to 2027-02-24, Wilson Center at Cape Fear Community College, Downtown. Arts. Tickets required. https://www.wilsoncentertickets.com/pnc-broadway-series/shows
+- Hidden Battleship Tour: 2027-02-27, 11:00 AM, Battleship North Carolina, Downtown. History. Tickets required, $75. https://events.dncr.nc.gov/event/hidden-battleship-tour-6380
+- Novant Health Wilmington NC Marathon, Half Marathon and 5K: 2027-02-27, Start on the UNCW campus per race site, Greater Wilmington. Sports. Registration required. https://wilmingtonncmarathon.com/
+- Wilmington Symphony Youth Orchestras Concert (February): 2027-02-28, 4:00 PM, Kenan Auditorium, Greater Wilmington. Music. https://www.wilmingtonsymphony.org/concerts
+
+## Where to stay in Wilmington, NC (https://shorelist.net/where-to-stay)
+### Downtown Wilmington and the riverfront
+Best for walkability, restaurants, nightlife, history and first-time visitors.
+Stay downtown and you can walk to the Riverwalk, the historic district, ghost and history tours, river cruises, theaters and most of the city's best-known restaurants. Hotels here range from riverfront high-rises to small inns and historic bed and breakfasts. The beaches are a 20 to 30 minute drive.
+What you will find: Riverfront hotels such as Hotel Ballast and Embassy Suites by Hilton Wilmington Riverfront, plus boutique inns and bed and breakfasts in the historic district.
+### Wrightsville Beach
+Best for surfing, paddleboarding, clear water and the closest beach to the city.
+Wrightsville Beach is about 20 minutes from downtown. It is a small island with a walkable beach strand, the Loop walking path, water sports on the sound side and a relaxed, active feel. Lodging is limited, so it books early for summer and holiday weekends. Paid parking applies in season.
+What you will find: Oceanfront resorts such as Blockade Runner Beach Resort and Holiday Inn Resort Lumina on Wrightsville Beach, plus vacation rentals.
+### Carolina Beach
+Best for families, the boardwalk, fishing and a classic beach-town feel.
+Carolina Beach is about 30 minutes south of downtown on Pleasure Island. It has a boardwalk with rides and food in season, a lake park, a state park with trails and a marina, and plenty of fishing charters. You will find oceanfront hotels, motels, condos and a large supply of vacation rentals.
+What you will find: Oceanfront hotels such as Courtyard by Marriott Carolina Beach Oceanfront and Golden Sands, plus condos and beach house rentals.
+### Kure Beach and Fort Fisher
+Best for quiet stays, the fishing pier, history and nature.
+Kure Beach sits just past Carolina Beach on the same island. It is the quietest of the three beach towns, with a fishing pier, a small oceanfront park, and Fort Fisher State Historic Site and its recreation area nearby. Lodging is mostly cottages, small motels and vacation rentals.
+What you will find: Beach cottages, small family-run motels and vacation rentals.
+### Midtown, Mayfaire and near the airport
+Best for value, road trips, shopping and easy parking.
+Chain hotels are spread along the main roads between downtown and Wrightsville Beach, around the Mayfaire shopping area, near UNCW and close to Wilmington International Airport (ILM). You will drive everywhere, but rates are often lower than on the water and parking is usually simple.
+What you will find: Familiar national hotel brands and extended-stay properties.
+Q: What is the best area to stay in Wilmington, NC?
+A: For a first visit, downtown Wilmington is the easiest base: it is walkable, close to restaurants and tours, and 20 to 30 minutes from the beaches. If the beach is the whole point, stay at Wrightsville Beach for surfing and water sports, Carolina Beach for families and the boardwalk, or Kure Beach for a quiet stay.
+Q: Is it better to stay downtown or at the beach?
+A: Stay downtown if you want restaurants, nightlife, history and tours on foot. Stay at the beach if you plan to spend most days on the sand. Many visitors split a trip, or stay downtown and drive to a different beach each day.
+Q: How far are the beach hotels from downtown Wilmington?
+A: Wrightsville Beach is about 20 minutes from downtown. Carolina Beach is about 30 minutes, and Kure Beach is a few minutes beyond it. Allow extra time on summer weekends.
+Q: When should I book a place to stay in Wilmington?
+A: Summer, holiday weekends and major festival weekends fill first, especially on the beaches where lodging is limited. Book early for those dates. Late fall through early spring usually has more availability.
+Q: Are there vacation rentals in Wilmington and the beach towns?
+A: Yes. Beach houses, condos and cottages are common in Carolina Beach, Kure Beach and Wrightsville Beach, and there are rentals downtown as well. Check each listing for minimum stays, parking and local rules.
+Q: Does ShoreList book hotels?
+A: No. ShoreList books local tours and experiences and helps you plan what to do. Book lodging directly with the hotel or rental host. The hotels named on this page are examples, not rankings or endorsements.
+
+## Where to eat and drink: Shore Picks (https://shorelist.net/shore-picks)
+Handpicked restaurants, coffee shops and bars. Editorial picks, not paid placements.
+- Seabird (Downtown Wilmington; Seafood): Chef Dean Neff is a 2026 James Beard Outstanding Chef finalist , top five in the country , and this is the restaurant that did it. NC oysters, a legendary seafood tower, and a weekend brunch worth building a morning around.
+- Opa by Giorgios (Downtown Wilmington; Greek & Seafood): Greek island cooking right on the Wilmington marina. Expect fresh local seafood, grilled meats, salads and Mediterranean flavors, with a bar that stays lively late on weekends.
+- Marina Grill (Downtown Wilmington; Casual Waterfront): A relaxed spot on the marina for flatbreads, sandwiches, tacos, jerk chicken and steak frites, with vegetarian, vegan and gluten-free choices on the menu.
+- Steam Restaurant & Bar (Downtown Wilmington; Seafood): Locally sourced, seafood-forward plates in a dining room that looks out over the Cape Fear River, with a deep spirits list and a sommelier on the team.
+- Ruth's Chris Steak House (Downtown Wilmington; Steakhouse): The classic special-occasion steakhouse on North Water Street: broiled steaks served on sizzling plates, polished service and a comfortable bar.
+- manna (Downtown Wilmington; Modern American): Named one of USA Today's 2026 Restaurants of the Year, with a decade-long run as the city's only AAA Four Diamond room. The special-occasion institution , ask about the monthly omakase-style "Beggars Can't Be Choosers."
+- Olivero (Downtown Wilmington; Spanish-Italian-NOLA): Chef Sunny Gerhart , a James Beard Best Chef: Southeast semifinalist , cooks Spanish, Italian, and New Orleans flavors with a coastal accent. Named to USA Today's 2025 Best Restaurants.
+- Voyce Bistro (Downtown Wilmington; Caribbean-Coastal): The newest room from Chef Keith Rhodes , James Beard finalist, Top Chef alum, and a 20-year pillar of this food scene. Caribbean flavors meet coastal favorites, right off the Riverwalk.
+- River 128 (Downtown Wilmington; Riverfront): The Riverwalk's buzzy relaunch (formerly The George) , elevated menu, new cocktails, and a patio with front-row views of the Cape Fear and the Battleship. Sunday brunch on the water.
+- The Basics (Downtown Wilmington; Southern): Southern comfort done right in the heart of downtown , the kind of room that feels like Sunday dinner at a friend's.
+- Circa 1922 (Downtown Wilmington; Tapas & Small Plates): Small plates, big nights. Built for lingering , an easy go-to for an anniversary or a "we should do this more often."
+- Indochine (Downtown Wilmington; Thai & Vietnamese): The most "wait, this is North Carolina?!" restaurant in town , lantern-lit gardens, koi ponds, ornate Thai pavilions, and food that lives up to the setting. A trip-maker.
+- Oceanic at Crystal Pier (Wrightsville Beach; Seafood): The island icon: the only oceanfront restaurant on Wrightsville, perched on a pier with history back to 1939. Waves under the planks, local catch on the plate, sunsets on the house.
+- Tower 7 Baja Mexican Grill (Wrightsville Beach; Baja Mexican): The beloved surf-culture taco institution , post-beach Baja plates that generations of Wrightsville regulars swear by.
+- Dockside (Wrightsville Beach; Seafood): The waterway classic , boats tie up, sunsets deliver, and the grilled mahi and peel-and-eat shrimp taste like vacation.
+- South Beach Grill (Wrightsville Beach; Southern Coastal): Southern seafood with local charm on the Banks Channel , tuna nachos, fried green tomatoes, and a patio built for ocean-breeze lingering.
+- Shark Bar & Kitchen (Wrightsville Beach; Coastal): Locally owned and right on the ocean , premium oysters, ceviche, Wagyu smash burgers, and legendary margaritas. The current-generation pick.
+- Ceviche's (Wrightsville Beach; Panamanian): Panamanian flavors and tropical courtyard dining , the most distinctive menu on the island, and a story to tell when you're home.
+- Brasserie du Soleil (Wrightsville Beach; French): An airy French brasserie , oysters, frites, and weekend brunch on a sunny, dog-welcoming patio, minutes from the drawbridge.
+- Britt's Donut Shop (Carolina Beach; Donuts): A Boardwalk institution since 1939, repeatedly ranked among the best donuts in the country. One item, one secret recipe, hot from the fryer. Cash only, seasonal (Apr Oct), line's part of the ritual.
+- Wake N Bake Donuts (Carolina Beach; Gourmet Donuts): The gourmet counterweight to Britt's , wild creations like Wake N Bacon and Carolina Sand that routinely sell out before 10am. Go early, go weird.
+- SeaWitch Cafe & Tiki Bar (Carolina Beach; Seafood & Tiki): The classic beach-casual tiki stop , fresh local seafood, festive energy, and a spot on every "best of Carolina Beach" list for a reason. Insider move: Carolina Beach Tours meets right here , grab a bite, then walk the island's history with a guide.
+- Salt Fish Restaurant & Bar (Carolina Beach; Coastal Seafood): On the CVB's current shortlist for the best seafood on the island , the polished-but-barefoot dinner pick after a beach day.
+- Seaworthy Kitchen + Bar (Carolina Beach; Coastal Kitchen): The newer, polished side of the island's food scene , also on the CVB's best-seafood shortlist, with a cocktail list to match.
+- Michael's Seafood (Carolina Beach; Seafood): The chowder people cross the bridge for , a Pleasure Island staple for fresh, sustainable seafood done the long way.
+- Freddie's Restaurant (Kure Beach; Italian-American): Voted Best Restaurant in Kure Beach and named among Cape Fear's best by Encore magazine year after year. Tiny, romantic, family-run , and home to a pork chop with a genuine cult following.
+- Jack Mackerel's Island Grill (Kure Beach; Caribbean Seafood): Caribbean-style seafood in a colorful setting a shell's throw from the Kure boardwalk , prime rib nights and island energy.
+- Big Daddy's (Kure Beach; Beach Classics): Kure's gathering place for over 50 years , seafood, classic beach burgers, and a deck built for long dinners with the whole crew.
+- Ocean View Restaurant (Kure Beach; Breakfast & Lunch): The mom-and-pop breakfast by the pier , giant fluffy pancakes, a famous breakfast charcuterie board, and seaside-morning energy.
+- Beach House Burgers (Kure Beach; Burgers): The walk-up burger shack next to the pier , thick, cooked-to-order, sandy toes welcome. Vacation food, defined.
+- Hidden Grounds Coffee (Downtown Wilmington; Coffee): The highest-rated coffee downtown , a tiny dinosaur-themed shop with a jungle-like garden patio hiding out back. There's usually a line; it's part of the fun. Order the Dino Campfire.
+- Bespoke Coffee (Downtown Wilmington; Coffee & More): The downtown standard-bearer , Counter Culture beans, plus tea, kombucha, wine and beer. The room everyone ends up meeting in.
+- abrew at Aloft Wilmington (Downtown Wilmington; Coffee Bar): The Riverwalk coffee move: order at the bar, then settle onto a beautiful outdoor patio , or walk your cup straight onto the Riverwalk. The hotel coffee spot that doesn't feel like one.
+- Bitty & Beau's Coffee (Downtown Wilmington; Coffee): More than a coffee shop , a movement that started right here in Wilmington, employing people with intellectual and developmental disabilities and pouring the warmest service on the coast.
+- Concorde Espresso Bar (Downtown Wilmington; Espresso by day, fire pits by night): Espresso and pastries in the morning; an outdoor cocktail garden with fire pits and blankets after dark. Insider move: the 9am Architecture & History tour with Wilmington Walking Tours meets right here , grab a coffee, then walk the historic district with a guide.
+- 24 South Coffee House (Downtown Wilmington; Coffee): The Front Street classic , rustic charm, cozy nooks to tuck into, and a location that makes it the natural first stop of a downtown morning.
+- Maroon Monkey Coffee (Downtown Wilmington; Coffee & Roaster): Family-owned, roasting in-house weekly , and home of the adorable latte flight, the most fun way to try three flavors at once. Bottomless drip for the frugal.
+- Drift Caf (Wrightsville Beach; Coffee & Kitchen): Good coffee and ocean air , the island's morning ritual, with a breakfast menu strong enough to derail your beach schedule.
+- SUNdays Surf Caf (Wrightsville Beach; Surf Caf): Surf-culture coffee with salt still in the air , the pre-paddle and post-session stop the locals' guides always pair with a beach morning.
+- Adapt Kitchen & Juice Bar (Wrightsville Beach; Juice & Bowls): Smoothie bowls, fresh-pressed juice, and avocado toast steps from the sand , the healthy-start favorite before a day on the water.
+- Crush & Grind (Carolina Beach; Coffee & Wine Bar): Coffee by day, wine bar by night, records for sale in between , a beachy-moody little spot half a block off the boardwalk that locals call their standard. Dog-friendly, 4.8 and earning it.
+- Malama Cafe (Carolina Beach; Coffee & A a): Island-style mornings: a a bowls, seasonal cold brews with marshmallow foam, and eco-friendly everything , the locals' multiple-times-a-week spot.
+- Happy Hippies Java Hut (Kure Beach; Coffee & Gifts): The eclectic, locally-loved coffee hut keeping Kure smiling year-round , specialty drinks, baked treats, and good-vibe gifts. Insider tip: keep an eye out for the beloved blue coffee van near the Fishing Pier, too.
+- Cloud 9 Rooftop Bar (Downtown Wilmington; Rooftop): The sunset-over-the-Cape-Fear spot , fire pit tables, battleship views, live music, and a 2026 Best of Wilmington nominee. Thursday margarita flights are the local move.
+- aView at Aloft Wilmington (Downtown Wilmington; Rooftop): River views from the rooftop at Coastline Center , the natural nightcap after an evening on the Riverwalk, without ever leaving the water's edge.
+- The Rooftop Bar (Downtown Wilmington; Rooftop): Five floors up on Front Street with downtown-and-river views and DJs on Friday and Saturday nights , when the evening calls for energy over ambiance.
+- Dram Yard (Downtown Wilmington; Craft Cocktails): Craft cocktails and elevated small plates in a handsome courtyard setting , where downtown goes when it wants to feel grown-up.
+- The Blue Post (Downtown Wilmington; Neighborhood Bar): The enduring downtown institution , pool tables, darts, and a packed game room. The honest dive counterweight to a night of rooftops.
+- Ocean Grill & Tiki Bar (Carolina Beach; Tiki Bar on the Pier): Named to USA Today's national Bars of the Year as one of the beachiest beach bars in America , a tiki bar literally on the pier, with summertime tiki shows over the water. This is the postcard.
+- The Fat Pelican (Carolina Beach; Legendary Dive): Voted one of the "Diviest Dive Bars in America" , pick your own bottle from a 350-beer walk-in cooler, then drink it toes-in-the-sand beside a shipwrecked boat bar. You'll tell this story for years.
+- Hurricane Alley's (Carolina Beach; Rooftop Deck): The Boardwalk's big rooftop deck over the ocean, with live music every summer weekend , the party pick when the whole crew's in town.
+- Lazy Pirate Island Sports Grill (Carolina Beach; Tiki Hut & Deck): A sprawling outdoor deck, a gigantic tiki hut, and reggae bands all summer , including the Sunday Reggae Festivus that closes every beach weekend right.
+- Silver Dollar & The Top Dollar Rooftop (Carolina Beach; Island Bar): The island bar since 1957 , sing-along karaoke and big-screen sports downstairs, then up to The Top Dollar rooftop for ocean breeze, beach views, and live bands. The rooftop fills fast on fireworks nights.
+- Sand Dollar Sports Bar (Carolina Beach; Sports Bar): The Dollar family's sports bar next door , games with the sound on, craft cocktails, and a kitchen collab with Nollie's Taco Joint that feeds the whole block. 4.8 and the friendliest bar staff on the boardwalk.
+- The Last Resort (Carolina Beach; Locals' Bar): A tiny old gas station turned colorful locals' bar , 14 seats inside, a laid-back patio outside, and maximum island character per square foot.
+- The Palm Room (Wrightsville Beach; Historic Island Bar): Seventy years of salty air , the historic island bar with live music, pool, and skeeball. Friendly faces since 1955; the island's living room.
+- Poe's Tavern (Wrightsville Beach; Tavern): An Edgar Allan Poe themed tavern by the beach , gourmet burgers, blackened mahi tacos, cold drafts, and Poe's works playing in the restroom. Fun, memorable, and consistently excellent.
+- Banks Channel Pub & Grille (Wrightsville Beach; Pub): The easygoing sound-side pub between the beach and everything else , live music, ping pong and shuffleboard, $3 mimosa brunch, and a bar that makes you feel like beach family.
+- Red Dogs (Wrightsville Beach; Late Night): The island's legendary late-night stop , when the beach bars close and the night isn't over, the line wraps around the building for a reason.
+- Jimmy's (Wrightsville Beach; Beach Bar): The all-day beach bar next door to Red Dogs , cold drinks steps from the sand from lunch until last call. The Lumina Ave one-two punch.
+- Big Daddy's Fantasy Island Tiki Bar (Kure Beach; Patio & Tiki Bar): Cocktails and apps at the island's tiki bar, live music reasonably into the night on weekends , then wander out on the pier to watch the night fishermen. That's a Kure evening.
+- Bud & Joe's Sandbar (Kure Beach; Locals' Watering Hole): The cozy locals' spot: string lights over a dog-friendly backyard, picnic tables, a pool table, and the kind of easy conversation vacations are for.
+- Jack Mackerel's Bar (Kure Beach; Island Cocktails): Caribbean cocktails and festive island energy just off the Kure boardwalk , the pre-dinner rum drink or the after-dinner encore.
 
 ## Shop (original ShoreList designs, printed on demand)
 - The Sloop Embroidered Crewneck, Wrightsville Beach ($88): A little sloop under sail stitched on the chest, with WB for Wrightsville Beach beneath it. https://shorelist.myshopify.com/products/the-sloop-embroidered-crewneck-wrightsville-beach
