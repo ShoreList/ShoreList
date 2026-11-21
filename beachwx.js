@@ -133,7 +133,7 @@
     Promise.all(list.map(get)).then(function (ds) {
       el.classList.remove('bw-loading');
       el.innerHTML = ds.map(card).join('') + '<p class="bwn">Flags shown are ShoreList estimates from live wave, wind and weather data. They are not official lifeguard flags. Always follow the flags and instructions posted on the beach and never swim alone. Data: NOAA, open-meteo.</p>';
-      ds.forEach(function (d) { var p = el.querySelector('[data-b="' + d.beach.id + '"] [data-ai]'); aiReport(d).then(function (t) { if (p) p.textContent = t; }); });
+      // The summary line is rule-based (template). No automatic AI calls on page view.
     }).catch(function () { el.classList.remove('bw-loading'); el.innerHTML = '<p class="bwn">Live conditions are unavailable right now. Check the posted beach flags.</p>'; });
   }
   window.ShoreWX = { get: get, beaches: B, summary: summary, flag: flag };
