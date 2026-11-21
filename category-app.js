@@ -118,8 +118,9 @@ function calDraw(id){
   var first=new Date(s.y,s.m,1);
   var dim=new Date(s.y,s.m+1,0).getDate();
   var fdow=first.getDay();
-  var h=''; DW.forEach(function(d){h+='<div class="cal-dh">'+d+'</div>';}); 
-  for(var i=0;i<fdow;i++) h+='<div class="cal-d empty"></div>';
+  var ae=document.activeElement, keep=ae&&g.contains(ae)?ae.getAttribute('data-date'):null;
+  var h=''; DW.forEach(function(d){h+='<div class="cal-dh" aria-hidden="true">'+d+'</div>';}); 
+  for(var i=0;i<fdow;i++) h+='<div class="cal-d empty" aria-hidden="true"></div>';
   for(var day=1;day<=dim;day++){
     var dt=new Date(s.y,s.m,day); dt.setHours(0,0,0,0);
     var ds=pad(s.y)+'-'+pad(s.m+1)+'-'+pad(day);
@@ -129,13 +130,30 @@ function calDraw(id){
     var sel=s.date===ds;
     var tod=dt.getTime()===today.getTime();
     var cls='cal-d'+(past?' past':avail?' yes':' no')+(sel?' picked':'')+(tod&&!sel?' today-ring':'');
-    var oc=avail?' onclick="cpick(\''+id+'\',\''+ds+'\')\"':'';
-    h+='<div class="'+cls+'"'+oc+'>'+day+'</div>';
+    var oc=avail?' onclick="cpick(\''+id+'\',\''+ds+'\')\"':' disabled';
+    var al=dt.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'})+(avail?(sel?', selected':', available'):', unavailable');
+    h+='<button type="button" class="'+cls+'" data-date="'+ds+'" aria-label="'+al+'"'+(avail?' tabindex="-1" aria-pressed="'+(sel?'true':'false')+'"':'')+oc+'>'+day+'</button>';
   }
   g.innerHTML=h;
+  if(!g.getAttribute('data-kb')){g.setAttribute('data-kb','1');g.addEventListener('keydown',calKey);}
+  // one Tab stop in the grid (roving tabindex): the focused day, else the picked day, else the first available day
+  var kb=(keep&&g.querySelector('button[data-date="'+keep+'"]:not([disabled])'))||(s.date&&g.querySelector('button[data-date="'+s.date+'"]:not([disabled])'))||g.querySelector('button.cal-d:not([disabled])');
+  if(kb){kb.setAttribute('tabindex','0');if(keep)kb.focus({preventScroll:true});}
+  else if(keep){var ar=g.parentNode.querySelectorAll('.cal-arrow');if(ar[1])ar[1].focus({preventScroll:true});}
   if(s.date) slotDraw(id);
 }
 
+// arrow keys move between available days (Tab, Enter and Space work natively on the buttons)
+function calKey(e){
+  var b=e.target&&e.target.closest?e.target.closest('button.cal-d'):null; if(!b) return;
+  if(e.key==='PageDown'||e.key==='PageUp'){e.preventDefault();var cid=this.id.slice(3);if(e.key==='PageDown')cnext(cid);else cprev(cid);return;}
+  var step={ArrowLeft:-1,ArrowRight:1,ArrowUp:-7,ArrowDown:7}[e.key];
+  if(!step) return;
+  var all=[].slice.call(this.querySelectorAll('button.cal-d')), i=all.indexOf(b)+step;
+  while(i>=0&&i<all.length&&all[i].disabled) i+=step;
+  e.preventDefault();
+  if(i>=0&&i<all.length){b.setAttribute('tabindex','-1');all[i].setAttribute('tabindex','0');all[i].focus();}
+}
 function cpick(id,ds){
   var s=CS[id]; if(!s) return;
   s.date=ds; s.slot=null;
@@ -168,18 +186,20 @@ function slotDraw(id){
   var taken=s.booked[s.date]||{};
   var do2=new Date(s.date+'T12:00:00');
   var lbl=do2.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
-  var h='<div class="slots-area"><div class="slots-for">Available times for <strong>'+lbl+'</strong></div><div class="slots-row">';
+  var ae=document.activeElement, keep=ae&&w.contains(ae)?ae.getAttribute('data-slot'):null;
+  var h='<div class="slots-area"><div class="slots-for" id="sf-'+id+'">Available times for <strong>'+lbl+'</strong></div><div class="slots-row" role="group" aria-labelledby="sf-'+id+'">';
   var slotsForDate=getSlots(s.sched,s.date);
   var slotCap=s.sched.cap||SLOT_CAP;
   slotsForDate.forEach(function(sl){
     var tk=(taken[sl]||0)>=slotCap;
     var pk=s.slot===sl;
     var cls='slt'+(tk?' slt-taken':'')+(pk?' slt-picked':'');
-    var oc=tk?'':' onclick="spick(\''+id+'\',\''+sl.replace(/'/g,"\\'")+'\')"';
-    h+='<button type="button" class="'+cls+'"'+oc+'>'+sl+(tk?'<span class="slt-sub">Sold Out</span>':'')+'</button>';
+    var oc=tk?' disabled':' onclick="spick(\''+id+'\',\''+sl.replace(/'/g,"\\'")+'\')"';
+    h+='<button type="button" class="'+cls+'" data-slot="'+esc(sl)+'"'+(tk?'':' aria-pressed="'+(pk?'true':'false')+'"')+oc+'>'+sl+(tk?'<span class="slt-sub">Sold Out</span>':'')+'</button>';
   });
   h+='</div></div>';
   w.innerHTML=h;
+  if(keep){var bs=w.querySelectorAll('button.slt');for(var k=0;k<bs.length;k++){if(bs[k].getAttribute('data-slot')===keep&&!bs[k].disabled){bs[k].focus({preventScroll:true});break;}}}
 }
 
 function spick(id,sl){
@@ -261,7 +281,7 @@ function renderPage(){
   document.body.setAttribute('data-cat',cat);
   document.getElementById('hico').innerHTML=d.icon;
   document.getElementById('htitle').textContent=window.__H1||d.title;
-  document.getElementById('hsub').textContent=d.sub;
+  document.getElementById('hsub').textContent=String(d.sub).replace(/&#(\d+);/g,function(_,n){return String.fromCharCode(+n);});
   document.getElementById('hbc').textContent=d.title;
   if(cat==='museums'){renderMuseumsCategory();return;}
   var ops=OPS[cat]||[];
@@ -300,7 +320,7 @@ function renderPage(){
       h+='<div class="op-divider"></div>';
       h+='<div style="display:flex;flex-wrap:wrap;gap:16px;font-size:0.78rem;color:#3a5a61;font-weight:600;margin:0 0 14px;"><span>&#10003; Free cancellation 24hrs</span><span>&#10003; Local Wilmington operator</span><span>&#10003; Secure checkout</span></div>';
       if(op.live){
-        h+='<div class="op-book-row"><button type="button" class="btn-sub" style="width:100%;font-size:1rem;" id="ob-'+oid+'" onclick="toggleBook(\''+oid+'\')">Book This Experience &#8212; '+esc(op.price)+' <span style="opacity:0.75;font-weight:600;">'+esc(op.priceLabel)+'</span></button></div>';
+        h+='<div class="op-book-row"><button type="button" class="btn-sub" style="width:100%;font-size:1rem;" id="ob-'+oid+'" aria-expanded="false" aria-controls="bf-'+oid+'" onclick="toggleBook(\''+oid+'\')">Book This Experience &#8212; '+esc(op.price)+' <span style="opacity:0.75;font-weight:600;">'+esc(op.priceLabel)+'</span></button></div>';
       } else {
         h+='<div class="op-book-row"><div class="op-book-note-pre">Bookings open <strong>soon</strong> &#8212; join the early list to lock your spot before we open to the public.</div></div>';
       }
@@ -311,10 +331,10 @@ function renderPage(){
         h+='<div class="book-form-title">Book: '+esc(op.business)+'</div>';
         h+='<div class="cal-section"><div class="cal-lbl">1 &middot; Pick a Date</div>';
         h+='<div class="cal-box">';
-        h+='<div class="cal-hd"><button type="button" class="cal-arrow" onclick="cprev(\''+oid+'\')" aria-label="Previous month">&#8592;</button><div class="cal-mlbl" id="cm-'+oid+'"></div><button type="button" class="cal-arrow" onclick="cnext(\''+oid+'\')" aria-label="Next month">&#8594;</button></div>';
-        h+='<div class="cal-g" id="cg-'+oid+'"></div>';
-        h+='<div id="sw-'+oid+'"></div>';
-        h+='<div class="bk-sel-summary" id="ss-'+oid+'"></div>';
+        h+='<div class="cal-hd"><button type="button" class="cal-arrow" onclick="cprev(\''+oid+'\')" aria-label="Previous month">&#8592;</button><div class="cal-mlbl" id="cm-'+oid+'" aria-live="polite"></div><button type="button" class="cal-arrow" onclick="cnext(\''+oid+'\')" aria-label="Next month">&#8594;</button></div>';
+        h+='<div class="cal-g" id="cg-'+oid+'" role="group" aria-label="Choose a date. Arrow keys move between available days, Page Up and Page Down change the month."></div><div class="cal-kb" aria-hidden="true">Arrow keys move between days &middot; Enter selects</div>';
+        h+='<div id="sw-'+oid+'" aria-live="polite"></div>';
+        h+='<div class="bk-sel-summary" id="ss-'+oid+'" role="status"></div>';
         h+='</div></div>';
         h+='<input type="hidden" id="hd-'+oid+'"/><input type="hidden" id="ht-'+oid+'"/>';
         h+='<div class="cal-lbl" style="margin:22px 0 12px;">2 &middot; Your Details</div>';
@@ -330,14 +350,14 @@ function renderPage(){
         h+='</div>';
         h+='<div class="bk-row full"><div class="bk-field"><label class="bk-label" for="bo-'+oid+'">Notes for Your Guide (optional)</label><textarea class="bk-input" id="bo-'+oid+'" placeholder="Anything we should know? Mobility needs, celebrations, questions&hellip;"></textarea></div></div>';
         h+='<div class="dep-row"><div><div class="dep-lbl">Total &#8212; <span id="bqty-'+oid+'">1 guest</span></div><div class="dep-note">Includes 7% NC sales tax &middot; Paid securely via Stripe &middot; Full refund if you cancel 24+ hours before</div></div><div class="dep-amt" id="btot-'+oid+'">'+esc(op.price)+'</div></div>';
-        h+='<div class="bk-err" id="berr-'+oid+'"></div>';
+        h+='<div class="bk-err" id="berr-'+oid+'" role="alert"></div>';
         h+='<div class="bk-acts"><button type="button" class="btn-sub" id="bb-'+oid+'" onclick="doBook(\''+oid+'\')">Confirm &amp; Pay '+esc(op.price)+' &#8594;</button></div>';
         h+='</div>';
       } else {
         h+='<div style="padding:0 40px 32px;">';
         h+='<div class="prelaunch-card">';
         h+='<div class="plc-left"><div class="plc-tag">&#10022; Reserve Early</div><div class="plc-title">Reserve with '+esc(op.business)+'</div><div class="plc-sub">Drop your email. We\'ll notify you the moment bookings go live &#8212; before we announce it anywhere else.</div></div>';
-        h+='<div class="plc-form"><input class="plc-input" type="email" id="plc-'+oid+'" placeholder="your@email.com" autocomplete="email"/><button class="plc-btn" onclick="doPrelaunch(\''+oid+'\',\''+esc(op.business)+'\')">Notify Me &#8594;</button><div class="plc-done" id="plcd-'+oid+'">&#10003; You\'re on the list!</div></div>';
+        h+='<div class="plc-form"><input class="plc-input" type="email" id="plc-'+oid+'" aria-label="Email address" placeholder="your@email.com" autocomplete="email"/><button class="plc-btn" onclick="doPrelaunch(\''+oid+'\',\''+esc(op.business)+'\')">Notify Me &#8594;</button><div class="plc-done" id="plcd-'+oid+'">&#10003; You\'re on the list!</div></div>';
         h+='</div>';
         h+='</div>';
       }
@@ -345,7 +365,7 @@ function renderPage(){
     });
     h+='</div>'; // end operator-grid
   } else {
-    h+='<div class="coming-soon"><span class="cs-ico">'+d.icon+'</span><h2 class="cs-title">'+esc(d.title)+' &#8212; Coming Soon</h2><p class="cs-sub">We\'re signing local '+esc(d.title.toLowerCase())+' operators right now. Drop your email and we\'ll notify you the moment bookings go live.</p><div class="notify-form"><input class="notify-inp" type="email" id="ni-'+esc(cat)+'" placeholder="your@email.com" autocomplete="email"/><button class="btn-notify" onclick="doNotify(\''+esc(cat)+'\',\''+esc(d.title)+'\')">Notify Me</button></div><div class="notify-done" id="nd-'+esc(cat)+'">Got it! We\'ll email you when '+esc(d.title)+' goes live. &#10003;</div></div>';
+    h+='<div class="coming-soon"><span class="cs-ico">'+d.icon+'</span><h2 class="cs-title">'+esc(d.title)+' &#8212; Coming Soon</h2><p class="cs-sub">We\'re signing local '+esc(d.title.toLowerCase())+' operators right now. Drop your email and we\'ll notify you the moment bookings go live.</p><div class="notify-form"><input class="notify-inp" type="email" id="ni-'+esc(cat)+'" aria-label="Email address" placeholder="your@email.com" autocomplete="email"/><button class="btn-notify" onclick="doNotify(\''+esc(cat)+'\',\''+esc(d.title)+'\')">Notify Me</button></div><div class="notify-done" id="nd-'+esc(cat)+'">Got it! We\'ll email you when '+esc(d.title)+' goes live. &#10003;</div></div>';
   }
 
   h+='<div class="list-cta"><div class="lc-text"><div class="lc-tag">For Local Operators</div><div class="lc-title">Run a '+esc(d.title)+' business in Wilmington?</div><div class="lc-sub">Get listed on ShoreList free. No upfront cost, no monthly fees. Commission only on completed bookings. We put your listing directly in front of visitors who are already looking for something to do.</div></div><a href="/join" class="lc-btn">List Your Business Free &rarr;</a></div>';
@@ -370,6 +390,7 @@ function toggleBook(id){
   var f=document.getElementById('bf-'+id); if(!f)return;
   var open=f.classList.toggle('open');
   var b=document.getElementById('ob-'+id);
+  if(b)b.setAttribute('aria-expanded',open?'true':'false');
   var op=getOp(id);
   if(b&&op)b.innerHTML=open?'Hide Booking Form &#8593;':'Book This Experience &#8212; '+esc(op.price)+' <span style="opacity:0.75;font-weight:600;">'+esc(op.priceLabel)+'</span>';
   if(open){
@@ -403,7 +424,7 @@ function doBook(id){
   var name=(document.getElementById('bn-'+id)||{}).value||''; name=name.trim();
   var email=(document.getElementById('be-'+id)||{}).value||''; email=email.trim();
   if(!name){fail('Please enter your full name.');return;}
-  if(!email||email.indexOf('@')===-1||email.indexOf('.')===-1){fail('Please enter a valid email &#8212; your confirmation and tickets go there.');return;}
+  if(!email||email.indexOf('@')===-1||email.indexOf('.')===-1){fail('Please enter a valid email \u2014 your confirmation and tickets go there.');return;}
   var phone=((document.getElementById('bp-'+id)||{}).value||'').trim();
   var size=parseInt((document.getElementById('bs-'+id)||{}).value,10)||1;
   var notes=((document.getElementById('bo-'+id)||{}).value||'').trim();
