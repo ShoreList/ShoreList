@@ -151,3 +151,27 @@ footer nav,footer nav.foot-links{position:static;inset:auto;z-index:auto;padding
 body[data-cat] .hero-breadcrumb{color:#cfe9ee!important}body[data-cat] .hero-breadcrumb a{color:#FFB199!important}
 body[data-cat] .hm-badge{color:#fff!important;background:rgba(7,35,45,.5)!important;border:1px solid rgba(255,255,255,.28)!important;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 body[data-cat] .hero{min-height:420px}
+
+/* ---- unified site header (built by luxe.js on every page except the home page) ---- */
+nav.sl-hdr{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;gap:18px;min-height:64px;padding:0 clamp(16px,3.2vw,40px)!important;background:rgba(7,24,33,.86)!important;-webkit-backdrop-filter:blur(14px) saturate(1.25);backdrop-filter:blur(14px) saturate(1.25);border-bottom:1px solid rgba(245,232,203,.12)!important;box-shadow:0 10px 30px -22px rgba(0,0,0,.9);font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+nav.sl-hdr .sl-logo{font-family:"Playfair Display",Georgia,serif;font-weight:800;font-size:1.42rem;letter-spacing:-.01em;color:#F5E8CB;text-decoration:none;line-height:1;white-space:nowrap}
+nav.sl-hdr .sl-logo span{color:#E96645}
+nav.sl-hdr .sl-links{display:flex;align-items:center;gap:clamp(12px,2vw,26px)}
+nav.sl-hdr .sl-links a{color:rgba(245,232,203,.86);text-decoration:none;font-size:.76rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;white-space:nowrap;padding:8px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+nav.sl-hdr .sl-links a:hover,nav.sl-hdr .sl-links a:focus-visible{color:#FFC95E}
+nav.sl-hdr .sl-links a[aria-current="page"]{color:#FFC95E;border-bottom-color:#FFC95E}
+nav.sl-hdr .sl-links a.sl-cta{background:#C9452A;color:#fff!important;border:0;border-radius:999px;padding:11px 18px;box-shadow:0 6px 18px -8px rgba(233,102,69,.7)}
+nav.sl-hdr .sl-links a.sl-cta:hover{background:#E96645}
+nav.sl-hdr .sl-burger{display:none;background:none;border:0;width:44px;height:44px;padding:11px 9px;cursor:pointer}
+nav.sl-hdr .sl-burger span{display:block;height:2px;background:#F5E8CB;border-radius:2px;margin:5px 0;transition:transform .25s,opacity .2s}
+@media (max-width:920px){
+ nav.sl-hdr .sl-burger{display:block}
+ nav.sl-hdr .sl-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:8px clamp(16px,3.2vw,40px) 18px;background:#071821;border-bottom:1px solid rgba(245,232,203,.12);display:none;box-shadow:0 24px 40px -20px rgba(0,0,0,.8)}
+ nav.sl-hdr.open .sl-links{display:flex}
+ nav.sl-hdr .sl-links a{padding:14px 2px;font-size:.84rem;border-bottom:1px solid rgba(245,232,203,.08)}
+ nav.sl-hdr .sl-links a.sl-cta{margin-top:14px;text-align:center;padding:14px 18px}
+ nav.sl-hdr.open .sl-burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+ nav.sl-hdr.open .sl-burger span:nth-child(2){opacity:0}
+ nav.sl-hdr.open .sl-burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+}
+@media (prefers-reduced-motion:reduce){nav.sl-hdr *{transition:none!important}}
