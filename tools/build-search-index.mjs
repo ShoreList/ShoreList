@@ -2,6 +2,7 @@
 // Run after editing operators/tours:  node tools/build-search-index.mjs
 import fs from 'node:fs';
 import vm from 'node:vm';
+import { loadOperators, toPublic } from './operators-lib.mjs';
 const html = fs.readFileSync(new URL('../category-app.js', import.meta.url), 'utf8');
 const a = html.indexOf('var CAT_DATA=');
 const o = html.indexOf('var OPS={');
@@ -9,6 +10,7 @@ const rest = html.slice(o + 5);
 const m = rest.search(/\n(var |function |const |let )/);
 const ctx = {}; vm.createContext(ctx);
 vm.runInContext(html.slice(a, o + 5 + m) + ';this.CAT_DATA=CAT_DATA;this.OPS=OPS;', ctx);
+ctx.OPS = toPublic(loadOperators()).categories; // operators now live in data/operators.json
 const strip = (s) => String(s || '').replace(/<[^>]*>/g, '').replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n)).replace(/&amp;/g, '&').replace(/&mdash;/g, '\u2014').replace(/&ndash;/g, '\u2013').replace(/\s+/g, ' ').trim();
 
 const items = [];

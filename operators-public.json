@@ -1,0 +1,378 @@
+{
+ "schemaVersion": 1,
+ "city": "wilmington",
+ "cancellationHours": 24,
+ "taxRate": 0.07,
+ "categories": {
+  "walking-tours": [
+   {
+    "id": "wwt-original",
+    "business": "The Original History & Architecture Tour",
+    "operator": "Wilmington Walking Tours",
+    "live": true,
+    "title": "Led by Amanda Leese",
+    "desc": "Wilmington 101, from the 1730s to today. Over a relaxed 1.5-mile loop through the Historic District, you'll trace the city's colonial roots, its industry and its complicated past, and the architecture still lining these streets — Colonial, Greek Revival, Queen Anne, and Italianate. The original tour, and still the best place to start.",
+    "price": "$25",
+    "priceLabel": "per person",
+    "priceCents": 2500,
+    "tags": [
+     "Wilmington Historic District",
+     "1.75 Hours",
+     "1.5-Mile Loop",
+     "All Ages",
+     "ShoreList Founding Partner"
+    ],
+    "note": "Starts at Front Street Inn. Offered daily except Tuesdays. Secure your spot online.",
+    "schedule": {
+     "days": [
+      0,
+      1,
+      3,
+      4,
+      5,
+      6
+     ],
+     "slots": [
+      "9:00 AM"
+     ],
+     "rules": [
+      {
+       "mdFrom": "03-15",
+       "mdUntil": "11-14",
+       "slots": [
+        "9:00 AM"
+       ]
+      },
+      {
+       "slots": [
+        "11:30 AM"
+       ]
+      }
+     ],
+     "cap": 24
+    }
+   },
+   {
+    "id": "wwt-happyhour",
+    "business": "Historic Happy Hour Tour",
+    "operator": "Wilmington Walking Tours",
+    "live": true,
+    "title": "Led by Amanda Leese",
+    "desc": "A little history, a little libation. This stroll pairs a mini history lesson — from Wilmington's founding through the 20th century — with three 25-minute stops at downtown bars. Begin at the Gazebo Bar, wind through The Vine, and finish at the Wine Knot Sky Bar. Drinks are on you.",
+    "price": "$30",
+    "priceLabel": "per person",
+    "priceCents": 3000,
+    "tags": [
+     "Wilmington Historic District",
+     "21+",
+     "Every Other Friday",
+     "Three Bar Stops",
+     "ShoreList Founding Partner"
+    ],
+    "note": "Drinks not included. Every other Friday — times vary seasonally.",
+    "schedule": {
+     "days": [
+      5
+     ],
+     "slots": [
+      "6:00 PM"
+     ],
+     "rules": [
+      {
+       "until": "2026-09-04",
+       "slots": [
+        "6:00 PM"
+       ]
+      },
+      {
+       "slots": [
+        "5:00 PM"
+       ]
+      }
+     ],
+     "cap": 16
+    }
+   },
+   {
+    "id": "wwt-speakeasy",
+    "business": "Speakeasy & Prohibition Walking Tour",
+    "operator": "Wilmington Walking Tours",
+    "live": true,
+    "title": "Led by Amanda Leese",
+    "desc": "Step into Wilmington from the 1880s to the 1930s — the days of Barbary Row and the secret watering holes hidden inside today's restored downtown buildings. The route starts at The Ivey in the Alley, with stops at Underfront Co. and the Blind Elephant. Prohibition never looked so good.",
+    "price": "$30",
+    "priceLabel": "per person",
+    "priceCents": 3000,
+    "tags": [
+     "Wilmington Historic District",
+     "21+",
+     "Every Other Friday",
+     "Prohibition Era",
+     "ShoreList Founding Partner"
+    ],
+    "note": "Drinks not included. Every other Friday — times vary seasonally.",
+    "schedule": {
+     "days": [
+      5
+     ],
+     "slots": [
+      "6:00 PM"
+     ],
+     "rules": [
+      {
+       "until": "2026-09-04",
+       "slots": [
+        "6:00 PM"
+       ]
+      },
+      {
+       "slots": [
+        "5:00 PM"
+       ]
+      }
+     ],
+     "cap": 16
+    }
+   },
+   {
+    "id": "wwt-candlelight",
+    "business": "Christmas Candlelight Victorians Walk",
+    "operator": "Wilmington Walking Tours",
+    "live": true,
+    "title": "Led by Amanda Leese",
+    "desc": "A Wilmington holiday tradition. By the glow of provided candles, this gentle one-mile walk takes in the Historic District's decorated Victorian homes and the holiday customs of the era. About 90 minutes of seasonal magic downtown.",
+    "price": "$20",
+    "priceLabel": "per person",
+    "priceCents": 2000,
+    "tags": [
+     "Wilmington Historic District",
+     "Seasonal · December",
+     "1.5 Hours",
+     "Family Friendly",
+     "ShoreList Founding Partner"
+    ],
+    "note": "Starts at Front Street Inn. December only — 4:30 PM or 6:15 PM.",
+    "schedule": {
+     "days": [
+      1,
+      3,
+      5,
+      6
+     ],
+     "slots": [
+      "4:30 PM",
+      "6:15 PM"
+     ],
+     "months": [
+      11
+     ],
+     "cap": 24
+    }
+   },
+   {
+    "id": "cbt-mural",
+    "business": "Carolina Beach History & Mural Walk",
+    "operator": "Carolina Beach Tours",
+    "live": true,
+    "title": "Led by Amanda Leese",
+    "desc": "Pleasure Island's story, told through its art. This easygoing 1.5-mile stroll from Carolina Beach Lake Park weaves coastal history together with the Carolina Beach Mural Project — the surf and shag-culture murals that color the town. Your ticket includes a $5 donation to the Mural Project.",
+    "price": "$30",
+    "priceLabel": "per person",
+    "priceCents": 3000,
+    "tags": [
+     "Carolina Beach",
+     "Seasonal · May–Sep",
+     "1.5 Hours",
+     "Family Friendly",
+     "ShoreList Founding Partner"
+    ],
+    "note": "Starts at CB Lake Park. Includes a $5 Mural Project donation.",
+    "schedule": {
+     "days": [
+      2
+     ],
+     "slots": [
+      "9:30 AM"
+     ],
+     "months": [
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "cap": 24
+    }
+   },
+   {
+    "id": "cbt-divebar",
+    "business": "Carolina Beach History & Dive Bar Tour",
+    "operator": "Carolina Beach Tours",
+    "live": true,
+    "title": "Led by Amanda Leese",
+    "desc": "The gritty, colorful side of Pleasure Island. Over about two hours and a mile, you'll hit the local spots that built Carolina Beach — starting at The Sea Witch, with stops at the Silver Dollar and the legendary Fat Pelican. History with a little salt.",
+    "price": "$30",
+    "priceLabel": "per person",
+    "priceCents": 3000,
+    "tags": [
+     "Carolina Beach",
+     "21+",
+     "Seasonal · May–Sep",
+     "2 Hours",
+     "ShoreList Founding Partner"
+    ],
+    "note": "Drinks not included. Starts at The Sea Witch.",
+    "schedule": {
+     "days": [
+      3
+     ],
+     "slots": [
+      "5:30 PM"
+     ],
+     "months": [
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "cap": 20
+    }
+   }
+  ],
+  "film-tours": [
+   {
+    "id": "ron-film",
+    "business": "Wilmywood Insider Tours",
+    "operator": "Industry Insider & Local Expert",
+    "title": "20+ Years in the Wilmington Film & Hospitality Industry",
+    "desc": "Wilmington isn't just a beach town &#8212; it's one of the most filmed cities in America. One Tree Hill. Dawson's Creek. Iron Man 3. Safe Haven. A Walk to Remember. Hundreds of productions have called Wilmington home. Your guide has spent over two decades working inside the Wilmington film and hospitality industry and knows the stories behind the sets, the locations, and the legends that most tourists never hear. This isn't a bus tour reading from a brochure. This is Wilmywood &#8212; from the inside.",
+    "price": "$45",
+    "priceLabel": "per person",
+    "priceCents": 4500,
+    "tags": [
+     "Downtown Wilmington",
+     "90 Minutes",
+     "All Ages",
+     "Film History"
+    ],
+    "note": "Secure your spot online. Pay in full at checkout.",
+    "schedule": {
+     "days": [
+      3,
+      4,
+      5,
+      6,
+      0
+     ],
+     "slots": [
+      "10:00 AM",
+      "2:00 PM",
+      "6:00 PM"
+     ]
+    }
+   }
+  ],
+  "ghost-tours": [
+   {
+    "id": "sean-ghost",
+    "business": "Sean Austin's Wilmington Ghost Walk",
+    "operator": "Sean Austin",
+    "title": "Led by a Netflix &amp; Travel Channel Paranormal Investigator",
+    "desc": "This is the most unforgettable ghost walk in Wilmington &mdash; 90 minutes through the haunted heart of one of America&rsquo;s oldest cities, led by Sean Austin: star of Netflix&rsquo;s <em>28 Days Haunted</em>, lead investigator on Travel Channel&rsquo;s <em>Ghost Loop</em> (now on Discovery+), and featured on <em>The Demon Files</em>. Trained demonologist, psychic medium, and published author of <em>Shadow Chaser</em>, Sean brings 16+ years of real paranormal investigation to the city&rsquo;s most haunted streets, antebellum mansions, and burial grounds. Family-friendly, endlessly fascinating, and impossible to forget &mdash; available <strong>exclusively on ShoreList</strong>.",
+    "price": "$30",
+    "priceLabel": "per person",
+    "priceCents": 3000,
+    "tags": [
+     "ShoreList Founding Partner",
+     "Netflix",
+     "Travel Channel",
+     "90 Minutes",
+     "All Ages",
+     "Exclusive to ShoreList",
+     "Downtown Wilmington"
+    ],
+    "note": "Led by Sean Austin &mdash; nationally recognized paranormal TV investigator. Secure your spot online. Exclusive to ShoreList.",
+    "schedule": {
+     "days": [
+      4,
+      5,
+      6,
+      0
+     ],
+     "slots": [
+      "7:00 PM",
+      "8:30 PM",
+      "10:00 PM"
+     ]
+    }
+   }
+  ],
+  "surf-lessons": [
+   {
+    "id": "james-surf",
+    "business": "Carolina Beach Surf Co.",
+    "operator": "Certified Local Instructor",
+    "title": "Professional Surf Instructor &middot; 10+ Years Experience",
+    "desc": "Learn to surf at one of the best beginner beaches on the East Coast with a certified local instructor who has spent years teaching in these exact waters. Whether you've never touched a board or want to level up your skills, this lesson is fun, safe, and unforgettable. Every session is tailored to your level. All equipment included &#8212; board, wetsuit, and rash guard.",
+    "price": "$100",
+    "priceLabel": "per person",
+    "priceCents": 10000,
+    "tags": [
+     "Carolina Beach",
+     "2 Hours",
+     "All Skill Levels",
+     "All Gear Included"
+    ],
+    "note": "Secure your spot online. Pay in full at checkout.",
+    "schedule": {
+     "days": [
+      1,
+      2,
+      4,
+      5,
+      6,
+      0
+     ],
+     "slots": [
+      "8:00 AM",
+      "10:00 AM",
+      "12:00 PM",
+      "2:00 PM"
+     ]
+    }
+   }
+  ],
+  "nature-walks": [
+   {
+    "id": "nature-walk",
+    "business": "Coastal Carolina Nature Walks",
+    "operator": "",
+    "title": "Coming Soon &mdash; Operator Joining Shorelist",
+    "desc": "Discover the wild, beautiful natural world of coastal North Carolina. From ancient cypress swamps and carnivorous plant bogs of Carolina Beach State Park to pristine maritime forests and tidal marshes, these guided walks reveal the incredible biodiversity that makes this coast so special. This experience is launching soon on Shorelist &#8212; tap to be notified when bookings open.",
+    "price": "$35",
+    "priceLabel": "per person",
+    "priceCents": 3500,
+    "tags": [
+     "Carolina Beach State Park",
+     "2 Hours",
+     "Family Friendly",
+     "Coming Soon"
+    ],
+    "note": "Secure your spot online. Pay in full at checkout.",
+    "schedule": {
+     "days": [
+      3,
+      6,
+      0
+     ],
+     "slots": [
+      "8:00 AM",
+      "10:00 AM",
+      "2:00 PM"
+     ]
+    }
+   }
+  ]
+ }
+}

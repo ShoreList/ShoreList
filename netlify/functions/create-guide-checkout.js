@@ -2,7 +2,7 @@
 // The browser sends one product id. Price, name and the guides included come
 // from GUIDES in _shared.js. No date, slot, seat or hold logic: quantity is 1.
 
-const { corsHeaders, originAllowed, clientIp, rateLimitDurable, getGuideProduct } = require('./_shared.js');
+const { corsHeaders, originAllowed, clientIp, rateLimitDurable, getGuideProduct, attribMetadata } = require('./_shared.js');
 
 exports.handler = async (event) => {
   const headers = corsHeaders(event, { 'Cache-Control': 'no-store' });
@@ -50,6 +50,7 @@ exports.handler = async (event) => {
   p.set('metadata[product]', data.product);
   p.set('metadata[guideIds]', product.ids.join(','));
   p.set('metadata[taxCents]', String(taxCents));
+  Object.entries(attribMetadata(data.attrib)).forEach(([k, v]) => p.set(`metadata[${k}]`, v)); // booking source (allowlisted, capped, sanitized)
 
   try {
     const res = await fetch('https://api.stripe.com/v1/checkout/sessions', {

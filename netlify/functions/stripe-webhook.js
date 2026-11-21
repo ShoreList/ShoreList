@@ -2,7 +2,7 @@
 // Fires on successful payment → sends operator email notification
 
 const crypto = require('crypto');
-const { escapeHtml, header } = require('./_shared.js');
+const { escapeHtml, header, attribSummary } = require('./_shared.js');
 
 async function sendOperatorEmail(meta, amount) {
   const RESEND_KEY = process.env.RESEND_API_KEY;
@@ -40,6 +40,7 @@ async function sendOperatorEmail(meta, amount) {
       <tr><td style="${tdLabel}">Date</td><td style="${tdVal}">${e(meta.date)}</td></tr>
       <tr><td style="${tdLabel}">Time</td><td style="${tdVal}">${e(meta.timeSlot)}</td></tr>
       <tr><td style="${tdLabel}">Party Size</td><td style="${tdVal}">${e(meta.partySize) || '1'} guest(s)</td></tr>
+      ${attribSummary(meta) ? `<tr><td style="${tdLabel}">Source</td><td style="${tdVal}">${e(attribSummary(meta))}</td></tr>` : ''}
       ${meta.notes ? `<tr><td style="${tdLabel}">Notes</td><td style="${tdVal}">${e(meta.notes)}</td></tr>` : ''}
     </table>
     <div style="margin-top:20px;padding:16px 20px;background:rgba(233,102,69,0.12);border:1px solid rgba(233,102,69,0.3);border-radius:10px;display:flex;align-items:center;justify-content:space-between;">
@@ -96,7 +97,7 @@ async function sendGuideSaleEmail(meta, amount) {
         from: 'ShoreList Bookings <onboarding@resend.dev>',
         to: ['shorelistwilmington@gmail.com'],
         subject: 'Guide sold: ' + String(meta.product || 'guide').replace(/[^a-z0-9-]/gi, '').slice(0, 60),
-        html: `<p>A guide was bought and paid: <strong>${e(meta.product)}</strong> (${e(amountFormatted)}). Buyer details are in Stripe.</p>`,
+        html: `<p>A guide was bought and paid: <strong>${e(meta.product)}</strong> (${e(amountFormatted)}). Buyer details are in Stripe.${attribSummary(meta) ? ` Source: ${e(attribSummary(meta))}.` : ''}</p>`,
       }),
     });
     if (!r.ok) console.error('Resend error (guide):', r.status);

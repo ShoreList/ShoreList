@@ -1,6 +1,7 @@
 // Site sanity checks. Run: node tools/check-site.mjs   (exits 1 on any failure)
 import fs from 'node:fs';
 import vm from 'node:vm';
+import { loadOperators, publicJson } from './operators-lib.mjs';
 const fails = [];
 const bad = (m) => fails.push(m);
 const pages = fs.readdirSync('.').filter((f) => f.endsWith('.html')).concat(fs.existsSync('things-to-do') ? fs.readdirSync('things-to-do').filter((f) => f.endsWith('.html')).map((f) => 'things-to-do/' + f) : []);
@@ -36,6 +37,12 @@ for (const i of cat.items || []) {
 }
 for (const f of fs.readdirSync('netlify/functions')) {
   try { new vm.Script(fs.readFileSync('netlify/functions/' + f, 'utf8').replace(/^#!.*/, '')); } catch (e) { bad(`function ${f}: ${e.message}`); }
+}
+// operators: data/operators.json is the source; the committed public file must match what the builder makes
+try { if (fs.readFileSync('operators-public.json', 'utf8') !== publicJson(loadOperators())) bad('operators-public.json is stale: run node tools/build-operators-public.mjs'); } catch (e) { bad('operators data: ' + e.message); }
+for (const f of pages) { // every page that starts a checkout must load the attribution script
+  const h = fs.readFileSync(f, 'utf8');
+  if (/category-app\.js|create-guide-checkout/.test(h) && !/\/attrib\.js/.test(h)) bad(`${f}: starts checkout but does not load /attrib.js`);
 }
 if (fails.length) { console.error(fails.join('\n')); process.exit(1); }
 console.log(`ok: ${pages.length} pages, ${cat.items.length} products`);
