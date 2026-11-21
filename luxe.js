@@ -52,4 +52,17 @@
     if('MutationObserver' in window)new MutationObserver(function(ms){ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1)scan(n);});});}).observe(d.body,{childList:true,subtree:true});
   }
   if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',go);else go();
+
+  /* instant navigation: prerender likely next pages (Speculation Rules), where supported */
+  try{
+    if(HTMLScriptElement.supports&&HTMLScriptElement.supports('speculationrules')&&!(navigator.connection&&navigator.connection.saveData)){
+      var sp=d.createElement('script');sp.type='speculationrules';
+      sp.textContent=JSON.stringify({prerender:[{where:{and:[{href_matches:'/*'},{not:{href_matches:['/dashboard*','/success*','/.netlify/*','/api/*']}}]},eagerness:'moderate'}]});
+      d.head.appendChild(sp);
+    }
+  }catch(e){}
+  /* Shore Score widget on pages that carry the live conditions */
+  addEventListener('load',function(){
+    if(d.querySelector('script[src*="widgets.js"]')){var s=d.createElement('script');s.src='/shorescore.js';s.defer=true;d.body.appendChild(s);}
+  });
 })();

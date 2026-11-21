@@ -59,3 +59,15 @@ body{animation:lx-page .6s var(--lx-ease) both}
  .lx-rv{opacity:1;transform:none}
  #lx-splash{display:none}
 }
+
+/* native cross-page transitions (Chromium) */
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:lx-vt-out .25s ease both}
+::view-transition-new(root){animation:lx-vt-in .45s var(--lx-ease) both}
+@keyframes lx-vt-out{to{opacity:0}}
+@keyframes lx-vt-in{from{opacity:0;transform:translateY(8px)}}
+/* scroll-driven reading progress (no JS) */
+@supports(animation-timeline:scroll()){
+ html::after{content:"";position:fixed;left:0;top:0;height:2px;width:100%;z-index:99990;background:linear-gradient(90deg,#E96645,#FFC95E);transform-origin:0 50%;transform:scaleX(0);animation:lx-read linear both;animation-timeline:scroll(root)}
+ @keyframes lx-read{to{transform:scaleX(1)}}
+}
