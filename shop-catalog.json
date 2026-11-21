@@ -333,6 +333,23 @@
       ],
       "cut": "unisex",
       "store": "fourthwall"
+    },
+    {
+      "id": "carolina-beach-surf-tee",
+      "collection": "shore-gear",
+      "name": "Carolina Beach Surf Tee",
+      "url": "https://shorelist-shop.fourthwall.com/products/carolina-beach-surf-tee",
+      "img": "https://imgproxy.fourthwall.dev/AtlCC3YAu_Irm_UqD4V58_BqGx5S427QCZNkNJLEqDc/w:1920/sm:1/enc/rJDwSQ7OUdAUCo6K/Z_JlA1VY64UdkqTI/RJVUroeHR3kpgJ_f/ydSl34WhFrmIb99P/WlHy3MhldrAl2L6e/8fBAlJ7J1Bvt-H_O/rVx2pYakXuqXk7bT/maUfyaGTFdSO_c6s/1eXsLKnlAgDJ3UL0/7EvrwsyINWH6S3Ac/rsThUGk3LhkSWkBb/jtWcL8up9kGLlmUj/zMnSSqq95WlK2lXC/6miKYQ.webp",
+      "lookbook": "https://imgproxy.fourthwall.dev/AtlCC3YAu_Irm_UqD4V58_BqGx5S427QCZNkNJLEqDc/w:1920/sm:1/enc/rJDwSQ7OUdAUCo6K/Z_JlA1VY64UdkqTI/RJVUroeHR3kpgJ_f/ydSl34WhFrmIb99P/WlHy3MhldrAl2L6e/8fBAlJ7J1Bvt-H_O/rVx2pYakXuqXk7bT/maUfyaGTFdSO_c6s/1eXsLKnlAgDJ3UL0/7EvrwsyINWH6S3Ac/rsThUGk3LhkSWkBb/jtWcL8up9kGLlmUj/zMnSSqq95WlK2lXC/6miKYQ.webp",
+      "alt": "Woman in a seafoam Carolina Beach Surf tee holding a surfboard on the Carolina Beach pier at sunrise",
+      "meta": "Comfort Colors 1717 garment-dyed tee with a navy Carolina Beach Surf lockup. Seafoam.",
+      "cta": "Choose options and buy",
+      "price": 46,
+      "scenes": [
+        "beach"
+      ],
+      "cut": "unisex",
+      "store": "fourthwall"
     }
   ],
   "scenes": [
