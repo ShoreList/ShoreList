@@ -5,28 +5,53 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Page Not Found — ShoreList</title>
 <meta name="robots" content="noindex"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+<meta name="theme-color" content="#0E1F33"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,700&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 </script>
 <style>
-:root{--teal:#0A4D5C;--teal2:#1A7585;--coral:#E96645;--cream:#F5E8CB;--cream2:#FEFCF7;--gold:#FFC95E;}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'DM Sans',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px 20px;color:var(--cream);
-  background:radial-gradient(circle at 85% 10%,rgba(255,178,76,0.30) 0,transparent 40%),linear-gradient(160deg,#0D5A6B 0%,#0A4D5C 55%,#073D4A 100%);}
-.brand{font-family:'Playfair Display',serif;font-weight:900;font-size:1.6rem;color:var(--cream2);text-decoration:none;margin-bottom:34px;display:inline-block;}
-.brand span{color:var(--coral);}
-.code{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(4.5rem,16vw,8rem);line-height:1;color:var(--coral);text-shadow:0 10px 40px rgba(0,0,0,0.3);}
-h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(1.4rem,4vw,2rem);margin:10px 0 10px;color:var(--cream2);}
-p{max-width:430px;line-height:1.7;color:rgba(245,232,203,0.75);font-size:1rem;margin-bottom:28px;}
-.links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:520px;}
-.links a{background:rgba(255,255,255,0.08);border:1px solid rgba(245,232,203,0.25);color:var(--cream);text-decoration:none;padding:11px 20px;border-radius:100px;font-weight:600;font-size:0.9rem;transition:all .2s;}
-.links a:hover{background:var(--coral);border-color:var(--coral);transform:translateY(-2px);}
-.links a.primary{background:var(--coral);border-color:var(--coral);font-weight:700;}
-.wave{position:fixed;bottom:0;left:0;right:0;height:70px;opacity:0.5;pointer-events:none;
-  background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 90' preserveAspectRatio='none'%3E%3Cpath d='M0,55 C200,85 420,20 640,45 C860,70 1040,88 1220,55 C1340,32 1400,48 1440,40 L1440,90 L0,90 Z' fill='%23073D4A'/%3E%3C/svg%3E") bottom / 100% 100% no-repeat;}
+:root{--navy:#0E1F33;--sail:#F4F1EA;--glass:#9FC3B8;--red:#C9452A;--coral:#FF9B7B}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'DM Sans',system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column;background:var(--navy);color:var(--sail);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:8px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--red);color:#fff;padding:12px 18px;border-radius:8px;font-weight:700;text-decoration:none;z-index:999}.skip:focus{left:12px}
+nav.nf-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:rgba(14,31,51,.96);border-bottom:1px solid rgba(244,241,234,.12)}
+.brand{font-family:'Playfair Display',serif;font-weight:900;font-size:1.5rem;color:var(--sail);text-decoration:none}
+.brand span{color:var(--coral);font-style:italic}
+main{flex:1;position:relative;isolation:isolate;display:flex;align-items:center;padding:64px 24px 72px;overflow:hidden}
+.nf-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+main::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(14,31,51,.95) 0%,rgba(14,31,51,.84) 52%,rgba(14,31,51,.6) 100%),linear-gradient(180deg,rgba(14,31,51,0) 55%,rgba(14,31,51,.92) 100%)}
+.nf{max-width:1180px;width:100%;margin:0 auto}
+.code{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--glass);margin-bottom:16px}
+.code i{width:7px;height:7px;border-radius:50%;background:var(--glass)}
+h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(2.4rem,6vw,4.4rem);line-height:1.03;letter-spacing:-.02em;color:#fff;margin-bottom:16px;max-width:14ch}
+h1 em{font-style:italic;color:var(--coral)}
+.lede{max-width:520px;font-size:1.12rem;color:rgba(244,241,234,.92);margin-bottom:26px}
+.nf-search{display:flex;align-items:center;gap:12px;width:100%;max-width:520px;min-height:58px;padding:0 20px;border-radius:100px;border:1.5px solid rgba(244,241,234,.4);background:rgba(244,241,234,.12);color:var(--sail);font:inherit;font-size:1.02rem;font-weight:600;text-align:left;cursor:pointer;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);transition:background .2s,border-color .2s,transform .25s}
+.nf-search:hover{background:rgba(244,241,234,.2);border-color:var(--sail);transform:translateY(-2px)}
+.nf-search svg{flex:none;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
+.nf-search span{flex:1}
+.nf-search kbd{font:inherit;font-size:.8rem;font-weight:700;padding:3px 9px;border-radius:8px;border:1px solid rgba(244,241,234,.4);color:rgba(244,241,234,.9)}
+[hidden]{display:none!important}
+.nf-guess{max-width:520px;margin-top:14px;font-size:.98rem;color:rgba(244,241,234,.9);min-height:1.6em}
+.nf-guess a{font-weight:700;color:#fff;text-underline-offset:3px;display:inline-block;padding:11px 0}
+.links{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:34px;max-width:1040px}
+.links a{display:flex;flex-direction:column;justify-content:flex-end;gap:2px;min-height:112px;padding:18px;border-radius:20px;background:rgba(244,241,234,.09);border:1px solid rgba(244,241,234,.2);text-decoration:none;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s,background .3s}
+.links a:hover{transform:translateY(-4px);border-color:rgba(255,155,123,.7);background:rgba(244,241,234,.14)}
+.links b{font-family:'Playfair Display',serif;font-size:1.2rem;color:#fff;line-height:1.2}
+.links span{font-size:.88rem;color:rgba(244,241,234,.86);line-height:1.35}
+.links a.primary{background:var(--red);border-color:var(--red)}
+.links a.primary span{color:#fff}
+.credit{margin-top:34px;font-size:.76rem;color:rgba(244,241,234,.78)}
+.credit a{color:rgba(244,241,234,.92)}
+@media(max-width:900px){.links{grid-template-columns:repeat(2,minmax(0,1fr))}.links a.primary{grid-column:1/-1;min-height:84px}}
+@media(max-width:640px){nav.nf-nav{padding:12px 16px}main{padding:44px 16px 56px;align-items:flex-start}.nf-search kbd{display:none}.links a{min-height:96px;padding:16px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 <link rel="manifest" href="/manifest.webmanifest"/>
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
@@ -34,19 +59,58 @@ p{max-width:430px;line-height:1.7;color:rgba(245,232,203,0.75);font-size:1rem;ma
 <script src="/luxe.js" defer></script>
 </head>
 <body>
-<a href="/" class="brand">Shore<span>List</span></a>
-<div class="code">404</div>
-<h1>Looks like you drifted off course</h1>
-<p>This page washed out with the tide — but the good stuff is all still here. Where to next?</p>
-<nav class="links" aria-label="Helpful links">
-  <a href="/" class="primary">Back to Home</a>
-  <a href="/downtown">Downtown Guide</a>
-  <a href="/shore-picks">Shore Picks</a>
-  <a href="/events">Events</a>
-  <a href="/wilmington-railroad-museum">Railroad Museum</a>
-  <a href="/planner">Plan My Trip</a>
-</nav>
-<div class="wave" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nf-nav" aria-label="Primary"><a href="/" class="brand" aria-label="ShoreList home">Shore<span>List</span></a></nav>
+<main id="main">
+  <img class="nf-bg" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bench_1920x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bench_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bench_1920x.webp 1920w" sizes="100vw" width="1920" height="1373" alt="" fetchpriority="high" decoding="async"/>
+  <div class="nf">
+    <div class="code"><i></i>Error 404 &middot; Page not found</div>
+    <h1>Looks like you drifted <em>off course</em></h1>
+    <p class="lede">That page is not here, but everything else is. Search the site or pick a starting point below.</p>
+    <button type="button" class="nf-search" id="nf-search" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><span>Search ShoreList</span><kbd>/</kbd></button>
+    <p class="nf-guess" id="nf-guess" aria-live="polite"></p>
+    <nav class="links" aria-label="Helpful links">
+      <a href="/" class="primary"><b>Home</b><span>Back to the front page</span></a>
+      <a href="/things-to-do"><b>Things to Do</b><span>Tours, lessons and rentals</span></a>
+      <a href="/events"><b>Events</b><span>What is on around Wilmington</span></a>
+      <a href="/shore-picks"><b>Shore Picks</b><span>Where to eat and drink</span></a>
+      <a href="/wilmington-weather"><b>Weather</b><span>Live forecast and beach conditions</span></a>
+    </nav>
+    <p class="credit">Photo: Unexpected Snacks, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Wilmington,_NC_Riverwalk_Bench_at_Sunset.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></p>
+  </div>
+</main>
+<script>
+(function(){
+  var d=document,btn=d.getElementById('nf-search'),guess=d.getElementById('nf-guess');
+  /* words from the address that was not found, e.g. /things-to-do/kayak -> "kayak" */
+  var words=decodeURIComponent(location.pathname).toLowerCase().replace(/\.html?$/,'').split(/[^a-z0-9]+/).filter(function(w){return w.length>2&&!/^(the|and|for|404|html|things|index)$/.test(w);});
+  function ready(n){
+    if(window.ShorePlus&&typeof window.ShorePlus.open==='function'){
+      btn.hidden=false;
+      btn.addEventListener('click',function(){
+        window.ShorePlus.open('404');
+        var q=words.slice(-2).join(' ');
+        if(q)setTimeout(function(){var i=d.getElementById('sp-input');if(i&&!i.value){i.value=q;i.dispatchEvent(new Event('input',{bubbles:true}));}},250);
+      });
+    }else if(n<40)setTimeout(function(){ready(n+1);},150);
+  }
+  ready(0);
+  if(!words.length||!window.fetch)return;
+  fetch('/search-index.json',{credentials:'same-origin'}).then(function(r){return r.json();}).then(function(j){
+    var hits=(j.items||[]).map(function(it){
+      var hay=(it.title+' '+(it.slug||'')+' '+it.url).toLowerCase(),s=0;
+      words.forEach(function(w){if(hay.indexOf(w)>-1)s+=2;else if(w.length>4&&hay.indexOf(w.slice(0,4))>-1)s+=1;});
+      return {it:it,s:s};
+    }).filter(function(x){return x.s>1&&x.it.url&&x.it.url.charAt(0)==='/';}).sort(function(a,b){return b.s-a.s;});
+    var seen={},out=[];
+    hits.forEach(function(h){if(out.length<3&&!seen[h.it.url]){seen[h.it.url]=1;out.push(h.it);}});
+    if(!out.length)return;
+    guess.textContent='Were you looking for ';
+    out.forEach(function(it,i){if(i)guess.appendChild(d.createTextNode(i===out.length-1?' or ':', '));var a=d.createElement('a');a.href=it.url;a.textContent=it.title;guess.appendChild(a);});
+    guess.appendChild(d.createTextNode('?'));
+  }).catch(function(){});
+})();
+</script>
 <script src="/shore-plus.js" defer></script>
 </body>
 </html>

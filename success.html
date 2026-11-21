@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex"/>
 <title>Booking Confirmed — ShoreList</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
@@ -87,7 +88,7 @@ nav{width:100%;max-width:700px;display:flex;align-items:center;justify-content:s
   <a href="/" class="nav-home">&#8592; All Experiences</a>
 </nav>
 
-<div class="check-wrap">
+<div class="check-wrap" id="check-wrap" style="display:none;">
   <div class="check-glow"></div>
   <div class="check-circle">
     <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#4ade80" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="100" stroke-dashoffset="100">
@@ -97,12 +98,13 @@ nav{width:100%;max-width:700px;display:flex;align-items:center;justify-content:s
 </div>
 
 <div class="main-card">
-  <div class="confirmed-label"><span>&#10003;</span> Booking Confirmed</div>
-  <h1 class="confirmed-title">You're all set<em style="color:var(--coral);">.</em></h1>
-  <p class="confirmed-sub" id="conf-sub">Your spot is reserved. A confirmation email is on its way to your inbox.</p>
+  <div class="confirmed-label" id="conf-label">Checking your booking&hellip;</div>
+  <h1 class="confirmed-title" id="conf-title">One moment<em style="color:var(--coral);">.</em></h1>
+  <p class="confirmed-sub" id="conf-sub">We are looking up your booking.</p>
 
   <div class="booking-card" id="booking-card">
     <div class="bc-loading">Loading your booking details&hellip;</div>
+    <noscript><div class="bc-operator">We could not confirm this booking on this page. Check your email for your confirmation, or write to shorelistwilmington@gmail.com.</div></noscript>
   </div>
 
   <div class="action-row" id="action-row" style="display:none;">
@@ -110,7 +112,7 @@ nav{width:100%;max-width:700px;display:flex;align-items:center;justify-content:s
     <button class="btn-share" onclick="shareBooking()">&#8679; Share</button>
   </div>
 
-  <div class="info-box">
+  <div class="info-box" id="info-box" style="display:none;">
     <div class="info-title">What Happens Next</div>
     <div class="info-item">
       <div class="info-icon">&#128231;</div>
@@ -156,7 +158,7 @@ function fmtDate(ds){
   catch(e){return ds;}
 }
 
-function fmtAmt(cents){return '$'+(((cents||2500)/100).toFixed(2));}
+function fmtAmt(cents){return (typeof cents==='number'&&isFinite(cents))?'$'+(cents/100).toFixed(2):'Paid';}
 
 function buildGCalUrl(b){
   if(!b.date) return 'https://calendar.google.com/calendar/r/eventedit';
@@ -181,30 +183,65 @@ function buildGCalUrl(b){
   }catch(e){return 'https://calendar.google.com/calendar/r/eventedit';}
 }
 
+// Builds an element whose content is always plain text, never HTML. Every value
+// that comes from the booking goes through here (or through textContent).
+function el(tag,cls,text){var n=document.createElement(tag);if(cls)n.className=cls;if(text!=null)n.textContent=String(text);return n;}
+function item(label,value,full){var w=el('div','bc-item'+(full?' full':''));w.appendChild(el('div','bc-item-label',label));w.appendChild(el('div','bc-item-value',value));return w;}
+function setHead(label,title,sub){
+  document.getElementById('conf-label').textContent=label;
+  var t=document.getElementById('conf-title');t.textContent=title;
+  var dot=el('em',null,'.');dot.style.color='var(--coral)';t.appendChild(dot);
+  document.getElementById('conf-sub').textContent=sub;
+}
+
+// Shown only when the server says this session is paid.
 function renderBooking(b){
+  var first=b.guestName?String(b.guestName).split(' ')[0]:'';
+  setHead('\u2713 Booking Confirmed','You\u2019re all set','Your spot is reserved'+(first?', '+first:'')+'. A confirmation email is on its way to your inbox.');
   var card=document.getElementById('booking-card');
-  var h='';
-  h+='<div class="bc-tag">Your Booking</div>';
-  h+='<div class="bc-experience">'+(b.categoryLabel||'Your Experience')+'</div>';
-  h+='<div class="bc-operator">with '+(b.operatorName||'Your Operator')+(b.guestName?' &nbsp;&middot;&nbsp; Booked for '+b.guestName:'')+'</div>';
-  h+='<div class="bc-divider"></div>';
-  h+='<div class="bc-grid">';
-  h+='<div class="bc-item"><div class="bc-item-label">Date</div><div class="bc-item-value">'+fmtDate(b.date)+'</div></div>';
-  h+='<div class="bc-item"><div class="bc-item-label">Time</div><div class="bc-item-value">'+(b.timeSlot||'See confirmation email')+'</div></div>';
-  h+='<div class="bc-item"><div class="bc-item-label">Party Size</div><div class="bc-item-value">'+(b.partySize||'1')+' guest(s)</div></div>';
-  h+='<div class="bc-item"><div class="bc-item-label">Confirmation sent to</div><div class="bc-item-value">'+(b.guestEmail||'Your email')+'</div></div>';
-  if(b.notes){h+='<div class="bc-item full"><div class="bc-item-label">Special Requests</div><div class="bc-item-value">'+b.notes+'</div></div>';}
-  h+='</div>';
-  h+='<div class="bc-paid"><div><div class="bc-paid-label">Payment Confirmed &#10003;</div><div class="bc-paid-note">Paid in full &nbsp;&middot;&nbsp; Free cancellation 24+ hrs before</div></div><div class="bc-paid-amt">'+fmtAmt(b.amount)+'</div></div>';
-  card.innerHTML=h;
-  var ar=document.getElementById('action-row');
-  ar.style.display='flex';
+  card.textContent='';
+  card.appendChild(el('div','bc-tag','Your Booking'));
+  card.appendChild(el('div','bc-experience',b.categoryLabel||'Your Experience'));
+  card.appendChild(el('div','bc-operator','with '+(b.operatorName||'Your Operator')+(b.guestName?' \u00a0\u00b7\u00a0 Booked for '+b.guestName:'')));
+  card.appendChild(el('div','bc-divider'));
+  var grid=el('div','bc-grid');
+  grid.appendChild(item('Date',fmtDate(b.date)));
+  grid.appendChild(item('Time',b.timeSlot||'See confirmation email'));
+  grid.appendChild(item('Party Size',(b.partySize||'1')+' guest(s)'));
+  grid.appendChild(item('Confirmation sent to','The email you booked with'));
+  card.appendChild(grid);
+  var paid=el('div','bc-paid'),left=el('div');
+  left.appendChild(el('div','bc-paid-label','Payment Confirmed \u2713'));
+  left.appendChild(el('div','bc-paid-note','Paid in full \u00a0\u00b7\u00a0 Free cancellation 24+ hrs before'));
+  paid.appendChild(left);
+  paid.appendChild(el('div','bc-paid-amt',fmtAmt(b.amount)));
+  card.appendChild(paid);
+  document.getElementById('check-wrap').style.display=''; // green tick only once payment is confirmed
+  document.getElementById('action-row').style.display='flex';
+  document.getElementById('info-box').style.display='';
   var gcal=document.getElementById('btn-gcal');
   if(gcal) gcal.href=buildGCalUrl(b);
-  if(b.guestName){
-    var sub=document.getElementById('conf-sub');
-    if(sub) sub.textContent='Your spot is reserved, '+b.guestName.split(' ')[0]+'. A confirmation email is on its way to your inbox.';
-  }
+  confetti();
+}
+
+// Shown when there is no session, it is not paid, or the lookup failed. Says nothing about payment.
+function renderUnconfirmed(){
+  document.getElementById('conf-label').style.color='var(--cream)';
+  setHead('Booking not confirmed','We couldn\u2019t confirm this booking','We could not find a paid booking for this link.');
+  var card=document.getElementById('booking-card');
+  card.textContent='';
+  card.appendChild(el('div','bc-tag','Booking status'));
+  card.appendChild(el('div','bc-experience','Not confirmed on this page'));
+  card.appendChild(el('div','bc-operator','If you finished paying, your booking is safe: look for the confirmation email and the receipt from Stripe (check spam too). If you did not finish checkout, no booking was made and you have not been charged.'));
+  var help=el('div','bc-operator','Need help? Email ');
+  var mail=el('a',null,'shorelistwilmington@gmail.com');
+  mail.href='mailto:shorelistwilmington@gmail.com';mail.style.color='var(--coral)';
+  help.appendChild(mail);
+  help.appendChild(document.createTextNode(' and we will sort it out.'));
+  help.style.marginTop='14px';
+  card.appendChild(help);
+  document.getElementById('action-row').style.display='none';
+  document.getElementById('info-box').style.display='none';
 }
 
 function shareBooking(){
@@ -221,24 +258,19 @@ function shareBooking(){
 }
 
 var sessionId=getParam('session_id');
-if(sessionId&&sessionId.startsWith('cs_')){
+if(/^cs_(test|live)_[A-Za-z0-9]{8,250}$/.test(sessionId)){
   fetch('/.netlify/functions/get-session?id='+encodeURIComponent(sessionId))
-    .then(function(r){return r.json();})
+    .then(function(r){if(!r.ok) throw new Error('not confirmed');return r.json();})
     .then(function(data){
-      if(data.error){throw new Error(data.error);}
+      if(!data||data.error||data.paid!==true){throw new Error('not confirmed');}
       renderBooking(data);
     })
-    .catch(function(){
-      var card=document.getElementById('booking-card');
-      card.innerHTML='<div class="bc-tag">Your Booking</div><div class="bc-experience">Experience Confirmed!</div><div class="bc-operator" style="margin-bottom:20px;">Your confirmation details will arrive by email shortly.</div><div class="bc-paid"><div><div class="bc-paid-label">Payment Confirmed &#10003;</div><div class="bc-paid-note">Paid in full &nbsp;&middot;&nbsp; Free cancellation 24+ hrs before</div></div><div class="bc-paid-amt">Paid</div></div>';
-      document.getElementById('action-row').style.display='flex';
-    });
+    .catch(renderUnconfirmed);
 } else {
-  var card=document.getElementById('booking-card');
-  card.innerHTML='<div class="bc-tag">Booking Confirmed</div><div class="bc-experience">Your spot is reserved!</div><div class="bc-operator" style="margin-bottom:20px;">Check your email for confirmation details.</div><div class="bc-paid"><div><div class="bc-paid-label">Payment Confirmed &#10003;</div><div class="bc-paid-note">Paid in full &nbsp;&middot;&nbsp; Free cancellation 24+ hrs before</div></div><div class="bc-paid-amt">Paid</div></div>';
+  renderUnconfirmed();
 }
 
-(function(){
+function confetti(){
   var colors=['#E96645','#F5E8CB','#4ade80','#60a5fa','#FEFCF7'];
   var container=document.createElement('div');
   container.style.cssText='position:fixed;inset:0;pointer-events:none;z-index:999;overflow:hidden;';
@@ -259,7 +291,7 @@ if(sessionId&&sessionId.startsWith('cs_')){
   document.head.appendChild(style);
   document.body.appendChild(container);
   setTimeout(function(){container.remove();},4000);
-})();
+}
 </script>
 </body>
 </html>

@@ -186,11 +186,12 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"TouristDestination","name":"Carolina Beach, NC","url":"https://shorelist.net/carolina-beach","description":"Visitor guide to Carolina Beach, North Carolina — things to do, local experiences, and events.","touristType":"Coastal travelers","containedInPlace":{"@type":"AdministrativeArea","name":"New Hanover County, North Carolina"},"publisher":{"@type":"Organization","name":"ShoreList LLC","url":"https://shorelist.net"}}
 </script>
-<link rel="stylesheet" href="/shorelist.css"/>
 <link rel="manifest" href="/manifest.webmanifest"/>
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
 <link rel="stylesheet" href="/scene.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
+<link rel="stylesheet" href="/town.css"/>
+<noscript><style>.t-evs{display:none!important}.t-chip{display:none!important}</style></noscript>
 <script src="/luxe.js" defer></script>
 <style id="scene-hero">
 .hero-photo{position:absolute;left:-2%;top:-2%;width:104%;height:104%;max-width:none;object-fit:cover;object-position:50% 60%;z-index:0;animation:heroDrift 60s ease-in-out infinite alternate}
@@ -214,7 +215,7 @@ section.hero[data-photo] .weather-card{background:rgba(6,28,40,.55)!important;bo
 </style>
 <link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1920x.webp" imagesrcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1920x.webp 1920w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_3840x.webp 3840w" imagesizes="100vw" fetchpriority="high"/>
 </head>
-<body>
+<body class="town" data-town="carolina" data-wx="1">
 
 <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs>
 <symbol id="i-leaf" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
@@ -356,6 +357,7 @@ section.hero[data-photo] .weather-card{background:rgba(6,28,40,.55)!important;bo
   <div class="hero-inner">
     <div>
       <div class="hero-breadcrumb"><a href="/">ShoreList</a> &nbsp;&#8250;&nbsp; <a href="/map">Wilmington &amp; the Beaches</a> &nbsp;&#8250;&nbsp; Carolina Beach</div>
+      <p class="t-chip is-off" data-t-chip aria-live="polite">Live conditions</p>
       <div class="hero-tag">Pleasure Island &nbsp;&middot;&nbsp; NC Coast</div>
       <h1 class="hero-title">Carolina Beach, NC<br/><em>Wild, Warm, and Real.</em></h1>
       <p class="hero-sub">A classic American beach town with a boardwalk that's been rocking since 1939, the only wild Venus flytraps in the world, and the best July 4th fireworks on the East Coast. Carolina Beach doesn't pretend to be anything it isn't &mdash; and that's exactly why people love it.</p>
@@ -371,123 +373,61 @@ section.hero[data-photo] .weather-card{background:rgba(6,28,40,.55)!important;bo
         <a href="/map" class="btn-ghost"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-pin" xlink:href="#i-pin"/></svg>View on Map</a>
       </div>
     </div>
-    <div class="weather-card">
-      <div class="wc-label">Live Conditions</div>
-      <div class="wc-temp" id="wc-temp">--&#176;</div>
-      <div class="wc-loc">Carolina Beach, NC</div>
-      <div class="wc-cond" id="wc-cond">Loading...</div>
-      <div class="wc-live"><div class="wc-dot"></div>Real-time weather</div>
+  </div>
+<p class="hero-credit">Photo is a styled scene, not a picture of the exact spot.</p>
+</section>
+<section class="t-now" id="conditions" aria-labelledby="t-now-h">
+  <div class="t-wrap t-now-grid">
+    <div class="t-now-copy">
+      <p class="t-eye">Right now</p>
+      <h2 id="t-now-h">Today at Carolina Beach</h2>
+      <p class="t-now-line">Live air, water, surf, wind and tide for Carolina Beach, refreshed every ten minutes from NOAA and open-meteo.</p>
+      <p class="t-tip" data-t-tip><b>Suggested for these conditions</b>When live readings load, a suggestion that fits the weather appears here. Until then, start with the top things to do below.</p>
+      <ul class="t-pills">
+        <li><a class="t-cam" href="https://www.surfchex.com/cams/carolina-beach-web-cam/" target="_blank" rel="noopener noreferrer">Carolina Beach Boardwalk Cam<span class="t-sr"> (opens in a new tab)</span></a></li>
+        <li><a class="t-cam" href="https://www.surfchex.com/cams/carolina-beach-center-pier-webcam/" target="_blank" rel="noopener noreferrer">Center Pier Cam<span class="t-sr"> (opens in a new tab)</span></a></li>
+        <li><a href="/wilmington-weather">Full weather and surf report</a></li>
+      </ul>
+    </div>
+    <div class="t-now-card">
+      <div class="bw" data-beachwx="carolina"></div>
     </div>
   </div>
 </section>
-<div class="hero-wave">
-  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="#FEFCF7"/>
-  </svg>
-</div>
-<div class="webcam-bar">
-  <div class="wb-inner">
-    <div class="wb-live"><div class="wb-dot"></div>Live Cams</div>
-    <div class="wb-cams">
-      <a href="https://www.surfchex.com/cams/carolina-beach-web-cam/" target="_blank" rel="noopener noreferrer" class="wb-cam"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-camera" xlink:href="#i-camera"/></svg>Carolina Beach Boardwalk Cam</a>
-      <a href="https://www.surfchex.com/cams/carolina-beach-center-pier-webcam/" target="_blank" rel="noopener noreferrer" class="wb-cam"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-camera" xlink:href="#i-camera"/></svg>Center Pier Cam</a>
-    </div>
-  </div>
-</div>
-<section id="conditions" aria-label="Beach conditions today" style="padding:44px 20px 36px;background:#FEFCF7;text-align:center"><p style="font:700 .78rem 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E96645;margin:0 0 6px">Right now</p><h2 style="font-family:'Playfair Display',serif;color:#0A4D5C;font-size:1.7rem;margin:0 0 20px">Today at Carolina Beach</h2><div class="bw" data-beachwx="carolina" style="max-width:520px;margin:0 auto;text-align:left"></div></section>
-<section class="sec" id="experiences">
-  <div class="sec-inner">
-    <div class="sec-label">ShoreList Experiences in Carolina Beach</div>
-    <h2 class="sec-title">Book a Local <em>Experience</em></h2>
-    <p class="sec-sub">These are the experiences available right here in Carolina Beach through ShoreList. Every operator is one we know personally. Bookings open soon.</p>
-    <div class="exp-grid">
-      <div class="exp-card">
-        <div class="exp-card-top" style="background:#0A4D5C;"></div>
-        <div class="exp-card-body">
-          <img src="/carolina-beach-tours.webp" width="440" height="371" loading="lazy" decoding="async" alt="Carolina Beach Tours" style="height:44px;width:auto;display:block;margin-bottom:12px;"/>
-          <div class="exp-name">Carolina Beach Tours</div>
-          <div class="exp-desc">A ShoreList Founding Partner. Led by <strong>Amanda Leese</strong>, these guided history walks tell the story of Pleasure Island &mdash; from the Carolina Beach Mural Project (surf and shag-culture art) to the gritty, colorful dive-bar history of the boardwalk. Two seasonal Carolina Beach tours.</div>
-          <div class="exp-tags"><span class="exp-tag">Carolina Beach</span><span class="exp-tag">Founding Partner</span><span class="exp-tag">Mural &amp; History Walks</span><span class="exp-tag">Seasonal</span><span class="exp-tag">4.9&#9733; on Viator &amp; TripAdvisor</span></div>
-        </div>
-        <div class="exp-foot">
-          <div class="exp-price">From $30 <span>per person</span></div>
-          <a href="/things-to-do/walking-tours" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;">View Tours &#8594;</a>
-        </div>
-      </div>
-      <div class="exp-card">
-        <div class="exp-card-top"></div>
-        <div class="exp-card-body">
-          <span class="exp-ico"><svg aria-hidden="true" focusable="false"><use href="#i-surf" xlink:href="#i-surf"/></svg></span>
-          <div class="exp-name">Surf Lessons &mdash; Carolina Beach</div>
-          <div class="exp-desc">Learn to surf at one of the best beginner breaks on the East Coast with a certified local instructor who has taught these exact waters for years. All gear included &mdash; board, rash guard, and everything else. All skill levels welcome.</div>
-          <div class="exp-tags"><span class="exp-tag">Carolina Beach</span><span class="exp-tag">2 Hours</span><span class="exp-tag">All Skill Levels</span><span class="exp-tag">All Gear Included</span></div>
-        </div>
-        <div class="exp-foot">
-          <div class="exp-price">From $75 <span>per person</span></div>
-          <a href="/things-to-do/surf-lessons" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;">Join Waitlist &#8594;</a>
-        </div>
-      </div>
-      <div class="exp-card">
-        <div class="exp-card-top" style="background:#1a7a4a;"></div>
-        <div class="exp-card-body">
-          <span class="exp-ico"><svg aria-hidden="true" focusable="false"><use href="#i-leaf" xlink:href="#i-leaf"/></svg></span>
-          <div class="exp-name">Venus Flytrap Nature Walk</div>
-          <div class="exp-desc">Wild Venus flytraps grow in only one place in the world &mdash; a narrow band of the NC coastal plain, right here. A guided walk through Carolina Beach State Park takes you into ancient cypress swamps and the carnivorous plant bogs that make this state park unlike anywhere else on Earth.</div>
-          <div class="exp-tags"><span class="exp-tag">Carolina Beach State Park</span><span class="exp-tag">2 Hours</span><span class="exp-tag">Family Friendly</span><span class="exp-tag">Wildlife</span></div>
-        </div>
-        <div class="exp-foot">
-          <div class="exp-price">From $35 <span>per person</span></div>
-          <a href="/things-to-do/nature-walks" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;">Join Waitlist &#8594;</a>
-        </div>
-      </div>
-      <div class="exp-card">
-        <div class="exp-card-top" style="background:#0A4D5C;"></div>
-        <div class="exp-card-body">
-          <span class="exp-ico"><svg aria-hidden="true" focusable="false"><use href="#i-fish" xlink:href="#i-fish"/></svg></span>
-          <div class="exp-name">Fishing Charters</div>
-          <div class="exp-desc">Half and full-day offshore charters departing from Carolina Beach Marina. Experienced captains who know where the fish are running. Tackle provided &mdash; you just show up ready. Inshore and offshore options available.</div>
-          <div class="exp-tags"><span class="exp-tag">Carolina Beach Marina</span><span class="exp-tag">Half &amp; Full Day</span><span class="exp-tag">Tackle Provided</span><span class="exp-tag">Groups Welcome</span></div>
-        </div>
-        <div class="exp-foot">
-          <div class="exp-price">From $85 <span>per person</span></div>
-          <a href="/things-to-do/fishing-charters" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;">Join Waitlist &#8594;</a>
-        </div>
-      </div>
-      <div class="exp-card">
-        <div class="exp-card-top" style="background:#E96645;"></div>
-        <div class="exp-card-body">
-          <span class="exp-ico"><svg aria-hidden="true" focusable="false"><use href="#i-fish" xlink:href="#i-fish"/></svg></span>
-          <div class="exp-name">Jet Ski &amp; E-Bike Rentals</div>
-          <div class="exp-desc">Hit the Atlantic on a jet ski or ride the island on an e-bike &mdash; two of the best ways to experience Carolina Beach and Pleasure Island. Rentals available for both. No experience needed for either.</div>
-          <div class="exp-tags"><span class="exp-tag">Carolina Beach</span><span class="exp-tag">Rentals</span><span class="exp-tag">No Experience Needed</span></div>
-        </div>
-        <div class="exp-foot">
-          <div class="exp-price">From $55 <span>per session</span></div>
-          <a href="/things-to-do/jet-ski-rentals" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;">Join Waitlist &#8594;</a>
-        </div>
-      </div>
-    </div>
+<section class="t-do" id="things" aria-labelledby="t-do-h">
+  <div class="t-wrap">
+    <p class="t-eye">Top things to do here</p>
+    <h2 id="t-do-h">Top things to do in <em>Carolina Beach</em></h2>
+    <p class="t-lede">Start with the activities this guide covers for Carolina Beach. Each card opens the full category page.</p>
+    <ul class="t-cards">
+      <li><a class="t-card" href="/things-to-do/walking-tours"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-walking-tours_800x600_crop_center.webp" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>Walking &amp; History Tours</b><span>Mural and boardwalk history walks on Pleasure Island.</span><i>See options</i></span></a></li>
+      <li><a class="t-card" href="/things-to-do/surf-lessons"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-surf-lessons_800x600_crop_center.webp" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>Surf Lessons</b><span>Learn with a certified local instructor, all gear included.</span><i>See options</i></span></a></li>
+      <li><a class="t-card" href="/things-to-do/nature-walks"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-nature-walks_800x600_crop_center.webp" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>Nature Walks</b><span>Venus flytraps and cypress swamps in Carolina Beach State Park.</span><i>See options</i></span></a></li>
+      <li><a class="t-card" href="/things-to-do/fishing-charters"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-fishing-charters_800x600_crop_center.webp" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>Fishing Charters</b><span>Half and full-day trips from Carolina Beach Marina.</span><i>See options</i></span></a></li>
+      <li><a class="t-card" href="/things-to-do/jet-ski-rentals"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-jet-ski-rentals_800x600_crop_center.webp" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>Jet Ski Rentals</b><span>Hit the Atlantic, no experience needed.</span><i>See options</i></span></a></li>
+      <li><a class="t-card" href="/things-to-do/ebike-rentals"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-ebike-rentals_800x600_crop_center.webp" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>E-Bike Rentals</b><span>Ride the island on an e-bike.</span><i>See options</i></span></a></li>
+    </ul>
+    <p class="t-note">Activity photos are illustrative and may not show the exact tour or location.</p>
   </div>
 </section>
-<section class="sec sec-teal">
-  <div class="sec-inner">
-    <div class="sec-label" style="color:var(--coral);">By the Numbers</div>
-    <h2 class="sec-title sec-title-light">Carolina Beach <em>at a Glance</em></h2>
-    <div class="facts-grid" style="margin-top:28px;">
-      <div class="fact"><div class="fact-n">1939</div><div class="fact-l">Boardwalk established</div></div>
-      <div class="fact"><div class="fact-n">6 mi</div><div class="fact-l">of Atlantic coastline</div></div>
-      <div class="fact"><div class="fact-n">50K+</div><div class="fact-l">July 4th visitors annually</div></div>
-      <div class="fact"><div class="fact-n">Only</div><div class="fact-l">place wild Venus flytraps grow</div></div>
-      <div class="fact"><div class="fact-n">1 hr</div><div class="fact-l">from Raleigh, NC</div></div>
-      <div class="fact"><div class="fact-n">Free</div><div class="fact-l">beach access, always</div></div>
-    </div>
-  </div>
-</section>
-<section class="sec sec-alt" id="events">
-  <div class="sec-inner">
-    <div class="sec-label">Upcoming Events</div>
-    <h2 class="sec-title">What's Happening in <em>Carolina Beach</em></h2>
-    <p class="sec-sub">For the complete event calendar with 75+ events across all of Wilmington &amp; the Beaches, visit our <a href="/events" style="color:var(--coral);font-weight:600;">Events Guide</a>.</p>
+<section class="t-on" id="events" aria-labelledby="t-on-h">
+  <div class="t-wrap">
+    <p class="t-eye">What is on</p>
+    <h2 id="t-on-h">What's Happening in <em>Carolina Beach</em></h2>
+    <p class="t-lede">For the complete event calendar with 75+ events across all of Wilmington &amp; the Beaches, visit our <a href="/events">Events Guide</a>.</p>
+    <div class="t-on-grid">
+      <div class="t-ev-live" data-t-events="Carolina Beach">
+        <h3>Next up in Carolina Beach</h3>
+        <ol class="t-evs" aria-hidden="true">
+          <li class="t-ev t-ev-sk"><div></div></li>
+          <li class="t-ev t-ev-sk"><div></div></li>
+          <li class="t-ev t-ev-sk"><div></div></li>
+          <li class="t-ev t-ev-sk"><div></div></li>
+        </ol>
+        <a class="t-on-all" href="/events/carolina-beach"><span>All Carolina Beach events<small>Every upcoming date for this area, updated daily</small></span></a>
+      </div>
+      <div class="t-on-season">
+        <h3>Seasonal highlights</h3>
     <div class="events-list">
       <div class="event-row">
         <div class="er-ico"><svg aria-hidden="true" focusable="false"><use href="#i-surf" xlink:href="#i-surf"/></svg></div>
@@ -510,33 +450,138 @@ section.hero[data-photo] .weather-card{background:rgba(6,28,40,.55)!important;bo
         <span class="er-badge er-paid">Ticketed</span>
       </div>
     </div>
-    <div style="margin-top:20px;text-align:center;">
-      <a href="/events" class="btn-fill" style="display:inline-flex;">View Full Events Calendar &#8594;</a>
+        <p class="t-note">Some dates in this list are from the 2026 season and may have passed. The <a href="/events/carolina-beach">Carolina Beach events page</a> shows what is next.</p>
+      </div>
+    </div>
+    <p class="t-on-foot"><a href="/events" class="t-btn">View Full Events Calendar &#8594;</a></p>
+  </div>
+</section>
+<section class="sec t-guide" id="experiences">
+  <div class="sec-inner">
+    <div class="sec-label">ShoreList Experiences in Carolina Beach</div>
+    <h2 class="sec-title">Book a Local <em>Experience</em></h2>
+    <p class="sec-sub">These are the experiences available right here in Carolina Beach through ShoreList. Every operator is one we know personally. Bookings open soon.</p>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <div class="exp-card-top" style="background:#0A4D5C;"></div>
+        <div class="exp-card-body">
+          <img src="/carolina-beach-tours.webp" width="440" height="371" loading="lazy" decoding="async" alt="Carolina Beach Tours" style="height:44px;width:auto;display:block;margin-bottom:12px;"/>
+          <h3 class="exp-name">Carolina Beach Tours</h3>
+          <div class="exp-desc">A ShoreList Founding Partner. Led by <strong>Amanda Leese</strong>, these guided history walks tell the story of Pleasure Island &mdash; from the Carolina Beach Mural Project (surf and shag-culture art) to the gritty, colorful dive-bar history of the boardwalk. Two seasonal Carolina Beach tours.</div>
+          <div class="exp-tags"><span class="exp-tag">Carolina Beach</span><span class="exp-tag">Founding Partner</span><span class="exp-tag">Mural &amp; History Walks</span><span class="exp-tag">Seasonal</span><span class="exp-tag">4.9&#9733; on Viator &amp; TripAdvisor</span></div>
+        </div>
+        <div class="exp-foot">
+          <div class="exp-price">From $30 <span>per person</span></div>
+          <a href="/things-to-do/walking-tours" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;">View Tours &#8594;</a>
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-card-top"></div>
+        <div class="exp-card-body">
+          <span class="exp-ico"><svg aria-hidden="true" focusable="false"><use href="#i-surf" xlink:href="#i-surf"/></svg></span>
+          <h3 class="exp-name">Surf Lessons &mdash; Carolina Beach</h3>
+          <div class="exp-desc">Learn to surf at one of the best beginner breaks on the East Coast with a certified local instructor who has taught these exact waters for years. All gear included &mdash; board, rash guard, and everything else. All skill levels welcome.</div>
+          <div class="exp-tags"><span class="exp-tag">Carolina Beach</span><span class="exp-tag">2 Hours</span><span class="exp-tag">All Skill Levels</span><span class="exp-tag">All Gear Included</span></div>
+        </div>
+        <div class="exp-foot">
+          <div class="exp-price">From $75 <span>per person</span></div>
+          <a href="/things-to-do/surf-lessons" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;">Join Waitlist &#8594;</a>
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-card-top" style="background:#1a7a4a;"></div>
+        <div class="exp-card-body">
+          <span class="exp-ico"><svg aria-hidden="true" focusable="false"><use href="#i-leaf" xlink:href="#i-leaf"/></svg></span>
+          <h3 class="exp-name">Venus Flytrap Nature Walk</h3>
+          <div class="exp-desc">Wild Venus flytraps grow in only one place in the world &mdash; a narrow band of the NC coastal plain, right here. A guided walk through Carolina Beach State Park takes you into ancient cypress swamps and the carnivorous plant bogs that make this state park unlike anywhere else on Earth.</div>
+          <div class="exp-tags"><span class="exp-tag">Carolina Beach State Park</span><span class="exp-tag">2 Hours</span><span class="exp-tag">Family Friendly</span><span class="exp-tag">Wildlife</span></div>
+        </div>
+        <div class="exp-foot">
+          <div class="exp-price">From $35 <span>per person</span></div>
+          <a href="/things-to-do/nature-walks" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;">Join Waitlist &#8594;</a>
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-card-top" style="background:#0A4D5C;"></div>
+        <div class="exp-card-body">
+          <span class="exp-ico"><svg aria-hidden="true" focusable="false"><use href="#i-fish" xlink:href="#i-fish"/></svg></span>
+          <h3 class="exp-name">Fishing Charters</h3>
+          <div class="exp-desc">Half and full-day offshore charters departing from Carolina Beach Marina. Experienced captains who know where the fish are running. Tackle provided &mdash; you just show up ready. Inshore and offshore options available.</div>
+          <div class="exp-tags"><span class="exp-tag">Carolina Beach Marina</span><span class="exp-tag">Half &amp; Full Day</span><span class="exp-tag">Tackle Provided</span><span class="exp-tag">Groups Welcome</span></div>
+        </div>
+        <div class="exp-foot">
+          <div class="exp-price">From $85 <span>per person</span></div>
+          <a href="/things-to-do/fishing-charters" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;">Join Waitlist &#8594;</a>
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-card-top" style="background:#E96645;"></div>
+        <div class="exp-card-body">
+          <span class="exp-ico"><svg aria-hidden="true" focusable="false"><use href="#i-fish" xlink:href="#i-fish"/></svg></span>
+          <h3 class="exp-name">Jet Ski &amp; E-Bike Rentals</h3>
+          <div class="exp-desc">Hit the Atlantic on a jet ski or ride the island on an e-bike &mdash; two of the best ways to experience Carolina Beach and Pleasure Island. Rentals available for both. No experience needed for either.</div>
+          <div class="exp-tags"><span class="exp-tag">Carolina Beach</span><span class="exp-tag">Rentals</span><span class="exp-tag">No Experience Needed</span></div>
+        </div>
+        <div class="exp-foot">
+          <div class="exp-price">From $55 <span>per session</span></div>
+          <a href="/things-to-do/jet-ski-rentals" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;">Join Waitlist &#8594;</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-<section class="sec sec-dark">
+<section class="sec sec-teal t-facts" id="glance">
   <div class="sec-inner">
-    <div class="sec-label" style="color:var(--coral);">Explore the Whole Coast</div>
+    <div class="sec-label">By the Numbers</div>
+    <h2 class="sec-title sec-title-light">Carolina Beach <em>at a Glance</em></h2>
+    <div class="facts-grid">
+      <div class="fact"><div class="fact-n">1939</div><div class="fact-l">Boardwalk established</div></div>
+      <div class="fact"><div class="fact-n">6 mi</div><div class="fact-l">of Atlantic coastline</div></div>
+      <div class="fact"><div class="fact-n">50K+</div><div class="fact-l">July 4th visitors annually</div></div>
+      <div class="fact"><div class="fact-n">Only</div><div class="fact-l">place wild Venus flytraps grow</div></div>
+      <div class="fact"><div class="fact-n">1 hr</div><div class="fact-l">from Raleigh, NC</div></div>
+      <div class="fact"><div class="fact-n">Free</div><div class="fact-l">beach access, always</div></div>
+    </div>
+  </div>
+</section>
+<section class="t-plan" id="plan" aria-labelledby="t-plan-h">
+  <div class="t-wrap">
+    <p class="t-eye">Eat, stay and plan</p>
+    <h2 id="t-plan-h">Round out your <em>Carolina Beach</em> trip</h2>
+    <ul class="t-links">
+      <li><a class="t-link" href="/shore-picks"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 3v8M4 3v5a3 3 0 0 0 6 0V3M7 11v10M17 3c-2 2-3 5-3 8h3v10"/></svg><b>Where to eat</b><span>Shore Picks: handpicked restaurants, coffee shops and bars across Wilmington and the beaches.</span><i>See Shore Picks</i></a></li>
+      <li><a class="t-link" href="/where-to-stay"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 20V8M3 14h18v6M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="1.6"/></svg><b>Where to stay</b><span>Compare downtown and the riverfront, the beach towns and midtown as your base.</span><i>Choose your base</i></a></li>
+      <li><a class="t-link" href="/wilmington-weather"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="3"/><path d="M8 2v1.5M2 8h1.5M3.8 3.8l1 1M12.2 3.8l-1 1"/><path d="M2 17c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2 21c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg><b>Weather and surf</b><span>Current conditions, hourly and 7-day forecast, surf, tides and water temperature.</span><i>Check the forecast</i></a></li>
+      <li><a class="t-link" href="/wilmington-nc-faq"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.6 2.2c-.7.4-1.1 1-1.1 1.8"/><path d="M12 17h.01"/></svg><b>Visitor FAQ</b><span>Straight answers on beaches, parking, kids, nightlife, festivals and ferries.</span><i>Read the answers</i></a></li>
+    </ul>
+  </div>
+</section>
+<section class="sec sec-dark t-towns" id="towns">
+  <div class="sec-inner">
+    <div class="sec-label">Explore the Whole Coast</div>
     <h2 class="sec-title sec-title-light">More <em>Town Guides</em></h2>
     <div class="other-towns">
       <a href="/downtown" class="ot">
+        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bridge_1000x.webp" width="1000" height="714" alt="" loading="lazy" decoding="async"/>
         <span class="ot-ico"><svg aria-hidden="true" focusable="false"><use href="#i-building" xlink:href="#i-building"/></svg></span>
         <div class="ot-name">Downtown Wilmington</div>
         <div class="ot-sub">Ghost tours, film history, river cruises</div>
       </a>
       <a href="/wrightsville-beach" class="ot">
+        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-wrightsville_1000x.webp" width="1000" height="558" alt="" loading="lazy" decoding="async"/>
         <span class="ot-ico"><svg aria-hidden="true" focusable="false"><use href="#i-surf" xlink:href="#i-surf"/></svg></span>
         <div class="ot-name">Wrightsville Beach</div>
         <div class="ot-sub">NC&#8217;s premier surf beach</div>
       </a>
       <a href="/kure-beach" class="ot">
+        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1000x.webp" width="1000" height="558" alt="" loading="lazy" decoding="async"/>
         <span class="ot-ico"><svg aria-hidden="true" focusable="false"><use href="#i-beach" xlink:href="#i-beach"/></svg></span>
         <div class="ot-name">Kure Beach</div>
         <div class="ot-sub">Fort Fisher &amp; NC Aquarium</div>
       </a>
     </div>
-    <div style="text-align:center;margin-top:32px;">
+    <p class="t-note">Beach photos are styled scenes, not pictures of the exact spot. Downtown photo by Unexpected Snacks, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Wilmington,_NC_Riverwalk_and_Cape_Fear_Memorial_Bridge_at_Sunset.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</p>
+    <div class="t-map">
       <a href="/map" class="btn-fill">View Full Interactive Map &#8594;</a>
     </div>
   </div>
@@ -569,29 +614,9 @@ section.hero[data-photo] .weather-card{background:rgba(6,28,40,.55)!important;bo
   <div class="sc-text"><strong>Tours are bookable now</strong> &mdash; see what is open this week</div>
   <a href="/things-to-do" class="sc-btn">Browse Experiences &#8594;</a>
 </div>
-<script>
-(function(){
-  fetch('https://api.open-meteo.com/v1/forecast?latitude=34.0345&longitude=-77.8976&current=temperature_2m,weather_code&temperature_unit=fahrenheit')
-    .then(function(r){return r.json();})
-    .then(function(d){
-      var WC={0:'Clear skies',1:'Mostly clear',2:'Partly cloudy',3:'Overcast',51:'Light drizzle',61:'Rain',80:'Showers',95:'Thunderstorm'};
-      var c=d.current||{};
-      var te=document.getElementById('wc-temp');var co=document.getElementById('wc-cond');
-      if(te)te.textContent=(c.temperature_2m?Math.round(c.temperature_2m):'--')+'\u00b0F';
-      if(co)co.textContent=WC[c.weather_code]||'Good conditions';
-    }).catch(function(){var co=document.getElementById('wc-cond');if(co)co.textContent='Beautiful coastal weather';});
-})();
-(function(){
-  var cta=document.getElementById('sticky-cta');if(!cta)return;
-  var shown=false;
-  window.addEventListener('scroll',function(){
-    if(window.scrollY>400&&!shown){shown=true;cta.classList.add('show');}
-    else if(window.scrollY<=100&&shown){shown=false;cta.classList.remove('show');}
-  },{passive:true});
-})();
-</script>
 <script src="/sound.js" defer></script>
 <script src="/beachwx.js" defer></script>
+<script src="/town.js" defer></script>
 <script src="/widgets.js" defer></script>
 <script src="/shore-plus.js" defer></script>
 </body>
