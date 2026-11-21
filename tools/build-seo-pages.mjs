@@ -175,7 +175,7 @@ fs.writeFileSync('things-to-do/index.html', shell({
     { '@context': 'https://schema.org', '@type': 'ItemList', name: 'Things to do in Wilmington, NC', itemListElement: slugs.map((s, i) => ({ '@type': 'ListItem', position: i + 1, name: CATS[s].h1, url: SITE + '/things-to-do/' + s })) },
     faqLd(hubFaq),
   ],
-  bodyAttr: 'data-cat="river-cruises"',
+  bodyAttr: 'data-cat="wildlife-tours"',
   breadcrumb: '<span>Things to Do</span>', tag: 'Wilmington &middot; Wrightsville &middot; Carolina &middot; Kure',
   h1: 'Things to Do in Wilmington, NC <em>&amp; the Beaches</em>',
   sub: 'Tours, water sports, museums, rentals and local experiences across downtown Wilmington, Wrightsville Beach, Carolina Beach and Kure Beach.',
