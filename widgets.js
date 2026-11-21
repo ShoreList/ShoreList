@@ -26,8 +26,8 @@
     var tod = document.getElementById('tod');
     function mark(n) { if (!tod) return; tod.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-t') === n)); }); }
     if (tod) {
-      tod.addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b || !window.ShoreScene) return; ShoreScene.set(b.getAttribute('data-t')); mark(b.getAttribute('data-t')); track('scene_time', { t: b.getAttribute('data-t') }); });
-      if (window.ShoreScene) mark(ShoreScene.auto());
+      tod.addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b || !window.ShoreScene) return; var t = b.getAttribute('data-t'); if (t === 'live') ShoreScene.live(); else ShoreScene.set(t); mark(t); track('scene_time', { t: b.getAttribute('data-t') }); });
+      mark('live');
     }
   }
 
