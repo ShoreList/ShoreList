@@ -51,7 +51,7 @@ h1 em{color:var(--coral);font-style:italic}
 .card .bd{padding:16px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
 .card h3{font-family:'Playfair Display',serif;font-size:1.1rem;line-height:1.25}
 .card .meta{font-size:.82rem;color:var(--mid)}
-.buy{margin-top:auto;display:inline-block;text-align:center;background:var(--coral);color:#fff;font-weight:700;text-decoration:none;border-radius:100px;padding:11px 18px;font-size:.92rem}
+.more{display:block;text-align:center;margin-top:8px;font-size:.82rem;color:var(--teal);text-decoration:underline;text-underline-offset:3px}.buy{margin-top:auto;display:inline-block;text-align:center;background:var(--coral);color:#fff;font-weight:700;text-decoration:none;border-radius:100px;padding:11px 18px;font-size:.92rem}
 .soon{text-align:center;max-width:760px;margin:0 auto}
 .soon h2{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--teal);margin-bottom:10px}
 .soon p{color:var(--mid);margin-bottom:22px}
@@ -186,7 +186,7 @@ dialog#qv{border:0;border-radius:20px;padding:0;max-width:min(860px,94vw);width:
       var on=saved.indexOf(i.id)>-1;
       var img=i.img?'<div class="ph" data-qv="'+esc(i.id)+'"><img src="'+esc(i.img)+'" alt="'+esc(i.alt||i.name)+'" loading="lazy" width="600" height="800"/><button class="heart" type="button" data-h="'+esc(i.id)+'" aria-pressed="'+on+'" aria-label="Save '+esc(i.name)+'">'+(on?'\u2665':'\u2661')+'</button><button class="qvb" type="button" data-qv="'+esc(i.id)+'">Quick view</button></div>':'<div class="ph"></div>';
       return '<article class="card">'+img+'<div class="bd"><h3>'+esc(i.name)+'</h3>'+(money(i)?'<div class="price">'+esc(money(i))+'</div>':'')+(i.meta?'<div class="meta">'+esc(i.meta)+'</div>':'')+
-        '<a class="buy" target="_blank" rel="noopener" href="'+esc(i.url)+'" data-id="'+esc(i.id)+'">'+esc(i.cta||'Choose options and buy')+'</a></div></article>';
+        (i.buy&&safeUrl(i.buy)?'<a class="buy" target="_blank" rel="noopener" href="'+esc(i.buy)+'" data-id="'+esc(i.id)+'">Buy now</a><a class="more" target="_blank" rel="noopener" href="'+esc(i.url)+'">Details</a>':'<a class="buy" target="_blank" rel="noopener" href="'+esc(i.url)+'" data-id="'+esc(i.id)+'">'+esc(i.cta||'Choose options and buy')+'</a>')+'</div></article>';
     }).join('');
     grid.querySelectorAll('.buy').forEach(function(a){a.addEventListener('click',function(){try{gtag('event','select_item',{item_id:a.getAttribute('data-id')});}catch(e){}});});
   }
