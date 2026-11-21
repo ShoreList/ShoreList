@@ -1,19 +1,26 @@
 // ShoreList — Get Session Details
-// Called from the success page to display booking confirmation
+// Called from the success page to display booking confirmation.
+// Answers only for a PAID session, and only with what the page shows.
+
+const { corsHeaders, getTour } = require('./_shared.js');
+
+const NOT_CONFIRMED = { error: 'Booking could not be confirmed' };
 
 exports.handler = async (event) => {
-  const headers = {
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
-  };
+  const headers = corsHeaders(event, { 'Cache-Control': 'no-store' });
+
+  if (event.httpMethod === 'OPTIONS') return { statusCode: 204, headers, body: '' };
+  if (event.httpMethod !== 'GET') return { statusCode: 405, headers, body: JSON.stringify({ error: 'Method not allowed' }) };
 
   const STRIPE_KEY = process.env.STRIPE_SECRET_KEY;
   if (!STRIPE_KEY) {
-    return { statusCode: 500, headers, body: JSON.stringify({ error: 'Not configured' }) };
+    console.error('get-session: STRIPE_SECRET_KEY is not set');
+    return { statusCode: 500, headers, body: JSON.stringify(NOT_CONFIRMED) };
   }
 
+  // Stripe Checkout Session ids: cs_test_ or cs_live_ followed by letters and digits.
   const { id } = event.queryStringParameters || {};
-  if (!id || !id.startsWith('cs_')) {
+  if (typeof id !== 'string' || !/^cs_(test|live)_[A-Za-z0-9]{8,250}$/.test(id)) {
     return { statusCode: 400, headers, body: JSON.stringify({ error: 'Invalid session ID' }) };
   }
 
@@ -23,31 +30,31 @@ exports.handler = async (event) => {
     });
 
     const session = await res.json();
-    if (!res.ok) throw new Error(session.error?.message || 'Session not found');
+    if (!res.ok) throw new Error('stripe ' + res.status);
 
+    // Unpaid, open and expired sessions look exactly like "not found" to the caller.
+    if (session.payment_status !== 'paid') {
+      return { statusCode: 404, headers, body: JSON.stringify(NOT_CONFIRMED) };
+    }
+
+    const meta = session.metadata || {};
+    const tour = getTour(meta.operatorId); // prefer our own names over stored text
     return {
       statusCode: 200,
       headers,
       body: JSON.stringify({
-        guestName:     session.metadata?.guestName     || '',
-        guestEmail:    session.customer_email           || session.metadata?.guestEmail || '',
-        categoryLabel: session.metadata?.categoryLabel || '',
-        operatorName:  session.metadata?.operatorName  || '',
-        date:          session.metadata?.date          || '',
-        timeSlot:      session.metadata?.timeSlot      || '',
-        partySize:     session.metadata?.partySize     || '',
-        notes:         session.metadata?.notes         || '',
-        amount:        session.amount_total            || 2500,
-        category:      session.metadata?.category      || '',
-        status:        session.status,
+        paid:          true,
+        guestName:     meta.guestName || '',
+        categoryLabel: tour ? tour.label : (meta.categoryLabel || ''),
+        operatorName:  tour ? tour.operator : (meta.operatorName || ''),
+        date:          meta.date      || '',
+        timeSlot:      meta.timeSlot  || '',
+        partySize:     meta.partySize || '',
+        amount:        Number.isFinite(session.amount_total) ? session.amount_total : null,
       }),
     };
   } catch (err) {
     console.error('get-session error:', err.message);
-    return {
-      statusCode: 400,
-      headers,
-      body: JSON.stringify({ error: 'Could not retrieve booking details' }),
-    };
+    return { statusCode: 400, headers, body: JSON.stringify(NOT_CONFIRMED) };
   }
 };

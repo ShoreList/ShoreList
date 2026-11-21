@@ -31,25 +31,26 @@ Rules:
 - Sound like a local friend wrote it
 - Never call the area the "Cape Fear coast"`;
 
-const ALLOWED_ORIGINS = ['https://shorelist.net', 'https://www.shorelist.net'];
+const { corsHeaders, originAllowed, clientIp, rateLimit } = require('./_shared.js');
+const MAX_BODY = 4000;      // bytes; the form sends one field of at most 600 characters
+const RATE = { max: 5, windowMs: 60000 }; // per IP, per warm instance: best effort only (see _shared.js)
 
 exports.handler = async (event) => {
-  const origin = (event.headers && event.headers.origin) || '';
-  const headers = {
-    'Content-Type': 'application/json',
-    'Cache-Control': 'no-store',
-    'Access-Control-Allow-Origin': ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0],
-    'Access-Control-Allow-Headers': 'Content-Type',
-    'Vary': 'Origin',
-  };
+  const headers = corsHeaders(event, { 'Cache-Control': 'no-store' });
   if (event.httpMethod === 'OPTIONS') return { statusCode: 204, headers, body: '' };
   if (event.httpMethod !== 'POST') return { statusCode: 405, headers, body: JSON.stringify({ error: 'POST only' }) };
+  // Only our own pages may spend the AI budget. Foreign or missing Origin/Referer is refused.
+  if (!originAllowed(event)) return { statusCode: 403, headers, body: JSON.stringify({ error: 'Forbidden' }) };
+  const size = Buffer.byteLength(event.body || '', event.isBase64Encoded ? 'base64' : 'utf8');
+  if (size > MAX_BODY) return { statusCode: 413, headers, body: JSON.stringify({ error: 'Request too large' }) };
+  const rl = rateLimit('ai:' + clientIp(event), RATE.max, RATE.windowMs);
+  if (!rl.ok) return { statusCode: 429, headers: { ...headers, 'Retry-After': String(rl.retryAfter) }, body: JSON.stringify({ error: 'Too many requests. Please try again in a minute.' }) };
 
   const key = process.env.ANTHROPIC_API_KEY;
   if (!key) return { statusCode: 503, headers, body: JSON.stringify({ error: 'Planner not configured' }) };
 
   let input = '';
-  try { input = String(JSON.parse(event.body || '{}').input || ''); } catch (e) {}
+  try { input = String((JSON.parse((event.isBase64Encoded ? Buffer.from(event.body || '', 'base64').toString('utf8') : event.body) || '{}') || {}).input || ''); } catch (e) {}
   input = input.replace(/\s+/g, ' ').trim().slice(0, 600);
   if (input.length < 3) return { statusCode: 400, headers, body: JSON.stringify({ error: 'Tell us a bit about your group' }) };
 
@@ -65,9 +66,9 @@ exports.handler = async (event) => {
       }),
     });
     const data = await res.json();
-    if (!res.ok) throw new Error((data.error && data.error.message) || 'upstream ' + res.status);
+    if (!res.ok) throw new Error('upstream ' + res.status + ' ' + ((data.error && data.error.type) || ''));
     const raw = (data.content || []).map((b) => b.text || '').join('').replace(/```json|```/g, '').trim();
-    const plan = JSON.parse(raw);
+    const plan = JSON.parse(raw.slice(0, 20000));
     if (!plan || !Array.isArray(plan.items)) throw new Error('bad shape');
     return { statusCode: 200, headers, body: JSON.stringify(plan) };
   } catch (err) {
