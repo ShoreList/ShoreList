@@ -483,6 +483,40 @@
    "buy": "https://shorelist.myshopify.com/cart/48571216855124:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now"
   },
   {
+   "id": "wrightsville-ornament-2026",
+   "collection": "coastal-christmas",
+   "name": "Wrightsville Beach Christmas Ornament 2026",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-christmas-ornament-2026",
+   "img": "https://shorelist.myshopify.com/cdn/shop/files/5725671387617568149_2048.jpg",
+   "alt": "Round ceramic ornament with a sailboat under a striped sunset, lettered Wrightsville Beach Christmas 2026",
+   "meta": "Dated ceramic keepsake: a sloop under a striped Carolina sunset. ShoreList illustration.",
+   "cta": "Shop Christmas",
+   "price": 18,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "buy": "https://shorelist.myshopify.com/cart/48571263025236:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now"
+  },
+  {
+   "id": "carolina-beach-ornament-2026",
+   "collection": "coastal-christmas",
+   "name": "Carolina Beach Christmas Ornament 2026",
+   "url": "https://shorelist.myshopify.com/products/carolina-beach-christmas-ornament-2026",
+   "img": "https://shorelist.myshopify.com/cdn/shop/files/5074047802882228178_2048.jpg",
+   "alt": "Round ceramic ornament with a sailboat under a striped sunset, lettered Carolina Beach Christmas 2026",
+   "meta": "Dated ceramic keepsake: a sloop under a striped Carolina sunset. ShoreList illustration.",
+   "cta": "Shop Christmas",
+   "price": 18,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "buy": "https://shorelist.myshopify.com/cart/48571271643220:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now"
+  },
+  {
    "id": "coastal-christmas-can-cooler",
    "collection": "coastal-christmas",
    "name": "Coastal Christmas Can Cooler",
