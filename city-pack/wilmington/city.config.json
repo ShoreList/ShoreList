@@ -1,0 +1,492 @@
+{
+  "$schema": "./../city.config.schema.json",
+  "_notes": [
+    "Captures the values currently hard-coded in the Wilmington generators and pages (see city-pack/HARDCODED-REPORT.md). No generator reads this file yet.",
+    "Stripe ids and secrets are placeholders. Real keys stay in Netlify env vars, never in this file.",
+    "GA4 id is the public value already present in index.html. Replace with the new site's own id for any clone.",
+    "tax.rate mirrors TAX_RATE in netlify/functions/create-checkout.js and the 0.07 in create-guide-checkout.js. Confirm per state before reuse.",
+    "Area blurbs copied from tools/build-events-pages.mjs AREAS so the pack reproduces current output."
+  ],
+  "id": "wilmington-nc",
+  "name": "Wilmington",
+  "siteName": "ShoreList",
+  "tagline": "Your Shore Thing",
+  "domain": "shorelist.net",
+  "siteUrl": "https://shorelist.net",
+  "locale": "en-US",
+  "state": {
+    "code": "NC",
+    "name": "North Carolina"
+  },
+  "country": "US",
+  "timezone": "America/New_York",
+  "center": {
+    "lat": 34.2257,
+    "lng": -77.9447
+  },
+  "tax": {
+    "rate": 0.07,
+    "components": [
+      {
+        "name": "NC state",
+        "rate": 0.0475
+      },
+      {
+        "name": "New Hanover County",
+        "rate": 0.0225
+      }
+    ],
+    "basis": "Sourced to event location, per comment in create-checkout.js",
+    "appliesTo": [
+      "tours",
+      "digital guides"
+    ]
+  },
+  "areas": [
+    {
+      "slug": "downtown-wilmington",
+      "key": "Downtown",
+      "name": "Downtown Wilmington",
+      "locality": "Wilmington",
+      "center": {
+        "lat": 34.2257,
+        "lng": -77.9447
+      },
+      "guidePath": "/downtown",
+      "blurb": "Concerts, theater, markets, parades and history events along the Riverwalk and in the historic district."
+    },
+    {
+      "slug": "wrightsville-beach",
+      "key": "Wrightsville Beach",
+      "name": "Wrightsville Beach",
+      "locality": "Wrightsville Beach",
+      "center": {
+        "lat": 34.2097,
+        "lng": -77.7964
+      },
+      "guidePath": "/wrightsville-beach",
+      "blurb": "Tree lightings, the holiday flotilla, races, plunges and community events on the island."
+    },
+    {
+      "slug": "carolina-beach",
+      "key": "Carolina Beach",
+      "name": "Carolina Beach",
+      "locality": "Carolina Beach",
+      "center": {
+        "lat": 34.0345,
+        "lng": -77.8976
+      },
+      "guidePath": "/carolina-beach",
+      "blurb": "Boardwalk and lake events, parades, markets, movies and seasonal celebrations."
+    },
+    {
+      "slug": "kure-beach",
+      "key": "Kure Beach",
+      "name": "Kure Beach",
+      "locality": "Kure Beach",
+      "center": {
+        "lat": 33.994,
+        "lng": -77.9068
+      },
+      "guidePath": "/kure-beach",
+      "blurb": "Markets, holiday gatherings, plunges and events near the pier and Fort Fisher."
+    },
+    {
+      "slug": "greater-wilmington",
+      "key": "Greater Wilmington",
+      "name": "Greater Wilmington",
+      "locality": "Wilmington",
+      "center": {
+        "lat": 34.2257,
+        "lng": -77.9447
+      },
+      "guidePath": "/things-to-do",
+      "blurb": "Museum exhibitions, garden light shows, campus concerts and races across the wider city."
+    }
+  ],
+  "categories": [
+    {
+      "slug": "ghost-tours",
+      "label": "Ghost Tours",
+      "photoKey": "ghost-tours",
+      "contentSource": "tools/seo-data.mjs CATS['ghost-tours']"
+    },
+    {
+      "slug": "walking-tours",
+      "label": "Walking Tours",
+      "photoKey": "walking-tours",
+      "contentSource": "tools/seo-data.mjs CATS['walking-tours']"
+    },
+    {
+      "slug": "museums",
+      "label": "Museums",
+      "photoKey": "museums",
+      "contentSource": "tools/seo-data.mjs CATS['museums']"
+    },
+    {
+      "slug": "film-tours",
+      "label": "Film Tours",
+      "photoKey": "film-tours",
+      "contentSource": "tools/seo-data.mjs CATS['film-tours']"
+    },
+    {
+      "slug": "fishing-charters",
+      "label": "Fishing Charters",
+      "photoKey": "fishing-charters",
+      "contentSource": "tools/seo-data.mjs CATS['fishing-charters']"
+    },
+    {
+      "slug": "kayak-tours",
+      "label": "Kayak Tours",
+      "photoKey": "kayak-tours",
+      "contentSource": "tools/seo-data.mjs CATS['kayak-tours']"
+    },
+    {
+      "slug": "river-cruises",
+      "label": "River Cruises",
+      "photoKey": "river-cruises-2",
+      "contentSource": "tools/seo-data.mjs CATS['river-cruises']"
+    },
+    {
+      "slug": "surf-lessons",
+      "label": "Surf Lessons",
+      "photoKey": "surf-lessons",
+      "contentSource": "tools/seo-data.mjs CATS['surf-lessons']"
+    },
+    {
+      "slug": "paddleboard",
+      "label": "Paddleboard",
+      "photoKey": "paddleboard",
+      "contentSource": "tools/seo-data.mjs CATS['paddleboard']"
+    },
+    {
+      "slug": "bike-tours",
+      "label": "Bike Tours",
+      "photoKey": "bike-tours",
+      "contentSource": "tools/seo-data.mjs CATS['bike-tours']"
+    },
+    {
+      "slug": "wildlife-tours",
+      "label": "Wildlife Tours",
+      "photoKey": "wildlife-tours",
+      "contentSource": "tools/seo-data.mjs CATS['wildlife-tours']"
+    },
+    {
+      "slug": "ebike-rentals",
+      "label": "Ebike Rentals",
+      "photoKey": "ebike-rentals",
+      "contentSource": "tools/seo-data.mjs CATS['ebike-rentals']"
+    },
+    {
+      "slug": "scooter-rentals",
+      "label": "Scooter Rentals",
+      "photoKey": "scooter-rentals",
+      "contentSource": "tools/seo-data.mjs CATS['scooter-rentals']"
+    },
+    {
+      "slug": "fat-bike-rentals",
+      "label": "Fat Bike Rentals",
+      "photoKey": "fat-bike-rentals",
+      "contentSource": "tools/seo-data.mjs CATS['fat-bike-rentals']"
+    },
+    {
+      "slug": "sailboat-rides",
+      "label": "Sailboat Rides",
+      "photoKey": "sailboat-rides",
+      "contentSource": "tools/seo-data.mjs CATS['sailboat-rides']"
+    },
+    {
+      "slug": "nature-walks",
+      "label": "Nature Walks",
+      "photoKey": "nature-walks",
+      "contentSource": "tools/seo-data.mjs CATS['nature-walks']"
+    },
+    {
+      "slug": "beach-photography",
+      "label": "Beach Photography",
+      "photoKey": "beach-photography",
+      "contentSource": "tools/seo-data.mjs CATS['beach-photography']"
+    },
+    {
+      "slug": "beach-picnics",
+      "label": "Beach Picnics",
+      "photoKey": "beach-picnics",
+      "contentSource": "tools/seo-data.mjs CATS['beach-picnics']"
+    },
+    {
+      "slug": "beach-chairs",
+      "label": "Beach Chairs",
+      "photoKey": "beach-chairs-2",
+      "contentSource": "tools/seo-data.mjs CATS['beach-chairs']"
+    },
+    {
+      "slug": "jet-ski-rentals",
+      "label": "Jet Ski Rentals",
+      "photoKey": "jet-ski-rentals",
+      "contentSource": "tools/seo-data.mjs CATS['jet-ski-rentals']"
+    },
+    {
+      "slug": "golf-cart-rentals",
+      "label": "Golf Cart Rentals",
+      "photoKey": "golf-cart-rentals",
+      "contentSource": "tools/seo-data.mjs CATS['golf-cart-rentals']"
+    },
+    {
+      "slug": "wellness",
+      "label": "Wellness",
+      "photoKey": "wellness-2",
+      "contentSource": "tools/seo-data.mjs CATS['wellness']"
+    }
+  ],
+  "eventCategories": [
+    "Music",
+    "Arts",
+    "Holiday",
+    "Festival",
+    "Family",
+    "History",
+    "Markets",
+    "Sports",
+    "Outdoors"
+  ],
+  "nav": {
+    "primary": [
+      {
+        "label": "Experiences",
+        "href": "#explore"
+      },
+      {
+        "label": "Events Guide",
+        "href": "/events",
+        "class": "nav-events-link"
+      },
+      {
+        "label": "Shore Picks",
+        "href": "/shore-picks"
+      },
+      {
+        "label": "Shop",
+        "href": "/shop"
+      },
+      {
+        "label": "✦ Plan My Trip",
+        "href": "/planner",
+        "class": "nav-planner"
+      },
+      {
+        "label": "Operators",
+        "href": "/join",
+        "class": "nav-op"
+      },
+      {
+        "label": "Book Experiences",
+        "href": "/things-to-do",
+        "class": "nav-cta"
+      }
+    ],
+    "footer": [
+      {
+        "label": "Things to Do",
+        "href": "/things-to-do"
+      },
+      {
+        "label": "Events Guide",
+        "href": "/events"
+      },
+      {
+        "label": "This Weekend",
+        "href": "/events/this-weekend"
+      },
+      {
+        "label": "Shore Picks",
+        "href": "/shore-picks"
+      },
+      {
+        "label": "Shop",
+        "href": "/shop"
+      },
+      {
+        "label": "Map",
+        "href": "/map"
+      },
+      {
+        "label": "Plan Your Trip",
+        "href": "/plan-your-trip"
+      },
+      {
+        "label": "Trip Planner",
+        "href": "/planner"
+      },
+      {
+        "label": "Wilmington Weather",
+        "href": "/wilmington-weather"
+      },
+      {
+        "label": "Where to Stay",
+        "href": "/where-to-stay"
+      },
+      {
+        "label": "Visitor FAQ",
+        "href": "/wilmington-nc-faq"
+      },
+      {
+        "label": "Downtown Wilmington",
+        "href": "/downtown"
+      },
+      {
+        "label": "Wrightsville Beach",
+        "href": "/wrightsville-beach"
+      },
+      {
+        "label": "Carolina Beach",
+        "href": "/carolina-beach"
+      },
+      {
+        "label": "Kure Beach",
+        "href": "/kure-beach"
+      },
+      {
+        "label": "Join Waitlist",
+        "href": "/waitlist"
+      },
+      {
+        "label": "Contact",
+        "href": "mailto:shorelistwilmington@gmail.com"
+      },
+      {
+        "label": "Privacy & Terms",
+        "href": "/legal"
+      },
+      {
+        "label": "Accessibility",
+        "href": "/legal#accessibility"
+      }
+    ]
+  },
+  "brand": {
+    "wordmark": "ShoreList",
+    "themeColor": "#0A4D5C",
+    "colors": {
+      "teal": "#0A4D5C",
+      "teal2": "#1A7585",
+      "teal3": "#073D4A",
+      "coral": "#E96645",
+      "coral2": "#F07A5A",
+      "cream": "#F5E8CB",
+      "cream2": "#FEFCF7",
+      "sand": "#FBF3E2",
+      "seaglass": "#8FD3DE",
+      "sky": "#E4F5F6",
+      "sunset1": "#FF8A5B",
+      "sunset2": "#FFB24C",
+      "gold": "#FFC95E",
+      "ink": "#0D1F25",
+      "mid": "#2C4A52"
+    },
+    "fonts": {},
+    "voiceNotes": "Plain, checkable claims; no banned phrase 'Cape Fear coast' (check-site.mjs). Fill fonts from shorelist.css when extracting.",
+    "ownAssetsRequired": true
+  },
+  "umbrella": {
+    "name": "ShoreList network",
+    "url": "https://shorelist.net/network",
+    "footerLine": "A ShoreList network site",
+    "aboutNetworkPath": "/about-the-network",
+    "legalEntity": "ShoreList LLC"
+  },
+  "contact": {
+    "publicEmail": "shorelistwilmington@gmail.com",
+    "opsEmail": "rj@shorelist.net",
+    "instagram": "https://instagram.com/ShoreList",
+    "mailingLine": "ShoreList LLC · Wilmington, NC · shorelist.net"
+  },
+  "analytics": {
+    "ga4MeasurementId": "G-EN91RH3PZV",
+    "searchConsoleVerification": "PLACEHOLDER_GSC_TOKEN",
+    "bingVerification": "PLACEHOLDER_BING_TOKEN",
+    "indexNowKey": "PLACEHOLDER_INDEXNOW_KEY"
+  },
+  "stripe": {
+    "mode": "test",
+    "accountId": "acct_PLACEHOLDER",
+    "secretKeyEnvVar": "STRIPE_SECRET_KEY",
+    "webhookSecretEnvVar": "STRIPE_WEBHOOK_SECRET",
+    "connectAccountIds": [],
+    "allowedOrigins": [
+      "https://shorelist.net",
+      "https://www.shorelist.net"
+    ]
+  },
+  "weather": {
+    "points": [
+      {
+        "name": "Wilmington",
+        "lat": 34.2257,
+        "lon": -77.9447
+      },
+      {
+        "name": "Wrightsville Beach",
+        "lat": 34.2097,
+        "lon": -77.7964,
+        "sea": [
+          34.19,
+          -77.77
+        ]
+      },
+      {
+        "name": "Carolina Beach",
+        "lat": 34.0345,
+        "lon": -77.8976,
+        "sea": [
+          34.02,
+          -77.87
+        ]
+      },
+      {
+        "name": "Kure Beach",
+        "lat": 33.994,
+        "lon": -77.9068,
+        "sea": [
+          33.97,
+          -77.89
+        ]
+      }
+    ],
+    "noaaTideStation": "8658163"
+  },
+  "featureFlags": {
+    "shop": true,
+    "planner": true,
+    "concierge": true,
+    "weather": true,
+    "surf": true,
+    "guides": true
+  },
+  "launchGate": {
+    "minLiveOperators": 3,
+    "minVerifiedEvents60d": 20,
+    "minHandWrittenGuides": 4,
+    "minOwnPhotos": 12,
+    "thinContent": {
+      "minWords": 150,
+      "maxJaccard": 0.25,
+      "maxDupTitlePattern": 0.5
+    }
+  },
+  "localEntities": [
+    "Riverwalk",
+    "Battleship North Carolina",
+    "Airlie Gardens",
+    "Greenfield Lake",
+    "Fort Fisher",
+    "Front Street",
+    "Thalian Hall",
+    "Cape Fear River",
+    "Johnnie Mercer's Pier",
+    "Masonboro",
+    "Cameron Art Museum",
+    "Wilson Center",
+    "Carolina Beach State Park",
+    "Hannah Block"
+  ]
+}
