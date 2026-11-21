@@ -105,3 +105,14 @@ body:not(:has(.hero-cine)) .cc-fab{right:auto;left:16px}body:not(:has(.hero-cine
 .cond .fl{display:inline-flex;align-items:center;gap:6px;font-weight:700}.cond .fl i{width:10px;height:14px;border-radius:2px;display:inline-block}
 @media(prefers-reduced-motion:reduce){.flagcloth{animation:none}}
 @media(prefers-color-scheme:dark){.bwc{background:#12303a;border-color:rgba(245,232,203,.14)}.bwc h3,.bwg dd{color:#9fd8e2}.bwc .upd,.bwf span,.bwg dt,.bwg small,.bwt small,.bwn,.tide-svg text{color:#b9c9c6;fill:#b9c9c6}.bwc .ai,.bwf ul,.bwt .tt{color:#f5e8cb}.bwc .ai{background:#0d2730}.bwg div{background:#0d2730}}
+/* photo plates */
+.plates{position:absolute;inset:0;z-index:0;overflow:hidden;background:#0b2a35;--px:0px;--py:0px;opacity:0;transition:opacity 1.2s ease}
+.plates-on .plates{opacity:1}.plates-on .scene-cv{opacity:0!important}
+.plates img{position:absolute;left:-3%;top:-3%;width:106%;height:106%;max-width:none;object-fit:cover;object-position:34% 50%;opacity:0;visibility:hidden;transform:translate3d(var(--px),var(--py),0) scale(1.02);animation:kb 70s ease-in-out infinite alternate;will-change:opacity,transform;user-select:none;-webkit-user-drag:none}
+.plates img:nth-child(2){animation-delay:-18s}.plates img:nth-child(3){animation-delay:-36s}.plates img:nth-child(4){animation-delay:-52s}
+@keyframes kb{from{scale:1}to{scale:1.07}}
+.ripple{position:absolute;z-index:2;width:12px;height:5px;margin:-2px 0 0 -6px;border-radius:50%;border:2px solid rgba(255,255,255,.75);pointer-events:none;animation:rpl 1.7s ease-out forwards}
+.ripple::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1.5px solid rgba(255,255,255,.5)}
+@keyframes rpl{to{width:360px;height:140px;margin:-70px 0 0 -180px;opacity:0;border-width:.5px}}
+@media(max-width:820px){.plates img{object-position:30% 50%}}
+@media(prefers-reduced-motion:reduce){.plates img{animation:none}.ripple{display:none}}
