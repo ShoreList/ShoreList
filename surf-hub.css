@@ -1,6 +1,6 @@
 /* ShoreList Surf hub (/surf only). Sits on the shared theme (events.css + luxe.css): same header, hero, type, footer.
-   This file holds only the surf-specific parts: the live check cards, flag colors and the photo cards.
-   The three /surf/* guides still use surf.css. */
+   This file holds only the surf-specific parts: the live check cards, flag colors and the photo cards,
+   plus the long-form guide pieces (.gd) used by the three /surf/* guides. */
 .sv{padding:clamp(48px,6vw,80px) clamp(16px,4vw,40px)}
 .sv.alt{background:#EAE4D6}
 .sv-in{max-width:1180px;margin:0 auto}
@@ -111,3 +111,44 @@ a.card{display:flex;flex-direction:column;text-decoration:none;transition:transf
 @media(max-width:900px){.sc-grid{grid-template-columns:1fr}.sc{min-height:500px}.sc.is-fail{min-height:0}.water{grid-template-columns:1fr 1fr}.band-grid{grid-template-columns:1fr}}
 @media(max-width:640px){.water{grid-template-columns:1fr}.wc{min-height:230px}.goods{grid-template-columns:1fr 1fr}}
 @media(max-width:420px){.goods{grid-template-columns:1fr}}
+
+/* /surf/* guides: breadcrumb, reading column, key box, soft/hard compare, table, source box */
+.ev-hero .crumbs{font-size:.84rem;color:rgba(244,241,234,.82);margin-bottom:18px}
+.crumbs ol{list-style:none;display:flex;flex-wrap:wrap;gap:0 8px;align-items:center}
+.crumbs li+li::before{content:"\203A";margin-right:8px;opacity:.7}
+.crumbs a{color:var(--ev-sail);display:inline-flex;align-items:center;min-height:44px}
+.ev-hero .reviewed{display:inline-block;margin-top:20px;padding:10px 16px;border-radius:12px;font-weight:700;font-size:.92rem;color:var(--ev-sail);background:rgba(244,241,234,.12);border:1px solid rgba(244,241,234,.3)}
+.gd .prose{max-width:760px}
+.gd .prose h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.5rem,3vw,2rem);margin:46px 0 12px;scroll-margin-top:calc(var(--ev-hdr) + 16px)}
+.gd .prose>h2:first-child{margin-top:0}
+.gd .prose h3{font-size:1.2rem;margin:26px 0 6px}
+.gd .prose p{margin:0 0 14px;color:#1F3A43;font-size:1.04rem}
+.gd .prose ul,.gd .prose ol{margin:0 0 16px 22px;color:#1F3A43;font-size:1.04rem;list-style:disc}
+.gd .prose ol{list-style:decimal}
+.gd .prose li{margin:6px 0}
+.gd .prose a{color:var(--ev-red);font-weight:700}
+.gd .key{background:var(--ev-navy);color:var(--ev-sail);border-radius:22px;padding:26px 28px;margin:0 0 26px}
+.gd .key h2,.gd .key h3{color:var(--ev-sail);margin:0 0 10px;font-size:1.3rem}
+.gd .key ul{margin:0 0 0 20px;color:rgba(244,241,234,.94)}
+.gd .key li{margin:7px 0}
+.gd .key p{color:rgba(244,241,234,.94);margin:0}
+.gd .key a{color:#FFC2AD}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0 22px}
+.vs .card h3{margin-bottom:10px}
+.vs ul{margin:0 0 0 18px;font-size:.97rem;color:var(--ev-mute);list-style:disc}
+.vs li{margin:6px 0}
+.vs .tag{display:block;font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ev-teal);margin-bottom:6px}
+.src{background:#fff;border:1px solid var(--ev-line);border-left:5px solid var(--ev-glass);border-radius:14px;padding:16px 20px;margin:16px 0 22px}
+.gd .src p{margin:0 0 6px;font-size:.98rem}
+.gd .src p:last-child{margin:0}
+.src a{display:inline-block;padding:10px 0}
+.gd .prose .reviewed{display:inline-block;background:#fff;border:1px solid var(--ev-line);border-radius:12px;padding:10px 16px;font-weight:700;font-size:.92rem;color:var(--ev-navy);margin:0 0 26px}
+.tscroll{overflow-x:auto}
+.table{width:100%;border-collapse:collapse;margin:8px 0 22px;background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--ev-line);font-size:.97rem}
+.table th,.table td{text-align:left;padding:12px 16px;border-bottom:1px solid rgba(14,31,51,.08);vertical-align:top}
+.table tr:last-child td,.table tr:last-child th{border-bottom:0}
+.table thead th{background:var(--ev-navy);color:var(--ev-sail);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+.table tbody th{color:var(--ev-navy);width:30%}
+.gd .note,.gd .prose .note{font-size:.84rem;color:#3A5760;margin-top:16px}
+.gd .note a{color:inherit}
+@media(max-width:640px){.vs{grid-template-columns:1fr}.gd .key{padding:22px 20px}.table th,.table td{padding:10px 12px}}
