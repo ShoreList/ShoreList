@@ -1,7 +1,7 @@
 // Search copy for the static "things to do" pages. Keep every claim plain and checkable:
 // no prices, no schedules, no operator promises that are not in category.html.
 export const PHOTO = (slug) => {
-  const f = { 'beach-chairs': 'beach-chairs-2', wellness: 'wellness-2' }[slug] || slug;
+  const f = { 'beach-chairs': 'beach-chairs-2', wellness: 'wellness-2', 'river-cruises': 'river-cruises-2' }[slug] || slug;
   return 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-' + f;
 };
 
