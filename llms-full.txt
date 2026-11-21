@@ -39,6 +39,10 @@ ShoreList (shorelist.net) is a hyperlocal booking marketplace for tours and expe
 - Kure Beach events: Markets and community events https://shorelist.net/events/kure-beach
 - Downtown Wilmington events: Concerts, theater, markets and parades https://shorelist.net/events/downtown-wilmington
 - Wilmington, NC weather: Live conditions, hourly and 7-day forecast, beach, surf and tide report https://shorelist.net/wilmington-weather
+- ShoreList Surf: Live surf check for Wrightsville, Carolina and Kure Beach, lessons, paddling and beginner guides https://shorelist.net/surf
+- Choosing a first surfboard: Soft-top or hard board, how size works and what a first setup involves https://shorelist.net/surf/first-surfboard
+- Paddleboards and kayaks: inflatable or hard: How they compare, carrying and storing them, and where each fits on local water https://shorelist.net/surf/paddleboard-and-kayak
+- Know before you go: water safety and rules: Beach flags, rip current basics and life jacket rules for paddlers, with official links https://shorelist.net/surf/know-before-you-go
 - Wilmington, NC visitor FAQ: Short answers about beaches, parking, kids, nightlife, festivals and getting around https://shorelist.net/wilmington-nc-faq
 - The Shore Report newsletter: Free weekly events, itinerary and beach conditions https://shorelist.net/weekly
 - Plan your trip to Wilmington, NC: When to go, where to stay, how far the beaches are and a three-day itinerary https://shorelist.net/plan-your-trip

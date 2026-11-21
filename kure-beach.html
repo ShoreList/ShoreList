@@ -213,6 +213,8 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
 <link rel="stylesheet" href="/scene.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
+<link rel="stylesheet" href="/town.css"/>
+<noscript><style>.t-evs{display:none!important}.t-chip{display:none!important}</style></noscript>
 <script src="/luxe.js" defer></script>
 <style id="scene-hero">
 .hero-photo{position:absolute;left:-2%;top:-2%;width:104%;height:104%;max-width:none;object-fit:cover;object-position:50% 62%;z-index:0;animation:heroDrift 60s ease-in-out infinite alternate}
@@ -236,7 +238,7 @@ section.hero[data-photo] .weather-card{background:rgba(6,28,40,.55)!important;bo
 </style>
 <link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1920x.webp" imagesrcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1920x.webp 1920w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_3840x.webp 3840w" imagesizes="100vw" fetchpriority="high"/>
 </head>
-<body>
+<body class="town" data-town="kure" data-wx="2">
 
 <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs>
 <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.3C15.5 5 17 4 19 2c1 2 2 5 2 8a7 7 0 0 1-7 7"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></symbol>
@@ -286,6 +288,7 @@ section.hero[data-photo] .weather-card{background:rgba(6,28,40,.55)!important;bo
   <div class="hero-inner">
     <div>
       <div class="hero-bc"><a href="/">ShoreList</a> &nbsp;&#8250;&nbsp; <a href="/map">Wilmington &amp; the Beaches</a> &nbsp;&#8250;&nbsp; Kure Beach</div>
+      <p class="t-chip is-off" data-t-chip aria-live="polite">Live conditions</p>
       <div class="hero-tag">Pleasure Island &nbsp;&middot;&nbsp; Southern NC Coast</div>
       <h1 class="hero-title">Kure Beach, NC<br/><em>Where the Cape Fear Meets the Atlantic.</em></h1>
       <p class="hero-sub">The quiet one. Wild dunes, undisturbed coastline, the site of the Civil War&rsquo;s largest sea-land battle, and a stretch of beach that feels like it belongs to a different era. The NC Aquarium is undergoing a once-in-a-generation $65M expansion &mdash; meaning the hundreds of thousands of visitors who come to Pleasure Island now have every reason to discover what ShoreList knows: there is plenty more here.</p>
@@ -301,26 +304,26 @@ section.hero[data-photo] .weather-card{background:rgba(6,28,40,.55)!important;bo
         <a href="/map" class="btn-ghost"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-pin" xlink:href="#i-pin"/></svg>View on Map</a>
       </div>
     </div>
-    <div class="weather-card">
-      <div class="wc-label">Live Conditions</div>
-      <div class="wc-temp" id="wc-temp">--&#176;</div>
-      <div class="wc-loc">Kure Beach, NC</div>
-      <div class="wc-cond" id="wc-cond">Loading...</div>
-      <div class="wc-live"><div class="wc-dot"></div>Real-time weather</div>
+  </div>
+<p class="hero-credit">Photo is a styled scene, not a picture of the exact spot.</p>
+</section>
+<section class="t-now" id="conditions" aria-labelledby="t-now-h">
+  <div class="t-wrap t-now-grid">
+    <div class="t-now-copy">
+      <p class="t-eye">Right now</p>
+      <h2 id="t-now-h">Today at Kure Beach</h2>
+      <p class="t-now-line">Live air, water, surf, wind and tide for Kure Beach, refreshed every ten minutes from NOAA and open-meteo.</p>
+      <p class="t-tip" data-t-tip><b>Suggested for these conditions</b>When live readings load, a suggestion that fits the weather appears here. Until then, start with the top things to do below.</p>
+      <ul class="t-pills">
+        <li><a class="t-cam" href="https://www.surfchex.com/cams/kure-beach-web-cam/" target="_blank" rel="noopener noreferrer">Kure Beach Live Cam<span class="t-sr"> (opens in a new tab)</span></a></li>
+        <li><a href="/wilmington-weather">Full weather and surf report</a></li>
+      </ul>
+    </div>
+    <div class="t-now-card">
+      <div class="bw" data-beachwx="kure"></div>
     </div>
   </div>
 </section>
-<div class="hero-wave">
-  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="#FEFCF7"/>
-  </svg>
-</div>
-<div class="webcam-bar">
-  <div class="wb-inner">
-    <div class="wb-live"><div class="wb-dot"></div>Live Cam</div>
-    <a href="https://www.surfchex.com/cams/kure-beach-web-cam/" target="_blank" rel="noopener noreferrer" class="wb-cam"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-camera" xlink:href="#i-camera"/></svg>Kure Beach Live Cam</a>
-  </div>
-</div>
 <div class="aquarium-alert">
   <div class="aa-inner">
     <div class="aa-icon"><svg aria-hidden="true" focusable="false"><use href="#i-construction" xlink:href="#i-construction"/></svg></div>
@@ -337,8 +340,66 @@ section.hero[data-photo] .weather-card{background:rgba(6,28,40,.55)!important;bo
     </div>
   </div>
 </div>
-<section id="conditions" aria-label="Beach conditions today" style="padding:44px 20px 36px;background:#FEFCF7;text-align:center"><p style="font:700 .78rem 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E96645;margin:0 0 6px">Right now</p><h2 style="font-family:'Playfair Display',serif;color:#0A4D5C;font-size:1.7rem;margin:0 0 20px">Today at Kure Beach</h2><div class="bw" data-beachwx="kure" style="max-width:520px;margin:0 auto;text-align:left"></div></section>
-<section class="sec" id="experiences">
+<section class="t-do" id="things" aria-labelledby="t-do-h">
+  <div class="t-wrap">
+    <p class="t-eye">Top things to do here</p>
+    <h2 id="t-do-h">Top things to do at <em>Kure Beach</em></h2>
+    <p class="t-lede">Start with the activities this guide covers for Kure Beach. Each card opens the full category page.</p>
+    <ul class="t-cards t-cards-odd">
+      <li><a class="t-card" href="/things-to-do/nature-walks"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-nature-walks_800x600_crop_center.webp" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>Nature Walks</b><span>Maritime forest, coastal dunes and tidal wetlands.</span><i>See options</i></span></a></li>
+      <li><a class="t-card" href="/things-to-do/museums"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-museums_800x600_crop_center.webp" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>Museums &amp; Attractions</b><span>Fort Fisher earthworks and museum, plus aquarium updates.</span><i>See options</i></span></a></li>
+      <li><a class="t-card" href="/things-to-do/wildlife-tours"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-wildlife-tours_800x600_crop_center.webp" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>Wildlife Tours</b><span>Sea turtle and shorebird habitat at Fort Fisher.</span><i>See options</i></span></a></li>
+    </ul>
+    <p class="t-note">Activity photos are illustrative and may not show the exact tour or location.</p>
+  </div>
+</section>
+<section class="t-on" id="events" aria-labelledby="t-on-h">
+  <div class="t-wrap">
+    <p class="t-eye">What is on</p>
+    <h2 id="t-on-h">What&rsquo;s Happening at <em>Kure Beach</em></h2>
+    <p class="t-lede">For the full events calendar with 75+ events, visit our <a href="/events">Events Guide</a> covering all of Wilmington &amp; the Beaches.</p>
+    <div class="t-on-grid">
+      <div class="t-ev-live" data-t-events="Kure Beach">
+        <h3>Next up at Kure Beach</h3>
+        <ol class="t-evs" aria-hidden="true">
+          <li class="t-ev t-ev-sk"><div></div></li>
+          <li class="t-ev t-ev-sk"><div></div></li>
+          <li class="t-ev t-ev-sk"><div></div></li>
+          <li class="t-ev t-ev-sk"><div></div></li>
+        </ol>
+        <a class="t-on-all" href="/events/kure-beach"><span>All Kure Beach events<small>Every upcoming date for this area, updated daily</small></span></a>
+      </div>
+      <div class="t-on-season">
+        <h3>Seasonal highlights</h3>
+    <div class="events-list">
+      <div class="ev-row">
+        <div class="er-ico"><svg aria-hidden="true" focusable="false"><use href="#i-kite" xlink:href="#i-kite"/></svg></div>
+        <div class="er-body"><div class="er-name">Cape Fear Kite Festival</div><div class="er-meta">November 6&#8211;8, 2026 &nbsp;&middot;&nbsp; Fort Fisher State Recreation Area &nbsp;&middot;&nbsp; Hundreds of kites over the Atlantic</div></div>
+        <span class="er-badge er-free">Free</span>
+      </div>
+      <div class="ev-row">
+        <div class="er-ico"><svg aria-hidden="true" focusable="false"><use href="#i-fort" xlink:href="#i-fort"/></svg></div>
+        <div class="er-body"><div class="er-name">Fort Fisher Civil War Living History</div><div class="er-meta">October 2026 &nbsp;&middot;&nbsp; Fort Fisher Historic Site &nbsp;&middot;&nbsp; Re-enactors, artillery demonstrations, and camp life</div></div>
+        <span class="er-badge er-free">Free</span>
+      </div>
+      <div class="ev-row">
+        <div class="er-ico"><svg aria-hidden="true" focusable="false"><use href="#i-fireworks" xlink:href="#i-fireworks"/></svg></div>
+        <div class="er-body"><div class="er-name">America&rsquo;s 250th Birthday &mdash; July 4th, 2026</div><div class="er-meta">Saturday, July 4 &nbsp;&middot;&nbsp; Kure Beach &amp; Pleasure Island &nbsp;&middot;&nbsp; Fireworks and celebrations across the island</div></div>
+        <span class="er-badge er-free">Free</span>
+      </div>
+      <div class="ev-row">
+        <div class="er-ico"><svg aria-hidden="true" focusable="false"><use href="#i-aquarium" xlink:href="#i-aquarium"/></svg></div>
+        <div class="er-body"><div class="er-name">Discovery Cove &mdash; NC Aquarium at Independence Mall</div><div class="er-meta">Year-round &nbsp;&middot;&nbsp; Independence Mall, Wilmington &nbsp;&middot;&nbsp; Satellite aquarium during Fort Fisher renovation &nbsp;&middot;&nbsp; Free admission</div></div>
+        <span class="er-badge er-free">Free</span>
+      </div>
+    </div>
+        <p class="t-note">Some dates in this list are from the 2026 season and may have passed. The <a href="/events/kure-beach">Kure Beach events page</a> shows what is next.</p>
+      </div>
+    </div>
+    <p class="t-on-foot"><a href="/events" class="t-btn">View Full Events Calendar &#8594;</a></p>
+  </div>
+</section>
+<section class="sec t-guide" id="experiences">
   <div class="sec-inner">
     <div class="sec-label">ShoreList Experiences at Kure Beach</div>
     <h2 class="sec-title">Book a Local <em>Experience</em></h2>
@@ -348,7 +409,7 @@ section.hero[data-photo] .weather-card{background:rgba(6,28,40,.55)!important;bo
         <div class="exp-bar" style="background:#1a7a4a;"></div>
         <div class="exp-body">
           <span class="exp-ico"><svg aria-hidden="true" focusable="false"><use href="#i-leaf" xlink:href="#i-leaf"/></svg></span>
-          <div class="exp-name">Coastal Carolina Nature Walks</div>
+          <h3 class="exp-name">Coastal Carolina Nature Walks</h3>
           <div class="exp-desc">The Fort Fisher and Kure Beach area sits at one of the most biologically rich points on the East Coast. Guided walks through maritime forest, coastal dunes, and tidal wetlands reveal an extraordinary diversity of species. Wild Venus flytraps at nearby Carolina Beach State Park are included on select tours. <em>Coming soon on Shorelist &mdash; operator joining shortly.</em></div>
           <div class="exp-tags"><span class="exp-tag">Fort Fisher Area</span><span class="exp-tag">2 Hours</span><span class="exp-tag">Family Friendly</span><span class="exp-tag">Venus Flytraps</span></div>
         </div>
@@ -361,7 +422,7 @@ section.hero[data-photo] .weather-card{background:rgba(6,28,40,.55)!important;bo
         <div class="exp-bar" style="background:#6c3e9c;"></div>
         <div class="exp-body">
           <span class="exp-ico"><svg aria-hidden="true" focusable="false"><use href="#i-fort" xlink:href="#i-fort"/></svg></span>
-          <div class="exp-name">Fort Fisher State Historic Site</div>
+          <h3 class="exp-name">Fort Fisher State Historic Site</h3>
           <div class="exp-desc">Fort Fisher was the last major Confederate fortification to fall in the Civil War, defending the Cape Fear River&rsquo;s supply route until January 1865. The site contains original earthworks, a museum, and sweeping Atlantic views where the Union fleet assembled for the war&rsquo;s largest combined naval and land attack.</div>
           <div class="exp-tags"><span class="exp-tag">Fort Fisher</span><span class="exp-tag">Civil War History</span><span class="exp-tag">Self-Guided</span><span class="exp-tag">Free Admission</span></div>
         </div>
@@ -374,7 +435,7 @@ section.hero[data-photo] .weather-card{background:rgba(6,28,40,.55)!important;bo
         <div class="exp-bar" style="background:#1a7a4a;"></div>
         <div class="exp-body">
           <span class="exp-ico"><svg aria-hidden="true" focusable="false"><use href="#i-beach" xlink:href="#i-beach"/></svg></span>
-          <div class="exp-name">Fort Fisher State Recreation Area</div>
+          <h3 class="exp-name">Fort Fisher State Recreation Area</h3>
           <div class="exp-desc">Four miles of wild, undeveloped Atlantic beach at the southern tip of Pleasure Island. Protected nesting habitat for loggerhead sea turtles and imperiled shorebirds. No development, no crowds &mdash; just the Atlantic the way it looked a hundred years ago.</div>
           <div class="exp-tags"><span class="exp-tag">Wild Atlantic Beach</span><span class="exp-tag">Sea Turtles</span><span class="exp-tag">Undeveloped</span><span class="exp-tag">Free</span></div>
         </div>
@@ -388,7 +449,7 @@ section.hero[data-photo] .weather-card{background:rgba(6,28,40,.55)!important;bo
           <div class="aq-h-left">
             <span class="aq-ico"><svg aria-hidden="true" focusable="false"><use href="#i-aquarium" xlink:href="#i-aquarium"/></svg></span>
             <div>
-              <div class="aq-h-title">NC Aquarium at Fort Fisher</div>
+              <h3 class="aq-h-title">NC Aquarium at Fort Fisher</h3>
               <div class="aq-h-sub">900 Loggerhead Road, Kure Beach &nbsp;&middot;&nbsp; Closed for renovation &amp; expansion</div>
             </div>
           </div>
@@ -429,11 +490,11 @@ section.hero[data-photo] .weather-card{background:rgba(6,28,40,.55)!important;bo
     </div>
   </div>
 </section>
-<section class="sec sec-teal">
+<section class="sec sec-teal t-facts" id="glance">
   <div class="sec-inner">
-    <div class="sec-label" style="color:var(--coral);">By the Numbers</div>
+    <div class="sec-label">By the Numbers</div>
     <h2 class="sec-title sec-title-light">Kure Beach <em>at a Glance</em></h2>
-    <div class="facts-grid" style="margin-top:28px;">
+    <div class="facts-grid">
       <div class="fact"><div class="fact-n">1865</div><div class="fact-l">Fort Fisher falls, ending the Civil War</div></div>
       <div class="fact"><div class="fact-n">4 mi</div><div class="fact-l">of wild undeveloped Atlantic beach</div></div>
       <div class="fact"><div class="fact-n">$65M</div><div class="fact-l">Aquarium expansion investment</div></div>
@@ -443,60 +504,44 @@ section.hero[data-photo] .weather-card{background:rgba(6,28,40,.55)!important;bo
     </div>
   </div>
 </section>
-<section class="sec sec-alt" id="events">
-  <div class="sec-inner">
-    <div class="sec-label">Upcoming Events</div>
-    <h2 class="sec-title">What&rsquo;s Happening at <em>Kure Beach</em></h2>
-    <p class="sec-sub">For the full events calendar with 75+ events, visit our <a href="/events" style="color:var(--coral);font-weight:600;">Events Guide</a> covering all of Wilmington &amp; the Beaches.</p>
-    <div class="events-list">
-      <div class="ev-row">
-        <div class="er-ico"><svg aria-hidden="true" focusable="false"><use href="#i-kite" xlink:href="#i-kite"/></svg></div>
-        <div class="er-body"><div class="er-name">Cape Fear Kite Festival</div><div class="er-meta">November 6&#8211;8, 2026 &nbsp;&middot;&nbsp; Fort Fisher State Recreation Area &nbsp;&middot;&nbsp; Hundreds of kites over the Atlantic</div></div>
-        <span class="er-badge er-free">Free</span>
-      </div>
-      <div class="ev-row">
-        <div class="er-ico"><svg aria-hidden="true" focusable="false"><use href="#i-fort" xlink:href="#i-fort"/></svg></div>
-        <div class="er-body"><div class="er-name">Fort Fisher Civil War Living History</div><div class="er-meta">October 2026 &nbsp;&middot;&nbsp; Fort Fisher Historic Site &nbsp;&middot;&nbsp; Re-enactors, artillery demonstrations, and camp life</div></div>
-        <span class="er-badge er-free">Free</span>
-      </div>
-      <div class="ev-row">
-        <div class="er-ico"><svg aria-hidden="true" focusable="false"><use href="#i-fireworks" xlink:href="#i-fireworks"/></svg></div>
-        <div class="er-body"><div class="er-name">America&rsquo;s 250th Birthday &mdash; July 4th, 2026</div><div class="er-meta">Saturday, July 4 &nbsp;&middot;&nbsp; Kure Beach &amp; Pleasure Island &nbsp;&middot;&nbsp; Fireworks and celebrations across the island</div></div>
-        <span class="er-badge er-free">Free</span>
-      </div>
-      <div class="ev-row">
-        <div class="er-ico"><svg aria-hidden="true" focusable="false"><use href="#i-aquarium" xlink:href="#i-aquarium"/></svg></div>
-        <div class="er-body"><div class="er-name">Discovery Cove &mdash; NC Aquarium at Independence Mall</div><div class="er-meta">Year-round &nbsp;&middot;&nbsp; Independence Mall, Wilmington &nbsp;&middot;&nbsp; Satellite aquarium during Fort Fisher renovation &nbsp;&middot;&nbsp; Free admission</div></div>
-        <span class="er-badge er-free">Free</span>
-      </div>
-    </div>
-    <div style="margin-top:20px;text-align:center;">
-      <a href="/events" class="btn-fill" style="display:inline-flex;">View Full Events Calendar &#8594;</a>
-    </div>
+<section class="t-plan" id="plan" aria-labelledby="t-plan-h">
+  <div class="t-wrap">
+    <p class="t-eye">Eat, stay and plan</p>
+    <h2 id="t-plan-h">Round out your <em>Kure Beach</em> trip</h2>
+    <ul class="t-links">
+      <li><a class="t-link" href="/shore-picks"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 3v8M4 3v5a3 3 0 0 0 6 0V3M7 11v10M17 3c-2 2-3 5-3 8h3v10"/></svg><b>Where to eat</b><span>Shore Picks: handpicked restaurants, coffee shops and bars across Wilmington and the beaches.</span><i>See Shore Picks</i></a></li>
+      <li><a class="t-link" href="/where-to-stay"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 20V8M3 14h18v6M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="1.6"/></svg><b>Where to stay</b><span>Compare downtown and the riverfront, the beach towns and midtown as your base.</span><i>Choose your base</i></a></li>
+      <li><a class="t-link" href="/wilmington-weather"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="3"/><path d="M8 2v1.5M2 8h1.5M3.8 3.8l1 1M12.2 3.8l-1 1"/><path d="M2 17c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2 21c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg><b>Weather and surf</b><span>Current conditions, hourly and 7-day forecast, surf, tides and water temperature.</span><i>Check the forecast</i></a></li>
+      <li><a class="t-link" href="/wilmington-nc-faq"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.6 2.2c-.7.4-1.1 1-1.1 1.8"/><path d="M12 17h.01"/></svg><b>Visitor FAQ</b><span>Straight answers on beaches, parking, kids, nightlife, festivals and ferries.</span><i>Read the answers</i></a></li>
+    </ul>
   </div>
 </section>
-<section class="sec sec-dark">
+<section class="sec sec-dark t-towns" id="towns">
   <div class="sec-inner">
-    <div class="sec-label" style="color:var(--coral);">Explore the Whole Coast</div>
+    <div class="sec-label">Explore the Whole Coast</div>
     <h2 class="sec-title sec-title-light">More <em>Town Guides</em></h2>
     <div class="other-towns">
       <a href="/downtown" class="ot">
+        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bridge_1000x.webp" width="1000" height="714" alt="" loading="lazy" decoding="async"/>
         <span class="ot-ico"><svg aria-hidden="true" focusable="false"><use href="#i-building" xlink:href="#i-building"/></svg></span>
         <div class="ot-name">Downtown Wilmington</div>
         <div class="ot-sub">Ghost tours, film history, river cruises</div>
       </a>
       <a href="/carolina-beach" class="ot">
+        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1000x.webp" width="1000" height="558" alt="" loading="lazy" decoding="async"/>
         <span class="ot-ico"><svg aria-hidden="true" focusable="false"><use href="#i-park" xlink:href="#i-park"/></svg></span>
         <div class="ot-name">Carolina Beach</div>
         <div class="ot-sub">Boardwalk, Venus flytraps, surf</div>
       </a>
       <a href="/wrightsville-beach" class="ot">
+        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-wrightsville_1000x.webp" width="1000" height="558" alt="" loading="lazy" decoding="async"/>
         <span class="ot-ico"><svg aria-hidden="true" focusable="false"><use href="#i-surf" xlink:href="#i-surf"/></svg></span>
         <div class="ot-name">Wrightsville Beach</div>
         <div class="ot-sub">NC&rsquo;s premier surf beach</div>
       </a>
     </div>
-    <div style="text-align:center;margin-top:32px;">
+    <p class="t-note">Beach photos are styled scenes, not pictures of the exact spot. Downtown photo by Unexpected Snacks, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Wilmington,_NC_Riverwalk_and_Cape_Fear_Memorial_Bridge_at_Sunset.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</p>
+    <div class="t-map">
       <a href="/map" class="btn-fill">View Full Interactive Map &#8594;</a>
     </div>
   </div>
@@ -528,34 +573,9 @@ section.hero[data-photo] .weather-card{background:rgba(6,28,40,.55)!important;bo
   <div class="sc-text"><strong>Tours are bookable now</strong> &mdash; see what is open this week</div>
   <a href="/things-to-do" class="sc-btn">Browse Experiences &#8594;</a>
 </div>
-<script>
-(function(){
-  fetch('https://api.open-meteo.com/v1/forecast?latitude=33.9940&longitude=-77.9068&current=temperature_2m,weather_code&temperature_unit=fahrenheit')
-    .then(function(r){return r.json();})
-    .then(function(d){
-      var WC={0:'Clear skies',1:'Mostly clear',2:'Partly cloudy',3:'Overcast',51:'Light drizzle',61:'Rain',80:'Showers',95:'Thunderstorm'};
-      var c=d.current||{};
-      var te=document.getElementById('wc-temp');
-      var co=document.getElementById('wc-cond');
-      if(te)te.textContent=(c.temperature_2m?Math.round(c.temperature_2m):'--')+'\u00b0F';
-      if(co)co.textContent=WC[c.weather_code]||'Beautiful coastal weather';
-    }).catch(function(){
-      var co=document.getElementById('wc-cond');
-      if(co)co.textContent='Beautiful coastal weather';
-    });
-})();
-(function(){
-  var cta=document.getElementById('sticky-cta');
-  if(!cta)return;
-  var shown=false;
-  window.addEventListener('scroll',function(){
-    if(window.scrollY>400&&!shown){shown=true;cta.classList.add('show');}
-    else if(window.scrollY<=100&&shown){shown=false;cta.classList.remove('show');}
-  },{passive:true});
-})();
-</script>
 <script src="/sound.js" defer></script>
 <script src="/beachwx.js" defer></script>
+<script src="/town.js" defer></script>
 <script src="/widgets.js" defer></script>
 <script src="/shore-plus.js" defer></script>
 </body>

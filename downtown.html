@@ -166,14 +166,15 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"TouristDestination","name":"Downtown Wilmington, NC","url":"https://shorelist.net/downtown","description":"Visitor guide to Downtown Wilmington, North Carolina — things to do, local experiences, and events.","touristType":"Coastal travelers","containedInPlace":{"@type":"AdministrativeArea","name":"New Hanover County, North Carolina"},"publisher":{"@type":"Organization","name":"ShoreList LLC","url":"https://shorelist.net"}}
 </script>
-<link rel="stylesheet" href="/shorelist.css"/>
 <link rel="manifest" href="/manifest.webmanifest"/>
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
 <link rel="stylesheet" href="/scene.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
+<link rel="stylesheet" href="/town.css"/>
+<noscript><style>.t-evs{display:none!important}.t-chip{display:none!important}</style></noscript>
 <script src="/luxe.js" defer></script>
 </head>
-<body>
+<body class="town" data-town="downtown" data-wx="0" data-wx-city="34.2257,-77.9447">
 
 <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs>
 <symbol id="i-leaf" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
@@ -309,11 +310,13 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
   </div>
 </nav>
 <main id="main">
+
 <section class="hero has-photo">
   <img class="hero-photo" width="1920" height="1371" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bridge_1920x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bridge_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bridge_1920x.webp 1920w" sizes="100vw" alt="The Wilmington Riverwalk at sunset with the Cape Fear Memorial Bridge lit in the distance" fetchpriority="high" decoding="async"/>
   <div class="hero-inner">
     <div>
       <div class="hero-bc"><a href="/">ShoreList</a> &nbsp;&#8250;&nbsp; <a href="/map">Wilmington &amp; the Beaches</a> &nbsp;&#8250;&nbsp; Downtown Wilmington</div>
+      <p class="t-chip is-off" data-t-chip aria-live="polite">Live conditions</p>
       <div class="hero-tag">Historic Downtown &nbsp;&middot;&nbsp; Cape Fear River</div>
       <h1 class="hero-title">Downtown Wilmington, NC<br/><em>America&rsquo;s Film City.</em></h1>
       <p class="hero-sub">300 years of history on the Cape Fear River. The largest intact collection of antebellum architecture in NC. The biggest film studio east of Hollywood. Ghost tours that have been terrifying visitors for decades. The Battleship North Carolina sitting 400 feet from the Riverwalk. There is no city in the South quite like Wilmington.</p>
@@ -329,127 +332,60 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
         <a href="/map" class="btn-ghost"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-pin" xlink:href="#i-pin"/></svg>View on Map</a>
       </div>
     </div>
-    <div class="weather-card">
-      <div class="wc-label">Live Conditions</div>
-      <div class="wc-temp" id="wc-temp">--&#176;</div>
-      <div class="wc-loc">Wilmington, NC</div>
-      <div class="wc-cond" id="wc-cond">Loading...</div>
-      <div class="wc-live"><div class="wc-dot"></div>Real-time weather</div>
-    </div>
   </div>
 <p class="hero-credit">Photo: Unexpected Snacks, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Wilmington,_NC_Riverwalk_and_Cape_Fear_Memorial_Bridge_at_Sunset.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></p>
 </section>
-<div class="hero-wave">
-  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="#FEFCF7"/>
-  </svg>
-</div>
-<section class="dt-gal" aria-labelledby="dt-gal-h">
-  <div class="in">
-    <div class="hero-tag" style="color:#C0412A">Real Downtown</div>
-    <h2 id="dt-gal-h">The Riverwalk, <em>as it really looks</em></h2>
-    <p class="sub">Photographs of the real Downtown waterfront from the Wikimedia Commons community, used with credit under their open licenses.</p>
-    <div class="dt-grid">
-      <figure><img width="1000" height="667" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-riverwalk_1000x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-riverwalk_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-riverwalk_1920x.webp 1920w" sizes="(max-width:768px) 100vw, 360px" alt="Shops and restaurants along the Wilmington Riverwalk beside the Cape Fear River" loading="lazy" decoding="async"/><figcaption><b>Along the Riverwalk</b>Photo: Jason W. Smith, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener license">CC BY-SA 3.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Wilmington_Riverwalk.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure>
-      <figure><img width="1000" height="704" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-trolley_1000x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-trolley_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-trolley_1920x.webp 1920w" sizes="(max-width:768px) 100vw, 360px" alt="A trolley on the Wilmington Riverwalk" loading="lazy" decoding="async"/><figcaption><b>Downtown by trolley</b>Photo: APK, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener license">CC BY 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Trolley_on_the_Wilmington_Riverwalk.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure>
-      <figure><img width="1000" height="715" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bench_1000x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bench_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bench_1920x.webp 1920w" sizes="(max-width:768px) 100vw, 360px" alt="A bench on the Wilmington Riverwalk at sunset" loading="lazy" decoding="async"/><figcaption><b>Sunset on the river</b>Photo: Unexpected Snacks, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Wilmington,_NC_Riverwalk_Bench_at_Sunset.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure>
+<section class="t-now" id="conditions" aria-labelledby="t-now-h">
+  <div class="t-wrap t-now-grid">
+    <div class="t-now-copy">
+      <p class="t-eye">Right now</p>
+      <h2 id="t-now-h">Today in Downtown Wilmington</h2>
+      <p class="t-now-line">Wilmington air temperature for downtown, plus live surf, water and tide at the nearest beach. Refreshed every ten minutes from NOAA and open-meteo.</p>
+      <p class="t-tip" data-t-tip><b>Suggested for these conditions</b>When live readings load, a suggestion that fits the weather appears here. Until then, start with the top things to do below.</p>
+      <ul class="t-pills">
+        <li><a href="/wilmington-weather">Full weather and surf report</a></li>
+      </ul>
+    </div>
+    <div class="t-now-card">
+      <p class="t-near">Nearest beach: Wrightsville Beach</p>
+      <div class="bw" data-beachwx="wrightsville"></div>
     </div>
   </div>
 </section>
-
-<section class="sec" id="experiences">
-  <div class="sec-inner">
-    <div class="sec-label">ShoreList Experiences in Downtown Wilmington</div>
-    <h2 class="sec-title">Book a Local <em>Experience</em></h2>
-    <p class="sec-sub">These are the experiences available right here in downtown Wilmington through ShoreList. Every operator is one we know personally. Bookings open soon.</p>
-    <div class="exp-grid">
-      <div class="exp-card">
-        <div class="exp-bar" style="background:#E96645;"></div>
-        <div class="exp-body">
-          <span class="exp-ico"><svg aria-hidden="true" focusable="false"><use href="#i-train" xlink:href="#i-train"/></svg></span>
-          <div class="exp-name">Wilmington Railroad Museum</div>
-          <div class="exp-desc">Climb aboard a real 1911 steam locomotive, walk through a life-size caboose, and watch 20+ model trains run through a 1,600 sq ft layout. Housed in an authentic 1883 freight warehouse at the north end of downtown, this 501(c)(3) nonprofit has preserved Wilmington&rsquo;s Atlantic Coast Line railroad story since 1979. Indoors and fun in any weather &mdash; one of the best things to do downtown with kids.</div>
-          <div class="exp-tags"><span class="exp-tag">Official Partner</span><span class="exp-tag">All Ages</span><span class="exp-tag">Rain or Shine</span><span class="exp-tag">505 Nutt St</span><span class="exp-tag">Since 1979</span></div>
-        </div>
-        <div class="exp-foot">
-          <div class="exp-price">From $8 <span>per person</span></div>
-          <a href="/wilmington-railroad-museum" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;">View Tickets &#8594;</a>
-        </div>
-      </div>
-      <div class="exp-card">
-        <div class="exp-bar" style="background:#6c3e9c;"></div>
-        <div class="exp-body">
-          <span class="exp-ico"><svg aria-hidden="true" focusable="false"><use href="#i-ghost" xlink:href="#i-ghost"/></svg></span>
-          <div class="exp-name">Sean Austin's Wilmington Ghost Walk</div>
-          <div class="exp-desc">90 spine-tingling minutes through the most haunted streets in one of America&rsquo;s oldest cities &mdash; led by <strong>Sean Austin</strong>, star of Netflix&rsquo;s <em>28 Days Haunted</em> and Travel Channel&rsquo;s <em>Ghost Loop</em>. A real paranormal TV investigator brings Wilmington&rsquo;s ghosts, Civil War spirits, and colonial hauntings to life. Family-friendly, unforgettable, and available exclusively on ShoreList.</div>
-          <div class="exp-tags"><span class="exp-tag">Founding Partner</span><span class="exp-tag">Downtown Wilmington</span><span class="exp-tag">90 Minutes</span><span class="exp-tag">Thu&#8211;Sun Evenings</span><span class="exp-tag">All Ages</span></div>
-        </div>
-        <div class="exp-foot">
-          <div class="exp-price">From $30 <span>per person</span></div>
-          <a href="/things-to-do/ghost-tours" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;">Join Waitlist &#8594;</a>
-        </div>
-      </div>
-      <div class="exp-card">
-        <div class="exp-bar" style="background:#1e64c8;"></div>
-        <div class="exp-body">
-          <span class="exp-ico"><svg aria-hidden="true" focusable="false"><use href="#i-film" xlink:href="#i-film"/></svg></span>
-          <div class="exp-name">Wilmywood Film Location Tours</div>
-          <div class="exp-desc">One Tree Hill. Iron Man 3. Dawson&rsquo;s Creek. A Walk to Remember. Hundreds of productions have filmed here. Your guide spent over 20 years working inside the Wilmington film and hospitality industry. Every set, every story, every secret &mdash; from the inside.</div>
-          <div class="exp-tags"><span class="exp-tag">Downtown Wilmington</span><span class="exp-tag">Industry Insider</span><span class="exp-tag">Daytime &amp; Evening</span><span class="exp-tag">Film History</span></div>
-        </div>
-        <div class="exp-foot">
-          <div class="exp-price">From $45 <span>per person</span></div>
-          <a href="/things-to-do/film-tours" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;">Join Waitlist &#8594;</a>
-        </div>
-      </div>
-      <div class="exp-card">
-        <div class="exp-bar" style="background:var(--teal);"></div>
-        <div class="exp-body">
-          <span class="exp-ico"><svg aria-hidden="true" focusable="false"><use href="#i-fort" xlink:href="#i-fort"/></svg></span>
-          <div class="exp-name">Sunset Sails &amp; River Cruises</div>
-          <div class="exp-desc">Watch the sun set over the Cape Fear River from the deck of a sailboat or river cruise vessel. The Wilmington waterfront at golden hour is one of the most beautiful settings in North Carolina. Evening sails departing from downtown.</div>
-          <div class="exp-tags"><span class="exp-tag">Cape Fear River</span><span class="exp-tag">Evening Sails</span><span class="exp-tag">Groups Welcome</span><span class="exp-tag">Sunset Views</span></div>
-        </div>
-        <div class="exp-foot">
-          <div class="exp-price">From $45 <span>per person</span></div>
-          <a href="/things-to-do/sailboat-rides" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;">Join Waitlist &#8594;</a>
-        </div>
-      </div>
-      <div class="exp-card">
-        <div class="exp-bar" style="background:#0A4D5C;"></div>
-        <div class="exp-body">
-          <img src="/wilmington-walking-tours.webp" width="440" height="366" loading="lazy" decoding="async" alt="Wilmington Walking Tours" style="height:44px;width:auto;display:block;margin-bottom:12px;"/>
-          <div class="exp-name">Wilmington Walking Tours</div>
-          <div class="exp-desc">A ShoreList Founding Partner. Led by <strong>Amanda Leese</strong>, these guided strolls through the Historic District cover 300 years of Wilmington &mdash; colonial roots, antebellum architecture, prohibition-era speakeasies, and a candlelit Victorian holiday walk. Four downtown tours, from the original history walk to the Historic Happy Hour.</div>
-          <div class="exp-tags"><span class="exp-tag">Historic District</span><span class="exp-tag">Founding Partner</span><span class="exp-tag">4 Downtown Tours</span><span class="exp-tag">All Ages</span><span class="exp-tag">4.9&#9733; on Viator &amp; TripAdvisor</span></div>
-        </div>
-        <div class="exp-foot">
-          <div class="exp-price">From $20 <span>per person</span></div>
-          <a href="/things-to-do/walking-tours" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;">View Tours &#8594;</a>
-        </div>
-      </div>
-    </div>
+<section class="t-do" id="things" aria-labelledby="t-do-h">
+  <div class="t-wrap">
+    <p class="t-eye">Top things to do here</p>
+    <h2 id="t-do-h">Top things to do in <em>Downtown Wilmington</em></h2>
+    <p class="t-lede">Start with the activities this guide covers for Downtown Wilmington. Each card opens the full category page.</p>
+    <ul class="t-cards">
+      <li><a class="t-card" href="/things-to-do/ghost-tours"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-ghost-tours_800x600_crop_center.webp" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>Ghost Tours</b><span>Haunted streets in one of America&rsquo;s oldest cities.</span><i>See options</i></span></a></li>
+      <li><a class="t-card" href="/things-to-do/film-tours"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-film-tours_800x600_crop_center.webp" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>Film &amp; TV Tours</b><span>One Tree Hill, Iron Man 3 and Dawson&rsquo;s Creek locations.</span><i>See options</i></span></a></li>
+      <li><a class="t-card" href="/things-to-do/walking-tours"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-walking-tours_800x600_crop_center.webp" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>Walking &amp; History Tours</b><span>Guided strolls through the Historic District.</span><i>See options</i></span></a></li>
+      <li><a class="t-card" href="/things-to-do/museums"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-museums_800x600_crop_center.webp" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>Museums &amp; Attractions</b><span>The Wilmington Railroad Museum, indoors in any weather.</span><i>See options</i></span></a></li>
+      <li><a class="t-card" href="/things-to-do/sailboat-rides"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-sailboat-rides_800x600_crop_center.webp" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>Sailboat Rides</b><span>Sunset over the Cape Fear River from the deck.</span><i>See options</i></span></a></li>
+      <li><a class="t-card" href="/things-to-do/river-cruises"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-river-cruises-2_800x600_crop_center.webp" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>River Cruises</b><span>Evening cruises departing from downtown.</span><i>See options</i></span></a></li>
+    </ul>
+    <p class="t-note">Activity photos are illustrative and may not show the exact tour or location.</p>
   </div>
 </section>
-<section class="sec sec-teal">
-  <div class="sec-inner">
-    <div class="sec-label" style="color:var(--coral);">By the Numbers</div>
-    <h2 class="sec-title sec-title-light">Downtown Wilmington <em>at a Glance</em></h2>
-    <div class="facts-grid" style="margin-top:28px;">
-      <div class="fact"><div class="fact-n">1739</div><div class="fact-l">City of Wilmington incorporated</div></div>
-      <div class="fact"><div class="fact-n">300+</div><div class="fact-l">years of unbroken history</div></div>
-      <div class="fact"><div class="fact-n">#1</div><div class="fact-l">Film studio east of Hollywood</div></div>
-      <div class="fact"><div class="fact-n">1.75 mi</div><div class="fact-l">of Cape Fear Riverwalk</div></div>
-      <div class="fact"><div class="fact-n">1858</div><div class="fact-l">Thalian Hall built &mdash; still running</div></div>
-      <div class="fact"><div class="fact-n">7,000</div><div class="fact-l">capacity at Live Oak Bank Pavilion</div></div>
-    </div>
-  </div>
-</section>
-<section class="sec sec-alt" id="events">
-  <div class="sec-inner">
-    <div class="sec-label">Upcoming Events</div>
-    <h2 class="sec-title">What&rsquo;s Happening in <em>Downtown Wilmington</em></h2>
-    <p class="sec-sub">For the full events calendar with 75+ events across all of Wilmington &amp; the Beaches, visit our <a href="/events" style="color:var(--coral);font-weight:600;">Events Guide</a>.</p>
+<section class="t-on" id="events" aria-labelledby="t-on-h">
+  <div class="t-wrap">
+    <p class="t-eye">What is on</p>
+    <h2 id="t-on-h">What&rsquo;s Happening in <em>Downtown Wilmington</em></h2>
+    <p class="t-lede">For the full events calendar with 75+ events across all of Wilmington &amp; the Beaches, visit our <a href="/events">Events Guide</a>.</p>
+    <div class="t-on-grid">
+      <div class="t-ev-live" data-t-events="Downtown">
+        <h3>Next up in Downtown Wilmington</h3>
+        <ol class="t-evs" aria-hidden="true">
+          <li class="t-ev t-ev-sk"><div></div></li>
+          <li class="t-ev t-ev-sk"><div></div></li>
+          <li class="t-ev t-ev-sk"><div></div></li>
+          <li class="t-ev t-ev-sk"><div></div></li>
+        </ol>
+        <a class="t-on-all" href="/events/downtown-wilmington"><span>All Downtown Wilmington events<small>Every upcoming date for this area, updated daily</small></span></a>
+      </div>
+      <div class="t-on-season">
+        <h3>Seasonal highlights</h3>
     <div class="events-list">
       <div class="ev-row">
         <div class="er-ico"><svg aria-hidden="true" focusable="false"><use href="#i-film" xlink:href="#i-film"/></svg></div>
@@ -472,33 +408,150 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
         <span class="er-badge er-paid">Ticketed</span>
       </div>
     </div>
-    <div style="margin-top:20px;text-align:center;">
-      <a href="/events" class="btn-fill" style="display:inline-flex;">View Full Events Calendar &#8594;</a>
+        <p class="t-note">Some dates in this list are from the 2026 season and may have passed. The <a href="/events/downtown-wilmington">Downtown Wilmington events page</a> shows what is next.</p>
+      </div>
+    </div>
+    <p class="t-on-foot"><a href="/events" class="t-btn">View Full Events Calendar &#8594;</a></p>
+  </div>
+</section>
+<section class="dt-gal" aria-labelledby="dt-gal-h">
+  <div class="in">
+    <div class="hero-tag" style="color:#C0412A">Real Downtown</div>
+    <h2 id="dt-gal-h">The Riverwalk, <em>as it really looks</em></h2>
+    <p class="sub">Photographs of the real Downtown waterfront from the Wikimedia Commons community, used with credit under their open licenses.</p>
+    <div class="dt-grid">
+      <figure><img width="1000" height="667" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-riverwalk_1000x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-riverwalk_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-riverwalk_1920x.webp 1920w" sizes="(max-width:768px) 100vw, 360px" alt="Shops and restaurants along the Wilmington Riverwalk beside the Cape Fear River" loading="lazy" decoding="async"/><figcaption><b>Along the Riverwalk</b>Photo: Jason W. Smith, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener license">CC BY-SA 3.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Wilmington_Riverwalk.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure>
+      <figure><img width="1000" height="704" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-trolley_1000x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-trolley_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-trolley_1920x.webp 1920w" sizes="(max-width:768px) 100vw, 360px" alt="A trolley on the Wilmington Riverwalk" loading="lazy" decoding="async"/><figcaption><b>Downtown by trolley</b>Photo: APK, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener license">CC BY 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Trolley_on_the_Wilmington_Riverwalk.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure>
+      <figure><img width="1000" height="715" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bench_1000x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bench_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bench_1920x.webp 1920w" sizes="(max-width:768px) 100vw, 360px" alt="A bench on the Wilmington Riverwalk at sunset" loading="lazy" decoding="async"/><figcaption><b>Sunset on the river</b>Photo: Unexpected Snacks, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Wilmington,_NC_Riverwalk_Bench_at_Sunset.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure>
     </div>
   </div>
 </section>
-<section class="sec sec-dark">
+<section class="sec t-guide" id="experiences">
   <div class="sec-inner">
-    <div class="sec-label" style="color:var(--coral);">Explore the Whole Coast</div>
+    <div class="sec-label">ShoreList Experiences in Downtown Wilmington</div>
+    <h2 class="sec-title">Book a Local <em>Experience</em></h2>
+    <p class="sec-sub">These are the experiences available right here in downtown Wilmington through ShoreList. Every operator is one we know personally. Bookings open soon.</p>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <div class="exp-bar" style="background:#E96645;"></div>
+        <div class="exp-body">
+          <span class="exp-ico"><svg aria-hidden="true" focusable="false"><use href="#i-train" xlink:href="#i-train"/></svg></span>
+          <h3 class="exp-name">Wilmington Railroad Museum</h3>
+          <div class="exp-desc">Climb aboard a real 1911 steam locomotive, walk through a life-size caboose, and watch 20+ model trains run through a 1,600 sq ft layout. Housed in an authentic 1883 freight warehouse at the north end of downtown, this 501(c)(3) nonprofit has preserved Wilmington&rsquo;s Atlantic Coast Line railroad story since 1979. Indoors and fun in any weather &mdash; one of the best things to do downtown with kids.</div>
+          <div class="exp-tags"><span class="exp-tag">Official Partner</span><span class="exp-tag">All Ages</span><span class="exp-tag">Rain or Shine</span><span class="exp-tag">505 Nutt St</span><span class="exp-tag">Since 1979</span></div>
+        </div>
+        <div class="exp-foot">
+          <div class="exp-price">From $8 <span>per person</span></div>
+          <a href="/wilmington-railroad-museum" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;">View Tickets &#8594;</a>
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-bar" style="background:#6c3e9c;"></div>
+        <div class="exp-body">
+          <span class="exp-ico"><svg aria-hidden="true" focusable="false"><use href="#i-ghost" xlink:href="#i-ghost"/></svg></span>
+          <h3 class="exp-name">Sean Austin's Wilmington Ghost Walk</h3>
+          <div class="exp-desc">90 spine-tingling minutes through the most haunted streets in one of America&rsquo;s oldest cities &mdash; led by <strong>Sean Austin</strong>, star of Netflix&rsquo;s <em>28 Days Haunted</em> and Travel Channel&rsquo;s <em>Ghost Loop</em>. A real paranormal TV investigator brings Wilmington&rsquo;s ghosts, Civil War spirits, and colonial hauntings to life. Family-friendly, unforgettable, and available exclusively on ShoreList.</div>
+          <div class="exp-tags"><span class="exp-tag">Founding Partner</span><span class="exp-tag">Downtown Wilmington</span><span class="exp-tag">90 Minutes</span><span class="exp-tag">Thu&#8211;Sun Evenings</span><span class="exp-tag">All Ages</span></div>
+        </div>
+        <div class="exp-foot">
+          <div class="exp-price">From $30 <span>per person</span></div>
+          <a href="/things-to-do/ghost-tours" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;">Join Waitlist &#8594;</a>
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-bar" style="background:#1e64c8;"></div>
+        <div class="exp-body">
+          <span class="exp-ico"><svg aria-hidden="true" focusable="false"><use href="#i-film" xlink:href="#i-film"/></svg></span>
+          <h3 class="exp-name">Wilmywood Film Location Tours</h3>
+          <div class="exp-desc">One Tree Hill. Iron Man 3. Dawson&rsquo;s Creek. A Walk to Remember. Hundreds of productions have filmed here. Your guide spent over 20 years working inside the Wilmington film and hospitality industry. Every set, every story, every secret &mdash; from the inside.</div>
+          <div class="exp-tags"><span class="exp-tag">Downtown Wilmington</span><span class="exp-tag">Industry Insider</span><span class="exp-tag">Daytime &amp; Evening</span><span class="exp-tag">Film History</span></div>
+        </div>
+        <div class="exp-foot">
+          <div class="exp-price">From $45 <span>per person</span></div>
+          <a href="/things-to-do/film-tours" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;">Join Waitlist &#8594;</a>
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-bar" style="background:var(--teal);"></div>
+        <div class="exp-body">
+          <span class="exp-ico"><svg aria-hidden="true" focusable="false"><use href="#i-fort" xlink:href="#i-fort"/></svg></span>
+          <h3 class="exp-name">Sunset Sails &amp; River Cruises</h3>
+          <div class="exp-desc">Watch the sun set over the Cape Fear River from the deck of a sailboat or river cruise vessel. The Wilmington waterfront at golden hour is one of the most beautiful settings in North Carolina. Evening sails departing from downtown.</div>
+          <div class="exp-tags"><span class="exp-tag">Cape Fear River</span><span class="exp-tag">Evening Sails</span><span class="exp-tag">Groups Welcome</span><span class="exp-tag">Sunset Views</span></div>
+        </div>
+        <div class="exp-foot">
+          <div class="exp-price">From $45 <span>per person</span></div>
+          <a href="/things-to-do/sailboat-rides" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;">Join Waitlist &#8594;</a>
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-bar" style="background:#0A4D5C;"></div>
+        <div class="exp-body">
+          <img src="/wilmington-walking-tours.webp" width="440" height="366" loading="lazy" decoding="async" alt="Wilmington Walking Tours" style="height:44px;width:auto;display:block;margin-bottom:12px;"/>
+          <h3 class="exp-name">Wilmington Walking Tours</h3>
+          <div class="exp-desc">A ShoreList Founding Partner. Led by <strong>Amanda Leese</strong>, these guided strolls through the Historic District cover 300 years of Wilmington &mdash; colonial roots, antebellum architecture, prohibition-era speakeasies, and a candlelit Victorian holiday walk. Four downtown tours, from the original history walk to the Historic Happy Hour.</div>
+          <div class="exp-tags"><span class="exp-tag">Historic District</span><span class="exp-tag">Founding Partner</span><span class="exp-tag">4 Downtown Tours</span><span class="exp-tag">All Ages</span><span class="exp-tag">4.9&#9733; on Viator &amp; TripAdvisor</span></div>
+        </div>
+        <div class="exp-foot">
+          <div class="exp-price">From $20 <span>per person</span></div>
+          <a href="/things-to-do/walking-tours" class="btn-fill" style="padding:10px 20px;font-size:0.84rem;">View Tours &#8594;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="sec sec-teal t-facts" id="glance">
+  <div class="sec-inner">
+    <div class="sec-label">By the Numbers</div>
+    <h2 class="sec-title sec-title-light">Downtown Wilmington <em>at a Glance</em></h2>
+    <div class="facts-grid">
+      <div class="fact"><div class="fact-n">1739</div><div class="fact-l">City of Wilmington incorporated</div></div>
+      <div class="fact"><div class="fact-n">300+</div><div class="fact-l">years of unbroken history</div></div>
+      <div class="fact"><div class="fact-n">#1</div><div class="fact-l">Film studio east of Hollywood</div></div>
+      <div class="fact"><div class="fact-n">1.75 mi</div><div class="fact-l">of Cape Fear Riverwalk</div></div>
+      <div class="fact"><div class="fact-n">1858</div><div class="fact-l">Thalian Hall built &mdash; still running</div></div>
+      <div class="fact"><div class="fact-n">7,000</div><div class="fact-l">capacity at Live Oak Bank Pavilion</div></div>
+    </div>
+  </div>
+</section>
+<section class="t-plan" id="plan" aria-labelledby="t-plan-h">
+  <div class="t-wrap">
+    <p class="t-eye">Eat, stay and plan</p>
+    <h2 id="t-plan-h">Round out your <em>Downtown Wilmington</em> trip</h2>
+    <ul class="t-links">
+      <li><a class="t-link" href="/shore-picks"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 3v8M4 3v5a3 3 0 0 0 6 0V3M7 11v10M17 3c-2 2-3 5-3 8h3v10"/></svg><b>Where to eat</b><span>Shore Picks: handpicked restaurants, coffee shops and bars across Wilmington and the beaches.</span><i>See Shore Picks</i></a></li>
+      <li><a class="t-link" href="/where-to-stay"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 20V8M3 14h18v6M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="1.6"/></svg><b>Where to stay</b><span>Compare downtown and the riverfront, the beach towns and midtown as your base.</span><i>Choose your base</i></a></li>
+      <li><a class="t-link" href="/wilmington-weather"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="3"/><path d="M8 2v1.5M2 8h1.5M3.8 3.8l1 1M12.2 3.8l-1 1"/><path d="M2 17c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2 21c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg><b>Weather and surf</b><span>Current conditions, hourly and 7-day forecast, surf, tides and water temperature.</span><i>Check the forecast</i></a></li>
+      <li><a class="t-link" href="/wilmington-nc-faq"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.6 2.2c-.7.4-1.1 1-1.1 1.8"/><path d="M12 17h.01"/></svg><b>Visitor FAQ</b><span>Straight answers on beaches, parking, kids, nightlife, festivals and ferries.</span><i>Read the answers</i></a></li>
+    </ul>
+  </div>
+</section>
+<section class="sec sec-dark t-towns" id="towns">
+  <div class="sec-inner">
+    <div class="sec-label">Explore the Whole Coast</div>
     <h2 class="sec-title sec-title-light">More <em>Town Guides</em></h2>
     <div class="other-towns">
       <a href="/carolina-beach" class="ot">
+        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1000x.webp" width="1000" height="558" alt="" loading="lazy" decoding="async"/>
         <span class="ot-ico"><svg aria-hidden="true" focusable="false"><use href="#i-park" xlink:href="#i-park"/></svg></span>
         <div class="ot-name">Carolina Beach</div>
         <div class="ot-sub">Boardwalk, Venus flytraps, surf</div>
       </a>
       <a href="/wrightsville-beach" class="ot">
+        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-wrightsville_1000x.webp" width="1000" height="558" alt="" loading="lazy" decoding="async"/>
         <span class="ot-ico"><svg aria-hidden="true" focusable="false"><use href="#i-surf" xlink:href="#i-surf"/></svg></span>
         <div class="ot-name">Wrightsville Beach</div>
         <div class="ot-sub">NC&rsquo;s premier surf beach</div>
       </a>
       <a href="/kure-beach" class="ot">
+        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1000x.webp" width="1000" height="558" alt="" loading="lazy" decoding="async"/>
         <span class="ot-ico"><svg aria-hidden="true" focusable="false"><use href="#i-beach" xlink:href="#i-beach"/></svg></span>
         <div class="ot-name">Kure Beach</div>
         <div class="ot-sub">Fort Fisher &amp; NC Aquarium</div>
       </a>
     </div>
-    <div style="text-align:center;margin-top:32px;">
+    <p class="t-note">Beach photos are styled scenes, not pictures of the exact spot.</p>
+    <div class="t-map">
       <a href="/map" class="btn-fill">View Full Interactive Map &#8594;</a>
     </div>
   </div>
@@ -531,34 +584,9 @@ footer{background:#0b1a1f;padding:32px 48px;display:flex;justify-content:space-b
   <div class="sc-text"><strong>Tours are bookable now</strong> &mdash; see what is open this week</div>
   <a href="/things-to-do" class="sc-btn">Browse Experiences &#8594;</a>
 </div>
-<script>
-(function(){
-  fetch('https://api.open-meteo.com/v1/forecast?latitude=34.2257&longitude=-77.9447&current=temperature_2m,weather_code&temperature_unit=fahrenheit')
-    .then(function(r){return r.json();})
-    .then(function(d){
-      var WC={0:'Clear skies',1:'Mostly clear',2:'Partly cloudy',3:'Overcast',51:'Light drizzle',61:'Rain',80:'Showers',95:'Thunderstorm'};
-      var c=d.current||{};
-      var te=document.getElementById('wc-temp');
-      var co=document.getElementById('wc-cond');
-      if(te)te.textContent=(c.temperature_2m?Math.round(c.temperature_2m):'--')+'\u00b0F';
-      if(co)co.textContent=WC[c.weather_code]||'Beautiful coastal weather';
-    }).catch(function(){
-      var co=document.getElementById('wc-cond');
-      if(co)co.textContent='Beautiful coastal weather';
-    });
-})();
-(function(){
-  var cta=document.getElementById('sticky-cta');
-  if(!cta)return;
-  var shown=false;
-  window.addEventListener('scroll',function(){
-    if(window.scrollY>400&&!shown){shown=true;cta.classList.add('show');}
-    else if(window.scrollY<=100&&shown){shown=false;cta.classList.remove('show');}
-  },{passive:true});
-})();
-</script>
 <script src="/sound.js" defer></script>
 <script src="/beachwx.js" defer></script>
+<script src="/town.js" defer></script>
 <script src="/widgets.js" defer></script>
 <script src="/shore-plus.js" defer></script>
 </body>

@@ -11,6 +11,7 @@
 - [Kure Beach](https://shorelist.net/kure-beach)
 - [Events](https://shorelist.net/events): dated local events, updated regularly
 - [Wilmington weather](https://shorelist.net/wilmington-weather): live current conditions, hourly and 7-day forecast, beach, surf and tide report
+- [ShoreList Surf](https://shorelist.net/surf): live surf check for Wrightsville, Carolina and Kure Beach, surf lessons and paddling, and plain guides to a [first surfboard](https://shorelist.net/surf/first-surfboard), [paddleboards and kayaks](https://shorelist.net/surf/paddleboard-and-kayak) and [water safety and rules](https://shorelist.net/surf/know-before-you-go)
 - [Where to stay](https://shorelist.net/where-to-stay): which area to choose (downtown, Wrightsville Beach, Carolina Beach, Kure Beach, midtown) and what lodging each offers
 - [This weekend](https://shorelist.net/events/this-weekend): events for the current weekend, rebuilt daily
 - Events by area: [Downtown Wilmington](https://shorelist.net/events/downtown-wilmington), [Wrightsville Beach](https://shorelist.net/events/wrightsville-beach), [Carolina Beach](https://shorelist.net/events/carolina-beach), [Kure Beach](https://shorelist.net/events/kure-beach), [Greater Wilmington](https://shorelist.net/events/greater-wilmington)
