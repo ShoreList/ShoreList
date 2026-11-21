@@ -274,6 +274,41 @@
     if ('requestIdleCallback' in window) requestIdleCallback(go, { timeout: 2500 }); else setTimeout(go, 1200);
   }
 
-  function init() { build(); load(); ambient(); }
+  /* sitewide signup: one slim email form above the footer on pages that have no email field */
+  function leadBar() {
+    if (/^\/(legal|dashboard|success|lookbook-kit|offline|404|join|waitlist)/.test(location.pathname)) return;
+    if (document.querySelector('input[type=email]')) return;
+    var foot = document.querySelector('body > footer') || document.querySelector('footer');
+    if (!foot) return;
+    var st = document.createElement('style');
+    st.textContent = '.sl-lead{background:#0E1F33;color:#F4F1EA;padding:44px 20px;text-align:center;font-family:"DM Sans",system-ui,sans-serif}' +
+      '.sl-lead h2{font-family:"Playfair Display",Georgia,serif;font-size:1.6rem;margin:0 0 8px;color:#F4F1EA}' +
+      '.sl-lead p{margin:0 auto 18px;max-width:46ch;color:#D9C7A3;line-height:1.55}' +
+      '.sl-lead form{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:520px;margin:0 auto}' +
+      '.sl-lead input{flex:1;min-width:220px;padding:13px 18px;border-radius:100px;border:1.5px solid rgba(244,241,234,.35);background:rgba(244,241,234,.08);color:#F4F1EA;font:inherit}' +
+      '.sl-lead input::placeholder{color:rgba(244,241,234,.6)}.sl-lead input:focus{outline:2px solid #9FC3B8;outline-offset:2px}' +
+      '.sl-lead button{border:0;border-radius:100px;background:#E96645;color:#fff;font:700 .95rem "DM Sans",system-ui,sans-serif;padding:13px 24px;cursor:pointer}' +
+      '.sl-lead .msg{flex-basis:100%;min-height:1.4em;margin:6px 0 0;color:#9FC3B8;font-size:.92rem}' +
+      '.sl-lead .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}';
+    document.head.appendChild(st);
+    var s = document.createElement('section'); s.className = 'sl-lead'; s.setAttribute('aria-label', 'Email signup');
+    s.innerHTML = '<h2>Get the locals’ list</h2><p>One email when new tours, events and shop drops go live around Wilmington and the beaches. Unsubscribe any time.</p>' +
+      '<form id="slLead" novalidate><label class="sr" for="slLeadEmail">Email address</label><input id="slLeadEmail" type="email" name="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required/><button type="submit">Sign me up</button><p class="msg" role="status" aria-live="polite"></p></form>';
+    var surf = document.querySelector('.sl-surf');
+    foot.parentNode.insertBefore(s, surf || foot);
+    var f = s.querySelector('form'), i = s.querySelector('input'), m = s.querySelector('.msg'), busy = false;
+    f.addEventListener('submit', function (e) {
+      e.preventDefault(); if (busy) return;
+      var v = (i.value || '').trim();
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)) { m.textContent = 'Please enter a valid email address.'; i.focus(); return; }
+      busy = true; m.textContent = 'Adding you to the list.';
+      fetch('https://formspree.io/f/xeevzzqd', { method: 'POST', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }, body: JSON.stringify({ email: v, list: 'Locals list', source: location.pathname, _subject: 'ShoreList locals list signup' }) })
+        .then(function (r) { if (!r.ok) throw new Error('bad'); m.textContent = 'You’re on the list. Talk soon.'; f.reset(); })
+        .catch(function () { m.textContent = 'That didn’t go through. Please try again in a moment.'; })
+        .then(function () { busy = false; });
+    });
+  }
+
+  function init() { build(); load(); leadBar(); ambient(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
