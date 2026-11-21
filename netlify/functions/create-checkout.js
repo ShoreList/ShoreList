@@ -1,7 +1,7 @@
 // ShoreList — Stripe Checkout Function
 // No npm dependencies — uses native fetch (Node 18+, Netlify default)
 
-const { corsHeaders, getTour, checkDateSlot, listCompleteSessions, capacityWindowStart } = require('./_shared.js');
+const { corsHeaders, getTour, checkDateSlot, listCompleteSessions, capacityWindowStart, reserveSlot, releaseSlot } = require('./_shared.js');
 
 // Free text typed by the guest: one line, no control characters, bounded length.
 const clean = (v, max) => String(v == null ? '' : v).replace(/[\u0000-\u001f\u007f]+/g, ' ').trim().slice(0, max);
@@ -86,8 +86,9 @@ exports.handler = async (event) => {
   const SLOT_CAP = CAPS[operatorId] || 25;
   // Count paid guests already booked on this tour, date and time. Fails CLOSED:
   // if Stripe cannot be read we refuse rather than risk overselling the slot.
+  let hold = null; // slot reservation (Netlify Blobs); null when Blobs is unavailable
+  const dateSlot = `${date}|${timeSlot}`;
   try {
-    const dateSlot = `${date}|${timeSlot}`;
     const sessions = await listCompleteSessions(STRIPE_KEY, capacityWindowStart());
     const bookedGuests = sessions
       .filter(s => s.metadata && s.metadata.operatorId === operatorId && s.metadata.dateSlot === dateSlot)
@@ -98,6 +99,13 @@ exports.handler = async (event) => {
     if (bookedGuests + qty > SLOT_CAP) {
       return bad('Not enough spots remain at that time for your party size — please pick a different time or reduce your party size.', 409);
     }
+    // Atomically reserve qty seats against paid guests plus other live holds, so two
+    // simultaneous checkouts cannot both pass the check above for the last seats.
+    const paidHoldIds = new Set(sessions.map(s => s.metadata && s.metadata.holdId).filter(Boolean));
+    const r = await reserveSlot(event, operatorId, dateSlot, qty, SLOT_CAP, bookedGuests, paidHoldIds);
+    if (!r.ok && r.reason === 'busy') return bad('That time is in high demand. Please try again in a moment.', 503);
+    if (!r.ok) return bad(r.left > 0 ? 'Not enough spots remain at that time for your party size — please pick a different time or reduce your party size.' : 'That time is now sold out — please choose a different date or time.', 409);
+    if (r.tracked) hold = r;
   } catch (e) {
     console.error('create-checkout: capacity check failed:', e.message);
     return bad('We could not check availability just now. Please try again in a moment.', 503);
@@ -123,6 +131,8 @@ exports.handler = async (event) => {
   p.set('success_url', `${siteUrl}/success?session_id={CHECKOUT_SESSION_ID}`);
   p.set('cancel_url', `${siteUrl}/things-to-do/${encodeURIComponent(tour.category)}`);
   p.set('payment_intent_data[receipt_email]', guestEmail);
+  // The session lives exactly as long as the seat hold, so an abandoned checkout frees its seats.
+  if (hold) p.set('expires_at', String(hold.expiresAt));
 
   const meta = {
     operatorId:    operatorId,
@@ -138,8 +148,9 @@ exports.handler = async (event) => {
     taxCents:      String(taxCents),
     notes:         clean(data.notes, 490),
     yearMonth:     yearMonth,
-    dateSlot:      `${date}|${timeSlot}`,
+    dateSlot:      dateSlot,
   };
+  if (hold) meta.holdId = hold.holdId;
 
   Object.entries(meta).forEach(([k, v]) => p.set(`metadata[${k}]`, v));
 
@@ -169,6 +180,7 @@ exports.handler = async (event) => {
 
   } catch (err) {
     console.error('create-checkout error:', err.message);
+    if (hold) await releaseSlot(event, operatorId, dateSlot, hold.holdId);
     return bad('Checkout could not be started. Please try again in a moment.', 500);
   }
 };

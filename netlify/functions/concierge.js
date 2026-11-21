@@ -1,6 +1,6 @@
 // ShoreList concierge: short, grounded answers. Links come from the client's
 // own search results, never from the model. 503 when no key, client falls back.
-const { corsHeaders, originAllowed, clientIp, rateLimit } = require('./_shared.js');
+const { corsHeaders, originAllowed, clientIp, rateLimitDurable, aiDailyCheck, AI_CAP_BODY } = require('./_shared.js');
 const MAX_BODY = 8000;      // bytes; a real request (question, 600 chars of context, 6 short options) is well under this
 const RATE = { max: 20, windowMs: 60000 }; // per IP, per warm instance: best effort only (see _shared.js)
 exports.handler = async (event) => {
@@ -11,7 +11,7 @@ exports.handler = async (event) => {
   if (!originAllowed(event)) return { statusCode: 403, headers, body: '{}' };
   const size = Buffer.byteLength(event.body || '', event.isBase64Encoded ? 'base64' : 'utf8');
   if (size > MAX_BODY) return { statusCode: 413, headers, body: '{}' };
-  const rl = rateLimit('ai:' + clientIp(event), RATE.max, RATE.windowMs);
+  const rl = await rateLimitDurable(event, 'ai:' + clientIp(event), RATE.max, RATE.windowMs);
   if (!rl.ok) return { statusCode: 429, headers: { ...headers, 'Retry-After': String(rl.retryAfter) }, body: JSON.stringify({ error: 'Too many requests' }) };
   const key = process.env.ANTHROPIC_API_KEY;
   if (!key) return { statusCode: 503, headers, body: JSON.stringify({ error: 'not configured' }) };
@@ -20,6 +20,7 @@ exports.handler = async (event) => {
   q = q.replace(/\s+/g, ' ').trim().slice(0, 300);
   if (mode !== 'report' && q.length < 2) return { statusCode: 400, headers, body: '{}' };
   if (mode === 'report' && ctx.length < 20) return { statusCode: 400, headers, body: '{}' };
+  if (!(await aiDailyCheck(event)).ok) return { statusCode: 429, headers: { ...headers, 'Retry-After': '3600' }, body: AI_CAP_BODY };
   const list = c.slice(0, 6).filter((x) => x && typeof x === 'object').map((x) => '- ' + String(x.title || '').slice(0, 80) + ': ' + String(x.sub || '').slice(0, 160)).join('\n');
   try {
     const r = await fetch('https://api.anthropic.com/v1/messages', {

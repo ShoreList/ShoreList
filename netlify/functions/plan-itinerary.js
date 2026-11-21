@@ -31,7 +31,7 @@ Rules:
 - Sound like a local friend wrote it
 - Never call the area the "Cape Fear coast"`;
 
-const { corsHeaders, originAllowed, clientIp, rateLimit } = require('./_shared.js');
+const { corsHeaders, originAllowed, clientIp, rateLimitDurable, aiDailyCheck, AI_CAP_BODY } = require('./_shared.js');
 const MAX_BODY = 4000;      // bytes; the form sends one field of at most 600 characters
 const RATE = { max: 5, windowMs: 60000 }; // per IP, per warm instance: best effort only (see _shared.js)
 
@@ -43,7 +43,7 @@ exports.handler = async (event) => {
   if (!originAllowed(event)) return { statusCode: 403, headers, body: JSON.stringify({ error: 'Forbidden' }) };
   const size = Buffer.byteLength(event.body || '', event.isBase64Encoded ? 'base64' : 'utf8');
   if (size > MAX_BODY) return { statusCode: 413, headers, body: JSON.stringify({ error: 'Request too large' }) };
-  const rl = rateLimit('ai:' + clientIp(event), RATE.max, RATE.windowMs);
+  const rl = await rateLimitDurable(event, 'ai:' + clientIp(event), RATE.max, RATE.windowMs);
   if (!rl.ok) return { statusCode: 429, headers: { ...headers, 'Retry-After': String(rl.retryAfter) }, body: JSON.stringify({ error: 'Too many requests. Please try again in a minute.' }) };
 
   const key = process.env.ANTHROPIC_API_KEY;
@@ -53,6 +53,8 @@ exports.handler = async (event) => {
   try { input = String((JSON.parse((event.isBase64Encoded ? Buffer.from(event.body || '', 'base64').toString('utf8') : event.body) || '{}') || {}).input || ''); } catch (e) {}
   input = input.replace(/\s+/g, ' ').trim().slice(0, 600);
   if (input.length < 3) return { statusCode: 400, headers, body: JSON.stringify({ error: 'Tell us a bit about your group' }) };
+
+  if (!(await aiDailyCheck(event)).ok) return { statusCode: 429, headers: { ...headers, 'Retry-After': '3600' }, body: AI_CAP_BODY };
 
   try {
     const res = await fetch('https://api.anthropic.com/v1/messages', {

@@ -256,7 +256,7 @@ ${hubSections}
 </div>
 </section>`;
 fs.writeFileSync('things-to-do/index.html', shell({
-  url: '/things-to-do', title: 'Things to Do in Wilmington, NC & the Beaches | ShoreList',
+  url: '/things-to-do', title: 'All Things to Do in Wilmington, NC: Tours & Rentals | ShoreList',
   desc: 'Things to do in Wilmington, NC, Wrightsville Beach, Carolina Beach and Kure Beach: tours, water sports, museums, rentals and local experiences, with live beach conditions.',
   image: SITE + '/og-category.jpg',
   lds: [
