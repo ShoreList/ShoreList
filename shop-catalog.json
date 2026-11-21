@@ -63,8 +63,8 @@
    "collection": "landmarks",
    "name": "The Airlie Oak Poster Tee",
    "url": "https://shorelist-shop.fourthwall.com/products/the-airlie-oak-poster-tee",
-   "img": "https://imgproxy.fourthwall.dev/0Moa8GD6nnPuScXDLvNYFvMdTIq7p5NLgYfUjFcPyAU/w:720/sm:1/enc/XblOqpMITwpEkXVH/3M4eyXJuUgczoxjZ/5eSaqajSonUkUYIe/znHiyLyp1ltDwdKp/wTmzpxO2gr6SWo57/QYxUJCdAV_PwygDy/LYZh-Y7j73frM2ed/xKxjYcTqpmYF8A4d/021SQDjNg6u2V0lD/GYWR_ib3HJ_6J11u/uTlrFF8vIPDi-nZC/Kt6xl9lC_hOuMFbg/7r2lqIttydntQkNp/V1tubbB3ucCwiOT1/qGO7KLLAUdA.jpg",
-   "alt": "Ivory heavyweight tee printed with a vintage-style poster of the Airlie Oak",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-tee_1000x.webp",
+   "alt": "Woman walking under mossy live oaks wearing the black Airlie Oak poster tee",
    "meta": "Vintage screenprint-style poster of Wilmington’s great live oak on a heavyweight garment-dyed tee.",
    "cta": "Choose options and buy",
    "price": 48,
@@ -72,15 +72,17 @@
     "riverwalk"
    ],
    "cut": "unisex",
-   "store": "fourthwall"
+   "store": "fourthwall",
+   "studio": "https://imgproxy.fourthwall.dev/0Moa8GD6nnPuScXDLvNYFvMdTIq7p5NLgYfUjFcPyAU/w:720/sm:1/enc/XblOqpMITwpEkXVH/3M4eyXJuUgczoxjZ/5eSaqajSonUkUYIe/znHiyLyp1ltDwdKp/wTmzpxO2gr6SWo57/QYxUJCdAV_PwygDy/LYZh-Y7j73frM2ed/xKxjYcTqpmYF8A4d/021SQDjNg6u2V0lD/GYWR_ib3HJ_6J11u/uTlrFF8vIPDi-nZC/Kt6xl9lC_hOuMFbg/7r2lqIttydntQkNp/V1tubbB3ucCwiOT1/qGO7KLLAUdA.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-tee_1920x.webp"
   },
   {
    "id": "airlie-oak-crewneck",
    "collection": "landmarks",
    "name": "The Airlie Oak Embroidered Crewneck",
    "url": "https://shorelist-shop.fourthwall.com/products/the-airlie-oak-embroidered-crewneck",
-   "img": "https://imgproxy.fourthwall.dev/gvkjYCy2ARGqiUAd3Ma5tgaUKLgFF-fI8XAC424yDbM/w:720/sm:1/enc/ZRAWkba93sQrD4Y4/0dQAngX9oculu4LT/8NASxILWnChLU2Mr/bw_ty9p_rHnjTlj7/OGgxxvrUpMjBoXfo/222X2_vdQS9YOuwN/MvLITtjxAlp4Cuub/cEBEjmIqnsAS8qkA/gYVSYev6772U0cqH/rUMY9yM08jY0772T/kZ9RAgESWiI8vvaK/0NKOJuv3ss-jAyUw/krRazealfPQC89wE/PIf28QfVjcVuq4s3/6LP3UnfQyYQ.jpg",
-   "alt": "Crewneck sweatshirt with the Airlie Oak embroidered small on the chest in two greens",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-crewneck_1000x.webp",
+   "alt": "Man on a marsh dock wearing the navy Airlie Oak crewneck with the green oak embroidered on the chest",
    "meta": "The real Airlie Oak stitched small on the chest in two greens, with quiet engraved-style lettering. Organic cotton crewneck.",
    "cta": "Choose options and buy",
    "price": 84,
@@ -88,7 +90,9 @@
     "riverwalk"
    ],
    "cut": "unisex",
-   "store": "fourthwall"
+   "store": "fourthwall",
+   "studio": "https://imgproxy.fourthwall.dev/gvkjYCy2ARGqiUAd3Ma5tgaUKLgFF-fI8XAC424yDbM/w:720/sm:1/enc/ZRAWkba93sQrD4Y4/0dQAngX9oculu4LT/8NASxILWnChLU2Mr/bw_ty9p_rHnjTlj7/OGgxxvrUpMjBoXfo/222X2_vdQS9YOuwN/MvLITtjxAlp4Cuub/cEBEjmIqnsAS8qkA/gYVSYev6772U0cqH/rUMY9yM08jY0772T/kZ9RAgESWiI8vvaK/0NKOJuv3ss-jAyUw/krRazealfPQC89wE/PIf28QfVjcVuq4s3/6LP3UnfQyYQ.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-crewneck_1920x.webp"
   },
   {
    "id": "sunset-sail-tee",
