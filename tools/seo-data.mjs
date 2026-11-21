@@ -1,0 +1,280 @@
+// Search copy for the static "things to do" pages. Keep every claim plain and checkable:
+// no prices, no schedules, no operator promises that are not in category.html.
+export const PHOTO = (slug) => {
+  const f = { 'beach-chairs': 'beach-chairs-2', wellness: 'wellness-2' }[slug] || slug;
+  return 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-' + f;
+};
+
+export const TOWNS = [
+  { url: '/downtown', name: 'Downtown Wilmington' },
+  { url: '/wrightsville-beach', name: 'Wrightsville Beach' },
+  { url: '/carolina-beach', name: 'Carolina Beach' },
+  { url: '/kure-beach', name: 'Kure Beach' },
+];
+
+export const CATS = {
+  'ghost-tours': {
+    h1: 'Ghost Tours in Wilmington, NC',
+    title: 'Ghost Tours in Wilmington, NC | Haunted Walks Downtown',
+    desc: 'Ghost tours in Wilmington, NC: lantern-lit walks through the haunted historic district downtown. See what is bookable on ShoreList and plan your night.',
+    intro: 'Wilmington is one of the oldest port cities in North Carolina, and its historic district is full of the kind of history that makes a good ghost story: old cemeteries, antebellum homes, brick alleys and a working riverfront that dates to the 1700s. Ghost tours here are walking tours after dark, usually through the blocks between the Cape Fear River and Third Street.',
+    where: 'Downtown Wilmington historic district and the Riverwalk.',
+    faq: [
+      ['Where do Wilmington ghost tours take place?', 'Almost all of them are walking tours in the downtown historic district, within a few blocks of the Cape Fear River. Wear comfortable shoes, since the streets are brick and uneven in places.'],
+      ['Are ghost tours good for kids?', 'Most are story-driven walking tours rather than jump-scare attractions, so older kids usually enjoy them. Check the age guidance on each listing before you book.'],
+    ],
+    related: ['walking-tours', 'film-tours', 'museums'],
+  },
+  'walking-tours': {
+    h1: 'Walking & History Tours in Wilmington, NC',
+    title: 'Wilmington, NC Walking Tours | History & Architecture Tours',
+    desc: 'Guided walking and history tours of downtown Wilmington, NC and Carolina Beach. Architecture, port history and local stories, bookable on ShoreList.',
+    intro: 'The easiest way to understand Wilmington is on foot. The downtown historic district is one of the largest in North Carolina, with Colonial, Greek Revival, Italianate and Queen Anne homes on streets you can cover in an afternoon. Guided walking tours add the stories: the port, the railroad, the Civil War blockade runners and the people who built the city.',
+    where: 'Downtown Wilmington historic district and Carolina Beach.',
+    faq: [
+      ['How long is a walking tour of downtown Wilmington?', 'Most guided tours run between one and two hours and cover about a mile to a mile and a half at a relaxed pace.'],
+      ['What should I bring on a walking tour?', 'Comfortable shoes, water in the warm months and sun protection. Summer afternoons are hot and humid, so morning and evening tours are the most comfortable.'],
+    ],
+    related: ['ghost-tours', 'museums', 'bike-tours'],
+  },
+  museums: {
+    h1: 'Museums & Attractions in Wilmington, NC',
+    title: 'Wilmington, NC Museums & Attractions | Tickets & Hours',
+    desc: 'Museums and attractions in Wilmington, NC, including the Wilmington Railroad Museum. Find what to see downtown and at the beaches on ShoreList.',
+    intro: 'Wilmington packs a lot of museums into a small downtown: railroad history, a World War II battleship moored across the river, historic house museums and gardens. They make a good plan for a rainy day or a break from the beach, and most are within a short walk or drive of the Riverwalk.',
+    where: 'Downtown Wilmington, the riverfront and Fort Fisher near Kure Beach.',
+    faq: [
+      ['What is there to do in Wilmington, NC on a rainy day?', 'Museums are the best bet. The Wilmington Railroad Museum downtown is indoors and family friendly, and the historic house museums run guided tours in any weather.'],
+      ['Are Wilmington museums good for young children?', 'Yes. The Railroad Museum in particular is built around hands-on exhibits, model trains and real rail cars that kids can climb aboard.'],
+    ],
+    related: ['walking-tours', 'film-tours', 'ghost-tours'],
+  },
+  'film-tours': {
+    h1: 'Film & TV Location Tours in Wilmington, NC',
+    title: 'Wilmington, NC Film & TV Location Tours | One Tree Hill & More',
+    desc: 'Film and TV location tours in Wilmington, NC, the city behind One Tree Hill, Dawson\'s Creek and hundreds of productions. Plan a tour on ShoreList.',
+    intro: 'Wilmington has been a working film town since the 1980s, with a major studio complex and hundreds of film and television credits. Fans come for the locations from One Tree Hill and Dawson\'s Creek, and many of those spots are in walking distance of each other downtown and along the river.',
+    where: 'Downtown Wilmington, the Riverwalk and nearby neighborhoods.',
+    faq: [
+      ['What was filmed in Wilmington, NC?', 'Wilmington is best known for the TV series One Tree Hill and Dawson\'s Creek, along with a long list of feature films and series shot at the local studio and on downtown streets.'],
+      ['Can you visit filming locations on your own?', 'Yes, many exterior locations are public streets, parks and the Riverwalk. A guided tour adds the behind-the-scenes stories and saves time finding each spot.'],
+    ],
+    related: ['walking-tours', 'ghost-tours', 'museums'],
+  },
+  'fishing-charters': {
+    h1: 'Fishing Charters near Wilmington, NC',
+    title: 'Fishing Charters in Wilmington, Carolina Beach & Wrightsville Beach, NC',
+    desc: 'Inshore and offshore fishing charters from Carolina Beach and Wrightsville Beach, NC. What to expect, what bites when, and charters on ShoreList.',
+    intro: 'The waters around Wilmington offer two very different days of fishing. Inshore trips work the marshes, creeks and the Intracoastal Waterway for red drum, flounder and speckled trout. Offshore trips run out of the inlets for king mackerel, mahi and other bluewater fish, with longer runs toward the Gulf Stream on full-day charters.',
+    where: 'Charters leave from Carolina Beach and Wrightsville Beach marinas.',
+    faq: [
+      ['Inshore or offshore: which fishing charter should I book?', 'Inshore trips are shorter, calmer and better for kids and first timers. Offshore trips are longer, go into open ocean and target bigger fish. If anyone in your group gets seasick, start inshore.'],
+      ['Do I need a fishing license on a charter?', 'Licensed charter boats in North Carolina generally cover their passengers under the boat\'s license. Confirm with your captain when you book.'],
+    ],
+    related: ['wildlife-tours', 'sailboat-rides', 'kayak-tours'],
+  },
+  'kayak-tours': {
+    h1: 'Kayak Tours near Wilmington, NC',
+    title: 'Kayak Tours in Wilmington & Wrightsville Beach, NC',
+    desc: 'Guided kayak tours near Wilmington, NC: salt marshes, tidal creeks, cypress swamps and barrier islands. Find paddling trips on ShoreList.',
+    intro: 'Kayaking is one of the best ways to see the quiet side of the coast. Behind the barrier islands, protected tidal creeks and salt marshes wind for miles, and you can paddle to undeveloped islands such as Masonboro that no road reaches. Inland, blackwater creeks and cypress swamps offer shaded, flat-water paddling.',
+    where: 'Wrightsville Beach and Masonboro Island, Carolina Beach, and the creeks and lakes around Wilmington.',
+    faq: [
+      ['Do I need experience for a guided kayak tour?', 'No. Most guided tours use stable sit-on-top kayaks in protected water and start with a short lesson. Tides and wind matter here, which is the main reason to go with a guide.'],
+      ['When is the best time to kayak near Wilmington?', 'Spring and fall have the most comfortable temperatures. In summer, go early in the morning or near sunset to avoid the heat and afternoon thunderstorms.'],
+    ],
+    related: ['paddleboard', 'wildlife-tours', 'nature-walks'],
+  },
+  'river-cruises': {
+    h1: 'River Cruises in Wilmington, NC',
+    title: 'Cape Fear River Cruises in Wilmington, NC | Sunset & Sightseeing',
+    desc: 'Sunset and sightseeing river cruises on the Cape Fear River in downtown Wilmington, NC. See the skyline, the battleship and the bridges from the water.',
+    intro: 'Downtown Wilmington sits right on the Cape Fear River, and a cruise is the easiest way to see it: the Riverwalk, the Battleship North Carolina across the water and the bridges at sunset. Boats leave from the downtown waterfront, a short walk from restaurants and hotels.',
+    where: 'Downtown Wilmington waterfront on the Cape Fear River.',
+    faq: [
+      ['Where do Wilmington river cruises leave from?', 'From docks along the downtown Riverwalk, within walking distance of most downtown hotels and parking decks.'],
+      ['What is the best time for a river cruise?', 'Sunset cruises are the most popular because the sun goes down over the river side of downtown. Book ahead on summer and holiday weekends.'],
+    ],
+    related: ['sailboat-rides', 'walking-tours', 'wildlife-tours'],
+  },
+  'surf-lessons': {
+    h1: 'Surf Lessons at Wrightsville Beach, NC',
+    title: 'Surf Lessons in Wrightsville Beach & Carolina Beach, NC',
+    desc: 'Surf lessons near Wilmington, NC. Wrightsville Beach and Carolina Beach have gentle summer waves for beginners. Check live surf and lessons on ShoreList.',
+    intro: 'Wrightsville Beach is one of the best known surf towns on the East Coast, and in summer its small, gentle waves and sandy bottom make it a friendly place to learn. Lessons include a board and start on the sand before you paddle out. Carolina Beach, to the south, is another good place for a first lesson.',
+    where: 'Wrightsville Beach and Carolina Beach.',
+    faq: [
+      ['Is Wrightsville Beach good for beginner surfers?', 'Yes. Summer waves are usually small and the bottom is sand, which is ideal for learning. ShoreList shows live surf height and an estimated flag for each beach so you can pick your day.'],
+      ['What is the best time of year for surf lessons in North Carolina?', 'Late spring through early fall, when the water is warm enough to surf without a wetsuit. Mornings usually have the lightest wind.'],
+    ],
+    related: ['paddleboard', 'kayak-tours', 'beach-chairs'],
+  },
+  paddleboard: {
+    h1: 'Paddleboard Rentals & SUP Tours near Wilmington, NC',
+    title: 'Paddleboarding in Wrightsville Beach, NC | SUP Rentals & Lessons',
+    desc: 'Stand-up paddleboard rentals, lessons and tours near Wilmington, NC. Calm sound-side water at Wrightsville Beach is ideal for beginners.',
+    intro: 'The sound side of Wrightsville Beach is flat, protected water, which is why it has become a stand-up paddleboarding hub. You can rent a board and explore the channels and marsh on your own, take a lesson, or join a guided paddle. The calmest water is usually early in the morning.',
+    where: 'Sound-side Wrightsville Beach, Carolina Beach and local lakes.',
+    faq: [
+      ['Where is the calmest water for paddleboarding near Wilmington?', 'The sound side of Wrightsville Beach, behind the island, is protected from ocean swell. Watch for boat traffic and check the tide before you go.'],
+      ['Can beginners paddleboard here?', 'Yes. Start on a wide, stable board on a calm morning, kneel until you feel balanced, and wear the leash and a life jacket.'],
+    ],
+    related: ['kayak-tours', 'surf-lessons', 'wildlife-tours'],
+  },
+  'bike-tours': {
+    h1: 'Bike Tours in Wilmington, NC',
+    title: 'Bike Tours in Wilmington, NC & the Beaches',
+    desc: 'Guided bike tours in Wilmington, NC: historic districts, the riverfront and beach towns at an easy pace. Find rides on ShoreList.',
+    intro: 'Wilmington and its beach towns are flat, which makes them easy to see by bike. A guided ride covers more ground than a walking tour, from the downtown historic district and the riverfront to shaded neighborhoods and beach-town side streets.',
+    where: 'Downtown Wilmington, Wrightsville Beach and Pleasure Island.',
+    faq: [
+      ['Is Wilmington, NC bike friendly?', 'The terrain is flat and there are greenways and quiet residential streets, though downtown has brick streets and traffic. A guide will keep you on the comfortable routes.'],
+      ['Do bike tours include the bike?', 'Guided tours normally include a bike and helmet. Check each listing for what is provided.'],
+    ],
+    related: ['ebike-rentals', 'fat-bike-rentals', 'walking-tours'],
+  },
+  'wildlife-tours': {
+    h1: 'Dolphin & Wildlife Tours near Wilmington, NC',
+    title: 'Dolphin & Wildlife Tours in Wrightsville Beach & Carolina Beach, NC',
+    desc: 'Dolphin cruises, birding trips and wildlife tours near Wilmington, NC. See bottlenose dolphins, shorebirds and sea turtle nesting beaches.',
+    intro: 'Bottlenose dolphins live in the waters around Wilmington all year, and they are often seen in the inlets and the Intracoastal Waterway. Wildlife tours by boat or kayak also visit undeveloped barrier islands where shorebirds nest and sea turtles come ashore in summer.',
+    where: 'Wrightsville Beach, Masonboro Island, Carolina Beach and Fort Fisher.',
+    faq: [
+      ['Can you see dolphins near Wilmington, NC?', 'Yes. Bottlenose dolphins are common in the inlets, the sound and just off the beaches. Sightings are frequent but never guaranteed.'],
+      ['When do sea turtles nest on the local beaches?', 'Loggerhead nesting season runs through the summer months. Nests are marked and protected, so keep your distance and fill in holes on the beach.'],
+    ],
+    related: ['kayak-tours', 'nature-walks', 'sailboat-rides'],
+  },
+  'ebike-rentals': {
+    h1: 'E-Bike Rentals near Wilmington, NC',
+    title: 'E-Bike Rentals in Wrightsville Beach, Carolina Beach & Wilmington, NC',
+    desc: 'Electric bike rentals near Wilmington, NC. Cover the beach towns and island neighborhoods without the effort. Find rentals on ShoreList.',
+    intro: 'An electric bike turns a hot, flat beach town into an easy afternoon. With pedal assist you can ride the length of the island, reach the quieter beach accesses and skip the hunt for parking.',
+    where: 'Wrightsville Beach, Carolina Beach, Kure Beach and Wilmington.',
+    faq: [
+      ['Do I need a license to ride an e-bike in North Carolina?', 'Standard pedal-assist e-bikes do not require a driver\'s license. Rental shops set their own minimum rider age, so check before you book.'],
+      ['Where can I ride an e-bike at the beach?', 'On streets and bike paths. Rules for riding on the sand and on boardwalks vary by town, so ask the rental shop what is allowed.'],
+    ],
+    related: ['bike-tours', 'golf-cart-rentals', 'scooter-rentals'],
+  },
+  'scooter-rentals': {
+    h1: 'Scooter Rentals near Wilmington, NC',
+    title: 'Scooter Rentals in Carolina Beach & Wilmington, NC',
+    desc: 'Scooter rentals near Wilmington, NC for getting around the beach towns at your own pace. Find rentals on ShoreList.',
+    intro: 'Scooters are a simple way to get around a beach town: easy to park, quick for short hops between the beach, the boardwalk and dinner.',
+    where: 'Carolina Beach, Kure Beach, Wrightsville Beach and downtown Wilmington.',
+    faq: [
+      ['Do I need a license to rent a scooter?', 'It depends on the type of scooter and its engine size. Rental shops will tell you the license and age requirements for each model.'],
+      ['Are scooters allowed on beach-town roads?', 'Street-legal scooters are allowed on local roads. Follow posted speed limits and wear a helmet.'],
+    ],
+    related: ['golf-cart-rentals', 'ebike-rentals', 'bike-tours'],
+  },
+  'fat-bike-rentals': {
+    h1: 'Fat Bike Rentals near Wilmington, NC',
+    title: 'Fat Tire Beach Bike Rentals near Wilmington, NC',
+    desc: 'Fat tire bike rentals for riding the sand near Wilmington, NC. Wide tires built for the beach. Find rentals on ShoreList.',
+    intro: 'Fat bikes have wide, low-pressure tires that roll over sand that would stop a normal bike. The best riding is at low tide, on the firm sand near the water.',
+    where: 'Carolina Beach, Kure Beach and Wrightsville Beach.',
+    faq: [
+      ['When is the best time to ride a bike on the beach?', 'Within a couple of hours of low tide, when there is a wide band of hard-packed sand. ShoreList shows the tide for each beach.'],
+      ['Are bikes allowed on the beach?', 'Rules vary by town and season. Ask the rental shop which stretches are open to bikes.'],
+    ],
+    related: ['bike-tours', 'ebike-rentals', 'beach-chairs'],
+  },
+  'sailboat-rides': {
+    h1: 'Sailboat Rides & Sunset Sails near Wilmington, NC',
+    title: 'Sailboat Rides & Sunset Sails in Wrightsville Beach, NC',
+    desc: 'Private and shared sailboat rides near Wilmington, NC. Sunset sails from Wrightsville Beach along the Intracoastal Waterway and the Atlantic.',
+    intro: 'A sail from Wrightsville Beach takes you through the Intracoastal Waterway, past the marshes and out toward the inlet. Sunset trips are the classic choice, and private charters are popular for proposals, anniversaries and small groups.',
+    where: 'Wrightsville Beach, with trips on the Intracoastal Waterway and the ocean.',
+    faq: [
+      ['How many people fit on a private sailing charter?', 'Many charter sailboats carry up to six passengers. Larger groups need a larger licensed vessel, so check capacity on each listing.'],
+      ['What should I bring on a sunset sail?', 'A light jacket, sunglasses and soft-soled shoes. It is cooler on the water than on shore, even in summer.'],
+    ],
+    related: ['river-cruises', 'wildlife-tours', 'beach-photography'],
+  },
+  'nature-walks': {
+    h1: 'Nature Walks & Guided Hikes near Wilmington, NC',
+    title: 'Nature Walks near Wilmington, NC | Carolina Beach State Park & More',
+    desc: 'Guided nature walks near Wilmington, NC: maritime forest, cypress swamps and Carolina Beach State Park, home of the wild Venus flytrap.',
+    intro: 'The Wilmington area is one of the few places on earth where Venus flytraps grow wild, and Carolina Beach State Park is the best place to see them. Guided walks also explore maritime forest, salt marsh boardwalks and cypress-lined lakes, all on flat, easy trails.',
+    where: 'Carolina Beach State Park, Fort Fisher, and parks and gardens around Wilmington.',
+    faq: [
+      ['Where can I see wild Venus flytraps?', 'Carolina Beach State Park has a short loop trail through flytrap habitat. The plants are small and protected by law, so look closely and never touch or remove them.'],
+      ['Are the trails near Wilmington difficult?', 'No. The coast is flat and most trails are short loops on sand or boardwalk. Bring water and insect repellent in the warm months.'],
+    ],
+    related: ['wildlife-tours', 'kayak-tours', 'walking-tours'],
+  },
+  'beach-photography': {
+    h1: 'Beach Photographers near Wilmington, NC',
+    title: 'Beach Photographers in Wrightsville Beach, Carolina Beach & Kure Beach, NC',
+    desc: 'Beach photography sessions near Wilmington, NC: family portraits, engagements and couples at golden hour. Find photographers on ShoreList.',
+    intro: 'A beach trip is when the whole family is finally in one place, which is why sunset portrait sessions are so popular here. Photographers work the hour before sunset, when the light is soft and the sand and sea oats glow.',
+    where: 'Wrightsville Beach, Carolina Beach, Kure Beach and Fort Fisher.',
+    faq: [
+      ['What time of day is best for beach photos?', 'The hour before sunset, often called golden hour. ShoreList shows today\'s sunset time for each beach.'],
+      ['What should we wear for beach family photos?', 'Soft, coordinated colors without large logos. Light fabrics move well in the breeze, and most families go barefoot.'],
+    ],
+    related: ['beach-picnics', 'sailboat-rides', 'beach-chairs'],
+  },
+  'beach-picnics': {
+    h1: 'Luxury Beach Picnics near Wilmington, NC',
+    title: 'Luxury Beach Picnics in Wrightsville Beach & Carolina Beach, NC',
+    desc: 'Private, fully set-up beach picnics near Wilmington, NC for proposals, birthdays and date nights. Find picnic experiences on ShoreList.',
+    intro: 'A styled beach picnic is set up before you arrive: low table, cushions, place settings and decor, timed for sunset. They are popular for proposals, anniversaries, birthdays and bachelorette weekends.',
+    where: 'Wrightsville Beach, Carolina Beach and Kure Beach.',
+    faq: [
+      ['Is alcohol allowed on the beaches near Wilmington?', 'Rules differ by town, and some beaches prohibit alcohol and glass entirely. Confirm the rules for your beach with the picnic host before you plan a toast.'],
+      ['What happens if it rains?', 'Weather policies vary by host. Most will reschedule for rain or high wind, so check the policy on each listing.'],
+    ],
+    related: ['beach-photography', 'beach-chairs', 'sailboat-rides'],
+  },
+  'beach-chairs': {
+    h1: 'Beach Chair & Umbrella Rentals near Wilmington, NC',
+    title: 'Beach Chair & Umbrella Rentals in Wrightsville, Carolina & Kure Beach, NC',
+    desc: 'Beach chair and umbrella rentals near Wilmington, NC, delivered and set up before you arrive. Plus beach gear to buy from the ShoreList Shop.',
+    intro: 'Skip hauling gear from the car. Beach rental services deliver chairs and umbrellas and set them up on the sand before you get there, then collect them at the end of the day. If you would rather own your setup, the ShoreList Shop carries chairs, umbrellas, towels and coolers.',
+    where: 'Wrightsville Beach, Carolina Beach and Kure Beach.',
+    faq: [
+      ['Can I buy beach chairs and umbrellas instead of renting?', 'Yes. The ShoreList Shop sells beach chairs, umbrellas, towels and coolers online.'],
+      ['Are tents and canopies allowed on the beach?', 'Each town sets its own rules on tents, canopies and where equipment can be placed. Check the town\'s beach rules before you bring a large shelter.'],
+    ],
+    related: ['beach-picnics', 'surf-lessons', 'golf-cart-rentals'],
+  },
+  'jet-ski-rentals': {
+    h1: 'Jet Ski Rentals near Wilmington, NC',
+    title: 'Jet Ski Rentals in Carolina Beach & Wrightsville Beach, NC',
+    desc: 'Jet ski rentals near Wilmington, NC at Carolina Beach and Wrightsville Beach. What you need to know before you ride, and rentals on ShoreList.',
+    intro: 'Jet skis are the fastest way to see the waterways behind the islands. Rentals usually launch on the sound side and run along the Intracoastal Waterway, with guided tours available for riders who want to see more.',
+    where: 'Carolina Beach and Wrightsville Beach.',
+    faq: [
+      ['Do I need a boating license to rent a jet ski in North Carolina?', 'North Carolina requires boater education for younger operators and sets a minimum age for personal watercraft. Rental companies explain the current requirements and provide a safety briefing.'],
+      ['Where can you ride a jet ski near Wilmington?', 'Mostly in the Intracoastal Waterway and the sounds behind the islands, within the area set by the rental company. Watch for no-wake zones.'],
+    ],
+    related: ['paddleboard', 'kayak-tours', 'fishing-charters'],
+  },
+  'golf-cart-rentals': {
+    h1: 'Golf Cart Rentals near Wilmington, NC',
+    title: 'Golf Cart Rentals in Carolina Beach & Kure Beach, NC',
+    desc: 'Golf cart rentals for Carolina Beach and Kure Beach, NC. The easy way to get around Pleasure Island. Find rentals on ShoreList.',
+    intro: 'On Pleasure Island, home to Carolina Beach and Kure Beach, street-legal golf carts are a favorite way to get around. They make short trips to the beach access, the boardwalk and dinner easy, and they are simpler to park than a car.',
+    where: 'Carolina Beach and Kure Beach.',
+    faq: [
+      ['Are golf carts street legal in Carolina Beach?', 'Registered, street-legal carts are allowed on town roads with lower speed limits. The driver needs a valid driver\'s license, and rental companies explain where carts can and cannot go.'],
+      ['Can I park a golf cart at the beach access?', 'Carts must use legal parking spaces and paid parking rules still apply in season. Check the town\'s current parking rules.'],
+    ],
+    related: ['ebike-rentals', 'scooter-rentals', 'beach-chairs'],
+  },
+  wellness: {
+    h1: 'Beach Yoga, Spa & Wellness near Wilmington, NC',
+    title: 'Beach Yoga, Spas & Wellness in Wilmington & Wrightsville Beach, NC',
+    desc: 'Beach yoga, massage, spas and wellness experiences near Wilmington, NC. Slow down on the coast with experiences from ShoreList.',
+    intro: 'The coast is a good place to slow down. Sunrise yoga on the sand, massage and spa days fit easily around a beach trip, and they are a calm option when the surf is rough or the weather turns.',
+    where: 'Wrightsville Beach, Carolina Beach, Kure Beach and Wilmington.',
+    faq: [
+      ['Where can I do yoga on the beach near Wilmington?', 'Beach yoga classes are usually held near sunrise or sunset when the sand is cool. Bring a towel or mat and water.'],
+      ['What can I do in Wilmington when the weather is bad?', 'Spas and studios are a good rainy-day plan, along with the museums downtown.'],
+    ],
+    related: ['beach-picnics', 'paddleboard', 'nature-walks'],
+  },
+};

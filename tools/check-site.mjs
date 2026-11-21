@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 const fails = [];
 const bad = (m) => fails.push(m);
-const pages = fs.readdirSync('.').filter((f) => f.endsWith('.html'));
+const pages = fs.readdirSync('.').filter((f) => f.endsWith('.html')).concat(fs.existsSync('things-to-do') ? fs.readdirSync('things-to-do').filter((f) => f.endsWith('.html')).map((f) => 'things-to-do/' + f) : []);
 const noindex = new Set(['404.html', 'offline.html', 'dashboard.html', 'success.html']);
 
 for (const f of pages) {
@@ -25,7 +25,7 @@ for (const j of ['shop-catalog.json', 'search-index.json', 'manifest.webmanifest
 const sm = fs.readFileSync('sitemap.xml', 'utf8');
 for (const m of sm.matchAll(/<loc>https:\/\/shorelist\.net(\/[^<]*)<\/loc>/g)) {
   const p = m[1] === '/' ? 'index.html' : m[1].slice(1) + '.html';
-  if (!fs.existsSync(p)) bad(`sitemap: ${m[1]} has no ${p}`);
+  if (!fs.existsSync(p) && !fs.existsSync(m[1].slice(1) + '/index.html')) bad(`sitemap: ${m[1]} has no ${p}`);
 }
 const cat = JSON.parse(fs.readFileSync('shop-catalog.json', 'utf8'));
 const ids = new Set();

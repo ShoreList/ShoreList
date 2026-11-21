@@ -100,7 +100,7 @@ exports.handler = async (event) => {
   p.set('mode', 'payment');
   p.set('customer_email', data.guestEmail || '');
   p.set('success_url', `${siteUrl}/success?session_id={CHECKOUT_SESSION_ID}`);
-  p.set('cancel_url', `${siteUrl}/category?cat=${encodeURIComponent(data.category || '')}`);
+  p.set('cancel_url', `${siteUrl}/things-to-do/${encodeURIComponent(data.category || '')}`);
   p.set('payment_intent_data[receipt_email]', data.guestEmail || '');
 
   const meta = {

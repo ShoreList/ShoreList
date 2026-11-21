@@ -9,9 +9,9 @@
 <link rel="canonical" href="https://shorelist.net/category"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>ShoreList — Wilmington, NC Coastal Experiences</title>
-<meta name="description" content="Explore local coastal experiences in Wilmington, NC — ghost tours with Sean Austin (Netflix), film & TV location tours, surf lessons, fishing charters, kayak tours, nature walks and more. Launching Summer 2026."/>
+<meta name="description" content="Explore local coastal experiences in Wilmington, NC — ghost tours with Sean Austin (Netflix), film & TV location tours, surf lessons, fishing charters, kayak tours, nature walks and more. Book direct with local operators."/>
 <meta property="og:title" content="ShoreList — Wilmington, NC Coastal Experiences"/>
-<meta property="og:description" content="Discover unforgettable local experiences across Wilmington and the NC beaches. Independent local operators. Secure Stripe checkout. Launching Summer 2026."/>
+<meta property="og:description" content="Discover unforgettable local experiences across Wilmington and the NC beaches. Independent local operators. Secure Stripe checkout."/>
 <meta property="og:type" content="website"/>
 <meta property="og:image" content="https://shorelist.net/og-category.jpg"/>
 <meta property="og:image:width" content="1200"/>
@@ -404,7 +404,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 <nav aria-label="Primary">
   <a href="/" class="nav-logo" aria-label="ShoreList home">Shore<span>List</span></a>
   <div class="nav-right">
-    <a href="/" class="nav-back">&#8592; All Experiences</a>
+    <a href="/things-to-do" class="nav-back">&#8592; All Things to Do</a>
     <a href="/events" class="nav-ev-link" style="font-size:0.78rem;font-weight:600;color:var(--coral);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;transition:color 0.2s;">Events Guide</a>
     <a href="/shore-picks" style="font-size:0.78rem;font-weight:600;color:var(--coral);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;transition:color 0.2s;">Shore Picks</a>
     <a href="/join" class="nav-join">List Your Business</a>
@@ -434,6 +434,8 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
   <a href="/" style="text-decoration:none;" aria-label="ShoreList home"><div class="foot-logo">Shore<span>List</span></div></a>
   <p class="foot-txt">&copy; 2026 ShoreList LLC &nbsp;&middot;&nbsp; Wilmington, NC &amp; the Beaches</p>
   <nav class="foot-links" aria-label="Footer" style="margin-top:14px;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;font-size:0.80rem;">
+    <a href="/things-to-do" style="color:rgba(245,232,203,0.62);text-decoration:none;">Things to Do</a>
+    <a href="/plan-your-trip" style="color:rgba(245,232,203,0.62);text-decoration:none;">Plan Your Trip</a>
     <a href="/" style="color:rgba(245,232,203,0.62);text-decoration:none;">Experiences</a>
     <a href="/events" style="color:rgba(245,232,203,0.62);text-decoration:none;">Events Guide</a>
     <a href="/shore-picks" style="color:rgba(245,232,203,0.62);text-decoration:none;">Shore Picks</a>
@@ -673,7 +675,7 @@ function pad(n){return String(n).padStart(2,'0');}
 
 /* FORM */
   // Calendar init - bookings coming soon
-function getCat(){return new URLSearchParams(window.location.search).get('cat')||'';}
+function getCat(){return window.__CAT||new URLSearchParams(window.location.search).get('cat')||'';}
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
 function renderMuseumsCategory(){
@@ -704,11 +706,11 @@ function renderMuseumsCategory(){
   container.innerHTML=h;
 }
 function renderPage(){
-  var cat=getCat(); var d=CAT_DATA[cat]; if(!d){window.location.replace('/#explore');return;}
-  document.title=d.title+' \u2014 ShoreList Wilmington, NC';
+  var cat=getCat(); var d=CAT_DATA[cat]; if(!d){window.location.replace('/things-to-do');return;}
+  if(!window.__CAT)document.title=d.title+' \u2014 ShoreList Wilmington, NC';
   document.body.setAttribute('data-cat',cat);
   document.getElementById('hico').innerHTML=d.icon;
-  document.getElementById('htitle').textContent=d.title;
+  document.getElementById('htitle').textContent=window.__H1||d.title;
   document.getElementById('hsub').textContent=d.sub;
   document.getElementById('hbc').textContent=d.title;
   if(cat==='museums'){renderMuseumsCategory();return;}
@@ -803,7 +805,7 @@ function renderPage(){
   for(var i=0;i<keys.length&&shown<8;i++){
     var k=keys[i]; if(k===cat) continue;
     var cd=CAT_DATA[k]; var hasOps=OPS[k]&&OPS[k].length>0; var liveNow=hasOps&&OPS[k].some(function(o){return o.live;});
-    h+='<a class="more-card" href="/category?cat='+esc(k)+'"><div class="more-ico">'+cd.icon+'</div><div class="more-name">'+esc(cd.title)+'</div>'+(liveNow?'<div class="more-live">Live Now</div>':hasOps?'<div class="more-live">Live Soon</div>':'')+'</a>';
+    h+='<a class="more-card" href="/things-to-do/'+esc(k)+'"><div class="more-ico">'+cd.icon+'</div><div class="more-name">'+esc(cd.title)+'</div>'+(liveNow?'<div class="more-live">Live Now</div>':hasOps?'<div class="more-live">Live Soon</div>':'')+'</a>';
     shown++;
   }
   h+='</div></div>';
@@ -923,8 +925,7 @@ document.addEventListener('DOMContentLoaded',renderPage);
 <script>
 /* Show paranormal banner when ghost-tours loaded */
 (function(){
-  var params=new URLSearchParams(window.location.search);
-  var cat=params.get('cat')||'';
+  var cat=getCat();
   if(cat==='ghost-tours'){
     var container=document.getElementById('mc')||document.getElementById('op-container')||document.querySelector('.sec-inner');
     if(container){
@@ -969,7 +970,7 @@ document.addEventListener('DOMContentLoaded',renderPage);
 
 /* Founding Partner banner when walking-tours loaded */
 (function(){
-  var cat=new URLSearchParams(window.location.search).get('cat')||'';
+  var cat=getCat();
   if(cat!=='walking-tours')return;
   function inject(tries){
     var container=document.getElementById('mc')||document.getElementById('op-container')||document.querySelector('.sec-inner');

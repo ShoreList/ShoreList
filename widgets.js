@@ -41,8 +41,8 @@
     function paint(d) {
       var tip;
       var wet = d.code >= 50, waves = d.wave != null ? d.wave * 3.281 : null;
-      if (wet) tip = 'Wet one. A museum or an evening <a href="/category?cat=ghost-tours">ghost walk</a> fits.';
-      else if (waves != null && waves >= 2) tip = 'Good swell. Try a <a href="/category?cat=surf-lessons">surf lesson</a>.';
+      if (wet) tip = 'Wet one. A museum or an evening <a href="/things-to-do/ghost-tours">ghost walk</a> fits.';
+      else if (waves != null && waves >= 2) tip = 'Good swell. Try a <a href="/things-to-do/surf-lessons">surf lesson</a>.';
       else if (d.temp < 55) tip = 'Layer up and see <a href="/shop">the coastal shop</a>, then a <a href="/events">local event</a>.';
       else tip = 'Easy beach day. Browse <a href="/category">experiences</a> or <a href="/shop">beach gear</a>.';
       cond.querySelector('.stats').innerHTML = '<b>' + Math.round(d.temp) + '&deg;F</b> ' + esc(WX(d.code)) + (d.wind != null ? ' &middot; wind ' + Math.round(d.wind) + ' mph' : '') + (waves != null ? ' &middot; waves ' + waves.toFixed(1) + ' ft' : '') + (d.sst != null ? ' &middot; water ' + Math.round(d.sst * 9 / 5 + 32) + '&deg;F' : '') + (d.set ? ' &middot; sunset ' + esc(t12(d.set)) : '');
@@ -51,8 +51,8 @@
     function paintWX(d) {
       var waves = d.waveFt, tip, wet = d.code >= 50;
       if (d.flag.level === 'red') tip = 'Rough water today. Stay out of the surf and see <a href="/category">things to do on land</a>.';
-      else if (wet) tip = 'Wet one. A museum or an evening <a href="/category?cat=ghost-tours">ghost walk</a> fits.';
-      else if (waves != null && waves >= 2) tip = 'Good swell. Try a <a href="/category?cat=surf-lessons">surf lesson</a>.';
+      else if (wet) tip = 'Wet one. A museum or an evening <a href="/things-to-do/ghost-tours">ghost walk</a> fits.';
+      else if (waves != null && waves >= 2) tip = 'Good swell. Try a <a href="/things-to-do/surf-lessons">surf lesson</a>.';
       else if (d.temp < 55) tip = 'Layer up and see <a href="/shop">the coastal shop</a>, then a <a href="/events">local event</a>.';
       else tip = 'Easy beach day. Browse <a href="/category">experiences</a> or <a href="/shop">beach gear</a>.';
       var col = { green: '#1fa35c', yellow: '#f2b705', red: '#d93025' }[d.flag.level];

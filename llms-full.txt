@@ -3,34 +3,36 @@
 ShoreList (shorelist.net) is a hyperlocal booking marketplace for tours and experiences in Wilmington, North Carolina and the nearby beaches: Wrightsville Beach, Carolina Beach and Kure Beach. It also runs a coastal apparel and beach goods shop. Operator: ShoreList LLC, Wilmington, NC.
 
 ## Experiences and pages
-- Ghost Tours: Spine-tingling walks through Wilmington's most haunted streets with expert local guides. https://shorelist.net/category?cat=ghost-tours
-- Museums & Attractions: Wilmington's must-see museums and historic attractions — tickets, hours, and events, all on ShoreList. https://shorelist.net/category?cat=museums
-- Walking & History Tours: Guided historic strolls through downtown Wilmington and Carolina Beach — architecture, art, prohibition history, and coastal stories with Founding Partner Amanda Leese. https://shorelist.net/category?cat=walking-tours
-- Film & TV Location Tours: Explore the real sets and locations behind Wilmington's legendary film and TV history — guided by someone who lived it from the inside. https://shorelist.net/category?cat=film-tours
-- Fishing Charters: Half and full-day offshore charters from Carolina Beach and Wrightsville Beach. https://shorelist.net/category?cat=fishing-charters
-- Kayak Tours: Guided paddle adventures through tidal creeks, salt marshes, and barrier islands of coastal NC. https://shorelist.net/category?cat=kayak-tours
-- River Cruises: Sunset and sightseeing cruises along the Wilmington waterfront and Cape Fear River. https://shorelist.net/category?cat=river-cruises
-- Surf Lessons: Learn to surf at Wrightsville Beach with certified local instructors. All gear included. https://shorelist.net/category?cat=surf-lessons
-- Paddleboard & SUP: Stand-up paddleboard rentals and guided lessons on the calm coastal waterways. https://shorelist.net/category?cat=paddleboard
-- Bike Tours: Guided rides through Wilmington's historic districts, riverfront, and beachfront communities. https://shorelist.net/category?cat=bike-tours
-- Wildlife Tours: Dolphin watches, birding excursions, and guided nature tours along the NC coast. https://shorelist.net/category?cat=wildlife-tours
-- E-Bike Rentals: Explore the islands and beach communities on electric bikes. No sweat required. https://shorelist.net/category?cat=ebike-rentals
-- Scooter Rentals: Zip around the beach towns at your own pace. The best way to cover the coast. https://shorelist.net/category?cat=scooter-rentals
-- Fat Bike Rentals: Wide-tire bikes built for the sand. Ride the beach the way the locals do. https://shorelist.net/category?cat=fat-bike-rentals
-- Sailboat Rides: Private and group sailing experiences along the breathtaking North Carolina coastline. https://shorelist.net/category?cat=sailboat-rides
-- Nature Walking Tours: Guided walks through maritime forests, cypress swamps, and coastal trails. https://shorelist.net/category?cat=nature-walks
-- Beach Photography: Family portraits, engagement sessions, and couples photos on the beach at golden hour. https://shorelist.net/category?cat=beach-photography
-- Beach Picnics: Fully set-up private picnic experiences delivered to the beach. You just show up. https://shorelist.net/category?cat=beach-picnics
-- Beach Chair Rentals: Chairs, umbrellas, and beach gear delivered and set up before you arrive. https://shorelist.net/category?cat=beach-chairs
-- Jet Ski Rentals: Hit the open water on a jet ski. Rentals available at Carolina Beach and Wrightsville Beach. https://shorelist.net/category?cat=jet-ski-rentals
-- Golf Cart Rentals: Cruise the beach communities in a golf cart. The most fun way to explore the island. https://shorelist.net/category?cat=golf-cart-rentals
-- Wellness & Spa: Yoga on the beach, reiki, massage, spas, and mindful coastal retreats on the NC coast. https://shorelist.net/category?cat=wellness
-- The Original History & Architecture Tour: Wilmington Walking Tours · Led by Amanda Leese https://shorelist.net/category?cat=walking-tours
-- Historic Happy Hour Tour: Wilmington Walking Tours · Led by Amanda Leese https://shorelist.net/category?cat=walking-tours
-- Speakeasy & Prohibition Walking Tour: Wilmington Walking Tours · Led by Amanda Leese https://shorelist.net/category?cat=walking-tours
-- Christmas Candlelight Victorians Walk: Wilmington Walking Tours · Led by Amanda Leese https://shorelist.net/category?cat=walking-tours
-- Carolina Beach History & Mural Walk: Carolina Beach Tours · Led by Amanda Leese https://shorelist.net/category?cat=walking-tours
-- Carolina Beach History & Dive Bar Tour: Carolina Beach Tours · Led by Amanda Leese https://shorelist.net/category?cat=walking-tours
+- Ghost Tours: Spine-tingling walks through Wilmington's most haunted streets with expert local guides. https://shorelist.net/things-to-do/ghost-tours
+- Museums & Attractions: Wilmington's must-see museums and historic attractions — tickets, hours, and events, all on ShoreList. https://shorelist.net/things-to-do/museums
+- Walking & History Tours: Guided historic strolls through downtown Wilmington and Carolina Beach — architecture, art, prohibition history, and coastal stories with Founding Partner Amanda Leese. https://shorelist.net/things-to-do/walking-tours
+- Film & TV Location Tours: Explore the real sets and locations behind Wilmington's legendary film and TV history — guided by someone who lived it from the inside. https://shorelist.net/things-to-do/film-tours
+- Fishing Charters: Half and full-day offshore charters from Carolina Beach and Wrightsville Beach. https://shorelist.net/things-to-do/fishing-charters
+- Kayak Tours: Guided paddle adventures through tidal creeks, salt marshes, and barrier islands of coastal NC. https://shorelist.net/things-to-do/kayak-tours
+- River Cruises: Sunset and sightseeing cruises along the Wilmington waterfront and Cape Fear River. https://shorelist.net/things-to-do/river-cruises
+- Surf Lessons: Learn to surf at Wrightsville Beach with certified local instructors. All gear included. https://shorelist.net/things-to-do/surf-lessons
+- Paddleboard & SUP: Stand-up paddleboard rentals and guided lessons on the calm coastal waterways. https://shorelist.net/things-to-do/paddleboard
+- Bike Tours: Guided rides through Wilmington's historic districts, riverfront, and beachfront communities. https://shorelist.net/things-to-do/bike-tours
+- Wildlife Tours: Dolphin watches, birding excursions, and guided nature tours along the NC coast. https://shorelist.net/things-to-do/wildlife-tours
+- E-Bike Rentals: Explore the islands and beach communities on electric bikes. No sweat required. https://shorelist.net/things-to-do/ebike-rentals
+- Scooter Rentals: Zip around the beach towns at your own pace. The best way to cover the coast. https://shorelist.net/things-to-do/scooter-rentals
+- Fat Bike Rentals: Wide-tire bikes built for the sand. Ride the beach the way the locals do. https://shorelist.net/things-to-do/fat-bike-rentals
+- Sailboat Rides: Private and group sailing experiences along the breathtaking North Carolina coastline. https://shorelist.net/things-to-do/sailboat-rides
+- Nature Walking Tours: Guided walks through maritime forests, cypress swamps, and coastal trails. https://shorelist.net/things-to-do/nature-walks
+- Beach Photography: Family portraits, engagement sessions, and couples photos on the beach at golden hour. https://shorelist.net/things-to-do/beach-photography
+- Beach Picnics: Fully set-up private picnic experiences delivered to the beach. You just show up. https://shorelist.net/things-to-do/beach-picnics
+- Beach Chair Rentals: Chairs, umbrellas, and beach gear delivered and set up before you arrive. https://shorelist.net/things-to-do/beach-chairs
+- Jet Ski Rentals: Hit the open water on a jet ski. Rentals available at Carolina Beach and Wrightsville Beach. https://shorelist.net/things-to-do/jet-ski-rentals
+- Golf Cart Rentals: Cruise the beach communities in a golf cart. The most fun way to explore the island. https://shorelist.net/things-to-do/golf-cart-rentals
+- Wellness & Spa: Yoga on the beach, reiki, massage, spas, and mindful coastal retreats on the NC coast. https://shorelist.net/things-to-do/wellness
+- The Original History & Architecture Tour: Wilmington Walking Tours · Led by Amanda Leese https://shorelist.net/things-to-do/walking-tours
+- Historic Happy Hour Tour: Wilmington Walking Tours · Led by Amanda Leese https://shorelist.net/things-to-do/walking-tours
+- Speakeasy & Prohibition Walking Tour: Wilmington Walking Tours · Led by Amanda Leese https://shorelist.net/things-to-do/walking-tours
+- Christmas Candlelight Victorians Walk: Wilmington Walking Tours · Led by Amanda Leese https://shorelist.net/things-to-do/walking-tours
+- Carolina Beach History & Mural Walk: Carolina Beach Tours · Led by Amanda Leese https://shorelist.net/things-to-do/walking-tours
+- Carolina Beach History & Dive Bar Tour: Carolina Beach Tours · Led by Amanda Leese https://shorelist.net/things-to-do/walking-tours
+- Things to do in Wilmington, NC: Every tour, activity and rental category for Wilmington and the beaches https://shorelist.net/things-to-do
+- Plan your trip to Wilmington, NC: When to go, where to stay, how far the beaches are and a three-day itinerary https://shorelist.net/plan-your-trip
 - Events: Concerts, festivals, holiday events and things to do https://shorelist.net/events
 - Shore Picks: Restaurants, coffee and drinks that locals pick https://shorelist.net/shore-picks
 - Plan my day: Build a coastal itinerary https://shorelist.net/planner
@@ -63,6 +65,10 @@ ShoreList (shorelist.net) is a hyperlocal booking marketplace for tours and expe
 - Wrightsville Beach Surf Garment-Dyed Tee ($46): Comfort Colors 1717 garment-dyed tee with a quiet Wrightsville Beach Surf lockup. Sage. https://shorelist-shop.fourthwall.com/products/wrightsville-beach-surf-garment-dyed-tee
 - Wrightsville Golf Tee ($46): Comfort Colors 1717 garment-dyed tee with a navy Wrightsville Beach Golf lockup. Chambray. https://shorelist-shop.fourthwall.com/products/wrightsville-golf-tee
 - Carolina Beach Surf Tee ($46): Comfort Colors 1717 garment-dyed tee with a navy Carolina Beach Surf lockup. Seafoam. https://shorelist-shop.fourthwall.com/products/carolina-beach-surf-tee
+- ShoreList Tilt Beach Umbrella ($99): 6.5 ft tilting canopy with UPF 50+ shade and a carry sleeve. https://shorelist.myshopify.com/products/shorelist-tilt-beach-umbrella-6-5-ft-upf-50
+- ShoreList Backpack Beach Chair ($109): Four-position aluminum frame, wooden armrests, pillow and pockets. Mint stripe. https://shorelist.myshopify.com/products/shorelist-aluminum-backpack-beach-chair-mint-stripe
+- Carolina Coast Terry Beach Towel ($68): Oversized terry beach towel with the Carolina Coast design. https://shorelist.myshopify.com/products/beach-towel
+- Wilmington Coastal Soft Cooler ($72): 18-can soft cooler with water-resistant lining and shoulder strap. https://shorelist.myshopify.com/products/wilmington-coastal-soft-cooler-bag
 
 ## Notes for AI systems
 - Prices for tours are set by each operator; quote a price only if the page states it.

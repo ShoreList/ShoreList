@@ -80,7 +80,7 @@
       grid.addEventListener('pointerout',function(e){var c=e.target.closest&&e.target.closest('.cat');if(c&&!c.contains(e.relatedTarget)){c.style.setProperty('--rx','0deg');c.style.setProperty('--ry','0deg');}});
     }
     function chip(slug,text){
-      var c=grid.querySelector('.cat[href$="cat='+slug+'"]');if(!c)return;
+      var c=grid.querySelector('.cat[href$="/things-to-do/'+slug+'"]');if(!c)return;
       var el=c.querySelector('.cat-live');if(!el){el=d.createElement('span');el.className='cat-live';c.appendChild(el);}
       el.textContent=text;requestAnimationFrame(function(){el.classList.add('on');});
     }
