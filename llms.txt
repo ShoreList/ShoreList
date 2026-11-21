@@ -10,6 +10,7 @@
 - [Carolina Beach](https://shorelist.net/carolina-beach)
 - [Kure Beach](https://shorelist.net/kure-beach)
 - [Events](https://shorelist.net/events): dated local events, updated regularly
+- [Wilmington weather](https://shorelist.net/wilmington-weather): live current conditions, hourly and 7-day forecast, beach, surf and tide report
 - [AI trip planner](https://shorelist.net/planner)
 - [Map](https://shorelist.net/map)
 - [Join as an operator](https://shorelist.net/join)

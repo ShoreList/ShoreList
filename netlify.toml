@@ -90,6 +90,16 @@
   status = 200
 
 [[redirects]]
+  from = "/wilmington-weather"
+  to = "/wilmington-weather.html"
+  status = 200
+
+[[redirects]]
+  from = "/weather"
+  to = "/wilmington-weather"
+  status = 301
+
+[[redirects]]
   from = "/advertise"
   to = "/advertise.html"
   status = 200
