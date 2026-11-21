@@ -83,3 +83,66 @@ body{animation:lx-page .6s var(--lx-ease) both}
 a[href*="seandaustin"]{text-decoration:underline!important;text-underline-offset:3px}
 .cc-fab{min-height:44px;min-width:44px}
 .marquee-bar{background:#C9452A!important}
+
+/* ===== Photo tiles: real cinematic photography replaces icon circles ===== */
+[href$="cat=ghost-tours"],body[data-cat="ghost-tours"]{--ph:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-ghost-tours_800x.webp);--phl:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-ghost-tours_1920x.webp)}
+[href$="cat=walking-tours"],body[data-cat="walking-tours"]{--ph:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-walking-tours_800x.webp);--phl:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-walking-tours_1920x.webp)}
+[href$="cat=museums"],body[data-cat="museums"]{--ph:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-museums_800x.webp);--phl:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-museums_1920x.webp)}
+[href$="cat=film-tours"],body[data-cat="film-tours"]{--ph:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-film-tours_800x.webp);--phl:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-film-tours_1920x.webp)}
+[href$="cat=fishing-charters"],body[data-cat="fishing-charters"]{--ph:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-fishing-charters_800x.webp);--phl:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-fishing-charters_1920x.webp)}
+[href$="cat=kayak-tours"],body[data-cat="kayak-tours"]{--ph:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-kayak-tours_800x.webp);--phl:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-kayak-tours_1920x.webp)}
+[href$="cat=river-cruises"],body[data-cat="river-cruises"]{--ph:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-river-cruises_800x.webp);--phl:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-river-cruises_1920x.webp)}
+[href$="cat=surf-lessons"],body[data-cat="surf-lessons"]{--ph:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-surf-lessons_800x.webp);--phl:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-surf-lessons_1920x.webp)}
+[href$="cat=paddleboard"],body[data-cat="paddleboard"]{--ph:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-paddleboard_800x.webp);--phl:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-paddleboard_1920x.webp)}
+[href$="cat=bike-tours"],body[data-cat="bike-tours"]{--ph:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-bike-tours_800x.webp);--phl:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-bike-tours_1920x.webp)}
+[href$="cat=wildlife-tours"],body[data-cat="wildlife-tours"]{--ph:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-wildlife-tours_800x.webp);--phl:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-wildlife-tours_1920x.webp)}
+[href$="cat=ebike-rentals"],body[data-cat="ebike-rentals"]{--ph:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-ebike-rentals_800x.webp);--phl:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-ebike-rentals_1920x.webp)}
+[href$="cat=scooter-rentals"],body[data-cat="scooter-rentals"]{--ph:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-scooter-rentals_800x.webp);--phl:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-scooter-rentals_1920x.webp)}
+[href$="cat=fat-bike-rentals"],body[data-cat="fat-bike-rentals"]{--ph:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-fat-bike-rentals_800x.webp);--phl:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-fat-bike-rentals_1920x.webp)}
+[href$="cat=sailboat-rides"],body[data-cat="sailboat-rides"]{--ph:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-sailboat-rides_800x.webp);--phl:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-sailboat-rides_1920x.webp)}
+[href$="cat=nature-walks"],body[data-cat="nature-walks"]{--ph:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-nature-walks_800x.webp);--phl:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-nature-walks_1920x.webp)}
+[href$="cat=beach-photography"],body[data-cat="beach-photography"]{--ph:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-beach-photography_800x.webp);--phl:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-beach-photography_1920x.webp)}
+[href$="cat=beach-picnics"],body[data-cat="beach-picnics"]{--ph:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-beach-picnics_800x.webp);--phl:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-beach-picnics_1920x.webp)}
+[href$="cat=beach-chairs"],body[data-cat="beach-chairs"]{--ph:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-beach-chairs-2_800x.webp);--phl:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-beach-chairs-2_1920x.webp)}
+[href$="cat=jet-ski-rentals"],body[data-cat="jet-ski-rentals"]{--ph:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-jet-ski-rentals_800x.webp);--phl:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-jet-ski-rentals_1920x.webp)}
+[href$="cat=golf-cart-rentals"],body[data-cat="golf-cart-rentals"]{--ph:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-golf-cart-rentals_800x.webp);--phl:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-golf-cart-rentals_1920x.webp)}
+[href$="cat=wellness"],body[data-cat="wellness"]{--ph:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-wellness-2_800x.webp);--phl:url(https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-wellness-2_1920x.webp)}
+#explore .cats-grid{grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:14px}
+#explore .cats-grid .cat{position:relative;aspect-ratio:4/5;padding:0;border:0;border-radius:16px;overflow:hidden;background:#0b2e38 var(--ph) center/cover no-repeat;display:flex;align-items:flex-end;text-align:left;box-shadow:0 10px 28px -14px rgba(7,35,45,.55)}
+#explore .cats-grid .cat:hover{background:#0b2e38 var(--ph) center/cover no-repeat;border:0;box-shadow:0 22px 44px -16px rgba(7,35,45,.7);transform:translateY(-5px) scale(1.015)}
+#explore .cats-grid .cat::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,25,32,0) 40%,rgba(4,25,32,.82) 100%);transition:opacity .4s}
+#explore .cats-grid .cat .cat-ico{display:none}
+#explore .cats-grid .cat .cat-name{position:relative;z-index:1;color:#fff;font-weight:700;font-size:.95rem;line-height:1.2;padding:14px 38px 14px 14px;text-shadow:0 2px 12px rgba(0,0,0,.45)}
+#explore .cats-grid .cat:hover .cat-name{color:#fff}
+#explore .cats-grid .cat::after{color:#fff;bottom:12px;right:14px;opacity:.9;transform:none}
+@media(max-width:700px){#explore .cats-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
+/* category page hero photo */
+body[data-cat] .hero{background:linear-gradient(180deg,rgba(4,25,32,.45) 0%,rgba(4,25,32,.88) 100%),var(--phl) center/cover no-repeat!important}
+body[data-cat] .hero .hero-title,body[data-cat] .hero h1,body[data-cat] .hero .hero-sub,body[data-cat] .hero-bc,body[data-cat] .hero-bc a{color:#fff!important}
+body[data-cat] #hico{display:none}
+
+/* ===== Beach flags: crisp, flat, premium (replaces the glossy 3D render) ===== */
+.flagwrap{width:92px;height:78px}
+.flagwrap .pole{left:7px;top:2px;width:3px;height:76px;border-radius:2px;background:linear-gradient(90deg,#d8d0bd,#8f8671 60%,#cfc6b0)}
+.flagwrap .pole::before{content:"";position:absolute;left:-2.5px;top:-5px;width:8px;height:8px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff3c4,#c9a24a 70%)}
+.flagwrap .flagcloth{left:10px;top:5px;width:76px;height:48px;border-radius:0;box-shadow:none;transform-origin:left center;
+ background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.10) 0 6px,rgba(0,0,0,.07) 6px 12px);
+ -webkit-mask:none;clip-path:polygon(0 0,12% 3%,25% 0,38% 3%,50% 0,63% 3%,75% 0,88% 3%,100% 0,100% 100%,88% 97%,75% 100%,63% 97%,50% 100%,38% 97%,25% 100%,12% 97%,0 100%);
+ animation:lx-flag var(--dur,2.4s) ease-in-out infinite}
+.flagwrap .flagcloth::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.28),inset 0 -10px 18px -12px rgba(0,0,0,.35)}
+@keyframes lx-flag{0%,100%{clip-path:polygon(0 0,12% 3%,25% 0,38% 3%,50% 0,63% 3%,75% 0,88% 3%,100% 0,100% 100%,88% 97%,75% 100%,63% 97%,50% 100%,38% 97%,25% 100%,12% 97%,0 100%)}
+ 50%{clip-path:polygon(0 0,12% 0,25% 4%,38% 0,50% 4%,63% 0,75% 4%,88% 0,100% 4%,100% 96%,88% 100%,75% 96%,63% 100%,50% 96%,38% 100%,25% 96%,12% 100%,0 100%)}}
+.f-green{background-color:#17935a}.f-yellow{background-color:#EDB10A}.f-red{background-color:#C92A20}
+@media(prefers-reduced-motion:reduce){.flagwrap .flagcloth{animation:none}}
+/* photo tiles: glass edge, pointer-tracked light and tilt, live "right now" chip */
+#explore .cats-grid{perspective:1200px}
+#explore .cats-grid .cat{transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s;will-change:transform;outline:1px solid rgba(255,255,255,.14);outline-offset:-1px}
+#explore .cats-grid .cat:hover{transform:translateY(-5px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(1.02)}
+#explore .cats-grid .cat .cat-sheen{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .4s;background:radial-gradient(220px circle at var(--mx,50%) var(--my,0%),rgba(255,236,196,.34),rgba(255,236,196,0) 62%);mix-blend-mode:screen}
+#explore .cats-grid .cat:hover .cat-sheen{opacity:1}
+#explore .cats-grid .cat .cat-live{position:absolute;top:10px;left:10px;z-index:1;display:inline-flex;align-items:center;gap:6px;padding:5px 10px 5px 8px;border-radius:100px;font:600 .68rem/1 "DM Sans",system-ui,sans-serif;letter-spacing:.02em;color:#fff;background:rgba(7,35,45,.55);-webkit-backdrop-filter:blur(10px) saturate(1.4);backdrop-filter:blur(10px) saturate(1.4);border:1px solid rgba(255,255,255,.22);opacity:0;transform:translateY(-4px);transition:opacity .6s,transform .6s}
+#explore .cats-grid .cat .cat-live.on{opacity:1;transform:none}
+#explore .cats-grid .cat .cat-live::before{content:"";width:6px;height:6px;border-radius:50%;background:#7CF0C0;box-shadow:0 0 0 0 rgba(124,240,192,.7);animation:lx-pulse 2.2s infinite}
+@keyframes lx-pulse{70%{box-shadow:0 0 0 7px rgba(124,240,192,0)}100%{box-shadow:0 0 0 0 rgba(124,240,192,0)}}
+@media(prefers-reduced-motion:reduce){#explore .cats-grid .cat{transform:none!important}#explore .cats-grid .cat .cat-live::before{animation:none}}
+@media(hover:none){#explore .cats-grid .cat .cat-sheen{display:none}}
