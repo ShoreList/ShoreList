@@ -1,33 +1,100 @@
+# Disallows are repeated in every group because a crawler obeys only its most specific group.
+
 User-agent: *
 Allow: /
 Disallow: /dashboard
 Disallow: /success
+Disallow: /guide-success
+Disallow: /netlify/
+Disallow: /data/
+
+User-agent: Googlebot
+Allow: /
+Disallow: /dashboard
+Disallow: /success
+Disallow: /guide-success
+Disallow: /netlify/
+Disallow: /data/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /dashboard
+Disallow: /success
+Disallow: /guide-success
+Disallow: /netlify/
+Disallow: /data/
 
 User-agent: GPTBot
 Allow: /
+Disallow: /dashboard
+Disallow: /success
+Disallow: /guide-success
+Disallow: /netlify/
+Disallow: /data/
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /dashboard
+Disallow: /success
+Disallow: /guide-success
+Disallow: /netlify/
+Disallow: /data/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /dashboard
+Disallow: /success
+Disallow: /guide-success
+Disallow: /netlify/
+Disallow: /data/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /dashboard
+Disallow: /success
+Disallow: /guide-success
+Disallow: /netlify/
+Disallow: /data/
 
 User-agent: Claude-SearchBot
 Allow: /
+Disallow: /dashboard
+Disallow: /success
+Disallow: /guide-success
+Disallow: /netlify/
+Disallow: /data/
 
 User-agent: Claude-User
 Allow: /
+Disallow: /dashboard
+Disallow: /success
+Disallow: /guide-success
+Disallow: /netlify/
+Disallow: /data/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /dashboard
+Disallow: /success
+Disallow: /guide-success
+Disallow: /netlify/
+Disallow: /data/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /dashboard
+Disallow: /success
+Disallow: /guide-success
+Disallow: /netlify/
+Disallow: /data/
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /dashboard
+Disallow: /success
+Disallow: /guide-success
+Disallow: /netlify/
+Disallow: /data/
 
 Sitemap: https://shorelist.net/sitemap.xml
+# LLM-readable site summary: https://shorelist.net/llms.txt

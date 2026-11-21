@@ -13,3 +13,4 @@ jobs:
           node-version: 22
       - run: node tools/check-site.mjs
       - run: node --test tools/feeds/feeds.test.mjs
+      - run: node --test tools/indexnow-ping.test.mjs

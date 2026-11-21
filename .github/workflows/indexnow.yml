@@ -1,0 +1,33 @@
+name: indexnow
+on:
+  push:
+    branches: [main]
+    paths: ['*.html', 'sitemap.xml', 'events-data.json', 'events/**', 'things-to-do/**']
+  workflow_run:
+    workflows: [refresh-events]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      all:
+        description: Ping every sitemap URL
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # Give Netlify time to publish so the key file and pages are live when the engines fetch them.
+      - run: sleep 90
+      - name: Ping IndexNow
+        continue-on-error: true
+        run: node tools/indexnow-ping.mjs ${{ inputs.all && '--all' || '' }}
