@@ -90,6 +90,11 @@
   status = 200
 
 [[redirects]]
+  from = "/advertise"
+  to = "/advertise.html"
+  status = 200
+
+[[redirects]]
   from = "/shore-picks"
   to = "/shore-picks.html"
   status = 200
