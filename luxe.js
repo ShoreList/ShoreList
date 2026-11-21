@@ -89,8 +89,9 @@
       grid.querySelectorAll('.cat-live').forEach(function(n){n.remove();});
       var ft=c.wave!=null?c.wave*3.281:null,rain=c.code!=null&&c.code>=50,red=/red/i.test(String(c.flag||'')),now=Date.now(),set=c.set?new Date(c.set).getTime():0;
       if(rain){chip('museums','Rainy-day pick');chip('film-tours','Rainy-day pick');chip('wellness','Rainy-day pick');return;}
-      if(ft!=null&&ft>=2&&!red)chip('surf-lessons','Surf up · '+ft.toFixed(1)+' ft');
-      if(ft!=null&&ft<1.5){chip('paddleboard','Calm water now');chip('kayak-tours','Calm water now');}
+      var day=set&&now<set;
+      if(day&&ft!=null&&ft>=1.5&&ft<=3.5&&!red)chip('surf-lessons','Learner surf · '+ft.toFixed(1)+' ft');
+      if(day&&ft!=null&&ft<1.5){chip('paddleboard','Calm water now');chip('kayak-tours','Calm water now');}
       if(set&&now<set&&set-now<2.5*36e5){chip('river-cruises','Golden hour soon');chip('sailboat-rides','Golden hour soon');chip('beach-photography','Golden hour soon');}
       if(set&&now>set)chip('ghost-tours','After-dark favorite');
     });

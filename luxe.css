@@ -117,7 +117,7 @@ a[href*="seandaustin"]{text-decoration:underline!important;text-underline-offset
 #explore .cats-grid .cat::after{color:#fff;bottom:12px;right:14px;opacity:.9;transform:none}
 @media(max-width:700px){#explore .cats-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
 /* category page hero photo */
-body[data-cat] .hero{background:linear-gradient(180deg,rgba(4,25,32,.45) 0%,rgba(4,25,32,.88) 100%),var(--phl) center/cover no-repeat!important}
+body[data-cat] .hero{background:linear-gradient(180deg,rgba(4,25,32,.30) 0%,rgba(4,25,32,.78) 100%),var(--phl) center 58%/cover no-repeat!important}
 body[data-cat] .hero .hero-title,body[data-cat] .hero h1,body[data-cat] .hero .hero-sub,body[data-cat] .hero-bc,body[data-cat] .hero-bc a{color:#fff!important}
 body[data-cat] #hico{display:none}
 
@@ -126,7 +126,7 @@ body[data-cat] #hico{display:none}
 .flagwrap .pole{left:7px;top:2px;width:3px;height:76px;border-radius:2px;background:linear-gradient(90deg,#d8d0bd,#8f8671 60%,#cfc6b0)}
 .flagwrap .pole::before{content:"";position:absolute;left:-2.5px;top:-5px;width:8px;height:8px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff3c4,#c9a24a 70%)}
 .flagwrap .flagcloth{left:10px;top:5px;width:76px;height:48px;border-radius:0;box-shadow:none;transform-origin:left center;
- background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.10) 0 6px,rgba(0,0,0,.07) 6px 12px);
+ background-image:linear-gradient(180deg,rgba(255,255,255,.14),rgba(0,0,0,.08));
  -webkit-mask:none;clip-path:polygon(0 0,12% 3%,25% 0,38% 3%,50% 0,63% 3%,75% 0,88% 3%,100% 0,100% 100%,88% 97%,75% 100%,63% 97%,50% 100%,38% 97%,25% 100%,12% 97%,0 100%);
  animation:lx-flag var(--dur,2.4s) ease-in-out infinite}
 .flagwrap .flagcloth::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.28),inset 0 -10px 18px -12px rgba(0,0,0,.35)}
@@ -146,3 +146,8 @@ body[data-cat] #hico{display:none}
 @keyframes lx-pulse{70%{box-shadow:0 0 0 7px rgba(124,240,192,0)}100%{box-shadow:0 0 0 0 rgba(124,240,192,0)}}
 @media(prefers-reduced-motion:reduce){#explore .cats-grid .cat{transform:none!important}#explore .cats-grid .cat .cat-live::before{animation:none}}
 @media(hover:none){#explore .cats-grid .cat .cat-sheen{display:none}}
+/* the footer link nav must never inherit the fixed header rule (bare "nav" selectors on older pages) */
+footer nav,footer nav.foot-links{position:static;inset:auto;z-index:auto;padding:0;background:none;-webkit-backdrop-filter:none;backdrop-filter:none;border:0;justify-content:flex-start}
+body[data-cat] .hero-breadcrumb{color:#cfe9ee!important}body[data-cat] .hero-breadcrumb a{color:#FFB199!important}
+body[data-cat] .hm-badge{color:#fff!important;background:rgba(7,35,45,.5)!important;border:1px solid rgba(255,255,255,.28)!important;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+body[data-cat] .hero{min-height:420px}
