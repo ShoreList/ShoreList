@@ -71,3 +71,15 @@ body{animation:lx-page .6s var(--lx-ease) both}
  html::after{content:"";position:fixed;left:0;top:0;height:2px;width:100%;z-index:99990;background:linear-gradient(90deg,#E96645,#FFC95E);transform-origin:0 50%;transform:scaleX(0);animation:lx-read linear both;animation-timeline:scroll(root)}
  @keyframes lx-read{to{transform:scaleX(1)}}
 }
+
+/* accessibility: contrast-safe brand colors (WCAG AA) */
+.btn-fill,.btn-primary,.btn-book,.btn-sub,.btn-tix,.nav-cta,.navr a.cta,.tc-cta,.buy,.weekend-pill,.mq-item.hot,.ss-cta{background-color:#C9452A!important;color:#fff!important}
+.mq-item{--lx-mq:1}
+.feat-badge,.section-eyebrow,.wb-live,.fact-n,.wc-btn,.sec-label[style*="coral"],.hero-tag,.eyebrow{color:#FFB199!important}
+.sec-label{color:#B93C24}
+.stores a b{color:#B93C24!important}
+.feat-tag,.we-chip-date,.wc-desc,.fact-l{color:#cfd9d1!important}
+.wc-live-badge{background:#C62F2F!important}
+a[href*="seandaustin"]{text-decoration:underline!important;text-underline-offset:3px}
+.cc-fab{min-height:44px;min-width:44px}
+.marquee-bar{background:#C9452A!important}

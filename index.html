@@ -766,7 +766,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
         <div class="xcard xc-main">
           <div class="xcard-img" style="background:linear-gradient(145deg,#fffdf7,#f5e8cb);">
             <div class="xsf" id="sf"></div>
-            <img src="/wilmington-walking-tours.png" alt="Wilmington Walking Tours" style="position:absolute;inset:0;margin:auto;max-height:82%;max-width:80%;object-fit:contain;z-index:2;"/>
+            <img src="/wilmington-walking-tours.webp" width="440" height="366" alt="Wilmington Walking Tours" style="position:absolute;inset:0;margin:auto;max-height:82%;max-width:80%;object-fit:contain;z-index:2;"/>
             <div class="xbadge">Founding Partner</div>
             <div class="xprice">From $25</div>
           </div>
@@ -886,8 +886,8 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       <div>
         <div class="feat-card" style="background:#fff;border:1px solid rgba(10,77,92,0.12);">
           <div style="display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap;margin-bottom:18px;">
-            <img src="/wilmington-walking-tours.png" alt="Wilmington Walking Tours" style="height:78px;width:auto;" loading="lazy"/>
-            <img src="/carolina-beach-tours.png" alt="Carolina Beach Tours" style="height:78px;width:auto;" loading="lazy"/>
+            <img src="/wilmington-walking-tours.webp" width="440" height="366" alt="Wilmington Walking Tours" style="height:78px;width:auto;" loading="lazy"/>
+            <img src="/carolina-beach-tours.webp" width="440" height="371" alt="Carolina Beach Tours" style="height:78px;width:auto;" loading="lazy"/>
           </div>
           <div style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:16px;"><span style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#6b8483;">Follow along</span><a href="https://www.instagram.com/wilmingtonwalkingtours" target="_blank" rel="noopener noreferrer" aria-label="Wilmington Walking Tours on Instagram" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:rgba(10,77,92,0.08);color:#0A4D5C;text-decoration:none;"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/wilmingtonwalkingtours" target="_blank" rel="noopener noreferrer" aria-label="Wilmington Walking Tours on Facebook" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:rgba(10,77,92,0.08);color:#0A4D5C;text-decoration:none;"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M13.5 21v-7h2.3l.4-2.9h-2.7V9.3c0-.8.3-1.4 1.5-1.4h1.3V5.3c-.6-.1-1.4-.2-2.3-.2-2.3 0-3.8 1.4-3.8 3.9v1.9H7.7V14h2.2v7h3.6z"/></svg></a><a href="https://www.tiktok.com/@wilmingtonwalkingtours" target="_blank" rel="noopener noreferrer" aria-label="Wilmington Walking Tours on TikTok" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:rgba(10,77,92,0.08);color:#0A4D5C;text-decoration:none;"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M16.5 3c.3 2 1.6 3.6 3.5 3.9v2.4c-1.3 0-2.5-.4-3.5-1.1v5.9a5.3 5.3 0 1 1-5.3-5.3c.3 0 .6 0 .9.1v2.5a2.8 2.8 0 1 0 2 2.7V3h2.4z"/></svg></a></div>
           <div class="feat-times">
@@ -1004,7 +1004,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
     </div>
     <div class="wk-controls" aria-hidden="false">
       <button class="wk-arrow" id="wkPrev" aria-label="Previous experiences" type="button">&#8592;</button>
-      <div class="wk-dots" id="wkDots" role="tablist" aria-label="Carousel position"></div>
+      <div class="wk-dots" id="wkDots" role="group" aria-label="Carousel position"></div>
       <button class="wk-arrow" id="wkNext" aria-label="Next experiences" type="button">&#8594;</button>
     </div>
   </div>
@@ -1580,8 +1580,8 @@ window.addEventListener('scroll', function(){
 .wk-arrow{background:rgba(255,255,255,0.08);border:1px solid rgba(245,232,203,0.25);color:#F5E8CB;width:38px;height:38px;border-radius:50%;font-size:1rem;cursor:pointer;transition:all .2s;}
 .wk-arrow:hover{background:var(--coral);border-color:var(--coral);}
 .wk-dots{display:flex;gap:8px;}
-.wk-dot{width:8px;height:8px;border-radius:50%;background:rgba(245,232,203,0.28);border:none;padding:0;cursor:pointer;transition:all .25s;}
-.wk-dot.on{background:var(--coral);width:22px;border-radius:100px;}
+.wk-dot{position:relative;width:8px;height:8px;border-radius:50%;background:rgba(245,232,203,0.28);border:none;padding:0;cursor:pointer;transition:all .25s;}
+.wk-dot::after{content:"";position:absolute;inset:-9px}.wk-dot.on{background:var(--coral);width:22px;border-radius:100px;}
 @media(max-width:640px){.wk-arrow{display:none;}}
 </style>
 <script>

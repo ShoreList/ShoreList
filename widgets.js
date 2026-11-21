@@ -87,7 +87,7 @@
   function WXs(c) { return c === 0 ? 'clear' : c < 4 ? 'partly cloudy' : c < 50 ? 'foggy' : c < 70 ? 'rain' : c < 95 ? 'showers' : 'storms'; }
   window.__shoreCtx = setCtx;
   var fab = document.createElement('button');
-  fab.className = 'cc-fab'; fab.type = 'button'; fab.setAttribute('aria-expanded', 'false'); fab.setAttribute('aria-controls', 'cc');
+  fab.className = 'cc-fab'; fab.type = 'button'; fab.setAttribute('aria-label', 'Open Shore AI concierge'); fab.setAttribute('aria-expanded', 'false'); fab.setAttribute('aria-controls', 'cc');
   fab.innerHTML = '<span class="orb" aria-hidden="true"></span><span class="lbl">Shore AI</span>';
   var box = document.createElement('div');
   box.className = 'cc'; box.id = 'cc'; box.hidden = true; box.setAttribute('role', 'dialog'); box.setAttribute('aria-label', 'Shore AI concierge');
