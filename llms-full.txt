@@ -74,6 +74,7 @@ ShoreList (shorelist.net) is a hyperlocal booking marketplace for tours and expe
 - Kure Beach Can Cooler ($12): Navy can cooler with the town name, coordinates and compass. Printed both sides, foam lined. https://shorelist.myshopify.com/products/kure-beach-can-cooler
 - Wrightsville Beach Christmas Ornament 2026 ($18): Dated ceramic keepsake: a sloop under a striped Carolina sunset. ShoreList illustration. https://shorelist.myshopify.com/products/wrightsville-beach-christmas-ornament-2026
 - Carolina Beach Christmas Ornament 2026 ($18): Dated ceramic keepsake: a sloop under a striped Carolina sunset. ShoreList illustration. https://shorelist.myshopify.com/products/carolina-beach-christmas-ornament-2026
+- Kure Beach Christmas Ornament 2026 ($18): Dated ceramic keepsake: a sloop under a striped Carolina sunset. ShoreList illustration. https://shorelist.myshopify.com/products/kure-beach-christmas-ornament-2026
 - Coastal Christmas Can Cooler ($12): Evergreen stocking stuffer: Merry Christmas from Wilmington and the Carolina beaches. https://shorelist.myshopify.com/products/coastal-christmas-can-cooler-wilmington-nc
 
 ## Notes for AI systems
