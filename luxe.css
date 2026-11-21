@@ -193,3 +193,5 @@ kbd{font-size:.75rem}
 .foot-links a:hover{color:#FF9B7B!important}
 kbd{font-size:.75rem!important}
 a.wk-link,a.more,a.pc-link,a.c-link,a.c-dir{display:inline-block;padding:5px 0}
+/* audit: minimum readable size */
+.nav-op,.rv-meta,.eyebrow,.lbl,.wc-desc,.mf-tag,.rec-pill,.we-chip-date,.mp-meta,.bc-cams-btn,.feat-ra,.fs-step{font-size:max(.75rem,12px)!important}
