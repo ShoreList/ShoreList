@@ -420,24 +420,6 @@
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-crewneck_1920x.webp"
   },
   {
-   "id": "sunset-sail-tee",
-   "collection": "classics",
-   "name": "Sunset Sail Garment-Dyed Tee",
-   "url": "https://shorelist-shop.fourthwall.com/products/sunset-sail-garment-dyed-tee",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-sunset-sail-tee-v2_1000x.webp",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-sunset-sail-tee-v2_1920x.webp",
-   "alt": "Man coiling a rope on a sunny dock, seen from behind in the khaki Sunset Sail tee with the sunset badge on the back",
-   "meta": "Comfort Colors 1717 heavyweight. Khaki, Sandstone, Bay, Ivory. Pennant on the chest, the Sunset Sail badge large on the back: a sloop cut out of a striped Carolina sunset.",
-   "cta": "Choose options and buy",
-   "price": 48,
-   "scenes": [
-    "harbor-night",
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "fourthwall"
-  },
-  {
    "id": "pennant-dad-hat",
    "collection": "classics",
    "name": "Pennant Embroidered Dad Hat",
@@ -469,59 +451,6 @@
    "scenes": [
     "beach",
     "boardwalk"
-   ],
-   "cut": "unisex",
-   "store": "fourthwall"
-  },
-  {
-   "id": "sunset-sail-hoodie",
-   "collection": "classics",
-   "name": "Sunset Sail Relaxed Hoodie",
-   "url": "https://shorelist-shop.fourthwall.com/products/sunset-sail-relaxed-hoodie",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-sunset-sail-hoodie-v2_1000x.webp",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-sunset-sail-hoodie-v2_1920x.webp",
-   "alt": "Woman on a dock at sunset glancing over her shoulder in the black Sunset Sail hoodie with the sunset badge on the back",
-   "meta": "AS Colour 5161, 9.4 oz relaxed fit, lined hood with no drawcord. Forest, Black. Pennant on the chest, the Sunset Sail badge large on the back.",
-   "cta": "Choose options and buy",
-   "price": 74,
-   "scenes": [
-    "harbor-night",
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "fourthwall"
-  },
-  {
-   "id": "sunset-sail-crewneck",
-   "collection": "classics",
-   "name": "Sunset Sail Organic Crewneck",
-   "url": "https://shorelist-shop.fourthwall.com/products/sunset-sail-organic-crewneck",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-sunset-sail-crewneck-v2_1000x.webp",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-sunset-sail-crewneck-v2_1920x.webp",
-   "alt": "Man on the deck of a wooden sailboat at sunset, seen from behind in the black Sunset Sail crewneck with the sunset badge on the back",
-   "meta": "Stanley/Stella organic oversized crewneck, brushed organic cotton. Black, Navy. Pennant on the chest, the Sunset Sail badge large on the back.",
-   "cta": "Choose options and buy",
-   "price": 84,
-   "scenes": [
-    "harbor-night",
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "fourthwall"
-  },
-  {
-   "id": "sunset-sail-long-sleeve",
-   "collection": "classics",
-   "name": "Sunset Sail Garment-Dyed Long Sleeve",
-   "url": "https://shorelist-shop.fourthwall.com/products/sunset-sail-garment-dyed-long-sleeve",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-sunset-sail-long-sleeve-v2_1000x.webp",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-sunset-sail-long-sleeve-v2_1920x.webp",
-   "alt": "Woman walking the waterline at sunset, seen from behind in the black Sunset Sail long sleeve with the sunset badge on the back",
-   "meta": "Comfort Colors 6014 heavyweight garment-dyed long sleeve. Black, Navy. Pennant on the chest, the Sunset Sail badge large on the back.",
-   "cta": "Choose options and buy",
-   "price": 62,
-   "scenes": [
-    "beach"
    ],
    "cut": "unisex",
    "store": "fourthwall"
