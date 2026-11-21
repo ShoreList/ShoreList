@@ -54,7 +54,6 @@ const pages = [
   ['Wrightsville Beach', 'Surf, paddle and island life', '/wrightsville-beach', 'wrightsville beach surf paddle'],
   ['Carolina Beach', 'Boardwalk, fishing and beach days', '/carolina-beach', 'carolina beach boardwalk fishing'],
   ['Kure Beach', 'Quiet beach town and Fort Fisher', '/kure-beach', 'kure beach fort fisher'],
-  ['Wilmington Railroad Museum', 'Tickets and events at the museum', '/wilmington-railroad-museum', 'train railroad museum kids family'],
   ['List your business', 'Join ShoreList as a local operator', '/join', 'operator join list business partner vendor sell'],
   ['Join the waitlist', 'Get updates when new experiences go live', '/waitlist', 'waitlist signup notify email updates'],
   ['Legal and policies', 'Terms, privacy and refund policy', '/legal', 'terms privacy refund cancellation policy legal'],

@@ -55,7 +55,6 @@ ShoreList (shorelist.net) is a hyperlocal booking marketplace for tours and expe
 - Wrightsville Beach: Surf, paddle and island life https://shorelist.net/wrightsville-beach
 - Carolina Beach: Boardwalk, fishing and beach days https://shorelist.net/carolina-beach
 - Kure Beach: Quiet beach town and Fort Fisher https://shorelist.net/kure-beach
-- Wilmington Railroad Museum: Tickets and events at the museum https://shorelist.net/wilmington-railroad-museum
 - List your business: Join ShoreList as a local operator https://shorelist.net/join
 - Join the waitlist: Get updates when new experiences go live https://shorelist.net/waitlist
 - Legal and policies: Terms, privacy and refund policy https://shorelist.net/legal
