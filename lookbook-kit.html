@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="robots" content="noindex,nofollow"/><meta name="theme-color" content="#0E1F33"/>
+<title>Lookbook Kit | ShoreList</title>
+<meta name="description" content="Every ShoreList shop lookbook image, full size, for social posts and merch drops."/>
+<link rel="canonical" href="https://shorelist.net/lookbook-kit"/>
+<style>
+:root{--navy:#0E1F33;--sail:#F4F1EA;--sand:#D9C7A3;--glass:#9FC3B8;--red:#B5362F}
+*{box-sizing:border-box}
+body{margin:0;background:var(--navy);color:var(--sail);font-family:'DM Sans',system-ui,-apple-system,sans-serif;line-height:1.5}
+header{padding:28px 16px 8px;max-width:1200px;margin:0 auto}
+h1{font-family:'Playfair Display',Georgia,serif;font-size:1.9rem;margin:0 0 6px}
+header p{margin:0 0 10px;color:var(--sand);max-width:70ch}
+.bar{position:sticky;top:0;z-index:2;background:var(--navy);padding:10px 16px;border-bottom:1px solid rgba(244,241,234,.14)}
+.bar div{max-width:1200px;margin:0 auto;display:flex;gap:8px;overflow-x:auto}
+.bar a{flex:none;color:var(--sail);text-decoration:none;border:1px solid rgba(244,241,234,.3);border-radius:100px;padding:6px 14px;font-size:.9rem;white-space:nowrap}
+main{max-width:1200px;margin:0 auto;padding:8px 16px 60px}
+h2{font-family:'Playfair Display',Georgia,serif;font-size:1.35rem;margin:30px 0 4px;scroll-margin-top:64px}
+.count{color:var(--glass);font-size:.9rem;margin:0 0 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+figure{margin:0;background:rgba(244,241,234,.06);border:1px solid rgba(244,241,234,.14);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+figure img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;background:#162a44}
+figcaption{padding:10px 12px 12px;display:flex;flex-direction:column;gap:8px;flex:1}
+.nm{font-weight:700;font-size:.95rem}
+.pr{color:var(--glass);font-size:.88rem}
+.row{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
+.row a,.row button{flex:1;min-width:96px;text-align:center;font:inherit;font-size:.85rem;font-weight:700;border-radius:100px;padding:8px 10px;cursor:pointer;text-decoration:none}
+.row a{background:var(--red);color:#fff;border:1px solid var(--red)}
+.row button{background:transparent;color:var(--sail);border:1px solid rgba(244,241,234,.4)}
+#msg{padding:20px 0;color:var(--sand)}
+</style></head><body>
+<header>
+<h1>ShoreList Lookbook Kit</h1>
+<p>Every lookbook image in the shop, full size, for social posts and merch drops. Tap <b>Open full size</b>, then press and hold the picture (or right-click on a computer) and choose Save. <b>Copy link</b> copies the product page link for your caption.</p>
+</header>
+<nav class="bar" aria-label="Collections"><div id="nav"></div></nav>
+<main id="out"><p id="msg">Loading the lookbook…</p></main>
+<script>
+(async function(){
+  var out=document.getElementById('out'),nav=document.getElementById('nav');
+  function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+  try{
+    var d=await (await fetch('/shop-catalog.json',{cache:'no-store'})).json();
+    out.textContent='';
+    var total=0;
+    d.collections.forEach(function(c){
+      var items=d.items.filter(function(p){return p.collection===c.id&&p.lookbook});
+      if(!items.length)return;
+      total+=items.length;
+      var a=el('a',null,c.name+' ('+items.length+')');a.href='#'+c.id;nav.appendChild(a);
+      var h=el('h2',null,c.name);h.id=c.id;out.appendChild(h);
+      out.appendChild(el('p','count',items.length+(items.length===1?' image':' images')));
+      var g=el('div','grid');
+      items.forEach(function(p){
+        var f=el('figure');
+        var im=el('img');im.loading='lazy';im.alt=p.alt||p.name;im.src=p.img||p.lookbook;f.appendChild(im);
+        var cap=el('figcaption');
+        cap.appendChild(el('div','nm',p.name));
+        cap.appendChild(el('div','pr','$'+p.price));
+        var row=el('div','row');
+        var o=el('a',null,'Open full size');o.href=p.lookbook;o.target='_blank';o.rel='noopener';row.appendChild(o);
+        var b=el('button',null,'Copy link');b.type='button';
+        b.addEventListener('click',function(){
+          var done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy link'},1500)};
+          if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(p.url).then(done,function(){prompt('Copy this link',p.url)})}
+          else{prompt('Copy this link',p.url)}
+        });
+        row.appendChild(b);cap.appendChild(row);f.appendChild(cap);g.appendChild(f);
+      });
+      out.appendChild(g);
+    });
+    document.title='Lookbook Kit ('+total+') | ShoreList';
+  }catch(e){
+    document.getElementById('msg').textContent='Could not load the lookbook right now. Refresh to try again.';
+  }
+})();
+</script>
+</body></html>
