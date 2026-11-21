@@ -299,6 +299,23 @@
       ],
       "cut": "unisex",
       "store": "fourthwall"
+    },
+    {
+      "id": "wrightsville-surf-tee",
+      "collection": "shore-gear",
+      "name": "Wrightsville Beach Surf Garment-Dyed Tee",
+      "url": "https://shorelist-shop.fourthwall.com/products/wrightsville-beach-surf-garment-dyed-tee",
+      "img": "https://imgproxy.fourthwall.dev/rZbr1_hmRYf_BOSorm7iroKEF-AmpdWl-PTUHIq1Tao/w:1920/sm:1/enc/jkzjT-6i3JZXpf8h/BE3AH7bklvMb0bNN/hp_rN1U7v8W1LhOI/ZEL9hp0gU5UQQNXv/-Z1moAdwS0i1Yq5Q/KSk2SFyjxS50Qdkp/ZqnEIw480WP364MZ/dXN0rOVTkb6ZteqY/YbFvE6e3KIACkP8M/B1q2wOfQ3Q3dLw-W/MGi-tZ5RqmIUA_nt/cW2N-R0oCpXhdzsj/QG3l4_Z-Li3V1t5L/RYxm9w.webp",
+      "lookbook": "https://imgproxy.fourthwall.dev/rZbr1_hmRYf_BOSorm7iroKEF-AmpdWl-PTUHIq1Tao/w:1920/sm:1/enc/jkzjT-6i3JZXpf8h/BE3AH7bklvMb0bNN/hp_rN1U7v8W1LhOI/ZEL9hp0gU5UQQNXv/-Z1moAdwS0i1Yq5Q/KSk2SFyjxS50Qdkp/ZqnEIw480WP364MZ/dXN0rOVTkb6ZteqY/YbFvE6e3KIACkP8M/B1q2wOfQ3Q3dLw-W/MGi-tZ5RqmIUA_nt/cW2N-R0oCpXhdzsj/QG3l4_Z-Li3V1t5L/RYxm9w.webp",
+      "alt": "Man in a sage Wrightsville Beach Surf tee carrying a surfboard along the shore near the pier",
+      "meta": "Comfort Colors 1717 garment-dyed tee with a quiet Wrightsville Beach Surf lockup. Sage.",
+      "cta": "Choose options and buy",
+      "price": 46,
+      "scenes": [
+        "beach"
+      ],
+      "cut": "unisex",
+      "store": "fourthwall"
     }
   ],
   "scenes": [
