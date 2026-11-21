@@ -1,10 +1,21 @@
 // ShoreList — Get Bookings (Dashboard)
 // Password-protected endpoint that returns all bookings from Stripe
 
+const crypto = require('crypto');
+
+function safeEqual(a, b) {
+  const ha = crypto.createHash('sha256').update(String(a || '')).digest();
+  const hb = crypto.createHash('sha256').update(String(b || '')).digest();
+  return crypto.timingSafeEqual(ha, hb);
+}
+
 exports.handler = async (event) => {
   const headers = {
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
+    'Cache-Control': 'no-store',
+    'Access-Control-Allow-Origin': 'https://shorelist.net',
+    'Access-Control-Allow-Headers': 'Content-Type, X-Dashboard-Key',
+    'Vary': 'Origin',
   };
 
   if (event.httpMethod === 'OPTIONS') {
@@ -18,8 +29,9 @@ exports.handler = async (event) => {
     return { statusCode: 500, headers, body: JSON.stringify({ error: 'Not configured' }) };
   }
 
-  const { password } = event.queryStringParameters || {};
-  if (password !== DASH_PASS) {
+  // Password is sent in a header, never in the URL (URLs end up in logs and history).
+  const sent = (event.headers && (event.headers['x-dashboard-key'] || event.headers['X-Dashboard-Key'])) || '';
+  if (!safeEqual(sent, DASH_PASS)) {
     return { statusCode: 401, headers, body: JSON.stringify({ error: 'Unauthorized' }) };
   }
 

@@ -316,62 +316,14 @@ async function buildPlan() {
     </div>
   `;
 
-  var systemPrompt = `You are ShoreList's AI Trip Planner for Wilmington, NC and the surrounding beaches (Wrightsville Beach, Carolina Beach, Kure Beach). You build personalized day itineraries for visitors based on their interests and group.
-
-Available bookable experiences on ShoreList:
-- Film & TV Location Tours &#8212; Wilmywood Insider Tours, guided by a 20+ year film industry veteran (daytime & evening, downtown Wilmington) - category: film-tours
-- Ghost Tours / Historic Walking Tours (evening, downtown Wilmington) - category: ghost-tours
-- Surf Lessons at Carolina Beach or Wrightsville Beach - category: surf-lessons  
-- Coastal Carolina Nature Walks (Carolina Beach State Park) - category: nature-walks
-
-Other experiences available on ShoreList (coming soon / browse only):
-- Kayak Tours, Fishing Charters, River Cruises, Paddleboard/SUP
-- Bike Tours, Wildlife Tours, Beach Picnics, Beach Photography
-- Jet Ski Rentals, Golf Cart Rentals, Sailboat Rides, Wellness/Spa
-
-You must respond ONLY with valid JSON &#8212; no markdown, no backticks, no explanation outside the JSON.
-
-JSON format:
-{
-  "title": "Your Perfect [X] Day in Wilmington",
-  "narrative": "2-3 sentence personal intro for this specific group, warm and excited tone",
-  "items": [
-    {
-      "time": "9:00 AM",
-      "name": "Experience Name",
-      "description": "2 sentences about why this is perfect for them specifically",
-      "tags": ["tag1", "tag2"],
-      "category": "category-key-from-list-above-or-null",
-      "bookable": true or false
-    }
-  ]
-}
-
-Rules:
-- 4-6 items per itinerary
-- Match timing realistically (don't book surf at 10pm)
-- Make descriptions personal to the specific group
-- Use "bookable: true" only for ghost-tours, surf-lessons, nature-walks
-- Tags should be short: "2 Hours", "Family Friendly", "On the Water", etc.
-- Narrative should feel like a local friend wrote it, not a robot`;
-
   try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+    const response = await fetch('/.netlify/functions/plan-itinerary', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        system: systemPrompt,
-        messages: [{ role: 'user', content: 'Build a Wilmington itinerary for: ' + input }]
-      })
+      body: JSON.stringify({ input: input })
     });
-
-    const data = await response.json();
-    var raw = (data.content || []).map(function(b) { return b.text || ''; }).join('');
-    raw = raw.replace(/```json|```/g, '').trim();
-
-    var plan = JSON.parse(raw);
+    if (!response.ok) throw new Error('planner ' + response.status);
+    var plan = await response.json();
     renderPlan(plan);
 
   } catch(e) {

@@ -173,7 +173,7 @@ function doLogin(){
   var err=document.getElementById('login-err');
   if(!pw){err.style.display='block';err.textContent='Please enter a password.';return;}
   PASS=pw;
-  fetch('/.netlify/functions/get-bookings?password='+encodeURIComponent(pw))
+  fetch('/.netlify/functions/get-bookings',{headers:{'X-Dashboard-Key':pw}})
     .then(function(r){return r.json();})
     .then(function(data){
       if(data.error&&data.error==='Unauthorized'){err.style.display='block';err.textContent='Incorrect password. Please try again.';PASS='';return;}
@@ -265,7 +265,7 @@ function filterAndSearch(){
 
 function loadData(){
   if(!PASS) return;
-  fetch('/.netlify/functions/get-bookings?password='+encodeURIComponent(PASS))
+  fetch('/.netlify/functions/get-bookings',{headers:{'X-Dashboard-Key':PASS}})
     .then(function(r){return r.json();})
     .then(function(data){
       if(data.error) return;
