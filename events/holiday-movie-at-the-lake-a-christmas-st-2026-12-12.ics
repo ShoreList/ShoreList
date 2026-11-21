@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:holiday-movie-at-the-lake-a-christmas-st-2026-12-12@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART:20261212T220000Z
+SUMMARY:Holiday Movie at the Lake: A Christmas Story
+LOCATION:Carolina Beach Lake Park\, Carolina Beach\, NC
+DESCRIPTION:Confirm details with the organizer: https://www.carolinabeach.gov/196/Recreation-Programs
+URL:https://www.carolinabeach.gov/196/Recreation-Programs
+END:VEVENT
+END:VCALENDAR

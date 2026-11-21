@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:miracle-on-34th-street-thalian-associati-2026-12-11@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART:20261212T003000Z
+SUMMARY:Miracle on 34th Street (Thalian Association Community Theatre)
+LOCATION:Thalian Hall Main Stage\, Wilmington\, NC
+DESCRIPTION:Fri and Sat 7:30 pm\, Sun 2:00 pm\; extra shows Sat Dec 12 2 pm\, Thu Dec 17 7:30 pm\, Sat Dec 19 2 pm\nTickets and admission: Tickets required\nConfirm details with the organizer: https://www.thalianhall.org/tact-miracle34-26
+URL:https://www.thalianhall.org/tact-miracle34-26
+END:VEVENT
+END:VCALENDAR

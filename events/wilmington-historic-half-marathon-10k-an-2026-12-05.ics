@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:wilmington-historic-half-marathon-10k-an-2026-12-05@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261206
+SUMMARY:Wilmington Historic Half Marathon\, 10K and 5K
+LOCATION:Downtown Wilmington\, Wilmington\, NC
+DESCRIPTION:Tickets and admission: Registration required\nConfirm details with the organizer: https://runsignup.com/Race/NC/Wilmington/RunHistoricWilmington
+URL:https://runsignup.com/Race/NC/Wilmington/RunHistoricWilmington
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:pearl-harbor-day-remembrance-at-battlesh-2026-12-07@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART:20261207T140000Z
+SUMMARY:Pearl Harbor Day Remembrance at Battleship North Carolina
+LOCATION:Battleship North Carolina\, Wilmington\, NC
+DESCRIPTION:Tickets and admission: Free with Battleship admission\nConfirm details with the organizer: https://events.dncr.nc.gov/event/battleship-north-carolina-pearl-harbor-day-and-veterans-dayremembrances
+URL:https://events.dncr.nc.gov/event/battleship-north-carolina-pearl-harbor-day-and-veterans-dayremembrances
+END:VEVENT
+END:VCALENDAR

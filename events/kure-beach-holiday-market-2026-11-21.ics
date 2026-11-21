@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:kure-beach-holiday-market-2026-11-21@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART:20261121T140000Z
+SUMMARY:Kure Beach Holiday Market
+LOCATION:Ocean Front Park and Pavilion\, Kure Beach\, NC
+DESCRIPTION:Saturdays Nov 21 and Nov 28\, 9 am to 3 pm\nTickets and admission: Free to browse\nConfirm details with the organizer: https://www.townofkurebeach.org/recreation/ocean-front-park-and-pavilion/activities-events
+URL:https://www.townofkurebeach.org/recreation/ocean-front-park-and-pavilion/activities-events
+END:VEVENT
+END:VCALENDAR

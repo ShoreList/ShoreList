@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:carolina-beach-holiday-market-2026-12-05@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART:20261205T140000Z
+SUMMARY:Carolina Beach Holiday Market
+LOCATION:Carolina Beach Lake Park\, Carolina Beach\, NC
+DESCRIPTION:Confirm details with the organizer: https://www.carolinabeach.gov/196/Recreation-Programs
+URL:https://www.carolinabeach.gov/196/Recreation-Programs
+END:VEVENT
+END:VCALENDAR

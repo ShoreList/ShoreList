@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:jazz-at-cam-yolanda-rabun-2026-12-03@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART;VALUE=DATE:20261203
+DTEND;VALUE=DATE:20261204
+SUMMARY:Jazz at CAM: Yolanda Rabun
+LOCATION:Cameron Art Museum\, Wilmington\, NC
+DESCRIPTION:Tickets and admission: Tickets required per prior Jazz at CAM concerts\; price not on listing\nConfirm details with the organizer: https://cameronartmuseum.org/event/jazz-at-cam-yolanda-rabun/
+URL:https://cameronartmuseum.org/event/jazz-at-cam-yolanda-rabun/
+END:VEVENT
+END:VCALENDAR

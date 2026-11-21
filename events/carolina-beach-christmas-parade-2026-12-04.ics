@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:carolina-beach-christmas-parade-2026-12-04@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART:20261205T000000Z
+SUMMARY:Carolina Beach Christmas Parade
+LOCATION:Lake Park Blvd.\, Carolina Beach\, NC
+DESCRIPTION:Tickets and admission: Free to watch (cost not listed)\nConfirm details with the organizer: https://www.carolinabeach.gov/196/Recreation-Programs
+URL:https://www.carolinabeach.gov/196/Recreation-Programs
+END:VEVENT
+END:VCALENDAR

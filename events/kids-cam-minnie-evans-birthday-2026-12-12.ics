@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:kids-cam-minnie-evans-birthday-2026-12-12@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:Kids@CAM: Minnie Evans Birthday
+LOCATION:Cameron Art Museum\, Wilmington\, NC
+DESCRIPTION:Confirm details with the organizer: https://cameronartmuseum.org/event/kidscam-minnie-evans-birthday/
+URL:https://cameronartmuseum.org/event/kidscam-minnie-evans-birthday/
+END:VEVENT
+END:VCALENDAR

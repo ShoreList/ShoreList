@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:downtown-wilmington-holiday-tree-lightin-2026-11-27@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART:20261127T223000Z
+SUMMARY:Downtown Wilmington Holiday Tree Lighting
+LOCATION:Water Street and Market Street\, Wilmington\, NC
+DESCRIPTION:Tickets and admission: Free\nConfirm details with the organizer: https://www.wilmingtonnc.gov/Events-directory/Holiday-Tree-Lighting
+URL:https://www.wilmingtonnc.gov/Events-directory/Holiday-Tree-Lighting
+END:VEVENT
+END:VCALENDAR

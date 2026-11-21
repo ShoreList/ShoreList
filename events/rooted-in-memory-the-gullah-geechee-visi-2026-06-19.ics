@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:rooted-in-memory-the-gullah-geechee-visi-2026-06-19@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART;VALUE=DATE:20260619
+DTEND;VALUE=DATE:20270125
+SUMMARY:Rooted in Memory: The Gullah Geechee Vision of Jonathan Green
+LOCATION:Cameron Art Museum\, Wilmington\, NC
+DESCRIPTION:Open during museum hours through Jan 24\, 2027\nTickets and admission: Museum admission\nConfirm details with the organizer: https://cameronartmuseum.org/exhibitions/
+URL:https://cameronartmuseum.org/exhibitions/
+END:VEVENT
+END:VCALENDAR

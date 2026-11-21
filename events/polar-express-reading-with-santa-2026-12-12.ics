@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:polar-express-reading-with-santa-2026-12-12@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART:20261212T203000Z
+SUMMARY:Polar Express Reading with Santa
+LOCATION:Wilmington Railroad Museum\, Wilmington\, NC
+DESCRIPTION:Dec 12\, 13\, 19\, 20\; sessions at 3:30\, 4:30 and 5:30 pm\nTickets and admission: $5 per person\, advance tickets required\; under 2 free\nConfirm details with the organizer: https://www.wrrm.org/events-and-tours.html
+URL:https://www.wrrm.org/events-and-tours.html
+END:VEVENT
+END:VCALENDAR

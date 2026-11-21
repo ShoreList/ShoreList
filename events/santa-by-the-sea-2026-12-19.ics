@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:santa-by-the-sea-2026-12-19@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART:20261219T220000Z
+SUMMARY:Santa by the Sea
+LOCATION:Carolina Beach Lake Park\, Carolina Beach\, NC
+DESCRIPTION:Confirm details with the organizer: https://www.carolinabeach.gov/196/Recreation-Programs
+URL:https://www.carolinabeach.gov/196/Recreation-Programs
+END:VEVENT
+END:VCALENDAR

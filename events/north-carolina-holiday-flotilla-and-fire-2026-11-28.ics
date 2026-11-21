@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:north-carolina-holiday-flotilla-and-fire-2026-11-28@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART:20261128T230000Z
+SUMMARY:North Carolina Holiday Flotilla and Fireworks
+LOCATION:Banks Channel\, Wrightsville Beach\, NC
+DESCRIPTION:Tickets and admission: Free to watch from public areas (cost not stated on sources)\nConfirm details with the organizer: https://www.ncholidayflotilla.org/
+URL:https://www.ncholidayflotilla.org/
+END:VEVENT
+END:VCALENDAR

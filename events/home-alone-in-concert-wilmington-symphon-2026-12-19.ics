@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:home-alone-in-concert-wilmington-symphon-2026-12-19@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART:20261219T193000Z
+SUMMARY:Home Alone in Concert (Wilmington Symphony Orchestra)
+LOCATION:Wilson Center at Cape Fear Community College\, Wilmington\, NC
+DESCRIPTION:Two performances\, 2:30 pm and 7:30 pm\nTickets and admission: Tickets required\nConfirm details with the organizer: https://www.wilsoncentertickets.com/events/detail/home-alone-in-concert-1518393
+URL:https://www.wilsoncentertickets.com/events/detail/home-alone-in-concert-1518393
+END:VEVENT
+END:VCALENDAR

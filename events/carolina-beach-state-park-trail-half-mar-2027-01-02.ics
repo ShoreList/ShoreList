@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:carolina-beach-state-park-trail-half-mar-2027-01-02@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART;VALUE=DATE:20270102
+DTEND;VALUE=DATE:20270103
+SUMMARY:Carolina Beach State Park Trail Half Marathon and 5K
+LOCATION:Carolina Beach State Park\, Carolina Beach\, NC
+DESCRIPTION:Tickets and admission: Registration required\; price not listed\nConfirm details with the organizer: https://runsignup.com/Race/NC/CarolinaBeach/CarolinaBeachStateParkTrailRace
+URL:https://runsignup.com/Race/NC/CarolinaBeach/CarolinaBeachStateParkTrailRace
+END:VEVENT
+END:VCALENDAR

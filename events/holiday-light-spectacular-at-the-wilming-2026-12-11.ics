@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:holiday-light-spectacular-at-the-wilming-2026-12-11@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART:20261211T233000Z
+SUMMARY:Holiday Light Spectacular at the Wilmington Railroad Museum
+LOCATION:Wilmington Railroad Museum\, Wilmington\, NC
+DESCRIPTION:Dec 11\, 12\, 13\, 18\, 19\, 20\; 6:30 to 8:00 pm\nTickets and admission: $5 per person at the door\; under 2 free\nConfirm details with the organizer: https://www.wrrm.org/events-and-tours.html
+URL:https://www.wrrm.org/events-and-tours.html
+END:VEVENT
+END:VCALENDAR

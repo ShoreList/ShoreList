@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:hidden-battleship-tour-2027-02-27@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART:20270227T160000Z
+SUMMARY:Hidden Battleship Tour
+LOCATION:Battleship North Carolina\, Wilmington\, NC
+DESCRIPTION:Tickets and admission: Tickets required\, $75\nConfirm details with the organizer: https://events.dncr.nc.gov/event/hidden-battleship-tour-6380
+URL:https://events.dncr.nc.gov/event/hidden-battleship-tour-6380
+END:VEVENT
+END:VCALENDAR

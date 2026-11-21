@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:cape-fear-museum-holiday-gift-workshop-2026-12-05@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART;VALUE=DATE:20261205
+DTEND;VALUE=DATE:20261206
+SUMMARY:Cape Fear Museum Holiday Gift Workshop
+LOCATION:Cape Fear Museum\, Wilmington\, NC
+DESCRIPTION:Confirm details with the organizer: https://capefearmuseum.com/Calendar.aspx
+URL:https://capefearmuseum.com/Calendar.aspx
+END:VEVENT
+END:VCALENDAR

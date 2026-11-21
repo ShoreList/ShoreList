@@ -15,6 +15,8 @@
 - [Where to stay](https://shorelist.net/where-to-stay): which area to choose (downtown, Wrightsville Beach, Carolina Beach, Kure Beach, midtown) and what lodging each offers
 - [This weekend](https://shorelist.net/events/this-weekend): events for the current weekend, rebuilt daily
 - Events by area: [Downtown Wilmington](https://shorelist.net/events/downtown-wilmington), [Wrightsville Beach](https://shorelist.net/events/wrightsville-beach), [Carolina Beach](https://shorelist.net/events/carolina-beach), [Kure Beach](https://shorelist.net/events/kure-beach), [Greater Wilmington](https://shorelist.net/events/greater-wilmington)
+- [How we verify events](https://shorelist.net/how-we-verify): where event listings come from, how often they refresh and how to report a correction
+- Each upcoming event with a checked source has its own page at https://shorelist.net/events/<id> (listed in the full digest), with an add-to-calendar file
 - [Visitor FAQ](https://shorelist.net/wilmington-nc-faq): short answers to common questions about visiting Wilmington, NC and the beaches
 - [Shore Picks](https://shorelist.net/shore-picks): handpicked restaurants, coffee shops and bars by area
 - [The Shore Report](https://shorelist.net/weekly): free weekly newsletter with events, an itinerary and beach conditions

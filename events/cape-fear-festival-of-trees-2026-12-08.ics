@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:cape-fear-festival-of-trees-2026-12-08@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART;VALUE=DATE:20261208
+DTEND;VALUE=DATE:20270104
+SUMMARY:Cape Fear Festival of Trees
+LOCATION:Discovery Bay at Independence Mall\, Wilmington\, NC
+DESCRIPTION:Daily during mall hours\nTickets and admission: Free\nConfirm details with the organizer: https://lifecare.org/ways-to-give/foundation-events/festival-of-trees/
+URL:https://lifecare.org/ways-to-give/foundation-events/festival-of-trees/
+END:VEVENT
+END:VCALENDAR

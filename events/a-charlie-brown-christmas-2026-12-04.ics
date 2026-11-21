@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:a-charlie-brown-christmas-2026-12-04@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261205
+SUMMARY:A Charlie Brown Christmas
+LOCATION:Wilson Center at Cape Fear Community College\, Wilmington\, NC
+DESCRIPTION:Tickets and admission: Tickets required\nConfirm details with the organizer: https://www.wilsoncentertickets.com/events/detail/a-charlie-brown-christmas-1694955
+URL:https://www.wilsoncentertickets.com/events/detail/a-charlie-brown-christmas-1694955
+END:VEVENT
+END:VCALENDAR

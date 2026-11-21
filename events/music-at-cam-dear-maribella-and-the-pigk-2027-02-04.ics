@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:music-at-cam-dear-maribella-and-the-pigk-2027-02-04@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART;VALUE=DATE:20270204
+DTEND;VALUE=DATE:20270205
+SUMMARY:Music at CAM: Dear MariBella and the Pigkickers
+LOCATION:Cameron Art Museum\, Wilmington\, NC
+DESCRIPTION:Confirm details with the organizer: https://cameronartmuseum.org/event/music-at-cam-dear-maribella-and-the-pigkickers/
+URL:https://cameronartmuseum.org/event/music-at-cam-dear-maribella-and-the-pigkickers/
+END:VEVENT
+END:VCALENDAR

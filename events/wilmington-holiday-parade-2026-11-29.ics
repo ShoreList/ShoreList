@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:wilmington-holiday-parade-2026-11-29@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART:20261129T230000Z
+SUMMARY:Wilmington Holiday Parade
+LOCATION:Front Street\, Wilmington\, NC
+DESCRIPTION:Tickets and admission: Free\nConfirm details with the organizer: https://www.wilmingtonnc.gov/Events-directory/Holiday-Parade-2026
+URL:https://www.wilmingtonnc.gov/Events-directory/Holiday-Parade-2026
+END:VEVENT
+END:VCALENDAR

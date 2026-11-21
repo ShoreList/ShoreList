@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:colonial-wilmington-and-the-revolution-w-2026-12-11@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:Colonial Wilmington and The Revolution Walking Tour
+LOCATION:Burgwin-Wright House and Gardens\, Wilmington\, NC
+DESCRIPTION:Tickets and admission: Tickets required (price not stated)\nConfirm details with the organizer: https://www.burgwinwrighthouse.com/
+URL:https://www.burgwinwrighthouse.com/
+END:VEVENT
+END:VCALENDAR

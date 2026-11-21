@@ -20,7 +20,8 @@ try {
 try {
   const ev = JSON.parse(fs.readFileSync('events-data.json', 'utf8'));
   L.push('', `## Upcoming events in Wilmington, NC and the beaches (updated ${ev.updated}; live list at https://shorelist.net/events)`);
-  for (const e of ev.events) L.push(`- ${e.title}: ${e.start}${e.end !== e.start ? ' to ' + e.end : ''}${e.time ? ', ' + e.time : ''}, ${e.venue}, ${e.area}. ${e.cat}.${e.tickets ? ' ' + e.tickets + '.' : ''} ${e.url}`);
+  // Same rule as tools/build-events-pages.mjs hasPage(): only events with a checked source have their own page.
+  for (const e of ev.events) L.push(`- ${e.title}: ${e.start}${e.end !== e.start ? ' to ' + e.end : ''}${e.time ? ', ' + e.time : ''}, ${e.venue}, ${e.area}. ${e.cat}.${e.tickets ? ' ' + e.tickets + '.' : ''} ${e.url}${e.verified || e.source !== 'curated' ? ' | ShoreList page: https://shorelist.net/events/' + e.id : ''}`);
 } catch (e) {}
 try {
   const ws = JSON.parse(fs.readFileSync('tools/where-to-stay.json', 'utf8'));

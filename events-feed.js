@@ -24,10 +24,10 @@
   var dow = utc(today).getUTCDay(), fri = plus(today, dow === 0 ? -2 : dow === 6 ? -1 : 5 - dow), sun = plus(fri, 2), wkFrom = fri < today ? today : fri;
 
   var cards = $$('.evc').map(function (el) {
-    var a = $('.evc-t a', el);
+    var a = $('.evc-t a', el), det = $('.evc-a a.evc-b', el); // the title may link to the event page; the Details link is always the organizer page
     return { el: el, id: el.getAttribute('data-id'), start: el.getAttribute('data-start'), end: el.getAttribute('data-end'), area: el.getAttribute('data-area'), cat: el.getAttribute('data-cat'),
       city: el.getAttribute('data-city') || 'Wilmington', venue: el.getAttribute('data-venue') || '', free: el.getAttribute('data-free') === '1',
-      title: a ? a.textContent : '', url: a ? a.href : '', text: (el.textContent || '').toLowerCase() + ' ' + (el.getAttribute('data-area') || '').toLowerCase() };
+      title: a ? a.textContent : '', url: det ? det.href : a ? a.href : '', text: (el.textContent || '').toLowerCase() + ' ' + (el.getAttribute('data-area') || '').toLowerCase() };
   });
   var days = $$('.evd'), months = $$('.evmo'), jumps = $$('[data-jump]');
   var q = $('#ef-q'), count = $('.ef-count'), empty = $('.ef-empty'), resets = $$('.ef-reset');

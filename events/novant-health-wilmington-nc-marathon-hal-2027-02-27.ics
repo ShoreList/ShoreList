@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:novant-health-wilmington-nc-marathon-hal-2027-02-27@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART;VALUE=DATE:20270227
+DTEND;VALUE=DATE:20270228
+SUMMARY:Novant Health Wilmington NC Marathon\, Half Marathon and 5K
+LOCATION:Start on the UNCW campus per race site\, Wilmington\, NC
+DESCRIPTION:Tickets and admission: Registration required\nConfirm details with the organizer: https://wilmingtonncmarathon.com/
+URL:https://wilmingtonncmarathon.com/
+END:VEVENT
+END:VCALENDAR
