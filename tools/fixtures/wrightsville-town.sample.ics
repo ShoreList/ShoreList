@@ -1,0 +1,53 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CivicPlus//Calendar//EN
+X-SHORELIST-FIXTURE:synthetic sample in the CivicPlus iCalendar.aspx format; replace with a captured payload
+BEGIN:VEVENT
+UID:calendar-event-1101@townofwrightsvillebeach.com
+SUMMARY:Wrightsville Beach Farmers' Market
+DTSTART;TZID=America/New_York:20261123T080000
+DTEND;TZID=America/New_York:20261123T130000
+RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20261214T235959Z
+LOCATION:Wrightsville Beach Park\, 1 Bob Sawyer Dr\, Wrightsville Beach\, NC
+URL:https://townofwrightsvillebeach.com/Calendar.aspx?EID=1101
+END:VEVENT
+BEGIN:VEVENT
+UID:calendar-event-1102@townofwrightsvillebeach.com
+SUMMARY:Town of Wrightsville Beach Christmas Kickoff & Tree Lighting Ceremony
+DTSTART;TZID=America/New_York:20261127T173000
+DTEND;TZID=America/New_York:20261127T193000
+LOCATION:Wrightsville Beach Park
+URL:https://townofwrightsvillebeach.com/Calendar.aspx?EID=1102
+END:VEVENT
+BEGIN:VEVENT
+UID:calendar-event-1103@townofwrightsvillebeach.com
+SUMMARY:Town Offices Closed for Thanksgiving
+DTSTART;VALUE=DATE:20261126
+DTEND;VALUE=DATE:20261128
+END:VEVENT
+BEGIN:VEVENT
+UID:calendar-event-1104@townofwrightsvillebeach.com
+SUMMARY:Adult Tennis Lessons
+DTSTART;TZID=America/New_York:20261124T080000
+DTEND;TZID=America/New_York:20261124T093000
+LOCATION:Wrightsville Beach Park tennis courts
+END:VEVENT
+BEGIN:VEVENT
+UID:calendar-event-1105@townofwrightsvillebeach.com
+SUMMARY:Planning Board Meeting
+DTSTART;TZID=America/New_York:20261201T170000
+END:VEVENT
+BEGIN:VEVENT
+UID:calendar-event-1106@townofwrightsvillebeach.com
+SUMMARY:Movie in the Park: The Santa Clause
+DTSTART;TZID=America/New_York:20261204T180000
+DTEND;TZID=America/New_York:20261204T200000
+LOCATION:Wrightsville Beach Park
+STATUS:CANCELLED
+END:VEVENT
+BEGIN:VEVENT
+UID:calendar-event-0001@townofwrightsvillebeach.com
+SUMMARY:Past Event Already Over
+DTSTART;VALUE=DATE:20260301
+END:VEVENT
+END:VCALENDAR

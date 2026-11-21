@@ -13,15 +13,18 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: node tools/refresh-events.mjs
+      # Fail soft: a feed problem must never block the site builders or open issues/PRs. Per-source status goes to tools/feed-health.json.
+      - name: Refresh feeds
+        continue-on-error: true
+        run: node tools/refresh-events.mjs
       - run: node tools/build-events-pages.mjs
       - run: node tools/build-llms.mjs
       - name: Commit if changed
         run: |
-          if [ -n "$(git status --porcelain events-data.json events.html events llms-full.txt sitemap.xml)" ]; then
+          if [ -n "$(git status --porcelain events-data.json tools/feed-health.json events.html events llms-full.txt sitemap.xml)" ]; then
             git config user.name "ShoreList events bot"
             git config user.email "noreply@shorelist.net"
-            git add -A events-data.json events.html events llms-full.txt sitemap.xml
+            git add -A events-data.json tools/feed-health.json events.html events llms-full.txt sitemap.xml
             git commit -m "Refresh events feed"
             git push
           fi

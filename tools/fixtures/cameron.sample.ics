@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Cameron Art Museum - ECPv6.4//NONSGML v1.0//EN
+X-SHORELIST-FIXTURE:synthetic sample in The Events Calendar (Tribe) ICS format; replace with a captured payload
+BEGIN:VEVENT
+DTSTART;TZID=America/New_York:20261203T180000
+DTEND;TZID=America/New_York:20261203T200000
+UID:9912-1796338800-1796346000@cameronartmuseum.org
+SUMMARY:Third Thursday Gallery Talk
+LOCATION:Cameron Art Museum\, 3201 S 17th St\, Wilmington\, NC
+URL:https://cameronartmuseum.org/event/third-thursday-gallery-talk/
+END:VEVENT
+END:VCALENDAR

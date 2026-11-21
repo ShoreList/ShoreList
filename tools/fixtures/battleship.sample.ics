@@ -1,0 +1,35 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:icalendar-ruby
+X-WR-CALNAME:Battleship North Carolina
+X-SHORELIST-FIXTURE:synthetic sample in the Localist ICS format; replace with a captured payload
+BEGIN:VEVENT
+UID:tag:localist.com\,2008:EventInstance_60000000000001
+DTSTART:20261207T140000Z
+DTEND:20261207T210000Z
+SUMMARY:Battleship North Carolina Pearl Harbor Day and Veterans Day Remembrances
+LOCATION:Battleship North Carolina\, 1 Battleship Rd NE\, Wilmington\, NC
+URL:https://events.dncr.nc.gov/event/battleship-north-carolina-pearl-harbor-day
+END:VEVENT
+BEGIN:VEVENT
+UID:tag:localist.com\,2008:EventInstance_60000000000002
+DTSTART:20270227T160000Z
+DTEND:20270227T220000Z
+SUMMARY:Hidden Battleship Tour
+LOCATION:Battleship North Carolina
+URL:https://events.dncr.nc.gov/event/hidden-battleship-tour
+END:VEVENT
+BEGIN:VEVENT
+UID:tag:localist.com\,2008:EventInstance_60000000000003
+DTSTART:20270101T150000Z
+DTEND:20270101T210000Z
+SUMMARY:Battleship North Carolina is Open on New Years Day
+URL:https://events.dncr.nc.gov/event/battleship-north-carolina-is-open-on-new-years-day
+END:VEVENT
+BEGIN:VEVENT
+UID:tag:localist.com\,2008:EventInstance_60000000000004
+DTSTART:20270116T180000Z
+DTEND:20270116T210000Z
+SUMMARY:USS North Carolina Battleship Commission Meeting
+END:VEVENT
+END:VCALENDAR

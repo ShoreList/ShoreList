@@ -1,3 +1,17 @@
-{"feeds":[
-{"id":"cameron","name":"Cameron Art Museum","ics":"https://cameronartmuseum.org/events-calendar/list/?ical=1","venue":"Cameron Art Museum","area":"Wilmington","cat":"Arts","site":"https://cameronartmuseum.org/events-calendar/"}
-],"horizonDays":120}
+{"horizonDays":120,
+"feeds":[
+{"id":"cameron","name":"Cameron Art Museum events calendar","type":"ics (Tribe Events)","ics":"https://cameronartmuseum.org/events-calendar/list/?ical=1","venue":"Cameron Art Museum","area":"Wilmington","cat":"Arts","site":"https://cameronartmuseum.org/events-calendar/"},
+{"id":"wrightsville-town","name":"Town of Wrightsville Beach calendar","type":"ics (CivicPlus iCalendar.aspx)","ics":"https://townofwrightsvillebeach.com/iCalendar.aspx","venue":"Wrightsville Beach Park","area":"Wrightsville Beach","cat":"Family","site":"https://townofwrightsvillebeach.com/m/Calendar"},
+{"id":"fort-fisher","name":"NC DNCR events calendar: Fort Fisher State Historic Site","type":"ics (Localist place calendar)","ics":"https://events.dncr.nc.gov/fort-fisher-historic-site/calendar/ics","venue":"Fort Fisher State Historic Site","area":"Kure Beach","cat":"History","site":"https://events.dncr.nc.gov/fort-fisher-historic-site/calendar"},
+{"id":"battleship","name":"NC DNCR events calendar: Battleship North Carolina","type":"ics (Localist place calendar, URL by pattern)","ics":"https://events.dncr.nc.gov/battleship-north-carolina/calendar/ics","venue":"Battleship North Carolina","area":"Greater Wilmington","cat":"History","site":"https://events.dncr.nc.gov/battleship-north-carolina/calendar"},
+{"id":"riverwatch","name":"Cape Fear River Watch events calendar","type":"ics (Tribe Events)","ics":"https://capefearriverwatch.org/?post_type=tribe_events&ical=1&eventDisplay=list","venue":"Cape Fear River Watch","area":"Greater Wilmington","cat":"Outdoors","site":"https://capefearriverwatch.org/events/"}
+],
+"rejected":[
+{"name":"Thalian Hall","reason":"No ICS/RSS/JSON feed found; site states it is the only official ticketing provider and carries an all-rights-reserved notice. Curated entries only."},
+{"name":"Wilson Center, Live Oak Bank Pavilion, Greenfield Lake Amphitheater","reason":"Listings live on Ticketmaster, AXS and Live Nation, whose terms bar scraping and reuse; the venue and city pages have no feed."},
+{"name":"Airlie Gardens, Wilmington Downtown Inc","reason":"WordPress sites with no iCal/RSS feed linked (Airlie uses a custom post type and a Google Calendar embed). Revisit if they add a Tribe feed."},
+{"name":"NC Aquarium at Fort Fisher","reason":"Main aquarium closed May 2026, so no events from it."},
+{"name":"NHC Public Library (LibCal)","reason":"Only per-event .ics links found (libcal.nhcgov.com/event/<id>/ical); no calendar-level subscribe URL (cid) could be verified. Add it here once the cid is known."},
+{"name":"Town of Carolina Beach, Town of Kure Beach, Wilmington city calendar, Wilmington Convention Center","reason":"HTML calendars only (OpenCities, Drupal, govaccess); no iCal, RSS or JSON-LD feed found, or page could not be inspected."},
+{"name":"Wilmington and Beaches CVB, WHQR community calendar, Eventbrite","reason":"Copyright notices with no reuse licence; no public feed or JSON-LD confirmed."}
+]}

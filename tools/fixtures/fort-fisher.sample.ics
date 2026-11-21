@@ -1,0 +1,50 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:icalendar-ruby
+X-WR-CALNAME:Fort Fisher State Historic Site
+X-SHORELIST-FIXTURE:synthetic sample in the Localist ICS format (UID tag:localist.com, UTC times); replace with a captured payload
+BEGIN:VEVENT
+DTSTAMP:20261101T120000Z
+UID:tag:localist.com\,2008:EventInstance_51780938803591
+DTSTART:20261003T140000Z
+DTEND:20261003T200000Z
+SUMMARY:Fort Fisher's Second World War
+DESCRIPTION:Living history at the site. Free\, no tickets required.
+LOCATION:Fort Fisher Historic Site
+URL:https://events.dncr.nc.gov/event/fort-fishers-second-world-war
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20261101T120000Z
+UID:tag:localist.com\,2008:EventInstance_51780938803592
+DTSTART:20261212T150000Z
+DTEND:20261212T190000Z
+SUMMARY:Candlelight Christmas Tour
+LOCATION:Fort Fisher Historic Site
+URL:https://events.dncr.nc.gov/event/candlelight-christmas-tour
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20261101T120000Z
+UID:tag:localist.com\,2008:EventInstance_51780938803593
+DTSTART:20261212T200000Z
+DTEND:20261212T210000Z
+SUMMARY:Candlelight Christmas Tour
+LOCATION:Fort Fisher Historic Site
+URL:https://events.dncr.nc.gov/event/candlelight-christmas-tour
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20261101T120000Z
+UID:tag:localist.com\,2008:EventInstance_51780938803594
+DTSTART;VALUE=DATE:20270115
+DTEND;VALUE=DATE:20270117
+SUMMARY:162nd Anniversary Commemoration
+LOCATION:Fort Fisher Historic Site
+URL:https://events.dncr.nc.gov/event/fort-fishers-162nd-anniversary-commemoration
+END:VEVENT
+BEGIN:VEVENT
+UID:tag:localist.com\,2008:EventInstance_51780938803595
+DTSTART:20261203T150000Z
+DTEND:20261203T170000Z
+SUMMARY:Historic Sites Advisory Commission Meeting
+LOCATION:Raleigh
+END:VEVENT
+END:VCALENDAR
