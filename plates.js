@@ -5,7 +5,7 @@
   'use strict';
   var host = document.querySelector('[data-scene]');
   if (!host) return;
-  var BASE = 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb2-', V = '';
+  var BASE = 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb3-', V = '';
   var NAMES = ['dawn', 'midday', 'golden', 'night'], ALT = ['Beach and fishing pier at dawn', 'Beach and fishing pier at midday', 'Beach and fishing pier at golden hour', 'Beach and fishing pier under a full moon'];
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var sun = window.ShoreSun;
