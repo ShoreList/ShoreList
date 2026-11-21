@@ -3,6 +3,12 @@
  "note": "Only add an item here after it passes the shop gates: real supplier mockup of the exact colorway, lining/inside color checked, art at print resolution, Fourthwall product URL returns 200 signed out. Run: node tools/check-shop-links.mjs",
  "collections": [
   {
+   "id": "local-icons",
+   "name": "Local Icons",
+   "blurb": "One small embroidered icon and the letters locals read right away: WB, CB, KB, ILM. Real stitching on garment-dyed Comfort Colors crewnecks, no big prints.",
+   "art": "lighthouse"
+  },
+  {
    "id": "heritage",
    "name": "Heritage Varsity",
    "blurb": "Town names in classic varsity lettering on garment-dyed Comfort Colors crewnecks, in six washed coastal colours.",
@@ -64,6 +70,78 @@
   }
  ],
  "items": [
+  {
+   "id": "the-sloop-embroidered-crewneck-wrightsville-beach",
+   "collection": "local-icons",
+   "name": "The Sloop Embroidered Crewneck, Wrightsville Beach",
+   "url": "https://shorelist.myshopify.com/products/the-sloop-embroidered-crewneck-wrightsville-beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-embroidered-crewneck-wrightsville-beach_1000x.webp",
+   "alt": "Woman on a marina dock at sunset wearing a washed blue crewneck with a small embroidered sailboat and the letters WB",
+   "meta": "A little sloop under sail stitched on the chest, with WB for Wrightsville Beach beneath it.",
+   "cta": "Choose colour and size",
+   "price": 88,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12766898488605460372_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-embroidered-crewneck-wrightsville-beach_1920x.webp"
+  },
+  {
+   "id": "the-pelican-embroidered-crewneck-carolina-beach",
+   "collection": "local-icons",
+   "name": "The Pelican Embroidered Crewneck, Carolina Beach",
+   "url": "https://shorelist.myshopify.com/products/the-pelican-embroidered-crewneck-carolina-beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-embroidered-crewneck-carolina-beach_1000x.webp",
+   "alt": "Man on a beach boardwalk at sunset wearing a blue crewneck with a small embroidered pelican and the letters CB",
+   "meta": "A brown pelican stitched on the chest, with CB for Carolina Beach beneath it.",
+   "cta": "Choose colour and size",
+   "price": 88,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13933455820164530453_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-embroidered-crewneck-carolina-beach_1920x.webp"
+  },
+  {
+   "id": "the-blue-crab-embroidered-crewneck-kure-beach",
+   "collection": "local-icons",
+   "name": "The Blue Crab Embroidered Crewneck, Kure Beach",
+   "url": "https://shorelist.myshopify.com/products/the-blue-crab-embroidered-crewneck-kure-beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-embroidered-crewneck-kure-beach_1000x.webp",
+   "alt": "Woman on a shingled beach cottage porch wearing a mint crewneck with a small embroidered blue crab and the letters KB",
+   "meta": "An Atlantic blue crab stitched on the chest, with KB for Kure Beach beneath it.",
+   "cta": "Choose colour and size",
+   "price": 88,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17367446352125890490_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-embroidered-crewneck-kure-beach_1920x.webp"
+  },
+  {
+   "id": "the-live-oak-embroidered-crewneck-wilmington",
+   "collection": "local-icons",
+   "name": "The Live Oak Embroidered Crewneck, Wilmington",
+   "url": "https://shorelist.myshopify.com/products/the-live-oak-embroidered-crewneck-wilmington",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-embroidered-crewneck-wilmington_1000x.webp",
+   "alt": "Woman on a historic downtown sidewalk under live oaks wearing a crewneck with a small embroidered live oak and the letters ILM",
+   "meta": "A live oak hung with Spanish moss stitched on the chest, with ILM for Wilmington beneath it.",
+   "cta": "Choose colour and size",
+   "price": 88,
+   "scenes": [
+    "riverwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/252732908222325248_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-embroidered-crewneck-wilmington_1920x.webp"
+  },
   {
    "id": "wrightsville-beach-varsity-crewneck",
    "collection": "heritage",
