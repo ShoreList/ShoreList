@@ -14,6 +14,43 @@
     try { if (typeof window.gtag === 'function') window.gtag('event', name, params || {}); } catch (e) {}
   }
 
+  /* ---------- sales tracking: every buy, book and signup click (no personal data) ---------- */
+  function hostOf(u) { try { return new URL(u, location.href).hostname.toLowerCase(); } catch (e) { return ''; } }
+  function label(el) { return (el.getAttribute('aria-label') || el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80); }
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href],button') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var h = href ? hostOf(href) : '';
+    var page = location.pathname;
+    if (h && /(^|\.)myshopify\.com$|(^|\.)fourthwall\.com$|(^|\.)shorelist\.shop$/.test(h)) {
+      track('shop_click', { item_id: a.getAttribute('data-id') || '', link_text: label(a), link_domain: h, page_path: page });
+    } else if (/create-checkout|\/success|book/i.test(href) || /\bbook\b|reserve|check availability/i.test(label(a))) {
+      track('book_click', { link_text: label(a), link_url: href.slice(0, 120), page_path: page });
+    } else if (/^tel:/.test(href)) {
+      track('call_click', { page_path: page });
+    } else if (/^mailto:/.test(href)) {
+      track('email_click', { page_path: page });
+    } else if (h && h !== location.hostname) {
+      track('outbound_click', { link_domain: h, link_text: label(a), page_path: page });
+    } else if (a.classList && (a.classList.contains('btn') || a.classList.contains('cta') || a.classList.contains('buy'))) {
+      track('cta_click', { link_text: label(a), link_url: href.slice(0, 120), page_path: page });
+    }
+  }, true);
+  document.addEventListener('submit', function (e) {
+    var f = e.target; if (!f || f.tagName !== 'FORM') return;
+    track('generate_lead', { form_id: f.id || f.getAttribute('name') || 'form', page_path: location.pathname });
+  }, true);
+  (function () {
+    var marks = [25, 50, 75, 90], seen = {};
+    function onScroll() {
+      var d = document.documentElement, max = d.scrollHeight - innerHeight; if (max <= 0) return;
+      var pct = Math.round((scrollY / max) * 100);
+      marks.forEach(function (m) { if (pct >= m && !seen[m]) { seen[m] = 1; track('scroll_depth', { percent: m, page_path: location.pathname }); } });
+    }
+    addEventListener('scroll', onScroll, { passive: true });
+  })();
+
   /* ---------- tiny helpers ---------- */
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]; }); }
   function norm(s) { return String(s || '').toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim(); }
