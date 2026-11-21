@@ -21,6 +21,16 @@ const rest = app.slice(o + 5), m = rest.search(/\n(var |function |const |let )/)
 const ctx = {}; vm.createContext(ctx);
 vm.runInContext(app.slice(a, o + 5 + m) + ';this.CAT_DATA=CAT_DATA;this.OPS=OPS;', ctx);
 ctx.OPS = toPublic(loadOperators()).categories; // operators now live in data/operators.json
+const CANCEL_H = toPublic(loadOperators()).cancellationHours ?? 24;
+// hero badges, same markup category-app.js renders, so the client render does not move the page
+const heroMeta = (slug, ops) => {
+  const b = (t, live) => `<div class="hm-badge${live ? ' live' : ''}">${t}</div>`;
+  if (slug === 'museums') return b('Official Partner On Board', 1) + b('Open Daily &middot; Rain or Shine') + b('Tickets &amp; Events');
+  const lv = ops.filter((o) => o.live);
+  if (lv.length) return b('Bookings Open Now', 1) + b(lv.length + ' Experience' + (lv.length > 1 ? 's' : '') + ' Live') + b('Secure Checkout via Stripe') + b('Free Cancellation ' + CANCEL_H + 'hrs+');
+  if (ops.length) return b(ops.length + ' Operator' + (ops.length > 1 ? 's' : '') + ' Ready to Book', 1) + b('Waitlist Open Now') + b('Bookings Opening Soon') + b('Secure Checkout via Stripe');
+  return b('Coming Soon') + b('Notify Me');
+};
 const slugs = Object.keys(ctx.CAT_DATA);
 for (const s of slugs) if (!CATS[s]) throw new Error('missing copy for ' + s);
 
@@ -45,9 +55,9 @@ const HERO_OPEN = '<section class="hero" aria-label="Page header">';
 if (!tpl.includes(HERO_OPEN)) throw new Error('template hero missing');
 // photo hero: a real <img> (so it can be prioritised and sized) under a navy overlay
 const heroOpen = (slug, extra = '') => `<section class="hero ph${extra}" aria-label="Page header">
-  <img class="hero-photo" src="${PHOTO(slug)}_1920x.webp" srcset="${PHOTO(slug)}_1000x.webp 1000w, ${PHOTO(slug)}_1920x.webp 1920w" sizes="100vw" width="1920" height="1072" alt="" fetchpriority="high" decoding="async"/>`;
+  <img class="hero-photo" src="${PHOTO(slug)}_1920x.webp" srcset="${PHOTO(slug)}_640x.webp 640w, ${PHOTO(slug)}_1000x.webp 1000w, ${PHOTO(slug)}_1280x.webp 1280w, ${PHOTO(slug)}_1920x.webp 1920w" sizes="100vw" width="1920" height="1072" alt="" fetchpriority="high" decoding="async"/>`;
 const title = (slug) => strip(ctx.CAT_DATA[slug].title);
-const thumb = (slug, w, h, alt, sizes) => `<img src="${PHOTO(slug)}_${w}x${h}_crop_center.webp"${sizes ? ` srcset="${PHOTO(slug)}_${w}x${h}_crop_center.webp ${w}w, ${PHOTO(slug)}_${w * 2}x${h * 2}_crop_center.webp ${w * 2}w" sizes="${sizes}"` : ''} width="${w}" height="${h}" alt="${esc(alt)}" loading="lazy" decoding="async"/>`;
+const thumb = (slug, w, h, alt, sizes) => `<img src="${PHOTO(slug)}_${w}x${h}_crop_center.webp"${sizes ? ` srcset="${w >= 480 ? `${PHOTO(slug)}_${w / 2}x${h / 2}_crop_center.webp ${w / 2}w, ` : ''}${PHOTO(slug)}_${w}x${h}_crop_center.webp ${w}w, ${PHOTO(slug)}_${w * 2}x${h * 2}_crop_center.webp ${w * 2}w" sizes="${sizes}"` : ''} width="${w}" height="${h}" alt="${esc(alt)}" loading="lazy" decoding="async"/>`;
 const ico = (id) => `<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#i-${id}"/></svg>`;
 const tile = ([u, name, small, icon, cls]) => `<li><a class="tile${cls ? ' ' + cls : ''}" href="${u}">${ico(icon)}<span><b>${esc(name)}</b><small>${esc(small)}</small></span></a></li>`;
 const PHOTO_NOTE = '<p class="ph-note">Photos set the scene and may not show the exact tour, operator or location.</p>';
@@ -83,6 +93,7 @@ for (const slug of slugs) {
     .replace('<span id="hbc">Experiences</span>', `<a href="/things-to-do">Things to Do</a> &nbsp;&#8250;&nbsp; <span id="hbc">${esc(strip(d.title))}</span>`)
     .replace('<h1 class="hero-title" id="htitle">Loading...</h1>', `<h1 class="hero-title" id="htitle">${esc(c.h1)}</h1>`)
     .replace('<p class="hero-sub" id="hsub"></p>', `<p class="hero-sub" id="hsub">${esc(sub)}</p>`)
+    .replace('<div class="hero-meta" id="hmeta"></div>', `<div class="hero-meta" id="hmeta">${heroMeta(slug, ctx.OPS[slug] || [])}</div>`)
     .replace('</head>', `<script>window.__CAT=${JSON.stringify(slug)};window.__H1=${JSON.stringify(c.h1)};</script>\n</head>`);
 
   const ops = ctx.OPS[slug] || [];

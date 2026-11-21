@@ -213,7 +213,7 @@ function renderPage(){
   document.body.setAttribute('data-cat',cat);
   document.getElementById('hico').innerHTML=d.icon;
   document.getElementById('htitle').textContent=window.__H1||d.title;
-  document.getElementById('hsub').textContent=String(d.sub).replace(/&#(\d+);/g,function(_,n){return String.fromCharCode(+n);});
+  if(!window.__CAT)document.getElementById('hsub').textContent=String(d.sub).replace(/&#(\d+);/g,function(_,n){return String.fromCharCode(+n);});
   document.getElementById('hbc').textContent=d.title;
   if(cat==='museums'){renderMuseumsCategory();return;}
   var ops=OPS[cat]||[];

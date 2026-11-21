@@ -1,7 +1,7 @@
 /* ShoreList events: /events and every /events/<area> page share this sheet.
    The event cards, agenda, calendar and tools are written into the HTML by tools/build-events-pages.mjs
    and enhanced in place by events-feed.js, so the page looks the same before and after the script runs. */
-:root{--ev-navy:#0E1F33;--ev-sail:#F4F1EA;--ev-sand:#D9C7A3;--ev-glass:#9FC3B8;--ev-red:#B93C24;--ev-red2:#C9452A;--ev-coral:#FF9B7B;--ev-teal:#0A4D5C;--ev-ink:#16303A;--ev-mute:#2A4850;--ev-line:rgba(14,31,51,.12);--ev-hdr:64px;--ev-ease:cubic-bezier(.2,.7,.2,1)}
+:root{--ev-navy:#0E1F33;--ev-sail:#F4F1EA;--ev-sand:#D9C7A3;--ev-glass:#9FC3B8;--ev-red:#B93C24;--ev-red2:#C0412A;--ev-coral:#FF9B7B;--ev-teal:#0A4D5C;--ev-ink:#16303A;--ev-mute:#2A4850;--ev-line:rgba(14,31,51,.12);--ev-hdr:64px;--ev-ease:cubic-bezier(.2,.7,.2,1)}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body.ev-page{margin:0;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--ev-sail);color:var(--ev-ink);line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -40,7 +40,7 @@ html:not(.js) .ef-js{display:none!important}
 .hero-facts li{font-size:.86rem;color:rgba(244,241,234,.9);border:1px solid rgba(244,241,234,.22);background:rgba(244,241,234,.08);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-radius:100px;padding:7px 14px;white-space:nowrap}
 .hero-facts b{font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;color:#fff;margin-right:2px}
 .hero-credit{max-width:1180px;margin:22px auto 0!important;font-size:.75rem;color:rgba(244,241,234,.78);text-align:right}
-.hero-credit a{color:#FFB199;text-decoration:underline;display:inline-block;padding:4px 0}
+.hero-credit a{color:#FFB199;text-decoration:underline;display:inline-block;padding:13px 4px}
 .ev-jump{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .ev-jump a{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:100px;border:1.5px solid rgba(244,241,234,.38);color:var(--ev-sail);text-decoration:none;font-weight:700;font-size:.9rem;background:rgba(14,31,51,.3);transition:background-color .25s,border-color .25s}
 .ev-jump a:hover{background:rgba(244,241,234,.16);border-color:rgba(244,241,234,.7)}
@@ -169,7 +169,7 @@ html:not(.js) .cal-m+.cal-m{margin-top:20px}
 .evc-cat .evi{width:15px;height:15px}
 .evc-free{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ev-navy);background:var(--ev-glass);border-radius:100px;padding:3px 10px}
 .evc-t{font-family:'Playfair Display',Georgia,serif;font-size:1.16rem;font-weight:800;line-height:1.22;color:var(--ev-navy);margin:6px 0 8px!important}
-.evc-t a{text-decoration:none}
+.evc-t a{text-decoration:none;display:block;padding:11px 0;margin:-11px 0}
 .evc-t a:hover{color:var(--ev-red)}
 .evc-w,.evc-v{display:flex;gap:8px;font-size:.9rem;color:var(--ev-mute);line-height:1.45}
 .evc-w{font-weight:700;color:var(--ev-navy)}

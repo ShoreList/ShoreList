@@ -165,7 +165,7 @@ textarea.bk-input{resize:vertical;min-height:80px;line-height:1.6;}
 .more-ico{font-size:1.9rem;}
 .more-name{font-size:0.82rem;font-weight:600;color:var(--teal);line-height:1.3;}
 .more-live{font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#1a7a4a;background:rgba(26,122,74,0.10);border-radius:4px;padding:2px 8px;}
-footer{background:var(--dark);padding:40px 48px;text-align:center;}
+footer{background:#0E1F33;padding:40px 48px;text-align:center;}
 .foot-logo{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--cream2);margin-bottom:8px;}
 .foot-logo span{color:var(--coral);}
 .foot-txt{font-size:0.82rem;color:rgba(245,232,203,0.35);line-height:1.8;}
@@ -264,6 +264,8 @@ button.cal-d:focus-visible{outline:3px solid #B5362F;outline-offset:2px;z-index:
    Sailcloth #F4F1EA, Dune Sand #D9C7A3, Sea Glass #9FC3B8, Signal Red #B5362F.
    =================================================================== */
 :root{--navy:#0E1F33;--sail:#F4F1EA;--sand:#D9C7A3;--glass:#9FC3B8;--red:#B5362F;--red2:#B93C24;--ink:#16303A;--ink2:#2A4850;}
+/* reserve the booking area until the client render fills it, so the guide below stays off screen (no layout shift) */
+#mc:empty{min-height:min(100vh,900px);}
 #guide,#faq,#mc,.hub-sec,.trip-sec,.tiles-sec,#today-plan{scroll-margin-top:88px;}
 
 /* ---- photo hero ---- */
@@ -317,7 +319,7 @@ button.cal-d:focus-visible{outline:3px solid #B5362F;outline-offset:2px;z-index:
 .fact-s::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--sand);flex:0 0 9px;}
 .fact-s.on::before{background:#1E9E63;box-shadow:0 0 0 4px rgba(30,158,99,.18);}
 .fact-links{display:flex;flex-wrap:wrap;gap:6px 8px;margin-top:2px;}
-.fact-links a{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:100px;border:1.5px solid rgba(14,31,51,.16);color:var(--navy);text-decoration:none;font-weight:700;font-size:.86rem;transition:border-color .2s,background .2s;}
+.fact-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:100px;border:1.5px solid rgba(14,31,51,.16);color:var(--navy);text-decoration:none;font-weight:700;font-size:.86rem;transition:border-color .2s,background .2s;}
 .fact-links a:hover{border-color:var(--navy);background:var(--sail);}
 .fact-links a.fl-go{background:var(--red2);border-color:var(--red2);color:#fff;}
 .fact-links a.fl-go:hover{background:#9E3020;border-color:#9E3020;}

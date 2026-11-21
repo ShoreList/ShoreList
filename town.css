@@ -187,7 +187,7 @@ body.town .t-towns .t-map{text-align:center;margin-top:36px}
 body.town .t-towns .t-map .btn-fill{min-height:52px;border-radius:100px;padding:0 30px}
 
 /* ---------- footer and sticky bar ---------- */
-body.town footer{background:#0A1626}
+body.town footer{background:#0E1F33}
 body.town .foot-copy{color:rgba(245,232,203,.78);font-size:.82rem}
 body.town .foot-links{gap:4px 20px}
 body.town .foot-links a{font-size:.86rem;min-height:44px;display:inline-flex;align-items:center}
