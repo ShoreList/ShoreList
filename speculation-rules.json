@@ -1,0 +1,1 @@
+{"prerender":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/shop*","/*.json","/*.xml","/*.txt","/netlify/*","/*?*"]}}]},"eager":false,"eagerness":"moderate"}]}

@@ -1,4 +1,5 @@
 /*
+  Speculation-Rules: "/speculation-rules.json"
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
@@ -43,3 +44,7 @@
 
 /*.png
   Cache-Control: public, max-age=604800
+
+/speculation-rules.json
+  Content-Type: application/speculationrules+json
+  Cache-Control: public, max-age=3600
