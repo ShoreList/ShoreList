@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:wilmington-symphony-young-people-s-conce-2027-02-21@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART:20270221T210000Z
+SUMMARY:Wilmington Symphony Young People's Concert
+LOCATION:Wilson Center at Cape Fear Community College\, Wilmington\, NC
+DESCRIPTION:Tickets and admission: Tickets required\nConfirm details with the organizer: https://www.wilmingtonsymphony.org/concerts
+URL:https://www.wilmingtonsymphony.org/concerts
+END:VEVENT
+END:VCALENDAR

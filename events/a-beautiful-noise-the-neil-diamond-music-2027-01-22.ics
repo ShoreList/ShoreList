@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:a-beautiful-noise-the-neil-diamond-music-2027-01-22@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART;VALUE=DATE:20270122
+DTEND;VALUE=DATE:20270125
+SUMMARY:A Beautiful Noise: The Neil Diamond Musical
+LOCATION:Wilson Center at Cape Fear Community College\, Wilmington\, NC
+DESCRIPTION:Multiple performances Jan 22 to 24\nTickets and admission: Tickets required\nConfirm details with the organizer: https://www.wilsoncentertickets.com/pnc-broadway-series/shows
+URL:https://www.wilsoncentertickets.com/pnc-broadway-series/shows
+END:VEVENT
+END:VCALENDAR

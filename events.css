@@ -310,3 +310,32 @@ html:not(.js) .cal-m+.cal-m{margin-top:20px}
   html{scroll-behavior:auto}
   .ev-page *,.ev-page *::before,.ev-page *::after{animation:none!important;transition:none!important}
 }
+
+/* ---------- single event page ---------- */
+.ed-lede{font-size:1.08rem;max-width:760px;margin-top:14px!important;color:var(--ev-ink)}
+.ed-dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:24px!important;max-width:920px}
+.ed-dl>div{padding:14px 18px;border-radius:16px;background:#fff;border:1px solid var(--ev-line);min-width:0}
+.ed-dl dt{font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ev-red)}
+.ed-dl dd{margin:4px 0 0;overflow-wrap:anywhere}
+.ed-dl a{color:var(--ev-red);font-weight:800}
+.ed-act{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px!important}
+.ev-page .ed-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border-radius:999px;background:var(--ev-red);color:#fff;font-weight:800;font-size:.95rem;text-decoration:none;border:2px solid var(--ev-red)}
+.ev-page .ed-btn.ed-alt{background:transparent;color:var(--ev-red)}
+.ed-btn .evi{width:17px;height:17px}
+.ed-btn:hover{background:var(--ev-navy);border-color:var(--ev-navy);color:#fff}
+.ed-more{margin-top:36px}
+#events-feed .ed-more h3{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;font-weight:800;color:var(--ev-navy)}
+.ed-more ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:12px!important}
+.ed-more a{display:flex;flex-direction:column;gap:2px;height:100%;padding:14px 18px;border-radius:16px;background:#fff;border:1px solid var(--ev-line);text-decoration:none;color:var(--ev-ink)}
+.ed-more a:hover strong{color:var(--ev-red)}
+.ed-more strong{font-family:'Playfair Display',Georgia,serif;font-size:1.02rem;line-height:1.25}
+.ed-more span{font-size:.84rem;color:var(--ev-mute)}
+.hv{max-width:760px;margin:0}
+.hv p,.hv ul{margin-top:10px!important}
+#events-feed .hv h2{font-size:clamp(1.4rem,2.6vw,1.8rem);margin-top:34px!important}
+#events-feed .hv h2:first-child{margin-top:0!important}
+.hv a{color:var(--ev-red);font-weight:700}
+.hv .ev-on a{color:var(--ev-sail)}
+.hv-l{padding-left:1.2em}
+.hv-l li{list-style:disc;margin-top:4px}
+.ev-hero-sub .hero-facts li{white-space:normal}

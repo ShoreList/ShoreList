@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:wrightsville-beach-christmas-kick-off-an-2026-11-27@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART:20261127T223000Z
+SUMMARY:Wrightsville Beach Christmas Kick-Off and Tree Lighting
+LOCATION:Wrightsville Beach Park\, Wrightsville Beach\, NC
+DESCRIPTION:Tickets and admission: Free (no admission mentioned)\nConfirm details with the organizer: https://www.townofwrightsvillebeach.com/484/Christmas-Season-Kickoff
+URL:https://www.townofwrightsvillebeach.com/484/Christmas-Season-Kickoff
+END:VEVENT
+END:VCALENDAR

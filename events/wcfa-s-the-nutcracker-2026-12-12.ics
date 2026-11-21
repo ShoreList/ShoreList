@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:wcfa-s-the-nutcracker-2026-12-12@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261214
+SUMMARY:WCFA's The Nutcracker
+LOCATION:Wilson Center at Cape Fear Community College\, Wilmington\, NC
+DESCRIPTION:Tickets and admission: Tickets required\nConfirm details with the organizer: https://www.wilsoncentertickets.com/events/detail/the-nutcracker-1603066
+URL:https://www.wilsoncentertickets.com/events/detail/the-nutcracker-1603066
+END:VEVENT
+END:VCALENDAR

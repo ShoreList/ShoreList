@@ -36,6 +36,9 @@ function when(e) {
 const MON3 = MON.map((m) => m.slice(0, 3)), DOW3 = DOW.map((x) => x.slice(0, 3));
 const shortAbbr = (s) => { const x = d(s); return MON3[x.getUTCMonth()] + ' ' + x.getUTCDate(); };
 const isFree = (e) => /^free/i.test(e.tickets || '');
+// An event gets its own page only when its source was checked: curated entries need a verified URL, feed entries come straight from an organizer calendar.
+const hasPage = (e) => !!e.verified || e.source !== 'curated';
+const pageUrl = (e) => '/events/' + e.id;
 const CATS = ['Music', 'Arts', 'Holiday', 'Festival', 'Family', 'History', 'Markets', 'Sports', 'Outdoors'];
 const catKey = (c) => (CATS.includes(c) ? c.toLowerCase() : 'other');
 const ico = (n, cls) => '<svg class="' + (cls || 'evi') + '" aria-hidden="true" focusable="false"><use href="#ev-i-' + n + '"/></svg>';
@@ -69,7 +72,7 @@ function item(e) {
   const city = CITY[e.area] || 'Wilmington', free = isFree(e);
   return '<li class="evc" id="ev-' + esc(e.id) + '" data-id="' + esc(e.id) + '" data-start="' + esc(e.start) + '" data-end="' + esc(e.end) + '" data-area="' + esc(e.area) + '" data-cat="' + esc(e.cat) + '" data-city="' + esc(city) + '" data-venue="' + esc(e.venue) + '"' + (free ? ' data-free="1"' : '') + '>' +
     '<p class="evc-k"><span class="evc-cat">' + ico(catKey(e.cat)) + esc(e.cat) + '</span>' + (free ? '<span class="evc-free">Free</span>' : '') + '</p>' +
-    '<h4 class="evc-t"><a href="' + esc(e.url) + '" rel="noopener" target="_blank">' + esc(e.title) + '</a></h4>' +
+    '<h4 class="evc-t">' + (hasPage(e) ? '<a href="' + esc(pageUrl(e)) + '">' : '<a href="' + esc(e.url) + '" rel="noopener" target="_blank">') + esc(e.title) + '</a></h4>' +
     '<p class="evc-w">' + ico('clock') + '<time datetime="' + esc(e.start) + '">' + esc(when(e)) + '</time></p>' +
     '<p class="evc-v">' + ico('pin') + '<span>' + esc(e.venue) + ', ' + esc(city) + ', NC</span></p>' +
     (e.sched || e.tickets ? '<p class="evc-x">' + esc([e.sched, e.tickets].filter(Boolean).join('. ')) + '</p>' : '') +
@@ -198,9 +201,8 @@ const PHOTO = {
 const AREA_PHOTO = { 'downtown-wilmington': 'riverwalk', 'wrightsville-beach': 'wrightsville', 'carolina-beach': 'carolina', 'kure-beach': 'kure', 'greater-wilmington': 'bridge' };
 const heroImg = (p) => `<img class="ev-hero-img" width="${p.w}" height="${p.h}" src="${CDN}${p.file}_1920x.webp" srcset="${CDN}${p.file}_1000x.webp 1000w, ${CDN}${p.file}_1920x.webp 1920w" sizes="100vw" alt="${esc(p.alt)}" fetchpriority="high" decoding="async"/>`;
 const onward = (links) => '<nav class="ev-on" aria-label="Plan the rest of your visit"><h2>Plan the rest of your visit</h2><ul>' + links.map(([href, label, sub]) => '<li><a href="' + href + '"><strong>' + esc(label) + '</strong><span>' + esc(sub) + '</span>' + ico('arrow') + '</a></li>').join('') + '</ul></nav>';
-function page({ path, title, desc, h1, lede, list, crumb, h2, intro, photo, links }) {
-  const lds = [ld(list, title, path), { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [['ShoreList', '/'], ['Events', '/events'], [crumb, path]].map(([n, u], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + u })) }];
-  return `<!DOCTYPE html>
+// Shared document head, nav and footer for every /events/ page (identical markup for area, weekend and event pages).
+const headHtml = (path, title, desc, lds) => `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -219,14 +221,19 @@ function page({ path, title, desc, h1, lede, list, crumb, h2, intro, photo, link
 <link rel="manifest" href="/manifest.webmanifest"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
-${lds.map(script).join('\n')}
+${lds.map(script).join('\n')}`;
+const NAV = `<a class="skip-link" href="#main">Skip to content</a>
+<nav class="ev-nav" aria-label="Primary"><a class="nav-logo" href="/" aria-label="ShoreList home">Shore<span>List</span></a><div class="nav-right"><a href="/events">Events</a><a href="/things-to-do">Things to Do</a><a href="/shore-picks">Shore Picks</a><a class="nav-book" href="/things-to-do">Book Experiences</a></div></nav>`;
+const FOOT = `<footer class="ev-foot"><div>&copy; 2026 ShoreList LLC &middot; Wilmington, NC &amp; the Beaches</div><div><a href="/events">Events Guide</a><a href="/things-to-do">Things to Do</a><a href="/shore-picks">Shore Picks</a><a href="/where-to-stay">Where to Stay</a><a href="/wilmington-weather">Weather</a><a href="/how-we-verify">How we verify</a><a href="/legal">Privacy &amp; Terms</a></div></footer>`;
+function page({ path, title, desc, h1, lede, list, crumb, h2, intro, photo, links }) {
+  const lds = [ld(list, title, path), { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [['ShoreList', '/'], ['Events', '/events'], [crumb, path]].map(([n, u], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + u })) }];
+  return `${headHtml(path, title, desc, lds)}
 <link rel="stylesheet" href="/events.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
 <script src="/luxe.js" defer></script>
 </head>
 <body class="ev-page">
-<a class="skip-link" href="#main">Skip to content</a>
-<nav class="ev-nav" aria-label="Primary"><a class="nav-logo" href="/" aria-label="ShoreList home">Shore<span>List</span></a><div class="nav-right"><a href="/events">Events</a><a href="/things-to-do">Things to Do</a><a href="/shore-picks">Shore Picks</a><a class="nav-book" href="/things-to-do">Book Experiences</a></div></nav>
+${NAV}
 <main id="main">
 <header class="ev-hero ev-hero-sub">
   ${heroImg(photo)}
@@ -246,7 +253,7 @@ ${list.length ? feed(list, { areas: path === '/events/this-weekend', weekend: pa
 ${onward(links)}
 </div></section>
 </main>
-<footer class="ev-foot"><div>&copy; 2026 ShoreList LLC &middot; Wilmington, NC &amp; the Beaches</div><div><a href="/events">Events Guide</a><a href="/things-to-do">Things to Do</a><a href="/shore-picks">Shore Picks</a><a href="/where-to-stay">Where to Stay</a><a href="/wilmington-weather">Weather</a><a href="/legal">Privacy &amp; Terms</a></div></footer>
+${FOOT}
 <script src="/shore-plus.js" defer></script>
 <script src="/events-feed.js" defer></script>
 </body>
@@ -276,3 +283,169 @@ fs.writeFileSync('events/this-weekend.html', page({
   links: [['/wilmington-weather', 'Weekend weather', 'Forecast and beach report'], ['/things-to-do', 'Things to do', 'Tours and experiences you can book'], ['/shore-picks', 'Where to eat', 'Local picks for before or after'], ['/where-to-stay', 'Where to stay', 'Areas and places to base yourself']]
 }));
 console.log('events static:', all.length, 'events;', AREAS.map((a) => a.slug + ' ' + all.filter((e) => e.area === a.area).length).join(', ') + '; weekend ' + wk.length);
+
+// ---------- one page per event: /events/<id>.html plus a static /events/<id>.ics ----------
+// Only events whose source was checked get a page (hasPage). Everything shown comes from fields in events-data.json; nothing is invented.
+// Past events are not in `all`, so their files are deleted here on every run (the daily workflow commits the deletions).
+const RESERVED = new Set(AREAS.map((a) => a.slug).concat(['this-weekend']));
+const AREA_OF = Object.fromEntries(AREAS.map((a) => [a.area, a]));
+const evPages = all.filter(hasPage);
+const clip = (str, n) => { if (str.length <= n) return str; const c = str.slice(0, n - 1); return c.slice(0, c.lastIndexOf(' ')).replace(/[,;:.\s]+$/, '') + '…'; };
+const sentence = (str) => String(str).trim().replace(/[.\s]+$/, '') + '.';
+const cityOf = (e) => CITY[e.area] || 'Wilmington';
+const longDate = (x) => short(x) + ', ' + x.slice(0, 4);
+const whenFull = (e) => e.recurring || e.end === e.start ? when(e) : longDate(e.start) + ' to ' + longDate(e.end) + (e.time ? ', starting ' + e.time : '');
+const dateTag = (e) => (e.start > today ? short(e.start) : 'through ' + short(e.end));
+const descOf = (e) => [e.title + ' takes place at ' + e.venue + ' in ' + cityOf(e) + ', NC.', sentence('Date: ' + whenFull(e)), e.sched ? sentence('Schedule: ' + e.sched) : '', e.tickets ? sentence('Tickets and admission: ' + e.tickets) : ''].filter(Boolean).join(' ');
+const metaOf = (e) => clip(e.title + ': ' + whenFull(e) + ' at ' + e.venue + ', ' + cityOf(e) + ', NC.' + (e.tickets ? ' ' + sentence(e.tickets) : ''), 158);
+// Offers only from ticket/price text in the data. Dollar amounts become prices; "Free" (with no "with", "not stated" or "not listed" hedge) is price 0.
+function offersOf(e) {
+  const t = e.tickets; if (!t) return null;
+  const url = e.url, amounts = [...t.matchAll(/\$(\d+(?:\.\d{1,2})?)/g)].map((m) => +m[1]);
+  const avail = /sold out/i.test(t) ? { availability: 'https://schema.org/SoldOut' } : {};
+  if (amounts.length === 1) return Object.assign({ '@type': 'Offer', url, price: amounts[0], priceCurrency: 'USD' }, avail);
+  if (amounts.length > 1) return Object.assign({ '@type': 'AggregateOffer', url, lowPrice: Math.min(...amounts), highPrice: Math.max(...amounts), priceCurrency: 'USD' }, avail);
+  if (/^free\b/i.test(t) && !/\bwith\b|not (stated|listed)|no admission/i.test(t)) return { '@type': 'Offer', url, price: 0, priceCurrency: 'USD' };
+  return { '@type': 'Offer', url };
+}
+function eventLd(e) {
+  const o = { '@context': 'https://schema.org', '@type': 'Event', name: e.title, description: descOf(e), startDate: iso(e.start, e.time) };
+  if (!(e.time && e.start === e.end)) o.endDate = e.end; // a start time alone is not an end time, so single-day timed events omit endDate
+  o.eventStatus = 'https://schema.org/EventScheduled';
+  o.eventAttendanceMode = 'https://schema.org/OfflineEventAttendanceMode';
+  o.location = { '@type': 'Place', name: e.venue, address: { '@type': 'PostalAddress', addressLocality: cityOf(e), addressRegion: 'NC', addressCountry: 'US' } };
+  if (e.organizer) o.organizer = { '@type': 'Organization', name: e.organizer, url: e.url };
+  const off = offersOf(e); if (off) o.offers = off;
+  if (e.image) o.image = e.image;
+  o.url = SITE + pageUrl(e);
+  return o;
+}
+function icsOf(e) {
+  const esc2 = (x) => String(x).replace(/[\;,]/g, '\\$&').replace(/\n/g, '\\n');
+  const stamp = (data.updated || today).replace(/-/g, '') + 'T000000Z', day = (x) => x.replace(/-/g, '');
+  const next = (x) => { const t2 = d(x); t2.setUTCDate(t2.getUTCDate() + 1); return t2.toISOString().slice(0, 10); };
+  const when2 = e.time ? ['DTSTART:' + new Date(iso(e.start, e.time)).toISOString().replace(/[-:]|\.\d+/g, '')] : ['DTSTART;VALUE=DATE:' + day(e.start), 'DTEND;VALUE=DATE:' + day(next(e.end))];
+  const note = [e.sched, e.tickets && 'Tickets and admission: ' + e.tickets, 'Confirm details with the organizer: ' + e.url].filter(Boolean).join('\n');
+  return ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//ShoreList//Events//EN', 'CALSCALE:GREGORIAN', 'BEGIN:VEVENT', 'UID:' + e.id + '@shorelist.net', 'DTSTAMP:' + stamp].concat(when2,
+    ['SUMMARY:' + esc2(e.title), 'LOCATION:' + esc2(e.venue + ', ' + cityOf(e) + ', NC'), 'DESCRIPTION:' + esc2(note), 'URL:' + e.url, 'END:VEVENT', 'END:VCALENDAR']).join('\r\n') + '\r\n';
+}
+const titleOf = (e) => e.title + ', ' + dateTag(e) + ': ' + cityOf(e) + ', NC | ShoreList';
+const fact = (k, v) => '<div><dt>' + k + '</dt><dd>' + v + '</dd></div>';
+function eventPage(e) {
+  const a = AREA_OF[e.area] || AREAS[0], city = cityOf(e), path = pageUrl(e), title = titleOf(e);
+  const photo = PHOTO[AREA_PHOTO[a.slug]];
+  const lds = [eventLd(e), { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [['ShoreList', '/'], ['Events', '/events'], [a.name + ' events', '/events/' + a.slug], [e.title, path]].map(([n, u], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + u })) }];
+  const more = all.filter((x) => x.area === e.area && x.id !== e.id && hasPage(x)).slice(0, 4);
+  const links = [['/events/' + a.slug, a.name + ' events', 'All upcoming events in this area'], ['/events/this-weekend', 'This weekend', 'What else is on Friday to Sunday'], [a.guide, a.guide === '/things-to-do' ? 'Wilmington area guide' : a.name + ' guide', 'Things to do nearby'], ['/things-to-do', 'Things to do', 'Tours and experiences you can book'], ['/where-to-stay', 'Where to stay', 'Areas and places to base yourself'], ['/wilmington-weather', 'Weather', 'Forecast and beach report']];
+  return `${headHtml(path, title, metaOf(e), lds)}
+<link rel="stylesheet" href="/events.css"/>
+<link rel="stylesheet" href="/luxe.css"/>
+<script src="/luxe.js" defer></script>
+</head>
+<body class="ev-page">
+${NAV}
+<main id="main">
+<header class="ev-hero ev-hero-sub">
+  ${heroImg(photo)}
+  <div class="ev-wrap">
+    <p class="ev-eye"><i></i>${esc(e.cat)} event</p>
+    <h1>${esc(e.title)}</h1>
+    <ul class="hero-facts"><li><time datetime="${esc(e.start)}">${esc(whenFull(e))}</time></li><li>${esc(e.venue)}, ${esc(city)}</li></ul>
+    <div class="ev-jump"><a href="/events/${a.slug}">${esc(a.name)} events</a><a href="/events">All events</a><a href="/events/this-weekend">This weekend</a></div>
+  </div>
+  <p class="hero-credit">${photo.credit}</p>
+</header>
+<section id="events-feed" aria-label="Event details">
+<div class="ef-in">
+<h2>About this event</h2>
+<p class="ed-lede">${esc(descOf(e))}</p>
+<dl class="ed-dl">${fact('When', '<time datetime="' + esc(e.start) + '">' + esc(whenFull(e)) + '</time>')}${fact('Where', esc(e.venue) + ', ' + esc(city) + ', NC')}${fact('Area', '<a href="/events/' + a.slug + '">' + esc(a.name) + '</a>')}${fact('Type', esc(e.cat))}${e.sched ? fact('Schedule', esc(e.sched)) : ''}${e.tickets ? fact('Tickets and admission', esc(e.tickets)) : ''}</dl>
+<p class="ed-act"><a class="ed-btn" href="${esc(e.url)}" rel="noopener" target="_blank">${ico('ticket')}Organizer page and tickets${ico('out')}<span class="sr"> for ${esc(e.title)} (opens in a new tab)</span></a><a class="ed-btn ed-alt" href="${esc(path)}.ics" download="${esc(e.id)}.ics">${ico('cal')}Add to calendar<span class="sr">: ${esc(e.title)} (.ics file)</span></a></p>
+<p class="ef-note">Dates and times come from official and organizer pages and can change. Confirm with the organizer before you go.${e.verified ? ' Source we checked: <a href="' + esc(e.verified) + '" rel="noopener" target="_blank">' + esc(new URL(e.verified).hostname.replace(/^www\./, '')) + '</a>.' : ''} <a href="/how-we-verify">How we verify events</a>.</p>
+${more.length ? '<nav class="ed-more" aria-label="More events in ' + esc(a.name) + '"><h3>More in ' + esc(a.name) + '</h3><ul>' + more.map((x) => '<li><a href="' + esc(pageUrl(x)) + '"><strong>' + esc(x.title) + '</strong><span>' + esc(when(x)) + '</span></a></li>').join('') + '</ul></nav>' : ''}
+${SPRITE}${onward(links)}
+</div></section>
+</main>
+${FOOT}
+<script src="/shore-plus.js" defer></script>
+</body>
+</html>
+`;
+}
+const keepFiles = new Set(['carolina-beach.html', 'downtown-wilmington.html', 'greater-wilmington.html', 'kure-beach.html', 'this-weekend.html', 'wrightsville-beach.html']);
+const seenSlug = new Set(), meta = new Set(), titles = new Set(), sm = {};
+for (const e of evPages) {
+  if (!/^[A-Za-z0-9][A-Za-z0-9-]*$/.test(e.id) || RESERVED.has(e.id) || seenSlug.has(e.id.toLowerCase())) throw new Error('bad or duplicate event slug: ' + e.id);
+  seenSlug.add(e.id.toLowerCase());
+  const html = eventPage(e), ics = icsOf(e);
+  if (titles.has(titleOf(e)) || meta.has(metaOf(e))) throw new Error('duplicate title or meta description: ' + e.id);
+  titles.add(titleOf(e)); meta.add(metaOf(e));
+  const hp = 'events/' + e.id + '.html', ip = 'events/' + e.id + '.ics';
+  const changed = !fs.existsSync(hp) || fs.readFileSync(hp, 'utf8') !== html || !fs.existsSync(ip) || fs.readFileSync(ip, 'utf8') !== ics;
+  sm[e.id] = changed;
+  if (changed) { fs.writeFileSync(hp, html); fs.writeFileSync(ip, ics); }
+  keepFiles.add(e.id + '.html'); keepFiles.add(e.id + '.ics');
+}
+let removed = 0;
+for (const f of fs.readdirSync('events')) if (!keepFiles.has(f) && /\.(html|ics)$/.test(f)) { fs.unlinkSync('events/' + f); removed++; }
+
+// ---------- /how-we-verify: process facts only, taken from tools/refresh-events.mjs and .github/workflows/refresh-events.yml ----------
+{
+  const path = '/how-we-verify', title = 'How ShoreList Verifies Events in Wilmington, NC', desc = 'Where ShoreList event listings come from, how often they refresh, what verified means here, and how to send a correction.';
+  const lds = [{ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [['ShoreList', '/'], ['Events', '/events'], ['How we verify', path]].map(([n, u], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + u })) }];
+  const photo = PHOTO.bridge;
+  const html = `${headHtml(path, title, desc, lds)}
+<link rel="stylesheet" href="/events.css"/>
+<link rel="stylesheet" href="/luxe.css"/>
+<script src="/luxe.js" defer></script>
+</head>
+<body class="ev-page">
+${NAV}
+<main id="main">
+<header class="ev-hero ev-hero-sub">
+  ${heroImg(photo)}
+  <div class="ev-wrap">
+    <p class="ev-eye"><i></i>Events</p>
+    <h1>How ShoreList <em>verifies</em> events</h1>
+    <p class="ev-lede">Where our event listings come from, how often they refresh, and what to do if something is wrong.</p>
+    <div class="ev-jump"><a href="/events">All events</a><a href="/events/this-weekend">This weekend</a></div>
+  </div>
+  <p class="hero-credit">${photo.credit}</p>
+</header>
+<section id="events-feed" aria-label="How we verify events">
+<div class="ef-in hv">
+<h2>Where listings come from</h2>
+<p>Event listings come from two places. Some are entered by ShoreList from organizer, venue and town pages. Others are read automatically from public calendar feeds (iCal) that organizers publish themselves.</p>
+<h2>How often they refresh</h2>
+<p>A refresh runs once a day. It re-reads the calendar feeds, keeps the listings ShoreList entered by hand, and drops any event whose end date has passed. Calendar-feed events are kept only for the next 120 days. If a feed cannot be reached on a given day, its last known listings stay in place instead of disappearing. After each refresh, the events pages are rebuilt and published automatically.</p>
+<h2>What verified means here</h2>
+<p>An event gets its own page only when it points to a source we checked (the &ldquo;Source we checked&rdquo; link on that page) or comes straight from the organizer&rsquo;s own calendar feed. Listings without either stay in the date lists and link to the organizer&rsquo;s page, but have no page of their own. Verified is not a guarantee: organizers change dates, times and prices, so confirm with the organizer before you go.</p>
+<p>Event pages show only details held in our listing data. If a price, address, organizer or photo is not in the data, the page leaves it out rather than guessing.</p>
+<h2>Report a correction</h2>
+<p>If a date, time, venue or link is wrong, email <a href="mailto:rj@shorelist.net">rj@shorelist.net</a> with the event name, the page address and, if you have it, a link to the organizer&rsquo;s page showing the right details.</p>
+<h2>What we do not do</h2>
+<ul class="hv-l"><li>No paid rankings. Events are listed in date order.</li><li>No fake reviews.</li></ul>
+${SPRITE}${onward([['/events', 'All events', 'Upcoming events in Wilmington and the beaches'], ['/events/this-weekend', 'This weekend', 'What is on Friday to Sunday'], ['/things-to-do', 'Things to do', 'Tours and experiences you can book']])}
+</div></section>
+</main>
+${FOOT}
+<script src="/shore-plus.js" defer></script>
+</body>
+</html>
+`;
+  fs.writeFileSync('how-we-verify.html', html);
+}
+
+// ---------- sitemap.xml: the block between the markers lists the event pages (everything else in the file is hand-kept) ----------
+{
+  const smp = 'sitemap.xml'; let x = fs.readFileSync(smp, 'utf8');
+  const A = '  <!-- event-pages:start (written by tools/build-events-pages.mjs) -->', B = '  <!-- event-pages:end -->';
+  const prev = {}; const i0 = x.indexOf(A), j0 = x.indexOf(B);
+  if (i0 >= 0 && j0 >= 0) for (const m of x.slice(i0, j0).matchAll(/<loc>https:\/\/shorelist\.net\/events\/([^<]+)<\/loc><lastmod>([^<]+)<\/lastmod>/g)) prev[m[1]] = m[2];
+  const lines = evPages.map((e) => '  <url><loc>' + SITE + pageUrl(e) + '</loc><lastmod>' + (sm[e.id] || !prev[e.id] ? (data.updated || today) : prev[e.id]) + '</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>');
+  const block = A + '\n' + lines.join('\n') + '\n' + B;
+  if (i0 >= 0 && j0 >= 0) x = x.slice(0, i0) + block + x.slice(j0 + B.length);
+  else x = x.replace('</urlset>', block + '\n</urlset>');
+  fs.writeFileSync(smp, x);
+}
+console.log('event pages:', evPages.length, 'written/kept;', removed, 'stale files removed;', all.length - evPages.length, 'upcoming events without a checked source get no page');

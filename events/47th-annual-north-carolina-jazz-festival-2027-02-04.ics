@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:47th-annual-north-carolina-jazz-festival-2027-02-04@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART:20270205T003000Z
+SUMMARY:47th Annual North Carolina Jazz Festival
+LOCATION:Hotel Ballast\, Wilmington\, NC
+DESCRIPTION:Nightly concerts Thu to Sat at 7:30 pm\; Patrons Jazz Brunch Sat 10:30 am\nTickets and admission: Tickets required\, $65 per night\; packages available\nConfirm details with the organizer: https://ncjazzfestival.org
+URL:https://ncjazzfestival.org
+END:VEVENT
+END:VCALENDAR

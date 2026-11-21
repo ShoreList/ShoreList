@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:enchanted-airlie-2026-11-27@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART:20261127T223000Z
+SUMMARY:Enchanted Airlie
+LOCATION:Airlie Gardens\, Wilmington\, NC
+DESCRIPTION:Nightly Nov 27 to 28 and Dec 1 to 21 (not Nov 29 or 30)\; timed entry 5:30\, 6:30\, 7:30\, 8:30 pm\nTickets and admission: Advance tickets required\, $35 per carload\; page currently marked SOLD OUT\nConfirm details with the organizer: https://airliegardens.org/events/enchanted-airlie/
+URL:https://airliegardens.org/events/enchanted-airlie/
+END:VEVENT
+END:VCALENDAR

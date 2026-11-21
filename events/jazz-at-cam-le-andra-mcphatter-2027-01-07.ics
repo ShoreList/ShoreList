@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:jazz-at-cam-le-andra-mcphatter-2027-01-07@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART;VALUE=DATE:20270107
+DTEND;VALUE=DATE:20270108
+SUMMARY:Jazz at CAM: Le'Andra McPhatter
+LOCATION:Cameron Art Museum\, Wilmington\, NC
+DESCRIPTION:Tickets and admission: Tickets required per prior Jazz at CAM concerts\; price not on listing\nConfirm details with the organizer: https://cameronartmuseum.org/event/jazz-at-cam-leandra-mcphatter/
+URL:https://cameronartmuseum.org/event/jazz-at-cam-leandra-mcphatter/
+END:VEVENT
+END:VCALENDAR

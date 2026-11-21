@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:holiday-story-time-by-the-sea-2026-12-19@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART:20261219T160000Z
+SUMMARY:Holiday Story Time by the Sea
+LOCATION:Ocean Front Park and Pavilion\, Kure Beach\, NC
+DESCRIPTION:Confirm details with the organizer: https://www.townofkurebeach.org/recreation/ocean-front-park-and-pavilion/activities-events
+URL:https://www.townofkurebeach.org/recreation/ocean-front-park-and-pavilion/activities-events
+END:VEVENT
+END:VCALENDAR

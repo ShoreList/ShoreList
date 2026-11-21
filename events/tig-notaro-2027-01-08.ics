@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:tig-notaro-2027-01-08@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART;VALUE=DATE:20270108
+DTEND;VALUE=DATE:20270109
+SUMMARY:Tig Notaro
+LOCATION:Wilson Center at Cape Fear Community College\, Wilmington\, NC
+DESCRIPTION:Tickets and admission: Tickets required\nConfirm details with the organizer: https://www.wilsoncentertickets.com/events/detail/tig-notaro-1645199
+URL:https://www.wilsoncentertickets.com/events/detail/tig-notaro-1645199
+END:VEVENT
+END:VCALENDAR

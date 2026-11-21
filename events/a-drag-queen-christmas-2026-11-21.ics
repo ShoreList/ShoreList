@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:a-drag-queen-christmas-2026-11-21@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:A Drag Queen Christmas
+LOCATION:Wilson Center at Cape Fear Community College\, Wilmington\, NC
+DESCRIPTION:Tickets and admission: Tickets required\nConfirm details with the organizer: https://www.wilsoncentertickets.com/events/detail/a-drag-queen-christmas-1467266
+URL:https://www.wilsoncentertickets.com/events/detail/a-drag-queen-christmas-1467266
+END:VEVENT
+END:VCALENDAR

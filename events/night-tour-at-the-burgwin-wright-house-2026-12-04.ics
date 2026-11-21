@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:night-tour-at-the-burgwin-wright-house-2026-12-04@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261205
+SUMMARY:Night Tour at the Burgwin-Wright House
+LOCATION:Burgwin-Wright House and Gardens\, Wilmington\, NC
+DESCRIPTION:Tickets and admission: Tickets required (price not stated)\nConfirm details with the organizer: https://www.burgwinwrighthouse.com/
+URL:https://www.burgwinwrighthouse.com/
+END:VEVENT
+END:VCALENDAR

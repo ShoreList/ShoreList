@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:leslie-odom-jr-the-christmas-tour-2026-12-17@shorelist.net
+DTSTAMP:20261121T000000Z
+DTSTART:20261218T003000Z
+SUMMARY:Leslie Odom\, Jr.: The Christmas Tour
+LOCATION:Wilson Center at Cape Fear Community College\, Wilmington\, NC
+DESCRIPTION:Tickets and admission: Tickets required\nConfirm details with the organizer: https://www.wilsoncentertickets.com/events/detail/leslie-odom-jr-1442850
+URL:https://www.wilsoncentertickets.com/events/detail/leslie-odom-jr-1442850
+END:VEVENT
+END:VCALENDAR

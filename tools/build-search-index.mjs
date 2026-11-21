@@ -44,6 +44,7 @@ const pages = [
   ['The Shore Report newsletter', 'Free weekly events, itinerary and beach conditions', '/weekly', 'newsletter weekly email shore report subscribe'],
   ['Plan your trip to Wilmington, NC', 'When to go, where to stay, how far the beaches are and a three-day itinerary', '/plan-your-trip', 'plan trip visit vacation when to go where to stay airport itinerary guide'],
   ['Events', 'Concerts, festivals, holiday events and things to do', '/events', 'event events concert festival holiday show music tonight weekend'],
+  ['How we verify events', 'Where event listings come from, how often they refresh and how to report a correction', '/how-we-verify', 'verify verification sources correction accuracy events calendar'],
   ['Shore Picks', 'Restaurants, coffee and drinks that locals pick', '/shore-picks', 'eat food restaurant coffee cafe bar drinks brunch dinner lunch'],
   ['Plan my day', 'Build a coastal itinerary', '/planner', 'plan planner itinerary day trip schedule'],
   ['Map', 'Explore Wilmington and the beaches on a map', '/map', 'map where directions location'],
