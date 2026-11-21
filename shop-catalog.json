@@ -253,6 +253,97 @@
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-ilm-hoodie_1920x.webp"
   },
   {
+   "id": "wrightsville-beach-varsity-tee",
+   "collection": "heritage",
+   "name": "Wrightsville Beach Varsity Tee",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-varsity-tee",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-varsity-tee_1000x.webp",
+   "alt": "Woman on a wooden dock at golden hour wearing the washed blue Wrightsville Beach varsity tee",
+   "meta": "WRIGHTSVILLE arched over BEACH in cream varsity lettering on a heavyweight garment-dyed tee, with 1899, the year the town was incorporated.",
+   "cta": "Choose colour and size",
+   "price": 42,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15711640030921180241_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-varsity-tee_1920x.webp"
+  },
+  {
+   "id": "carolina-beach-varsity-tee",
+   "collection": "heritage",
+   "name": "Carolina Beach Varsity Tee",
+   "url": "https://shorelist.myshopify.com/products/carolina-beach-varsity-tee",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-varsity-tee_1000x.webp",
+   "alt": "Man on the boardwalk with an ice cream wearing the washed blue Carolina Beach varsity tee",
+   "meta": "CAROLINA arched over BEACH in cream varsity lettering on a heavyweight garment-dyed tee, with 1925, the year the town was incorporated.",
+   "cta": "Choose colour and size",
+   "price": 42,
+   "scenes": [
+    "boardwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/1365805015077500468_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-varsity-tee_1920x.webp"
+  },
+  {
+   "id": "kure-beach-varsity-tee",
+   "collection": "heritage",
+   "name": "Kure Beach Varsity Tee",
+   "url": "https://shorelist.myshopify.com/products/kure-beach-varsity-tee",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-varsity-tee_1000x.webp",
+   "alt": "Woman on the beach at sunrise with a fishing rod wearing the washed blue Kure Beach varsity tee",
+   "meta": "KURE BEACH arched over N.C. in cream varsity lettering on a heavyweight garment-dyed tee, with Pleasure Island and 1947.",
+   "cta": "Choose colour and size",
+   "price": 42,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10495263550913441161_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-varsity-tee_1920x.webp"
+  },
+  {
+   "id": "wilmington-varsity-tee",
+   "collection": "heritage",
+   "name": "Wilmington Varsity Tee",
+   "url": "https://shorelist.myshopify.com/products/wilmington-varsity-tee",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wilmington-varsity-tee_1000x.webp",
+   "alt": "Man at a riverwalk cafe table at golden hour wearing the washed blue Wilmington varsity tee",
+   "meta": "WILMINGTON arched over N.C. in cream varsity lettering on a heavyweight garment-dyed tee, with The Port City and 1739.",
+   "cta": "Choose colour and size",
+   "price": 42,
+   "scenes": [
+    "riverwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6354541425083840221_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wilmington-varsity-tee_1920x.webp"
+  },
+  {
+   "id": "ilm-tee",
+   "collection": "heritage",
+   "name": "ILM Tee",
+   "url": "https://shorelist.myshopify.com/products/ilm-tee",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-ilm-tee_1000x.webp",
+   "alt": "Woman beside a vintage convertible under live oaks wearing the washed blue ILM tee",
+   "meta": "The airport code every local knows, set in a fine serif on a heavyweight garment-dyed tee.",
+   "cta": "Choose colour and size",
+   "price": 42,
+   "scenes": [
+    "riverwalk",
+    "harbor-night"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17784527671395886940_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-ilm-tee_1920x.webp"
+  },
+  {
    "id": "wrightsville-beach-pier-embroidered-crewneck",
    "collection": "stitched",
    "name": "Wrightsville Beach Pier Embroidered Crewneck",
