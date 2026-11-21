@@ -223,7 +223,7 @@
    "alt": "Blonde woman on a marina dock wearing a navy cuffed beanie embroidered with a small sailboat and the letters WB",
    "meta": "A little sloop and WB embroidered on the cuff of a classic knit beanie.",
    "cta": "Choose colour",
-   "price": 42,
+   "price": 30,
    "scenes": [
     "beach"
    ],
@@ -241,7 +241,7 @@
    "alt": "Man on a winter beach wearing a green cuffed beanie embroidered with a small pelican and the letters CB",
    "meta": "A brown pelican and CB embroidered on the cuff of a classic knit beanie.",
    "cta": "Choose colour",
-   "price": 42,
+   "price": 30,
    "scenes": [
     "beach"
    ],
@@ -249,6 +249,24 @@
    "store": "shopify",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2987194900095621589_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-cuffed-beanie-carolina-beach_1920x.webp"
+  },
+  {
+   "id": "the-blue-crab-cuffed-beanie-kure-beach",
+   "collection": "local-icons",
+   "name": "The Blue Crab Cuffed Beanie, Kure Beach",
+   "url": "https://shorelist.myshopify.com/products/the-blue-crab-cuffed-beanie-kure-beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-cuffed-beanie-kure-beach_1000x.webp",
+   "alt": "Man on a fishing pier wearing an olive cuffed beanie embroidered with a small blue crab and the letters KB",
+   "meta": "A blue crab and KB embroidered on the cuff of a classic knit beanie.",
+   "cta": "Choose colour",
+   "price": 30,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5273891047849590882_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-cuffed-beanie-kure-beach_1920x.webp"
   },
   {
    "id": "the-live-oak-cuffed-beanie-wilmington",
@@ -259,7 +277,7 @@
    "alt": "Brunette woman on a historic downtown street wearing a navy cuffed beanie embroidered with a small live oak and the letters ILM",
    "meta": "A live oak and ILM embroidered on the cuff of a classic knit beanie.",
    "cta": "Choose colour",
-   "price": 42,
+   "price": 30,
    "scenes": [
     "riverwalk"
    ],
@@ -546,8 +564,8 @@
    "collection": "landmarks",
    "name": "Kure Beach Fishing Pier Art Print",
    "url": "https://shorelist-shop.fourthwall.com/products/kure-beach-fishing-pier-art-print",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-studio-kure-beach-fishing-pier-art-print_1000x.webp",
-   "alt": "Kure Beach Fishing Pier Art Print shown flat on a neutral background",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-fishing-pier-art-print_1000x.webp",
+   "alt": "Kure Beach Fishing Pier art print framed above a sofa in a beach house",
    "meta": "A restored mid-century postcard of the fishing pier on museum-matte paper.",
    "cta": "Choose a size and buy",
    "price": 16,
@@ -555,15 +573,16 @@
     "beach"
    ],
    "store": "fourthwall",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-studio-kure-beach-fishing-pier-art-print_1000x.webp"
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-studio-kure-beach-fishing-pier-art-print_1000x.webp",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-fishing-pier-art-print_1920x.webp"
   },
   {
    "id": "carolina-beach-boardwalk-art-print",
    "collection": "landmarks",
    "name": "Carolina Beach Boardwalk Art Print",
    "url": "https://shorelist-shop.fourthwall.com/products/carolina-beach-boardwalk-art-print",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-studio-carolina-beach-boardwalk-art-print_1000x.webp",
-   "alt": "Carolina Beach Boardwalk Art Print shown flat on a neutral background",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-boardwalk-art-print_1000x.webp",
+   "alt": "Carolina Beach Boardwalk art print framed above a console table",
    "meta": "The carousel and Ferris wheel at blue hour on museum-matte paper.",
    "cta": "Choose a size and buy",
    "price": 16,
@@ -571,15 +590,16 @@
     "boardwalk"
    ],
    "store": "fourthwall",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-studio-carolina-beach-boardwalk-art-print_1000x.webp"
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-studio-carolina-beach-boardwalk-art-print_1000x.webp",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-boardwalk-art-print_1920x.webp"
   },
   {
    "id": "wrightsville-beach-pier-art-print",
    "collection": "landmarks",
    "name": "Wrightsville Beach Pier Art Print",
    "url": "https://shorelist-shop.fourthwall.com/products/wrightsville-beach-pier-art-print",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-studio-wrightsville-beach-pier-art-print_1000x.webp",
-   "alt": "Wrightsville Beach Pier Art Print shown flat on a neutral background",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-pier-art-print_1000x.webp",
+   "alt": "Wrightsville Beach Pier art print framed above a bed in a beach house",
    "meta": "Sunrise over the pier in five flat inks on museum-matte paper.",
    "cta": "Choose a size and buy",
    "price": 16,
@@ -587,15 +607,16 @@
     "beach"
    ],
    "store": "fourthwall",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-studio-wrightsville-beach-pier-art-print_1000x.webp"
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-studio-wrightsville-beach-pier-art-print_1000x.webp",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-pier-art-print_1920x.webp"
   },
   {
    "id": "uss-north-carolina-art-print",
    "collection": "landmarks",
    "name": "USS North Carolina Art Print",
    "url": "https://shorelist-shop.fourthwall.com/products/uss-north-carolina-art-print",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-studio-uss-north-carolina-art-print_1000x.webp",
-   "alt": "USS North Carolina Art Print shown flat on a neutral background",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-uss-north-carolina-art-print_1000x.webp",
+   "alt": "USS North Carolina art print framed above a desk in a coastal study",
    "meta": "The battleship underway in 1946, in five naval inks on museum-matte paper.",
    "cta": "Choose a size and buy",
    "price": 16,
@@ -603,7 +624,8 @@
     "riverwalk"
    ],
    "store": "fourthwall",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-studio-uss-north-carolina-art-print_1000x.webp"
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-studio-uss-north-carolina-art-print_1000x.webp",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-uss-north-carolina-art-print_1920x.webp"
   },
   {
    "id": "airlie-oak-crewneck",
@@ -851,8 +873,8 @@
    "collection": "beach-setup",
    "name": "ShoreList Tilt Beach Umbrella",
    "url": "https://shorelist.myshopify.com/products/shorelist-tilt-beach-umbrella-6-5-ft-upf-50",
-   "img": "https://shorelist.myshopify.com/cdn/shop/files/896e91258188456b9739f40519a8211b.webp",
-   "alt": "Turquoise 6.5 ft tilt beach umbrella with carry sleeve",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-tilt-beach-umbrella_1000x.webp",
+   "alt": "Couple laughing under the teal tilt beach umbrella on the sand by the dunes at golden hour",
    "meta": "6.5 ft tilting canopy with UPF 50+ shade and a carry sleeve.",
    "cta": "Shop beach gear",
    "price": 99,
@@ -861,15 +883,17 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48569723617364:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now"
+   "buy": "https://shorelist.myshopify.com/cart/48569723617364:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://shorelist.myshopify.com/cdn/shop/files/896e91258188456b9739f40519a8211b.webp",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-tilt-beach-umbrella_1920x.webp"
   },
   {
    "id": "backpack-beach-chair",
    "collection": "beach-setup",
    "name": "ShoreList Backpack Beach Chair",
    "url": "https://shorelist.myshopify.com/products/shorelist-aluminum-backpack-beach-chair-mint-stripe",
-   "img": "https://shorelist.myshopify.com/cdn/shop/files/e4e9481e914347868d7fc04ab6c9e261.webp",
-   "alt": "Mint stripe aluminum backpack beach chair with wooden armrests",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-backpack-beach-chair_1000x.webp",
+   "alt": "Woman reading in the backpack beach chair at the water edge",
    "meta": "Four-position aluminum frame, wooden armrests, pillow and pockets. Mint stripe.",
    "cta": "Shop beach gear",
    "price": 109,
@@ -878,15 +902,17 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48569729744980:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now"
+   "buy": "https://shorelist.myshopify.com/cart/48569729744980:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://shorelist.myshopify.com/cdn/shop/files/e4e9481e914347868d7fc04ab6c9e261.webp",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-backpack-beach-chair_1920x.webp"
   },
   {
    "id": "carolina-coast-towel",
    "collection": "beach-setup",
    "name": "Carolina Coast Terry Beach Towel",
    "url": "https://shorelist.myshopify.com/products/beach-towel",
-   "img": "https://shorelist.myshopify.com/cdn/shop/files/carolina-coast-towel-lookbook.png",
-   "alt": "Woman wrapped in a Carolina Coast terry beach towel on the beach at sunrise",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-coast-towel_1000x.webp",
+   "alt": "Woman walking up the beach with the terry beach towel over her shoulders",
    "meta": "Oversized terry beach towel with the Carolina Coast design.",
    "cta": "Shop beach gear",
    "price": 68,
@@ -895,15 +921,17 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48569495519316:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now"
+   "buy": "https://shorelist.myshopify.com/cart/48569495519316:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://shorelist.myshopify.com/cdn/shop/files/carolina-coast-towel-lookbook.png",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-coast-towel_1920x.webp"
   },
   {
    "id": "coastal-soft-cooler",
    "collection": "beach-setup",
    "name": "Wilmington Coastal Soft Cooler",
    "url": "https://shorelist.myshopify.com/products/wilmington-coastal-soft-cooler-bag",
-   "img": "https://shorelist.myshopify.com/cdn/shop/files/1136021536200041722_2048.jpg",
-   "alt": "Gray Wilmington soft cooler bag with zippered front pocket",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-coastal-soft-cooler_1000x.webp",
+   "alt": "Couple on a small boat at a sandbar reaching into the soft cooler",
    "meta": "18-can soft cooler with water-resistant lining and shoulder strap.",
    "cta": "Shop beach gear",
    "price": 72,
@@ -912,15 +940,17 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48569330499668:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now"
+   "buy": "https://shorelist.myshopify.com/cart/48569330499668:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://shorelist.myshopify.com/cdn/shop/files/1136021536200041722_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-coastal-soft-cooler_1920x.webp"
   },
   {
    "id": "wrightsville-can-cooler",
    "collection": "shore-gear",
    "name": "Wrightsville Beach Can Cooler",
    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-can-cooler",
-   "img": "https://shorelist.myshopify.com/cdn/shop/files/16675080237515692816_2048.jpg",
-   "alt": "Navy can cooler printed with Wrightsville Beach, North Carolina and the ShoreList compass",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-can-cooler_1000x.webp",
+   "alt": "Hand holding a can in the Wrightsville Beach can cooler on a dock at sunset",
    "meta": "Navy can cooler with the town name, coordinates and compass. Printed both sides, foam lined.",
    "cta": "Shop drinkware",
    "price": 12,
@@ -929,15 +959,17 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48571208204372:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now"
+   "buy": "https://shorelist.myshopify.com/cart/48571208204372:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://shorelist.myshopify.com/cdn/shop/files/16675080237515692816_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-can-cooler_1920x.webp"
   },
   {
    "id": "carolina-beach-can-cooler",
    "collection": "shore-gear",
    "name": "Carolina Beach Can Cooler",
    "url": "https://shorelist.myshopify.com/products/carolina-beach-can-cooler",
-   "img": "https://shorelist.myshopify.com/cdn/shop/files/18309295045651903048_2048.jpg",
-   "alt": "Navy can cooler printed with Carolina Beach, North Carolina and the ShoreList compass",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-can-cooler_1000x.webp",
+   "alt": "Hand holding a can in the Carolina Beach can cooler on a boardwalk rail",
    "meta": "Navy can cooler with the town name, coordinates and compass. Printed both sides, foam lined.",
    "cta": "Shop drinkware",
    "price": 12,
@@ -946,15 +978,17 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48571212169300:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now"
+   "buy": "https://shorelist.myshopify.com/cart/48571212169300:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://shorelist.myshopify.com/cdn/shop/files/18309295045651903048_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-can-cooler_1920x.webp"
   },
   {
    "id": "kure-beach-can-cooler",
    "collection": "shore-gear",
    "name": "Kure Beach Can Cooler",
    "url": "https://shorelist.myshopify.com/products/kure-beach-can-cooler",
-   "img": "https://shorelist.myshopify.com/cdn/shop/files/5200674536494590319_2048.jpg",
-   "alt": "Navy can cooler printed with Kure Beach, North Carolina and the ShoreList compass",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-can-cooler_1000x.webp",
+   "alt": "Kure Beach can cooler in the sand beside a straw hat and sunglasses",
    "meta": "Navy can cooler with the town name, coordinates and compass. Printed both sides, foam lined.",
    "cta": "Shop drinkware",
    "price": 12,
@@ -963,15 +997,17 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48571216855124:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now"
+   "buy": "https://shorelist.myshopify.com/cart/48571216855124:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://shorelist.myshopify.com/cdn/shop/files/5200674536494590319_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-can-cooler_1920x.webp"
   },
   {
    "id": "wrightsville-ornament-2026",
    "collection": "coastal-christmas",
    "name": "Wrightsville Beach Christmas Ornament 2026",
    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-christmas-ornament-2026",
-   "img": "https://shorelist.myshopify.com/cdn/shop/files/5725671387617568149_2048.jpg",
-   "alt": "Round ceramic ornament with a sailboat under a striped sunset, lettered Wrightsville Beach Christmas 2026",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-ornament-2026_1000x.webp",
+   "alt": "Wrightsville Beach 2026 ornament on a Christmas tree in a coastal living room",
    "meta": "Dated ceramic keepsake: a sloop under a striped Carolina sunset. ShoreList illustration.",
    "cta": "Shop Christmas",
    "price": 18,
@@ -980,15 +1016,17 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48571263025236:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now"
+   "buy": "https://shorelist.myshopify.com/cart/48571263025236:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://shorelist.myshopify.com/cdn/shop/files/5725671387617568149_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-ornament-2026_1920x.webp"
   },
   {
    "id": "carolina-beach-ornament-2026",
    "collection": "coastal-christmas",
    "name": "Carolina Beach Christmas Ornament 2026",
    "url": "https://shorelist.myshopify.com/products/carolina-beach-christmas-ornament-2026",
-   "img": "https://shorelist.myshopify.com/cdn/shop/files/5074047802882228178_2048.jpg",
-   "alt": "Round ceramic ornament with a sailboat under a striped sunset, lettered Carolina Beach Christmas 2026",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-ornament-2026_1000x.webp",
+   "alt": "Carolina Beach 2026 ornament on a Christmas tree in a beach cottage",
    "meta": "Dated ceramic keepsake: a sloop under a striped Carolina sunset. ShoreList illustration.",
    "cta": "Shop Christmas",
    "price": 18,
@@ -997,15 +1035,17 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48571271643220:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now"
+   "buy": "https://shorelist.myshopify.com/cart/48571271643220:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://shorelist.myshopify.com/cdn/shop/files/5074047802882228178_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-ornament-2026_1920x.webp"
   },
   {
    "id": "kure-beach-ornament-2026",
    "collection": "coastal-christmas",
    "name": "Kure Beach Christmas Ornament 2026",
    "url": "https://shorelist.myshopify.com/products/kure-beach-christmas-ornament-2026",
-   "img": "https://shorelist.myshopify.com/cdn/shop/files/2471044685723405738_2048.jpg",
-   "alt": "Round ceramic ornament with a sailboat under a striped sunset, lettered Kure Beach Christmas 2026",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-ornament-2026_1000x.webp",
+   "alt": "Woman hanging the Kure Beach 2026 ornament on a Christmas tree",
    "meta": "Dated ceramic keepsake: a sloop under a striped Carolina sunset. ShoreList illustration.",
    "cta": "Shop Christmas",
    "price": 18,
@@ -1014,15 +1054,17 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48571283341396:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now"
+   "buy": "https://shorelist.myshopify.com/cart/48571283341396:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://shorelist.myshopify.com/cdn/shop/files/2471044685723405738_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-ornament-2026_1920x.webp"
   },
   {
    "id": "coastal-christmas-can-cooler",
    "collection": "coastal-christmas",
    "name": "Coastal Christmas Can Cooler",
    "url": "https://shorelist.myshopify.com/products/coastal-christmas-can-cooler-wilmington-nc",
-   "img": "https://shorelist.myshopify.com/cdn/shop/files/10500283908840878239_2048.jpg",
-   "alt": "Evergreen can cooler reading Merry Christmas from Wilmington and the Carolina beaches",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-coastal-christmas-can-cooler_1000x.webp",
+   "alt": "Hand holding a can in the Christmas can cooler beside a fire pit on a beach house deck",
    "meta": "Evergreen stocking stuffer: Merry Christmas from Wilmington and the Carolina beaches.",
    "cta": "Shop Christmas",
    "price": 12,
@@ -1031,7 +1073,9 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48571224784980:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now"
+   "buy": "https://shorelist.myshopify.com/cart/48571224784980:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://shorelist.myshopify.com/cdn/shop/files/10500283908840878239_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-coastal-christmas-can-cooler_1920x.webp"
   }
  ],
  "scenes": [
