@@ -807,6 +807,44 @@
    "store": "shopify",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5701970608703344784_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-daymark-sail-number-corduroy-cap-wrightsville-beach_1920x.webp"
+  },
+  {
+   "id": "daymark-sloop-crewneck",
+   "collection": "local-icons",
+   "shelf": "regatta",
+   "name": "Daymark Sloop Crewneck",
+   "url": "https://shorelist.myshopify.com/products/daymark-sloop-crewneck",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-daymark-sloop-crewneck_1000x.webp",
+   "alt": "Woman in a soft white crewneck sweatshirt with a small navy sloop sailboat mark at the left chest, standing among sea oats on a Wrightsville Beach dune path",
+   "meta": "A small navy sloop sailboat at the left chest of a soft white garment-dyed crewneck. Easy fit for dock days and cool beach evenings.",
+   "cta": "Choose size",
+   "price": 88,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5770908623621843800_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-daymark-sloop-crewneck_1920x.webp"
+  },
+  {
+   "id": "daymark-blue-crab-crewneck",
+   "collection": "local-icons",
+   "shelf": "regatta",
+   "name": "Daymark Blue Crab Crewneck",
+   "url": "https://shorelist.myshopify.com/products/daymark-blue-crab-crewneck",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-daymark-blue-crab-crewneck_1000x.webp",
+   "alt": "Woman in a soft white crewneck sweatshirt with a small navy blue crab mark at the left chest, standing among sea oats on an Outer Banks style dune path",
+   "meta": "A small navy blue crab with red claw tips at the left chest of a soft white garment-dyed crewneck. Made for Kure Beach and Carolina Beach days.",
+   "cta": "Choose size",
+   "price": 88,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5007874699452909705_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-daymark-blue-crab-crewneck_1920x.webp"
   }
  ],
  "scenes": [
