@@ -6,6 +6,10 @@
 [functions]
   included_files = ["data/operators.json"]
 
+# The shop bot validates every model pick against the shop catalog, so the catalog ships with it.
+[functions."shop-bot"]
+  included_files = ["shop-catalog.json", "data/operators.json"]
+
 # The paid PDF guides are bundled into the guide-download function only.
 [functions."guide-download"]
   included_files = ["netlify/guides-private/**"]

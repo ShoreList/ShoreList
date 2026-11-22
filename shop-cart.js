@@ -176,7 +176,7 @@
     if (!a || a.id === 'slbagPay') return;
     var h = handleOf(a.getAttribute('href')); if (!h) return;
     e.preventDefault();
-    var card = a.closest('.card'), qv = a.closest('#qv');
+    var card = a.closest('.card,.rb-card'), qv = a.closest('#qv');
     var name = '', img = '';
     if (card) { var t = card.querySelector('h3'); name = t ? t.textContent : ''; var im = card.querySelector('img'); img = im ? im.currentSrc || im.src : ''; }
     else if (qv) { var n = qv.querySelector('#qvn'); name = n ? n.textContent : ''; var qi = qv.querySelector('#qvi'); img = qi ? qi.src : ''; if (qv.close) qv.close(); }
