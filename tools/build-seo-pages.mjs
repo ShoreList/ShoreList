@@ -36,7 +36,7 @@ for (const s of slugs) if (!CATS[s]) throw new Error('missing copy for ' + s);
 
 const og = (slug) => PHOTO(slug) + '_1200x630_crop_center.webp';
 const ld = (o) => '<script type="application/ld+json">' + JSON.stringify(o).replace(/</g, '\\u003c') + '</script>';
-const ORG = { '@type': 'Organization', name: 'ShoreList', url: SITE };
+const ORG = { '@type': 'Organization', '@id': SITE + '/#org', name: 'ShoreList', url: SITE + '/' };
 
 function head(html, { url, title, desc, image, extraLd }) {
   html = html.replace(/<link rel="canonical"[^>]*>/, `<link rel="canonical" href="${SITE}${url}"/>`)

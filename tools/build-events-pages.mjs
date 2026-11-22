@@ -157,7 +157,8 @@ const wk = all.filter((e) => e.start <= s && e.end >= from);
 function ld(list, name, url) {
   return { '@context': 'https://schema.org', '@type': 'ItemList', name, url: SITE + url, numberOfItems: list.length,
     itemListElement: list.map((e, i) => ({ '@type': 'ListItem', position: i + 1, item: Object.assign({
-      '@type': 'Event', name: e.title, startDate: iso(e.start, e.time), endDate: e.end,
+      '@type': 'Event', name: e.title, startDate: iso(e.start, e.time) },
+      e.time && e.start === e.end ? {} : { endDate: e.end }, {
       eventStatus: 'https://schema.org/EventScheduled', eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
       location: { '@type': 'Place', name: e.venue, address: { '@type': 'PostalAddress', addressLocality: CITY[e.area] || 'Wilmington', addressRegion: 'NC', addressCountry: 'US' } },
       url: e.url }, /^free/i.test(e.tickets || '') ? { isAccessibleForFree: true } : {}) })) };
@@ -325,14 +326,17 @@ function offersOf(e) {
   if (amounts.length === 1) return Object.assign({ '@type': 'Offer', url, price: amounts[0], priceCurrency: 'USD' }, avail);
   if (amounts.length > 1) return Object.assign({ '@type': 'AggregateOffer', url, lowPrice: Math.min(...amounts), highPrice: Math.max(...amounts), priceCurrency: 'USD' }, avail);
   if (/^free\b/i.test(t) && !/\bwith\b|not (stated|listed)|no admission/i.test(t)) return { '@type': 'Offer', url, price: 0, priceCurrency: 'USD' };
-  return { '@type': 'Offer', url };
+  return null; // no stated price: no Offer (a price-less Offer is invalid for Event)
 }
 function eventLd(e) {
   const o = { '@context': 'https://schema.org', '@type': 'Event', name: e.title, description: descOf(e), startDate: iso(e.start, e.time) };
   if (!(e.time && e.start === e.end)) o.endDate = e.end; // a start time alone is not an end time, so single-day timed events omit endDate
   o.eventStatus = 'https://schema.org/EventScheduled';
   o.eventAttendanceMode = 'https://schema.org/OfflineEventAttendanceMode';
-  o.location = { '@type': 'Place', name: e.venue, address: { '@type': 'PostalAddress', addressLocality: cityOf(e), addressRegion: 'NC', addressCountry: 'US' } };
+  const addr = { '@type': 'PostalAddress', addressLocality: cityOf(e), addressRegion: 'NC', addressCountry: 'US' };
+  const va = venueOf(e) && /^(.+?),\s*[^,]+,\s*NC\s+(\d{5})\s*$/.exec(venueOf(e).address || '');
+  if (va) { addr.streetAddress = va[1]; addr.postalCode = va[2]; } // only from the sourced venue-facts address
+  o.location = { '@type': 'Place', name: e.venue, address: addr };
   if (e.organizer) o.organizer = { '@type': 'Organization', name: e.organizer, url: e.url };
   const off = offersOf(e); if (off) o.offers = off;
   if (e.image) o.image = e.image;
