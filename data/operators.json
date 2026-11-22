@@ -63,7 +63,7 @@
    "name": "The Original History & Architecture Tour",
    "live": true,
    "headline": "Led by Amanda Leese",
-   "description": "Wilmington 101, from the 1730s to today. Over a relaxed 1.5-mile loop through the Historic District, you'll trace the city's colonial roots, its industry and its complicated past, and the architecture still lining these streets: Colonial, Greek Revival, Queen Anne, and Italianate. The original tour, and still the best place to start.",
+   "description": "Wilmington 101, from the 1730s to today. Over a relaxed 1.5-mile loop through the Historic District, you'll trace the city's colonial roots, its industry and its complicated past, and the architecture still lining these streets: Colonial, Greek Revival, Queen Anne, and Italianate. A good first tour of the Historic District.",
    "priceCents": 2500,
    "priceLabel": "per person",
    "tags": [
@@ -232,7 +232,7 @@
    "priceLabel": "per person",
    "tags": [
     "Carolina Beach",
-    "Seasonal · May–Sep",
+    "Seasonal · May to Sep",
     "1.5 Hours",
     "Family Friendly",
     "ShoreList Founding Partner"
@@ -262,13 +262,13 @@
    "name": "Carolina Beach History & Dive Bar Tour",
    "live": true,
    "headline": "Led by Amanda Leese",
-   "description": "The gritty, colorful side of Pleasure Island. Over about two hours and a mile, you'll hit the local spots that built Carolina Beach, starting at The Sea Witch, with stops at the Silver Dollar and the legendary Fat Pelican. History with a little salt.",
+   "description": "The gritty, colorful side of Pleasure Island. Over about two hours and a mile, you'll hit the local spots that built Carolina Beach, starting at The Sea Witch, with stops at the Silver Dollar and the Fat Pelican. History with a little salt.",
    "priceCents": 3000,
    "priceLabel": "per person",
    "tags": [
     "Carolina Beach",
     "21+",
-    "Seasonal · May–Sep",
+    "Seasonal · May to Sep",
     "2 Hours",
     "ShoreList Founding Partner"
    ],
@@ -329,7 +329,7 @@
    "name": "Sean Austin's Wilmington Ghost Walk",
    "live": false,
    "headline": "Led by Sean Austin, Paranormal Investigator",
-   "description": "A 90-minute ghost walk through the haunted heart of one of America&rsquo;s oldest cities, led by Sean Austin: star of Netflix&rsquo;s <em>28 Days Haunted</em> and lead investigator on Travel Channel&rsquo;s <em>Ghost Loop</em>. A trained demonologist, psychic medium and published author of <em>Shadow Chaser</em>, Sean guides you past the city&rsquo;s most haunted streets, antebellum mansions and burial grounds. Family-friendly and endlessly fascinating.",
+   "description": "A 90-minute ghost walk through the historic heart of Wilmington, led by Sean Austin: star of Netflix&rsquo;s <em>28 Days Haunted</em> and lead investigator on Travel Channel&rsquo;s <em>Ghost Loop</em>. A trained demonologist, psychic medium and published author of <em>Shadow Chaser</em>, Sean guides you past the city&rsquo;s most haunted streets, antebellum mansions and burial grounds. Family-friendly and endlessly fascinating.",
    "priceCents": 3000,
    "priceLabel": "per person",
    "tags": [
@@ -360,7 +360,7 @@
    "name": "Carolina Beach Surf Co.",
    "live": false,
    "headline": "Professional Surf Instructor &middot; 10+ Years Experience",
-   "description": "Learn to surf at one of the best beginner beaches on the East Coast with a certified local instructor who has spent years teaching in these exact waters. Whether you've never touched a board or want to level up your skills, this lesson is fun, safe, and unforgettable. Every session is tailored to your level. All equipment included: board, wetsuit, and rash guard.",
+   "description": "Learn to surf with a local instructor who has spent years teaching in these exact waters. Whether you've never touched a board or want to level up your skills, this lesson is fun. Every session is tailored to your level. All equipment included: board, wetsuit, and rash guard.",
    "priceCents": 10000,
    "priceLabel": "per person",
    "tags": [
@@ -394,7 +394,7 @@
    "name": "Coastal Carolina Nature Walks",
    "live": false,
    "headline": "Coming Soon: Operator Joining Shorelist",
-   "description": "Discover the wild, beautiful natural world of coastal North Carolina. From ancient cypress swamps and carnivorous plant bogs of Carolina Beach State Park to pristine maritime forests and tidal marshes, these guided walks reveal the incredible biodiversity that makes this coast so special. This experience is launching soon on Shorelist. Tap to be notified when bookings open.",
+   "description": "Discover the wild, beautiful natural world of coastal North Carolina. From ancient cypress swamps and carnivorous plant bogs of Carolina Beach State Park to pristine maritime forests and tidal marshes, these guided walks reveal the biodiversity of this coast. This experience is launching soon on Shorelist. Tap to be notified when bookings open.",
    "priceCents": 3500,
    "priceLabel": "per person",
    "tags": [

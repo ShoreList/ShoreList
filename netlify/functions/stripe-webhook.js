@@ -72,7 +72,7 @@ async function sendOperatorEmail(meta, amount) {
       body: JSON.stringify({
         from:    'ShoreList Bookings <onboarding@resend.dev>',
         to:      ['shorelistwilmington@gmail.com'],
-        subject: `🎉 New Booking: ${oneLine(meta.categoryLabel) || 'Experience'} — ${oneLine(meta.guestName) || 'Guest'}`,
+        subject: `🎉 New Booking: ${oneLine(meta.categoryLabel) || 'Experience'} | ${oneLine(meta.guestName) || 'Guest'}`,
         html,
       }),
     });
