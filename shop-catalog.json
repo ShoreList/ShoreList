@@ -141,6 +141,20 @@
    ],
    "cut": "unisex",
    "store": "shopify",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, sizes S to 3XL"
+    ],
+    [
+     "Fabric",
+     "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
+    ],
+    [
+     "Embroidery",
+     "Stitched in white, red and blue thread"
+    ]
+   ],
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12766898488605460372_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-embroidered-crewneck-wrightsville-beach_1920x.webp"
   },
@@ -160,6 +174,20 @@
    ],
    "cut": "unisex",
    "store": "shopify",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, sizes S to 3XL"
+    ],
+    [
+     "Fabric",
+     "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
+    ],
+    [
+     "Embroidery",
+     "Stitched in blue, white and red thread"
+    ]
+   ],
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17367446352125890490_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-embroidered-crewneck-kure-beach_1920x.webp"
   },
@@ -179,6 +207,20 @@
    ],
    "cut": "unisex",
    "store": "shopify",
+   "facts": [
+    [
+     "Sizing",
+     "One size, adjustable strap with a brass buckle"
+    ],
+    [
+     "Fabric",
+     "Cotton corduroy, unstructured low profile, curved brim"
+    ],
+    [
+     "Embroidery",
+     "Real embroidery on the front and the back"
+    ]
+   ],
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7042525475132206278_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-corduroy-cap-wrightsville-beach_1920x.webp"
   },
@@ -198,6 +240,20 @@
    ],
    "cut": "unisex",
    "store": "shopify",
+   "facts": [
+    [
+     "Sizing",
+     "One size, adjustable strap with a brass buckle"
+    ],
+    [
+     "Fabric",
+     "Cotton corduroy, unstructured low profile, curved brim"
+    ],
+    [
+     "Embroidery",
+     "Real embroidery on the front and the back"
+    ]
+   ],
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3503163223785382366_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-corduroy-cap-kure-beach_1920x.webp"
   },
@@ -217,6 +273,20 @@
    ],
    "cut": "unisex",
    "store": "shopify",
+   "facts": [
+    [
+     "Sizing",
+     "One size"
+    ],
+    [
+     "Fabric",
+     "Soft acrylic knit with a fold-up cuff"
+    ],
+    [
+     "Embroidery",
+     "Icon and town letters on the cuff"
+    ]
+   ],
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6062137644770390613_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-cuffed-beanie-wrightsville-beach_1920x.webp"
   },
@@ -236,6 +306,20 @@
    ],
    "cut": "unisex",
    "store": "shopify",
+   "facts": [
+    [
+     "Sizing",
+     "One size"
+    ],
+    [
+     "Fabric",
+     "Soft acrylic knit with a fold-up cuff"
+    ],
+    [
+     "Embroidery",
+     "Icon and town letters on the cuff"
+    ]
+   ],
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5273891047849590882_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-cuffed-beanie-kure-beach_1920x.webp"
   },
@@ -333,7 +417,17 @@
    ],
    "cut": "unisex",
    "store": "fourthwall",
-   "blank": "Yupoong 6245CM"
+   "blank": "Yupoong 6245CM",
+   "facts": [
+    [
+     "Sizing",
+     "Adjustable strap, unstructured"
+    ],
+    [
+     "Fabric",
+     "Chino twill"
+    ]
+   ]
   },
   {
    "id": "salt-wash-market-tote",
@@ -352,7 +446,17 @@
    ],
    "cut": "unisex",
    "store": "fourthwall",
-   "blank": "Econscious"
+   "blank": "Econscious",
+   "facts": [
+    [
+     "Size",
+     "20 x 14 x 5 in"
+    ],
+    [
+     "Fabric",
+     "Organic cotton twill"
+    ]
+   ]
   },
   {
    "id": "pennant-tee-true-navy",
@@ -371,7 +475,17 @@
    ],
    "cut": "unisex",
    "store": "fourthwall",
-   "blank": "Comfort Colors 1717"
+   "blank": "Comfort Colors 1717",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit"
+    ],
+    [
+     "Fabric",
+     "Garment-dyed ringspun cotton"
+    ]
+   ]
   },
   {
    "id": "tilt-beach-umbrella",
@@ -390,6 +504,20 @@
    "cut": "unisex",
    "store": "shopify",
    "buy": "https://shorelist.myshopify.com/cart/48569723617364:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "facts": [
+    [
+     "Size",
+     "6.5 ft canopy that tilts"
+    ],
+    [
+     "Frame",
+     "Aluminum tube, 8 fiberglass ribs and a sand anchor"
+    ],
+    [
+     "Details",
+     "UPF 50+ fabric with a top air vent"
+    ]
+   ],
    "studio": "https://shorelist.myshopify.com/cdn/shop/files/896e91258188456b9739f40519a8211b.webp",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-tilt-beach-umbrella_1920x.webp"
   },
@@ -401,7 +529,7 @@
    "url": "https://shorelist.myshopify.com/products/shorelist-aluminum-backpack-beach-chair-mint-stripe",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-backpack-beach-chair_1000x.webp",
    "alt": "Woman reading in the backpack beach chair at the water edge",
-   "meta": "Four-position aluminum frame, wooden armrests, pillow and pockets. Mint stripe.",
+   "meta": "Four-position aluminum frame that holds up to 265 lb, with wooden armrests, a detachable pillow and backpack straps. Mint stripe.",
    "cta": "Shop beach gear",
    "price": 109,
    "scenes": [
@@ -410,6 +538,20 @@
    "cut": "unisex",
    "store": "shopify",
    "buy": "https://shorelist.myshopify.com/cart/48569729744980:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "facts": [
+    [
+     "Support",
+     "Holds up to 265 lb on a rustproof aluminum frame"
+    ],
+    [
+     "Seat",
+     "Four backrest positions from 100 to 140 degrees, 12 in seat height"
+    ],
+    [
+     "Carry",
+     "Folds flat with shoulder straps and a detachable pillow"
+    ]
+   ],
    "studio": "https://shorelist.myshopify.com/cdn/shop/files/e4e9481e914347868d7fc04ab6c9e261.webp",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-backpack-beach-chair_1920x.webp"
   },
@@ -421,7 +563,7 @@
    "url": "https://shorelist.myshopify.com/products/beach-towel",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-coast-towel_1000x.webp",
    "alt": "Woman walking up the beach with the terry beach towel over her shoulders",
-   "meta": "Oversized terry beach towel, soft and absorbent, with the Carolina Coast design.",
+   "meta": "Full-size 35 x 62 in terry beach towel in 100% cotton, with a restrained Carolina Coast lockup.",
    "cta": "Shop beach gear",
    "price": 68,
    "scenes": [
@@ -430,6 +572,16 @@
    "cut": "unisex",
    "store": "shopify",
    "buy": "https://shorelist.myshopify.com/cart/48569495519316:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "facts": [
+    [
+     "Size",
+     "35 x 62 in"
+    ],
+    [
+     "Fabric",
+     "100% cotton terry velour with hemmed edges"
+    ]
+   ],
    "studio": "https://shorelist.myshopify.com/cdn/shop/files/carolina-coast-towel-lookbook.png",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-coast-towel_1920x.webp"
   },
@@ -441,7 +593,7 @@
    "url": "https://shorelist.myshopify.com/products/wilmington-coastal-soft-cooler-bag",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-coastal-soft-cooler_1000x.webp",
    "alt": "Couple on a small boat at a sandbar reaching into the soft cooler",
-   "meta": "Holds 18 cans. Water-resistant lining and an easy shoulder strap for the dock, the boat or the dunes.",
+   "meta": "Holds 18 cans in a water-resistant lining, with a zip pocket and a removable shoulder strap for the dock, the boat or the dunes.",
    "cta": "Shop beach gear",
    "price": 72,
    "scenes": [
@@ -450,6 +602,20 @@
    "cut": "unisex",
    "store": "shopify",
    "buy": "https://shorelist.myshopify.com/cart/48569330499668:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "facts": [
+    [
+     "Size",
+     "Holds 18 cans, about 8.5 x 10.5 x 8 in"
+    ],
+    [
+     "Materials",
+     "600D polyester outside, water-resistant PEVA lining"
+    ],
+    [
+     "Carry",
+     "Zip front pocket and a removable, adjustable shoulder strap"
+    ]
+   ],
    "studio": "https://shorelist.myshopify.com/cdn/shop/files/1136021536200041722_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-coastal-soft-cooler_1920x.webp"
   },
@@ -461,7 +627,7 @@
    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-can-cooler",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-can-cooler_1000x.webp",
    "alt": "Hand holding a can in the Wrightsville Beach can cooler on a dock at sunset",
-   "meta": "Navy foam-lined can cooler with the town name, coordinates and a compass, printed on both sides.",
+   "meta": "Navy foam-lined can cooler with the town name, printed on both sides. Folds flat for the beach bag.",
    "cta": "Shop drinkware",
    "price": 12,
    "scenes": [
@@ -470,6 +636,20 @@
    "cut": "unisex",
    "store": "shopify",
    "buy": "https://shorelist.myshopify.com/cart/48571208204372:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "facts": [
+    [
+     "Size",
+     "Fits a 12 oz can and folds flat"
+    ],
+    [
+     "Materials",
+     "Polyester outside, foam liner inside"
+    ],
+    [
+     "Print",
+     "Printed on both sides"
+    ]
+   ],
    "studio": "https://shorelist.myshopify.com/cdn/shop/files/16675080237515692816_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-can-cooler_1920x.webp"
   },
@@ -481,7 +661,7 @@
    "url": "https://shorelist.myshopify.com/products/carolina-beach-can-cooler",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-can-cooler_1000x.webp",
    "alt": "Hand holding a can in the Carolina Beach can cooler on a boardwalk rail",
-   "meta": "Navy foam-lined can cooler with the town name, coordinates and a compass, printed on both sides.",
+   "meta": "Navy foam-lined can cooler with the town name, printed on both sides. Folds flat for the beach bag.",
    "cta": "Shop drinkware",
    "price": 12,
    "scenes": [
@@ -490,6 +670,20 @@
    "cut": "unisex",
    "store": "shopify",
    "buy": "https://shorelist.myshopify.com/cart/48571212169300:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "facts": [
+    [
+     "Size",
+     "Fits a 12 oz can and folds flat"
+    ],
+    [
+     "Materials",
+     "Polyester outside, foam liner inside"
+    ],
+    [
+     "Print",
+     "Printed on both sides"
+    ]
+   ],
    "studio": "https://shorelist.myshopify.com/cdn/shop/files/18309295045651903048_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-can-cooler_1920x.webp"
   },
@@ -501,7 +695,7 @@
    "url": "https://shorelist.myshopify.com/products/kure-beach-can-cooler",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-can-cooler_1000x.webp",
    "alt": "Kure Beach can cooler in the sand beside a straw hat and sunglasses",
-   "meta": "Navy foam-lined can cooler with the town name, coordinates and a compass, printed on both sides.",
+   "meta": "Navy foam-lined can cooler with the town name, printed on both sides. Folds flat for the beach bag.",
    "cta": "Shop drinkware",
    "price": 12,
    "scenes": [
@@ -510,6 +704,20 @@
    "cut": "unisex",
    "store": "shopify",
    "buy": "https://shorelist.myshopify.com/cart/48571216855124:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "facts": [
+    [
+     "Size",
+     "Fits a 12 oz can and folds flat"
+    ],
+    [
+     "Materials",
+     "Polyester outside, foam liner inside"
+    ],
+    [
+     "Print",
+     "Printed on both sides"
+    ]
+   ],
    "studio": "https://shorelist.myshopify.com/cdn/shop/files/5200674536494590319_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-can-cooler_1920x.webp"
   },
@@ -521,7 +729,7 @@
    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-christmas-ornament-2026",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-ornament-2026_1000x.webp",
    "alt": "Wrightsville Beach 2026 ornament on a Christmas tree in a coastal living room",
-   "meta": "Dated ceramic keepsake: a sloop under a striped Carolina sunset. ShoreList illustration.",
+   "meta": "Dated ceramic keepsake: a sloop under a striped Carolina sunset, lettered Wrightsville Beach, Christmas 2026. ShoreList illustration.",
    "cta": "Shop Christmas",
    "price": 18,
    "scenes": [
@@ -530,6 +738,20 @@
    "cut": "unisex",
    "store": "shopify",
    "buy": "https://shorelist.myshopify.com/cart/48571263025236:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "facts": [
+    [
+     "Size",
+     "About 2.9 in across, glossy ceramic"
+    ],
+    [
+     "Print",
+     "One side, with a gold hanging cord"
+    ],
+    [
+     "Lettering",
+     "Wrightsville Beach, Christmas 2026"
+    ]
+   ],
    "studio": "https://shorelist.myshopify.com/cdn/shop/files/5725671387617568149_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-ornament-2026_1920x.webp"
   },
@@ -541,7 +763,7 @@
    "url": "https://shorelist.myshopify.com/products/carolina-beach-christmas-ornament-2026",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-ornament-2026_1000x.webp",
    "alt": "Carolina Beach 2026 ornament on a Christmas tree in a beach cottage",
-   "meta": "Dated ceramic keepsake: a sloop under a striped Carolina sunset. ShoreList illustration.",
+   "meta": "Dated ceramic keepsake: a sloop under a striped Carolina sunset, lettered Carolina Beach, Christmas 2026. ShoreList illustration.",
    "cta": "Shop Christmas",
    "price": 18,
    "scenes": [
@@ -550,6 +772,20 @@
    "cut": "unisex",
    "store": "shopify",
    "buy": "https://shorelist.myshopify.com/cart/48571271643220:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "facts": [
+    [
+     "Size",
+     "About 2.9 in across, glossy ceramic"
+    ],
+    [
+     "Print",
+     "One side, with a gold hanging cord"
+    ],
+    [
+     "Lettering",
+     "Carolina Beach, Christmas 2026"
+    ]
+   ],
    "studio": "https://shorelist.myshopify.com/cdn/shop/files/5074047802882228178_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-ornament-2026_1920x.webp"
   },
@@ -561,7 +797,7 @@
    "url": "https://shorelist.myshopify.com/products/kure-beach-christmas-ornament-2026",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-ornament-2026_1000x.webp",
    "alt": "Woman hanging the Kure Beach 2026 ornament on a Christmas tree",
-   "meta": "Dated ceramic keepsake: a sloop under a striped Carolina sunset. ShoreList illustration.",
+   "meta": "Dated ceramic keepsake: a sloop under a striped Carolina sunset, lettered Kure Beach, Christmas 2026. ShoreList illustration.",
    "cta": "Shop Christmas",
    "price": 18,
    "scenes": [
@@ -570,6 +806,20 @@
    "cut": "unisex",
    "store": "shopify",
    "buy": "https://shorelist.myshopify.com/cart/48571283341396:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "facts": [
+    [
+     "Size",
+     "About 2.9 in across, glossy ceramic"
+    ],
+    [
+     "Print",
+     "One side, with a gold hanging cord"
+    ],
+    [
+     "Lettering",
+     "Kure Beach, Christmas 2026"
+    ]
+   ],
    "studio": "https://shorelist.myshopify.com/cdn/shop/files/2471044685723405738_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-ornament-2026_1920x.webp"
   },
@@ -590,6 +840,20 @@
    "cut": "unisex",
    "store": "shopify",
    "buy": "https://shorelist.myshopify.com/cart/48571224784980:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "facts": [
+    [
+     "Size",
+     "Fits a 12 oz can and folds flat"
+    ],
+    [
+     "Materials",
+     "Polyester outside, foam liner inside"
+    ],
+    [
+     "Print",
+     "Printed on both sides"
+    ]
+   ],
    "studio": "https://shorelist.myshopify.com/cdn/shop/files/10500283908840878239_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-coastal-christmas-can-cooler_1920x.webp"
   }
@@ -612,7 +876,7 @@
    "name": "Harbor night"
   }
  ],
- "item_fields": "id, collection, name, url (https product page on one of the stores[] hosts), img, alt, meta, cta, price (number, USD, lowest variant price), from (optional boolean, true when the price varies by option so the page prints From $X), scenes[] (beach|boardwalk|riverwalk|harbor-night), cut (optional, unisex), store (shopify|fourthwall), buy (optional https cart permalink for one-tap checkout), shelf (optional presentation field: id from shelves[], used by the collection-first shop page), studio (optional product shot url, shown as a second image in quick view), lookbook (styled image url), blank (optional, internal only: supplier blank brand and model, never rendered on the page)",
+ "item_fields": "id, collection, name, url (https product page on one of the stores[] hosts), img, alt, meta, cta, price (number, USD, lowest variant price), from (optional boolean, true when the price varies by option so the page prints From $X), scenes[] (beach|boardwalk|riverwalk|harbor-night), cut (optional, unisex), store (shopify|fourthwall), buy (optional https cart permalink for one-tap checkout), shelf (optional presentation field: id from shelves[], used by the collection-first shop page), studio (optional product shot url, shown as a second image in quick view), lookbook (styled image url), facts (optional [[label, text], ...] rows shown in quick view; only facts stated in the product listing or the maker's spec, never marketing claims), blank (optional, internal only: supplier blank brand and model, never rendered on the page)",
  "stores": [
   {
    "id": "fourthwall",

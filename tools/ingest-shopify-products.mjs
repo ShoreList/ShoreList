@@ -112,6 +112,7 @@ for (const e of plan.items || []) {
   if (!collIds.has(e.collection)) fail(`${L}: unknown collection ${e.collection}`);
   for (const k of ['alt', 'meta', 'cta']) clean(`${L} ${k}`, e[k]);
   if (e.name) clean(`${L} name`, e.name);
+  for (const f of e.facts || []) { clean(`${L} fact label`, f[0]); clean(`${L} fact`, f[1]); if (/comfort colors|yupoong|big accessories|gildan|bella/i.test(f.join(' '))) fail(`${L}: fact names a blank maker`); }
   if (!p.variants.length) { fail(`${L}: no variants`); continue; }
   if (!p.variants.some((v) => v.available)) { fail(`${L}: no available variant`); continue; }
   if (!p.images.length) { fail(`${L}: no images`); continue; }
@@ -136,6 +137,7 @@ for (const e of plan.items || []) {
   const studioImg = pick(e.studioIndex ?? (look ? 0 : 1));
   if (studioImg) item.studio = raw(studioImg.file);
   if (look) item.lookbook = sized(look.file, 1920);
+  if (Array.isArray(e.facts) && e.facts.length) item.facts = e.facts;
   if (e.blank) item.blank = e.blank;
   for (const u of [item.img, item.studio, item.lookbook]) if (u && !CDN.test(u)) fail(`${L}: image url off CDN ${u}`);
   if (!look && !item.studio) console.log(`  note ${e.handle}: only one mockup, no studio image`);
