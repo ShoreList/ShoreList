@@ -94,6 +94,7 @@ export const CATS = {
     faq: [
       ['Where do Wilmington river cruises leave from?', 'From docks along the downtown Riverwalk, within walking distance of most downtown hotels and parking decks.'],
       ['What is the best time for a river cruise?', 'Sunset cruises are the most popular because the sun goes down over the river side of downtown. Book ahead on summer and holiday weekends.'],
+      ['Is there parking near the downtown waterfront?', 'Downtown Wilmington has parking decks and metered street parking within walking distance of the Riverwalk. Rates and hours change, so check the City of Wilmington before you go, and allow extra time on event weekends.'],
     ],
     related: ['sailboat-rides', 'walking-tours', 'wildlife-tours'],
   },
@@ -130,6 +131,7 @@ export const CATS = {
     faq: [
       ['Is Wilmington, NC bike friendly?', 'The terrain is flat and there are greenways and quiet residential streets, though downtown has brick streets and traffic. A guide will keep you on the comfortable routes.'],
       ['Do bike tours include the bike?', 'Guided tours normally include a bike and helmet. Check each listing for what is provided.'],
+      ['What should I bring on a bike tour?', 'Comfortable clothes and closed shoes, water and sunscreen. Bring a light layer for the evening and check the weather page before you go. Each listing says what the operator provides and whether there are age or height limits.'],
     ],
     related: ['ebike-rentals', 'fat-bike-rentals', 'walking-tours'],
   },
@@ -166,6 +168,7 @@ export const CATS = {
     faq: [
       ['Do I need a license to rent a scooter?', 'It depends on the type of scooter and its engine size. Rental shops will tell you the license and age requirements for each model.'],
       ['Are scooters allowed on beach-town roads?', 'Street-legal scooters are allowed on local roads. Follow posted speed limits and wear a helmet.'],
+      ['Is parking free at the beach?', 'Often, yes. Wrightsville Beach, Carolina Beach and Kure Beach each set their own paid parking seasons, hours and rates, usually paid by app or kiosk. Check the town website before you go and arrive early on summer weekends. A scooter can be easier to park than a car, but the same rules and meters may apply, so ask the rental shop.'],
     ],
     related: ['golf-cart-rentals', 'ebike-rentals', 'bike-tours'],
   },
@@ -177,6 +180,7 @@ export const CATS = {
     where: 'Carolina Beach, Kure Beach and Wrightsville Beach.',
     faq: [
       ['When is the best time to ride a bike on the beach?', 'Within a couple of hours of low tide, when there is a wide band of hard-packed sand. ShoreList shows the tide for each beach.'],
+      ['Is parking free at the beach?', 'Often, yes. Wrightsville Beach, Carolina Beach and Kure Beach each set their own paid parking seasons, hours and rates, usually paid by app or kiosk. Check the town website before you go and arrive early on summer weekends. Ask the rental shop where to park and where to start your ride.'],
       ['Are bikes allowed on the beach?', 'Rules vary by town and season. Ask the rental shop which stretches are open to bikes.'],
     ],
     related: ['bike-tours', 'ebike-rentals', 'beach-chairs'],
@@ -214,6 +218,7 @@ export const CATS = {
     faq: [
       ['What time of day is best for beach photos?', 'The hour before sunset, often called golden hour. ShoreList shows today\'s sunset time for each beach.'],
       ['What should we wear for beach family photos?', 'Soft, coordinated colors without large logos. Light fabrics move well in the breeze, and most families go barefoot.'],
+      ['Is parking free at the beach?', 'Often, yes. Wrightsville Beach, Carolina Beach and Kure Beach each set their own paid parking seasons, hours and rates, usually paid by app or kiosk. Check the town website before you go and arrive early on summer weekends. Allow extra time to park before your session starts.'],
     ],
     related: ['beach-picnics', 'sailboat-rides', 'beach-chairs'],
   },
@@ -226,6 +231,7 @@ export const CATS = {
     faq: [
       ['Is alcohol allowed on the beaches near Wilmington?', 'Rules differ by town, and some beaches prohibit alcohol and glass entirely. Confirm the rules for your beach with the picnic host before you plan a toast.'],
       ['What happens if it rains?', 'Weather policies vary by host. Most will reschedule for rain or high wind, so check the policy on each listing.'],
+      ['Is parking free at the beach?', 'Often, yes. Wrightsville Beach, Carolina Beach and Kure Beach each set their own paid parking seasons, hours and rates, usually paid by app or kiosk. Check the town website before you go and arrive early on summer weekends. Leave time to park and carry anything you bring.'],
     ],
     related: ['beach-photography', 'beach-chairs', 'sailboat-rides'],
   },
@@ -238,6 +244,7 @@ export const CATS = {
     faq: [
       ['Can I buy beach chairs and umbrellas instead of renting?', 'Yes. The ShoreList Shop sells beach chairs, umbrellas, towels and coolers online.'],
       ['Are tents and canopies allowed on the beach?', 'Each town sets its own rules on tents, canopies and where equipment can be placed. Check the town\'s beach rules before you bring a large shelter.'],
+      ['Is parking free at the beach?', 'Often, yes. Wrightsville Beach, Carolina Beach and Kure Beach each set their own paid parking seasons, hours and rates, usually paid by app or kiosk. Check the town website before you go and arrive early on summer weekends. Plan your drop-off and loading with that in mind.'],
     ],
     related: ['beach-picnics', 'surf-lessons', 'golf-cart-rentals'],
   },
@@ -274,6 +281,7 @@ export const CATS = {
     faq: [
       ['Where can I do yoga on the beach near Wilmington?', 'Beach yoga classes are usually held near sunrise or sunset when the sand is cool. Bring a towel or mat and water.'],
       ['What can I do in Wilmington when the weather is bad?', 'Spas and studios are a good rainy-day plan, along with the museums downtown.'],
+      ['How do I fit a wellness day into a beach trip?', 'Pair a morning session with an afternoon at the beach, or save spa time for a rainy day. Check the Wilmington weather page for the hourly and 7 day forecast, and book early for weekends and holidays.'],
     ],
     related: ['beach-picnics', 'paddleboard', 'nature-walks'],
   },

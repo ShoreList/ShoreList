@@ -339,3 +339,9 @@ html:not(.js) .cal-m+.cal-m{margin-top:20px}
 .hv-l{padding-left:1.2em}
 .hv-l li{list-style:disc;margin-top:4px}
 .ev-hero-sub .hero-facts li{white-space:normal}
+
+.ed-venue{margin-top:36px}
+#events-feed .ed-venue h2{font-family:'Playfair Display',Georgia,serif;font-size:1.4rem;font-weight:800;color:var(--ev-navy)}
+.ed-venue>p{max-width:760px;margin-top:10px!important}
+#events-feed .ed-venue h3{font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:800;color:var(--ev-navy);margin-top:24px}
+.ed-venue>p a{color:var(--ev-red);font-weight:800}

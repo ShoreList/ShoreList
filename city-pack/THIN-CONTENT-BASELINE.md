@@ -106,3 +106,11 @@ Date: 2026-11-21
 
 - Thresholds are unvalidated starting points from the playbook (section 3.5). Tune them against a known-good hand-written page set before using this as a deploy gate.
 - Word counts come from `<main>` (or body) with nav, header, footer, forms, scripts and SVG removed. Pages that render their body client-side will under-count.
+
+## Update 2026-11-22 (launch prep)
+
+- Run: `node tools/thin-content-gate.mjs --site . --config city-pack/wilmington/city.config.json`
+- Result: 82 indexable pages, **0 flagged**, exit code 0.
+- Event pages now carry sourced venue facts from `tools/venue-facts.json` (address, parking, source link), area "staying nearby" copy from `tools/where-to-stay.json`, and a list of other events at the same venue.
+- An event page stays indexable only when its venue has an entry in `tools/venue-facts.json` without `"noindex": true`. All other generated event pages are `noindex,follow` and are left out of `sitemap.xml`. The area pages under /events/ gained an "About" block.
+- Eight category pages got one extra FAQ each. Utility pages (how-we-verify, shipping-returns, size-guide, surf/know-before-you-go) are exempt from the word and entity checks.

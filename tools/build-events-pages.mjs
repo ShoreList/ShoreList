@@ -133,6 +133,11 @@ const AREAS = [
   { slug: 'kure-beach', area: 'Kure Beach', name: 'Kure Beach', guide: '/kure-beach', blurb: 'Markets, holiday gatherings, plunges and events near the pier and Fort Fisher.' },
   { slug: 'greater-wilmington', area: 'Greater Wilmington', name: 'Greater Wilmington', guide: '/things-to-do', blurb: 'Museum exhibitions, garden light shows, campus concerts and races across the wider city.' }
 ];
+// "Staying nearby" text per area is read from tools/where-to-stay.json (the same copy used on /where-to-stay).
+const STAY = JSON.parse(fs.readFileSync('tools/where-to-stay.json', 'utf8')).areas;
+const STAY_OF = { 'Downtown': 0, 'Wrightsville Beach': 1, 'Carolina Beach': 2, 'Kure Beach': 3 };
+const BEACH_PARKING = 'Wrightsville Beach, Carolina Beach and Kure Beach each set their own paid parking seasons, hours and rates, usually paid by app or kiosk, so check the town website and arrive early on busy days.';
+const areaAbout = (a) => STAY[STAY_OF[a.area]] ? '<section class="ed-venue"><h2>About ' + esc(a.name) + '</h2><p>' + esc(STAY[STAY_OF[a.area]][1] + ' ' + STAY[STAY_OF[a.area]][2]) + '</p><p>' + esc(a.blurb) + ' ' + (a.area === 'Downtown' ? '' : esc(BEACH_PARKING)) + ' See the <a href="' + a.guide + '">' + esc(a.name) + ' guide</a> for things to do and the <a href="/where-to-stay">where to stay page</a> to compare areas.</p></section>' : '';
 const areaLinks = (skip) => '<nav class="ef-areas" aria-label="Events by area"><p class="cal-k">Browse by area</p><ul>' +
   (skip === '/events' ? '' : '<li><a href="/events">All events<span>' + all.length + '</span></a></li>') +
   AREAS.filter((a) => '/events/' + a.slug !== skip).map((a) => '<li><a href="/events/' + a.slug + '">' + esc(a.name) + ' events<span>' + all.filter((e) => e.area === a.area).length + '</span></a></li>').join('') +
@@ -202,13 +207,13 @@ const AREA_PHOTO = { 'downtown-wilmington': 'riverwalk', 'wrightsville-beach': '
 const heroImg = (p) => `<img class="ev-hero-img" width="${p.w}" height="${p.h}" src="${CDN}${p.file}_1920x.webp" srcset="${CDN}${p.file}_1000x.webp 1000w, ${CDN}${p.file}_1920x.webp 1920w" sizes="100vw" alt="${esc(p.alt)}" fetchpriority="high" decoding="async"/>`;
 const onward = (links) => '<nav class="ev-on" aria-label="Plan the rest of your visit"><h2>Plan the rest of your visit</h2><ul>' + links.map(([href, label, sub]) => '<li><a href="' + href + '"><strong>' + esc(label) + '</strong><span>' + esc(sub) + '</span>' + ico('arrow') + '</a></li>').join('') + '</ul></nav>';
 // Shared document head, nav and footer for every /events/ page (identical markup for area, weekend and event pages).
-const headHtml = (path, title, desc, lds) => `<!DOCTYPE html>
+const headHtml = (path, title, desc, lds, robots) => `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <meta name="theme-color" content="#0E1F33"/>
-<meta name="robots" content="index,follow"/>
+<meta name="robots" content="${robots || 'index,follow'}"/>
 <link rel="canonical" href="${SITE}${path}"/>
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}"/>
@@ -225,7 +230,7 @@ ${lds.map(script).join('\n')}`;
 const NAV = `<a class="skip-link" href="#main">Skip to content</a>
 <nav class="ev-nav" aria-label="Primary"><a class="nav-logo" href="/" aria-label="ShoreList home">Shore<span>List</span></a><div class="nav-right"><a href="/events">Events</a><a href="/things-to-do">Things to Do</a><a href="/shore-picks">Shore Picks</a><a class="nav-book" href="/things-to-do">Book Experiences</a></div></nav>`;
 const FOOT = `<footer class="ev-foot"><div>&copy; 2026 ShoreList LLC &middot; Wilmington, NC &amp; the Beaches</div><div><a href="/events">Events Guide</a><a href="/things-to-do">Things to Do</a><a href="/shore-picks">Shore Picks</a><a href="/where-to-stay">Where to Stay</a><a href="/wilmington-weather">Weather</a><a href="/guides">PDF Guides</a><a href="/prints">Art Prints</a><a href="/shipping-returns">Shipping &amp; Returns</a><a href="/size-guide">Size Guide</a><a href="/gift-guide">Gift Guide</a><a href="/how-we-verify">How we verify</a><a href="/legal">Privacy &amp; Terms</a></div></footer>`;
-function page({ path, title, desc, h1, lede, list, crumb, h2, intro, photo, links }) {
+function page({ path, title, desc, h1, lede, list, crumb, h2, intro, photo, links, extra }) {
   const lds = [ld(list, title, path), { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [['ShoreList', '/'], ['Events', '/events'], [crumb, path]].map(([n, u], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + u })) }];
   return `${headHtml(path, title, desc, lds)}
 <link rel="stylesheet" href="/events.css"/>
@@ -250,6 +255,7 @@ ${NAV}
 ${SPRITE}<div class="ef-in"><h2>${esc(h2)}</h2><p class="ef-sub">${esc(intro)}</p>
 ${list.length ? feed(list, { areas: path === '/events/this-weekend', weekend: path !== '/events/this-weekend', path }) : '<p class="ef-none">Nothing is listed here right now. See <a href="/events">all Wilmington events</a>.</p>'}
 <p class="ef-note">Updated ${esc(nice(data.updated || today))}. Dates and times come from official and organizer pages; confirm with the venue before you go.</p>
+${extra || ''}
 ${onward(links)}
 </div></section>
 </main>
@@ -269,7 +275,7 @@ for (const a of AREAS) {
     desc: `Upcoming events in ${a.name}, NC: ${a.blurb.charAt(0).toLowerCase() + a.blurb.slice(1)} Updated daily.`.slice(0, 158),
     h1: `${esc(a.name)} <em>events</em>`, lede: a.blurb + ' Updated daily from official and organizer calendars.', list,
     h2: `Upcoming in ${a.name}`, intro: 'Listed by date, soonest first. Each title links to the organizer or venue page.',
-    photo: PHOTO[AREA_PHOTO[a.slug]],
+    photo: PHOTO[AREA_PHOTO[a.slug]], extra: areaAbout(a),
     links: [[a.guide, a.guide === '/things-to-do' ? 'Wilmington area guide' : a.name + ' guide', 'What to see and do nearby'], ['/things-to-do', 'Things to do', 'Tours and experiences you can book'], ['/shore-picks', 'Where to eat', 'Local picks for before or after'], ['/where-to-stay', 'Where to stay', 'Areas and places to base yourself']]
   }));
 }
@@ -290,6 +296,19 @@ console.log('events static:', all.length, 'events;', AREAS.map((a) => a.slug + '
 const RESERVED = new Set(AREAS.map((a) => a.slug).concat(['this-weekend']));
 const AREA_OF = Object.fromEntries(AREAS.map((a) => [a.area, a]));
 const evPages = all.filter(hasPage);
+// Venue facts (address, parking) come only from tools/venue-facts.json, each entry sourced from the venue's own page.
+// An event page is indexable only when its venue has facts there; otherwise the page is noindex and stays out of the sitemap.
+const VENUES = JSON.parse(fs.readFileSync('tools/venue-facts.json', 'utf8'));
+const venueOf = (e) => (e.venue !== '_note' && Object.prototype.hasOwnProperty.call(VENUES, e.venue) ? VENUES[e.venue] : null);
+const indexable = (e) => !!venueOf(e) && !venueOf(e).noindex && !e.noindex;
+
+const GETTING = {
+  'Downtown': 'Downtown Wilmington is compact and walkable: the Riverwalk, the historic district, restaurants and shops sit close together.',
+  'Greater Wilmington': 'This venue is in the wider Wilmington area, so plan on driving or taking a ride.',
+  'Wrightsville Beach': 'Wrightsville Beach is about 20 minutes east of downtown Wilmington.',
+  'Carolina Beach': 'Carolina Beach is about 30 minutes south of downtown Wilmington, on Pleasure Island.',
+  'Kure Beach': 'Kure Beach is just past Carolina Beach on the same island, south of downtown Wilmington.'
+};
 const clip = (str, n) => { if (str.length <= n) return str; const c = str.slice(0, n - 1); return c.slice(0, c.lastIndexOf(' ')).replace(/[,;:.\s]+$/, '') + '…'; };
 const sentence = (str) => String(str).trim().replace(/[.\s]+$/, '') + '.';
 const cityOf = (e) => CITY[e.area] || 'Wilmington';
@@ -331,13 +350,25 @@ function icsOf(e) {
 }
 const titleOf = (e) => e.title + ', ' + dateTag(e) + ': ' + cityOf(e) + ', NC | ShoreList';
 const fact = (k, v) => '<div><dt>' + k + '</dt><dd>' + v + '</dd></div>';
+function venueBlock(e) {
+  const v = venueOf(e), here = all.filter((x) => x.venue === e.venue && x.id !== e.id && hasPage(x));
+  const facts = v ? [['Address', v.address], ['Parking', v.parking]].concat(v.hours ? [['Hours', v.hours]] : []) : [];
+  const src = v ? ' Source: <a href="' + esc(v.source) + '" rel="noopener" target="_blank">' + esc(new URL(v.source).hostname.replace(/^www\./, '')) + '</a>, checked November 2026.' : '';
+  return (v ? '<section class="ed-venue" aria-labelledby="ed-venue-h"><h2 id="ed-venue-h">Getting to ' + esc(e.venue) + '</h2>' +
+    '<p>' + esc(e.venue) + ' is at ' + esc(v.address) + '. ' + esc([v.about, v.area_note, GETTING[e.area]].filter(Boolean).join(' ')) + '</p>' +
+    '<dl class="ed-dl">' + facts.map(([k, t]) => fact(k, esc(t))).join('') + '</dl>' +
+    '<h3>Plan your day</h3><p>Check the <a href="/wilmington-weather">Wilmington weather page</a> for the hourly and 7 day forecast before you go, and use the Add to calendar button above to save the date. ' + (e.area === 'Downtown' || e.area === 'Greater Wilmington' ? '' : esc(BEACH_PARKING)) + '</p>' +
+    (STAY[STAY_OF[e.area]] ? '<h3>Staying nearby</h3><p>' + esc(STAY[STAY_OF[e.area]][1] + ' ' + STAY[STAY_OF[e.area]][2]) + ' <a href="/where-to-stay">Compare areas on the where to stay page</a>.</p>' : '') +
+    '<p class="ef-note">Venue details are taken from the venue or operator page and can change.' + src + '</p></section>' : '') +
+    (here.length ? '<nav class="ed-more" aria-label="More at ' + esc(e.venue) + '"><h3>Also at ' + esc(e.venue) + '</h3><ul>' + here.slice(0, 6).map((x) => '<li><a href="' + esc(pageUrl(x)) + '"><strong>' + esc(x.title) + '</strong><span>' + esc(when(x)) + '</span></a></li>').join('') + '</ul></nav>' : '');
+}
 function eventPage(e) {
   const a = AREA_OF[e.area] || AREAS[0], city = cityOf(e), path = pageUrl(e), title = titleOf(e);
   const photo = PHOTO[AREA_PHOTO[a.slug]];
   const lds = [eventLd(e), { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [['ShoreList', '/'], ['Events', '/events'], [a.name + ' events', '/events/' + a.slug], [e.title, path]].map(([n, u], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + u })) }];
   const more = all.filter((x) => x.area === e.area && x.id !== e.id && hasPage(x)).slice(0, 4);
   const links = [['/events/' + a.slug, a.name + ' events', 'All upcoming events in this area'], ['/events/this-weekend', 'This weekend', 'What else is on Friday to Sunday'], [a.guide, a.guide === '/things-to-do' ? 'Wilmington area guide' : a.name + ' guide', 'Things to do nearby'], ['/things-to-do', 'Things to do', 'Tours and experiences you can book'], ['/where-to-stay', 'Where to stay', 'Areas and places to base yourself'], ['/wilmington-weather', 'Weather', 'Forecast and beach report']];
-  return `${headHtml(path, title, metaOf(e), lds)}
+  return `${headHtml(path, title, metaOf(e), lds, indexable(e) ? '' : 'noindex,follow')}
 <link rel="stylesheet" href="/events.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
 <script src="/luxe.js" defer></script>
@@ -362,6 +393,7 @@ ${NAV}
 <dl class="ed-dl">${fact('When', '<time datetime="' + esc(e.start) + '">' + esc(whenFull(e)) + '</time>')}${fact('Where', esc(e.venue) + ', ' + esc(city) + ', NC')}${fact('Area', '<a href="/events/' + a.slug + '">' + esc(a.name) + '</a>')}${fact('Type', esc(e.cat))}${e.sched ? fact('Schedule', esc(e.sched)) : ''}${e.tickets ? fact('Tickets and admission', esc(e.tickets)) : ''}</dl>
 <p class="ed-act"><a class="ed-btn" href="${esc(e.url)}" rel="noopener" target="_blank">${ico('ticket')}Organizer page and tickets${ico('out')}<span class="sr"> for ${esc(e.title)} (opens in a new tab)</span></a><a class="ed-btn ed-alt" href="${esc(path)}.ics" download="${esc(e.id)}.ics">${ico('cal')}Add to calendar<span class="sr">: ${esc(e.title)} (.ics file)</span></a></p>
 <p class="ef-note">Dates and times come from official and organizer pages and can change. Confirm with the organizer before you go.${e.verified ? ' Source we checked: <a href="' + esc(e.verified) + '" rel="noopener" target="_blank">' + esc(new URL(e.verified).hostname.replace(/^www\./, '')) + '</a>.' : ''} <a href="/how-we-verify">How we verify events</a>.</p>
+${venueBlock(e)}
 ${more.length ? '<nav class="ed-more" aria-label="More events in ' + esc(a.name) + '"><h3>More in ' + esc(a.name) + '</h3><ul>' + more.map((x) => '<li><a href="' + esc(pageUrl(x)) + '"><strong>' + esc(x.title) + '</strong><span>' + esc(when(x)) + '</span></a></li>').join('') + '</ul></nav>' : ''}
 ${SPRITE}${onward(links)}
 </div></section>
@@ -442,7 +474,7 @@ ${FOOT}
   const A = '  <!-- event-pages:start (written by tools/build-events-pages.mjs) -->', B = '  <!-- event-pages:end -->';
   const prev = {}; const i0 = x.indexOf(A), j0 = x.indexOf(B);
   if (i0 >= 0 && j0 >= 0) for (const m of x.slice(i0, j0).matchAll(/<loc>https:\/\/shorelist\.net\/events\/([^<]+)<\/loc><lastmod>([^<]+)<\/lastmod>/g)) prev[m[1]] = m[2];
-  const lines = evPages.map((e) => '  <url><loc>' + SITE + pageUrl(e) + '</loc><lastmod>' + (sm[e.id] || !prev[e.id] ? (data.updated || today) : prev[e.id]) + '</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>');
+  const lines = evPages.filter(indexable).map((e) => '  <url><loc>' + SITE + pageUrl(e) + '</loc><lastmod>' + (sm[e.id] || !prev[e.id] ? (data.updated || today) : prev[e.id]) + '</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>');
   const block = A + '\n' + lines.join('\n') + '\n' + B;
   if (i0 >= 0 && j0 >= 0) x = x.slice(0, i0) + block + x.slice(j0 + B.length);
   else x = x.replace('</urlset>', block + '\n</urlset>');

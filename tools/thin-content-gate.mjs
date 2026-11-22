@@ -38,7 +38,7 @@ const T = {
   patternMaxShare: num('pattern-max-share', 'patternMaxShare', 0.15),
   shingle: num('shingle', 'shingle', 5),
 };
-const DEFAULT_EXEMPT = '^(404|category|offline|dashboard|success|guide-success|legal|waitlist|join|advertise|lookbook-kit|shop|map|planner|index\\.html$)|(^|/)index\\.html$|^events/this-weekend';
+const DEFAULT_EXEMPT = '^(404|category|offline|dashboard|success|guide-success|legal|waitlist|join|advertise|lookbook-kit|shop|map|planner|how-we-verify|shipping-returns|size-guide|surf/know-before-you-go|index\\.html$)|(^|/)index\\.html$|^events/this-weekend';
 const exempt = new RegExp(val('exempt', DEFAULT_EXEMPT), 'i');
 // the home page and index pages are hubs: keep the word/similarity checks, skip only the entity and ratio checks via a second regex
 const HUB = /(^|\/)index\.html$|^(shop|map|planner)\.html$/i;
