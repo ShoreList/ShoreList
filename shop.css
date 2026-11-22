@@ -226,3 +226,6 @@ body.shop .dock{display:none!important}
   .savedbtn{right:auto;left:16px}
   .tray{right:auto;left:16px}
 }
+
+/* touch targets: card titles and text links reach 44px on phones and tablets */
+@media(pointer:coarse){.card h3 button{padding:12px 0}.tlink{min-height:44px;display:inline-flex;align-items:center;padding:0}}
