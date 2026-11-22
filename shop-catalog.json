@@ -9,12 +9,6 @@
    "art": "lighthouse"
   },
   {
-   "id": "heritage",
-   "name": "Heritage Varsity",
-   "blurb": "Town names and the ILM airport code in classic varsity lettering on garment-dyed crewnecks, hoodies and tees.",
-   "art": "lighthouse"
-  },
-  {
    "id": "coastal-christmas",
    "name": "Locals' Christmas",
    "blurb": "Christmas on the Carolina coast. Gifts and stocking stuffers for Wilmington locals and everyone who wishes they were at the beach.",
@@ -23,38 +17,26 @@
   {
    "id": "landmarks",
    "name": "Landmark Prints",
-   "blurb": "The fishing piers, the Carolina Beach boardwalk and the battleship as vintage travel posters on museum-matte paper, plus an embroidered Airlie Oak crewneck.",
+   "blurb": "The fishing piers, the Carolina Beach boardwalk and the battleship as vintage travel posters on museum-matte paper. Wall art, not clothing.",
    "art": "lighthouse"
   },
   {
    "id": "classics",
    "name": "Coastal Classics",
-   "blurb": "The pennant dad hat and garment-dyed tees in quiet coastal colors, each with a small, understated mark.",
+   "blurb": "The pennant cap and the pennant tee in quiet coastal colors, each with one small, understated mark.",
    "art": "lighthouse"
-  },
-  {
-   "id": "sea-oats",
-   "name": "Salt & Sea Oats",
-   "blurb": "Hand-painted watercolor sloops on a garment-dyed tee and an oversized organic crewneck.",
-   "art": "sea-oats"
   },
   {
    "id": "tide-line",
    "name": "Tide Line",
-   "blurb": "An organic cotton tote for the boat, the beach and the market run.",
+   "blurb": "Organic cotton totes for the boat, the beach and the market run.",
    "art": "tide-line"
   },
   {
    "id": "shore-gear",
    "name": "Shore Gear",
-   "blurb": "Surf, tennis, pickleball and golf tees, a market tote and town can coolers.",
+   "blurb": "A market tote and town can coolers.",
    "art": "lighthouse"
-  },
-  {
-   "id": "boardwalk",
-   "name": "Boardwalk",
-   "blurb": "The Carolina Beach Boardwalk tee, garment-dyed, with a sea glass wave.",
-   "art": "pelican"
   },
   {
    "id": "harbor-capsules",
@@ -287,279 +269,6 @@
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-cuffed-beanie-wilmington_1920x.webp"
   },
   {
-   "id": "wrightsville-beach-varsity-crewneck",
-   "collection": "heritage",
-   "name": "Wrightsville Beach Varsity Crewneck",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-varsity-crewneck",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-varsity-crewneck_1000x.webp",
-   "alt": "Woman on the bow of a wooden sailboat at golden hour wearing the navy Wrightsville Beach varsity crewneck",
-   "meta": "WRIGHTSVILLE arched over BEACH in cream varsity lettering on a garment-dyed crewneck, with 1899, the year the town was incorporated.",
-   "cta": "Choose color and size",
-   "price": 78,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8214280971553777558_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-varsity-crewneck_1920x.webp"
-  },
-  {
-   "id": "carolina-beach-varsity-crewneck",
-   "collection": "heritage",
-   "name": "Carolina Beach Varsity Crewneck",
-   "url": "https://shorelist.myshopify.com/products/carolina-beach-varsity-crewneck",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-varsity-crewneck_1000x.webp",
-   "alt": "Man walking the boardwalk at dusk with a coffee wearing the navy Carolina Beach varsity crewneck",
-   "meta": "CAROLINA arched over BEACH in cream varsity lettering on a garment-dyed crewneck, with 1925, the year the town was incorporated.",
-   "cta": "Choose color and size",
-   "price": 78,
-   "scenes": [
-    "boardwalk"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15469697947599356445_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-varsity-crewneck_1920x.webp"
-  },
-  {
-   "id": "kure-beach-varsity-crewneck",
-   "collection": "heritage",
-   "name": "Kure Beach Varsity Crewneck",
-   "url": "https://shorelist.myshopify.com/products/kure-beach-varsity-crewneck",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-varsity-crewneck_1000x.webp",
-   "alt": "Woman on the beach at sunrise by the fishing pier wearing the navy Kure Beach varsity crewneck",
-   "meta": "KURE BEACH arched over N.C. in cream varsity lettering on a garment-dyed crewneck, with Pleasure Island and 1947.",
-   "cta": "Choose color and size",
-   "price": 78,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15404441680492765180_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-varsity-crewneck_1920x.webp"
-  },
-  {
-   "id": "wilmington-varsity-crewneck",
-   "collection": "heritage",
-   "name": "Wilmington Varsity Crewneck",
-   "url": "https://shorelist.myshopify.com/products/wilmington-varsity-crewneck",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wilmington-varsity-crewneck_1000x.webp",
-   "alt": "Man leaning on the riverwalk railing at sunset wearing the navy Wilmington varsity crewneck",
-   "meta": "WILMINGTON arched over N.C. in cream varsity lettering on a garment-dyed crewneck, with The Port City and 1739.",
-   "cta": "Choose color and size",
-   "price": 78,
-   "scenes": [
-    "riverwalk"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/885599791757679174_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wilmington-varsity-crewneck_1920x.webp"
-  },
-  {
-   "id": "ilm-crewneck",
-   "collection": "heritage",
-   "name": "ILM Crewneck",
-   "url": "https://shorelist.myshopify.com/products/ilm-crewneck",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-ilm-crewneck_1000x.webp",
-   "alt": "Woman leaving a small coastal airport with a leather weekender wearing the navy ILM crewneck",
-   "meta": "The airport code every local knows, set large in a fine serif on a garment-dyed crewneck.",
-   "cta": "Choose color and size",
-   "price": 78,
-   "scenes": [
-    "riverwalk",
-    "harbor-night"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9446758540865204948_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-ilm-crewneck_1920x.webp"
-  },
-  {
-   "id": "wrightsville-beach-varsity-hoodie",
-   "collection": "heritage",
-   "name": "Wrightsville Beach Varsity Hoodie",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-varsity-hoodie",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-varsity-hoodie_1000x.webp",
-   "alt": "Man on the beach at sunrise with a surfboard wearing the navy Wrightsville Beach varsity hoodie",
-   "meta": "WRIGHTSVILLE arched over BEACH in cream varsity lettering on a heavyweight garment-dyed hoodie, with 1899, the year the town was incorporated.",
-   "cta": "Choose color and size",
-   "price": 92,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2208554389027895019_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-varsity-hoodie_1920x.webp"
-  },
-  {
-   "id": "carolina-beach-varsity-hoodie",
-   "collection": "heritage",
-   "name": "Carolina Beach Varsity Hoodie",
-   "url": "https://shorelist.myshopify.com/products/carolina-beach-varsity-hoodie",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-varsity-hoodie_1000x.webp",
-   "alt": "Woman leaning on a boardwalk railing at golden hour wearing the navy Carolina Beach varsity hoodie",
-   "meta": "CAROLINA arched over BEACH in cream varsity lettering on a heavyweight garment-dyed hoodie, with 1925, the year the town was incorporated.",
-   "cta": "Choose color and size",
-   "price": 92,
-   "scenes": [
-    "boardwalk"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15832602661171854122_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-varsity-hoodie_1920x.webp"
-  },
-  {
-   "id": "kure-beach-varsity-hoodie",
-   "collection": "heritage",
-   "name": "Kure Beach Varsity Hoodie",
-   "url": "https://shorelist.myshopify.com/products/kure-beach-varsity-hoodie",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-varsity-hoodie_1000x.webp",
-   "alt": "Man on a truck tailgate by the dunes with a coffee wearing the navy Kure Beach varsity hoodie",
-   "meta": "KURE BEACH arched over N.C. in cream varsity lettering on a heavyweight garment-dyed hoodie, with Pleasure Island and 1947.",
-   "cta": "Choose color and size",
-   "price": 92,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13251640658457528931_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-varsity-hoodie_1920x.webp"
-  },
-  {
-   "id": "wilmington-varsity-hoodie",
-   "collection": "heritage",
-   "name": "Wilmington Varsity Hoodie",
-   "url": "https://shorelist.myshopify.com/products/wilmington-varsity-hoodie",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wilmington-varsity-hoodie_1000x.webp",
-   "alt": "Woman walking a brick riverfront street at dusk wearing the navy Wilmington varsity hoodie",
-   "meta": "WILMINGTON arched over N.C. in cream varsity lettering on a heavyweight garment-dyed hoodie, with The Port City and 1739.",
-   "cta": "Choose color and size",
-   "price": 92,
-   "scenes": [
-    "riverwalk"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11153637541025147618_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wilmington-varsity-hoodie_1920x.webp"
-  },
-  {
-   "id": "ilm-hoodie",
-   "collection": "heritage",
-   "name": "ILM Hoodie",
-   "url": "https://shorelist.myshopify.com/products/ilm-hoodie",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-ilm-hoodie_1000x.webp",
-   "alt": "Man with a leather weekender outside a small airport wearing the navy ILM hoodie",
-   "meta": "The airport code every local knows, set in a fine serif on a heavyweight garment-dyed hoodie.",
-   "cta": "Choose color and size",
-   "price": 92,
-   "scenes": [
-    "riverwalk",
-    "harbor-night"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6346132088776174040_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-ilm-hoodie_1920x.webp"
-  },
-  {
-   "id": "wrightsville-beach-varsity-tee",
-   "collection": "heritage",
-   "name": "Wrightsville Beach Varsity Tee",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-varsity-tee",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-varsity-tee_1000x.webp",
-   "alt": "Woman on a wooden dock at golden hour wearing the washed blue Wrightsville Beach varsity tee",
-   "meta": "WRIGHTSVILLE arched over BEACH in cream varsity lettering on a heavyweight garment-dyed tee, with 1899, the year the town was incorporated.",
-   "cta": "Choose color and size",
-   "price": 42,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15711640030921180241_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-varsity-tee_1920x.webp"
-  },
-  {
-   "id": "carolina-beach-varsity-tee",
-   "collection": "heritage",
-   "name": "Carolina Beach Varsity Tee",
-   "url": "https://shorelist.myshopify.com/products/carolina-beach-varsity-tee",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-varsity-tee_1000x.webp",
-   "alt": "Man on the boardwalk with an ice cream wearing the washed blue Carolina Beach varsity tee",
-   "meta": "CAROLINA arched over BEACH in cream varsity lettering on a heavyweight garment-dyed tee, with 1925, the year the town was incorporated.",
-   "cta": "Choose color and size",
-   "price": 42,
-   "scenes": [
-    "boardwalk"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/1365805015077500468_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-varsity-tee_1920x.webp"
-  },
-  {
-   "id": "kure-beach-varsity-tee",
-   "collection": "heritage",
-   "name": "Kure Beach Varsity Tee",
-   "url": "https://shorelist.myshopify.com/products/kure-beach-varsity-tee",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-varsity-tee_1000x.webp",
-   "alt": "Woman on the beach at sunrise with a fishing rod wearing the washed blue Kure Beach varsity tee",
-   "meta": "KURE BEACH arched over N.C. in cream varsity lettering on a heavyweight garment-dyed tee, with Pleasure Island and 1947.",
-   "cta": "Choose color and size",
-   "price": 42,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10495263550913441161_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-varsity-tee_1920x.webp"
-  },
-  {
-   "id": "wilmington-varsity-tee",
-   "collection": "heritage",
-   "name": "Wilmington Varsity Tee",
-   "url": "https://shorelist.myshopify.com/products/wilmington-varsity-tee",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wilmington-varsity-tee_1000x.webp",
-   "alt": "Man at a riverwalk cafe table at golden hour wearing the washed blue Wilmington varsity tee",
-   "meta": "WILMINGTON arched over N.C. in cream varsity lettering on a heavyweight garment-dyed tee, with The Port City and 1739.",
-   "cta": "Choose color and size",
-   "price": 42,
-   "scenes": [
-    "riverwalk"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6354541425083840221_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wilmington-varsity-tee_1920x.webp"
-  },
-  {
-   "id": "ilm-tee",
-   "collection": "heritage",
-   "name": "ILM Tee",
-   "url": "https://shorelist.myshopify.com/products/ilm-tee",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-ilm-tee_1000x.webp",
-   "alt": "Woman beside a vintage convertible under live oaks wearing the washed blue ILM tee",
-   "meta": "The airport code every local knows, set in a fine serif on a heavyweight garment-dyed tee.",
-   "cta": "Choose color and size",
-   "price": 42,
-   "scenes": [
-    "riverwalk",
-    "harbor-night"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17784527671395886940_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-ilm-tee_1920x.webp"
-  },
-  {
    "id": "kure-beach-fishing-pier-art-print",
    "collection": "landmarks",
    "name": "Kure Beach Fishing Pier Art Print",
@@ -632,32 +341,14 @@
    "from": true
   },
   {
-   "id": "airlie-oak-crewneck",
-   "collection": "landmarks",
-   "name": "The Airlie Oak Embroidered Crewneck",
-   "url": "https://shorelist-shop.fourthwall.com/products/the-airlie-oak-embroidered-crewneck",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-crewneck_1000x.webp",
-   "alt": "Man on a marsh dock wearing the navy Airlie Oak crewneck with the green oak embroidered on the chest",
-   "meta": "The real Airlie Oak stitched small on the chest in two greens, with quiet engraved-style lettering. Organic cotton crewneck.",
-   "cta": "Choose options and buy",
-   "price": 84,
-   "scenes": [
-    "riverwalk"
-   ],
-   "cut": "unisex",
-   "store": "fourthwall",
-   "studio": "https://imgproxy.fourthwall.dev/gvkjYCy2ARGqiUAd3Ma5tgaUKLgFF-fI8XAC424yDbM/w:720/sm:1/enc/ZRAWkba93sQrD4Y4/0dQAngX9oculu4LT/8NASxILWnChLU2Mr/bw_ty9p_rHnjTlj7/OGgxxvrUpMjBoXfo/222X2_vdQS9YOuwN/MvLITtjxAlp4Cuub/cEBEjmIqnsAS8qkA/gYVSYev6772U0cqH/rUMY9yM08jY0772T/kZ9RAgESWiI8vvaK/0NKOJuv3ss-jAyUw/krRazealfPQC89wE/PIf28QfVjcVuq4s3/6LP3UnfQyYQ.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-crewneck_1920x.webp"
-  },
-  {
    "id": "pennant-dad-hat",
    "collection": "classics",
-   "name": "Pennant Embroidered Dad Hat",
+   "name": "Pennant Twill Cap",
    "url": "https://shorelist-shop.fourthwall.com/products/pennant-embroidered-dad-hat",
    "img": "https://imgproxy.fourthwall.dev/Y9dw8YEednbCJiJA-iPSySv94hDjwuVlp3d0mM7jBzA/w:1920/sm:1/enc/8AkH3Zo4bmoirBEI/f3PcCTa3gQjWOedI/AfSofSARng3gzrNh/t8epkac0FJ6R-SdE/rtuspQJpW63i-5qL/C3FqVGsILOb1WvfZ/hbZYeQwlh446twLK/vzY8Q983gz4SlQ1t/8en7zMt_VSy9lPmQ/f0e9Gn3NvbLvBOQ_/Rt1VYOw2QMKnGMeT/t3EHpuWhRMME9dRq/aO4cTB7OBkF0txLI/_-maEA.jpg",
    "lookbook": "https://imgproxy.fourthwall.dev/Y9dw8YEednbCJiJA-iPSySv94hDjwuVlp3d0mM7jBzA/w:1920/sm:1/enc/8AkH3Zo4bmoirBEI/f3PcCTa3gQjWOedI/AfSofSARng3gzrNh/t8epkac0FJ6R-SdE/rtuspQJpW63i-5qL/C3FqVGsILOb1WvfZ/hbZYeQwlh446twLK/vzY8Q983gz4SlQ1t/8en7zMt_VSy9lPmQ/f0e9Gn3NvbLvBOQ_/Rt1VYOw2QMKnGMeT/t3EHpuWhRMME9dRq/aO4cTB7OBkF0txLI/_-maEA.jpg",
-   "alt": "Man in a black ShoreList pennant embroidered dad hat on a wooden fishing pier",
-   "meta": "Soft chino twill, embroidered. Navy, Black, Khaki.",
+   "alt": "Man wearing the ShoreList pennant embroidered twill cap",
+   "meta": "Soft, unstructured chino twill with a small embroidered pennant on the front. Adjustable strap. Navy, Black or Khaki.",
    "cta": "Choose options and buy",
    "price": 42,
    "scenes": [
@@ -671,12 +362,12 @@
   {
    "id": "yacht-beach-club-tote",
    "collection": "tide-line",
-   "name": "Yacht & Beach Club Organic Cotton Tote",
+   "name": "Harbor Organic Cotton Tote",
    "url": "https://shorelist-shop.fourthwall.com/products/yacht-beach-club-organic-cotton-tote",
    "img": "https://imgproxy.fourthwall.dev/8wpSQ-MIqwpWgsegEExGBD9GIeK-SOzdDl0njoFAwII/w:1920/sm:1/enc/1XzZS9lwrx_e9kXx/DXIuFkHKbtLcolR3/kMszTBYVsT1kKdu2/GWCTeW6uaQdTRiR9/4TIaNncJQA2ToZfW/-om9X1ciQSkE-1PQ/KcI002DzKVZG3EcB/0mbQaE6Zy-Z9GaTy/SW73pVOBGCW2rwdy/VkNqPKIwLR5D6U_r/oN3I89b-jEbwT7ms/hkkXjPE0Sp9o37tK/4A2hGk8jYU9ig6LP/PVLJnA.jpg",
    "lookbook": "https://imgproxy.fourthwall.dev/8wpSQ-MIqwpWgsegEExGBD9GIeK-SOzdDl0njoFAwII/w:1920/sm:1/enc/1XzZS9lwrx_e9kXx/DXIuFkHKbtLcolR3/kMszTBYVsT1kKdu2/GWCTeW6uaQdTRiR9/4TIaNncJQA2ToZfW/-om9X1ciQSkE-1PQ/KcI002DzKVZG3EcB/0mbQaE6Zy-Z9GaTy/SW73pVOBGCW2rwdy/VkNqPKIwLR5D6U_r/oN3I89b-jEbwT7ms/hkkXjPE0Sp9o37tK/4A2hGk8jYU9ig6LP/PVLJnA.jpg",
    "alt": "Woman carrying the ShoreList Yacht and Beach Club tote on a wooden beach walkway",
-   "meta": "8 oz organic cotton twill, 20 x 14 x 5 in. Oyster with harbor navy print.",
+   "meta": "Organic cotton twill, 8 oz, 20 x 14 x 5 in, with a small harbor navy print on oyster. Roomy enough for the boat, the beach and the market.",
    "cta": "Choose options and buy",
    "price": 48,
    "scenes": [
@@ -688,50 +379,14 @@
    "blank": "Econscious EC8001"
   },
   {
-   "id": "salt-wash-sloop-tee",
-   "collection": "sea-oats",
-   "name": "Salt Wash Sloop Garment-Dyed Tee",
-   "url": "https://shorelist-shop.fourthwall.com/products/salt-wash-sloop-garment-dyed-tee",
-   "img": "https://imgproxy.fourthwall.dev/f3hJXkZi4jduCm3oUsxVG3uhLLrWINps7b6l3rXrQl0/w:1920/sm:1/enc/BdqwY0nNPk-NWCtz/1BcfBMI8s3Hosuwb/zxtYlonTUIRcmfK1/isV-AGWvEMUpOk3c/wBkyF9DbIcuFpyn5/LbDyj95qxEmpKsnB/fNxd8e0YUyE6XqTW/zw500inOuqzsUoqK/Ifs4Ro6mknkehrNJ/0U2atLQ5OOKi1v5g/kE7GOPB_00mT0Wfd/kKdcJU_UOymUrXXo/xtBS1GEBBgDU5ieT/OU1QvQ.jpg",
-   "lookbook": "https://imgproxy.fourthwall.dev/f3hJXkZi4jduCm3oUsxVG3uhLLrWINps7b6l3rXrQl0/w:1920/sm:1/enc/BdqwY0nNPk-NWCtz/1BcfBMI8s3Hosuwb/zxtYlonTUIRcmfK1/isV-AGWvEMUpOk3c/wBkyF9DbIcuFpyn5/LbDyj95qxEmpKsnB/fNxd8e0YUyE6XqTW/zw500inOuqzsUoqK/Ifs4Ro6mknkehrNJ/0U2atLQ5OOKi1v5g/kE7GOPB_00mT0Wfd/kKdcJU_UOymUrXXo/xtBS1GEBBgDU5ieT/OU1QvQ.jpg",
-   "alt": "Woman in a washed denim Salt Wash sloop tee on a wooden walkway through sea oats",
-   "meta": "Heavyweight garment-dyed tee with a hand-painted watercolor sloop. Ivory, Washed Denim.",
-   "cta": "Choose options and buy",
-   "price": 52,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "fourthwall",
-   "blank": "Comfort Colors 1717"
-  },
-  {
-   "id": "salt-wash-organic-crewneck",
-   "collection": "sea-oats",
-   "name": "Salt Wash Organic Crewneck",
-   "url": "https://shorelist-shop.fourthwall.com/products/salt-wash-organic-crewneck",
-   "img": "https://imgproxy.fourthwall.dev/Oig_jV44WqPbJK9ojY9qhMKlLkr7tW06BTiERk75iKE/w:1920/sm:1/enc/fg2KSOd8rpa4ylXU/xlcVJJEFrlLv9qp2/aOhHjE0HcAVWg7-x/S1xO-skFzepu9HnU/kcwEAGDwuARVUmob/80QT3sSS20ZNsHzs/vaIJLoGOOYPLoT81/D4cXsvUpGba8UB9w/UXawcOksv1CqeMyH/NIpGPLO374JhNwVP/yvdjg1VJOKVxTuB0/dM-tnFROA3TN1yPi/69_jqCZSyXCQoLWr/13g1ag.jpg",
-   "lookbook": "https://imgproxy.fourthwall.dev/Oig_jV44WqPbJK9ojY9qhMKlLkr7tW06BTiERk75iKE/w:1920/sm:1/enc/fg2KSOd8rpa4ylXU/xlcVJJEFrlLv9qp2/aOhHjE0HcAVWg7-x/S1xO-skFzepu9HnU/kcwEAGDwuARVUmob/80QT3sSS20ZNsHzs/vaIJLoGOOYPLoT81/D4cXsvUpGba8UB9w/UXawcOksv1CqeMyH/NIpGPLO374JhNwVP/yvdjg1VJOKVxTuB0/dM-tnFROA3TN1yPi/69_jqCZSyXCQoLWr/13g1ag.jpg",
-   "alt": "Man in a heather grey Salt Wash crewneck beside blue hydrangeas and a cedar-shingle cottage",
-   "meta": "Organic oversized crewneck with a small hand-painted watercolor sloop. White, Heather Grey.",
-   "cta": "Choose options and buy",
-   "price": 78,
-   "scenes": [
-    "riverwalk"
-   ],
-   "cut": "unisex",
-   "store": "fourthwall",
-   "blank": "Stanley/Stella"
-  },
-  {
    "id": "salt-wash-market-tote",
    "collection": "shore-gear",
-   "name": "Salt Wash Organic Cotton Market Tote",
+   "name": "Sloop Organic Cotton Market Tote",
    "url": "https://shorelist-shop.fourthwall.com/products/salt-wash-organic-cotton-market-tote",
    "img": "https://imgproxy.fourthwall.dev/TZt3re_wDyZ0W16_4JbSgpMdKwOMYBzAwPsa2r3eqHA/w:1920/sm:1/enc/Pk5QPfjBEPCd6iv4/jzgR6bKsy7yyQSZv/n5nrwFsWvAAQyQVI/e3FznjKMNn4uGwsZ/xM5ia2wEXu6YZSfz/TuQbjJhrMqgnSt5p/M86zkfeYUuJkpP4U/Ep3Y89lpVKKlf5b7/nrschLQbJeecVVMi/aEvtdTJMIptcL7yO/lIdn7xEV_W8hJdaP/x6JU_2u2-_tiXm_x/KdGjIviHRxutI_um/KWy8ww.jpg",
    "lookbook": "https://imgproxy.fourthwall.dev/TZt3re_wDyZ0W16_4JbSgpMdKwOMYBzAwPsa2r3eqHA/w:1920/sm:1/enc/Pk5QPfjBEPCd6iv4/jzgR6bKsy7yyQSZv/n5nrwFsWvAAQyQVI/e3FznjKMNn4uGwsZ/xM5ia2wEXu6YZSfz/TuQbjJhrMqgnSt5p/M86zkfeYUuJkpP4U/Ep3Y89lpVKKlf5b7/nrschLQbJeecVVMi/aEvtdTJMIptcL7yO/lIdn7xEV_W8hJdaP/x6JU_2u2-_tiXm_x/KdGjIviHRxutI_um/KWy8ww.jpg",
-   "alt": "Woman holding a natural organic cotton Salt Wash sloop tote on a wooden beach walkway",
-   "meta": "Organic cotton twill tote, 20 x 14 x 5 in, with a small hand-painted watercolor sloop. Natural.",
+   "alt": "Woman holding a natural organic cotton sloop tote on a wooden beach walkway",
+   "meta": "Organic cotton twill, 20 x 14 x 5 in, with one small sloop print. Natural color, sturdy handles.",
    "cta": "Choose options and buy",
    "price": 48,
    "scenes": [
@@ -744,140 +399,14 @@
   {
    "id": "pennant-tee-true-navy",
    "collection": "classics",
-   "name": "Pennant Garment-Dyed Tee in True Navy",
+   "name": "Pennant Tee",
    "url": "https://shorelist-shop.fourthwall.com/products/pennant-garment-dyed-tee-in-true-navy",
    "img": "https://imgproxy.fourthwall.dev/CfTKG911v7u6cHN3uDB0vuse20W1KVd0y1OOUj2fItc/w:1920/sm:1/enc/a3MrYIkYidChF9e3/LrnoHalkbC14rgCj/4-MXCBYgdxWAQMJQ/13Kb7RlXxjBSBCsZ/c7xlGifBFjFPk_Zr/ZsseQ_jO4P2Nae-h/_1cStkDzFZx4EmCy/QM2grpiKM4gCTBEE/mrPdZ1vDJTwtdi3Y/X7uG680G4ZOsqYVm/R7Fmcl09St142BDP/j9Ki4_TxDX86IASW/1K7Fj7y129boO68o/w8NG9g.jpg",
    "lookbook": "https://imgproxy.fourthwall.dev/CfTKG911v7u6cHN3uDB0vuse20W1KVd0y1OOUj2fItc/w:1920/sm:1/enc/a3MrYIkYidChF9e3/LrnoHalkbC14rgCj/4-MXCBYgdxWAQMJQ/13Kb7RlXxjBSBCsZ/c7xlGifBFjFPk_Zr/ZsseQ_jO4P2Nae-h/_1cStkDzFZx4EmCy/QM2grpiKM4gCTBEE/mrPdZ1vDJTwtdi3Y/X7uG680G4ZOsqYVm/R7Fmcl09St142BDP/j9Ki4_TxDX86IASW/1K7Fj7y129boO68o/w8NG9g.jpg",
-   "alt": "Man in a True Navy pennant tee at the end of a weathered pier at golden hour",
-   "meta": "Heavyweight garment-dyed tee with a small tonal sand pennant on the left chest. True Navy.",
+   "alt": "Man in a True Navy pennant tee at golden hour",
+   "meta": "Garment-dyed ringspun cotton in True Navy, relaxed fit, with a small tonal sand pennant on the left chest and nothing else.",
    "cta": "Choose options and buy",
    "price": 48,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "fourthwall",
-   "blank": "Comfort Colors 1717"
-  },
-  {
-   "id": "carolina-beach-boardwalk-tee",
-   "collection": "boardwalk",
-   "name": "Carolina Beach Boardwalk Garment-Dyed Tee",
-   "url": "https://shorelist-shop.fourthwall.com/products/carolina-beach-boardwalk-garment-dyed-tee",
-   "img": "https://imgproxy.fourthwall.dev/vsL1Few1h2JGln2Utknb_MPUepF-sEaNsdDr8RC2oh0/w:1920/sm:1/enc/99E2h2_g-toQYBVU/Ot7oym-DIWByFIh3/AwDPRWyeWSwsyDS6/WtXytIz-ZKfOp8qg/KD8Bz8hyJeyHRrW7/bcKy7b5vB3FmkS1K/2HaFw_r6ZYgEAx8S/sA67ptezIWxtd1cj/zQ0Mfc1EZSBw-lIJ/3IvpP-i1r28MQzFs/9ovmUVHkG1kEC94i/lB_nqXELeIwFkElU/zjKNYDCAYkLjyRr_/parFKQ.jpg",
-   "lookbook": "https://imgproxy.fourthwall.dev/vsL1Few1h2JGln2Utknb_MPUepF-sEaNsdDr8RC2oh0/w:1920/sm:1/enc/99E2h2_g-toQYBVU/Ot7oym-DIWByFIh3/AwDPRWyeWSwsyDS6/WtXytIz-ZKfOp8qg/KD8Bz8hyJeyHRrW7/bcKy7b5vB3FmkS1K/2HaFw_r6ZYgEAx8S/sA67ptezIWxtd1cj/zQ0Mfc1EZSBw-lIJ/3IvpP-i1r28MQzFs/9ovmUVHkG1kEC94i/lB_nqXELeIwFkElU/zjKNYDCAYkLjyRr_/parFKQ.jpg",
-   "alt": "Woman in an ivory Carolina Beach Boardwalk tee on a seaside boardwalk at early evening",
-   "meta": "Heavyweight garment-dyed tee with a quiet navy Carolina Beach boardwalk lockup and a sea glass wave. Ivory.",
-   "cta": "Choose options and buy",
-   "price": 46,
-   "scenes": [
-    "boardwalk"
-   ],
-   "cut": "unisex",
-   "store": "fourthwall",
-   "blank": "Comfort Colors 1717"
-  },
-  {
-   "id": "historic-wilmington-tee",
-   "collection": "classics",
-   "name": "Historic Wilmington Garment-Dyed Tee",
-   "url": "https://shorelist-shop.fourthwall.com/products/historic-wilmington-garment-dyed-tee",
-   "img": "https://imgproxy.fourthwall.dev/5AEXH4IOuiVW7sHClXbZ_fV-5utTgLQtr_mVMeGEPZ4/w:1920/sm:1/enc/5ppwHXPXbpd3OPOV/-13XKOC-z2h2EC77/CkJXX5-phl6S5rWV/ZxXoyQagknDoJMoW/ysAgQY0rFYwjXUFt/-usxWob7ZYJKbnuu/tW43UNMKOmvsZBvo/lNq1L4kBi8cc-5pK/QeyFtBoGQayptCl0/ecJkIzXiV2B1mjk1/uKax1RejyMU0abiy/jCPyCzsusxKrqb8L/-j11NUHlZVRpsclI/rgfMmQ.jpg",
-   "lookbook": "https://imgproxy.fourthwall.dev/5AEXH4IOuiVW7sHClXbZ_fV-5utTgLQtr_mVMeGEPZ4/w:1920/sm:1/enc/5ppwHXPXbpd3OPOV/-13XKOC-z2h2EC77/CkJXX5-phl6S5rWV/ZxXoyQagknDoJMoW/ysAgQY0rFYwjXUFt/-usxWob7ZYJKbnuu/tW43UNMKOmvsZBvo/lNq1L4kBi8cc-5pK/QeyFtBoGQayptCl0/ecJkIzXiV2B1mjk1/uKax1RejyMU0abiy/jCPyCzsusxKrqb8L/-j11NUHlZVRpsclI/rgfMmQ.jpg",
-   "alt": "Woman in a moss green Historic Wilmington tee on a brick sidewalk beside a black iron fence, azaleas and an Italianate porch",
-   "meta": "Heavyweight garment-dyed tee with a quiet sailcloth Historic Wilmington lockup and a sand iron fence mark. Moss.",
-   "cta": "Choose options and buy",
-   "price": 46,
-   "scenes": [
-    "riverwalk"
-   ],
-   "cut": "unisex",
-   "store": "fourthwall",
-   "blank": "Comfort Colors 1717"
-  },
-  {
-   "id": "wrightsville-pickleball-tee",
-   "collection": "shore-gear",
-   "name": "Wrightsville Beach Pickleball Garment-Dyed Tee",
-   "url": "https://shorelist-shop.fourthwall.com/products/wrightsville-beach-pickleball-garment-dyed-tee",
-   "img": "https://imgproxy.fourthwall.dev/sYIngYbRQOZk0VrzqbHzGrVoZTjRq2d_9swQplbC3h4/w:1920/sm:1/enc/1flNc9_z9jtx6_QL/gpD-j1XC7fq9QrAn/enoU1HKF8BjjKplo/-EfzKZb-Mvqe1SHe/_YPnRelpmmchwxaw/MVLDaHwR-CmXwdHO/biwxknOXaXzb4bJH/VW_1_twN63JRSscv/uYYfhHHyS_EM_R_T/7MqsGOMNIjDr_yRV/TFxhK6b0VKlvwdgC/dip4rYwCzW5mF-UT/hx_pVJTeGkvhpmMU/M8-aEw.webp",
-   "lookbook": "https://imgproxy.fourthwall.dev/sYIngYbRQOZk0VrzqbHzGrVoZTjRq2d_9swQplbC3h4/w:1920/sm:1/enc/1flNc9_z9jtx6_QL/gpD-j1XC7fq9QrAn/enoU1HKF8BjjKplo/-EfzKZb-Mvqe1SHe/_YPnRelpmmchwxaw/MVLDaHwR-CmXwdHO/biwxknOXaXzb4bJH/VW_1_twN63JRSscv/uYYfhHHyS_EM_R_T/7MqsGOMNIjDr_yRV/TFxhK6b0VKlvwdgC/dip4rYwCzW5mF-UT/hx_pVJTeGkvhpmMU/M8-aEw.webp",
-   "alt": "Man in a blue-gray Wrightsville Beach Pickleball tee walking off a coastal court with a paddle",
-   "meta": "Heavyweight garment-dyed tee with a quiet Wrightsville Beach Pickleball lockup. Blue Jean.",
-   "cta": "Choose options and buy",
-   "price": 46,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "fourthwall",
-   "blank": "Comfort Colors 1717"
-  },
-  {
-   "id": "wrightsville-tennis-tee",
-   "collection": "shore-gear",
-   "name": "Wrightsville Beach Tennis Garment-Dyed Tee",
-   "url": "https://shorelist-shop.fourthwall.com/products/wrightsville-beach-tennis-garment-dyed-tee",
-   "img": "https://imgproxy.fourthwall.dev/9YWQkN7HmMWDJuCCKLJ423sQbUsO-t2WW0BZ0VATRVU/w:1920/sm:1/enc/Wi4YifDZI6QNIytx/7IXTj6ENTSjB2Lal/h5o64S3Xrl8GJHbO/l2q0iTe72gpg8-g7/Q3SFvNs89ZxLcGzG/LTivieuKvdCUOoU_/mho9JAB1v0Tn34ub/Hq8qNZ5mP-tN5pd2/LXlte_m3FBNB8fOu/cQTn9IFXlupdN9fg/j3ikD9buyMGGkn0I/gQ-sCVnkPUFKPJyf/ar5M_CHGrdi8012m/lwEfkQ.webp",
-   "lookbook": "https://imgproxy.fourthwall.dev/9YWQkN7HmMWDJuCCKLJ423sQbUsO-t2WW0BZ0VATRVU/w:1920/sm:1/enc/Wi4YifDZI6QNIytx/7IXTj6ENTSjB2Lal/h5o64S3Xrl8GJHbO/l2q0iTe72gpg8-g7/Q3SFvNs89ZxLcGzG/LTivieuKvdCUOoU_/mho9JAB1v0Tn34ub/Hq8qNZ5mP-tN5pd2/LXlte_m3FBNB8fOu/cQTn9IFXlupdN9fg/j3ikD9buyMGGkn0I/gQ-sCVnkPUFKPJyf/ar5M_CHGrdi8012m/lwEfkQ.webp",
-   "alt": "Woman in a cream Wrightsville Beach Tennis tee with a racquet bag at a coastal court",
-   "meta": "Heavyweight garment-dyed tee with a quiet Wrightsville Beach Tennis lockup. Ivory.",
-   "cta": "Choose options and buy",
-   "price": 46,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "fourthwall",
-   "blank": "Comfort Colors 1717"
-  },
-  {
-   "id": "wrightsville-surf-tee",
-   "collection": "shore-gear",
-   "name": "Wrightsville Beach Surf Garment-Dyed Tee",
-   "url": "https://shorelist-shop.fourthwall.com/products/wrightsville-beach-surf-garment-dyed-tee",
-   "img": "https://imgproxy.fourthwall.dev/rZbr1_hmRYf_BOSorm7iroKEF-AmpdWl-PTUHIq1Tao/w:1920/sm:1/enc/jkzjT-6i3JZXpf8h/BE3AH7bklvMb0bNN/hp_rN1U7v8W1LhOI/ZEL9hp0gU5UQQNXv/-Z1moAdwS0i1Yq5Q/KSk2SFyjxS50Qdkp/ZqnEIw480WP364MZ/dXN0rOVTkb6ZteqY/YbFvE6e3KIACkP8M/B1q2wOfQ3Q3dLw-W/MGi-tZ5RqmIUA_nt/cW2N-R0oCpXhdzsj/QG3l4_Z-Li3V1t5L/RYxm9w.webp",
-   "lookbook": "https://imgproxy.fourthwall.dev/rZbr1_hmRYf_BOSorm7iroKEF-AmpdWl-PTUHIq1Tao/w:1920/sm:1/enc/jkzjT-6i3JZXpf8h/BE3AH7bklvMb0bNN/hp_rN1U7v8W1LhOI/ZEL9hp0gU5UQQNXv/-Z1moAdwS0i1Yq5Q/KSk2SFyjxS50Qdkp/ZqnEIw480WP364MZ/dXN0rOVTkb6ZteqY/YbFvE6e3KIACkP8M/B1q2wOfQ3Q3dLw-W/MGi-tZ5RqmIUA_nt/cW2N-R0oCpXhdzsj/QG3l4_Z-Li3V1t5L/RYxm9w.webp",
-   "alt": "Man in a sage Wrightsville Beach Surf tee carrying a surfboard along the shore near the pier",
-   "meta": "Heavyweight garment-dyed tee with a quiet Wrightsville Beach Surf lockup. Sage.",
-   "cta": "Choose options and buy",
-   "price": 46,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "fourthwall",
-   "blank": "Comfort Colors 1717"
-  },
-  {
-   "id": "wrightsville-golf-tee",
-   "collection": "shore-gear",
-   "name": "Wrightsville Golf Tee",
-   "url": "https://shorelist-shop.fourthwall.com/products/wrightsville-golf-tee",
-   "img": "https://imgproxy.fourthwall.dev/LhRPFTaKVnuQEDAKi4APR7YRfp_KaBThjX1xVEPUT8M/w:1920/sm:1/enc/9Ok-2UVJZ3jxo9zr/F31cBIiuaVRJ4Zqj/OUQsJO-B0TV4rps1/cjLz5fOklBBTpBnG/zKXeqNSLWKyhOhB3/8KLNYQ5cz73q3r6I/NogGpSIuSszqsqaU/Du6lImRfZUJw7VUO/SoYZvH6A-2WNOC86/_FhilIeEktGGBA_G/CSAEzavNcW6osMW8/nIABPyeQISK_FLgS/jX8pfcAF_RCJkPrk/77-lnw.webp",
-   "lookbook": "https://imgproxy.fourthwall.dev/LhRPFTaKVnuQEDAKi4APR7YRfp_KaBThjX1xVEPUT8M/w:1920/sm:1/enc/9Ok-2UVJZ3jxo9zr/F31cBIiuaVRJ4Zqj/OUQsJO-B0TV4rps1/cjLz5fOklBBTpBnG/zKXeqNSLWKyhOhB3/8KLNYQ5cz73q3r6I/NogGpSIuSszqsqaU/Du6lImRfZUJw7VUO/SoYZvH6A-2WNOC86/_FhilIeEktGGBA_G/CSAEzavNcW6osMW8/nIABPyeQISK_FLgS/jX8pfcAF_RCJkPrk/77-lnw.webp",
-   "alt": "Woman in a light blue Wrightsville Beach Golf tee and straw visor on a coastal fairway under live oaks",
-   "meta": "Heavyweight garment-dyed tee with a navy Wrightsville Beach Golf lockup. Chambray.",
-   "cta": "Choose options and buy",
-   "price": 46,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "fourthwall",
-   "blank": "Comfort Colors 1717"
-  },
-  {
-   "id": "carolina-beach-surf-tee",
-   "collection": "shore-gear",
-   "name": "Carolina Beach Surf Tee",
-   "url": "https://shorelist-shop.fourthwall.com/products/carolina-beach-surf-tee",
-   "img": "https://imgproxy.fourthwall.dev/AtlCC3YAu_Irm_UqD4V58_BqGx5S427QCZNkNJLEqDc/w:1920/sm:1/enc/rJDwSQ7OUdAUCo6K/Z_JlA1VY64UdkqTI/RJVUroeHR3kpgJ_f/ydSl34WhFrmIb99P/WlHy3MhldrAl2L6e/8fBAlJ7J1Bvt-H_O/rVx2pYakXuqXk7bT/maUfyaGTFdSO_c6s/1eXsLKnlAgDJ3UL0/7EvrwsyINWH6S3Ac/rsThUGk3LhkSWkBb/jtWcL8up9kGLlmUj/zMnSSqq95WlK2lXC/6miKYQ.webp",
-   "lookbook": "https://imgproxy.fourthwall.dev/AtlCC3YAu_Irm_UqD4V58_BqGx5S427QCZNkNJLEqDc/w:1920/sm:1/enc/rJDwSQ7OUdAUCo6K/Z_JlA1VY64UdkqTI/RJVUroeHR3kpgJ_f/ydSl34WhFrmIb99P/WlHy3MhldrAl2L6e/8fBAlJ7J1Bvt-H_O/rVx2pYakXuqXk7bT/maUfyaGTFdSO_c6s/1eXsLKnlAgDJ3UL0/7EvrwsyINWH6S3Ac/rsThUGk3LhkSWkBb/jtWcL8up9kGLlmUj/zMnSSqq95WlK2lXC/6miKYQ.webp",
-   "alt": "Woman in a seafoam Carolina Beach Surf tee holding a surfboard on a wooden pier at sunrise",
-   "meta": "Heavyweight garment-dyed tee with a navy Carolina Beach Surf lockup. Seafoam.",
-   "cta": "Choose options and buy",
-   "price": 46,
    "scenes": [
     "beach"
    ],
@@ -930,7 +459,7 @@
    "url": "https://shorelist.myshopify.com/products/beach-towel",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-coast-towel_1000x.webp",
    "alt": "Woman walking up the beach with the terry beach towel over her shoulders",
-   "meta": "Oversized terry beach towel with the Carolina Coast design.",
+   "meta": "Oversized terry beach towel, soft and absorbent, with the Carolina Coast design.",
    "cta": "Shop beach gear",
    "price": 68,
    "scenes": [
@@ -949,7 +478,7 @@
    "url": "https://shorelist.myshopify.com/products/wilmington-coastal-soft-cooler-bag",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-coastal-soft-cooler_1000x.webp",
    "alt": "Couple on a small boat at a sandbar reaching into the soft cooler",
-   "meta": "18-can soft cooler with water-resistant lining and shoulder strap.",
+   "meta": "Holds 18 cans. Water-resistant lining and an easy shoulder strap for the dock, the boat or the dunes.",
    "cta": "Shop beach gear",
    "price": 72,
    "scenes": [
@@ -968,7 +497,7 @@
    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-can-cooler",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-can-cooler_1000x.webp",
    "alt": "Hand holding a can in the Wrightsville Beach can cooler on a dock at sunset",
-   "meta": "Navy can cooler with the town name, coordinates and compass. Printed both sides, foam lined.",
+   "meta": "Navy foam-lined can cooler with the town name, coordinates and a compass, printed on both sides.",
    "cta": "Shop drinkware",
    "price": 12,
    "scenes": [
@@ -987,7 +516,7 @@
    "url": "https://shorelist.myshopify.com/products/carolina-beach-can-cooler",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-can-cooler_1000x.webp",
    "alt": "Hand holding a can in the Carolina Beach can cooler on a boardwalk rail",
-   "meta": "Navy can cooler with the town name, coordinates and compass. Printed both sides, foam lined.",
+   "meta": "Navy foam-lined can cooler with the town name, coordinates and a compass, printed on both sides.",
    "cta": "Shop drinkware",
    "price": 12,
    "scenes": [
@@ -1006,7 +535,7 @@
    "url": "https://shorelist.myshopify.com/products/kure-beach-can-cooler",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-can-cooler_1000x.webp",
    "alt": "Kure Beach can cooler in the sand beside a straw hat and sunglasses",
-   "meta": "Navy can cooler with the town name, coordinates and compass. Printed both sides, foam lined.",
+   "meta": "Navy foam-lined can cooler with the town name, coordinates and a compass, printed on both sides.",
    "cta": "Shop drinkware",
    "price": 12,
    "scenes": [
@@ -1132,5 +661,35 @@
   "shorelist.myshopify.com",
   "shorelist-shop.fourthwall.com"
  ],
- "stores_note": "Both stores are live: the Shopify store carries the embroidered and varsity apparel, beach gear, can coolers and ornaments and feeds the on-site bag; the second store carries the art prints, printed tees, two crewnecks, totes and the dad hat and checks out on its own site. The store links strip shows only when 2+ stores resolve to an allowed host. allowedHosts lists the exact store hosts (the page also accepts their subdomains); item url, buy and stores[].url are dropped by the page if their host is not listed. If the store domain changes (for example to shorelist.shop), update stores[].url, item urls, allowedHosts and the STORE constants in shop-cart.js and netlify/functions/shop-product.js together."
+ "stores_note": "Both stores are live: the Shopify store carries the embroidered and varsity apparel, beach gear, can coolers and ornaments and feeds the on-site bag; the second store carries the art prints, printed tees, two crewnecks, totes and the dad hat and checks out on its own site. The store links strip shows only when 2+ stores resolve to an allowed host. allowedHosts lists the exact store hosts (the page also accepts their subdomains); item url, buy and stores[].url are dropped by the page if their host is not listed. If the store domain changes (for example to shorelist.shop), update stores[].url, item urls, allowedHosts and the STORE constants in shop-cart.js and netlify/functions/shop-product.js together.",
+ "retired": {
+  "note": "Removed from the on-site shop on 2026-11-21 (shop-redo). The shop only renders items in items[], so retired products stop showing everywhere (shop page, Tidebot, llms digest). Shopify/Fourthwall listings are unchanged until unpublished in admin. See plans/shop-redo-spec.md.",
+  "items": {
+   "wrightsville-beach-varsity-crewneck": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
+   "carolina-beach-varsity-crewneck": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
+   "kure-beach-varsity-crewneck": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
+   "wilmington-varsity-crewneck": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
+   "ilm-crewneck": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
+   "wrightsville-beach-varsity-hoodie": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
+   "carolina-beach-varsity-hoodie": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
+   "kure-beach-varsity-hoodie": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
+   "wilmington-varsity-hoodie": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
+   "ilm-hoodie": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
+   "wrightsville-beach-varsity-tee": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
+   "carolina-beach-varsity-tee": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
+   "kure-beach-varsity-tee": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
+   "wilmington-varsity-tee": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
+   "ilm-tee": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
+   "airlie-oak-crewneck": "names a specific managed property; Live Oak ILM icon covers Wilmington",
+   "salt-wash-sloop-tee": "unbackable hand-painted claim, off-palette heather grey/white, oversized cut, fourth sloop",
+   "salt-wash-organic-crewneck": "unbackable hand-painted claim, off-palette heather grey/white, oversized cut, fourth sloop",
+   "carolina-beach-boardwalk-tee": "landmark lockup souvenir tee; boardwalk/pier adjacent",
+   "historic-wilmington-tee": "postcard-style lockup, unverifiable \"historic\" claim",
+   "wrightsville-pickleball-tee": "town plus sport lockup reads as a team or club tee, souvenir-stand look",
+   "wrightsville-tennis-tee": "town plus sport lockup reads as a team or club tee, souvenir-stand look",
+   "wrightsville-surf-tee": "town plus sport lockup reads as a team or club tee, souvenir-stand look",
+   "wrightsville-golf-tee": "town plus sport lockup reads as a team or club tee, souvenir-stand look",
+   "carolina-beach-surf-tee": "town plus sport lockup reads as a team or club tee, souvenir-stand look"
+  }
+ }
 }
