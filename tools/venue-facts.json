@@ -1,0 +1,61 @@
+{
+  "_note": "Venue facts used on /events/ pages. Every entry comes from the venue's or operator's own page (see source), read on 2026-11-22. Add a venue here only with a source; an event whose venue is not listed gets a noindex page that stays out of the sitemap. A venue with \"noindex\": true shows its facts on the event page, but the page stays noindex because it has too little unique content to index.",
+  "Wilson Center at Cape Fear Community College": {
+    "address": "703 N Third St, Wilmington, NC 28401",
+    "parking": "The venue's getting-here page lists the Hanover Student Parking Deck at 200 Hanover Street, open 1.5 hours before showtime, at $8 prepaid or $10 cash at the gate. Metered street parking is also available around the Wilson Center. Rates can change, so check the venue page before you go.",
+    "source": "https://wilsoncentertickets.com/your-visit/getting-here"
+  },
+  "Cameron Art Museum": {
+    "address": "3201 South 17th St, Wilmington, NC 28412",
+    "parking": "The museum's visit page does not describe parking. Call the museum at (910) 395-5999 to ask before you go.",
+    "hours": "The museum lists hours of 10 AM to 5 PM Tuesday through Sunday, open until 9 PM on Wednesdays and Thursdays, and closed Mondays.",
+    "source": "https://cameronartmuseum.org/plan-your-visit/",
+    "noindex": true
+  },
+  "Ocean Front Park and Pavilion": {
+    "address": "105 Atlantic Avenue, Kure Beach, NC 28449",
+    "parking": "The town says parking is available in any marked public space, subject to paid parking enforcement during season.",
+    "source": "https://www.townofkurebeach.org/node/2318"
+  },
+  "Carolina Beach Lake Park": {
+    "address": "Atlanta Avenue, Carolina Beach, NC 28428",
+    "parking": "The park listing does not describe parking. The Town of Carolina Beach publishes its parking rules at carolinabeach.org/visitors/parking.",
+    "about": "The park has an 11-acre lake, four gazebos, a playground and a picnic area.",
+    "source": "https://www.visitnc.com/listing/carolina-beach-lake-park"
+  },
+  "Kenan Auditorium": {
+    "address": "515 Wagoner Dr., Wilmington, NC 28403",
+    "parking": "UNCW lists free on-site parking for Kenan Auditorium events.",
+    "source": "https://uncw.edu/seahawk-life/arts/venues/kenan-auditorium",
+    "noindex": true
+  },
+  "Burgwin-Wright House and Gardens": {
+    "address": "224 Market St., Wilmington, NC 28401",
+    "parking": "The museum's website does not describe parking, so ask the organizer before you go.",
+    "source": "https://burgwinwrighthouse.com/museum",
+    "noindex": true
+  },
+  "Battleship North Carolina": {
+    "address": "1 Battleship Road, Wilmington, NC 28401",
+    "parking": "The ticketing page points visitors to the Parking section of battleshipnc.com for current details.",
+    "area_note": "The ship is moored across the Cape Fear River from downtown.",
+    "source": "https://tickets.battleshipnc.com/",
+    "about": "The World War II battleship is open for self-guided tours."
+  },
+  "Airlie Gardens": {
+    "address": "300 Airlie Road, Wilmington, NC 28403",
+    "parking": "Airlie's visit page says a ticket includes parking and access to the grounds all day.",
+    "source": "https://www.airliegardens.org/plan-your-visit",
+    "noindex": true
+  },
+  "Children's Museum of Wilmington": {
+    "address": "116 Orange St., Wilmington, NC 28401",
+    "parking": "The museum has a separate directions and parking page on its website. The main entrance is on Orange Street, and a stroller and wheelchair accessible entrance is on 2nd Street.",
+    "source": "https://www.playwilmington.org/visit"
+  },
+  "Carolina Beach State Park": {
+    "address": "1010 State Park Road, Carolina Beach, NC 28428",
+    "parking": "NC State Parks lists no fee for most day-use activities, including hiking, biking and fishing, and says accessible parking is provided. A $7 fee applies to the boat launch.",
+    "source": "https://www.ncparks.gov/state-parks/carolina-beach-state-park/general-information"
+  }
+}

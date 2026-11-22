@@ -461,7 +461,8 @@
    "url": "https://www.wilsoncentertickets.com/events/detail/the-nutcracker-1603066",
    "source": "curated",
    "tickets": "Tickets required",
-   "verified": "https://www.wilsoncentertickets.com/"
+   "verified": "https://www.wilsoncentertickets.com/",
+   "noindex": true
   },
   {
    "id": "leslie-odom-jr-the-christmas-tour-2026-12-17",
