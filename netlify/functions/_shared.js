@@ -277,6 +277,16 @@ const GUIDES = {
   'on-the-water-wilmington': { title: "On the Water: Wilmington", cents: 1400, file: 'on-the-water-wilmington.pdf', pages: 18 },
   'rainy-day-wilmington': { title: "Rainy Day Wilmington", cents: 1400, file: 'rainy-day-wilmington.pdf', pages: 20 },
   'wilmington-on-screen': { title: "Wilmington on Screen", cents: 1400, file: 'wilmington-on-screen.pdf', pages: 20 },
+  'print-coordinates-wrightsville-cape-fear-river': { title: "Wrightsville Beach Coordinates", cents: 1200, file: 'print-coordinates-wrightsville-cape-fear-river.pdf', pages: 2, kind: 'print' },
+  'print-tide-chart-one-tidal-day': { title: "One Tidal Day", cents: 1200, file: 'print-tide-chart-one-tidal-day.pdf', pages: 2, kind: 'print' },
+  'print-three-beaches-sunrise-stripes': { title: "First Light", cents: 1200, file: 'print-three-beaches-sunrise-stripes.pdf', pages: 2, kind: 'print' },
+  'print-two-capes-nc-coast-map': { title: "Two Capes", cents: 1200, file: 'print-two-capes-nc-coast-map.pdf', pages: 2, kind: 'print' },
+  'print-salt-sun-river-typographic': { title: "Salt, Sun, River", cents: 1200, file: 'print-salt-sun-river-typographic.pdf', pages: 2, kind: 'print' },
+  'print-old-baldy-lighthouse-silhouette': { title: "Old Baldy", cents: 1200, file: 'print-old-baldy-lighthouse-silhouette.pdf', pages: 2, kind: 'print' },
+  'print-loggerhead-sea-turtle-line-art': { title: "Loggerhead", cents: 1200, file: 'print-loggerhead-sea-turtle-line-art.pdf', pages: 2, kind: 'print' },
+  'print-live-oak-and-azalea-botanical-plate': { title: "Live Oak and Azalea", cents: 1200, file: 'print-live-oak-and-azalea-botanical-plate.pdf', pages: 2, kind: 'print' },
+  'print-visit-wilmington-vintage-style-poster': { title: "Visit Wilmington", cents: 1200, file: 'print-visit-wilmington-vintage-style-poster.pdf', pages: 2, kind: 'print' },
+  'print-wilmington-in-signal-flags': { title: "Wilmington in Signal Flags", cents: 1200, file: 'print-wilmington-in-signal-flags.pdf', pages: 2, kind: 'print' },
 };
 // The bundle is the original four guides only; later guides are sold singly.
 const BUNDLE_IDS = ['beach-day-field-guide', 'wilmington-in-three-days', 'wilmington-with-kids', 'winter-in-wilmington'];

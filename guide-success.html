@@ -59,7 +59,7 @@
         if(!g||!/^[a-z0-9-]{1,60}$/.test(g.id))return;
         var li=document.createElement('li');li.className='gs-item';
         var t=document.createElement('div');var s=document.createElement('strong');s.textContent=String(g.title||'');
-        var sp=document.createElement('span');sp.textContent='PDF'+(g.pages?' · '+Number(g.pages)+' pages':'');
+        var sp=document.createElement('span');sp.textContent=g.kind==='print'?'Print-ready PDF · 18x24 and 24x36 in':'PDF'+(g.pages?' · '+Number(g.pages)+' pages':'');
         t.appendChild(s);t.appendChild(sp);
         var a=document.createElement('a');a.className='gs-dl';a.textContent='Download PDF';
         a.href='/.netlify/functions/guide-download?session_id='+encodeURIComponent(id)+'&file='+encodeURIComponent(g.id);

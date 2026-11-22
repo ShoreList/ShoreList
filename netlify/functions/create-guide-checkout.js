@@ -2,7 +2,7 @@
 // The browser sends one product id. Price, name and the guides included come
 // from GUIDES in _shared.js. No date, slot, seat or hold logic: quantity is 1.
 
-const { corsHeaders, originAllowed, clientIp, rateLimitDurable, getGuideProduct, attribMetadata } = require('./_shared.js');
+const { corsHeaders, originAllowed, clientIp, rateLimitDurable, getGuideProduct, getGuide, attribMetadata } = require('./_shared.js');
 
 exports.handler = async (event) => {
   const headers = corsHeaders(event, { 'Cache-Control': 'no-store' });
@@ -35,7 +35,8 @@ exports.handler = async (event) => {
   p.set('payment_method_types[0]', 'card');
   p.set('line_items[0][price_data][currency]', 'usd');
   p.set('line_items[0][price_data][product_data][name]', product.title);
-  p.set('line_items[0][price_data][product_data][description]', 'PDF download, November 2026 edition. Digital product: nothing ships.');
+  const printItem = getGuide(data.product) && getGuide(data.product).kind === 'print';
+  p.set('line_items[0][price_data][product_data][description]', printItem ? 'Print-ready PDF poster, 18x24 and 24x36 in. Digital product: nothing ships.' : 'PDF download, November 2026 edition. Digital product: nothing ships.');
   p.set('line_items[0][price_data][unit_amount]', String(product.cents));
   p.set('line_items[0][quantity]', '1');
   // NC sales tax on digital books and publications: 7% (4.75% state + 2.25% New Hanover County).
@@ -45,7 +46,7 @@ exports.handler = async (event) => {
   p.set('line_items[1][price_data][unit_amount]', String(taxCents));
   p.set('line_items[1][quantity]', '1');
   p.set('success_url', `${siteUrl}/guide-success.html?session_id={CHECKOUT_SESSION_ID}`);
-  p.set('cancel_url', `${siteUrl}/guides`);
+  p.set('cancel_url', printItem ? `${siteUrl}/prints` : `${siteUrl}/guides`);
   p.set('metadata[kind]', 'guide');
   p.set('metadata[product]', data.product);
   p.set('metadata[guideIds]', product.ids.join(','));
