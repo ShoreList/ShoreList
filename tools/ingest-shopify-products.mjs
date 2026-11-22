@@ -108,7 +108,8 @@ for (const e of plan.items || []) {
   const p = products.get(e.handle);
   if (!p) { fail(`${L}: not in products.json (not published on Shopify yet?)`); continue; }
   if (ids.has(e.handle) && !(e.replaces || []).includes(e.handle)) { console.log(`= ${e.handle}: already in the catalog, left untouched`); continue; }
-  if (!shelfIds.has(e.shelf)) fail(`${L}: unknown shelf ${e.shelf}`);
+  if (!e.shelf && e.town) e.shelf = e.town; // shelves are the towns; town is enough
+  if (!shelfIds.has(e.shelf)) fail(`${L}: unknown shelf ${e.shelf} (use a town id from shelves[])`);
   if (!collIds.has(e.collection)) fail(`${L}: unknown collection ${e.collection}`);
   for (const k of ['alt', 'meta', 'cta']) clean(`${L} ${k}`, e[k]);
   if (e.name) clean(`${L} name`, e.name);
@@ -127,7 +128,10 @@ for (const e of plan.items || []) {
   if (!look && !ALLOW_NO_LOOKBOOK) { console.log(`~ ${e.handle}: HELD, no lookbook image yet (set lookbookFile in the plan once it is uploaded to Shopify files)`); continue; }
   const pick = (n) => (n == null ? null : mock[n] || null);
   const lead = pick(e.imgIndex ?? 0) || mock[0];
-  const item = { id: e.handle, collection: e.collection, shelf: e.shelf, name: e.name || p.title, url: `${STORE}/products/${e.handle}` };
+  const item = { id: e.handle, collection: e.collection, shelf: e.shelf, town: e.town || e.shelf, name: e.name || p.title, url: `${STORE}/products/${e.handle}` };
+  if (e.type) item.type = e.type;          // tops|hats|prints|coolers|ornaments|beach; the shop page infers it from the name when absent
+  if (e.color) item.color = e.color;       // only a colour the listing text states
+  item.added = new Date().toISOString().slice(0, 10); // drives New arrivals on the shop page
   if (look) { item.img = sized(look.file, 1000); } else { item.img = sized(lead.file, 1000); }
   item.alt = e.alt; item.meta = e.meta; item.cta = e.cta; item.price = lo;
   if (hi !== lo) item.from = true;

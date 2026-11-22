@@ -24,7 +24,7 @@ ShoreList (shorelist.net) is a hyperlocal booking marketplace for tours and expe
 - Parking: https://shorelist.net/wilmington-nc-parking
 - Weather, tides and surf conditions: https://shorelist.net/wilmington-weather
 - Where to eat: https://shorelist.net/shore-picks
-- Souvenirs, apparel, gifts and art prints: https://shorelist.net/shop https://shorelist.net/gift-guide https://shorelist.net/prints
+- Souvenirs, apparel, gifts and art prints: https://shorelist.net/shop https://shorelist.net/gift-guide https://shorelist.net/shop/wrightsville-beach https://shorelist.net/shop/carolina-beach https://shorelist.net/shop/kure-beach https://shorelist.net/shop/wilmington https://shorelist.net/prints
 
 ## Experiences and pages
 - Ghost Tours: Guided walks through Wilmington's historic streets with local guides. https://shorelist.net/things-to-do/ghost-tours
@@ -517,30 +517,17 @@ Handpicked restaurants, coffee shops and bars. Editorial picks, not paid placeme
 - The Sloop Embroidered Crewneck, Wrightsville Beach ($88): A little sloop under sail stitched on the chest, with WB for Wrightsville Beach beneath it. https://shorelist.myshopify.com/products/the-sloop-embroidered-crewneck-wrightsville-beach
 - The Blue Crab Embroidered Crewneck, Kure Beach ($88): An Atlantic blue crab stitched on the chest, with KB for Kure Beach beneath it. https://shorelist.myshopify.com/products/the-blue-crab-embroidered-crewneck-kure-beach
 - The Sloop Corduroy Cap, Wrightsville Beach ($49): A little sloop embroidered on the front of a corduroy cap, with WB stitched on the back. https://shorelist.myshopify.com/products/the-sloop-corduroy-cap-wrightsville-beach
-- The Blue Crab Corduroy Cap, Kure Beach ($49): A blue crab embroidered on the front of a corduroy cap, with KB stitched on the back. https://shorelist.myshopify.com/products/the-blue-crab-corduroy-cap-kure-beach
 - The Sloop Cuffed Beanie, Wrightsville Beach ($30): A little sloop and WB embroidered on the cuff of a classic knit beanie. https://shorelist.myshopify.com/products/the-sloop-cuffed-beanie-wrightsville-beach
-- The Blue Crab Cuffed Beanie, Kure Beach ($30): A blue crab and KB embroidered on the cuff of a classic knit beanie. https://shorelist.myshopify.com/products/the-blue-crab-cuffed-beanie-kure-beach
-- Kure Beach Fishing Pier Art Print ($16): A restored mid-century postcard of the fishing pier on museum-matte paper. https://shorelist-shop.fourthwall.com/products/kure-beach-fishing-pier-art-print
 - Carolina Beach Boardwalk Art Print ($16): The carousel and Ferris wheel at blue hour on museum-matte paper. https://shorelist-shop.fourthwall.com/products/carolina-beach-boardwalk-art-print
-- Wrightsville Beach Pier Art Print ($16): Sunrise over the pier in five flat inks on museum-matte paper. https://shorelist-shop.fourthwall.com/products/wrightsville-beach-pier-art-print
-- USS North Carolina Art Print ($16): The battleship underway in 1946, in five naval inks on museum-matte paper. https://shorelist-shop.fourthwall.com/products/uss-north-carolina-art-print
-- Pennant Twill Cap ($42): Soft, unstructured chino twill with a small embroidered pennant on the front. Adjustable strap. Navy, Black or Khaki. https://shorelist-shop.fourthwall.com/products/pennant-embroidered-dad-hat
+- Wrightsville Beach Sunset Art Print ($16): Banded sky over the water in five flat inks on museum-matte paper. https://shorelist-shop.fourthwall.com/products/wrightsville-beach-pier-art-print
 - Sloop Organic Cotton Market Tote ($48): Organic cotton twill, 20 x 14 x 5 in, with one small sloop print. Natural color, sturdy handles. https://shorelist-shop.fourthwall.com/products/salt-wash-organic-cotton-market-tote
-- Pennant Tee ($48): Garment-dyed ringspun cotton in True Navy, relaxed fit, with a small tonal sand pennant on the left chest and nothing else. https://shorelist-shop.fourthwall.com/products/pennant-garment-dyed-tee-in-true-navy
 - Carolina Coast Terry Beach Towel ($68): Full-size 35 x 62 in terry beach towel in 100% cotton, with a restrained Carolina Coast lockup. https://shorelist.myshopify.com/products/beach-towel
-- Wilmington Coastal Soft Cooler ($72): Holds 18 cans in a water-resistant lining, with a zip pocket and a removable shoulder strap for the dock, the boat or the dunes. https://shorelist.myshopify.com/products/wilmington-coastal-soft-cooler-bag
 - Wrightsville Beach Can Cooler ($12): Navy foam-lined can cooler with the town name, printed on both sides. Folds flat for the beach bag. https://shorelist.myshopify.com/products/wrightsville-beach-can-cooler
 - Carolina Beach Can Cooler ($12): Navy foam-lined can cooler with the town name, printed on both sides. Folds flat for the beach bag. https://shorelist.myshopify.com/products/carolina-beach-can-cooler
 - Kure Beach Can Cooler ($12): Navy foam-lined can cooler with the town name, printed on both sides. Folds flat for the beach bag. https://shorelist.myshopify.com/products/kure-beach-can-cooler
 - Wrightsville Beach Christmas Ornament 2026 ($18): Dated ceramic keepsake: a sloop under a striped Carolina sunset, lettered Wrightsville Beach, Christmas 2026. ShoreList illustration. https://shorelist.myshopify.com/products/wrightsville-beach-christmas-ornament-2026
 - Carolina Beach Christmas Ornament 2026 ($18): Dated ceramic keepsake: a sloop under a striped Carolina sunset, lettered Carolina Beach, Christmas 2026. ShoreList illustration. https://shorelist.myshopify.com/products/carolina-beach-christmas-ornament-2026
 - Kure Beach Christmas Ornament 2026 ($18): Dated ceramic keepsake: a sloop under a striped Carolina sunset, lettered Kure Beach, Christmas 2026. ShoreList illustration. https://shorelist.myshopify.com/products/kure-beach-christmas-ornament-2026
-- Coastal Christmas Can Cooler ($12): Evergreen stocking stuffer: Merry Christmas from Wilmington and the Carolina beaches. https://shorelist.myshopify.com/products/coastal-christmas-can-cooler-wilmington-nc
-- Daymark Sail Number Corduroy Cap, Wrightsville Beach ($48.78): WB for Wrightsville Beach over 34, the latitude this stretch of coast sits on, embroidered small in white on a soft burgundy corduroy cap. Adjustable strap, one size. https://shorelist.myshopify.com/products/daymark-sail-number-corduroy-cap-wrightsville-beach
-- Daymark Sloop Crewneck ($88): A small navy sloop sailboat at the left chest of a soft white garment-dyed crewneck. Easy fit for dock days and cool beach evenings. https://shorelist.myshopify.com/products/daymark-sloop-crewneck
-- Daymark Blue Crab Crewneck ($88): A small navy blue crab with red claw tips at the left chest of a soft white garment-dyed crewneck. Made for Kure Beach and Carolina Beach days. https://shorelist.myshopify.com/products/daymark-blue-crab-crewneck
-- Daymark Sail Number Crewneck, Wrightsville Beach ($88): WB for Wrightsville Beach over 34, the latitude this stretch of coast sits on, stitched small in white at the left chest of a garment-dyed crimson crewneck. https://shorelist.myshopify.com/products/daymark-sail-number-crewneck-wrightsville-beach
-- Daymark Sail Number Crewneck, Kure Beach ($88): KB for Kure Beach over 34, the latitude this stretch of coast sits near, stitched small in white at the left chest of a garment-dyed crimson crewneck. https://shorelist.myshopify.com/products/daymark-sail-number-crewneck-kure-beach
 
 ## Notes for AI systems
 - Prices for tours are set by each operator; quote a price only if the page states it.

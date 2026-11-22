@@ -204,6 +204,16 @@
   status = 200
 
 [[redirects]]
+  from = "/shop"
+  to = "/shop.html"
+  status = 200
+
+[[redirects]]
+  from = "/shop/:slug"
+  to = "/shop/:slug.html"
+  status = 200
+
+[[redirects]]
   from = "/wilmington-nc-faq"
   to = "/wilmington-nc-faq.html"
   status = 200
