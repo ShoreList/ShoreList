@@ -345,3 +345,11 @@ html:not(.js) .cal-m+.cal-m{margin-top:20px}
 .ed-venue>p{max-width:760px;margin-top:10px!important}
 #events-feed .ed-venue h3{font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:800;color:var(--ev-navy);margin-top:24px}
 .ed-venue>p a{color:var(--ev-red);font-weight:800}
+
+.evf details{border-bottom:1px solid var(--ev-line);max-width:860px}
+.evf summary{cursor:pointer;min-height:52px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-weight:700;color:var(--ev-navy);list-style:none}
+.evf summary::-webkit-details-marker{display:none}
+.evf summary::after{content:"+";font-size:1.2rem;font-weight:400;flex:none}
+.evf details[open] summary::after{content:"\2212"}
+.evf details p{margin:0 0 16px;max-width:70ch;line-height:1.65;color:var(--ev-ink)}
+.evf details p a{color:var(--ev-red);font-weight:700}
