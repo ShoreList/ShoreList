@@ -107,8 +107,8 @@ ${sizeTable}
 // ------------------------------------------------------- shipping and returns
 const faq = [
   ['How long does an order take?', 'Every piece is made after you order, and production begins after checkout. For ShoreList Shop items, our print partner says most orders ship within 2 to 7 business days after the order is submitted, then transit time applies. Production time for ShoreList Gear items depends on the product and the fulfillment partner. The shipping method, cost and estimated delivery for your address are shown at checkout.'],
-  ['Can I return something because I changed my mind or ordered the wrong size?', 'Because each piece is made to order, ShoreList Gear does not accept returns for a change of mind or a size preference. For ShoreList Shop orders, ask us before you buy at rj@shorelist.net and we will tell you what applies.'],
-  ['What if my order arrives damaged, defective or misprinted?', 'Write to rj@shorelist.net with your order number and photos, and we will replace it. For ShoreList Gear orders the window is 30 days from delivery.'],
+  ['Can I return something because I changed my mind or ordered the wrong size?', 'Because each piece is made to order, neither ShoreList Gear nor ShoreList Shop accepts returns for a change of mind or a size preference. A size exchange applies only if the wrong size was sent. Customers in the EU, EEA or UK may have statutory withdrawal rights, which this policy does not limit.'],
+  ['What if my order arrives damaged, defective or misprinted?', 'Write to rj@shorelist.net with your order number and photos, and we will arrange a replacement at no cost. Report it within 30 days of delivery on both ShoreList Gear and ShoreList Shop orders.'],
   ['Do digital guides and prints ship?', 'No. PDF guides and art print files are downloads, and 7 percent North Carolina sales tax is added at checkout. If a file is missing or will not open, email rj@shorelist.net.'],
 ];
 const shipBody = `<ul class="tp-short">
@@ -135,10 +135,10 @@ const shipBody = `<ul class="tp-short">
 
 <h2>Returns and replacements</h2>
 <h3>Damaged, defective or misprinted</h3>
-<p>Write to <a href="mailto:${MAIL}">${MAIL}</a> as soon as you notice, with your order number and photos of the problem. We will replace the piece. For ShoreList Gear orders the window is 30 days from delivery. Misprints, faded or smeared designs and damage that affected the piece all count.</p>
-<p>Two things are not defects. Garment-dyed pieces vary slightly in color from one to the next, and ink on dark fabric can read softer than it does on a screen.</p>
+<p>Write to <a href="mailto:${MAIL}">${MAIL}</a> as soon as you notice, with your order number and photos of the problem. We will arrange a replacement at no cost. Please report it within 30 days of delivery, for both ShoreList Gear and ShoreList Shop orders. Wrong size or wrong item sent also counts. Misprints, faded or smeared designs and damage that affected the piece all count.</p>
+<p>Some things are not defects. Garment-dyed pieces vary slightly in color from one to the next, ink on dark fabric can read softer than it does on a screen, and a measurement within about 1 inch of the size guide is within tolerance.</p>
 <h3>Change of mind and size swaps</h3>
-<p>Because every piece is made after you order, ShoreList Gear does not accept returns for a change of mind or a size preference. For ShoreList Shop orders, ask us before you buy and we will tell you what applies. A question about fit costs nothing, and the <a href="/size-guide">size guide</a> is the better first step.</p>
+<p>Because every piece is made after you order, we do not accept returns for a change of mind or a size preference, on either store. A size exchange applies only if the wrong size was sent. Customers in the EU, EEA or UK may have statutory withdrawal rights, which this policy does not limit. A question about fit costs nothing, and the <a href="/size-guide">size guide</a> is the better first step.</p>
 <h3>Guides and prints</h3>
 <p>The PDF guides and art print files are downloads, and nothing ships. Seven percent North Carolina sales tax is added at checkout. If a file is missing or will not open, email <a href="mailto:${MAIL}">${MAIL}</a>.</p>
 
