@@ -26,7 +26,7 @@ exports.handler = async (event) => {
       statusCode: 200, headers,
       body: JSON.stringify({
         paid: true,
-        guides: r.ids.map((id) => ({ id, title: getGuide(id).title, pages: getGuide(id).pages })),
+        guides: r.ids.map((id) => ({ id, title: getGuide(id).title, pages: getGuide(id).pages, kind: getGuide(id).kind || 'guide' })),
         amount: Number.isFinite(s.amount_total) ? s.amount_total : null,
       }),
     };

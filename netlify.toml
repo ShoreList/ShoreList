@@ -31,6 +31,11 @@
   status = 200
 
 [[redirects]]
+  from = "/prints"
+  to = "/prints.html"
+  status = 200
+
+[[redirects]]
   from = "/guide-success"
   to = "/guide-success.html"
   status = 200
