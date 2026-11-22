@@ -1,4 +1,4 @@
-/* Rip, the ShoreList shop stylist: mascot, launcher, chat panel, picks strip, hero tide.
+/* Tidebot, the ShoreList shop stylist: mascot, launcher, chat panel, picks strip, hero tide.
    Original character. No external assets. Motion stops under prefers-reduced-motion. */
 :root{--rb-navy:#0E1F33;--rb-navy2:#10263A;--rb-deep:#07343F;--rb-glow:#5CF0D8;--rb-glass:#A8C7C0;--rb-sand:#F5E8CB;--rb-coral:#E96645;--rb-line:rgba(168,199,192,.24);--rb-ink:#0D1F25}
 .rb-fig{display:block;overflow:visible}
