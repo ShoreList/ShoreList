@@ -1,0 +1,100 @@
+{
+  "_notes": [
+    "Keyword template for one city site. Clones copy this file, change `vars`, `clusters` and `pages`, and run: node tools/check-keywords.mjs --config <file>",
+    "Search volume is never stored here. Rank clusters by intent tier (T1 book or buy, T2 plan a trip, T3 quick answer) until Search Console data exists.",
+    "Every title, meta description and H1 must be written by hand for the city. This file checks them, it does not generate them.",
+    "See docs/SEO-KEYWORDS.md for the full method."
+  ],
+  "vars": {
+    "city": "Wilmington",
+    "st": "NC",
+    "stateName": "North Carolina",
+    "island": "Pleasure Island",
+    "brand": "ShoreList",
+    "beaches": ["Wrightsville Beach", "Carolina Beach", "Kure Beach"]
+  },
+  "rules": {
+    "titleMax": 62,
+    "titleMin": 25,
+    "descMax": 165,
+    "descMin": 70,
+    "noDashes": true,
+    "uniqueTitles": true,
+    "uniqueDescriptions": true,
+    "uniqueH1": true
+  },
+  "patterns": {
+    "activity": {
+      "primary": "{activity} {city} {st}",
+      "variants": ["best {activity} in {city} {st}", "{activity} near {city}", "{activity} {beach}", "{activity} for families", "{activity} this weekend"],
+      "title": "{Activity} in {city}, {st} | {hook}",
+      "h1": "{Activity} in {city}, {st}"
+    },
+    "beach": {
+      "primary": "{beach} {st}",
+      "variants": ["things to do in {beach}", "{beach} activities", "{beach} with kids", "{beach} parking", "{beach} tides", "{beach} events"],
+      "title": "{beach}, {st}: Things to Do & {hook}"
+    },
+    "events": {
+      "primary": "{city} {st} events",
+      "variants": ["events in {city} {st} this weekend", "{city} {st} events {month}", "{city} {st} festivals", "{beach} events"]
+    },
+    "stay": {
+      "primary": "where to stay in {city} {st}",
+      "variants": ["best area to stay in {city} {st}", "downtown {city} vs {beach}"]
+    },
+    "parking": {
+      "primary": "parking in {city} {st}",
+      "variants": ["{beach} parking", "downtown {city} parking decks"]
+    },
+    "weather": {
+      "primary": "{city} {st} weather",
+      "variants": ["{beach} tides", "{beach} surf report", "{city} {st} water temperature"]
+    },
+    "shop": {
+      "primary": "{city} {st} souvenirs",
+      "variants": ["{beach} shirts", "{beach} hats", "{city} {st} gifts", "{city} {st} art prints"]
+    }
+  },
+  "pages": [
+    { "url": "/", "cluster": "hub", "tier": "T2", "primary": "things to do in {city}", "geo": ["{city}"] },
+    { "url": "/things-to-do", "cluster": "hub", "tier": "T2", "primary": "{city}", "geo": ["{city}"], "also": ["things to do", "activities"] },
+    { "url": "/things-to-do/ghost-tours", "cluster": "ghost-tours", "tier": "T1", "primary": "ghost tours", "geo": ["{city}"] },
+    { "url": "/things-to-do/walking-tours", "cluster": "walking-tours", "tier": "T1", "primary": "walking tours", "geo": ["{city}"] },
+    { "url": "/things-to-do/museums", "cluster": "museums", "tier": "T2", "primary": "museums", "geo": ["{city}"] },
+    { "url": "/things-to-do/film-tours", "cluster": "film-tours", "tier": "T1", "primary": "film", "geo": ["{city}"] },
+    { "url": "/things-to-do/fishing-charters", "cluster": "fishing-charters", "tier": "T1", "primary": "fishing charters", "geo": ["{city}", "Carolina Beach"] },
+    { "url": "/things-to-do/kayak-tours", "cluster": "kayak-tours", "tier": "T1", "primary": "kayak tours", "geo": ["{city}", "Wrightsville Beach"] },
+    { "url": "/things-to-do/river-cruises", "cluster": "river-cruises", "tier": "T1", "primary": "river cruises", "geo": ["{city}"] },
+    { "url": "/things-to-do/surf-lessons", "cluster": "surf-lessons", "tier": "T1", "primary": "surf lessons", "geo": ["Wrightsville Beach"] },
+    { "url": "/things-to-do/paddleboard", "cluster": "paddleboard", "tier": "T1", "primary": "paddleboard", "geo": ["Wrightsville Beach"] },
+    { "url": "/things-to-do/bike-tours", "cluster": "bikes", "tier": "T1", "primary": "bike tours", "geo": ["{city}"] },
+    { "url": "/things-to-do/wildlife-tours", "cluster": "wildlife", "tier": "T1", "primary": "dolphin", "geo": ["{city}"] },
+    { "url": "/things-to-do/ebike-rentals", "cluster": "bikes", "tier": "T1", "primary": "e-bike rentals", "geo": ["{city}"] },
+    { "url": "/things-to-do/scooter-rentals", "cluster": "rentals", "tier": "T1", "primary": "scooter rentals", "geo": ["{city}", "Carolina Beach"] },
+    { "url": "/things-to-do/fat-bike-rentals", "cluster": "bikes", "tier": "T1", "primary": "bike rentals", "geo": ["{city}"] },
+    { "url": "/things-to-do/sailboat-rides", "cluster": "river-cruises", "tier": "T1", "primary": "sailboat rides", "geo": ["Wrightsville Beach"] },
+    { "url": "/things-to-do/nature-walks", "cluster": "wildlife", "tier": "T1", "primary": "nature walks", "geo": ["{city}"] },
+    { "url": "/things-to-do/beach-photography", "cluster": "beach-day", "tier": "T1", "primary": "photographers", "geo": ["{city}", "Wrightsville Beach"] },
+    { "url": "/things-to-do/beach-picnics", "cluster": "beach-day", "tier": "T1", "primary": "beach picnics", "geo": ["Wrightsville", "Carolina Beach"] },
+    { "url": "/things-to-do/beach-chairs", "cluster": "beach-day", "tier": "T1", "primary": "beach chair", "geo": ["{city}"] },
+    { "url": "/things-to-do/jet-ski-rentals", "cluster": "rentals", "tier": "T1", "primary": "jet ski rentals", "geo": ["Carolina Beach", "Wrightsville Beach"] },
+    { "url": "/things-to-do/golf-cart-rentals", "cluster": "rentals", "tier": "T1", "primary": "golf cart rentals", "geo": ["Carolina Beach"] },
+    { "url": "/things-to-do/wellness", "cluster": "beach-day", "tier": "T1", "primary": "yoga", "geo": ["{city}"] },
+    { "url": "/downtown", "cluster": "town", "tier": "T2", "primary": "downtown {city}", "geo": ["{city}"] },
+    { "url": "/wrightsville-beach", "cluster": "town", "tier": "T2", "primary": "Wrightsville Beach", "geo": ["{st}"] },
+    { "url": "/carolina-beach", "cluster": "town", "tier": "T2", "primary": "Carolina Beach", "geo": ["{st}"] },
+    { "url": "/kure-beach", "cluster": "town", "tier": "T2", "primary": "Kure Beach", "geo": ["{st}"] },
+    { "url": "/events", "cluster": "events", "tier": "T2", "primary": "events", "geo": ["{city}"] },
+    { "url": "/events/this-weekend", "cluster": "events", "tier": "T3", "primary": "weekend", "geo": ["{city}"] },
+    { "url": "/where-to-stay", "cluster": "stay", "tier": "T2", "primary": "where to stay", "geo": ["{city}"] },
+    { "url": "/plan-your-trip", "cluster": "plan", "tier": "T2", "primary": "trip", "geo": ["{city}"] },
+    { "url": "/wilmington-nc-parking", "cluster": "parking", "tier": "T3", "primary": "parking", "geo": ["{city}"] },
+    { "url": "/wilmington-weather", "cluster": "weather", "tier": "T3", "primary": "weather", "geo": ["{city}"] },
+    { "url": "/wilmington-nc-faq", "cluster": "plan", "tier": "T3", "primary": "faq", "geo": ["{city}"] },
+    { "url": "/shore-picks", "cluster": "eat", "tier": "T2", "primary": "restaurants", "geo": ["{city}"] },
+    { "url": "/shop", "cluster": "shop", "tier": "T1", "primary": "souvenirs", "geo": ["{city}"] },
+    { "url": "/gift-guide", "cluster": "shop", "tier": "T1", "primary": "gift", "geo": ["Carolina"] },
+    { "url": "/prints", "cluster": "shop", "tier": "T1", "primary": "art prints", "geo": ["{city}"] }
+  ]
+}

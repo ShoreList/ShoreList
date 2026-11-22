@@ -5,6 +5,16 @@ const idx = JSON.parse(fs.readFileSync('search-index.json', 'utf8')).items || []
 const cat = JSON.parse(fs.readFileSync('shop-catalog.json', 'utf8')).items || [];
 const L = [];
 L.push('# ShoreList: full site digest', '', 'ShoreList (shorelist.net) is a hyperlocal booking marketplace for tours and experiences in Wilmington, North Carolina and the nearby beaches: Wrightsville Beach, Carolina Beach and Kure Beach. It also runs a coastal apparel and beach goods shop. Operator: ShoreList LLC, Wilmington, NC.', '');
+try {
+  // Topic index from the keyword config (docs/SEO-KEYWORDS.md): which page answers which kind of question.
+  const kc = JSON.parse(fs.readFileSync('tools/keyword-config.json', 'utf8'));
+  const by = new Map();
+  for (const pg of kc.pages) { if (!by.has(pg.cluster)) by.set(pg.cluster, []); by.get(pg.cluster).push(pg.url); }
+  const LABEL = { hub: 'Things to do in Wilmington, NC', town: 'Town and beach guides (downtown Wilmington, Wrightsville Beach, Carolina Beach, Kure Beach)', events: 'Events, including this weekend', stay: 'Where to stay', plan: 'Trip planning and visitor questions', parking: 'Parking', weather: 'Weather, tides and surf conditions', eat: 'Where to eat', shop: 'Souvenirs, apparel, gifts and art prints', 'beach-day': 'Beach day services', bikes: 'Bike tours and rentals', rentals: 'Scooter, golf cart and jet ski rentals', wildlife: 'Wildlife and nature walks', 'river-cruises': 'River cruises and sailing' };
+  L.push('## Topic index: where each kind of question is answered');
+  for (const [c, urls] of by) L.push(`- ${LABEL[c] || c.replace(/-/g, ' ').replace(/^./, (m) => m.toUpperCase())}: ${urls.map((u) => 'https://shorelist.net' + (u === '/' ? '/' : u)).join(' ')}`);
+  L.push('');
+} catch (e) {}
 L.push('## Experiences and pages');
 for (const i of idx) L.push(`- ${i.title}: ${String(i.sub || '').replace(/\s+/g, ' ')} https://shorelist.net${i.url}`);
 L.push('', '## Guides and answers by activity');
