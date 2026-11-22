@@ -1,7 +1,11 @@
 /* ShoreList shop bag. Pick color and size on shorelist.net, keep a bag across the visit,
    then pay at checkout.
 
-   Two stores sit behind the shop, so the bag has two groups:
+   Three groups can sit in the bag:
+   - ShoreList Direct (goods): physical goods bought on shorelist.net itself. Lines carry an item id, a variant id
+     and a quantity. They check out through create-goods-checkout (Stripe) in this same page; the server re-prices
+     every line from its own catalog, so the price shown here is only what the shopper last saw.
+   Two other stores sit behind the shop:
    - ShoreList Shop (Shopify): lines with a variant, quantity and price. These check out together
      in ONE Shopify checkout built from the bag at the moment of the tap.
    - ShoreList Gear (Fourthwall): link-out lines. They are held here so nothing is forgotten, but
@@ -31,9 +35,10 @@
     if (!Array.isArray(list)) return [];
     return list.filter(function (l) {
       if (!l || !(l.qty > 0)) return false;
+      if (l.goods === true) return /^[a-z0-9][a-z0-9-]{0,79}$/.test(l.item || '') && /^[a-z0-9][a-z0-9-]{0,79}$/.test(l.variantId || '') && Number.isInteger(l.cents) && l.cents > 0 && typeof l.name === 'string';
       if (l.out === true) return typeof l.id === 'string' && OUT_RE.test(l.url || '') && typeof l.name === 'string';
       return /^\d+$/.test(String(l.id));
-    }).map(function (l) { if (l.out === true) l.qty = 1; else l.qty = Math.min(20, Math.floor(l.qty)); return l; });
+    }).map(function (l) { if (l.out === true) l.qty = 1; else l.qty = Math.min(l.goods ? 10 : 20, Math.floor(l.qty)); return l; });
   }
   function load() { var raw = []; try { raw = JSON.parse(localStorage.getItem(KEY) || '[]') || []; } catch (e) { raw = []; } bag = clean(raw); }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(bag)); } catch (e) {} }
@@ -45,10 +50,12 @@
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]; }); }
   function money(n) { return '$' + (Math.round(n * 100) / 100).toFixed(2).replace(/\.00$/, ''); }
   function handleOf(href) { var m = /^https:\/\/shorelist\.myshopify\.com\/products\/([a-z0-9-]+)/i.exec(href || ''); return m ? m[1].toLowerCase() : ''; }
-  function shopLines() { return bag.filter(function (l) { return !l.out; }); }
+  function shopLines() { return bag.filter(function (l) { return !l.out && !l.goods; }); }
   function outLines() { return bag.filter(function (l) { return l.out; }); }
+  function goodsLines() { return bag.filter(function (l) { return l.goods; }); }
+  function goodsTotal() { return goodsLines().reduce(function (a, l) { return a + l.qty * l.cents; }, 0) / 100; }
   function buyable() { return shopLines().filter(function (l) { return !l.gone; }); }
-  function count() { return buyable().reduce(function (a, l) { return a + l.qty; }, 0) + outLines().length; }
+  function count() { return buyable().reduce(function (a, l) { return a + l.qty; }, 0) + outLines().length + goodsLines().reduce(function (a, l) { return a + l.qty; }, 0); }
   function total() { return buyable().reduce(function (a, l) { return a + l.qty * l.price; }, 0); }
   function checkoutUrl() {
     var path = '/cart/' + buyable().map(function (l) { return l.id + ':' + l.qty; }).join(',');
@@ -202,7 +209,7 @@
       var v = matchVariant(); if (!v || !v.available) return;
       var c = cur;
       mutate(function () {
-        var line = bag.filter(function (l) { return !l.out && String(l.id) === String(v.id); })[0];
+        var line = bag.filter(function (l) { return !l.out && !l.goods && String(l.id) === String(v.id); })[0];
         if (line) { line.qty = Math.min(20, line.qty + 1); line.price = v.price; delete line.gone; }
         else bag.push({ id: String(v.id), qty: 1, price: v.price, name: c.name || c.p.title, variant: v.title === 'Default Title' ? '' : v.title, img: v.image || c.img || c.p.image, handle: c.p.handle });
       });
@@ -250,7 +257,7 @@
           var changed = false;
           mutate(function () {
             bag.forEach(function (l) {
-              if (l.out || l.handle !== h) return;
+              if (l.out || l.goods || l.handle !== h) return;
               var v = p.variants.filter(function (x) { return String(x.id) === String(l.id); })[0];
               var gone = !v || !v.available;
               if (gone !== !!l.gone) { if (gone) l.gone = true; else delete l.gone; changed = true; }
@@ -274,6 +281,21 @@
     return true;
   }
 
+  /* ---------- add a ShoreList Direct (goods) line ---------- */
+  /* o: { item, variant, name, variantLabel, cents, img, lead: [min, max], max }. Returns true when the line joined the bag. */
+  function addGoods(o) {
+    if (!o || !/^[a-z0-9][a-z0-9-]{0,79}$/.test(o.item || '') || !/^[a-z0-9][a-z0-9-]{0,79}$/.test(o.variant || '') || !Number.isInteger(o.cents) || o.cents <= 0 || !o.name) return false;
+    mutate(function () {
+      var id = 'goods:' + o.item + ':' + o.variant;
+      var cap = Math.min(10, Math.max(1, Math.floor(o.max || 10)));
+      var line = bag.filter(function (l) { return l.id === id; })[0];
+      if (line) { line.qty = Math.min(cap, line.qty + 1); line.cents = o.cents; }
+      else bag.push({ goods: true, id: id, item: o.item, variantId: o.variant, qty: 1, cents: o.cents, price: o.cents / 100, name: String(o.name), variant: String(o.variantLabel || ''), img: o.img || '', cap: cap, lead: Array.isArray(o.lead) && o.lead.length === 2 ? [Math.floor(o.lead[0]), Math.floor(o.lead[1])] : null });
+    });
+    track('add_to_cart', { currency: 'USD', value: o.cents / 100, items: [{ item_id: o.item, item_name: o.name, item_variant: o.variantLabel, price: o.cents / 100, quantity: 1 }] });
+    return true;
+  }
+
   /* ---------- drawer ---------- */
   function shopHtml() {
     var sl = shopLines(); if (!sl.length) return '';
@@ -287,6 +309,17 @@
       (n ? '<div class="slbag-sum"><span>Subtotal</span><span>' + money(total()) + '</span></div><a class="slbag-go" id="slbagPay" href="' + esc(checkoutUrl()) + '">Check out ShoreList Shop items</a><p class="slbag-note">Shipping and tax are added at checkout.</p>' : '<p class="slbag-note">Nothing here can be checked out right now. Remove the unavailable pieces to continue.</p>') +
       (gone ? '<button type="button" class="slbag-go ghost" data-gone="1">Remove unavailable pieces</button>' : '') + '</section>';
   }
+  function goodsHtml() {
+    var gl = goodsLines(); if (!gl.length) return '';
+    var lead = gl.reduce(function (a, l) { return l.lead ? [Math.max(a[0], l.lead[0]), Math.max(a[1], l.lead[1])] : a; }, [0, 0]);
+    return '<section class="slbag-grp" aria-labelledby="slbagG3"><h4 id="slbagG3">ShoreList Direct</h4><p class="slbag-gsub">Made to order and sent to you by our supplier. You pay here on shorelist.net.' + (lead[1] ? ' Allow about ' + lead[0] + ' to ' + lead[1] + ' business days.' : '') + '</p><ul class="slbag-lines">' + gl.map(function (l) {
+      var k = bag.indexOf(l);
+      return '<li class="slbag-line">' + (l.img ? '<img alt="" src="' + esc(l.img) + '"/>' : '') + '<div><strong>' + esc(l.name) + '</strong><span>' + esc(l.variant || '') + '</span>' +
+        (l.moved ? '<span>Price updated to ' + money(l.cents / 100) + '</span>' : '') +
+        '<div class="slbag-qty"><button type="button" data-d="-1" data-k="' + k + '" aria-label="One fewer">&minus;</button><b>' + l.qty + '</b><button type="button" data-d="1" data-k="' + k + '" aria-label="One more">+</button><button type="button" class="rm" data-rm="' + k + '">Remove</button></div></div><b>' + money(l.cents * l.qty / 100) + '</b></li>';
+    }).join('') + '</ul><div class="slbag-sum"><span>Subtotal</span><span>' + money(goodsTotal()) + '</span></div>' +
+      '<button type="button" class="slbag-go" id="slbagGoodsPay">Check out ShoreList Direct items</button><p class="slbag-msg" id="slbagGoodsMsg" role="status" aria-live="polite"></p><p class="slbag-note">Shipping and tax are added at checkout. <a href="/shipping-returns">Delivery and returns</a></p></section>';
+  }
   function outHtml() {
     var ol = outLines(); if (!ol.length) return '';
     return '<section class="slbag-grp" aria-labelledby="slbagG2"><h4 id="slbagG2">ShoreList Gear</h4><p class="slbag-gsub">Sold through our second store. Each piece opens on its own page and checks out there, separate from the ShoreList Shop items' + (shopLines().length ? ' above' : '') + '.</p><ul class="slbag-lines">' + ol.map(function (l) {
@@ -297,10 +330,10 @@
   function paintDrawer() {
     var body = drawer.querySelector('.slbag-in');
     if (!bag.length) { body.innerHTML = '<h3>Your bag</h3><p class="slbag-msg">Your bag is empty.</p><button type="button" class="slbag-go ghost" data-close="1">Keep shopping</button>'; return; }
-    var two = shopLines().length && outLines().length;
+    var groups = (shopLines().length ? 1 : 0) + (outLines().length ? 1 : 0) + (goodsLines().length ? 1 : 0);
     body.innerHTML = '<h3>Your bag</h3><div class="slbag-scroll">' +
-      (two ? '<p class="slbag-two">Your bag has pieces from two stores. They check out separately and can arrive separately.</p>' : '') +
-      shopHtml() + outHtml() +
+      (groups > 1 ? '<p class="slbag-two">Your bag has pieces from ' + (groups === 2 ? 'two' : 'three') + ' stores. They check out separately and can arrive separately.</p>' : '') +
+      goodsHtml() + shopHtml() + outHtml() +
       preBlock(bag.map(function (l) { return l.name; }).filter(wearable).join(' '), true) + '</div>';
   }
   /* the drawer was rebuilt: put focus back on the same control, or on Close if its line is gone */
@@ -314,17 +347,18 @@
     if (t.hasAttribute && t.hasAttribute('data-close')) { shut(drawer); return; }
     if (t.hasAttribute && t.hasAttribute('data-d')) {
       var dk = +t.getAttribute('data-k'), dd = +t.getAttribute('data-d'), gone = false, rm = null;
-      mutate(function () { var l = bag[dk]; if (!l || l.out) return; l.qty = Math.max(0, Math.min(20, l.qty + dd)); if (!l.qty) { gone = true; rm = l; bag.splice(dk, 1); } });
+      mutate(function () { var l = bag[dk]; if (!l || l.out) return; l.qty = Math.max(0, Math.min(l.goods ? (l.cap || 10) : 20, l.qty + dd)); if (!l.qty) { gone = true; rm = l; bag.splice(dk, 1); } });
       if (gone && rm) track('remove_from_cart', { currency: 'USD', value: rm.price, items: [{ item_id: rm.handle, item_name: rm.name, item_variant: rm.variant, price: rm.price, quantity: 1 }] });
       paintDrawer(); refocus(gone ? null : '[data-d="' + dd + '"][data-k="' + dk + '"]'); return;
     }
     if (t.hasAttribute && t.hasAttribute('data-rm')) {
       var rk = +t.getAttribute('data-rm'), removed = null;
       mutate(function () { removed = bag[rk]; if (removed) bag.splice(rk, 1); });
-      if (removed && !removed.out) track('remove_from_cart', { currency: 'USD', value: removed.price * removed.qty, items: [{ item_id: removed.handle, item_name: removed.name, item_variant: removed.variant, price: removed.price, quantity: removed.qty }] });
+      if (removed && !removed.out && !removed.goods) track('remove_from_cart', { currency: 'USD', value: removed.price * removed.qty, items: [{ item_id: removed.handle, item_name: removed.name, item_variant: removed.variant, price: removed.price, quantity: removed.qty }] });
       paintDrawer(); refocus(null); return;
     }
     if (t.hasAttribute && t.hasAttribute('data-gone')) { mutate(function () { bag = bag.filter(function (l) { return !l.gone; }); }); paintDrawer(); refocus(null); return; }
+    if (t.id === 'slbagGoodsPay') { goodsCheckout(t); return; }
     if (t.id === 'slbagPay') {
       /* Build the link from the bag right now, not from whatever was painted earlier. */
       load();
@@ -333,6 +367,30 @@
       track('begin_checkout', { currency: 'USD', value: total(), items: gaLines() });
     }
   });
+  /* ShoreList Direct checkout: send item id, variant id, quantity and the price the shopper saw. The server decides the real price. */
+  function goodsCheckout(btnEl) {
+    load();
+    var gl = goodsLines(), msg = drawer.querySelector('#slbagGoodsMsg');
+    if (!gl.length) { paintDrawer(); return; }
+    btnEl.disabled = true; if (msg) msg.textContent = 'Starting secure checkout.';
+    track('begin_checkout', { currency: 'USD', value: goodsTotal(), items: gl.map(function (l) { return { item_id: l.item, item_name: l.name, item_variant: l.variant, price: l.cents / 100, quantity: l.qty }; }) });
+    var body = { lines: gl.map(function (l) { return { id: l.item, variant: l.variantId, qty: l.qty, expect_cents: l.cents }; }) };
+    try { if (window.ShoreAttrib && window.ShoreAttrib.get) body.attrib = window.ShoreAttrib.get(); } catch (e) {}
+    fetch('/.netlify/functions/create-goods-checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, d: d || {} }; }); })
+      .then(function (x) {
+        if (x.ok && x.d.url && /^https:\/\/checkout\.stripe\.com\//.test(x.d.url)) { location.href = x.d.url; return; }
+        if (x.d.code === 'price_changed' && Array.isArray(x.d.lines)) {
+          mutate(function () { x.d.lines.forEach(function (n) { bag.forEach(function (l) { if (l.goods && l.item === n.id && l.variantId === n.variant) { l.cents = n.price_cents; l.price = n.price_cents / 100; l.moved = true; } }); }); });
+        } else if (x.d.code === 'unavailable' || x.d.code === 'bad_variant') {
+          mutate(function () { bag = bag.filter(function (l) { return !l.goods; }); });
+        }
+        paintDrawer();
+        var m2 = drawer.querySelector('#slbagGoodsMsg'); if (m2) m2.textContent = x.d.error || 'Checkout could not be started. Please try again.';
+        var b2 = drawer.querySelector('#slbagGoodsPay'); if (b2) b2.disabled = false;
+      })
+      .catch(function () { var m3 = drawer.querySelector('#slbagGoodsMsg'); if (m3) m3.textContent = 'We could not reach checkout. Check your connection and try again.'; btnEl.disabled = false; });
+  }
   /* A change in another tab shows up here without a reload. */
   window.addEventListener('storage', function (e) { if (e.key !== KEY && e.key !== null) return; load(); paintBtn(); if (drawer.open) paintDrawer(); });
 
@@ -350,5 +408,5 @@
     start(h, a.getAttribute('href'), name, img, !!qv);
   });
 
-  window.ShoreBag = { open: openDrawer, count: count, addOut: addOut };
+  window.ShoreBag = { open: openDrawer, count: count, addOut: addOut, addGoods: addGoods };
 })();

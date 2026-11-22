@@ -1,0 +1,105 @@
+{
+  "v": 1,
+  "note": "ShoreList Direct goods catalog. Server-side source of truth for physical goods bought on shorelist.net. Only status 'live' items can be bought. Prices are in cents. This file is blocked from the public web by netlify.toml and read only by Netlify Functions. See /home/claude/plans/goods-checkout-README.md for every field. There are ZERO live items today: the two entries below are draft examples with placeholder data and cannot be purchased. Fields beyond the basics: supplier.adapter (printify, cj or manual), variants[].supplier_ref (printify {product_id, variant_id} or cj {vid}), variants[].cost_cents (your cost, for the daily margin check), supplier_ship_cents (what the supplier charges you per piece), supplier.logistic_name and supplier.from_country (CJ only).",
+  "items": [
+    {
+      "id": "draft-example-flat-shipping",
+      "status": "draft-not-live",
+      "collection": "direct",
+      "name": "DRAFT EXAMPLE: Flat shipping sample item",
+      "url": "/shop",
+      "img": "",
+      "alt": "",
+      "meta": "Placeholder entry that shows the catalog fields. Not a real product.",
+      "price": 20,
+      "store": "goods",
+      "sku": "SL-DRAFT-FLAT",
+      "price_cents": 2000,
+      "shipping_cents": 599,
+      "max_qty": 5,
+      "supplier": {
+        "name": "Example Supplier (draft)",
+        "url": "https://example.com/supplier-listing",
+        "origin": "US",
+        "lead_days": [
+          7,
+          14
+        ],
+        "adapter": "printify"
+      },
+      "variants": [
+        {
+          "id": "std",
+          "label": "Standard",
+          "sku": "SL-DRAFT-FLAT-STD",
+          "price_cents": 2000,
+          "cost_cents": 1100,
+          "supplier_ref": {
+            "product_id": "REPLACE_WITH_PRINTIFY_PRODUCT_ID",
+            "variant_id": 11111
+          }
+        },
+        {
+          "id": "lrg",
+          "label": "Large",
+          "sku": "SL-DRAFT-FLAT-LRG",
+          "price_cents": 2400,
+          "cost_cents": 1300,
+          "supplier_ref": {
+            "product_id": "REPLACE_WITH_PRINTIFY_PRODUCT_ID",
+            "variant_id": 11112
+          }
+        }
+      ],
+      "supplier_ship_cents": 350
+    },
+    {
+      "id": "draft-example-weight-tiers",
+      "status": "draft-not-live",
+      "collection": "direct",
+      "name": "DRAFT EXAMPLE: Weight tier shipping sample item",
+      "url": "/shop",
+      "img": "",
+      "alt": "",
+      "meta": "Placeholder entry that shows weight based shipping. Not a real product.",
+      "price": 35,
+      "store": "goods",
+      "sku": "SL-DRAFT-TIER",
+      "price_cents": 3500,
+      "shipping_tiers": [
+        {
+          "max_g": 500,
+          "cents": 599
+        },
+        {
+          "max_g": 2000,
+          "cents": 1099
+        },
+        {
+          "max_g": 5000,
+          "cents": 1899
+        }
+      ],
+      "max_qty": 4,
+      "supplier": {
+        "name": "Example Overseas Exporter (draft)",
+        "url": "https://example.com/exporter-listing",
+        "origin": "IN",
+        "lead_days": [
+          14,
+          28
+        ],
+        "adapter": "manual"
+      },
+      "variants": [
+        {
+          "id": "one",
+          "label": "One size",
+          "sku": "SL-DRAFT-TIER-ONE",
+          "price_cents": 3500,
+          "weight_g": 450
+        }
+      ]
+    }
+  ]
+}
