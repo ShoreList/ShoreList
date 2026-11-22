@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:battleship-tag-localist-com-2008-EventI-c6365b29-2027-03-20@shorelist.net
+DTSTAMP:20261122T000000Z
+DTSTART:20270320T150000Z
+SUMMARY:Hidden Battleship Tour
+LOCATION:Battleship North Carolina\, Wilmington\, NC
+DESCRIPTION:Confirm details with the organizer: https://events.dncr.nc.gov/event/hidden-battleship-tour-8467
+URL:https://events.dncr.nc.gov/event/hidden-battleship-tour-8467
+END:VEVENT
+END:VCALENDAR

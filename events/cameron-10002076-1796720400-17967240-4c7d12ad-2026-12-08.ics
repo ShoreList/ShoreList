@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:cameron-10002076-1796720400-17967240-4c7d12ad-2026-12-08@shorelist.net
+DTSTAMP:20261122T000000Z
+DTSTART:20261208T140000Z
+SUMMARY:Gentle Yoga
+LOCATION:NC\, Wilmington\, NC
+DESCRIPTION:Confirm details with the organizer: https://cameronartmuseum.org/event/gentle-yoga-56/
+URL:https://cameronartmuseum.org/event/gentle-yoga-56/
+END:VEVENT
+END:VCALENDAR

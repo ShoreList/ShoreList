@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:cameron-10002075-1796216400-17962182-514a2a56-2026-12-02@shorelist.net
+DTSTAMP:20261122T000000Z
+DTSTART:20261202T180000Z
+SUMMARY:Public Tour
+LOCATION:Cameron Art Museum\, Wilmington\, NC
+DESCRIPTION:Confirm details with the organizer: https://cameronartmuseum.org/event/public-tour-93/
+URL:https://cameronartmuseum.org/event/public-tour-93/
+END:VEVENT
+END:VCALENDAR

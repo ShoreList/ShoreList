@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:cameron-10002086-1796562000-17965692-5643128b-2026-12-06@shorelist.net
+DTSTAMP:20261122T000000Z
+DTSTART:20261206T180000Z
+SUMMARY:The Gift of Poetry: Words from the Heart
+LOCATION:Cameron Art Museum\, Wilmington\, NC
+DESCRIPTION:Confirm details with the organizer: https://cameronartmuseum.org/event/the-gift-of-poetry-words-from-the-heart/
+URL:https://cameronartmuseum.org/event/the-gift-of-poetry-words-from-the-heart/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:cameron-10002088-1797017400-17970246-80b9503a-2026-12-11@shorelist.net
+DTSTAMP:20261122T000000Z
+DTSTART:20261212T003000Z
+SUMMARY:CAM at the Movies: Always Looking: Titus Brooks Heagins
+LOCATION:Cameron Art Museum\, Wilmington\, NC
+DESCRIPTION:Confirm details with the organizer: https://cameronartmuseum.org/event/cam-at-the-movies-always-looking-titus-brooks-heagins/
+URL:https://cameronartmuseum.org/event/cam-at-the-movies-always-looking-titus-brooks-heagins/
+END:VEVENT
+END:VCALENDAR

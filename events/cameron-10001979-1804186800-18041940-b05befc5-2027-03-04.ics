@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:cameron-10001979-1804186800-18041940-b05befc5-2027-03-04@shorelist.net
+DTSTAMP:20261122T000000Z
+DTSTART:20270305T000000Z
+SUMMARY:Jazz at CAM: Matt Booth Quartet
+LOCATION:Cameron Art Museum\, Wilmington\, NC
+DESCRIPTION:Confirm details with the organizer: https://cameronartmuseum.org/event/jazz-at-cam-matt-booth-quartet/
+URL:https://cameronartmuseum.org/event/jazz-at-cam-matt-booth-quartet/
+END:VEVENT
+END:VCALENDAR

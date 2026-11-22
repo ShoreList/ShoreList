@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21",
+ "updated": "2026-11-22",
  "events": [
   {
    "id": "rooted-in-memory-the-gullah-geechee-visi-2026-06-19",
@@ -14,19 +14,6 @@
    "tickets": "Museum admission",
    "verified": "https://cameronartmuseum.org/?c=future_exhibitions",
    "sched": "Open during museum hours through Jan 24, 2027"
-  },
-  {
-   "id": "a-drag-queen-christmas-2026-11-21",
-   "title": "A Drag Queen Christmas",
-   "start": "2026-11-21",
-   "end": "2026-11-21",
-   "venue": "Wilson Center at Cape Fear Community College",
-   "area": "Downtown",
-   "cat": "Arts",
-   "url": "https://www.wilsoncentertickets.com/events/detail/a-drag-queen-christmas-1467266",
-   "source": "curated",
-   "tickets": "Tickets required",
-   "verified": "https://www.wilsoncentertickets.com/"
   },
   {
    "id": "kure-beach-holiday-market-2026-11-21",
@@ -164,6 +151,34 @@
    "verified": "https://www.wilmingtonnc.gov/Events-directory/Holiday-Parade-2026"
   },
   {
+   "id": "cameron-10002074-1796115600-17961192-ada3dfa3-2026-12-01",
+   "title": "Gentle Yoga",
+   "start": "2026-12-01",
+   "end": "2026-12-01",
+   "venue": "NC",
+   "area": "Wilmington",
+   "cat": "Arts",
+   "url": "https://cameronartmuseum.org/event/gentle-yoga-55/",
+   "source": "cameron",
+   "sourceUrl": "https://cameronartmuseum.org/event/gentle-yoga-55/",
+   "via": "Cameron Art Museum events calendar",
+   "time": "9:00 AM"
+  },
+  {
+   "id": "cameron-10002075-1796216400-17962182-514a2a56-2026-12-02",
+   "title": "Public Tour",
+   "start": "2026-12-02",
+   "end": "2026-12-02",
+   "venue": "Cameron Art Museum",
+   "area": "Wilmington",
+   "cat": "Arts",
+   "url": "https://cameronartmuseum.org/event/public-tour-93/",
+   "source": "cameron",
+   "sourceUrl": "https://cameronartmuseum.org/event/public-tour-93/",
+   "via": "Cameron Art Museum events calendar",
+   "time": "1:00 PM"
+  },
+  {
    "id": "sing-we-now-of-christmas-a-joyful-celebr-2026-12-02",
    "title": "Sing We Now of Christmas: A Joyful Celebration of the Season",
    "start": "2026-12-02",
@@ -188,6 +203,20 @@
    "source": "curated",
    "tickets": "Tickets required per prior Jazz at CAM concerts; price not on listing",
    "verified": "https://cameronartmuseum.org/events/"
+  },
+  {
+   "id": "cameron-10002084-1796292000-17962956-dd2bb0ad-2026-12-03",
+   "title": "Mary's Art Explorers: Chloe Zoe with Author and Illustrator Jane Smith",
+   "start": "2026-12-03",
+   "end": "2026-12-03",
+   "venue": "Cameron Art Museum",
+   "area": "Wilmington",
+   "cat": "Arts",
+   "url": "https://cameronartmuseum.org/event/marys-art-explorers-with-airlie-gardens-ducks-2/",
+   "source": "cameron",
+   "sourceUrl": "https://cameronartmuseum.org/event/marys-art-explorers-with-airlie-gardens-ducks-2/",
+   "via": "Cameron Art Museum events calendar",
+   "time": "10:00 AM"
   },
   {
    "id": "a-charlie-brown-christmas-2026-12-04",
@@ -316,6 +345,20 @@
    "source": "curated"
   },
   {
+   "id": "cameron-10002085-1796475600-17964864-678ca0b9-2026-12-05",
+   "title": "Museum School Open House at Ponysaurus",
+   "start": "2026-12-05",
+   "end": "2026-12-05",
+   "venue": "Cameron Art Museum",
+   "area": "Wilmington",
+   "cat": "Arts",
+   "url": "https://cameronartmuseum.org/event/museum-school-open-house-at-ponysaurus/",
+   "source": "cameron",
+   "sourceUrl": "https://cameronartmuseum.org/event/museum-school-open-house-at-ponysaurus/",
+   "via": "Cameron Art Museum events calendar",
+   "time": "1:00 PM"
+  },
+  {
    "id": "candlelight-2026-12-05",
    "title": "Old Wilmington Candlelight Tours",
    "start": "2026-12-05",
@@ -338,6 +381,20 @@
    "source": "curated",
    "tickets": "Registration required",
    "verified": "https://runsignup.com/Race/RunHistoricWilmington/Page-14"
+  },
+  {
+   "id": "cameron-10002086-1796562000-17965692-5643128b-2026-12-06",
+   "title": "The Gift of Poetry: Words from the Heart",
+   "start": "2026-12-06",
+   "end": "2026-12-06",
+   "venue": "Cameron Art Museum",
+   "area": "Wilmington",
+   "cat": "Arts",
+   "url": "https://cameronartmuseum.org/event/the-gift-of-poetry-words-from-the-heart/",
+   "source": "cameron",
+   "sourceUrl": "https://cameronartmuseum.org/event/the-gift-of-poetry-words-from-the-heart/",
+   "via": "Cameron Art Museum events calendar",
+   "time": "1:00 PM"
   },
   {
    "id": "pearl-harbor-day-remembrance-at-battlesh-2026-12-07",
@@ -366,6 +423,48 @@
    "tickets": "Free",
    "verified": "https://lifecare.org/ways-to-give/foundation-events/festival-of-trees/",
    "sched": "Daily during mall hours"
+  },
+  {
+   "id": "cameron-10002076-1796720400-17967240-4c7d12ad-2026-12-08",
+   "title": "Gentle Yoga",
+   "start": "2026-12-08",
+   "end": "2026-12-08",
+   "venue": "NC",
+   "area": "Wilmington",
+   "cat": "Arts",
+   "url": "https://cameronartmuseum.org/event/gentle-yoga-56/",
+   "source": "cameron",
+   "sourceUrl": "https://cameronartmuseum.org/event/gentle-yoga-56/",
+   "via": "Cameron Art Museum events calendar",
+   "time": "9:00 AM"
+  },
+  {
+   "id": "cameron-10002078-1796821200-17968230-03d621d7-2026-12-09",
+   "title": "Public Tour",
+   "start": "2026-12-09",
+   "end": "2026-12-09",
+   "venue": "Cameron Art Museum",
+   "area": "Wilmington",
+   "cat": "Arts",
+   "url": "https://cameronartmuseum.org/event/public-tour-94/",
+   "source": "cameron",
+   "sourceUrl": "https://cameronartmuseum.org/event/public-tour-94/",
+   "via": "Cameron Art Museum events calendar",
+   "time": "1:00 PM"
+  },
+  {
+   "id": "cameron-10002088-1797017400-17970246-80b9503a-2026-12-11",
+   "title": "CAM at the Movies: Always Looking: Titus Brooks Heagins",
+   "start": "2026-12-11",
+   "end": "2026-12-11",
+   "venue": "Cameron Art Museum",
+   "area": "Wilmington",
+   "cat": "Arts",
+   "url": "https://cameronartmuseum.org/event/cam-at-the-movies-always-looking-titus-brooks-heagins/",
+   "source": "cameron",
+   "sourceUrl": "https://cameronartmuseum.org/event/cam-at-the-movies-always-looking-titus-brooks-heagins/",
+   "via": "Cameron Art Museum events calendar",
+   "time": "7:30 PM"
   },
   {
    "id": "colonial-wilmington-and-the-revolution-w-2026-12-11",
@@ -465,6 +564,48 @@
    "noindex": true
   },
   {
+   "id": "cameron-10002089-1797244200-17972514-e1ac30d3-2026-12-14",
+   "title": "Connections Monday",
+   "start": "2026-12-14",
+   "end": "2026-12-14",
+   "venue": "Cameron Art Museum",
+   "area": "Wilmington",
+   "cat": "Arts",
+   "url": "https://cameronartmuseum.org/event/connections-monday-29/",
+   "source": "cameron",
+   "sourceUrl": "https://cameronartmuseum.org/event/connections-monday-29/",
+   "via": "Cameron Art Museum events calendar",
+   "time": "10:30 AM"
+  },
+  {
+   "id": "cameron-10002082-1797325200-17973288-ab11b695-2026-12-15",
+   "title": "Gentle Yoga",
+   "start": "2026-12-15",
+   "end": "2026-12-15",
+   "venue": "NC",
+   "area": "Wilmington",
+   "cat": "Arts",
+   "url": "https://cameronartmuseum.org/event/gentle-yoga-57/",
+   "source": "cameron",
+   "sourceUrl": "https://cameronartmuseum.org/event/gentle-yoga-57/",
+   "via": "Cameron Art Museum events calendar",
+   "time": "9:00 AM"
+  },
+  {
+   "id": "cameron-10002079-1797426000-17974278-3f18d405-2026-12-16",
+   "title": "Public Tour",
+   "start": "2026-12-16",
+   "end": "2026-12-16",
+   "venue": "Cameron Art Museum",
+   "area": "Wilmington",
+   "cat": "Arts",
+   "url": "https://cameronartmuseum.org/event/public-tour-95/",
+   "source": "cameron",
+   "sourceUrl": "https://cameronartmuseum.org/event/public-tour-95/",
+   "via": "Cameron Art Museum events calendar",
+   "time": "1:00 PM"
+  },
+  {
    "id": "leslie-odom-jr-the-christmas-tour-2026-12-17",
    "title": "Leslie Odom, Jr.: The Christmas Tour",
    "start": "2026-12-17",
@@ -477,6 +618,20 @@
    "time": "7:30 PM",
    "tickets": "Tickets required",
    "verified": "https://www.wilsoncentertickets.com/events/detail/leslie-odom-jr-1442850"
+  },
+  {
+   "id": "cameron-10000404-1797501600-17975052-00a4d178-2026-12-17",
+   "title": "Mary's Art Explorers: How the Grinch Stole Christmas",
+   "start": "2026-12-17",
+   "end": "2026-12-17",
+   "venue": "Cameron Art Museum",
+   "area": "Wilmington",
+   "cat": "Arts",
+   "url": "https://cameronartmuseum.org/event/marys-art-explorers-grinch/",
+   "source": "cameron",
+   "sourceUrl": "https://cameronartmuseum.org/event/marys-art-explorers-grinch/",
+   "via": "Cameron Art Museum events calendar",
+   "time": "10:00 AM"
   },
   {
    "id": "kure-beach-holiday-whoobie-whatty-2026-12-18",
@@ -532,6 +687,48 @@
    "source": "curated",
    "time": "5:00 PM",
    "verified": "https://www.carolinabeach.gov/196/Recreation-Programs"
+  },
+  {
+   "id": "cameron-10002083-1797930000-17979336-28bd7a9a-2026-12-22",
+   "title": "Gentle Yoga",
+   "start": "2026-12-22",
+   "end": "2026-12-22",
+   "venue": "NC",
+   "area": "Wilmington",
+   "cat": "Arts",
+   "url": "https://cameronartmuseum.org/event/gentle-yoga-58/",
+   "source": "cameron",
+   "sourceUrl": "https://cameronartmuseum.org/event/gentle-yoga-58/",
+   "via": "Cameron Art Museum events calendar",
+   "time": "9:00 AM"
+  },
+  {
+   "id": "cameron-10002080-1798030800-17980326-3d272df6-2026-12-23",
+   "title": "Public Tour",
+   "start": "2026-12-23",
+   "end": "2026-12-23",
+   "venue": "Cameron Art Museum",
+   "area": "Wilmington",
+   "cat": "Arts",
+   "url": "https://cameronartmuseum.org/event/public-tour-96/",
+   "source": "cameron",
+   "sourceUrl": "https://cameronartmuseum.org/event/public-tour-96/",
+   "via": "Cameron Art Museum events calendar",
+   "time": "1:00 PM"
+  },
+  {
+   "id": "cameron-10002081-1798635600-17986374-7c59b8fd-2026-12-30",
+   "title": "Public Tour",
+   "start": "2026-12-30",
+   "end": "2026-12-30",
+   "venue": "Cameron Art Museum",
+   "area": "Wilmington",
+   "cat": "Arts",
+   "url": "https://cameronartmuseum.org/event/public-tour-97/",
+   "source": "cameron",
+   "sourceUrl": "https://cameronartmuseum.org/event/public-tour-97/",
+   "via": "Cameron Art Museum events calendar",
+   "time": "1:00 PM"
   },
   {
    "id": "new-year-s-eve-gala-at-thalian-hall-2026-12-31",
@@ -788,6 +985,34 @@
    "source": "curated",
    "time": "4:00 PM",
    "verified": "https://www.wilmingtonsymphony.org/concerts"
+  },
+  {
+   "id": "cameron-10001979-1804186800-18041940-b05befc5-2027-03-04",
+   "title": "Jazz at CAM: Matt Booth Quartet",
+   "start": "2027-03-04",
+   "end": "2027-03-04",
+   "venue": "Cameron Art Museum",
+   "area": "Wilmington",
+   "cat": "Arts",
+   "url": "https://cameronartmuseum.org/event/jazz-at-cam-matt-booth-quartet/",
+   "source": "cameron",
+   "sourceUrl": "https://cameronartmuseum.org/event/jazz-at-cam-matt-booth-quartet/",
+   "via": "Cameron Art Museum events calendar",
+   "time": "7:00 PM"
+  },
+  {
+   "id": "battleship-tag-localist-com-2008-EventI-c6365b29-2027-03-20",
+   "title": "Hidden Battleship Tour",
+   "start": "2027-03-20",
+   "end": "2027-03-20",
+   "venue": "Battleship North Carolina",
+   "area": "Greater Wilmington",
+   "cat": "History",
+   "url": "https://events.dncr.nc.gov/event/hidden-battleship-tour-8467",
+   "source": "battleship",
+   "sourceUrl": "https://events.dncr.nc.gov/event/hidden-battleship-tour-8467",
+   "via": "NC DNCR events calendar: Battleship North Carolina",
+   "time": "11:00 AM"
   }
  ]
 }
