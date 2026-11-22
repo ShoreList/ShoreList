@@ -25,7 +25,7 @@ const CANCEL_H = toPublic(loadOperators()).cancellationHours ?? 24;
 // hero badges, same markup category-app.js renders, so the client render does not move the page
 const heroMeta = (slug, ops) => {
   const b = (t, live) => `<div class="hm-badge${live ? ' live' : ''}">${t}</div>`;
-  if (slug === 'museums') return b('Official Partner On Board', 1) + b('Open Daily &middot; Rain or Shine') + b('Tickets &amp; Events');
+  if (slug === 'museums') return b('Museum Guide', 1) + b('Open Daily &middot; Rain or Shine') + b('Tickets &amp; Events');
   const lv = ops.filter((o) => o.live);
   if (lv.length) return b('Bookings Open Now', 1) + b(lv.length + ' Experience' + (lv.length > 1 ? 's' : '') + ' Live') + b('Secure Checkout via Stripe') + b('Free Cancellation ' + CANCEL_H + 'hrs+');
   if (ops.length) return b(ops.length + ' Operator' + (ops.length > 1 ? 's' : '') + ' Ready to Book', 1) + b('Waitlist Open Now') + b('Bookings Opening Soon') + b('Secure Checkout via Stripe');
@@ -105,7 +105,7 @@ for (const slug of slugs) {
   const fact = live.length
     ? ['on', 'Bookable now', (live.length === 1 ? '1 experience' : live.length + ' experiences') + ' with dates, times and secure checkout', 'Book']
     : slug === 'museums'
-      ? ['', 'Partner listing', 'Tickets, hours and events on the partner page', 'See listing']
+      ? ['', 'Visitor guide', 'Tickets, hours and events on the partner page', 'See listing']
       : ops.length
         ? ['', 'Waitlist open', 'Bookings open soon. Join the early list on this page', 'Join the list']
         : ['', 'Waitlist open', 'Not bookable yet. Leave your email to hear when it opens', 'Get notified'];
