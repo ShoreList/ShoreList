@@ -527,17 +527,18 @@
     ui.log.addEventListener('click', function (e) { var a = e.target.closest ? e.target.closest('.rb-card .buy') : null; if (a) track('rip_pick_click', { item_id: (a.closest('.rb-card') || {}).getAttribute ? a.closest('.rb-card').getAttribute('data-id') : '' }); });
     /* a one-time friendly nudge, never repeated in a session, and never when motion is reduced */
     var shown = false; try { shown = sessionStorage.getItem('rbTip') === '1'; } catch (e) {}
-    if (!shown && !reduce) setTimeout(function () { if (!opened) { ui.tip.hidden = false; try { sessionStorage.setItem('rbTip', '1'); } catch (e) {} setTimeout(function () { ui.tip.hidden = true; }, 6500); } }, 4500);
+    var small = window.matchMedia && window.matchMedia('(max-width:900px)').matches;
+    if (!shown && !reduce && !small) setTimeout(function () { if (!opened) { ui.tip.hidden = false; try { sessionStorage.setItem('rbTip', '1'); } catch (e) {} setTimeout(function () { ui.tip.hidden = true; }, 6500); } }, 4500);
     document.querySelectorAll('[data-rip-open]').forEach(function (b) { b.hidden = false; b.addEventListener('click', openPanel); });
     var hc = document.getElementById('ripHeroCta'); if (hc) hc.hidden = false;
   }
 
   /* ------------------------------------------------------------------ picks strip (weather and season) */
   function buildStrip() {
-    var main = document.getElementById('main'); if (!main || document.getElementById('ripStrip')) return;
+    var slot = document.getElementById('ripSlot'), main = slot || document.getElementById('main'); if (!main || document.getElementById('ripStrip')) return;
     var s = document.createElement('section'); s.id = 'ripStrip'; s.className = 'rb-strip'; s.setAttribute('aria-labelledby', 'ripStripH');
     s.innerHTML = '<div class="rb-sh">' + mascot('S' + (++uidN), 'Tidebot, the shop stylist robot') + '<div><p class="rb-eyebrow">Fresh from the tide</p><h2 id="ripStripH">Tidebot\'s picks today</h2><p class="rb-wx" id="ripWx"></p></div><div class="rb-ask"><button class="rb-btn" type="button" data-rip-open>Ask Tidebot for more</button></div></div><div class="rb-tiles" id="ripTiles"></div><p class="rb-src" id="ripSrc"></p>';
-    main.insertBefore(s, main.firstChild);
+    if (slot) slot.appendChild(s); else main.insertBefore(s, main.firstChild);
     s.querySelector('[data-rip-open]').addEventListener('click', openPanel);
     function paint() {
       var md = mood || seasonalMood(nyParts());
@@ -556,7 +557,10 @@
     var art = hero.querySelector('.art'); hero.insertBefore(cv, art ? art.nextSibling : hero.firstChild);
     var ctx = cv.getContext && cv.getContext('2d'); if (!ctx) return;
     var W = 0, H = 0, dpr = 1, running = false, vis = true, last = 0;
-    var L = [{ a: 9, l: 360, v: .00055, y: .55, c: '92,240,216', al: .13 }, { a: 13, l: 540, v: -.00038, y: .66, c: '168,199,192', al: .16 }, { a: 7, l: 250, v: .0009, y: .78, c: '92,240,216', al: .2 }, { a: 10, l: 420, v: -.0006, y: .88, c: '14,31,51', al: .55 }];
+    /* Calm sea-glass and sand tides. Colors come from CSS custom properties on the hero so the page can theme them; the last layer is the page color, so the hero meets the page on a wave. */
+    var cs = window.getComputedStyle ? getComputedStyle(hero) : null;
+    function tv(n, d) { var v = cs ? cs.getPropertyValue(n).trim() : ''; return /^\d+,\s*\d+,\s*\d+$/.test(v) ? v : d; }
+    var L = [{ a: 7, l: 360, v: .00055, y: .5, c: tv('--tide-1', '159,195,184'), al: .3 }, { a: 9, l: 540, v: -.00038, y: .62, c: tv('--tide-2', '217,199,163'), al: .55 }, { a: 5, l: 250, v: .0009, y: .74, c: tv('--tide-3', '159,195,184'), al: .45 }, { a: 7, l: 420, v: -.0006, y: .86, c: tv('--tide-base', '244,241,234'), al: 1 }];
     function size() { var r = cv.getBoundingClientRect(); dpr = Math.min(window.devicePixelRatio || 1, 1.5); W = Math.max(1, Math.round(r.width)); H = Math.max(1, Math.round(r.height)); cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
     function draw(t) {
       ctx.clearRect(0, 0, W, H);
@@ -564,7 +568,7 @@
         var base = H * w.y; ctx.beginPath(); ctx.moveTo(0, H);
         for (var x = 0; x <= W; x += 8) ctx.lineTo(x, base + Math.sin(x / w.l * 6.283 + t * w.v * 6.283 * 1000 / 6.283 + n) * w.a + Math.sin(x / (w.l * .47) + t * w.v * 1300 + n * 2) * w.a * .35);
         ctx.lineTo(W, H); ctx.closePath(); ctx.fillStyle = 'rgba(' + w.c + ',' + w.al + ')'; ctx.fill();
-        if (n < 3) { ctx.beginPath(); for (var y = 0; y <= W; y += 8) { var yy = base + Math.sin(y / w.l * 6.283 + t * w.v * 1000 + n) * w.a + Math.sin(y / (w.l * .47) + t * w.v * 1300 + n * 2) * w.a * .35; if (y) ctx.lineTo(y, yy); else ctx.moveTo(y, yy); } ctx.strokeStyle = 'rgba(92,240,216,' + (n === 2 ? .55 : .3) + ')'; ctx.lineWidth = 1.2; ctx.stroke(); }
+        if (n < 3) { ctx.beginPath(); for (var y = 0; y <= W; y += 8) { var yy = base + Math.sin(y / w.l * 6.283 + t * w.v * 1000 + n) * w.a + Math.sin(y / (w.l * .47) + t * w.v * 1300 + n * 2) * w.a * .35; if (y) ctx.lineTo(y, yy); else ctx.moveTo(y, yy); } ctx.strokeStyle = 'rgba(' + w.c + ',' + (n === 2 ? .8 : .5) + ')'; ctx.lineWidth = 1.2; ctx.stroke(); }
       });
     }
     function frame(ts) { if (!running) return; if (ts - last > 40) { last = ts; draw(ts); } requestAnimationFrame(frame); }

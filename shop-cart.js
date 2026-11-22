@@ -1,6 +1,16 @@
-/* ShoreList shop bag: pick color and size on shorelist.net, keep a bag across the
-   visit, then pay once at Shopify checkout. Works for products hosted on the ShoreList
-   Shopify store; other products keep their normal product-page link.
+/* ShoreList shop bag. Pick color and size on shorelist.net, keep a bag across the visit,
+   then pay at checkout.
+
+   Two stores sit behind the shop, so the bag has two groups:
+   - ShoreList Shop (Shopify): lines with a variant, quantity and price. These check out together
+     in ONE Shopify checkout built from the bag at the moment of the tap.
+   - ShoreList Gear (Fourthwall): link-out lines. They are held here so nothing is forgotten, but
+     each opens its own page and checks out there, separate from the Shopify lines.
+
+   The bag lives in localStorage only. The Shopify checkout link is rebuilt from the bag when
+   the shopper taps Checkout (never from a stale link), a second tab keeps the bag in sync, and
+   opening the bag re-checks price and availability of each Shopify line against the store.
+
    If the product lookup fails (offline, function down) the dialog stays open and shows a
    plain link to the product page, so a tap always gives a visible result. */
 (function () {
@@ -10,66 +20,130 @@
 
   var STORE = 'https://shorelist.myshopify.com';
   var KEY = 'slBag';
+  /* Shopify cart permalinks may add to a cart the browser already holds from an earlier checkout visit.
+     Setting this to true sends shoppers through /cart/clear first. It is off because it has not been
+     tested against the live store from here. Test it, then switch it on. */
+  var CLEAR_FIRST = false;
+  var OUT_RE = /^https:\/\/shorelist-shop\.fourthwall\.com\//i;
   var bag = [];
-  try { bag = JSON.parse(localStorage.getItem(KEY) || '[]') || []; } catch (e) { bag = []; }
-  if (!Array.isArray(bag)) bag = [];
-  bag = bag.filter(function (l) { return l && /^\d+$/.test(String(l.id)) && l.qty > 0; });
 
+  function clean(list) {
+    if (!Array.isArray(list)) return [];
+    return list.filter(function (l) {
+      if (!l || !(l.qty > 0)) return false;
+      if (l.out === true) return typeof l.id === 'string' && OUT_RE.test(l.url || '') && typeof l.name === 'string';
+      return /^\d+$/.test(String(l.id));
+    }).map(function (l) { if (l.out === true) l.qty = 1; else l.qty = Math.min(20, Math.floor(l.qty)); return l; });
+  }
+  function load() { var raw = []; try { raw = JSON.parse(localStorage.getItem(KEY) || '[]') || []; } catch (e) { raw = []; } bag = clean(raw); }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(bag)); } catch (e) {} }
+  /* Always re-read the bag before changing it, so a change made in another tab is never overwritten. */
+  function mutate(fn) { load(); var r = fn(); save(); paintBtn(); return r; }
+  load();
+
   function track(n, p) { try { if (typeof window.gtag === 'function') window.gtag('event', n, p || {}); } catch (e) {} }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]; }); }
   function money(n) { return '$' + (Math.round(n * 100) / 100).toFixed(2).replace(/\.00$/, ''); }
   function handleOf(href) { var m = /^https:\/\/shorelist\.myshopify\.com\/products\/([a-z0-9-]+)/i.exec(href || ''); return m ? m[1].toLowerCase() : ''; }
-  function count() { return bag.reduce(function (a, l) { return a + l.qty; }, 0); }
-  function total() { return bag.reduce(function (a, l) { return a + l.qty * l.price; }, 0); }
-  function checkoutUrl() { return STORE + '/cart/' + bag.map(function (l) { return l.id + ':' + l.qty; }).join(','); }
+  function shopLines() { return bag.filter(function (l) { return !l.out; }); }
+  function outLines() { return bag.filter(function (l) { return l.out; }); }
+  function buyable() { return shopLines().filter(function (l) { return !l.gone; }); }
+  function count() { return buyable().reduce(function (a, l) { return a + l.qty; }, 0) + outLines().length; }
+  function total() { return buyable().reduce(function (a, l) { return a + l.qty * l.price; }, 0); }
+  function checkoutUrl() {
+    var path = '/cart/' + buyable().map(function (l) { return l.id + ':' + l.qty; }).join(',');
+    return CLEAR_FIRST ? STORE + '/cart/clear?return_to=' + encodeURIComponent(path) : STORE + path;
+  }
+  function wearable(name) { return /\b(crewneck|tee|hoodie|cap|beanie|hat)\b/i.test(name || ''); }
+  function gaLines() { return buyable().map(function (l) { return { item_id: l.handle, item_name: l.name, item_variant: l.variant, price: l.price, quantity: l.qty }; }); }
 
   var css = '' +
-    '.slbag-btn{position:fixed;right:16px;top:74px;z-index:70;border:0;border-radius:100px;background:#0E1F33;color:#F4F1EA;font:700 .9rem "DM Sans",system-ui,sans-serif;padding:11px 18px;box-shadow:0 10px 30px rgba(0,0,0,.35);cursor:pointer;display:flex;gap:8px;align-items:center}' +
-    '.slbag-btn b{background:#C0412A;color:#fff;border-radius:100px;min-width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:.8rem;padding:0 6px}' +
-    'dialog.slbag{border:0;padding:0;background:#FEFCF7;color:#0D1F25;font-family:"DM Sans",system-ui,sans-serif;box-shadow:0 30px 80px rgba(0,0,0,.45)}' +
-    'dialog.slbag::backdrop{background:rgba(6,18,24,.6)}' +
-    'dialog.slbag-pick{margin:auto;border-radius:20px;width:min(480px,94vw);max-height:92vh}' +
+    '.slbag-btn{position:fixed;right:16px;top:74px;z-index:70;border:0;border-radius:2px;background:var(--navy,#0E1F33);color:var(--on-navy,#F4F1EA);font:700 .78rem "DM Sans",system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:0 18px;min-height:44px;box-shadow:0 10px 30px rgba(0,0,0,.3);cursor:pointer}' +
     '.slbag-btn[hidden]{display:none}' +
-    'dialog.slbag-drawer{margin:0 0 0 auto;height:100vh;max-height:100vh;width:min(420px,100vw);border-radius:0}' +
-    '.slbag-in{padding:22px;display:flex;flex-direction:column;gap:14px}' +
+    'dialog.slbag{border:0;padding:0;background:#FBF9F4;color:#0E1F33;font-family:"DM Sans",system-ui,sans-serif;box-shadow:0 30px 80px rgba(0,0,0,.45)}' +
+    'dialog.slbag::backdrop{background:rgba(14,31,51,.6)}' +
+    'dialog.slbag-pick{margin:auto;border-radius:0;width:min(480px,94vw);max-height:92dvh}' +
+    'dialog.slbag-drawer{margin:0 0 0 auto;height:100vh;height:100dvh;max-height:100dvh;width:min(440px,100vw);border-radius:0}' +
+    '.slbag-in{padding:26px 22px 22px;display:flex;flex-direction:column;gap:14px}' +
     '.slbag-drawer .slbag-in{height:100%;box-sizing:border-box}' +
-    '.slbag h3{font-family:"Playfair Display",Georgia,serif;font-size:1.3rem;margin:0;padding-right:36px}' +
-    '.slbag-x{position:absolute;right:12px;top:12px;width:40px;height:40px;border:0;border-radius:50%;background:rgba(127,127,127,.15);color:inherit;font-size:1.4rem;cursor:pointer;line-height:1}' +
-    '.slbag-head{display:flex;gap:14px;align-items:flex-start}.slbag-head img{width:96px;height:128px;object-fit:cover;border-radius:10px;background:#e8e3d8;flex:none}' +
-    '.slbag-price{font-weight:700;color:#0A4D5C;margin-top:4px}' +
-    '.slbag-lbl{display:block;font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px;opacity:.75}' +
+    '.slbag h3{font-family:"Playfair Display",Georgia,serif;font-size:1.4rem;line-height:1.15;margin:0;padding-right:70px}' +
+    '.slbag h4{font-family:"Playfair Display",Georgia,serif;font-size:1.05rem;margin:0}' +
+    '.slbag-x{position:absolute;right:0;top:0;min-height:48px;padding:0 16px;border:0;background:none;color:inherit;font:700 .74rem "DM Sans",system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}' +
+    '.slbag-head{display:flex;gap:14px;align-items:flex-start}.slbag-head img{width:96px;height:120px;object-fit:cover;background:#E9E3D6;flex:none}' +
+    '.slbag-price{font-weight:700;margin-top:4px}' +
+    '.slbag-lbl{display:block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;opacity:.75}' +
     '.slbag-opts{display:flex;flex-wrap:wrap;gap:8px}' +
-    '.slbag-opt{border:1.5px solid rgba(13,31,37,.25);background:transparent;color:inherit;border-radius:100px;padding:9px 14px;font:inherit;font-size:.9rem;cursor:pointer;min-height:40px}' +
+    '.slbag-opt{border:1px solid rgba(14,31,51,.35);background:transparent;color:inherit;border-radius:2px;padding:9px 14px;font:inherit;font-size:.9rem;cursor:pointer;min-height:44px}' +
     '.slbag-opt[aria-pressed=true]{background:#0E1F33;color:#F4F1EA;border-color:#0E1F33}' +
     '.slbag-opt:disabled{opacity:.35;text-decoration:line-through;cursor:not-allowed}' +
-    '.slbag-go{border:0;border-radius:100px;background:#C0412A;color:#fff;font:700 1rem "DM Sans",system-ui,sans-serif;padding:14px 20px;cursor:pointer;text-align:center;text-decoration:none;display:block}' +
+    '.slbag-go{border:1px solid #0E1F33;border-radius:2px;background:#0E1F33;color:#F4F1EA;font:700 .78rem "DM Sans",system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;min-height:50px;padding:0 20px;cursor:pointer;text-align:center;text-decoration:none;display:flex;align-items:center;justify-content:center}' +
+    '.slbag-go:hover{background:transparent;color:#0E1F33}' +
+    '.slbag-go.ghost{background:transparent;color:#0E1F33}.slbag-go.ghost:hover{background:#0E1F33;color:#F4F1EA}' +
     '.slbag-go:disabled{opacity:.5;cursor:not-allowed}' +
     '.slbag-msg{min-height:1.3em;font-size:.9rem;margin:0;opacity:.85}' +
     '.slbag-fail{font-size:1rem;margin:0}' +
-    '.slbag-lines{flex:1;overflow:auto;display:flex;flex-direction:column;gap:14px;margin:0;padding:0;list-style:none}' +
-    '.slbag-line{display:flex;gap:12px}.slbag-line img{width:64px;height:84px;object-fit:cover;border-radius:8px;background:#e8e3d8;flex:none}' +
-    '.slbag-line div{flex:1;min-width:0}.slbag-line strong{display:block;font-size:.95rem}.slbag-line span{font-size:.85rem;opacity:.75}' +
-    '.slbag-qty{display:flex;align-items:center;gap:6px;margin-top:6px}.slbag-qty button{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(13,31,37,.25);background:transparent;color:inherit;font-size:1rem;cursor:pointer}' +
-    '.slbag-qty .rm{width:auto;border:0;border-radius:0;text-decoration:underline;font-size:.82rem;margin-left:8px;height:auto;opacity:.75}' +
-    '.slbag-sum{display:flex;justify-content:space-between;font-weight:700;font-size:1.05rem;border-top:1px solid rgba(13,31,37,.15);padding-top:14px}' +
-    '.slbag-note{font-size:.82rem;opacity:.75;margin:0}' +
-    '@media (prefers-color-scheme:dark){dialog.slbag{background:#12303a;color:#F5E8CB}.slbag-price{color:#7FC3CF}.slbag-opt,.slbag-qty button{border-color:rgba(245,232,203,.3)}.slbag-opt[aria-pressed=true]{background:#F5E8CB;color:#0D1F25;border-color:#F5E8CB}.slbag-sum{border-color:rgba(245,232,203,.2)}}';
+    '.slbag-scroll{flex:1;overflow:auto;display:flex;flex-direction:column;gap:22px;min-height:0}' +
+    '.slbag-grp{display:flex;flex-direction:column;gap:12px}' +
+    '.slbag-gsub{font-size:.84rem;opacity:.8;margin:-6px 0 0}' +
+    '.slbag-two{font-size:.84rem;border:1px solid rgba(14,31,51,.25);padding:10px 12px;margin:0}' +
+    '.slbag-lines{display:flex;flex-direction:column;gap:14px;margin:0;padding:0;list-style:none}' +
+    '.slbag-line{display:flex;gap:12px}.slbag-line img{width:64px;height:80px;object-fit:cover;background:#E9E3D6;flex:none}' +
+    '.slbag-line>div{flex:1;min-width:0}.slbag-line strong{display:block;font-size:.92rem;line-height:1.3}.slbag-line span{font-size:.82rem;opacity:.75;display:block}' +
+    '.slbag-line .warn{opacity:1;color:#B5362F;font-weight:600}' +
+    '.slbag-qty{display:flex;align-items:center;gap:4px;margin-top:4px}.slbag-qty button{width:44px;height:44px;border:1px solid rgba(14,31,51,.3);border-radius:2px;background:transparent;color:inherit;font-size:1.05rem;cursor:pointer}' +
+    '.slbag-qty b{min-width:26px;text-align:center}' +
+    '.slbag-qty .rm,.slbag-out{width:auto;min-height:44px;border:0;background:none;border-radius:0;text-decoration:underline;text-underline-offset:3px;font-size:.84rem;margin-left:6px;opacity:.85;padding:0 6px;color:inherit;cursor:pointer;display:inline-flex;align-items:center}' +
+    '.slbag-out{margin-left:0;padding:0;font-weight:600;opacity:1}' +
+    '.slbag-sum{display:flex;justify-content:space-between;font-weight:700;font-size:1.05rem;border-top:1px solid rgba(14,31,51,.18);padding-top:14px}' +
+    '.slbag-note{font-size:.82rem;opacity:.8;margin:0}' +
+    '.slbag-pre{margin:0;border-top:1px solid rgba(14,31,51,.18);font-size:.82rem}' +
+    '.slbag-pre div{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid rgba(14,31,51,.12)}' +
+    '.slbag-pre dt{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;opacity:.7;flex:none;width:36%}' +
+    '.slbag-pre dd{margin:0;flex:1;text-align:right}.slbag-pre a{color:inherit;font-weight:600}' +
+    'nav.sl-hdr .sl-tools .sl-bag{padding:0 12px}' +
+    '@media(max-width:560px){nav.sl-hdr .sl-tools .sl-srch span{display:none}}' +
+    '@media (prefers-color-scheme:dark){dialog.slbag{background:#112336;color:#F1ECE0}.slbag-opt,.slbag-qty button{border-color:rgba(241,236,224,.35)}.slbag-opt[aria-pressed=true]{background:#F1ECE0;color:#0C1A28;border-color:#F1ECE0}.slbag-go{background:#F1ECE0;color:#0C1A28;border-color:#F1ECE0}.slbag-go:hover{background:transparent;color:#F1ECE0}.slbag-go.ghost{background:transparent;color:#F1ECE0}.slbag-go.ghost:hover{background:#F1ECE0;color:#0C1A28}.slbag-sum,.slbag-pre,.slbag-pre div{border-color:rgba(241,236,224,.2)}.slbag-two{border-color:rgba(241,236,224,.3)}.slbag-line .warn{color:#E08A7F}.slbag-head img,.slbag-line img{background:#16293B}}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
 
-  /* ---------- bag button ---------- */
+  /* ---------- bag button: always in the header ---------- */
   var btn = document.createElement('button');
-  btn.type = 'button'; btn.className = 'slbag-btn'; btn.hidden = true;
-  btn.setAttribute('aria-label', 'Open your bag');
-  document.body.appendChild(btn);
-  function paintBtn() { var c = count(); btn.hidden = !c; btn.innerHTML = 'Bag <b>' + c + '</b>'; }
+  btn.type = 'button'; btn.className = 'sl-bag';
+  var searchBtn = null;
+  function openSearch() {
+    if (window.ShorePlus && window.ShorePlus.open) { window.ShorePlus.open('shop'); return; }
+    var f = document.querySelector('.sp-fab'); if (f) { f.click(); return; }
+    document.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true, bubbles: true }));
+  }
+  function mountBtn() {
+    if (btn.parentNode) return true;
+    var nav = document.querySelector('nav.sl-hdr');
+    if (!nav) return false;
+    var box = nav.querySelector('.sl-tools');
+    if (!box) { box = document.createElement('div'); box.className = 'sl-tools'; nav.insertBefore(box, nav.querySelector('.sl-burger')); }
+    searchBtn = document.createElement('button'); searchBtn.type = 'button'; searchBtn.className = 'sl-srch'; searchBtn.setAttribute('aria-label', 'Search ShoreList');
+    searchBtn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg><span>Search</span>';
+    searchBtn.addEventListener('click', openSearch);
+    box.appendChild(searchBtn); box.appendChild(btn);
+    return true;
+  }
+  function paintBtn() {
+    var c = count();
+    btn.innerHTML = 'Bag (' + c + ')';
+    btn.setAttribute('aria-label', 'Open your bag, ' + c + (c === 1 ? ' item' : ' items'));
+  }
+  paintBtn();
+  btn.addEventListener('click', function () { openDrawer(); });
+  if (!mountBtn()) {
+    /* header not built yet: wait for it, and fall back to a floating button so the bag is never unreachable */
+    var tries = 0, iv = setInterval(function () { if (mountBtn() || ++tries > 20) { clearInterval(iv); if (!btn.parentNode) { btn.className = 'slbag-btn'; document.body.appendChild(btn); } } }, 150);
+  }
 
   /* ---------- dialogs ---------- */
   function mk(cls, label, titleId) {
     var d = document.createElement('dialog'); d.className = 'slbag ' + cls;
     /* titleId: the dialog is named by its own heading (the product name) instead of a generic label. */
     if (titleId) d.setAttribute('aria-labelledby', titleId); else d.setAttribute('aria-label', label);
-    d.innerHTML = '<button class="slbag-x" type="button" aria-label="Close">&times;</button><div class="slbag-in"></div>';
+    d.innerHTML = '<button class="slbag-x" type="button" aria-label="Close">Close</button><div class="slbag-in"></div>';
     document.body.appendChild(d);
     d.querySelector('.slbag-x').addEventListener('click', function () { shut(d); });
     d.addEventListener('click', function (e) { if (e.target === d) shut(d); });
@@ -79,6 +153,15 @@
   function shut(d) { if (d.close) d.close(); else d.removeAttribute('open'); }
   var pick = mk('slbag-pick', 'Choose options', 'slbagPickT');
   var drawer = mk('slbag-drawer', 'Your bag');
+
+  function preBlock(name, cartMode) {
+    return '<dl class="slbag-pre">' +
+      (wearable(name) ? '<div><dt>Size and fit</dt><dd><a href="/size-guide">Size guide</a></dd></div>' : '') +
+      '<div><dt>Delivery</dt><dd><a href="/shipping-returns">Delivery and returns</a></dd></div>' +
+      '<div><dt>Made to order</dt><dd>Made after you order, so allow production time before it ships.</dd></div>' +
+      '<div><dt>Returns</dt><dd>No returns for change of mind or size preference. Damaged, defective, misprinted or wrong-size items are replaced at no cost if reported within 30 days of delivery. <a href="/shipping-returns">Full details</a></dd></div>' +
+      (cartMode ? '' : '<div><dt>Checkout</dt><dd>Shipping and tax are shown at checkout.</dd></div>') + '</dl>';
+  }
 
   /* ---------- option picker ---------- */
   var cur = null;
@@ -92,7 +175,7 @@
     var img = (v && v.image) || cur.img || p.image;
     var h = '<div class="slbag-head">' + (img ? '<img alt="" src="' + esc(img) + '"/>' : '') + '<div><h3 id="slbagPickT">' + esc(cur.name || p.title) + '</h3><div class="slbag-price">' + (v ? money(v.price) : '') + '</div></div></div>';
     p.options.forEach(function (o, k) {
-      if (o.values.length === 1 && /^(title|default title)$/i.test(o.name + '') ) return;
+      if (o.values.length === 1 && /^(title|default title)$/i.test(o.name + '')) return;
       h += '<div role="group" aria-labelledby="slbagOpt' + k + '"><span class="slbag-lbl" id="slbagOpt' + k + '">' + esc(o.name) + '</span><div class="slbag-opts">' + o.values.map(function (val) {
         var ok = p.variants.some(function (x) { return x.available && x.options[k] === val && x.options.every(function (ov, j) { return j === k || cur.sel[j] == null || ov === cur.sel[j]; }); });
         return '<button type="button" class="slbag-opt" data-k="' + k + '" data-v="' + esc(val) + '" aria-pressed="' + (cur.sel[k] === val) + '"' + (ok ? '' : ' disabled') + '>' + esc(val) + '</button>';
@@ -101,7 +184,8 @@
     var ready = v && v.available;
     h += '<button type="button" class="slbag-go" id="slbagAdd"' + (ready ? '' : ' disabled') + '>' + (ready ? 'Add to bag' : (v ? 'Sold out in this option' : 'Choose your options')) + '</button>';
     h += '<p class="slbag-msg" role="status" aria-live="polite"></p>';
-    h += '<p class="slbag-note">Made to order. Shipping and tax are shown at checkout. <a href="' + esc(cur.url) + '" target="_blank" rel="noopener" style="color:inherit">Full product details</a></p>';
+    h += preBlock(cur.name || p.title, false);
+    h += '<p class="slbag-note"><a href="' + esc(cur.url) + '" target="_blank" rel="noopener" style="color:inherit">Full product details</a></p>';
     body.innerHTML = h;
   }
   pick.addEventListener('click', function (e) {
@@ -116,11 +200,13 @@
     }
     if (e.target.id === 'slbagAdd' && cur) {
       var v = matchVariant(); if (!v || !v.available) return;
-      var line = bag.filter(function (l) { return String(l.id) === String(v.id); })[0];
-      if (line) line.qty = Math.min(20, line.qty + 1);
-      else bag.push({ id: String(v.id), qty: 1, price: v.price, name: cur.name || cur.p.title, variant: v.title === 'Default Title' ? '' : v.title, img: v.image || cur.img || cur.p.image, handle: cur.p.handle });
-      save(); paintBtn();
-      track('add_to_cart', { currency: 'USD', value: v.price, items: [{ item_id: cur.p.handle, item_name: cur.name || cur.p.title, item_variant: v.title, price: v.price, quantity: 1 }] });
+      var c = cur;
+      mutate(function () {
+        var line = bag.filter(function (l) { return !l.out && String(l.id) === String(v.id); })[0];
+        if (line) { line.qty = Math.min(20, line.qty + 1); line.price = v.price; delete line.gone; }
+        else bag.push({ id: String(v.id), qty: 1, price: v.price, name: c.name || c.p.title, variant: v.title === 'Default Title' ? '' : v.title, img: v.image || c.img || c.p.image, handle: c.p.handle });
+      });
+      track('add_to_cart', { currency: 'USD', value: v.price, items: [{ item_id: c.p.handle, item_name: c.name || c.p.title, item_variant: v.title, price: v.price, quantity: 1 }] });
       shut(pick); openDrawer();
     }
   });
@@ -150,24 +236,105 @@
       .catch(function () { fail(url, name); });
   }
 
+  /* ---------- keep Shopify lines honest: re-check price and availability ---------- */
+  var checked = {};
+  function refresh() {
+    var seenH = {};
+    shopLines().forEach(function (l) { if (l.handle && !seenH[l.handle] && !(checked[l.handle] && Date.now() - checked[l.handle] < 60000)) seenH[l.handle] = 1; });
+    Object.keys(seenH).forEach(function (h) {
+      fetch('/.netlify/functions/shop-product?handle=' + encodeURIComponent(h))
+        .then(function (r) { if (!r.ok) throw new Error('lookup'); return r.json(); })
+        .then(function (p) {
+          if (!p || !p.variants) return;
+          checked[h] = Date.now();
+          var changed = false;
+          mutate(function () {
+            bag.forEach(function (l) {
+              if (l.out || l.handle !== h) return;
+              var v = p.variants.filter(function (x) { return String(x.id) === String(l.id); })[0];
+              var gone = !v || !v.available;
+              if (gone !== !!l.gone) { if (gone) l.gone = true; else delete l.gone; changed = true; }
+              if (v && typeof v.price === 'number' && v.price !== l.price) { l.price = v.price; l.moved = true; changed = true; }
+            });
+          });
+          if (changed && drawer.open) { paintDrawer(); }
+        })
+        .catch(function () { /* offline or function down: keep the bag as it is */ });
+    });
+  }
+
+  /* ---------- add a Fourthwall link-out line ---------- */
+  function addOut(o) {
+    if (!o || !o.id || !OUT_RE.test(o.url || '')) return false;
+    mutate(function () {
+      var id = 'out:' + o.id;
+      if (bag.some(function (l) { return l.id === id; })) return;
+      bag.push({ out: true, id: id, qty: 1, name: String(o.name || ''), url: o.url, img: o.img || '', price: typeof o.price === 'number' ? o.price : 0, from: o.from === true, store: String(o.store || 'ShoreList Gear') });
+    });
+    return true;
+  }
+
   /* ---------- drawer ---------- */
+  function shopHtml() {
+    var sl = shopLines(); if (!sl.length) return '';
+    var gone = sl.some(function (l) { return l.gone; }), n = buyable().reduce(function (a, l) { return a + l.qty; }, 0);
+    return '<section class="slbag-grp" aria-labelledby="slbagG1"><h4 id="slbagG1">ShoreList Shop</h4><p class="slbag-gsub">Ships from our Shopify store. These pieces check out together.</p><ul class="slbag-lines">' + sl.map(function (l) {
+      var k = bag.indexOf(l);
+      return '<li class="slbag-line">' + (l.img ? '<img alt="" src="' + esc(l.img) + '"/>' : '') + '<div><strong>' + esc(l.name) + '</strong><span>' + esc(l.variant || '') + '</span>' +
+        (l.gone ? '<span class="warn">No longer available</span>' : (l.moved ? '<span>Price updated to ' + money(l.price) + '</span>' : '')) +
+        '<div class="slbag-qty">' + (l.gone ? '' : '<button type="button" data-d="-1" data-k="' + k + '" aria-label="One fewer">&minus;</button><b>' + l.qty + '</b><button type="button" data-d="1" data-k="' + k + '" aria-label="One more">+</button>') + '<button type="button" class="rm" data-rm="' + k + '">Remove</button></div></div><b>' + (l.gone ? '' : money(l.price * l.qty)) + '</b></li>';
+    }).join('') + '</ul>' +
+      (n ? '<div class="slbag-sum"><span>Subtotal</span><span>' + money(total()) + '</span></div><a class="slbag-go" id="slbagPay" href="' + esc(checkoutUrl()) + '">Check out ShoreList Shop items</a><p class="slbag-note">Shipping and tax are added at checkout.</p>' : '<p class="slbag-note">Nothing here can be checked out right now. Remove the unavailable pieces to continue.</p>') +
+      (gone ? '<button type="button" class="slbag-go ghost" data-gone="1">Remove unavailable pieces</button>' : '') + '</section>';
+  }
+  function outHtml() {
+    var ol = outLines(); if (!ol.length) return '';
+    return '<section class="slbag-grp" aria-labelledby="slbagG2"><h4 id="slbagG2">ShoreList Gear</h4><p class="slbag-gsub">Sold through our second store. Each piece opens on its own page and checks out there, separate from the ShoreList Shop items' + (shopLines().length ? ' above' : '') + '.</p><ul class="slbag-lines">' + ol.map(function (l) {
+      var k = bag.indexOf(l);
+      return '<li class="slbag-line">' + (l.img ? '<img alt="" src="' + esc(l.img) + '"/>' : '') + '<div><strong>' + esc(l.name) + '</strong><span>' + (l.price ? (l.from ? 'From ' : '') + money(l.price) : '') + '</span><div class="slbag-qty"><a class="slbag-out" href="' + esc(l.url) + '" target="_blank" rel="noopener" data-out="' + esc(l.id) + '">Choose options and buy</a><button type="button" class="rm" data-rm="' + k + '">Remove</button></div></div></li>';
+    }).join('') + '</ul></section>';
+  }
   function paintDrawer() {
     var body = drawer.querySelector('.slbag-in');
-    if (!bag.length) { body.innerHTML = '<h3>Your bag</h3><p class="slbag-msg">Your bag is empty.</p>'; return; }
-    body.innerHTML = '<h3>Your bag</h3><ul class="slbag-lines">' + bag.map(function (l, k) {
-      return '<li class="slbag-line">' + (l.img ? '<img alt="" src="' + esc(l.img) + '"/>' : '') + '<div><strong>' + esc(l.name) + '</strong><span>' + esc(l.variant || '') + '</span><div class="slbag-qty"><button type="button" data-d="-1" data-k="' + k + '" aria-label="One fewer">&minus;</button><b>' + l.qty + '</b><button type="button" data-d="1" data-k="' + k + '" aria-label="One more">+</button><button type="button" class="rm" data-rm="' + k + '">Remove</button></div></div><b>' + money(l.price * l.qty) + '</b></li>';
-    }).join('') + '</ul><div class="slbag-sum"><span>Subtotal</span><span>' + money(total()) + '</span></div><a class="slbag-go" id="slbagPay" href="' + esc(checkoutUrl()) + '">Checkout</a><p class="slbag-note">One secure checkout on Shopify for everything in your bag. Shipping and tax are added there.</p>';
+    if (!bag.length) { body.innerHTML = '<h3>Your bag</h3><p class="slbag-msg">Your bag is empty.</p><button type="button" class="slbag-go ghost" data-close="1">Keep shopping</button>'; return; }
+    var two = shopLines().length && outLines().length;
+    body.innerHTML = '<h3>Your bag</h3><div class="slbag-scroll">' +
+      (two ? '<p class="slbag-two">Your bag has pieces from two stores. They check out separately and can arrive separately.</p>' : '') +
+      shopHtml() + outHtml() +
+      preBlock(bag.map(function (l) { return l.name; }).filter(wearable).join(' '), true) + '</div>';
   }
   /* the drawer was rebuilt: put focus back on the same control, or on Close if its line is gone */
   function refocus(sel) { var el = sel ? drawer.querySelector(sel) : null; (el || drawer.querySelector('.slbag-x')).focus(); }
-  function openDrawer() { paintDrawer(); openD(drawer); track('view_cart', { currency: 'USD', value: total(), items: bag.map(function (l) { return { item_id: l.handle, item_name: l.name, item_variant: l.variant, price: l.price, quantity: l.qty }; }) }); }
+  function openDrawer() {
+    load(); paintBtn(); paintDrawer(); openD(drawer); refresh();
+    track('view_cart', { currency: 'USD', value: total(), items: gaLines() });
+  }
   drawer.addEventListener('click', function (e) {
-    var t = e.target;
-    if (t.hasAttribute && t.hasAttribute('data-d')) { var dk = t.getAttribute('data-k'), dd = t.getAttribute('data-d'), l = bag[+dk]; if (l) { l.qty = Math.max(0, Math.min(20, l.qty + (+dd))); var gone = !l.qty; if (gone) bag.splice(+dk, 1); save(); paintBtn(); paintDrawer(); refocus(gone ? null : '[data-d="' + dd + '"][data-k="' + dk + '"]'); } return; }
-    if (t.hasAttribute && t.hasAttribute('data-rm')) { bag.splice(+t.getAttribute('data-rm'), 1); save(); paintBtn(); paintDrawer(); refocus(null); return; }
-    if (t.id === 'slbagPay') { track('begin_checkout', { currency: 'USD', value: total(), items: bag.map(function (l) { return { item_id: l.handle, item_name: l.name, item_variant: l.variant, price: l.price, quantity: l.qty }; }) }); }
+    var t = e.target.closest ? (e.target.closest('button,a') || e.target) : e.target;
+    if (t.hasAttribute && t.hasAttribute('data-close')) { shut(drawer); return; }
+    if (t.hasAttribute && t.hasAttribute('data-d')) {
+      var dk = +t.getAttribute('data-k'), dd = +t.getAttribute('data-d'), gone = false, rm = null;
+      mutate(function () { var l = bag[dk]; if (!l || l.out) return; l.qty = Math.max(0, Math.min(20, l.qty + dd)); if (!l.qty) { gone = true; rm = l; bag.splice(dk, 1); } });
+      if (gone && rm) track('remove_from_cart', { currency: 'USD', value: rm.price, items: [{ item_id: rm.handle, item_name: rm.name, item_variant: rm.variant, price: rm.price, quantity: 1 }] });
+      paintDrawer(); refocus(gone ? null : '[data-d="' + dd + '"][data-k="' + dk + '"]'); return;
+    }
+    if (t.hasAttribute && t.hasAttribute('data-rm')) {
+      var rk = +t.getAttribute('data-rm'), removed = null;
+      mutate(function () { removed = bag[rk]; if (removed) bag.splice(rk, 1); });
+      if (removed && !removed.out) track('remove_from_cart', { currency: 'USD', value: removed.price * removed.qty, items: [{ item_id: removed.handle, item_name: removed.name, item_variant: removed.variant, price: removed.price, quantity: removed.qty }] });
+      paintDrawer(); refocus(null); return;
+    }
+    if (t.hasAttribute && t.hasAttribute('data-gone')) { mutate(function () { bag = bag.filter(function (l) { return !l.gone; }); }); paintDrawer(); refocus(null); return; }
+    if (t.id === 'slbagPay') {
+      /* Build the link from the bag right now, not from whatever was painted earlier. */
+      load();
+      if (!buyable().length) { e.preventDefault(); paintDrawer(); return; }
+      t.setAttribute('href', checkoutUrl());
+      track('begin_checkout', { currency: 'USD', value: total(), items: gaLines() });
+    }
   });
-  btn.addEventListener('click', openDrawer);
+  /* A change in another tab shows up here without a reload. */
+  window.addEventListener('storage', function (e) { if (e.key !== KEY && e.key !== null) return; load(); paintBtn(); if (drawer.open) paintDrawer(); });
 
   /* ---------- take over buy clicks for Shopify products ---------- */
   document.addEventListener('click', function (e) {
@@ -183,6 +350,5 @@
     start(h, a.getAttribute('href'), name, img, !!qv);
   });
 
-  paintBtn();
-  window.ShoreBag = { open: openDrawer, count: count };
+  window.ShoreBag = { open: openDrawer, count: count, addOut: addOut };
 })();

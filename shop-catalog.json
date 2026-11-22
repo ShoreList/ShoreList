@@ -51,10 +51,64 @@
    "art": "tide-line"
   }
  ],
+ "shelves": [
+  {
+   "id": "daymarks",
+   "name": "Daymarks",
+   "blurb": "A daymark is the fixed marker you steer by in daylight. These are our town pieces: one small stitched icon and the letters locals know, WB, CB, KB and ILM, on crewnecks, corduroy caps and cuffed beanies.",
+   "cover": "the-sloop-embroidered-crewneck-wrightsville-beach"
+  },
+  {
+   "id": "standing-rigging",
+   "name": "Standing Rigging",
+   "blurb": "The pieces that stay put. A twill cap and a tee, each with one small pennant and nothing else.",
+   "cover": "pennant-tee-true-navy"
+  },
+  {
+   "id": "faded-marker",
+   "name": "Faded Marker",
+   "blurb": "Washed red garments and arched town lettering."
+  },
+  {
+   "id": "regatta",
+   "name": "Regatta",
+   "blurb": "Stripes, signal flags and color blocking."
+  },
+  {
+   "id": "quiet-season",
+   "name": "Quiet Season",
+   "blurb": "Light layers for a mild coastal winter."
+  },
+  {
+   "id": "beach-setup",
+   "name": "Beach Setup",
+   "blurb": "The chair, the shade, the towel and the cooler for a full day at Wrightsville, Carolina Beach or Kure.",
+   "cover": "tilt-beach-umbrella"
+  },
+  {
+   "id": "totes-coolers",
+   "name": "Totes and Coolers",
+   "blurb": "Organic cotton totes for the boat and the market run, and town can coolers for the dock.",
+   "cover": "salt-wash-market-tote"
+  },
+  {
+   "id": "locals-christmas",
+   "name": "Locals' Christmas",
+   "blurb": "Dated ceramic ornaments and a stocking-stuffer can cooler, for people who live here or wish they did.",
+   "cover": "wrightsville-ornament-2026"
+  },
+  {
+   "id": "landmark-prints",
+   "name": "Landmark Prints",
+   "blurb": "The piers, the boardwalk and the battleship as vintage-style posters on museum-matte paper. Wall art, not clothing.",
+   "cover": "kure-beach-fishing-pier-art-print"
+  }
+ ],
  "items": [
   {
    "id": "the-sloop-embroidered-crewneck-wrightsville-beach",
    "collection": "local-icons",
+   "shelf": "daymarks",
    "name": "The Sloop Embroidered Crewneck, Wrightsville Beach",
    "url": "https://shorelist.myshopify.com/products/the-sloop-embroidered-crewneck-wrightsville-beach",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-embroidered-crewneck-wrightsville-beach_1000x.webp",
@@ -73,6 +127,7 @@
   {
    "id": "the-pelican-embroidered-crewneck-carolina-beach",
    "collection": "local-icons",
+   "shelf": "daymarks",
    "name": "The Pelican Embroidered Crewneck, Carolina Beach",
    "url": "https://shorelist.myshopify.com/products/the-pelican-embroidered-crewneck-carolina-beach",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-embroidered-crewneck-carolina-beach_1000x.webp",
@@ -91,6 +146,7 @@
   {
    "id": "the-blue-crab-embroidered-crewneck-kure-beach",
    "collection": "local-icons",
+   "shelf": "daymarks",
    "name": "The Blue Crab Embroidered Crewneck, Kure Beach",
    "url": "https://shorelist.myshopify.com/products/the-blue-crab-embroidered-crewneck-kure-beach",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-embroidered-crewneck-kure-beach_1000x.webp",
@@ -109,6 +165,7 @@
   {
    "id": "the-live-oak-embroidered-crewneck-wilmington",
    "collection": "local-icons",
+   "shelf": "daymarks",
    "name": "The Live Oak Embroidered Crewneck, Wilmington",
    "url": "https://shorelist.myshopify.com/products/the-live-oak-embroidered-crewneck-wilmington",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-embroidered-crewneck-wilmington_1000x.webp",
@@ -127,6 +184,7 @@
   {
    "id": "the-sloop-corduroy-cap-wrightsville-beach",
    "collection": "local-icons",
+   "shelf": "daymarks",
    "name": "The Sloop Corduroy Cap, Wrightsville Beach",
    "url": "https://shorelist.myshopify.com/products/the-sloop-corduroy-cap-wrightsville-beach",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-corduroy-cap-wrightsville-beach_1000x.webp",
@@ -145,6 +203,7 @@
   {
    "id": "the-pelican-corduroy-cap-carolina-beach",
    "collection": "local-icons",
+   "shelf": "daymarks",
    "name": "The Pelican Corduroy Cap, Carolina Beach",
    "url": "https://shorelist.myshopify.com/products/the-pelican-corduroy-cap-carolina-beach",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-corduroy-cap-carolina-beach_1000x.webp",
@@ -163,6 +222,7 @@
   {
    "id": "the-blue-crab-corduroy-cap-kure-beach",
    "collection": "local-icons",
+   "shelf": "daymarks",
    "name": "The Blue Crab Corduroy Cap, Kure Beach",
    "url": "https://shorelist.myshopify.com/products/the-blue-crab-corduroy-cap-kure-beach",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-corduroy-cap-kure-beach_1000x.webp",
@@ -181,6 +241,7 @@
   {
    "id": "the-live-oak-corduroy-cap-wilmington",
    "collection": "local-icons",
+   "shelf": "daymarks",
    "name": "The Live Oak Corduroy Cap, Wilmington",
    "url": "https://shorelist.myshopify.com/products/the-live-oak-corduroy-cap-wilmington",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-corduroy-cap-wilmington_1000x.webp",
@@ -199,6 +260,7 @@
   {
    "id": "the-sloop-cuffed-beanie-wrightsville-beach",
    "collection": "local-icons",
+   "shelf": "daymarks",
    "name": "The Sloop Cuffed Beanie, Wrightsville Beach",
    "url": "https://shorelist.myshopify.com/products/the-sloop-cuffed-beanie-wrightsville-beach",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-cuffed-beanie-wrightsville-beach_1000x.webp",
@@ -217,6 +279,7 @@
   {
    "id": "the-pelican-cuffed-beanie-carolina-beach",
    "collection": "local-icons",
+   "shelf": "daymarks",
    "name": "The Pelican Cuffed Beanie, Carolina Beach",
    "url": "https://shorelist.myshopify.com/products/the-pelican-cuffed-beanie-carolina-beach",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-cuffed-beanie-carolina-beach_1000x.webp",
@@ -235,6 +298,7 @@
   {
    "id": "the-blue-crab-cuffed-beanie-kure-beach",
    "collection": "local-icons",
+   "shelf": "daymarks",
    "name": "The Blue Crab Cuffed Beanie, Kure Beach",
    "url": "https://shorelist.myshopify.com/products/the-blue-crab-cuffed-beanie-kure-beach",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-cuffed-beanie-kure-beach_1000x.webp",
@@ -253,6 +317,7 @@
   {
    "id": "the-live-oak-cuffed-beanie-wilmington",
    "collection": "local-icons",
+   "shelf": "daymarks",
    "name": "The Live Oak Cuffed Beanie, Wilmington",
    "url": "https://shorelist.myshopify.com/products/the-live-oak-cuffed-beanie-wilmington",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-cuffed-beanie-wilmington_1000x.webp",
@@ -271,6 +336,7 @@
   {
    "id": "kure-beach-fishing-pier-art-print",
    "collection": "landmarks",
+   "shelf": "landmark-prints",
    "name": "Kure Beach Fishing Pier Art Print",
    "url": "https://shorelist-shop.fourthwall.com/products/kure-beach-fishing-pier-art-print",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-fishing-pier-art-print_1000x.webp",
@@ -289,6 +355,7 @@
   {
    "id": "carolina-beach-boardwalk-art-print",
    "collection": "landmarks",
+   "shelf": "landmark-prints",
    "name": "Carolina Beach Boardwalk Art Print",
    "url": "https://shorelist-shop.fourthwall.com/products/carolina-beach-boardwalk-art-print",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-boardwalk-art-print_1000x.webp",
@@ -307,6 +374,7 @@
   {
    "id": "wrightsville-beach-pier-art-print",
    "collection": "landmarks",
+   "shelf": "landmark-prints",
    "name": "Wrightsville Beach Pier Art Print",
    "url": "https://shorelist-shop.fourthwall.com/products/wrightsville-beach-pier-art-print",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-pier-art-print_1000x.webp",
@@ -325,6 +393,7 @@
   {
    "id": "uss-north-carolina-art-print",
    "collection": "landmarks",
+   "shelf": "landmark-prints",
    "name": "USS North Carolina Art Print",
    "url": "https://shorelist-shop.fourthwall.com/products/uss-north-carolina-art-print",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-uss-north-carolina-art-print_1000x.webp",
@@ -343,6 +412,7 @@
   {
    "id": "pennant-dad-hat",
    "collection": "classics",
+   "shelf": "standing-rigging",
    "name": "Pennant Twill Cap",
    "url": "https://shorelist-shop.fourthwall.com/products/pennant-embroidered-dad-hat",
    "img": "https://imgproxy.fourthwall.dev/Y9dw8YEednbCJiJA-iPSySv94hDjwuVlp3d0mM7jBzA/w:1920/sm:1/enc/8AkH3Zo4bmoirBEI/f3PcCTa3gQjWOedI/AfSofSARng3gzrNh/t8epkac0FJ6R-SdE/rtuspQJpW63i-5qL/C3FqVGsILOb1WvfZ/hbZYeQwlh446twLK/vzY8Q983gz4SlQ1t/8en7zMt_VSy9lPmQ/f0e9Gn3NvbLvBOQ_/Rt1VYOw2QMKnGMeT/t3EHpuWhRMME9dRq/aO4cTB7OBkF0txLI/_-maEA.jpg",
@@ -362,6 +432,7 @@
   {
    "id": "yacht-beach-club-tote",
    "collection": "tide-line",
+   "shelf": "totes-coolers",
    "name": "Harbor Organic Cotton Tote",
    "url": "https://shorelist-shop.fourthwall.com/products/yacht-beach-club-organic-cotton-tote",
    "img": "https://imgproxy.fourthwall.dev/8wpSQ-MIqwpWgsegEExGBD9GIeK-SOzdDl0njoFAwII/w:1920/sm:1/enc/1XzZS9lwrx_e9kXx/DXIuFkHKbtLcolR3/kMszTBYVsT1kKdu2/GWCTeW6uaQdTRiR9/4TIaNncJQA2ToZfW/-om9X1ciQSkE-1PQ/KcI002DzKVZG3EcB/0mbQaE6Zy-Z9GaTy/SW73pVOBGCW2rwdy/VkNqPKIwLR5D6U_r/oN3I89b-jEbwT7ms/hkkXjPE0Sp9o37tK/4A2hGk8jYU9ig6LP/PVLJnA.jpg",
@@ -381,6 +452,7 @@
   {
    "id": "salt-wash-market-tote",
    "collection": "shore-gear",
+   "shelf": "totes-coolers",
    "name": "Sloop Organic Cotton Market Tote",
    "url": "https://shorelist-shop.fourthwall.com/products/salt-wash-organic-cotton-market-tote",
    "img": "https://imgproxy.fourthwall.dev/TZt3re_wDyZ0W16_4JbSgpMdKwOMYBzAwPsa2r3eqHA/w:1920/sm:1/enc/Pk5QPfjBEPCd6iv4/jzgR6bKsy7yyQSZv/n5nrwFsWvAAQyQVI/e3FznjKMNn4uGwsZ/xM5ia2wEXu6YZSfz/TuQbjJhrMqgnSt5p/M86zkfeYUuJkpP4U/Ep3Y89lpVKKlf5b7/nrschLQbJeecVVMi/aEvtdTJMIptcL7yO/lIdn7xEV_W8hJdaP/x6JU_2u2-_tiXm_x/KdGjIviHRxutI_um/KWy8ww.jpg",
@@ -399,6 +471,7 @@
   {
    "id": "pennant-tee-true-navy",
    "collection": "classics",
+   "shelf": "standing-rigging",
    "name": "Pennant Tee",
    "url": "https://shorelist-shop.fourthwall.com/products/pennant-garment-dyed-tee-in-true-navy",
    "img": "https://imgproxy.fourthwall.dev/CfTKG911v7u6cHN3uDB0vuse20W1KVd0y1OOUj2fItc/w:1920/sm:1/enc/a3MrYIkYidChF9e3/LrnoHalkbC14rgCj/4-MXCBYgdxWAQMJQ/13Kb7RlXxjBSBCsZ/c7xlGifBFjFPk_Zr/ZsseQ_jO4P2Nae-h/_1cStkDzFZx4EmCy/QM2grpiKM4gCTBEE/mrPdZ1vDJTwtdi3Y/X7uG680G4ZOsqYVm/R7Fmcl09St142BDP/j9Ki4_TxDX86IASW/1K7Fj7y129boO68o/w8NG9g.jpg",
@@ -417,6 +490,7 @@
   {
    "id": "tilt-beach-umbrella",
    "collection": "beach-setup",
+   "shelf": "beach-setup",
    "name": "ShoreList Tilt Beach Umbrella",
    "url": "https://shorelist.myshopify.com/products/shorelist-tilt-beach-umbrella-6-5-ft-upf-50",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-tilt-beach-umbrella_1000x.webp",
@@ -436,6 +510,7 @@
   {
    "id": "backpack-beach-chair",
    "collection": "beach-setup",
+   "shelf": "beach-setup",
    "name": "ShoreList Backpack Beach Chair",
    "url": "https://shorelist.myshopify.com/products/shorelist-aluminum-backpack-beach-chair-mint-stripe",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-backpack-beach-chair_1000x.webp",
@@ -455,6 +530,7 @@
   {
    "id": "carolina-coast-towel",
    "collection": "beach-setup",
+   "shelf": "beach-setup",
    "name": "Carolina Coast Terry Beach Towel",
    "url": "https://shorelist.myshopify.com/products/beach-towel",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-coast-towel_1000x.webp",
@@ -474,6 +550,7 @@
   {
    "id": "coastal-soft-cooler",
    "collection": "beach-setup",
+   "shelf": "beach-setup",
    "name": "Wilmington Coastal Soft Cooler",
    "url": "https://shorelist.myshopify.com/products/wilmington-coastal-soft-cooler-bag",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-coastal-soft-cooler_1000x.webp",
@@ -493,6 +570,7 @@
   {
    "id": "wrightsville-can-cooler",
    "collection": "shore-gear",
+   "shelf": "totes-coolers",
    "name": "Wrightsville Beach Can Cooler",
    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-can-cooler",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-can-cooler_1000x.webp",
@@ -512,6 +590,7 @@
   {
    "id": "carolina-beach-can-cooler",
    "collection": "shore-gear",
+   "shelf": "totes-coolers",
    "name": "Carolina Beach Can Cooler",
    "url": "https://shorelist.myshopify.com/products/carolina-beach-can-cooler",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-can-cooler_1000x.webp",
@@ -531,6 +610,7 @@
   {
    "id": "kure-beach-can-cooler",
    "collection": "shore-gear",
+   "shelf": "totes-coolers",
    "name": "Kure Beach Can Cooler",
    "url": "https://shorelist.myshopify.com/products/kure-beach-can-cooler",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-can-cooler_1000x.webp",
@@ -550,6 +630,7 @@
   {
    "id": "wrightsville-ornament-2026",
    "collection": "coastal-christmas",
+   "shelf": "locals-christmas",
    "name": "Wrightsville Beach Christmas Ornament 2026",
    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-christmas-ornament-2026",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-ornament-2026_1000x.webp",
@@ -569,6 +650,7 @@
   {
    "id": "carolina-beach-ornament-2026",
    "collection": "coastal-christmas",
+   "shelf": "locals-christmas",
    "name": "Carolina Beach Christmas Ornament 2026",
    "url": "https://shorelist.myshopify.com/products/carolina-beach-christmas-ornament-2026",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-ornament-2026_1000x.webp",
@@ -588,6 +670,7 @@
   {
    "id": "kure-beach-ornament-2026",
    "collection": "coastal-christmas",
+   "shelf": "locals-christmas",
    "name": "Kure Beach Christmas Ornament 2026",
    "url": "https://shorelist.myshopify.com/products/kure-beach-christmas-ornament-2026",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-ornament-2026_1000x.webp",
@@ -607,6 +690,7 @@
   {
    "id": "coastal-christmas-can-cooler",
    "collection": "coastal-christmas",
+   "shelf": "locals-christmas",
    "name": "Coastal Christmas Can Cooler",
    "url": "https://shorelist.myshopify.com/products/coastal-christmas-can-cooler-wilmington-nc",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-coastal-christmas-can-cooler_1000x.webp",
@@ -642,7 +726,7 @@
    "name": "Harbor night"
   }
  ],
- "item_fields": "id, collection, name, url (https product page on one of the stores[] hosts), img, alt, meta, cta, price (number, USD, lowest variant price), from (optional boolean, true when the price varies by option so the page prints From $X), scenes[] (beach|boardwalk|riverwalk|harbor-night), cut (optional, unisex), store (shopify|fourthwall), buy (optional https cart permalink for one-tap checkout), studio (optional product shot url, not shown on the shop page yet), lookbook (styled image url), blank (optional, internal only: supplier blank brand and model, never rendered on the page)",
+ "item_fields": "id, collection, name, url (https product page on one of the stores[] hosts), img, alt, meta, cta, price (number, USD, lowest variant price), from (optional boolean, true when the price varies by option so the page prints From $X), scenes[] (beach|boardwalk|riverwalk|harbor-night), cut (optional, unisex), store (shopify|fourthwall), buy (optional https cart permalink for one-tap checkout), shelf (optional presentation field: id from shelves[], used by the collection-first shop page), studio (optional product shot url, shown as a second image in quick view), lookbook (styled image url), blank (optional, internal only: supplier blank brand and model, never rendered on the page)",
  "stores": [
   {
    "id": "fourthwall",
@@ -691,5 +775,6 @@
    "wrightsville-golf-tee": "town plus sport lockup reads as a team or club tee, souvenir-stand look",
    "carolina-beach-surf-tee": "town plus sport lockup reads as a team or club tee, souvenir-stand look"
   }
- }
+ },
+ "shelves_note": "Presentation only. The shop page groups items by item.shelf and shows a shelf only when at least one live item uses it, so Faded Marker, Regatta and Quiet Season stay hidden until a real piece is assigned. cover is an item id whose image is the collection tile. Collections above are unchanged and still drive Tidebot."
 }
