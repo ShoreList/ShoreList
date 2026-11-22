@@ -37,7 +37,7 @@
  ],
  "items": [
   {
-   "handle": "daymark-sail-number-crewneck-wrightsville-beach",
+   "handle": "daymark-sloop-crewneck",
    "shelf": "regatta",
    "collection": "local-icons",
    "imgIndex": 0,
@@ -46,9 +46,24 @@
     "beach"
    ],
    "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-daymark-sail-number-crewneck-wrightsville-beach.webp",
-   "alt": "Woman in a crimson crewneck sweatshirt with a small WB over 34 sail number mark at the left chest, standing on a Wrightsville Beach boardwalk",
-   "meta": "WB for Wrightsville Beach over 34, the latitude this stretch of coast sits on, stitched small in white at the left chest of a garment-dyed crimson crewneck.",
+   "lookbookFile": "shorelist-lookbook-daymark-sloop-crewneck.webp",
+   "alt": "Woman in a soft white crewneck sweatshirt with a small navy sloop sailboat mark at the left chest, standing among sea oats on a Wrightsville Beach dune path",
+   "meta": "A small navy sloop sailboat at the left chest of a soft white garment-dyed crewneck. Easy fit for dock days and cool beach evenings.",
+   "cta": "Choose size"
+  },
+  {
+   "handle": "daymark-blue-crab-crewneck",
+   "shelf": "regatta",
+   "collection": "local-icons",
+   "imgIndex": 0,
+   "studioIndex": 0,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "lookbookFile": "shorelist-lookbook-daymark-blue-crab-crewneck.webp",
+   "alt": "Woman in a soft white crewneck sweatshirt with a small navy blue crab mark at the left chest, standing among sea oats on an Outer Banks style dune path",
+   "meta": "A small navy blue crab with red claw tips at the left chest of a soft white garment-dyed crewneck. Made for Kure Beach and Carolina Beach days.",
    "cta": "Choose size"
   }
  ]
