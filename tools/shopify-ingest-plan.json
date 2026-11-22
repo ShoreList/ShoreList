@@ -1,0 +1,55 @@
+{
+ "shelves": [
+  {
+   "id": "rope-and-line",
+   "name": "Rope and Line",
+   "after": "standing-rigging",
+   "blurb": "Rope stitching and small dock-line marks in the colors of a working marina. Easy layers for the boat, the ferry line and a cool evening on the water."
+  },
+  {
+   "id": "field-and-dock",
+   "name": "Field and Dock",
+   "after": "rope-and-line",
+   "blurb": "Practical layers and everyday carry for dock days and cool mornings."
+  },
+  {
+   "id": "faded-marker",
+   "name": "Faded Marker",
+   "blurb": "Salt-washed reds and weathered blues, with arched town lettering that looks like it has seen a few summers."
+  },
+  {
+   "id": "regatta",
+   "name": "Regatta",
+   "blurb": "Race-day stripes, signal flags and color blocking for the crew, the spectators and everyone on the dock."
+  },
+  {
+   "id": "surf-shop",
+   "name": "Surf Shop",
+   "after": "regatta",
+   "blurb": "Easy beach-town pieces for the lineup and the parking lot afterward."
+  },
+  {
+   "id": "clubhouse-summer",
+   "name": "Clubhouse Summer",
+   "after": "surf-shop",
+   "blurb": "Playful summer staples with a preppy turn, and small details that make a long weekend feel like a holiday."
+  }
+ ],
+ "items": [
+  {
+   "handle": "the-rope-line-crewneck-wrightsville-beach",
+   "shelf": "rope-and-line",
+   "collection": "local-icons",
+   "imgIndex": 4,
+   "studioIndex": 0,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "blank": "Comfort Colors 1566, embroidery via Printify",
+   "alt": "Man in a white crewneck sweatshirt with a small navy WB and rope line embroidered at the center of the chest, one hand in his pocket",
+   "meta": "WB for Wrightsville Beach over a short rope line, stitched small at the chest in navy thread. A garment-dyed cotton blend fleece crewneck.",
+   "cta": "Choose color and size"
+  }
+ ]
+}
