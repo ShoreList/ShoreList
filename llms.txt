@@ -19,6 +19,7 @@
 - [Art prints](https://shorelist.net/prints): ten original Cape Fear River and Wilmington poster designs as print-ready PDF downloads in 18x24 and 24x36 inch sizes, $12 each
 - [How we verify events](https://shorelist.net/how-we-verify): where event listings come from, how often they refresh and how to report a correction
 - Each upcoming event with a checked source has its own page at https://shorelist.net/events/<id> (listed in the full digest), with an add-to-calendar file
+- [Wilmington, NC events by month](https://shorelist.net/events/by-month): upcoming events grouped by month, with a full date list for each month that has enough listings; refreshed daily from the same checked feed
 - [Parking in Wilmington, NC](https://shorelist.net/wilmington-nc-parking): downtown deck locations, meter hours and the 2026 paid-parking seasons at Wrightsville, Carolina and Kure Beach, with sources
 - [Pleasure Island, NC](https://shorelist.net/pleasure-island): Carolina Beach, Kure Beach and Fort Fisher, with beach and dog rules, state parks, the ferry and what is open, sourced to official pages
 - [Visitor FAQ](https://shorelist.net/wilmington-nc-faq): short answers to common questions about visiting Wilmington, NC and the beaches

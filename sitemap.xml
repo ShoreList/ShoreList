@@ -61,6 +61,10 @@
   <url><loc>https://shorelist.net/surf/paddleboard-and-kayak</loc><lastmod>2026-11-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://shorelist.net/surf/know-before-you-go</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <!-- event-pages:start (written by tools/build-events-pages.mjs) -->
+  <url><loc>https://shorelist.net/events/by-month</loc><lastmod>2026-11-21</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://shorelist.net/events/december-2026</loc><lastmod>2026-11-21</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://shorelist.net/events/january-2027</loc><lastmod>2026-11-21</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://shorelist.net/events/february-2027</loc><lastmod>2026-11-21</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
   <url><loc>https://shorelist.net/events/kure-beach-holiday-market-2026-11-21</loc><lastmod>2026-11-21</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://shorelist.net/events/sing-we-now-of-christmas-a-joyful-celebr-2026-12-02</loc><lastmod>2026-11-21</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://shorelist.net/events/a-charlie-brown-christmas-2026-12-04</loc><lastmod>2026-11-21</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
