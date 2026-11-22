@@ -3,6 +3,7 @@
 
 const crypto = require('crypto');
 const { escapeHtml, header, attribSummary } = require('./_shared.js');
+const F = require('./_fulfill.js');
 
 async function sendOperatorEmail(meta, amount) {
   const RESEND_KEY = process.env.RESEND_API_KEY;
@@ -183,6 +184,13 @@ exports.handler = async (event) => {
     if (meta.kind === 'guide') {
       console.log('Guide order completed:', session.id, meta.product);
       await sendGuideSaleEmail(meta, amount);
+      return { statusCode: 200, body: JSON.stringify({ received: true }) };
+    }
+    if (meta.kind === 'goods') {
+      // Record (idempotent on the session id), auto supplier order, owner summary. 500 only if nothing durable happened, so Stripe retries.
+      console.log('Goods order completed:', session.id);
+      const g = await F.handlePaidGoodsSession(event, session);
+      if (!g.ok) return { statusCode: 500, body: JSON.stringify({ error: 'Order could not be recorded' }) };
       return { statusCode: 200, body: JSON.stringify({ received: true }) };
     }
     console.log('Booking completed:', session.id, meta.operatorId, meta.date, meta.timeSlot);

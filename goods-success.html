@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta name="theme-color" content="#0E1F33"/>
+<meta name="robots" content="noindex"/>
+<title>Your Order - ShoreList</title>
+<link rel="icon" href="/favicon.ico"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/events.css"/>
+<style>
+.gs{max-width:680px;margin:0 auto;padding:clamp(32px,6vw,64px) 18px 72px;color:var(--ev-ink)}
+.gs h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2rem,5vw,2.8rem);color:var(--ev-navy);line-height:1.1;margin:0 0 10px}
+.gs p{line-height:1.6;margin:0 0 14px}
+.gs-list{list-style:none;margin:22px 0;padding:0;display:grid;gap:12px}
+.gs-item{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;background:#fff;border:1px solid var(--ev-line);border-radius:14px;padding:14px 16px}
+.gs-item strong{font-size:1.05rem;color:var(--ev-navy)}
+.gs-item span{display:block;font-size:.85rem;color:var(--ev-mute)}
+.gs-dl{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 20px;border-radius:999px;background:var(--ev-red);color:#fff;font-weight:700;text-decoration:none}
+.gs-dl:hover{background:var(--ev-red2)}.gs-dl:focus-visible{outline:3px solid var(--ev-navy);outline-offset:2px}
+.gs-box{background:rgba(14,31,51,.05);border-radius:12px;padding:14px 16px;font-size:.95rem}
+.gs-err{color:var(--ev-red);font-weight:700}
+</style>
+</head>
+<body class="ev-page">
+<nav class="ev-nav" aria-label="Primary"><a class="nav-logo" href="/" aria-label="ShoreList home">Shore<span>List</span></a><div class="nav-right"><a href="/guides">Guides</a><a class="nav-book" href="/things-to-do">Book Experiences</a></div></nav>
+<main class="gs" id="main">
+  <div id="gs-loading" role="status">Confirming your payment...</div>
+  <div id="gs-ok" hidden>
+    <h1>Thank you. Your order is placed.</h1>
+    <p>Your payment went through. Your pieces are made to order and sent to you by our supplier, so they do not ship the same day.</p>
+    <ul class="gs-list" id="gs-list"></ul>
+    <p class="gs-box" id="gs-sums"></p>
+    <p class="gs-box" id="gs-lead"></p>
+    <p class="gs-box"><strong>Receipt.</strong> Stripe sends your receipt to the email you entered at checkout. When your order ships we email you the tracking number if you gave us an email address. If nothing arrives, write to <a href="mailto:rj@shorelist.net">rj@shorelist.net</a> with the time of your order.</p>
+    <p class="gs-box"><strong>Returns.</strong> Made to order pieces are not returned for change of mind. Damaged, defective or wrong items are replaced. Read the <a id="gs-ret" href="/shipping-returns">delivery and returns page</a>.</p>
+    <p><a href="/shop">Back to the shop</a> &middot; <a href="/things-to-do">Browse things to do</a></p>
+  </div>
+  <div id="gs-bad" hidden>
+    <h1>We could not confirm that order</h1>
+    <p class="gs-err" id="gs-msg">This page needs the link Stripe sent you to after payment.</p>
+    <p>If you were charged, email <a href="mailto:rj@shorelist.net">rj@shorelist.net</a> and we will sort it out. Otherwise you can <a href="/shop">go back to the shop</a>.</p>
+  </div>
+</main>
+<script>
+(function(){
+  var id=new URLSearchParams(location.search).get('session_id')||'';
+  var $=function(x){return document.getElementById(x);};
+  function usd(c){return '$'+(c/100).toFixed(2);}
+  function bad(m){$('gs-loading').hidden=true;$('gs-ok').hidden=true;if(m)$('gs-msg').textContent=m;$('gs-bad').hidden=false;}
+  if(!/^cs_(test|live)_[A-Za-z0-9]{8,250}$/.test(id)){bad();return;}
+  fetch('/.netlify/functions/get-goods-session?session_id='+encodeURIComponent(id),{headers:{'Accept':'application/json'}})
+    .then(function(r){return r.json().then(function(d){return {ok:r.ok,d:d};});})
+    .then(function(x){
+      var d=x.d;
+      if(!x.ok||!d||!d.paid||!Array.isArray(d.lines)||!d.lines.length){bad(d&&d.error&&/Too many/.test(d.error)?d.error:'');return;}
+      var ul=$('gs-list');
+      d.lines.forEach(function(l){
+        var li=document.createElement('li');li.className='gs-item';
+        var t=document.createElement('div');var s=document.createElement('strong');s.textContent=String(l.name||'');
+        var sp=document.createElement('span');sp.textContent=(l.variant?l.variant+' · ':'')+'Qty '+Number(l.qty)+' · '+usd(Number(l.unit_cents)||0)+' each';
+        t.appendChild(s);t.appendChild(sp);li.appendChild(t);ul.appendChild(li);
+      });
+      var parts=[];
+      if(typeof d.subtotal_cents==='number')parts.push('Items '+usd(d.subtotal_cents));
+      if(typeof d.shipping_cents==='number')parts.push('Shipping '+usd(d.shipping_cents));
+      if(typeof d.tax_cents==='number')parts.push('NC sales tax '+usd(d.tax_cents));
+      if(typeof d.amount==='number')parts.push('Paid in full: '+usd(d.amount)+' (USD)');
+      if(parts.length)$('gs-sums').textContent=parts.join(' · ');else $('gs-sums').hidden=true;
+      if(d.lead_days&&d.lead_days.max)$('gs-lead').textContent='Made to order. Expect delivery about '+Number(d.lead_days.min)+' to '+Number(d.lead_days.max)+' business days after your order. That is an estimate from our supplier, not a guarantee.';
+      else $('gs-lead').textContent='Made to order. Delivery time depends on the product and the supplier.';
+      $('gs-loading').hidden=true;$('gs-ok').hidden=false;
+    })
+    .catch(function(){bad('We could not reach the server. Please reload this page in a moment.');});
+})();
+</script>
+</body>
+</html>

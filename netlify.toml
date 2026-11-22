@@ -10,6 +10,20 @@
 [functions."shop-bot"]
   included_files = ["shop-catalog.json", "data/operators.json"]
 
+# ShoreList Direct (physical goods): the catalog is read by the checkout, the order page and the fulfillment code.
+[functions."create-goods-checkout"]
+  included_files = ["dropship-catalog.json"]
+[functions."get-goods-session"]
+  included_files = ["dropship-catalog.json"]
+[functions."stripe-webhook"]
+  included_files = ["dropship-catalog.json", "data/operators.json"]
+[functions."sync-supplier-orders"]
+  included_files = ["dropship-catalog.json"]
+  schedule = "@hourly"
+[functions."check-supplier-drift"]
+  included_files = ["dropship-catalog.json"]
+  schedule = "@daily"
+
 # The paid PDF guides are bundled into the guide-download function only.
 [functions."guide-download"]
   included_files = ["netlify/guides-private/**"]
@@ -25,6 +39,13 @@
 # data/ holds server-only fields (capacities, payout ids); the browser reads /operators-public.json instead.
 [[redirects]]
   from = "/data/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+# ShoreList Direct: the goods catalog holds supplier and cost data. Never serve it publicly.
+[[redirects]]
+  from = "/dropship-catalog.json"
   to = "/404.html"
   status = 404
   force = true
@@ -52,6 +73,11 @@
 [[redirects]]
   from = "/gift-guide"
   to = "/gift-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/goods-success"
+  to = "/goods-success.html"
   status = 200
 
 [[redirects]]
