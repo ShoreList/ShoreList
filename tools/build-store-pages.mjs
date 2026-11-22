@@ -159,7 +159,7 @@ const sections = [
     ids: ['the-sloop-embroidered-crewneck-wrightsville-beach', 'the-blue-crab-embroidered-crewneck-kure-beach', ] },
   { id: 'hats', h: 'Beanies and caps', p: 'Smaller than a sweatshirt, and the same stitched icon. Check each product page for sizing.',
     ids: ['the-sloop-cuffed-beanie-wrightsville-beach', 'the-blue-crab-cuffed-beanie-kure-beach', 'the-sloop-corduroy-cap-wrightsville-beach', 'the-blue-crab-corduroy-cap-kure-beach', ] },
-  { id: 'beach-day', h: 'For the beach-day household', p: 'Shade, a seat, a towel and something cold to put in a cooler.',
+  { id: 'beach-day', h: 'For the beach-day household', p: 'A towel and something cold to put in a cooler.',
     ids: ['tilt-beach-umbrella', 'backpack-beach-chair', 'carolina-coast-towel', 'coastal-soft-cooler'] },
 ];
 const price = (i) => `${i.from ? 'From ' : ''}$${i.price}`;

@@ -102,8 +102,8 @@
   {
    "id": "beach-setup",
    "name": "Beach Setup",
-   "blurb": "The chair, the shade, the towel and the cooler for a full day at Wrightsville, Carolina Beach or Kure.",
-   "cover": "tilt-beach-umbrella"
+   "blurb": "The towel and the cooler for a full day at Wrightsville, Carolina Beach or Kure.",
+   "cover": "carolina-coast-towel"
   },
   {
    "id": "totes-coolers",
@@ -488,74 +488,6 @@
    ]
   },
   {
-   "id": "tilt-beach-umbrella",
-   "collection": "beach-setup",
-   "shelf": "beach-setup",
-   "name": "ShoreList Tilt Beach Umbrella",
-   "url": "https://shorelist.myshopify.com/products/shorelist-tilt-beach-umbrella-6-5-ft-upf-50",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-tilt-beach-umbrella_1000x.webp",
-   "alt": "Couple laughing under the teal tilt beach umbrella on the sand by the dunes at golden hour",
-   "meta": "6.5 ft tilting canopy with UPF 50+ shade and a carry sleeve.",
-   "cta": "Shop beach gear",
-   "price": 99,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48569723617364:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
-   "facts": [
-    [
-     "Size",
-     "6.5 ft canopy that tilts"
-    ],
-    [
-     "Frame",
-     "Aluminum tube, 8 fiberglass ribs and a sand anchor"
-    ],
-    [
-     "Details",
-     "UPF 50+ fabric with a top air vent"
-    ]
-   ],
-   "studio": "https://shorelist.myshopify.com/cdn/shop/files/896e91258188456b9739f40519a8211b.webp",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-tilt-beach-umbrella_1920x.webp"
-  },
-  {
-   "id": "backpack-beach-chair",
-   "collection": "beach-setup",
-   "shelf": "beach-setup",
-   "name": "ShoreList Backpack Beach Chair",
-   "url": "https://shorelist.myshopify.com/products/shorelist-aluminum-backpack-beach-chair-mint-stripe",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-backpack-beach-chair_1000x.webp",
-   "alt": "Woman reading in the backpack beach chair at the water edge",
-   "meta": "Four-position aluminum frame that holds up to 265 lb, with wooden armrests, a detachable pillow and backpack straps. Mint stripe.",
-   "cta": "Shop beach gear",
-   "price": 109,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48569729744980:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
-   "facts": [
-    [
-     "Support",
-     "Holds up to 265 lb on a rustproof aluminum frame"
-    ],
-    [
-     "Seat",
-     "Four backrest positions from 100 to 140 degrees, 12 in seat height"
-    ],
-    [
-     "Carry",
-     "Folds flat with shoulder straps and a detachable pillow"
-    ]
-   ],
-   "studio": "https://shorelist.myshopify.com/cdn/shop/files/e4e9481e914347868d7fc04ab6c9e261.webp",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-backpack-beach-chair_1920x.webp"
-  },
-  {
    "id": "carolina-coast-towel",
    "collection": "beach-setup",
    "shelf": "beach-setup",
@@ -930,8 +862,81 @@
    "the-live-oak-embroidered-crewneck-wilmington": "design gate verdict KILL (score under 6); not sold until it passes 9.0",
    "the-live-oak-corduroy-cap-wilmington": "design gate verdict KILL (score under 6); not sold until it passes 9.0",
    "the-live-oak-cuffed-beanie-wilmington": "design gate verdict KILL (score under 6); not sold until it passes 9.0",
-   "yacht-beach-club-tote": "design gate verdict KILL (score under 6); not sold until it passes 9.0"
-  }
+   "yacht-beach-club-tote": "design gate verdict KILL (score under 6); not sold until it passes 9.0",
+   "tilt-beach-umbrella": "design gate under 9.0; replaced or returns when it passes",
+   "backpack-beach-chair": "design gate under 9.0; replaced or returns when it passes"
+  },
+  "archive": {
+   "tilt-beach-umbrella": {
+    "id": "tilt-beach-umbrella",
+    "collection": "beach-setup",
+    "shelf": "beach-setup",
+    "name": "ShoreList Tilt Beach Umbrella",
+    "url": "https://shorelist.myshopify.com/products/shorelist-tilt-beach-umbrella-6-5-ft-upf-50",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-tilt-beach-umbrella_1000x.webp",
+    "alt": "Couple laughing under the teal tilt beach umbrella on the sand by the dunes at golden hour",
+    "meta": "6.5 ft tilting canopy with UPF 50+ shade and a carry sleeve.",
+    "cta": "Shop beach gear",
+    "price": 99,
+    "scenes": [
+     "beach"
+    ],
+    "cut": "unisex",
+    "store": "shopify",
+    "buy": "https://shorelist.myshopify.com/cart/48569723617364:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+    "facts": [
+     [
+      "Size",
+      "6.5 ft canopy that tilts"
+     ],
+     [
+      "Frame",
+      "Aluminum tube, 8 fiberglass ribs and a sand anchor"
+     ],
+     [
+      "Details",
+      "UPF 50+ fabric with a top air vent"
+     ]
+    ],
+    "studio": "https://shorelist.myshopify.com/cdn/shop/files/896e91258188456b9739f40519a8211b.webp",
+    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-tilt-beach-umbrella_1920x.webp"
+   },
+   "backpack-beach-chair": {
+    "id": "backpack-beach-chair",
+    "collection": "beach-setup",
+    "shelf": "beach-setup",
+    "name": "ShoreList Backpack Beach Chair",
+    "url": "https://shorelist.myshopify.com/products/shorelist-aluminum-backpack-beach-chair-mint-stripe",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-backpack-beach-chair_1000x.webp",
+    "alt": "Woman reading in the backpack beach chair at the water edge",
+    "meta": "Four-position aluminum frame that holds up to 265 lb, with wooden armrests, a detachable pillow and backpack straps. Mint stripe.",
+    "cta": "Shop beach gear",
+    "price": 109,
+    "scenes": [
+     "beach"
+    ],
+    "cut": "unisex",
+    "store": "shopify",
+    "buy": "https://shorelist.myshopify.com/cart/48569729744980:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+    "facts": [
+     [
+      "Support",
+      "Holds up to 265 lb on a rustproof aluminum frame"
+     ],
+     [
+      "Seat",
+      "Four backrest positions from 100 to 140 degrees, 12 in seat height"
+     ],
+     [
+      "Carry",
+      "Folds flat with shoulder straps and a detachable pillow"
+     ]
+    ],
+    "studio": "https://shorelist.myshopify.com/cdn/shop/files/e4e9481e914347868d7fc04ab6c9e261.webp",
+    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-backpack-beach-chair_1920x.webp"
+   }
+  },
+  "archive_note": "archive holds the full item entry for pieces taken off sale on purpose, so they can be restored: move the entry from retired.archive back into items[], delete its retired.items reason, then run build-store-pages, build-llms and check-site."
  },
  "shelves_note": "Presentation only. The shop page groups items by item.shelf and shows a shelf only when at least one live item uses it, so Faded Marker, Regatta and Quiet Season stay hidden until a real piece is assigned. cover is an item id whose image is the collection tile. Collections above are unchanged and still drive Tidebot."
 }
