@@ -85,6 +85,7 @@
     { "url": "/wrightsville-beach", "cluster": "town", "tier": "T2", "primary": "Wrightsville Beach", "geo": ["{st}"] },
     { "url": "/carolina-beach", "cluster": "town", "tier": "T2", "primary": "Carolina Beach", "geo": ["{st}"] },
     { "url": "/kure-beach", "cluster": "town", "tier": "T2", "primary": "Kure Beach", "geo": ["{st}"] },
+    { "url": "/pleasure-island", "cluster": "town", "tier": "T2", "primary": "Pleasure Island", "geo": ["{st}"], "also": ["Carolina Beach", "Kure Beach"] },
     { "url": "/events", "cluster": "events", "tier": "T2", "primary": "events", "geo": ["{city}"] },
     { "url": "/events/this-weekend", "cluster": "events", "tier": "T3", "primary": "weekend", "geo": ["{city}"] },
     { "url": "/where-to-stay", "cluster": "stay", "tier": "T2", "primary": "where to stay", "geo": ["{city}"] },

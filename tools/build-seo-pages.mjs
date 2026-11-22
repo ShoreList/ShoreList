@@ -144,7 +144,7 @@ ${liveHtml}
       <li><a class="all" href="/things-to-do"><span>All things to do</span></a></li>
     </ul>
     <h3>Explore by area</h3>
-    ${chips(TOWNS.map((t) => [t.url, t.name]).concat([['/plan-your-trip', 'Plan your trip'], ['/wilmington-nc-parking', 'Parking'], ['/events', 'Events this week']]))}
+    ${chips(TOWNS.map((t) => [t.url, t.name]).concat([['/pleasure-island', 'Pleasure Island guide'], ['/plan-your-trip', 'Plan your trip'], ['/wilmington-nc-parking', 'Parking'], ['/events', 'Events this week']]))}
     ${PHOTO_NOTE}
   </div>
 </div>
@@ -257,7 +257,7 @@ ${hubSections}
         <li><strong>Getting around:</strong> <a href="/things-to-do/golf-cart-rentals">golf carts</a>, <a href="/things-to-do/ebike-rentals">e-bikes</a>, <a href="/things-to-do/bike-tours">bike tours</a>, <a href="/things-to-do/fat-bike-rentals">fat bikes</a> and <a href="/things-to-do/scooter-rentals">scooters</a>.</li>
         <li><strong>Beach day extras:</strong> <a href="/things-to-do/beach-chairs">chair and umbrella rentals</a>, <a href="/things-to-do/beach-picnics">beach picnics</a>, <a href="/things-to-do/beach-photography">beach photographers</a> and <a href="/things-to-do/wellness">yoga and wellness</a>.</li>
       </ul>
-      <p>Planning the whole visit? Start with the <a href="/plan-your-trip">Wilmington trip planning guide</a>, see <a href="/events">what is on this week</a>, find <a href="/shore-picks">where locals eat</a>, check <a href="/wilmington-nc-parking">where to park downtown and at the beaches</a>, or let the <a href="/planner">AI trip planner</a> build a day for you.</p>
+      <p>Planning the whole visit? Start with the <a href="/plan-your-trip">Wilmington trip planning guide</a>, see <a href="/events">what is on this week</a>, read the <a href="/pleasure-island">Pleasure Island guide to Carolina Beach and Kure Beach</a>, find <a href="/shore-picks">where locals eat</a>, check <a href="/wilmington-nc-parking">where to park downtown and at the beaches</a>, or let the <a href="/planner">AI trip planner</a> build a day for you.</p>
     </div>
     <div id="faq">
       <p class="pg-eye">Before you go</p>
@@ -489,4 +489,99 @@ fs.writeFileSync('wilmington-nc-parking.html', shell({
   main: parkMain,
 }));
 
-console.log('built', slugs.length, 'category pages + hub + trip guide + parking guide');
+// ---------- Pleasure Island guide ----------
+// Facts come only from the sources listed on the page (town and county tourism pages, NC State Parks, NC Historic Sites, NCDOT and the NC aquarium press release), read on PI_CHECKED.
+// No prices or ticket rates (they change); every rule is attributed to the page that states it.
+const PI_CHECKED = '2026-11-22';
+const piFaq = JSON.parse(fs.readFileSync('tools/pleasure-island-faq.json', 'utf8')); // shared with tools/build-llms.mjs
+const piMain = `
+<div class="pg-in">
+  <section class="trip-sec" aria-labelledby="h-pi-short">
+    <p class="pg-eye">The short answer</p>
+    <h2 id="h-pi-short">Pleasure Island in brief</h2>
+    <p class="pg-sub" style="max-width:760px">Pleasure Island is the island south of Wilmington that holds <a class="txt" href="/carolina-beach">Carolina Beach</a> and <a class="txt" href="/kure-beach">Kure Beach</a>, with Fort Fisher at its southern end. Carolina Beach has the boardwalk and a state park known for wild Venus flytraps. Kure Beach has a long fishing pier and a quieter beach, and Fort Fisher has a Civil War historic site and a state recreation area. Wilmington International Airport is about 19 miles from Carolina Beach, according to the visitors bureau.</p>
+    <ul class="stats">
+      <li><span>Towns on the island</span><b>Carolina Beach, Kure Beach</b></li>
+      <li><span>Southern end</span><b>Fort Fisher</b></li>
+      <li><span>Beach access, Carolina Beach</span><b>No charge</b></li>
+      <li><span>Last checked</span><b>${PI_CHECKED}</b></li>
+    </ul>
+  </section>
+
+  <section class="trip-sec" aria-labelledby="h-pi-cb">
+    <p class="pg-eye">North end</p>
+    <h2 id="h-pi-cb">Carolina Beach</h2>
+    <p class="pg-sub" style="max-width:760px">The island's busiest town has a boardwalk, a charter boat basin, Carolina Beach Lake Park and the beach itself. Weekly fireworks run on Thursday evenings from Memorial Day through Labor Day, per the visitors bureau. Browse <a class="txt" href="/carolina-beach">the Carolina Beach guide</a>, then see what is bookable: <a class="txt" href="/things-to-do/surf-lessons">surf lessons</a>, <a class="txt" href="/things-to-do/fishing-charters">fishing charters</a>, <a class="txt" href="/things-to-do/walking-tours">walking tours</a>, <a class="txt" href="/things-to-do/jet-ski-rentals">jet ski rentals</a> and <a class="txt" href="/things-to-do/golf-cart-rentals">golf cart rentals</a>.</p>
+    <ul class="seasons" style="margin-top:18px">
+      <li><strong>Lifeguards:</strong> on duty daily from Memorial Day weekend through Labor Day weekend.</li>
+      <li><strong>Driving on the sand:</strong> only four-wheel-drive vehicles, and only at Freeman Park, which also allows overnight camping. A paid permit is required, and Freeman Park has its own rules on dogs, alcohol, glass and fires. Read the <a class="txt" href="https://www.carolinabeach.org/visitors/freeman-park" rel="noopener">town's Freeman Park page</a> before you go.</li>
+      <li><strong>Carolina Beach State Park:</strong> at 1010 State Park Road, with the Flytrap Trail and a marina. Day use such as hiking, biking and fishing has no fee. The visitor center is open 8 a.m. to 5 p.m. daily except Christmas Day. See <a class="txt" href="/things-to-do/nature-walks">nature walks near Wilmington</a> for guided options.</li>
+      <li><strong>Dogs:</strong> leashed on the beach, allowed before 9 a.m. and after 5 p.m. from April 1 to September 30 and at any hour from October 1 to March 31. Not allowed on the historic wooden boardwalk or in the Boardwalk Business District.</li>
+    </ul>
+  </section>
+
+  <section class="trip-sec" aria-labelledby="h-pi-kb">
+    <p class="pg-eye">Middle and south</p>
+    <h2 id="h-pi-kb">Kure Beach and Fort Fisher</h2>
+    <p class="pg-sub" style="max-width:760px">Kure Beach, pronounced "Cure-ee", has wide sandy beaches and a 700-foot fishing pier, and the town runs Ocean Front Park and Pavilion. Just past it, Fort Fisher holds two state sites. Read the <a class="txt" href="/kure-beach">Kure Beach guide</a> for more, or see <a class="txt" href="/things-to-do/fat-bike-rentals">fat bike rentals</a> and <a class="txt" href="/things-to-do/wildlife-tours">wildlife tours</a> in the area.</p>
+    <table class="areas">
+      <tr><th>Place</th><th>What to know</th></tr>
+      <tr><td>Fort Fisher State Historic Site</td><td data-l="What to know">1610 Ft. Fisher Blvd. South, Kure Beach. Free general admission. Open Tuesday to Saturday, 9 a.m. to 5 p.m. A visitor center opened on October 30, 2024, and a half mile tour trail circles the fort remains. The state says less than ten percent of the original earthen fortification remains.</td></tr>
+      <tr><td>Fort Fisher State Recreation Area</td><td data-l="What to know">1000 Loggerhead Road, Kure Beach, about 18 miles south of Wilmington. Hiking, paddling, swimming and fishing, and the only park in the state system that allows four-wheel-drive beach access. Day use is free except for a per-vehicle fee on the four-wheel-drive beach. Pets must be on a leash of 6 feet or shorter and are not allowed on the swim beach.</td></tr>
+      <tr><td>North Carolina Aquarium at Fort Fisher</td><td data-l="What to know">Closed to the public since May 26, 2026 for construction expected to take 30 months. No reopening date has been announced.</td></tr>
+    </table>
+  </section>
+
+  <section class="trip-sec" aria-labelledby="h-pi-get">
+    <p class="pg-eye">Getting there</p>
+    <h2 id="h-pi-get">Getting to Pleasure Island and around it</h2>
+    <p class="pg-sub" style="max-width:760px">From downtown Wilmington, Carolina Beach is about 30 minutes by car and Kure Beach is just past it. Taxis, rental cars and the Fort Fisher to Southport ferry also serve the island. NCDOT runs the ferry for vehicles and passengers, and the crossing takes about 35 minutes. Its schedule changes by season, and the 2026 fall schedule runs September 8 to December 31, so confirm times with <a class="txt" href="https://www.ncdot.gov/travel-maps/ferry-tickets-services/Pages/default.aspx" rel="noopener">NCDOT Ferry</a> first.</p>
+    <p class="pg-sub" style="max-width:760px">Parking is paid in a spring to fall season at both beaches, with different dates in each town. The <a class="txt" href="/wilmington-nc-parking">parking guide</a> lists 2026 dates and hours, and the <a class="txt" href="/wilmington-weather">live beach and tide report</a> helps you pick the day. Staying overnight? See <a class="txt" href="/where-to-stay">where to stay in Wilmington and at the beaches</a>. For dated happenings, see <a class="txt" href="/events/carolina-beach">Carolina Beach events</a> and <a class="txt" href="/events/kure-beach">Kure Beach events</a>.</p>
+  </section>
+</div>
+<section class="seo-band" aria-label="Pleasure Island questions" style="margin-top:72px">
+<div class="seo">
+  <div class="seo-cols">
+    <div id="faq">
+      <p class="pg-eye">Before you go</p>
+      <h2>Pleasure Island questions</h2>
+      ${faqHtml(piFaq)}
+    </div>
+    <div>
+      <p class="pg-eye">Sources</p>
+      <h2>Where this comes from</h2>
+      <ul class="seasons">
+        <li><a class="txt" href="https://carolina-beach.wilmingtonandbeaches.com/about/island-info/faq/" rel="noopener">Wilmington and Beaches: Carolina Beach FAQ</a> (beach access, lifeguards, parking season, dogs, Freeman Park, airport distance), checked ${PI_CHECKED}.</li>
+        <li><a class="txt" href="https://carolinabeach.org/visitors/pet-rules" rel="noopener">Town of Carolina Beach: dog rules</a>, checked ${PI_CHECKED}.</li>
+        <li><a class="txt" href="https://carolina-beach.wilmingtonandbeaches.com/press-and-media/area-information" rel="noopener">Wilmington and Beaches: about Carolina Beach</a> (the island's towns, Fort Fisher, Kure Beach pier, Thursday fireworks).</li>
+        <li><a class="txt" href="https://www.townofkurebeach.org/" rel="noopener">Town of Kure Beach</a> (location on Pleasure Island, pronunciation, Ocean Front Park and Pavilion).</li>
+        <li><a class="txt" href="https://historicsites.nc.gov/all-sites/fort-fisher/plan-your-visit" rel="noopener">NC Historic Sites: Fort Fisher, plan your visit</a>.</li>
+        <li><a class="txt" href="https://www.ncparks.gov/fort-fisher-state-recreation-area/home" rel="noopener">NC State Parks: Fort Fisher State Recreation Area</a>.</li>
+        <li><a class="txt" href="https://www.ncparks.gov/state-parks/carolina-beach-state-park/general-information" rel="noopener">NC State Parks: Carolina Beach State Park</a>.</li>
+        <li><a class="txt" href="https://www.dncr.nc.gov/news/press-releases/2026/05/28/north-carolina-aquarium-fort-fisher-breaks-ground-transformational-expansion" rel="noopener">NC Department of Natural and Cultural Resources: aquarium expansion</a>, May 28, 2026.</li>
+        <li><a class="txt" href="https://www.ncbrunswick.com/islands-towns/southport/fort-fisher-ferry/" rel="noopener">Brunswick County tourism: Southport and Fort Fisher ferry</a> (crossing time).</li>
+      </ul>
+      <p class="pg-sub">Hours, rules and fees change. Confirm with the town or the agency before you go.</p>
+      ${chips([['/carolina-beach', 'Carolina Beach'], ['/kure-beach', 'Kure Beach'], ['/wilmington-nc-parking', 'Parking'], ['/where-to-stay', 'Where to stay'], ['/things-to-do', 'Things to do']])}
+    </div>
+  </div>
+</div>
+</section>`;
+fs.writeFileSync('pleasure-island.html', shell({
+  url: '/pleasure-island', title: 'Pleasure Island, NC: Carolina Beach & Kure Beach Guide',
+  desc: 'Plan a Pleasure Island, NC visit: Carolina Beach, Kure Beach and Fort Fisher. Beach and dog rules, state parks, the ferry and what is open, with official sources.',
+  image: 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-fishing-charters_1200x630_crop_center.webp',
+  lds: [
+    { '@context': 'https://schema.org', '@type': 'Article', headline: 'Pleasure Island, NC: Carolina Beach, Kure Beach and Fort Fisher', url: SITE + '/pleasure-island', inLanguage: 'en-US', datePublished: PI_CHECKED, dateModified: PI_CHECKED, author: ORG, publisher: ORG, about: { '@type': 'TouristDestination', name: 'Pleasure Island, North Carolina' } },
+    crumbs([['ShoreList', '/'], ['Things to Do in Wilmington, NC', '/things-to-do'], ['Pleasure Island, NC', '/pleasure-island']]),
+    faqLd(piFaq),
+  ],
+  photo: 'fishing-charters',
+  scripts: '',
+  breadcrumb: '<a href="/things-to-do">Things to Do</a> &nbsp;&#8250;&nbsp; <span>Pleasure Island</span>', tag: 'Local island guide',
+  h1: 'Pleasure Island, NC: <em>Carolina Beach</em>, Kure Beach and Fort Fisher',
+  sub: 'The beach towns south of Wilmington: where they are, how to get there, and what is open.',
+  main: piMain,
+}));
+
+console.log('built', slugs.length, 'category pages + hub + trip guide + parking guide + Pleasure Island guide');

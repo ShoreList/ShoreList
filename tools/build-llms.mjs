@@ -28,6 +28,11 @@ try {
   for (const [q, a] of vf) L.push(`Q: ${q}`, `A: ${a}`);
 } catch (e) {}
 try {
+  const pi = JSON.parse(fs.readFileSync('tools/pleasure-island-faq.json', 'utf8'));
+  L.push('', '## Pleasure Island, NC: Carolina Beach, Kure Beach and Fort Fisher (https://shorelist.net/pleasure-island)', 'Pleasure Island is the island south of Wilmington that holds Carolina Beach and Kure Beach, with Fort Fisher at its southern end. Facts on the page come from town, county tourism, NC State Parks, NC Historic Sites and NCDOT pages, each linked there.');
+  for (const [q, a] of pi) L.push(`Q: ${q}`, `A: ${a}`);
+} catch (e) {}
+try {
   const pk = JSON.parse(fs.readFileSync('tools/parking-faq.json', 'utf8'));
   L.push('', '## Parking in Wilmington, NC and at the beaches (https://shorelist.net/wilmington-nc-parking)', 'Downtown Wilmington has five city parking decks (Skyline, Convention Center, River Place, 2nd Street, Market Street). Beach paid-parking seasons in 2026: Wrightsville Beach and Carolina Beach March 1 to October 31, Kure Beach March 15 to September 30. Rates are not listed on ShoreList because they change; confirm with the city or town.');
   for (const [q, a] of pk) L.push(`Q: ${q}`, `A: ${a}`);
