@@ -725,7 +725,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
         <div class="mockup-bullets">
           <div class="mb-item"><div class="mb-dot">&#10003;</div><div class="mb-text"><strong>Real-time calendar.</strong> Guests see exactly which time slots are available. No double bookings. Ever.</div></div>
           <div class="mb-item"><div class="mb-dot">&#10003;</div><div class="mb-text"><strong>Instant confirmation.</strong> Guests receive an email confirmation the moment they book. You get notified too.</div></div>
-          <div class="mb-item"><div class="mb-dot">&#10003;</div><div class="mb-text"><strong>Full upfront payment.</strong> Guests pay the full booking price at checkout via Stripe. You see committed, paid bookings &#8212; not tentative holds. Clear 24-hour cancellation policy means no surprises for anyone.</div></div>
+          <div class="mb-item"><div class="mb-dot">&#10003;</div><div class="mb-text"><strong>Full upfront payment.</strong> Guests pay the full booking price at checkout via Stripe. You see committed, paid bookings, not tentative holds. Clear 24-hour cancellation policy means no surprises for anyone.</div></div>
           <div class="mb-item"><div class="mb-dot">&#10003;</div><div class="mb-text"><strong>Stripe-powered checkout.</strong> Card, bank transfer, or Klarna. The most trusted payment processor in the world.</div></div>
           <div class="mb-item"><div class="mb-dot">&#10003;</div><div class="mb-text"><strong>Your brand stays front and center.</strong> Your business name, your description, your prices. We send the guests. You run the show.</div></div>
         </div>
@@ -822,7 +822,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
             <div class="calc-annual-num" id="cr-annual">$168,624</div>
             <div class="calc-annual-label">estimated annual earnings at this rate</div>
           </div>
-          <div class="calc-note">Based on sessions &#215; group size &#215; price. Actual earnings vary by demand, season, and cancellations. ShoreList never charges for listing &#8212; commission applies only when bookings occur.</div>
+          <div class="calc-note">Based on sessions &#215; group size &#215; price. Actual earnings vary by demand, season, and cancellations. ShoreList never charges for listing, commission applies only when bookings occur.</div>
         </div>
       </div>
     </div>
@@ -849,7 +849,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
           <td>Commission Rate</td>
           <td class="highlight-col yes">15&#8211;20%</td>
           <td class="no">20&#8211;30%</td>
-          <td class="yes">0% &#8212; but you find your own guests</td>
+          <td class="yes">0%, but you find your own guests</td>
         </tr>
         <tr>
           <td>Local Wilmington Focus</td>
@@ -883,8 +883,8 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
         </tr>
         <tr>
           <td>Payment &amp; Cancellation</td>
-          <td class="highlight-col yes">&#10003; Full upfront payment &#8212; 24hr cancellation policy</td>
-          <td class="no">&#10007; Varies &#8212; inconsistent refund policies</td>
+          <td class="highlight-col yes">&#10003; Full upfront payment: 24hr cancellation policy</td>
+          <td class="no">&#10007; Varies, inconsistent refund policies</td>
           <td class="no">&#10007; You set and enforce your own policy</td>
         </tr>
       </tbody>
@@ -1184,7 +1184,7 @@ function validateStep1(){
   }
   if(!ein){
     err.style.display='block';
-    err.innerHTML='Please provide your EIN or SSN (Tax ID) &#8212; required for IRS reporting.';
+    err.innerHTML='Please provide your EIN or SSN (Tax ID), required for IRS reporting.';
     return false;
   }
   if(!email.includes('@')||!email.includes('.')){
@@ -1254,7 +1254,7 @@ function submitForm(){
     description:document.getElementById('f-desc').value,
     website:document.getElementById('f-web').value,
     licensed:document.getElementById('f-lic').value,
-    ein_provided:document.getElementById('f-ein').value ? 'Yes &#8212; Tax ID provided' : 'Not provided',
+    ein_provided:document.getElementById('f-ein').value ? 'Yes: Tax ID provided' : 'Not provided',
     _subject:'ShoreList Operator Application: '+document.getElementById('f-biz').value
   };
   fetch('https://formspree.io/f/xeevzzqd',{
@@ -1262,7 +1262,7 @@ function submitForm(){
     headers:{'Accept':'application/json','Content-Type':'application/json'},
     body:JSON.stringify(data)
   }).then(function(){
-    // Show success regardless &#8212; don't block on API
+    // Show success regardless, don't block on API
   }).catch(function(){});
   // Show success screen after brief delay
   setTimeout(function(){

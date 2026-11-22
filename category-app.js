@@ -1,8 +1,8 @@
 var CAT_DATA={
   'ghost-tours':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-ghost" xlink:href="#i-ghost"/></svg>',title:'Ghost Tours',sub:'Spine-tingling walks through Wilmington\'s most haunted streets with expert local guides.'},
-  'museums':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-train" xlink:href="#i-train"/></svg>',title:'Museums & Attractions',sub:'Wilmington\'s must-see museums and historic attractions &#8212; tickets, hours, and events, all on ShoreList.'},
+  'museums':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-train" xlink:href="#i-train"/></svg>',title:'Museums & Attractions',sub:'Wilmington\'s must-see museums and historic attractions, with hours, links and local events.'},
   'walking-tours':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-compass" xlink:href="#i-compass"/></svg>',title:'Walking & History Tours',sub:'Guided historic strolls through downtown Wilmington and Carolina Beach: architecture, art, prohibition history, and coastal stories with Founding Partner Amanda Leese.'},
-  'film-tours':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-film" xlink:href="#i-film"/></svg>',title:'Film & TV Location Tours',sub:'Explore the real sets and locations behind Wilmington\'s legendary film and TV history &#8212; guided by someone who lived it from the inside.'},
+  'film-tours':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-film" xlink:href="#i-film"/></svg>',title:'Film & TV Location Tours',sub:'Explore the real sets and locations behind Wilmington\'s legendary film and TV history, guided by someone who lived it from the inside.'},
   'fishing-charters':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-fish" xlink:href="#i-fish"/></svg>',title:'Fishing Charters',sub:'Half and full-day offshore charters from Carolina Beach and Wrightsville Beach.'},
   'kayak-tours':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-kayak" xlink:href="#i-kayak"/></svg>',title:'Kayak Tours',sub:'Guided paddle adventures through tidal creeks, salt marshes, and barrier islands of coastal NC.'},
   'river-cruises':{icon:'<svg class="ico-lg cd-svg" aria-hidden="true" focusable="false"><use href="#i-ship" xlink:href="#i-ship"/></svg>',title:'River Cruises',sub:'Sunset and sightseeing cruises along the Wilmington waterfront and Cape Fear River.'},
@@ -149,7 +149,7 @@ function sumShow(id){
   var s=CS[id]; var el=document.getElementById('ss-'+id); if(!el||!s||!s.date||!s.slot) return;
   var do2=new Date(s.date+'T12:00:00');
   var fmt=do2.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
-  el.innerHTML='&#10003;&nbsp; <strong>'+fmt+' at '+s.slot+'</strong> selected &#8212; tap below to confirm';
+  el.innerHTML='&#10003;&nbsp; <strong>'+fmt+' at '+s.slot+'</strong> selected, tap below to confirm';
   el.classList.add('on');
 }
 function sumHide(id){var el=document.getElementById('ss-'+id); if(el) el.classList.remove('on');}
@@ -190,11 +190,11 @@ function renderMuseumsCategory(){
   var h='';
   h+='<div class="section-label">Downtown Museum</div>';
   h+='<h2 class="section-title">Wilmington\u2019s <em>Museums</em></h2>';
-  h+='<p class="section-sub">Real local institutions &mdash; explore what makes this coast worth remembering.</p>';
+  h+='<p class="section-sub">Real local institutions: explore what makes this coast worth remembering.</p>';
   h+='<div class="operator-grid">';
   h+='<div class="op-card" id="card-railroad-museum"><div class="op-card-body">';
   h+='<div class="op-card-header"><div><div class="op-live-badge"><span class="op-live-dot"></span>Downtown Museum</div><div class="op-business-name">Wilmington Railroad Museum</div><div class="op-operator-name">505 Nutt Street &nbsp;&middot;&nbsp; Downtown Wilmington &nbsp;&middot;&nbsp; Since 1979</div></div><div class="op-price-tag"><div class="op-price">From $8</div><div class="op-price-label">per person</div></div></div>';
-  h+='<p class="op-desc">Climb aboard a real 1911 Baldwin steam locomotive, walk through a life-size caboose, and watch 20+ model trains run through a 1,600 sq ft layout &mdash; all inside an authentic 1883 freight warehouse from Wilmington\u2019s days as headquarters of the Atlantic Coast Line Railroad. A 501(c)(3) nonprofit, fun for every age, and one of the best rain-or-shine things to do downtown.</p>';
+  h+='<p class="op-desc">Climb aboard a real 1911 Baldwin steam locomotive, walk through a life-size caboose, and watch 20+ model trains run through a 1,600 sq ft layout, all inside an authentic 1883 freight warehouse from Wilmington\u2019s days as headquarters of the Atlantic Coast Line Railroad. A 501(c)(3) nonprofit, fun for every age, and one of the best rain-or-shine things to do downtown.</p>';
   h+='<div class="op-tags"><span class="op-tag">All Ages</span><span class="op-tag">Rain or Shine</span><span class="op-tag">1911 Steam Locomotive</span><span class="op-tag">20+ Model Trains</span><span class="op-tag">Downtown</span></div>';
   h+='<div class="op-divider"></div>';
   h+='<div style="display:flex;flex-wrap:wrap;gap:16px;font-size:0.78rem;color:#3a5a61;font-weight:600;margin:0 0 14px;"><span>&#10003; Tickets at the door</span><span>&#10003; Supports a local nonprofit</span></div>';
@@ -220,7 +220,7 @@ function renderPage(){
   var mh='';
   var liveOps=ops.filter(function(o){return o.live;});
   if(liveOps.length>0){mh+='<div class="hm-badge live">Bookings Open Now</div>';mh+='<div class="hm-badge">'+liveOps.length+' Experience'+(liveOps.length>1?'s':'')+' Live</div>';mh+='<div class="hm-badge">Secure Checkout via Stripe</div>';mh+='<div class="hm-badge">Free Cancellation '+CANCEL_H+'hrs+</div>';}
-  else if(ops.length>0){mh+='<div class="hm-badge live">'+ops.length+' Operator'+(ops.length>1?'s':'')+' Ready to Book</div>';mh+='<div class="hm-badge">Waitlist Open Now</div>';mh+='<div class="hm-badge">Bookings Opening Soon</div>';mh+='<div class="hm-badge">Secure Checkout via Stripe</div>';}
+  else if(ops.length>0){mh+='<div class="hm-badge live">Waitlist Open Now</div>';mh+='<div class="hm-badge">'+ops.length+' Local Operator'+(ops.length>1?'s':'')+'</div>';mh+='<div class="hm-badge">Bookings Opening Soon</div>';}
   else{mh+='<div class="hm-badge">Coming Soon</div>';mh+='<div class="hm-badge">Notify Me</div>';}
   document.getElementById('hmeta').innerHTML=mh;
 
@@ -229,11 +229,11 @@ function renderPage(){
     h+='<div class="section-label">Book an Experience</div>';
     h+='<h2 class="section-title">Our <em>Local Operators</em></h2>';
     h+= liveOps.length>0
-      ? '<p class="section-sub">Pick your experience, choose a date and time, and book securely online. Checkout is powered by Stripe &#8212; full refund if you cancel '+CANCEL_H+'+ hours before your experience.</p>'
+      ? '<p class="section-sub">Pick your experience, choose a date and time, and book securely online. Checkout is powered by Stripe, with a full refund if you cancel '+CANCEL_H+'+ hours before your experience.</p>'
       : '<p class="section-sub">Bookings open soon. Drop your email below or <a href="/waitlist" style="color:var(--coral);font-weight:600;">join the full waitlist</a> to tell us more about your trip.</p>';
     h+='<div class=\"guarantee-bar\">';
     h+='<span class=\"gb-ico\" style=\"color:#1a7a4a;display:inline-flex;align-items:center;\"><svg class=\"ico-sm\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-shield\" xlink:href=\"#i-shield\"/></svg></span>';
-    h+='<div class=\"gb-text\">ShoreList Guarantee &nbsp;&mdash;&nbsp; <span>Operators we know personally. Full refund if you cancel '+CANCEL_H+'+ hours before your experience.</span></div>';
+    h+='<div class=\"gb-text\">ShoreList Guarantee: <span>Operators we know personally. Full refund if you cancel '+CANCEL_H+'+ hours before your experience.</span></div>';
     h+='</div>';
     h+='<div class=\"booking-steps\">';
     h+='<div class=\"bs-step\"><span class=\"bs-step-n\">1</span><span>Browse</span></div>';
@@ -246,15 +246,15 @@ function renderPage(){
       var oid=esc(op.id);
       h+='<div class="op-card" id="card-'+oid+'">';
       h+='<div class="op-card-body">';
-      h+='<div class="op-card-header"><div><div class="op-live-badge"><span class="op-live-dot"></span>Available to Book</div><div class="op-business-name">'+esc(op.business)+'</div><div class="op-operator-name">'+esc(op.operator)+' &nbsp;&middot;&nbsp; '+esc(op.title)+'</div></div><div class="op-price-tag"><div class="op-price">'+esc(op.price)+'</div><div class="op-price-label">'+esc(op.priceLabel)+'</div></div></div>';
+      h+='<div class="op-card-header"><div><div class="op-live-badge"><span class="op-live-dot"></span>'+(op.live?'Available to Book':'Waitlist Open')+'</div><div class="op-business-name">'+esc(op.business)+'</div><div class="op-operator-name">'+esc(op.operator)+' &nbsp;&middot;&nbsp; '+esc(op.title)+'</div></div><div class="op-price-tag"><div class="op-price">'+esc(op.price)+'</div><div class="op-price-label">'+esc(op.priceLabel)+'</div></div></div>';
       h+='<p class="op-desc">'+rich(op.desc)+'</p>';
       h+='<div class="op-tags">'; op.tags.forEach(function(t){h+='<span class="op-tag">'+esc(t)+'</span>';}); h+='</div>';
       h+='<div class="op-divider"></div>';
-      h+='<div style="display:flex;flex-wrap:wrap;gap:16px;font-size:0.78rem;color:#3a5a61;font-weight:600;margin:0 0 14px;"><span>&#10003; Free cancellation '+CANCEL_H+'hrs</span><span>&#10003; Local Wilmington operator</span><span>&#10003; Secure checkout</span></div>';
+      h+='<div style="display:flex;flex-wrap:wrap;gap:16px;font-size:0.78rem;color:#3a5a61;font-weight:600;margin:0 0 14px;"><span>&#10003; Free cancellation '+CANCEL_H+'hrs</span><span>&#10003; Local Wilmington operator</span>'+(op.live?'<span>&#10003; Secure checkout</span>':'')+'</div>';
       if(op.live){
-        h+='<div class="op-book-row"><button type="button" class="btn-sub" style="width:100%;font-size:1rem;" id="ob-'+oid+'" aria-expanded="false" aria-controls="bf-'+oid+'" onclick="toggleBook(\''+oid+'\')">Book This Experience &#8212; '+esc(op.price)+' <span style="opacity:0.75;font-weight:600;">'+esc(op.priceLabel)+'</span></button></div>';
+        h+='<div class="op-book-row"><button type="button" class="btn-sub" style="width:100%;font-size:1rem;" id="ob-'+oid+'" aria-expanded="false" aria-controls="bf-'+oid+'" onclick="toggleBook(\''+oid+'\')">Book This Experience: '+esc(op.price)+' <span style="opacity:0.75;font-weight:600;">'+esc(op.priceLabel)+'</span></button></div>';
       } else {
-        h+='<div class="op-book-row"><div class="op-book-note-pre">Bookings open <strong>soon</strong> &#8212; join the early list to lock your spot before we open to the public.</div></div>';
+        h+='<div class="op-book-row"><div class="op-book-note-pre">Bookings open <strong>soon</strong>. Join the early list to lock your spot before we open to the public.</div></div>';
       }
       h+='<div style="font-size:0.75rem;color:rgba(44,74,82,0.45);margin-top:8px;line-height:1.6;">By booking through ShoreList you acknowledge activities involve inherent risks and agree to our <a href="/legal#risk" style="color:var(--teal2);">Terms &amp; Assumption of Risk</a>. Full refunds available with '+CANCEL_H+'+ hours cancellation notice. Operators are independent contractors, not employees of ShoreList.</div>';
       h+='</div>'; // end op-card-body
@@ -281,14 +281,14 @@ function renderPage(){
         h+='</select></div>';
         h+='</div>';
         h+='<div class="bk-row full"><div class="bk-field"><label class="bk-label" for="bo-'+oid+'">Notes for Your Guide (optional)</label><textarea class="bk-input" id="bo-'+oid+'" placeholder="Anything we should know? Mobility needs, celebrations, questions&hellip;"></textarea></div></div>';
-        h+='<div class="dep-row"><div><div class="dep-lbl">Total &#8212; <span id="bqty-'+oid+'">1 guest</span></div><div class="dep-note">Includes 7% NC sales tax &middot; Paid securely via Stripe &middot; Full refund if you cancel '+CANCEL_H+'+ hours before</div></div><div class="dep-amt" id="btot-'+oid+'">'+esc(op.price)+'</div></div>';
+        h+='<div class="dep-row"><div><div class="dep-lbl">Total: <span id="bqty-'+oid+'">1 guest</span></div><div class="dep-note">Includes 7% NC sales tax &middot; Paid securely via Stripe &middot; Full refund if you cancel '+CANCEL_H+'+ hours before</div></div><div class="dep-amt" id="btot-'+oid+'">'+esc(op.price)+'</div></div>';
         h+='<div class="bk-err" id="berr-'+oid+'" role="alert"></div>';
         h+='<div class="bk-acts"><button type="button" class="btn-sub" id="bb-'+oid+'" onclick="doBook(\''+oid+'\')">Confirm &amp; Pay '+esc(op.price)+' &#8594;</button></div>';
         h+='</div>';
       } else {
         h+='<div style="padding:0 40px 32px;">';
         h+='<div class="prelaunch-card">';
-        h+='<div class="plc-left"><div class="plc-tag">&#10022; Reserve Early</div><div class="plc-title">Reserve with '+esc(op.business)+'</div><div class="plc-sub">Drop your email. We\'ll notify you the moment bookings go live &#8212; before we announce it anywhere else.</div></div>';
+        h+='<div class="plc-left"><div class="plc-tag">&#10022; Reserve Early</div><div class="plc-title">Reserve with '+esc(op.business)+'</div><div class="plc-sub">Drop your email. We\'ll notify you the moment bookings go live, before we announce it anywhere else.</div></div>';
         h+='<div class="plc-form"><input class="plc-input" type="email" id="plc-'+oid+'" aria-label="Email address" placeholder="your@email.com" autocomplete="email"/><button class="plc-btn" onclick="doPrelaunch(\''+oid+'\',\''+esc(op.business)+'\')">Notify Me &#8594;</button><div class="plc-done" id="plcd-'+oid+'">&#10003; You\'re on the list!</div></div>';
         h+='</div>';
         h+='</div>';
@@ -297,7 +297,7 @@ function renderPage(){
     });
     h+='</div>'; // end operator-grid
   } else {
-    h+='<div class="coming-soon"><span class="cs-ico">'+d.icon+'</span><h2 class="cs-title">'+esc(d.title)+' &#8212; Coming Soon</h2><p class="cs-sub">We\'re signing local '+esc(d.title.toLowerCase())+' operators right now. Drop your email and we\'ll notify you the moment bookings go live.</p><div class="notify-form"><input class="notify-inp" type="email" id="ni-'+esc(cat)+'" aria-label="Email address" placeholder="your@email.com" autocomplete="email"/><button class="btn-notify" onclick="doNotify(\''+esc(cat)+'\',\''+esc(d.title)+'\')">Notify Me</button></div><div class="notify-done" id="nd-'+esc(cat)+'">Got it! We\'ll email you when '+esc(d.title)+' goes live. &#10003;</div></div>';
+    h+='<div class="coming-soon"><span class="cs-ico">'+d.icon+'</span><h2 class="cs-title">'+esc(d.title)+': Coming Soon</h2><p class="cs-sub">We\'re signing local '+esc(d.title.toLowerCase())+' operators right now. Drop your email and we\'ll notify you the moment bookings go live.</p><div class="notify-form"><input class="notify-inp" type="email" id="ni-'+esc(cat)+'" aria-label="Email address" placeholder="your@email.com" autocomplete="email"/><button class="btn-notify" onclick="doNotify(\''+esc(cat)+'\',\''+esc(d.title)+'\')">Notify Me</button></div><div class="notify-done" id="nd-'+esc(cat)+'">Got it! We\'ll email you when '+esc(d.title)+' goes live. &#10003;</div></div>';
   }
 
   h+='<div class="list-cta"><div class="lc-text"><div class="lc-tag">For Local Operators</div><div class="lc-title">Run a '+esc(d.title)+' business in Wilmington?</div><div class="lc-sub">Get listed on ShoreList free. No upfront cost, no monthly fees. Commission only on completed bookings. We put your listing directly in front of visitors who are already looking for something to do.</div></div><a href="/join" class="lc-btn">List Your Business Free &rarr;</a></div>';
@@ -324,7 +324,7 @@ function toggleBook(id){
   var b=document.getElementById('ob-'+id);
   if(b)b.setAttribute('aria-expanded',open?'true':'false');
   var op=getOp(id);
-  if(b&&op)b.innerHTML=open?'Hide Booking Form &#8593;':'Book This Experience &#8212; '+esc(op.price)+' <span style="opacity:0.75;font-weight:600;">'+esc(op.priceLabel)+'</span>';
+  if(b&&op)b.innerHTML=open?'Hide Booking Form &#8593;':'Book This Experience: '+esc(op.price)+' <span style="opacity:0.75;font-weight:600;">'+esc(op.priceLabel)+'</span>';
   if(open){
     if(!CS[id]&&op)calInit(id,op.schedule);
     updTotal(id);
@@ -424,7 +424,7 @@ if(document.readyState!=='loading')startPage();else document.addEventListener('D
         +'<span class="cgb-ico"><svg class="cgb-svg"><use href="#i-train" xlink:href="#i-train"/></svg></span>'
         +'<div class="cgb-body">'
         +'<div class="cgb-title">Also Haunted: The Wilmington Railroad Museum</div>'
-        +'<div class="cgb-sub">An authentic 1883 freight warehouse with a haunted reputation of its own &mdash; explore the steam locomotive and model trains by day, and keep an eye out for after-dark events. <a href="/wilmington-railroad-museum">View tickets, hours &amp; events &#8599;</a></div>'
+        +'<div class="cgb-sub">An authentic 1883 freight warehouse with a haunted reputation of its own: explore the steam locomotive and model trains by day, and keep an eye out for after-dark events. <a href="/wilmington-railroad-museum">View tickets, hours &amp; events &#8599;</a></div>'
         +'<div class="cgb-badges"><span class="cgb-badge">1883 Freight Warehouse</span><span class="cgb-badge">Downtown</span><span class="cgb-badge">Open Daily</span></div>'
         +'</div></div>';
       container.appendChild(x);
@@ -445,14 +445,11 @@ if(document.readyState!=='loading')startPage();else document.addEventListener('D
       banner.innerHTML='<div class="cgb-inner">'
         +'<span class="cgb-ico"><svg class="cgb-svg"><use href="#i-ghost" xlink:href="#i-ghost"/></svg></span>'
         +'<div class="cgb-body">'
-        +'<div class="cgb-title">&#9889; The Most Unforgettable Ghost Walk in Wilmington</div>'
-        +'<div class="cgb-sub">Sean Austin &mdash; star of Netflix&rsquo;s <strong>28 Days Haunted</strong> and Travel Channel&rsquo;s <strong>Ghost Loop</strong> &mdash; leads his Wilmington Ghost Walk exclusively through ShoreList. A real paranormal TV investigator guiding you through the city&rsquo;s most haunted streets. <a href="https://www.seandaustin.com" target="_blank" rel="noopener noreferrer">Learn more at seandaustin.com &#8599;</a></div>'
+        +'<div class="cgb-title">&#9889; A Ghost Walk Through Wilmington&rsquo;s Haunted Heart</div>'
+        +'<div class="cgb-sub">Sean Austin, star of Netflix&rsquo;s <strong>28 Days Haunted</strong> and Travel Channel&rsquo;s <strong>Ghost Loop</strong>, leads his Wilmington Ghost Walk through ShoreList. A paranormal investigator guiding you through the city&rsquo;s most haunted streets. <a href="https://www.seandaustin.com" target="_blank" rel="noopener noreferrer">Learn more at seandaustin.com &#8599;</a></div>'
         +'<div class="cgb-badges">'
-        +'<span class="cgb-badge cgb-badge-coral">&#9733; Founding Partner</span>'+'<span class="cgb-badge">Netflix</span>'
-        +'<span class="cgb-badge">Travel Channel</span>'
-        +'<span class="cgb-badge">Paranormal Investigator</span>'
+        +'<span class="cgb-badge cgb-badge-coral">&#9733; Founding Partner</span>'        +'<span class="cgb-badge">Paranormal Investigator</span>'
         +'<span class="cgb-badge">Demonologist</span>'
-        +'<span class="cgb-badge cgb-badge-coral">Exclusive to ShoreList</span>'
         +'</div>'
         +'</div>'
         +'</div>';

@@ -77,7 +77,7 @@
       var c0 = r[0].current || {}, m = r[1].current || {}, n = r[2], now = nyNowMs();
       var d = { beach: b, temp: c0.temperature_2m, feels: c0.apparent_temperature, code: c0.weather_code, wind: c0.wind_speed_10m, gust: c0.wind_gusts_10m, windDir: c0.wind_direction_10m, uv: c0.uv_index,
         waveFt: m.wave_height != null ? m.wave_height * 3.281 : null, period: m.wave_period, waveDir: m.wave_direction,
-        waterF: n && n.waterF != null ? n.waterF : (m.sea_surface_temperature != null ? m.sea_surface_temperature * 9 / 5 + 32 : null), waterSrc: n && n.waterF != null ? 'NOAA station, Wrightsville Beach' : 'model estimate',
+        waterF: n && n.waterF != null ? n.waterF : (m.sea_surface_temperature != null ? m.sea_surface_temperature * 9 / 5 + 32 : null), waterSrc: n && n.waterF != null ? (b.id === 'wrightsville' ? 'NOAA station, Wrightsville Beach' : 'nearest NOAA station: Wrightsville Beach') : 'model estimate',
         sunrise: r[0].daily && r[0].daily.sunrise && r[0].daily.sunrise[0], sunset: r[0].daily && r[0].daily.sunset && r[0].daily.sunset[0], now: now, noaa: n, tide: tideInfo(n, now), at: Date.now() };
       d.flag = flag(d); d.surf = surfNote(d); cache[i] = { at: Date.now(), d: d }; return d;
     });
@@ -125,7 +125,7 @@
       '<div><dt>Wind</dt><dd>' + Math.round(d.wind) + ' mph<small>' + esc(compass(d.windDir)) + (d.gust ? ', gusts ' + Math.round(d.gust) : '') + '</small></dd></div>' +
       '<div><dt>Rip risk</dt><dd>' + esc(d.flag.rip) + '<small>estimated</small></dd></div>' +
       '<div><dt>UV</dt><dd>' + (d.uv != null ? Math.round(d.uv) : 'n/a') + '<small>' + (d.sunset ? 'sunset ' + t12(new Date(d.sunset).getTime()) : '') + '</small></dd></div></dl>' +
-      '<div class="bwt"><div class="tt"><b>Tide</b> ' + esc(tideTxt) + '</div>' + tideSvg(d) + '<small>NOAA tide station: Wrightsville Beach</small></div></article>';
+      '<div class="bwt"><div class="tt"><b>Tide</b> ' + esc(tideTxt) + '</div>' + tideSvg(d) + '<small>' + (d.beach.id === 'wrightsville' ? 'NOAA tide station: Wrightsville Beach' : 'Tide from the nearest NOAA station: Wrightsville Beach') + '</small></div></article>';
   }
   function mount(el) {
     var ids = el.getAttribute('data-beachwx'), list = ids === 'all' || !ids ? [0, 1, 2] : [B.map(function (b) { return b.id; }).indexOf(ids)].filter(function (x) { return x > -1; });

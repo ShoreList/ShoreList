@@ -197,3 +197,16 @@ kbd{font-size:.75rem!important}
 a.wk-link,a.more,a.pc-link,a.c-link,a.c-dir{display:inline-block;padding:5px 0}
 /* audit: minimum readable size */
 .nav-op,.rv-meta,.eyebrow,.lbl,.wc-desc,.mf-tag,.rec-pill,.we-chip-date,.mp-meta,.bc-cams-btn,.feat-ra,.fs-step{font-size:max(.75rem,12px)!important}
+
+/* ===== Mobile tap targets: at least 44px for chips, nav logo and table links ===== */
+@media(max-width:700px){
+  .cond button{min-height:44px;padding:8px 14px}
+  .cond{gap:6px}
+  nav#nav .logo{min-height:44px;align-items:center}
+  table.areas td a,table.areas th a{display:inline-flex;align-items:center;min-height:44px}
+  .chips a,.chips li a{display:inline-flex;align-items:center;min-height:44px}
+}
+@media(max-width:700px){
+  .lk a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px}
+  .op-card-body a[href^="/legal"],a[href="/join"][style*="font-weight:700"]{display:inline-block;padding:13px 0}
+}
