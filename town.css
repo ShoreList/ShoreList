@@ -256,3 +256,10 @@ body.town .foot-logo{min-height:44px;align-items:center}
 body.town .foot-links a{min-width:44px;justify-content:center}
 body.town .t-plan h2{margin-bottom:30px}
 @media(min-width:981px){body.town .t-cards:has(li:nth-child(6)){grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+body.town .t-faq{background:#fff}
+body.town .t-faq .t-lede{max-width:760px}
+body.town .t-faq details{border-bottom:1px solid rgba(14,31,51,.14);max-width:860px}
+body.town .t-faq summary{cursor:pointer;font-weight:700;padding:14px 0;min-height:44px;color:var(--navy,#0E1F33)}
+body.town .t-faq details p{margin:0 0 16px;line-height:1.65;max-width:760px}
+body.town .t-faq .t-src{font-size:.88rem;margin-top:18px;max-width:860px}
