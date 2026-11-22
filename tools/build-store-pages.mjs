@@ -156,9 +156,9 @@ const sections = [
   { id: 'for-the-wall', h: 'For someone who misses a particular pier', p: 'A print of the right stretch of coast beats a postcard. Each is made to order and sold through ShoreList Gear.',
     ids: ['kure-beach-fishing-pier-art-print', 'carolina-beach-boardwalk-art-print', 'wrightsville-beach-pier-art-print', 'uss-north-carolina-art-print'] },
   { id: 'wears-the-town', h: 'For the person who wears their town', p: 'A small embroidered icon and a town code, stitched on a garment-dyed crewneck. Sizing help is on the <a href="/size-guide">size guide</a>, and a fit question to us is welcome.',
-    ids: ['the-sloop-embroidered-crewneck-wrightsville-beach', 'the-blue-crab-embroidered-crewneck-kure-beach', 'the-live-oak-embroidered-crewneck-wilmington'] },
+    ids: ['the-sloop-embroidered-crewneck-wrightsville-beach', 'the-blue-crab-embroidered-crewneck-kure-beach', ] },
   { id: 'hats', h: 'Beanies and caps', p: 'Smaller than a sweatshirt, and the same stitched icon. Check each product page for sizing.',
-    ids: ['the-sloop-cuffed-beanie-wrightsville-beach', 'the-blue-crab-cuffed-beanie-kure-beach', 'the-live-oak-cuffed-beanie-wilmington', 'the-sloop-corduroy-cap-wrightsville-beach', 'the-blue-crab-corduroy-cap-kure-beach', 'the-live-oak-corduroy-cap-wilmington'] },
+    ids: ['the-sloop-cuffed-beanie-wrightsville-beach', 'the-blue-crab-cuffed-beanie-kure-beach', 'the-sloop-corduroy-cap-wrightsville-beach', 'the-blue-crab-corduroy-cap-kure-beach', ] },
   { id: 'beach-day', h: 'For the beach-day household', p: 'Shade, a seat, a towel and something cold to put in a cooler.',
     ids: ['tilt-beach-umbrella', 'backpack-beach-chair', 'carolina-coast-towel', 'coastal-soft-cooler'] },
 ];
