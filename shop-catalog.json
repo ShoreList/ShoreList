@@ -65,14 +65,34 @@
    "cover": "pennant-tee-true-navy"
   },
   {
+   "id": "rope-and-line",
+   "name": "Rope and Line",
+   "blurb": "Rope stitching and small dock-line marks in the colors of a working marina. Easy layers for the boat, the ferry line and a cool evening on the water."
+  },
+  {
+   "id": "field-and-dock",
+   "name": "Field and Dock",
+   "blurb": "Practical layers and everyday carry for dock days and cool mornings."
+  },
+  {
    "id": "faded-marker",
    "name": "Faded Marker",
-   "blurb": "Washed red garments and arched town lettering."
+   "blurb": "Salt-washed reds and weathered blues, with arched town lettering that looks like it has seen a few summers."
   },
   {
    "id": "regatta",
    "name": "Regatta",
-   "blurb": "Stripes, signal flags and color blocking."
+   "blurb": "Race-day stripes, signal flags and color blocking for the crew, the spectators and everyone on the dock."
+  },
+  {
+   "id": "surf-shop",
+   "name": "Surf Shop",
+   "blurb": "Easy beach-town pieces for the lineup and the parking lot afterward."
+  },
+  {
+   "id": "clubhouse-summer",
+   "name": "Clubhouse Summer",
+   "blurb": "Playful summer staples with a preppy turn, and small details that make a long weekend feel like a holiday."
   },
   {
    "id": "quiet-season",
