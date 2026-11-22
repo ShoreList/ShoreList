@@ -18,6 +18,11 @@ try {
   for (const [q, a] of vf) L.push(`Q: ${q}`, `A: ${a}`);
 } catch (e) {}
 try {
+  const pk = JSON.parse(fs.readFileSync('tools/parking-faq.json', 'utf8'));
+  L.push('', '## Parking in Wilmington, NC and at the beaches (https://shorelist.net/wilmington-nc-parking)', 'Downtown Wilmington has five city parking decks (Skyline, Convention Center, River Place, 2nd Street, Market Street). Beach paid-parking seasons in 2026: Wrightsville Beach and Carolina Beach March 1 to October 31, Kure Beach March 15 to September 30. Rates are not listed on ShoreList because they change; confirm with the city or town.');
+  for (const [q, a] of pk) L.push(`Q: ${q}`, `A: ${a}`);
+} catch (e) {}
+try {
   const ev = JSON.parse(fs.readFileSync('events-data.json', 'utf8'));
   L.push('', `## Upcoming events in Wilmington, NC and the beaches (updated ${ev.updated}; live list at https://shorelist.net/events)`);
   // Same rule as tools/build-events-pages.mjs hasPage(): only events with a checked source have their own page.

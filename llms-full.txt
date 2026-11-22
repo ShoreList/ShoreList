@@ -43,6 +43,7 @@ ShoreList (shorelist.net) is a hyperlocal booking marketplace for tours and expe
 - Choosing a first surfboard: Soft-top or hard board, how size works and what a first setup involves https://shorelist.net/surf/first-surfboard
 - Paddleboards and kayaks: inflatable or hard: How they compare, carrying and storing them, and where each fits on local water https://shorelist.net/surf/paddleboard-and-kayak
 - Know before you go: water safety and rules: Beach flags, rip current basics and life jacket rules for paddlers, with official links https://shorelist.net/surf/know-before-you-go
+- Parking in Wilmington, NC: Downtown deck locations, meter hours and the paid season at Wrightsville, Carolina and Kure Beach https://shorelist.net/wilmington-nc-parking
 - Wilmington, NC visitor FAQ: Short answers about beaches, parking, kids, nightlife, festivals and getting around https://shorelist.net/wilmington-nc-faq
 - The Shore Report newsletter: Free weekly events, itinerary and beach conditions https://shorelist.net/weekly
 - Plan your trip to Wilmington, NC: When to go, where to stay, how far the beaches are and a three-day itinerary https://shorelist.net/plan-your-trip
@@ -296,6 +297,19 @@ Q: What is ShoreList?
 A: ShoreList is a local guide and booking marketplace for Wilmington, NC and the beaches. You can book tours and experiences with local operators, check live beach conditions, find events and plan your trip in one place.
 Q: How do I find out what is happening this week?
 A: The events page lists upcoming events and refreshes daily, and the free Shore Report newsletter sends a weekly roundup with an itinerary and beach conditions.
+
+## Parking in Wilmington, NC and at the beaches (https://shorelist.net/wilmington-nc-parking)
+Downtown Wilmington has five city parking decks (Skyline, Convention Center, River Place, 2nd Street, Market Street). Beach paid-parking seasons in 2026: Wrightsville Beach and Carolina Beach March 1 to October 31, Kure Beach March 15 to September 30. Rates are not listed on ShoreList because they change; confirm with the city or town.
+Q: Is parking free at Wrightsville Beach?
+A: Not during the paid season. In 2026 Wrightsville Beach enforced paid parking daily from March 1 to October 31, generally 9 a.m. to 7 p.m., with some locations running to 8 p.m. Outside the posted season and hours the published schedule does not call for payment, but always follow the signs at your space.
+Q: When does paid parking start at the beaches near Wilmington?
+A: In 2026, paid parking began March 1 at Wrightsville Beach and Carolina Beach and March 15 at Kure Beach. Carolina Beach and Wrightsville Beach ran through October 31, and Kure Beach through September 30. Each town sets its own dates every year, so confirm before you go.
+Q: Where do I park for the Wilmington Riverwalk?
+A: The City of Wilmington runs five downtown decks: Skyline Deck, the Convention Center Deck, River Place Deck, 2nd Street Deck and Market Street Deck. Choose the one closest to where you are headed, and allow extra time on event weekends.
+Q: Are downtown Wilmington parking meters free on Sunday?
+A: Per the City of Wilmington, on-street meters are enforced Monday to Saturday from 9 a.m. to 6:30 p.m. They are free after 6:30 p.m. daily and all day Sunday, and are not enforced on listed city holidays. Read the sign at the meter, since rules on a block can differ.
+Q: How do I pay for parking at Wrightsville Beach?
+A: The town lists pay stations and Text2Park mobile payment, and operates more than 1,600 metered public spaces. Rates and hours vary by location, so check the posted signs.
 
 ## Upcoming events in Wilmington, NC and the beaches (updated 2026-11-21; live list at https://shorelist.net/events)
 - Rooted in Memory: The Gullah Geechee Vision of Jonathan Green: 2026-06-19 to 2027-01-24, Cameron Art Museum, Greater Wilmington. Arts. Museum admission. https://cameronartmuseum.org/exhibitions/ | ShoreList page: https://shorelist.net/events/rooted-in-memory-the-gullah-geechee-visi-2026-06-19
