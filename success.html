@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="robots" content="noindex"/>
-<title>Booking Confirmed — ShoreList</title>
+<title>Booking Confirmed | ShoreList</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
@@ -247,7 +247,7 @@ function renderUnconfirmed(){
 function shareBooking(){
   var url=window.location.origin+'/';
   if(navigator.share){
-    navigator.share({title:'ShoreList — Coastal Experiences in Wilmington, NC',text:'Just booked an experience through ShoreList! Check out all the amazing things to do in Wilmington.',url:url}).catch(function(){});
+    navigator.share({title:'ShoreList, Coastal Experiences in Wilmington, NC',text:'Just booked an experience through ShoreList! Check out all the amazing things to do in Wilmington.',url:url}).catch(function(){});
   } else if(navigator.clipboard){
     navigator.clipboard.writeText(url).then(function(){
       var t=document.getElementById('toast');

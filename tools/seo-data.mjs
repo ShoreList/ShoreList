@@ -17,7 +17,7 @@ export const CATS = {
     h1: 'Ghost Tours in Wilmington, NC',
     title: 'Ghost Tours in Wilmington, NC | Haunted Walks Downtown',
     desc: 'Ghost tours in Wilmington, NC: lantern-lit walks through the haunted historic district downtown. See what is bookable on ShoreList and plan your night.',
-    intro: 'Wilmington is one of the oldest port cities in North Carolina, and its historic district is full of the kind of history that makes a good ghost story: old cemeteries, antebellum homes, brick alleys and a working riverfront that dates to the 1700s. Ghost tours here are walking tours after dark, usually through the blocks between the Cape Fear River and Third Street.',
+    intro: 'Wilmington is an old port city, and its historic district is full of the kind of history that makes a good ghost story: old cemeteries, antebellum homes, brick alleys and a working riverfront that dates to the 1700s. Ghost tours here are walking tours after dark, usually through the blocks between the Cape Fear River and Third Street.',
     where: 'Downtown Wilmington historic district and the Riverwalk.',
     faq: [
       ['Where do Wilmington ghost tours take place?', 'Almost all of them are walking tours in the downtown historic district, within a few blocks of the Cape Fear River. Wear comfortable shoes, since the streets are brick and uneven in places.'],
@@ -29,7 +29,7 @@ export const CATS = {
     h1: 'Walking & History Tours in Wilmington, NC',
     title: 'Wilmington, NC Walking Tours | History & Architecture',
     desc: 'Guided walking and history tours of downtown Wilmington, NC and Carolina Beach. Architecture, port history and local stories, bookable on ShoreList.',
-    intro: 'The easiest way to understand Wilmington is on foot. The downtown historic district is one of the largest in North Carolina, with Colonial, Greek Revival, Italianate and Queen Anne homes on streets you can cover in an afternoon. Guided walking tours add the stories: the port, the railroad, the Civil War blockade runners and the people who built the city.',
+    intro: 'The easiest way to understand Wilmington is on foot. The downtown historic district has Colonial, Greek Revival, Italianate and Queen Anne homes on streets you can cover in an afternoon. Guided walking tours add the stories: the port, the railroad, the Civil War blockade runners and the people who built the city.',
     where: 'Downtown Wilmington historic district and Carolina Beach.',
     faq: [
       ['How long is a walking tour of downtown Wilmington?', 'Most guided tours run between one and two hours and cover about a mile to a mile and a half at a relaxed pace.'],
@@ -44,7 +44,7 @@ export const CATS = {
     intro: 'Wilmington packs a lot of museums into a small downtown: railroad history, a World War II battleship moored across the river, historic house museums and gardens. They make a good plan for a rainy day or a break from the beach, and most are within a short walk or drive of the Riverwalk.',
     where: 'Downtown Wilmington, the riverfront and Fort Fisher near Kure Beach.',
     faq: [
-      ['What is there to do in Wilmington, NC on a rainy day?', 'Museums are the best bet. The Wilmington Railroad Museum downtown is indoors and family friendly, and the historic house museums run guided tours in any weather.'],
+      ['What is there to do in Wilmington, NC on a rainy day?', 'Museums are a good option. The Wilmington Railroad Museum downtown is indoors and family friendly, and the historic house museums run guided tours in any weather.'],
       ['Are Wilmington museums good for young children?', 'Yes. The Railroad Museum in particular is built around hands-on exhibits, model trains and real rail cars that kids can climb aboard.'],
     ],
     related: ['walking-tours', 'film-tours', 'ghost-tours'],
@@ -52,8 +52,8 @@ export const CATS = {
   'film-tours': {
     h1: 'Film & TV Location Tours in Wilmington, NC',
     title: 'Wilmington, NC Film & TV Location Tours | One Tree Hill',
-    desc: 'Film and TV location tours in Wilmington, NC, the city behind One Tree Hill, Dawson\'s Creek and hundreds of productions. Plan a tour on ShoreList.',
-    intro: 'Wilmington has been a working film town since the 1980s, with a major studio complex and hundreds of film and television credits. Fans come for the locations from One Tree Hill and Dawson\'s Creek, and many of those spots are in walking distance of each other downtown and along the river.',
+    desc: 'Film and TV location tours in Wilmington, NC, the city behind One Tree Hill, Dawson\'s Creek and many other productions. Plan a tour on ShoreList.',
+    intro: 'Wilmington has been a working film town since the 1980s, with a major studio complex and a long list of film and television credits. Fans come for the locations from One Tree Hill and Dawson\'s Creek, and many of those spots are in walking distance of each other downtown and along the river.',
     where: 'Downtown Wilmington, the Riverwalk and nearby neighborhoods.',
     faq: [
       ['What was filmed in Wilmington, NC?', 'Wilmington is best known for the TV series One Tree Hill and Dawson\'s Creek, along with a long list of feature films and series shot at the local studio and on downtown streets.'],
@@ -77,7 +77,7 @@ export const CATS = {
     h1: 'Kayak Tours near Wilmington, NC',
     title: 'Kayak Tours in Wilmington & Wrightsville Beach, NC',
     desc: 'Guided kayak tours near Wilmington, NC: salt marshes, tidal creeks, cypress swamps and barrier islands. Find paddling trips on ShoreList.',
-    intro: 'Kayaking is one of the best ways to see the quiet side of the coast. Behind the barrier islands, protected tidal creeks and salt marshes wind for miles, and you can paddle to undeveloped islands such as Masonboro that no road reaches. Inland, blackwater creeks and cypress swamps offer shaded, flat-water paddling.',
+    intro: 'Kayaking is a quiet way to see the coast. Behind the barrier islands, protected tidal creeks and salt marshes wind for miles, and you can paddle to undeveloped islands such as Masonboro that no road reaches. Inland, blackwater creeks and cypress swamps offer shaded, flat-water paddling.',
     where: 'Wrightsville Beach and Masonboro Island, Carolina Beach, and the creeks and lakes around Wilmington.',
     faq: [
       ['Do I need experience for a guided kayak tour?', 'No. Most guided tours use stable sit-on-top kayaks in protected water and start with a short lesson. Tides and wind matter here, which is the main reason to go with a guide.'],
@@ -93,7 +93,7 @@ export const CATS = {
     where: 'Downtown Wilmington waterfront on the Cape Fear River.',
     faq: [
       ['Where do Wilmington river cruises leave from?', 'From docks along the downtown Riverwalk, within walking distance of most downtown hotels and parking decks.'],
-      ['What is the best time for a river cruise?', 'Sunset cruises are the most popular because the sun goes down over the river side of downtown. Book ahead on summer and holiday weekends.'],
+      ['What is the best time for a river cruise?', 'Many people choose sunset cruises because the sun goes down over the river side of downtown. Book ahead on summer and holiday weekends.'],
       ['Is there parking near the downtown waterfront?', 'Downtown Wilmington has parking decks and metered street parking within walking distance of the Riverwalk. Rates and hours change, so check the City of Wilmington before you go, and allow extra time on event weekends.'],
     ],
     related: ['sailboat-rides', 'walking-tours', 'wildlife-tours'],
@@ -102,7 +102,7 @@ export const CATS = {
     h1: 'Surf Lessons at Wrightsville Beach, NC',
     title: 'Surf Lessons in Wrightsville Beach & Carolina Beach, NC',
     desc: 'Surf lessons near Wilmington, NC. Wrightsville Beach and Carolina Beach have gentle summer waves for beginners. Check live surf and lessons on ShoreList.',
-    intro: 'Wrightsville Beach is one of the best known surf towns on the East Coast, and in summer its small, gentle waves and sandy bottom make it a friendly place to learn. Lessons include a board and start on the sand before you paddle out. Carolina Beach, to the south, is another good place for a first lesson.',
+    intro: 'Wrightsville Beach is a well-known surf town, and in summer its small, gentle waves and sandy bottom make it a friendly place to learn. Lessons include a board and start on the sand before you paddle out. Carolina Beach, to the south, is another good place for a first lesson.',
     where: 'Wrightsville Beach and Carolina Beach.',
     faq: [
       ['Is Wrightsville Beach good for beginner surfers?', 'Yes. Summer waves are usually small and the bottom is sand, which is ideal for learning. ShoreList shows live surf height and an estimated flag for each beach so you can pick your day.'],
@@ -176,7 +176,7 @@ export const CATS = {
     h1: 'Fat Bike Rentals near Wilmington, NC',
     title: 'Fat Tire Beach Bike Rentals near Wilmington, NC',
     desc: 'Fat tire bike rentals for riding the sand near Wilmington, NC. Wide tires built for the beach. Find rentals on ShoreList.',
-    intro: 'Fat bikes have wide, low-pressure tires that roll over sand that would stop a normal bike. The best riding is at low tide, on the firm sand near the water.',
+    intro: 'Fat bikes have wide, low-pressure tires that roll over sand that would stop a normal bike. Riding is easiest at low tide, on the firm sand near the water.',
     where: 'Carolina Beach, Kure Beach and Wrightsville Beach.',
     faq: [
       ['When is the best time to ride a bike on the beach?', 'Within a couple of hours of low tide, when there is a wide band of hard-packed sand. ShoreList shows the tide for each beach.'],
@@ -201,7 +201,7 @@ export const CATS = {
     h1: 'Nature Walks & Guided Hikes near Wilmington, NC',
     title: 'Nature Walks near Wilmington, NC | State Park Trails',
     desc: 'Guided nature walks near Wilmington, NC: maritime forest, cypress swamps and Carolina Beach State Park, home of the wild Venus flytrap.',
-    intro: 'The Wilmington area is one of the few places on earth where Venus flytraps grow wild, and Carolina Beach State Park is the best place to see them. Guided walks also explore maritime forest, salt marsh boardwalks and cypress-lined lakes, all on flat, easy trails.',
+    intro: 'The Wilmington area is one of the few places where Venus flytraps grow wild, and Carolina Beach State Park has a trail where you can see them. Guided walks also explore maritime forest, salt marsh boardwalks and cypress-lined lakes, all on flat, easy trails.',
     where: 'Carolina Beach State Park, Fort Fisher, and parks and gardens around Wilmington.',
     faq: [
       ['Where can I see wild Venus flytraps?', 'Carolina Beach State Park has a short loop trail through flytrap habitat. The plants are small and protected by law, so look closely and never touch or remove them.'],

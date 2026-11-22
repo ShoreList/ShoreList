@@ -19,6 +19,9 @@ for (const f of pages) {
   [...h.matchAll(/<script>([\s\S]*?)<\/script>/g)].forEach((m, i) => {
     try { new vm.Script(m[1]); } catch (e) { bad(`${f}: inline script ${i} syntax: ${e.message}`); }
   });
+  // copy rule: no em or en dashes in visible copy (comments, styles and scripts other than JSON-LD are ignored)
+  const copy = h.replace(/<!--[\s\S]*?-->/g, '').replace(/<style[\s\S]*?<\/style>/g, '').replace(/<script(?![^>]*ld\+json)[\s\S]*?<\/script>/g, '');
+  if (/\u2014|\u2013|&mdash;|&ndash;|&#8212;|&#8211;|&#x2014;|&#x2013;/i.test(copy)) bad(`${f}: em or en dash in visible copy`);
   if (/api\.anthropic\.com/.test(h)) bad(`${f}: client-side call to api.anthropic.com (use a function)`);
   if (/get-bookings\?password=/.test(h)) bad(`${f}: password in URL`);
 }

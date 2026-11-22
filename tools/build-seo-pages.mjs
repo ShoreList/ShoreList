@@ -178,10 +178,10 @@ function shell({ url, title, desc, image, lds, photo, heroExtra, breadcrumb, tag
 
 // ---------- hub ----------
 const hubFaq = [
-  ['What are the best things to do in Wilmington, NC?', 'Walk the Riverwalk and the historic district downtown, tour the Battleship North Carolina, take a river cruise at sunset, and spend a day at Wrightsville Beach, Carolina Beach or Kure Beach. Ghost tours, film location tours, surf lessons, kayak trips and fishing charters are the most popular guided experiences.'],
+  ['What are the best things to do in Wilmington, NC?', 'Walk the Riverwalk and the historic district downtown, tour the Battleship North Carolina, take a river cruise at sunset, and spend a day at Wrightsville Beach, Carolina Beach or Kure Beach. Ghost tours, film location tours, surf lessons, kayak trips and fishing charters are common guided experiences.'],
   ['How far are the beaches from downtown Wilmington?', 'Wrightsville Beach is about 20 minutes east of downtown. Carolina Beach is about 30 minutes south, and Kure Beach is just beyond it on the same island. Allow extra time on summer weekends.'],
   ['What is there to do in Wilmington when it rains?', 'Museums such as the Wilmington Railroad Museum, historic house tours, film location tours, and spa and wellness experiences all work in bad weather.'],
-  ['Which beach near Wilmington is best?', 'Wrightsville Beach is closest and best for surfing, paddleboarding and clear water. Carolina Beach has the boardwalk, a state park and a lively family atmosphere. Kure Beach is the quietest, with a fishing pier and Fort Fisher nearby.'],
+  ['Which beach near Wilmington should I choose?', 'Wrightsville Beach is closest and popular for surfing and paddleboarding. Carolina Beach has the boardwalk, a state park and a lively family atmosphere. Kure Beach is the quietest, with a fishing pier and Fort Fisher nearby.'],
 ];
 // Directory groups: how visitors think about the day. Every category must appear exactly once.
 const GROUPS = [

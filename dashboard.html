@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>ShoreList — Operator Dashboard</title>
+<title>ShoreList | Operator Dashboard</title>
 <meta name="robots" content="noindex,nofollow"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
@@ -111,22 +111,22 @@ tr:hover td{background:rgba(10,77,92,0.02);}
     <div class="stats-grid">
       <div class="stat-card highlight">
         <div class="stat-label">Total Revenue</div>
-        <div class="stat-val" id="s-rev">—</div>
+        <div class="stat-val" id="s-rev">-</div>
         <div class="stat-note">Deposits collected</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">Total Bookings</div>
-        <div class="stat-val" id="s-total">—</div>
+        <div class="stat-val" id="s-total">-</div>
         <div class="stat-note">Confirmed paid</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">This Month</div>
-        <div class="stat-val" id="s-month">—</div>
+        <div class="stat-val" id="s-month">-</div>
         <div class="stat-note">Bookings</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">Avg. Booking</div>
-        <div class="stat-val" id="s-avg">—</div>
+        <div class="stat-val" id="s-avg">-</div>
         <div class="stat-note">Per transaction</div>
       </div>
     </div>
@@ -216,16 +216,16 @@ function renderTable(bookings){
   }
   var html='';
   bookings.forEach(function(b){
-    var dt=b.date?fmtDate(b.date):'—';
+    var dt=b.date?fmtDate(b.date):'-';
     var amt=b.amount?'$'+((b.amount/100).toFixed(2)):'$25.00';
     var status=b.status==='paid'?'paid':'pending';
-    var notes=b.notes?'<span class="note-chip" title="'+esc(b.notes)+'">'+esc(b.notes)+'</span>':'<span style="color:rgba(44,74,82,0.25);">—</span>';
+    var notes=b.notes?'<span class="note-chip" title="'+esc(b.notes)+'">'+esc(b.notes)+'</span>':'<span style="color:rgba(44,74,82,0.25);">-</span>';
     var booked=b.created?new Date(b.created*1000).toLocaleDateString('en-US',{month:'short',day:'numeric'}):'';
     html+='<tr>';
-    html+='<td><div class="td-name">'+esc(b.guestName||'—')+'</div><div style="font-size:0.78rem;color:rgba(44,74,82,0.50);">'+esc(b.guestEmail||'')+(b.guestPhone?'<br/>'+esc(b.guestPhone):'')+'</div></td>';
-    html+='<td class="td-exp">'+esc(b.category||'—')+'<div style="font-size:0.76rem;font-weight:400;color:rgba(44,74,82,0.5);">'+esc(b.operator||'')+'</div></td>';
+    html+='<td><div class="td-name">'+esc(b.guestName||'-')+'</div><div style="font-size:0.78rem;color:rgba(44,74,82,0.50);">'+esc(b.guestEmail||'')+(b.guestPhone?'<br/>'+esc(b.guestPhone):'')+'</div></td>';
+    html+='<td class="td-exp">'+esc(b.category||'-')+'<div style="font-size:0.76rem;font-weight:400;color:rgba(44,74,82,0.5);">'+esc(b.operator||'')+'</div></td>';
     html+='<td class="td-date">'+dt+'<div style="font-size:0.73rem;color:rgba(44,74,82,0.40);">Booked '+booked+'</div></td>';
-    html+='<td>'+esc(b.timeSlot||'—')+'</td>';
+    html+='<td>'+esc(b.timeSlot||'-')+'</td>';
     html+='<td style="text-align:center;">'+esc(b.partySize||'1')+'</td>';
     html+='<td class="td-amt">'+amt+'</td>';
     html+='<td><span class="td-status '+status+'">'+(status==='paid'?'&#10003; Paid':'Pending')+'</span></td>';
@@ -236,7 +236,7 @@ function renderTable(bookings){
 }
 
 function fmtDate(ds){
-  if(!ds) return '—';
+  if(!ds) return '-';
   try{var d=new Date(ds+'T12:00:00');return d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});}
   catch(e){return ds;}
 }

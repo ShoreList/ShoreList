@@ -36,13 +36,13 @@ exports.handler = async (event) => {
   // The tour, its names and its schedule come from the server table, keyed by id.
   // operatorName / categoryLabel / category sent by the browser are ignored.
   const tour = getTour(data.operatorId);
-  if (!tour) return bad('Unknown experience — please refresh and try again.');
+  if (!tour) return bad('Unknown experience. Please refresh and try again.');
   if (!tour.live) return bad('That experience is not open for booking yet.');
   const operatorId = data.operatorId;
 
   const why = checkDateSlot(tour, data.date, data.timeSlot);
-  if (why === 'slot') return bad('That time is not available — please pick a time from the calendar.');
-  if (why) return bad('That date is not available — please pick another date from the calendar.');
+  if (why === 'slot') return bad('That time is not available. Please pick a time from the calendar.');
+  if (why) return bad('That date is not available. Please pick another date from the calendar.');
   const date = data.date, timeSlot = data.timeSlot; // now known-safe: strict date format, slot from the table
 
   const guestName  = clean(data.guestName, 100);
@@ -57,7 +57,7 @@ exports.handler = async (event) => {
   // Price comes from the server table (data/operators.json) — never trust the amount sent by the browser
   const unitAmount = tour.priceCents;
   if (!unitAmount) {
-    return bad('Unknown experience — please refresh and try again.');
+    return bad('Unknown experience. Please refresh and try again.');
   }
   const qty = Number(data.partySize);
   if (!Number.isInteger(qty) || qty < 1 || qty > 12) return bad('Please choose a party size between 1 and 12.');
@@ -74,17 +74,17 @@ exports.handler = async (event) => {
       .filter(s => s.metadata && s.metadata.operatorId === operatorId && s.metadata.dateSlot === dateSlot)
       .reduce((sum, s) => sum + (parseInt(s.metadata.partySize, 10) || 1), 0);
     if (bookedGuests >= SLOT_CAP) {
-      return bad('That time is now sold out — please choose a different date or time.', 409);
+      return bad('That time is now sold out. Please choose a different date or time.', 409);
     }
     if (bookedGuests + qty > SLOT_CAP) {
-      return bad('Not enough spots remain at that time for your party size — please pick a different time or reduce your party size.', 409);
+      return bad('Not enough spots remain at that time for your party size. Please pick a different time or reduce your party size.', 409);
     }
     // Atomically reserve qty seats against paid guests plus other live holds, so two
     // simultaneous checkouts cannot both pass the check above for the last seats.
     const paidHoldIds = new Set(sessions.map(s => s.metadata && s.metadata.holdId).filter(Boolean));
     const r = await reserveSlot(event, operatorId, dateSlot, qty, SLOT_CAP, bookedGuests, paidHoldIds);
     if (!r.ok && r.reason === 'busy') return bad('That time is in high demand. Please try again in a moment.', 503);
-    if (!r.ok) return bad(r.left > 0 ? 'Not enough spots remain at that time for your party size — please pick a different time or reduce your party size.' : 'That time is now sold out — please choose a different date or time.', 409);
+    if (!r.ok) return bad(r.left > 0 ? 'Not enough spots remain at that time for your party size. Please pick a different time or reduce your party size.' : 'That time is now sold out. Please choose a different date or time.', 409);
     if (r.tracked) hold = r;
   } catch (e) {
     console.error('create-checkout: capacity check failed:', e.message);
@@ -95,7 +95,7 @@ exports.handler = async (event) => {
   p.set('payment_method_types[0]', 'card');
   p.set('line_items[0][price_data][currency]', 'usd');
   p.set('line_items[0][price_data][product_data][name]', `${tour.label} · ${tour.operator || 'ShoreList'}`);
-  p.set('line_items[0][price_data][product_data][description]', `${date} at ${timeSlot} — Free cancellation ${CITY.defaults.cancellationHours}+ hrs before`);
+  p.set('line_items[0][price_data][product_data][description]', `${date} at ${timeSlot}, Free cancellation ${CITY.defaults.cancellationHours}+ hrs before`);
   p.set('line_items[0][price_data][unit_amount]', String(unitAmount));
   p.set('line_items[0][quantity]', String(qty));
 
