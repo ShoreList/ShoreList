@@ -5,7 +5,7 @@ import vm from 'node:vm';
 import { loadOperators, publicJson } from './operators-lib.mjs';
 const fails = [];
 const bad = (m) => fails.push(m);
-const pages = fs.readdirSync('.').filter((f) => f.endsWith('.html')).concat(fs.existsSync('things-to-do') ? fs.readdirSync('things-to-do').filter((f) => f.endsWith('.html')).map((f) => 'things-to-do/' + f) : []);
+const pages = fs.readdirSync('.').filter((f) => f.endsWith('.html')).concat(['things-to-do', 'events', 'surf'].flatMap((d) => (fs.existsSync(d) ? fs.readdirSync(d).filter((f) => f.endsWith('.html')).map((f) => d + '/' + f) : [])));
 const noindex = new Set(['404.html', 'offline.html', 'dashboard.html', 'success.html', 'guide-success.html', 'goods-success.html']);
 
 for (const f of pages) {
@@ -15,6 +15,7 @@ for (const f of pages) {
   if (!noindex.has(f) && !/name="description"/.test(h)) bad(`${f}: missing meta description`);
   if (!noindex.has(f) && !/rel="canonical"/.test(h)) bad(`${f}: missing canonical`);
   for (const m of h.matchAll(/<img\b[^>]*>/g)) if (!/\balt=/.test(m[0])) bad(`${f}: <img> without alt`);
+  for (const m of h.matchAll(/<img\b[^>]*?\bsrc="(\/[^"?#]+)[^"]*"/g)) if (!fs.existsSync('.' + decodeURI(m[1]))) bad(`${f}: <img> src ${m[1]} does not exist`);
   [...h.matchAll(/<script>([\s\S]*?)<\/script>/g)].forEach((m, i) => {
     try { new vm.Script(m[1]); } catch (e) { bad(`${f}: inline script ${i} syntax: ${e.message}`); }
   });
