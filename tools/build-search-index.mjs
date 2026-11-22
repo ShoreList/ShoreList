@@ -43,6 +43,7 @@ const pages = [
   ['Paddleboards and kayaks: inflatable or hard', 'How they compare, carrying and storing them, and where each fits on local water', '/surf/paddleboard-and-kayak', 'paddleboard sup kayak inflatable hard buy storage transport'],
   ['Know before you go: water safety and rules', 'Beach flags, rip current basics and life jacket rules for paddlers, with official links', '/surf/know-before-you-go', 'safety rip current life jacket pfd rules flags lifeguard whistle registration'],
   ['Parking in Wilmington, NC', 'Downtown deck locations, meter hours and the paid season at Wrightsville, Carolina and Kure Beach', '/wilmington-nc-parking', 'parking park deck meter lot paid free beach access downtown garage'],
+  ['Wilmington, NC events by month', 'Upcoming events grouped by month, December onward, from the daily events feed', '/events/by-month', 'events month december january february calendar festivals concerts holiday'],
   ['Pleasure Island, NC guide', 'Carolina Beach, Kure Beach and Fort Fisher: beach and dog rules, state parks, the ferry and what is open', '/pleasure-island', 'pleasure island carolina beach kure beach fort fisher ferry state park freeman park dogs'],
   ['Wilmington, NC visitor FAQ', 'Short answers about beaches, parking, kids, nightlife, festivals and getting around', '/wilmington-nc-faq', 'faq questions parking dogs kids free festivals ferry film sunset'],
   ['The Shore Report newsletter', 'Free weekly events, itinerary and beach conditions', '/weekly', 'newsletter weekly email shore report subscribe'],

@@ -141,7 +141,8 @@ const areaAbout = (a) => STAY[STAY_OF[a.area]] ? '<section class="ed-venue"><h2>
 const areaLinks = (skip) => '<nav class="ef-areas" aria-label="Events by area"><p class="cal-k">Browse by area</p><ul>' +
   (skip === '/events' ? '' : '<li><a href="/events">All events<span>' + all.length + '</span></a></li>') +
   AREAS.filter((a) => '/events/' + a.slug !== skip).map((a) => '<li><a href="/events/' + a.slug + '">' + esc(a.name) + ' events<span>' + all.filter((e) => e.area === a.area).length + '</span></a></li>').join('') +
-  (skip === '/events/this-weekend' ? '' : '<li><a href="/events/this-weekend">This weekend<span>' + wk.length + '</span></a></li>') + '</ul></nav>';
+  (skip === '/events/this-weekend' ? '' : '<li><a href="/events/this-weekend">This weekend<span>' + wk.length + '</span></a></li>') + '</ul>' +
+  (MONTHS.some((m) => m.page) ? '<p class="cal-k" style="margin-top:14px">Browse by month</p><ul>' + MONTHS.filter((m) => m.page && '/events/' + m.slug !== skip).map((m) => '<li><a href="/events/' + m.slug + '">' + esc(m.name) + ' events<span>' + m.list.length + '</span></a></li>').join('') + (skip === '/events/by-month' ? '' : '<li><a href="/events/by-month">Events by month</a></li>') + '</ul>' : '') + '</nav>';
 // The whole feed block: tools, calendar, agenda. Identical structure with and without JavaScript, so nothing moves when the script starts.
 function feed(list, opts) {
   return tools(list, opts) + '<div class="ef-body"><aside class="ef-side">' + calendar(list) + areaLinks(opts.path) + '</aside>' + agenda(list) + '</div>';
@@ -153,6 +154,21 @@ const fri = new Date(t); fri.setUTCDate(t.getUTCDate() + (dow === 0 ? -2 : dow =
 const sun = new Date(fri); sun.setUTCDate(fri.getUTCDate() + 2);
 const f = fri.toISOString().slice(0, 10), s = sun.toISOString().slice(0, 10), from = f < today ? today : f;
 const wk = all.filter((e) => e.start <= s && e.end >= from);
+
+// ---------- events by month ----------
+// A month lists every upcoming event that overlaps it (so running exhibitions appear in each month they cover).
+// Dedicated month pages exist only for future months with at least MONTH_MIN events, so no page is thin; the hub /events/by-month covers every month in the feed.
+const MONTH_MIN = 8;
+const monthKeys = [...new Set(all.flatMap((e) => { const out = []; for (let k = eff(e).slice(0, 7); k <= e.end.slice(0, 7); k = nextMonth(k)) out.push(k); return out; }))].sort();
+function nextMonth(k) { let y = +k.slice(0, 4), m = +k.slice(5); m++; if (m > 12) { m = 1; y++; } return y + '-' + String(m).padStart(2, '0'); }
+const monthName = (k) => MON[+k.slice(5) - 1] + ' ' + k.slice(0, 4);
+const monthSlug = (k) => MON[+k.slice(5) - 1].toLowerCase() + '-' + k.slice(0, 4);
+const inMonth = (e, k) => eff(e).slice(0, 7) <= k && e.end.slice(0, 7) >= k;
+const MONTHS = monthKeys.map((k) => ({ k, name: monthName(k), slug: monthSlug(k), list: all.filter((e) => inMonth(e, k)) }));
+MONTHS.forEach((m) => { m.page = m.k > today.slice(0, 7) && m.list.length >= MONTH_MIN; });
+const topCats = (list) => { const c = {}; list.forEach((e) => { c[e.cat] = (c[e.cat] || 0) + 1; }); return Object.entries(c).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])); };
+const catPhrase = (list, n) => topCats(list).slice(0, n).map(([c, k]) => k + ' ' + c.toLowerCase()).join(', ');
+const catNames = (list, n) => topCats(list).slice(0, n).map(([c]) => c.toLowerCase()).join(', ').replace(/, ([^,]*)$/, ' and $1') + ' events';
 
 function ld(list, name, url) {
   return { '@context': 'https://schema.org', '@type': 'ItemList', name, url: SITE + url, numberOfItems: list.length,
@@ -289,12 +305,73 @@ fs.writeFileSync('events/this-weekend.html', page({
   photo: PHOTO.bench,
   links: [['/wilmington-weather', 'Weekend weather', 'Forecast and beach report'], ['/things-to-do', 'Things to do', 'Tours and experiences you can book'], ['/shore-picks', 'Where to eat', 'Local picks for before or after'], ['/where-to-stay', 'Where to stay', 'Areas and places to base yourself']]
 }));
+
+const MONTH_LINKS = [['/events/this-weekend', 'This weekend', 'What is on Friday to Sunday'], ['/things-to-do', 'Things to do', 'Tours and experiences you can book'], ['/where-to-stay', 'Where to stay', 'Areas and places to base yourself'], ['/wilmington-nc-parking', 'Parking guide', 'Downtown decks and beach lots']];
+const monthPages = MONTHS.filter((m) => m.page);
+monthPages.forEach((m, i) => {
+  const free = m.list.filter(isFree).length, areas = AREAS.filter((a) => m.list.some((e) => e.area === a.area)).map((a) => a.name);
+  const sib = monthPages.filter((x) => x !== m).map((x) => ['/events/' + x.slug, x.name + ' events', x.list.length + ' events listed']);
+  fs.writeFileSync('events/' + m.slug + '.html', page({
+    path: '/events/' + m.slug, crumb: m.name + ' events',
+    title: `Wilmington, NC Events in ${m.name} | ShoreList`,
+    desc: `${m.list.length} events in Wilmington, NC and the beaches in ${m.name}, by date, including ${catNames(m.list, 3)}. Updated daily from official calendars.`.slice(0, 160),
+    h1: `Wilmington, NC events in <em>${esc(m.name)}</em>`,
+    lede: `${m.list.length} events are listed for ${m.name} across ${areas.join(', ').replace(/, ([^,]*)$/, ' and $1')}. That includes ${catNames(m.list, 3)}${free ? ', and ' + free + ' listed as free' : ''}.`,
+    list: m.list, h2: `Events in ${m.name}`, intro: 'Listed by date, soonest first, including exhibitions that are already running. Each title links to the organizer or venue page.',
+    photo: PHOTO.riverwalk,
+    links: sib.concat(MONTH_LINKS).slice(0, 4)
+  }));
+});
+{
+  // hub: /events/by-month
+  const path = '/events/by-month', title = 'Wilmington, NC Events by Month | ShoreList';
+  const first = MONTHS[0], last = MONTHS[MONTHS.length - 1];
+  const desc = `Wilmington, NC and beach events by month, ${first ? first.name : ''}${last && last !== first ? ' to ' + last.name : ''}: ${all.length} upcoming concerts, markets, festivals and holiday events, updated daily.`.slice(0, 160);
+  const hl = (m) => m.list.filter((e) => e.end === e.start).slice(0, 5);
+  const sec = MONTHS.map((m) => '<section class="hv-mo" aria-labelledby="mo-' + m.slug + '"><h2 id="mo-' + m.slug + '">' + esc(m.name) + ' <span>' + m.list.length + (m.list.length === 1 ? ' event' : ' events') + '</span></h2>' +
+    '<p>' + esc(catPhrase(m.list, 4)) + '.</p>' +
+    (hl(m).length ? '<nav class="ed-more" aria-label="Highlights in ' + esc(m.name) + '"><ul>' + hl(m).map((e) => '<li><a href="' + esc(hasPage(e) ? pageUrl(e) : e.url) + '"' + (hasPage(e) ? '' : ' rel="noopener" target="_blank"') + '><strong>' + esc(e.title) + '</strong><span>' + esc(when(e)) + ' at ' + esc(e.venue) + '</span></a></li>').join('') + '</ul></nav>' : '') +
+    '<p>' + (m.page ? '<a href="/events/' + m.slug + '">See all ' + m.list.length + ' events in ' + esc(m.name) + '</a>' : '<a href="/events">See every event on the main events calendar</a>') + '</p></section>').join('\n');
+  const lds = [{ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [['ShoreList', '/'], ['Events', '/events'], ['Events by month', path]].map(([n, u], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: SITE + u })) }];
+  const photo = PHOTO.bridge;
+  fs.writeFileSync('events/by-month.html', `${headHtml(path, title, desc, lds)}
+<link rel="stylesheet" href="/events.css"/>
+<link rel="stylesheet" href="/luxe.css"/>
+<script src="/luxe.js" defer></script>
+</head>
+<body class="ev-page">
+${NAV}
+<main id="main">
+<header class="ev-hero ev-hero-sub">
+  ${heroImg(photo)}
+  <div class="ev-wrap">
+    <p class="ev-eye"><i></i>Events</p>
+    <h1>Wilmington, NC events <em>by month</em></h1>
+    <p class="ev-lede">${all.length} upcoming events in Wilmington, Wrightsville Beach, Carolina Beach and Kure Beach${first ? ', from ' + first.name + (last !== first ? ' through ' + last.name : '') : ''}. Pick a month to plan around.</p>
+    <div class="ev-jump"><a href="/events">All events</a><a href="/events/this-weekend">This weekend</a>${AREAS.slice(0, 3).map((a) => `<a href="/events/${a.slug}">${esc(a.name)}</a>`).join('')}</div>
+  </div>
+  <p class="hero-credit">${photo.credit}</p>
+</header>
+<section id="events-feed" aria-label="Events by month">
+${SPRITE}<div class="ef-in hv">
+<p>Listings run as far ahead as organizers have published their calendars, and the list refreshes every day. Dates beyond the last month shown are not listed yet. Each month below links to the full date list, and every event title links to the organizer or venue page.</p>
+${sec}
+<p class="ef-note">Updated ${esc(nice(data.updated || today))}. Dates and times come from official and organizer pages; confirm with the venue before you go. <a href="/how-we-verify">How we verify events</a>.</p>
+${onward([['/events', 'All events', 'The full searchable calendar'], ['/events/this-weekend', 'This weekend', 'What is on Friday to Sunday'], ['/wilmington-nc-parking', 'Parking guide', 'Downtown decks and beach lots'], ['/where-to-stay', 'Where to stay', 'Areas and places to base yourself']])}
+</div></section>
+</main>
+${FOOT}
+<script src="/shore-plus.js" defer></script>
+</body>
+</html>
+`);
+}
 console.log('events static:', all.length, 'events;', AREAS.map((a) => a.slug + ' ' + all.filter((e) => e.area === a.area).length).join(', ') + '; weekend ' + wk.length);
 
 // ---------- one page per event: /events/<id>.html plus a static /events/<id>.ics ----------
 // Only events whose source was checked get a page (hasPage). Everything shown comes from fields in events-data.json; nothing is invented.
 // Past events are not in `all`, so their files are deleted here on every run (the daily workflow commits the deletions).
-const RESERVED = new Set(AREAS.map((a) => a.slug).concat(['this-weekend']));
+const RESERVED = new Set(AREAS.map((a) => a.slug).concat(['this-weekend', 'by-month'], MONTHS.map((m) => m.slug)));
 const AREA_OF = Object.fromEntries(AREAS.map((a) => [a.area, a]));
 const evPages = all.filter(hasPage);
 // Venue facts (address, parking) come only from tools/venue-facts.json, each entry sourced from the venue's own page.
@@ -408,7 +485,7 @@ ${FOOT}
 </html>
 `;
 }
-const keepFiles = new Set(['carolina-beach.html', 'downtown-wilmington.html', 'greater-wilmington.html', 'kure-beach.html', 'this-weekend.html', 'wrightsville-beach.html']);
+const keepFiles = new Set(['carolina-beach.html', 'downtown-wilmington.html', 'greater-wilmington.html', 'kure-beach.html', 'this-weekend.html', 'wrightsville-beach.html', 'by-month.html'].concat(monthPages.map((m) => m.slug + '.html')));
 const seenSlug = new Set(), meta = new Set(), titles = new Set(), sm = {};
 for (const e of evPages) {
   if (!/^[A-Za-z0-9][A-Za-z0-9-]*$/.test(e.id) || RESERVED.has(e.id) || seenSlug.has(e.id.toLowerCase())) throw new Error('bad or duplicate event slug: ' + e.id);
@@ -478,7 +555,7 @@ ${FOOT}
   const A = '  <!-- event-pages:start (written by tools/build-events-pages.mjs) -->', B = '  <!-- event-pages:end -->';
   const prev = {}; const i0 = x.indexOf(A), j0 = x.indexOf(B);
   if (i0 >= 0 && j0 >= 0) for (const m of x.slice(i0, j0).matchAll(/<loc>https:\/\/shorelist\.net\/events\/([^<]+)<\/loc><lastmod>([^<]+)<\/lastmod>/g)) prev[m[1]] = m[2];
-  const lines = evPages.filter(indexable).map((e) => '  <url><loc>' + SITE + pageUrl(e) + '</loc><lastmod>' + (sm[e.id] || !prev[e.id] ? (data.updated || today) : prev[e.id]) + '</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>');
+  const lines = [{ u: '/events/by-month', f: 'daily', p: '0.7' }].concat(monthPages.map((m) => ({ u: '/events/' + m.slug, f: 'daily', p: '0.7' }))).map((o) => '  <url><loc>' + SITE + o.u + '</loc><lastmod>' + (data.updated || today) + '</lastmod><changefreq>' + o.f + '</changefreq><priority>' + o.p + '</priority></url>').concat(evPages.filter(indexable).map((e) => '  <url><loc>' + SITE + pageUrl(e) + '</loc><lastmod>' + (sm[e.id] || !prev[e.id] ? (data.updated || today) : prev[e.id]) + '</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>'));
   const block = A + '\n' + lines.join('\n') + '\n' + B;
   if (i0 >= 0 && j0 >= 0) x = x.slice(0, i0) + block + x.slice(j0 + B.length);
   else x = x.replace('</urlset>', block + '\n</urlset>');
