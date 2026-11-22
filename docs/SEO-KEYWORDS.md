@@ -33,7 +33,7 @@ Everything else (copy, FAQ, JSON-LD) is reviewed by a person. Titles and metas a
 1. Add an entry to `pages` in the keyword config: `url`, `cluster`, `tier`, `primary`, `geo` (and `also` if a second term must appear).
 2. Write the title, meta description and H1 in the page's generator (`tools/seo-data.mjs` for activity pages, `tools/build-seo-pages.mjs` for the hub, trip and parking pages, the page itself for hand-kept pages). Never edit generated files by hand.
 3. Rebuild: `node tools/build-seo-pages.mjs`, `node tools/build-search-index.mjs`, `node tools/build-llms.mjs`.
-4. Add the URL to `sitemap.xml` with an honest `lastmod`, link it from its hub, and add a line to `llms.txt`.
+4. Add the URL to `sitemap.xml`, then run `node tools/update-sitemap-lastmod.mjs` (full clone) so `lastmod` follows the page's last real change, link it from its hub, and add a line to `llms.txt`.
 5. Run `node tools/check-site.mjs` and `node tools/check-keywords.mjs`, bump `VERSION` in `sw.js`, open a small PR.
 
 ## Clone checklist for a new city (about 100 planned)
