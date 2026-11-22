@@ -1,4 +1,4 @@
-/* Rip, the ShoreList shop stylist.
+/* Tidebot, the ShoreList shop stylist.
    - Original sea-glass wave bot drawn in inline SVG (no images, no libraries).
    - Instant, offline matching over shop-catalog.json: scene, vibe, budget, who-for, free text,
      season and (when the beach report loads) weather. Nothing here needs the network once the
@@ -9,7 +9,7 @@
      other stores get a plain link. */
 (function () {
   'use strict';
-  if (window.RipBot) return;
+  if (window.TideBot) return;
 
   var AI_URL = '/.netlify/functions/shop-bot';
   var reduce = false;
@@ -60,7 +60,7 @@
       '<rect class="rb-eye" x="58" y="58" width="13" height="19" rx="6.5" fill="#5CF0D8" filter="url(#rbk' + u + ')"/><rect class="rb-eye" x="89" y="58" width="13" height="19" rx="6.5" fill="#5CF0D8" filter="url(#rbk' + u + ')"/>' +
       '<path d="M69 84 Q80 92 91 84" fill="none" stroke="#5CF0D8" stroke-width="2.8" stroke-linecap="round" filter="url(#rbk' + u + ')"/>' +
       '<circle cx="50" cy="84" r="3.4" fill="#E96645" opacity=".55"/><circle cx="110" cy="84" r="3.4" fill="#E96645" opacity=".55"/>' +
-      /* wave crest on top of the head: a curling wave, the whole point of Rip */
+      /* wave crest on top of the head: a curling wave, the whole point of Tidebot */
       '<path d="M30 50 C22 20 50 -4 88 0 C120 4 142 24 133 48 C131 55 121 55 121 47 C123 37 115 28 103 28 C113 19 105 9 91 9 C65 9 48 28 49 52 Z" fill="url(#rbf' + u + ')" stroke="#0A4D5C" stroke-width="2.5" stroke-linejoin="round"/>' +
       '<path d="M104 27 C112 28 117 36 113 43" fill="none" stroke="#5FB5AB" stroke-width="2.4" stroke-linecap="round"/>' +
       '<path d="M44 40 C46 24 62 12 84 10" fill="none" stroke="#5FB5AB" stroke-width="2.4" stroke-linecap="round" opacity=".75"/>' +
@@ -77,7 +77,7 @@
     ['softcooler', /soft cooler/i], ['cooler', /can cooler/i], ['umbrella', /umbrella/i], ['chair', /\bchair\b/i],
     ['towel', /towel/i], ['ornament', /ornament/i], ['print', /art print/i], ['tote', /\btote\b/i], ['tee', /\btee\b/i]
   ];
-  /* w: warmth, s: season (w winter, s summer, a any), g: gift-friendliness, quip: Rip's line (plain, no claims) */
+  /* w: warmth, s: season (w winter, s summer, a any), g: gift-friendliness, quip: Tidebot's line (plain, no claims) */
   var TM = {
     hoodie: { s: 'w', g: 1, q: ['A hoodie for when the sea breeze gets opinions.', 'Pullover weather, handled.'] },
     crewneck: { s: 'w', g: 1.2, q: ['A crewneck that works from boardwalk to bonfire.', 'The easy layer. Throw it on and go.'] },
@@ -366,7 +366,7 @@
   function stale() { ui.log.querySelectorAll('.rb-cards,.rb-actions,.rb-note').forEach(function (n) { n.parentNode && n.parentNode.removeChild(n); }); }
 
   function greet() {
-    var d = addMsg('rb-bot', 'Hey, I\'m <b>Rip</b>. Wave bot, sea-glass heart, zero surf skills, strong opinions about crewnecks. Tap a few chips below or tell me what you\'re after, and I\'ll pull three pieces from the shop.' + (moodText ? '<br><br>' + esc(moodText) : ''));
+    var d = addMsg('rb-bot', 'Hey, I\'m <b>Tidebot</b>. Wave bot, sea-glass heart, zero surf skills, strong opinions about crewnecks. Tap a few chips below or tell me what you\'re after, and I\'ll pull three pieces from the shop.' + (moodText ? '<br><br>' + esc(moodText) : ''));
     var a = document.createElement('div'); a.className = 'rb-actions'; a.innerHTML = '<button class="rb-btn" type="button" data-act="surprise">Surprise me</button><button class="rb-btn" type="button" data-act="today">What suits today?</button>'; ui.log.appendChild(a);
   }
   function ensureMoodNow() { return mood || seasonalMood(nyParts()); }
@@ -387,7 +387,7 @@
     stale();
     var label = kind === 'surprise' ? 'Surprise me' : kind === 'today' ? 'What suits today?' : kind === 'more' ? 'Show me three more' : userText || (summary() + (S.q ? (summary() ? ', ' : '') + '"' + S.q + '"' : ''));
     var me = addMsg('rb-me', esc(label));
-    var typing = addMsg('rb-bot', '<span class="rb-typing" aria-hidden="true"><i></i><i></i><i></i></span><span class="rb-sr">Rip is picking</span>');
+    var typing = addMsg('rb-bot', '<span class="rb-typing" aria-hidden="true"><i></i><i></i><i></i></span><span class="rb-sr">Tidebot is picking</span>');
     ui.log.setAttribute('aria-busy', 'true'); setThink(true); scrollTo(me);
     track('rip_match', { kind: kind, scene: o.scene || '', vibe: o.vibe || '', budget: o.budget || '', who: o.who || '', typed: o.q ? 1 : 0 });
     var turn = { o: o, res: res, sig: sig, kind: kind, ai: false };
@@ -413,7 +413,7 @@
   function aiTune(turn, auto) {
     if (!turn || turn.ai || !aiOK || !turn.cards) return;
     turn.ai = true;
-    var btn = turn.acts && turn.acts.querySelector('[data-act="ai"]'); if (btn) { btn.disabled = true; btn.textContent = 'Rip is thinking'; }
+    var btn = turn.acts && turn.acts.querySelector('[data-act="ai"]'); if (btn) { btn.disabled = true; btn.textContent = 'Tidebot is thinking'; }
     setThink(true);
     var o = turn.o, ids = turn.res.ranked.slice(0, 12).map(function (r) { return r.f.i.id; });
     var body = { q: o.q || '', scene: o.scene, vibe: o.vibe, budget: o.budget, who: o.who, mood: o.mood, ids: ids };
@@ -485,14 +485,14 @@
     var root = document.createElement('div'); root.className = 'rb-root';
     var id = ++uidN;
     root.innerHTML =
-      '<button class="rb-launch" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="rbPanel" aria-label="Ask Rip, the shop stylist">' + mascot('L' + id, '') + '<span class="rb-lbl" aria-hidden="true">Ask Rip</span></button>' +
-      '<div class="rb-tip" hidden aria-hidden="true">Need a fit? Ask Rip.</div>' +
+      '<button class="rb-launch" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="rbPanel" aria-label="Ask Tidebot, the shop stylist">' + mascot('L' + id, '') + '<span class="rb-lbl" aria-hidden="true">Ask Tidebot</span></button>' +
+      '<div class="rb-tip" hidden aria-hidden="true">Need a fit? Ask Tidebot.</div>' +
       '<div class="rb-scrim" hidden></div>' +
       '<section class="rb-panel" id="rbPanel" role="dialog" aria-modal="false" aria-labelledby="rbTitle" tabindex="-1" hidden>' +
-        '<header class="rb-head">' + mascot('P' + id, '') + '<div><h2 id="rbTitle">Rip</h2><p><b>Shop stylist</b> &middot; instant picks</p></div><button class="rb-x" type="button" aria-label="Close Rip">&times;</button></header>' +
-        '<div class="rb-log" id="rbLog" role="log" aria-live="polite" aria-relevant="additions" aria-label="Conversation with Rip" tabindex="0"></div>' +
+        '<header class="rb-head">' + mascot('P' + id, '') + '<div><h2 id="rbTitle">Tidebot</h2><p><b>Shop stylist</b> &middot; instant picks</p></div><button class="rb-x" type="button" aria-label="Close Tidebot">&times;</button></header>' +
+        '<div class="rb-log" id="rbLog" role="log" aria-live="polite" aria-relevant="additions" aria-label="Conversation with Tidebot" tabindex="0"></div>' +
         '<div class="rb-dial"><button class="rb-dialtog" type="button" aria-expanded="true" aria-controls="rbDial">Dial it in <span id="rbSum">tap to choose</span></button><div class="rb-dialbody" id="rbDial">' + dialHtml() + '</div></div>' +
-        '<form class="rb-form" autocomplete="off"><label class="rb-sr" for="rbQ">Tell Rip what you are after</label><input id="rbQ" type="text" maxlength="140" placeholder="Try: gift for my dad who loves golf" enterkeyhint="send"/><button class="rb-send" type="submit">Go</button></form>' +
+        '<form class="rb-form" autocomplete="off"><label class="rb-sr" for="rbQ">Tell Tidebot what you are after</label><input id="rbQ" type="text" maxlength="140" placeholder="Try: gift for my dad who loves golf" enterkeyhint="send"/><button class="rb-send" type="submit">Go</button></form>' +
         '<p class="rb-fine">Picks come from the live shop catalog. Optional AI tuning only chooses from the same shop.</p>' +
       '</section>';
     document.body.appendChild(root);
@@ -536,7 +536,7 @@
   function buildStrip() {
     var main = document.getElementById('main'); if (!main || document.getElementById('ripStrip')) return;
     var s = document.createElement('section'); s.id = 'ripStrip'; s.className = 'rb-strip'; s.setAttribute('aria-labelledby', 'ripStripH');
-    s.innerHTML = '<div class="rb-sh">' + mascot('S' + (++uidN), 'Rip, the shop stylist robot') + '<div><p class="rb-eyebrow">Fresh from the tide</p><h2 id="ripStripH">Rip\'s picks today</h2><p class="rb-wx" id="ripWx"></p></div><div class="rb-ask"><button class="rb-btn" type="button" data-rip-open>Ask Rip for more</button></div></div><div class="rb-tiles" id="ripTiles"></div><p class="rb-src" id="ripSrc"></p>';
+    s.innerHTML = '<div class="rb-sh">' + mascot('S' + (++uidN), 'Tidebot, the shop stylist robot') + '<div><p class="rb-eyebrow">Fresh from the tide</p><h2 id="ripStripH">Tidebot\'s picks today</h2><p class="rb-wx" id="ripWx"></p></div><div class="rb-ask"><button class="rb-btn" type="button" data-rip-open>Ask Tidebot for more</button></div></div><div class="rb-tiles" id="ripTiles"></div><p class="rb-src" id="ripSrc"></p>';
     main.insertBefore(s, main.firstChild);
     s.querySelector('[data-rip-open]').addEventListener('click', openPanel);
     function paint() {
@@ -587,7 +587,7 @@
     if (window.ShoreWX === undefined) window.addEventListener('load', loadMood);
     document.dispatchEvent(new CustomEvent('rip:ready'));
   }
-  window.RipBot = {
+  window.TideBot = {
     open: function () { openPanel(); },
     ready: function () { return booted; },
     pick: function (o, n) { return search(o || {}, n || 3).picks.map(function (p) { return { id: p.f.i.id, tier: p.tier, s: Math.round(p.s * 10) / 10, tags: p.tags }; }); },

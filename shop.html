@@ -124,7 +124,7 @@ summary{padding:10px 0;margin:-10px 0}
   <h1>Coastal Carolina, <em>made to wear</em> and take to the beach</h1>
   <p>Apparel, can coolers and beach goods designed for Wilmington and the NC beaches. Made to order, shipped to your door.</p>
   <div class="trust"><span>Original designs</span><span>Made to order</span><span>Shipped to your door</span><span>Secure checkout</span></div>
-  <div class="rb-herocta" id="ripHeroCta" hidden><button class="rb-cta" type="button" data-rip-open>Ask Rip to style me</button><small>Wave bot stylist &middot; instant picks</small></div>
+  <div class="rb-herocta" id="ripHeroCta" hidden><button class="rb-cta" type="button" data-rip-open>Ask Tidebot to style me</button><small>Wave bot stylist &middot; instant picks</small></div>
 </header>
 <main id="main" class="wrap">
   <div id="stores" class="stores" hidden></div>
@@ -151,8 +151,8 @@ summary{padding:10px 0;margin:-10px 0}
     <div class="lbl">Where</div><div class="row" id="plWhere" role="group" aria-label="Where"></div>
     <div class="lbl">What</div><div class="row" id="plWhat" role="group" aria-label="What"></div>
     <div class="plhead" id="plHead" aria-live="polite"></div><div class="plout" id="plOut"></div></section>
-  <section id="stylSec" class="sec" hidden><h2>ShoreList Stylist</h2><p>Pick a scene and Rip pulls a look from what's in the shop. Want to dial in vibe, budget and who it's for? Open the full stylist.</p>
-    <div class="styl rb-styl"><div class="row" id="scenes" role="group" aria-label="Scene"></div><div class="row"><button class="chip" type="button" id="another">Show another look</button><button class="chip" type="button" data-rip-open hidden>Open Rip, the full stylist</button></div><div id="picks" class="picks" aria-live="polite"></div></div></section>
+  <section id="stylSec" class="sec" hidden><h2>ShoreList Stylist</h2><p>Pick a scene and Tidebot pulls a look from what's in the shop. Want to dial in vibe, budget and who it's for? Open the full stylist.</p>
+    <div class="styl rb-styl"><div class="row" id="scenes" role="group" aria-label="Scene"></div><div class="row"><button class="chip" type="button" id="another">Show another look</button><button class="chip" type="button" data-rip-open hidden>Open Tidebot, the full stylist</button></div><div id="picks" class="picks" aria-live="polite"></div></div></section>
   <section class="proof" aria-label="Why ShoreList"><div><b>Made for here</b>Original designs for Wilmington and its beaches, never stock art.</div><div><b>Made one at a time</b>Each order is made for you by our print partners, then shipped to your door.</div><div><b>No inventory waste</b>Everything is printed or engraved after you order.</div><div><b>Clear terms</b>14 day fix or refund if it arrives wrong.</div></section>
   <section class="sec" id="drops"><h2>Get the next drop</h2><p>We'll email you when new pieces go live. One email per drop, and you can unsubscribe any time.</p>
     <form id="dropForm" class="drop" novalidate><label class="sr" for="dropEmail">Email address</label><input id="dropEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required/><button class="buy" type="submit">Tell me first</button><p class="dropmsg" id="dropMsg" role="status" aria-live="polite"></p></form></section>
@@ -284,10 +284,10 @@ summary{padding:10px 0;margin:-10px 0}
       var sb=document.getElementById('scenes');
       sb.innerHTML=sc.map(function(s,k){return '<button class="chip" type="button" data-s="'+esc(s.id)+'" aria-pressed="'+(k?'false':'true')+'">'+esc(s.name)+'</button>';}).join('');
       function picks(){
-        if(window.RipBot&&window.RipBot.scenePicks){var sp=window.RipBot.scenePicks(scene,shown);shown=sp.ids;document.getElementById('picks').innerHTML=sp.html;return;}
+        if(window.TideBot&&window.TideBot.scenePicks){var sp=window.TideBot.scenePicks(scene,shown);shown=sp.ids;document.getElementById('picks').innerHTML=sp.html;return;}
         var pool=live.filter(function(i){return (i.scenes||[]).indexOf(scene)>-1;});
         var out=[];for(var k=0;k<Math.min(3,pool.length);k++)out.push(pool[(n+k)%pool.length]);
-        document.getElementById('picks').innerHTML=out.length?(window.RipBot?window.RipBot.cards(out):out.map(function(i){return '<div class="pick"><b>'+esc(i.name)+'</b><br><a target="_blank" rel="noopener" href="'+esc(i.url)+'">View</a></div>';}).join('')):'<p>Nothing in this scene yet.</p>';
+        document.getElementById('picks').innerHTML=out.length?(window.TideBot?window.TideBot.cards(out):out.map(function(i){return '<div class="pick"><b>'+esc(i.name)+'</b><br><a target="_blank" rel="noopener" href="'+esc(i.url)+'">View</a></div>';}).join('')):'<p>Nothing in this scene yet.</p>';
       }
       sb.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;scene=b.getAttribute('data-s');n=0;shown=[];sb.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});picks();});
       document.getElementById('another').addEventListener('click',function(){n++;picks();});
