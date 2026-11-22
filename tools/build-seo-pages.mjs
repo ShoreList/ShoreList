@@ -144,7 +144,7 @@ ${liveHtml}
       <li><a class="all" href="/things-to-do"><span>All things to do</span></a></li>
     </ul>
     <h3>Explore by area</h3>
-    ${chips(TOWNS.map((t) => [t.url, t.name]).concat([['/plan-your-trip', 'Plan your trip'], ['/events', 'Events this week']]))}
+    ${chips(TOWNS.map((t) => [t.url, t.name]).concat([['/plan-your-trip', 'Plan your trip'], ['/wilmington-nc-parking', 'Parking'], ['/events', 'Events this week']]))}
     ${PHOTO_NOTE}
   </div>
 </div>
@@ -257,7 +257,7 @@ ${hubSections}
         <li><strong>Getting around:</strong> <a href="/things-to-do/golf-cart-rentals">golf carts</a>, <a href="/things-to-do/ebike-rentals">e-bikes</a>, <a href="/things-to-do/bike-tours">bike tours</a>, <a href="/things-to-do/fat-bike-rentals">fat bikes</a> and <a href="/things-to-do/scooter-rentals">scooters</a>.</li>
         <li><strong>Beach day extras:</strong> <a href="/things-to-do/beach-chairs">chair and umbrella rentals</a>, <a href="/things-to-do/beach-picnics">beach picnics</a>, <a href="/things-to-do/beach-photography">beach photographers</a> and <a href="/things-to-do/wellness">yoga and wellness</a>.</li>
       </ul>
-      <p>Planning the whole visit? Start with the <a href="/plan-your-trip">Wilmington trip planning guide</a>, see <a href="/events">what is on this week</a>, find <a href="/shore-picks">where locals eat</a>, or let the <a href="/planner">AI trip planner</a> build a day for you.</p>
+      <p>Planning the whole visit? Start with the <a href="/plan-your-trip">Wilmington trip planning guide</a>, see <a href="/events">what is on this week</a>, find <a href="/shore-picks">where locals eat</a>, check <a href="/wilmington-nc-parking">where to park downtown and at the beaches</a>, or let the <a href="/planner">AI trip planner</a> build a day for you.</p>
     </div>
     <div id="faq">
       <p class="pg-eye">Before you go</p>
@@ -269,8 +269,8 @@ ${hubSections}
 </div>
 </section>`;
 fs.writeFileSync('things-to-do/index.html', shell({
-  url: '/things-to-do', title: 'All Things to Do in Wilmington, NC: Tours & Rentals | ShoreList',
-  desc: 'Things to do in Wilmington, NC, Wrightsville Beach, Carolina Beach and Kure Beach: tours, water sports, museums, rentals and local experiences, with live beach conditions.',
+  url: '/things-to-do', title: 'Wilmington NC Activities: Tours, Rentals & Water Sports',
+  desc: 'Browse Wilmington, NC activities by type: ghost tours, kayaking, surf lessons, fishing charters, museums and rentals at Wrightsville, Carolina and Kure Beach.',
   image: SITE + '/og-category.jpg',
   lds: [
     { '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Things to Do in Wilmington, NC and the Beaches', url: SITE + '/things-to-do', inLanguage: 'en-US', dateModified: today, about: { '@type': 'TouristDestination', name: 'Wilmington, North Carolina', containsPlace: ['Wrightsville Beach', 'Carolina Beach', 'Kure Beach'].map((n) => ({ '@type': 'Place', name: n })) }, publisher: ORG },
@@ -351,7 +351,7 @@ const tripMain = `
   <section class="trip-sec trip-2" aria-label="Practical notes">
     <div class="pcard">
       <h2>Getting here and getting around</h2>
-      <p>Wilmington International Airport (ILM) is about 10 minutes from downtown. By road, Interstate 40 ends in Wilmington, and Raleigh is roughly two hours away. Once you are here, downtown is walkable, and each beach town is easy by bike, <a class="txt" href="/things-to-do/ebike-rentals">e-bike</a> or <a class="txt" href="/things-to-do/golf-cart-rentals">golf cart</a>, but you will want a car to move between them. Beach parking is paid in season, and lots fill early on summer weekends.</p>
+      <p>Wilmington International Airport (ILM) is about 10 minutes from downtown. By road, Interstate 40 ends in Wilmington, and Raleigh is roughly two hours away. Once you are here, downtown is walkable, and each beach town is easy by bike, <a class="txt" href="/things-to-do/ebike-rentals">e-bike</a> or <a class="txt" href="/things-to-do/golf-cart-rentals">golf cart</a>, but you will want a car to move between them. Beach parking is paid in season, and lots fill early on summer weekends. See <a class="txt" href="/wilmington-nc-parking">parking in Wilmington and at the beaches</a> for deck locations, meter hours and season dates.</p>
     </div>
     <div class="pcard">
       <h2>What to pack</h2>
@@ -394,4 +394,99 @@ fs.writeFileSync('plan-your-trip.html', shell({
   main: tripMain,
 }));
 
-console.log('built', slugs.length, 'category pages + hub + trip guide');
+// ---------- parking guide ----------
+// Facts are limited to what the city, the towns and local news published (sources listed on the page). No rates: they change every year.
+const PK_CHECKED = '2026-11-22';
+const parkFaq = JSON.parse(fs.readFileSync('tools/parking-faq.json', 'utf8')); // shared with tools/build-llms.mjs
+const parkMain = `
+<div class="pg-in">
+  <section class="trip-sec" aria-labelledby="h-pk-short">
+    <p class="pg-eye">The short answer</p>
+    <h2 id="h-pk-short">Where to park, in brief</h2>
+    <p class="pg-sub" style="max-width:760px">Downtown Wilmington has five city parking decks, and its on-street meters are enforced Monday to Saturday until 6:30 p.m. Wrightsville Beach, Carolina Beach and Kure Beach charge for parking in a spring-to-fall season whose dates and hours each town sets. This page lists what was published for 2026 and links every source. Rates are left out on purpose because they change, so check the city or town before you go.</p>
+    <ul class="stats">
+      <li><span>Downtown meters</span><b>Mon to Sat, 9 a.m. to 6:30 p.m.</b></li>
+      <li><span>Downtown decks</span><b>Five city decks</b></li>
+      <li><span>Paid beach season, 2026</span><b>March to September or October</b></li>
+      <li><span>Last checked</span><b>${PK_CHECKED}</b></li>
+    </ul>
+  </section>
+
+  <section class="trip-sec" aria-labelledby="h-pk-dt">
+    <p class="pg-eye">Downtown</p>
+    <h2 id="h-pk-dt">Parking in downtown Wilmington</h2>
+    <p class="pg-sub" style="max-width:760px">The City of Wilmington lists these decks. For tours that start near the river, such as the <a class="txt" href="/things-to-do/walking-tours">walking tours</a>, <a class="txt" href="/things-to-do/ghost-tours">ghost tours</a> and <a class="txt" href="/things-to-do/river-cruises">river cruises</a>, pick the deck closest to your meeting point.</p>
+    <table class="areas">
+      <tr><th>Deck</th><th>Address</th></tr>
+      <tr><td>Skyline Deck</td><td data-l="Address">155 Brunswick St</td></tr>
+      <tr><td>Wilmington Convention Center Deck</td><td data-l="Address">Entrance at N. Water St and Estell Lee Dr, next to the center at 515 Nutt St</td></tr>
+      <tr><td>River Place Deck</td><td data-l="Address">14 Grace St</td></tr>
+      <tr><td>2nd Street Deck</td><td data-l="Address">114 N. 2nd St</td></tr>
+      <tr><td>Market Street Deck</td><td data-l="Address">115 Market St</td></tr>
+    </table>
+    <ul class="seasons" style="margin-top:18px">
+      <li><strong>Meters:</strong> enforced Monday to Saturday, 9 a.m. to 6:30 p.m. Free after 6:30 p.m. daily and all day Sunday. Not enforced on listed city holidays.</li>
+      <li><strong>Accessible parking:</strong> the city says accessible license plates and hang tags allow free metered street parking.</li>
+      <li><strong>Coming in 2027:</strong> the city council approved a one-year paid parking pilot on 11 downtown residential blocks starting January 1, 2027. Check the city page for the blocks and rules before parking on a residential street.</li>
+    </ul>
+  </section>
+
+  <section class="trip-sec" aria-labelledby="h-pk-bch">
+    <p class="pg-eye">At the beaches</p>
+    <h2 id="h-pk-bch">Beach parking seasons, 2026</h2>
+    <table class="areas">
+      <tr><th>Beach</th><th>Paid season</th><th>Hours</th></tr>
+      <tr><td><a href="/wrightsville-beach">Wrightsville Beach</a></td><td data-l="Paid season">March 1 to October 31</td><td data-l="Hours">9 a.m. to 7 p.m., some locations to 8 p.m.</td></tr>
+      <tr><td><a href="/carolina-beach">Carolina Beach</a></td><td data-l="Paid season">March 1 to October 31</td><td data-l="Hours">9 a.m. to 8 p.m.</td></tr>
+      <tr><td><a href="/kure-beach">Kure Beach</a></td><td data-l="Paid season">March 15 to September 30</td><td data-l="Hours">8 a.m. to 6 p.m.</td></tr>
+    </table>
+    <ul class="seasons" style="margin-top:18px">
+      <li><strong>Wrightsville Beach:</strong> beach accesses 2, 3, 4 and 8 are at the north end, and accesses 34, 36 and 44 at the south end. Other public parking is on streets, in designated lots and at Wrightsville Beach Park. Pay at a pay station or with Text2Park. A valid handicap placard or plate allows free parking in designated handicap spaces only, not in standard metered spaces.</li>
+      <li><strong>Carolina Beach:</strong> the town's parking office answers questions at (910) 458-4614.</li>
+      <li><strong>Any beach:</strong> lots fill early on summer weekends. Arriving in the morning, or skipping the car with a <a class="txt" href="/things-to-do/golf-cart-rentals">golf cart</a>, <a class="txt" href="/things-to-do/ebike-rentals">e-bike</a> or <a class="txt" href="/things-to-do/scooter-rentals">scooter</a> once you are on the island, makes the day easier.</li>
+    </ul>
+    <p class="pg-sub" style="max-width:760px">Heading to the sand? Check the <a class="txt" href="/wilmington-weather">live beach and tide report</a> first, and see <a class="txt" href="/things-to-do/beach-chairs">beach chair and umbrella rentals</a> to carry less from the car.</p>
+  </section>
+</div>
+<section class="seo-band" aria-label="Parking questions" style="margin-top:72px">
+<div class="seo">
+  <div class="seo-cols">
+    <div id="faq">
+      <p class="pg-eye">Before you go</p>
+      <h2>Parking questions</h2>
+      ${faqHtml(parkFaq)}
+    </div>
+    <div>
+      <p class="pg-eye">Sources</p>
+      <h2>Where this comes from</h2>
+      <ul class="seasons">
+        <li><a class="txt" href="https://www.wilmingtonnc.gov/Services/Parking" rel="noopener">City of Wilmington: parking</a> (decks, meter hours, accessible parking), checked ${PK_CHECKED}.</li>
+        <li><a class="txt" href="https://wect.com/2026/11/18/wilmington-approves-downtown-parking-pilot-with-7-hourly-rate-residential-blocks/" rel="noopener">WECT: downtown parking pilot approved</a>, November 18, 2026.</li>
+        <li><a class="txt" href="https://wrightsville-beach.wilmingtonandbeaches.com/blog/post/parking-in-wrightsville-beach/" rel="noopener">Wilmington and Beaches: parking in Wrightsville Beach</a>, published February 2025 (accesses, payment, hours).</li>
+        <li><a class="txt" href="https://www.wect.com/2026/03/01/paid-parking-begins-many-new-hanover-county-beaches-sunday/" rel="noopener">WECT: paid parking begins at many New Hanover County beaches</a>, March 2026.</li>
+        <li><a class="txt" href="https://www.aol.com/articles/guide-beach-parking-rates-enforcement-090908784.html" rel="noopener">AOL News: beach parking rates and enforcement in the Wilmington area</a>, 2026 season.</li>
+      </ul>
+      <p class="pg-sub">Rates and rules change. Confirm with the City of Wilmington or the town before you park.</p>
+      ${chips([['/plan-your-trip', 'Plan your trip'], ['/where-to-stay', 'Where to stay'], ['/things-to-do', 'Things to do'], ['/wilmington-nc-faq', 'Visitor FAQ']])}
+    </div>
+  </div>
+</div>
+</section>`;
+fs.writeFileSync('wilmington-nc-parking.html', shell({
+  url: '/wilmington-nc-parking', title: 'Parking in Wilmington, NC: Downtown Decks & Beach Lots',
+  desc: 'Where to park in downtown Wilmington, NC and at Wrightsville, Carolina and Kure Beach: deck locations, meter hours and 2026 paid beach season dates, with sources.',
+  image: 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb4-golden_1200x630_crop_center.webp',
+  lds: [
+    { '@context': 'https://schema.org', '@type': 'Article', headline: 'Parking in Wilmington, NC and at the Beaches', url: SITE + '/wilmington-nc-parking', inLanguage: 'en-US', datePublished: PK_CHECKED, dateModified: PK_CHECKED, author: ORG, publisher: ORG, about: { '@type': 'TouristDestination', name: 'Wilmington, North Carolina' } },
+    crumbs([['ShoreList', '/'], ['Plan Your Trip', '/plan-your-trip'], ['Parking in Wilmington, NC', '/wilmington-nc-parking']]),
+    faqLd(parkFaq),
+  ],
+  photo: 'golf-cart-rentals',
+  scripts: '',
+  breadcrumb: '<a href="/plan-your-trip">Plan Your Trip</a> &nbsp;&#8250;&nbsp; <span>Parking</span>', tag: 'Local parking guide',
+  h1: 'Parking in <em>Wilmington, NC</em> and at the Beaches',
+  sub: 'Downtown decks, meter hours and the paid-parking seasons at Wrightsville Beach, Carolina Beach and Kure Beach.',
+  main: parkMain,
+}));
+
+console.log('built', slugs.length, 'category pages + hub + trip guide + parking guide');
