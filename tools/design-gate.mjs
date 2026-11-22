@@ -103,8 +103,8 @@ for (const it of items.filter(i => i._src === 'catalog' || i.status)) {
   if (!r) { W(id, 'no expert review yet (blocks listing)'); continue; }
   const sc = r.scores || {}, vals = Object.values(sc);
   const mean = vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : 0;
-  if (mean < 8.5) F(id, `expert mean ${mean.toFixed(2)} under 8.5`);
-  for (const [k, v] of Object.entries(sc)) if (v < 7) F(id, `expert criterion ${k}=${v} under 7`);
+  if (mean < 9.0) F(id, `expert mean ${mean.toFixed(2)} under 9.0`);
+  for (const [k, v] of Object.entries(sc)) if (v < 8) F(id, `expert criterion ${k}=${v} under 8`);
   if (r.verdict && r.verdict !== 'PASS') F(id, `expert verdict ${r.verdict}`);
 }
 
