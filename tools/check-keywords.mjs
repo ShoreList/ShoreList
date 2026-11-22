@@ -18,8 +18,9 @@ const text = (h) => String(h).replace(/<br\s*\/?>/g, ' ').replace(/<[^>]*>/g, ''
 if (args.includes('--report')) {
   console.log(`# Keyword candidates for ${V.city}, ${V.st}\n`);
   for (const [name, p] of Object.entries(cfg.patterns)) {
-    console.log(`## ${name}\n- primary: ${V.beaches.map((b) => fill(p.primary).replace(V.beaches[0], b)).join(' | ')}`);
-    for (const v of p.variants || []) console.log(`- ${V.beaches.map((b) => fill(v).replace(V.beaches[0], b)).filter((x, i, a) => a.indexOf(x) === i).join(' | ')}`);
+    const uniq = (x) => x.filter((v, i, arr) => arr.indexOf(v) === i);
+    console.log(`## ${name}\n- primary: ${uniq(V.beaches.map((b) => fill(p.primary).replace(V.beaches[0], b))).join(' | ')}`);
+    for (const v of p.variants || []) console.log(`- ${uniq(V.beaches.map((b) => fill(v).replace(V.beaches[0], b))).join(' | ')}`);
     console.log('');
   }
   process.exit(0);
