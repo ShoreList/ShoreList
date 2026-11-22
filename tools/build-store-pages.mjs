@@ -166,21 +166,23 @@ const price = (i) => `${i.from ? 'From ' : ''}$${i.price}`;
 const card = (i) => `<li><a href="${esc(i.url)}" data-item-id="${esc(i.id)}"><img src="${esc(i.img)}" alt="${esc(i.alt)}" width="800" height="1000" loading="lazy" decoding="async"/><span class="gg-name">${esc(i.name)}</span><span class="gg-price">${price(i)}</span><span class="gg-line">${esc(i.meta)}</span></a></li>`;
 const used = [];
 const giftSections = sections.map((s) => {
-  const items = s.ids.map((id) => { const i = byId.get(id); if (!i) throw new Error('gift guide: unknown catalog id ' + id); used.push(i); return i; });
+  const items = s.ids.map((id) => byId.get(id)).filter(Boolean); // an item that left the catalog drops out of the guide; it returns when it is back in items[]
+  if (!items.length) return '';
+  items.forEach((i) => used.push(i));
   return `<section class="gg-sec" id="${s.id}" aria-labelledby="${s.id}-h"><h2 id="${s.id}-h">${s.h}</h2><p>${s.p}</p><ul class="gg-grid">${items.map(card).join('')}</ul></section>`;
-}).join('\n');
+}).filter(Boolean).join('\n');
 const giftBody = `<p>Prices and links come straight from the shop, so what you see here is what you pay before shipping and tax. Everything is made to order. Shipping and delivery estimates for your address are shown at checkout, and the <a href="/shipping-returns">shipping and returns page</a> covers the rest. We do not publish holiday order-by dates.</p>
 ${giftSections}
 <section class="gg-sec" id="no-shipping" aria-labelledby="ns-h"><h2 id="ns-h">Nothing to ship</h2>
 <p>For a visitor coming to town, the <a href="/guides">PDF guides</a> are $14 each and download right after checkout, including Wilmington Holidays 2026. The <a href="/prints">art prints</a> are $12 each as print-ready files. Seven percent North Carolina sales tax is added at checkout on both.</p></section>
-<p class="tp-src">Everything above is listed in the <a href="/shop">full shop</a>.</p>`;
-const giftLd = { '@context': 'https://schema.org', '@type': 'ItemList', name: 'ShoreList gift guide', itemListElement: used.map((i, n) => ({ '@type': 'ListItem', position: n + 1, name: i.name, url: i.url })) };
+${used.length ? '<p class="tp-src">Everything above is listed in the <a href="/shop">full shop</a>.</p>' : '<p class="tp-src">The shop has no pieces listed right now. The <a href="/shop">shop page</a> shows what is available.</p>'}`;
+const giftLd = !used.length ? null : { '@context': 'https://schema.org', '@type': 'ItemList', name: 'ShoreList gift guide', itemListElement: used.map((i, n) => ({ '@type': 'ListItem', position: n + 1, name: i.name, url: i.url })) };
 
 const out = {
   'size-guide.html': page({ slug: 'size-guide', title: 'Size Guide | ShoreList Shop', desc: 'Garment measurements for ShoreList embroidered crewnecks in inches, how to measure a piece you own, and who to ask when a size is not listed.', eye: 'Size guide', h1: 'Fit, <em>measured</em>', lede: 'Every piece is made to order, so the right size matters. Here are the real numbers where we have them, and a straight answer where we do not.', body: sizeBody }),
   'shipping-returns.html': page({ slug: 'shipping-returns', title: 'Shipping and Returns | ShoreList Shop', desc: 'How ShoreList orders are made, how long they take, and what happens if a piece arrives damaged, defective or misprinted. Plain answers, nothing buried.', eye: 'Shipping and returns', h1: 'Shipping &amp; returns, <em>plainly</em>', lede: 'Made to order, shipped by our partners, fixed if it arrives wrong. Here is exactly how that works.', body: shipBody,
     ld: [{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }] }),
-  'gift-guide.html': page({ slug: 'gift-guide', title: 'Coastal Carolina Gift Guide | ShoreList Shop', desc: 'A short gift guide by recipient, from under $20 stocking stuffers to beach-day gear, drawn from the ShoreList shop at its current prices.', eye: 'Gift guide', h1: 'Gifts for people who <em>love the coast</em>', lede: 'Sorted by who is getting it, not by price. Every item is in the shop today.', body: giftBody, ld: [giftLd], wide: true }),
+  'gift-guide.html': page({ slug: 'gift-guide', title: 'Coastal Carolina Gift Guide | ShoreList Shop', desc: 'A short gift guide by recipient, from under $20 stocking stuffers to beach-day gear, drawn from the ShoreList shop at its current prices.', eye: 'Gift guide', h1: 'Gifts for people who <em>love the coast</em>', lede: 'Sorted by who is getting it, not by price. Every item is in the shop today.', body: giftBody, ld: giftLd ? [giftLd] : [], wide: true }),
 };
 for (const [f, h] of Object.entries(out)) fs.writeFileSync(new URL('../' + f, import.meta.url), h);
 console.log('wrote', Object.keys(out).join(', '), `(${used.length} gift items)`);
