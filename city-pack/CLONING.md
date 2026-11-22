@@ -28,6 +28,7 @@ Google's spam policy names two things a clone network can be punished for: scale
 13. **Publish the network disclosure** (below) on the new site and add the new city to the umbrella list.
 14. **Run the gates**, all must pass:
     - `node tools/check-site.mjs`
+    - `node tools/check-keywords.mjs --config city-pack/<id>/keywords.json --site https://<domain>` (method and template in `docs/SEO-KEYWORDS.md`)
     - `node tools/thin-content-gate.mjs --site <build dir> --config city-pack/<id>/city.config.json --against <every other city's build dir>`
     - `node tools/audit-hardcoded.mjs --root <build dir> --out /dev/null` and confirm no Wilmington, NC, `shorelist.net` or Wilmington coordinates remain in the new site's files.
 15. **Launch gate.** Do not go live below `launchGate` (default 3 live operators, 20 verified events in the next 60 days, 4 hand-written guides, 12 own photos). The numbers are unvalidated; tune them.

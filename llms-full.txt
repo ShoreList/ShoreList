@@ -2,6 +2,30 @@
 
 ShoreList (shorelist.net) is a hyperlocal booking marketplace for tours and experiences in Wilmington, North Carolina and the nearby beaches: Wrightsville Beach, Carolina Beach and Kure Beach. It also runs a coastal apparel and beach goods shop. Operator: ShoreList LLC, Wilmington, NC.
 
+## Topic index: where each kind of question is answered
+- Things to do in Wilmington, NC: https://shorelist.net/ https://shorelist.net/things-to-do
+- Ghost tours: https://shorelist.net/things-to-do/ghost-tours
+- Walking tours: https://shorelist.net/things-to-do/walking-tours
+- Museums: https://shorelist.net/things-to-do/museums
+- Film tours: https://shorelist.net/things-to-do/film-tours
+- Fishing charters: https://shorelist.net/things-to-do/fishing-charters
+- Kayak tours: https://shorelist.net/things-to-do/kayak-tours
+- River cruises and sailing: https://shorelist.net/things-to-do/river-cruises https://shorelist.net/things-to-do/sailboat-rides
+- Surf lessons: https://shorelist.net/things-to-do/surf-lessons
+- Paddleboard: https://shorelist.net/things-to-do/paddleboard
+- Bike tours and rentals: https://shorelist.net/things-to-do/bike-tours https://shorelist.net/things-to-do/ebike-rentals https://shorelist.net/things-to-do/fat-bike-rentals
+- Wildlife and nature walks: https://shorelist.net/things-to-do/wildlife-tours https://shorelist.net/things-to-do/nature-walks
+- Scooter, golf cart and jet ski rentals: https://shorelist.net/things-to-do/scooter-rentals https://shorelist.net/things-to-do/jet-ski-rentals https://shorelist.net/things-to-do/golf-cart-rentals
+- Beach day services: https://shorelist.net/things-to-do/beach-photography https://shorelist.net/things-to-do/beach-picnics https://shorelist.net/things-to-do/beach-chairs https://shorelist.net/things-to-do/wellness
+- Town and beach guides (downtown Wilmington, Wrightsville Beach, Carolina Beach, Kure Beach): https://shorelist.net/downtown https://shorelist.net/wrightsville-beach https://shorelist.net/carolina-beach https://shorelist.net/kure-beach
+- Events, including this weekend: https://shorelist.net/events https://shorelist.net/events/this-weekend
+- Where to stay: https://shorelist.net/where-to-stay
+- Trip planning and visitor questions: https://shorelist.net/plan-your-trip https://shorelist.net/wilmington-nc-faq
+- Parking: https://shorelist.net/wilmington-nc-parking
+- Weather, tides and surf conditions: https://shorelist.net/wilmington-weather
+- Where to eat: https://shorelist.net/shore-picks
+- Souvenirs, apparel, gifts and art prints: https://shorelist.net/shop https://shorelist.net/gift-guide https://shorelist.net/prints
+
 ## Experiences and pages
 - Ghost Tours: Spine-tingling walks through Wilmington's most haunted streets with expert local guides. https://shorelist.net/things-to-do/ghost-tours
 - Museums & Attractions: Wilmington's must-see museums and historic attractions, with hours, links and local events. https://shorelist.net/things-to-do/museums
