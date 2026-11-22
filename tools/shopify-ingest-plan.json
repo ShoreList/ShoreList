@@ -37,19 +37,19 @@
  ],
  "items": [
   {
-   "handle": "the-rope-line-crewneck-wrightsville-beach",
-   "shelf": "rope-and-line",
+   "handle": "daymark-sail-number-corduroy-cap-wrightsville-beach",
+   "shelf": "regatta",
    "collection": "local-icons",
-   "imgIndex": 4,
+   "imgIndex": 0,
    "studioIndex": 0,
    "scenes": [
     "beach"
    ],
    "cut": "unisex",
-   "blank": "Comfort Colors 1566, embroidery via Printify",
-   "alt": "Man in a white crewneck sweatshirt with a small navy WB and rope line embroidered at the center of the chest, one hand in his pocket",
-   "meta": "WB for Wrightsville Beach over a short rope line, stitched small at the chest in navy thread. A garment-dyed cotton blend fleece crewneck.",
-   "cta": "Choose color and size"
+   "lookbookFile": "shorelist-lookbook-daymark-sail-number-corduroy-cap-wrightsville-beach.webp",
+   "alt": "Woman in a white linen shirt on a Wrightsville Beach boardwalk wearing a burgundy corduroy cap with a small sail number mark on the front",
+   "meta": "WB for Wrightsville Beach over 34, the latitude this stretch of coast sits on, embroidered small in white on a soft burgundy corduroy cap. Adjustable strap, one size.",
+   "cta": "Add to bag"
   }
  ]
 }

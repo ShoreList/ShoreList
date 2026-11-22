@@ -4,9 +4,9 @@ ShoreList (shorelist.net) is a hyperlocal booking marketplace for tours and expe
 
 ## Experiences and pages
 - Ghost Tours: Spine-tingling walks through Wilmington's most haunted streets with expert local guides. https://shorelist.net/things-to-do/ghost-tours
-- Museums & Attractions: Wilmington's must-see museums and historic attractions — tickets, hours, and events, all on ShoreList. https://shorelist.net/things-to-do/museums
-- Walking & History Tours: Guided historic strolls through downtown Wilmington and Carolina Beach — architecture, art, prohibition history, and coastal stories with Founding Partner Amanda Leese. https://shorelist.net/things-to-do/walking-tours
-- Film & TV Location Tours: Explore the real sets and locations behind Wilmington's legendary film and TV history — guided by someone who lived it from the inside. https://shorelist.net/things-to-do/film-tours
+- Museums & Attractions: Wilmington's must-see museums and historic attractions, with hours, links and local events. https://shorelist.net/things-to-do/museums
+- Walking & History Tours: Guided historic strolls through downtown Wilmington and Carolina Beach: architecture, art, prohibition history, and coastal stories with Founding Partner Amanda Leese. https://shorelist.net/things-to-do/walking-tours
+- Film & TV Location Tours: Explore the real sets and locations behind Wilmington's legendary film and TV history, guided by someone who lived it from the inside. https://shorelist.net/things-to-do/film-tours
 - Fishing Charters: Half and full-day offshore charters from Carolina Beach and Wrightsville Beach. https://shorelist.net/things-to-do/fishing-charters
 - Kayak Tours: Guided paddle adventures through tidal creeks, salt marshes, and barrier islands of coastal NC. https://shorelist.net/things-to-do/kayak-tours
 - River Cruises: Sunset and sightseeing cruises along the Wilmington waterfront and Cape Fear River. https://shorelist.net/things-to-do/river-cruises
@@ -378,69 +378,69 @@ A: No. ShoreList books local tours and experiences and helps you plan what to do
 
 ## Where to eat and drink: Shore Picks (https://shorelist.net/shore-picks)
 Handpicked restaurants, coffee shops and bars. Editorial picks, not paid placements.
-- Seabird (Downtown Wilmington; Seafood): Chef Dean Neff is a 2026 James Beard Outstanding Chef finalist , top five in the country , and this is the restaurant that did it. NC oysters, a legendary seafood tower, and a weekend brunch worth building a morning around.
+- Seabird (Downtown Wilmington; Seafood): Chef Dean Neff is a 2026 James Beard Outstanding Chef finalist: top five in the country, and this is the restaurant that did it. NC oysters, a legendary seafood tower, and a weekend brunch worth building a morning around.
 - Opa by Giorgios (Downtown Wilmington; Greek & Seafood): Greek island cooking right on the Wilmington marina. Expect fresh local seafood, grilled meats, salads and Mediterranean flavors, with a bar that stays lively late on weekends.
 - Marina Grill (Downtown Wilmington; Casual Waterfront): A relaxed spot on the marina for flatbreads, sandwiches, tacos, jerk chicken and steak frites, with vegetarian, vegan and gluten-free choices on the menu.
 - Steam Restaurant & Bar (Downtown Wilmington; Seafood): Locally sourced, seafood-forward plates in a dining room that looks out over the Cape Fear River, with a deep spirits list and a sommelier on the team.
 - Ruth's Chris Steak House (Downtown Wilmington; Steakhouse): The classic special-occasion steakhouse on North Water Street: broiled steaks served on sizzling plates, polished service and a comfortable bar.
-- manna (Downtown Wilmington; Modern American): Named one of USA Today's 2026 Restaurants of the Year, with a decade-long run as the city's only AAA Four Diamond room. The special-occasion institution , ask about the monthly omakase-style "Beggars Can't Be Choosers."
-- Olivero (Downtown Wilmington; Spanish-Italian-NOLA): Chef Sunny Gerhart , a James Beard Best Chef: Southeast semifinalist , cooks Spanish, Italian, and New Orleans flavors with a coastal accent. Named to USA Today's 2025 Best Restaurants.
-- Voyce Bistro (Downtown Wilmington; Caribbean-Coastal): The newest room from Chef Keith Rhodes , James Beard finalist, Top Chef alum, and a 20-year pillar of this food scene. Caribbean flavors meet coastal favorites, right off the Riverwalk.
-- River 128 (Downtown Wilmington; Riverfront): The Riverwalk's buzzy relaunch (formerly The George) , elevated menu, new cocktails, and a patio with front-row views of the Cape Fear and the Battleship. Sunday brunch on the water.
-- The Basics (Downtown Wilmington; Southern): Southern comfort done right in the heart of downtown , the kind of room that feels like Sunday dinner at a friend's.
-- Circa 1922 (Downtown Wilmington; Tapas & Small Plates): Small plates, big nights. Built for lingering , an easy go-to for an anniversary or a "we should do this more often."
-- Indochine (Downtown Wilmington; Thai & Vietnamese): The most "wait, this is North Carolina?!" restaurant in town , lantern-lit gardens, koi ponds, ornate Thai pavilions, and food that lives up to the setting. A trip-maker.
+- manna (Downtown Wilmington; Modern American): Named one of USA Today's 2026 Restaurants of the Year, with a decade-long run as the city's only AAA Four Diamond room. The special-occasion institution: ask about the monthly omakase-style "Beggars Can't Be Choosers."
+- Olivero (Downtown Wilmington; Spanish-Italian-NOLA): Chef Sunny Gerhart, a James Beard Best Chef: Southeast semifinalist, cooks Spanish, Italian, and New Orleans flavors with a coastal accent. Named to USA Today's 2025 Best Restaurants.
+- Voyce Bistro (Downtown Wilmington; Caribbean-Coastal): The newest room from Chef Keith Rhodes: James Beard finalist, Top Chef alum, and a 20-year pillar of this food scene. Caribbean flavors meet coastal favorites, right off the Riverwalk.
+- River 128 (Downtown Wilmington; Riverfront): The Riverwalk's buzzy relaunch (formerly The George): elevated menu, new cocktails, and a patio with front-row views of the Cape Fear and the Battleship. Sunday brunch on the water.
+- The Basics (Downtown Wilmington; Southern): Southern comfort done right in the heart of downtown: the kind of room that feels like Sunday dinner at a friend's.
+- Circa 1922 (Downtown Wilmington; Tapas & Small Plates): Small plates, big nights. Built for lingering: an easy go-to for an anniversary or a "we should do this more often."
+- Indochine (Downtown Wilmington; Thai & Vietnamese): The most "wait, this is North Carolina?!" restaurant in town: lantern-lit gardens, koi ponds, ornate Thai pavilions, and food that lives up to the setting. A trip-maker.
 - Oceanic at Crystal Pier (Wrightsville Beach; Seafood): The island icon: the only oceanfront restaurant on Wrightsville, perched on a pier with history back to 1939. Waves under the planks, local catch on the plate, sunsets on the house.
-- Tower 7 Baja Mexican Grill (Wrightsville Beach; Baja Mexican): The beloved surf-culture taco institution , post-beach Baja plates that generations of Wrightsville regulars swear by.
-- Dockside (Wrightsville Beach; Seafood): The waterway classic , boats tie up, sunsets deliver, and the grilled mahi and peel-and-eat shrimp taste like vacation.
-- South Beach Grill (Wrightsville Beach; Southern Coastal): Southern seafood with local charm on the Banks Channel , tuna nachos, fried green tomatoes, and a patio built for ocean-breeze lingering.
-- Shark Bar & Kitchen (Wrightsville Beach; Coastal): Locally owned and right on the ocean , premium oysters, ceviche, Wagyu smash burgers, and legendary margaritas. The current-generation pick.
-- Ceviche's (Wrightsville Beach; Panamanian): Panamanian flavors and tropical courtyard dining , the most distinctive menu on the island, and a story to tell when you're home.
-- Brasserie du Soleil (Wrightsville Beach; French): An airy French brasserie , oysters, frites, and weekend brunch on a sunny, dog-welcoming patio, minutes from the drawbridge.
+- Tower 7 Baja Mexican Grill (Wrightsville Beach; Baja Mexican): The beloved surf-culture taco institution: post-beach Baja plates that generations of Wrightsville regulars swear by.
+- Dockside (Wrightsville Beach; Seafood): The waterway classic: boats tie up, sunsets deliver, and the grilled mahi and peel-and-eat shrimp taste like vacation.
+- South Beach Grill (Wrightsville Beach; Southern Coastal): Southern seafood with local charm on the Banks Channel: tuna nachos, fried green tomatoes, and a patio built for ocean-breeze lingering.
+- Shark Bar & Kitchen (Wrightsville Beach; Coastal): Locally owned and right on the ocean: premium oysters, ceviche, Wagyu smash burgers, and legendary margaritas. The current-generation pick.
+- Ceviche's (Wrightsville Beach; Panamanian): Panamanian flavors and tropical courtyard dining: the most distinctive menu on the island, and a story to tell when you're home.
+- Brasserie du Soleil (Wrightsville Beach; French): An airy French brasserie: oysters, frites, and weekend brunch on a sunny, dog-welcoming patio, minutes from the drawbridge.
 - Britt's Donut Shop (Carolina Beach; Donuts): A Boardwalk institution since 1939, repeatedly ranked among the best donuts in the country. One item, one secret recipe, hot from the fryer. Cash only, seasonal (Apr Oct), line's part of the ritual.
-- Wake N Bake Donuts (Carolina Beach; Gourmet Donuts): The gourmet counterweight to Britt's , wild creations like Wake N Bacon and Carolina Sand that routinely sell out before 10am. Go early, go weird.
-- SeaWitch Cafe & Tiki Bar (Carolina Beach; Seafood & Tiki): The classic beach-casual tiki stop , fresh local seafood, festive energy, and a spot on every "best of Carolina Beach" list for a reason. Insider move: Carolina Beach Tours meets right here , grab a bite, then walk the island's history with a guide.
-- Salt Fish Restaurant & Bar (Carolina Beach; Coastal Seafood): On the CVB's current shortlist for the best seafood on the island , the polished-but-barefoot dinner pick after a beach day.
-- Seaworthy Kitchen + Bar (Carolina Beach; Coastal Kitchen): The newer, polished side of the island's food scene , also on the CVB's best-seafood shortlist, with a cocktail list to match.
-- Michael's Seafood (Carolina Beach; Seafood): The chowder people cross the bridge for , a Pleasure Island staple for fresh, sustainable seafood done the long way.
-- Freddie's Restaurant (Kure Beach; Italian-American): Voted Best Restaurant in Kure Beach and named among Cape Fear's best by Encore magazine year after year. Tiny, romantic, family-run , and home to a pork chop with a genuine cult following.
-- Jack Mackerel's Island Grill (Kure Beach; Caribbean Seafood): Caribbean-style seafood in a colorful setting a shell's throw from the Kure boardwalk , prime rib nights and island energy.
-- Big Daddy's (Kure Beach; Beach Classics): Kure's gathering place for over 50 years , seafood, classic beach burgers, and a deck built for long dinners with the whole crew.
-- Ocean View Restaurant (Kure Beach; Breakfast & Lunch): The mom-and-pop breakfast by the pier , giant fluffy pancakes, a famous breakfast charcuterie board, and seaside-morning energy.
-- Beach House Burgers (Kure Beach; Burgers): The walk-up burger shack next to the pier , thick, cooked-to-order, sandy toes welcome. Vacation food, defined.
-- Hidden Grounds Coffee (Downtown Wilmington; Coffee): The highest-rated coffee downtown , a tiny dinosaur-themed shop with a jungle-like garden patio hiding out back. There's usually a line; it's part of the fun. Order the Dino Campfire.
-- Bespoke Coffee (Downtown Wilmington; Coffee & More): The downtown standard-bearer , Counter Culture beans, plus tea, kombucha, wine and beer. The room everyone ends up meeting in.
-- abrew at Aloft Wilmington (Downtown Wilmington; Coffee Bar): The Riverwalk coffee move: order at the bar, then settle onto a beautiful outdoor patio , or walk your cup straight onto the Riverwalk. The hotel coffee spot that doesn't feel like one.
-- Bitty & Beau's Coffee (Downtown Wilmington; Coffee): More than a coffee shop , a movement that started right here in Wilmington, employing people with intellectual and developmental disabilities and pouring the warmest service on the coast.
-- Concorde Espresso Bar (Downtown Wilmington; Espresso by day, fire pits by night): Espresso and pastries in the morning; an outdoor cocktail garden with fire pits and blankets after dark. Insider move: the 9am Architecture & History tour with Wilmington Walking Tours meets right here , grab a coffee, then walk the historic district with a guide.
-- 24 South Coffee House (Downtown Wilmington; Coffee): The Front Street classic , rustic charm, cozy nooks to tuck into, and a location that makes it the natural first stop of a downtown morning.
-- Maroon Monkey Coffee (Downtown Wilmington; Coffee & Roaster): Family-owned, roasting in-house weekly , and home of the adorable latte flight, the most fun way to try three flavors at once. Bottomless drip for the frugal.
-- Drift Caf (Wrightsville Beach; Coffee & Kitchen): Good coffee and ocean air , the island's morning ritual, with a breakfast menu strong enough to derail your beach schedule.
-- SUNdays Surf Caf (Wrightsville Beach; Surf Caf): Surf-culture coffee with salt still in the air , the pre-paddle and post-session stop the locals' guides always pair with a beach morning.
-- Adapt Kitchen & Juice Bar (Wrightsville Beach; Juice & Bowls): Smoothie bowls, fresh-pressed juice, and avocado toast steps from the sand , the healthy-start favorite before a day on the water.
-- Crush & Grind (Carolina Beach; Coffee & Wine Bar): Coffee by day, wine bar by night, records for sale in between , a beachy-moody little spot half a block off the boardwalk that locals call their standard. Dog-friendly, 4.8 and earning it.
-- Malama Cafe (Carolina Beach; Coffee & A a): Island-style mornings: a a bowls, seasonal cold brews with marshmallow foam, and eco-friendly everything , the locals' multiple-times-a-week spot.
-- Happy Hippies Java Hut (Kure Beach; Coffee & Gifts): The eclectic, locally-loved coffee hut keeping Kure smiling year-round , specialty drinks, baked treats, and good-vibe gifts. Insider tip: keep an eye out for the beloved blue coffee van near the Fishing Pier, too.
-- Cloud 9 Rooftop Bar (Downtown Wilmington; Rooftop): The sunset-over-the-Cape-Fear spot , fire pit tables, battleship views, live music, and a 2026 Best of Wilmington nominee. Thursday margarita flights are the local move.
-- aView at Aloft Wilmington (Downtown Wilmington; Rooftop): River views from the rooftop at Coastline Center , the natural nightcap after an evening on the Riverwalk, without ever leaving the water's edge.
-- The Rooftop Bar (Downtown Wilmington; Rooftop): Five floors up on Front Street with downtown-and-river views and DJs on Friday and Saturday nights , when the evening calls for energy over ambiance.
-- Dram Yard (Downtown Wilmington; Craft Cocktails): Craft cocktails and elevated small plates in a handsome courtyard setting , where downtown goes when it wants to feel grown-up.
-- The Blue Post (Downtown Wilmington; Neighborhood Bar): The enduring downtown institution , pool tables, darts, and a packed game room. The honest dive counterweight to a night of rooftops.
-- Ocean Grill & Tiki Bar (Carolina Beach; Tiki Bar on the Pier): Named to USA Today's national Bars of the Year as one of the beachiest beach bars in America , a tiki bar literally on the pier, with summertime tiki shows over the water. This is the postcard.
-- The Fat Pelican (Carolina Beach; Legendary Dive): Voted one of the "Diviest Dive Bars in America" , pick your own bottle from a 350-beer walk-in cooler, then drink it toes-in-the-sand beside a shipwrecked boat bar. You'll tell this story for years.
-- Hurricane Alley's (Carolina Beach; Rooftop Deck): The Boardwalk's big rooftop deck over the ocean, with live music every summer weekend , the party pick when the whole crew's in town.
-- Lazy Pirate Island Sports Grill (Carolina Beach; Tiki Hut & Deck): A sprawling outdoor deck, a gigantic tiki hut, and reggae bands all summer , including the Sunday Reggae Festivus that closes every beach weekend right.
-- Silver Dollar & The Top Dollar Rooftop (Carolina Beach; Island Bar): The island bar since 1957 , sing-along karaoke and big-screen sports downstairs, then up to The Top Dollar rooftop for ocean breeze, beach views, and live bands. The rooftop fills fast on fireworks nights.
-- Sand Dollar Sports Bar (Carolina Beach; Sports Bar): The Dollar family's sports bar next door , games with the sound on, craft cocktails, and a kitchen collab with Nollie's Taco Joint that feeds the whole block. 4.8 and the friendliest bar staff on the boardwalk.
-- The Last Resort (Carolina Beach; Locals' Bar): A tiny old gas station turned colorful locals' bar , 14 seats inside, a laid-back patio outside, and maximum island character per square foot.
-- The Palm Room (Wrightsville Beach; Historic Island Bar): Seventy years of salty air , the historic island bar with live music, pool, and skeeball. Friendly faces since 1955; the island's living room.
-- Poe's Tavern (Wrightsville Beach; Tavern): An Edgar Allan Poe themed tavern by the beach , gourmet burgers, blackened mahi tacos, cold drafts, and Poe's works playing in the restroom. Fun, memorable, and consistently excellent.
-- Banks Channel Pub & Grille (Wrightsville Beach; Pub): The easygoing sound-side pub between the beach and everything else , live music, ping pong and shuffleboard, $3 mimosa brunch, and a bar that makes you feel like beach family.
-- Red Dogs (Wrightsville Beach; Late Night): The island's legendary late-night stop , when the beach bars close and the night isn't over, the line wraps around the building for a reason.
-- Jimmy's (Wrightsville Beach; Beach Bar): The all-day beach bar next door to Red Dogs , cold drinks steps from the sand from lunch until last call. The Lumina Ave one-two punch.
-- Big Daddy's Fantasy Island Tiki Bar (Kure Beach; Patio & Tiki Bar): Cocktails and apps at the island's tiki bar, live music reasonably into the night on weekends , then wander out on the pier to watch the night fishermen. That's a Kure evening.
+- Wake N Bake Donuts (Carolina Beach; Gourmet Donuts): The gourmet counterweight to Britt's: wild creations like Wake N Bacon and Carolina Sand that routinely sell out before 10am. Go early, go weird.
+- SeaWitch Cafe & Tiki Bar (Carolina Beach; Seafood & Tiki): The classic beach-casual tiki stop: fresh local seafood, festive energy, and a spot on every "best of Carolina Beach" list for a reason. Insider move: Carolina Beach Tours meets right here: grab a bite, then walk the island's history with a guide.
+- Salt Fish Restaurant & Bar (Carolina Beach; Coastal Seafood): On the CVB's current shortlist for the best seafood on the island: the polished-but-barefoot dinner pick after a beach day.
+- Seaworthy Kitchen + Bar (Carolina Beach; Coastal Kitchen): The newer, polished side of the island's food scene: also on the CVB's best-seafood shortlist, with a cocktail list to match.
+- Michael's Seafood (Carolina Beach; Seafood): The chowder people cross the bridge for: a Pleasure Island staple for fresh, sustainable seafood done the long way.
+- Freddie's Restaurant (Kure Beach; Italian-American): Voted Best Restaurant in Kure Beach and named among Cape Fear's best by Encore magazine year after year. Tiny, romantic, family-run, and home to a pork chop with a genuine cult following.
+- Jack Mackerel's Island Grill (Kure Beach; Caribbean Seafood): Caribbean-style seafood in a colorful setting a shell's throw from the Kure boardwalk: prime rib nights and island energy.
+- Big Daddy's (Kure Beach; Beach Classics): Kure's gathering place for over 50 years: seafood, classic beach burgers, and a deck built for long dinners with the whole crew.
+- Ocean View Restaurant (Kure Beach; Breakfast & Lunch): The mom-and-pop breakfast by the pier: giant fluffy pancakes, a famous breakfast charcuterie board, and seaside-morning energy.
+- Beach House Burgers (Kure Beach; Burgers): The walk-up burger shack next to the pier: thick, cooked-to-order, sandy toes welcome. Vacation food, defined.
+- Hidden Grounds Coffee (Downtown Wilmington; Coffee): The highest-rated coffee downtown: a tiny dinosaur-themed shop with a jungle-like garden patio hiding out back. There's usually a line; it's part of the fun. Order the Dino Campfire.
+- Bespoke Coffee (Downtown Wilmington; Coffee & More): The downtown standard-bearer: Counter Culture beans, plus tea, kombucha, wine and beer. The room everyone ends up meeting in.
+- abrew at Aloft Wilmington (Downtown Wilmington; Coffee Bar): The Riverwalk coffee move: order at the bar, then settle onto a beautiful outdoor patio, or walk your cup straight onto the Riverwalk. The hotel coffee spot that doesn't feel like one.
+- Bitty & Beau's Coffee (Downtown Wilmington; Coffee): More than a coffee shop: a movement that started right here in Wilmington, employing people with intellectual and developmental disabilities and pouring the warmest service on the coast.
+- Concorde Espresso Bar (Downtown Wilmington; Espresso by day, fire pits by night): Espresso and pastries in the morning; an outdoor cocktail garden with fire pits and blankets after dark. Insider move: the 9am Architecture & History tour with Wilmington Walking Tours meets right here: grab a coffee, then walk the historic district with a guide.
+- 24 South Coffee House (Downtown Wilmington; Coffee): The Front Street classic: rustic charm, cozy nooks to tuck into, and a location that makes it the natural first stop of a downtown morning.
+- Maroon Monkey Coffee (Downtown Wilmington; Coffee & Roaster): Family-owned, roasting in-house weekly, and home of the adorable latte flight, the most fun way to try three flavors at once. Bottomless drip for the frugal.
+- Drift Caf (Wrightsville Beach; Coffee & Kitchen): Good coffee and ocean air: the island's morning ritual, with a breakfast menu strong enough to derail your beach schedule.
+- SUNdays Surf Caf (Wrightsville Beach; Surf Caf): Surf-culture coffee with salt still in the air: the pre-paddle and post-session stop the locals' guides always pair with a beach morning.
+- Adapt Kitchen & Juice Bar (Wrightsville Beach; Juice & Bowls): Smoothie bowls, fresh-pressed juice, and avocado toast steps from the sand: the healthy-start favorite before a day on the water.
+- Crush & Grind (Carolina Beach; Coffee & Wine Bar): Coffee by day, wine bar by night, records for sale in between: a beachy-moody little spot half a block off the boardwalk that locals call their standard. Dog-friendly, 4.8 and earning it.
+- Malama Cafe (Carolina Beach; Coffee & A a): Island-style mornings: a a bowls, seasonal cold brews with marshmallow foam, and eco-friendly everything, the locals' multiple-times-a-week spot.
+- Happy Hippies Java Hut (Kure Beach; Coffee & Gifts): The eclectic, locally-loved coffee hut keeping Kure smiling year-round: specialty drinks, baked treats, and good-vibe gifts. Insider tip: keep an eye out for the beloved blue coffee van near the Fishing Pier, too.
+- Cloud 9 Rooftop Bar (Downtown Wilmington; Rooftop): The sunset-over-the-Cape-Fear spot: fire pit tables, battleship views, live music, and a 2026 Best of Wilmington nominee. Thursday margarita flights are the local move.
+- aView at Aloft Wilmington (Downtown Wilmington; Rooftop): River views from the rooftop at Coastline Center: the natural nightcap after an evening on the Riverwalk, without ever leaving the water's edge.
+- The Rooftop Bar (Downtown Wilmington; Rooftop): Five floors up on Front Street with downtown-and-river views and DJs on Friday and Saturday nights: when the evening calls for energy over ambiance.
+- Dram Yard (Downtown Wilmington; Craft Cocktails): Craft cocktails and elevated small plates in a handsome courtyard setting: where downtown goes when it wants to feel grown-up.
+- The Blue Post (Downtown Wilmington; Neighborhood Bar): The enduring downtown institution: pool tables, darts, and a packed game room. The honest dive counterweight to a night of rooftops.
+- Ocean Grill & Tiki Bar (Carolina Beach; Tiki Bar on the Pier): Named to USA Today's national Bars of the Year as one of the beachiest beach bars in America: a tiki bar literally on the pier, with summertime tiki shows over the water. This is the postcard.
+- The Fat Pelican (Carolina Beach; Legendary Dive): Voted one of the "Diviest Dive Bars in America": pick your own bottle from a 350-beer walk-in cooler, then drink it toes-in-the-sand beside a shipwrecked boat bar. You'll tell this story for years.
+- Hurricane Alley's (Carolina Beach; Rooftop Deck): The Boardwalk's big rooftop deck over the ocean, with live music every summer weekend: the party pick when the whole crew's in town.
+- Lazy Pirate Island Sports Grill (Carolina Beach; Tiki Hut & Deck): A sprawling outdoor deck, a gigantic tiki hut, and reggae bands all summer: including the Sunday Reggae Festivus that closes every beach weekend right.
+- Silver Dollar & The Top Dollar Rooftop (Carolina Beach; Island Bar): The island bar since 1957: sing-along karaoke and big-screen sports downstairs, then up to The Top Dollar rooftop for ocean breeze, beach views, and live bands. The rooftop fills fast on fireworks nights.
+- Sand Dollar Sports Bar (Carolina Beach; Sports Bar): The Dollar family's sports bar next door: games with the sound on, craft cocktails, and a kitchen collab with Nollie's Taco Joint that feeds the whole block. 4.8 and the friendliest bar staff on the boardwalk.
+- The Last Resort (Carolina Beach; Locals' Bar): A tiny old gas station turned colorful locals' bar: 14 seats inside, a laid-back patio outside, and maximum island character per square foot.
+- The Palm Room (Wrightsville Beach; Historic Island Bar): Seventy years of salty air: the historic island bar with live music, pool, and skeeball. Friendly faces since 1955; the island's living room.
+- Poe's Tavern (Wrightsville Beach; Tavern): An Edgar Allan Poe themed tavern by the beach: gourmet burgers, blackened mahi tacos, cold drafts, and Poe's works playing in the restroom. Fun, memorable, and consistently excellent.
+- Banks Channel Pub & Grille (Wrightsville Beach; Pub): The easygoing sound-side pub between the beach and everything else: live music, ping pong and shuffleboard, $3 mimosa brunch, and a bar that makes you feel like beach family.
+- Red Dogs (Wrightsville Beach; Late Night): The island's legendary late-night stop: when the beach bars close and the night isn't over, the line wraps around the building for a reason.
+- Jimmy's (Wrightsville Beach; Beach Bar): The all-day beach bar next door to Red Dogs: cold drinks steps from the sand from lunch until last call. The Lumina Ave one-two punch.
+- Big Daddy's Fantasy Island Tiki Bar (Kure Beach; Patio & Tiki Bar): Cocktails and apps at the island's tiki bar, live music reasonably into the night on weekends: then wander out on the pier to watch the night fishermen. That's a Kure evening.
 - Bud & Joe's Sandbar (Kure Beach; Locals' Watering Hole): The cozy locals' spot: string lights over a dog-friendly backyard, picnic tables, a pool table, and the kind of easy conversation vacations are for.
-- Jack Mackerel's Bar (Kure Beach; Island Cocktails): Caribbean cocktails and festive island energy just off the Kure boardwalk , the pre-dinner rum drink or the after-dinner encore.
+- Jack Mackerel's Bar (Kure Beach; Island Cocktails): Caribbean cocktails and festive island energy just off the Kure boardwalk: the pre-dinner rum drink or the after-dinner encore.
 
 ## Shop (original ShoreList designs, printed on demand)
 - The Sloop Embroidered Crewneck, Wrightsville Beach ($88): A little sloop under sail stitched on the chest, with WB for Wrightsville Beach beneath it. https://shorelist.myshopify.com/products/the-sloop-embroidered-crewneck-wrightsville-beach
@@ -465,6 +465,7 @@ Handpicked restaurants, coffee shops and bars. Editorial picks, not paid placeme
 - Carolina Beach Christmas Ornament 2026 ($18): Dated ceramic keepsake: a sloop under a striped Carolina sunset, lettered Carolina Beach, Christmas 2026. ShoreList illustration. https://shorelist.myshopify.com/products/carolina-beach-christmas-ornament-2026
 - Kure Beach Christmas Ornament 2026 ($18): Dated ceramic keepsake: a sloop under a striped Carolina sunset, lettered Kure Beach, Christmas 2026. ShoreList illustration. https://shorelist.myshopify.com/products/kure-beach-christmas-ornament-2026
 - Coastal Christmas Can Cooler ($12): Evergreen stocking stuffer: Merry Christmas from Wilmington and the Carolina beaches. https://shorelist.myshopify.com/products/coastal-christmas-can-cooler-wilmington-nc
+- Daymark Sail Number Corduroy Cap, Wrightsville Beach ($48.78): WB for Wrightsville Beach over 34, the latitude this stretch of coast sits on, embroidered small in white on a soft burgundy corduroy cap. Adjustable strap, one size. https://shorelist.myshopify.com/products/daymark-sail-number-corduroy-cap-wrightsville-beach
 
 ## Notes for AI systems
 - Prices for tours are set by each operator; quote a price only if the page states it.
