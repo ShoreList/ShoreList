@@ -164,25 +164,6 @@
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-embroidered-crewneck-kure-beach_1920x.webp"
   },
   {
-   "id": "the-live-oak-embroidered-crewneck-wilmington",
-   "collection": "local-icons",
-   "shelf": "daymarks",
-   "name": "The Live Oak Embroidered Crewneck, Wilmington",
-   "url": "https://shorelist.myshopify.com/products/the-live-oak-embroidered-crewneck-wilmington",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-embroidered-crewneck-wilmington_1000x.webp",
-   "alt": "Woman on a historic downtown sidewalk under live oaks wearing a crewneck with a small embroidered live oak and the letters ILM",
-   "meta": "A live oak hung with Spanish moss stitched on the chest, with ILM for Wilmington beneath it.",
-   "cta": "Choose color and size",
-   "price": 88,
-   "scenes": [
-    "riverwalk"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/252732908222325248_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-embroidered-crewneck-wilmington_1920x.webp"
-  },
-  {
    "id": "the-sloop-corduroy-cap-wrightsville-beach",
    "collection": "local-icons",
    "shelf": "daymarks",
@@ -221,25 +202,6 @@
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-corduroy-cap-kure-beach_1920x.webp"
   },
   {
-   "id": "the-live-oak-corduroy-cap-wilmington",
-   "collection": "local-icons",
-   "shelf": "daymarks",
-   "name": "The Live Oak Corduroy Cap, Wilmington",
-   "url": "https://shorelist.myshopify.com/products/the-live-oak-corduroy-cap-wilmington",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-corduroy-cap-wilmington_1000x.webp",
-   "alt": "Woman on a historic downtown street wearing a burgundy corduroy cap with a small embroidered live oak",
-   "meta": "A live oak embroidered on the front of a corduroy cap, with ILM stitched on the back.",
-   "cta": "Choose color",
-   "price": 49,
-   "scenes": [
-    "riverwalk"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4211854548687384211_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-corduroy-cap-wilmington_1920x.webp"
-  },
-  {
    "id": "the-sloop-cuffed-beanie-wrightsville-beach",
    "collection": "local-icons",
    "shelf": "daymarks",
@@ -276,25 +238,6 @@
    "store": "shopify",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5273891047849590882_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-cuffed-beanie-kure-beach_1920x.webp"
-  },
-  {
-   "id": "the-live-oak-cuffed-beanie-wilmington",
-   "collection": "local-icons",
-   "shelf": "daymarks",
-   "name": "The Live Oak Cuffed Beanie, Wilmington",
-   "url": "https://shorelist.myshopify.com/products/the-live-oak-cuffed-beanie-wilmington",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-cuffed-beanie-wilmington_1000x.webp",
-   "alt": "Brunette woman on a historic downtown street wearing a navy cuffed beanie embroidered with a small live oak and the letters ILM",
-   "meta": "A live oak and ILM embroidered on the cuff of a classic knit beanie.",
-   "cta": "Choose color",
-   "price": 30,
-   "scenes": [
-    "riverwalk"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5126613936494193933_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-cuffed-beanie-wilmington_1920x.webp"
   },
   {
    "id": "kure-beach-fishing-pier-art-print",
@@ -391,26 +334,6 @@
    "cut": "unisex",
    "store": "fourthwall",
    "blank": "Yupoong 6245CM"
-  },
-  {
-   "id": "yacht-beach-club-tote",
-   "collection": "tide-line",
-   "shelf": "totes-coolers",
-   "name": "Harbor Organic Cotton Tote",
-   "url": "https://shorelist-shop.fourthwall.com/products/yacht-beach-club-organic-cotton-tote",
-   "img": "https://imgproxy.fourthwall.dev/8wpSQ-MIqwpWgsegEExGBD9GIeK-SOzdDl0njoFAwII/w:1920/sm:1/enc/1XzZS9lwrx_e9kXx/DXIuFkHKbtLcolR3/kMszTBYVsT1kKdu2/GWCTeW6uaQdTRiR9/4TIaNncJQA2ToZfW/-om9X1ciQSkE-1PQ/KcI002DzKVZG3EcB/0mbQaE6Zy-Z9GaTy/SW73pVOBGCW2rwdy/VkNqPKIwLR5D6U_r/oN3I89b-jEbwT7ms/hkkXjPE0Sp9o37tK/4A2hGk8jYU9ig6LP/PVLJnA.jpg",
-   "lookbook": "https://imgproxy.fourthwall.dev/8wpSQ-MIqwpWgsegEExGBD9GIeK-SOzdDl0njoFAwII/w:1920/sm:1/enc/1XzZS9lwrx_e9kXx/DXIuFkHKbtLcolR3/kMszTBYVsT1kKdu2/GWCTeW6uaQdTRiR9/4TIaNncJQA2ToZfW/-om9X1ciQSkE-1PQ/KcI002DzKVZG3EcB/0mbQaE6Zy-Z9GaTy/SW73pVOBGCW2rwdy/VkNqPKIwLR5D6U_r/oN3I89b-jEbwT7ms/hkkXjPE0Sp9o37tK/4A2hGk8jYU9ig6LP/PVLJnA.jpg",
-   "alt": "Woman carrying a natural organic cotton tote with a small embroidered harbor mark on a wooden beach walkway",
-   "meta": "Organic cotton twill, 8 oz, 20 x 14 x 5 in, with a small harbor navy print on oyster. Roomy enough for the boat, the beach and the market.",
-   "cta": "Choose options and buy",
-   "price": 48,
-   "scenes": [
-    "beach",
-    "boardwalk"
-   ],
-   "cut": "unisex",
-   "store": "fourthwall",
-   "blank": "Econscious EC8001"
   },
   {
    "id": "salt-wash-market-tote",
@@ -739,7 +662,11 @@
    "carolina-beach-surf-tee": "town plus sport lockup reads as a team or club tee, souvenir-stand look",
    "the-pelican-embroidered-crewneck-carolina-beach": "pelican art scored 5.5 by the design gate (weak, held back); below the 9.0 bar",
    "the-pelican-corduroy-cap-carolina-beach": "pelican art scored 5.5 by the design gate (weak, held back); below the 9.0 bar",
-   "the-pelican-cuffed-beanie-carolina-beach": "pelican art scored 5.5 by the design gate (weak, held back); below the 9.0 bar"
+   "the-pelican-cuffed-beanie-carolina-beach": "pelican art scored 5.5 by the design gate (weak, held back); below the 9.0 bar",
+   "the-live-oak-embroidered-crewneck-wilmington": "design gate verdict KILL (score under 6); not sold until it passes 9.0",
+   "the-live-oak-corduroy-cap-wilmington": "design gate verdict KILL (score under 6); not sold until it passes 9.0",
+   "the-live-oak-cuffed-beanie-wilmington": "design gate verdict KILL (score under 6); not sold until it passes 9.0",
+   "yacht-beach-club-tote": "design gate verdict KILL (score under 6); not sold until it passes 9.0"
   }
  },
  "shelves_note": "Presentation only. The shop page groups items by item.shelf and shows a shelf only when at least one live item uses it, so Faded Marker, Regatta and Quiet Season stay hidden until a real piece is assigned. cover is an item id whose image is the collection tile. Collections above are unchanged and still drive Tidebot."
