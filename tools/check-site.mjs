@@ -22,6 +22,23 @@ for (const f of pages) {
   // copy rule: no em or en dashes in visible copy (comments, styles and scripts other than JSON-LD are ignored)
   const copy = h.replace(/<!--[\s\S]*?-->/g, '').replace(/<style[\s\S]*?<\/style>/g, '').replace(/<script(?![^>]*ld\+json)[\s\S]*?<\/script>/g, '');
   if (/\u2014|\u2013|&mdash;|&ndash;|&#8212;|&#8211;|&#x2014;|&#x2013;/i.test(copy)) bad(`${f}: em or en dash in visible copy`);
+  // JSON-LD: every block parses and follows the sitewide rules (no ratings or reviews without real data, no price-less offers, Events complete, no invented business hours)
+  for (const m of h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+    let j; try { j = JSON.parse(m[1]); } catch (e) { bad(`${f}: JSON-LD does not parse: ${e.message}`); continue; }
+    const walk = (o, top) => {
+      if (Array.isArray(o)) return o.forEach((x) => walk(x));
+      if (!o || typeof o !== 'object') return;
+      const t = [].concat(o['@type'] || []).join(',');
+      if (top && !o['@context'] && !o['@graph']) bad(`${f}: JSON-LD block without @context`);
+      if (/AggregateRating|^Review$/.test(t)) bad(`${f}: ${t} markup needs real review data`);
+      if (t === 'LocalBusiness' && /^ShoreList/.test(o.name || '')) bad(`${f}: ShoreList is not a storefront; use Organization, not LocalBusiness`);
+      if (t === 'Organization' && o.sameAs) bad(`${f}: Organization sameAs only for verified profiles`);
+      if (t === 'Offer' && o.price === undefined) bad(`${f}: Offer without price`);
+      if (t === 'Event') for (const k of ['name', 'startDate', 'location']) if (!o[k]) bad(`${f}: Event missing ${k}`);
+      for (const k in o) walk(o[k]);
+    };
+    walk(j, true);
+  }
   if (/api\.anthropic\.com/.test(h)) bad(`${f}: client-side call to api.anthropic.com (use a function)`);
   if (/get-bookings\?password=/.test(h)) bad(`${f}: password in URL`);
 }
