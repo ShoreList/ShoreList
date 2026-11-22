@@ -100,7 +100,7 @@ let reviews = {};
 try { reviews = JSON.parse(fs.readFileSync(REVIEWS, 'utf8')); } catch { /* none yet */ }
 for (const it of items.filter(i => i._src === 'catalog' || i.status)) {
   const id = it.id, r = reviews[id];
-  if (!r) { W(id, 'no expert review yet (blocks listing)'); continue; }
+  if (!r) { (it._src === 'catalog' ? F : W)(id, 'no passing expert review: not sellable'); continue; }
   const sc = r.scores || {}, vals = Object.values(sc);
   const mean = vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : 0;
   if (mean < 9.0) F(id, `expert mean ${mean.toFixed(2)} under 9.0`);
