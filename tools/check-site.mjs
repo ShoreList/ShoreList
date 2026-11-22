@@ -15,6 +15,7 @@ for (const f of pages) {
   if (!noindex.has(f) && !/name="description"/.test(h)) bad(`${f}: missing meta description`);
   if (!noindex.has(f) && !/rel="canonical"/.test(h)) bad(`${f}: missing canonical`);
   for (const m of h.matchAll(/<img\b[^>]*>/g)) if (!/\balt=/.test(m[0])) bad(`${f}: <img> without alt`);
+  for (const m of h.matchAll(/<img\b[^>]*?\balt="([^"]+)"/g)) if (/^(image|photo|picture|img|logo|banner|untitled)\b\.?$|\.(webp|png|jpe?g|gif)$|^shorelist[-_ ]/i.test(m[1].trim())) bad(`${f}: generic or filename alt text "${m[1]}"`);
   for (const m of h.matchAll(/<img\b[^>]*?\bsrc="(\/[^"?#]+)[^"]*"/g)) if (!fs.existsSync('.' + decodeURI(m[1]))) bad(`${f}: <img> src ${m[1]} does not exist`);
   [...h.matchAll(/<script>([\s\S]*?)<\/script>/g)].forEach((m, i) => {
     try { new vm.Script(m[1]); } catch (e) { bad(`${f}: inline script ${i} syntax: ${e.message}`); }
