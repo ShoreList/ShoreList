@@ -35,6 +35,23 @@ for (const i of cat.items || []) {
   ids.add(i.id);
   for (const k of ['id', 'name', 'url', 'price']) if (i[k] == null) bad(`catalog ${i.id}: missing ${k}`);
 }
+// gift guide: every item link must be a live catalog item, with the catalog's url and price (regenerate: node tools/build-store-pages.mjs)
+if (fs.existsSync('gift-guide.html')) {
+  const gg = fs.readFileSync('gift-guide.html', 'utf8');
+  const byId = new Map((cat.items || []).map((i) => [i.id, i]));
+  for (const m of gg.matchAll(/<a href="([^"]+)" data-item-id="([^"]+)">[\s\S]*?<span class="gg-price">([^<]+)<\/span>/g)) {
+    const it = byId.get(m[2].replace(/&amp;/g, '&'));
+    if (!it) { bad(`gift-guide: ${m[2]} is not in shop-catalog.json (run node tools/build-store-pages.mjs)`); continue; }
+    if (m[1].replace(/&amp;/g, '&') !== it.url) bad(`gift-guide: ${it.id} url differs from the catalog`);
+    if (m[3] !== `${it.from ? 'From ' : ''}$${it.price}`) bad(`gift-guide: ${it.id} price differs from the catalog`);
+  }
+}
+for (const f of ['size-guide.html', 'shipping-returns.html', 'gift-guide.html']) {
+  if (!fs.existsSync(f)) { bad(`${f}: missing`); continue; }
+  const t = fs.readFileSync(f, 'utf8').replace(/<script[\s\S]*?<\/script>/g, '');
+  if (/[\u2013\u2014]|&mdash;|&ndash;|&#821[12];/.test(t)) bad(`${f}: em or en dash in visible copy`);
+  if (/shore thing/i.test(t)) bad(`${f}: banned phrase`);
+}
 for (const f of fs.readdirSync('netlify/functions')) {
   try { new vm.Script(fs.readFileSync('netlify/functions/' + f, 'utf8').replace(/^#!.*/, '')); } catch (e) { bad(`function ${f}: ${e.message}`); }
 }

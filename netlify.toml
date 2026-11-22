@@ -40,6 +40,21 @@
   status = 200
 
 [[redirects]]
+  from = "/size-guide"
+  to = "/size-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/shipping-returns"
+  to = "/shipping-returns.html"
+  status = 200
+
+[[redirects]]
+  from = "/gift-guide"
+  to = "/gift-guide.html"
+  status = 200
+
+[[redirects]]
   from = "/guide-success"
   to = "/guide-success.html"
   status = 200

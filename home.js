@@ -134,7 +134,7 @@
   (function () {
     var el = d.getElementById('typewriter-text');
     if (!el) return;
-    var P = ['Romantic weekend for 2. We love sunsets and the water...', 'Family trip with kids — adventure, nature, and fun...', 'Bachelor party for 6. Max adrenaline. Flexible budget...', 'Solo traveler, one day — show me the real Wilmington...'];
+    var P = ['Romantic weekend for 2. We love sunsets and the water...', 'Family trip with kids: adventure, nature, and fun...', 'Bachelor party for 6. Max adrenaline. Flexible budget...', 'Solo traveler, one day — show me the real Wilmington...'];
     var txt = d.createElement('span'), cur = d.createElement('span');
     cur.className = 'pc-cursor'; cur.setAttribute('aria-hidden', 'true');
     el.textContent = ''; el.appendChild(txt); el.appendChild(cur);

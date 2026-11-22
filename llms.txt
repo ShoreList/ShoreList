@@ -36,4 +36,7 @@
 
 ## Shop
 - [Shop](https://shorelist.net/shop): coastal Carolina apparel and beach goods, sold through two ShoreList stores. The Shopify store at https://shorelist.myshopify.com sells the embroidered crewnecks, corduroy caps, cuffed beanies and garment-dyed tees, the beach gear, the can coolers and the Christmas ornaments. The second store at https://shorelist-shop.fourthwall.com sells the art prints, the printed tees, two crewnecks, the totes and the dad hat. Each product on the shop page links to the store that sells it. Beach Setup items: Tilt Beach Umbrella $99, Backpack Beach Chair $109, Carolina Coast Terry Towel $68, Wilmington Soft Cooler $72. Items are made to order or shipped from our suppliers; see each product page for shipping and returns.
+- [Shipping and returns](https://shorelist.net/shipping-returns): how ShoreList shop orders are made to order, what is stated about production time, and how damaged, defective or misprinted pieces are handled
+- [Size guide](https://shorelist.net/size-guide): garment measurements in inches for the embroidered crewnecks and varsity hoodies, and how to measure a piece you own
+- [Gift guide](https://shorelist.net/gift-guide): shop items sorted by recipient, linked to the stores that sell them at their current prices
 - Machine-readable catalog: https://shorelist.net/shop-catalog.json
