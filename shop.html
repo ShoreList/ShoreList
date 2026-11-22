@@ -179,7 +179,8 @@
   var qvCur=null;
   function preHtml(i){
     var out=isGear(i);
-    return (wearable(i)?'<div><dt>Size and fit</dt><dd><a href="/size-guide">Size guide</a></dd></div>':'')+
+    var facts=(Array.isArray(i.facts)?i.facts:[]).filter(function(f){return Array.isArray(f)&&typeof f[0]==='string'&&typeof f[1]==='string';}).map(function(f){return '<div><dt>'+esc(f[0])+'</dt><dd>'+esc(f[1])+'</dd></div>';}).join('');
+    return facts+(wearable(i)?'<div><dt>Size and fit</dt><dd><a href="/size-guide">Size guide</a></dd></div>':'')+
       '<div><dt>Delivery</dt><dd><a href="/shipping-returns">Delivery and returns</a></dd></div>'+
       '<div><dt>Made to order</dt><dd>Made after you order, so allow production time before it ships.</dd></div>'+
       '<div><dt>Returns</dt><dd>No returns for change of mind or size preference. Damaged, defective, misprinted or wrong-size items are replaced at no cost if reported within 30 days of delivery. <a href="/shipping-returns">Full details</a></dd></div>'+

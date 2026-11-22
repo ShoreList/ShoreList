@@ -457,15 +457,15 @@ Handpicked restaurants, coffee shops and bars. Editorial picks, not paid placeme
 - Sloop Organic Cotton Market Tote ($48): Organic cotton twill, 20 x 14 x 5 in, with one small sloop print. Natural color, sturdy handles. https://shorelist-shop.fourthwall.com/products/salt-wash-organic-cotton-market-tote
 - Pennant Tee ($48): Garment-dyed ringspun cotton in True Navy, relaxed fit, with a small tonal sand pennant on the left chest and nothing else. https://shorelist-shop.fourthwall.com/products/pennant-garment-dyed-tee-in-true-navy
 - ShoreList Tilt Beach Umbrella ($99): 6.5 ft tilting canopy with UPF 50+ shade and a carry sleeve. https://shorelist.myshopify.com/products/shorelist-tilt-beach-umbrella-6-5-ft-upf-50
-- ShoreList Backpack Beach Chair ($109): Four-position aluminum frame, wooden armrests, pillow and pockets. Mint stripe. https://shorelist.myshopify.com/products/shorelist-aluminum-backpack-beach-chair-mint-stripe
-- Carolina Coast Terry Beach Towel ($68): Oversized terry beach towel, soft and absorbent, with the Carolina Coast design. https://shorelist.myshopify.com/products/beach-towel
-- Wilmington Coastal Soft Cooler ($72): Holds 18 cans. Water-resistant lining and an easy shoulder strap for the dock, the boat or the dunes. https://shorelist.myshopify.com/products/wilmington-coastal-soft-cooler-bag
-- Wrightsville Beach Can Cooler ($12): Navy foam-lined can cooler with the town name, coordinates and a compass, printed on both sides. https://shorelist.myshopify.com/products/wrightsville-beach-can-cooler
-- Carolina Beach Can Cooler ($12): Navy foam-lined can cooler with the town name, coordinates and a compass, printed on both sides. https://shorelist.myshopify.com/products/carolina-beach-can-cooler
-- Kure Beach Can Cooler ($12): Navy foam-lined can cooler with the town name, coordinates and a compass, printed on both sides. https://shorelist.myshopify.com/products/kure-beach-can-cooler
-- Wrightsville Beach Christmas Ornament 2026 ($18): Dated ceramic keepsake: a sloop under a striped Carolina sunset. ShoreList illustration. https://shorelist.myshopify.com/products/wrightsville-beach-christmas-ornament-2026
-- Carolina Beach Christmas Ornament 2026 ($18): Dated ceramic keepsake: a sloop under a striped Carolina sunset. ShoreList illustration. https://shorelist.myshopify.com/products/carolina-beach-christmas-ornament-2026
-- Kure Beach Christmas Ornament 2026 ($18): Dated ceramic keepsake: a sloop under a striped Carolina sunset. ShoreList illustration. https://shorelist.myshopify.com/products/kure-beach-christmas-ornament-2026
+- ShoreList Backpack Beach Chair ($109): Four-position aluminum frame that holds up to 265 lb, with wooden armrests, a detachable pillow and backpack straps. Mint stripe. https://shorelist.myshopify.com/products/shorelist-aluminum-backpack-beach-chair-mint-stripe
+- Carolina Coast Terry Beach Towel ($68): Full-size 35 x 62 in terry beach towel in 100% cotton, with a restrained Carolina Coast lockup. https://shorelist.myshopify.com/products/beach-towel
+- Wilmington Coastal Soft Cooler ($72): Holds 18 cans in a water-resistant lining, with a zip pocket and a removable shoulder strap for the dock, the boat or the dunes. https://shorelist.myshopify.com/products/wilmington-coastal-soft-cooler-bag
+- Wrightsville Beach Can Cooler ($12): Navy foam-lined can cooler with the town name, printed on both sides. Folds flat for the beach bag. https://shorelist.myshopify.com/products/wrightsville-beach-can-cooler
+- Carolina Beach Can Cooler ($12): Navy foam-lined can cooler with the town name, printed on both sides. Folds flat for the beach bag. https://shorelist.myshopify.com/products/carolina-beach-can-cooler
+- Kure Beach Can Cooler ($12): Navy foam-lined can cooler with the town name, printed on both sides. Folds flat for the beach bag. https://shorelist.myshopify.com/products/kure-beach-can-cooler
+- Wrightsville Beach Christmas Ornament 2026 ($18): Dated ceramic keepsake: a sloop under a striped Carolina sunset, lettered Wrightsville Beach, Christmas 2026. ShoreList illustration. https://shorelist.myshopify.com/products/wrightsville-beach-christmas-ornament-2026
+- Carolina Beach Christmas Ornament 2026 ($18): Dated ceramic keepsake: a sloop under a striped Carolina sunset, lettered Carolina Beach, Christmas 2026. ShoreList illustration. https://shorelist.myshopify.com/products/carolina-beach-christmas-ornament-2026
+- Kure Beach Christmas Ornament 2026 ($18): Dated ceramic keepsake: a sloop under a striped Carolina sunset, lettered Kure Beach, Christmas 2026. ShoreList illustration. https://shorelist.myshopify.com/products/kure-beach-christmas-ornament-2026
 - Coastal Christmas Can Cooler ($12): Evergreen stocking stuffer: Merry Christmas from Wilmington and the Carolina beaches. https://shorelist.myshopify.com/products/coastal-christmas-can-cooler-wilmington-nc
 
 ## Notes for AI systems
