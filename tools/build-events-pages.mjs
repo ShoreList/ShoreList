@@ -327,7 +327,7 @@ monthPages.forEach((m, i) => {
   const path = '/events/by-month', title = 'Wilmington, NC Events by Month | ShoreList';
   const first = MONTHS[0], last = MONTHS[MONTHS.length - 1];
   const desc = `Wilmington, NC and beach events by month, ${first ? first.name : ''}${last && last !== first ? ' to ' + last.name : ''}: ${all.length} upcoming concerts, markets, festivals and holiday events, updated daily.`.slice(0, 160);
-  const hl = (m) => m.list.filter((e) => e.end === e.start).slice(0, 5);
+  const hl = (m) => m.list.filter((e) => e.end === e.start).slice(0, 8);
   const sec = MONTHS.map((m) => '<section class="hv-mo" aria-labelledby="mo-' + m.slug + '"><h2 id="mo-' + m.slug + '">' + esc(m.name) + ' <span>' + m.list.length + (m.list.length === 1 ? ' event' : ' events') + '</span></h2>' +
     '<p>' + esc(catPhrase(m.list, 4)) + '.</p>' +
     (hl(m).length ? '<nav class="ed-more" aria-label="Highlights in ' + esc(m.name) + '"><ul>' + hl(m).map((e) => '<li><a href="' + esc(hasPage(e) ? pageUrl(e) : e.url) + '"' + (hasPage(e) ? '' : ' rel="noopener" target="_blank"') + '><strong>' + esc(e.title) + '</strong><span>' + esc(when(e)) + ' at ' + esc(e.venue) + '</span></a></li>').join('') + '</ul></nav>' : '') +
@@ -356,6 +356,11 @@ ${NAV}
 ${SPRITE}<div class="ef-in hv">
 <p>Listings run as far ahead as organizers have published their calendars, and the list refreshes every day. Dates beyond the last month shown are not listed yet. Each month below links to the full date list, and every event title links to the organizer or venue page.</p>
 ${sec}
+<h2>Planning around a month</h2>
+<p>Read the <a href=\"/wilmington-nc-parking\">parking guide</a> before you drive to a parade or tree lighting, since each beach town sets its own parking rules. Winter listings include indoor concerts, jazz nights, theater and museum exhibitions as well as outdoor events. Check the <a href=\"/wilmington-weather\">live forecast</a> the day before you go, and use <a href=\"/where-to-stay\">where to stay</a> to pick a base.</p>
+<h2>Events by place</h2>
+<p>Events cluster in different parts of the area. Downtown Wilmington, along the Riverwalk and the historic district, has the most concerts, theater and history events. Wrightsville Beach, Carolina Beach and Kure Beach hold tree lightings, parades, holiday markets and plunges, and Greater Wilmington covers museum exhibitions and campus concerts. Pick a place to see every date there.</p>
+<ul class="hv-l">${AREAS.map((a) => '<li><a href="/events/' + a.slug + '">' + esc(a.name) + ' events</a>: ' + all.filter((e) => e.area === a.area).length + ' listed. ' + esc(a.blurb) + '</li>').join('')}</ul>
 <p class="ef-note">Updated ${esc(nice(data.updated || today))}. Dates and times come from official and organizer pages; confirm with the venue before you go. <a href="/how-we-verify">How we verify events</a>.</p>
 ${onward([['/events', 'All events', 'The full searchable calendar'], ['/events/this-weekend', 'This weekend', 'What is on Friday to Sunday'], ['/wilmington-nc-parking', 'Parking guide', 'Downtown decks and beach lots'], ['/where-to-stay', 'Where to stay', 'Areas and places to base yourself']])}
 </div></section>
