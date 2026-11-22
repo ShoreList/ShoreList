@@ -150,6 +150,28 @@ const shipBody = `<ul class="tp-short">
 <p class="tp-src">Production and shipping notes come from the public help pages of our fulfillment partners, read November 21, 2026: <a href="https://help.fourthwall.com/manage-my-shop/shop-settings/change-shipping-options" rel="noopener">Fourthwall on shipping options</a>, <a href="https://help.fourthwall.com/frequently-asked-questions/shipping-and-orders/returns-refunds-and-quality-issues" rel="noopener">Fourthwall on returns and quality issues</a> and <a href="https://help.printify.com/hc/en-us/articles/4483629751825-What-are-Printify-s-production-times-like" rel="noopener">Printify on production times</a>.</p>`;
 
 // ----------------------------------------------------------------- gift guide
+const giftFaq = [
+ [
+  "What is a good gift from Wilmington NC?",
+  "Something that carries the town: an embroidered crewneck, beanie or cap with a Wrightsville Beach or Kure Beach icon, a Christmas ornament, or an art print of a local pier. The gift guide sorts them by who is getting them."
+ ],
+ [
+  "Are there Wilmington NC gifts under $20?",
+  "Yes. The Wrightsville Beach, Carolina Beach and Kure Beach ornaments and the can coolers are in the Under $20 section, at the prices shown on this page."
+ ],
+ [
+  "Will a gift arrive in time for the holidays?",
+  "Every piece is made to order, and we do not publish holiday order-by dates. Shipping and the estimated delivery for your address are shown at checkout, before you pay."
+ ],
+ [
+  "Is there a gift that does not need shipping?",
+  "Yes. The PDF guides are $14 each and the art prints are $12 each as print-ready files. Both download after checkout, and 7 percent North Carolina sales tax is added."
+ ],
+ [
+  "Can I return a gift if it does not fit?",
+  "Because each piece is made after you order, we cannot take returns for a change of mind or size preference. Damaged, defective, misprinted or wrong-size pieces are replaced at no cost when reported within 30 days of delivery. See <a href=\"/shipping-returns\">shipping and returns</a>."
+ ]
+];
 const sections = [
   { id: 'under-20', h: 'Under $20: hosts, neighbors, stocking stuffers', p: 'Small, specific and about a town. The ornament is the keepsake. The can cooler is the one that actually goes on the boat.',
     ids: ['wrightsville-ornament-2026', 'carolina-beach-ornament-2026', 'kure-beach-ornament-2026', 'coastal-christmas-can-cooler', 'wrightsville-can-cooler', 'carolina-beach-can-cooler', 'kure-beach-can-cooler'] },
@@ -171,10 +193,12 @@ const giftSections = sections.map((s) => {
   items.forEach((i) => used.push(i));
   return `<section class="gg-sec" id="${s.id}" aria-labelledby="${s.id}-h"><h2 id="${s.id}-h">${s.h}</h2><p>${s.p}</p><ul class="gg-grid">${items.map(card).join('')}</ul></section>`;
 }).filter(Boolean).join('\n');
+const giftFaqHtml = `<section class="tp-faq" id="faq"><h2>Gift questions</h2>${giftFaq.map(([q, a]) => `<h3>${q}</h3><p>${a}</p>`).join('')}</section>`;
 const giftBody = `<p>Prices and links come straight from the shop, so what you see here is what you pay before shipping and tax. Everything is made to order. Shipping and delivery estimates for your address are shown at checkout, and the <a href="/shipping-returns">shipping and returns page</a> covers the rest. We do not publish holiday order-by dates.</p>
 ${giftSections}
 <section class="gg-sec" id="no-shipping" aria-labelledby="ns-h"><h2 id="ns-h">Nothing to ship</h2>
 <p>For a visitor coming to town, the <a href="/guides">PDF guides</a> are $14 each and download right after checkout, including Wilmington Holidays 2026. The <a href="/prints">art prints</a> are $12 each as print-ready files. Seven percent North Carolina sales tax is added at checkout on both.</p></section>
+${giftFaqHtml}
 ${used.length ? '<p class="tp-src">Everything above is listed in the <a href="/shop">full shop</a>.</p>' : '<p class="tp-src">The shop has no pieces listed right now. The <a href="/shop">shop page</a> shows what is available.</p>'}`;
 const giftLd = !used.length ? null : { '@context': 'https://schema.org', '@type': 'ItemList', name: 'ShoreList gift guide', itemListElement: used.map((i, n) => ({ '@type': 'ListItem', position: n + 1, name: i.name, url: i.url })) };
 
@@ -182,7 +206,7 @@ const out = {
   'size-guide.html': page({ slug: 'size-guide', title: 'Size Guide | ShoreList Shop', desc: 'Garment measurements for ShoreList embroidered crewnecks in inches, how to measure a piece you own, and who to ask when a size is not listed.', eye: 'Size guide', h1: 'Fit, <em>measured</em>', lede: 'Every piece is made to order, so the right size matters. Here are the real numbers where we have them, and a straight answer where we do not.', body: sizeBody }),
   'shipping-returns.html': page({ slug: 'shipping-returns', title: 'Shipping and Returns | ShoreList Shop', desc: 'How ShoreList orders are made, how long they take, and what happens if a piece arrives damaged, defective or misprinted. Plain answers, nothing buried.', eye: 'Shipping and returns', h1: 'Shipping &amp; returns, <em>plainly</em>', lede: 'Made to order, shipped by our partners, fixed if it arrives wrong. Here is exactly how that works.', body: shipBody,
     ld: [{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }] }),
-  'gift-guide.html': page({ slug: 'gift-guide', title: 'Coastal Carolina Gift Guide | ShoreList Shop', desc: 'A short gift guide by recipient, from under $20 stocking stuffers to beach-day gear, drawn from the ShoreList shop at its current prices.', eye: 'Gift guide', h1: 'Gifts for people who <em>love the coast</em>', lede: 'Sorted by who is getting it, not by price. Every item is in the shop today.', body: giftBody, ld: giftLd ? [giftLd] : [], wide: true }),
+  'gift-guide.html': page({ slug: 'gift-guide', title: 'Coastal Carolina Gift Guide | ShoreList Shop', desc: 'A short gift guide by recipient, from under $20 stocking stuffers to beach-day gear, drawn from the ShoreList shop at its current prices.', eye: 'Gift guide', h1: 'Gifts for people who <em>love the coast</em>', lede: 'This Wilmington NC gift guide sorts coastal Carolina gifts by who is getting them: ornaments and can coolers under $20, art prints of local piers, embroidered crewnecks, beanies and caps, and beach-day gear. Every item is in the shop today at its current price, and everything is made to order.', body: giftBody, ld: [...(giftLd ? [giftLd] : []), { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: giftFaq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a.replace(/<[^>]+>/g, '') } })) }], wide: true }),
 };
 for (const [f, h] of Object.entries(out)) fs.writeFileSync(new URL('../' + f, import.meta.url), h);
 console.log('wrote', Object.keys(out).join(', '), `(${used.length} gift items)`);
