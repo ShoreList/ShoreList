@@ -153,7 +153,7 @@ const shipBody = `<ul class="tp-short">
 const giftFaq = [
  [
   "What is a good gift from Wilmington NC?",
-  "Something that carries the town: an embroidered crewneck, beanie or cap with a Wrightsville Beach or Kure Beach icon, a Christmas ornament, or an art print of a local pier. The gift guide sorts them by who is getting them."
+  "Something that carries the town: an embroidered crewneck, beanie or cap with a Wrightsville Beach or Kure Beach icon, a Christmas ornament, or an art print of a Wrightsville Beach sunset or the Carolina Beach boardwalk. The gift guide sorts them by who is getting them."
  ],
  [
   "Are there Wilmington NC gifts under $20?",
@@ -174,15 +174,15 @@ const giftFaq = [
 ];
 const sections = [
   { id: 'under-20', h: 'Under $20: hosts, neighbors, stocking stuffers', p: 'Small, specific and about a town. The ornament is the keepsake. The can cooler is the one that actually goes on the boat.',
-    ids: ['wrightsville-ornament-2026', 'carolina-beach-ornament-2026', 'kure-beach-ornament-2026', 'coastal-christmas-can-cooler', 'wrightsville-can-cooler', 'carolina-beach-can-cooler', 'kure-beach-can-cooler'] },
-  { id: 'for-the-wall', h: 'For someone who misses a particular pier', p: 'A print of the right stretch of coast beats a postcard. Each is made to order and sold through ShoreList Gear.',
-    ids: ['kure-beach-fishing-pier-art-print', 'carolina-beach-boardwalk-art-print', 'wrightsville-beach-pier-art-print', 'uss-north-carolina-art-print'] },
+    ids: ['wrightsville-ornament-2026', 'carolina-beach-ornament-2026', 'kure-beach-ornament-2026', 'wrightsville-can-cooler', 'carolina-beach-can-cooler', 'kure-beach-can-cooler'] },
+  { id: 'for-the-wall', h: 'For the wall', p: 'A print of the right stretch of coast beats a postcard. Each is made to order and sold through ShoreList Gear.',
+    ids: ['carolina-beach-boardwalk-art-print', 'wrightsville-beach-pier-art-print'] },
   { id: 'wears-the-town', h: 'For the person who wears their town', p: 'A small embroidered icon and a town code, stitched on a garment-dyed crewneck. Sizing help is on the <a href="/size-guide">size guide</a>, and a fit question to us is welcome.',
     ids: ['the-sloop-embroidered-crewneck-wrightsville-beach', 'the-blue-crab-embroidered-crewneck-kure-beach', ] },
   { id: 'hats', h: 'Beanies and caps', p: 'Smaller than a sweatshirt, and the same stitched icon. Check each product page for sizing.',
     ids: ['the-sloop-cuffed-beanie-wrightsville-beach', 'the-blue-crab-cuffed-beanie-kure-beach', 'the-sloop-corduroy-cap-wrightsville-beach', 'the-blue-crab-corduroy-cap-kure-beach', ] },
-  { id: 'beach-day', h: 'For the beach-day household', p: 'A towel and something cold to put in a cooler.',
-    ids: ['tilt-beach-umbrella', 'backpack-beach-chair', 'carolina-coast-towel', 'coastal-soft-cooler'] },
+  { id: 'beach-day', h: 'For the beach-day household', p: 'A towel for the sand and a tote for the walk down.',
+    ids: ['carolina-coast-towel', 'salt-wash-market-tote'] },
 ];
 const price = (i) => `${i.from ? 'From ' : ''}$${i.price}`;
 const card = (i) => `<li><a href="${esc(i.url)}" data-item-id="${esc(i.id)}"><img src="${esc(i.img)}" alt="${esc(i.alt)}" width="800" height="1000" loading="lazy" decoding="async"/><span class="gg-name">${esc(i.name)}</span><span class="gg-price">${price(i)}</span><span class="gg-line">${esc(i.meta)}</span></a></li>`;
@@ -208,5 +208,77 @@ const out = {
     ld: [{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }] }),
   'gift-guide.html': page({ slug: 'gift-guide', title: 'Coastal Carolina Gift Guide | ShoreList Shop', desc: 'A short gift guide by recipient, from under $20 stocking stuffers to beach-day gear, drawn from the ShoreList shop at its current prices.', eye: 'Gift guide', h1: 'Gifts for people who <em>love the coast</em>', lede: 'This Wilmington NC gift guide sorts coastal Carolina gifts by who is getting them: ornaments and can coolers under $20, art prints of local piers, embroidered crewnecks, beanies and caps, and beach-day gear. Every item is in the shop today at its current price, and everything is made to order.', body: giftBody, ld: [...(giftLd ? [giftLd] : []), { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: giftFaq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a.replace(/<[^>]+>/g, '') } })) }], wide: true }),
 };
+
+// ------------------------------------------------------------ town shop pages
+// /shop/<town> landing pages for ads and social links. Built from shop-catalog.json: the shelves[] with town:true are the towns,
+// an item lands on a town by item.town, then by a town name in its name, then by item.shelf, else on Wilmington and the Coast.
+// Nothing here is typed per product, so new catalog items appear after a rebuild. Links carry UTM tags for campaign tracking.
+const TOWN_COPY = {
+  'wrightsville-beach': {
+    title: 'Wrightsville Beach Souvenirs and Apparel | ShoreList',
+    desc: 'Wrightsville Beach NC souvenirs from the ShoreList Shop: embroidered apparel, art prints, can coolers and ornaments with the sloop mark. Made to order.',
+    h1: 'Wrightsville Beach souvenirs, <em>made to order</em>',
+    lede: 'The ShoreList Shop sells Wrightsville Beach NC souvenirs and gifts, each with one small, understated mark: the sloop, for sailing days and marina evenings. Embroidered crewnecks, caps and beanies, an art print, a can cooler and a dated ornament, all made to order.',
+    about: 'The sloop is the Wrightsville Beach mark. It is stitched small on the apparel, never printed as a big souvenir graphic, and it shares the shop with the town&rsquo;s sunset art print and keepsakes.',
+    q: ['What is the Wrightsville Beach mark?', 'A small sloop under sail. On apparel it is stitched on the chest, the cap or the beanie cuff.'] },
+  'carolina-beach': {
+    title: 'Carolina Beach Souvenirs, Prints and Gifts | ShoreList',
+    desc: 'Carolina Beach NC souvenirs and gifts from the ShoreList Shop: a boardwalk art print, a can cooler and a dated ornament. Made to order.',
+    h1: 'Carolina Beach souvenirs and <em>boardwalk gifts</em>',
+    lede: 'The ShoreList Shop sells Carolina Beach NC souvenirs and gifts drawn from the boardwalk: the carousel and the Ferris wheel at blue hour, as a vintage-style art print, with a can cooler and a dated ornament. Everything is made to order.',
+    about: 'Carolina Beach is on Pleasure Island, and its pieces take their color from the boardwalk at blue hour. New Carolina Beach pieces are added to this page as they join the shop.',
+    q: ['What does the Carolina Beach art print show?', 'The boardwalk carousel and Ferris wheel at blue hour, printed on museum-matte paper.'] },
+  'kure-beach': {
+    title: 'Kure Beach Souvenirs, Apparel and Gifts | ShoreList',
+    desc: 'Kure Beach NC souvenirs and gifts from the ShoreList Shop: an embroidered blue crab crewneck, a can cooler and a dated ornament. Made to order.',
+    h1: 'Kure Beach souvenirs with the <em>blue crab</em>',
+    lede: 'The ShoreList Shop sells Kure Beach NC souvenirs and gifts with one small mark, the Atlantic blue crab: an embroidered crewneck, a can cooler and a dated ornament, all made to order.',
+    about: 'The blue crab is the Kure Beach mark, stitched small rather than printed large. New Kure Beach pieces are added to this page as they join the shop.',
+    q: ['What is the Kure Beach mark?', 'The Atlantic blue crab, stitched small on the chest of the crewneck.'] },
+  wilmington: {
+    title: 'Wilmington NC Souvenirs and Beach Gear | ShoreList',
+    desc: 'Wilmington NC souvenirs and beach gear from the ShoreList Shop: a market tote and a Carolina Coast beach towel, made to order.',
+    h1: 'Wilmington NC souvenirs and <em>beach gear</em>',
+    lede: 'These Wilmington NC souvenirs and beach goods belong to the whole coast rather than one beach: a market tote and the Carolina Coast terry beach towel. Everything is made to order.',
+    about: 'Pieces for the whole coast live here. For a single beach, start with Wrightsville Beach, Carolina Beach or Kure Beach.',
+    q: ['Where do the beach towel and tote ship from?', 'Everything is made to order by our print partners. Shipping method, cost and the estimate for your address are shown at checkout.'] },
+};
+const shopTowns = (cat.shelves || []).filter((s) => s.town);
+const townIds = new Set(shopTowns.map((s) => s.id));
+const townOfItem = (i) => {
+  if (i.town && townIds.has(i.town)) return i.town;
+  const n = `${i.name} ${i.id}`.toLowerCase();
+  if (/wrightsville/.test(n) && townIds.has('wrightsville-beach')) return 'wrightsville-beach';
+  if (/carolina[ -]beach/.test(n) && townIds.has('carolina-beach')) return 'carolina-beach';
+  if (/kure/.test(n) && townIds.has('kure-beach')) return 'kure-beach';
+  if (i.shelf && townIds.has(i.shelf)) return i.shelf;
+  return townIds.has('wilmington') ? 'wilmington' : shopTowns[0]?.id;
+};
+const townFaqShared = [
+  ['Is everything made to order?', 'Yes. Every piece is made after you order, so allow production time before it ships. The <a href="/shipping-returns">shipping and returns page</a> has the details.'],
+  ['How does checkout work?', 'Pieces from ShoreList Shop go in your bag and check out together on Shopify. A few pieces are sold through our second store, ShoreList Gear, and check out there. Shipping and tax are shown before you pay.'],
+  ['What if something arrives wrong?', 'If a piece arrives damaged, defective, misprinted or in the wrong size, we replace it at no cost when you report it within 30 days of delivery. Made-to-order pieces cannot be returned for a change of mind or size preference.'],
+];
+fs.mkdirSync(new URL('../shop/', import.meta.url), { recursive: true });
+const townOut = [];
+for (const t of shopTowns) {
+  const c = TOWN_COPY[t.id];
+  if (!c) continue; // a new town needs its TOWN_COPY entry before it gets a page
+  const items = cat.items.filter((i) => townOfItem(i) === t.id);
+  if (!items.length) continue;
+  const utm = `utm_source=shorelist.net&utm_medium=landing&utm_campaign=shop-${t.id}`;
+  const link = (u) => u + (u.includes('?') ? '&' : '?') + utm;
+  const tcard = (i) => `<li><a href="${esc(link(i.url))}" data-item-id="${esc(i.id)}" rel="noopener"><img src="${esc(i.img)}" alt="${esc(i.alt)}" width="800" height="1000" loading="lazy" decoding="async"/><span class="gg-name">${esc(i.name)}</span><span class="gg-price">${price(i)}</span><span class="gg-line">${esc(i.meta)}</span></a></li>`;
+  const faqs = [[c.q[0], c.q[1]], ...townFaqShared];
+  const others = shopTowns.filter((x) => x.id !== t.id && TOWN_COPY[x.id]).map((x) => `<a href="/shop/${x.id}">${esc(x.name)}</a>`).join(', ');
+  const body = `<section class="gg-sec" id="pieces" aria-labelledby="pieces-h"><h2 id="pieces-h">${esc(t.name)} pieces</h2><p>${c.about}</p><ul class="gg-grid">${items.map(tcard).join('')}</ul></section>
+<section class="gg-sec" id="more" aria-labelledby="more-h"><h2 id="more-h">More from the shop</h2><p>Browse every town and filter by product type or motif on the <a href="/shop?town=${t.id}">full shop page</a>, shop by recipient in the <a href="/gift-guide">gift guide</a>, or see ${others}. We are adding new pieces for each town, so check back or join the drop list on the shop page. Prices are shown before shipping and tax, and everything is made to order.</p></section>
+<section class="tp-faq" id="faq"><h2>Questions</h2>${faqs.map(([q, a]) => `<h3>${q}</h3><p>${a}</p>`).join('')}</section>`;
+  const ld = [{ '@context': 'https://schema.org', '@type': 'ItemList', name: `ShoreList ${t.name} shop`, itemListElement: items.map((i, n) => ({ '@type': 'ListItem', position: n + 1, name: i.name, url: i.url })) },
+    { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a.replace(/<[^>]+>/g, '') } })) }];
+  out[`shop/${t.id}.html`] = page({ slug: `shop/${t.id}`, title: c.title, desc: c.desc, eye: t.name, h1: c.h1, lede: c.lede, body, ld, wide: true, ogImage: `${SITE}/og-shop-${t.id}.jpg` });
+  townOut.push(t.id);
+}
+
 for (const [f, h] of Object.entries(out)) fs.writeFileSync(new URL('../' + f, import.meta.url), h);
 console.log('wrote', Object.keys(out).join(', '), `(${used.length} gift items)`);

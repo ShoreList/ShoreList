@@ -24,6 +24,8 @@
 <link rel="manifest" href="/manifest.webmanifest"/>
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
 <link rel="preconnect" href="https://cdn.shopify.com" crossorigin/>
+<link rel="preload" href="/shop-catalog.json" as="fetch" crossorigin="anonymous"/>
+<link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-embroidered-crewneck-wrightsville-beach_1000x.webp" imagesrcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-embroidered-crewneck-wrightsville-beach_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-embroidered-crewneck-wrightsville-beach_1920x.webp 1920w" imagesizes="(min-width:900px) 58vw, 100vw" fetchpriority="high"/>
 <link rel="stylesheet" href="/scene.css"/>
 <link rel="stylesheet" href="/fixes.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
@@ -39,23 +41,45 @@
 </nav>
 <header class="hero" id="top">
   <div class="hero-in">
-    <div class="hero-img"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-embroidered-crewneck-wrightsville-beach_1000x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-embroidered-crewneck-wrightsville-beach_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-embroidered-crewneck-wrightsville-beach_1920x.webp 1920w" sizes="(min-width:900px) 55vw, 100vw" alt="Woman on a marina dock at sunset wearing a washed blue crewneck with a small embroidered sailboat and the letters WB" width="1000" height="1250" fetchpriority="high" decoding="async"/><span class="hero-cap">Styled scene. Generated image.</span></div>
+    <div class="hero-img"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-embroidered-crewneck-wrightsville-beach_1000x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-embroidered-crewneck-wrightsville-beach_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-embroidered-crewneck-wrightsville-beach_1920x.webp 1920w" sizes="(min-width:900px) 58vw, 100vw" alt="Woman on a marina dock at sunset wearing a washed blue crewneck with a small embroidered sailboat and the letters WB" width="1000" height="1250" fetchpriority="high" decoding="async"/><span class="hero-cap">Styled scene. Generated image.</span></div>
     <div class="hero-txt">
       <p class="kicker">The ShoreList Shop</p>
       <h1>Coastal Carolina, one small mark at a time</h1>
-      <p class="lead">The ShoreList Shop sells Wilmington NC souvenirs, apparel and beach gear designed for Wrightsville Beach, Carolina Beach and Kure Beach: embroidered crewnecks, beanies and caps, can coolers, ornaments and towels. Every piece is made to order by our print partners, and the <a href="/gift-guide">gift guide</a> sorts the shop by who you are shopping for.</p>
-      <div class="hero-cta"><a class="sbtn" href="#shelf-daymarks" id="heroShop">Shop Daymarks</a><a class="tlink" href="#collections">All collections</a></div>
-      <p class="hero-trust"><span>Original designs</span><span>Made to order</span><span>Secure checkout</span></p>
+      <p class="lead">The ShoreList Shop sells Wilmington NC souvenirs, apparel and beach gear designed for Wrightsville Beach, Carolina Beach and Kure Beach: embroidered crewnecks, beanies and caps, art prints, can coolers and ornaments, made to order.</p>
+      <div class="hero-cta"><a class="sbtn" href="#towns" id="heroShop">Shop by town</a><a class="tlink" href="#featured" id="heroNew">Featured pieces</a></div>
     </div>
   </div>
+  <div class="rope" aria-hidden="true"></div>
 </header>
 <main id="main">
+  <section class="trust" aria-label="Why shop with ShoreList">
+    <ul class="trust-in wrap">
+      <li><b>Made to order</b><span>Nothing is printed or stitched until you buy, so nothing is wasted.</span></li>
+      <li><b>Secure checkout</b><span>Handled by Shopify and our print partners. Shipping and tax show before you pay.</span></li>
+      <li><b>Easy replacements</b><span>Damaged, defective, misprinted or wrong size? Replaced at no cost within 30 days of delivery. <a href="/shipping-returns">Details</a></span></li>
+      <li><b>Original designs</b><span>Made for Wilmington and its beaches, never stock art.</span></li>
+    </ul>
+  </section>
   <div class="wrap">
-    <section class="sec" id="collections" aria-labelledby="railH" hidden><div class="sec-h"><h2 id="railH">Shop by collection</h2></div><div class="rail" id="rail"></div></section>
-    <div id="ripSlot"></div>
-    <section class="gift" id="giftStrip" aria-labelledby="giftH" hidden><div class="gift-in"><div><h2 id="giftH">Gifts for the people on your list</h2><p>The gift guide pulls pieces from the shop for the people you are shopping for. Locals' Christmas has the ornaments.</p></div><div class="gift-l"><a class="tlink" href="/gift-guide">Open the gift guide</a><a class="tlink" href="#shelf-locals-christmas" id="giftShelf">Locals' Christmas</a></div></div></section>
-    <details class="tools" id="toolsBox" hidden><summary>Search, filter and sort</summary><div class="tools-in"><label class="sr" for="q">Search the shop</label><input id="q" type="search" placeholder="Search the shop" autocomplete="off"/><label class="sr" for="coll">Collection</label><select id="coll"></select><label class="sr" for="sort">Sort</label><select id="sort"><option value="feat">Featured</option><option value="you">For you</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option></select><span class="cnt" id="cnt" aria-live="polite"></span></div></details>
+    <section class="sec" id="towns" aria-labelledby="townH"><div class="sec-h"><h2 id="townH">Shop by town</h2><a class="tlink" href="/gift-guide">Gift guide</a></div>
+      <div class="towns" id="townGrid"><a class="town" href="/shop/wrightsville-beach"><b>Wrightsville Beach</b><span>Sloops, marinas and the sound</span></a><a class="town" href="/shop/carolina-beach"><b>Carolina Beach</b><span>The boardwalk at blue hour</span></a><a class="town" href="/shop/kure-beach"><b>Kure Beach</b><span>The Atlantic blue crab</span></a><a class="town" href="/shop/wilmington"><b>Wilmington and the Coast</b><span>For the whole coast</span></a></div></section>
+    <section class="sec" id="featured" aria-labelledby="featH" hidden><div class="sec-h"><h2 id="featH">Featured pieces</h2><a class="tlink" href="#results" id="featAll">Shop everything</a></div><div class="grid" id="featGrid"></div></section>
+    <section class="sec" id="motifs" aria-labelledby="motifH" hidden><div class="sec-h"><h2 id="motifH">Shop by motif</h2></div><div class="motifs" id="motifGrid"></div></section>
+  </div>
+  <section class="story" aria-labelledby="storyH"><div class="wrap">
+    <div class="story-hd"><p class="kicker kk">Our story</p><h2 id="storyH">Three beach towns, one small mark each</h2>
+    <p>ShoreList is a Wilmington company, and the shop starts where we live. Every piece carries one small, understated mark for a town, never big souvenir lettering. Each order is made for you by our print partners, and the <a href="/gift-guide">gift guide</a> sorts the shop by who you are shopping for.</p></div>
+    <ul class="story-towns">
+      <li><svg viewBox="0 0 64 48" aria-hidden="true" focusable="false"><path d="M32 4v34M32 6c10 6 16 18 16 30H32zM30 12C22 18 16 26 14 36h16z"/><path d="M8 40h48l-6 6H14z"/></svg><b>Wrightsville Beach</b><span>The sloop, for sailing days and marina evenings.</span><a href="/shop/wrightsville-beach">Shop Wrightsville Beach</a></li>
+      <li><svg viewBox="0 0 64 48" aria-hidden="true" focusable="false"><path d="M6 40h52M12 40V22M24 40V22M36 40V22M48 40V22M8 22h48M8 30h48"/><path d="M4 44c6-4 10 4 16 0s10 4 16 0 10 4 16 0 6 2 8 0"/></svg><b>Carolina Beach</b><span>The boardwalk, the carousel and the Ferris wheel at blue hour.</span><a href="/shop/carolina-beach">Shop Carolina Beach</a></li>
+      <li><svg viewBox="0 0 64 48" aria-hidden="true" focusable="false"><path d="M20 30c0-9 6-13 12-13s12 4 12 13-5 9-12 9-12 0-12-9zM21 33l-8 4M22 37l-7 6M43 33l8 4M42 37l7 6M23 23l-7-7M41 23l7-7M16 16c-5 0-8-4-7-8 4 0 8 2 10 5M48 16c5 0 8-4 7-8-4 0-8 2-10 5M29 18v-4M35 18v-4"/></svg><b>Kure Beach</b><span>The Atlantic blue crab, stitched small on a crewneck.</span><a href="/shop/kure-beach">Shop Kure Beach</a></li>
+    </ul>
+  </div></section>
+  <div class="wrap shopwrap" id="results">
+    <div class="filters" id="filters" role="group" aria-label="Filter the shop by town and product type" hidden><div class="chips" id="chips"></div></div>
+    <details class="tools" id="toolsBox" hidden><summary>Search and sort</summary><div class="tools-in"><label class="sr" for="q">Search the shop</label><input id="q" type="search" placeholder="Search the shop" autocomplete="off"/><label class="sr" for="sort">Sort</label><select id="sort"><option value="feat">Featured</option><option value="new">Newest</option><option value="you">For you</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option></select><span class="cnt" id="cnt" aria-live="polite"></span></div></details>
     <div id="shelves"></div>
+    <div id="ripSlot"></div>
     <section id="loadErr" class="soon" hidden aria-labelledby="loadErrH">
       <h2 id="loadErrH" tabindex="-1">We could not load the shop</h2>
       <p id="loadErrMsg" role="status" aria-live="polite">The product list did not load. Check your connection and try again, or go straight to our store.</p>
@@ -63,7 +87,6 @@
       <p style="margin-top:18px"><a class="tlink" href="https://shorelist.myshopify.com/collections/all" target="_blank" rel="noopener">Open the ShoreList store</a></p>
     </section>
     <noscript><section class="soon"><h2>The shop needs JavaScript to show products</h2><p>You can still browse and buy in our store.</p><a class="sbtn" href="https://shorelist.myshopify.com/collections/all" target="_blank" rel="noopener">Open the ShoreList store</a></section></noscript>
-    <section class="proof" aria-label="Why ShoreList"><div><b>Made for here</b>Original designs for Wilmington and its beaches, never stock art.</div><div><b>Made one at a time</b>Each order is made for you by our print partners, then shipped to your door.</div><div><b>No inventory waste</b>Everything is made after you order.</div><div><b>Clear terms</b>Damaged, defective or misprinted? Replaced at no cost within 30 days of delivery. <a href="/shipping-returns">Full details</a></div></section>
     <p class="note" id="note" hidden>Checkout is handled securely by Shopify and our print partners.</p>
     <section class="drop" id="drops"><h2>Get the next drop</h2><p class="s">We'll email you when new pieces go live. One email per drop, and you can unsubscribe any time.</p>
       <form id="dropForm" novalidate><label class="sr" for="dropEmail">Email address</label><input id="dropEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required/><button class="sbtn" type="submit">Tell me first</button><p class="dropmsg" id="dropMsg" role="status" aria-live="polite"></p></form></section>
@@ -85,7 +108,8 @@
   function $(id){return document.getElementById(id);}
   var allowed=[];
   function safeUrl(u){var m=/^https:\/\/([a-z0-9.-]+)\//i.exec(u||'');if(!m)return '';var h=m[1].toLowerCase();if(!allowed.length)return u;return allowed.some(function(a){return h===a||h.slice(-a.length-1)==='.'+a;})?u:'';}
-  var data={collections:[],items:[]},current='all',q='',sortBy='feat',saved=[],expanded={},SHOWN=4;
+  var data={collections:[],items:[]},town='all',type='all',motif='all',q='',sortBy='feat',saved=[],PER=8,PAGE=12,shownN=PAGE;
+  var TYPES=[['tops','Crewnecks and tees'],['hats','Caps and beanies'],['prints','Art prints'],['coolers','Can coolers'],['ornaments','Ornaments'],['beach','Beach goods']];
   try{saved=JSON.parse(localStorage.getItem('slSaved')||'[]')||[];}catch(e){saved=[];}
   function views(){try{return JSON.parse(localStorage.getItem('slViews')||'{}')||{};}catch(e){return {};}}
   function bump(id,n){try{var v=views();v[id]=(v[id]||0)+n;localStorage.setItem('slViews',JSON.stringify(v));}catch(e){}}
@@ -99,7 +123,47 @@
   function storeName(i){var s=(data.stores||[]).filter(function(x){return x.id===i.store;})[0];return s&&s.name?s.name:'ShoreList Gear';}
   function wearable(i){return /\b(crewneck|tee|hoodie|cap|beanie|hat)\b/i.test(i.name||'');}
   function splitName(n){n=String(n);var k=n.lastIndexOf(', '),a=k>0?n.slice(0,k):n,b=k>0?n.slice(k+2):'';return [a.replace(/^The /,''),b];}
-  function shelfOf(i){return i.shelf||'more';}
+
+  /* ---------- towns and types: a new product needs only a town id; the name fills in the rest ---------- */
+  function townDefs(){return (data.shelves||[]).filter(function(s){return s.town;});}
+  function townIds(){var o={};townDefs().forEach(function(s){o[s.id]=1;});return o;}
+  function townOf(i){
+    var ids=townIds();
+    if(i.town&&ids[i.town])return i.town;
+    var t=((i.name||'')+' '+(i.id||'')).toLowerCase();
+    if(/wrightsville/.test(t)&&ids['wrightsville-beach'])return 'wrightsville-beach';
+    if(/carolina[ -]beach/.test(t)&&ids['carolina-beach'])return 'carolina-beach';
+    if(/kure/.test(t)&&ids['kure-beach'])return 'kure-beach';
+    if(i.shelf&&ids[i.shelf])return i.shelf;
+    return ids.wilmington?'wilmington':(townDefs()[0]||{}).id||'more';
+  }
+  function typeOf(i){
+    var ok={};TYPES.forEach(function(t){ok[t[0]]=1;});
+    if(i.type&&ok[i.type])return i.type;
+    var n=(i.name||'').toLowerCase();
+    if(/\b(cap|beanie|hat)\b/.test(n))return 'hats';
+    if(/crewneck|\btee\b|hoodie|sweatshirt|shirt|quarter zip/.test(n))return 'tops';
+    if(/print|poster/.test(n))return 'prints';
+    if(/ornament/.test(n))return 'ornaments';
+    if(/can cooler/.test(n))return 'coolers';
+    return 'beach';
+  }
+  function motifDefs(){return data.motifs||[];}
+  function motifOf(i){
+    var d=motifDefs();if(i.motif&&d.some(function(m){return m.id===i.motif;}))return i.motif;
+    var n=(i.name||'').toLowerCase();
+    for(var k=0;k<d.length;k++){if(d[k].words&&new RegExp('\\b('+d[k].words+')','i').test(n))return d[k].id;}
+    return '';
+  }
+  function motifName(id){var d=motifDefs().filter(function(m){return m.id===id;})[0];return d?d.name:'';}
+  function townName(id){var d=townDefs().filter(function(s){return s.id===id;})[0];return d?d.name:'';}
+  function isNew(i){
+    if(!i.added)return false;
+    var d=Date.parse(i.added),now=Date.now(),old=data.items.some(function(x){return x.added&&Date.parse(x.added)<now-14*864e5;});
+    return old&&isFinite(d)&&now-d<=14*864e5;
+  }
+  function pieces(n){return n+' piece'+(n===1?'':'s');}
+  function liveItems(){return data.items.filter(function(i){return i.url&&safeUrl(i.url);});}
 
   /* ---------- saved list ---------- */
   function trayRender(){
@@ -114,65 +178,120 @@
     bump(id,3);var k=saved.indexOf(id),it=byId(id);
     try{if(k<0)gtag('event','add_to_wishlist',it?{item_id:id,currency:'USD',value:it.price,items:[gaItem(it)]}:{item_id:id});}catch(e){}
     if(k>-1)saved.splice(k,1);else saved.push(id);persist();trayRender();
-    var ae=document.activeElement,box=$('shelves'),back=ae&&box.contains(ae)&&ae.getAttribute('data-h')===id;
-    render();
-    if(back){var hs=box.querySelectorAll('[data-h]');for(var x=0;x<hs.length;x++){if(hs[x].getAttribute('data-h')===id){hs[x].focus();break;}}}
+    var ae=document.activeElement,back=ae&&ae.getAttribute&&ae.getAttribute('data-h')===id&&(ae.closest('#shelves')||ae.closest('#featGrid'));
+    var inFeat=back&&ae.closest('#featGrid');
+    renderAll();
+    if(back){var hs=(inFeat?$('featGrid'):$('shelves')).querySelectorAll('[data-h]');for(var x=0;x<hs.length;x++){if(hs[x].getAttribute('data-h')===id){hs[x].focus();break;}}}
   }
 
-  /* ---------- shelves ---------- */
-  function liveItems(){return data.items.filter(function(i){return i.url&&safeUrl(i.url);});}
-  function shelfList(){
-    var live=liveItems(),defs=(data.shelves||[]).slice(),have={};
-    live.forEach(function(i){have[shelfOf(i)]=1;});
-    if(have.more&&!defs.some(function(d){return d.id==='more';}))defs.push({id:'more',name:'More from the shop',blurb:''});
-    return defs.filter(function(d){return have[d.id];});
-  }
-  function cardHtml(i){
-    var on=saved.indexOf(i.id)>-1,nm=splitName(i.name);
-    var ph=i.img?'<div class="ph" data-qv="'+esc(i.id)+'"><img src="'+esc(i.img)+'" alt="'+esc(i.alt||i.name)+'" loading="lazy" decoding="async" width="600" height="750"/><button class="qvb" type="button" data-qv="'+esc(i.id)+'" tabindex="-1" aria-hidden="true">Quick view</button></div>':'<div class="ph"></div>';
-    return '<article class="card">'+ph+'<div class="bd"><h3><button type="button" data-qv="'+esc(i.id)+'" aria-haspopup="dialog">'+esc(nm[0])+'</button></h3>'+(nm[1]?'<div class="town">'+esc(nm[1])+'</div>':'')+
+  /* ---------- cards ---------- */
+  function cardHtml(i,eager){
+    var on=saved.indexOf(i.id)>-1,nm=splitName(i.name),tn=townName(townOf(i)),ty=typeOf(i);
+    var tlabel=(TYPES.filter(function(t){return t[0]===ty;})[0]||['','']),cue=[tn];if(i.color)cue.push(i.color);
+    var ph=i.img?'<div class="ph" data-qv="'+esc(i.id)+'"><img src="'+esc(i.img)+'" alt="'+esc(i.alt||i.name)+'" '+(eager?'loading="eager" fetchpriority="high"':'loading="lazy"')+' decoding="async" width="800" height="1000"/><button class="qvb" type="button" data-qv="'+esc(i.id)+'" tabindex="-1" aria-hidden="true">Quick view</button></div>':'<div class="ph"></div>';
+    var add=isGear(i)
+      ?'<button class="sbtn ghost add" type="button" data-add="'+esc(i.id)+'" aria-label="Add to bag: '+esc(i.name)+'">Add to bag</button>'
+      :'<a class="sbtn ghost add buy" href="'+esc(i.url)+'" target="_blank" rel="noopener" data-id="'+esc(i.id)+'" aria-label="Add to bag, choose options: '+esc(i.name)+'">Add to bag</a>';
+    return '<article class="card">'+ph+'<div class="bd">'+(isNew(i)?'<span class="newc">New</span>':'')+'<div class="cue">'+esc(cue.join(' · '))+'</div><h3><button type="button" data-qv="'+esc(i.id)+'" aria-haspopup="dialog">'+esc(nm[0])+'</button></h3>'+
       (i.meta?'<div class="meta">'+esc(i.meta)+'</div>':'')+
       '<div class="row">'+(money(i)?'<span class="price">'+esc(priceLabel(i))+'</span>':'<span></span>')+'<button class="save" type="button" data-h="'+esc(i.id)+'" aria-pressed="'+on+'" aria-label="'+(on?'Remove from my list: ':'Save to my list: ')+esc(i.name)+'">'+(on?'Saved':'Save')+'</button></div>'+
+      '<div class="act">'+add+'</div>'+
       (isGear(i)?'<div class="sep">Checks out at '+esc(storeName(i))+'</div>':'')+'</div></article>';
+  }
+  function soonCard(t){
+    return '<div class="card soon-card"><div class="ph soonph"><span class="kicker">On the way</span><b>More '+esc(t.name)+' pieces</b></div><div class="bd"><div class="meta">We are adding new pieces for each town. Get the next drop first.</div><div class="act"><a class="sbtn ghost" href="#drops" data-drop="1">Tell me first</a></div></div></div>';
   }
   function sortItems(list){
     if(sortBy==='you'){var v=views();return list.slice().sort(function(a,b){return (v[b.id]||0)-(v[a.id]||0);});}
+    if(sortBy==='new')return list.slice().sort(function(a,b){return String(b.added||'').localeCompare(String(a.added||''));});
     if(sortBy==='lo')return list.slice().sort(function(a,b){return (a.price||0)-(b.price||0);});
     if(sortBy==='hi')return list.slice().sort(function(a,b){return (b.price||0)-(a.price||0);});
     return list;
   }
   function hook(n,d){try{document.dispatchEvent(new CustomEvent('shopanalytics:'+n,{detail:d}));}catch(e){}}
+  function matches(i,needle){
+    if(town!=='all'&&townOf(i)!==town)return false;
+    if(type!=='all'&&typeOf(i)!==type)return false;
+    if(motif!=='all'&&motifOf(i)!==motif)return false;
+    if(needle&&(i.name+' '+(i.meta||'')+' '+(i.alt||'')+' '+(i.color||'')+' '+townName(townOf(i))).toLowerCase().indexOf(needle)<0)return false;
+    return true;
+  }
+  function qs(){var s=location.search;return /utm_|[?&](town|type)=/.test(s)?s.replace(/[?&](town|type)=[^&]*/g,'').replace(/^&/,'?').replace(/^([^?])/,'?$1'):'';}
+  function syncUrl(){
+    try{
+      var p=new URLSearchParams(location.search);p.delete('town');p.delete('type');p.delete('motif');
+      if(town!=='all')p.set('town',town);if(type!=='all')p.set('type',type);if(motif!=='all')p.set('motif',motif);
+      var s=p.toString();history.replaceState(null,'',location.pathname+(s?'?'+s:'')+location.hash);
+    }catch(e){}
+  }
+
+  /* ---------- results ---------- */
   function render(){
-    var live=liveItems(),needle=q.trim().toLowerCase(),shelves=shelfList(),html='',total=0;
-    var narrowed=!!needle||sortBy!=='feat'||current!=='all';
-    shelves.forEach(function(s){
-      if(current!=='all'&&current!==s.id)return;
-      var list=live.filter(function(i){return shelfOf(i)===s.id;});
-      if(needle)list=list.filter(function(i){return (i.name+' '+(i.meta||'')+' '+(i.alt||'')).toLowerCase().indexOf(needle)>-1;});
-      if(!list.length)return;
-      list=sortItems(list);total+=list.length;hook('view_item_list',{list:s.name,items:list.map(function(i){return {id:i.id,name:i.name,price:i.price,collection:s.id,store:i.store};})});
-      var all=narrowed||expanded[s.id]||list.length<=SHOWN+1,shown=all?list:list.slice(0,SHOWN);
-      html+='<section class="shelf" id="shelf-'+esc(s.id)+'" aria-labelledby="sh-'+esc(s.id)+'"><div class="shelf-h"><h2 id="sh-'+esc(s.id)+'">'+esc(s.name)+'</h2>'+(s.blurb?'<p>'+esc(s.blurb)+'</p>':'')+'</div><div class="grid">'+shown.map(cardHtml).join('')+'</div>'+
-        (!all?'<div class="more-row"><button class="sbtn ghost" type="button" data-more="'+esc(s.id)+'" aria-expanded="false">See all '+list.length+' '+esc(s.name)+'</button></div>':'')+'</section>';
-    });
-    $('cnt').textContent=total+' piece'+(total===1?'':'s')+(narrowed?' shown':'');
-    $('shelves').innerHTML=html||'<p class="empty" style="padding:40px 0">Nothing matches that. Try a beach name or a color.</p>';
+    var live=liveItems(),needle=q.trim().toLowerCase(),html='',total=0;
+    var narrowed=!!needle||sortBy!=='feat'||town!=='all'||type!=='all'||motif!=='all';
+    if(!narrowed){
+      townDefs().forEach(function(s){
+        var list=live.filter(function(i){return townOf(i)===s.id;});
+        if(!list.length)return;
+        total+=list.length;hook('view_item_list',{list:s.name,items:list.map(function(i){return {id:i.id,name:i.name,price:i.price,collection:s.id,store:i.store};})});
+        var shown=list.slice(0,PER);
+        html+='<section class="shelf" id="shelf-'+esc(s.id)+'" aria-labelledby="sh-'+esc(s.id)+'"><div class="shelf-h"><div><h2 id="sh-'+esc(s.id)+'">'+esc(s.name)+'</h2>'+(s.tag?'<p class="tag">'+esc(s.tag)+'</p>':'')+'</div>'+(list.length>PER?'<button class="tlink" type="button" data-town="'+esc(s.id)+'">See all '+list.length+'</button>':'<button class="tlink" type="button" data-town="'+esc(s.id)+'">Shop this town</button>')+'</div>'+(s.blurb?'<p class="blurb">'+esc(s.blurb)+'</p>':'')+'<div class="grid">'+shown.map(function(i){return cardHtml(i,false);}).join('')+(list.length<5&&s.id!=='wilmington'?soonCard(s):'')+'</div></section>';
+      });
+    }else{
+      var list=sortItems(live.filter(function(i){return matches(i,needle);}));total=list.length;
+      if(list.length){
+        hook('view_item_list',{list:'filtered',items:list.map(function(i){return {id:i.id,name:i.name,price:i.price,store:i.store};})});
+        var shown=list.slice(0,shownN),td=townDefs().filter(function(s){return s.id===town;})[0],ty=TYPES.filter(function(t){return t[0]===type;})[0];
+        var title=(td?td.name:'All towns')+(motif!=='all'?': '+motifName(motif):'')+(ty?': '+ty[1]:'');
+        html+='<section class="shelf" aria-labelledby="flatH"><div class="shelf-h"><div><h2 id="flatH">'+esc(title)+'</h2></div><button class="tlink" type="button" data-clear="1">Clear filters</button></div>'+(td&&td.blurb&&type==='all'&&motif==='all'&&!needle?'<p class="blurb">'+esc(td.blurb)+'</p>':'')+'<div class="grid">'+shown.map(function(i){return cardHtml(i,false);}).join('')+(td&&shown.length===list.length&&list.length<5&&type==='all'&&!needle?soonCard(td):'')+'</div>'+(shown.length<list.length?'<div class="more-row"><button class="sbtn ghost" type="button" data-more="1">Show more ('+(list.length-shown.length)+' left)</button></div>':'')+'</section>';
+      }
+    }
+    $('cnt').textContent=pieces(total)+(narrowed?' shown':'');
+    $('shelves').innerHTML=html||'<p class="empty" style="padding:40px 0">Nothing matches that. Try a beach name or a color, or <button class="tlink" type="button" data-clear="1">clear the filters</button>.</p>';
   }
-  function rail(){
-    var live=liveItems(),sh=shelfList().filter(function(s){return s.id!=='more';}),out='';
-    sh.forEach(function(s){
-      var list=live.filter(function(i){return shelfOf(i)===s.id;}),cv=byId(s.cover)||list[0];
-      out+='<a class="tile" href="#shelf-'+esc(s.id)+'" data-tile="'+esc(s.id)+'"><div class="tp">'+(cv&&cv.img?'<img src="'+esc(cv.img)+'" alt="" loading="lazy" decoding="async" width="400" height="500"/>':'')+'</div><b>'+esc(s.name)+'</b><span>'+list.length+' piece'+(list.length===1?'':'s')+'</span></a>';
-    });
-    $('rail').innerHTML=out;$('collections').hidden=!out;
-    var sel=$('coll');sel.innerHTML='<option value="all">All collections</option>'+shelfList().map(function(s){return '<option value="'+esc(s.id)+'">'+esc(s.name)+'</option>';}).join('');
-    var hs=$('heroShop'),first=sh[0];if(hs&&first){hs.href='#shelf-'+first.id;hs.textContent='Shop '+first.name;}
-    var gs=$('giftShelf');if(gs&&!sh.some(function(s){return s.id==='locals-christmas';}))gs.hidden=true;
+  function renderFeatured(){
+    var live=liveItems(),list=live.filter(function(i){return isNew(i)||i.featured===true;});
+    list.sort(function(a,b){return (isNew(b)?1:0)-(isNew(a)?1:0);});
+    list=list.slice(0,4);
+    $('featured').hidden=!list.length;
+    $('featGrid').innerHTML=list.map(function(i){return cardHtml(i,true);}).join('');
   }
-  function jump(id){
-    var el=document.getElementById('shelf-'+id);
-    if(!el){current='all';q='';$('q').value='';$('coll').value='all';render();el=document.getElementById('shelf-'+id);}
-    if(el){el.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'});var h=el.querySelector('h2');if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true});}}
+  function renderAll(){renderFeatured();render();paintChips();}
+  function paintChips(){
+    var live=liveItems(),out='';
+    function chip(kind,id,label,n,on){return '<button type="button" class="chip '+kind+'" data-'+kind+'="'+esc(id)+'" aria-pressed="'+on+'">'+esc(label)+'<small> '+n+'</small></button>';}
+    out+=chip('town','all','All towns',live.length,town==='all');
+    townDefs().forEach(function(s){var n=live.filter(function(i){return townOf(i)===s.id;}).length;if(n)out+=chip('town',s.id,s.name,n,town===s.id);});
+    out+='<span class="chip-sep" aria-hidden="true"></span>';
+    var mo=motifDefs().filter(function(m){return live.some(function(i){return motifOf(i)===m.id;});});
+    if(mo.length){out+=chip('motif','all','All motifs',live.length,motif==='all');mo.forEach(function(m){out+=chip('motif',m.id,m.name,live.filter(function(i){return motifOf(i)===m.id;}).length,motif===m.id);});out+='<span class="chip-sep" aria-hidden="true"></span>';}
+    out+=chip('type','all','All types',live.length,type==='all');
+    TYPES.forEach(function(t){var n=live.filter(function(i){return typeOf(i)===t[0];}).length;if(n)out+=chip('type',t[0],t[1],n,type===t[0]);});
+    $('chips').innerHTML=out;
+  }
+  function sameImg(a,b){function k(u){return String(u||'').split('?')[0].replace(/_(\d+)x(?=\.[a-z]+$)/i,'').replace(/_\d{3,4}$/,'');}return k(a)===k(b);}
+  function setFilter(t,ty,scroll,mo){
+    town=t;type=ty;motif=mo||'all';shownN=PAGE;syncUrl();renderAll();
+    if(scroll){var el=$('results');el.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'});}
+  }
+  function tiles(){
+    var live=liveItems(),out='',k=0;
+    townDefs().forEach(function(s){
+      var list=live.filter(function(i){return townOf(i)===s.id;});if(!list.length)return;
+      var cv=byId(s.cover)||list[0],eager=k++<4;
+      out+='<a class="town" href="/shop/'+esc(s.id)+esc(qs())+'" data-tile="'+esc(s.id)+'"><div class="tp">'+(cv&&cv.img?'<img src="'+esc(cv.img)+'" alt="" '+(eager?'loading="eager"':'loading="lazy"')+' decoding="async" width="800" height="1000"/>':'')+'</div><div class="tx"><b>'+esc(s.name)+'</b><span>'+esc(s.tag||'')+'</span><i>'+pieces(list.length)+'</i></div></a>';
+    });
+    if(out)$('townGrid').innerHTML=out;
+  }
+
+  function motifTiles(){
+    var live=liveItems(),defs=motifDefs(),out='';
+    defs.forEach(function(m){
+      var list=live.filter(function(i){return motifOf(i)===m.id;});
+      if(list.length){var cv=list[0];out+='<a class="mtile" href="#results" data-motif-tile="'+esc(m.id)+'"><div class="tp">'+(cv.img?'<img src="'+esc(cv.img)+'" alt="" loading="lazy" decoding="async" width="800" height="1000"/>':'')+'</div><div class="tx"><b>'+esc(m.name)+'</b><span>'+esc(m.tag||'')+'</span><i>'+pieces(list.length)+'</i></div></a>';}
+      else out+='<div class="mtile empty"><div class="tp"><span>On the way</span></div><div class="tx"><b>'+esc(m.name)+'</b><span>'+esc(m.tag||'')+'</span><a class="tlink" href="#drops" data-drop="1">Tell me when it arrives</a></div></div>';
+    });
+    $('motifGrid').innerHTML=out;$('motifs').hidden=!out;
   }
 
   /* ---------- quick view ---------- */
@@ -186,21 +305,25 @@
       '<div><dt>Returns</dt><dd>No returns for change of mind or size preference. Damaged, defective, misprinted or wrong-size items are replaced at no cost if reported within 30 days of delivery. <a href="/shipping-returns">Full details</a></dd></div>'+
       '<div><dt>Checkout</dt><dd>'+(out?'Opens '+esc(storeName(i))+' in a new tab and checks out there, separate from your bag.':'Goes in your bag. Shipping and tax are shown at checkout.')+'</dd></div>';
   }
-  function setQvImg(src,alt){
+  function setQvImg(src,alt,styled){
     var im=$('qvi');im.src=src||'';im.alt=alt||'';
-    $('qvcap').hidden=!/lookbook/i.test(src||'');
+    $('qvcap').hidden=!styled;
   }
   function openQv(id){
     var i=byId(id);if(!i)return;qvCur=id;
     try{gtag('event','view_item',{item_id:id,item_name:i.name,value:i.price,currency:'USD',items:[gaItem(i)]});}catch(e){}
-    hook('select_item',{list:'shop',item:{id:i.id,name:i.name,price:i.price,collection:i.shelf,store:i.store}});
-    var d=$('qv'),nm=splitName(i.name),sh=(data.shelves||[]).filter(function(s){return s.id===i.shelf;})[0];
+    hook('select_item',{list:'shop',item:{id:i.id,name:i.name,price:i.price,collection:townOf(i),store:i.store}});
+    var d=$('qv'),nm=splitName(i.name);
     var im=$('qvi');
-    if(i.lookbook&&i.lookbook!==i.img){im.srcset=i.img+' 1000w, '+i.lookbook+' 1920w';im.sizes='(min-width:700px) 470px, 100vw';}else{im.removeAttribute('srcset');im.removeAttribute('sizes');}
-    setQvImg(i.img||i.lookbook,i.alt||i.name);
+    im.removeAttribute('srcset');im.removeAttribute('sizes');
+    /* gallery: distinct pictures only, never the same photo twice */
+    var pics=[];
+    [[i.img,true],[i.lookbook,true],[i.studio,false]].forEach(function(p){if(p[0]&&!pics.some(function(x){return sameImg(x.src,p[0]);}))pics.push({src:p[0],styled:p[1]});});
+    var first=pics[0]||{src:'',styled:false};
+    setQvImg(first.src,i.alt||i.name,first.styled);
     var th=$('qvth');
-    if(i.studio&&i.img){th.hidden=false;th.innerHTML='<button type="button" aria-pressed="true" data-src="'+esc(i.img)+'" aria-label="Styled image"><img alt="" src="'+esc(i.img)+'" loading="lazy"/></button><button type="button" aria-pressed="false" data-src="'+esc(i.studio)+'" aria-label="Product image"><img alt="" src="'+esc(i.studio)+'" loading="lazy"/></button>';}else{th.hidden=true;th.innerHTML='';}
-    $('qvk').textContent=sh?sh.name:'';
+    if(pics.length>1){th.hidden=false;th.innerHTML=pics.map(function(p,k){return '<button type="button" aria-pressed="'+(k===0)+'" data-src="'+esc(p.src)+'" data-styled="'+(p.styled?'1':'')+'" aria-label="'+(p.styled?'Styled image':'Product image')+' '+(k+1)+' of '+pics.length+'"><img alt="" src="'+esc(p.src)+'" loading="lazy" width="60" height="75"/></button>';}).join('');}else{th.hidden=true;th.innerHTML='';}
+    $('qvk').textContent=townName(townOf(i));
     $('qvn').textContent=i.name;$('qvp').textContent=priceLabel(i);$('qvm').textContent=i.meta||'';
     $('qvpre').innerHTML=preHtml(i);
     $('qvcta').innerHTML=isGear(i)
@@ -210,40 +333,58 @@
     if(d.showModal){if(!d.open)d.showModal();}else d.setAttribute('open','');
     d.scrollTop=0;
   }
-  function addOut(){
-    var i=byId(qvCur);if(!i||!window.ShoreBag||!ShoreBag.addOut)return;
+  function addGear(id){
+    var i=byId(id);if(!i||!window.ShoreBag||!ShoreBag.addOut)return;
     ShoreBag.addOut({id:i.id,name:i.name,url:i.url,img:i.img,price:i.price,from:i.from===true,store:storeName(i)});
-    var d=$('qv');if(d.close)d.close();else d.removeAttribute('open');
     try{gtag('event','add_to_cart',{currency:'USD',value:i.price,items:[gaItem(i)]});}catch(e){}
     ShoreBag.open();
   }
+  function addOut(){
+    var d=$('qv');addGear(qvCur);if(d.close)d.close();else d.removeAttribute('open');
+  }
 
   /* ---------- wiring ---------- */
+  function onGrid(e){
+    var h=e.target.closest('[data-h]');if(h){e.preventDefault();toggle(h.getAttribute('data-h'));return;}
+    var ad=e.target.closest('[data-add]');if(ad){addGear(ad.getAttribute('data-add'));return;}
+    var tw=e.target.closest('[data-town]');if(tw){setFilter(tw.getAttribute('data-town'),type,true,motif);return;}
+    if(e.target.closest('[data-clear]')){$('q').value='';q='';sortBy='feat';$('sort').value='feat';setFilter('all','all',false,'all');return;}
+    var m=e.target.closest('[data-more]');if(m){shownN+=PAGE;render();var cs=document.querySelectorAll('#shelves .card');var g=cs[shownN-PAGE]&&cs[shownN-PAGE].querySelector('h3 button');if(g)g.focus({preventScroll:true});return;}
+    var dr=e.target.closest('[data-drop]');if(dr){e.preventDefault();var f=$('drops');f.scrollIntoView({behavior:'smooth'});setTimeout(function(){$('dropEmail').focus({preventScroll:true});},350);return;}
+    var v=e.target.closest('[data-qv]');if(v){bump(v.getAttribute('data-qv'),1);openQv(v.getAttribute('data-qv'));}
+  }
   function wire(){
-    $('toolsBox').hidden=false;
+    $('toolsBox').hidden=false;$('filters').hidden=false;
     var mq=window.matchMedia('(min-width:900px)');
     function sync(){$('toolsBox').open=mq.matches;}sync();if(mq.addEventListener)mq.addEventListener('change',sync);
-    $('q').addEventListener('input',function(e){q=e.target.value;render();});
-    $('sort').addEventListener('change',function(e){sortBy=e.target.value;render();});
-    $('coll').addEventListener('change',function(e){current=e.target.value;render();});
-    $('shelves').addEventListener('click',function(e){
-      var h=e.target.closest('[data-h]');if(h){e.preventDefault();toggle(h.getAttribute('data-h'));return;}
-      var m=e.target.closest('[data-more]');if(m){expanded[m.getAttribute('data-more')]=true;var sid=m.getAttribute('data-more');render();var g=document.querySelector('#shelf-'+sid+' .card:nth-child(5) h3 button');if(g)g.focus({preventScroll:true});return;}
-      var v=e.target.closest('[data-qv]');if(v){bump(v.getAttribute('data-qv'),1);openQv(v.getAttribute('data-qv'));}
+    $('q').addEventListener('input',function(e){q=e.target.value;shownN=PAGE;render();});
+    $('sort').addEventListener('change',function(e){sortBy=e.target.value;shownN=PAGE;render();});
+    $('chips').addEventListener('click',function(e){
+      var c=e.target.closest('.chip');if(!c)return;
+      if(c.hasAttribute('data-town'))setFilter(c.getAttribute('data-town'),type,false,motif);else if(c.hasAttribute('data-motif'))setFilter(town,type,false,c.getAttribute('data-motif'));else setFilter(town,c.getAttribute('data-type'),false,motif);
+      var ak=c.hasAttribute('data-town')?'data-town':c.hasAttribute('data-motif')?'data-motif':'data-type';var again=$('chips').querySelector('.chip['+ak+'="'+c.getAttribute(ak)+'"]');if(again)again.focus({preventScroll:true});
+      var r=$('shelves').getBoundingClientRect();if(r.top<0||r.top>window.innerHeight*.6)$('shelves').scrollIntoView({behavior:'auto',block:'start'});
     });
-    $('rail').addEventListener('click',function(e){var t=e.target.closest('[data-tile]');if(!t)return;e.preventDefault();jump(t.getAttribute('data-tile'));});
+    $('shelves').addEventListener('click',onGrid);$('featGrid').addEventListener('click',onGrid);
+    $('townGrid').addEventListener('click',function(e){
+      if(e.metaKey||e.ctrlKey||e.shiftKey||e.button)return;
+      var t=e.target.closest('[data-tile]');if(!t)return;e.preventDefault();setFilter(t.getAttribute('data-tile'),'all',true,'all');
+    });
+    $('featAll').addEventListener('click',function(e){e.preventDefault();setFilter('all','all',true,'all');});
+    $('motifGrid').addEventListener('click',function(e){var m=e.target.closest('[data-motif-tile]');if(m){e.preventDefault();setFilter('all','all',true,m.getAttribute('data-motif-tile'));return;}var dr=e.target.closest('[data-drop]');if(dr){e.preventDefault();$('drops').scrollIntoView({behavior:'smooth'});setTimeout(function(){$('dropEmail').focus({preventScroll:true});},350);}});
+    $('heroShop').addEventListener('click',function(e){e.preventDefault();$('towns').scrollIntoView({behavior:'smooth'});});
     var d=$('qv');
     $('qvx').addEventListener('click',function(){d.close?d.close():d.removeAttribute('open');});
     d.addEventListener('click',function(e){if(e.target===d&&d.close)d.close();});
-    $('qvth').addEventListener('click',function(e){var b=e.target.closest('button[data-src]');if(!b)return;var i=byId(qvCur);$('qvth').querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});var s=b.getAttribute('data-src');$('qvi').removeAttribute('srcset');setQvImg(s,i?(i.alt||i.name):'');});
+    $('qvth').addEventListener('click',function(e){var b=e.target.closest('button[data-src]');if(!b)return;var i=byId(qvCur);$('qvth').querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});setQvImg(b.getAttribute('data-src'),i?(i.alt||i.name):'',!!b.getAttribute('data-styled'));});
     $('qvcta').addEventListener('click',function(e){
       if(e.target.id==='qvAdd'){addOut();return;}
       var a=e.target.closest('a[data-id]');if(a){try{var it=byId(a.getAttribute('data-id'));gtag('event','select_item',it?{item_id:it.id,items:[gaItem(it)]}:{});}catch(x){}}
     });
     $('qvh').addEventListener('click',function(){if(qvCur){toggle(qvCur);var on=saved.indexOf(qvCur)>-1;this.setAttribute('aria-pressed',on);this.textContent=on?'Saved to my list':'Save to my list';}});
     $('savedBtn').addEventListener('click',function(){var t=$('tray');t.hidden=!t.hidden;this.setAttribute('aria-expanded',String(!t.hidden));});
-    $('giftShelf').addEventListener('click',function(e){e.preventDefault();jump('locals-christmas');});
-    $('heroShop').addEventListener('click',function(e){var id=(this.getAttribute('href')||'').replace('#shelf-','');if(id){e.preventDefault();jump(id);}});
+    function navh(){var n=document.querySelector('nav.sl-hdr')||document.querySelector('nav');document.documentElement.style.setProperty('--nav-h',(n?Math.round(n.getBoundingClientRect().height):64)+'px');}
+    navh();window.addEventListener('resize',navh);window.addEventListener('load',navh);
     trayRender();
   }
 
@@ -286,7 +427,9 @@
     var live=liveItems();
     if(live.length){
       window.__slCatalog=data;try{document.dispatchEvent(new CustomEvent('sl:catalog',{detail:data}));}catch(e){}
-      $('note').hidden=false;$('giftStrip').hidden=false;rail();wire();render();jsonld(live);
+      try{var sp=new URLSearchParams(location.search),t0=sp.get('town'),y0=sp.get('type'),m0=sp.get('motif');if(m0&&motifDefs().some(function(m){return m.id===m0;}))motif=m0;if(t0&&townIds()[t0])town=t0;if(y0&&TYPES.some(function(x){return x[0]===y0;}))type=y0;}catch(e){}
+      $('note').hidden=false;tiles();motifTiles();wire();renderAll();jsonld(live);
+      if(town!=='all'||type!=='all'||motif!=='all')setTimeout(function(){$('results').scrollIntoView({block:'start'});},60);
     }else{
       $('shelves').innerHTML='<section class="soon"><h2>The shop is opening soon</h2><p>We are finishing the first collections now. Join the waitlist and we will tell you when they are live.</p><a class="sbtn" href="/waitlist?src=shop">Join the waitlist</a></section>';
     }
