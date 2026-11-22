@@ -28,7 +28,7 @@ const heroMeta = (slug, ops) => {
   if (slug === 'museums') return b('Museum Guide', 1) + b('Open Daily &middot; Rain or Shine') + b('Tickets &amp; Events');
   const lv = ops.filter((o) => o.live);
   if (lv.length) return b('Bookings Open Now', 1) + b(lv.length + ' Experience' + (lv.length > 1 ? 's' : '') + ' Live') + b('Secure Checkout via Stripe') + b('Free Cancellation ' + CANCEL_H + 'hrs+');
-  if (ops.length) return b(ops.length + ' Operator' + (ops.length > 1 ? 's' : '') + ' Ready to Book', 1) + b('Waitlist Open Now') + b('Bookings Opening Soon') + b('Secure Checkout via Stripe');
+  if (ops.length) return b('Waitlist Open Now', 1) + b(ops.length + ' Local Operator' + (ops.length > 1 ? 's' : '')) + b('Bookings Opening Soon');
   return b('Coming Soon') + b('Notify Me');
 };
 const slugs = Object.keys(ctx.CAT_DATA);
@@ -341,7 +341,7 @@ const tripMain = `
     <p class="pg-eye">Itinerary</p>
     <h2 id="h-plan">A simple three-day plan</h2>
     <div class="days seo-days">
-      ${dayCard(1, 'walking-tours', 'Walking tour scene for a day in downtown Wilmington', 'Day 1: Downtown and the river', 'Start with a <a class="txt" href="/things-to-do/walking-tours">guided walking tour</a> of the historic district, visit the <a class="txt" href="/wilmington-railroad-museum">Wilmington Railroad Museum</a> or cross the river to the Battleship North Carolina, then take a <a class="txt" href="/things-to-do/river-cruises">sunset river cruise</a>. After dark, try a <a class="txt" href="/things-to-do/ghost-tours">ghost tour</a>.')}
+      ${dayCard(1, 'walking-tours', 'Walking tour scene for a day in downtown Wilmington', 'Day 1: Downtown and the river', 'Start with a <a class="txt" href="/things-to-do/walking-tours">guided walking tour</a> of the historic district, visit the <a class="txt" href="/things-to-do/museums">Wilmington Railroad Museum</a> or cross the river to the Battleship North Carolina, then take a <a class="txt" href="/things-to-do/river-cruises">sunset river cruise</a>. After dark, try a <a class="txt" href="/things-to-do/ghost-tours">ghost tour</a>.')}
       ${dayCard(2, 'surf-lessons', 'Surf scene for a day at Wrightsville Beach', 'Day 2: Wrightsville Beach', 'Check the <a class="txt" href="/wrightsville-beach">live beach report</a>, then take a <a class="txt" href="/things-to-do/surf-lessons">surf lesson</a> or <a class="txt" href="/things-to-do/paddleboard">paddleboard</a> the sound side in the morning. In the afternoon, a <a class="txt" href="/things-to-do/kayak-tours">kayak</a> or <a class="txt" href="/things-to-do/wildlife-tours">wildlife tour</a> gets you out toward Masonboro Island, and a <a class="txt" href="/things-to-do/sailboat-rides">sunset sail</a> ends the day.')}
       ${dayCard(3, 'nature-walks', 'Nature walk scene for a day at Carolina Beach and Kure Beach', 'Day 3: Carolina Beach and Kure Beach', 'Walk the flytrap trail at Carolina Beach State Park on a <a class="txt" href="/things-to-do/nature-walks">nature walk</a>, spend midday on the sand and the boardwalk, then continue south to Kure Beach and Fort Fisher. Anglers can swap the morning for a <a class="txt" href="/things-to-do/fishing-charters">fishing charter</a>.')}
     </div>

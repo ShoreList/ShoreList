@@ -69,7 +69,7 @@
      "Three Bar Stops",
      "ShoreList Founding Partner"
     ],
-    "note": "Drinks not included. Every other Friday — times vary seasonally.",
+    "note": "Drinks not included. Every other Friday. Times vary seasonally.",
     "schedule": {
      "days": [
       5
@@ -110,7 +110,7 @@
      "Prohibition Era",
      "ShoreList Founding Partner"
     ],
-    "note": "Drinks not included. Every other Friday — times vary seasonally.",
+    "note": "Drinks not included. Every other Friday. Times vary seasonally.",
     "schedule": {
      "days": [
       5
@@ -151,7 +151,7 @@
      "Family Friendly",
      "ShoreList Founding Partner"
     ],
-    "note": "Starts at Front Street Inn. December only — 4:30 PM or 6:15 PM.",
+    "note": "Starts at Front Street Inn. December only: 4:30 PM or 6:15 PM.",
     "schedule": {
      "days": [
       1,
@@ -246,7 +246,7 @@
     "business": "Wilmywood Insider Tours",
     "operator": "Industry Insider & Local Expert",
     "title": "20+ Years in the Wilmington Film & Hospitality Industry",
-    "desc": "Wilmington isn't just a beach town &#8212; it's one of the most filmed cities in America. One Tree Hill. Dawson's Creek. Iron Man 3. Safe Haven. A Walk to Remember. Hundreds of productions have called Wilmington home. Your guide has spent over two decades working inside the Wilmington film and hospitality industry and knows the stories behind the sets, the locations, and the legends that most tourists never hear. This isn't a bus tour reading from a brochure. This is Wilmywood &#8212; from the inside.",
+    "desc": "Wilmington isn't just a beach town. It's one of the most filmed cities in America. One Tree Hill. Dawson's Creek. Iron Man 3. Safe Haven. A Walk to Remember. Hundreds of productions have called Wilmington home. Your guide has spent over two decades working inside the Wilmington film and hospitality industry and knows the stories behind the sets, the locations, and the legends that most tourists never hear. This isn't a bus tour reading from a brochure. This is Wilmywood, from the inside.",
     "price": "$45",
     "priceLabel": "per person",
     "priceCents": 4500,
@@ -278,21 +278,18 @@
     "id": "sean-ghost",
     "business": "Sean Austin's Wilmington Ghost Walk",
     "operator": "Sean Austin",
-    "title": "Led by a Netflix &amp; Travel Channel Paranormal Investigator",
-    "desc": "This is the most unforgettable ghost walk in Wilmington &mdash; 90 minutes through the haunted heart of one of America&rsquo;s oldest cities, led by Sean Austin: star of Netflix&rsquo;s <em>28 Days Haunted</em>, lead investigator on Travel Channel&rsquo;s <em>Ghost Loop</em> (now on Discovery+), and featured on <em>The Demon Files</em>. Trained demonologist, psychic medium, and published author of <em>Shadow Chaser</em>, Sean brings 16+ years of real paranormal investigation to the city&rsquo;s most haunted streets, antebellum mansions, and burial grounds. Family-friendly, endlessly fascinating, and impossible to forget &mdash; available <strong>exclusively on ShoreList</strong>.",
+    "title": "Led by Sean Austin, Paranormal Investigator",
+    "desc": "A 90-minute ghost walk through the haunted heart of one of America&rsquo;s oldest cities, led by Sean Austin: star of Netflix&rsquo;s <em>28 Days Haunted</em> and lead investigator on Travel Channel&rsquo;s <em>Ghost Loop</em>. A trained demonologist, psychic medium and published author of <em>Shadow Chaser</em>, Sean guides you past the city&rsquo;s most haunted streets, antebellum mansions and burial grounds. Family-friendly and endlessly fascinating.",
     "price": "$30",
     "priceLabel": "per person",
     "priceCents": 3000,
     "tags": [
      "ShoreList Founding Partner",
-     "Netflix",
-     "Travel Channel",
      "90 Minutes",
      "All Ages",
-     "Exclusive to ShoreList",
      "Downtown Wilmington"
     ],
-    "note": "Led by Sean Austin &mdash; nationally recognized paranormal TV investigator. Secure your spot online. Exclusive to ShoreList.",
+    "note": "Led by Sean Austin, paranormal investigator. Join the waitlist to hear when bookings open.",
     "schedule": {
      "days": [
       4,
@@ -314,7 +311,7 @@
     "business": "Carolina Beach Surf Co.",
     "operator": "Certified Local Instructor",
     "title": "Professional Surf Instructor &middot; 10+ Years Experience",
-    "desc": "Learn to surf at one of the best beginner beaches on the East Coast with a certified local instructor who has spent years teaching in these exact waters. Whether you've never touched a board or want to level up your skills, this lesson is fun, safe, and unforgettable. Every session is tailored to your level. All equipment included &#8212; board, wetsuit, and rash guard.",
+    "desc": "Learn to surf at one of the best beginner beaches on the East Coast with a certified local instructor who has spent years teaching in these exact waters. Whether you've never touched a board or want to level up your skills, this lesson is fun, safe, and unforgettable. Every session is tailored to your level. All equipment included: board, wetsuit, and rash guard.",
     "price": "$100",
     "priceLabel": "per person",
     "priceCents": 10000,
@@ -348,8 +345,8 @@
     "id": "nature-walk",
     "business": "Coastal Carolina Nature Walks",
     "operator": "",
-    "title": "Coming Soon &mdash; Operator Joining Shorelist",
-    "desc": "Discover the wild, beautiful natural world of coastal North Carolina. From ancient cypress swamps and carnivorous plant bogs of Carolina Beach State Park to pristine maritime forests and tidal marshes, these guided walks reveal the incredible biodiversity that makes this coast so special. This experience is launching soon on Shorelist &#8212; tap to be notified when bookings open.",
+    "title": "Coming Soon: Operator Joining Shorelist",
+    "desc": "Discover the wild, beautiful natural world of coastal North Carolina. From ancient cypress swamps and carnivorous plant bogs of Carolina Beach State Park to pristine maritime forests and tidal marshes, these guided walks reveal the incredible biodiversity that makes this coast so special. This experience is launching soon on Shorelist. Tap to be notified when bookings open.",
     "price": "$35",
     "priceLabel": "per person",
     "priceCents": 3500,
