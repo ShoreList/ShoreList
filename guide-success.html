@@ -24,6 +24,12 @@
 .gs-err{color:var(--ev-red);font-weight:500}
 </style>
 <link rel="stylesheet" href="/tokens.css"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-EN91RH3PZV',{page_location:location.origin+location.pathname});
+</script>
+<script src="/purchase-analytics.js" defer></script>
 </head>
 <body class="ev-page">
 <nav class="ev-nav" aria-label="Primary"><a class="nav-logo" href="/" aria-label="ShoreList home">Shore<span>List</span></a><div class="nav-right"><a href="/guides">Guides</a><a class="nav-book" href="/things-to-do">Book Experiences</a></div></nav>
@@ -70,6 +76,7 @@
       });
       if(typeof x.d.amount==='number')$('gs-paid').textContent='Paid in full: $'+(x.d.amount/100).toFixed(2)+' (USD).';else $('gs-paid').hidden=true;
       $('gs-loading').hidden=true;$('gs-ok').hidden=false;
+      try{if(window.slPurchase&&typeof x.d.amount==='number'){window.slPurchase(id,{value:x.d.amount/100,items:x.d.guides.filter(function(g){return g&&/^[a-z0-9-]{1,60}$/.test(g.id);}).map(function(g){return {item_id:g.id,item_name:String(g.title||''),item_brand:'ShoreList',item_category:'Guide',quantity:1};})});}}catch(e){}
     })
     .catch(function(){bad('We could not reach the server. Please reload this page in a moment.');});
 })();

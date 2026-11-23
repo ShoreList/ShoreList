@@ -24,6 +24,12 @@
 .gs-err{color:var(--ev-red);font-weight:500}
 </style>
 <link rel="stylesheet" href="/tokens.css"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-EN91RH3PZV',{page_location:location.origin+location.pathname});
+</script>
+<script src="/purchase-analytics.js" defer></script>
 </head>
 <body class="ev-page">
 <nav class="ev-nav" aria-label="Primary"><a class="nav-logo" href="/" aria-label="ShoreList home">Shore<span>List</span></a><div class="nav-right"><a href="/guides">Guides</a><a class="nav-book" href="/things-to-do">Book Experiences</a></div></nav>
@@ -73,6 +79,7 @@
       if(d.lead_days&&d.lead_days.max)$('gs-lead').textContent='Made to order. Expect delivery about '+Number(d.lead_days.min)+' to '+Number(d.lead_days.max)+' business days after your order. That is an estimate from our supplier, not a guarantee.';
       else $('gs-lead').textContent='Made to order. Delivery time depends on the product and the supplier.';
       $('gs-loading').hidden=true;$('gs-ok').hidden=false;
+      try{if(window.slPurchase&&typeof d.amount==='number'){window.slPurchase(id,{value:d.amount/100,tax:typeof d.tax_cents==='number'?d.tax_cents/100:undefined,shipping:typeof d.shipping_cents==='number'?d.shipping_cents/100:undefined,items:d.lines.map(function(l){var nm=String(l.name||'');return {item_id:window.slPurchaseSlug(nm+' '+(l.variant||'')),item_name:nm,item_variant:String(l.variant||''),item_brand:'ShoreList',quantity:Number(l.qty)||1,price:(Number(l.unit_cents)||0)/100};})});}}catch(e){}
     })
     .catch(function(){bad('We could not reach the server. Please reload this page in a moment.');});
 })();

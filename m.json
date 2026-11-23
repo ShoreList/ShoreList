@@ -1,0 +1,4 @@
+{
+  "merge_method": "squash",
+  "commit_title": "Block internal tooling paths from the public site (#277)"
+}

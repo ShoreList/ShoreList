@@ -1,0 +1,6 @@
+{
+  "title": "Block internal tooling paths from the public site",
+  "body": "Adds forced 404 redirects for /tools/*, /docs/*, /city-pack/*, /.github/*, /package.json and /package-lock.json. No page, script or service worker references these paths (grepped). Fixes audit defect 1 (/tools/shopify-ingest-plan.json was public).\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nhttps://claude.ai/code/session_01B2QdSxgLEEq9pdMiNJR1fh",
+  "head": "fix-block-internal",
+  "base": "main"
+}
