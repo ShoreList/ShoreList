@@ -950,127 +950,6 @@
    "motif": "boats-buoys"
   },
   {
-   "id": "the-pelican-embroidered-crewneck-carolina-beach",
-   "collection": "local-icons",
-   "shelf": "carolina-beach",
-   "town": "carolina-beach",
-   "name": "The Pelican Embroidered Crewneck, Carolina Beach",
-   "url": "https://shorelist.myshopify.com/products/the-pelican-embroidered-crewneck-carolina-beach",
-   "type": "tops",
-   "color": "Blue Jean",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-embroidered-crewneck-carolina-beach_1000x.webp",
-   "alt": "Smiling woman in a blue jean crewneck sweatshirt with a small embroidered brown pelican and the letters CB, on the sand at Carolina Beach, shown as an illustrative image",
-   "meta": "A brown pelican stitched on the chest in white, chestnut and gold thread, with CB for Carolina Beach beneath it.",
-   "cta": "Choose color and size",
-   "price": 88,
-   "scenes": [
-    "beach",
-    "boardwalk"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13933455820164530453_2048.jpg",
-   "facts": [
-    [
-     "Sizing",
-     "Relaxed fit, sizes S to 3XL"
-    ],
-    [
-     "Fabric",
-     "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
-    ],
-    [
-     "Embroidery",
-     "Stitched in white, chestnut and gold thread"
-    ],
-    [
-     "Colors",
-     "Blue Jean, Blue Spruce, Denim"
-    ]
-   ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-embroidered-crewneck-carolina-beach_1920x.webp"
-  },
-  {
-   "id": "the-pelican-corduroy-cap-carolina-beach",
-   "collection": "local-icons",
-   "shelf": "carolina-beach",
-   "town": "carolina-beach",
-   "name": "The Pelican Corduroy Cap, Carolina Beach",
-   "url": "https://shorelist.myshopify.com/products/the-pelican-corduroy-cap-carolina-beach",
-   "type": "hats",
-   "color": "Navy Blue",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-corduroy-cap-carolina-beach_1000x.webp",
-   "alt": "Man in a navy corduroy cap with an embroidered brown pelican, on the sand at Carolina Beach, shown as an illustrative image",
-   "meta": "A brown pelican embroidered on the front of a soft corduroy cap, with CB for Carolina Beach stitched on the back.",
-   "cta": "Choose color",
-   "price": 49,
-   "scenes": [
-    "beach",
-    "boardwalk"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/755985813891049725_2048.jpg",
-   "facts": [
-    [
-     "Fit",
-     "Unstructured, low profile, curved brim, one size"
-    ],
-    [
-     "Fabric",
-     "Cotton corduroy"
-    ],
-    [
-     "Closure",
-     "Adjustable strap with a brass buckle"
-    ],
-    [
-     "Colors",
-     "Navy Blue, Olive"
-    ]
-   ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-corduroy-cap-carolina-beach_1920x.webp"
-  },
-  {
-   "id": "the-pelican-cuffed-beanie-carolina-beach",
-   "collection": "local-icons",
-   "shelf": "carolina-beach",
-   "town": "carolina-beach",
-   "name": "The Pelican Cuffed Beanie, Carolina Beach",
-   "url": "https://shorelist.myshopify.com/products/the-pelican-cuffed-beanie-carolina-beach",
-   "type": "hats",
-   "color": "Forest green",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-cuffed-beanie-carolina-beach_1000x.webp",
-   "alt": "Woman in a forest green cuffed beanie embroidered with a brown pelican and the letters CB, on the sand at Carolina Beach, shown as an illustrative image",
-   "meta": "A brown pelican and CB for Carolina Beach embroidered side by side on the cuff of a classic knit beanie.",
-   "cta": "Choose color",
-   "price": 30,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2987194900095621589_2048.jpg",
-   "facts": [
-    [
-     "Fit",
-     "Classic cuffed beanie, one size"
-    ],
-    [
-     "Fabric",
-     "Soft acrylic knit with a fold-up cuff"
-    ],
-    [
-     "Colors",
-     "Navy, Spruce, Olive"
-    ]
-   ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-cuffed-beanie-carolina-beach_1920x.webp"
-  },
-  {
    "id": "carolina-beach-lifeguard-stand-printed-garment-dyed-tee",
    "collection": "local-icons",
    "shelf": "carolina-beach",
@@ -1617,9 +1496,9 @@
    "wrightsville-surf-tee": "town plus sport lockup reads as a team or club tee, souvenir-stand look",
    "wrightsville-golf-tee": "town plus sport lockup reads as a team or club tee, souvenir-stand look",
    "carolina-beach-surf-tee": "town plus sport lockup reads as a team or club tee, souvenir-stand look",
-   "the-pelican-embroidered-crewneck-carolina-beach": "pelican art scored 5.5 by the design gate (weak, held back); below the 9.0 bar",
-   "the-pelican-corduroy-cap-carolina-beach": "pelican art scored 5.5 by the design gate (weak, held back); below the 9.0 bar",
-   "the-pelican-cuffed-beanie-carolina-beach": "pelican art scored 5.5 by the design gate (weak, held back); below the 9.0 bar",
+   "the-pelican-embroidered-crewneck-carolina-beach": "pelican art scored 5.5 by the design gate; below the 8.0 bar (re-held 2026-11-22)",
+   "the-pelican-corduroy-cap-carolina-beach": "pelican art scored 5.5 by the design gate; below the 8.0 bar (re-held 2026-11-22)",
+   "the-pelican-cuffed-beanie-carolina-beach": "pelican art scored 5.5 by the design gate; below the 8.0 bar (re-held 2026-11-22)",
    "the-live-oak-embroidered-crewneck-wilmington": "Live Oak relaunch: art being redone to pass the 8.0 gate (Nov 22 blind reviews 4.8 to 6.5); returns when it passes",
    "the-live-oak-corduroy-cap-wilmington": "Live Oak relaunch: art being redone to pass the 8.0 gate (Nov 22 blind reviews 4.8 to 6.5); returns when it passes",
    "the-live-oak-cuffed-beanie-wilmington": "Live Oak relaunch: art being redone to pass the 8.0 gate (Nov 22 blind reviews 4.8 to 6.5); returns when it passes",
