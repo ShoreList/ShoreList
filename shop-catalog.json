@@ -5,7 +5,7 @@
   {
    "id": "local-icons",
    "name": "Local Icons",
-   "blurb": "One small embroidered icon per beach town on garment-dyed crewnecks, corduroy caps and cuffed beanies. Real stitching, no big prints.",
+   "blurb": "One small icon per beach town, stitched or printed on crewnecks, tees and caps. Quiet marks, never big lettering.",
    "art": "lighthouse"
   },
   {
@@ -57,24 +57,24 @@
    "name": "Wrightsville Beach",
    "town": true,
    "tag": "Sloops, marinas and the sound",
-   "blurb": "The sloop is our Wrightsville Beach mark: a small sailboat stitched on a crewneck, a corduroy cap and a cuffed beanie, plus the sunset print, a can cooler and a dated ornament.",
-   "cover": "the-sloop-embroidered-crewneck-wrightsville-beach"
+   "blurb": "The sloop is our Wrightsville Beach mark, printed as a navy pattern on a tote, mug, pillow, pouch, tea towel and pet bandana, with a can cooler and a stitched cap and crewneck.",
+   "cover": "wrightsville-beach-sloop-printed-canvas-tote-bag"
   },
   {
    "id": "carolina-beach",
    "name": "Carolina Beach",
    "town": true,
-   "tag": "The boardwalk at blue hour",
-   "blurb": "The boardwalk, the carousel and the Ferris wheel, as a vintage-style print, a can cooler and a dated ornament.",
-   "cover": "carolina-beach-boardwalk-art-print"
+   "tag": "The lifeguard stand on the sand",
+   "blurb": "The lifeguard stand is our Carolina Beach mark, stitched small on a white crewneck and printed on a tee, mug, pouch and pillow, with a can cooler.",
+   "cover": "carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt"
   },
   {
    "id": "kure-beach",
    "name": "Kure Beach",
    "town": true,
-   "tag": "The Atlantic blue crab",
-   "blurb": "The blue crab is our Kure Beach mark, stitched small on the crewneck, with a can cooler and a dated ornament.",
-   "cover": "the-blue-crab-embroidered-crewneck-kure-beach"
+   "tag": "The lifeguard stand at Kure",
+   "blurb": "The lifeguard stand is our Kure Beach mark, stitched small on a white crewneck and printed on a tee, tote, mug, pouch and pillow, with a can cooler.",
+   "cover": "kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt"
   },
   {
    "id": "wilmington",
@@ -87,203 +87,738 @@
  ],
  "items": [
   {
-   "id": "the-sloop-embroidered-crewneck-wrightsville-beach",
-   "collection": "local-icons",
+   "id": "wrightsville-beach-sloop-printed-canvas-tote-bag",
+   "collection": "shore-gear",
    "shelf": "wrightsville-beach",
-   "name": "The Sloop Embroidered Crewneck, Wrightsville Beach",
-   "url": "https://shorelist.myshopify.com/products/the-sloop-embroidered-crewneck-wrightsville-beach",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-embroidered-crewneck-wrightsville-beach_1000x.webp",
-   "alt": "Woman on a marina dock at sunset wearing a washed blue crewneck with a small embroidered sailboat and the letters WB",
-   "meta": "A little sloop under sail stitched on the chest, with WB for Wrightsville Beach beneath it.",
-   "cta": "Choose color and size",
-   "price": 88,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "facts": [
-    [
-     "Sizing",
-     "Relaxed fit, sizes S to 3XL"
-    ],
-    [
-     "Fabric",
-     "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
-    ],
-    [
-     "Embroidery",
-     "Stitched in white, red and blue thread"
-    ]
-   ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-embroidered-crewneck-wrightsville-beach_1920x.webp",
    "town": "wrightsville-beach",
-   "type": "tops",
-   "color": "Washed blue",
-   "added": "2026-11-21",
-   "motif": "boats-buoys"
-  },
-  {
-   "id": "the-blue-crab-embroidered-crewneck-kure-beach",
-   "collection": "local-icons",
-   "shelf": "kure-beach",
-   "name": "The Blue Crab Embroidered Crewneck, Kure Beach",
-   "url": "https://shorelist.myshopify.com/products/the-blue-crab-embroidered-crewneck-kure-beach",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-embroidered-crewneck-kure-beach_1000x.webp",
-   "alt": "Woman on a shingled beach cottage porch wearing a mint crewneck with a small embroidered blue crab and the letters KB",
-   "meta": "An Atlantic blue crab stitched on the chest, with KB for Kure Beach beneath it.",
-   "cta": "Choose color and size",
-   "price": 88,
+   "name": "Wrightsville Beach Sloop Printed Canvas Tote Bag",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-canvas-tote-bag",
+   "type": "beach",
+   "color": "Natural",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-canvas-tote-bag-v2_1000x.webp",
+   "alt": "Natural canvas tote bag with a navy panel of small sailboats printed on the front, shown as an illustrative image",
+   "meta": "A printed canvas tote with a navy panel of little sloops on the front. Roomy enough for a beach day or a Wilmington errand run.",
+   "cta": "Shop tote bags",
+   "price": 36,
    "scenes": [
     "beach"
    ],
    "cut": "unisex",
    "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12079303666000630164_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-canvas-tote-bag-v2_1920x.webp",
    "facts": [
     [
-     "Sizing",
-     "Relaxed fit, sizes S to 3XL"
+     "Size",
+     "About 15 x 16 in with 20 in handles"
     ],
     [
      "Fabric",
-     "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
+     "100% cotton canvas in natural"
     ],
     [
-     "Embroidery",
-     "Stitched in blue, white and red thread"
+     "Print",
+     "Sailboat pattern panel on the front"
+    ],
+    [
+     "Care",
+     "Machine wash cold, tumble dry low"
     ]
    ],
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17367446352125890490_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-embroidered-crewneck-kure-beach_1920x.webp",
-   "town": "kure-beach",
-   "type": "tops",
-   "color": "Mint",
-   "added": "2026-11-21",
-   "motif": "sea-life"
+   "motif": "boats-buoys",
+   "featured": true
   },
   {
-   "id": "the-sloop-corduroy-cap-wrightsville-beach",
-   "collection": "local-icons",
+   "id": "wrightsville-beach-sloop-printed-mug",
+   "collection": "shore-gear",
    "shelf": "wrightsville-beach",
-   "name": "The Sloop Corduroy Cap, Wrightsville Beach",
-   "url": "https://shorelist.myshopify.com/products/the-sloop-corduroy-cap-wrightsville-beach",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-corduroy-cap-wrightsville-beach_1000x.webp",
-   "alt": "Man at the helm of a wooden sailboat wearing a navy corduroy cap with a small embroidered sailboat",
-   "meta": "A little sloop embroidered on the front of a corduroy cap, with WB stitched on the back.",
-   "cta": "Choose color",
-   "price": 49,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "facts": [
-    [
-     "Sizing",
-     "One size, adjustable strap with a brass buckle"
-    ],
-    [
-     "Fabric",
-     "Cotton corduroy, unstructured low profile, curved brim"
-    ],
-    [
-     "Embroidery",
-     "Real embroidery on the front and the back"
-    ]
-   ],
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7042525475132206278_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-corduroy-cap-wrightsville-beach_1920x.webp",
    "town": "wrightsville-beach",
-   "type": "hats",
-   "color": "Navy",
-   "added": "2026-11-21",
-   "featured": true,
-   "motif": "boats-buoys"
-  },
-  {
-   "id": "the-sloop-cuffed-beanie-wrightsville-beach",
-   "collection": "local-icons",
-   "shelf": "wrightsville-beach",
-   "name": "The Sloop Cuffed Beanie, Wrightsville Beach",
-   "url": "https://shorelist.myshopify.com/products/the-sloop-cuffed-beanie-wrightsville-beach",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-cuffed-beanie-wrightsville-beach_1000x.webp",
-   "alt": "Blonde woman on a marina dock wearing a navy cuffed beanie embroidered with a small sailboat and the letters WB",
-   "meta": "A little sloop and WB embroidered on the cuff of a classic knit beanie.",
-   "cta": "Choose color",
+   "name": "Wrightsville Beach Sloop Printed Mug",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-mug",
+   "type": "beach",
+   "color": "White",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-mug_1000x.webp",
+   "alt": "White ceramic mug covered in small navy sailboats sitting on beach sand beside a folded towel, shown as an illustrative image",
+   "meta": "A printed 11 oz white ceramic mug with a navy all-over pattern of little sloops on teal waves. Made to order.",
+   "cta": "Shop mugs",
    "price": 30,
    "scenes": [
     "beach"
    ],
    "cut": "unisex",
    "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5906329180415418302_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-mug_1920x.webp",
    "facts": [
     [
-     "Sizing",
-     "One size"
+     "Size",
+     "11 oz white ceramic mug"
     ],
     [
-     "Fabric",
-     "Soft acrylic knit with a fold-up cuff"
+     "Print",
+     "Sailboat pattern wrapped around the mug"
     ],
     [
-     "Embroidery",
-     "Icon and town letters on the cuff"
+     "Care",
+     "Microwave and dishwasher safe"
     ]
    ],
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6062137644770390613_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-cuffed-beanie-wrightsville-beach_1920x.webp",
-   "town": "wrightsville-beach",
-   "type": "hats",
-   "color": "Navy",
-   "added": "2026-11-21",
    "motif": "boats-buoys"
   },
   {
-   "id": "carolina-beach-boardwalk-art-print",
-   "collection": "landmarks",
-   "shelf": "carolina-beach",
-   "name": "Carolina Beach Boardwalk Art Print",
-   "url": "https://shorelist-shop.fourthwall.com/products/carolina-beach-boardwalk-art-print",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-boardwalk-art-print_1000x.webp",
-   "alt": "Carolina Beach Boardwalk art print framed above a console table",
-   "meta": "The carousel and Ferris wheel at blue hour on museum-matte paper.",
-   "cta": "Choose a size and buy",
-   "price": 16,
-   "scenes": [
-    "boardwalk"
-   ],
-   "store": "fourthwall",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-studio-carolina-beach-boardwalk-art-print_1000x.webp",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-boardwalk-art-print_1920x.webp",
-   "from": true,
-   "town": "carolina-beach",
-   "type": "prints",
-   "added": "2026-11-21",
-   "featured": true,
-   "motif": "beach-scenes"
-  },
-  {
-   "id": "wrightsville-beach-pier-art-print",
-   "collection": "landmarks",
+   "id": "wrightsville-beach-sloop-printed-throw-pillow",
+   "collection": "shore-gear",
    "shelf": "wrightsville-beach",
-   "name": "Wrightsville Beach Sunset Art Print",
-   "url": "https://shorelist-shop.fourthwall.com/products/wrightsville-beach-pier-art-print",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-pier-art-print_1000x.webp",
-   "alt": "Wrightsville Beach sunset art print framed above a bed in a beach house",
-   "meta": "Banded sky over the water in five flat inks on museum-matte paper.",
-   "cta": "Choose a size and buy",
-   "price": 16,
+   "town": "wrightsville-beach",
+   "name": "Wrightsville Beach Sloop Printed Throw Pillow",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-throw-pillow",
+   "type": "beach",
+   "color": "Navy",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-throw-pillow_1000x.webp",
+   "alt": "Navy throw pillow covered in small sailboats on a weathered beach chair by the dunes, shown as an illustrative image",
+   "meta": "A square throw pillow with a navy all-over pattern of little sloops. Printed, not embroidered, for a Wilmington NC porch or beach house.",
+   "cta": "Shop home decor",
+   "price": 42,
    "scenes": [
     "beach"
    ],
-   "store": "fourthwall",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-studio-wrightsville-beach-pier-art-print_1000x.webp",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-pier-art-print_1920x.webp",
-   "from": true,
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10845976540544592137_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-throw-pillow_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "16 x 16 in or 18 x 18 in"
+    ],
+    [
+     "Fabric",
+     "100% polyester cover with insert"
+    ],
+    [
+     "Print",
+     "Sailboat pattern edge to edge"
+    ],
+    [
+     "Care",
+     "Spot clean or machine wash cold per the cover label"
+    ]
+   ],
+   "motif": "boats-buoys"
+  },
+  {
+   "id": "wrightsville-beach-sloop-printed-zip-pouch",
+   "collection": "shore-gear",
+   "shelf": "wrightsville-beach",
    "town": "wrightsville-beach",
-   "type": "prints",
-   "added": "2026-11-21",
-   "featured": true,
+   "name": "Wrightsville Beach Sloop Printed Zip Pouch",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-zip-pouch",
+   "type": "beach",
+   "color": "Natural",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-zip-pouch_1000x.webp",
+   "alt": "Natural canvas zip pouch with a navy sailboat panel lying on beach sand beside shells and sunglasses, shown as an illustrative image",
+   "meta": "A natural canvas zip pouch with a navy panel of little sloops on the front and a wrist strap. Holds sunscreen, keys and phone for a Wrightsville Beach day.",
+   "cta": "Shop pouches",
+   "price": 30,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10521571959228082054_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-zip-pouch_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "About 8.3 x 7.8 in"
+    ],
+    [
+     "Fabric",
+     "100% cotton canvas with a zipper and carry strap"
+    ],
+    [
+     "Print",
+     "Navy sailboat pattern panel on the front"
+    ],
+    [
+     "Care",
+     "Spot clean"
+    ]
+   ],
+   "motif": "boats-buoys"
+  },
+  {
+   "id": "wrightsville-beach-sloop-printed-tea-towel",
+   "collection": "shore-gear",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Wrightsville Beach Sloop Printed Tea Towel",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-tea-towel",
+   "type": "beach",
+   "color": "Teal",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-tea-towel_1000x.webp",
+   "alt": "Teal and navy sloop pattern tea towel hanging in a bright coastal kitchen, shown as an illustrative image",
+   "meta": "A printed polyester tea towel with a navy all-over pattern of small sailboats on teal waves. A Wrightsville Beach kitchen gift made for the Carolina coast and Wilmington NC.",
+   "cta": "Shop kitchen linens",
+   "price": 30,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13002889693185505046_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-tea-towel_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "18 x 30 in"
+    ],
+    [
+     "Fabric",
+     "Polyester, one sided print, lightweight"
+    ],
+    [
+     "Print",
+     "Navy sloop pattern on teal waves, printed not embroidered"
+    ],
+    [
+     "Made",
+     "Made to order"
+    ]
+   ],
+   "motif": "boats-buoys"
+  },
+  {
+   "id": "wrightsville-beach-sloop-printed-pet-bandana",
+   "collection": "shore-gear",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Wrightsville Beach Sloop Printed Pet Bandana",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-pet-bandana",
+   "type": "beach",
+   "color": "Navy",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-pet-bandana-v2_1000x.webp",
+   "alt": "Golden retriever on a sandy beach wearing a thin black collar with a navy sailboat print bandana hanging from it, shown as an illustrative image",
+   "meta": "A navy pet bandana printed with little sloops that clips onto an adjustable black collar. Sold in size Small only. For beach walks with your dog on the Carolina coast.",
+   "cta": "Shop pet gear",
+   "price": 28,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12094930629799905524_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-pet-bandana-v2_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "Small"
+    ],
+    [
+     "Fabric",
+     "100% polyester"
+    ],
+    [
+     "Fit",
+     "Clip-on bandana with an adjustable, removable collar"
+    ]
+   ],
+   "motif": "boats-buoys"
+  },
+  {
+   "id": "wrightsville-beach-sloop-can-cooler-sleeve",
+   "collection": "shore-gear",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Wrightsville Beach Sloop Can Cooler Sleeve",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-can-cooler-sleeve",
+   "type": "coolers",
+   "color": "Navy",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-can-cooler-sleeve-v2_1000x.webp",
+   "alt": "Navy can cooler sleeve covered in small sailboats around a regular can, shown as an illustrative image",
+   "meta": "A navy can cooler sleeve covered in little sloops, printed edge to edge. Keeps a regular can cool on the boat, the sand or the porch.",
+   "cta": "Shop can coolers",
+   "price": 14,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17349877194870767359_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-can-cooler-sleeve-v2_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "Fits a regular can, about 3.5 x 4.3 in"
+    ],
+    [
+     "Materials",
+     "Polyester outside, soft foam liner inside"
+    ],
+    [
+     "Print",
+     "Sailboat pattern printed edge to edge"
+    ]
+   ],
+   "motif": "boats-buoys"
+  },
+  {
+   "id": "carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
+   "collection": "local-icons",
+   "shelf": "carolina-beach",
+   "town": "carolina-beach",
+   "name": "Carolina Beach Lifeguard Stand Embroidered Crewneck Sweatshirt",
+   "url": "https://shorelist.myshopify.com/products/carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
+   "type": "tops",
+   "color": "White",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt_1000x.webp",
+   "alt": "White crewneck sweatshirt with a small embroidered lifeguard stand and the words Carolina Beach on the chest, worn on the sand, shown as an illustrative image",
+   "meta": "A small lifeguard stand with a red flag and the town name Carolina Beach, embroidered on the chest of a white crewneck sweatshirt.",
+   "cta": "Choose size",
+   "price": 88,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13000623743151575142_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt_1920x.webp",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, sizes S to 3XL"
+    ],
+    [
+     "Fabric",
+     "9.5 oz garment-dyed, 80% ring-spun cotton and 20% polyester"
+    ],
+    [
+     "Embroidery",
+     "Lifeguard stand and town name stitched in navy and red thread, about 2.8 x 2.5 in"
+    ],
+    [
+     "Care",
+     "Machine wash cold, tumble dry low, do not iron the embroidery"
+    ]
+   ],
+   "motif": "beach-scenes",
+   "featured": true
+  },
+  {
+   "id": "carolina-beach-lifeguard-stand-printed-throw-pillow",
+   "collection": "local-icons",
+   "shelf": "carolina-beach",
+   "town": "carolina-beach",
+   "name": "Carolina Beach Lifeguard Stand Printed Throw Pillow",
+   "url": "https://shorelist.myshopify.com/products/carolina-beach-lifeguard-stand-printed-throw-pillow",
+   "type": "beach",
+   "color": "Ivory",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-throw-pillow_1000x.webp",
+   "alt": "Ivory throw pillow printed with a navy lifeguard stand and the words Carolina Beach, shown as an illustrative image",
+   "meta": "A printed square throw pillow with one navy lifeguard stand, a small red flag and the words Carolina Beach on ivory. For a Wilmington NC porch or beach house.",
+   "cta": "Shop home decor",
+   "price": 42,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12353768058891167259_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-throw-pillow_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "16 x 16 in or 18 x 18 in"
+    ],
+    [
+     "Fabric",
+     "Polyester cover with insert"
+    ],
+    [
+     "Print",
+     "Navy lifeguard stand with a red flag and the town name, centered on the front"
+    ],
+    [
+     "Care",
+     "Spot clean or machine wash cold per the cover label"
+    ]
+   ],
+   "motif": "beach-scenes"
+  },
+  {
+   "id": "carolina-beach-lifeguard-stand-printed-zip-pouch",
+   "collection": "local-icons",
+   "shelf": "carolina-beach",
+   "town": "carolina-beach",
+   "name": "Carolina Beach Lifeguard Stand Printed Zip Pouch",
+   "url": "https://shorelist.myshopify.com/products/carolina-beach-lifeguard-stand-printed-zip-pouch",
+   "type": "beach",
+   "color": "Natural",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-zip-pouch_1000x.webp",
+   "alt": "Natural canvas zip pouch printed with a navy lifeguard stand and the words Carolina Beach lying on beach sand, shown as an illustrative image",
+   "meta": "A printed cotton canvas zip pouch with a navy lifeguard stand, a small red flag and the words Carolina Beach on the front. Holds sunscreen, keys and phone for a beach day.",
+   "cta": "Shop pouches",
+   "price": 30,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15530950866645752954_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-zip-pouch_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "About 8.3 x 7.8 in"
+    ],
+    [
+     "Fabric",
+     "Cotton canvas with a zipper and carry strap"
+    ],
+    [
+     "Print",
+     "Navy lifeguard stand with a red flag and the town name on the front"
+    ],
+    [
+     "Care",
+     "Spot clean"
+    ]
+   ],
+   "motif": "beach-scenes"
+  },
+  {
+   "id": "carolina-beach-lifeguard-stand-printed-mug",
+   "collection": "local-icons",
+   "shelf": "carolina-beach",
+   "town": "carolina-beach",
+   "name": "Carolina Beach Lifeguard Stand Printed Mug",
+   "url": "https://shorelist.myshopify.com/products/carolina-beach-lifeguard-stand-printed-mug",
+   "type": "beach",
+   "color": "Ivory",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-mug_1000x.webp",
+   "alt": "Ivory ceramic mug printed with a navy lifeguard stand and the words Carolina Beach sitting on beach sand, shown as an illustrative image",
+   "meta": "A printed 11 oz white ceramic mug with one navy lifeguard stand, a small red flag and the words Carolina Beach on an ivory field. Made to order.",
+   "cta": "Shop mugs",
+   "price": 30,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3438836625257813204_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-mug_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "11 oz white ceramic mug"
+    ],
+    [
+     "Print",
+     "Navy lifeguard stand with a red flag and the town name, one centered design on an ivory field"
+    ],
+    [
+     "Care",
+     "Microwave and dishwasher safe per the supplier"
+    ]
+   ],
+   "motif": "beach-scenes"
+  },
+  {
+   "id": "carolina-beach-lifeguard-stand-printed-garment-dyed-tee",
+   "collection": "local-icons",
+   "shelf": "carolina-beach",
+   "town": "carolina-beach",
+   "name": "Carolina Beach Lifeguard Stand Printed Garment-Dyed Tee",
+   "url": "https://shorelist.myshopify.com/products/carolina-beach-lifeguard-stand-printed-garment-dyed-tee",
+   "type": "tops",
+   "color": "Ivory",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-garment-dyed-tee_1000x.webp",
+   "alt": "Ivory tee printed with a navy lifeguard stand, a red flag and the words Carolina Beach, worn on the sand with sea oats behind, shown as an illustrative image",
+   "meta": "A lifeguard stand on the Carolina Beach shoreline, printed in deep navy with a small red flag and the town name in full, on a relaxed ivory garment-dyed tee.",
+   "cta": "Choose size",
+   "price": 42,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15494710442550733373_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-garment-dyed-tee_1920x.webp",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, offered in sizes L to 3XL (S and M are not offered yet)"
+    ],
+    [
+     "Fabric",
+     "Heavyweight 6.1 oz ring-spun cotton, pre-shrunk, double-needle stitching, no side seams"
+    ],
+    [
+     "Print",
+     "Navy lifeguard stand with a small red flag and the town name on the chest"
+    ],
+    [
+     "Color",
+     "Garment dye means the shade varies slightly from piece to piece"
+    ]
+   ],
+   "motif": "beach-scenes"
+  },
+  {
+   "id": "kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "town": "kure-beach",
+   "name": "Kure Beach Lifeguard Stand Embroidered Crewneck Sweatshirt",
+   "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
+   "type": "tops",
+   "color": "White",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt_1000x.webp",
+   "alt": "Smiling woman in a white crewneck sweatshirt with a small embroidered lifeguard stand and the words Kure Beach, shown as an illustrative image",
+   "meta": "A small lifeguard stand with a red flag and the town name Kure Beach, embroidered on the chest of a white crewneck sweatshirt.",
+   "cta": "Choose size",
+   "price": 88,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5860568908472344756_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt_1920x.webp",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, sizes S to 3XL"
+    ],
+    [
+     "Fabric",
+     "9.5 oz garment-dyed, 80% ring-spun cotton and 20% polyester"
+    ],
+    [
+     "Embroidery",
+     "Lifeguard stand and town name stitched in navy and red thread, about 2.8 x 2.5 in"
+    ],
+    [
+     "Style",
+     "Classic crewneck with ribbed neck, cuffs and hem"
+    ],
+    [
+     "Care",
+     "Machine wash cold, tumble dry low, do not iron the embroidery"
+    ]
+   ],
+   "motif": "beach-scenes",
+   "featured": true
+  },
+  {
+   "id": "kure-beach-lifeguard-stand-printed-canvas-tote-bag",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "town": "kure-beach",
+   "name": "Kure Beach Lifeguard Stand Printed Canvas Tote Bag",
+   "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-printed-canvas-tote-bag",
+   "type": "beach",
+   "color": "Natural",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-canvas-tote-bag_1000x.webp",
+   "alt": "Natural canvas tote bag printed with a navy lifeguard stand and the words Kure Beach, leaning on a beach chair, shown as an illustrative image",
+   "meta": "A natural cotton canvas tote printed with one navy lifeguard stand, a small red flag and the words Kure Beach. A Wilmington NC gift for beach days and market trips.",
+   "cta": "Shop tote bags",
+   "price": 36,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4978189819285394626_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-canvas-tote-bag_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "About 15 x 16 in"
+    ],
+    [
+     "Fabric",
+     "100% cotton canvas in natural"
+    ],
+    [
+     "Print",
+     "Navy lifeguard stand with a red flag and the town name on the front"
+    ]
+   ],
+   "motif": "beach-scenes"
+  },
+  {
+   "id": "kure-beach-lifeguard-stand-printed-throw-pillow",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "town": "kure-beach",
+   "name": "Kure Beach Lifeguard Stand Printed Throw Pillow",
+   "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-printed-throw-pillow",
+   "type": "beach",
+   "color": "Ivory",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-throw-pillow_1000x.webp",
+   "alt": "Ivory throw pillow printed with a navy lifeguard stand and the words Kure Beach, shown as an illustrative image",
+   "meta": "A printed square throw pillow with one navy lifeguard stand, a small red flag and the words Kure Beach on ivory. For a Wilmington NC porch or beach house.",
+   "cta": "Shop home decor",
+   "price": 42,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4443965749188829078_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-throw-pillow_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "16 x 16 in or 18 x 18 in"
+    ],
+    [
+     "Fabric",
+     "Polyester cover with insert"
+    ],
+    [
+     "Print",
+     "Navy lifeguard stand with a red flag and the town name, centered on the front"
+    ],
+    [
+     "Care",
+     "Spot clean or machine wash cold per the cover label"
+    ]
+   ],
+   "motif": "beach-scenes"
+  },
+  {
+   "id": "kure-beach-lifeguard-stand-printed-zip-pouch",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "town": "kure-beach",
+   "name": "Kure Beach Lifeguard Stand Printed Zip Pouch",
+   "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-printed-zip-pouch",
+   "type": "beach",
+   "color": "Natural",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-zip-pouch_1000x.webp",
+   "alt": "Natural canvas zip pouch printed with a navy lifeguard stand and the words Kure Beach lying on beach sand, shown as an illustrative image",
+   "meta": "A printed cotton canvas zip pouch with a navy lifeguard stand, a small red flag and the words Kure Beach on the front. Holds sunscreen, keys and phone for a beach day.",
+   "cta": "Shop pouches",
+   "price": 30,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/1925704596928453072_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-zip-pouch_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "About 8.3 x 7.8 in"
+    ],
+    [
+     "Fabric",
+     "Cotton canvas with a zipper and carry strap"
+    ],
+    [
+     "Print",
+     "Navy lifeguard stand with a red flag and the town name on the front"
+    ],
+    [
+     "Care",
+     "Spot clean"
+    ]
+   ],
+   "motif": "beach-scenes"
+  },
+  {
+   "id": "kure-beach-lifeguard-stand-printed-mug",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "town": "kure-beach",
+   "name": "Kure Beach Lifeguard Stand Printed Mug",
+   "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-printed-mug",
+   "type": "beach",
+   "color": "Ivory",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-mug_1000x.webp",
+   "alt": "Ivory ceramic mug printed with a navy lifeguard stand and the words Kure Beach sitting on beach sand, shown as an illustrative image",
+   "meta": "A printed 11 oz white ceramic mug with one navy lifeguard stand, a small red flag and the words Kure Beach on an ivory field. Made to order.",
+   "cta": "Shop mugs",
+   "price": 30,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15581314161783206053_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-mug_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "11 oz white ceramic mug"
+    ],
+    [
+     "Print",
+     "Navy lifeguard stand with a red flag and the town name, one centered design on an ivory field"
+    ],
+    [
+     "Care",
+     "Microwave and dishwasher safe per the supplier"
+    ]
+   ],
+   "motif": "beach-scenes"
+  },
+  {
+   "id": "kure-beach-lifeguard-stand-printed-garment-dyed-tee",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "town": "kure-beach",
+   "name": "Kure Beach Lifeguard Stand Printed Garment-Dyed Tee",
+   "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-printed-garment-dyed-tee",
+   "type": "tops",
+   "color": "Ivory",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-garment-dyed-tee_1000x.webp",
+   "alt": "Woman in an ivory tee printed with a navy lifeguard stand and the words Kure Beach, standing in the dunes, shown as an illustrative image",
+   "meta": "A navy lifeguard stand with a small red flag over the words Kure Beach, printed on a soft ivory garment-dyed tee.",
+   "cta": "Choose size",
+   "price": 42,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10323877380730444236_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-garment-dyed-tee_1920x.webp",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, offered in sizes L to 3XL (S and M are not offered yet)"
+    ],
+    [
+     "Fabric",
+     "100% ring-spun cotton, garment-dyed for a soft worn-in feel"
+    ],
+    [
+     "Print",
+     "Navy and red lifeguard stand with the town name on the chest"
+    ]
+   ],
    "motif": "beach-scenes"
   },
   {
@@ -440,7 +975,7 @@
    "name": "Wrightsville Beach Christmas Ornament 2026",
    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-christmas-ornament-2026",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-ornament-2026_1000x.webp",
-   "alt": "Wrightsville Beach 2026 ornament on a Christmas tree in a coastal living room",
+   "alt": "Wrightsville Beach 2026 ornament on a Christmas tree in a coastal living room, shown as an illustrative image",
    "meta": "Dated ceramic keepsake: a sloop under a striped Carolina sunset, lettered Wrightsville Beach, Christmas 2026. ShoreList illustration.",
    "cta": "Shop Christmas",
    "price": 18,
@@ -472,86 +1007,6 @@
    "motif": "boats-buoys"
   },
   {
-   "id": "wrightsville-beach-sloop-printed-canvas-tote-bag",
-   "collection": "shore-gear",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop Printed Canvas Tote Bag",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-canvas-tote-bag",
-   "type": "beach",
-   "color": "Natural",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-canvas-tote-bag-v2_1000x.webp",
-   "alt": "Natural canvas tote bag with a navy panel of small sailboats printed on the front, shown as an illustrative image",
-   "meta": "A printed canvas tote with a navy panel of little sloops on the front. Roomy enough for a beach day or a Wilmington errand run.",
-   "cta": "Shop tote bags",
-   "price": 36,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12079303666000630164_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-canvas-tote-bag-v2_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "About 15 x 16 in with 20 in handles"
-    ],
-    [
-     "Fabric",
-     "100% cotton canvas in natural"
-    ],
-    [
-     "Print",
-     "Sailboat pattern panel on the front"
-    ],
-    [
-     "Care",
-     "Machine wash cold, tumble dry low"
-    ]
-   ],
-   "motif": "boats-buoys"
-  },
-  {
-   "id": "wrightsville-beach-sloop-can-cooler-sleeve",
-   "collection": "shore-gear",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop Can Cooler Sleeve",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-can-cooler-sleeve",
-   "type": "coolers",
-   "color": "Navy",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-can-cooler-sleeve-v2_1000x.webp",
-   "alt": "Navy can cooler sleeve covered in small sailboats around a regular can, shown as an illustrative image",
-   "meta": "A navy can cooler sleeve covered in little sloops, printed edge to edge. Keeps a regular can cool on the boat, the sand or the porch.",
-   "cta": "Shop can coolers",
-   "price": 14,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17349877194870767359_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-can-cooler-sleeve-v2_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "Fits a regular can, about 3.5 x 4.3 in"
-    ],
-    [
-     "Materials",
-     "Polyester outside, soft foam liner inside"
-    ],
-    [
-     "Print",
-     "Sailboat pattern printed edge to edge"
-    ]
-   ],
-   "motif": "boats-buoys"
-  },
-  {
    "id": "daymark-corduroy-cap-wrightsville-beach",
    "collection": "local-icons",
    "shelf": "wrightsville-beach",
@@ -563,7 +1018,7 @@
    "added": "2026-11-23",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-daymark-corduroy-cap-wrightsville-beach_1000x.webp",
    "alt": "Man in a navy corduroy cap with a small white embroidered sailboat, on the dunes at Wrightsville Beach, shown as an illustrative image",
-   "meta": "One small sloop stitched on the front of a navy corduroy cap, with WB for Wrightsville Beach on the back.",
+   "meta": "One small sloop stitched on the front of a navy corduroy cap, kept quiet on purpose.",
    "cta": "Shop the cap",
    "price": 49,
    "scenes": [
@@ -632,7 +1087,7 @@
    "collection": "beach-setup",
    "shelf": "wrightsville-beach",
    "town": "wrightsville-beach",
-   "name": "ShoreList Tilt Beach Umbrella, 6.5 ft UPF 50+",
+   "name": "The Tilt Beach Umbrella",
    "url": "https://shorelist.myshopify.com/products/shorelist-tilt-beach-umbrella-6-5-ft-upf-50",
    "type": "beach",
    "added": "2026-11-23",
@@ -653,12 +1108,16 @@
      "6.5 ft across, 7 ft tall"
     ],
     [
+     "Sun protection",
+     "UPF 50+"
+    ],
+    [
      "Frame",
      "Aluminum pole with 8 fiberglass ribs and a sand anchor"
     ],
     [
      "Fabric",
-     "Silver-coated polyester, UPF 50+, top air vent"
+     "Silver-coated polyester with a top air vent"
     ],
     [
      "Weight",
@@ -678,7 +1137,7 @@
    "color": "Mint stripe",
    "added": "2026-11-23",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-shorelist-aluminum-backpack-beach-chair-mint-stripe_1000x.webp",
-   "alt": "Mint and white striped aluminum backpack beach chair open on the sand at Carolina Beach with a straw hat and a book on the seat, shown as an illustrative image",
+   "alt": "Mint and white striped aluminum backpack beach chair open on the sand at Wrightsville Beach with a straw hat and a book on the seat, shown as an illustrative image",
    "meta": "A mint stripe backpack beach chair with four recline positions, wooden armrests and shoulder straps for the walk over the dunes.",
    "cta": "Shop beach gear",
    "price": 109,
@@ -707,208 +1166,6 @@
     ]
    ],
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-shorelist-aluminum-backpack-beach-chair-mint-stripe_1920x.webp"
-  },
-  {
-   "id": "wrightsville-beach-sloop-printed-mug",
-   "collection": "shore-gear",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop Printed Mug",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-mug",
-   "type": "beach",
-   "color": "White",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-mug_1000x.webp",
-   "alt": "White ceramic mug covered in small navy sailboats sitting on beach sand beside a folded towel, shown as an illustrative image",
-   "meta": "A printed 11 oz white ceramic mug with a navy all-over pattern of little sloops on teal waves. A Wrightsville Beach coffee mug and a Wilmington NC gift.",
-   "cta": "Shop mugs",
-   "price": 30,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5906329180415418302_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-mug_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "11 oz white ceramic mug"
-    ],
-    [
-     "Print",
-     "Sailboat pattern wrapped around the mug"
-    ],
-    [
-     "Care",
-     "Microwave and dishwasher safe"
-    ]
-   ],
-   "motif": "boats-buoys"
-  },
-  {
-   "id": "wrightsville-beach-sloop-printed-pet-bandana",
-   "collection": "shore-gear",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop Printed Pet Bandana",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-pet-bandana",
-   "type": "beach",
-   "color": "Navy",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-pet-bandana-v2_1000x.webp",
-   "alt": "Golden retriever on a sandy beach wearing a thin black collar with a navy sailboat print bandana hanging from it, shown as an illustrative image",
-   "meta": "A navy pet bandana printed with little sloops that clips onto an adjustable black collar. For beach walks with your dog on the Carolina coast.",
-   "cta": "Shop pet gear",
-   "price": 28,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12094930629799905524_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-pet-bandana-v2_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "Small"
-    ],
-    [
-     "Fabric",
-     "100% polyester"
-    ],
-    [
-     "Fit",
-     "Clip-on bandana with an adjustable, removable collar"
-    ]
-   ],
-   "motif": "boats-buoys"
-  },
-  {
-   "id": "wrightsville-beach-sloop-printed-throw-pillow",
-   "collection": "shore-gear",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop Printed Throw Pillow",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-throw-pillow",
-   "type": "beach",
-   "color": "Navy",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-throw-pillow_1000x.webp",
-   "alt": "Navy throw pillow covered in small sailboats on a weathered beach chair by the dunes, shown as an illustrative image",
-   "meta": "A square throw pillow with a navy all-over pattern of little sloops. Printed, not embroidered, for a Wilmington NC porch or beach house.",
-   "cta": "Shop home decor",
-   "price": 42,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10845976540544592137_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-throw-pillow_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "16 x 16 in or 18 x 18 in"
-    ],
-    [
-     "Fabric",
-     "100% polyester cover with insert"
-    ],
-    [
-     "Print",
-     "Sailboat pattern edge to edge"
-    ],
-    [
-     "Care",
-     "Spot clean or machine wash cold per the cover label"
-    ]
-   ],
-   "motif": "boats-buoys"
-  },
-  {
-   "id": "wrightsville-beach-sloop-printed-zip-pouch",
-   "collection": "shore-gear",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop Printed Zip Pouch",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-zip-pouch",
-   "type": "beach",
-   "color": "Natural",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-zip-pouch_1000x.webp",
-   "alt": "Natural canvas zip pouch with a navy sailboat panel lying on beach sand beside shells and sunglasses, shown as an illustrative image",
-   "meta": "A natural canvas zip pouch with a navy panel of little sloops on the front and a wrist strap. Holds sunscreen, keys and phone for a Wrightsville Beach day.",
-   "cta": "Shop pouches",
-   "price": 30,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10521571959228082054_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-zip-pouch_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "About 8.3 x 7.8 in"
-    ],
-    [
-     "Fabric",
-     "100% cotton canvas with a zipper and carry strap"
-    ],
-    [
-     "Print",
-     "Navy sailboat pattern panel on the front"
-    ],
-    [
-     "Care",
-     "Spot clean"
-    ]
-   ],
-   "motif": "boats-buoys"
-  },
-  {
-   "id": "wrightsville-beach-sloop-printed-tea-towel",
-   "collection": "shore-gear",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop Printed Tea Towel",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-tea-towel",
-   "type": "beach",
-   "color": "Teal",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-tea-towel_1000x.webp",
-   "alt": "Teal and navy sloop pattern tea towel hanging in a bright coastal kitchen, shown as an illustrative image",
-   "meta": "A printed polyester tea towel with a navy all-over pattern of small sailboats on teal waves. A Wrightsville Beach kitchen gift made for the Carolina coast and Wilmington NC.",
-   "cta": "Shop kitchen linens",
-   "price": 30,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13002889693185505046_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-tea-towel_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "18 x 30 in"
-    ],
-    [
-     "Fabric",
-     "Polyester, one sided print, lightweight"
-    ],
-    [
-     "Print",
-     "Navy sloop pattern on teal waves, printed not embroidered"
-    ],
-    [
-     "Made",
-     "Made to order"
-    ]
-   ],
-   "motif": "boats-buoys"
   },
   {
    "id": "the-sloop-rope-cap-wrightsville-beach",
@@ -946,525 +1203,6 @@
      "Ivory, Chambray, Peachy"
     ]
    ]
-  },
-  {
-   "id": "carolina-beach-ornament-2026",
-   "collection": "coastal-christmas",
-   "shelf": "carolina-beach",
-   "name": "Carolina Beach Christmas Ornament 2026",
-   "url": "https://shorelist.myshopify.com/products/carolina-beach-christmas-ornament-2026",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-ornament-2026_1000x.webp",
-   "alt": "Carolina Beach 2026 ornament on a Christmas tree in a beach cottage",
-   "meta": "Dated ceramic keepsake: a sloop under a striped Carolina sunset, lettered Carolina Beach, Christmas 2026. ShoreList illustration.",
-   "cta": "Shop Christmas",
-   "price": 18,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48571271643220:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
-   "facts": [
-    [
-     "Size",
-     "About 2.9 in across, glossy ceramic"
-    ],
-    [
-     "Print",
-     "One side, with a gold hanging cord"
-    ],
-    [
-     "Lettering",
-     "Carolina Beach, Christmas 2026"
-    ]
-   ],
-   "studio": "https://shorelist.myshopify.com/cdn/shop/files/5074047802882228178_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-ornament-2026_1920x.webp",
-   "town": "carolina-beach",
-   "type": "ornaments",
-   "added": "2026-11-20",
-   "featured": true,
-   "motif": "boats-buoys"
-  },
-  {
-   "id": "carolina-beach-lifeguard-stand-printed-garment-dyed-tee",
-   "collection": "local-icons",
-   "shelf": "carolina-beach",
-   "town": "carolina-beach",
-   "name": "Carolina Beach Lifeguard Stand Printed Garment-Dyed Tee",
-   "url": "https://shorelist.myshopify.com/products/carolina-beach-lifeguard-stand-printed-garment-dyed-tee",
-   "type": "tops",
-   "color": "Ivory",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-garment-dyed-tee_1000x.webp",
-   "alt": "Ivory tee printed with a navy lifeguard stand, a red flag and the words Carolina Beach, worn on the sand with sea oats behind, shown as an illustrative image",
-   "meta": "A lifeguard stand on the Carolina Beach shoreline, printed in deep navy with a small red flag and the town name in full, on a relaxed ivory garment-dyed tee.",
-   "cta": "Choose size",
-   "price": 42,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15494710442550733373_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-garment-dyed-tee_1920x.webp",
-   "facts": [
-    [
-     "Sizing",
-     "Relaxed fit, sizes L to 3XL"
-    ],
-    [
-     "Fabric",
-     "Heavyweight 6.1 oz ring-spun cotton, pre-shrunk, double-needle stitching, no side seams"
-    ],
-    [
-     "Print",
-     "Navy lifeguard stand with a small red flag and the town name on the chest"
-    ],
-    [
-     "Color",
-     "Garment dye means the shade varies slightly from piece to piece"
-    ]
-   ],
-   "motif": "beach-scenes"
-  },
-  {
-   "id": "carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
-   "collection": "local-icons",
-   "shelf": "carolina-beach",
-   "town": "carolina-beach",
-   "name": "Carolina Beach Lifeguard Stand Embroidered Crewneck Sweatshirt",
-   "url": "https://shorelist.myshopify.com/products/carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
-   "type": "tops",
-   "color": "White",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt_1000x.webp",
-   "alt": "White crewneck sweatshirt with a small embroidered lifeguard stand and the words Carolina Beach on the chest, worn on the sand, shown as an illustrative image",
-   "meta": "A small lifeguard stand with a red flag and the town name Carolina Beach, embroidered on the chest of a white crewneck sweatshirt.",
-   "cta": "Choose size",
-   "price": 88,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13000623743151575142_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt_1920x.webp",
-   "facts": [
-    [
-     "Sizing",
-     "Relaxed fit, sizes S to 3XL"
-    ],
-    [
-     "Fabric",
-     "9.5 oz garment-dyed, 80% ring-spun cotton and 20% polyester"
-    ],
-    [
-     "Embroidery",
-     "Lifeguard stand and town name stitched in navy and red thread, about 2.8 x 2.5 in"
-    ],
-    [
-     "Care",
-     "Machine wash cold, tumble dry low, do not iron the embroidery"
-    ]
-   ],
-   "motif": "beach-scenes"
-  },
-  {
-   "id": "carolina-beach-lifeguard-stand-printed-mug",
-   "collection": "local-icons",
-   "shelf": "carolina-beach",
-   "town": "carolina-beach",
-   "name": "Carolina Beach Lifeguard Stand Printed Mug",
-   "url": "https://shorelist.myshopify.com/products/carolina-beach-lifeguard-stand-printed-mug",
-   "type": "beach",
-   "color": "Ivory",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-mug_1000x.webp",
-   "alt": "Ivory ceramic mug printed with a navy lifeguard stand and the words Carolina Beach sitting on beach sand, shown as an illustrative image",
-   "meta": "A printed 11 oz white ceramic mug with one navy lifeguard stand, a small red flag and the words Carolina Beach on an ivory field. A Carolina Beach coffee mug and a Wilmington NC gift.",
-   "cta": "Shop mugs",
-   "price": 30,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3438836625257813204_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-mug_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "11 oz white ceramic mug"
-    ],
-    [
-     "Print",
-     "Navy lifeguard stand with a red flag and the town name, one centered design on an ivory field"
-    ],
-    [
-     "Care",
-     "Microwave and dishwasher safe per the supplier"
-    ]
-   ],
-   "motif": "beach-scenes"
-  },
-  {
-   "id": "carolina-beach-lifeguard-stand-printed-zip-pouch",
-   "collection": "local-icons",
-   "shelf": "carolina-beach",
-   "town": "carolina-beach",
-   "name": "Carolina Beach Lifeguard Stand Printed Zip Pouch",
-   "url": "https://shorelist.myshopify.com/products/carolina-beach-lifeguard-stand-printed-zip-pouch",
-   "type": "beach",
-   "color": "Natural",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-zip-pouch_1000x.webp",
-   "alt": "Natural canvas zip pouch printed with a navy lifeguard stand and the words Carolina Beach lying on beach sand, shown as an illustrative image",
-   "meta": "A printed cotton canvas zip pouch with a navy lifeguard stand, a small red flag and the words Carolina Beach on the front. Holds sunscreen, keys and phone for a beach day.",
-   "cta": "Shop pouches",
-   "price": 30,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15530950866645752954_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-zip-pouch_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "About 8.3 x 7.8 in"
-    ],
-    [
-     "Fabric",
-     "Cotton canvas with a zipper and carry strap"
-    ],
-    [
-     "Print",
-     "Navy lifeguard stand with a red flag and the town name on the front"
-    ],
-    [
-     "Care",
-     "Spot clean"
-    ]
-   ],
-   "motif": "beach-scenes"
-  },
-  {
-   "id": "carolina-beach-lifeguard-stand-printed-throw-pillow",
-   "collection": "local-icons",
-   "shelf": "carolina-beach",
-   "town": "carolina-beach",
-   "name": "Carolina Beach Lifeguard Stand Printed Throw Pillow",
-   "url": "https://shorelist.myshopify.com/products/carolina-beach-lifeguard-stand-printed-throw-pillow",
-   "type": "beach",
-   "color": "Ivory",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-throw-pillow_1000x.webp",
-   "alt": "Ivory throw pillow printed with a navy lifeguard stand and the words Carolina Beach, shown as an illustrative image",
-   "meta": "A printed square throw pillow with one navy lifeguard stand, a small red flag and the words Carolina Beach on ivory. For a Wilmington NC porch or beach house.",
-   "cta": "Shop home decor",
-   "price": 42,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12353768058891167259_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-throw-pillow_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "16 x 16 in or 18 x 18 in"
-    ],
-    [
-     "Fabric",
-     "Polyester cover with insert"
-    ],
-    [
-     "Print",
-     "Navy lifeguard stand with a red flag and the town name, centered on the front"
-    ],
-    [
-     "Care",
-     "Spot clean or machine wash cold per the cover label"
-    ]
-   ],
-   "motif": "beach-scenes"
-  },
-  {
-   "id": "kure-beach-ornament-2026",
-   "collection": "coastal-christmas",
-   "shelf": "kure-beach",
-   "name": "Kure Beach Christmas Ornament 2026",
-   "url": "https://shorelist.myshopify.com/products/kure-beach-christmas-ornament-2026",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-ornament-2026_1000x.webp",
-   "alt": "Woman hanging the Kure Beach 2026 ornament on a Christmas tree",
-   "meta": "Dated ceramic keepsake: a sloop under a striped Carolina sunset, lettered Kure Beach, Christmas 2026. ShoreList illustration.",
-   "cta": "Shop Christmas",
-   "price": 18,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48571283341396:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
-   "facts": [
-    [
-     "Size",
-     "About 2.9 in across, glossy ceramic"
-    ],
-    [
-     "Print",
-     "One side, with a gold hanging cord"
-    ],
-    [
-     "Lettering",
-     "Kure Beach, Christmas 2026"
-    ]
-   ],
-   "studio": "https://shorelist.myshopify.com/cdn/shop/files/2471044685723405738_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-ornament-2026_1920x.webp",
-   "town": "kure-beach",
-   "type": "ornaments",
-   "added": "2026-11-20",
-   "motif": "boats-buoys"
-  },
-  {
-   "id": "kure-beach-lifeguard-stand-printed-garment-dyed-tee",
-   "collection": "local-icons",
-   "shelf": "kure-beach",
-   "town": "kure-beach",
-   "name": "Kure Beach Lifeguard Stand Printed Garment-Dyed Tee",
-   "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-printed-garment-dyed-tee",
-   "type": "tops",
-   "color": "Ivory",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-garment-dyed-tee_1000x.webp",
-   "alt": "Woman in an ivory tee printed with a navy lifeguard stand and the words Kure Beach, standing in the dunes, shown as an illustrative image",
-   "meta": "A navy lifeguard stand with a small red flag over the words Kure Beach, printed on a soft ivory garment-dyed tee.",
-   "cta": "Choose size",
-   "price": 42,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10323877380730444236_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-garment-dyed-tee_1920x.webp",
-   "facts": [
-    [
-     "Sizing",
-     "Relaxed fit, sizes L to 3XL"
-    ],
-    [
-     "Fabric",
-     "100% ring-spun cotton, garment-dyed for a soft worn-in feel"
-    ],
-    [
-     "Print",
-     "Navy and red lifeguard stand with the town name on the chest"
-    ]
-   ],
-   "motif": "beach-scenes"
-  },
-  {
-   "id": "kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
-   "collection": "local-icons",
-   "shelf": "kure-beach",
-   "town": "kure-beach",
-   "name": "Kure Beach Lifeguard Stand Embroidered Crewneck Sweatshirt",
-   "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
-   "type": "tops",
-   "color": "White",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt_1000x.webp",
-   "alt": "Smiling woman in a white crewneck sweatshirt with a small embroidered lifeguard stand and the words Kure Beach, shown as an illustrative image",
-   "meta": "A small lifeguard stand with a red flag and the town name Kure Beach, embroidered on the chest of a white crewneck sweatshirt.",
-   "cta": "Choose size",
-   "price": 88,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5860568908472344756_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt_1920x.webp",
-   "facts": [
-    [
-     "Sizing",
-     "Sizes S to 3XL"
-    ],
-    [
-     "Embroidery",
-     "Lifeguard stand and town name stitched in navy and red thread"
-    ],
-    [
-     "Style",
-     "Classic crewneck with ribbed neck, cuffs and hem"
-    ]
-   ],
-   "motif": "beach-scenes"
-  },
-  {
-   "id": "kure-beach-lifeguard-stand-printed-mug",
-   "collection": "local-icons",
-   "shelf": "kure-beach",
-   "town": "kure-beach",
-   "name": "Kure Beach Lifeguard Stand Printed Mug",
-   "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-printed-mug",
-   "type": "beach",
-   "color": "Ivory",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-mug_1000x.webp",
-   "alt": "Ivory ceramic mug printed with a navy lifeguard stand and the words Kure Beach sitting on beach sand, shown as an illustrative image",
-   "meta": "A printed 11 oz white ceramic mug with one navy lifeguard stand, a small red flag and the words Kure Beach on an ivory field. A Kure Beach coffee mug and a Wilmington NC gift.",
-   "cta": "Shop mugs",
-   "price": 30,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15581314161783206053_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-mug_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "11 oz white ceramic mug"
-    ],
-    [
-     "Print",
-     "Navy lifeguard stand with a red flag and the town name, one centered design on an ivory field"
-    ],
-    [
-     "Care",
-     "Microwave and dishwasher safe per the supplier"
-    ]
-   ],
-   "motif": "beach-scenes"
-  },
-  {
-   "id": "kure-beach-lifeguard-stand-printed-zip-pouch",
-   "collection": "local-icons",
-   "shelf": "kure-beach",
-   "town": "kure-beach",
-   "name": "Kure Beach Lifeguard Stand Printed Zip Pouch",
-   "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-printed-zip-pouch",
-   "type": "beach",
-   "color": "Natural",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-zip-pouch_1000x.webp",
-   "alt": "Natural canvas zip pouch printed with a navy lifeguard stand and the words Kure Beach lying on beach sand, shown as an illustrative image",
-   "meta": "A printed cotton canvas zip pouch with a navy lifeguard stand, a small red flag and the words Kure Beach on the front. Holds sunscreen, keys and phone for a beach day.",
-   "cta": "Shop pouches",
-   "price": 30,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/1925704596928453072_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-zip-pouch_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "About 8.3 x 7.8 in"
-    ],
-    [
-     "Fabric",
-     "Cotton canvas with a zipper and carry strap"
-    ],
-    [
-     "Print",
-     "Navy lifeguard stand with a red flag and the town name on the front"
-    ],
-    [
-     "Care",
-     "Spot clean"
-    ]
-   ],
-   "motif": "beach-scenes"
-  },
-  {
-   "id": "kure-beach-lifeguard-stand-printed-throw-pillow",
-   "collection": "local-icons",
-   "shelf": "kure-beach",
-   "town": "kure-beach",
-   "name": "Kure Beach Lifeguard Stand Printed Throw Pillow",
-   "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-printed-throw-pillow",
-   "type": "beach",
-   "color": "Ivory",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-throw-pillow_1000x.webp",
-   "alt": "Ivory throw pillow printed with a navy lifeguard stand and the words Kure Beach, shown as an illustrative image",
-   "meta": "A printed square throw pillow with one navy lifeguard stand, a small red flag and the words Kure Beach on ivory. For a Wilmington NC porch or beach house.",
-   "cta": "Shop home decor",
-   "price": 42,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4443965749188829078_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-throw-pillow_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "16 x 16 in or 18 x 18 in"
-    ],
-    [
-     "Fabric",
-     "Polyester cover with insert"
-    ],
-    [
-     "Print",
-     "Navy lifeguard stand with a red flag and the town name, centered on the front"
-    ],
-    [
-     "Care",
-     "Spot clean or machine wash cold per the cover label"
-    ]
-   ],
-   "motif": "beach-scenes"
-  },
-  {
-   "id": "kure-beach-lifeguard-stand-printed-canvas-tote-bag",
-   "collection": "local-icons",
-   "shelf": "kure-beach",
-   "town": "kure-beach",
-   "name": "Kure Beach Lifeguard Stand Printed Canvas Tote Bag",
-   "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-printed-canvas-tote-bag",
-   "type": "beach",
-   "color": "Natural",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-canvas-tote-bag_1000x.webp",
-   "alt": "Natural canvas tote bag printed with a navy lifeguard stand and the words Kure Beach, leaning on a beach chair, shown as an illustrative image",
-   "meta": "A natural cotton canvas tote printed with one navy lifeguard stand, a small red flag and the words Kure Beach. A Wilmington NC gift for beach days and market trips.",
-   "cta": "Shop tote bags",
-   "price": 36,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4978189819285394626_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-canvas-tote-bag_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "About 15 x 16 in"
-    ],
-    [
-     "Fabric",
-     "100% cotton canvas in natural"
-    ],
-    [
-     "Print",
-     "Navy lifeguard stand with a red flag and the town name on the front"
-    ]
-   ],
-   "motif": "beach-scenes"
   },
   {
    "id": "the-blue-crab-rope-cap-kure-beach",
@@ -1590,7 +1328,15 @@
    "coastal-christmas-can-cooler": "green colorway is off palette (2026-11-22 shop audit). Full record in docs/retired-items.json.",
    "daymark-sloop-crewneck": "duplicate of the-sloop-embroidered-crewneck-wrightsville-beach (merged, kept that one) (2026-11-22 shop audit). Full record in docs/retired-items.json.",
    "daymark-blue-crab-crewneck": "duplicate of the-blue-crab-embroidered-crewneck-kure-beach (merged, kept that one) (2026-11-22 shop audit). Full record in docs/retired-items.json.",
-   "salt-wash-market-tote": "Paused 2026-11-22: no faithful lookbook possible (supplier photo unreachable, mark not visible in the supplier image, shop audit 6.2 FIX). RJ decides keep or remove. Record kept in retired.paused."
+   "salt-wash-market-tote": "Paused 2026-11-22: no faithful lookbook possible (supplier photo unreachable, mark not visible in the supplier image, shop audit 6.2 FIX). RJ decides keep or remove. Record kept in retired.paused.",
+   "the-sloop-embroidered-crewneck-wrightsville-beach": "brand audit 2026-11-22: WB initials in copy, washed blue off the white crewneck rule, paused until redone",
+   "the-blue-crab-embroidered-crewneck-kure-beach": "brand audit 2026-11-22: KB initials, mint colorway off palette, paused until redone",
+   "the-sloop-corduroy-cap-wrightsville-beach": "brand audit 2026-11-22: duplicates the Daymark corduroy cap, WB on the back, paused",
+   "the-sloop-cuffed-beanie-wrightsville-beach": "brand audit 2026-11-22: WB on the cuff, paused until redone",
+   "carolina-beach-boardwalk-art-print": "brand audit 2026-11-22: Fourthwall checkout, boardwalk not an approved motif, paused",
+   "wrightsville-beach-pier-art-print": "brand audit 2026-11-22: Fourthwall checkout, pier wording, paused",
+   "carolina-beach-ornament-2026": "brand audit 2026-11-22: sloop is the Wrightsville mark, wrong town motif, paused until redone",
+   "kure-beach-ornament-2026": "brand audit 2026-11-22: sloop is the Wrightsville mark, wrong town motif, paused until redone"
   },
   "archive": {
    "tilt-beach-umbrella": {
