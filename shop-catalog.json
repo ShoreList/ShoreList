@@ -3598,6 +3598,219 @@
      "Banks Channel sunset scene across the back, small red pennant on the chest"
     ]
    ]
+  },
+  {
+   "id": "tilt-beach-umbrella",
+   "collection": "beach-setup",
+   "shelf": "beach-setup",
+   "name": "ShoreList Tilt Beach Umbrella",
+   "url": "https://shorelist.myshopify.com/products/shorelist-tilt-beach-umbrella-6-5-ft-upf-50",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-tilt-beach-umbrella_1000x.webp",
+   "alt": "Couple laughing under the teal tilt beach umbrella on the sand by the dunes at golden hour",
+   "meta": "6.5 ft tilting canopy with UPF 50+ shade and a carry sleeve.",
+   "cta": "Shop beach gear",
+   "price": 99,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "buy": "https://shorelist.myshopify.com/cart/48569723617364:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "facts": [
+    [
+     "Size",
+     "6.5 ft canopy that tilts"
+    ],
+    [
+     "Frame",
+     "Aluminum tube, 8 fiberglass ribs and a sand anchor"
+    ],
+    [
+     "Details",
+     "UPF 50+ fabric with a top air vent"
+    ]
+   ],
+   "studio": "https://shorelist.myshopify.com/cdn/shop/files/896e91258188456b9739f40519a8211b.webp",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-tilt-beach-umbrella_1920x.webp"
+  },
+  {
+   "id": "backpack-beach-chair",
+   "collection": "beach-setup",
+   "shelf": "beach-setup",
+   "name": "ShoreList Backpack Beach Chair",
+   "url": "https://shorelist.myshopify.com/products/shorelist-aluminum-backpack-beach-chair-mint-stripe",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-backpack-beach-chair_1000x.webp",
+   "alt": "Woman reading in the backpack beach chair at the water edge",
+   "meta": "Four-position aluminum frame that holds up to 265 lb, with wooden armrests, a detachable pillow and backpack straps. Mint stripe.",
+   "cta": "Shop beach gear",
+   "price": 109,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "buy": "https://shorelist.myshopify.com/cart/48569729744980:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "facts": [
+    [
+     "Support",
+     "Holds up to 265 lb on a rustproof aluminum frame"
+    ],
+    [
+     "Seat",
+     "Four backrest positions from 100 to 140 degrees, 12 in seat height"
+    ],
+    [
+     "Carry",
+     "Folds flat with shoulder straps and a detachable pillow"
+    ]
+   ],
+   "studio": "https://shorelist.myshopify.com/cdn/shop/files/e4e9481e914347868d7fc04ab6c9e261.webp",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-backpack-beach-chair_1920x.webp"
+  },
+  {
+   "id": "salt-wash-market-tote",
+   "collection": "shore-gear",
+   "shelf": "wilmington",
+   "name": "Sloop Organic Cotton Market Tote",
+   "url": "https://shorelist-shop.fourthwall.com/products/salt-wash-organic-cotton-market-tote",
+   "img": "https://imgproxy.fourthwall.dev/TZt3re_wDyZ0W16_4JbSgpMdKwOMYBzAwPsa2r3eqHA/w:1920/sm:1/enc/Pk5QPfjBEPCd6iv4/jzgR6bKsy7yyQSZv/n5nrwFsWvAAQyQVI/e3FznjKMNn4uGwsZ/xM5ia2wEXu6YZSfz/TuQbjJhrMqgnSt5p/M86zkfeYUuJkpP4U/Ep3Y89lpVKKlf5b7/nrschLQbJeecVVMi/aEvtdTJMIptcL7yO/lIdn7xEV_W8hJdaP/x6JU_2u2-_tiXm_x/KdGjIviHRxutI_um/KWy8ww.jpg",
+   "lookbook": "https://imgproxy.fourthwall.dev/TZt3re_wDyZ0W16_4JbSgpMdKwOMYBzAwPsa2r3eqHA/w:1920/sm:1/enc/Pk5QPfjBEPCd6iv4/jzgR6bKsy7yyQSZv/n5nrwFsWvAAQyQVI/e3FznjKMNn4uGwsZ/xM5ia2wEXu6YZSfz/TuQbjJhrMqgnSt5p/M86zkfeYUuJkpP4U/Ep3Y89lpVKKlf5b7/nrschLQbJeecVVMi/aEvtdTJMIptcL7yO/lIdn7xEV_W8hJdaP/x6JU_2u2-_tiXm_x/KdGjIviHRxutI_um/KWy8ww.jpg",
+   "alt": "Woman holding a natural organic cotton sloop tote on a wooden beach walkway",
+   "meta": "Organic cotton twill, 20 x 14 x 5 in, with one small sloop print. Natural color, sturdy handles.",
+   "cta": "Choose options and buy",
+   "price": 48,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "fourthwall",
+   "blank": "Econscious",
+   "facts": [
+    [
+     "Size",
+     "20 x 14 x 5 in"
+    ],
+    [
+     "Fabric",
+     "Organic cotton twill"
+    ]
+   ],
+   "town": "wilmington",
+   "type": "beach",
+   "color": "Natural",
+   "added": "2026-11-20",
+   "motif": "boats-buoys"
+  },
+  {
+   "id": "wrightsville-beach-varsity-crewneck",
+   "collection": "local-icons",
+   "name": "Wrightsville Beach Varsity Crewneck",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-varsity-crewneck",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-varsity-crewneck_1000x.webp",
+   "alt": "Woman on the bow of a wooden sailboat at golden hour wearing the navy Wrightsville Beach varsity crewneck",
+   "meta": "WRIGHTSVILLE arched over BEACH in cream varsity lettering on a garment-dyed crewneck, with 1899, the year the town was incorporated.",
+   "cta": "Choose options",
+   "price": 78,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "buy": "https://shorelist.myshopify.com/cart/48572798926932:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8214280971553777558_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-varsity-crewneck_1920x.webp",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "type": "tops"
+  },
+  {
+   "id": "carolina-beach-varsity-crewneck",
+   "collection": "local-icons",
+   "name": "Carolina Beach Varsity Crewneck",
+   "url": "https://shorelist.myshopify.com/products/carolina-beach-varsity-crewneck",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-varsity-crewneck_1000x.webp",
+   "alt": "Man walking the boardwalk at dusk with a coffee wearing the navy Carolina Beach varsity crewneck",
+   "meta": "CAROLINA arched over BEACH in cream varsity lettering on a garment-dyed crewneck, with 1925, the year the town was incorporated.",
+   "cta": "Choose options",
+   "price": 78,
+   "scenes": [
+    "boardwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "buy": "https://shorelist.myshopify.com/cart/48572815081556:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15469697947599356445_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-varsity-crewneck_1920x.webp",
+   "shelf": "carolina-beach",
+   "town": "carolina-beach",
+   "type": "tops"
+  },
+  {
+   "id": "kure-beach-varsity-crewneck",
+   "collection": "local-icons",
+   "name": "Kure Beach Varsity Crewneck",
+   "url": "https://shorelist.myshopify.com/products/kure-beach-varsity-crewneck",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-varsity-crewneck_1000x.webp",
+   "alt": "Woman on the beach at sunrise by the fishing pier wearing the navy Kure Beach varsity crewneck",
+   "meta": "KURE BEACH arched over N.C. in cream varsity lettering on a garment-dyed crewneck, with Pleasure Island and 1947.",
+   "cta": "Choose options",
+   "price": 78,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "buy": "https://shorelist.myshopify.com/cart/48572825993300:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15404441680492765180_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-varsity-crewneck_1920x.webp",
+   "shelf": "kure-beach",
+   "town": "kure-beach",
+   "type": "tops"
+  },
+  {
+   "id": "wilmington-varsity-crewneck",
+   "collection": "local-icons",
+   "name": "Wilmington Varsity Crewneck",
+   "url": "https://shorelist.myshopify.com/products/wilmington-varsity-crewneck",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wilmington-varsity-crewneck_1000x.webp",
+   "alt": "Man leaning on the riverwalk railing at sunset wearing the navy Wilmington varsity crewneck",
+   "meta": "WILMINGTON arched over N.C. in cream varsity lettering on a garment-dyed crewneck, with The Port City and 1739.",
+   "cta": "Choose options",
+   "price": 78,
+   "scenes": [
+    "riverwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "buy": "https://shorelist.myshopify.com/cart/48572834250836:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/885599791757679174_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wilmington-varsity-crewneck_1920x.webp",
+   "shelf": "wilmington",
+   "town": "wilmington",
+   "type": "tops"
+  },
+  {
+   "id": "ilm-crewneck",
+   "collection": "local-icons",
+   "name": "ILM Crewneck",
+   "url": "https://shorelist.myshopify.com/products/ilm-crewneck",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-ilm-crewneck_1000x.webp",
+   "alt": "Woman leaving a small coastal airport with a leather weekender wearing the navy ILM crewneck",
+   "meta": "The airport code every local knows, set large in a fine serif on a garment-dyed crewneck.",
+   "cta": "Choose options",
+   "price": 78,
+   "scenes": [
+    "riverwalk",
+    "harbor-night"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "buy": "https://shorelist.myshopify.com/cart/48572844408916:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9446758540865204948_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-ilm-crewneck_1920x.webp",
+   "shelf": "wilmington",
+   "town": "wilmington",
+   "type": "tops"
   }
  ],
  "scenes": [
@@ -3641,11 +3854,6 @@
  "retired": {
   "note": "Removed from the on-site shop on 2026-11-21 (shop-redo). The shop only renders items in items[], so retired products stop showing everywhere (shop page, Tidebot, llms digest). Shopify/Fourthwall listings are unchanged until unpublished in admin. See plans/shop-redo-spec.md.",
   "items": {
-   "wrightsville-beach-varsity-crewneck": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
-   "carolina-beach-varsity-crewneck": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
-   "kure-beach-varsity-crewneck": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
-   "wilmington-varsity-crewneck": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
-   "ilm-crewneck": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
    "wrightsville-beach-varsity-hoodie": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
    "carolina-beach-varsity-hoodie": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
    "kure-beach-varsity-hoodie": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
@@ -3669,8 +3877,6 @@
    "the-live-oak-corduroy-cap-wilmington": "Live Oak relaunch: art being redone to pass the 8.0 gate (Nov 22 blind reviews 4.8 to 6.5); returns when it passes",
    "the-live-oak-cuffed-beanie-wilmington": "Live Oak relaunch: art being redone to pass the 8.0 gate (Nov 22 blind reviews 4.8 to 6.5); returns when it passes",
    "yacht-beach-club-tote": "design gate verdict KILL (score under 6); not sold until it passes 9.0",
-   "tilt-beach-umbrella": "design gate under 9.0; replaced or returns when it passes",
-   "backpack-beach-chair": "design gate under 9.0; replaced or returns when it passes",
    "daymark-sail-number-corduroy-cap-wrightsville-beach": "concept withdrawn 2026-11-22 (the mark needed an explanation customers should not need); Shopify listings set to draft",
    "daymark-sail-number-crewneck-wrightsville-beach": "concept withdrawn 2026-11-22 (the mark needed an explanation customers should not need); Shopify listings set to draft",
    "daymark-sail-number-crewneck-kure-beach": "concept withdrawn 2026-11-22 (the mark needed an explanation customers should not need); Shopify listings set to draft",
@@ -3684,7 +3890,6 @@
    "coastal-christmas-can-cooler": "green colorway is off palette (2026-11-22 shop audit). Full record in docs/retired-items.json.",
    "daymark-sloop-crewneck": "duplicate of the-sloop-embroidered-crewneck-wrightsville-beach (merged, kept that one) (2026-11-22 shop audit). Full record in docs/retired-items.json.",
    "daymark-blue-crab-crewneck": "duplicate of the-blue-crab-embroidered-crewneck-kure-beach (merged, kept that one) (2026-11-22 shop audit). Full record in docs/retired-items.json.",
-   "salt-wash-market-tote": "Paused 2026-11-22: no faithful lookbook possible (supplier photo unreachable, mark not visible in the supplier image, shop audit 6.2 FIX). RJ decides keep or remove. Record kept in retired.paused.",
    "the-sloop-embroidered-crewneck-wrightsville-beach": "brand audit 2026-11-22: WB initials in copy, washed blue off the white crewneck rule, paused until redone",
    "the-sloop-corduroy-cap-wrightsville-beach": "brand audit 2026-11-22: duplicates the Daymark corduroy cap, WB on the back, paused",
    "the-sloop-cuffed-beanie-wrightsville-beach": "brand audit 2026-11-22: WB on the cuff, paused until redone",
@@ -3703,113 +3908,9 @@
    "wrightsville-beach-airlie-live-oak-all-over-print-tote-bag": "Airlie live oak all-over print does not match the real Airlie Oak poster art (green tree with hanging moss); unpublished in Printify, awaiting new Airlie Oak builds",
    "wrightsville-beach-airlie-live-oak-printed-mug": "Airlie live oak all-over print does not match the real Airlie Oak poster art (green tree with hanging moss); unpublished in Printify, awaiting new Airlie Oak builds"
   },
-  "archive": {
-   "tilt-beach-umbrella": {
-    "id": "tilt-beach-umbrella",
-    "collection": "beach-setup",
-    "shelf": "beach-setup",
-    "name": "ShoreList Tilt Beach Umbrella",
-    "url": "https://shorelist.myshopify.com/products/shorelist-tilt-beach-umbrella-6-5-ft-upf-50",
-    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-tilt-beach-umbrella_1000x.webp",
-    "alt": "Couple laughing under the teal tilt beach umbrella on the sand by the dunes at golden hour",
-    "meta": "6.5 ft tilting canopy with UPF 50+ shade and a carry sleeve.",
-    "cta": "Shop beach gear",
-    "price": 99,
-    "scenes": [
-     "beach"
-    ],
-    "cut": "unisex",
-    "store": "shopify",
-    "buy": "https://shorelist.myshopify.com/cart/48569723617364:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
-    "facts": [
-     [
-      "Size",
-      "6.5 ft canopy that tilts"
-     ],
-     [
-      "Frame",
-      "Aluminum tube, 8 fiberglass ribs and a sand anchor"
-     ],
-     [
-      "Details",
-      "UPF 50+ fabric with a top air vent"
-     ]
-    ],
-    "studio": "https://shorelist.myshopify.com/cdn/shop/files/896e91258188456b9739f40519a8211b.webp",
-    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-tilt-beach-umbrella_1920x.webp"
-   },
-   "backpack-beach-chair": {
-    "id": "backpack-beach-chair",
-    "collection": "beach-setup",
-    "shelf": "beach-setup",
-    "name": "ShoreList Backpack Beach Chair",
-    "url": "https://shorelist.myshopify.com/products/shorelist-aluminum-backpack-beach-chair-mint-stripe",
-    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-backpack-beach-chair_1000x.webp",
-    "alt": "Woman reading in the backpack beach chair at the water edge",
-    "meta": "Four-position aluminum frame that holds up to 265 lb, with wooden armrests, a detachable pillow and backpack straps. Mint stripe.",
-    "cta": "Shop beach gear",
-    "price": 109,
-    "scenes": [
-     "beach"
-    ],
-    "cut": "unisex",
-    "store": "shopify",
-    "buy": "https://shorelist.myshopify.com/cart/48569729744980:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
-    "facts": [
-     [
-      "Support",
-      "Holds up to 265 lb on a rustproof aluminum frame"
-     ],
-     [
-      "Seat",
-      "Four backrest positions from 100 to 140 degrees, 12 in seat height"
-     ],
-     [
-      "Carry",
-      "Folds flat with shoulder straps and a detachable pillow"
-     ]
-    ],
-    "studio": "https://shorelist.myshopify.com/cdn/shop/files/e4e9481e914347868d7fc04ab6c9e261.webp",
-    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-backpack-beach-chair_1920x.webp"
-   }
-  },
+  "archive": {},
   "archive_note": "archive holds the full item entry for pieces taken off sale on purpose, so they can be restored: move the entry from retired.archive back into items[], delete its retired.items reason, then run build-store-pages, build-llms and check-site.",
-  "paused": {
-   "salt-wash-market-tote": {
-    "id": "salt-wash-market-tote",
-    "collection": "shore-gear",
-    "shelf": "wilmington",
-    "name": "Sloop Organic Cotton Market Tote",
-    "url": "https://shorelist-shop.fourthwall.com/products/salt-wash-organic-cotton-market-tote",
-    "img": "https://imgproxy.fourthwall.dev/TZt3re_wDyZ0W16_4JbSgpMdKwOMYBzAwPsa2r3eqHA/w:1920/sm:1/enc/Pk5QPfjBEPCd6iv4/jzgR6bKsy7yyQSZv/n5nrwFsWvAAQyQVI/e3FznjKMNn4uGwsZ/xM5ia2wEXu6YZSfz/TuQbjJhrMqgnSt5p/M86zkfeYUuJkpP4U/Ep3Y89lpVKKlf5b7/nrschLQbJeecVVMi/aEvtdTJMIptcL7yO/lIdn7xEV_W8hJdaP/x6JU_2u2-_tiXm_x/KdGjIviHRxutI_um/KWy8ww.jpg",
-    "lookbook": "https://imgproxy.fourthwall.dev/TZt3re_wDyZ0W16_4JbSgpMdKwOMYBzAwPsa2r3eqHA/w:1920/sm:1/enc/Pk5QPfjBEPCd6iv4/jzgR6bKsy7yyQSZv/n5nrwFsWvAAQyQVI/e3FznjKMNn4uGwsZ/xM5ia2wEXu6YZSfz/TuQbjJhrMqgnSt5p/M86zkfeYUuJkpP4U/Ep3Y89lpVKKlf5b7/nrschLQbJeecVVMi/aEvtdTJMIptcL7yO/lIdn7xEV_W8hJdaP/x6JU_2u2-_tiXm_x/KdGjIviHRxutI_um/KWy8ww.jpg",
-    "alt": "Woman holding a natural organic cotton sloop tote on a wooden beach walkway",
-    "meta": "Organic cotton twill, 20 x 14 x 5 in, with one small sloop print. Natural color, sturdy handles.",
-    "cta": "Choose options and buy",
-    "price": 48,
-    "scenes": [
-     "beach"
-    ],
-    "cut": "unisex",
-    "store": "fourthwall",
-    "blank": "Econscious",
-    "facts": [
-     [
-      "Size",
-      "20 x 14 x 5 in"
-     ],
-     [
-      "Fabric",
-      "Organic cotton twill"
-     ]
-    ],
-    "town": "wilmington",
-    "type": "beach",
-    "color": "Natural",
-    "added": "2026-11-20",
-    "motif": "boats-buoys"
-   }
-  }
+  "paused": {}
  },
  "shelves_note": "The shop page groups items by town. item.town (or item.shelf, same ids) places an item on a town shelf; an item with neither is placed by its name (a town name in it) and otherwise lands on Wilmington and the Coast. New products need only a town id from shelves[]. type: tops|hats|prints|coolers|ornaments|beach (inferred from the name when missing). color is only set where the listing text states it. added is the date the item joined the shop and drives New arrivals. motif (optional): sea-life | boats-buoys | beach-scenes, set only when the art shows it; the page also matches words from motifs[].words in the item name. A motif with no pieces shows an on-the-way card, never a placeholder product.",
  "motifs": [
