@@ -1090,6 +1090,43 @@
    "added": "2026-11-20"
   },
   {
+   "id": "the-lifeguard-stand-rope-cap-carolina-beach",
+   "collection": "local-icons",
+   "shelf": "carolina-beach",
+   "town": "carolina-beach",
+   "name": "The Lifeguard Stand Rope Cap, Carolina Beach",
+   "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-rope-cap-carolina-beach",
+   "type": "hats",
+   "color": "Ivory",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5523734583376982600_2048_1000x.jpg",
+   "alt": "Ivory rope cap with an embroidered lifeguard stand, red flag and Carolina Beach lettering, rendered mockup",
+   "meta": "A Carolina Beach lifeguard stand with its small red flag, machine embroidered on a rope cap above the town name.",
+   "cta": "Choose color",
+   "price": 45,
+   "scenes": [
+    "beach",
+    "boardwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15088731947567056959_2048.jpg",
+   "facts": [
+    [
+     "Fit",
+     "Semi-structured five-panel, high profile, plastic snapback, one size"
+    ],
+    [
+     "Fabric",
+     "Lightweight 100% polyester micro ripstop"
+    ],
+    [
+     "Colors",
+     "Ivory, Chambray, Peachy"
+    ]
+   ]
+  },
+  {
    "id": "kure-beach-can-cooler",
    "collection": "shore-gear",
    "shelf": "kure-beach",
@@ -1364,6 +1401,47 @@
    ]
   },
   {
+   "id": "the-sloop-pique-polo-wrightsville-beach",
+   "collection": "local-icons",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "The Sloop Pique Polo, Wrightsville Beach",
+   "url": "https://shorelist.myshopify.com/products/the-sloop-pique-polo-wrightsville-beach",
+   "type": "tops",
+   "color": "White",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4961829559303425363_2048_1000x.jpg",
+   "alt": "Pique polo with a small embroidered sailboat and WB on the left chest, rendered mockup",
+   "meta": "A little sloop with WB for Wrightsville Beach, machine embroidered on the left chest of a classic pique polo.",
+   "cta": "Choose color and size",
+   "price": 68,
+   "scenes": [
+    "beach",
+    "harbor-night"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5729341081628538925_2048.jpg",
+   "facts": [
+    [
+     "Fabric",
+     "65% polyester, 35% cotton pique, 5.0 oz"
+    ],
+    [
+     "Fit",
+     "Relaxed fit that runs large"
+    ],
+    [
+     "Details",
+     "Flat knit collar and cuffs, metal buttons, side vents"
+    ],
+    [
+     "Colors",
+     "White, Stone"
+    ]
+   ]
+  },
+  {
    "id": "the-blue-crab-rope-cap-kure-beach",
    "collection": "local-icons",
    "shelf": "kure-beach",
@@ -1395,6 +1473,81 @@
     [
      "Colors",
      "Ivory, Peachy"
+    ]
+   ]
+  },
+  {
+   "id": "the-lifeguard-stand-rope-cap-kure-beach",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "town": "kure-beach",
+   "name": "The Lifeguard Stand Rope Cap, Kure Beach",
+   "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-rope-cap-kure-beach",
+   "type": "hats",
+   "color": "Ivory",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11002461942969889786_2048_1000x.jpg",
+   "alt": "Ivory rope cap with an embroidered lifeguard stand, red flag and Kure Beach lettering, rendered mockup",
+   "meta": "A Kure Beach lifeguard stand with its small red flag, machine embroidered on a rope cap above the town name.",
+   "cta": "Choose color",
+   "price": 45,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "facts": [
+    [
+     "Fit",
+     "Semi-structured five-panel, high profile, plastic snapback, one size"
+    ],
+    [
+     "Fabric",
+     "Lightweight 100% polyester micro ripstop"
+    ],
+    [
+     "Colors",
+     "Ivory, Chambray, Peachy"
+    ]
+   ]
+  },
+  {
+   "id": "the-blue-crab-pique-polo-kure-beach",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "town": "kure-beach",
+   "name": "The Blue Crab Pique Polo, Kure Beach",
+   "url": "https://shorelist.myshopify.com/products/the-blue-crab-pique-polo-kure-beach",
+   "type": "tops",
+   "color": "White",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8465944193308461469_2048_1000x.jpg",
+   "alt": "Pique polo with a small embroidered blue crab and KB on the left chest, rendered mockup",
+   "meta": "An Atlantic blue crab with KB for Kure Beach, machine embroidered on the left chest of a classic pique polo.",
+   "cta": "Choose color and size",
+   "price": 68,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2487667657649319662_2048.jpg",
+   "facts": [
+    [
+     "Fabric",
+     "65% polyester, 35% cotton pique, 5.0 oz"
+    ],
+    [
+     "Fit",
+     "Relaxed fit that runs large"
+    ],
+    [
+     "Details",
+     "Flat knit collar and cuffs, metal buttons, side vents"
+    ],
+    [
+     "Colors",
+     "White, Stone"
     ]
    ]
   },
