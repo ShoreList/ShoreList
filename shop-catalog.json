@@ -354,114 +354,6 @@
    "added": "2026-11-20"
   },
   {
-   "id": "the-live-oak-embroidered-crewneck-wilmington",
-   "collection": "local-icons",
-   "shelf": "wilmington",
-   "town": "wilmington",
-   "name": "The Live Oak Embroidered Crewneck, Wilmington",
-   "url": "https://shorelist.myshopify.com/products/the-live-oak-embroidered-crewneck-wilmington",
-   "type": "tops",
-   "color": "Blue Jean",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11333301079082788819_2048_1000x.jpg",
-   "alt": "Garment-dyed blue crewneck sweatshirt with a small embroidered live oak and the letters ILM on the chest, supplier mockup",
-   "meta": "A live oak hung with Spanish moss stitched on the chest, with ILM for Wilmington beneath it.",
-   "cta": "Choose color and size",
-   "price": 88,
-   "scenes": [
-    "riverwalk"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/392796372616078076_2048.jpg",
-   "facts": [
-    [
-     "Sizing",
-     "Relaxed fit, sizes S to 3XL"
-    ],
-    [
-     "Fabric",
-     "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
-    ],
-    [
-     "Embroidery",
-     "Stitched in green, chestnut and white thread"
-    ]
-   ]
-  },
-  {
-   "id": "the-live-oak-corduroy-cap-wilmington",
-   "collection": "local-icons",
-   "shelf": "wilmington",
-   "town": "wilmington",
-   "name": "The Live Oak Corduroy Cap, Wilmington",
-   "url": "https://shorelist.myshopify.com/products/the-live-oak-corduroy-cap-wilmington",
-   "type": "hats",
-   "color": "Navy Blue",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4211854548687384211_2048_1000x.jpg",
-   "alt": "Corduroy cap with a small embroidered live oak on the front, supplier mockup",
-   "meta": "A live oak hung with Spanish moss embroidered on the front of a soft corduroy cap, with ILM for Wilmington on the back.",
-   "cta": "Choose color",
-   "price": 49,
-   "scenes": [
-    "riverwalk"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15008965743144943281_2048.jpg",
-   "facts": [
-    [
-     "Fit",
-     "Unstructured, low profile, curved brim, one size"
-    ],
-    [
-     "Fabric",
-     "Cotton corduroy"
-    ],
-    [
-     "Closure",
-     "Adjustable strap with a brass buckle"
-    ],
-    [
-     "Colors",
-     "Navy Blue, Burgundy, Black"
-    ]
-   ]
-  },
-  {
-   "id": "the-live-oak-cuffed-beanie-wilmington",
-   "collection": "local-icons",
-   "shelf": "wilmington",
-   "town": "wilmington",
-   "name": "The Live Oak Cuffed Beanie, Wilmington",
-   "url": "https://shorelist.myshopify.com/products/the-live-oak-cuffed-beanie-wilmington",
-   "type": "hats",
-   "color": "Navy",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5126613936494193933_2048_1000x.jpg",
-   "alt": "Navy cuffed knit beanie with a live oak and the letters ILM embroidered on the cuff, supplier mockup",
-   "meta": "A live oak and ILM for Wilmington embroidered side by side on the cuff of a classic knit beanie.",
-   "cta": "Choose color",
-   "price": 30,
-   "scenes": [
-    "riverwalk"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10802425845324763419_2048.jpg",
-   "facts": [
-    [
-     "Fit",
-     "Classic cuffed beanie, one size"
-    ],
-    [
-     "Fabric",
-     "Soft acrylic knit with a fold-up cuff"
-    ]
-   ]
-  },
-  {
    "id": "wrightsville-can-cooler",
    "collection": "shore-gear",
    "shelf": "wrightsville-beach",
@@ -1187,9 +1079,9 @@
    "the-pelican-embroidered-crewneck-carolina-beach": "pelican art scored 5.5 by the design gate (weak, held back); below the 9.0 bar",
    "the-pelican-corduroy-cap-carolina-beach": "pelican art scored 5.5 by the design gate (weak, held back); below the 9.0 bar",
    "the-pelican-cuffed-beanie-carolina-beach": "pelican art scored 5.5 by the design gate (weak, held back); below the 9.0 bar",
-   "the-live-oak-embroidered-crewneck-wilmington": "design gate verdict KILL (score under 6); not sold until it passes 9.0",
-   "the-live-oak-corduroy-cap-wilmington": "design gate verdict KILL (score under 6); not sold until it passes 9.0",
-   "the-live-oak-cuffed-beanie-wilmington": "design gate verdict KILL (score under 6); not sold until it passes 9.0",
+   "the-live-oak-embroidered-crewneck-wilmington": "Live Oak relaunch: art being redone to pass the 8.0 gate (Nov 22 blind reviews 4.8 to 6.5); returns when it passes",
+   "the-live-oak-corduroy-cap-wilmington": "Live Oak relaunch: art being redone to pass the 8.0 gate (Nov 22 blind reviews 4.8 to 6.5); returns when it passes",
+   "the-live-oak-cuffed-beanie-wilmington": "Live Oak relaunch: art being redone to pass the 8.0 gate (Nov 22 blind reviews 4.8 to 6.5); returns when it passes",
    "yacht-beach-club-tote": "design gate verdict KILL (score under 6); not sold until it passes 9.0",
    "tilt-beach-umbrella": "design gate under 9.0; replaced or returns when it passes",
    "backpack-beach-chair": "design gate under 9.0; replaced or returns when it passes",
