@@ -232,7 +232,7 @@ function renderPage(){
       ? '<p class="section-sub">Pick your experience, choose a date and time, and book securely online. Checkout is powered by Stripe, with a full refund if you cancel '+CANCEL_H+'+ hours before your experience.</p>'
       : '<p class="section-sub">Bookings open soon. Drop your email below or <a href="/waitlist" style="color:var(--coral);font-weight:500;">join the full waitlist</a> to tell us more about your trip.</p>';
     h+='<div class=\"guarantee-bar\">';
-    h+='<span class=\"gb-ico\" style=\"color:#0E1F33;display:inline-flex;align-items:center;\"><svg class=\"ico-sm\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-shield\" xlink:href=\"#i-shield\"/></svg></span>';
+    h+='<span class=\"gb-ico\" style=\"color:#1a7a4a;display:inline-flex;align-items:center;\"><svg class=\"ico-sm\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-shield\" xlink:href=\"#i-shield\"/></svg></span>';
     h+='<div class=\"gb-text\">ShoreList Guarantee: <span>Operators we know personally. Full refund if you cancel '+CANCEL_H+'+ hours before your experience.</span></div>';
     h+='</div>';
     h+='<div class=\"booking-steps\">';

@@ -44,3 +44,48 @@ img.lx-in{animation:none!important;filter:none!important}
 .lx-skel{background:var(--sl-sand)!important}.lx-skel::after{display:none!important}
 .light .nav-logo,.light .brand,body.light-nav .nav-logo{color:var(--sl-navy)!important}
 :where(a.foot-logo){color:var(--sl-sailcloth)}
+
+/* ---- 23 Nov fix: functional and semantic elements keep their signal colors ----
+   Beach flags (green, yellow, red, double red, purple) are safety signals and are exempt from the
+   five-color palette rule; category and tile icons keep their tinted sea-glass squares. */
+.flagwrap .flagcloth.f-green{background-color:#2E7D4F}
+.flagwrap .flagcloth.f-yellow{background-color:#E3B23C}
+.flagwrap .flagcloth.f-red{background-color:#B5362F}
+.flagwrap .flagcloth.f-dred,.flagwrap .flagcloth.f-double-red{background-color:#8E1410}
+.flagwrap .flagcloth.f-purple{background-color:#6B3FA0}
+
+/* fixed headers are fully opaque and sit above page content (no ghost text behind them) */
+body>nav,nav#nav,nav.sl-hdr{background-color:#0E1F33!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;z-index:1000!important}
+nav.sl-hdr .sl-links{z-index:1001}
+/* floating search and helper buttons: solid, and the page keeps room for them at the bottom */
+.sp-fab{background:#0E1F33!important}
+.ss,.cc-fab,.rb-launch{max-width:calc(100vw - 24px)}
+@media(max-width:640px){
+  body{padding-bottom:max(0px,env(safe-area-inset-bottom))}
+  footer{padding-bottom:calc(88px + env(safe-area-inset-bottom))!important}
+}
+
+/* Plan your visit: sea glass squares with two-tone icons (sand fill, navy line), taller tiles */
+.hx-tile{min-height:96px}
+.hx-tile .ic svg .f{fill:#D9C7A3;stroke:#0E1F33}
+.hx-tile .ic{box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+
+/* trust strip sits below the hero on Sailcloth with Navy text, never under the fixed nav */
+.trust-bar{position:static!important;background:#F4F1EA!important;color:#0E1F33!important;border-top:1px solid #D9C7A3!important;border-bottom:1px solid #D9C7A3!important}
+.trust-bar .trust-item,.trust-bar .trust-item *{color:#0E1F33!important}
+
+/* primary buttons on dark grounds use Sailcloth so they never vanish (navy on navy) */
+.hx-dark .btn-fill,.hx-dark .btn-primary,.hx-dark .btn-book,.hx-dark .btn-sub,.hx-dark .btn-main,.hx-dark .hx-btn,
+.hero .btn-fill,.hero .btn-primary,.hero .btn-book,.hero .btn-sub,.hero .btn-main,
+body.town .t-now .btn-fill,body.town .t-facts .btn-fill,body.town .hero .btn-book,
+.hx-pl-band .btn-fill,.hx-pl-band .btn-primary,.hx-ask .btn-fill,
+[class*="dark"] .btn-primary,[class*="dark"] .btn-fill,.join-hero .btn-fill,.join-hero .btn-primary{background:#F4F1EA!important;color:#0E1F33!important;border:1px solid #F4F1EA!important}
+
+/* floaters: one fab bottom right, no bottom-center pill, dock only on wide home, gulls behind text */
+.sp-fab,.snd{display:none!important}
+.cc-fab{bottom:calc(16px + env(safe-area-inset-bottom))!important;right:16px!important}
+.ss{bottom:calc(78px + env(safe-area-inset-bottom))!important}
+body{padding-bottom:88px}
+@media(max-width:1099px){.dock{display:none!important}}
+body:not(.home):not(.pg-home) .dock{display:none!important}
+.sl-sky{z-index:-1!important}

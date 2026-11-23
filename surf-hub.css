@@ -25,8 +25,8 @@
 .sc h3 a:hover{color:var(--ev-red)}
 .sc .upd{font-size:.76rem;color:var(--ev-mute);white-space:nowrap}
 .flag{display:inline-flex;align-items:center;gap:9px;align-self:flex-start;min-height:34px;padding:0 14px 0 11px;border-radius:2px;font-size:.84rem;font-weight:500;background:rgba(159,195,184,.3);color:var(--ev-navy)}
-.flag i{width:11px;height:15px;border-radius:2px 5px 5px 2px;background:#D9C7A3}
-.flag.green i{background:#0E1F33}.flag.yellow i{background:#8A5A3B}.flag.red i{background:#B5362F}
+.flag i{width:11px;height:15px;border-radius:2px 5px 5px 2px;background:#8A9AA0}
+.flag.green i{background:#2E7D4F}.flag.yellow i{background:#E3B23C}.flag.red i{background:#B5362F}
 .flag small{font-weight:500;color:var(--ev-mute);font-size:.78rem}
 .sc .big{display:flex;align-items:baseline;gap:10px}
 .sc .big b{font-family:'Libre Caslon Display',Georgia,serif;font-weight:400;font-size:3rem;line-height:1;color:var(--ev-navy);font-variant-numeric:tabular-nums}
@@ -49,7 +49,7 @@
 /* learn band */
 .band{position:relative;isolation:isolate;background:var(--ev-navy);color:var(--ev-sail);overflow:hidden}
 .band>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
-.band::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(14,31,51,.4)}
+.band::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(14,31,51,.94) 0%,rgba(14,31,51,.84) 55%,rgba(14,31,51,.66) 100%)}
 .band h2{color:var(--ev-sail)}.band h2 em{color:var(--ev-coral)}
 .band .sv-sub{color:rgba(244,241,234,.92)}
 .band-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,48px);align-items:center}
@@ -69,7 +69,7 @@
 .water{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,22px);margin-top:28px}
 .wc{position:relative;isolation:isolate;display:flex;align-items:flex-end;min-height:270px;border-radius:2px;overflow:hidden;background:var(--ev-navy);color:#fff;text-decoration:none;transition:transform .35s var(--ev-ease)}
 .wc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.2s var(--ev-ease)}
-.wc::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(14,31,51,.4)}
+.wc::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,20,34,.1) 0%,rgba(8,20,34,.55) 52%,rgba(8,20,34,.92) 100%)}
 @media(hover:hover){.wc:hover{}.wc:hover img{}}
 .wc div{padding:22px}
 .wc h3{color:#fff;font-size:1.35rem;margin-bottom:4px}

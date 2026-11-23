@@ -102,7 +102,7 @@ footer a:hover,.foot-links a:hover{ color:var(--cream)!important; }
 .sec-sub-light{ color:var(--teal2)!important; }
 .wb-cam{ color:var(--teal)!important; }
 .wb-cam:hover, .wb-live{ color:var(--coral)!important; }
-.er-free{ color:#0E1F33!important; }   /* darker green reads on its light tint */
+.er-free{ color:#15803d!important; }   /* darker green reads on its light tint */
 .er-paid{ color:#B5362F!important; }   /* darker coral reads on its light tint */
 
 /* breadcrumb class varies by page (.hero-bc vs .hero-breadcrumb) — cover both */
