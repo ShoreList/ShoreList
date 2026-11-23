@@ -8,7 +8,7 @@
   /* splash: home page, first visit per session, never for reduced motion; auto-clears fast */
   if(isHome&&!seen&&!rm){
     var s=d.createElement('div');s.id='lx-splash';s.setAttribute('aria-hidden','true');
-    s.innerHTML='<svg viewBox="0 0 64 64" fill="none" stroke="#FFC95E" stroke-width="2.2"><circle cx="32" cy="32" r="26"/><path d="M32 6v52M6 32h52" stroke-opacity=".5"/><path d="M32 14l6 18-6 18-6-18z" fill="#E96645" stroke="none"/></svg><b>Shore<span>List</span></b><i></i>';
+    s.innerHTML='<svg viewBox="0 0 64 64" fill="none" stroke="#D9C7A3" stroke-width="2.2"><circle cx="32" cy="32" r="26"/><path d="M32 6v52M6 32h52" stroke-opacity=".5"/><path d="M32 14l6 18-6 18-6-18z" fill="#B5362F" stroke="none"/></svg><b>Shore<span>List</span></b><i></i>';
     root.appendChild(s);
     var gone=function(){s.classList.add('out');setTimeout(function(){s.remove();},800);try{sessionStorage.setItem('lx-splash','1');}catch(e){}};
     var t0=Date.now();

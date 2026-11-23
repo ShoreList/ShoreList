@@ -16,7 +16,7 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EN91RH3PZV');</script>
 <link rel="manifest" href="/manifest.webmanifest"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" rel="stylesheet"/>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ShoreList", "item": "https://shorelist.net/"}, {"@type": "ListItem", "position": 2, "name": "Where to Stay in Wilmington, NC", "item": "https://shorelist.net/where-to-stay"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the best area to stay in Wilmington, NC?", "acceptedAnswer": {"@type": "Answer", "text": "For a first visit, downtown Wilmington is the easiest base: it is walkable, close to restaurants and tours, and 20 to 30 minutes from the beaches. If the beach is the whole point, stay at Wrightsville Beach for surfing and water sports, Carolina Beach for families and the boardwalk, or Kure Beach for a quiet stay."}}, {"@type": "Question", "name": "Is it better to stay downtown or at the beach?", "acceptedAnswer": {"@type": "Answer", "text": "Stay downtown if you want restaurants, nightlife, history and tours on foot. Stay at the beach if you plan to spend most days on the sand. Many visitors split a trip, or stay downtown and drive to a different beach each day."}}, {"@type": "Question", "name": "How far are the beach hotels from downtown Wilmington?", "acceptedAnswer": {"@type": "Answer", "text": "Wrightsville Beach is about 20 minutes from downtown. Carolina Beach is about 30 minutes, and Kure Beach is a few minutes beyond it. Allow extra time on summer weekends."}}, {"@type": "Question", "name": "When should I book a place to stay in Wilmington?", "acceptedAnswer": {"@type": "Answer", "text": "Summer, holiday weekends and major festival weekends fill first, especially on the beaches where lodging is limited. Book early for those dates. Late fall through early spring usually has more availability."}}, {"@type": "Question", "name": "Are there vacation rentals in Wilmington and the beach towns?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Beach houses, condos and cottages are common in Carolina Beach, Kure Beach and Wrightsville Beach, and there are rentals downtown as well. Check each listing for minimum stays, parking and local rules."}}, {"@type": "Question", "name": "Does ShoreList book hotels?", "acceptedAnswer": {"@type": "Answer", "text": "No. ShoreList books local tours and experiences and helps you plan what to do. Book lodging directly with the hotel or rental host. The hotels named on this page are examples, not rankings or endorsements."}}]}</script>
 <link rel="stylesheet" href="/events.css"/>
@@ -25,28 +25,29 @@
 .ws-area{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;padding:clamp(26px,4vw,40px) 0;border-top:1px solid var(--ev-line)}
 .ws-area:first-child{border-top:0;padding-top:0}
 #events-feed .ws-area h2{font-size:clamp(1.5rem,2.8vw,2rem)}
-.ws-best{font-weight:700;color:var(--ev-red);margin-top:8px!important;font-size:.98rem}
+.ws-best{font-weight:500;color:var(--ev-red);margin-top:8px!important;font-size:.98rem}
 .ws-body p{max-width:64ch}.ws-body p+p{margin-top:12px!important}
 .ws-body strong{color:var(--ev-navy)}
 .ws-body .lk{display:flex;flex-wrap:wrap;gap:0 22px;margin-top:10px!important}
-.ws-body .lk a{display:inline-flex;align-items:center;min-height:44px;color:var(--ev-red);font-weight:800;text-decoration:none;border-bottom:1px solid transparent}
+.ws-body .lk a{display:inline-flex;align-items:center;min-height:44px;color:var(--ev-red);font-weight:500;text-decoration:none;border-bottom:1px solid transparent}
 .ws-body .lk a:hover{text-decoration:underline;text-underline-offset:4px}
 @media(min-width:860px){.ws-area{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,64px)}}
-.fq-band{background:#EAE4D6}
+.fq-band{background:#D9C7A3}
 .fq details{border-top:1px solid rgba(14,31,51,.16)}.fq details:last-of-type{border-bottom:1px solid rgba(14,31,51,.16)}
-.fq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:56px;padding:12px 0;font-family:'Playfair Display',Georgia,serif;font-weight:800;font-size:1.12rem;line-height:1.25;color:var(--ev-navy)}
+.fq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:56px;padding:12px 0;font-family:'Libre Caslon Display',Georgia,serif;font-weight:400;font-size:1.12rem;line-height:1.25;color:var(--ev-navy)}
 .fq summary::-webkit-details-marker{display:none}
 .fq summary::after{content:"";flex:none;width:10px;height:10px;border-right:2px solid var(--ev-red);border-bottom:2px solid var(--ev-red);transform:rotate(45deg);transition:transform .25s}
 .fq details[open] summary::after{transform:rotate(-135deg)}
 .fq details p{max-width:66ch;padding:0 0 18px;color:var(--ev-mute)}
 .fq .lk{display:flex;flex-wrap:wrap;gap:0 22px;padding:0 0 12px}
-.fq .lk a{display:inline-flex;align-items:center;min-height:44px;color:var(--ev-red);font-weight:800;text-decoration:none}
+.fq .lk a{display:inline-flex;align-items:center;min-height:44px;color:var(--ev-red);font-weight:500;text-decoration:none}
 .fq .lk a:hover{text-decoration:underline;text-underline-offset:4px}
 .fq-wrap{max-width:860px}
 .ev-hero-sub .ev-lede{max-width:600px}
 #events-feed h2.fq-h{font-size:clamp(1.4rem,2.6vw,1.8rem);margin:clamp(40px,5vw,60px) 0 12px}
 #events-feed .fq>h2.fq-h:first-child{margin-top:0}</style>
 <script src="/luxe.js" defer></script>
+<link rel="stylesheet" href="/tokens.css"/>
 </head>
 <body class="ev-page">
 <a class="skip-link" href="#main">Skip to content</a>

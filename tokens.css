@@ -1,0 +1,46 @@
+/* ShoreList design tokens: the single source of truth for color and type. Linked last on every page.
+   Palette: Harbor Navy, Sailcloth, Dune Sand, Sea Glass, Signal Red (one small accent), Weathered Teak (optional).
+   Type: Libre Caslon Display (headlines, wordmark), Libre Caslon Text (product names), DM Sans (UI, body), DM Mono (captions). */
+:root{
+  --sl-navy:#0E1F33; --sl-sailcloth:#F4F1EA; --sl-sand:#D9C7A3; --sl-seaglass:#9FC3B8; --sl-signal:#B5362F; --sl-teak:#8A5A3B;
+  --sl-font-display:'Libre Caslon Display',Georgia,'Times New Roman',serif;
+  --sl-font-text:'Libre Caslon Text',Georgia,'Times New Roman',serif;
+  --sl-font-ui:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --sl-font-mono:'DM Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+  --sl-radius:2px;
+  --lx-gold:#0E1F33; --lx-shadow:none; --lx-shadow-hi:none;
+}
+body{font-family:var(--sl-font-ui);font-weight:400;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.hero-title,.hero-h,.sec-title,.hx-h{font-family:var(--sl-font-display);font-weight:400;letter-spacing:-.01em}
+h1 em,h2 em,h3 em,.hero-title em,.hero-h em{font-style:normal;color:inherit}
+strong,b,th{font-weight:500}
+code,kbd,samp,.mono,.eyebrow,.sec-label{font-family:var(--sl-font-mono)}
+::selection{background:var(--sl-navy);color:var(--sl-sailcloth)}
+
+/* wordmark: one word, one color, one typeface, everywhere */
+.nav-logo,.logo,.brand,.pl-logo,.foot-logo,.sl-logo,.login-logo{font-family:var(--sl-font-display)!important;font-weight:400!important;font-style:normal!important;letter-spacing:-.01em!important;text-transform:none!important}
+.nav-logo span,.logo span,.brand span,.pl-logo span,.foot-logo span,.sl-logo span,.logo-s,.logo-l,.foot-s,.foot-l,.nav-logo .s,.nav-logo .l,.foot-logo .s,.foot-logo .l{color:inherit!important;font-family:inherit!important;font-weight:inherit!important;font-style:normal!important}
+
+.nav-logo,.logo,.brand,.pl-logo,.sl-logo{color:var(--sl-sailcloth)!important}
+body.pg-success .nav-logo,.offline .brand{color:var(--sl-navy)!important}
+
+/* focus: one visible navy ring (Sand on navy grounds) */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--sl-navy)!important;outline-offset:3px!important;box-shadow:0 0 0 5px var(--sl-sailcloth)!important;border-radius:var(--sl-radius)}
+nav a:focus-visible,footer a:focus-visible,.nav-right a:focus-visible,.hx-foot a:focus-visible{outline-color:var(--sl-sand)!important;box-shadow:0 0 0 5px var(--sl-navy)!important}
+
+/* buttons: Harbor Navy ground, Sailcloth text, square, flat, no sheen, no lift */
+.lc-btn,.plc-btn,.btn-notify,.nav-join,.btn-fill,.btn-primary,.btn-book,.btn-sub,.btn-tix,.btn-back-form,.sc-btn,.tix-btn,.wc-btn,.xbookbtn,.tc-cta,.ev-action-btn,.nav-cta,.navr a.cta,.nav-book,.sticky-cta a,.hx-btn,.btn-main{background:var(--sl-navy)!important;color:var(--sl-sailcloth)!important;border:1px solid var(--sl-navy)!important;border-radius:var(--sl-radius)!important;box-shadow:none!important;background-image:none!important;font-family:var(--sl-font-ui);font-weight:500;letter-spacing:.02em}
+.btn-ghost,.btn-tix-ghost{border-radius:var(--sl-radius)!important;box-shadow:none!important}
+nav .nav-cta,nav .nav-book,.nav-right .nav-book{background:var(--sl-sailcloth)!important;color:var(--sl-navy)!important;border-color:var(--sl-sailcloth)!important}
+.btn-fill::after,.btn-primary::after,.btn-book::after,.btn-sub::after,.btn-tix::after,.nav-cta::after,.navr a.cta::after{display:none!important}
+.btn-fill:hover,.btn-primary:hover,.btn-book:hover,.btn-sub:hover,.btn-tix:hover,.nav-cta:hover,.navr a.cta:hover,.tc-cta:hover,.btn-ghost:hover,.sc-btn:hover,.wc-btn:hover,.filter-btn:hover,.ev-action-btn:hover{transform:none!important;box-shadow:none!important;opacity:.88}
+
+/* cards: flat, no lift, no shadow, no image zoom, no shimmer */
+.card,.exp-card,.town-card,.wk-card,.rec-card,.rv-card,.ev-card,.xcard,.visit-card,.tix-card,.feat-card,.stat-card,.op-card,.dm-card,.more-tile,.wc-card{will-change:auto!important;box-shadow:none!important;border-radius:var(--sl-radius)}
+.card:hover,.exp-card:hover,.town-card:hover,.wk-card:hover,.rec-card:hover,.ev-card:hover,.xcard:hover,.visit-card:hover,.feat-card:hover,.more-tile:hover,.chip:hover,.exp-chip:hover,.f-chip:hover,.bs-chip:hover,.xchip:hover{transform:none!important;box-shadow:none!important}
+.card:hover img,.exp-card:hover img,.town-card:hover img,.xcard:hover img,.ev-card:hover img,.feat-card:hover img{transform:none!important}
+img.lx-pending{background:var(--sl-sand)!important;animation:none!important}
+img.lx-in{animation:none!important;filter:none!important}
+.lx-skel{background:var(--sl-sand)!important}.lx-skel::after{display:none!important}
+.light .nav-logo,.light .brand,body.light-nav .nav-logo{color:var(--sl-navy)!important}
+:where(a.foot-logo){color:var(--sl-sailcloth)}

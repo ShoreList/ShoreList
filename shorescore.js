@@ -25,14 +25,14 @@
   function ensure() {
     if (pill) return pill;
     var css = document.createElement('style');
-    css.textContent = '.ss{position:fixed;right:16px;bottom:78px;z-index:9000;display:flex;align-items:center;gap:10px;padding:8px 14px 8px 8px;border-radius:100px;border:1px solid rgba(255,255,255,.18);background:rgba(7,35,45,.72);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:#F5E8CB;font:600 .78rem/1.1 "DM Sans",system-ui,sans-serif;cursor:pointer;box-shadow:0 10px 30px -10px rgba(0,0,0,.6);opacity:0;transform:translateY(10px);transition:opacity .6s,transform .6s}.ss.on{opacity:1;transform:none}.ss svg{width:38px;height:38px;flex:none}.ss small{display:block;font-weight:500;opacity:.75;margin-top:2px}.ss:hover{border-color:#FFC95E}@media(max-width:700px){.ss{display:none}}';
+    css.textContent = '.ss{position:fixed;right:16px;bottom:78px;z-index:9000;display:flex;align-items:center;gap:10px;padding:8px 14px 8px 8px;border-radius:100px;border:1px solid rgba(255,255,255,.18);background:rgba(14,31,51,.72);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:#D9C7A3;font:600 .78rem/1.1 "DM Sans",system-ui,sans-serif;cursor:pointer;box-shadow:0 10px 30px -10px rgba(0,0,0,.6);opacity:0;transform:translateY(10px);transition:opacity .6s,transform .6s}.ss.on{opacity:1;transform:none}.ss svg{width:38px;height:38px;flex:none}.ss small{display:block;font-weight:500;opacity:.75;margin-top:2px}.ss:hover{border-color:#D9C7A3}@media(max-width:700px){.ss{display:none}}';
     document.head.appendChild(css);
     pill = document.createElement('button'); pill.type = 'button'; pill.className = 'ss'; pill.setAttribute('aria-label', 'Beach score, open Shore AI for ideas');
     pill.addEventListener('click', function () { if (last) document.dispatchEvent(new CustomEvent('shore:ask', { detail: last.q })); });
     document.body.appendChild(pill); return pill;
   }
   function render(d) {
-    var r = score(d), q = idea(d, r), col = r.n >= 70 ? '#8FD3DE' : r.n >= 50 ? '#FFC95E' : '#E96645', C = 2 * Math.PI * 16, off = C * (1 - r.n / 100);
+    var r = score(d), q = idea(d, r), col = r.n >= 70 ? '#9FC3B8' : r.n >= 50 ? '#D9C7A3' : '#B5362F', C = 2 * Math.PI * 16, off = C * (1 - r.n / 100);
     last = { n: r.n, q: q, why: r.why };
     var p = ensure();
     p.innerHTML = '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="16" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="4"/><circle cx="20" cy="20" r="16" fill="none" stroke="' + col + '" stroke-width="4" stroke-linecap="round" stroke-dasharray="' + C.toFixed(1) + '" stroke-dashoffset="' + off.toFixed(1) + '" transform="rotate(-90 20 20)"/><text x="20" y="24.5" text-anchor="middle" font-size="12" font-weight="700" fill="#fff" font-family="DM Sans,system-ui">' + r.n + '</text></svg><span>Beach score: ' + label(r.n) + '<small>' + (r.why.length ? r.why.slice(0, 2).join(', ') : 'tap for a plan') + '</small></span>';
