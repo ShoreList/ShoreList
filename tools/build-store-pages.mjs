@@ -184,7 +184,8 @@ const sections = [
   { id: 'beach-day', h: 'For the beach-day household', p: 'A towel for the sand and a tote for the walk down.',
     ids: ['carolina-coast-towel', 'salt-wash-market-tote'] },
 ];
-const price = (i) => `${i.from ? 'From ' : ''}$${i.price}`;
+const money = (n) => (Math.round(n * 100) % 100 === 0 ? n.toFixed(0) : n.toFixed(2));
+const price = (i) => `${i.from ? 'From ' : ''}$${money(i.price)}`;
 const card = (i) => `<li><a href="${esc(i.url)}" data-item-id="${esc(i.id)}"><img src="${esc(i.img)}" alt="${esc(i.alt)}" width="800" height="1000" loading="lazy" decoding="async"/><span class="gg-name">${esc(i.name)}</span><span class="gg-price">${price(i)}</span><span class="gg-line">${esc(i.meta)}</span></a></li>`;
 const used = [];
 const giftSections = sections.map((s) => {
