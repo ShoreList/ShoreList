@@ -287,40 +287,6 @@
    "motif": "beach-scenes"
   },
   {
-   "id": "salt-wash-market-tote",
-   "collection": "shore-gear",
-   "shelf": "wilmington",
-   "name": "Sloop Organic Cotton Market Tote",
-   "url": "https://shorelist-shop.fourthwall.com/products/salt-wash-organic-cotton-market-tote",
-   "img": "https://imgproxy.fourthwall.dev/TZt3re_wDyZ0W16_4JbSgpMdKwOMYBzAwPsa2r3eqHA/w:1920/sm:1/enc/Pk5QPfjBEPCd6iv4/jzgR6bKsy7yyQSZv/n5nrwFsWvAAQyQVI/e3FznjKMNn4uGwsZ/xM5ia2wEXu6YZSfz/TuQbjJhrMqgnSt5p/M86zkfeYUuJkpP4U/Ep3Y89lpVKKlf5b7/nrschLQbJeecVVMi/aEvtdTJMIptcL7yO/lIdn7xEV_W8hJdaP/x6JU_2u2-_tiXm_x/KdGjIviHRxutI_um/KWy8ww.jpg",
-   "lookbook": "https://imgproxy.fourthwall.dev/TZt3re_wDyZ0W16_4JbSgpMdKwOMYBzAwPsa2r3eqHA/w:1920/sm:1/enc/Pk5QPfjBEPCd6iv4/jzgR6bKsy7yyQSZv/n5nrwFsWvAAQyQVI/e3FznjKMNn4uGwsZ/xM5ia2wEXu6YZSfz/TuQbjJhrMqgnSt5p/M86zkfeYUuJkpP4U/Ep3Y89lpVKKlf5b7/nrschLQbJeecVVMi/aEvtdTJMIptcL7yO/lIdn7xEV_W8hJdaP/x6JU_2u2-_tiXm_x/KdGjIviHRxutI_um/KWy8ww.jpg",
-   "alt": "Woman holding a natural organic cotton sloop tote on a wooden beach walkway",
-   "meta": "Organic cotton twill, 20 x 14 x 5 in, with one small sloop print. Natural color, sturdy handles.",
-   "cta": "Choose options and buy",
-   "price": 48,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "fourthwall",
-   "blank": "Econscious",
-   "facts": [
-    [
-     "Size",
-     "20 x 14 x 5 in"
-    ],
-    [
-     "Fabric",
-     "Organic cotton twill"
-    ]
-   ],
-   "town": "wilmington",
-   "type": "beach",
-   "color": "Natural",
-   "added": "2026-11-20",
-   "motif": "boats-buoys"
-  },
-  {
    "id": "carolina-coast-towel",
    "collection": "beach-setup",
    "shelf": "wilmington",
@@ -363,8 +329,8 @@
    "type": "tops",
    "color": "Blue Jean",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11333301079082788819_2048_1000x.jpg",
-   "alt": "Garment-dyed blue crewneck sweatshirt with a small embroidered live oak and the letters ILM on the chest, supplier mockup",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-embroidered-crewneck-wilmington_1000x.webp",
+   "alt": "Smiling woman in a blue jean crewneck sweatshirt with a small embroidered live oak tree and the letters ILM, on the Wilmington Riverwalk under live oaks, shown as an illustrative image",
    "meta": "A live oak hung with Spanish moss stitched on the chest, with ILM for Wilmington beneath it.",
    "cta": "Choose color and size",
    "price": 88,
@@ -387,7 +353,8 @@
      "Embroidery",
      "Stitched in green, chestnut and white thread"
     ]
-   ]
+   ],
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-embroidered-crewneck-wilmington_1920x.webp"
   },
   {
    "id": "the-live-oak-corduroy-cap-wilmington",
@@ -399,8 +366,8 @@
    "type": "hats",
    "color": "Navy Blue",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4211854548687384211_2048_1000x.jpg",
-   "alt": "Corduroy cap with a small embroidered live oak on the front, supplier mockup",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-corduroy-cap-wilmington_1000x.webp",
+   "alt": "Man in a navy corduroy cap with an embroidered green live oak tree, on the Wilmington Riverwalk under live oaks, shown as an illustrative image",
    "meta": "A live oak hung with Spanish moss embroidered on the front of a soft corduroy cap, with ILM for Wilmington on the back.",
    "cta": "Choose color",
    "price": 49,
@@ -427,7 +394,8 @@
      "Colors",
      "Navy Blue, Burgundy, Black"
     ]
-   ]
+   ],
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-corduroy-cap-wilmington_1920x.webp"
   },
   {
    "id": "the-live-oak-cuffed-beanie-wilmington",
@@ -437,10 +405,10 @@
    "name": "The Live Oak Cuffed Beanie, Wilmington",
    "url": "https://shorelist.myshopify.com/products/the-live-oak-cuffed-beanie-wilmington",
    "type": "hats",
-   "color": "Navy",
+   "color": "Black",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5126613936494193933_2048_1000x.jpg",
-   "alt": "Navy cuffed knit beanie with a live oak and the letters ILM embroidered on the cuff, supplier mockup",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-cuffed-beanie-wilmington_1000x.webp",
+   "alt": "Woman in a black cuffed beanie embroidered with a green live oak tree and the letters ILM, on the Wilmington Riverwalk, shown as an illustrative image",
    "meta": "A live oak and ILM for Wilmington embroidered side by side on the cuff of a classic knit beanie.",
    "cta": "Choose color",
    "price": 30,
@@ -459,7 +427,8 @@
      "Fabric",
      "Soft acrylic knit with a fold-up cuff"
     ]
-   ]
+   ],
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-cuffed-beanie-wilmington_1920x.webp"
   },
   {
    "id": "wrightsville-can-cooler",
@@ -703,8 +672,8 @@
    "type": "hats",
    "color": "Navy Blue",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8866227092479380040_2048_1000x.jpg",
-   "alt": "Navy corduroy cap with one small embroidered sloop on the front, supplier mockup",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-daymark-corduroy-cap-wrightsville-beach_1000x.webp",
+   "alt": "Man in a navy corduroy cap with a small white embroidered sailboat, on the dunes at Wrightsville Beach, shown as an illustrative image",
    "meta": "One small sloop stitched on the front of a navy corduroy cap, with WB for Wrightsville Beach on the back.",
    "cta": "Shop the cap",
    "price": 49,
@@ -728,7 +697,8 @@
      "Closure",
      "Adjustable strap with a brass buckle"
     ]
-   ]
+   ],
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-daymark-corduroy-cap-wrightsville-beach_1920x.webp"
   },
   {
    "id": "the-rope-line-crewneck-wrightsville-beach",
@@ -740,8 +710,8 @@
    "type": "tops",
    "color": "White",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4552877450016127230_2048_1000x.jpg",
-   "alt": "White crewneck sweatshirt with WB and a short twisted rope line embroidered in navy on the chest, supplier mockup",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-rope-line-crewneck-wrightsville-beach_1000x.webp",
+   "alt": "Smiling woman in a white crewneck sweatshirt with small navy WB letters over a wavy rope line, on the dunes at Wrightsville Beach, shown as an illustrative image",
    "meta": "WB for Wrightsville Beach in widely spaced capitals over a short stitched rope line, small and quiet on the chest.",
    "cta": "Choose your size",
    "price": 74,
@@ -765,7 +735,8 @@
      "Embroidery",
      "Navy thread on white"
     ]
-   ]
+   ],
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-rope-line-crewneck-wrightsville-beach_1920x.webp"
   },
   {
    "id": "shorelist-tilt-beach-umbrella-6-5-ft-upf-50",
@@ -776,8 +747,8 @@
    "url": "https://shorelist.myshopify.com/products/shorelist-tilt-beach-umbrella-6-5-ft-upf-50",
    "type": "beach",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/896e91258188456b9739f40519a8211b_1000x.webp",
-   "alt": "Tilting beach umbrella with an aluminum pole planted in the sand, supplier photo",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-shorelist-tilt-beach-umbrella-6-5-ft-upf-50_1000x.webp",
+   "alt": "Teal beach umbrella open in the sand at Wrightsville Beach with a towel and sandals beneath it, shown as an illustrative image",
    "meta": "A 6.5 ft tilting beach umbrella with UPF 50+ fabric, a sand anchor and a carry bag. About 3.5 lb.",
    "cta": "Shop beach gear",
    "price": 99,
@@ -804,7 +775,8 @@
      "Weight",
      "About 3.5 lb, carry bag included"
     ]
-   ]
+   ],
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-shorelist-tilt-beach-umbrella-6-5-ft-upf-50_1920x.webp"
   },
   {
    "id": "shorelist-aluminum-backpack-beach-chair-mint-stripe",
@@ -816,8 +788,8 @@
    "type": "beach",
    "color": "Mint stripe",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/e4e9481e914347868d7fc04ab6c9e261_1000x.webp",
-   "alt": "Mint striped aluminum backpack beach chair with wooden armrests, supplier photo",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-shorelist-aluminum-backpack-beach-chair-mint-stripe_1000x.webp",
+   "alt": "Mint and white striped aluminum backpack beach chair open on the sand at Carolina Beach with a straw hat and a book on the seat, shown as an illustrative image",
    "meta": "A mint stripe backpack beach chair with four recline positions, wooden armrests and shoulder straps for the walk over the dunes.",
    "cta": "Shop beach gear",
    "price": 109,
@@ -844,7 +816,8 @@
      "Carry",
      "Folds flat with backpack shoulder straps"
     ]
-   ]
+   ],
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-shorelist-aluminum-backpack-beach-chair-mint-stripe_1920x.webp"
   },
   {
    "id": "carolina-beach-ornament-2026",
@@ -895,8 +868,8 @@
    "type": "tops",
    "color": "Blue Jean",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17511693076647559523_2048_1000x.jpg",
-   "alt": "Garment-dyed blue crewneck sweatshirt with a small embroidered brown pelican and the letters CB on the chest, supplier mockup",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-embroidered-crewneck-carolina-beach_1000x.webp",
+   "alt": "Smiling woman in a blue jean crewneck sweatshirt with a small embroidered brown pelican and the letters CB, on the sand at Carolina Beach, shown as an illustrative image",
    "meta": "A brown pelican stitched on the chest in white, chestnut and gold thread, with CB for Carolina Beach beneath it.",
    "cta": "Choose color and size",
    "price": 88,
@@ -924,7 +897,8 @@
      "Colors",
      "Blue Jean, Blue Spruce, Denim"
     ]
-   ]
+   ],
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-embroidered-crewneck-carolina-beach_1920x.webp"
   },
   {
    "id": "the-pelican-corduroy-cap-carolina-beach",
@@ -936,8 +910,8 @@
    "type": "hats",
    "color": "Navy Blue",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/554477750588018687_2048_1000x.jpg",
-   "alt": "Navy corduroy cap with a small embroidered brown pelican on the front, supplier mockup",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-corduroy-cap-carolina-beach_1000x.webp",
+   "alt": "Man in a navy corduroy cap with an embroidered brown pelican, on the sand at Carolina Beach, shown as an illustrative image",
    "meta": "A brown pelican embroidered on the front of a soft corduroy cap, with CB for Carolina Beach stitched on the back.",
    "cta": "Choose color",
    "price": 49,
@@ -965,7 +939,8 @@
      "Colors",
      "Navy Blue, Olive"
     ]
-   ]
+   ],
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-corduroy-cap-carolina-beach_1920x.webp"
   },
   {
    "id": "the-pelican-cuffed-beanie-carolina-beach",
@@ -975,10 +950,10 @@
    "name": "The Pelican Cuffed Beanie, Carolina Beach",
    "url": "https://shorelist.myshopify.com/products/the-pelican-cuffed-beanie-carolina-beach",
    "type": "hats",
-   "color": "Navy",
+   "color": "Forest green",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10754155865723586346_2048_1000x.jpg",
-   "alt": "Navy cuffed knit beanie with a brown pelican and the letters CB embroidered on the cuff, supplier mockup",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-cuffed-beanie-carolina-beach_1000x.webp",
+   "alt": "Woman in a forest green cuffed beanie embroidered with a brown pelican and the letters CB, on the sand at Carolina Beach, shown as an illustrative image",
    "meta": "A brown pelican and CB for Carolina Beach embroidered side by side on the cuff of a classic knit beanie.",
    "cta": "Choose color",
    "price": 30,
@@ -1001,7 +976,8 @@
      "Colors",
      "Navy, Spruce, Olive"
     ]
-   ]
+   ],
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-cuffed-beanie-carolina-beach_1920x.webp"
   },
   {
    "id": "kure-beach-ornament-2026",
@@ -1205,7 +1181,8 @@
    "coastal-soft-cooler": "grey bag with generic text, not a town piece (2026-11-22 shop audit). Full record in docs/retired-items.json.",
    "coastal-christmas-can-cooler": "green colorway is off palette (2026-11-22 shop audit). Full record in docs/retired-items.json.",
    "daymark-sloop-crewneck": "duplicate of the-sloop-embroidered-crewneck-wrightsville-beach (merged, kept that one) (2026-11-22 shop audit). Full record in docs/retired-items.json.",
-   "daymark-blue-crab-crewneck": "duplicate of the-blue-crab-embroidered-crewneck-kure-beach (merged, kept that one) (2026-11-22 shop audit). Full record in docs/retired-items.json."
+   "daymark-blue-crab-crewneck": "duplicate of the-blue-crab-embroidered-crewneck-kure-beach (merged, kept that one) (2026-11-22 shop audit). Full record in docs/retired-items.json.",
+   "salt-wash-market-tote": "Paused 2026-11-22: no faithful lookbook possible (supplier photo unreachable, mark not visible in the supplier image, shop audit 6.2 FIX). RJ decides keep or remove. Record kept in retired.paused."
   },
   "archive": {
    "tilt-beach-umbrella": {
@@ -1277,7 +1254,43 @@
     "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-backpack-beach-chair_1920x.webp"
    }
   },
-  "archive_note": "archive holds the full item entry for pieces taken off sale on purpose, so they can be restored: move the entry from retired.archive back into items[], delete its retired.items reason, then run build-store-pages, build-llms and check-site."
+  "archive_note": "archive holds the full item entry for pieces taken off sale on purpose, so they can be restored: move the entry from retired.archive back into items[], delete its retired.items reason, then run build-store-pages, build-llms and check-site.",
+  "paused": {
+   "salt-wash-market-tote": {
+    "id": "salt-wash-market-tote",
+    "collection": "shore-gear",
+    "shelf": "wilmington",
+    "name": "Sloop Organic Cotton Market Tote",
+    "url": "https://shorelist-shop.fourthwall.com/products/salt-wash-organic-cotton-market-tote",
+    "img": "https://imgproxy.fourthwall.dev/TZt3re_wDyZ0W16_4JbSgpMdKwOMYBzAwPsa2r3eqHA/w:1920/sm:1/enc/Pk5QPfjBEPCd6iv4/jzgR6bKsy7yyQSZv/n5nrwFsWvAAQyQVI/e3FznjKMNn4uGwsZ/xM5ia2wEXu6YZSfz/TuQbjJhrMqgnSt5p/M86zkfeYUuJkpP4U/Ep3Y89lpVKKlf5b7/nrschLQbJeecVVMi/aEvtdTJMIptcL7yO/lIdn7xEV_W8hJdaP/x6JU_2u2-_tiXm_x/KdGjIviHRxutI_um/KWy8ww.jpg",
+    "lookbook": "https://imgproxy.fourthwall.dev/TZt3re_wDyZ0W16_4JbSgpMdKwOMYBzAwPsa2r3eqHA/w:1920/sm:1/enc/Pk5QPfjBEPCd6iv4/jzgR6bKsy7yyQSZv/n5nrwFsWvAAQyQVI/e3FznjKMNn4uGwsZ/xM5ia2wEXu6YZSfz/TuQbjJhrMqgnSt5p/M86zkfeYUuJkpP4U/Ep3Y89lpVKKlf5b7/nrschLQbJeecVVMi/aEvtdTJMIptcL7yO/lIdn7xEV_W8hJdaP/x6JU_2u2-_tiXm_x/KdGjIviHRxutI_um/KWy8ww.jpg",
+    "alt": "Woman holding a natural organic cotton sloop tote on a wooden beach walkway",
+    "meta": "Organic cotton twill, 20 x 14 x 5 in, with one small sloop print. Natural color, sturdy handles.",
+    "cta": "Choose options and buy",
+    "price": 48,
+    "scenes": [
+     "beach"
+    ],
+    "cut": "unisex",
+    "store": "fourthwall",
+    "blank": "Econscious",
+    "facts": [
+     [
+      "Size",
+      "20 x 14 x 5 in"
+     ],
+     [
+      "Fabric",
+      "Organic cotton twill"
+     ]
+    ],
+    "town": "wilmington",
+    "type": "beach",
+    "color": "Natural",
+    "added": "2026-11-20",
+    "motif": "boats-buoys"
+   }
+  }
  },
  "shelves_note": "The shop page groups items by town. item.town (or item.shelf, same ids) places an item on a town shelf; an item with neither is placed by its name (a town name in it) and otherwise lands on Wilmington and the Coast. New products need only a town id from shelves[]. type: tops|hats|prints|coolers|ornaments|beach (inferred from the name when missing). color is only set where the listing text states it. added is the date the item joined the shop and drives New arrivals. motif (optional): sea-life | boats-buoys | beach-scenes, set only when the art shows it; the page also matches words from motifs[].words in the item name. A motif with no pieces shows an on-the-way card, never a placeholder product.",
  "motifs": [
