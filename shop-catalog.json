@@ -290,6 +290,43 @@
    "motif": "boats-buoys"
   },
   {
+   "id": "wrightsville-beach-airlie-live-oak-printed-mug",
+   "collection": "shore-gear",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Wrightsville Beach Airlie Live Oak Printed Mug",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-airlie-live-oak-printed-mug",
+   "type": "beach",
+   "color": "White",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-airlie-live-oak-printed-mug_1000x.webp",
+   "alt": "White ceramic mug printed with teal and navy live oak and Spanish moss medallions on ivory, standing on a driftwood plank in the dunes beside a folded cream towel and a shell at Wrightsville Beach, shown as an illustrative image",
+   "meta": "A printed 11 oz white ceramic mug with ink and watercolor live oak and Spanish moss medallions in teal and navy on ivory, inspired by Airlie Gardens. Made to order.",
+   "cta": "Shop mugs",
+   "price": 30,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4024793003840873023_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-airlie-live-oak-printed-mug_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "11 oz white ceramic mug"
+    ],
+    [
+     "Print",
+     "Live oak and Spanish moss pattern wrapped around the mug"
+    ],
+    [
+     "Care",
+     "Microwave and dishwasher safe"
+    ]
+   ]
+  },
+  {
    "id": "wrightsville-beach-sloop-printed-throw-pillow",
    "collection": "shore-gear",
    "shelf": "wrightsville-beach",
