@@ -1,6 +1,0 @@
-{
-  "title": "Wire GA4 into shop and add purchase events on success pages",
-  "body": "- shop.html: data-ga-id on the shop-analytics.js tag so view_item_list and the hooked select_item fire; removed the duplicate direct select_item on quick-view link clicks (select_item now sent once per quick view open by the helper).\n- success.html, goods-success.html, guide-success.html: GA4 snippet (page_location stripped of the query so the Stripe session id never reaches GA) and a once-per-session purchase event via purchase-analytics.js. Value, tax, shipping and items come only from the page's existing session lookup. transaction_id is a SHA-256 digest of the session id (the id itself unlocks paid downloads). Honors GPC, DNT and the opt-out key. No function, Stripe or webhook code touched.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nhttps://claude.ai/code/session_01B2QdSxgLEEq9pdMiNJR1fh",
-  "head": "fix-analytics",
-  "base": "main"
-}

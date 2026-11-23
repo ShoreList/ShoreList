@@ -1,4 +1,0 @@
-{
-  "merge_method": "squash",
-  "commit_title": "Wire GA4 into shop and add purchase events on success pages (#278)"
-}
