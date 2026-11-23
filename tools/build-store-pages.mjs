@@ -239,7 +239,7 @@ const TOWN_COPY = {
     title: 'Wilmington NC Souvenirs and Beach Gear | ShoreList',
     desc: 'Wilmington NC souvenirs from the ShoreList Shop: Airlie Oak art print, tote, tee, mug, ornament and pillow, a live oak crewneck and a beach towel.',
     h1: 'Wilmington NC souvenirs and <em>beach gear</em>',
-    lede: 'These Wilmington NC souvenirs and gifts belong to the whole coast rather than one beach: the Airlie Oak line, a painterly Wilmington live oak on a framed art print, tote, tee, mug, ceramic ornament, zip pouch, throw pillow and tea towel, plus an embroidered live oak crewneck and the Carolina Coast terry beach towel. Everything is made to order.',
+    lede: 'These Wilmington NC souvenirs and gifts belong to the whole coast rather than one beach: the Airlie Oak line, a painterly Wilmington live oak on a framed art print, tote, tee, mug, ceramic ornament, zip pouch, throw pillow and tea towel, plus printed Azalea, Blue Crab and Sea Oats tees, an embroidered live oak crewneck and the Carolina Coast terry beach towel. Everything is made to order.',
     about: 'Pieces for the whole coast live here. For a single beach, start with Wrightsville Beach, Carolina Beach or Kure Beach.',
     q: ['Where do the beach towel and tote ship from?', 'Everything is made to order by our print partners. Shipping method, cost and the estimate for your address are shown at checkout.'] },
 };
