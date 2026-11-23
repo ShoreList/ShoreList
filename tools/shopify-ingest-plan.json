@@ -2,20 +2,20 @@
  "shelves": [],
  "items": [
   {
-   "handle": "blue-crab-carolina-coast-printed-garment-dyed-tee",
+   "handle": "sea-oats-carolina-coast-printed-garment-dyed-tee",
    "shelf": "wilmington",
    "collection": "local-icons",
-   "name": "Blue Crab Carolina Coast Printed Garment-Dyed Tee",
+   "name": "Sea Oats Carolina Coast Printed Garment-Dyed Tee",
    "type": "tops",
-   "color": "Ivory",
-   "alt": "Ivory tee printed on the chest with a lifelike painted blue crab with red-tipped claws, hanging from a driftwood branch on a dune beach with sea oats, shown as an illustrative image",
-   "meta": "A relaxed garment-dyed tee printed with a lifelike painted Atlantic blue crab, a Carolina coast classic. Made to order.",
+   "color": "White",
+   "alt": "White tee printed on the chest with a lifelike painted clump of sea oats on a small dune, hanging from a driftwood pole in sunlit sand dunes with sea oats, shown as an illustrative image",
+   "meta": "A relaxed garment-dyed tee printed with a lifelike painted clump of sea oats, the grass that holds the Carolina dunes together. Made to order.",
    "cta": "Choose size",
    "scenes": [
     "beach"
    ],
    "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-blue-crab-carolina-coast-printed-garment-dyed-tee.webp",
+   "lookbookFile": "shorelist-lookbook-sea-oats-carolina-coast-printed-garment-dyed-tee.webp",
    "facts": [
     [
      "Sizing",
@@ -27,11 +27,11 @@
     ],
     [
      "Print",
-     "Blue crab illustration printed on the front chest, not embroidered"
+     "Sea oats illustration printed on the front chest, not embroidered"
     ],
     [
      "Colors",
-     "Ivory or White"
+     "White"
     ]
    ]
   }
