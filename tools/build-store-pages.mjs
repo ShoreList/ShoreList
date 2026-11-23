@@ -237,9 +237,9 @@ const TOWN_COPY = {
     q: ['What is the Kure Beach mark?', 'A small lifeguard stand with a red flag and the town name, stitched on the chest of the white crewneck.'] },
   wilmington: {
     title: 'Wilmington NC Souvenirs and Beach Gear | ShoreList',
-    desc: 'Wilmington NC souvenirs and beach gear from the ShoreList Shop: a live oak crewneck and a beach towel, made to order.',
+    desc: 'Wilmington NC souvenirs from the ShoreList Shop: Airlie Oak art print, tote, tee, mug, ornament and pillow, a live oak crewneck and a beach towel.',
     h1: 'Wilmington NC souvenirs and <em>beach gear</em>',
-    lede: 'These Wilmington NC souvenirs and beach goods belong to the whole coast rather than one beach: an embroidered live oak crewneck and the Carolina Coast terry beach towel. Everything is made to order.',
+    lede: 'These Wilmington NC souvenirs and gifts belong to the whole coast rather than one beach: the Airlie Oak line, a painterly Wilmington live oak on a framed art print, tote, tee, mug, ceramic ornament, zip pouch, throw pillow and tea towel, plus printed garment-dyed tees, an embroidered live oak crewneck and the Carolina Coast terry beach towel. Everything is made to order.',
     about: 'Pieces for the whole coast live here. For a single beach, start with Wrightsville Beach, Carolina Beach or Kure Beach.',
     q: ['Where do the beach towel and tote ship from?', 'Everything is made to order by our print partners. Shipping method, cost and the estimate for your address are shown at checkout.'] },
 };
@@ -274,7 +274,7 @@ for (const t of shopTowns) {
   const body = `<section class="gg-sec" id="pieces" aria-labelledby="pieces-h"><h2 id="pieces-h">${esc(t.name)} pieces</h2><p>${c.about}</p><ul class="gg-grid">${items.map(tcard).join('')}</ul></section>
 <section class="gg-sec" id="more" aria-labelledby="more-h"><h2 id="more-h">More from the shop</h2><p>Browse every town and filter by product type or motif on the <a href="/shop?town=${t.id}">full shop page</a>, shop by recipient in the <a href="/gift-guide">gift guide</a>, or see ${others}. We are adding new pieces for each town, so check back or join the drop list on the shop page. Prices are shown before shipping and tax, and everything is made to order.</p></section>
 <section class="tp-faq" id="faq"><h2>Questions</h2>${faqs.map(([q, a]) => `<h3>${q}</h3><p>${a}</p>`).join('')}</section>`;
-  const ld = [{ '@context': 'https://schema.org', '@type': 'ItemList', name: `ShoreList ${t.name} shop`, itemListElement: items.map((i, n) => ({ '@type': 'ListItem', position: n + 1, name: i.name, url: i.url })) },
+  const ld = [{ '@context': 'https://schema.org', '@type': 'ItemList', name: `ShoreList ${t.name} shop`, itemListElement: items.map((i, n) => ({ '@type': 'ListItem', position: n + 1, item: { '@type': 'Product', name: i.name, url: i.url, image: i.img, description: i.meta, brand: { '@type': 'Brand', name: 'ShoreList' }, offers: i.from ? { '@type': 'AggregateOffer', priceCurrency: 'USD', lowPrice: i.price, offerCount: 1, availability: 'https://schema.org/InStock', url: i.url } : { '@type': 'Offer', priceCurrency: 'USD', price: i.price, availability: 'https://schema.org/InStock', url: i.url } } })) },
     { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a.replace(/<[^>]+>/g, '') } })) }];
   out[`shop/${t.id}.html`] = page({ slug: `shop/${t.id}`, title: c.title, desc: c.desc, eye: t.name, h1: c.h1, lede: c.lede, body, ld, wide: true, ogImage: `${SITE}/og-shop-${t.id}.jpg` });
   townOut.push(t.id);
