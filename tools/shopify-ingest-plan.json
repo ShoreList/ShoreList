@@ -2,21 +2,37 @@
  "shelves": [],
  "items": [
   {
-   "handle": "airlie-oak-wilmington-tea-towel",
+   "handle": "azalea-wilmington-printed-garment-dyed-tee",
    "shelf": "wilmington",
-   "collection": "shore-gear",
-   "name": "Airlie Oak Wilmington Tea Towel",
-   "type": "beach",
+   "collection": "local-icons",
+   "name": "Azalea Wilmington Printed Garment-Dyed Tee",
+   "type": "tops",
    "color": "Ivory",
-   "alt": "Ivory kitchen tea towel printed with a painterly illustration of the Airlie Oak, a Southern live oak with hanging Spanish moss, hanging on an oven handle, shown as an illustrative image",
-   "meta": "A printed kitchen tea towel with a painterly illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC, on warm ivory. Made to order.",
-   "cta": "Shop home decor",
-   "scenes": ["riverwalk"],
+   "alt": "Ivory tee printed on the chest with a lifelike painted pink azalea branch, hanging from a live oak branch draped in Spanish moss in a garden of blooming azaleas, shown as an illustrative image",
+   "meta": "A relaxed garment-dyed tee printed with a lifelike painted branch of pink azaleas, the spring bloom Wilmington NC is known for. Made to order.",
+   "cta": "Choose size",
+   "scenes": [
+    "beach"
+   ],
    "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-airlie-oak-wilmington-tea-towel.webp",
+   "lookbookFile": "shorelist-lookbook-azalea-wilmington-printed-garment-dyed-tee.webp",
    "facts": [
-    ["Size", "18 x 30 in"],
-    ["Print", "Airlie Oak illustration printed on the towel, not embroidered"]
+    [
+     "Sizing",
+     "Relaxed fit, offered in sizes L to 3XL (S and M are not offered yet)"
+    ],
+    [
+     "Fabric",
+     "Heavyweight 6.1 oz ring-spun cotton, pre-shrunk, double-needle stitching, no side seams"
+    ],
+    [
+     "Print",
+     "Azalea illustration printed on the front chest, not embroidered"
+    ],
+    [
+     "Colors",
+     "Ivory or White"
+    ]
    ]
   }
  ]
