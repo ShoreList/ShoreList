@@ -252,43 +252,44 @@
    "motif": "boats-buoys"
   },
   {
-   "id": "wrightsville-beach-sloop-printed-zip-pouch",
+   "id": "wrightsville-beach-sloop-all-over-print-zip-pouch",
    "collection": "shore-gear",
    "shelf": "wrightsville-beach",
    "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop Printed Zip Pouch",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-zip-pouch",
+   "name": "Wrightsville Beach Sloop All Over Print Zip Pouch",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-all-over-print-zip-pouch",
    "type": "beach",
-   "color": "Natural",
+   "color": "Navy",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-zip-pouch_1000x.webp",
-   "alt": "Natural canvas zip pouch with a navy sailboat panel lying on beach sand beside shells and sunglasses, shown as an illustrative image",
-   "meta": "A natural canvas zip pouch with a navy panel of little sloops on the front and a wrist strap. Holds sunscreen, keys and phone for a Wrightsville Beach day.",
-   "cta": "Shop pouches",
-   "price": 30,
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-all-over-print-zip-pouch_1000x.webp",
+   "alt": "Navy zip pouch printed edge to edge with white sailboats on teal waves, resting on the sand beside sunglasses and a shell at Wrightsville Beach, shown as an illustrative image",
+   "meta": "A printed zip pouch with a navy sloop pattern running to the seams. A Wrightsville Beach travel kit pouch for the Carolina coast.",
+   "cta": "Choose size",
+   "price": 28,
+   "from": true,
    "scenes": [
     "beach"
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10521571959228082054_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-zip-pouch_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6935754229711099713_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-all-over-print-zip-pouch_1920x.webp",
    "facts": [
     [
      "Size",
-     "About 8.3 x 7.8 in"
+     "Small or Large, see the size chart image"
+    ],
+    [
+     "Zipper",
+     "White"
     ],
     [
      "Fabric",
-     "100% cotton canvas with a zipper and carry strap"
+     "100% polyester with a laminate interior, spot clean"
     ],
     [
      "Print",
-     "Navy sailboat pattern panel on the front"
-    ],
-    [
-     "Care",
-     "Spot clean"
+     "Sailboat pattern printed edge to edge, not embroidered"
     ]
    ],
    "motif": "boats-buoys"
@@ -1788,7 +1789,8 @@
    "the-lifeguard-stand-rope-cap-kure-beach": "budget blank (polyester ripstop rope cap or 5 oz poly-cotton polo) fails the premium blank standard; rebuild on a heavyweight cotton blank",
    "the-blue-crab-pique-polo-kure-beach": "budget blank (polyester ripstop rope cap or 5 oz poly-cotton polo) fails the premium blank standard; rebuild on a heavyweight cotton blank",
    "the-blue-crab-rope-cap-kure-beach": "budget blank (polyester ripstop rope cap or 5 oz poly-cotton polo) fails the premium blank standard; rebuild on a heavyweight cotton blank",
-   "wrightsville-beach-sloop-printed-canvas-tote-bag": "square-panel print replaced by the edge to edge all over print tote (Printify unpublish pending)"
+   "wrightsville-beach-sloop-printed-canvas-tote-bag": "square-panel print replaced by the edge to edge all over print tote (Printify unpublish pending)",
+   "wrightsville-beach-sloop-printed-zip-pouch": "square-panel print replaced by the edge to edge all over print zip pouch (Printify unpublish pending)"
   },
   "archive": {
    "tilt-beach-umbrella": {
