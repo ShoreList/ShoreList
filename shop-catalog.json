@@ -1128,6 +1128,46 @@
    "added": "2026-11-20"
   },
   {
+   "id": "the-blue-crab-dad-hat-kure-beach",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "town": "kure-beach",
+   "name": "The Blue Crab Dad Hat, Kure Beach",
+   "url": "https://shorelist.myshopify.com/products/the-blue-crab-dad-hat-kure-beach",
+   "type": "hats",
+   "color": "Stone",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6155600276734697737_2048_1000x.jpg",
+   "alt": "Stone cotton dad hat with a small embroidered Atlantic blue crab on the front, rendered mockup",
+   "meta": "An Atlantic blue crab, claws up, machine embroidered on a washed cotton twill dad hat with a brass buckle. Made for Kure Beach summers.",
+   "cta": "Choose color",
+   "price": 42,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11407754714107868380_2048.jpg",
+   "facts": [
+    [
+     "Fit",
+     "Unstructured six-panel, low profile, adjustable strap with antique brass buckle, one size"
+    ],
+    [
+     "Fabric",
+     "100% cotton chino twill"
+    ],
+    [
+     "Decoration",
+     "Machine embroidered front mark"
+    ],
+    [
+     "Colors",
+     "Stone, Khaki"
+    ]
+   ]
+  },
+  {
    "id": "wrightsville-ornament-2026",
    "collection": "coastal-christmas",
    "shelf": "wrightsville-beach",
@@ -1367,6 +1407,47 @@
     ]
    ],
    "motif": "sea-life"
+  },
+  {
+   "id": "the-sloop-dad-hat-wrightsville-beach",
+   "collection": "local-icons",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "The Sloop Dad Hat, Wrightsville Beach",
+   "url": "https://shorelist.myshopify.com/products/the-sloop-dad-hat-wrightsville-beach",
+   "type": "hats",
+   "color": "Stone",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/1855770948602276036_2048_1000x.jpg",
+   "alt": "Stone cotton dad hat with a small embroidered sloop sailboat on the front, rendered mockup",
+   "meta": "A small sloop under full sail, machine embroidered on a washed cotton twill dad hat with a brass buckle. Wrightsville Beach harbor days.",
+   "cta": "Choose color",
+   "price": 42,
+   "scenes": [
+    "beach",
+    "harbor-night"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12967289315303322149_2048.jpg",
+   "facts": [
+    [
+     "Fit",
+     "Unstructured six-panel, low profile, adjustable strap with antique brass buckle, one size"
+    ],
+    [
+     "Fabric",
+     "100% cotton chino twill"
+    ],
+    [
+     "Decoration",
+     "Machine embroidered front mark"
+    ],
+    [
+     "Colors",
+     "Stone, Khaki, Light Blue"
+    ]
+   ]
   },
   {
    "id": "the-live-oak-embroidered-crewneck-wilmington",
