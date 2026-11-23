@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22",
+ "updated": "2026-11-23",
  "events": [
   {
    "id": "rooted-in-memory-the-gullah-geechee-visi-2026-06-19",
@@ -41,19 +41,6 @@
    "url": "https://www.wilmingtondowntown.com/events/",
    "source": "curated",
    "recurring": "Saturdays"
-  },
-  {
-   "id": "wilmington-symphony-youth-orchestras-con-2026-11-22",
-   "title": "Wilmington Symphony Youth Orchestras Concert",
-   "start": "2026-11-22",
-   "end": "2026-11-22",
-   "venue": "Kenan Auditorium",
-   "area": "Greater Wilmington",
-   "cat": "Music",
-   "url": "https://www.wilmingtonsymphony.org/concerts",
-   "source": "curated",
-   "time": "4:00 PM",
-   "verified": "https://www.wilmingtonsymphony.org/concerts"
   },
   {
    "id": "downtown-wilmington-holiday-tree-lightin-2026-11-27",
@@ -796,6 +783,20 @@
    "source": "curated",
    "tickets": "Tickets required",
    "verified": "https://www.wilsoncentertickets.com/"
+  },
+  {
+   "id": "cameron-10000905-1799593200-17996076-ee82be32-2027-01-10",
+   "title": "Floating Lantern Ceremony",
+   "start": "2027-01-10",
+   "end": "2027-01-10",
+   "venue": "Cameron Art Museum",
+   "area": "Wilmington",
+   "cat": "Arts",
+   "url": "https://cameronartmuseum.org/event/floating-lantern-ceremony-3/",
+   "source": "cameron",
+   "sourceUrl": "https://cameronartmuseum.org/event/floating-lantern-ceremony-3/",
+   "via": "Cameron Art Museum events calendar",
+   "time": "3:00 PM"
   },
   {
    "id": "wilmington-symphony-orchestra-bernstein--2027-01-16",
