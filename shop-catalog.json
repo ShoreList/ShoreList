@@ -869,6 +869,48 @@
    "motif": "boats-buoys"
   },
   {
+   "id": "wrightsville-beach-sloop-printed-tea-towel",
+   "collection": "shore-gear",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Wrightsville Beach Sloop Printed Tea Towel",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-tea-towel",
+   "type": "beach",
+   "color": "Teal",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-tea-towel_1000x.webp",
+   "alt": "Teal and navy sloop pattern tea towel hanging in a bright coastal kitchen, shown as an illustrative image",
+   "meta": "A printed polyester tea towel with a navy all-over pattern of small sailboats on teal waves. A Wrightsville Beach kitchen gift made for the Carolina coast and Wilmington NC.",
+   "cta": "Shop kitchen linens",
+   "price": 30,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13002889693185505046_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-tea-towel_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "18 x 30 in"
+    ],
+    [
+     "Fabric",
+     "Polyester, one sided print, lightweight"
+    ],
+    [
+     "Print",
+     "Navy sloop pattern on teal waves, printed not embroidered"
+    ],
+    [
+     "Made",
+     "Made to order"
+    ]
+   ],
+   "motif": "boats-buoys"
+  },
+  {
    "id": "carolina-beach-ornament-2026",
    "collection": "coastal-christmas",
    "shelf": "carolina-beach",

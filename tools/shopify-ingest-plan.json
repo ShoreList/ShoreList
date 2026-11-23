@@ -2,228 +2,36 @@
  "shelves": [],
  "items": [
   {
-   "handle": "kure-beach-lifeguard-stand-printed-mug",
-   "shelf": "kure-beach",
-   "collection": "local-icons",
-   "name": "Kure Beach Lifeguard Stand Printed Mug",
+   "handle": "wrightsville-beach-sloop-printed-tea-towel",
+   "shelf": "wrightsville-beach",
+   "collection": "shore-gear",
+   "name": "Wrightsville Beach Sloop Printed Tea Towel",
    "type": "beach",
-   "color": "Ivory",
-   "alt": "Ivory ceramic mug printed with a navy lifeguard stand and the words Kure Beach sitting on beach sand, shown as an illustrative image",
-   "meta": "A printed 11 oz white ceramic mug with one navy lifeguard stand, a small red flag and the words Kure Beach on an ivory field. A Kure Beach coffee mug and a Wilmington NC gift.",
-   "cta": "Shop mugs",
+   "color": "Teal",
+   "alt": "Teal and navy sloop pattern tea towel hanging in a bright coastal kitchen, shown as an illustrative image",
+   "meta": "A printed polyester tea towel with a navy all-over pattern of small sailboats on teal waves. A Wrightsville Beach kitchen gift made for the Carolina coast and Wilmington NC.",
+   "cta": "Shop kitchen linens",
    "scenes": [
     "beach"
    ],
    "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-kure-beach-lifeguard-stand-printed-mug.webp",
+   "lookbookFile": "shorelist-lookbook-wrightsville-beach-sloop-printed-tea-towel.webp",
    "facts": [
     [
      "Size",
-     "11 oz white ceramic mug"
-    ],
-    [
-     "Print",
-     "Navy lifeguard stand with a red flag and the town name, one centered design on an ivory field"
-    ],
-    [
-     "Care",
-     "Microwave and dishwasher safe per the supplier"
-    ]
-   ]
-  },
-  {
-   "handle": "kure-beach-lifeguard-stand-printed-zip-pouch",
-   "shelf": "kure-beach",
-   "collection": "local-icons",
-   "name": "Kure Beach Lifeguard Stand Printed Zip Pouch",
-   "type": "beach",
-   "color": "Natural",
-   "alt": "Natural canvas zip pouch printed with a navy lifeguard stand and the words Kure Beach lying on beach sand, shown as an illustrative image",
-   "meta": "A printed cotton canvas zip pouch with a navy lifeguard stand, a small red flag and the words Kure Beach on the front. Holds sunscreen, keys and phone for a beach day.",
-   "cta": "Shop pouches",
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-kure-beach-lifeguard-stand-printed-zip-pouch.webp",
-   "facts": [
-    [
-     "Size",
-     "About 8.3 x 7.8 in"
+     "18 x 30 in"
     ],
     [
      "Fabric",
-     "Cotton canvas with a zipper and carry strap"
+     "Polyester, one sided print, lightweight"
     ],
     [
      "Print",
-     "Navy lifeguard stand with a red flag and the town name on the front"
+     "Navy sloop pattern on teal waves, printed not embroidered"
     ],
     [
-     "Care",
-     "Spot clean"
-    ]
-   ]
-  },
-  {
-   "handle": "kure-beach-lifeguard-stand-printed-throw-pillow",
-   "shelf": "kure-beach",
-   "collection": "local-icons",
-   "name": "Kure Beach Lifeguard Stand Printed Throw Pillow",
-   "type": "beach",
-   "color": "Ivory",
-   "alt": "Ivory throw pillow printed with a navy lifeguard stand and the words Kure Beach, shown as an illustrative image",
-   "meta": "A printed square throw pillow with one navy lifeguard stand, a small red flag and the words Kure Beach on ivory. For a Wilmington NC porch or beach house.",
-   "cta": "Shop home decor",
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-kure-beach-lifeguard-stand-printed-throw-pillow.webp",
-   "facts": [
-    [
-     "Size",
-     "16 x 16 in or 18 x 18 in"
-    ],
-    [
-     "Fabric",
-     "Polyester cover with insert"
-    ],
-    [
-     "Print",
-     "Navy lifeguard stand with a red flag and the town name, centered on the front"
-    ],
-    [
-     "Care",
-     "Spot clean or machine wash cold per the cover label"
-    ]
-   ]
-  },
-  {
-   "handle": "carolina-beach-lifeguard-stand-printed-mug",
-   "shelf": "carolina-beach",
-   "collection": "local-icons",
-   "name": "Carolina Beach Lifeguard Stand Printed Mug",
-   "type": "beach",
-   "color": "Ivory",
-   "alt": "Ivory ceramic mug printed with a navy lifeguard stand and the words Carolina Beach sitting on beach sand, shown as an illustrative image",
-   "meta": "A printed 11 oz white ceramic mug with one navy lifeguard stand, a small red flag and the words Carolina Beach on an ivory field. A Carolina Beach coffee mug and a Wilmington NC gift.",
-   "cta": "Shop mugs",
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-carolina-beach-lifeguard-stand-printed-mug.webp",
-   "facts": [
-    [
-     "Size",
-     "11 oz white ceramic mug"
-    ],
-    [
-     "Print",
-     "Navy lifeguard stand with a red flag and the town name, one centered design on an ivory field"
-    ],
-    [
-     "Care",
-     "Microwave and dishwasher safe per the supplier"
-    ]
-   ]
-  },
-  {
-   "handle": "carolina-beach-lifeguard-stand-printed-zip-pouch",
-   "shelf": "carolina-beach",
-   "collection": "local-icons",
-   "name": "Carolina Beach Lifeguard Stand Printed Zip Pouch",
-   "type": "beach",
-   "color": "Natural",
-   "alt": "Natural canvas zip pouch printed with a navy lifeguard stand and the words Carolina Beach lying on beach sand, shown as an illustrative image",
-   "meta": "A printed cotton canvas zip pouch with a navy lifeguard stand, a small red flag and the words Carolina Beach on the front. Holds sunscreen, keys and phone for a beach day.",
-   "cta": "Shop pouches",
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-carolina-beach-lifeguard-stand-printed-zip-pouch.webp",
-   "facts": [
-    [
-     "Size",
-     "About 8.3 x 7.8 in"
-    ],
-    [
-     "Fabric",
-     "Cotton canvas with a zipper and carry strap"
-    ],
-    [
-     "Print",
-     "Navy lifeguard stand with a red flag and the town name on the front"
-    ],
-    [
-     "Care",
-     "Spot clean"
-    ]
-   ]
-  },
-  {
-   "handle": "carolina-beach-lifeguard-stand-printed-throw-pillow",
-   "shelf": "carolina-beach",
-   "collection": "local-icons",
-   "name": "Carolina Beach Lifeguard Stand Printed Throw Pillow",
-   "type": "beach",
-   "color": "Ivory",
-   "alt": "Ivory throw pillow printed with a navy lifeguard stand and the words Carolina Beach, shown as an illustrative image",
-   "meta": "A printed square throw pillow with one navy lifeguard stand, a small red flag and the words Carolina Beach on ivory. For a Wilmington NC porch or beach house.",
-   "cta": "Shop home decor",
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-carolina-beach-lifeguard-stand-printed-throw-pillow.webp",
-   "facts": [
-    [
-     "Size",
-     "16 x 16 in or 18 x 18 in"
-    ],
-    [
-     "Fabric",
-     "Polyester cover with insert"
-    ],
-    [
-     "Print",
-     "Navy lifeguard stand with a red flag and the town name, centered on the front"
-    ],
-    [
-     "Care",
-     "Spot clean or machine wash cold per the cover label"
-    ]
-   ]
-  },
-  {
-   "handle": "kure-beach-lifeguard-stand-printed-canvas-tote-bag",
-   "shelf": "kure-beach",
-   "collection": "local-icons",
-   "name": "Kure Beach Lifeguard Stand Printed Canvas Tote Bag",
-   "type": "beach",
-   "color": "Natural",
-   "alt": "Natural canvas tote bag printed with a navy lifeguard stand and the words Kure Beach, leaning on a beach chair, shown as an illustrative image",
-   "meta": "A natural cotton canvas tote printed with one navy lifeguard stand, a small red flag and the words Kure Beach. A Wilmington NC gift for beach days and market trips.",
-   "cta": "Shop tote bags",
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-kure-beach-lifeguard-stand-printed-canvas-tote-bag.webp",
-   "facts": [
-    [
-     "Size",
-     "About 15 x 16 in"
-    ],
-    [
-     "Fabric",
-     "100% cotton canvas in natural"
-    ],
-    [
-     "Print",
-     "Navy lifeguard stand with a red flag and the town name on the front"
+     "Made",
+     "Made to order"
     ]
    ]
   }
