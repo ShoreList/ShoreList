@@ -34,7 +34,7 @@
   var wrap = document.createElement('div'); wrap.className = 'plates'; wrap.setAttribute('aria-hidden', 'true');
   var imgs = PICS.map(function (p, i) {
     var im = new Image(); im.alt = ''; im.decoding = 'async'; im.draggable = false;
-    im.sizes = '100vw'; im.setAttribute('data-p', p.ph); im.setAttribute('data-i', i);
+    im.sizes = need(); im.setAttribute('data-p', p.ph); im.setAttribute('data-i', i);
     im.style.setProperty('--pos', p.pos); if (p.mpos) im.style.setProperty('--mpos', p.mpos); if (p.f2) im.style.setProperty('--f', p.f2);
     im.style.animationDelay = '-' + (i * 13 % 70) + 's';
     wrap.appendChild(im); return im;
@@ -42,7 +42,9 @@
   host.insertBefore(wrap, host.firstChild);
   var cap = document.createElement('p'); cap.className = 'plate-credit'; host.appendChild(cap);
   function credit() { var p = PICS[pick[Math.round(cur) % 4]]; cap.textContent = 'Photo: ' + p.place + ', ' + p.by + ', ' + p.lic; }
-  function src(i) { var b = BASE + PICS[i].f, c = 'x.jpg'; return { s: b + '_1280' + c + ' 1280w, ' + b + '_1920' + c + ' 1920w, ' + b + '_2560' + c + ' 2560w', f: b + '_1920' + c }; }
+  function src(i) { var b = BASE + PICS[i].f, c = 'x.jpg'; return { s: [1280, 1920, 2560, 3200, 3840].map(function (w) { return b + '_' + w + c + ' ' + w + 'w'; }).join(', '), f: b + '_2560' + c }; }
+  // The photo covers a tall hero, so on a phone it is drawn far wider than the screen. Ask for the width it is really drawn at (density capped at 2 to keep the file reasonable).
+  function need() { var r = host.getBoundingClientRect(), w = Math.max(r.width || innerWidth, (r.height || innerHeight) * 1.5) * 1.08, d = window.devicePixelRatio || 1; return Math.ceil(w * Math.min(d, 2) / d) + 'px'; }
   function load(i, high) { var im = imgs[i]; if (im.src || im.getAttribute('data-l')) return; im.setAttribute('data-l', 1); var u = src(i); if (high) im.fetchPriority = 'high'; im.srcset = u.s; im.src = u.f; im.addEventListener('load', function () { loaded++; im.classList.add('ok'); paint(); if (loaded >= 1) host.classList.add('plates-on'); }); im.addEventListener('error', function () { im.removeAttribute('src'); im.removeAttribute('srcset'); }); }
   function weights(p) { return NAMES.map(function (_, i) { var d = Math.abs(p - i); d = Math.min(d, 4 - d); var w = Math.max(0, 1 - d); return w * w * (3 - 2 * w); }); }
   function paint() {
