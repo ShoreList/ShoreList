@@ -2,32 +2,32 @@
  "shelves": [],
  "items": [
   {
-   "handle": "kure-beach-scallop-shell-printed-canvas-tote-bag",
-   "shelf": "kure-beach",
+   "handle": "wrightsville-beach-scallop-shell-printed-mug",
+   "shelf": "wrightsville-beach",
    "collection": "shore-gear",
-   "name": "Kure Beach Scallop Shell Printed Canvas Tote Bag",
+   "name": "Wrightsville Beach Scallop Shell Printed Mug",
    "type": "beach",
-   "color": "Natural",
-   "alt": "Natural canvas tote bag printed with a navy and coral scallop shell, leaning on a dune beside a folded towel and straw hat, shown as an illustrative image",
-   "meta": "A natural cotton canvas tote printed with one hand-inked navy and coral scallop shell. A Kure Beach tote for beach days and market trips.",
-   "cta": "Shop tote bags",
+   "color": "White",
+   "alt": "White ceramic mug printed with a navy and coral scallop shell, sitting on beach sand beside a folded towel, shown as an illustrative image",
+   "meta": "A printed 11 oz white ceramic mug with one hand-inked navy and coral scallop shell. Made to order.",
+   "cta": "Shop mugs",
    "scenes": [
     "beach"
    ],
    "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-kure-beach-scallop-shell-printed-canvas-tote-bag.webp",
+   "lookbookFile": "shorelist-lookbook-wrightsville-beach-scallop-shell-printed-mug.webp",
    "facts": [
     [
      "Size",
-     "About 15 x 16 in with 20 in handles"
-    ],
-    [
-     "Fabric",
-     "100% cotton canvas in natural"
+     "11 oz white ceramic mug"
     ],
     [
      "Print",
-     "Scallop shell drawing about 7 in wide on the front, printed not embroidered"
+     "Scallop shell drawing on one side of the mug"
+    ],
+    [
+     "Care",
+     "Microwave and dishwasher safe"
     ]
    ]
   }
