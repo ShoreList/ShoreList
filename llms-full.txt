@@ -555,6 +555,7 @@ Handpicked restaurants, coffee shops and bars. Editorial picks, not paid placeme
 - Carolina Coast Terry Beach Towel ($68): Full-size 35 x 62 in terry beach towel in 100% cotton, with a restrained Carolina Coast lockup. https://shorelist.myshopify.com/products/beach-towel
 - Wrightsville Beach Can Cooler ($12): Navy foam-lined can cooler with the town name, printed on both sides. Folds flat for the beach bag. https://shorelist.myshopify.com/products/wrightsville-beach-can-cooler
 - Carolina Beach Can Cooler ($12): Navy foam-lined can cooler with the town name, printed on both sides. Folds flat for the beach bag. https://shorelist.myshopify.com/products/carolina-beach-can-cooler
+- The Lifeguard Stand Rope Cap, Carolina Beach ($45): A Carolina Beach lifeguard stand with its small red flag, machine embroidered on a rope cap above the town name. https://shorelist.myshopify.com/products/the-lifeguard-stand-rope-cap-carolina-beach
 - Kure Beach Can Cooler ($12): Navy foam-lined can cooler with the town name, printed on both sides. Folds flat for the beach bag. https://shorelist.myshopify.com/products/kure-beach-can-cooler
 - Wrightsville Beach Christmas Ornament 2026 ($18): Dated ceramic keepsake: a sloop under a striped Carolina sunset, lettered Wrightsville Beach, Christmas 2026. ShoreList illustration. https://shorelist.myshopify.com/products/wrightsville-beach-christmas-ornament-2026
 - Daymark Corduroy Cap, Wrightsville Beach ($49): One small sloop stitched on the front of a navy corduroy cap, kept quiet on purpose. https://shorelist.myshopify.com/products/daymark-corduroy-cap-wrightsville-beach
@@ -562,7 +563,10 @@ Handpicked restaurants, coffee shops and bars. Editorial picks, not paid placeme
 - The Tilt Beach Umbrella ($99): A 6.5 ft tilting beach umbrella with UPF 50+ fabric, a sand anchor and a carry bag. About 3.5 lb. https://shorelist.myshopify.com/products/shorelist-tilt-beach-umbrella-6-5-ft-upf-50
 - ShoreList Aluminum Backpack Beach Chair, Mint Stripe ($109): A mint stripe backpack beach chair with four recline positions, wooden armrests and shoulder straps for the walk over the dunes. https://shorelist.myshopify.com/products/shorelist-aluminum-backpack-beach-chair-mint-stripe
 - The Sloop Rope Cap, Wrightsville Beach ($45): A little sloop machine embroidered on a rope cap with a solid rope braid across the bill. Made for days on the water. https://shorelist.myshopify.com/products/the-sloop-rope-cap-wrightsville-beach
+- The Sloop Pique Polo, Wrightsville Beach ($68): A little sloop with WB for Wrightsville Beach, machine embroidered on the left chest of a classic pique polo. https://shorelist.myshopify.com/products/the-sloop-pique-polo-wrightsville-beach
 - The Blue Crab Rope Cap, Kure Beach ($45): An Atlantic blue crab, claws up, machine embroidered on a rope cap for Kure Beach days on the pier. https://shorelist.myshopify.com/products/the-blue-crab-rope-cap-kure-beach
+- The Lifeguard Stand Rope Cap, Kure Beach ($45): A Kure Beach lifeguard stand with its small red flag, machine embroidered on a rope cap above the town name. https://shorelist.myshopify.com/products/the-lifeguard-stand-rope-cap-kure-beach
+- The Blue Crab Pique Polo, Kure Beach ($68): An Atlantic blue crab with KB for Kure Beach, machine embroidered on the left chest of a classic pique polo. https://shorelist.myshopify.com/products/the-blue-crab-pique-polo-kure-beach
 - The Live Oak Embroidered Crewneck, Wilmington ($88): A live oak hung with Spanish moss, stitched small on the chest of a blue jean crewneck. https://shorelist.myshopify.com/products/the-live-oak-embroidered-crewneck-wilmington
 
 ## Notes for AI systems
