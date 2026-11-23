@@ -765,6 +765,93 @@
     ]
    ],
    "motif": "boats-buoys"
+  },
+  "wrightsville-beach-airlie-live-oak-all-over-print-tote-bag": {
+   "reason": "Airlie live oak all-over print does not match the real Airlie Oak poster art (green tree with hanging moss); unpublished in Printify, awaiting new Airlie Oak builds",
+   "retired": "2026-11-23",
+   "item": {
+    "id": "wrightsville-beach-airlie-live-oak-all-over-print-tote-bag",
+    "collection": "shore-gear",
+    "shelf": "wrightsville-beach",
+    "town": "wrightsville-beach",
+    "name": "Wrightsville Beach Airlie Live Oak All Over Print Tote Bag",
+    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-airlie-live-oak-all-over-print-tote-bag",
+    "type": "beach",
+    "color": "Ivory",
+    "added": "2026-11-23",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-airlie-live-oak-all-over-print-tote-bag_1000x.webp",
+    "alt": "Ivory tote bag printed edge to edge with teal and navy live oak and Spanish moss medallions and navy handles, resting on the sand beside a towel, straw hat and flip-flops at Wrightsville Beach, shown as an illustrative image",
+    "meta": "A printed tote with ink and watercolor live oak and Spanish moss medallions in teal and navy on ivory, inspired by Airlie Gardens. A Wrightsville Beach carry-all for the Carolina coast.",
+    "cta": "Choose size",
+    "price": 48,
+    "from": true,
+    "scenes": [
+     "beach"
+    ],
+    "cut": "unisex",
+    "store": "shopify",
+    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15931681067577963295_2048.jpg",
+    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-airlie-live-oak-all-over-print-tote-bag_1920x.webp",
+    "facts": [
+     [
+      "Size",
+      "16 x 16 in or 18 x 18 in"
+     ],
+     [
+      "Handles",
+      "Navy or beige cotton webbing, solid color"
+     ],
+     [
+      "Fabric",
+      "100% spun polyester with a laminate lining, spot clean"
+     ],
+     [
+      "Print",
+      "Live oak and Spanish moss pattern printed edge to edge on the bag body, not embroidered"
+     ]
+    ]
+   }
+  },
+  "wrightsville-beach-airlie-live-oak-printed-mug": {
+   "reason": "Airlie live oak all-over print does not match the real Airlie Oak poster art (green tree with hanging moss); unpublished in Printify, awaiting new Airlie Oak builds",
+   "retired": "2026-11-23",
+   "item": {
+    "id": "wrightsville-beach-airlie-live-oak-printed-mug",
+    "collection": "shore-gear",
+    "shelf": "wrightsville-beach",
+    "town": "wrightsville-beach",
+    "name": "Wrightsville Beach Airlie Live Oak Printed Mug",
+    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-airlie-live-oak-printed-mug",
+    "type": "beach",
+    "color": "White",
+    "added": "2026-11-23",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-airlie-live-oak-printed-mug_1000x.webp",
+    "alt": "White ceramic mug printed with teal and navy live oak and Spanish moss medallions on ivory, standing on a driftwood plank in the dunes beside a folded cream towel and a shell at Wrightsville Beach, shown as an illustrative image",
+    "meta": "A printed 11 oz white ceramic mug with ink and watercolor live oak and Spanish moss medallions in teal and navy on ivory, inspired by Airlie Gardens. Made to order.",
+    "cta": "Shop mugs",
+    "price": 30,
+    "scenes": [
+     "beach"
+    ],
+    "cut": "unisex",
+    "store": "shopify",
+    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4024793003840873023_2048.jpg",
+    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-airlie-live-oak-printed-mug_1920x.webp",
+    "facts": [
+     [
+      "Size",
+      "11 oz white ceramic mug"
+     ],
+     [
+      "Print",
+      "Live oak and Spanish moss pattern wrapped around the mug"
+     ],
+     [
+      "Care",
+      "Microwave and dishwasher safe"
+     ]
+    ]
+   }
   }
  }
 }
