@@ -81,7 +81,7 @@
    "name": "Wilmington and the Coast",
    "town": true,
    "tag": "For the whole coast",
-   "blurb": "Pieces that belong to the whole coast: the Airlie Oak framed print, tote, tee and mug, the Live Oak embroidered crewneck and the Carolina Coast beach towel.",
+   "blurb": "Pieces that belong to the whole coast: the Airlie Oak framed print, tote, tee, mug, zip pouch and ornament, the Live Oak embroidered crewneck and the Carolina Coast beach towel.",
    "cover": "airlie-oak-framed-art-print-wrightsville-beach-and-wilmington"
   }
  ],
@@ -1217,6 +1217,77 @@
     [
      "Care",
      "Microwave and dishwasher safe"
+    ]
+   ]
+  },
+  {
+   "id": "airlie-oak-wilmington-ceramic-ornament",
+   "collection": "coastal-christmas",
+   "shelf": "wilmington",
+   "town": "wilmington",
+   "name": "Airlie Oak Wilmington Ceramic Ornament",
+   "url": "https://shorelist.myshopify.com/products/airlie-oak-wilmington-ceramic-ornament",
+   "type": "ornaments",
+   "color": "Ivory",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-ceramic-ornament_1000x.webp",
+   "alt": "Round ceramic ornament printed with a painterly illustration of the Airlie Oak, a Southern live oak with hanging Spanish moss and blush azaleas, hanging on a Christmas tree with warm lights, shown as an illustrative image",
+   "meta": "A round ceramic Christmas ornament with a painterly illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC. A Wilmington NC gift, made to order.",
+   "cta": "Shop Christmas",
+   "price": 18,
+   "scenes": [
+    "riverwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/14053065159852629044_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-ceramic-ornament_1920x.webp",
+   "facts": [
+    [
+     "Shape",
+     "Round glossy ceramic with a gold hanging cord"
+    ],
+    [
+     "Print",
+     "Airlie Oak illustration on the front"
+    ]
+   ]
+  },
+  {
+   "id": "airlie-oak-wilmington-all-over-print-zip-pouch",
+   "collection": "shore-gear",
+   "shelf": "wilmington",
+   "town": "wilmington",
+   "name": "Airlie Oak Wilmington All Over Print Zip Pouch",
+   "url": "https://shorelist.myshopify.com/products/airlie-oak-wilmington-all-over-print-zip-pouch",
+   "type": "beach",
+   "color": "Ivory",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-all-over-print-zip-pouch_1000x.webp",
+   "alt": "Ivory zip pouch printed with a painterly illustration of the Airlie Oak, a Southern live oak with hanging Spanish moss and blush azaleas, on a weathered garden bench in front of azaleas with sunglasses and a linen scarf, shown as an illustrative image",
+   "meta": "A printed zip pouch with a painterly illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC, on warm ivory. Two sizes, made to order.",
+   "cta": "Choose size",
+   "price": 28,
+   "from": true,
+   "scenes": [
+    "riverwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17996432865084604974_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-all-over-print-zip-pouch_1920x.webp",
+   "facts": [
+    [
+     "Sizes",
+     "Small or Large"
+    ],
+    [
+     "Zipper",
+     "White zipper"
+    ],
+    [
+     "Print",
+     "Airlie Oak illustration on both sides, not embroidered"
     ]
    ]
   },
