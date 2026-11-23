@@ -2,20 +2,20 @@
  "shelves": [],
  "items": [
   {
-   "handle": "camellia-wilmington-printed-garment-dyed-tee",
-   "shelf": "wilmington",
+   "handle": "brown-pelican-carolina-coast-printed-garment-dyed-tee",
+   "shelf": "carolina-beach",
    "collection": "local-icons",
-   "name": "Camellia Wilmington Printed Garment-Dyed Tee",
+   "name": "Brown Pelican Carolina Coast Printed Garment-Dyed Tee",
    "type": "tops",
    "color": "Ivory",
-   "alt": "Ivory tee printed on the chest with a lifelike painted red camellia branch, hanging from a camellia shrub in a historic Wilmington garden, shown as an illustrative image",
-   "meta": "A relaxed garment-dyed tee printed with a lifelike painted red camellia branch, bloom and glossy leaves, a Wilmington NC garden favorite. Made to order.",
+   "alt": "Ivory tee printed on the chest with a lifelike painted brown pelican perched on a wooden piling, hanging from a weathered dock rail beside a rope-wrapped piling on the Carolina coast, shown as an illustrative image",
+   "meta": "A relaxed garment-dyed tee printed with a lifelike painted brown pelican on a wooden piling, a Carolina Beach coast favorite. Made to order.",
    "cta": "Choose size",
    "scenes": [
     "beach"
    ],
    "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-camellia-wilmington-printed-garment-dyed-tee.webp",
+   "lookbookFile": "shorelist-lookbook-brown-pelican-carolina-coast-printed-garment-dyed-tee.webp",
    "facts": [
     [
      "Sizing",
@@ -27,7 +27,7 @@
     ],
     [
      "Print",
-     "Camellia illustration printed on the front chest, not embroidered"
+     "Pelican illustration printed on the front chest, not embroidered"
     ],
     [
      "Colors",
