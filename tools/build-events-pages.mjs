@@ -242,7 +242,7 @@ const headHtml = (path, title, desc, lds, robots) => `<!DOCTYPE html>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EN91RH3PZV');</script>
 <link rel="manifest" href="/manifest.webmanifest"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" rel="stylesheet"/>
 ${lds.map(script).join('\n')}`;
 const NAV = `<a class="skip-link" href="#main">Skip to content</a>
 <nav class="ev-nav" aria-label="Primary"><a class="nav-logo" href="/" aria-label="ShoreList home">Shore<span>List</span></a><div class="nav-right"><a href="/events">Events</a><a href="/things-to-do">Things to Do</a><a href="/shore-picks">Shore Picks</a><a class="nav-book" href="/things-to-do">Book Experiences</a></div></nav>`;
@@ -252,6 +252,7 @@ function page({ path, title, desc, h1, lede, list, crumb, h2, intro, photo, link
   return `${headHtml(path, title, desc, lds)}
 <link rel="stylesheet" href="/events.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
+<link rel="stylesheet" href="/tokens.css"/>
 <script src="/luxe.js" defer></script>
 </head>
 <body class="ev-page">
@@ -337,6 +338,7 @@ monthPages.forEach((m, i) => {
   fs.writeFileSync('events/by-month.html', `${headHtml(path, title, desc, lds)}
 <link rel="stylesheet" href="/events.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
+<link rel="stylesheet" href="/tokens.css"/>
 <script src="/luxe.js" defer></script>
 </head>
 <body class="ev-page">
@@ -457,6 +459,7 @@ function eventPage(e) {
   return `${headHtml(path, title, metaOf(e), lds, indexable(e) ? '' : 'noindex,follow')}
 <link rel="stylesheet" href="/events.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
+<link rel="stylesheet" href="/tokens.css"/>
 <script src="/luxe.js" defer></script>
 </head>
 <body class="ev-page">
@@ -515,6 +518,7 @@ for (const f of fs.readdirSync('events')) if (!keepFiles.has(f) && /\.(html|ics)
   const html = `${headHtml(path, title, desc, lds)}
 <link rel="stylesheet" href="/events.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
+<link rel="stylesheet" href="/tokens.css"/>
 <script src="/luxe.js" defer></script>
 </head>
 <body class="ev-page">

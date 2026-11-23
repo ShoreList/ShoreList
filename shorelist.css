@@ -8,15 +8,15 @@
 
 :root{
   /* core brand (locked) */
-  --teal:#0A4D5C;   --teal2:#1A7585;   --teal3:#073D4A;
-  --coral:#E96645;  --coral2:#F07A5A;
-  --cream:#F5E8CB;  --cream2:#FEFCF7;
+  --teal:#0E1F33;   --teal2:#0E1F33;   --teal3:#0E1F33;
+  --coral:#B5362F;  --coral2:#D9C7A3;
+  --cream:#D9C7A3;  --cream2:#F4F1EA;
   /* bright coastal palette */
-  --sand:#FBF3E2;   --seaglass:#8FD3DE; --sky:#E4F5F6;
-  --sunset1:#FF8A5B;--sunset2:#FFB24C;  --gold:#FFC95E;
+  --sand:#F4F1EA;   --seaglass:#9FC3B8; --sky:#F4F1EA;
+  --sunset1:#D9C7A3;--sunset2:#D9C7A3;  --gold:#D9C7A3;
   /* neutrals */
-  --ink:#0D1F25;    --mid:#2C4A52;      --dark:#0D1F25;
-  --line:rgba(10,77,92,0.12);
+  --ink:#0E1F33;    --mid:#0E1F33;      --dark:#0E1F33;
+  --line:rgba(14,31,51,0.12);
 }
 
 /* ---- BASE ---------------------------------------------------- */
@@ -26,8 +26,8 @@ h1,h2,h3,h4{ color:var(--teal); }
 /* ---- HERO: bright coastal ----------------------------------- */
 .hero{
   background:
-    radial-gradient(circle at 85% 14%,rgba(255,160,80,0.40),rgba(255,193,94,0.10) 46%,transparent 64%),
-    linear-gradient(160deg,#FDF4E3 0%,#E9F7F6 55%,#FCEAD6 100%)!important;
+    radial-gradient(circle at 85% 14%,rgba(217,199,163,0.40),rgba(217,199,163,0.10) 46%,transparent 64%),
+    linear-gradient(160deg,#F4F1EA 0%,#F4F1EA 55%,#F4F1EA 100%)!important;
 }
 .hero::before,.hero::after{ background-image:none!important; background:transparent!important; }
 /* dark→bright wave transition strip */
@@ -52,7 +52,7 @@ h1,h2,h3,h4{ color:var(--teal); }
 
 /* hero buttons */
 .btn-fill,.btn-primary,.btn-book{
-  background:var(--coral)!important; color:#fff!important; border:none!important;
+  background:#0E1F33!important; color:#fff!important; border:none!important;
 }
 .btn-ghost{
   background:transparent!important; color:var(--teal)!important;
@@ -63,7 +63,7 @@ h1,h2,h3,h4{ color:var(--teal); }
 /* weather card embedded in hero → solid teal accent, light text (always legible) */
 .weather-card{ background:var(--teal)!important; color:var(--cream)!important; border:1px solid rgba(255,255,255,0.14)!important; }
 .wc-temp{ color:#fff!important; }
-.wc-label,.wc-loc,.wc-cond,.wc-live{ color:rgba(245,232,203,0.85)!important; }
+.wc-label,.wc-loc,.wc-cond,.wc-live{ color:rgba(217,199,163,0.85)!important; }
 
 /* ---- SECTIONS ----------------------------------------------- */
 .sec{ background:var(--cream2)!important; }
@@ -79,11 +79,11 @@ h1,h2,h3,h4{ color:var(--teal); }
 }
 
 /* ---- FOOTER: consistent dark-teal accent, light text -------- */
-footer{ background:var(--teal3)!important; color:rgba(245,232,203,0.82)!important; }
-footer a,.foot-links a{ color:rgba(245,232,203,0.70)!important; text-decoration:none; }
+footer{ background:var(--teal3)!important; color:rgba(217,199,163,0.82)!important; }
+footer a,.foot-links a{ color:rgba(217,199,163,0.70)!important; text-decoration:none; }
 footer a:hover,.foot-links a:hover{ color:var(--cream)!important; }
 .foot-l,.foot-logo span{ color:var(--coral)!important; }
-.foot-copy{ color:rgba(245,232,203,0.6)!important; }
+.foot-copy{ color:rgba(217,199,163,0.6)!important; }
 
 /* ---- ACCENT BAND (CTAs): warm sunset, white text ------------ */
 .cta-band,.pitch,.proof-band{
@@ -96,15 +96,15 @@ footer a:hover,.foot-links a:hover{ color:var(--cream)!important; }
    Now that pages are bright, give them solid light surfaces
    and dark text so nothing blends. (Used by town-guide pages.)
    ============================================================ */
-.ot, .fact{ background:#fff!important; border:1px solid var(--line)!important; box-shadow:0 6px 16px rgba(10,77,92,0.06)!important; }
+.ot, .fact{ background:#fff!important; border:1px solid var(--line)!important; box-shadow:0 6px 16px rgba(14,31,51,0.06)!important; }
 .ot-name, .sc-text strong{ color:var(--teal)!important; }
 .ot-sub, .sc-text, .fact-l{ color:var(--mid)!important; }
 .fact-n{ color:var(--coral)!important; }
 .sec-sub-light{ color:var(--teal2)!important; }
 .wb-cam{ color:var(--teal)!important; }
 .wb-cam:hover, .wb-live{ color:var(--coral)!important; }
-.er-free{ color:#15803d!important; }   /* darker green reads on its light tint */
-.er-paid{ color:#c2410c!important; }   /* darker coral reads on its light tint */
+.er-free{ color:#0E1F33!important; }   /* darker green reads on its light tint */
+.er-paid{ color:#B5362F!important; }   /* darker coral reads on its light tint */
 
 /* breadcrumb class varies by page (.hero-bc vs .hero-breadcrumb) — cover both */
 .hero-breadcrumb{ color:var(--teal2)!important; }

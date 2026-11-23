@@ -55,7 +55,7 @@
       else if (waves != null && waves >= 2) tip = 'Good swell. Try a <a href="/things-to-do/surf-lessons">surf lesson</a>.';
       else if (d.temp < 55) tip = 'Layer up and see <a href="/shop">the coastal shop</a>, then a <a href="/events">local event</a>.';
       else tip = 'Easy beach day. Browse <a href="/category">experiences</a> or <a href="/shop">beach gear</a>.';
-      var col = { green: '#1fa35c', yellow: '#f2b705', red: '#d93025' }[d.flag.level];
+      var col = { green: '#0E1F33', yellow: '#8A5A3B', red: '#B5362F' }[d.flag.level];
       cond.querySelector('.stats').innerHTML = '<span class="fl" title="Estimated from live data, not an official lifeguard flag"><i style="background:' + col + '"></i>' + esc(d.flag.label) + '</span> &middot; <b>' + Math.round(d.temp) + '&deg;F</b> ' + esc(WX(d.code)) + (d.wind != null ? ' &middot; wind ' + Math.round(d.wind) + ' mph' : '') + (waves != null ? ' &middot; waves ' + waves.toFixed(1) + ' ft' : '') + (d.waterF != null ? ' &middot; water ' + Math.round(d.waterF) + '&deg;F' : '') + (d.sunset ? ' &middot; sunset ' + esc(t12(d.sunset)) : '');
       cond.querySelector('.tip').innerHTML = tip;
     }

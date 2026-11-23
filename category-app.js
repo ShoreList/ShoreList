@@ -197,13 +197,13 @@ function renderMuseumsCategory(){
   h+='<p class="op-desc">Climb aboard a real 1911 Baldwin steam locomotive, walk through a life-size caboose, and watch 20+ model trains run through a 1,600 sq ft layout, all inside an authentic 1883 freight warehouse from Wilmington\u2019s days as headquarters of the Atlantic Coast Line Railroad. A 501(c)(3) nonprofit, fun for every age, and open rain or shine.</p>';
   h+='<div class="op-tags"><span class="op-tag">All Ages</span><span class="op-tag">Rain or Shine</span><span class="op-tag">1911 Steam Locomotive</span><span class="op-tag">20+ Model Trains</span><span class="op-tag">Downtown</span></div>';
   h+='<div class="op-divider"></div>';
-  h+='<div style="display:flex;flex-wrap:wrap;gap:16px;font-size:0.78rem;color:#3a5a61;font-weight:600;margin:0 0 14px;"><span>&#10003; Tickets at the door</span><span>&#10003; Supports a local nonprofit</span></div>';
+  h+='<div style="display:flex;flex-wrap:wrap;gap:16px;font-size:0.78rem;color:#0E1F33;font-weight:500;margin:0 0 14px;"><span>&#10003; Tickets at the door</span><span>&#10003; Supports a local nonprofit</span></div>';
   h+='<div class="op-book-row"><a href="/wilmington-railroad-museum" class="btn-sub" style="width:100%;font-size:1rem;display:block;text-align:center;text-decoration:none;box-sizing:border-box;">View Tickets, Hours &amp; Events &#8594;</a></div>';
   h+='</div></div>';
   h+='</div>';
-  h+='<div style="margin-top:28px;text-align:center;background:var(--cream,#F5E8CB);border:1.5px dashed var(--coral,#E96645);border-radius:14px;padding:22px 24px;">';
-  h+='<div style="font-weight:800;color:var(--teal,#0A4D5C);font-size:1.02rem;margin-bottom:6px;">More museums &amp; attractions joining soon</div>';
-  h+='<div style="font-size:0.9rem;color:#3a5a61;line-height:1.7;max-width:520px;margin:0 auto;">Run a museum, historic site, or attraction in Wilmington or at the beaches? <a href="/join" style="color:var(--coral,#E96645);font-weight:700;">Partner with ShoreList &#8594;</a></div>';
+  h+='<div style="margin-top:28px;text-align:center;background:var(--cream,#D9C7A3);border:1.5px dashed var(--coral,#B5362F);border-radius:14px;padding:22px 24px;">';
+  h+='<div style="font-weight:500;color:var(--teal,#0E1F33);font-size:1.02rem;margin-bottom:6px;">More museums &amp; attractions joining soon</div>';
+  h+='<div style="font-size:0.9rem;color:#0E1F33;line-height:1.7;max-width:520px;margin:0 auto;">Run a museum, historic site, or attraction in Wilmington or at the beaches? <a href="/join" style="color:var(--coral,#B5362F);font-weight:500;">Partner with ShoreList &#8594;</a></div>';
   h+='</div>';
   container.innerHTML=h;
 }
@@ -230,9 +230,9 @@ function renderPage(){
     h+='<h2 class="section-title">Our <em>Local Operators</em></h2>';
     h+= liveOps.length>0
       ? '<p class="section-sub">Pick your experience, choose a date and time, and book securely online. Checkout is powered by Stripe, with a full refund if you cancel '+CANCEL_H+'+ hours before your experience.</p>'
-      : '<p class="section-sub">Bookings open soon. Drop your email below or <a href="/waitlist" style="color:var(--coral);font-weight:600;">join the full waitlist</a> to tell us more about your trip.</p>';
+      : '<p class="section-sub">Bookings open soon. Drop your email below or <a href="/waitlist" style="color:var(--coral);font-weight:500;">join the full waitlist</a> to tell us more about your trip.</p>';
     h+='<div class=\"guarantee-bar\">';
-    h+='<span class=\"gb-ico\" style=\"color:#1a7a4a;display:inline-flex;align-items:center;\"><svg class=\"ico-sm\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-shield\" xlink:href=\"#i-shield\"/></svg></span>';
+    h+='<span class=\"gb-ico\" style=\"color:#0E1F33;display:inline-flex;align-items:center;\"><svg class=\"ico-sm\" aria-hidden=\"true\" focusable=\"false\"><use href=\"#i-shield\" xlink:href=\"#i-shield\"/></svg></span>';
     h+='<div class=\"gb-text\">ShoreList Guarantee: <span>Operators we know personally. Full refund if you cancel '+CANCEL_H+'+ hours before your experience.</span></div>';
     h+='</div>';
     h+='<div class=\"booking-steps\">';
@@ -250,13 +250,13 @@ function renderPage(){
       h+='<p class="op-desc">'+rich(op.desc)+'</p>';
       h+='<div class="op-tags">'; op.tags.forEach(function(t){h+='<span class="op-tag">'+esc(t)+'</span>';}); h+='</div>';
       h+='<div class="op-divider"></div>';
-      h+='<div style="display:flex;flex-wrap:wrap;gap:16px;font-size:0.78rem;color:#3a5a61;font-weight:600;margin:0 0 14px;"><span>&#10003; Free cancellation '+CANCEL_H+'hrs</span><span>&#10003; Local Wilmington operator</span>'+(op.live?'<span>&#10003; Secure checkout</span>':'')+'</div>';
+      h+='<div style="display:flex;flex-wrap:wrap;gap:16px;font-size:0.78rem;color:#0E1F33;font-weight:500;margin:0 0 14px;"><span>&#10003; Free cancellation '+CANCEL_H+'hrs</span><span>&#10003; Local Wilmington operator</span>'+(op.live?'<span>&#10003; Secure checkout</span>':'')+'</div>';
       if(op.live){
-        h+='<div class="op-book-row"><button type="button" class="btn-sub" style="width:100%;font-size:1rem;" id="ob-'+oid+'" aria-expanded="false" aria-controls="bf-'+oid+'" onclick="toggleBook(\''+oid+'\')">Book This Experience: '+esc(op.price)+' <span style="opacity:0.75;font-weight:600;">'+esc(op.priceLabel)+'</span></button></div>';
+        h+='<div class="op-book-row"><button type="button" class="btn-sub" style="width:100%;font-size:1rem;" id="ob-'+oid+'" aria-expanded="false" aria-controls="bf-'+oid+'" onclick="toggleBook(\''+oid+'\')">Book This Experience: '+esc(op.price)+' <span style="opacity:0.75;font-weight:500;">'+esc(op.priceLabel)+'</span></button></div>';
       } else {
         h+='<div class="op-book-row"><div class="op-book-note-pre">Bookings open <strong>soon</strong>. Join the early list to lock your spot before we open to the public.</div></div>';
       }
-      h+='<div style="font-size:0.75rem;color:rgba(44,74,82,0.45);margin-top:8px;line-height:1.6;">By booking through ShoreList you acknowledge activities involve inherent risks and agree to our <a href="/legal#risk" style="color:var(--teal2);">Terms &amp; Assumption of Risk</a>. Full refunds available with '+CANCEL_H+'+ hours cancellation notice. Operators are independent contractors, not employees of ShoreList.</div>';
+      h+='<div style="font-size:0.75rem;color:rgba(14,31,51,0.74);margin-top:8px;line-height:1.6;">By booking through ShoreList you acknowledge activities involve inherent risks and agree to our <a href="/legal#risk" style="color:var(--teal2);">Terms &amp; Assumption of Risk</a>. Full refunds available with '+CANCEL_H+'+ hours cancellation notice. Operators are independent contractors, not employees of ShoreList.</div>';
       h+='</div>'; // end op-card-body
       if(op.live){
         h+='<div class="book-form-wrap" id="bf-'+oid+'">';
@@ -324,7 +324,7 @@ function toggleBook(id){
   var b=document.getElementById('ob-'+id);
   if(b)b.setAttribute('aria-expanded',open?'true':'false');
   var op=getOp(id);
-  if(b&&op)b.innerHTML=open?'Hide Booking Form &#8593;':'Book This Experience: '+esc(op.price)+' <span style="opacity:0.75;font-weight:600;">'+esc(op.priceLabel)+'</span>';
+  if(b&&op)b.innerHTML=open?'Hide Booking Form &#8593;':'Book This Experience: '+esc(op.price)+' <span style="opacity:0.75;font-weight:500;">'+esc(op.priceLabel)+'</span>';
   if(open){
     if(!CS[id]&&op)calInit(id,op.schedule);
     updTotal(id);
@@ -379,7 +379,7 @@ function doPrelaunch(id,business){
   var inp=document.getElementById('plc-'+id);
   var done=document.getElementById('plcd-'+id);
   if(!inp||!inp.value.trim()){if(inp)inp.focus();return;}
-  if(!inp.value.includes('@')){inp.style.borderColor='rgba(233,102,69,0.8)';inp.focus();return;}
+  if(!inp.value.includes('@')){inp.style.borderColor='rgba(181,54,47,0.8)';inp.focus();return;}
   fetch('https://formspree.io/f/xeevzzqd',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify({email:inp.value.trim(),type:'guest-waitlist',experience:business})}).catch(function(){});
   inp.style.display='none';
   var btn=inp.parentElement.querySelector('.plc-btn');
@@ -486,16 +486,16 @@ if(document.readyState!=='loading')startPage();else document.addEventListener('D
     if(document.getElementById('fp-banner'))return;
     var b=document.createElement('div');
     b.id='fp-banner';
-    b.style.cssText='background:linear-gradient(135deg,#fffdf7 0%,#f5e8cb 100%);border:1px solid rgba(10,77,92,0.18);border-radius:14px;padding:26px 30px;margin-bottom:28px;box-shadow:0 1px 3px rgba(10,77,92,0.06);';
+    b.style.cssText='background:linear-gradient(135deg,#F4F1EA 0%,#D9C7A3 100%);border:1px solid rgba(14,31,51,0.18);border-radius:14px;padding:26px 30px;margin-bottom:28px;box-shadow:0 1px 3px rgba(14,31,51,0.06);';
     b.innerHTML='<div style="display:flex;align-items:center;gap:26px;flex-wrap:wrap;">'
       +'<div style="display:flex;gap:18px;align-items:center;flex:none;">'
       +'<img src="/wilmington-walking-tours.webp" width="440" height="366" alt="Wilmington Walking Tours" style="height:76px;width:auto;" loading="lazy"/>'
       +'<img src="/carolina-beach-tours.webp" width="440" height="371" alt="Carolina Beach Tours" style="height:76px;width:auto;" loading="lazy"/>'
       +'</div>'
       +'<div style="flex:1;min-width:250px;">'
-      +'<div style="font-size:0.66rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#E96645;margin-bottom:7px;">&#9733; ShoreList Founding Partner</div>'
-      +'<div style="font-family:\'Playfair Display\',serif;font-size:1.4rem;font-weight:800;color:#0A4D5C;line-height:1.15;margin-bottom:8px;">Wilmington Walking Tours &amp; Carolina Beach Tours</div>'
-      +'<div style="font-size:0.9rem;color:#3a5a61;line-height:1.6;">Led by historian Amanda Leese, these guided strolls bring the history, architecture, art, and local flavor of Wilmington &amp; the Beaches to life. Six tours across downtown and Carolina Beach, now on ShoreList.</div>'+'<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;">'+'</div>'+'<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px;">'+'<span style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#6b8483;">Follow along</span>'+'<a href="https://www.instagram.com/wilmingtonwalkingtours" target="_blank" rel="noopener noreferrer" aria-label="Wilmington Walking Tours on Instagram" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:rgba(10,77,92,0.08);color:#0A4D5C;text-decoration:none;"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a>'+'<a href="https://www.facebook.com/wilmingtonwalkingtours" target="_blank" rel="noopener noreferrer" aria-label="Wilmington Walking Tours on Facebook" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:rgba(10,77,92,0.08);color:#0A4D5C;text-decoration:none;"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M13.5 21v-7h2.3l.4-2.9h-2.7V9.3c0-.8.3-1.4 1.5-1.4h1.3V5.3c-.6-.1-1.4-.2-2.3-.2-2.3 0-3.8 1.4-3.8 3.9v1.9H7.7V14h2.2v7h3.6z"/></svg></a>'+'<a href="https://www.tiktok.com/@wilmingtonwalkingtours" target="_blank" rel="noopener noreferrer" aria-label="Wilmington Walking Tours on TikTok" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:rgba(10,77,92,0.08);color:#0A4D5C;text-decoration:none;"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M16.5 3c.3 2 1.6 3.6 3.5 3.9v2.4c-1.3 0-2.5-.4-3.5-1.1v5.9a5.3 5.3 0 1 1-5.3-5.3c.3 0 .6 0 .9.1v2.5a2.8 2.8 0 1 0 2 2.7V3h2.4z"/></svg></a>'+'</div>'
+      +'<div style="font-size:0.66rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#B5362F;margin-bottom:7px;">&#9733; ShoreList Founding Partner</div>'
+      +'<div style="font-family:\'Libre Caslon Display\',serif;font-size:1.4rem;font-weight:500;color:#0E1F33;line-height:1.15;margin-bottom:8px;">Wilmington Walking Tours &amp; Carolina Beach Tours</div>'
+      +'<div style="font-size:0.9rem;color:#0E1F33;line-height:1.6;">Led by historian Amanda Leese, these guided strolls bring the history, architecture, art, and local flavor of Wilmington &amp; the Beaches to life. Six tours across downtown and Carolina Beach, now on ShoreList.</div>'+'<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;">'+'</div>'+'<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px;">'+'<span style="font-size:0.7rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#0E1F33;">Follow along</span>'+'<a href="https://www.instagram.com/wilmingtonwalkingtours" target="_blank" rel="noopener noreferrer" aria-label="Wilmington Walking Tours on Instagram" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:rgba(14,31,51,0.08);color:#0E1F33;text-decoration:none;"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a>'+'<a href="https://www.facebook.com/wilmingtonwalkingtours" target="_blank" rel="noopener noreferrer" aria-label="Wilmington Walking Tours on Facebook" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:rgba(14,31,51,0.08);color:#0E1F33;text-decoration:none;"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M13.5 21v-7h2.3l.4-2.9h-2.7V9.3c0-.8.3-1.4 1.5-1.4h1.3V5.3c-.6-.1-1.4-.2-2.3-.2-2.3 0-3.8 1.4-3.8 3.9v1.9H7.7V14h2.2v7h3.6z"/></svg></a>'+'<a href="https://www.tiktok.com/@wilmingtonwalkingtours" target="_blank" rel="noopener noreferrer" aria-label="Wilmington Walking Tours on TikTok" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:rgba(14,31,51,0.08);color:#0E1F33;text-decoration:none;"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M16.5 3c.3 2 1.6 3.6 3.5 3.9v2.4c-1.3 0-2.5-.4-3.5-1.1v5.9a5.3 5.3 0 1 1-5.3-5.3c.3 0 .6 0 .9.1v2.5a2.8 2.8 0 1 0 2 2.7V3h2.4z"/></svg></a>'+'</div>'
       +'</div>'
       +'</div>';
     container.insertBefore(b,container.firstChild);

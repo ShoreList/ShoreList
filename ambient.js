@@ -48,7 +48,7 @@
   function buildSurf() {
     var foot = d.querySelector('body > footer') || d.querySelector('footer');
     if (!foot || d.querySelector('.sl-surf')) return;
-    var col = '#0b1a1f';
+    var col = '#0E1F33';
     try { var c = getComputedStyle(foot).backgroundColor; if (c && !/rgba\(0, 0, 0, 0\)|transparent/.test(c)) col = c; } catch (e) {}
     surf = d.createElement('div'); surf.className = 'sl-surf'; surf.setAttribute('aria-hidden', 'true');
     var close = ' V80 H0 Z';
@@ -77,7 +77,7 @@
   /* ---------- gulls ---------- */
   var sky = null, gulls = [], mouse = { x: -999, y: -999 }, last = 0, running = false, nextFlock = 0;
   var fin = { active: false, x: 0, dir: 1, speed: 0, next: 0 }, surfSeen = false;
-  var GULL = '<svg viewBox="0 0 44 22"><path class="wl" fill="#F7F4EC" d="M22 13 C17 6 10 3 1 6 C8 6 13 9 19 16 Z"/><path class="wr" fill="#F7F4EC" d="M22 13 C27 6 34 3 43 6 C36 6 31 9 25 16 Z"/><path fill="#F7F4EC" d="M18 14 q4 -3 8 0 q-4 4 -8 0 Z"/></svg>';
+  var GULL = '<svg viewBox="0 0 44 22"><path class="wl" fill="#F4F1EA" d="M22 13 C17 6 10 3 1 6 C8 6 13 9 19 16 Z"/><path class="wr" fill="#F4F1EA" d="M22 13 C27 6 34 3 43 6 C36 6 31 9 25 16 Z"/><path fill="#F4F1EA" d="M18 14 q4 -3 8 0 q-4 4 -8 0 Z"/></svg>';
   function spawnFlock(now) {
     if (!sky) return;
     var n = Math.random() < 0.45 ? 1 : (Math.random() < 0.7 ? 2 : 3);
