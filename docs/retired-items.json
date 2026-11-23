@@ -455,48 +455,6 @@
     "motif": "boats-buoys"
    }
   },
-  "the-blue-crab-embroidered-crewneck-kure-beach": {
-   "reason": "brand audit 2026-11-22: KB initials, mint colorway off palette, paused until redone",
-   "retired": "2026-11-22",
-   "item": {
-    "id": "the-blue-crab-embroidered-crewneck-kure-beach",
-    "collection": "local-icons",
-    "shelf": "kure-beach",
-    "name": "The Blue Crab Embroidered Crewneck, Kure Beach",
-    "url": "https://shorelist.myshopify.com/products/the-blue-crab-embroidered-crewneck-kure-beach",
-    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-embroidered-crewneck-kure-beach_1000x.webp",
-    "alt": "Woman on a shingled beach cottage porch wearing a mint crewneck with a small embroidered blue crab and the letters KB",
-    "meta": "An Atlantic blue crab stitched on the chest, with KB for Kure Beach beneath it.",
-    "cta": "Choose color and size",
-    "price": 88,
-    "scenes": [
-     "beach"
-    ],
-    "cut": "unisex",
-    "store": "shopify",
-    "facts": [
-     [
-      "Sizing",
-      "Relaxed fit, sizes S to 3XL"
-     ],
-     [
-      "Fabric",
-      "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
-     ],
-     [
-      "Embroidery",
-      "Stitched in blue, white and red thread"
-     ]
-    ],
-    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17367446352125890490_2048.jpg",
-    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-embroidered-crewneck-kure-beach_1920x.webp",
-    "town": "kure-beach",
-    "type": "tops",
-    "color": "Mint",
-    "added": "2026-11-21",
-    "motif": "sea-life"
-   }
-  },
   "the-sloop-corduroy-cap-wrightsville-beach": {
    "reason": "brand audit 2026-11-22: duplicates the Daymark corduroy cap, WB on the back, paused",
    "retired": "2026-11-22",

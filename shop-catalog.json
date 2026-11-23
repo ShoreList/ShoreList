@@ -65,7 +65,7 @@
    "name": "Carolina Beach",
    "town": true,
    "tag": "The lifeguard stand on the sand",
-   "blurb": "The lifeguard stand is our Carolina Beach mark, stitched small on a white crewneck and printed on a tee, mug, pouch and pillow, with a can cooler.",
+   "blurb": "The lifeguard stand is our Carolina Beach mark, stitched small on a white crewneck and printed on a tee, mug, pouch and pillow, with a stitched pelican crewneck, cap and beanie and a can cooler.",
    "cover": "carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt"
   },
   {
@@ -73,7 +73,7 @@
    "name": "Kure Beach",
    "town": true,
    "tag": "The lifeguard stand at Kure",
-   "blurb": "The lifeguard stand is our Kure Beach mark, stitched small on a white crewneck and printed on a tee, tote, mug, pouch and pillow, with a can cooler.",
+   "blurb": "The lifeguard stand is our Kure Beach mark, stitched small on a white crewneck and printed on a tee, tote, mug, pouch and pillow, with a stitched blue crab crewneck and a can cooler.",
    "cover": "kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt"
   },
   {
@@ -413,6 +413,127 @@
    "featured": true
   },
   {
+   "id": "the-pelican-embroidered-crewneck-carolina-beach",
+   "collection": "local-icons",
+   "shelf": "carolina-beach",
+   "town": "carolina-beach",
+   "name": "The Pelican Embroidered Crewneck, Carolina Beach",
+   "url": "https://shorelist.myshopify.com/products/the-pelican-embroidered-crewneck-carolina-beach",
+   "type": "tops",
+   "color": "Blue Jean",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-embroidered-crewneck-carolina-beach_1000x.webp",
+   "alt": "Smiling woman in a blue jean crewneck sweatshirt with a small embroidered brown pelican, on the sand at Carolina Beach, shown as an illustrative image",
+   "meta": "A brown pelican stitched small on the chest in white, chestnut and gold thread, quiet on a blue jean crewneck.",
+   "cta": "Choose color and size",
+   "price": 88,
+   "scenes": [
+    "beach",
+    "boardwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13933455820164530453_2048.jpg",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, sizes S to 3XL"
+    ],
+    [
+     "Fabric",
+     "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
+    ],
+    [
+     "Embroidery",
+     "Stitched in white, chestnut and gold thread"
+    ],
+    [
+     "Colors",
+     "Blue Jean, Blue Spruce, Denim"
+    ]
+   ],
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-embroidered-crewneck-carolina-beach_1920x.webp"
+  },
+  {
+   "id": "the-pelican-corduroy-cap-carolina-beach",
+   "collection": "local-icons",
+   "shelf": "carolina-beach",
+   "town": "carolina-beach",
+   "name": "The Pelican Corduroy Cap, Carolina Beach",
+   "url": "https://shorelist.myshopify.com/products/the-pelican-corduroy-cap-carolina-beach",
+   "type": "hats",
+   "color": "Navy Blue",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-corduroy-cap-carolina-beach_1000x.webp",
+   "alt": "Man in a navy corduroy cap with an embroidered brown pelican, on the sand at Carolina Beach, shown as an illustrative image",
+   "meta": "A brown pelican embroidered on the front of a soft corduroy cap.",
+   "cta": "Choose color",
+   "price": 49,
+   "scenes": [
+    "beach",
+    "boardwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/755985813891049725_2048.jpg",
+   "facts": [
+    [
+     "Fit",
+     "Unstructured, low profile, curved brim, one size"
+    ],
+    [
+     "Fabric",
+     "Cotton corduroy"
+    ],
+    [
+     "Closure",
+     "Adjustable strap with a brass buckle"
+    ],
+    [
+     "Colors",
+     "Navy Blue, Olive"
+    ]
+   ],
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-corduroy-cap-carolina-beach_1920x.webp"
+  },
+  {
+   "id": "the-pelican-cuffed-beanie-carolina-beach",
+   "collection": "local-icons",
+   "shelf": "carolina-beach",
+   "town": "carolina-beach",
+   "name": "The Pelican Cuffed Beanie, Carolina Beach",
+   "url": "https://shorelist.myshopify.com/products/the-pelican-cuffed-beanie-carolina-beach",
+   "type": "hats",
+   "color": "Forest green",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-cuffed-beanie-carolina-beach_1000x.webp",
+   "alt": "Woman in a forest green cuffed beanie embroidered with a brown pelican, on the sand at Carolina Beach, shown as an illustrative image",
+   "meta": "A brown pelican embroidered on the cuff of a classic knit beanie.",
+   "cta": "Choose color",
+   "price": 30,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2987194900095621589_2048.jpg",
+   "facts": [
+    [
+     "Fit",
+     "Classic cuffed beanie, one size"
+    ],
+    [
+     "Fabric",
+     "Soft acrylic knit with a fold-up cuff"
+    ],
+    [
+     "Colors",
+     "Navy, Spruce, Olive"
+    ]
+   ],
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-cuffed-beanie-carolina-beach_1920x.webp"
+  },
+  {
    "id": "carolina-beach-lifeguard-stand-printed-throw-pillow",
    "collection": "local-icons",
    "shelf": "carolina-beach",
@@ -622,6 +743,44 @@
    ],
    "motif": "beach-scenes",
    "featured": true
+  },
+  {
+   "id": "the-blue-crab-embroidered-crewneck-kure-beach",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "name": "The Blue Crab Embroidered Crewneck, Kure Beach",
+   "url": "https://shorelist.myshopify.com/products/the-blue-crab-embroidered-crewneck-kure-beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-embroidered-crewneck-kure-beach_1000x.webp",
+   "alt": "Woman on a shingled beach cottage porch wearing a mint crewneck with a small embroidered blue crab, shown as an illustrative image",
+   "meta": "An Atlantic blue crab stitched small on the chest of a mint crewneck.",
+   "cta": "Choose color and size",
+   "price": 88,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, sizes S to 3XL"
+    ],
+    [
+     "Fabric",
+     "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
+    ],
+    [
+     "Embroidery",
+     "Stitched in blue, white and red thread"
+    ]
+   ],
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17367446352125890490_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-embroidered-crewneck-kure-beach_1920x.webp",
+   "town": "kure-beach",
+   "type": "tops",
+   "color": "Mint",
+   "added": "2026-11-21",
+   "motif": "sea-life"
   },
   {
    "id": "kure-beach-lifeguard-stand-printed-canvas-tote-bag",
@@ -1306,9 +1465,6 @@
    "wrightsville-surf-tee": "town plus sport lockup reads as a team or club tee, souvenir-stand look",
    "wrightsville-golf-tee": "town plus sport lockup reads as a team or club tee, souvenir-stand look",
    "carolina-beach-surf-tee": "town plus sport lockup reads as a team or club tee, souvenir-stand look",
-   "the-pelican-embroidered-crewneck-carolina-beach": "pelican art scored 5.5 by the design gate; below the 8.0 bar (re-held 2026-11-22)",
-   "the-pelican-corduroy-cap-carolina-beach": "pelican art scored 5.5 by the design gate; below the 8.0 bar (re-held 2026-11-22)",
-   "the-pelican-cuffed-beanie-carolina-beach": "pelican art scored 5.5 by the design gate; below the 8.0 bar (re-held 2026-11-22)",
    "the-live-oak-embroidered-crewneck-wilmington": "Live Oak relaunch: art being redone to pass the 8.0 gate (Nov 22 blind reviews 4.8 to 6.5); returns when it passes",
    "the-live-oak-corduroy-cap-wilmington": "Live Oak relaunch: art being redone to pass the 8.0 gate (Nov 22 blind reviews 4.8 to 6.5); returns when it passes",
    "the-live-oak-cuffed-beanie-wilmington": "Live Oak relaunch: art being redone to pass the 8.0 gate (Nov 22 blind reviews 4.8 to 6.5); returns when it passes",
@@ -1330,7 +1486,6 @@
    "daymark-blue-crab-crewneck": "duplicate of the-blue-crab-embroidered-crewneck-kure-beach (merged, kept that one) (2026-11-22 shop audit). Full record in docs/retired-items.json.",
    "salt-wash-market-tote": "Paused 2026-11-22: no faithful lookbook possible (supplier photo unreachable, mark not visible in the supplier image, shop audit 6.2 FIX). RJ decides keep or remove. Record kept in retired.paused.",
    "the-sloop-embroidered-crewneck-wrightsville-beach": "brand audit 2026-11-22: WB initials in copy, washed blue off the white crewneck rule, paused until redone",
-   "the-blue-crab-embroidered-crewneck-kure-beach": "brand audit 2026-11-22: KB initials, mint colorway off palette, paused until redone",
    "the-sloop-corduroy-cap-wrightsville-beach": "brand audit 2026-11-22: duplicates the Daymark corduroy cap, WB on the back, paused",
    "the-sloop-cuffed-beanie-wrightsville-beach": "brand audit 2026-11-22: WB on the cuff, paused until redone",
    "carolina-beach-boardwalk-art-print": "brand audit 2026-11-22: Fourthwall checkout, boardwalk not an approved motif, paused",
