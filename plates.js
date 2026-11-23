@@ -1,37 +1,70 @@
-/* ShoreList hero photo plates: four real photos of Wrightsville Beach (twilight, midday, sunset; credits on the homepage),
-   one shown at a time and chosen by the real sun at Wilmington. Slow drift and pointer parallax; click the water for ripples.
+/* ShoreList hero photo plates: real, openly licensed photos of Wrightsville Beach, Carolina Beach, Kure Beach and Fort Fisher
+   (credits on the homepage), grouped by phase of day; one shown at a time, the phase chosen by the real sun at Wilmington, the photo rotating. Slow drift and pointer parallax; click the water for ripples.
    If the photos fail to load, the live shader scene underneath stays visible. */
 (function () {
   'use strict';
   var host = document.querySelector('[data-scene]');
   if (!host) return;
-  var BASE = 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb5-', V = '';
-  var NAMES = ['dawn', 'midday', 'golden', 'night'], ALT = ['Wrightsville Beach at twilight', 'Beachgoers at Wrightsville Beach on a sunny day', 'Sunset over Wrightsville Beach', 'Wrightsville Beach at dusk'];
+  var BASE = 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-';
+  // Real, openly licensed photos (credits are listed under the town cards on this page and in /hero-photo-credits.txt).
+  // ph = phase index: 0 dawn, 1 midday, 2 golden hour, 3 night (night is darkened in CSS). pos/mpos = focal point on desktop/phone.
+  var PICS = [
+    { f: 'kure-dawn2', ph: 0, pos: '50% 62%', place: 'Kure Beach', by: 'Staniulis', lic: 'CC0' },
+    { f: 'wb-sunrise', ph: 0, pos: '50% 38%', place: 'Wrightsville Beach', by: 'James Willamor', lic: 'CC BY-SA 2.0' },
+    { f: 'wb-ocean', ph: 1, pos: '50% 45%', place: 'Wrightsville Beach', by: 'DiscoA340', lic: 'CC BY-SA 4.0' },
+    { f: 'wb-banks', ph: 1, pos: '50% 72%', place: 'Banks Channel, Wrightsville Beach', by: 'Gerry Dincher', lic: 'CC BY-SA 2.0' },
+    { f: 'ff-oaks', ph: 1, pos: '50% 82%', place: 'Fort Fisher', by: 'Staniulis', lic: 'CC0', f2: 'contrast(1.03) saturate(.82) brightness(1)' },
+    { f: 'cb-dunes', ph: 1, pos: '50% 58%', place: 'Carolina Beach', by: 'Mx. Granger', lic: 'CC0' },
+    { f: 'wb-golden', ph: 2, pos: '58% 60%', mpos: '62% 60%', place: 'Wrightsville Beach', by: 'NCSU16', lic: 'CC BY-SA 3.0' },
+    { f: 'wb-aerial2', ph: 2, pos: '50% 50%', mpos: '40% 50%', place: 'Wrightsville Beach and the sound', by: 'FOCIIS Photography', lic: 'CC BY-SA 4.0' },
+    { f: 'wb-twilight', ph: 3, pos: '70% 55%', mpos: '78% 55%', place: 'Wrightsville Beach', by: 'NCSU16', lic: 'CC BY-SA 3.0' }
+  ];
+  var NAMES = ['dawn', 'midday', 'golden', 'night'];
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var sun = window.ShoreSun;
   function nowPhase() { return sun ? Math.round(sun.now()) % 4 : 1; } // snap to one photo: blending two different photos ghosts the scene
   var cur = nowPhase(), target = cur, auto = true, loaded = 0, raf = 0;
 
+  // which photo of each phase is showing (random start, then rotates)
+  var LIST = [[], [], [], []];
+  PICS.forEach(function (p, i) { LIST[p.ph].push(i); });
+  var pick = LIST.map(function (l) { return l[Math.floor(Math.random() * l.length)]; });
+  var rv = PICS.map(function (p, i) { return pick[p.ph] === i ? 1 : 0; }); // per-photo rotation fade 0..1
+
   var wrap = document.createElement('div'); wrap.className = 'plates'; wrap.setAttribute('aria-hidden', 'true');
-  var imgs = NAMES.map(function (n, i) {
+  var imgs = PICS.map(function (p, i) {
     var im = new Image(); im.alt = ''; im.decoding = 'async'; im.draggable = false;
-    im.sizes = '100vw'; im.setAttribute('data-p', i); wrap.appendChild(im); return im;
+    im.sizes = '100vw'; im.setAttribute('data-p', p.ph); im.setAttribute('data-i', i);
+    im.style.setProperty('--pos', p.pos); if (p.mpos) im.style.setProperty('--mpos', p.mpos); if (p.f2) im.style.setProperty('--f', p.f2);
+    im.style.animationDelay = '-' + (i * 13 % 70) + 's';
+    wrap.appendChild(im); return im;
   });
   host.insertBefore(wrap, host.firstChild);
-  var FILES = ['night', 'midday', 'golden', 'night']; // dawn and night share the twilight photo; night is darkened in CSS
-  function src(i) { var b = BASE + FILES[i], c = '_crop_center.webp' + V; return { s: b + '_1000x563' + c + ' 1000w, ' + b + '_1920x1080' + c + ' 1920w, ' + b + '_2752x1548' + c + ' 2752w', f: b + '_1920x1080' + c }; }
+  var cap = document.createElement('p'); cap.className = 'plate-credit'; host.appendChild(cap);
+  function credit() { var p = PICS[pick[Math.round(cur) % 4]]; cap.textContent = 'Photo: ' + p.place + ', ' + p.by + ', ' + p.lic; }
+  function src(i) { var b = BASE + PICS[i].f, c = 'x.jpg'; return { s: b + '_1280' + c + ' 1280w, ' + b + '_1920' + c + ' 1920w, ' + b + '_2560' + c + ' 2560w', f: b + '_1920' + c }; }
   function load(i, high) { var im = imgs[i]; if (im.src || im.getAttribute('data-l')) return; im.setAttribute('data-l', 1); var u = src(i); if (high) im.fetchPriority = 'high'; im.srcset = u.s; im.src = u.f; im.addEventListener('load', function () { loaded++; im.classList.add('ok'); paint(); if (loaded >= 1) host.classList.add('plates-on'); }); im.addEventListener('error', function () { im.removeAttribute('src'); im.removeAttribute('srcset'); }); }
   function weights(p) { return NAMES.map(function (_, i) { var d = Math.abs(p - i); d = Math.min(d, 4 - d); var w = Math.max(0, 1 - d); return w * w * (3 - 2 * w); }); }
   function paint() {
-    var w = weights(cur), sum = 0; w.forEach(function (x) { sum += x; });
-    imgs.forEach(function (im, i) { var o = sum ? w[i] / sum : 0; if (!im.classList.contains('ok')) o = 0; im.style.opacity = o.toFixed(3); im.style.visibility = o < 0.004 ? 'hidden' : 'visible'; });
+    var w = weights(cur), sum = 0, v = imgs.map(function (im, i) { var x = PICS[i].ph, o = im.classList.contains('ok') ? w[x] * rv[i] : 0; sum += o; return o; });
+    imgs.forEach(function (im, i) { var o = sum ? v[i] / sum : 0; im.style.opacity = o.toFixed(3); im.style.visibility = o < 0.004 ? 'hidden' : 'visible'; });
+    credit();
   }
-  function ensureNeighbors() { var a = Math.round(cur) % 4; load(a, true); setTimeout(function () { load((a + 1) % 4); load((a + 3) % 4); }, 600); setTimeout(function () { for (var i = 0; i < 4; i++) load(i); }, 3500); }
+  function ensureNeighbors() { var a = Math.round(cur) % 4; load(pick[a], true); setTimeout(function () { load(pick[(a + 1) % 4]); load(pick[(a + 3) % 4]); }, 600); setTimeout(function () { for (var i = 0; i < 4; i++) load(pick[i]); }, 3500); }
   function frame() {
     raf = 0; var d = target - cur; if (d > 2) d -= 4; if (d < -2) d += 4;
-    if (Math.abs(d) > 0.002) { cur = (cur + d * 0.05 + 4) % 4; paint(); raf = requestAnimationFrame(frame); } else { cur = target; paint(); }
+    var moving = Math.abs(d) > 0.002;
+    if (moving) cur = (cur + d * 0.05 + 4) % 4; else cur = target;
+    rv.forEach(function (x, i) { var t = pick[PICS[i].ph] === i ? 1 : 0, dd = t - x; if (Math.abs(dd) > 0.004) { rv[i] = x + Math.sign(dd) * Math.min(Math.abs(dd), reduce ? 1 : 0.025); moving = true; } else rv[i] = t; });
+    paint(); if (moving) raf = requestAnimationFrame(frame);
   }
-  function go(t) { target = ((t % 4) + 4) % 4; ensureNeighbors(); if (reduce) { cur = target; paint(); } else if (!raf) raf = requestAnimationFrame(frame); }
+  function go(t) { target = ((t % 4) + 4) % 4; ensureNeighbors(); if (reduce) { cur = target; } if (!raf) raf = requestAnimationFrame(frame); }
+  // rotate the photo inside the current phase every ~50 s (only while the page is visible)
+  setInterval(function () {
+    if (document.hidden) return; var p = Math.round(cur) % 4, l = LIST[p]; if (l.length < 2) return;
+    var n = l[(l.indexOf(pick[p]) + 1) % l.length], im = imgs[n]; load(n, true);
+    if (im.classList.contains('ok')) { pick[p] = n; if (!raf) raf = requestAnimationFrame(frame); }
+  }, 50000);
   setInterval(function () { if (auto && sun) go(nowPhase()); }, 20000);
 
   document.addEventListener('shorescene', function (e) { var n = e.detail; if (n === 'live') { auto = true; go(nowPhase()); } else { var i = NAMES.indexOf(n === 'noon' ? 'midday' : n); if (i > -1) { auto = false; go(i); } } });

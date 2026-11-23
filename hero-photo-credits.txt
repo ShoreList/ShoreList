@@ -1,0 +1,14 @@
+ShoreList home hero photos: credits and licenses (all via Wikimedia Commons; resized and lightly color adjusted)
+Checked 2026-11-23. Files are hosted on the ShoreList Shopify CDN as shorelist-hero-<name>.jpg.
+
+kure-dawn2   Kure Beach (13 April 2025).jpg            Staniulis            CC0 1.0      https://commons.wikimedia.org/wiki/File:Kure_Beach_(13_April_2025).jpg
+wb-sunrise   Wrightsville Beach, NC - 10566962493.jpg  James Willamor       CC BY-SA 2.0 https://commons.wikimedia.org/wiki/File:Wrightsville_Beach,_NC_-_10566962493.jpg
+wb-ocean     Ocean at Wrightsville Beach 2.jpg         DiscoA340            CC BY-SA 4.0 https://commons.wikimedia.org/wiki/File:Ocean_at_Wrightsville_Beach_2.jpg
+wb-banks     Banks Channel (24123830773).jpg           Gerry Dincher        CC BY-SA 2.0 https://commons.wikimedia.org/wiki/File:Banks_Channel_(24123830773).jpg
+ff-oaks      Fort Fisher State Historic Site (13 April 2025).jpg  Staniulis  CC0 1.0      https://commons.wikimedia.org/wiki/File:Fort_Fisher_State_Historic_Site_(13_April_2025).jpg
+cb-dunes     Carolina Beach 1.jpg                      Mx. Granger          CC0 1.0      https://commons.wikimedia.org/wiki/File:Carolina_Beach_1.jpg
+wb-golden    Wrightsville Beach 2.JPG                  NCSU16               CC BY-SA 3.0 https://commons.wikimedia.org/wiki/File:Wrightsville_Beach_2.JPG
+wb-aerial2   Island Life in Wrightsville Beach.jpg     FOCIIS Photography   CC BY-SA 4.0 https://commons.wikimedia.org/wiki/File:Island_Life_in_Wrightsville_Beach.jpg
+wb-twilight  Wrightsville Beach 1.JPG                  NCSU16               CC BY-SA 3.0 https://commons.wikimedia.org/wiki/File:Wrightsville_Beach_1.JPG
+
+License texts: https://creativecommons.org/publicdomain/zero/1.0/  https://creativecommons.org/licenses/by-sa/2.0/  https://creativecommons.org/licenses/by-sa/3.0/  https://creativecommons.org/licenses/by-sa/4.0/
