@@ -2992,6 +2992,44 @@
    ]
   },
   {
+   "id": "carolina-beach-brown-pelican-framed-art-print",
+   "collection": "local-icons",
+   "shelf": "carolina-beach",
+   "town": "carolina-beach",
+   "name": "Carolina Beach Brown Pelican Framed Art Print",
+   "url": "https://shorelist.myshopify.com/products/carolina-beach-brown-pelican-framed-art-print",
+   "type": "prints",
+   "color": "Cream",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-brown-pelican-framed-art-print_1000x.webp",
+   "alt": "Framed Carolina Beach brown pelican art print with a cream natural history plate in a black frame above a sofa, shown as an illustrative image",
+   "meta": "A framed art print of a brown pelican illustration with the Carolina Beach name, set like a natural history plate on warm cream. Made to order.",
+   "cta": "Choose size",
+   "price": 84,
+   "from": true,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4792794011467400570_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-brown-pelican-framed-art-print_1920x.webp",
+   "facts": [
+    [
+     "Sizes",
+     "11 x 14 in or 12 x 16 in"
+    ],
+    [
+     "Frame",
+     "Black, walnut or white"
+    ],
+    [
+     "Art",
+     "Brown pelican illustration with a Carolina Beach caption"
+    ]
+   ]
+  },
+  {
    "id": "kure-beach-sea-turtle-framed-art-print",
    "collection": "local-icons",
    "shelf": "kure-beach",
@@ -3030,6 +3068,44 @@
    ]
   },
   {
+   "id": "kure-beach-blue-crab-framed-art-print",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "town": "kure-beach",
+   "name": "Kure Beach Blue Crab Framed Art Print",
+   "url": "https://shorelist.myshopify.com/products/kure-beach-blue-crab-framed-art-print",
+   "type": "prints",
+   "color": "Cream",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-blue-crab-framed-art-print_1000x.webp",
+   "alt": "Framed Kure Beach blue crab art print with a cream natural history plate in a walnut frame above a console table, shown as an illustrative image",
+   "meta": "A framed art print of a blue crab illustration with the Kure Beach name, set like a natural history plate on warm cream. Made to order.",
+   "cta": "Choose size",
+   "price": 84,
+   "from": true,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12040546470448815130_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-blue-crab-framed-art-print_1920x.webp",
+   "facts": [
+    [
+     "Sizes",
+     "11 x 14 in or 12 x 16 in"
+    ],
+    [
+     "Frame",
+     "Black, walnut or white"
+    ],
+    [
+     "Art",
+     "Blue crab illustration with a Kure Beach caption"
+    ]
+   ]
+  },
+  {
    "id": "wrightsville-beach-sailfish-framed-art-print",
    "collection": "local-icons",
    "shelf": "wrightsville-beach",
@@ -3064,6 +3140,44 @@
     [
      "Art",
      "Sailfish illustration with a Wrightsville Beach caption"
+    ]
+   ]
+  },
+  {
+   "id": "wrightsville-beach-sea-oats-framed-art-print",
+   "collection": "local-icons",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Wrightsville Beach Sea Oats Framed Art Print",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sea-oats-framed-art-print",
+   "type": "prints",
+   "color": "Cream",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sea-oats-framed-art-print_1000x.webp",
+   "alt": "Framed Wrightsville Beach sea oats art print with a cream natural history plate in a white frame above a bench, shown as an illustrative image",
+   "meta": "A framed art print of a sea oats illustration with the Wrightsville Beach name, set like a natural history plate on warm cream. Made to order.",
+   "cta": "Choose size",
+   "price": 84,
+   "from": true,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5361218556487163662_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sea-oats-framed-art-print_1920x.webp",
+   "facts": [
+    [
+     "Sizes",
+     "11 x 14 in or 12 x 16 in"
+    ],
+    [
+     "Frame",
+     "Black, walnut or white"
+    ],
+    [
+     "Art",
+     "Sea oats illustration with a Wrightsville Beach caption"
     ]
    ]
   }
