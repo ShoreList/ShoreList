@@ -6,7 +6,10 @@
   'use strict';
   var host = document.querySelector('[data-scene]');
   if (!host) return;
-  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var conn = navigator.connection || {};
+  // Still frame (no animation loop) when the visitor asks for reduced motion or Data Saver.
+  var reduce = !!((window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) || conn.saveData === true);
+  function boot() {
 
   // keyframes: skyTop, skyHorizon, sun, seaDeep, seaLight, sunY(0..1 horizon-relative), stars, warmth
   var K = {
@@ -134,4 +137,20 @@
   };
   setInterval(function () { if (autoMode) target = phaseNow(); }, 20000);
   host.setAttribute('data-tod', 'live');
+  }
+
+  // Start when the browser is idle and the scene is on screen, so first paint and input are not delayed by shader compile.
+  var started = false;
+  function go() { if (started) return; started = true; boot(); }
+  function whenIdle() {
+    if ('requestIdleCallback' in window) requestIdleCallback(go, { timeout: 1500 });
+    else setTimeout(go, 200);
+  }
+  function arm() {
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { io.disconnect(); whenIdle(); } });
+      io.observe(host);
+    } else whenIdle();
+  }
+  arm();
 })();
