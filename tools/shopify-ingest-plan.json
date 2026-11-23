@@ -2,36 +2,32 @@
  "shelves": [],
  "items": [
   {
-   "handle": "airlie-oak-wilmington-printed-garment-dyed-tee",
+   "handle": "airlie-oak-wilmington-printed-mug",
    "shelf": "wilmington",
-   "collection": "local-icons",
-   "name": "Airlie Oak Wilmington Printed Garment-Dyed Tee",
-   "type": "tops",
+   "collection": "shore-gear",
+   "name": "Airlie Oak Wilmington Printed Mug",
+   "type": "beach",
    "color": "Ivory",
-   "alt": "Ivory tee printed on the chest with a painterly illustration of the Airlie Oak, a Southern live oak with hanging Spanish moss, hanging from a live oak branch in a garden of azaleas, shown as an illustrative image",
-   "meta": "A relaxed garment-dyed tee printed with a painterly illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC, with Spanish moss and blush azaleas. Made to order.",
-   "cta": "Choose size",
+   "alt": "Ceramic mug printed with a painterly illustration of the Airlie Oak, a Southern live oak with hanging Spanish moss and blush azaleas at its base, on a weathered garden bench with azaleas and a live oak behind, shown as an illustrative image",
+   "meta": "A printed 11 oz ceramic mug with a painterly illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC, with Spanish moss and blush azaleas. Made to order.",
+   "cta": "Shop mugs",
    "scenes": [
     "beach"
    ],
    "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-airlie-oak-wilmington-printed-garment-dyed-tee.webp",
+   "lookbookFile": "shorelist-lookbook-airlie-oak-wilmington-printed-mug-v2.webp",
    "facts": [
     [
-     "Sizing",
-     "Relaxed fit, offered in sizes L to 3XL (S and M are not offered yet)"
-    ],
-    [
-     "Fabric",
-     "Heavyweight 6.1 oz ring-spun cotton, pre-shrunk, double-needle stitching, no side seams"
+     "Size",
+     "11 oz ceramic mug"
     ],
     [
      "Print",
-     "Airlie Oak illustration printed on the front chest, not embroidered"
+     "Airlie Oak illustration on the front of the mug"
     ],
     [
-     "Colors",
-     "Ivory or White"
+     "Care",
+     "Microwave and dishwasher safe"
     ]
    ]
   }
