@@ -413,6 +413,315 @@
     "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5992560652175314203_2048.jpg",
     "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-daymark-sail-number-crewneck-kure-beach_1920x.webp"
    }
+  },
+  "the-sloop-embroidered-crewneck-wrightsville-beach": {
+   "reason": "brand audit 2026-11-22: WB initials in copy, washed blue off the white crewneck rule, paused until redone",
+   "retired": "2026-11-22",
+   "item": {
+    "id": "the-sloop-embroidered-crewneck-wrightsville-beach",
+    "collection": "local-icons",
+    "shelf": "wrightsville-beach",
+    "name": "The Sloop Embroidered Crewneck, Wrightsville Beach",
+    "url": "https://shorelist.myshopify.com/products/the-sloop-embroidered-crewneck-wrightsville-beach",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-embroidered-crewneck-wrightsville-beach_1000x.webp",
+    "alt": "Woman on a marina dock at sunset wearing a washed blue crewneck with a small embroidered sailboat and the letters WB",
+    "meta": "A little sloop under sail stitched on the chest, with WB for Wrightsville Beach beneath it.",
+    "cta": "Choose color and size",
+    "price": 88,
+    "scenes": [
+     "beach"
+    ],
+    "cut": "unisex",
+    "store": "shopify",
+    "facts": [
+     [
+      "Sizing",
+      "Relaxed fit, sizes S to 3XL"
+     ],
+     [
+      "Fabric",
+      "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
+     ],
+     [
+      "Embroidery",
+      "Stitched in white, red and blue thread"
+     ]
+    ],
+    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-embroidered-crewneck-wrightsville-beach_1920x.webp",
+    "town": "wrightsville-beach",
+    "type": "tops",
+    "color": "Washed blue",
+    "added": "2026-11-21",
+    "motif": "boats-buoys"
+   }
+  },
+  "the-blue-crab-embroidered-crewneck-kure-beach": {
+   "reason": "brand audit 2026-11-22: KB initials, mint colorway off palette, paused until redone",
+   "retired": "2026-11-22",
+   "item": {
+    "id": "the-blue-crab-embroidered-crewneck-kure-beach",
+    "collection": "local-icons",
+    "shelf": "kure-beach",
+    "name": "The Blue Crab Embroidered Crewneck, Kure Beach",
+    "url": "https://shorelist.myshopify.com/products/the-blue-crab-embroidered-crewneck-kure-beach",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-embroidered-crewneck-kure-beach_1000x.webp",
+    "alt": "Woman on a shingled beach cottage porch wearing a mint crewneck with a small embroidered blue crab and the letters KB",
+    "meta": "An Atlantic blue crab stitched on the chest, with KB for Kure Beach beneath it.",
+    "cta": "Choose color and size",
+    "price": 88,
+    "scenes": [
+     "beach"
+    ],
+    "cut": "unisex",
+    "store": "shopify",
+    "facts": [
+     [
+      "Sizing",
+      "Relaxed fit, sizes S to 3XL"
+     ],
+     [
+      "Fabric",
+      "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
+     ],
+     [
+      "Embroidery",
+      "Stitched in blue, white and red thread"
+     ]
+    ],
+    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17367446352125890490_2048.jpg",
+    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-embroidered-crewneck-kure-beach_1920x.webp",
+    "town": "kure-beach",
+    "type": "tops",
+    "color": "Mint",
+    "added": "2026-11-21",
+    "motif": "sea-life"
+   }
+  },
+  "the-sloop-corduroy-cap-wrightsville-beach": {
+   "reason": "brand audit 2026-11-22: duplicates the Daymark corduroy cap, WB on the back, paused",
+   "retired": "2026-11-22",
+   "item": {
+    "id": "the-sloop-corduroy-cap-wrightsville-beach",
+    "collection": "local-icons",
+    "shelf": "wrightsville-beach",
+    "name": "The Sloop Corduroy Cap, Wrightsville Beach",
+    "url": "https://shorelist.myshopify.com/products/the-sloop-corduroy-cap-wrightsville-beach",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-corduroy-cap-wrightsville-beach_1000x.webp",
+    "alt": "Man at the helm of a wooden sailboat wearing a navy corduroy cap with a small embroidered sailboat",
+    "meta": "A little sloop embroidered on the front of a corduroy cap, with WB stitched on the back.",
+    "cta": "Choose color",
+    "price": 49,
+    "scenes": [
+     "beach"
+    ],
+    "cut": "unisex",
+    "store": "shopify",
+    "facts": [
+     [
+      "Sizing",
+      "One size, adjustable strap with a brass buckle"
+     ],
+     [
+      "Fabric",
+      "Cotton corduroy, unstructured low profile, curved brim"
+     ],
+     [
+      "Embroidery",
+      "Real embroidery on the front and the back"
+     ]
+    ],
+    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7042525475132206278_2048.jpg",
+    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-corduroy-cap-wrightsville-beach_1920x.webp",
+    "town": "wrightsville-beach",
+    "type": "hats",
+    "color": "Navy",
+    "added": "2026-11-21",
+    "featured": true,
+    "motif": "boats-buoys"
+   }
+  },
+  "the-sloop-cuffed-beanie-wrightsville-beach": {
+   "reason": "brand audit 2026-11-22: WB on the cuff, paused until redone",
+   "retired": "2026-11-22",
+   "item": {
+    "id": "the-sloop-cuffed-beanie-wrightsville-beach",
+    "collection": "local-icons",
+    "shelf": "wrightsville-beach",
+    "name": "The Sloop Cuffed Beanie, Wrightsville Beach",
+    "url": "https://shorelist.myshopify.com/products/the-sloop-cuffed-beanie-wrightsville-beach",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-cuffed-beanie-wrightsville-beach_1000x.webp",
+    "alt": "Blonde woman on a marina dock wearing a navy cuffed beanie embroidered with a small sailboat and the letters WB",
+    "meta": "A little sloop and WB embroidered on the cuff of a classic knit beanie.",
+    "cta": "Choose color",
+    "price": 30,
+    "scenes": [
+     "beach"
+    ],
+    "cut": "unisex",
+    "store": "shopify",
+    "facts": [
+     [
+      "Sizing",
+      "One size"
+     ],
+     [
+      "Fabric",
+      "Soft acrylic knit with a fold-up cuff"
+     ],
+     [
+      "Embroidery",
+      "Icon and town letters on the cuff"
+     ]
+    ],
+    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6062137644770390613_2048.jpg",
+    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-cuffed-beanie-wrightsville-beach_1920x.webp",
+    "town": "wrightsville-beach",
+    "type": "hats",
+    "color": "Navy",
+    "added": "2026-11-21",
+    "motif": "boats-buoys"
+   }
+  },
+  "carolina-beach-boardwalk-art-print": {
+   "reason": "brand audit 2026-11-22: Fourthwall checkout, boardwalk not an approved motif, paused",
+   "retired": "2026-11-22",
+   "item": {
+    "id": "carolina-beach-boardwalk-art-print",
+    "collection": "landmarks",
+    "shelf": "carolina-beach",
+    "name": "Carolina Beach Boardwalk Art Print",
+    "url": "https://shorelist-shop.fourthwall.com/products/carolina-beach-boardwalk-art-print",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-boardwalk-art-print_1000x.webp",
+    "alt": "Carolina Beach Boardwalk art print framed above a console table",
+    "meta": "The carousel and Ferris wheel at blue hour on museum-matte paper.",
+    "cta": "Choose a size and buy",
+    "price": 16,
+    "scenes": [
+     "boardwalk"
+    ],
+    "store": "fourthwall",
+    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-studio-carolina-beach-boardwalk-art-print_1000x.webp",
+    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-boardwalk-art-print_1920x.webp",
+    "from": true,
+    "town": "carolina-beach",
+    "type": "prints",
+    "added": "2026-11-21",
+    "featured": true,
+    "motif": "beach-scenes"
+   }
+  },
+  "wrightsville-beach-pier-art-print": {
+   "reason": "brand audit 2026-11-22: Fourthwall checkout, pier wording, paused",
+   "retired": "2026-11-22",
+   "item": {
+    "id": "wrightsville-beach-pier-art-print",
+    "collection": "landmarks",
+    "shelf": "wrightsville-beach",
+    "name": "Wrightsville Beach Sunset Art Print",
+    "url": "https://shorelist-shop.fourthwall.com/products/wrightsville-beach-pier-art-print",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-pier-art-print_1000x.webp",
+    "alt": "Wrightsville Beach sunset art print framed above a bed in a beach house",
+    "meta": "Banded sky over the water in five flat inks on museum-matte paper.",
+    "cta": "Choose a size and buy",
+    "price": 16,
+    "scenes": [
+     "beach"
+    ],
+    "store": "fourthwall",
+    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-studio-wrightsville-beach-pier-art-print_1000x.webp",
+    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-pier-art-print_1920x.webp",
+    "from": true,
+    "town": "wrightsville-beach",
+    "type": "prints",
+    "added": "2026-11-21",
+    "featured": true,
+    "motif": "beach-scenes"
+   }
+  },
+  "carolina-beach-ornament-2026": {
+   "reason": "brand audit 2026-11-22: sloop is the Wrightsville mark, wrong town motif, paused until redone",
+   "retired": "2026-11-22",
+   "item": {
+    "id": "carolina-beach-ornament-2026",
+    "collection": "coastal-christmas",
+    "shelf": "carolina-beach",
+    "name": "Carolina Beach Christmas Ornament 2026",
+    "url": "https://shorelist.myshopify.com/products/carolina-beach-christmas-ornament-2026",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-ornament-2026_1000x.webp",
+    "alt": "Carolina Beach 2026 ornament on a Christmas tree in a beach cottage",
+    "meta": "Dated ceramic keepsake: a sloop under a striped Carolina sunset, lettered Carolina Beach, Christmas 2026. ShoreList illustration.",
+    "cta": "Shop Christmas",
+    "price": 18,
+    "scenes": [
+     "beach"
+    ],
+    "cut": "unisex",
+    "store": "shopify",
+    "buy": "https://shorelist.myshopify.com/cart/48571271643220:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+    "facts": [
+     [
+      "Size",
+      "About 2.9 in across, glossy ceramic"
+     ],
+     [
+      "Print",
+      "One side, with a gold hanging cord"
+     ],
+     [
+      "Lettering",
+      "Carolina Beach, Christmas 2026"
+     ]
+    ],
+    "studio": "https://shorelist.myshopify.com/cdn/shop/files/5074047802882228178_2048.jpg",
+    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-ornament-2026_1920x.webp",
+    "town": "carolina-beach",
+    "type": "ornaments",
+    "added": "2026-11-20",
+    "featured": true,
+    "motif": "boats-buoys"
+   }
+  },
+  "kure-beach-ornament-2026": {
+   "reason": "brand audit 2026-11-22: sloop is the Wrightsville mark, wrong town motif, paused until redone",
+   "retired": "2026-11-22",
+   "item": {
+    "id": "kure-beach-ornament-2026",
+    "collection": "coastal-christmas",
+    "shelf": "kure-beach",
+    "name": "Kure Beach Christmas Ornament 2026",
+    "url": "https://shorelist.myshopify.com/products/kure-beach-christmas-ornament-2026",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-ornament-2026_1000x.webp",
+    "alt": "Woman hanging the Kure Beach 2026 ornament on a Christmas tree",
+    "meta": "Dated ceramic keepsake: a sloop under a striped Carolina sunset, lettered Kure Beach, Christmas 2026. ShoreList illustration.",
+    "cta": "Shop Christmas",
+    "price": 18,
+    "scenes": [
+     "beach"
+    ],
+    "cut": "unisex",
+    "store": "shopify",
+    "buy": "https://shorelist.myshopify.com/cart/48571283341396:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+    "facts": [
+     [
+      "Size",
+      "About 2.9 in across, glossy ceramic"
+     ],
+     [
+      "Print",
+      "One side, with a gold hanging cord"
+     ],
+     [
+      "Lettering",
+      "Kure Beach, Christmas 2026"
+     ]
+    ],
+    "studio": "https://shorelist.myshopify.com/cdn/shop/files/2471044685723405738_2048.jpg",
+    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-ornament-2026_1920x.webp",
+    "town": "kure-beach",
+    "type": "ornaments",
+    "added": "2026-11-20",
+    "motif": "boats-buoys"
+   }
   }
  }
 }
