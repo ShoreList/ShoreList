@@ -2,22 +2,37 @@
  "shelves": [],
  "items": [
   {
-   "handle": "wrightsville-beach-airlie-live-oak-printed-mug",
-   "shelf": "wrightsville-beach",
+   "handle": "airlie-oak-wilmington-all-over-print-tote-bag",
+   "shelf": "wilmington",
    "collection": "shore-gear",
-   "name": "Wrightsville Beach Airlie Live Oak Printed Mug",
+   "name": "Airlie Oak Wilmington All Over Print Tote Bag",
    "type": "beach",
-   "color": "White",
-   "alt": "White ceramic mug printed with teal and navy live oak and Spanish moss medallions on ivory, standing on a driftwood plank in the dunes beside a folded cream towel and a shell at Wrightsville Beach, shown as an illustrative image",
-   "meta": "A printed 11 oz white ceramic mug with ink and watercolor live oak and Spanish moss medallions in teal and navy on ivory, inspired by Airlie Gardens. Made to order.",
-   "cta": "Shop mugs",
-   "scenes": ["beach"],
+   "color": "Ivory",
+   "alt": "Cream tote bag with navy handles printed with a large green illustration of the Airlie Oak, a Southern live oak with hanging Spanish moss, resting on a weathered garden bench beneath a live oak with azaleas behind, shown as an illustrative image",
+   "meta": "A printed tote with an illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC, in leaf greens on ivory. Made to order.",
+   "cta": "Choose size",
+   "scenes": [
+    "beach"
+   ],
    "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-wrightsville-beach-airlie-live-oak-printed-mug.webp",
+   "lookbookFile": "shorelist-lookbook-airlie-oak-wilmington-all-over-print-tote-bag.webp",
    "facts": [
-    ["Size", "11 oz white ceramic mug"],
-    ["Print", "Live oak and Spanish moss pattern wrapped around the mug"],
-    ["Care", "Microwave and dishwasher safe"]
+    [
+     "Size",
+     "16 x 16 in or 18 x 18 in"
+    ],
+    [
+     "Handles",
+     "Navy or beige cotton webbing, solid color"
+    ],
+    [
+     "Fabric",
+     "100% spun polyester with a laminate lining, spot clean"
+    ],
+    [
+     "Print",
+     "Airlie Oak illustration printed on the bag body, not embroidered"
+    ]
    ]
   }
  ]
