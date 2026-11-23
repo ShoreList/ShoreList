@@ -1040,7 +1040,7 @@
    "added": "2026-11-23",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-garment-dyed-tee_1000x.webp",
    "alt": "Ivory tee printed with a navy lifeguard stand, a red flag and the words Carolina Beach, worn on the sand with sea oats behind, shown as an illustrative image",
-   "meta": "A navy lifeguard stand with a red flag over the words Carolina Beach, printed on a soft ivory garment-dyed tee.",
+   "meta": "A lifeguard stand on the Carolina Beach shoreline, printed in deep navy with a small red flag and the town name in full, on a relaxed ivory garment-dyed tee.",
    "cta": "Choose size",
    "price": 42,
    "scenes": [
@@ -1057,13 +1057,60 @@
     ],
     [
      "Fabric",
-     "100% ring-spun cotton, garment-dyed for a soft worn-in feel"
+     "Heavyweight 6.1 oz ring-spun cotton, pre-shrunk, double-needle stitching, no side seams"
     ],
     [
      "Print",
-     "Navy and red lifeguard stand with the town name on the chest"
+     "Navy lifeguard stand with a small red flag and the town name on the chest"
+    ],
+    [
+     "Color",
+     "Garment dye means the shade varies slightly from piece to piece"
     ]
-   ]
+   ],
+   "motif": "beach-scenes"
+  },
+  {
+   "id": "carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
+   "collection": "local-icons",
+   "shelf": "carolina-beach",
+   "town": "carolina-beach",
+   "name": "Carolina Beach Lifeguard Stand Embroidered Crewneck Sweatshirt",
+   "url": "https://shorelist.myshopify.com/products/carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
+   "type": "tops",
+   "color": "White",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt_1000x.webp",
+   "alt": "White crewneck sweatshirt with a small embroidered lifeguard stand and the words Carolina Beach on the chest, worn on the sand, shown as an illustrative image",
+   "meta": "A small lifeguard stand with a red flag and the town name Carolina Beach, embroidered on the chest of a white crewneck sweatshirt.",
+   "cta": "Choose size",
+   "price": 88,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13000623743151575142_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt_1920x.webp",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, sizes S to 3XL"
+    ],
+    [
+     "Fabric",
+     "9.5 oz garment-dyed, 80% ring-spun cotton and 20% polyester"
+    ],
+    [
+     "Embroidery",
+     "Lifeguard stand and town name stitched in navy and red thread, about 2.8 x 2.5 in"
+    ],
+    [
+     "Care",
+     "Machine wash cold, tumble dry low, do not iron the embroidery"
+    ]
+   ],
+   "motif": "beach-scenes"
   },
   {
    "id": "kure-beach-ornament-2026",
