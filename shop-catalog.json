@@ -1832,7 +1832,8 @@
      "Colors",
      "White"
     ]
-   ]
+   ],
+   "studio": null
   },
   {
    "id": "the-lifeguard-stand-canvas-tote-carolina-beach",
@@ -2190,7 +2191,8 @@
      "Colors",
      "White"
     ]
-   ]
+   ],
+   "studio": null
   },
   {
    "id": "the-blue-crab-canvas-tote-kure-beach",
@@ -2995,6 +2997,43 @@
    ]
   },
   {
+   "id": "camellia-carolina-coast-large-tote-cooler-bag",
+   "collection": "local-icons",
+   "shelf": "wilmington",
+   "town": "wilmington",
+   "name": "Camellia Carolina Coast Large Tote Cooler Bag",
+   "url": "https://shorelist.myshopify.com/products/camellia-carolina-coast-large-tote-cooler-bag",
+   "type": "beach",
+   "color": "True Royal",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-camellia-carolina-coast-large-tote-cooler-bag_1000x.webp",
+   "alt": "Royal blue canvas tote cooler bag with navy handles and a cream patch printed with a lifelike painted camellia branch, standing on weathered dock planks beside a rope cleat, shown as an illustrative image",
+   "meta": "A large insulated tote cooler in royal blue with a cream front patch printed with a lifelike painted camellia branch. Made to order.",
+   "cta": "Add to bag",
+   "price": 59,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/1199814179640456701_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-camellia-carolina-coast-large-tote-cooler-bag_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "Large, about 2,127 cubic inches"
+    ],
+    [
+     "Build",
+     "600 denier polyester canvas with a heat-sealed, water-resistant lining"
+    ],
+    [
+     "Art",
+     "Camellia illustration printed on a cream patch on the front"
+    ]
+   ]
+  },
+  {
    "id": "carolina-beach-megalodon-tooth-framed-art-print",
    "collection": "local-icons",
    "shelf": "carolina-beach",
@@ -3067,6 +3106,43 @@
     [
      "Art",
      "Brown pelican illustration with a Carolina Beach caption"
+    ]
+   ]
+  },
+  {
+   "id": "carolina-beach-megalodon-tooth-illustration-printed-garment-dyed-tee",
+   "collection": "local-icons",
+   "shelf": "carolina-beach",
+   "town": "carolina-beach",
+   "name": "Carolina Beach Megalodon Tooth Illustration Printed Garment-Dyed Tee",
+   "url": "https://shorelist.myshopify.com/products/carolina-beach-megalodon-tooth-illustration-printed-garment-dyed-tee",
+   "type": "tops",
+   "color": "Ivory",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-megalodon-tooth-illustration-printed-garment-dyed-tee_1000x.webp",
+   "alt": "Ivory tee printed on the chest with a lifelike painted megalodon tooth illustration, hanging on a wooden hanger from a driftwood branch on a quiet beach, shown as an illustrative image",
+   "meta": "A relaxed garment-dyed tee printed with a lifelike painted illustration of a fossil megalodon tooth, a Carolina Beach favorite. An illustration only, no real tooth is included. Made to order.",
+   "cta": "Choose size",
+   "price": 42,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5316184118947589103_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-megalodon-tooth-illustration-printed-garment-dyed-tee_1920x.webp",
+   "facts": [
+    [
+     "Fabric",
+     "Garment-dyed 100% ring-spun cotton, relaxed fit"
+    ],
+    [
+     "Colors",
+     "Ivory or White"
+    ],
+    [
+     "Art",
+     "Megalodon tooth illustration, about 7 in tall on the upper chest"
     ]
    ]
   },
@@ -3403,6 +3479,43 @@
     [
      "Pattern",
      "All-over sailboat pattern on navy"
+    ]
+   ]
+  },
+  {
+   "id": "wrightsville-beach-sloop-printed-beach-cloth-38-x-81-in",
+   "collection": "shore-gear",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Wrightsville Beach Sloop Printed Beach Cloth, 38 x 81 in",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-beach-cloth-38-x-81-in",
+   "type": "beach",
+   "color": "Navy",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-beach-cloth-38-x-81-in_1000x.webp",
+   "alt": "Long navy beach cloth with an all-over pattern of small white sailboats and knotted fringe ends, laid flat on pale sand beside a dune with sea oats and a woven basket, shown as an illustrative image",
+   "meta": "A large printed beach cloth, 38 x 81 in, with an all-over pattern of small sailboats on navy and knotted fringe ends. Made to order.",
+   "cta": "Add to bag",
+   "price": 79,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/14255062148024729065_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-beach-cloth-38-x-81-in_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "38 x 81 in"
+    ],
+    [
+     "Fabric",
+     "100% polyester, printed edge to edge"
+    ],
+    [
+     "Care",
+     "Machine wash separately in cold water, tumble dry low"
     ]
    ]
   }
