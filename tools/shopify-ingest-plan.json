@@ -2,23 +2,22 @@
  "shelves": [],
  "items": [
   {
-   "handle": "wrightsville-beach-sloop-printed-zip-pouch",
-   "shelf": "wrightsville-beach",
-   "collection": "shore-gear",
-   "name": "Wrightsville Beach Sloop Printed Zip Pouch",
-   "type": "beach",
-   "color": "Natural",
-   "alt": "Natural canvas zip pouch with a navy sailboat panel lying on beach sand beside shells and sunglasses, shown as an illustrative image",
-   "meta": "A natural canvas zip pouch with a navy panel of little sloops on the front and a wrist strap. Holds sunscreen, keys and phone for a Wrightsville Beach day.",
-   "cta": "Shop pouches",
+   "handle": "carolina-beach-lifeguard-stand-printed-garment-dyed-tee",
+   "shelf": "carolina-beach",
+   "collection": "local-icons",
+   "name": "Carolina Beach Lifeguard Stand Printed Garment-Dyed Tee",
+   "type": "tops",
+   "color": "Ivory",
+   "alt": "Ivory tee printed with a navy lifeguard stand, a red flag and the words Carolina Beach, worn on the sand with sea oats behind, shown as an illustrative image",
+   "meta": "A navy lifeguard stand with a red flag over the words Carolina Beach, printed on a soft ivory garment-dyed tee.",
+   "cta": "Choose size",
    "scenes": ["beach"],
    "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-wrightsville-beach-sloop-printed-zip-pouch.webp",
+   "lookbookFile": "shorelist-lookbook-carolina-beach-lifeguard-stand-printed-garment-dyed-tee.webp",
    "facts": [
-    ["Size", "About 8.3 x 7.8 in"],
-    ["Fabric", "100% cotton canvas with a zipper and carry strap"],
-    ["Print", "Navy sailboat pattern panel on the front"],
-    ["Care", "Spot clean"]
+    ["Sizing", "Relaxed fit, sizes L to 3XL"],
+    ["Fabric", "100% ring-spun cotton, garment-dyed for a soft worn-in feel"],
+    ["Print", "Navy and red lifeguard stand with the town name on the chest"]
    ]
   }
  ]

@@ -720,7 +720,7 @@
    "added": "2026-11-23",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-mug_1000x.webp",
    "alt": "White ceramic mug covered in small navy sailboats sitting on beach sand beside a folded towel, shown as an illustrative image",
-   "meta": "A white ceramic mug printed with a navy field of little sloops. A Wrightsville Beach morning coffee mug and a Wilmington NC gift.",
+   "meta": "A printed 11 oz white ceramic mug with a navy all-over pattern of little sloops on teal waves. A Wrightsville Beach coffee mug and a Wilmington NC gift.",
    "cta": "Shop mugs",
    "price": 30,
    "scenes": [
@@ -756,9 +756,9 @@
    "type": "beach",
    "color": "Navy",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-pet-bandana_1000x.webp",
-   "alt": "Golden retriever wearing a navy sailboat print bandana on a sandy beach, shown as an illustrative image",
-   "meta": "A navy pet bandana printed with little sloops, on an adjustable collar. For beach walks with your dog on the Carolina coast.",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-pet-bandana-v2_1000x.webp",
+   "alt": "Golden retriever on a sandy beach wearing a thin black collar with a navy sailboat print bandana hanging from it, shown as an illustrative image",
+   "meta": "A navy pet bandana printed with little sloops that clips onto an adjustable black collar. For beach walks with your dog on the Carolina coast.",
    "cta": "Shop pet gear",
    "price": 28,
    "scenes": [
@@ -767,7 +767,7 @@
    "cut": "unisex",
    "store": "shopify",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12094930629799905524_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-pet-bandana_1920x.webp",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-pet-bandana-v2_1920x.webp",
    "facts": [
     [
      "Size",
@@ -1027,6 +1027,43 @@
     ]
    ],
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-cuffed-beanie-carolina-beach_1920x.webp"
+  },
+  {
+   "id": "carolina-beach-lifeguard-stand-printed-garment-dyed-tee",
+   "collection": "local-icons",
+   "shelf": "carolina-beach",
+   "town": "carolina-beach",
+   "name": "Carolina Beach Lifeguard Stand Printed Garment-Dyed Tee",
+   "url": "https://shorelist.myshopify.com/products/carolina-beach-lifeguard-stand-printed-garment-dyed-tee",
+   "type": "tops",
+   "color": "Ivory",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-garment-dyed-tee_1000x.webp",
+   "alt": "Ivory tee printed with a navy lifeguard stand, a red flag and the words Carolina Beach, worn on the sand with sea oats behind, shown as an illustrative image",
+   "meta": "A navy lifeguard stand with a red flag over the words Carolina Beach, printed on a soft ivory garment-dyed tee.",
+   "cta": "Choose size",
+   "price": 42,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15494710442550733373_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-garment-dyed-tee_1920x.webp",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, sizes L to 3XL"
+    ],
+    [
+     "Fabric",
+     "100% ring-spun cotton, garment-dyed for a soft worn-in feel"
+    ],
+    [
+     "Print",
+     "Navy and red lifeguard stand with the town name on the chest"
+    ]
+   ]
   },
   {
    "id": "kure-beach-ornament-2026",
