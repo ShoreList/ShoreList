@@ -1090,6 +1090,48 @@
    "added": "2026-11-20"
   },
   {
+   "id": "carolina-beach-scallop-shell-printed-crewneck-sweatshirt",
+   "collection": "shore-gear",
+   "shelf": "carolina-beach",
+   "town": "carolina-beach",
+   "name": "Carolina Beach Scallop Shell Printed Crewneck Sweatshirt",
+   "url": "https://shorelist.myshopify.com/products/carolina-beach-scallop-shell-printed-crewneck-sweatshirt",
+   "type": "tops",
+   "color": "White",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-scallop-shell-printed-crewneck-sweatshirt_1000x.webp",
+   "alt": "White crewneck sweatshirt with a small navy and coral scallop shell drawing printed on the left chest, shown as an illustrative image",
+   "meta": "A hand-inked navy and coral scallop shell printed small on the left chest of a white garment-dyed crewneck. A Carolina Beach layer for cool evenings on the coast.",
+   "cta": "Choose size",
+   "price": 88,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/14568469345645711557_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-scallop-shell-printed-crewneck-sweatshirt_1920x.webp",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, sizes S to 3XL"
+    ],
+    [
+     "Fabric",
+     "9.5 oz garment-dyed, 80% ring-spun cotton and 20% polyester"
+    ],
+    [
+     "Print",
+     "Scallop shell drawing about 3.25 in wide on the left chest, printed not embroidered"
+    ],
+    [
+     "Care",
+     "Machine wash cold, tumble dry low. Garment dye means the shade varies slightly from piece to piece"
+    ]
+   ],
+   "motif": "sea-life"
+  },
+  {
    "id": "kure-beach-can-cooler",
    "collection": "shore-gear",
    "shelf": "kure-beach",
