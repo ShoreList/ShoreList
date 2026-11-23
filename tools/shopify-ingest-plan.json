@@ -2,22 +2,23 @@
  "shelves": [],
  "items": [
   {
-   "handle": "carolina-beach-lifeguard-stand-printed-garment-dyed-tee",
+   "handle": "carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
    "shelf": "carolina-beach",
    "collection": "local-icons",
-   "name": "Carolina Beach Lifeguard Stand Printed Garment-Dyed Tee",
+   "name": "Carolina Beach Lifeguard Stand Embroidered Crewneck Sweatshirt",
    "type": "tops",
-   "color": "Ivory",
-   "alt": "Ivory tee printed with a navy lifeguard stand, a red flag and the words Carolina Beach, worn on the sand with sea oats behind, shown as an illustrative image",
-   "meta": "A navy lifeguard stand with a red flag over the words Carolina Beach, printed on a soft ivory garment-dyed tee.",
+   "color": "White",
+   "alt": "White crewneck sweatshirt with a small embroidered lifeguard stand and the words Carolina Beach on the chest, worn on the sand, shown as an illustrative image",
+   "meta": "A small lifeguard stand with a red flag and the town name Carolina Beach, embroidered on the chest of a white crewneck sweatshirt.",
    "cta": "Choose size",
    "scenes": ["beach"],
    "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-carolina-beach-lifeguard-stand-printed-garment-dyed-tee.webp",
+   "lookbookFile": "shorelist-lookbook-carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt.webp",
    "facts": [
-    ["Sizing", "Relaxed fit, sizes L to 3XL"],
-    ["Fabric", "100% ring-spun cotton, garment-dyed for a soft worn-in feel"],
-    ["Print", "Navy and red lifeguard stand with the town name on the chest"]
+    ["Sizing", "Relaxed fit, sizes S to 3XL"],
+    ["Fabric", "9.5 oz garment-dyed, 80% ring-spun cotton and 20% polyester"],
+    ["Embroidery", "Lifeguard stand and town name stitched in navy and red thread, about 2.8 x 2.5 in"],
+    ["Care", "Machine wash cold, tumble dry low, do not iron the embroidery"]
    ]
   }
  ]
