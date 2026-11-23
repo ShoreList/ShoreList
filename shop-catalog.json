@@ -81,7 +81,7 @@
    "name": "Wilmington and the Coast",
    "town": true,
    "tag": "For the whole coast",
-   "blurb": "Pieces that belong to the whole coast: a market tote and the Carolina Coast beach towel.",
+   "blurb": "Pieces that belong to the whole coast: the Live Oak embroidered crewneck and the Carolina Coast beach towel.",
    "cover": "carolina-coast-towel"
   }
  ],
@@ -1397,6 +1397,43 @@
      "Ivory, Peachy"
     ]
    ]
+  },
+  {
+   "id": "the-live-oak-embroidered-crewneck-wilmington",
+   "collection": "local-icons",
+   "shelf": "wilmington",
+   "town": "wilmington",
+   "name": "The Live Oak Embroidered Crewneck, Wilmington",
+   "url": "https://shorelist.myshopify.com/products/the-live-oak-embroidered-crewneck-wilmington",
+   "type": "tops",
+   "color": "Blue Jean",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-embroidered-crewneck-wilmington_1000x.webp",
+   "alt": "Smiling woman in a blue jean crewneck sweatshirt with a small embroidered live oak tree, on the Wilmington Riverwalk under live oaks, shown as an illustrative image",
+   "meta": "A live oak hung with Spanish moss, stitched small on the chest of a blue jean crewneck.",
+   "cta": "Choose color and size",
+   "price": 88,
+   "scenes": [
+    "riverwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/392796372616078076_2048.jpg",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, sizes S to 3XL"
+    ],
+    [
+     "Fabric",
+     "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
+    ],
+    [
+     "Embroidery",
+     "Stitched in green, chestnut and white thread"
+    ]
+   ],
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-embroidered-crewneck-wilmington_1920x.webp"
   }
  ],
  "scenes": [
@@ -1465,7 +1502,6 @@
    "wrightsville-surf-tee": "town plus sport lockup reads as a team or club tee, souvenir-stand look",
    "wrightsville-golf-tee": "town plus sport lockup reads as a team or club tee, souvenir-stand look",
    "carolina-beach-surf-tee": "town plus sport lockup reads as a team or club tee, souvenir-stand look",
-   "the-live-oak-embroidered-crewneck-wilmington": "Live Oak relaunch: art being redone to pass the 8.0 gate (Nov 22 blind reviews 4.8 to 6.5); returns when it passes",
    "the-live-oak-corduroy-cap-wilmington": "Live Oak relaunch: art being redone to pass the 8.0 gate (Nov 22 blind reviews 4.8 to 6.5); returns when it passes",
    "the-live-oak-cuffed-beanie-wilmington": "Live Oak relaunch: art being redone to pass the 8.0 gate (Nov 22 blind reviews 4.8 to 6.5); returns when it passes",
    "yacht-beach-club-tote": "design gate verdict KILL (score under 6); not sold until it passes 9.0",

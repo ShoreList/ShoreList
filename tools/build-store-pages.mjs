@@ -237,9 +237,9 @@ const TOWN_COPY = {
     q: ['What is the Kure Beach mark?', 'A small lifeguard stand with a red flag and the town name, stitched on the chest of the white crewneck.'] },
   wilmington: {
     title: 'Wilmington NC Souvenirs and Beach Gear | ShoreList',
-    desc: 'Wilmington NC souvenirs and beach gear from the ShoreList Shop: a market tote and a Carolina Coast beach towel, made to order.',
+    desc: 'Wilmington NC souvenirs and beach gear from the ShoreList Shop: a live oak crewneck and a beach towel, made to order.',
     h1: 'Wilmington NC souvenirs and <em>beach gear</em>',
-    lede: 'These Wilmington NC souvenirs and beach goods belong to the whole coast rather than one beach: a market tote and the Carolina Coast terry beach towel. Everything is made to order.',
+    lede: 'These Wilmington NC souvenirs and beach goods belong to the whole coast rather than one beach: an embroidered live oak crewneck and the Carolina Coast terry beach towel. Everything is made to order.',
     about: 'Pieces for the whole coast live here. For a single beach, start with Wrightsville Beach, Carolina Beach or Kure Beach.',
     q: ['Where do the beach towel and tote ship from?', 'Everything is made to order by our print partners. Shipping method, cost and the estimate for your address are shown at checkout.'] },
 };
