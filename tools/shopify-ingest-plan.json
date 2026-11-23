@@ -2,41 +2,61 @@
  "shelves": [],
  "items": [
   {
-   "handle": "kure-beach-lifeguard-stand-printed-garment-dyed-tee",
-   "shelf": "kure-beach",
-   "collection": "local-icons",
-   "name": "Kure Beach Lifeguard Stand Printed Garment-Dyed Tee",
-   "type": "tops",
-   "color": "Ivory",
-   "alt": "Woman in an ivory tee printed with a navy lifeguard stand and the words Kure Beach, standing in the dunes, shown as an illustrative image",
-   "meta": "A navy lifeguard stand with a small red flag over the words Kure Beach, printed on a soft ivory garment-dyed tee.",
-   "cta": "Choose size",
+   "handle": "wrightsville-beach-sloop-printed-mug",
+   "shelf": "wrightsville-beach",
+   "collection": "shore-gear",
+   "name": "Wrightsville Beach Sloop Printed Mug",
+   "type": "beach",
+   "color": "White",
+   "alt": "White ceramic mug covered in small navy sailboats sitting on beach sand beside a folded towel, shown as an illustrative image",
+   "meta": "A white ceramic mug printed with a navy field of little sloops. A Wrightsville Beach morning coffee mug and a Wilmington NC gift.",
+   "cta": "Shop mugs",
    "scenes": ["beach"],
    "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-kure-beach-lifeguard-stand-printed-garment-dyed-tee.webp",
+   "lookbookFile": "shorelist-lookbook-wrightsville-beach-sloop-printed-mug.webp",
    "facts": [
-    ["Sizing", "Relaxed fit, sizes L to 3XL"],
-    ["Fabric", "100% ring-spun cotton, garment-dyed for a soft worn-in feel"],
-    ["Print", "Navy and red lifeguard stand with the town name on the chest"]
+    ["Size", "11 oz white ceramic mug"],
+    ["Print", "Sailboat pattern wrapped around the mug"],
+    ["Care", "Microwave and dishwasher safe"]
    ]
   },
   {
-   "handle": "kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
-   "shelf": "kure-beach",
-   "collection": "local-icons",
-   "name": "Kure Beach Lifeguard Stand Embroidered Crewneck Sweatshirt",
-   "type": "tops",
-   "color": "White",
-   "alt": "Smiling woman in a white crewneck sweatshirt with a small embroidered lifeguard stand and the words Kure Beach, shown as an illustrative image",
-   "meta": "A small lifeguard stand with a red flag and the town name Kure Beach, embroidered on the chest of a white crewneck sweatshirt.",
-   "cta": "Choose size",
+   "handle": "wrightsville-beach-sloop-printed-pet-bandana",
+   "shelf": "wrightsville-beach",
+   "collection": "shore-gear",
+   "name": "Wrightsville Beach Sloop Printed Pet Bandana",
+   "type": "beach",
+   "color": "Navy",
+   "alt": "Golden retriever wearing a navy sailboat print bandana on a sandy beach, shown as an illustrative image",
+   "meta": "A navy pet bandana printed with little sloops, on an adjustable collar. For beach walks with your dog on the Carolina coast.",
+   "cta": "Shop pet gear",
    "scenes": ["beach"],
    "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt.webp",
+   "lookbookFile": "shorelist-lookbook-wrightsville-beach-sloop-printed-pet-bandana.webp",
    "facts": [
-    ["Sizing", "Sizes S to 3XL"],
-    ["Embroidery", "Lifeguard stand and town name stitched in navy and red thread"],
-    ["Style", "Classic crewneck with ribbed neck, cuffs and hem"]
+    ["Size", "Small"],
+    ["Fabric", "100% polyester"],
+    ["Fit", "Clip-on bandana with an adjustable, removable collar"]
+   ]
+  },
+  {
+   "handle": "wrightsville-beach-sloop-printed-throw-pillow",
+   "shelf": "wrightsville-beach",
+   "collection": "shore-gear",
+   "name": "Wrightsville Beach Sloop Printed Throw Pillow",
+   "type": "beach",
+   "color": "Navy",
+   "alt": "Navy throw pillow covered in small sailboats on a weathered beach chair by the dunes, shown as an illustrative image",
+   "meta": "A square throw pillow with a navy all-over pattern of little sloops. Printed, not embroidered, for a Wilmington NC porch or beach house.",
+   "cta": "Shop home decor",
+   "scenes": ["beach"],
+   "cut": "unisex",
+   "lookbookFile": "shorelist-lookbook-wrightsville-beach-sloop-printed-throw-pillow.webp",
+   "facts": [
+    ["Size", "16 x 16 in or 18 x 18 in"],
+    ["Fabric", "100% polyester cover with insert"],
+    ["Print", "Sailboat pattern edge to edge"],
+    ["Care", "Spot clean or machine wash cold per the cover label"]
    ]
   }
  ]
