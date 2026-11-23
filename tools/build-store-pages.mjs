@@ -109,7 +109,7 @@ ${sizeTable}
 const faq = [
   ['How long does an order take?', 'Every piece is made after you order, and production begins after checkout. For ShoreList Shop items, our print partner says most orders ship within 2 to 7 business days after the order is submitted, then transit time applies. Production time for ShoreList Gear items depends on the product and the fulfillment partner. The shipping method, cost and estimated delivery for your address are shown at checkout.'],
   ['Can I return something because I changed my mind or ordered the wrong size?', 'Because each piece is made to order, neither ShoreList Gear nor ShoreList Shop accepts returns for a change of mind or a size preference. A size exchange applies only if the wrong size was sent. Customers in the EU, EEA or UK may have statutory withdrawal rights, which this policy does not limit.'],
-  ['What if my order arrives damaged, defective or misprinted?', 'Write to rj@shorelist.net with your order number and photos, and we will arrange a replacement at no cost. Report it within 30 days of delivery on both ShoreList Gear and ShoreList Shop orders.'],
+  ['What if my order arrives damaged, defective or misprinted?', 'Write to rj@shorelist.net with your order number and photos, and we will arrange a replacement or refund at no cost. Report it within 30 days of delivery on both ShoreList Gear and ShoreList Shop orders.'],
   ['Do digital guides and prints ship?', 'No. PDF guides and art print files are downloads, and 7 percent North Carolina sales tax is added at checkout. If a file is missing or will not open, email rj@shorelist.net.'],
 ];
 const shipBody = `<ul class="tp-short">
@@ -136,7 +136,8 @@ const shipBody = `<ul class="tp-short">
 
 <h2 id="returns">Returns and replacements</h2>
 <h3>Damaged, defective or misprinted</h3>
-<p>Write to <a href="mailto:${MAIL}">${MAIL}</a> as soon as you notice, with your order number and photos of the problem. We will arrange a replacement at no cost. Please report it within 30 days of delivery, for both ShoreList Gear and ShoreList Shop orders. Wrong size or wrong item sent also counts. Misprints, faded or smeared designs and damage that affected the piece all count.</p>
+<p>Write to <a href="mailto:${MAIL}">${MAIL}</a> as soon as you notice, with your order number and photos of the problem. We will arrange a replacement or refund at no cost. Please report it within 30 days of delivery, for both ShoreList Gear and ShoreList Shop orders. Wrong size or wrong item sent also counts. Misprints, faded or smeared designs and damage that affected the piece all count.</p>
+<p>If your order has not arrived 30 days after it was placed, write to us within one week after that point and we will investigate.</p>
 <p>Some things are not defects. Garment-dyed pieces vary slightly in color from one to the next, ink on dark fabric can read softer than it does on a screen, and a measurement within about 1 inch of the size guide is within tolerance.</p>
 <h3>Change of mind and size swaps</h3>
 <p>Because every piece is made after you order, we do not accept returns for a change of mind or a size preference, on either store. A size exchange applies only if the wrong size was sent. Customers in the EU, EEA or UK may have statutory withdrawal rights, which this policy does not limit. A question about fit costs nothing, and the <a href="/size-guide">size guide</a> is the better first step.</p>
@@ -259,7 +260,7 @@ const townOfItem = (i) => {
 const townFaqShared = [
   ['Is everything made to order?', 'Yes. Every piece is made after you order, so allow production time before it ships. The <a href="/shipping-returns">shipping and returns page</a> has the details.'],
   ['How does checkout work?', 'Pieces from ShoreList Shop go in your bag and check out together on Shopify. A few pieces are sold through our second store, ShoreList Gear, and check out there. Shipping and tax are shown before you pay.'],
-  ['What if something arrives wrong?', 'If a piece arrives damaged, defective, misprinted or in the wrong size, we replace it at no cost when you report it within 30 days of delivery. Made-to-order pieces cannot be returned for a change of mind or size preference.'],
+  ['What if something arrives wrong?', 'If a piece arrives damaged, defective, misprinted or in the wrong size, we replace or refund it at no cost when you report it within 30 days of delivery. Made-to-order pieces cannot be returned for a change of mind or size preference.'],
 ];
 fs.mkdirSync(new URL('../shop/', import.meta.url), { recursive: true });
 const townOut = [];
