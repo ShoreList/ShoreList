@@ -145,7 +145,7 @@ const areaLinks = (skip) => '<nav class="ef-areas" aria-label="Events by area"><
   (MONTHS.some((m) => m.page) ? '<p class="cal-k" style="margin-top:14px">Browse by month</p><ul>' + MONTHS.filter((m) => m.page && '/events/' + m.slug !== skip).map((m) => '<li><a href="/events/' + m.slug + '">' + esc(m.name) + ' events<span>' + m.list.length + '</span></a></li>').join('') + (skip === '/events/by-month' ? '' : '<li><a href="/events/by-month">Events by month</a></li>') + '</ul>' : '') + '</nav>';
 // The whole feed block: tools, calendar, agenda. Identical structure with and without JavaScript, so nothing moves when the script starts.
 function feed(list, opts) {
-  return tools(list, opts) + '<div class="ef-body"><aside class="ef-side">' + calendar(list) + areaLinks(opts.path) + '</aside>' + agenda(list) + '</div>';
+  return tools(list, opts) + '<div class="ef-body"><div class="ef-side">' + calendar(list) + areaLinks(opts.path) + '</div>' + agenda(list) + '</div>';
 }
 
 // this weekend: Friday to Sunday of the current week (or the coming one)
