@@ -354,6 +354,114 @@
    "added": "2026-11-20"
   },
   {
+   "id": "the-live-oak-embroidered-crewneck-wilmington",
+   "collection": "local-icons",
+   "shelf": "wilmington",
+   "town": "wilmington",
+   "name": "The Live Oak Embroidered Crewneck, Wilmington",
+   "url": "https://shorelist.myshopify.com/products/the-live-oak-embroidered-crewneck-wilmington",
+   "type": "tops",
+   "color": "Blue Jean",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11333301079082788819_2048_1000x.jpg",
+   "alt": "Garment-dyed blue crewneck sweatshirt with a small embroidered live oak and the letters ILM on the chest, supplier mockup",
+   "meta": "A live oak hung with Spanish moss stitched on the chest, with ILM for Wilmington beneath it.",
+   "cta": "Choose color and size",
+   "price": 88,
+   "scenes": [
+    "riverwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/392796372616078076_2048.jpg",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, sizes S to 3XL"
+    ],
+    [
+     "Fabric",
+     "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
+    ],
+    [
+     "Embroidery",
+     "Stitched in green, chestnut and white thread"
+    ]
+   ]
+  },
+  {
+   "id": "the-live-oak-corduroy-cap-wilmington",
+   "collection": "local-icons",
+   "shelf": "wilmington",
+   "town": "wilmington",
+   "name": "The Live Oak Corduroy Cap, Wilmington",
+   "url": "https://shorelist.myshopify.com/products/the-live-oak-corduroy-cap-wilmington",
+   "type": "hats",
+   "color": "Navy Blue",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4211854548687384211_2048_1000x.jpg",
+   "alt": "Corduroy cap with a small embroidered live oak on the front, supplier mockup",
+   "meta": "A live oak hung with Spanish moss embroidered on the front of a soft corduroy cap, with ILM for Wilmington on the back.",
+   "cta": "Choose color",
+   "price": 49,
+   "scenes": [
+    "riverwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15008965743144943281_2048.jpg",
+   "facts": [
+    [
+     "Fit",
+     "Unstructured, low profile, curved brim, one size"
+    ],
+    [
+     "Fabric",
+     "Cotton corduroy"
+    ],
+    [
+     "Closure",
+     "Adjustable strap with a brass buckle"
+    ],
+    [
+     "Colors",
+     "Navy Blue, Burgundy, Black"
+    ]
+   ]
+  },
+  {
+   "id": "the-live-oak-cuffed-beanie-wilmington",
+   "collection": "local-icons",
+   "shelf": "wilmington",
+   "town": "wilmington",
+   "name": "The Live Oak Cuffed Beanie, Wilmington",
+   "url": "https://shorelist.myshopify.com/products/the-live-oak-cuffed-beanie-wilmington",
+   "type": "hats",
+   "color": "Navy",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5126613936494193933_2048_1000x.jpg",
+   "alt": "Navy cuffed knit beanie with a live oak and the letters ILM embroidered on the cuff, supplier mockup",
+   "meta": "A live oak and ILM for Wilmington embroidered side by side on the cuff of a classic knit beanie.",
+   "cta": "Choose color",
+   "price": 30,
+   "scenes": [
+    "riverwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10802425845324763419_2048.jpg",
+   "facts": [
+    [
+     "Fit",
+     "Classic cuffed beanie, one size"
+    ],
+    [
+     "Fabric",
+     "Soft acrylic knit with a fold-up cuff"
+    ]
+   ]
+  },
+  {
    "id": "wrightsville-can-cooler",
    "collection": "shore-gear",
    "shelf": "wrightsville-beach",
@@ -586,6 +694,159 @@
    "motif": "boats-buoys"
   },
   {
+   "id": "daymark-corduroy-cap-wrightsville-beach",
+   "collection": "local-icons",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Daymark Corduroy Cap, Wrightsville Beach",
+   "url": "https://shorelist.myshopify.com/products/daymark-corduroy-cap-wrightsville-beach",
+   "type": "hats",
+   "color": "Navy Blue",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8866227092479380040_2048_1000x.jpg",
+   "alt": "Navy corduroy cap with one small embroidered sloop on the front, supplier mockup",
+   "meta": "One small sloop stitched on the front of a navy corduroy cap, with WB for Wrightsville Beach on the back.",
+   "cta": "Shop the cap",
+   "price": 49,
+   "scenes": [
+    "beach",
+    "harbor-night"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17489514768813412385_2048.jpg",
+   "facts": [
+    [
+     "Fit",
+     "Unstructured, low profile, curved brim, one size"
+    ],
+    [
+     "Fabric",
+     "Cotton corduroy"
+    ],
+    [
+     "Closure",
+     "Adjustable strap with a brass buckle"
+    ]
+   ]
+  },
+  {
+   "id": "the-rope-line-crewneck-wrightsville-beach",
+   "collection": "local-icons",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "The Rope Line Crewneck, Wrightsville Beach",
+   "url": "https://shorelist.myshopify.com/products/the-rope-line-crewneck-wrightsville-beach",
+   "type": "tops",
+   "color": "White",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4552877450016127230_2048_1000x.jpg",
+   "alt": "White crewneck sweatshirt with WB and a short twisted rope line embroidered in navy on the chest, supplier mockup",
+   "meta": "WB for Wrightsville Beach in widely spaced capitals over a short stitched rope line, small and quiet on the chest.",
+   "cta": "Choose your size",
+   "price": 74,
+   "scenes": [
+    "beach",
+    "harbor-night"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7530488386228248637_2048.jpg",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, sizes S to 3XL"
+    ],
+    [
+     "Fabric",
+     "Garment-dyed 80/20 ring-spun cotton and polyester fleece"
+    ],
+    [
+     "Embroidery",
+     "Navy thread on white"
+    ]
+   ]
+  },
+  {
+   "id": "shorelist-tilt-beach-umbrella-6-5-ft-upf-50",
+   "collection": "beach-setup",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "ShoreList Tilt Beach Umbrella, 6.5 ft UPF 50+",
+   "url": "https://shorelist.myshopify.com/products/shorelist-tilt-beach-umbrella-6-5-ft-upf-50",
+   "type": "beach",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/896e91258188456b9739f40519a8211b_1000x.webp",
+   "alt": "Tilting beach umbrella with an aluminum pole planted in the sand, supplier photo",
+   "meta": "A 6.5 ft tilting beach umbrella with UPF 50+ fabric, a sand anchor and a carry bag. About 3.5 lb.",
+   "cta": "Shop beach gear",
+   "price": 99,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/71c3cafdc73249299035b606ec9e19e8.webp",
+   "facts": [
+    [
+     "Size",
+     "6.5 ft across, 7 ft tall"
+    ],
+    [
+     "Frame",
+     "Aluminum pole with 8 fiberglass ribs and a sand anchor"
+    ],
+    [
+     "Fabric",
+     "Silver-coated polyester, UPF 50+, top air vent"
+    ],
+    [
+     "Weight",
+     "About 3.5 lb, carry bag included"
+    ]
+   ]
+  },
+  {
+   "id": "shorelist-aluminum-backpack-beach-chair-mint-stripe",
+   "collection": "beach-setup",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "ShoreList Aluminum Backpack Beach Chair, Mint Stripe",
+   "url": "https://shorelist.myshopify.com/products/shorelist-aluminum-backpack-beach-chair-mint-stripe",
+   "type": "beach",
+   "color": "Mint stripe",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/e4e9481e914347868d7fc04ab6c9e261_1000x.webp",
+   "alt": "Mint striped aluminum backpack beach chair with wooden armrests, supplier photo",
+   "meta": "A mint stripe backpack beach chair with four recline positions, wooden armrests and shoulder straps for the walk over the dunes.",
+   "cta": "Shop beach gear",
+   "price": 109,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/602c12d5ea7b4cd08d340469e5c9b75e.webp",
+   "facts": [
+    [
+     "Recline",
+     "Four positions from 100 to 140 degrees"
+    ],
+    [
+     "Frame",
+     "Rustproof aluminum, supports up to 265 lb"
+    ],
+    [
+     "Seat",
+     "12 in seat height, detachable pillow, wooden armrests"
+    ],
+    [
+     "Carry",
+     "Folds flat with backpack shoulder straps"
+    ]
+   ]
+  },
+  {
    "id": "carolina-beach-ornament-2026",
    "collection": "coastal-christmas",
    "shelf": "carolina-beach",
@@ -623,6 +884,124 @@
    "added": "2026-11-20",
    "featured": true,
    "motif": "boats-buoys"
+  },
+  {
+   "id": "the-pelican-embroidered-crewneck-carolina-beach",
+   "collection": "local-icons",
+   "shelf": "carolina-beach",
+   "town": "carolina-beach",
+   "name": "The Pelican Embroidered Crewneck, Carolina Beach",
+   "url": "https://shorelist.myshopify.com/products/the-pelican-embroidered-crewneck-carolina-beach",
+   "type": "tops",
+   "color": "Blue Jean",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17511693076647559523_2048_1000x.jpg",
+   "alt": "Garment-dyed blue crewneck sweatshirt with a small embroidered brown pelican and the letters CB on the chest, supplier mockup",
+   "meta": "A brown pelican stitched on the chest in white, chestnut and gold thread, with CB for Carolina Beach beneath it.",
+   "cta": "Choose color and size",
+   "price": 88,
+   "scenes": [
+    "beach",
+    "boardwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13933455820164530453_2048.jpg",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, sizes S to 3XL"
+    ],
+    [
+     "Fabric",
+     "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
+    ],
+    [
+     "Embroidery",
+     "Stitched in white, chestnut and gold thread"
+    ],
+    [
+     "Colors",
+     "Blue Jean, Blue Spruce, Denim"
+    ]
+   ]
+  },
+  {
+   "id": "the-pelican-corduroy-cap-carolina-beach",
+   "collection": "local-icons",
+   "shelf": "carolina-beach",
+   "town": "carolina-beach",
+   "name": "The Pelican Corduroy Cap, Carolina Beach",
+   "url": "https://shorelist.myshopify.com/products/the-pelican-corduroy-cap-carolina-beach",
+   "type": "hats",
+   "color": "Navy Blue",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/554477750588018687_2048_1000x.jpg",
+   "alt": "Navy corduroy cap with a small embroidered brown pelican on the front, supplier mockup",
+   "meta": "A brown pelican embroidered on the front of a soft corduroy cap, with CB for Carolina Beach stitched on the back.",
+   "cta": "Choose color",
+   "price": 49,
+   "scenes": [
+    "beach",
+    "boardwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/755985813891049725_2048.jpg",
+   "facts": [
+    [
+     "Fit",
+     "Unstructured, low profile, curved brim, one size"
+    ],
+    [
+     "Fabric",
+     "Cotton corduroy"
+    ],
+    [
+     "Closure",
+     "Adjustable strap with a brass buckle"
+    ],
+    [
+     "Colors",
+     "Navy Blue, Olive"
+    ]
+   ]
+  },
+  {
+   "id": "the-pelican-cuffed-beanie-carolina-beach",
+   "collection": "local-icons",
+   "shelf": "carolina-beach",
+   "town": "carolina-beach",
+   "name": "The Pelican Cuffed Beanie, Carolina Beach",
+   "url": "https://shorelist.myshopify.com/products/the-pelican-cuffed-beanie-carolina-beach",
+   "type": "hats",
+   "color": "Navy",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10754155865723586346_2048_1000x.jpg",
+   "alt": "Navy cuffed knit beanie with a brown pelican and the letters CB embroidered on the cuff, supplier mockup",
+   "meta": "A brown pelican and CB for Carolina Beach embroidered side by side on the cuff of a classic knit beanie.",
+   "cta": "Choose color",
+   "price": 30,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2987194900095621589_2048.jpg",
+   "facts": [
+    [
+     "Fit",
+     "Classic cuffed beanie, one size"
+    ],
+    [
+     "Fabric",
+     "Soft acrylic knit with a fold-up cuff"
+    ],
+    [
+     "Colors",
+     "Navy, Spruce, Olive"
+    ]
+   ]
   },
   {
    "id": "kure-beach-ornament-2026",
