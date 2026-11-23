@@ -911,6 +911,43 @@
    "motif": "boats-buoys"
   },
   {
+   "id": "the-sloop-rope-cap-wrightsville-beach",
+   "collection": "local-icons",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "The Sloop Rope Cap, Wrightsville Beach",
+   "url": "https://shorelist.myshopify.com/products/the-sloop-rope-cap-wrightsville-beach",
+   "type": "hats",
+   "color": "Chambray",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17046976352901640324_2048_1000x.jpg",
+   "alt": "Rope cap with a small embroidered sailboat on the front and a contrast rope across the bill, rendered mockup",
+   "meta": "A little sloop machine embroidered on a rope cap with a solid rope braid across the bill. Made for days on the water.",
+   "cta": "Choose color",
+   "price": 45,
+   "scenes": [
+    "beach",
+    "harbor-night"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4777922252812219658_2048.jpg",
+   "facts": [
+    [
+     "Fit",
+     "Semi-structured five-panel, high profile, plastic snapback, one size"
+    ],
+    [
+     "Fabric",
+     "Lightweight 100% polyester micro ripstop"
+    ],
+    [
+     "Colors",
+     "Ivory, Chambray, Peachy"
+    ]
+   ]
+  },
+  {
    "id": "carolina-beach-ornament-2026",
    "collection": "coastal-christmas",
    "shelf": "carolina-beach",
@@ -1428,6 +1465,41 @@
     ]
    ],
    "motif": "beach-scenes"
+  },
+  {
+   "id": "the-blue-crab-rope-cap-kure-beach",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "town": "kure-beach",
+   "name": "The Blue Crab Rope Cap, Kure Beach",
+   "url": "https://shorelist.myshopify.com/products/the-blue-crab-rope-cap-kure-beach",
+   "type": "hats",
+   "color": "Ivory",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11942122253093304092_2048_1000x.jpg",
+   "alt": "Ivory rope cap with a small embroidered blue crab on the front, rendered mockup",
+   "meta": "An Atlantic blue crab, claws up, machine embroidered on a rope cap for Kure Beach days on the pier.",
+   "cta": "Choose color",
+   "price": 45,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "facts": [
+    [
+     "Fit",
+     "Semi-structured five-panel, high profile, plastic snapback, one size"
+    ],
+    [
+     "Fabric",
+     "Lightweight 100% polyester micro ripstop"
+    ],
+    [
+     "Colors",
+     "Ivory, Peachy"
+    ]
+   ]
   }
  ],
  "scenes": [
