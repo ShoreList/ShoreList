@@ -1,5 +1,5 @@
 {
- "v": 1,
+ "v": 1, "startHere": ["carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt", "kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt", "the-pelican-corduroy-cap-carolina-beach", "airlie-oak-framed-art-print-wrightsville-beach-and-wilmington", "wrightsville-beach-sloop-all-over-print-tote-bag", "the-blue-crab-embroidered-crewneck-kure-beach"], 
  "note": "Only add an item here after it passes the shop gates: real supplier mockup of the exact colorway, lining/inside color checked, art at print resolution, product URL returns 200 signed out. Customer-facing fields (name, alt, meta, cta, collection blurbs, stores[].carries) must not name third-party blank brands; put those in the internal blank field. Run: node tools/check-shop-links.mjs",
  "collections": [
   {

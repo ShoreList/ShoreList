@@ -69,6 +69,21 @@ if (fs.existsSync('gift-guide.html')) {
     if (m[3] !== `${it.from ? 'From ' : ''}$${it.price}`) bad(`gift-guide: ${it.id} price differs from the catalog`);
   }
 }
+// shop page: the static Product JSON-LD and Start here cards must be live catalog items with the catalog's url and price (regenerate: node tools/build-shop-static.mjs)
+if (fs.existsSync('shop.html')) {
+  const sh = fs.readFileSync('shop.html', 'utf8');
+  const byIdS = new Map((cat.items || []).map((i) => [i.id, i]));
+  const retiredS = cat.retired && cat.retired.items ? (Array.isArray(cat.retired.items) ? cat.retired.items.map((r) => (typeof r === 'string' ? r : r.id)) : Object.keys(cat.retired.items)) : [];
+  for (const id of cat.startHere || []) { if (!byIdS.has(id)) bad(`shop startHere: ${id} is not in shop-catalog.json`); if (retiredS.includes(id)) bad(`shop startHere: ${id} is retired`); }
+  for (const m of sh.matchAll(/data-qv="([a-z0-9-]+)"/g)) if (!byIdS.has(m[1])) bad(`shop.html: static card ${m[1]} is not in shop-catalog.json (run node tools/build-shop-static.mjs)`);
+  for (const m of sh.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+    let j; try { j = JSON.parse(m[1]); } catch { continue; }
+    const walkP = (o) => { if (Array.isArray(o)) return o.forEach(walkP); if (!o || typeof o !== 'object') return;
+      if (o['@type'] === 'Product') { const it = [...byIdS.values()].find((x) => x.url === o.url); if (!it) bad(`shop.html: JSON-LD product ${o.name} is not in the catalog`); else if (String(it.price) !== String(o.offers && o.offers.price)) bad(`shop.html: JSON-LD price for ${it.id} differs from the catalog (run node tools/build-shop-static.mjs)`); }
+      for (const k in o) walkP(o[k]); };
+    walkP(j);
+  }
+}
 for (const f of ['size-guide.html', 'shipping-returns.html', 'gift-guide.html']) {
   if (!fs.existsSync(f)) { bad(`${f}: missing`); continue; }
   const t = fs.readFileSync(f, 'utf8').replace(/<script[\s\S]*?<\/script>/g, '');
