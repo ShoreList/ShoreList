@@ -1255,6 +1255,125 @@
    "motif": "sea-life"
   },
   {
+   "id": "the-lifeguard-stand-bucket-hat-carolina-beach",
+   "collection": "local-icons",
+   "shelf": "carolina-beach",
+   "town": "carolina-beach",
+   "name": "The Lifeguard Stand Bucket Hat, Carolina Beach",
+   "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-bucket-hat-carolina-beach",
+   "type": "hats",
+   "color": "White",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7039749206102019615_2048_1000x.jpg",
+   "alt": "White cotton bucket hat with a navy embroidered Carolina Beach lifeguard stand, rendered mockup",
+   "meta": "The Carolina Beach lifeguard stand, flag up, machine embroidered in navy on a white cotton twill bucket hat.",
+   "cta": "Shop now",
+   "price": 42,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "facts": [
+    [
+     "Fit",
+     "Unstructured bucket, 3.75 in crown, 2.25 in brim, sewn eyelets, one size fits most"
+    ],
+    [
+     "Fabric",
+     "100% cotton twill"
+    ],
+    [
+     "Decoration",
+     "Machine embroidered navy front mark"
+    ],
+    [
+     "Colors",
+     "White"
+    ]
+   ]
+  },
+  {
+   "id": "the-lifeguard-stand-canvas-tote-carolina-beach",
+   "collection": "local-icons",
+   "shelf": "carolina-beach",
+   "town": "carolina-beach",
+   "name": "The Lifeguard Stand Canvas Tote, Carolina Beach",
+   "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-canvas-tote-carolina-beach",
+   "type": "bags",
+   "color": "Cream",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3245672284682119365_2048_1000x.jpg",
+   "alt": "Cream cotton canvas tote with a navy embroidered Carolina Beach lifeguard stand, rendered mockup",
+   "meta": "The Carolina Beach lifeguard stand machine embroidered on a heavy 320 gsm cotton canvas tote for towels, books and shells.",
+   "cta": "Choose color",
+   "price": 48,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7823676963491228727_2048.jpg",
+   "facts": [
+    [
+     "Size",
+     "About 16.5 x 16.5 in, reinforced shoulder straps, double-stitched seams"
+    ],
+    [
+     "Fabric",
+     "100% cotton canvas, 320 gsm"
+    ],
+    [
+     "Decoration",
+     "Machine embroidered front mark"
+    ],
+    [
+     "Colors",
+     "Cream, Bone"
+    ]
+   ]
+  },
+  {
+   "id": "the-lifeguard-stand-dad-hat-carolina-beach",
+   "collection": "local-icons",
+   "shelf": "carolina-beach",
+   "town": "carolina-beach",
+   "name": "The Lifeguard Stand Dad Hat, Carolina Beach",
+   "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-dad-hat-carolina-beach",
+   "type": "hats",
+   "color": "Stone",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17788839184575237457_2048_1000x.jpg",
+   "alt": "Cotton dad hat with a navy embroidered Carolina Beach lifeguard stand, rendered mockup",
+   "meta": "The Carolina Beach lifeguard stand machine embroidered in navy on a washed cotton twill dad hat with a brass buckle.",
+   "cta": "Choose color",
+   "price": 42,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17705373984459054970_2048.jpg",
+   "facts": [
+    [
+     "Fit",
+     "Unstructured six-panel, low profile, adjustable strap with antique brass buckle, one size"
+    ],
+    [
+     "Fabric",
+     "100% cotton chino twill"
+    ],
+    [
+     "Decoration",
+     "Machine embroidered navy front mark"
+    ],
+    [
+     "Colors",
+     "White, Stone, Khaki, Light Blue"
+    ]
+   ]
+  },
+  {
    "id": "kure-beach-can-cooler",
    "collection": "shore-gear",
    "shelf": "kure-beach",
@@ -1369,6 +1488,125 @@
     ]
    ],
    "motif": "sea-life"
+  },
+  {
+   "id": "the-lifeguard-stand-bucket-hat-kure-beach",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "town": "kure-beach",
+   "name": "The Lifeguard Stand Bucket Hat, Kure Beach",
+   "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-bucket-hat-kure-beach",
+   "type": "hats",
+   "color": "White",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2225867852724475080_2048_1000x.jpg",
+   "alt": "White cotton bucket hat with a navy embroidered Kure Beach lifeguard stand, rendered mockup",
+   "meta": "The Kure Beach lifeguard stand, flag up, machine embroidered in navy on a white cotton twill bucket hat.",
+   "cta": "Shop now",
+   "price": 42,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "facts": [
+    [
+     "Fit",
+     "Unstructured bucket, 3.75 in crown, 2.25 in brim, sewn eyelets, one size fits most"
+    ],
+    [
+     "Fabric",
+     "100% cotton twill"
+    ],
+    [
+     "Decoration",
+     "Machine embroidered navy front mark"
+    ],
+    [
+     "Colors",
+     "White"
+    ]
+   ]
+  },
+  {
+   "id": "the-blue-crab-canvas-tote-kure-beach",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "town": "kure-beach",
+   "name": "The Blue Crab Canvas Tote, Kure Beach",
+   "url": "https://shorelist.myshopify.com/products/the-blue-crab-canvas-tote-kure-beach",
+   "type": "bags",
+   "color": "Cream",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7066691774119677009_2048_1000x.jpg",
+   "alt": "Cream cotton canvas tote with an embroidered Atlantic blue crab, rendered mockup",
+   "meta": "An Atlantic blue crab, claws up, machine embroidered on a heavy 320 gsm cotton canvas tote for Kure Beach days.",
+   "cta": "Choose color",
+   "price": 48,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10952569068745645040_2048.jpg",
+   "facts": [
+    [
+     "Size",
+     "About 16.5 x 16.5 in, reinforced shoulder straps, double-stitched seams"
+    ],
+    [
+     "Fabric",
+     "100% cotton canvas, 320 gsm"
+    ],
+    [
+     "Decoration",
+     "Machine embroidered front mark"
+    ],
+    [
+     "Colors",
+     "Cream, Bone"
+    ]
+   ]
+  },
+  {
+   "id": "the-lifeguard-stand-dad-hat-kure-beach",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "town": "kure-beach",
+   "name": "The Lifeguard Stand Dad Hat, Kure Beach",
+   "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-dad-hat-kure-beach",
+   "type": "hats",
+   "color": "Stone",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10636750651501254793_2048_1000x.jpg",
+   "alt": "Cotton dad hat with a navy embroidered Kure Beach lifeguard stand, rendered mockup",
+   "meta": "The Kure Beach lifeguard stand machine embroidered in navy on a washed cotton twill dad hat with a brass buckle.",
+   "cta": "Choose color",
+   "price": 42,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2145508029400222277_2048.jpg",
+   "facts": [
+    [
+     "Fit",
+     "Unstructured six-panel, low profile, adjustable strap with antique brass buckle, one size"
+    ],
+    [
+     "Fabric",
+     "100% cotton chino twill"
+    ],
+    [
+     "Decoration",
+     "Machine embroidered navy front mark"
+    ],
+    [
+     "Colors",
+     "White, Stone, Khaki, Light Blue"
+    ]
+   ]
   },
   {
    "id": "wrightsville-ornament-2026",
