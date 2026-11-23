@@ -112,7 +112,7 @@
 <!--/SHOP-STATIC:faq-->
   </div></section>
 </main>
-<dialog id="qv" aria-labelledby="qvn"><button class="qvx" type="button" id="qvx" aria-label="Close product details">Close</button><div class="qvg"><div class="qvm"><img id="qvi" alt="" width="600" height="750" decoding="async"/><div class="qvth" id="qvth" hidden></div><p class="qvcap" id="qvcap" hidden>Styled scene. Generated image, not a photograph of a real place.</p></div><div class="qvt"><p class="k" id="qvk"></p><h3 id="qvn"></h3><div class="price" id="qvp"></div><p id="qvm"></p><div class="qvcta" id="qvcta"></div><dl class="pre" id="qvpre"></dl></div></div></dialog>
+<dialog id="qv" aria-labelledby="qvn"><button class="qvx" type="button" id="qvx" aria-label="Close product details">Close</button><div class="qvg"><div class="qvm"><img id="qvi" alt="" width="600" height="750" decoding="async"/><div class="qvth" id="qvth" hidden></div></div><div class="qvt"><p class="k" id="qvk"></p><h3 id="qvn"></h3><div class="price" id="qvp"></div><p id="qvm"></p><div class="qvcta" id="qvcta"></div><dl class="pre" id="qvpre"></dl></div></div></dialog>
 <footer class="sf">
   <div class="fl"><a href="/">Experiences</a><a href="/events">Events</a><a href="/prints">Art prints</a><a href="/gift-guide">Gift guide</a><a href="/size-guide">Size guide</a><a href="/shipping-returns">Shipping</a><a href="/shipping-returns#returns">Returns</a><a href="mailto:rj@shorelist.net">Contact</a><a href="/waitlist?src=shop">Waitlist</a><a href="/legal">Privacy &amp; Terms</a></div>
   <div class="fine">&copy; 2026 ShoreList LLC</div>
@@ -296,7 +296,6 @@
   }
   function setQvImg(src,alt,styled){
     var im=$('qvi');im.src=src||'';im.alt=alt||'';
-    $('qvcap').hidden=!styled;
   }
   function openQv(id){
     var i=byId(id);if(!i)return;qvCur=id;

@@ -193,7 +193,6 @@ dialog#qv::backdrop{background:rgba(14,31,51,.6)}
 .qvth button{width:60px;aspect-ratio:4/5;border:1px solid var(--line);padding:0;background:var(--sail);cursor:pointer;opacity:.7}
 .qvth button[aria-pressed=true]{opacity:1;border-color:var(--ink)}
 .qvth img{width:100%;height:100%;object-fit:cover;aspect-ratio:auto}
-.qvcap{font-size:.78rem;padding:0 10px 10px;background:var(--sail)}
 .qvt{padding:44px 36px 32px;display:flex;flex-direction:column;gap:14px}
 .qvt .k{font:500 .72rem var(--mono);letter-spacing:.14em;text-transform:uppercase}
 .qvt h3{font:400 1.8rem var(--serif)}
