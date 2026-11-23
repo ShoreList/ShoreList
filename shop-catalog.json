@@ -81,7 +81,7 @@
    "name": "Wilmington and the Coast",
    "town": true,
    "tag": "For the whole coast",
-   "blurb": "Pieces that belong to the whole coast: the Airlie Oak tote and tee, the Live Oak embroidered crewneck and the Carolina Coast beach towel.",
+   "blurb": "Pieces that belong to the whole coast: the Airlie Oak tote, tee and mug, the Live Oak embroidered crewneck and the Carolina Coast beach towel.",
    "cover": "airlie-oak-wilmington-all-over-print-tote-bag"
   }
  ],
@@ -1141,6 +1141,43 @@
     [
      "Colors",
      "Ivory or White"
+    ]
+   ]
+  },
+  {
+   "id": "airlie-oak-wilmington-printed-mug",
+   "collection": "shore-gear",
+   "shelf": "wilmington",
+   "town": "wilmington",
+   "name": "Airlie Oak Wilmington Printed Mug",
+   "url": "https://shorelist.myshopify.com/products/airlie-oak-wilmington-printed-mug",
+   "type": "beach",
+   "color": "Ivory",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-printed-mug-v2_1000x.webp",
+   "alt": "Ceramic mug printed with a painterly illustration of the Airlie Oak, a Southern live oak with hanging Spanish moss and blush azaleas at its base, on a weathered garden bench with azaleas and a live oak behind, shown as an illustrative image",
+   "meta": "A printed 11 oz ceramic mug with a painterly illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC, with Spanish moss and blush azaleas. Made to order.",
+   "cta": "Shop mugs",
+   "price": 30,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17705579613895622135_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-printed-mug-v2_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "11 oz ceramic mug"
+    ],
+    [
+     "Print",
+     "Airlie Oak illustration on the front of the mug"
+    ],
+    [
+     "Care",
+     "Microwave and dishwasher safe"
     ]
    ]
   },
