@@ -2,20 +2,20 @@
  "shelves": [],
  "items": [
   {
-   "handle": "southern-magnolia-wilmington-printed-garment-dyed-tee",
+   "handle": "dogwood-blossom-wilmington-printed-garment-dyed-tee",
    "shelf": "wilmington",
    "collection": "local-icons",
-   "name": "Southern Magnolia Wilmington Printed Garment-Dyed Tee",
+   "name": "Dogwood Blossom Wilmington Printed Garment-Dyed Tee",
    "type": "tops",
    "color": "Navy",
-   "alt": "Navy tee printed on the chest with a lifelike painted Southern magnolia branch with a white bloom, hanging from a branch in a Wilmington magnolia garden, shown as an illustrative image",
-   "meta": "A relaxed garment-dyed tee printed with a lifelike painted Southern magnolia branch, white bloom and glossy leaves, a Wilmington NC garden favorite. Made to order.",
+   "alt": "Navy tee printed on the chest with a lifelike painted flowering dogwood branch with white blooms, hanging from a dogwood branch in a Wilmington spring garden, shown as an illustrative image",
+   "meta": "A relaxed garment-dyed tee printed with a lifelike painted flowering dogwood branch, white blooms and green leaves, a Wilmington NC spring favorite. Made to order.",
    "cta": "Choose size",
    "scenes": [
     "beach"
    ],
    "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-southern-magnolia-wilmington-printed-garment-dyed-tee.webp",
+   "lookbookFile": "shorelist-lookbook-dogwood-blossom-wilmington-printed-garment-dyed-tee.webp",
    "facts": [
     [
      "Sizing",
@@ -27,11 +27,11 @@
     ],
     [
      "Print",
-     "Magnolia illustration printed on the front chest, not embroidered"
+     "Dogwood illustration printed on the front chest, not embroidered"
     ],
     [
      "Colors",
-     "True Navy or Ivory"
+     "True Navy"
     ]
    ]
   }
