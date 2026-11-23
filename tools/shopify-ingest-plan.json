@@ -2,37 +2,22 @@
  "shelves": [],
  "items": [
   {
-   "handle": "wrightsville-beach-airlie-live-oak-all-over-print-tote-bag",
+   "handle": "wrightsville-beach-airlie-live-oak-printed-mug",
    "shelf": "wrightsville-beach",
    "collection": "shore-gear",
-   "name": "Wrightsville Beach Airlie Live Oak All Over Print Tote Bag",
+   "name": "Wrightsville Beach Airlie Live Oak Printed Mug",
    "type": "beach",
-   "color": "Ivory",
-   "alt": "Ivory tote bag printed edge to edge with teal and slate live oak and Spanish moss medallions and navy handles, resting on the sand beside a towel, straw hat and flip-flops at Wrightsville Beach, shown as an illustrative image",
-   "meta": "A printed tote with ink and watercolor live oak and Spanish moss medallions in teal and slate on ivory, inspired by Airlie Gardens. A Wrightsville Beach carry-all for the Carolina coast.",
-   "cta": "Choose size",
-   "scenes": [
-    "beach"
-   ],
+   "color": "White",
+   "alt": "White ceramic mug printed with teal and navy live oak and Spanish moss medallions on ivory, standing on a driftwood plank in the dunes beside a folded cream towel and a shell at Wrightsville Beach, shown as an illustrative image",
+   "meta": "A printed 11 oz white ceramic mug with ink and watercolor live oak and Spanish moss medallions in teal and navy on ivory, inspired by Airlie Gardens. Made to order.",
+   "cta": "Shop mugs",
+   "scenes": ["beach"],
    "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-wrightsville-beach-airlie-live-oak-all-over-print-tote-bag.webp",
+   "lookbookFile": "shorelist-lookbook-wrightsville-beach-airlie-live-oak-printed-mug.webp",
    "facts": [
-    [
-     "Size",
-     "16 x 16 in or 18 x 18 in"
-    ],
-    [
-     "Handles",
-     "Navy or beige cotton webbing, solid color"
-    ],
-    [
-     "Fabric",
-     "100% spun polyester with a laminate lining, spot clean"
-    ],
-    [
-     "Print",
-     "Live oak and Spanish moss pattern printed edge to edge on the bag body, not embroidered"
-    ]
+    ["Size", "11 oz white ceramic mug"],
+    ["Print", "Live oak and Spanish moss pattern wrapped around the mug"],
+    ["Care", "Microwave and dishwasher safe"]
    ]
   }
  ]
