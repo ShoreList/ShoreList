@@ -130,6 +130,48 @@
    "motif": "boats-buoys"
   },
   {
+   "id": "wrightsville-beach-sloop-weekender-tote-bag",
+   "collection": "shore-gear",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Wrightsville Beach Sloop Weekender Tote Bag",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-weekender-tote-bag",
+   "type": "beach",
+   "color": "Navy",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-weekender-tote-bag_1000x.webp",
+   "alt": "Navy weekender tote printed edge to edge with white sailboats on teal waves, resting on the sand beside a towel and straw hat at Wrightsville Beach, shown as an illustrative image",
+   "meta": "A large printed weekender tote with a navy sloop pattern wrapped around the body and bottom. A Wrightsville Beach bag for beach weekends on the Carolina coast.",
+   "cta": "Shop tote bags",
+   "price": 78,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13894062535701194746_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-weekender-tote-bag_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "24 x 13 in with a T bottom"
+    ],
+    [
+     "Handles",
+     "Black, solid color"
+    ],
+    [
+     "Fabric",
+     "100% spun polyester exterior, black cotton blend lining, spot clean"
+    ],
+    [
+     "Print",
+     "Sailboat pattern printed edge to edge around the body and bottom, not embroidered"
+    ]
+   ],
+   "motif": "boats-buoys"
+  },
+  {
    "id": "wrightsville-beach-sloop-printed-mug",
    "collection": "shore-gear",
    "shelf": "wrightsville-beach",
