@@ -2680,6 +2680,47 @@
    ],
    "motif": "sea-life"
   },
+ {
+  "id": "wrightsville-beach-oystercatcher-printed-garment-dyed-tee",
+  "collection": "local-icons",
+  "shelf": "wrightsville-beach",
+  "town": "wrightsville-beach",
+  "name": "Wrightsville Beach Oystercatcher Printed Garment-Dyed Tee",
+  "url": "https://shorelist.myshopify.com/products/wrightsville-beach-oystercatcher-printed-garment-dyed-tee",
+  "type": "tops",
+  "color": "Ivory",
+  "added": "2026-11-23",
+  "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-oystercatcher-printed-garment-dyed-tee_1000x.webp",
+  "alt": "Wrightsville Beach oystercatcher printed tee in Ivory by ShoreList",
+  "meta": "A relaxed ivory garment-dyed tee printed with a painterly American oystercatcher on a Wrightsville Beach sand flat. Made to order.",
+  "cta": "Choose size",
+  "price": 44,
+  "scenes": [
+   "beach"
+  ],
+  "cut": "unisex",
+  "store": "shopify",
+  "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11330414591097854260_2048.jpg",
+  "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-oystercatcher-printed-garment-dyed-tee_1920x.webp",
+  "facts": [
+   [
+    "Sizing",
+    "Relaxed fit, offered in sizes L to 3XL (S and M are not offered yet)"
+   ],
+   [
+    "Fabric",
+    "Garment-dyed 100% ring-spun cotton, 6.1 oz"
+   ],
+   [
+    "Print",
+    "American oystercatcher on a sand flat with a small Wrightsville Beach line, about 5.5 in wide on the chest, printed not embroidered"
+   ],
+   [
+    "Care",
+    "Machine wash cold, tumble dry low. Garment dye means the shade varies slightly from piece to piece"
+   ]
+  ]
+ },
   {
    "id": "the-sloop-dad-hat-wrightsville-beach",
    "collection": "local-icons",
