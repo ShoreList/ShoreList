@@ -2,36 +2,32 @@
  "shelves": [],
  "items": [
   {
-   "handle": "carolina-beach-scallop-shell-printed-crewneck-sweatshirt",
-   "shelf": "carolina-beach",
+   "handle": "kure-beach-scallop-shell-printed-canvas-tote-bag",
+   "shelf": "kure-beach",
    "collection": "shore-gear",
-   "name": "Carolina Beach Scallop Shell Printed Crewneck Sweatshirt",
-   "type": "tops",
-   "color": "White",
-   "alt": "White crewneck sweatshirt with a small navy and coral scallop shell drawing printed on the left chest, shown as an illustrative image",
-   "meta": "A hand-inked navy and coral scallop shell printed small on the left chest of a white garment-dyed crewneck. A Carolina Beach layer for cool evenings on the coast.",
-   "cta": "Choose size",
+   "name": "Kure Beach Scallop Shell Printed Canvas Tote Bag",
+   "type": "beach",
+   "color": "Natural",
+   "alt": "Natural canvas tote bag printed with a navy and coral scallop shell, leaning on a dune beside a folded towel and straw hat, shown as an illustrative image",
+   "meta": "A natural cotton canvas tote printed with one hand-inked navy and coral scallop shell. A Kure Beach tote for beach days and market trips.",
+   "cta": "Shop tote bags",
    "scenes": [
     "beach"
    ],
    "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-carolina-beach-scallop-shell-printed-crewneck-sweatshirt.webp",
+   "lookbookFile": "shorelist-lookbook-kure-beach-scallop-shell-printed-canvas-tote-bag.webp",
    "facts": [
     [
-     "Sizing",
-     "Relaxed fit, sizes S to 3XL"
+     "Size",
+     "About 15 x 16 in with 20 in handles"
     ],
     [
      "Fabric",
-     "9.5 oz garment-dyed, 80% ring-spun cotton and 20% polyester"
+     "100% cotton canvas in natural"
     ],
     [
      "Print",
-     "Scallop shell drawing about 3.25 in wide on the left chest, printed not embroidered"
-    ],
-    [
-     "Care",
-     "Machine wash cold, tumble dry low. Garment dye means the shade varies slightly from piece to piece"
+     "Scallop shell drawing about 7 in wide on the front, printed not embroidered"
     ]
    ]
   }
