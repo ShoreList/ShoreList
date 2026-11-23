@@ -385,7 +385,9 @@ const evPages = all.filter(hasPage);
 // An event page is indexable only when its venue has facts there; otherwise the page is noindex and stays out of the sitemap.
 const VENUES = JSON.parse(fs.readFileSync('tools/venue-facts.json', 'utf8'));
 const venueOf = (e) => (e.venue !== '_note' && Object.prototype.hasOwnProperty.call(VENUES, e.venue) ? VENUES[e.venue] : null);
-const indexable = (e) => !!venueOf(e) && !venueOf(e).noindex && !e.noindex;
+// Pages whose slug is a feed record id (a Localist or hash id, not words) are thin duplicates of the curated listing, so they stay noindex.
+const feedSlug = (e) => /localist|-[0-9a-f]{8}-\d{4}-\d{2}-\d{2}$/i.test(e.id);
+const indexable = (e) => !!venueOf(e) && !venueOf(e).noindex && !e.noindex && !feedSlug(e);
 
 const GETTING = {
   'Downtown': 'Downtown Wilmington is compact and walkable: the Riverwalk, the historic district, restaurants and shops sit close together.',
@@ -436,7 +438,18 @@ function icsOf(e) {
   return ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//ShoreList//Events//EN', 'CALSCALE:GREGORIAN', 'BEGIN:VEVENT', 'UID:' + e.id + '@shorelist.net', 'DTSTAMP:' + stamp].concat(when2,
     ['SUMMARY:' + esc2(e.title), 'LOCATION:' + esc2(e.venue + ', ' + cityOf(e) + ', NC'), 'DESCRIPTION:' + esc2(note), 'URL:' + e.url, 'END:VEVENT', 'END:VCALENDAR']).join('\r\n') + '\r\n';
 }
-const titleOf = (e) => e.title + ', ' + dateTag(e) + ': ' + cityOf(e) + ', NC | ShoreList';
+// Page <title> stays within 62 characters: full form first, then shorter suffixes, then a clipped event name.
+const TITLE_MAX = 62;
+function titleOf(e) {
+  const sufs = [', ' + dateTag(e) + ': ' + cityOf(e) + ', NC | ShoreList', ', ' + dateTag(e) + ' | ShoreList', ' | ShoreList'];
+  for (const sx of sufs) if (e.title.length + sx.length <= TITLE_MAX) return e.title + sx;
+  const sx = sufs[sufs.length - 1];
+  return clip(e.title, TITLE_MAX - sx.length) + sx;
+}
+// Recurring events share a name, so a second page with the same name gets its date in the H1 to stay distinct.
+const titleCount = {};
+for (const x of evPages) titleCount[x.title] = (titleCount[x.title] || 0) + 1;
+const h1Of = (e) => (titleCount[e.title] > 1 ? e.title + ', ' + short(e.start) : e.title);
 const fact = (k, v) => '<div><dt>' + k + '</dt><dd>' + v + '</dd></div>';
 function venueBlock(e) {
   const v = venueOf(e), here = all.filter((x) => x.venue === e.venue && x.id !== e.id && hasPage(x));
@@ -469,7 +482,7 @@ ${NAV}
   ${heroImg(photo)}
   <div class="ev-wrap">
     <p class="ev-eye"><i></i>${esc(e.cat)} event</p>
-    <h1>${esc(e.title)}</h1>
+    <h1>${esc(h1Of(e))}</h1>
     <ul class="hero-facts"><li><time datetime="${esc(e.start)}">${esc(whenFull(e))}</time></li><li>${esc(e.venue)}, ${esc(city)}</li></ul>
     <div class="ev-jump"><a href="/events/${a.slug}">${esc(a.name)} events</a><a href="/events">All events</a><a href="/events/this-weekend">This weekend</a></div>
   </div>
