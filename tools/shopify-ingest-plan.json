@@ -2,42 +2,41 @@
  "shelves": [],
  "items": [
   {
-   "handle": "wrightsville-beach-sloop-printed-canvas-tote-bag",
-   "shelf": "wrightsville-beach",
-   "collection": "shore-gear",
-   "name": "Wrightsville Beach Sloop Printed Canvas Tote Bag",
-   "type": "beach",
-   "color": "Natural",
-   "alt": "Natural canvas tote bag with a navy panel of small sailboats printed on the front, shown as an illustrative image",
-   "meta": "A printed canvas tote with a navy panel of little sloops on the front. Roomy enough for a beach day or a Wilmington errand run.",
-   "cta": "Shop tote bags",
+   "handle": "kure-beach-lifeguard-stand-printed-garment-dyed-tee",
+   "shelf": "kure-beach",
+   "collection": "local-icons",
+   "name": "Kure Beach Lifeguard Stand Printed Garment-Dyed Tee",
+   "type": "tops",
+   "color": "Ivory",
+   "alt": "Woman in an ivory tee printed with a navy lifeguard stand and the words Kure Beach, standing in the dunes, shown as an illustrative image",
+   "meta": "A navy lifeguard stand with a small red flag over the words Kure Beach, printed on a soft ivory garment-dyed tee.",
+   "cta": "Choose size",
    "scenes": ["beach"],
    "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-wrightsville-beach-sloop-printed-canvas-tote-bag.webp",
+   "lookbookFile": "shorelist-lookbook-kure-beach-lifeguard-stand-printed-garment-dyed-tee.webp",
    "facts": [
-    ["Size", "About 15 x 16 in with 20 in handles"],
-    ["Fabric", "100% cotton canvas in natural"],
-    ["Print", "Sailboat pattern panel on the front"],
-    ["Care", "Machine wash cold, tumble dry low"]
+    ["Sizing", "Relaxed fit, sizes L to 3XL"],
+    ["Fabric", "100% ring-spun cotton, garment-dyed for a soft worn-in feel"],
+    ["Print", "Navy and red lifeguard stand with the town name on the chest"]
    ]
   },
   {
-   "handle": "wrightsville-beach-sloop-can-cooler-sleeve",
-   "shelf": "wrightsville-beach",
-   "collection": "shore-gear",
-   "name": "Wrightsville Beach Sloop Can Cooler Sleeve",
-   "type": "coolers",
-   "color": "Navy",
-   "alt": "Navy can cooler sleeve covered in small sailboats around a regular can, shown as an illustrative image",
-   "meta": "A navy can cooler sleeve covered in little sloops, printed edge to edge. Keeps a regular can cool on the boat, the sand or the porch.",
-   "cta": "Shop can coolers",
+   "handle": "kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
+   "shelf": "kure-beach",
+   "collection": "local-icons",
+   "name": "Kure Beach Lifeguard Stand Embroidered Crewneck Sweatshirt",
+   "type": "tops",
+   "color": "White",
+   "alt": "Smiling woman in a white crewneck sweatshirt with a small embroidered lifeguard stand and the words Kure Beach, shown as an illustrative image",
+   "meta": "A small lifeguard stand with a red flag and the town name Kure Beach, embroidered on the chest of a white crewneck sweatshirt.",
+   "cta": "Choose size",
    "scenes": ["beach"],
    "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-wrightsville-beach-sloop-can-cooler-sleeve.webp",
+   "lookbookFile": "shorelist-lookbook-kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt.webp",
    "facts": [
-    ["Size", "Fits a regular can, about 3.5 x 4.3 in"],
-    ["Materials", "Polyester outside, soft foam liner inside"],
-    ["Print", "Sailboat pattern printed edge to edge"]
+    ["Sizing", "Sizes S to 3XL"],
+    ["Embroidery", "Lifeguard stand and town name stitched in navy and red thread"],
+    ["Style", "Classic crewneck with ribbed neck, cuffs and hem"]
    ]
   }
  ]

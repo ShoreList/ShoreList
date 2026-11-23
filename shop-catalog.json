@@ -661,6 +661,82 @@
    "type": "ornaments",
    "added": "2026-11-20",
    "motif": "boats-buoys"
+  },
+  {
+   "id": "kure-beach-lifeguard-stand-printed-garment-dyed-tee",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "town": "kure-beach",
+   "name": "Kure Beach Lifeguard Stand Printed Garment-Dyed Tee",
+   "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-printed-garment-dyed-tee",
+   "type": "tops",
+   "color": "Ivory",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-garment-dyed-tee_1000x.webp",
+   "alt": "Woman in an ivory tee printed with a navy lifeguard stand and the words Kure Beach, standing in the dunes, shown as an illustrative image",
+   "meta": "A navy lifeguard stand with a small red flag over the words Kure Beach, printed on a soft ivory garment-dyed tee.",
+   "cta": "Choose size",
+   "price": 42,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10323877380730444236_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-garment-dyed-tee_1920x.webp",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, sizes L to 3XL"
+    ],
+    [
+     "Fabric",
+     "100% ring-spun cotton, garment-dyed for a soft worn-in feel"
+    ],
+    [
+     "Print",
+     "Navy and red lifeguard stand with the town name on the chest"
+    ]
+   ],
+   "motif": "beach-scenes"
+  },
+  {
+   "id": "kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "town": "kure-beach",
+   "name": "Kure Beach Lifeguard Stand Embroidered Crewneck Sweatshirt",
+   "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
+   "type": "tops",
+   "color": "White",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt_1000x.webp",
+   "alt": "Smiling woman in a white crewneck sweatshirt with a small embroidered lifeguard stand and the words Kure Beach, shown as an illustrative image",
+   "meta": "A small lifeguard stand with a red flag and the town name Kure Beach, embroidered on the chest of a white crewneck sweatshirt.",
+   "cta": "Choose size",
+   "price": 88,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5860568908472344756_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt_1920x.webp",
+   "facts": [
+    [
+     "Sizing",
+     "Sizes S to 3XL"
+    ],
+    [
+     "Embroidery",
+     "Lifeguard stand and town name stitched in navy and red thread"
+    ],
+    [
+     "Style",
+     "Classic crewneck with ribbed neck, cuffs and hem"
+    ]
+   ],
+   "motif": "beach-scenes"
   }
  ],
  "scenes": [
