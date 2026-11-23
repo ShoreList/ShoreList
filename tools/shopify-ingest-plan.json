@@ -2,20 +2,20 @@
  "shelves": [],
  "items": [
   {
-   "handle": "sea-oats-carolina-coast-printed-garment-dyed-tee",
+   "handle": "southern-magnolia-wilmington-printed-garment-dyed-tee",
    "shelf": "wilmington",
    "collection": "local-icons",
-   "name": "Sea Oats Carolina Coast Printed Garment-Dyed Tee",
+   "name": "Southern Magnolia Wilmington Printed Garment-Dyed Tee",
    "type": "tops",
-   "color": "White",
-   "alt": "White tee printed on the chest with a lifelike painted clump of sea oats on a small dune, hanging from a driftwood pole in sunlit sand dunes with sea oats, shown as an illustrative image",
-   "meta": "A relaxed garment-dyed tee printed with a lifelike painted clump of sea oats, the grass that holds the Carolina dunes together. Made to order.",
+   "color": "Navy",
+   "alt": "Navy tee printed on the chest with a lifelike painted Southern magnolia branch with a white bloom, hanging from a branch in a Wilmington magnolia garden, shown as an illustrative image",
+   "meta": "A relaxed garment-dyed tee printed with a lifelike painted Southern magnolia branch, white bloom and glossy leaves, a Wilmington NC garden favorite. Made to order.",
    "cta": "Choose size",
    "scenes": [
     "beach"
    ],
    "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-sea-oats-carolina-coast-printed-garment-dyed-tee.webp",
+   "lookbookFile": "shorelist-lookbook-southern-magnolia-wilmington-printed-garment-dyed-tee.webp",
    "facts": [
     [
      "Sizing",
@@ -27,11 +27,11 @@
     ],
     [
      "Print",
-     "Sea oats illustration printed on the front chest, not embroidered"
+     "Magnolia illustration printed on the front chest, not embroidered"
     ],
     [
      "Colors",
-     "White"
+     "True Navy or Ivory"
     ]
    ]
   }
