@@ -7,6 +7,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import { loadOperators, toPublic } from './operators-lib.mjs';
 import { CATS, TOWNS, PHOTO } from './seo-data.mjs';
+import { PLACES } from './seo-places.mjs';
 
 const SITE = 'https://shorelist.net';
 const tpl = fs.readFileSync('category.html', 'utf8');
@@ -40,6 +41,7 @@ const ORG = { '@type': 'Organization', '@id': SITE + '/#org', name: 'ShoreList',
 
 function head(html, { url, title, desc, image, extraLd }) {
   html = html.replace(/<link rel="canonical"[^>]*>/, `<link rel="canonical" href="${SITE}${url}"/>`)
+    .replace(/<meta name="robots"[^>]*>/, '<meta name="robots" content="index,follow"/>') // the category.html stub itself is noindex; generated pages are not
     .replace(/<title>[^<]*<\/title>/, `<title>${esc(title)}</title>`)
     .replace(/<meta name="description"[^>]*>/, `<meta name="description" content="${esc(desc)}"/>`)
     .replace(/<meta property="og:title"[^>]*>/, `<meta property="og:title" content="${esc(title)}"/>`)
@@ -76,6 +78,14 @@ const crumbs = (items) => ({ '@context': 'https://schema.org', '@type': 'Breadcr
 fs.mkdirSync('things-to-do', { recursive: true });
 
 // ---------- category pages ----------
+// Named local places for each category (copy and sources in tools/seo-places.mjs).
+const placesHtml = (slug) => {
+  const p = PLACES[slug];
+  if (!p) return '';
+  return `<h2 id="places">Local places to know</h2>
+      ${p.places.map(([n, t]) => `<h3>${esc(n)}</h3>\n      <p>${esc(t)}</p>`).join('\n      ')}
+      <p>${esc(p.plan)}</p>`;
+};
 for (const slug of slugs) {
   const c = CATS[slug], d = ctx.CAT_DATA[slug], url = '/things-to-do/' + slug;
   const live = (ctx.OPS[slug] || []).filter((x) => x.live);
@@ -129,6 +139,7 @@ ${liveHtml}
       <p>${esc(c.intro)}</p>
       <p class="where">Where: ${esc(c.where)}</p>
       ${status}
+      ${placesHtml(slug)}
     </div>
     <div id="faq">
       <p class="pg-eye">Before you go</p>
