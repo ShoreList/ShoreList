@@ -2320,8 +2320,8 @@
    "type": "tops",
    "color": "White",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/16767505816766786217_2048_1000x.jpg",
-   "alt": "White crewneck sweatshirt with a printed sea turtle illustration and the words Kure Beach on the chest, rendered mockup",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-sea-turtle-printed-crewneck-sweatshirt_1000x.jpg",
+   "alt": "Man in a white crewneck sweatshirt with a printed sea turtle illustration on a Kure Beach dune walkway at dusk, rendered mockup",
    "meta": "A detailed sea turtle illustration with the town name Kure Beach, printed on the chest of a garment-dyed crewneck sweatshirt.",
    "cta": "Choose size",
    "price": 88,
@@ -2348,7 +2348,8 @@
      "Care",
      "Machine wash cold inside out, tumble dry low, do not iron the print"
     ]
-   ]
+   ],
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-sea-turtle-printed-crewneck-sweatshirt_1920x.jpg"
   },
   {
    "id": "kure-beach-sea-turtle-printed-garment-dyed-tee",
@@ -2950,6 +2951,120 @@
     ]
    ],
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-embroidered-crewneck-wilmington_1920x.webp"
+  },
+  {
+   "id": "carolina-beach-megalodon-tooth-framed-art-print",
+   "collection": "local-icons",
+   "shelf": "carolina-beach",
+   "town": "carolina-beach",
+   "name": "Carolina Beach Megalodon Tooth Framed Art Print",
+   "url": "https://shorelist.myshopify.com/products/carolina-beach-megalodon-tooth-framed-art-print",
+   "type": "prints",
+   "color": "Cream",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-megalodon-tooth-framed-art-print_1000x.jpg",
+   "alt": "Framed Carolina Beach megalodon tooth art print on a coastal living room wall, rendered mockup",
+   "meta": "A framed art print of a megalodon tooth illustration with the Carolina Beach name, set like a museum plate on warm cream. Made to order.",
+   "cta": "Choose size",
+   "price": 84,
+   "from": true,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7756219583509349462_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-megalodon-tooth-framed-art-print_1920x.jpg",
+   "facts": [
+    [
+     "Sizes",
+     "11 x 14 in, 12 x 16 in or 16 x 20 in"
+    ],
+    [
+     "Frame",
+     "Black, walnut or white"
+    ],
+    [
+     "Art",
+     "Megalodon tooth illustration with a Carolina Beach caption"
+    ]
+   ]
+  },
+  {
+   "id": "kure-beach-sea-turtle-framed-art-print",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "town": "kure-beach",
+   "name": "Kure Beach Sea Turtle Framed Art Print",
+   "url": "https://shorelist.myshopify.com/products/kure-beach-sea-turtle-framed-art-print",
+   "type": "prints",
+   "color": "Cream",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-sea-turtle-framed-art-print_1000x.jpg",
+   "alt": "Framed Kure Beach sea turtle art print in a coastal beach house hallway, rendered mockup",
+   "meta": "A framed art print of a sea turtle illustration with the Kure Beach name, set like a natural history plate on warm cream. Made to order.",
+   "cta": "Choose size",
+   "price": 84,
+   "from": true,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/865118314705992598_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-sea-turtle-framed-art-print_1920x.jpg",
+   "facts": [
+    [
+     "Sizes",
+     "11 x 14 in, 12 x 16 in or 16 x 20 in"
+    ],
+    [
+     "Frame",
+     "Black, walnut or white"
+    ],
+    [
+     "Art",
+     "Sea turtle illustration with a Kure Beach caption"
+    ]
+   ]
+  },
+  {
+   "id": "wrightsville-beach-sailfish-framed-art-print",
+   "collection": "local-icons",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Wrightsville Beach Sailfish Framed Art Print",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sailfish-framed-art-print",
+   "type": "prints",
+   "color": "Cream",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sailfish-framed-art-print_1000x.jpg",
+   "alt": "Framed Wrightsville Beach sailfish art print in a coastal study, rendered mockup",
+   "meta": "A framed art print of a sailfish illustration with the Wrightsville Beach name, set like a natural history plate on warm cream. Made to order.",
+   "cta": "Choose size",
+   "price": 84,
+   "from": true,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11774690371034893721_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sailfish-framed-art-print_1920x.jpg",
+   "facts": [
+    [
+     "Sizes",
+     "11 x 14 in, 12 x 16 in or 16 x 20 in"
+    ],
+    [
+     "Frame",
+     "Black, walnut or white"
+    ],
+    [
+     "Art",
+     "Sailfish illustration with a Wrightsville Beach caption"
+    ]
+   ]
   }
  ],
  "scenes": [
