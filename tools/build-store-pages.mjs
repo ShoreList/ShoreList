@@ -98,7 +98,7 @@ ${sizeTable}
 <p class="tp-src">This chart is for the four embroidered crewnecks. If a product page shows its own size information, that page wins.</p>
 
 <h2>Everything else</h2>
-<p>Corduroy caps, cuffed beanies, tees and caps from ShoreList Gear, totes and beach gear do not have a chart here yet. We would rather leave a gap than print a number we could not source to the maker. Sizing for each piece is shown on its product page.</p>
+<p>Corduroy caps, cuffed beanies, printed tees, totes and beach gear do not have a chart here yet. We would rather leave a gap than print a number we could not source to the maker. Sizing for each piece is shown on its product page.</p>
 <p>If it is not there, or you are deciding between two sizes, write to us with the piece and your usual size, and we will answer with what we can confirm.</p>
 <p><a class="tp-mail" href="mailto:${MAIL}?subject=Fit%20question">Ask about fit: ${MAIL}</a></p>
 
@@ -107,40 +107,40 @@ ${sizeTable}
 
 // ------------------------------------------------------- shipping and returns
 const faq = [
-  ['How long does an order take?', 'Every piece is made after you order, and production begins after checkout. For ShoreList Shop items, our print partner says most orders ship within 2 to 7 business days after the order is submitted, then transit time applies. Production time for ShoreList Gear items depends on the product and the fulfillment partner. The shipping method, cost and estimated delivery for your address are shown at checkout.'],
-  ['Can I return something because I changed my mind or ordered the wrong size?', 'Because each piece is made to order, neither ShoreList Gear nor ShoreList Shop accepts returns for a change of mind or a size preference. A size exchange applies only if the wrong size was sent. Customers in the EU, EEA or UK may have statutory withdrawal rights, which this policy does not limit.'],
-  ['What if my order arrives damaged, defective or misprinted?', 'Write to rj@shorelist.net with your order number and photos, and we will arrange a replacement or refund at no cost. Report it within 30 days of delivery on both ShoreList Gear and ShoreList Shop orders.'],
+  ['How long does an order take?', 'Every piece is made after you order, and production begins after checkout. Our print partner says most orders ship within 2 to 7 business days of being submitted, and the exact time depends on the season, the product and the order size. Transit time applies after that. The shipping method, cost and estimated delivery for your address are shown at checkout.'],
+  ['Can I return something because I changed my mind or ordered the wrong size?', 'Because each piece is made to order, we do not accept returns for a change of mind or a size preference. A size exchange applies only if the wrong size was sent. Customers in the EU, EEA or UK may have statutory withdrawal rights, which this policy does not limit.'],
+  ['What if my order arrives damaged, defective or misprinted?', 'Write to rj@shorelist.net with your order number and photos, and we will arrange a replacement or refund at no cost. Report it within 30 days of delivery. Wrong size or wrong item sent also counts.'],
   ['Do digital guides and prints ship?', 'No. PDF guides and art print files are downloads, and 7 percent North Carolina sales tax is added at checkout. If a file is missing or will not open, email rj@shorelist.net.'],
 ];
 const shipBody = `<ul class="tp-short">
 <li><strong>Made after you order.</strong>Nothing is printed or stitched until you buy. That is why we cannot restock a returned piece, and why we say so up front.</li>
-<li><strong>Two stores, two orders.</strong>ShoreList Shop and ShoreList Gear each take their own order and ship it on its own.</li>
+<li><strong>One shop, one bag.</strong>Everything on the <a href="/shop">shop page</a> goes in one bag and checks out together. The organic cotton market tote is the one exception and checks out on its own page.</li>
 <li><strong>The cost, before you pay.</strong>Shipping and tax are calculated at checkout and shown before you confirm.</li>
-<li><strong>Problems get fixed.</strong>If a piece arrives damaged, defective or misprinted, write to us with photos and we will replace it.</li>
+<li><strong>Problems get fixed.</strong>If a piece arrives damaged, defective or misprinted, write to us with photos and we will replace or refund it.</li>
 </ul>
 
-<h2>Two stores</h2>
-<p>ShoreList Shop carries the embroidered apparel, the beach gear, the can coolers and the ornaments. ShoreList Gear carries the art prints and the printed apparel. Every product on the <a href="/shop">shop page</a> links to the store that sells it, and each store takes its own checkout. Buy from both and you get two orders, which may arrive on different days.</p>
+<h2>One shop</h2>
+<p>The embroidered and printed apparel, the beach gear, the can coolers, the ornaments and the framed prints are all in the ShoreList shop and check out together in one bag. The organic cotton market tote is the one piece that opens on its own page and checks out there. Order it with other pieces and you get two orders, which may arrive on different days.</p>
 
 <h2>How long it takes</h2>
-<p><strong>Production.</strong> Production begins after checkout. For ShoreList Shop items, our print partner states that most orders ship within 2 to 7 business days after the order is submitted. For ShoreList Gear items, production time depends on the product and the fulfillment partner, so we do not quote a number for them.</p>
+<p><strong>Production.</strong> Production begins after checkout. Our print partner states that most orders ship within 2 to 7 business days of being submitted, and the exact time depends on the season, the product and the order size. We do not quote a faster number for any single piece.</p>
 <p><strong>Delivery.</strong> Transit time depends on where you are. The shipping method, cost and estimated delivery for your address are shown at checkout, before you pay.</p>
 <p><strong>If it goes quiet.</strong> If your order shows no update after 7 business days, write to us and we will find out why.</p>
 <p><strong>Gifts.</strong> We do not publish holiday order-by dates, because we cannot source one from our partners. The estimate at checkout is the one to trust.</p>
 
 <h2>Changes, split orders and addresses</h2>
 <ul>
-<li>On ShoreList Gear orders, the shipping method and timing cannot be changed after the order is placed, and an order with several items may arrive in more than one parcel.</li>
+<li>The shipping method and timing cannot be changed after the order is placed, and an order with several items may arrive in more than one parcel.</li>
 <li>Check your address before you pay. Our print partners do not replace packages lost because of an incorrect address.</li>
 </ul>
 
 <h2 id="returns">Returns and replacements</h2>
 <h3>Damaged, defective or misprinted</h3>
-<p>Write to <a href="mailto:${MAIL}">${MAIL}</a> as soon as you notice, with your order number and photos of the problem. We will arrange a replacement or refund at no cost. Please report it within 30 days of delivery, for both ShoreList Gear and ShoreList Shop orders. Wrong size or wrong item sent also counts. Misprints, faded or smeared designs and damage that affected the piece all count.</p>
+<p>Write to <a href="mailto:${MAIL}">${MAIL}</a> as soon as you notice, with your order number and photos of the problem. We will arrange a replacement or refund at no cost. Please report it within 30 days of delivery. Wrong size or wrong item sent also counts. Misprints, faded or smeared designs and damage that affected the piece all count.</p>
 <p>If your order has not arrived 30 days after it was placed, write to us within one week after that point and we will investigate.</p>
 <p>Some things are not defects. Garment-dyed pieces vary slightly in color from one to the next, ink on dark fabric can read softer than it does on a screen, and a measurement within about 1 inch of the size guide is within tolerance.</p>
 <h3>Change of mind and size swaps</h3>
-<p>Because every piece is made after you order, we do not accept returns for a change of mind or a size preference, on either store. A size exchange applies only if the wrong size was sent. Customers in the EU, EEA or UK may have statutory withdrawal rights, which this policy does not limit. A question about fit costs nothing, and the <a href="/size-guide">size guide</a> is the better first step.</p>
+<p>Because every piece is made after you order, we do not accept returns for a change of mind or a size preference. A size exchange applies only if the wrong size was sent. Customers in the EU, EEA or UK may have statutory withdrawal rights, which this policy does not limit. A question about fit costs nothing, and the <a href="/size-guide">size guide</a> is the better first step.</p>
 <h3>Guides and prints</h3>
 <p>The PDF guides and art print files are downloads, and nothing ships. Seven percent North Carolina sales tax is added at checkout. If a file is missing or will not open, email <a href="mailto:${MAIL}">${MAIL}</a>.</p>
 
@@ -149,7 +149,7 @@ const shipBody = `<ul class="tp-short">
 <p><a class="tp-mail" href="mailto:${MAIL}?subject=Order%20question">${MAIL}</a></p>
 
 <hr class="tp-rule"/>
-<p class="tp-src">Production and shipping notes come from the public help pages of our fulfillment partners, read November 21, 2026: <a href="https://help.fourthwall.com/manage-my-shop/shop-settings/change-shipping-options" rel="noopener">Fourthwall on shipping options</a>, <a href="https://help.fourthwall.com/frequently-asked-questions/shipping-and-orders/returns-refunds-and-quality-issues" rel="noopener">Fourthwall on returns and quality issues</a> and <a href="https://help.printify.com/hc/en-us/articles/4483629751825-What-are-Printify-s-production-times-like" rel="noopener">Printify on production times</a>.</p>`;
+<p class="tp-src">Production and shipping notes come from the published help guidance of our print partners, read November 23, 2026.</p>`;
 
 // ----------------------------------------------------------------- gift guide
 const giftFaq = [
@@ -177,7 +177,7 @@ const giftFaq = [
 const sections = [
   { id: 'under-20', h: 'Under $20: hosts, neighbors, stocking stuffers', p: 'Small, specific and about a town. The ornament is the keepsake. The can cooler is the one that actually goes on the boat.',
     ids: ['wrightsville-ornament-2026', 'carolina-beach-ornament-2026', 'kure-beach-ornament-2026', 'wrightsville-can-cooler', 'carolina-beach-can-cooler', 'kure-beach-can-cooler'] },
-  { id: 'for-the-wall', h: 'For the wall', p: 'A print of the right stretch of coast beats a postcard. Each is made to order and sold through ShoreList Gear.',
+  { id: 'for-the-wall', h: 'For the wall', p: 'A print of the right stretch of coast beats a postcard. Each is made to order.',
     ids: ['carolina-beach-boardwalk-art-print', 'wrightsville-beach-pier-art-print'] },
   { id: 'wears-the-town', h: 'For the person who wears their town', p: 'A small embroidered icon and a town code, stitched on a garment-dyed crewneck. Sizing help is on the <a href="/size-guide">size guide</a>, and a fit question to us is welcome.',
     ids: ['the-sloop-embroidered-crewneck-wrightsville-beach', 'the-blue-crab-embroidered-crewneck-kure-beach', ] },
@@ -259,7 +259,7 @@ const townOfItem = (i) => {
 };
 const townFaqShared = [
   ['Is everything made to order?', 'Yes. Every piece is made after you order, so allow production time before it ships. The <a href="/shipping-returns">shipping and returns page</a> has the details.'],
-  ['How does checkout work?', 'Pieces from ShoreList Shop go in your bag and check out together on Shopify. A few pieces are sold through our second store, ShoreList Gear, and check out there. Shipping and tax are shown before you pay.'],
+  ['How does checkout work?', 'Pieces from ShoreList Shop go in your bag and check out together in one bag. One piece, the organic cotton market tote, checks out on its own page. Shipping and tax are shown before you pay.'],
   ['What if something arrives wrong?', 'If a piece arrives damaged, defective, misprinted or in the wrong size, we replace or refund it at no cost when you report it within 30 days of delivery. Made-to-order pieces cannot be returned for a change of mind or size preference.'],
 ];
 fs.mkdirSync(new URL('../shop/', import.meta.url), { recursive: true });
