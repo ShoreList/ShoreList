@@ -1568,6 +1568,49 @@
    "motif": "sea-life"
   },
   {
+   "id": "wrightsville-beach-sloop-all-over-print-duffel-bag",
+   "collection": "shore-gear",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Wrightsville Beach Sloop All Over Print Duffel Bag",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-all-over-print-duffel-bag",
+   "type": "beach",
+   "color": "Navy",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-all-over-print-duffel-bag_1000x.webp",
+   "alt": "Navy duffel bag printed edge to edge with large white sailboats on teal waves, carried over one shoulder on a Wrightsville Beach dune path, shown as an illustrative image",
+   "meta": "A printed duffel with a navy sloop pattern running edge to edge across the body and both ends. A Wrightsville Beach weekend bag for the Carolina coast.",
+   "cta": "Choose size",
+   "price": 98,
+   "from": true,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10656102888954431234_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-all-over-print-duffel-bag_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "Small or Large, see the size chart image"
+    ],
+    [
+     "Fabric",
+     "100% polyester Oxford canvas, spot clean"
+    ],
+    [
+     "Strap",
+     "Black, adjustable, with a shoulder pad"
+    ],
+    [
+     "Print",
+     "Sailboat pattern printed edge to edge on the body and both end panels, not embroidered"
+    ]
+   ],
+   "motif": "boats-buoys"
+  },
+  {
    "id": "the-live-oak-embroidered-crewneck-wilmington",
    "collection": "local-icons",
    "shelf": "wilmington",
