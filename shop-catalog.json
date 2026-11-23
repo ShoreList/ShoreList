@@ -3811,6 +3811,289 @@
    "shelf": "wilmington",
    "town": "wilmington",
    "type": "tops"
+  },
+  {
+   "id": "the-sloop-embroidered-crewneck-wrightsville-beach",
+   "collection": "local-icons",
+   "shelf": "wrightsville-beach",
+   "name": "The Sloop Embroidered Crewneck, Wrightsville Beach",
+   "url": "https://shorelist.myshopify.com/products/the-sloop-embroidered-crewneck-wrightsville-beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-embroidered-crewneck-wrightsville-beach_1000x.webp",
+   "alt": "Woman on a marina dock at sunset wearing a washed blue crewneck with a small embroidered sailboat and the letters WB",
+   "meta": "A little sloop under sail stitched on the chest, with WB for Wrightsville Beach beneath it.",
+   "cta": "Choose color and size",
+   "price": 88,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, sizes S to 3XL"
+    ],
+    [
+     "Fabric",
+     "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
+    ],
+    [
+     "Embroidery",
+     "Stitched in white, red and blue thread"
+    ]
+   ],
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-embroidered-crewneck-wrightsville-beach_1920x.webp",
+   "town": "wrightsville-beach",
+   "type": "tops",
+   "color": "Washed blue",
+   "added": "2026-11-21",
+   "motif": "boats-buoys"
+  },
+  {
+   "id": "the-sloop-corduroy-cap-wrightsville-beach",
+   "collection": "local-icons",
+   "shelf": "wrightsville-beach",
+   "name": "The Sloop Corduroy Cap, Wrightsville Beach",
+   "url": "https://shorelist.myshopify.com/products/the-sloop-corduroy-cap-wrightsville-beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-corduroy-cap-wrightsville-beach_1000x.webp",
+   "alt": "Man at the helm of a wooden sailboat wearing a navy corduroy cap with a small embroidered sailboat",
+   "meta": "A little sloop embroidered on the front of a corduroy cap, with WB stitched on the back.",
+   "cta": "Choose color",
+   "price": 49,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "facts": [
+    [
+     "Sizing",
+     "One size, adjustable strap with a brass buckle"
+    ],
+    [
+     "Fabric",
+     "Cotton corduroy, unstructured low profile, curved brim"
+    ],
+    [
+     "Embroidery",
+     "Real embroidery on the front and the back"
+    ]
+   ],
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7042525475132206278_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-corduroy-cap-wrightsville-beach_1920x.webp",
+   "town": "wrightsville-beach",
+   "type": "hats",
+   "color": "Navy",
+   "added": "2026-11-21",
+   "featured": true,
+   "motif": "boats-buoys"
+  },
+  {
+   "id": "the-blue-crab-corduroy-cap-kure-beach",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "name": "The Blue Crab Corduroy Cap, Kure Beach",
+   "url": "https://shorelist.myshopify.com/products/the-blue-crab-corduroy-cap-kure-beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-corduroy-cap-kure-beach_1000x.webp",
+   "alt": "Man on a wooden fishing pier wearing a brown corduroy cap with a small embroidered blue crab",
+   "meta": "A blue crab embroidered on the front of a corduroy cap, with KB stitched on the back.",
+   "cta": "Choose color",
+   "price": 49,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "facts": [
+    [
+     "Sizing",
+     "One size, adjustable strap with a brass buckle"
+    ],
+    [
+     "Fabric",
+     "Cotton corduroy, unstructured low profile, curved brim"
+    ],
+    [
+     "Embroidery",
+     "Real embroidery on the front and the back"
+    ]
+   ],
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3503163223785382366_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-corduroy-cap-kure-beach_1920x.webp",
+   "town": "kure-beach",
+   "type": "hats",
+   "color": "Brown",
+   "added": "2026-11-21"
+  },
+  {
+   "id": "the-live-oak-corduroy-cap-wilmington",
+   "collection": "local-icons",
+   "shelf": "wilmington",
+   "town": "wilmington",
+   "name": "The Live Oak Corduroy Cap, Wilmington",
+   "url": "https://shorelist.myshopify.com/products/the-live-oak-corduroy-cap-wilmington",
+   "type": "hats",
+   "color": "Navy Blue",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4211854548687384211_2048_1000x.jpg",
+   "alt": "Corduroy cap with a small embroidered live oak on the front, supplier mockup",
+   "meta": "A live oak hung with Spanish moss embroidered on the front of a soft corduroy cap, with ILM for Wilmington on the back.",
+   "cta": "Choose color",
+   "price": 49,
+   "scenes": [
+    "riverwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15008965743144943281_2048.jpg",
+   "facts": [
+    [
+     "Fit",
+     "Unstructured, low profile, curved brim, one size"
+    ],
+    [
+     "Fabric",
+     "Cotton corduroy"
+    ],
+    [
+     "Closure",
+     "Adjustable strap with a brass buckle"
+    ],
+    [
+     "Colors",
+     "Navy Blue, Burgundy, Black"
+    ]
+   ]
+  },
+  {
+   "id": "the-sloop-cuffed-beanie-wrightsville-beach",
+   "collection": "local-icons",
+   "shelf": "wrightsville-beach",
+   "name": "The Sloop Cuffed Beanie, Wrightsville Beach",
+   "url": "https://shorelist.myshopify.com/products/the-sloop-cuffed-beanie-wrightsville-beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-cuffed-beanie-wrightsville-beach_1000x.webp",
+   "alt": "Blonde woman on a marina dock wearing a navy cuffed beanie embroidered with a small sailboat and the letters WB",
+   "meta": "A little sloop and WB embroidered on the cuff of a classic knit beanie.",
+   "cta": "Choose color",
+   "price": 30,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "facts": [
+    [
+     "Sizing",
+     "One size"
+    ],
+    [
+     "Fabric",
+     "Soft acrylic knit with a fold-up cuff"
+    ],
+    [
+     "Embroidery",
+     "Icon and town letters on the cuff"
+    ]
+   ],
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6062137644770390613_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-cuffed-beanie-wrightsville-beach_1920x.webp",
+   "town": "wrightsville-beach",
+   "type": "hats",
+   "color": "Navy",
+   "added": "2026-11-21",
+   "motif": "boats-buoys"
+  },
+  {
+   "id": "the-live-oak-cuffed-beanie-wilmington",
+   "collection": "local-icons",
+   "shelf": "wilmington",
+   "town": "wilmington",
+   "name": "The Live Oak Cuffed Beanie, Wilmington",
+   "url": "https://shorelist.myshopify.com/products/the-live-oak-cuffed-beanie-wilmington",
+   "type": "hats",
+   "color": "Navy",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5126613936494193933_2048_1000x.jpg",
+   "alt": "Navy cuffed knit beanie with a live oak and the letters ILM embroidered on the cuff, supplier mockup",
+   "meta": "A live oak and ILM for Wilmington embroidered side by side on the cuff of a classic knit beanie.",
+   "cta": "Choose color",
+   "price": 30,
+   "scenes": [
+    "riverwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10802425845324763419_2048.jpg",
+   "facts": [
+    [
+     "Fit",
+     "Classic cuffed beanie, one size"
+    ],
+    [
+     "Fabric",
+     "Soft acrylic knit with a fold-up cuff"
+    ]
+   ]
+  },
+  {
+   "id": "the-blue-crab-cuffed-beanie-kure-beach",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "name": "The Blue Crab Cuffed Beanie, Kure Beach",
+   "url": "https://shorelist.myshopify.com/products/the-blue-crab-cuffed-beanie-kure-beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-cuffed-beanie-kure-beach_1000x.webp",
+   "alt": "Man on a fishing pier wearing an olive cuffed beanie embroidered with a small blue crab and the letters KB",
+   "meta": "A blue crab and KB embroidered on the cuff of a classic knit beanie.",
+   "cta": "Choose color",
+   "price": 30,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "facts": [
+    [
+     "Sizing",
+     "One size"
+    ],
+    [
+     "Fabric",
+     "Soft acrylic knit with a fold-up cuff"
+    ],
+    [
+     "Embroidery",
+     "Icon and town letters on the cuff"
+    ]
+   ],
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5273891047849590882_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-cuffed-beanie-kure-beach_1920x.webp",
+   "town": "kure-beach",
+   "type": "hats",
+   "color": "Olive",
+   "added": "2026-11-21"
+  },
+  {
+   "id": "daymark-blue-crab-crewneck",
+   "collection": "local-icons",
+   "shelf": "wilmington",
+   "name": "Daymark Blue Crab Crewneck",
+   "url": "https://shorelist.myshopify.com/products/daymark-blue-crab-crewneck",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-daymark-blue-crab-crewneck_1000x.webp",
+   "alt": "Woman in a soft white crewneck sweatshirt with a small navy blue crab mark at the left chest, standing among sea oats on an Outer Banks style dune path",
+   "meta": "A small navy blue crab with red claw tips at the left chest of a soft white garment-dyed crewneck. Made for Kure Beach and Carolina Beach days.",
+   "cta": "Choose size",
+   "price": 88,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5007874699452909705_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-daymark-blue-crab-crewneck_1920x.webp",
+   "town": "wilmington",
+   "type": "tops",
+   "color": "White",
+   "added": "2026-11-22"
   }
  ],
  "scenes": [
@@ -3874,14 +4157,10 @@
    "wrightsville-surf-tee": "town plus sport lockup reads as a team or club tee, souvenir-stand look",
    "wrightsville-golf-tee": "town plus sport lockup reads as a team or club tee, souvenir-stand look",
    "carolina-beach-surf-tee": "town plus sport lockup reads as a team or club tee, souvenir-stand look",
-   "the-live-oak-corduroy-cap-wilmington": "Live Oak relaunch: art being redone to pass the 8.0 gate (Nov 22 blind reviews 4.8 to 6.5); returns when it passes",
-   "the-live-oak-cuffed-beanie-wilmington": "Live Oak relaunch: art being redone to pass the 8.0 gate (Nov 22 blind reviews 4.8 to 6.5); returns when it passes",
    "yacht-beach-club-tote": "design gate verdict KILL (score under 6); not sold until it passes 9.0",
    "daymark-sail-number-corduroy-cap-wrightsville-beach": "concept withdrawn 2026-11-22 (the mark needed an explanation customers should not need); Shopify listings set to draft",
    "daymark-sail-number-crewneck-wrightsville-beach": "concept withdrawn 2026-11-22 (the mark needed an explanation customers should not need); Shopify listings set to draft",
    "daymark-sail-number-crewneck-kure-beach": "concept withdrawn 2026-11-22 (the mark needed an explanation customers should not need); Shopify listings set to draft",
-   "the-blue-crab-corduroy-cap-kure-beach": "brown cap is off palette and the photo is on a pier (2026-11-22 shop audit). Full record in docs/retired-items.json.",
-   "the-blue-crab-cuffed-beanie-kure-beach": "olive beanie is off palette and the photo is on a pier (2026-11-22 shop audit). Full record in docs/retired-items.json.",
    "kure-beach-fishing-pier-art-print": "pier is the hero art, dark and heavy (2026-11-22 shop audit). Full record in docs/retired-items.json.",
    "uss-north-carolina-art-print": "not one of the three towns, grey warship off the brand mood (2026-11-22 shop audit). Full record in docs/retired-items.json.",
    "pennant-dad-hat": "black cap, off palette, no studio image (2026-11-22 shop audit). Full record in docs/retired-items.json.",
@@ -3889,10 +4168,6 @@
    "coastal-soft-cooler": "grey bag with generic text, not a town piece (2026-11-22 shop audit). Full record in docs/retired-items.json.",
    "coastal-christmas-can-cooler": "green colorway is off palette (2026-11-22 shop audit). Full record in docs/retired-items.json.",
    "daymark-sloop-crewneck": "duplicate of the-sloop-embroidered-crewneck-wrightsville-beach (merged, kept that one) (2026-11-22 shop audit). Full record in docs/retired-items.json.",
-   "daymark-blue-crab-crewneck": "duplicate of the-blue-crab-embroidered-crewneck-kure-beach (merged, kept that one) (2026-11-22 shop audit). Full record in docs/retired-items.json.",
-   "the-sloop-embroidered-crewneck-wrightsville-beach": "brand audit 2026-11-22: WB initials in copy, washed blue off the white crewneck rule, paused until redone",
-   "the-sloop-corduroy-cap-wrightsville-beach": "brand audit 2026-11-22: duplicates the Daymark corduroy cap, WB on the back, paused",
-   "the-sloop-cuffed-beanie-wrightsville-beach": "brand audit 2026-11-22: WB on the cuff, paused until redone",
    "carolina-beach-boardwalk-art-print": "brand audit 2026-11-22: Fourthwall checkout, boardwalk not an approved motif, paused",
    "wrightsville-beach-pier-art-print": "brand audit 2026-11-22: Fourthwall checkout, pier wording, paused",
    "carolina-beach-ornament-2026": "brand audit 2026-11-22: sloop is the Wrightsville mark, wrong town motif, paused until redone",
