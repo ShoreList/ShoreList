@@ -25,15 +25,15 @@ nav.nf-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;just
 .brand span{color:var(--coral);font-style:normal}
 main{flex:1;position:relative;isolation:isolate;display:flex;align-items:center;padding:64px 24px 72px;overflow:hidden}
 .nf-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
-main::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(14,31,51,.95) 0%,rgba(14,31,51,.84) 52%,rgba(14,31,51,.6) 100%),linear-gradient(180deg,rgba(14,31,51,0) 55%,rgba(14,31,51,.92) 100%)}
+main::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(14,31,51,.4)}
 .nf{max-width:1180px;width:100%;margin:0 auto}
 .code{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--glass);margin-bottom:16px}
-.code i{width:7px;height:7px;border-radius:50%;background:var(--glass)}
+.code i{width:7px;height:7px;border-radius:2px;background:var(--glass)}
 h1{font-family:'Libre Caslon Display',Georgia,serif;font-weight:400;font-size:clamp(2.4rem,6vw,4.4rem);line-height:1.03;letter-spacing:-.02em;color:#fff;margin-bottom:16px;max-width:14ch}
 h1 em{font-style:normal;color:var(--coral)}
 .lede{max-width:520px;font-size:1.12rem;color:rgba(244,241,234,.92);margin-bottom:26px}
-.nf-search{display:flex;align-items:center;gap:12px;width:100%;max-width:520px;min-height:58px;padding:0 20px;border-radius:100px;border:1.5px solid rgba(244,241,234,.4);background:rgba(244,241,234,.12);color:var(--sail);font:inherit;font-size:1.02rem;font-weight:500;text-align:left;cursor:pointer;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);transition:background .2s,border-color .2s,transform .25s}
-.nf-search:hover{background:rgba(244,241,234,.2);border-color:var(--sail);transform:translateY(-2px)}
+.nf-search{display:flex;align-items:center;gap:12px;width:100%;max-width:520px;min-height:58px;padding:0 20px;border-radius:2px;border:1.5px solid rgba(244,241,234,.4);background:rgba(244,241,234,.12);color:var(--sail);font:inherit;font-size:1.02rem;font-weight:500;text-align:left;cursor:pointer;transition:background .2s,border-color .2s,transform .25s}
+.nf-search:hover{background:rgba(244,241,234,.2);border-color:var(--sail);}
 .nf-search svg{flex:none;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
 .nf-search span{flex:1}
 .nf-search kbd{font:inherit;font-size:.8rem;font-weight:500;padding:3px 9px;border-radius:8px;border:1px solid rgba(244,241,234,.4);color:rgba(244,241,234,.9)}
@@ -41,8 +41,8 @@ h1 em{font-style:normal;color:var(--coral)}
 .nf-guess{max-width:520px;margin-top:14px;font-size:.98rem;color:rgba(244,241,234,.9);min-height:1.6em}
 .nf-guess a{font-weight:500;color:#fff;text-underline-offset:3px;display:inline-block;padding:11px 0}
 .links{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:34px;max-width:1040px}
-.links a{display:flex;flex-direction:column;justify-content:flex-end;gap:2px;min-height:112px;padding:18px;border-radius:20px;background:rgba(244,241,234,.09);border:1px solid rgba(244,241,234,.2);text-decoration:none;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s,background .3s}
-.links a:hover{transform:translateY(-4px);border-color:rgba(217,199,163,.7);background:rgba(244,241,234,.14)}
+.links a{display:flex;flex-direction:column;justify-content:flex-end;gap:2px;min-height:112px;padding:18px;border-radius:2px;background:rgba(244,241,234,.09);border:1px solid rgba(244,241,234,.2);text-decoration:none;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s,background .3s}
+.links a:hover{border-color:rgba(217,199,163,.7);background:rgba(244,241,234,.14)}
 .links b{font-family:'Libre Caslon Display',Georgia,serif;font-size:1.2rem;color:#fff;line-height:1.2}
 .links span{font-size:.88rem;color:rgba(244,241,234,.86);line-height:1.35}
 .links a.primary{background:var(--red);border-color:var(--red)}

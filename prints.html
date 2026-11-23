@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="/luxe.css"/>
 <style>
 .gd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:clamp(18px,2.4vw,28px);margin-top:26px}
-.gd-card{background:#fff;border:1px solid var(--ev-line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.gd-card{background:#fff;border:1px solid var(--ev-line);border-radius:2px;overflow:hidden;display:flex;flex-direction:column}
 .gd-card img{display:block;width:100%;height:auto;aspect-ratio:3/4;background:var(--ev-navy)}
 .gd-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
 .gd-body h3{font-family:'Libre Caslon Display',Georgia,serif;font-size:1.3rem;line-height:1.15;color:var(--ev-navy);margin:0}
@@ -40,11 +40,11 @@
 .gd-body .gd-meta{color:var(--ev-mute);font-size:.82rem}
 .gd-buy{margin-top:auto;padding-top:10px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .gd-price{font-weight:500;font-size:1.25rem;color:var(--ev-navy)}
-.gd-btn{font:inherit;font-weight:500;font-size:.95rem;min-height:46px;padding:0 20px;border:0;border-radius:999px;background:var(--ev-red);color:#fff;cursor:pointer}
+.gd-btn{font:inherit;font-weight:500;font-size:.95rem;min-height:46px;padding:0 20px;border:0;border-radius:2px;background:var(--ev-red);color:#fff;cursor:pointer}
 .gd-btn:hover{background:var(--ev-red2)}
 .gd-btn:focus-visible{outline:3px solid var(--ev-navy);outline-offset:2px}
 .gd-btn[disabled]{opacity:.6;cursor:progress}
-.gd-bundle{margin-top:clamp(28px,4vw,44px);background:var(--ev-navy);color:var(--ev-sail);border-radius:18px;padding:clamp(20px,3vw,34px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+.gd-bundle{margin-top:clamp(28px,4vw,44px);background:var(--ev-navy);color:var(--ev-sail);border-radius:2px;padding:clamp(20px,3vw,34px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
 .gd-bundle h2{color:var(--ev-sail)!important;font-size:clamp(1.5rem,3vw,2rem)!important;margin:0 0 6px}
 .gd-bundle p{margin:0;max-width:56ch;line-height:1.5}
 .gd-bundle .gd-price{color:var(--ev-sail);font-size:1.6rem}
@@ -53,14 +53,14 @@
 .gd-note{margin-top:26px;padding:16px 18px;border-left:4px solid var(--ev-red);background:rgba(14,31,51,.05);border-radius:0 10px 10px 0;color:var(--ev-ink);line-height:1.55}
 .gd-err{margin-top:16px;color:var(--ev-red);font-weight:500;min-height:1.2em}
 .gd-faq h3{font-size:1.05rem;margin:18px 0 4px;color:var(--ev-navy)}.gd-faq p{margin:0;line-height:1.55;color:var(--ev-ink)}
-.gd-try{margin:0 0 clamp(24px,3.5vw,38px);padding:clamp(18px,3vw,28px);border:1px solid rgba(14,31,51,.14);border-radius:18px;background:#fff}
+.gd-try{margin:0 0 clamp(24px,3.5vw,38px);padding:clamp(18px,3vw,28px);border:1px solid rgba(14,31,51,.14);border-radius:2px;background:#fff}
 .gd-try h2{margin:0 0 6px!important}.gd-try p{margin:0 0 14px;max-width:62ch;line-height:1.55}
 .gd-prev{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 16px}
 .gd-prev img{width:100%;height:auto;border-radius:8px;border:1px solid rgba(14,31,51,.12)}
-.gd-free{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:999px;border:2px solid var(--ev-navy);color:var(--ev-navy);font-weight:500;text-decoration:none}
+.gd-free{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:2px;border:2px solid var(--ev-navy);color:var(--ev-navy);font-weight:500;text-decoration:none}
 .gd-free:hover{background:var(--ev-navy);color:#fff}
 @media(max-width:560px){.gd-prev{grid-template-columns:1fr 1fr 1fr;gap:8px}}
-.gd-hint{position:absolute;top:10px;right:10px;background:rgba(14,31,51,.78);color:#F4F1EA;font:700 .72rem "DM Sans",system-ui,sans-serif;letter-spacing:.04em;padding:5px 10px;border-radius:100px;pointer-events:none}.gd-gal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin}.gd-gal img{flex:0 0 100%;scroll-snap-align:start}
+.gd-hint{position:absolute;top:10px;right:10px;background:rgba(14,31,51,.78);color:#F4F1EA;font:700 .72rem "DM Sans",system-ui,sans-serif;letter-spacing:.04em;padding:5px 10px;border-radius:2px;pointer-events:none}.gd-gal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin}.gd-gal img{flex:0 0 100%;scroll-snap-align:start}
 </style>
 <script src="/luxe.js" defer></script>
 <link rel="stylesheet" href="/tokens.css"/>

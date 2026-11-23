@@ -52,9 +52,12 @@ const ld = {
     { '@type': 'FAQPage', mainEntity: faq },
   ],
 };
+const HOME = ['carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt', 'the-pelican-corduroy-cap-carolina-beach', 'airlie-oak-framed-art-print-wrightsville-beach-and-wilmington'].map((id) => byId.get(id)).filter((i) => i && !retired.has(i.id));
+const homeBand = `<ul class="hx-shop-grid">${HOME.map((i) => `<li><a href="/shop/${esc(i.town || 'wilmington')}"><span class="hx-shop-ph"><img src="${esc(sized(i.studio || i.img, 800))}" alt="${esc(i.alt || i.name)}" loading="lazy" decoding="async" width="800" height="1000"/></span><span class="hx-shop-n">${esc(splitName(i.name))}</span></a></li>`).join('')}</ul>`;
 const put = (name, body) => { html = html.replace(new RegExp(`(<!--SHOP-STATIC:${name}-->)[\\s\\S]*?(<!--/SHOP-STATIC:${name}-->)`), `$1\n${body}\n$2`); };
 put('collections', `<div class="cblocks" id="cblocks">${collections.join('')}</div>`);
 put('cards', cards.join('\n'));
+if (fs.existsSync('index.html')) { let ix = fs.readFileSync('index.html', 'utf8'); ix = ix.replace(/(<!--SHOP-STATIC:homeband-->)[\s\S]*?(<!--\/SHOP-STATIC:homeband-->)/, `$1\n    ${homeBand}\n    $2`); if (process.argv.includes('--check')) { if (ix !== fs.readFileSync('index.html', 'utf8')) { console.error('index.html shop band is stale: run node tools/build-shop-static.mjs'); process.exit(1); } } else fs.writeFileSync('index.html', ix); }
 put('ld', `<script type="application/ld+json">${JSON.stringify(ld)}</script>`);
 if (process.argv.includes('--check')) { if (html !== fs.readFileSync('shop.html', 'utf8')) { console.error('shop.html static blocks are stale: run node tools/build-shop-static.mjs'); process.exit(1); } console.log('shop static blocks current'); }
 else { fs.writeFileSync('shop.html', html); console.log(`shop.html: ${collections.length} collection blocks, ${cards.length} cards, ${faq.length} FAQ entries`); }

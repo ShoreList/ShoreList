@@ -26,8 +26,7 @@ h1,h2,h3,h4{ color:var(--teal); }
 /* ---- HERO: bright coastal ----------------------------------- */
 .hero{
   background:
-    radial-gradient(circle at 85% 14%,rgba(217,199,163,0.40),rgba(217,199,163,0.10) 46%,transparent 64%),
-    linear-gradient(160deg,#F4F1EA 0%,#F4F1EA 55%,#F4F1EA 100%)!important;
+    #0E1F33;
 }
 .hero::before,.hero::after{ background-image:none!important; background:transparent!important; }
 /* dark→bright wave transition strip */
@@ -87,7 +86,7 @@ footer a:hover,.foot-links a:hover{ color:var(--cream)!important; }
 
 /* ---- ACCENT BAND (CTAs): warm sunset, white text ------------ */
 .cta-band,.pitch,.proof-band{
-  background:linear-gradient(120deg,var(--coral) 0%,var(--sunset1) 56%,var(--sunset2) 100%)!important;
+  background:#0E1F33;
   color:#fff!important;
 }
 
@@ -96,7 +95,7 @@ footer a:hover,.foot-links a:hover{ color:var(--cream)!important; }
    Now that pages are bright, give them solid light surfaces
    and dark text so nothing blends. (Used by town-guide pages.)
    ============================================================ */
-.ot, .fact{ background:#fff!important; border:1px solid var(--line)!important; box-shadow:0 6px 16px rgba(14,31,51,0.06)!important; }
+.ot, .fact{ background:#fff!important; border:1px solid var(--line)!important;  }
 .ot-name, .sc-text strong{ color:var(--teal)!important; }
 .ot-sub, .sc-text, .fact-l{ color:var(--mid)!important; }
 .fact-n{ color:var(--coral)!important; }
