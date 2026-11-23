@@ -50,7 +50,7 @@
     imgs.forEach(function (im, i) { var o = sum ? v[i] / sum : 0; im.style.opacity = o.toFixed(3); im.style.visibility = o < 0.004 ? 'hidden' : 'visible'; });
     credit();
   }
-  function ensureNeighbors() { var a = Math.round(cur) % 4; load(pick[a], true); setTimeout(function () { load(pick[(a + 1) % 4]); load(pick[(a + 3) % 4]); }, 600); setTimeout(function () { for (var i = 0; i < 4; i++) load(pick[i]); }, 3500); }
+  function ensureNeighbors() { var a = Math.round(target) % 4; load(pick[a], true); setTimeout(function () { load(pick[(a + 1) % 4]); load(pick[(a + 3) % 4]); }, 600); setTimeout(function () { for (var i = 0; i < 4; i++) load(pick[i]); }, 3500); }
   function frame() {
     raf = 0; var d = target - cur; if (d > 2) d -= 4; if (d < -2) d += 4;
     var moving = Math.abs(d) > 0.002;
