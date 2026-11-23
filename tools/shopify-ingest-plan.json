@@ -2,36 +2,32 @@
  "shelves": [],
  "items": [
   {
-   "handle": "wrightsville-beach-sloop-all-over-print-zip-pouch",
+   "handle": "wrightsville-beach-sloop-picnic-and-beach-blanket",
    "shelf": "wrightsville-beach",
-   "collection": "shore-gear",
-   "name": "Wrightsville Beach Sloop All Over Print Zip Pouch",
+   "collection": "beach-setup",
+   "name": "Wrightsville Beach Sloop Picnic and Beach Blanket",
    "type": "beach",
    "color": "Navy",
-   "alt": "Navy zip pouch printed edge to edge with white sailboats on teal waves, resting on the sand beside sunglasses and a shell at Wrightsville Beach, shown as an illustrative image",
-   "meta": "A printed zip pouch with a navy sloop pattern running to the seams. A Wrightsville Beach travel kit pouch for the Carolina coast.",
-   "cta": "Choose size",
+   "alt": "Navy picnic blanket printed edge to edge with white sailboats on teal waves, spread on the sand with a basket and glasses at Wrightsville Beach, shown as an illustrative image",
+   "meta": "A printed picnic and beach blanket with a navy sloop pattern edge to edge on a fleece front. A Wrightsville Beach blanket for shore picnics on the Carolina coast.",
+   "cta": "Shop beach gear",
    "scenes": [
     "beach"
    ],
    "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-wrightsville-beach-sloop-all-over-print-zip-pouch.webp",
+   "lookbookFile": "shorelist-lookbook-wrightsville-beach-sloop-picnic-and-beach-blanket.webp",
    "facts": [
     [
      "Size",
-     "Small or Large, see the size chart image"
-    ],
-    [
-     "Zipper",
-     "White"
+     "61 x 51 in, with a black carrying strap and buckles"
     ],
     [
      "Fabric",
-     "100% polyester with a laminate interior, spot clean"
+     "100% polyester fleece front, water resistant black oxford back, spot clean"
     ],
     [
      "Print",
-     "Sailboat pattern printed edge to edge, not embroidered"
+     "Sailboat pattern printed edge to edge on the fleece side, not embroidered"
     ]
    ]
   }

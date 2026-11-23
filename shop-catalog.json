@@ -172,6 +172,44 @@
    "motif": "boats-buoys"
   },
   {
+   "id": "wrightsville-beach-sloop-picnic-and-beach-blanket",
+   "collection": "beach-setup",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Wrightsville Beach Sloop Picnic and Beach Blanket",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-picnic-and-beach-blanket",
+   "type": "beach",
+   "color": "Navy",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-picnic-and-beach-blanket_1000x.webp",
+   "alt": "Navy picnic blanket printed edge to edge with white sailboats on teal waves, spread on the sand with a basket and glasses at Wrightsville Beach, shown as an illustrative image",
+   "meta": "A printed picnic and beach blanket with a navy sloop pattern edge to edge on a fleece front. A Wrightsville Beach blanket for shore picnics on the Carolina coast.",
+   "cta": "Shop beach gear",
+   "price": 98,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/71162535559617095_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-picnic-and-beach-blanket_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "61 x 51 in, with a black carrying strap and buckles"
+    ],
+    [
+     "Fabric",
+     "100% polyester fleece front, water resistant black oxford back, spot clean"
+    ],
+    [
+     "Print",
+     "Sailboat pattern printed edge to edge on the fleece side, not embroidered"
+    ]
+   ],
+   "motif": "boats-buoys"
+  },
+  {
    "id": "wrightsville-beach-sloop-printed-mug",
    "collection": "shore-gear",
    "shelf": "wrightsville-beach",
