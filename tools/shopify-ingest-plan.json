@@ -2,58 +2,28 @@
  "shelves": [],
  "items": [
   {
-   "handle": "airlie-oak-wilmington-ceramic-ornament",
-   "shelf": "wilmington",
-   "collection": "coastal-christmas",
-   "name": "Airlie Oak Wilmington Ceramic Ornament",
-   "type": "ornaments",
-   "color": "Ivory",
-   "alt": "Round ceramic ornament printed with a painterly illustration of the Airlie Oak, a Southern live oak with hanging Spanish moss and blush azaleas, hanging on a Christmas tree with warm lights, shown as an illustrative image",
-   "meta": "A round ceramic Christmas ornament with a painterly illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC. A Wilmington NC gift, made to order.",
-   "cta": "Shop Christmas",
-   "scenes": [
-    "riverwalk"
-   ],
-   "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-airlie-oak-wilmington-ceramic-ornament.webp",
-   "facts": [
-    [
-     "Shape",
-     "Round glossy ceramic with a gold hanging cord"
-    ],
-    [
-     "Print",
-     "Airlie Oak illustration on the front"
-    ]
-   ]
-  },
-  {
-   "handle": "airlie-oak-wilmington-all-over-print-zip-pouch",
+   "handle": "airlie-oak-wilmington-throw-pillow",
    "shelf": "wilmington",
    "collection": "shore-gear",
-   "name": "Airlie Oak Wilmington All Over Print Zip Pouch",
+   "name": "Airlie Oak Wilmington Throw Pillow",
    "type": "beach",
    "color": "Ivory",
-   "alt": "Ivory zip pouch printed with a painterly illustration of the Airlie Oak, a Southern live oak with hanging Spanish moss and blush azaleas, on a weathered garden bench in front of azaleas with sunglasses and a linen scarf, shown as an illustrative image",
-   "meta": "A printed zip pouch with a painterly illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC, on warm ivory. Two sizes, made to order.",
-   "cta": "Choose size",
+   "alt": "Ivory square throw pillow printed with a painterly illustration of the Airlie Oak, a Southern live oak with hanging Spanish moss, on a white wicker porch chair beside a fern, shown as an illustrative image",
+   "meta": "A printed square throw pillow with a painterly illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC, on warm ivory. Two sizes, made to order.",
+   "cta": "Shop home decor",
    "scenes": [
     "riverwalk"
    ],
    "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-airlie-oak-wilmington-all-over-print-zip-pouch.webp",
+   "lookbookFile": "shorelist-lookbook-airlie-oak-wilmington-throw-pillow.webp",
    "facts": [
     [
-     "Sizes",
-     "Small or Large"
-    ],
-    [
-     "Zipper",
-     "White zipper"
+     "Size",
+     "16 x 16 in or 18 x 18 in"
     ],
     [
      "Print",
-     "Airlie Oak illustration on both sides, not embroidered"
+     "Airlie Oak illustration on the front and back, not embroidered"
     ]
    ]
   }
