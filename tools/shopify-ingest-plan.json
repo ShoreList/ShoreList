@@ -2,61 +2,23 @@
  "shelves": [],
  "items": [
   {
-   "handle": "wrightsville-beach-sloop-printed-mug",
+   "handle": "wrightsville-beach-sloop-printed-zip-pouch",
    "shelf": "wrightsville-beach",
    "collection": "shore-gear",
-   "name": "Wrightsville Beach Sloop Printed Mug",
+   "name": "Wrightsville Beach Sloop Printed Zip Pouch",
    "type": "beach",
-   "color": "White",
-   "alt": "White ceramic mug covered in small navy sailboats sitting on beach sand beside a folded towel, shown as an illustrative image",
-   "meta": "A white ceramic mug printed with a navy field of little sloops. A Wrightsville Beach morning coffee mug and a Wilmington NC gift.",
-   "cta": "Shop mugs",
+   "color": "Natural",
+   "alt": "Natural canvas zip pouch with a navy sailboat panel lying on beach sand beside shells and sunglasses, shown as an illustrative image",
+   "meta": "A natural canvas zip pouch with a navy panel of little sloops on the front and a wrist strap. Holds sunscreen, keys and phone for a Wrightsville Beach day.",
+   "cta": "Shop pouches",
    "scenes": ["beach"],
    "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-wrightsville-beach-sloop-printed-mug.webp",
+   "lookbookFile": "shorelist-lookbook-wrightsville-beach-sloop-printed-zip-pouch.webp",
    "facts": [
-    ["Size", "11 oz white ceramic mug"],
-    ["Print", "Sailboat pattern wrapped around the mug"],
-    ["Care", "Microwave and dishwasher safe"]
-   ]
-  },
-  {
-   "handle": "wrightsville-beach-sloop-printed-pet-bandana",
-   "shelf": "wrightsville-beach",
-   "collection": "shore-gear",
-   "name": "Wrightsville Beach Sloop Printed Pet Bandana",
-   "type": "beach",
-   "color": "Navy",
-   "alt": "Golden retriever wearing a navy sailboat print bandana on a sandy beach, shown as an illustrative image",
-   "meta": "A navy pet bandana printed with little sloops, on an adjustable collar. For beach walks with your dog on the Carolina coast.",
-   "cta": "Shop pet gear",
-   "scenes": ["beach"],
-   "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-wrightsville-beach-sloop-printed-pet-bandana.webp",
-   "facts": [
-    ["Size", "Small"],
-    ["Fabric", "100% polyester"],
-    ["Fit", "Clip-on bandana with an adjustable, removable collar"]
-   ]
-  },
-  {
-   "handle": "wrightsville-beach-sloop-printed-throw-pillow",
-   "shelf": "wrightsville-beach",
-   "collection": "shore-gear",
-   "name": "Wrightsville Beach Sloop Printed Throw Pillow",
-   "type": "beach",
-   "color": "Navy",
-   "alt": "Navy throw pillow covered in small sailboats on a weathered beach chair by the dunes, shown as an illustrative image",
-   "meta": "A square throw pillow with a navy all-over pattern of little sloops. Printed, not embroidered, for a Wilmington NC porch or beach house.",
-   "cta": "Shop home decor",
-   "scenes": ["beach"],
-   "cut": "unisex",
-   "lookbookFile": "shorelist-lookbook-wrightsville-beach-sloop-printed-throw-pillow.webp",
-   "facts": [
-    ["Size", "16 x 16 in or 18 x 18 in"],
-    ["Fabric", "100% polyester cover with insert"],
-    ["Print", "Sailboat pattern edge to edge"],
-    ["Care", "Spot clean or machine wash cold per the cover label"]
+    ["Size", "About 8.3 x 7.8 in"],
+    ["Fabric", "100% cotton canvas with a zipper and carry strap"],
+    ["Print", "Navy sailboat pattern panel on the front"],
+    ["Care", "Spot clean"]
    ]
   }
  ]

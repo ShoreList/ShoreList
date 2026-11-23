@@ -743,7 +743,8 @@
      "Care",
      "Microwave and dishwasher safe"
     ]
-   ]
+   ],
+   "motif": "boats-buoys"
   },
   {
    "id": "wrightsville-beach-sloop-printed-pet-bandana",
@@ -780,7 +781,8 @@
      "Fit",
      "Clip-on bandana with an adjustable, removable collar"
     ]
-   ]
+   ],
+   "motif": "boats-buoys"
   },
   {
    "id": "wrightsville-beach-sloop-printed-throw-pillow",
@@ -821,7 +823,50 @@
      "Care",
      "Spot clean or machine wash cold per the cover label"
     ]
-   ]
+   ],
+   "motif": "boats-buoys"
+  },
+  {
+   "id": "wrightsville-beach-sloop-printed-zip-pouch",
+   "collection": "shore-gear",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Wrightsville Beach Sloop Printed Zip Pouch",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-zip-pouch",
+   "type": "beach",
+   "color": "Natural",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-zip-pouch_1000x.webp",
+   "alt": "Natural canvas zip pouch with a navy sailboat panel lying on beach sand beside shells and sunglasses, shown as an illustrative image",
+   "meta": "A natural canvas zip pouch with a navy panel of little sloops on the front and a wrist strap. Holds sunscreen, keys and phone for a Wrightsville Beach day.",
+   "cta": "Shop pouches",
+   "price": 30,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10521571959228082054_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-zip-pouch_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "About 8.3 x 7.8 in"
+    ],
+    [
+     "Fabric",
+     "100% cotton canvas with a zipper and carry strap"
+    ],
+    [
+     "Print",
+     "Navy sailboat pattern panel on the front"
+    ],
+    [
+     "Care",
+     "Spot clean"
+    ]
+   ],
+   "motif": "boats-buoys"
   },
   {
    "id": "carolina-beach-ornament-2026",
