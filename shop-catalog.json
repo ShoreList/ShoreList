@@ -2954,6 +2954,42 @@
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-embroidered-crewneck-wilmington_1920x.webp"
   },
   {
+   "id": "camellia-carolina-coast-kiss-cut-vinyl-sticker-3-inch",
+   "collection": "local-icons",
+   "shelf": "wilmington",
+   "town": "wilmington",
+   "name": "Camellia Carolina Coast Kiss-Cut Vinyl Sticker, 3 inch",
+   "url": "https://shorelist.myshopify.com/products/camellia-carolina-coast-kiss-cut-vinyl-sticker-3-inch",
+   "type": "beach",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-camellia-carolina-coast-kiss-cut-vinyl-sticker-3-inch_1000x.webp",
+   "alt": "Kiss-cut vinyl sticker with a lifelike painted camellia branch illustration, applied to a laptop lid beside a sunny window, shown as an illustrative image",
+   "meta": "A 3 x 3 in kiss-cut vinyl sticker with a lifelike painted camellia branch illustration. Made to order.",
+   "cta": "Add to bag",
+   "price": 5.5,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15243950351917908964_1200.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-camellia-carolina-coast-kiss-cut-vinyl-sticker-3-inch_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "3 x 3 in"
+    ],
+    [
+     "Type",
+     "Kiss-cut vinyl sticker"
+    ],
+    [
+     "Art",
+     "Camellia branch illustration"
+    ]
+   ]
+  },
+  {
    "id": "carolina-beach-megalodon-tooth-framed-art-print",
    "collection": "local-icons",
    "shelf": "carolina-beach",
@@ -3106,6 +3142,79 @@
    ]
   },
   {
+   "id": "blue-crab-carolina-coast-insulated-stainless-water-bottle-20-oz",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "town": "kure-beach",
+   "name": "Blue Crab Carolina Coast Insulated Stainless Water Bottle, 20 oz",
+   "url": "https://shorelist.myshopify.com/products/blue-crab-carolina-coast-insulated-stainless-water-bottle-20-oz",
+   "type": "beach",
+   "color": "White",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-blue-crab-carolina-coast-insulated-stainless-water-bottle-20-oz_1000x.webp",
+   "alt": "White insulated water bottle printed with a lifelike painted blue crab seen from above and the words Carolina Coast, standing on a weathered dock plank beside a coiled rope, shown as an illustrative image",
+   "meta": "A 20 oz double-wall insulated stainless steel bottle printed with a lifelike painted blue crab and Carolina Coast. Made to order.",
+   "cta": "Add to bag",
+   "price": 39,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11495380665131246352_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-blue-crab-carolina-coast-insulated-stainless-water-bottle-20-oz_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "20 oz"
+    ],
+    [
+     "Build",
+     "Double-wall insulated stainless steel"
+    ],
+    [
+     "Art",
+     "Blue crab illustration with the words Carolina Coast"
+    ]
+   ]
+  },
+  {
+   "id": "blue-crab-carolina-coast-kiss-cut-vinyl-sticker-3-inch",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "town": "kure-beach",
+   "name": "Blue Crab Carolina Coast Kiss-Cut Vinyl Sticker, 3 inch",
+   "url": "https://shorelist.myshopify.com/products/blue-crab-carolina-coast-kiss-cut-vinyl-sticker-3-inch",
+   "type": "beach",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-blue-crab-carolina-coast-kiss-cut-vinyl-sticker-3-inch_1000x.webp",
+   "alt": "Kiss-cut vinyl sticker with a lifelike painted blue crab illustration, applied to a navy water bottle on a porch rail, shown as an illustrative image",
+   "meta": "A 3 x 3 in kiss-cut vinyl sticker with a lifelike painted blue crab illustration. Made to order.",
+   "cta": "Add to bag",
+   "price": 5.5,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17544007515790696736_1200.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-blue-crab-carolina-coast-kiss-cut-vinyl-sticker-3-inch_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "3 x 3 in"
+    ],
+    [
+     "Type",
+     "Kiss-cut vinyl sticker"
+    ],
+    [
+     "Art",
+     "Blue crab illustration"
+    ]
+   ]
+  },
+  {
    "id": "wrightsville-beach-sailfish-framed-art-print",
    "collection": "local-icons",
    "shelf": "wrightsville-beach",
@@ -3178,6 +3287,117 @@
     [
      "Art",
      "Sea oats illustration with a Wrightsville Beach caption"
+    ]
+   ]
+  },
+  {
+   "id": "sea-oats-carolina-coast-insulated-stainless-tumbler-20-oz",
+   "collection": "local-icons",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Sea Oats Carolina Coast Insulated Stainless Tumbler, 20 oz",
+   "url": "https://shorelist.myshopify.com/products/sea-oats-carolina-coast-insulated-stainless-tumbler-20-oz",
+   "type": "beach",
+   "color": "White",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-sea-oats-carolina-coast-insulated-stainless-tumbler-20-oz_1000x.webp",
+   "alt": "White insulated tumbler printed with a lifelike painted sea oats illustration and the words Carolina Coast, standing on a weathered boardwalk rail in front of dune sea oats, shown as an illustrative image",
+   "meta": "A 20 oz double-wall insulated stainless tumbler with a clear lid, printed with a lifelike painted sea oats illustration and Carolina Coast. Made to order.",
+   "cta": "Add to bag",
+   "price": 38,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13085431489695915564_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-sea-oats-carolina-coast-insulated-stainless-tumbler-20-oz_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "20 oz"
+    ],
+    [
+     "Build",
+     "Double-wall insulated stainless steel with a clear lid"
+    ],
+    [
+     "Art",
+     "Sea oats illustration with the words Carolina Coast"
+    ]
+   ]
+  },
+  {
+   "id": "sea-oats-carolina-coast-kiss-cut-vinyl-sticker-3-inch",
+   "collection": "local-icons",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Sea Oats Carolina Coast Kiss-Cut Vinyl Sticker, 3 inch",
+   "url": "https://shorelist.myshopify.com/products/sea-oats-carolina-coast-kiss-cut-vinyl-sticker-3-inch",
+   "type": "beach",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-sea-oats-carolina-coast-kiss-cut-vinyl-sticker-3-inch_1000x.webp",
+   "alt": "Kiss-cut vinyl sticker with a lifelike painted sea oats illustration, applied to a navy beach cooler on the sand, shown as an illustrative image",
+   "meta": "A 3 x 3 in kiss-cut vinyl sticker with a lifelike painted sea oats illustration. Made to order.",
+   "cta": "Add to bag",
+   "price": 5.5,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12106373145236340930_1200.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-sea-oats-carolina-coast-kiss-cut-vinyl-sticker-3-inch_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "3 x 3 in"
+    ],
+    [
+     "Type",
+     "Kiss-cut vinyl sticker"
+    ],
+    [
+     "Art",
+     "Sea oats illustration"
+    ]
+   ]
+  },
+  {
+   "id": "wrightsville-beach-sloop-printed-beach-towel",
+   "collection": "shore-gear",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Wrightsville Beach Sloop Printed Beach Towel",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-beach-towel",
+   "type": "beach",
+   "color": "Navy",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-beach-towel-v2_1000x.webp",
+   "alt": "Navy beach towel with an all-over pattern of small white sailboats draped over a wooden beach chair on the sand, shown as an illustrative image",
+   "meta": "A printed beach towel with an all-over pattern of small sailboats on navy, in two sizes. Made to order.",
+   "cta": "Choose size",
+   "price": 58,
+   "from": true,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3327526685446775726_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-beach-towel-v2_1920x.webp",
+   "facts": [
+    [
+     "Sizes",
+     "30 x 60 in or 36 x 72 in"
+    ],
+    [
+     "Fabric",
+     "Polyester printed face with a cotton loop back"
+    ],
+    [
+     "Pattern",
+     "All-over sailboat pattern on navy"
     ]
    ]
   }
