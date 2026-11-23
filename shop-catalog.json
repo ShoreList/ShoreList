@@ -2702,6 +2702,10 @@
   "store": "shopify",
   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11330414591097854260_2048.jpg",
   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-oystercatcher-printed-garment-dyed-tee_1920x.webp",
+   "gallery": [
+    {"src": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-oystercatcher-printed-garment-dyed-tee-chest-detail_1920x.webp", "alt": "Close view of the painted oystercatcher on the chest of an ivory Wrightsville Beach tee"},
+    {"src": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-oystercatcher-printed-garment-dyed-tee-back_1920x.webp", "alt": "Back of the ivory Wrightsville Beach oystercatcher tee worn at the beach"}
+   ],
   "facts": [
    [
     "Sizing",
@@ -4465,7 +4469,7 @@
    "name": "Harbor night"
   }
  ],
- "item_fields": "id, collection, name, url (https product page on one of the stores[] hosts), img, alt, meta, cta, price (number, USD, lowest variant price), from (optional boolean, true when the price varies by option so the page prints From $X), scenes[] (beach|boardwalk|riverwalk|harbor-night), cut (optional, unisex), store (shopify|fourthwall), buy (optional https cart permalink for one-tap checkout), shelf (optional presentation field: id from shelves[], used by the collection-first shop page), studio (optional product shot url, shown as a second image in quick view), lookbook (styled image url), facts (optional [[label, text], ...] rows shown in quick view; only facts stated in the product listing or the maker's spec, never marketing claims), blank (optional, internal only: supplier blank brand and model, never rendered on the page)",
+ "item_fields": "id, collection, name, url (https product page on one of the stores[] hosts), img, alt, meta, cta, price (number, USD, lowest variant price), from (optional boolean, true when the price varies by option so the page prints From $X), scenes[] (beach|boardwalk|riverwalk|harbor-night), cut (optional, unisex), store (shopify|fourthwall), buy (optional https cart permalink for one-tap checkout), shelf (optional presentation field: id from shelves[], used by the collection-first shop page), studio (optional product shot url, shown as a second image in quick view), lookbook (styled image url), gallery (optional [{src, alt, styled}] extra pictures, shown as more thumbnails in quick view), facts (optional [[label, text], ...] rows shown in quick view; only facts stated in the product listing or the maker's spec, never marketing claims), blank (optional, internal only: supplier blank brand and model, never rendered on the page)",
  "stores": [
   {
    "id": "fourthwall",
