@@ -81,7 +81,7 @@
    "name": "Wilmington and the Coast",
    "town": true,
    "tag": "For the whole coast",
-   "blurb": "Pieces that belong to the whole coast: the Airlie Oak framed print, tote, tee, mug, zip pouch, throw pillow and ornament, the Live Oak embroidered crewneck and the Carolina Coast beach towel.",
+   "blurb": "Pieces that belong to the whole coast: the Airlie Oak framed print, tote, tee, mug, zip pouch, throw pillow, tea towel and ornament, the Live Oak embroidered crewneck and the Carolina Coast beach towel.",
    "cover": "airlie-oak-framed-art-print-wrightsville-beach-and-wilmington"
   }
  ],
@@ -1321,6 +1321,39 @@
     [
      "Print",
      "Airlie Oak illustration on the front and back, not embroidered"
+    ]
+   ]
+  },
+  {
+   "id": "airlie-oak-wilmington-tea-towel",
+   "collection": "shore-gear",
+   "shelf": "wilmington",
+   "town": "wilmington",
+   "name": "Airlie Oak Wilmington Tea Towel",
+   "url": "https://shorelist.myshopify.com/products/airlie-oak-wilmington-tea-towel",
+   "type": "beach",
+   "color": "Ivory",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-tea-towel_1000x.webp",
+   "alt": "Ivory kitchen tea towel printed with a painterly illustration of the Airlie Oak, a Southern live oak with hanging Spanish moss, hanging on an oven handle, shown as an illustrative image",
+   "meta": "A printed kitchen tea towel with a painterly illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC, on warm ivory. Made to order.",
+   "cta": "Shop home decor",
+   "price": 30,
+   "scenes": [
+    "riverwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/18186560907249845613_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-tea-towel_1920x.webp",
+   "facts": [
+    [
+     "Size",
+     "18 x 30 in"
+    ],
+    [
+     "Print",
+     "Airlie Oak illustration printed on the towel, not embroidered"
     ]
    ]
   },
