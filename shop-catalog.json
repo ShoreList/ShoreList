@@ -81,8 +81,8 @@
    "name": "Wilmington and the Coast",
    "town": true,
    "tag": "For the whole coast",
-   "blurb": "Pieces that belong to the whole coast: the Airlie Oak tote, tee and mug, the Live Oak embroidered crewneck and the Carolina Coast beach towel.",
-   "cover": "airlie-oak-wilmington-all-over-print-tote-bag"
+   "blurb": "Pieces that belong to the whole coast: the Airlie Oak framed print, tote, tee and mug, the Live Oak embroidered crewneck and the Carolina Coast beach towel.",
+   "cover": "airlie-oak-framed-art-print-wrightsville-beach-and-wilmington"
   }
  ],
  "items": [
@@ -1060,6 +1060,45 @@
     ]
    ],
    "motif": "beach-scenes"
+  },
+  {
+   "id": "airlie-oak-framed-art-print-wrightsville-beach-and-wilmington",
+   "collection": "landmarks",
+   "shelf": "wilmington",
+   "town": "wilmington",
+   "name": "Airlie Oak Framed Art Print, Wrightsville Beach and Wilmington",
+   "url": "https://shorelist.myshopify.com/products/airlie-oak-framed-art-print-wrightsville-beach-and-wilmington",
+   "type": "prints",
+   "color": "Ivory",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-framed-art-print-wrightsville-beach-and-wilmington_1000x.webp",
+   "alt": "Framed art print of the Airlie Oak, a painterly Southern live oak with hanging Spanish moss and blush azaleas on warm ivory with a Wrightsville Beach and Wilmington caption, in a walnut frame above a light oak console in a coastal entryway, shown as an illustrative image",
+   "meta": "A framed art print of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC, set like a botanical plate on warm ivory with a Wrightsville Beach and Wilmington caption. Made to order.",
+   "cta": "Choose size",
+   "price": 84,
+   "from": true,
+   "scenes": [
+    "riverwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/18372799870615515575_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-framed-art-print-wrightsville-beach-and-wilmington_1920x.webp",
+   "facts": [
+    [
+     "Sizes",
+     "11 x 14 in, 12 x 16 in or 16 x 20 in"
+    ],
+    [
+     "Frame",
+     "Black, walnut or white"
+    ],
+    [
+     "Art",
+     "Airlie Oak illustration with a Wrightsville Beach and Wilmington, North Carolina caption"
+    ]
+   ],
+   "alsoTown": "wrightsville-beach"
   },
   {
    "id": "airlie-oak-wilmington-all-over-print-tote-bag",
