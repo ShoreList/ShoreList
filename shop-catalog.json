@@ -1,5 +1,13 @@
 {
- "v": 1, "startHere": ["carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt", "kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt", "the-pelican-corduroy-cap-carolina-beach", "airlie-oak-framed-art-print-wrightsville-beach-and-wilmington", "wrightsville-beach-sloop-all-over-print-tote-bag", "the-blue-crab-embroidered-crewneck-kure-beach"], 
+ "v": 1,
+ "startHere": [
+  "carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
+  "kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
+  "the-pelican-corduroy-cap-carolina-beach",
+  "airlie-oak-framed-art-print-wrightsville-beach-and-wilmington",
+  "wrightsville-beach-sloop-all-over-print-tote-bag",
+  "the-blue-crab-embroidered-crewneck-kure-beach"
+ ],
  "note": "Only add an item here after it passes the shop gates: real supplier mockup of the exact colorway, lining/inside color checked, art at print resolution, product URL returns 200 signed out. Customer-facing fields (name, alt, meta, cta, collection blurbs, stores[].carries) must not name third-party blank brands; put those in the internal blank field. Run: node tools/check-shop-links.mjs",
  "collections": [
   {
@@ -2205,8 +2213,8 @@
    "type": "bags",
    "color": "Cream",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7066691774119677009_2048_1000x.jpg",
-   "alt": "Cream cotton canvas tote with an embroidered Atlantic blue crab, rendered mockup",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-canvas-tote-kure-beach_1000x.jpg",
+   "alt": "Man carrying a cream canvas tote with a printed blue crab illustration near the Kure Beach pier at dusk, rendered mockup",
    "meta": "An Atlantic blue crab, claws up, machine embroidered on a heavy 320 gsm cotton canvas tote for Kure Beach days.",
    "cta": "Choose color",
    "price": 48,
@@ -2233,7 +2241,8 @@
      "Colors",
      "Cream, Bone"
     ]
-   ]
+   ],
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-canvas-tote-kure-beach_1920x.jpg"
   },
   {
    "id": "the-lifeguard-stand-dad-hat-kure-beach",
@@ -2680,51 +2689,57 @@
    ],
    "motif": "sea-life"
   },
- {
-  "id": "wrightsville-beach-oystercatcher-printed-garment-dyed-tee",
-  "collection": "local-icons",
-  "shelf": "wrightsville-beach",
-  "town": "wrightsville-beach",
-  "name": "Wrightsville Beach Oystercatcher Printed Garment-Dyed Tee",
-  "url": "https://shorelist.myshopify.com/products/wrightsville-beach-oystercatcher-printed-garment-dyed-tee",
-  "type": "tops",
-  "color": "Ivory",
-  "added": "2026-11-23",
-  "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-oystercatcher-printed-garment-dyed-tee_1000x.webp",
-  "alt": "Wrightsville Beach oystercatcher printed tee in Ivory by ShoreList",
-  "meta": "A relaxed ivory garment-dyed tee printed with a painterly American oystercatcher on a Wrightsville Beach sand flat. Made to order.",
-  "cta": "Choose size",
-  "price": 44,
-  "scenes": [
-   "beach"
-  ],
-  "cut": "unisex",
-  "store": "shopify",
-  "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11330414591097854260_2048.jpg",
-  "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-oystercatcher-printed-garment-dyed-tee_1920x.webp",
+  {
+   "id": "wrightsville-beach-oystercatcher-printed-garment-dyed-tee",
+   "collection": "local-icons",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Wrightsville Beach Oystercatcher Printed Garment-Dyed Tee",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-oystercatcher-printed-garment-dyed-tee",
+   "type": "tops",
+   "color": "Ivory",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-oystercatcher-printed-garment-dyed-tee_1000x.webp",
+   "alt": "Wrightsville Beach oystercatcher printed tee in Ivory by ShoreList",
+   "meta": "A relaxed ivory garment-dyed tee printed with a painterly American oystercatcher on a Wrightsville Beach sand flat. Made to order.",
+   "cta": "Choose size",
+   "price": 44,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11330414591097854260_2048.jpg",
+   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-oystercatcher-printed-garment-dyed-tee_1920x.webp",
    "gallery": [
-    {"src": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-oystercatcher-printed-garment-dyed-tee-chest-detail_1920x.webp", "alt": "Close view of the painted oystercatcher on the chest of an ivory Wrightsville Beach tee"},
-    {"src": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-oystercatcher-printed-garment-dyed-tee-back_1920x.webp", "alt": "Back of the ivory Wrightsville Beach oystercatcher tee worn at the beach"}
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-oystercatcher-printed-garment-dyed-tee-chest-detail_1920x.webp",
+     "alt": "Close view of the painted oystercatcher on the chest of an ivory Wrightsville Beach tee"
+    },
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-oystercatcher-printed-garment-dyed-tee-back_1920x.webp",
+     "alt": "Back of the ivory Wrightsville Beach oystercatcher tee worn at the beach"
+    }
    ],
-  "facts": [
-   [
-    "Sizing",
-    "Relaxed fit, offered in sizes L to 3XL (S and M are not offered yet)"
-   ],
-   [
-    "Fabric",
-    "Garment-dyed 100% ring-spun cotton, 6.1 oz"
-   ],
-   [
-    "Print",
-    "American oystercatcher on a sand flat with a small Wrightsville Beach line, about 5.5 in wide on the chest, printed not embroidered"
-   ],
-   [
-    "Care",
-    "Machine wash cold, tumble dry low. Garment dye means the shade varies slightly from piece to piece"
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, offered in sizes L to 3XL (S and M are not offered yet)"
+    ],
+    [
+     "Fabric",
+     "Garment-dyed 100% ring-spun cotton, 6.1 oz"
+    ],
+    [
+     "Print",
+     "American oystercatcher on a sand flat with a small Wrightsville Beach line, about 5.5 in wide on the chest, printed not embroidered"
+    ],
+    [
+     "Care",
+     "Machine wash cold, tumble dry low. Garment dye means the shade varies slightly from piece to piece"
+    ]
    ]
-  ]
- },
+  },
   {
    "id": "the-sloop-dad-hat-wrightsville-beach",
    "collection": "local-icons",
