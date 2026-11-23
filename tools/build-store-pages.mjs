@@ -264,7 +264,7 @@ const townOut = [];
 for (const t of shopTowns) {
   const c = TOWN_COPY[t.id];
   if (!c) continue; // a new town needs its TOWN_COPY entry before it gets a page
-  const items = cat.items.filter((i) => townOfItem(i) === t.id);
+  const items = cat.items.filter((i) => townOfItem(i) === t.id || i.alsoTown === t.id);
   if (!items.length) continue;
   const utm = `utm_source=shorelist.net&utm_medium=landing&utm_campaign=shop-${t.id}`;
   const link = (u) => u + (u.includes('?') ? '&' : '?') + utm;
