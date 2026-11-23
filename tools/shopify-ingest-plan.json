@@ -1,4 +1,44 @@
 {
  "shelves": [],
- "items": []
+ "items": [
+  {
+   "handle": "wrightsville-beach-sloop-printed-canvas-tote-bag",
+   "shelf": "wrightsville-beach",
+   "collection": "shore-gear",
+   "name": "Wrightsville Beach Sloop Printed Canvas Tote Bag",
+   "type": "beach",
+   "color": "Natural",
+   "alt": "Natural canvas tote bag with a navy panel of small sailboats printed on the front, shown as an illustrative image",
+   "meta": "A printed canvas tote with a navy panel of little sloops on the front. Roomy enough for a beach day or a Wilmington errand run.",
+   "cta": "Shop tote bags",
+   "scenes": ["beach"],
+   "cut": "unisex",
+   "lookbookFile": "shorelist-lookbook-wrightsville-beach-sloop-printed-canvas-tote-bag.webp",
+   "facts": [
+    ["Size", "About 15 x 16 in with 20 in handles"],
+    ["Fabric", "100% cotton canvas in natural"],
+    ["Print", "Sailboat pattern panel on the front"],
+    ["Care", "Machine wash cold, tumble dry low"]
+   ]
+  },
+  {
+   "handle": "wrightsville-beach-sloop-can-cooler-sleeve",
+   "shelf": "wrightsville-beach",
+   "collection": "shore-gear",
+   "name": "Wrightsville Beach Sloop Can Cooler Sleeve",
+   "type": "coolers",
+   "color": "Navy",
+   "alt": "Navy can cooler sleeve covered in small sailboats around a regular can, shown as an illustrative image",
+   "meta": "A navy can cooler sleeve covered in little sloops, printed edge to edge. Keeps a regular can cool on the boat, the sand or the porch.",
+   "cta": "Shop can coolers",
+   "scenes": ["beach"],
+   "cut": "unisex",
+   "lookbookFile": "shorelist-lookbook-wrightsville-beach-sloop-can-cooler-sleeve.webp",
+   "facts": [
+    ["Size", "Fits a regular can, about 3.5 x 4.3 in"],
+    ["Materials", "Polyester outside, soft foam liner inside"],
+    ["Print", "Sailboat pattern printed edge to edge"]
+   ]
+  }
+ ]
 }
