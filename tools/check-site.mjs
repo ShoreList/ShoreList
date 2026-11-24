@@ -119,5 +119,28 @@ for (const f of pages) { // every page that starts a checkout must load the attr
   const h = fs.readFileSync(f, 'utf8');
   if (/category-app\.js|create-guide-checkout|create-goods-checkout|shop-cart\.js/.test(h) && !/\/attrib\.js/.test(h)) bad(`${f}: starts checkout but does not load /attrib.js`);
 }
+// stated facts must match the site: category count, home FAQ markup vs visible text, no blanket claims
+try {
+  const nCat = fs.readdirSync('things-to-do').filter((f) => f.endsWith('.html') && f !== 'index.html').length;
+  for (const f of ['index.html', 'llms.txt', 'things-to-do/index.html', 'wilmington-nc-faq.html']) {
+    const t = fs.readFileSync(f, 'utf8').replace(/<style[\s\S]*?<\/style>/g, '');
+    for (const m of t.matchAll(/\b(\d+)\+?\s+(?:[a-z]+ ){0,3}categories\b/gi)) {
+      if (f === 'things-to-do/index.html' && /class="pg-eye">\d+ categor/.test(t.slice(Math.max(0, m.index - 16), m.index + 20))) continue; // per-group counts on the hub
+      if (+m[1] !== nCat || /\+/.test(m[0])) bad(`${f}: says "${m[0]}" but there are ${nCat} things-to-do category pages`);
+    }
+  }
+  const home = fs.readFileSync('index.html', 'utf8');
+  const dec = (x) => x.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&rsquo;/g, '’').replace(/&nbsp;/g, ' ').replace(/&middot;/g, '·').replace(/\s+/g, ' ').trim();
+  const ld = [...home.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => { try { return JSON.parse(m[1]); } catch { return null; } }).find((j) => j && j['@type'] === 'FAQPage');
+  if (ld) for (const q of ld.mainEntity) {
+    const m = home.match(new RegExp('<summary>' + q.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '<span[^>]*>\\+</span></summary><div class="faq-a-inner">([\\s\\S]*?)</div></details>'));
+    if (!m) bad(`index.html: FAQ markup question not found in visible FAQ: ${q.name}`);
+    else if (dec(m[1]) !== dec(q.acceptedAnswer.text)) bad(`index.html: FAQ markup and visible answer differ: ${q.name}`);
+  }
+  const liveN = Object.values(JSON.parse(fs.readFileSync('operators-public.json', 'utf8')).categories).flat().filter((t) => t.live).length;
+  const six = home.match(/Founding Partner &nbsp;&middot;&nbsp; (\d+) tours/);
+  if (six && +six[1] !== liveN) bad(`index.html: founding partner card says ${six[1]} tours but ${liveN} experiences are live in operators-public.json`);
+  for (const f of pages) { const t = fs.readFileSync(f, 'utf8'); if (/We verify their business license|personally reviewed before going live|four local operators/i.test(t)) bad(`${f}: unsupported operator claim (license check, personal review or a fixed operator count)`); }
+} catch (e) { bad('stated facts: ' + e.message); }
 if (fails.length) { console.error(fails.join('\n')); process.exit(1); }
 console.log(`ok: ${pages.length} pages, ${cat.items.length} products`);

@@ -259,7 +259,7 @@ ${hubSections}
       <p class="pg-eye">Local guide</p>
       <h2>Things to do in Wilmington, NC and the beaches</h2>
       <p>Wilmington is a river city with three ocean beaches within a half hour: Wrightsville Beach, Carolina Beach and Kure Beach. That mix is what makes it easy to plan. You can spend the morning on the sand, the afternoon in a 250-year-old historic district, and the evening on the Cape Fear River.</p>
-      <p>ShoreList is the local guide and booking marketplace for the area. Every category above has its own page with what to expect, where it happens and what you can book today, and the live beach report on each beach page shows surf, tide, water temperature and an estimated flag.</p>
+      <p>ShoreList is the local guide and booking marketplace for the area. Every category above has its own page with what to expect, where it happens and whether it can be booked on ShoreList yet, and the live beach report on each beach page shows surf, tide, water temperature and an estimated flag.</p>
       <h3>By type of trip</h3>
       <ul>
         <li><strong>On the water:</strong> <a href="/things-to-do/surf-lessons">surf lessons</a>, <a href="/things-to-do/paddleboard">paddleboarding</a>, <a href="/things-to-do/kayak-tours">kayak tours</a>, <a href="/things-to-do/fishing-charters">fishing charters</a>, <a href="/things-to-do/sailboat-rides">sunset sails</a>, <a href="/things-to-do/river-cruises">river cruises</a> and <a href="/things-to-do/jet-ski-rentals">jet skis</a>.</li>
