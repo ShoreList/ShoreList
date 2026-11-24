@@ -177,13 +177,13 @@
   function pieces(n){return n+' piece'+(n===1?'':'s');}
   function liveItems(){return data.items.filter(function(i){return i.url&&safeUrl(i.url);});}
 
-  /* ---------- cards: studio image first, lookbook on hover, name, price, color ---------- */
+  /* ---------- cards: lookbook photo first, studio shot on hover, name, price, color ---------- */
   var DOTS={white:'#F4F1EA',ivory:'#EFE6D2',natural:'#E4D8BE',navy:'#0E1F33','navy blue':'#1B3552','blue jean':'#5C7A99',mint:'#BCD8CD',teal:'#2F6F73','forest green':'#2F4A3A',sand:'#D9C7A3',black:'#1B1B1B',red:'#B5362F'};
   function dot(i){var c=DOTS[String(i.color||'').toLowerCase()];return c?'<span class="dot" style="background:'+c+'" role="img" aria-label="Color: '+esc(i.color)+'"></span>':'';}
   function sized(u,w){return /^https:\/\/cdn\.shopify\.com\//.test(u)&&!/_\d+x\.\w+$/.test(u)?u+(u.indexOf('?')<0?'?':'&')+'width='+w:u;}
   function srcset(u){return /^https:\/\/cdn\.shopify\.com\//.test(u)&&!/_\d+x\.\w+$/.test(u)?sized(u,480)+' 480w, '+sized(u,800)+' 800w, '+sized(u,1200)+' 1200w':'';}
   function cardHtml(i,eager){
-    var nm=splitName(i.name),first=i.studio||i.img,second=i.lookbook&&!sameImg(i.lookbook,first)?i.lookbook:(i.img&&!sameImg(i.img,first)?i.img:'');
+    var nm=splitName(i.name),first=(i.img&&!sameImg(i.img,i.studio||''))?i.img:(i.lookbook||i.studio||i.img),second=i.studio&&!sameImg(i.studio,first)?i.studio:'';
     var ss=srcset(first),alt=i.alt||i.name;
     var ph=first?'<div class="ph" data-qv="'+esc(i.id)+'"><img class="p1" src="'+esc(sized(first,800))+'" '+(ss?'srcset="'+esc(ss)+'" sizes="(min-width:1040px) 25vw, (min-width:700px) 33vw, 50vw" ':'')+'alt="'+esc(alt)+'" '+(eager?'loading="eager"':'loading="lazy"')+' decoding="async" width="800" height="1000"/>'+(second?'<img class="p2" src="'+esc(sized(second,800))+'" alt="" loading="lazy" decoding="async" width="800" height="1000"/>':'')+'</div>':'<div class="ph" data-qv="'+esc(i.id)+'"></div>';
     return '<article class="card">'+ph+'<div class="bd"><h3><button type="button" data-qv="'+esc(i.id)+'" aria-haspopup="dialog">'+esc(nm[0])+'</button></h3><div class="row">'+(money(i)?'<span class="price">'+esc(priceLabel(i))+'</span>':'<span></span>')+dot(i)+'</div></div></article>';
