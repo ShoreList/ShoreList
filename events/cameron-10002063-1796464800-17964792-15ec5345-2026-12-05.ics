@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShoreList//Events//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:cameron-10002063-1796464800-17964792-15ec5345-2026-12-05@shorelist.net
+DTSTAMP:20261124T000000Z
+DTSTART:20261205T150000Z
+SUMMARY:Music & Mimosas at CAM Café with Roger Davis
+LOCATION:Cameron Art Museum\, Wilmington\, NC
+DESCRIPTION:Confirm details with the organizer: https://cameronartmuseum.org/event/music-mimosas-at-cam-cafe2/
+URL:https://cameronartmuseum.org/event/music-mimosas-at-cam-cafe2/
+END:VEVENT
+END:VCALENDAR

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23",
+ "updated": "2026-11-24",
  "events": [
   {
    "id": "rooted-in-memory-the-gullah-geechee-visi-2026-06-19",
@@ -344,6 +344,20 @@
    "sourceUrl": "https://cameronartmuseum.org/event/museum-school-open-house-at-ponysaurus/",
    "via": "Cameron Art Museum events calendar",
    "time": "1:00 PM"
+  },
+  {
+   "id": "cameron-10002063-1796464800-17964792-15ec5345-2026-12-05",
+   "title": "Music & Mimosas at CAM Café with Roger Davis",
+   "start": "2026-12-05",
+   "end": "2026-12-05",
+   "venue": "Cameron Art Museum",
+   "area": "Wilmington",
+   "cat": "Arts",
+   "url": "https://cameronartmuseum.org/event/music-mimosas-at-cam-cafe2/",
+   "source": "cameron",
+   "sourceUrl": "https://cameronartmuseum.org/event/music-mimosas-at-cam-cafe2/",
+   "via": "Cameron Art Museum events calendar",
+   "time": "10:00 AM"
   },
   {
    "id": "candlelight-2026-12-05",
