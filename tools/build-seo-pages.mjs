@@ -167,7 +167,11 @@ ${liveHtml}
     h = inlinePageCss('things-to-do/ghost-tours.html', h
       .replace('<link rel="preconnect" href="https://fonts.googleapis.com"/>',
         '<link rel="preconnect" href="https://cdn.shopify.com"/>\n<link rel="preconnect" href="https://fonts.googleapis.com"/>')
-      .replaceAll('&display=swap', '&display=optional'));
+      .replaceAll('&display=swap', '&display=optional')
+      .replace('</head>', '<link rel="preload" as="image" href="/img/hero-mobile/ghost-tours.webp" media="(max-width: 820px)" fetchpriority="high"/>\n</head>')
+      .replace(/<img class="hero-photo"[^>]+>/, '<picture><source media="(max-width: 820px)" srcset="/img/hero-mobile/ghost-tours.webp"/>$&</picture>')
+      .replace('<script src="/attrib.js"></script>', '<script src="/attrib.js" defer></script>')
+      .replace('<script src="/category-app.js"></script>', '<script src="/category-app.js" defer></script>'));
   }
   fs.writeFileSync(`things-to-do/${slug}.html`, h);
 }

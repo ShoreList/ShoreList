@@ -47,12 +47,15 @@
   var L=[['kure-dawn2','wb-sunrise'],['wb-ocean','wb-banks','ff-oaks','cb-dunes'],['wb-golden','wb-aerial2'],['wb-twilight']][ph];
   var f=L[Math.floor(Math.random()*L.length)];
   var vw=innerWidth,vh=innerHeight,d=devicePixelRatio||1;
-  /* phones: one 1280 px photo (about 200 KB) at any density; larger screens: the width the hero is really drawn at, density capped at 1.5 */
-  var sz=(vw<=820?Math.floor(1280/d):Math.ceil(Math.max(vw,vh*1.5)*1.08*Math.min(d,1.5)/d))+'px';
+  /* Phones preload a compact same-origin photo. On larger screens use the displayed width. */
+  var sz=Math.ceil(Math.max(vw,vh*1.5)*1.08*Math.min(d,1.5)/d)+'px';
   var b='https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-'+f+'_';
   var ss=[1280,1920,2560,3200,3840].map(function(w){return b+w+'x.jpg '+w+'w';}).join(', ');
-  window.__slHero={ph:ph,f:f,sz:sz,ss:ss,vw:vw};
-  var l=document.createElement('link');l.rel='preload';l.as='image';l.setAttribute('imagesrcset',ss);l.setAttribute('imagesizes',sz);l.setAttribute('fetchpriority','high');
+  var mobile=vw<=820;
+  window.__slHero={ph:ph,f:f,sz:sz,vw:vw,mobile:mobile};
+  var l=document.createElement('link');l.rel='preload';l.as='image';l.setAttribute('fetchpriority','high');
+  if(mobile)l.href='/img/hero-mobile/'+f+'.webp';
+  else{l.setAttribute('imagesrcset',ss);l.setAttribute('imagesizes',sz);}
   document.head.appendChild(l);
 }catch(e){}})();
 </script>
