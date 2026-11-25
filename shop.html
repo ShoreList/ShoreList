@@ -839,8 +839,8 @@ body:not(.home):not(.pg-home) .dock{display:none!important}
   /* ---------- cards: lookbook photo first, studio shot on hover, name, price, color ---------- */
   var DOTS={white:'#F4F1EA',ivory:'#EFE6D2',natural:'#E4D8BE',navy:'#0E1F33','navy blue':'#1B3552','blue jean':'#5C7A99',mint:'#BCD8CD',teal:'#2F6F73','forest green':'#2F4A3A',sand:'#D9C7A3',black:'#1B1B1B',red:'#B5362F'};
   function dot(i){var c=DOTS[String(i.color||'').toLowerCase()];return c?'<span class="dot" style="background:'+c+'" role="img" aria-label="Color: '+esc(i.color)+'"></span>':'';}
-  function sized(u,w){return /^https:\/\/cdn\.shopify\.com\//.test(u)&&!/_\d+x\.\w+(\?.*)?$/.test(u)?u.replace(/\.(\w+)(\?.*)?$/,'_'+w+'x.$1$2'):u;}
-  function srcset(u){return /^https:\/\/cdn\.shopify\.com\//.test(u)&&!/_\d+x\.\w+$/.test(u)?sized(u,360)+' 360w, '+sized(u,540)+' 540w, '+sized(u,800)+' 800w, '+sized(u,1200)+' 1200w':'';}
+  function sized(u,w){if(!/^https:\/\/cdn\.shopify\.com\//.test(u))return u;var m=u.match(/_(\d+)x(\.\w+(\?.*)?)$/);if(m)return +m[1]>w?u.replace(/_\d+x(\.\w+(\?.*)?)$/,'_'+w+'x$1'):u;return u.replace(/\.(\w+)(\?.*)?$/,'_'+w+'x.$1$2');}
+  function srcset(u){return /^https:\/\/cdn\.shopify\.com\//.test(u)?sized(u,360)+' 360w, '+sized(u,540)+' 540w, '+sized(u,800)+' 800w, '+sized(u,1200)+' 1200w':'';}
   function cardHtml(i,eager){
     var nm=splitName(i.name),first=(i.img&&!sameImg(i.img,i.studio||''))?i.img:(i.lookbook||i.studio||i.img),second=i.studio&&!sameImg(i.studio,first)?i.studio:'';
     var ss=srcset(first),alt=i.alt||i.name;
