@@ -8,6 +8,7 @@ import vm from 'node:vm';
 import { loadOperators, toPublic } from './operators-lib.mjs';
 import { CATS, TOWNS, PHOTO } from './seo-data.mjs';
 import { PLACES } from './seo-places.mjs';
+import { inlinePageCss } from './inline-home-css.mjs';
 
 const SITE = 'https://shorelist.net';
 const tpl = fs.readFileSync('category.html', 'utf8');
@@ -52,7 +53,7 @@ function head(html, { url, title, desc, image, extraLd }) {
   return html;
 }
 
-// All styling for these pages lives in category.css ("Page frame v2"). Nothing is inlined here.
+// Category styles are maintained in category.css.
 const HERO_OPEN = '<section class="hero" aria-label="Page header">';
 if (!tpl.includes(HERO_OPEN)) throw new Error('template hero missing');
 // photo hero: a real <img> (so it can be prioritised and sized) under a navy overlay
@@ -162,6 +163,12 @@ ${liveHtml}
 </section>`;
   if (!h.includes('<div class="main" id="mc"></div>')) throw new Error('template main missing');
   h = h.replace('<div class="main" id="mc"></div>', facts + '\n<div class="main" id="mc"></div>\n' + guide);
+  if (slug === 'ghost-tours') {
+    h = inlinePageCss('things-to-do/ghost-tours.html', h
+      .replace('<link rel="preconnect" href="https://fonts.googleapis.com"/>',
+        '<link rel="preconnect" href="https://cdn.shopify.com"/>\n<link rel="preconnect" href="https://fonts.googleapis.com"/>')
+      .replaceAll('&display=swap', '&display=optional'));
+  }
   fs.writeFileSync(`things-to-do/${slug}.html`, h);
 }
 
