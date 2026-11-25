@@ -28,13 +28,13 @@ const collections = BLOCKS.filter((b) => cat.collections.some((c) => c.id === b.
   .map((b, k) => {
     const c = cat.collections.find((x) => x.id === b.id), cv = byId.get(b.cover) || cat.items.find((i) => i.collection === b.id);
     const img = cv && (cv.lookbook || cv.img);
-    return `<a class="cblock${k === 0 ? ' wide' : ''}" href="/shop?collection=${esc(b.id)}#results" data-coll="${esc(b.id)}"><div class="cp">${img ? `<img src="${esc(img)}" alt="" loading="${k < 3 ? 'eager' : 'lazy'}" decoding="async" width="1200" height="${k === 0 ? 514 : 900}"/>` : ''}</div><h3>${esc(c.name)}</h3><p>${esc(b.line)}</p><span class="go">View the collection</span></a>`;
+    return `<a class="cblock${k === 0 ? ' wide' : ''}" href="/shop?collection=${esc(b.id)}#results" data-coll="${esc(b.id)}"><div class="cp">${img ? `<img src="${esc(img.replace(/_1920x(\.\w+)$/, k === 0 ? '_1280x$1' : '_960x$1'))}" alt="" loading="lazy" decoding="async" width="1200" height="${k === 0 ? 514 : 900}"/>` : ''}</div><h3>${esc(c.name)}</h3><p>${esc(b.line)}</p><span class="go">View the collection</span></a>`;
   });
 
 const start = (cat.startHere || []).map((id) => byId.get(id)).filter((i) => i && !retired.has(i.id)).slice(0, 6);
 const cards = start.map((i, k) => {
   const f = first(i);
-  return `<article class="card"><div class="ph" data-qv="${esc(i.id)}"><img class="p1" src="${esc(sized(f, 800))}" alt="${esc(i.alt || i.name)}" ${k < 2 ? 'loading="eager"' : 'loading="lazy"'} decoding="async" width="800" height="1000"/></div><div class="bd"><h3><button type="button" data-qv="${esc(i.id)}" aria-haspopup="dialog">${esc(splitName(i.name))}</button></h3><div class="row"><span class="price">${esc(money(i))}</span></div></div></article>`;
+  return `<article class="card"><div class="ph" data-qv="${esc(i.id)}"><img class="p1" src="${esc(sized(f, 640))}" alt="${esc(i.alt || i.name)}" ${k < 2 ? 'loading="eager"' : 'loading="lazy"'} decoding="async" width="800" height="1000"/></div><div class="bd"><h3><button type="button" data-qv="${esc(i.id)}" aria-haspopup="dialog">${esc(splitName(i.name))}</button></h3><div class="row"><span class="price">${esc(money(i))}</span></div></div></article>`;
 });
 
 const faqBlock = html.match(/<!--SHOP-STATIC:faq-->([\s\S]*?)<!--\/SHOP-STATIC:faq-->/)[1];
