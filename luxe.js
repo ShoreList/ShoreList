@@ -28,7 +28,7 @@
   addEventListener('pageshow',function(){if(bar)bar.className='done';});
   /* images: shimmer until decoded, then fade in */
   function img(im){
-    if(im.dataset.lx||im.closest('.plates,#lx-splash')||im.loading==='eager'&&im.complete)return;
+    if(im.dataset.lx||im.fetchPriority==='high'||im.closest('.plates,#lx-splash')||im.loading==='eager'&&im.complete)return;
     im.dataset.lx='1';
     if(im.complete&&im.naturalWidth)return;
     im.classList.add('lx-pending');
