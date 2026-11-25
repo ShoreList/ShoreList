@@ -296,11 +296,20 @@ nav{padding:15px 20px;top:0;}
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());gtag('config','G-EN91RH3PZV');
-window.addEventListener('load',function(){
-  var tag=document.createElement('script');tag.async=true;
-  tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
-  document.head.appendChild(tag);
-},{once:true});
+(function(){
+  var interactions=['pointerdown','keydown','scroll'];
+  function loadAnalytics(){
+    interactions.forEach(function(type){window.removeEventListener(type,loadAnalytics);});
+    function load(){
+      var tag=document.createElement('script');tag.async=true;
+      tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
+      document.head.appendChild(tag);
+    }
+    if('requestIdleCallback' in window)requestIdleCallback(load,{timeout:1500});
+    else setTimeout(load,0);
+  }
+  interactions.forEach(function(type){window.addEventListener(type,loadAnalytics,{passive:true});});
+})();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"ShoreList","alternateName":"ShoreList Wilmington","url":"https://shorelist.net/","inLanguage":"en-US","description":"Things to do, events, weather and local experiences in Wilmington, NC and the beaches.","publisher":{"@type":"Organization","@id":"https://shorelist.net/#org","name":"ShoreList","url":"https://shorelist.net/"}}
