@@ -142,7 +142,16 @@
 
   // The photo is the primary hero. Start the shader only as a visible, idle fallback.
   var started = false;
-  function go() { if (started || host.classList.contains('plates-on')) return; started = true; boot(); }
+  function go() {
+    if (started || host.classList.contains('plates-on')) return;
+    started = true;
+    // Keep a failed photo from triggering a costly shader on small screens.
+    if (window.matchMedia && matchMedia('(max-width: 820px)').matches) {
+      host.classList.add('scene-fallback');
+      return;
+    }
+    boot();
+  }
   function whenIdle() {
     if ('requestIdleCallback' in window) requestIdleCallback(go, { timeout: 1500 });
     else setTimeout(go, 200);
