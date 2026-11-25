@@ -34,6 +34,11 @@ for (const [p, floors] of PAGES) {
   const j = JSON.parse(fs.readFileSync(out, 'utf8'));
   const got = Object.fromEntries(Object.entries(j.categories).map(([k, v]) => [k, Math.round(v.score * 100)]));
   console.log(p.padEnd(36), JSON.stringify(got), 'LCP', j.audits['largest-contentful-paint'].displayValue, 'TBT', j.audits['total-blocking-time'].displayValue, 'CLS', j.audits['cumulative-layout-shift'].displayValue);
+  if (got.performance < floors.performance) {
+    const candidate = j.audits['largest-contentful-paint-element']?.details?.items?.[0]?.items?.[0]?.node?.selector;
+    const slowTasks = j.audits['long-tasks']?.details?.items?.slice(0, 3).map(({ url, duration }) => [url, Math.round(duration)]);
+    console.log('Performance details', JSON.stringify({ candidate, slowTasks }));
+  }
   for (const [k, min] of Object.entries(floors)) if (got[k] < min) fails.push(`${p}: ${k} ${got[k]} is under the floor of ${min}`);
 }
 server.close();

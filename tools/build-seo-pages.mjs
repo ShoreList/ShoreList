@@ -8,6 +8,7 @@ import vm from 'node:vm';
 import { loadOperators, toPublic } from './operators-lib.mjs';
 import { CATS, TOWNS, PHOTO } from './seo-data.mjs';
 import { PLACES } from './seo-places.mjs';
+import { inlinePageCss } from './inline-home-css.mjs';
 
 const SITE = 'https://shorelist.net';
 const tpl = fs.readFileSync('category.html', 'utf8');
@@ -26,7 +27,7 @@ const CANCEL_H = toPublic(loadOperators()).cancellationHours ?? 24;
 // hero badges, same markup category-app.js renders, so the client render does not move the page
 const heroMeta = (slug, ops) => {
   const b = (t, live) => `<div class="hm-badge${live ? ' live' : ''}">${t}</div>`;
-  if (slug === 'museums') return b('Museum Guide', 1) + b('Open Daily &middot; Rain or Shine') + b('Tickets &amp; Events');
+  if (slug === 'museums') return b('Museum Guide', 1) + b('Seasonal Hours') + b('Tickets &amp; Events');
   const lv = ops.filter((o) => o.live);
   if (lv.length) return b('Bookings Open Now', 1) + b(lv.length + ' Experience' + (lv.length > 1 ? 's' : '') + ' Live') + b('Secure Checkout via Stripe') + b('Free Cancellation ' + CANCEL_H + 'hrs+');
   if (ops.length) return b('Waitlist Open Now', 1) + b(ops.length + ' Local Operator' + (ops.length > 1 ? 's' : '')) + b('Bookings Opening Soon');
@@ -52,7 +53,7 @@ function head(html, { url, title, desc, image, extraLd }) {
   return html;
 }
 
-// All styling for these pages lives in category.css ("Page frame v2"). Nothing is inlined here.
+// Category styles are maintained in category.css.
 const HERO_OPEN = '<section class="hero" aria-label="Page header">';
 if (!tpl.includes(HERO_OPEN)) throw new Error('template hero missing');
 // photo hero: a real <img> (so it can be prioritised and sized) under a navy overlay
@@ -162,6 +163,16 @@ ${liveHtml}
 </section>`;
   if (!h.includes('<div class="main" id="mc"></div>')) throw new Error('template main missing');
   h = h.replace('<div class="main" id="mc"></div>', facts + '\n<div class="main" id="mc"></div>\n' + guide);
+  if (slug === 'ghost-tours') {
+    h = inlinePageCss('things-to-do/ghost-tours.html', h
+      .replace('<link rel="preconnect" href="https://fonts.googleapis.com"/>',
+        '<link rel="preconnect" href="https://cdn.shopify.com"/>\n<link rel="preconnect" href="https://fonts.googleapis.com"/>')
+      .replaceAll('&display=swap', '&display=optional')
+      .replace('</head>', '<link rel="preload" as="image" href="/img/hero-mobile/ghost-tours.webp" media="(max-width: 820px)" fetchpriority="high"/>\n</head>')
+      .replace(/<img class="hero-photo"[^>]+>/, '<picture><source media="(max-width: 820px)" srcset="/img/hero-mobile/ghost-tours.webp"/>$&</picture>')
+      .replace('<script src="/attrib.js"></script>', '<script src="/attrib.js" defer></script>')
+      .replace('<script src="/category-app.js"></script>', '<script src="/category-app.js" defer></script>'));
+  }
   fs.writeFileSync(`things-to-do/${slug}.html`, h);
 }
 
