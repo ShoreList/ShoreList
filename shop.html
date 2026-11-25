@@ -1091,8 +1091,10 @@ body:not(.home):not(.pg-home) .dock{display:none!important}
 </script>
 <script>
 (function(){var nav=document.querySelector('nav.shop-nav'),b=nav&&nav.querySelector('.sl-burger');if(!b)return;
-b.addEventListener('click',function(){var o=nav.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Close menu':'Open menu');});
-document.addEventListener('keydown',function(e){if(e.key==='Escape'&&nav.classList.contains('open')){nav.classList.remove('open');b.setAttribute('aria-expanded','false');b.focus();}});})();
+function setOpen(open){nav.classList.toggle('open',open);b.setAttribute('aria-expanded',String(open));b.setAttribute('aria-label',open?'Close menu':'Open menu');}
+b.addEventListener('click',function(){setOpen(!nav.classList.contains('open'));});
+nav.querySelector('a[href="#drops"]').addEventListener('click',function(){setOpen(false);});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&nav.classList.contains('open')){setOpen(false);b.focus();}});})();
 </script>
 <script src="/attrib.js" defer></script>
 <script src="/shop-cart.js" defer></script>
