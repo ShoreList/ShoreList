@@ -1066,6 +1066,9 @@ main #explore .cats-grid .cat .cat-live{font-size:.75rem}
 .hx-shop-n{display:block;margin-top:12px;font-family:'Libre Caslon Text',Georgia,serif;font-size:1rem;line-height:1.3}
 .hx-shop-link{margin:0}
 @media(max-width:640px){.hx-shop{padding:56px 0}.hx-shop-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 12px}.hx-shop-grid li:nth-child(3){display:none}}
+
+.mob-drawer{max-height:100dvh;overflow-y:auto;overscroll-behavior:contain}
+.mob-drawer .mobile-social{display:flex;flex-wrap:wrap;gap:0 18px;border-top:1px solid rgba(217,199,163,.22)}
 /* ShoreList design tokens: the single source of truth for color and type. Linked last on every page.
    Palette: Harbor Navy, Sailcloth, Dune Sand, Sea Glass, Signal Red (one small accent), Weathered Teak (optional).
    Type: Libre Caslon Display (headlines, wordmark), Libre Caslon Text (product names), DM Sans (UI, body), DM Mono (captions). */
@@ -1207,6 +1210,7 @@ body:not(.home):not(.pg-home) .dock{display:none!important}
   <a href="#how" onclick="closeNav()">How It Works</a>
   <a href="/things-to-do" class="mob-cta" onclick="closeNav()">Book Experiences</a>
   <a href="/join" onclick="closeNav()" style="font-size:0.84rem;color:rgba(217,199,163,0.82);margin-top:8px;padding:13px 0;border-top:1px solid rgba(255,255,255,0.04);">Are you a local operator? →</a>
+  <div class="mobile-social" role="group" aria-label="Follow ShoreList"><a href="/weekly#join" onclick="closeNav()">Sign up for emails</a><a href="https://www.tiktok.com/@shorelist" target="_blank" rel="noopener noreferrer" aria-label="ShoreList on TikTok">TikTok</a><a href="https://shop.tiktok.com/us/store/shorelist/7494237132591040191" target="_blank" rel="noopener noreferrer">TikTok Shop</a><a href="https://www.instagram.com/shorelist" target="_blank" rel="noopener noreferrer" aria-label="ShoreList on Instagram">Instagram</a></div>
 </div>
 
 <main id="main">
@@ -1699,6 +1703,7 @@ body:not(.home):not(.pg-home) .dock{display:none!important}
         <a href="/" class="foot-logo" aria-label="ShoreList home"><span class="foot-s">Shore</span><span class="foot-l">List</span></a>
         <p class="hx-foot-tag">Things to do, events, live beach conditions and local tours for Wilmington, NC and the beaches.</p>
         <a href="/join" class="foot-op">Are you a local operator? →</a>
+        <a href="/weekly#join" class="foot-op">Sign up for ShoreList emails</a>
         <a href="https://www.instagram.com/shorelist" class="foot-op" target="_blank" rel="noopener noreferrer" aria-label="ShoreList on Instagram">Follow ShoreList on Instagram →</a>
         <a href="https://www.tiktok.com/@shorelist" class="foot-op" target="_blank" rel="noopener noreferrer" aria-label="ShoreList on TikTok">TikTok</a>
         <a href="https://shop.tiktok.com/us/store/shorelist/7494237132591040191" class="foot-op" target="_blank" rel="noopener noreferrer">TikTok Shop</a>

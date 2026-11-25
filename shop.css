@@ -215,3 +215,14 @@ body.shop .lx-rv{opacity:1;transform:none;transition:none}
 body.shop img.lx-pending{opacity:1;animation:none;background:none}
 body.shop img.lx-in{animation:none}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card .ph img.p2{transition:none}}
+
+.shop-nav .mobile-social{display:none}
+.shop-social{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:0 18px;margin-top:12px}
+.shop-social p{flex-basis:100%;margin:0}
+.shop-social a{display:inline-flex;align-items:center;min-height:44px;text-underline-offset:3px}
+#drops{scroll-margin-top:76px}
+@media(max-width:860px){
+  nav.sl-hdr.shop-nav .sl-links{max-height:calc(100dvh - 64px);overflow-y:auto;overscroll-behavior:contain}
+  nav.sl-hdr.shop-nav .mobile-social{display:flex;flex-wrap:wrap;gap:0 18px;border-top:1px solid rgba(217,199,163,.22)}
+  nav.sl-hdr.shop-nav .mobile-social a{min-height:44px}
+}
