@@ -314,33 +314,57 @@
 
   /* Contrast fixer: brand coral text on dark panels and white text on coral fills fall below 4.5:1.
      This nudges only those cases (lighter coral on dark, deeper coral behind white) and lifts tiny labels to 12px. */
-  function contrastFix() {
+  function contrastFix(done) {
     function rgb(c) { var m = c && c.match(/[\d.]+/g); return m ? m.map(Number) : null; }
     function lum(m) { var f = function (v) { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); }; return 0.2126 * f(m[0]) + 0.7152 * f(m[1]) + 0.0722 * f(m[2]); }
     function bgOf(e) { var x = e; while (x && x.nodeType === 1) { var cs = getComputedStyle(x), m = rgb(cs.backgroundColor); if (m && (m.length < 4 || m[3] > 0.5) && cs.backgroundColor !== 'rgba(0, 0, 0, 0)') return m; if (cs.backgroundImage !== 'none') return null; x = x.parentElement; } return [255, 255, 255]; }
-    var els = document.body.querySelectorAll('*'), edits = [];
-    for (var i = 0; i < els.length && i < 4000; i++) {
-      var e = els[i], tag = e.tagName;
-      if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'SVG' || tag === 'PATH' || !e.firstChild) continue;
-      var own = false; for (var c = e.firstChild; c; c = c.nextSibling) if (c.nodeType === 3 && c.textContent.trim().length > 2) { own = true; break; }
-      if (!own) continue;
-      var cs = getComputedStyle(e);
-      if (cs.display === 'none' || cs.visibility === 'hidden') continue;
-      var fs = parseFloat(cs.fontSize);
-      if (fs < 11.5 && e.textContent.length < 60) edits.push([e, 'fontSize', '12px']);
-      var col = rgb(cs.color), bg = bgOf(e); if (!col || !bg || col.length > 3 && col[3] < 0.5) continue;
-      var L1 = lum(col), L2 = lum(bg), cr = (Math.max(L1, L2) + 0.05) / (Math.min(L1, L2) + 0.05);
-      var big = fs >= 24 || (fs >= 18.66 && +cs.fontWeight >= 700);
-      if (cr >= (big ? 3 : 4.5)) continue;
-      var coralText = col[0] > 170 && col[1] < 120 && col[2] < 100 && L2 < 0.2;
-      if (coralText) { edits.push([e, 'color', '#D9C7A3']); continue; }
-      if (bg[0] > 170 && bg[1] < 130 && bg[2] < 110 && L1 > 0.6) {
-        var host = e; while (host && host !== document.body) { var b2 = rgb(getComputedStyle(host).backgroundColor); if (b2 && b2[0] > 170 && b2[1] < 130 && getComputedStyle(host).backgroundColor !== 'rgba(0, 0, 0, 0)') { edits.push([host, 'backgroundColor', '#B5362F']); break; } host = host.parentElement; }
-      }
+    var els = document.body.querySelectorAll('*');
+    var i = 0, count = Math.min(els.length, 4000);
+    function slice() {
+      var edits = [], until = performance.now() + 6;
+      try {
+        while (i < count && performance.now() < until) {
+          var e = els[i++], tag = e.tagName;
+          if (!e.isConnected || tag === 'SCRIPT' || tag === 'STYLE' || tag === 'SVG' || tag === 'PATH' || !e.firstChild) continue;
+          var own = false; for (var c = e.firstChild; c; c = c.nextSibling) if (c.nodeType === 3 && c.textContent.trim().length > 2) { own = true; break; }
+          if (!own) continue;
+          var cs = getComputedStyle(e);
+          if (cs.display === 'none' || cs.visibility === 'hidden') continue;
+          var fs = parseFloat(cs.fontSize);
+          if (fs < 11.5 && e.textContent.length < 60) edits.push([e, 'fontSize', '12px']);
+          var col = rgb(cs.color), bg = bgOf(e); if (!col || !bg || col.length > 3 && col[3] < 0.5) continue;
+          var L1 = lum(col), L2 = lum(bg), cr = (Math.max(L1, L2) + 0.05) / (Math.min(L1, L2) + 0.05);
+          var big = fs >= 24 || (fs >= 18.66 && +cs.fontWeight >= 700);
+          if (cr >= (big ? 3 : 4.5)) continue;
+          var coralText = col[0] > 170 && col[1] < 120 && col[2] < 100 && L2 < 0.2;
+          if (coralText) { edits.push([e, 'color', '#D9C7A3']); continue; }
+          if (bg[0] > 170 && bg[1] < 130 && bg[2] < 110 && L1 > 0.6) {
+            var host = e; while (host && host !== document.body) { var b2 = rgb(getComputedStyle(host).backgroundColor); if (b2 && b2[0] > 170 && b2[1] < 130 && getComputedStyle(host).backgroundColor !== 'rgba(0, 0, 0, 0)') { edits.push([host, 'backgroundColor', '#B5362F']); break; } host = host.parentElement; }
+          }
+        }
+        edits.forEach(function (edit) { edit[0].style[edit[1]] = edit[2]; });
+      } catch (e) { done(); return; }
+      if (i < count) setTimeout(slice, 0);
+      else done();
     }
-    edits.forEach(function (edit) { edit[0].style[edit[1]] = edit[2]; });
+    slice();
   }
-  function scheduleFix() { var t; var run = function () { try { contrastFix(); } catch (e) {} }; setTimeout(run, 900); setTimeout(run, 3500); try { new MutationObserver(function () { clearTimeout(t); t = setTimeout(run, 700); }).observe(document.body, { childList: true, subtree: true }); } catch (e) {} }
+  function scheduleFix() {
+    var timer, running = false, pending = false;
+    function run() {
+      if (running) { pending = true; return; }
+      running = true;
+      contrastFix(function () {
+        running = false;
+        if (pending) { pending = false; setTimeout(run, 0); }
+      });
+    }
+    setTimeout(run, 900);
+    if ('MutationObserver' in window) new MutationObserver(function () {
+      clearTimeout(timer);
+      timer = setTimeout(run, 700);
+    }).observe(document.body, { childList: true, subtree: true });
+  }
 
   function init() { build(); load(); leadBar(); ambient(); scheduleFix(); }
   // Search button, install prompt, newsletter strip and click tracking are not needed for first paint: build them when the browser is idle (at most 2.5 s after the page is ready).
