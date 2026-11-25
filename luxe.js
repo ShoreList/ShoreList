@@ -37,19 +37,22 @@
     setTimeout(function(){im.classList.remove('lx-pending');},6000);
   }
   /* scroll reveal for cards and section titles below the fold */
-  var io=('IntersectionObserver' in window&&!rm)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('lx-on');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.05}):null;
+  var seen=new WeakSet();
+  var io=('IntersectionObserver' in window&&!rm)?new IntersectionObserver(function(es){es.forEach(function(e){var t=e.target;
+    if(!seen.has(t)){seen.add(t);if(e.isIntersecting){io.unobserve(t);return;}   /* already on screen: leave it alone */
+      t.classList.add('lx-rv');return;}
+    if(e.isIntersecting){t.classList.add('lx-on');io.unobserve(t);}});},{rootMargin:'0px 0px -8% 0px',threshold:.05}):null;
   var SEL='.card,.exp-card,.town-card,.wk-card,.rec-card,.ev-card,.xcard,.visit-card,.tix-card,.feat-card,.stat-card,.op-card,.more-tile,.sec-title,.sec h2';
-  /* Batched: mark first, then read every position, then add classes, so the page lays out once instead of once per element. */
+  /* No layout reads at all: IntersectionObserver tells us which elements start on screen. Its first report marks off-screen ones, later reports reveal them. */
   function rvAll(list){
-    if(!io)return;var els=[];
-    list.forEach(function(el){if(!el.dataset.lxr){el.dataset.lxr='1';els.push(el);}});
-    var lim=innerHeight*.95,tops=els.map(function(el){return el.getBoundingClientRect().top;});
-    els.forEach(function(el,i){if(tops[i]<lim)return;   /* already on screen: leave it alone */
-      el.classList.add('lx-rv');io.observe(el);});
+    if(!io)return;
+    list.forEach(function(el){if(!el.dataset.lxr){el.dataset.lxr='1';io.observe(el);}});
   }
+  var q=[],qs=0;
+  function flush(){qs=0;var n=q;q=[];n.forEach(function(x){if(!x.isConnected)return;x.querySelectorAll('img').forEach(img);rvAll([].slice.call(x.querySelectorAll(SEL)));if(x.matches&&x.matches(SEL))rvAll([x]);});}
   function scan(n){
-    (n.querySelectorAll?n:d).querySelectorAll('img').forEach(img);
-    rvAll([].slice.call((n.querySelectorAll?n:d).querySelectorAll(SEL)));
+    if(n===d){d.querySelectorAll('img').forEach(img);rvAll([].slice.call(d.querySelectorAll(SEL)));return;}
+    q.push(n);if(!qs){qs=1;(window.requestAnimationFrame||setTimeout)(flush);}
   }
   function go(){scan(d);
     if('MutationObserver' in window)new MutationObserver(function(ms){ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1)scan(n);});});}).observe(d.body,{childList:true,subtree:true});
