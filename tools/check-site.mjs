@@ -44,11 +44,24 @@ for (const f of pages) {
   if (/api\.anthropic\.com/.test(h)) bad(`${f}: client-side call to api.anthropic.com (use a function)`);
   if (/get-bookings\?password=/.test(h)) bad(`${f}: password in URL`);
 }
+// Keep the Railroad Museum page out of public indexes until it is approved for indexing.
+const railroadPath = '/wilmington-railroad-museum';
+const railroadHtml = fs.readFileSync(railroadPath.slice(1) + '.html', 'utf8');
+if (!/<meta\s+name="robots"\s+content="[^"]*\bnoindex\b[^"]*"/i.test(railroadHtml)) {
+  bad(`${railroadPath}: missing robots noindex`);
+}
+const isRailroadPath = (path) => /^\/wilmington-railroad-museum(?:\.html)?\/?(?:[?#].*)?$/.test(path);
 for (const j of ['shop-catalog.json', 'search-index.json', 'manifest.webmanifest']) {
-  try { JSON.parse(fs.readFileSync(j, 'utf8')); } catch (e) { bad(`${j}: invalid JSON`); }
+  try {
+    const parsed = JSON.parse(fs.readFileSync(j, 'utf8'));
+    if (j === 'search-index.json' && parsed.items.some((item) => isRailroadPath(item.url))) {
+      bad(`${j}: ${railroadPath} must stay excluded`);
+    }
+  } catch (e) { bad(`${j}: ${e.message}`); }
 }
 const sm = fs.readFileSync('sitemap.xml', 'utf8');
 for (const m of sm.matchAll(/<loc>https:\/\/shorelist\.net(\/[^<]*)<\/loc>/g)) {
+  if (isRailroadPath(m[1])) bad(`sitemap: ${railroadPath} must stay excluded`);
   const p = m[1] === '/' ? 'index.html' : m[1].slice(1) + '.html';
   if (!fs.existsSync(p) && !fs.existsSync(m[1].slice(1) + '/index.html')) bad(`sitemap: ${m[1]} has no ${p}`);
 }
