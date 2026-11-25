@@ -111,7 +111,7 @@ function calendar(list) {
     return '<div class="cal-m' + (i === 0 ? ' on' : '') + '" data-m="' + k + '"><p class="cal-t" id="cal-t-' + k + '">' + MON[m] + ' ' + y + '</p><ol class="cal-w" aria-hidden="true">' + ['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((x) => '<li>' + x + '</li>').join('') + '</ol><ol class="cal-g" aria-labelledby="cal-t-' + k + '">' + cells + '</ol></div>';
   }).join('');
   let pm = '';
-  const strip = gs.map((g) => { const t = d(g.day), mk = g.day.slice(0, 7), sep = mk !== pm ? '<li class="ds-m" aria-hidden="true">' + MON3[t.getUTCMonth()] + '</li>' : ''; pm = mk; return sep + '<li><a href="#d-' + g.day + '" data-jump="' + g.day + '" aria-label="' + esc(lab(g.day, g.items.length)) + '"><span>' + DOW3[t.getUTCDay()] + '</span><b>' + t.getUTCDate() + '</b></a></li>'; }).join('');
+  const strip = gs.map((g) => { const t = d(g.day), mk = g.day.slice(0, 7), sep = mk !== pm ? '<li class="ds-m" aria-hidden="true">' + MON3[t.getUTCMonth()] + '</li>' : ''; pm = mk; return sep + '<li><a href="#d-' + g.day + '" data-jump="' + g.day + '" aria-label="' + esc(DOW3[t.getUTCDay()] + ' ' + t.getUTCDate() + ' ' + MON3[t.getUTCMonth()] + ': ' + g.items.length + (g.items.length === 1 ? ' event' : ' events')) + '"><span>' + DOW3[t.getUTCDay()] + '</span><b>' + t.getUTCDate() + '</b></a></li>'; }).join('');
   return '<div class="ef-cal" role="group" aria-label="Jump to a date"><div class="cal-hd"><p class="cal-k">Jump to a date</p><div class="cal-nav ef-js"><button type="button" class="cal-prev" aria-label="Previous month">' + ico('arrow') + '</button><button type="button" class="cal-next" aria-label="Next month">' + ico('arrow') + '</button></div></div>' + grid + '<p class="cal-note">Marked days have events starting that day.</p></div>' +
     '<ol class="ef-strip" aria-label="Jump to a date">' + strip + '</ol>';
 }
@@ -242,7 +242,7 @@ const headHtml = (path, title, desc, lds, robots) => `<!DOCTYPE html>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EN91RH3PZV');</script>
 <link rel="manifest" href="/manifest.webmanifest"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" rel="stylesheet"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" rel="stylesheet"/></noscript>
 ${lds.map(script).join('\n')}`;
 const NAV = `<a class="skip-link" href="#main">Skip to content</a>
 <nav class="ev-nav" aria-label="Primary"><a class="nav-logo" href="/" aria-label="ShoreList home">Shore<span>List</span></a><div class="nav-right"><a href="/events">Events</a><a href="/things-to-do">Things to Do</a><a href="/shore-picks">Shore Picks</a><a class="nav-book" href="/things-to-do">Book Experiences</a></div></nav>`;

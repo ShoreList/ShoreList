@@ -16,3 +16,12 @@ jobs:
       - run: node tools/thin-content-gate.mjs --site . --entities tools/local-entities.json --warn-only
       - run: node --test tools/feeds/feeds.test.mjs
       - run: node --test tools/indexnow-ping.test.mjs
+  speed:
+    # Mobile Lighthouse budget on the homepage, shop, events and a category page: a speed or accessibility regression fails the PR.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/lighthouse-budget.mjs

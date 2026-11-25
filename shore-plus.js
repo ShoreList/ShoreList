@@ -342,5 +342,7 @@
   function scheduleFix() { var t; var run = function () { try { contrastFix(); } catch (e) {} }; setTimeout(run, 900); setTimeout(run, 3500); try { new MutationObserver(function () { clearTimeout(t); t = setTimeout(run, 700); }).observe(document.body, { childList: true, subtree: true }); } catch (e) {} }
 
   function init() { build(); load(); leadBar(); ambient(); scheduleFix(); }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+  // Search button, install prompt, newsletter strip and click tracking are not needed for first paint: build them when the browser is idle (at most 2.5 s after the page is ready).
+  function later() { (window.requestIdleCallback || function (f) { return setTimeout(f, 800); })(init, { timeout: 2500 }); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', later); else later();
 })();
