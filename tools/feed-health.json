@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-24T20:10:00.547Z",
+ "updated": "2026-11-25T19:15:33.686Z",
  "sources": {
   "cameron": {
    "name": "Cameron Art Museum events calendar",
    "url": "https://cameronartmuseum.org/events-calendar/list/?ical=1",
-   "lastAttempt": "2026-11-24T20:10:00.547Z",
-   "lastSuccess": "2026-11-24T20:10:00.547Z",
+   "lastAttempt": "2026-11-25T19:15:33.686Z",
+   "lastSuccess": "2026-11-25T19:15:33.686Z",
    "count": 23,
    "ok": true,
    "error": null,
@@ -15,7 +15,7 @@
   "wrightsville-town": {
    "name": "Town of Wrightsville Beach calendar",
    "url": "https://townofwrightsvillebeach.com/iCalendar.aspx",
-   "lastAttempt": "2026-11-24T20:10:00.547Z",
+   "lastAttempt": "2026-11-25T19:15:33.686Z",
    "lastSuccess": null,
    "count": 0,
    "ok": false,
@@ -24,8 +24,8 @@
   "fort-fisher": {
    "name": "NC DNCR events calendar: Fort Fisher State Historic Site",
    "url": "https://events.dncr.nc.gov/fort-fisher-historic-site/calendar/ics",
-   "lastAttempt": "2026-11-24T20:10:00.547Z",
-   "lastSuccess": "2026-11-24T20:10:00.547Z",
+   "lastAttempt": "2026-11-25T19:15:33.686Z",
+   "lastSuccess": "2026-11-25T19:15:33.686Z",
    "count": 0,
    "ok": true,
    "error": null,
@@ -35,8 +35,8 @@
   "battleship": {
    "name": "NC DNCR events calendar: Battleship North Carolina",
    "url": "https://events.dncr.nc.gov/battleship-north-carolina/calendar/ics",
-   "lastAttempt": "2026-11-24T20:10:00.547Z",
-   "lastSuccess": "2026-11-24T20:10:00.547Z",
+   "lastAttempt": "2026-11-25T19:15:33.686Z",
+   "lastSuccess": "2026-11-25T19:15:33.686Z",
    "count": 3,
    "ok": true,
    "error": null,
@@ -46,7 +46,7 @@
   "riverwatch": {
    "name": "Cape Fear River Watch events calendar",
    "url": "https://capefearriverwatch.org/?post_type=tribe_events&ical=1&eventDisplay=list",
-   "lastAttempt": "2026-11-24T20:10:00.547Z",
+   "lastAttempt": "2026-11-25T19:15:33.686Z",
    "lastSuccess": null,
    "count": 0,
    "ok": false,
