@@ -181,8 +181,8 @@ function rich(s){return esc(s).replace(/&lt;(\/?)(em|strong)&gt;/g,'<$1$2>');}
 function esc(s){return String(s).replace(/&(?!#?\w+;)/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
 function renderMuseumsCategory(){
-  var mh='<div class="hm-badge live">Official Partner On Board</div>'
-    +'<div class="hm-badge">Open Daily &middot; Rain or Shine</div>'
+  var mh='<div class="hm-badge live">Museum Guide</div>'
+    +'<div class="hm-badge">Seasonal Hours</div>'
     +'<div class="hm-badge">Tickets &amp; Events</div>';
   var hm=document.getElementById('hmeta'); if(hm){hm.innerHTML=mh;}
   var container=document.getElementById('mc');
@@ -425,7 +425,7 @@ if(document.readyState!=='loading')startPage();else document.addEventListener('D
         +'<div class="cgb-body">'
         +'<div class="cgb-title">Also Haunted: The Wilmington Railroad Museum</div>'
         +'<div class="cgb-sub">An authentic 1883 freight warehouse with a haunted reputation of its own: explore the steam locomotive and model trains by day, and keep an eye out for after-dark events. <a href="/wilmington-railroad-museum">View tickets, hours &amp; events &#8599;</a></div>'
-        +'<div class="cgb-badges"><span class="cgb-badge">1883 Freight Warehouse</span><span class="cgb-badge">Downtown</span><span class="cgb-badge">Open Daily</span></div>'
+        +'<div class="cgb-badges"><span class="cgb-badge">1883 Freight Warehouse</span><span class="cgb-badge">Downtown</span><span class="cgb-badge">Seasonal Hours</span></div>'
         +'</div></div>';
       container.appendChild(x);
     }catch(e){}
@@ -455,24 +455,6 @@ if(document.readyState!=='loading')startPage();else document.addEventListener('D
         +'</div>';
       container.insertBefore(banner,container.firstChild);
     }
-    /* Trigger creepy sound + particles after 1.5s */
-    setTimeout(function(){
-      try{
-        var AC=window.AudioContext||window.webkitAudioContext;
-        if(AC){
-          var ctx=new AC();
-          var osc=ctx.createOscillator();var gain=ctx.createGain();
-          osc.connect(gain);gain.connect(ctx.destination);
-          osc.type='sawtooth';
-          osc.frequency.setValueAtTime(70,ctx.currentTime);
-          osc.frequency.exponentialRampToValueAtTime(30,ctx.currentTime+0.9);
-          gain.gain.setValueAtTime(0,ctx.currentTime);
-          gain.gain.linearRampToValueAtTime(0.06,ctx.currentTime+0.05);
-          gain.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.9);
-          osc.start(ctx.currentTime);osc.stop(ctx.currentTime+0.9);
-        }
-      }catch(e){}
-    },1500);
   }
 })();
 

@@ -137,6 +137,23 @@
     }).catch(function () { el.classList.remove('bw-loading'); el.innerHTML = '<p class="bwn">Live conditions are unavailable right now. Check the posted beach flags.</p>'; });
   }
   window.ShoreWX = { get: get, beaches: B, summary: summary, flag: flag };
-  function init() { document.querySelectorAll('[data-beachwx]').forEach(mount); setInterval(function () { document.querySelectorAll('[data-beachwx]').forEach(function (e) { if (!document.hidden) mount(e); }); }, TTL); }
+  function init() {
+    var reports = Array.from(document.querySelectorAll('[data-beachwx]'));
+    if (!reports.length) return;
+    var mounted = [];
+    function begin(el) { mounted.push(el); mount(el); }
+    var observer = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        observer.unobserve(entry.target);
+        begin(entry.target);
+      });
+    }, { rootMargin: '320px' }) : null;
+    reports.forEach(function (el) {
+      if (observer && el.hasAttribute('data-beachwx-defer')) observer.observe(el);
+      else begin(el);
+    });
+    setInterval(function () { if (!document.hidden) mounted.forEach(mount); }, TTL);
+  }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();

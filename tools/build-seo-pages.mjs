@@ -27,7 +27,7 @@ const CANCEL_H = toPublic(loadOperators()).cancellationHours ?? 24;
 // hero badges, same markup category-app.js renders, so the client render does not move the page
 const heroMeta = (slug, ops) => {
   const b = (t, live) => `<div class="hm-badge${live ? ' live' : ''}">${t}</div>`;
-  if (slug === 'museums') return b('Museum Guide', 1) + b('Open Daily &middot; Rain or Shine') + b('Tickets &amp; Events');
+  if (slug === 'museums') return b('Museum Guide', 1) + b('Seasonal Hours') + b('Tickets &amp; Events');
   const lv = ops.filter((o) => o.live);
   if (lv.length) return b('Bookings Open Now', 1) + b(lv.length + ' Experience' + (lv.length > 1 ? 's' : '') + ' Live') + b('Secure Checkout via Stripe') + b('Free Cancellation ' + CANCEL_H + 'hrs+');
   if (ops.length) return b('Waitlist Open Now', 1) + b(ops.length + ' Local Operator' + (ops.length > 1 ? 's' : '')) + b('Bookings Opening Soon');
