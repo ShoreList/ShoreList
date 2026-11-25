@@ -6,6 +6,8 @@ import fs from 'node:fs';
 const PAGES = [
   ['index.html', ['scene.css', 'fixes.css', 'luxe.css', 'tokens.css', 'home.css', 'tokens.css']],
   ['shop.html', ['scene.css', 'fixes.css', 'luxe.css', 'shop.css', 'tokens.css']],
+  ['events.html', ['events.css', 'scene.css', 'luxe.css', 'tokens.css']],
+  ['things-to-do/ghost-tours.html', ['category.css', 'fixes.css', 'scene.css', 'luxe.css', 'tokens.css']],
 ];
 const START = '<!--HOME-CSS:start-->', END = '<!--HOME-CSS:end-->';
 let stale = false;
