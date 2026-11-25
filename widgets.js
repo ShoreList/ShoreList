@@ -64,7 +64,7 @@
       ShoreWX.get(i).then(function (d) {
         cond.hidden = false; paintWX(d);
         if (window.__shoreCtx) window.__shoreCtx({ temp: d.temp, code: d.code, wave: d.waveFt != null ? d.waveFt / 3.281 : null, set: d.sunset, flag: d.flag.label, water: d.waterF }, B[i][0]);
-      }).catch(function () {});
+      }).catch(function () { cond.hidden = true; });
     }
     cond.querySelectorAll('[data-b]').forEach(function (b) {
       b.addEventListener('click', function () { cur = +b.getAttribute('data-b'); cond.querySelectorAll('[data-b]').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); }); get(cur); track('conditions_beach', { b: B[cur][0] }); });

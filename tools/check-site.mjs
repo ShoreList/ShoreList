@@ -15,6 +15,7 @@ for (const f of pages) {
   if (!noindex.has(f) && !/name="description"/.test(h)) bad(`${f}: missing meta description`);
   if (!noindex.has(f) && !/rel="canonical"/.test(h)) bad(`${f}: missing canonical`);
   for (const m of h.matchAll(/<img\b[^>]*>/g)) if (!/\balt=/.test(m[0])) bad(`${f}: <img> without alt`);
+  if (/<link href="https:\/\/fonts\.googleapis\.com\/css2[^>]*rel="stylesheet"/.test(h.replace(/<noscript>[\s\S]*?<\/noscript>/g, ''))) bad(`${f}: Google Fonts stylesheet is render-blocking (use the preload and onload pattern)`);
   for (const m of h.matchAll(/<img\b[^>]*?\balt="([^"]+)"/g)) if (/^(image|photo|picture|img|logo|banner|untitled)\b\.?$|\.(webp|png|jpe?g|gif)$|^shorelist[-_ ]/i.test(m[1].trim())) bad(`${f}: generic or filename alt text "${m[1]}"`);
   for (const m of h.matchAll(/<img\b[^>]*?\bsrc="(\/[^"?#]+)[^"]*"/g)) if (!fs.existsSync('.' + decodeURI(m[1]))) bad(`${f}: <img> src ${m[1]} does not exist`);
   [...h.matchAll(/<script>([\s\S]*?)<\/script>/g)].forEach((m, i) => {
@@ -142,5 +143,13 @@ try {
   if (six && +six[1] !== liveN) bad(`index.html: founding partner card says ${six[1]} tours but ${liveN} experiences are live in operators-public.json`);
   for (const f of pages) { const t = fs.readFileSync(f, 'utf8'); if (/We verify their business license|personally reviewed before going live|four local operators/i.test(t)) bad(`${f}: unsupported operator claim (license check, personal review or a fixed operator count)`); }
 } catch (e) { bad('stated facts: ' + e.message); }
+// homepage CSS is inlined from the .css sources: fail if index.html is stale
+/* guard: no merge-conflict markers and every root script must parse (a broken sw.js silently kills offline support) */
+for (const f of fs.readdirSync('.').filter((x) => /\.(js|mjs|html|css)$/.test(x) || x === '_headers')) {
+  const t = fs.readFileSync(f, 'utf8');
+  if (/^(<<<<<<<|>>>>>>>) /m.test(t) || /^=======$/m.test(t) && /^<<<<<<< /m.test(t)) bad(f + ': merge conflict markers present');
+  if (/\.js$/.test(f)) { try { new vm.Script(t, { filename: f }); } catch (e) { bad(f + ': syntax error: ' + e.message); } }
+}
+try { const { execFileSync } = await import('node:child_process'); execFileSync('node', ['tools/inline-home-css.mjs', '--check'], { stdio: 'pipe' }); } catch (e) { bad('index.html: inlined homepage CSS is out of date (run node tools/inline-home-css.mjs)'); }
 if (fails.length) { console.error(fails.join('\n')); process.exit(1); }
 console.log(`ok: ${pages.length} pages, ${cat.items.length} products`);
