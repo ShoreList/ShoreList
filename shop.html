@@ -573,7 +573,8 @@ dialog#qv::backdrop{background:rgba(14,31,51,.6)}
 .qvx{position:absolute;top:0;right:0;z-index:3;min-height:48px;padding:0 18px;border:0;background:var(--sail);color:var(--ink);font:500 .74rem var(--sans);letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
 .qvg{display:grid;grid-template-columns:1fr 1fr}
 .qvm{background:var(--sail)}
-.qvm img{width:100%;height:100%;max-height:86dvh;object-fit:cover;display:block;aspect-ratio:4/5}
+.qvm{align-self:start}
+.qvm img{width:100%;height:auto;max-height:86dvh;object-fit:contain;display:block;background:var(--sail)}
 .qvth{display:flex;gap:8px;padding:10px;background:var(--sail)}
 .qvth button{width:60px;aspect-ratio:4/5;border:1px solid var(--line);padding:0;background:var(--sail);cursor:pointer;opacity:.7}
 .qvth button[aria-pressed=true]{opacity:1;border-color:var(--ink)}
@@ -590,7 +591,7 @@ dialog#qv::backdrop{background:rgba(14,31,51,.6)}
 .qvcta{display:flex;flex-direction:column;gap:10px;margin-top:6px}
 .qvcta .sbtn{width:100%}
 .qvwhy{font-size:.85rem}
-@media(max-width:700px){dialog#qv{margin:auto 0 0;width:100%;max-width:100%;max-height:94dvh}.qvg{grid-template-columns:1fr}.qvm img{max-height:46dvh;aspect-ratio:auto}.qvt{padding:22px var(--gut) 28px}}
+@media(max-width:700px){dialog#qv{margin:auto 0 0;width:100%;max-width:100%;max-height:94dvh}.qvg{grid-template-columns:1fr}.qvm img{max-height:56dvh}.qvt{padding:22px var(--gut) 28px}}
 
 /* floating chrome stays off the shop */
 body.shop .rb-launch,body.shop .rb-tip,body.shop .snd,body.shop .sp-fab,body.shop .cc-fab,body.shop .dock{display:none!important}
