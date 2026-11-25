@@ -441,6 +441,8 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 /* Keep the first-screen photo and controls static on narrow viewports. */
 @media(max-width:820px){
   .plates{transition:none}
+  .plates.plates-initial{opacity:1}
+  .plates img[data-early]{opacity:1;visibility:visible}
   .plates img,.path{animation:none;will-change:auto}
   .plates::after{display:none}
 }
@@ -1218,6 +1220,22 @@ body:not(.home):not(.pg-home) .dock{display:none!important}
 
 <main id="main">
 <section class="hero hero-cine" id="hero" aria-label="Hero" data-scene>
+  <script>
+  (function () {
+    var hero = window.__slHero;
+    if (!hero || !hero.mobile) return;
+    var wrap = document.createElement('div'), photo = new Image();
+    wrap.className = 'plates plates-initial';
+    wrap.setAttribute('aria-hidden', 'true');
+    photo.alt = '';
+    photo.setAttribute('data-early', '');
+    photo.setAttribute('data-p', hero.ph);
+    photo.fetchPriority = 'high';
+    photo.src = '/img/hero-mobile/' + hero.f + '.webp';
+    wrap.appendChild(photo);
+    document.getElementById('hero').appendChild(wrap);
+  })();
+  </script>
   <div class="tod" id="tod" role="group" aria-label="Time of day"><button type="button" data-t="live" aria-pressed="true" title="Follows the real sunrise and sunset in Wilmington">Live</button><button type="button" data-t="dawn" aria-pressed="false">Dawn</button><button type="button" data-t="noon" aria-pressed="false">Midday</button><button type="button" data-t="golden" aria-pressed="false">Golden hour</button><button type="button" data-t="night" aria-pressed="false">Night</button></div>
   <div class="cond" id="cond" aria-label="Live beach conditions"><span class="dot" aria-hidden="true"></span><span class="stats" aria-live="polite">Checking live flag, weather, wind, waves and water temperature</span><span role="group" aria-label="Beach"><button type="button" data-b="0" aria-pressed="false">Wrightsville</button> <button type="button" data-b="1" aria-pressed="true">Carolina</button> <button type="button" data-b="2" aria-pressed="false">Kure</button></span><button type="button" class="sur">Surprise me</button><div class="tip"></div></div>
 

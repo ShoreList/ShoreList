@@ -24,7 +24,7 @@
   var H0 = window.__slHero; // set early by index.html: the real-sun phase and photo it already preloaded
   var mobile = H0 && typeof H0.mobile === 'boolean' ? H0.mobile : innerWidth <= 820;
   function nowPhase() { var s = window.ShoreSun; return s ? Math.round(s.now()) % 4 : (H0 && typeof H0.ph === 'number' ? H0.ph : 1); } // snap to one photo: blending two different photos ghosts the scene
-  var cur = nowPhase(), target = cur, auto = true, loaded = 0, raf = 0;
+  var cur = H0 ? H0.ph : nowPhase(), target = cur, auto = true, loaded = 0, raf = 0;
 
   // which photo of each phase is showing (random start, then rotates)
   var LIST = [[], [], [], []];
@@ -34,25 +34,61 @@
   if (H0 && PICS[0] && typeof H0.ph === 'number') PICS.forEach(function (p, i) { if (p.f === H0.f && p.ph === H0.ph) pick[H0.ph] = i; });
   var rv = PICS.map(function (p, i) { return pick[p.ph] === i ? 1 : 0; }); // per-photo rotation fade 0..1
 
-  var wrap = document.createElement('div'); wrap.className = 'plates'; wrap.setAttribute('aria-hidden', 'true');
+  var wrap = host.querySelector('.plates') || document.createElement('div');
+  var early = wrap.querySelector('[data-early]');
+  wrap.classList.add('plates');
+  wrap.setAttribute('aria-hidden', 'true');
   var imgs = PICS.map(function (p, i) {
-    var im = new Image(); im.alt = ''; im.decoding = 'async'; im.draggable = false;
+    var im = early && H0.f === p.f ? early : new Image();
+    im.alt = ''; im.draggable = false;
+    if (im !== early) im.decoding = 'async';
     im.sizes = need(); im.setAttribute('data-p', p.ph); im.setAttribute('data-i', i);
     im.style.setProperty('--pos', p.pos); if (p.mpos) im.style.setProperty('--mpos', p.mpos); if (p.f2) im.style.setProperty('--f', p.f2);
     im.style.animationDelay = '-' + (i * 13 % 70) + 's';
-    wrap.appendChild(im); return im;
+    if (im !== early) wrap.appendChild(im);
+    return im;
   });
-  host.insertBefore(wrap, host.firstChild);
+  if (!wrap.parentNode) host.insertBefore(wrap, host.firstChild);
   var cap = document.createElement('p'); cap.className = 'plate-credit'; host.appendChild(cap);
   function credit() { var p = PICS[pick[Math.round(cur) % 4]]; cap.textContent = 'Photo: ' + p.place + ', ' + p.by + ', ' + p.lic; }
   function src(i) { if (mobile) return { s: '', f: '/img/hero-mobile/' + PICS[i].f + '.webp' }; var b = BASE + PICS[i].f, c = 'x.jpg'; return { s: [1280, 1920, 2560, 3200, 3840].map(function (w) { return b + '_' + w + c + ' ' + w + 'w'; }).join(', '), f: b + '_2560' + c }; }
   // Same rule as the preload in index.html. Phones use a single local image and larger screens use a responsive CDN image. Uses window size, not a layout read, so it never forces a reflow.
   function need() { if (mobile) return '100vw'; if (H0 && H0.sz) return H0.sz; var vw = innerWidth, vh = innerHeight, d = window.devicePixelRatio || 1; return Math.ceil(Math.max(vw, vh * 1.5) * 1.08 * Math.min(d, 1.5) / d) + 'px'; }
-  function load(i, high) { var im = imgs[i]; if (im.src || im.getAttribute('data-l')) return; im.setAttribute('data-l', 1); var u = src(i); if (high) im.fetchPriority = 'high'; im.addEventListener('load', function () { loaded++; im.classList.add('ok'); paint(); if (loaded >= 1) host.classList.add('plates-on'); if (loaded === 1) extras(); }); im.addEventListener('error', function () { im.removeAttribute('src'); im.removeAttribute('srcset'); if (!loaded) host.dispatchEvent(new Event('shoreheroerror')); }); if (u.s) im.srcset = u.s; im.src = u.f; }
+  function load(i, high) {
+    var im = imgs[i];
+    if (im.hasAttribute('data-l')) return;
+    im.setAttribute('data-l', '');
+    if (high) im.fetchPriority = 'high';
+    function ready() {
+      loaded++;
+      im.classList.add('ok');
+      paint();
+      host.classList.add('plates-on');
+      im.removeAttribute('data-early');
+      if (loaded === 1) extras();
+    }
+    function failed() {
+      im.removeAttribute('src');
+      im.removeAttribute('srcset');
+      im.removeAttribute('data-early');
+      if (!loaded) host.dispatchEvent(new Event('shoreheroerror'));
+    }
+    if (im.src && im.complete) {
+      if (im.naturalWidth) ready(); else failed();
+      return;
+    }
+    im.addEventListener('load', ready, { once: true });
+    im.addEventListener('error', failed, { once: true });
+    if (!im.src) {
+      var u = src(i);
+      if (u.s) im.srcset = u.s;
+      im.src = u.f;
+    }
+  }
   function weights(p) { return NAMES.map(function (_, i) { var d = Math.abs(p - i); d = Math.min(d, 4 - d); var w = Math.max(0, 1 - d); return w * w * (3 - 2 * w); }); }
   function paint() {
     var w = weights(cur), sum = 0, v = imgs.map(function (im, i) { var x = PICS[i].ph, o = im.classList.contains('ok') ? w[x] * rv[i] : 0; sum += o; return o; });
-    imgs.forEach(function (im, i) { var o = sum ? v[i] / sum : 0; im.style.opacity = o.toFixed(3); im.style.visibility = o < 0.004 ? 'hidden' : 'visible'; });
+    imgs.forEach(function (im, i) { var o = sum ? v[i] / sum : 0; if (im.hasAttribute('data-early') && !im.classList.contains('ok')) return; im.style.opacity = o.toFixed(3); im.style.visibility = o < 0.004 ? 'hidden' : 'visible'; });
     credit();
   }
   // Other times of day are fetched only after the first photo has painted. On phones and on slow or Data Saver connections they are fetched only when that time of day is shown (button, or the real sun moving on), so they never compete with the photo the visitor is waiting for.

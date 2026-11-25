@@ -515,6 +515,8 @@ html:not(.js) .cal-m+.cal-m{margin-top:20px}
 /* Keep the first-screen photo and controls static on narrow viewports. */
 @media(max-width:820px){
   .plates{transition:none}
+  .plates.plates-initial{opacity:1}
+  .plates img[data-early]{opacity:1;visibility:visible}
   .plates img,.path{animation:none;will-change:auto}
   .plates::after{display:none}
 }
