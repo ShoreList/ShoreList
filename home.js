@@ -19,9 +19,7 @@
   function short(s) { var x = utc(s); return MON[x.getUTCMonth()] + ' ' + x.getUTCDate(); }
 
   /* ---------- what's on: next six events from the verified feed ---------- */
-  (function () {
-    var list = d.getElementById('hx-events');
-    if (!list || !w.fetch) return;
+  function loadEvents(list) {
     var today = todayNY(), dow = utc(today).getUTCDay();
     var sat = dow === 0 ? today : plus(today, 6 - dow), sun = dow === 0 ? today : plus(sat, 1);
     function fail() {
@@ -64,7 +62,19 @@
       if (t && wk) { t.textContent = wk + (wk === 1 ? ' event listed' : ' events listed') + (dow === 0 ? ' today' : ' this weekend'); t.classList.add('live'); }
     }).catch(fail);
     list.addEventListener('click', function (ev) { var a = ev.target.closest && ev.target.closest('a.hx-ev'); if (a) track('home_event_click', { id: a.getAttribute('data-id') }); });
-  })();
+  }
+
+  var eventList = d.getElementById('hx-events');
+  if (eventList && w.fetch) {
+    if ('IntersectionObserver' in w) {
+      var eventObserver = new IntersectionObserver(function (entries) {
+        if (!entries[0].isIntersecting) return;
+        eventObserver.disconnect();
+        loadEvents(eventList);
+      }, { rootMargin: '500px' });
+      eventObserver.observe(eventList);
+    } else loadEvents(eventList);
+  }
 
   /* ---------- plan your visit: live weather note from the shared conditions feed ---------- */
   (function () {
