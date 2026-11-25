@@ -36,7 +36,7 @@ function page({ slug, title, desc, eye, h1, lede, body, ld = [], wide = false, o
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EN91RH3PZV');</script>
 <link rel="manifest" href="/manifest.webmanifest"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" rel="stylesheet"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" rel="stylesheet"/></noscript>
 ${lds}
 <link rel="stylesheet" href="/events.css"/>
 <link rel="stylesheet" href="/luxe.css"/>

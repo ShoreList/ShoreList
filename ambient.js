@@ -136,5 +136,7 @@
     } else surfSeen = true;
     if (!d.hidden) start();
   }
-  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', init); else init();
+  // Decorative: start once the page has loaded and the browser is idle, so it never competes with first paint or input.
+  function later() { (w.requestIdleCallback || function (f) { return setTimeout(f, 1500); })(init, { timeout: 4000 }); }
+  if (d.readyState === 'complete') later(); else w.addEventListener('load', later, { once: true });
 })();
