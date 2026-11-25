@@ -22,9 +22,7 @@
   var NAMES = ['dawn', 'midday', 'golden', 'night'];
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var H0 = window.__slHero; // set early by index.html: the real-sun phase and photo it already preloaded
-  var sun = window.ShoreSun;
-  // scene.js can still be starting up when this runs; fall back to the phase index.html worked out rather than assuming midday.
-  function nowPhase() { var s = window.ShoreSun || sun; return s ? Math.round(s.now()) % 4 : (H0 && typeof H0.ph === 'number' ? H0.ph : 1); } // snap to one photo: blending two different photos ghosts the scene
+  function nowPhase() { var s = window.ShoreSun; return s ? Math.round(s.now()) % 4 : (H0 && typeof H0.ph === 'number' ? H0.ph : 1); } // snap to one photo: blending two different photos ghosts the scene
   var cur = nowPhase(), target = cur, auto = true, loaded = 0, raf = 0;
 
   // which photo of each phase is showing (random start, then rotates)
@@ -49,7 +47,7 @@
   function src(i) { var b = BASE + PICS[i].f, c = 'x.jpg'; return { s: [1280, 1920, 2560, 3200, 3840].map(function (w) { return b + '_' + w + c + ' ' + w + 'w'; }).join(', '), f: b + '_2560' + c }; }
   // Same rule as the preload in index.html. Phones get one 1280 px photo at any density; larger screens get the width the photo is really drawn at (density capped at 1.5). Uses window size, not a layout read, so it never forces a reflow.
   function need() { if (H0 && H0.sz) return H0.sz; var vw = innerWidth, vh = innerHeight, d = window.devicePixelRatio || 1; return (vw <= 820 ? Math.floor(1280 / d) : Math.ceil(Math.max(vw, vh * 1.5) * 1.08 * Math.min(d, 1.5) / d)) + 'px'; }
-  function load(i, high) { var im = imgs[i]; if (im.src || im.getAttribute('data-l')) return; im.setAttribute('data-l', 1); var u = src(i); if (high) im.fetchPriority = 'high'; im.srcset = u.s; im.src = u.f; im.addEventListener('load', function () { loaded++; im.classList.add('ok'); paint(); if (loaded >= 1) host.classList.add('plates-on'); if (loaded === 1) extras(); }); im.addEventListener('error', function () { im.removeAttribute('src'); im.removeAttribute('srcset'); }); }
+  function load(i, high) { var im = imgs[i]; if (im.src || im.getAttribute('data-l')) return; im.setAttribute('data-l', 1); var u = src(i); if (high) im.fetchPriority = 'high'; im.srcset = u.s; im.src = u.f; im.addEventListener('load', function () { loaded++; im.classList.add('ok'); paint(); if (loaded >= 1) host.classList.add('plates-on'); if (loaded === 1) extras(); }); im.addEventListener('error', function () { im.removeAttribute('src'); im.removeAttribute('srcset'); if (!loaded) host.dispatchEvent(new Event('shoreheroerror')); }); }
   function weights(p) { return NAMES.map(function (_, i) { var d = Math.abs(p - i); d = Math.min(d, 4 - d); var w = Math.max(0, 1 - d); return w * w * (3 - 2 * w); }); }
   function paint() {
     var w = weights(cur), sum = 0, v = imgs.map(function (im, i) { var x = PICS[i].ph, o = im.classList.contains('ok') ? w[x] * rv[i] : 0; sum += o; return o; });
@@ -75,7 +73,7 @@
     var n = l[(l.indexOf(pick[p]) + 1) % l.length], im = imgs[n]; load(n, true);
     if (im.classList.contains('ok')) { pick[p] = n; if (!raf) raf = requestAnimationFrame(frame); }
   }, 50000);
-  setInterval(function () { if (auto && (window.ShoreSun || sun)) go(nowPhase()); }, 20000);
+  setInterval(function () { if (auto && (window.ShoreSun)) go(nowPhase()); }, 20000);
 
   document.addEventListener('shorescene', function (e) { var n = e.detail; if (n === 'live') { auto = true; go(nowPhase()); } else { var i = NAMES.indexOf(n === 'noon' ? 'midday' : n); if (i > -1) { auto = false; go(i); } } });
   if (!window.ShoreScene) {

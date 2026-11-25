@@ -9,23 +9,6 @@
   var conn = navigator.connection || {};
   // Still frame (no animation loop) when the visitor asks for reduced motion or Data Saver.
   var reduce = !!((window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) || conn.saveData === true);
-  function boot() {
-
-  // keyframes: skyTop, skyHorizon, sun, seaDeep, seaLight, sunY(0..1 horizon-relative), stars, warmth
-  var K = {
-    dawn:   { top: [0.20, 0.27, 0.46], hor: [1.00, 0.67, 0.55], sun: [1.00, 0.72, 0.50], deep: [0.07, 0.20, 0.30], lite: [0.55, 0.52, 0.55], sy: 0.06, st: 0.15 },
-    noon:   { top: [0.10, 0.45, 0.78], hor: [0.62, 0.86, 0.95], sun: [1.00, 0.97, 0.88], deep: [0.02, 0.33, 0.42], lite: [0.30, 0.78, 0.80], sy: 0.62, st: 0.0 },
-    golden: { top: [0.16, 0.30, 0.52], hor: [1.00, 0.55, 0.30], sun: [1.00, 0.62, 0.30], deep: [0.06, 0.20, 0.30], lite: [0.95, 0.52, 0.34], sy: 0.10, st: 0.05 },
-    night:  { top: [0.01, 0.03, 0.09], hor: [0.07, 0.16, 0.28], sun: [0.80, 0.88, 1.00], deep: [0.01, 0.05, 0.10], lite: [0.18, 0.28, 0.42], sy: 0.40, st: 1.0 }
-  };
-  var ORDER = ['dawn', 'noon', 'golden', 'night'];
-  function mix(a, b, t) { return a + (b - a) * t; }
-  function mixv(a, b, t) { return [mix(a[0], b[0], t), mix(a[1], b[1], t), mix(a[2], b[2], t)]; }
-  function blend(p) { // p in [0,4) loops dawn->noon->golden->night->dawn
-    var i = Math.floor(p) % 4, f = p - Math.floor(p), s = f * f * (3 - 2 * f);
-    var A = K[ORDER[i]], B = K[ORDER[(i + 1) % 4]];
-    return { top: mixv(A.top, B.top, s), hor: mixv(A.hor, B.hor, s), sun: mixv(A.sun, B.sun, s), deep: mixv(A.deep, B.deep, s), lite: mixv(A.lite, B.lite, s), sy: mix(A.sy, B.sy, s), st: mix(A.st, B.st, s) };
-  }
   // Real sun for Wilmington, NC (NOAA sunrise equation): no network needed.
   var LAT = 34.2257, LON = -77.9447, RAD = Math.PI / 180;
   function sunDay(ms) {
@@ -48,12 +31,30 @@
   }
   function phaseNow() { return phaseAt(Date.now()); }
   window.ShoreSun = { phaseAt: phaseAt, now: phaseNow };
+
+  function boot() {
+
+  // keyframes: skyTop, skyHorizon, sun, seaDeep, seaLight, sunY(0..1 horizon-relative), stars, warmth
+  var K = {
+    dawn:   { top: [0.20, 0.27, 0.46], hor: [1.00, 0.67, 0.55], sun: [1.00, 0.72, 0.50], deep: [0.07, 0.20, 0.30], lite: [0.55, 0.52, 0.55], sy: 0.06, st: 0.15 },
+    noon:   { top: [0.10, 0.45, 0.78], hor: [0.62, 0.86, 0.95], sun: [1.00, 0.97, 0.88], deep: [0.02, 0.33, 0.42], lite: [0.30, 0.78, 0.80], sy: 0.62, st: 0.0 },
+    golden: { top: [0.16, 0.30, 0.52], hor: [1.00, 0.55, 0.30], sun: [1.00, 0.62, 0.30], deep: [0.06, 0.20, 0.30], lite: [0.95, 0.52, 0.34], sy: 0.10, st: 0.05 },
+    night:  { top: [0.01, 0.03, 0.09], hor: [0.07, 0.16, 0.28], sun: [0.80, 0.88, 1.00], deep: [0.01, 0.05, 0.10], lite: [0.18, 0.28, 0.42], sy: 0.40, st: 1.0 }
+  };
+  var ORDER = ['dawn', 'noon', 'golden', 'night'];
+  function mix(a, b, t) { return a + (b - a) * t; }
+  function mixv(a, b, t) { return [mix(a[0], b[0], t), mix(a[1], b[1], t), mix(a[2], b[2], t)]; }
+  function blend(p) { // p in [0,4) loops dawn->noon->golden->night->dawn
+    var i = Math.floor(p) % 4, f = p - Math.floor(p), s = f * f * (3 - 2 * f);
+    var A = K[ORDER[i]], B = K[ORDER[(i + 1) % 4]];
+    return { top: mixv(A.top, B.top, s), hor: mixv(A.hor, B.hor, s), sun: mixv(A.sun, B.sun, s), deep: mixv(A.deep, B.deep, s), lite: mixv(A.lite, B.lite, s), sy: mix(A.sy, B.sy, s), st: mix(A.st, B.st, s) };
+  }
   var autoMode = true;
 
   var cv = document.createElement('canvas');
   cv.className = 'scene-cv'; cv.setAttribute('aria-hidden', 'true');
   host.insertBefore(cv, host.firstChild);
-  var gl = cv.getContext('webgl', { antialias: false, alpha: false, powerPreference: 'low-power' });
+  var gl = cv.getContext('webgl', { antialias: false, alpha: false, powerPreference: 'low-power', failIfMajorPerformanceCaveat: true });
   if (!gl) { host.classList.add('scene-fallback'); return; }
 
   var VS = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
@@ -139,9 +140,9 @@
   host.setAttribute('data-tod', 'live');
   }
 
-  // Start when the browser is idle and the scene is on screen, so first paint and input are not delayed by shader compile.
+  // The photo is the primary hero. Start the shader only as a visible, idle fallback.
   var started = false;
-  function go() { if (started) return; started = true; boot(); }
+  function go() { if (started || host.classList.contains('plates-on')) return; started = true; boot(); }
   function whenIdle() {
     if ('requestIdleCallback' in window) requestIdleCallback(go, { timeout: 1500 });
     else setTimeout(go, 200);
@@ -152,5 +153,5 @@
       io.observe(host);
     } else whenIdle();
   }
-  arm();
+  host.addEventListener('shoreheroerror', arm, { once: true });
 })();
