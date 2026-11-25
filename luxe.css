@@ -50,9 +50,7 @@ img.lx-in{animation:lx-fade .7s var(--lx-ease) both}
 #lx-splash i{display:block;width:120px;height:2px;border-radius:2px;background:rgba(217,199,163,.2);overflow:hidden}
 #lx-splash i::after{content:"";display:block;height:100%;width:40%;background:#D9C7A3;animation:lx-sweep 1s ease-in-out infinite}
 @keyframes lx-spin{0%{transform:rotate(0)}60%,100%{transform:rotate(360deg)}}
-/* page entrance */
-body{animation:lx-page .6s var(--lx-ease) both}
-@keyframes lx-page{from{opacity:.0}to{opacity:1}}
+/* no page-entrance fade: it held the whole page at opacity 0 for .6s and delayed first and largest paint on every page */
 @media(prefers-reduced-motion:reduce){
  html{scroll-behavior:auto}
  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}

@@ -21,14 +21,18 @@
   ];
   var NAMES = ['dawn', 'midday', 'golden', 'night'];
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var H0 = window.__slHero; // set early by index.html: the real-sun phase and photo it already preloaded
   var sun = window.ShoreSun;
-  function nowPhase() { return sun ? Math.round(sun.now()) % 4 : 1; } // snap to one photo: blending two different photos ghosts the scene
+  // scene.js can still be starting up when this runs; fall back to the phase index.html worked out rather than assuming midday.
+  function nowPhase() { var s = window.ShoreSun || sun; return s ? Math.round(s.now()) % 4 : (H0 && typeof H0.ph === 'number' ? H0.ph : 1); } // snap to one photo: blending two different photos ghosts the scene
   var cur = nowPhase(), target = cur, auto = true, loaded = 0, raf = 0;
 
   // which photo of each phase is showing (random start, then rotates)
   var LIST = [[], [], [], []];
   PICS.forEach(function (p, i) { LIST[p.ph].push(i); });
   var pick = LIST.map(function (l) { return l[Math.floor(Math.random() * l.length)]; });
+  // index.html decides the first photo early (so it can be preloaded); use the same one so the preloaded file is the one shown.
+  if (H0 && PICS[0] && typeof H0.ph === 'number') PICS.forEach(function (p, i) { if (p.f === H0.f && p.ph === H0.ph) pick[H0.ph] = i; });
   var rv = PICS.map(function (p, i) { return pick[p.ph] === i ? 1 : 0; }); // per-photo rotation fade 0..1
 
   var wrap = document.createElement('div'); wrap.className = 'plates'; wrap.setAttribute('aria-hidden', 'true');
@@ -43,16 +47,20 @@
   var cap = document.createElement('p'); cap.className = 'plate-credit'; host.appendChild(cap);
   function credit() { var p = PICS[pick[Math.round(cur) % 4]]; cap.textContent = 'Photo: ' + p.place + ', ' + p.by + ', ' + p.lic; }
   function src(i) { var b = BASE + PICS[i].f, c = 'x.jpg'; return { s: [1280, 1920, 2560, 3200, 3840].map(function (w) { return b + '_' + w + c + ' ' + w + 'w'; }).join(', '), f: b + '_2560' + c }; }
-  // The photo covers a tall hero, so on a phone it is drawn far wider than the screen. Ask for the width it is really drawn at (density capped at 2 to keep the file reasonable).
-  function need() { var r = host.getBoundingClientRect(), w = Math.max(r.width || innerWidth, (r.height || innerHeight) * 1.5) * 1.08, d = window.devicePixelRatio || 1; return Math.ceil(w * Math.min(d, 2) / d) + 'px'; }
-  function load(i, high) { var im = imgs[i]; if (im.src || im.getAttribute('data-l')) return; im.setAttribute('data-l', 1); var u = src(i); if (high) im.fetchPriority = 'high'; im.srcset = u.s; im.src = u.f; im.addEventListener('load', function () { loaded++; im.classList.add('ok'); paint(); if (loaded >= 1) host.classList.add('plates-on'); }); im.addEventListener('error', function () { im.removeAttribute('src'); im.removeAttribute('srcset'); }); }
+  // Same rule as the preload in index.html. Phones get one 1280 px photo at any density; larger screens get the width the photo is really drawn at (density capped at 2). Uses window size, not a layout read, so it never forces a reflow.
+  function need() { if (H0 && H0.sz) return H0.sz; var vw = innerWidth, vh = innerHeight, d = window.devicePixelRatio || 1; return (vw <= 820 ? Math.floor(1280 / d) : Math.ceil(Math.max(vw, vh * 1.5) * 1.08 * Math.min(d, 2) / d)) + 'px'; }
+  function load(i, high) { var im = imgs[i]; if (im.src || im.getAttribute('data-l')) return; im.setAttribute('data-l', 1); var u = src(i); if (high) im.fetchPriority = 'high'; im.srcset = u.s; im.src = u.f; im.addEventListener('load', function () { loaded++; im.classList.add('ok'); paint(); if (loaded >= 1) host.classList.add('plates-on'); if (loaded === 1) extras(); }); im.addEventListener('error', function () { im.removeAttribute('src'); im.removeAttribute('srcset'); }); }
   function weights(p) { return NAMES.map(function (_, i) { var d = Math.abs(p - i); d = Math.min(d, 4 - d); var w = Math.max(0, 1 - d); return w * w * (3 - 2 * w); }); }
   function paint() {
     var w = weights(cur), sum = 0, v = imgs.map(function (im, i) { var x = PICS[i].ph, o = im.classList.contains('ok') ? w[x] * rv[i] : 0; sum += o; return o; });
     imgs.forEach(function (im, i) { var o = sum ? v[i] / sum : 0; im.style.opacity = o.toFixed(3); im.style.visibility = o < 0.004 ? 'hidden' : 'visible'; });
     credit();
   }
-  function ensureNeighbors() { var a = Math.round(target) % 4; load(pick[a], true); setTimeout(function () { load(pick[(a + 1) % 4]); load(pick[(a + 3) % 4]); }, 600); setTimeout(function () { for (var i = 0; i < 4; i++) load(pick[i]); }, 3500); }
+  // Other times of day are fetched only after the first photo has painted. On phones and on slow or Data Saver connections they are fetched only when that time of day is shown (button, or the real sun moving on), so they never compete with the photo the visitor is waiting for.
+  var calm = ((H0 && H0.vw) || innerWidth) <= 820 || !!(navigator.connection && (navigator.connection.saveData || /(^|-)(2g|3g)$/.test(navigator.connection.effectiveType || '')));
+  var extrasOn = false;
+  function extras() { if (calm || extrasOn) return; extrasOn = true; var a = Math.round(target) % 4; setTimeout(function () { load(pick[(a + 1) % 4]); load(pick[(a + 3) % 4]); }, 1500); setTimeout(function () { for (var i = 0; i < 4; i++) load(pick[i]); }, 6000); }
+  function ensureNeighbors() { load(pick[Math.round(target) % 4], true); }
   function frame() {
     raf = 0; var d = target - cur; if (d > 2) d -= 4; if (d < -2) d += 4;
     var moving = Math.abs(d) > 0.002;
@@ -67,7 +75,7 @@
     var n = l[(l.indexOf(pick[p]) + 1) % l.length], im = imgs[n]; load(n, true);
     if (im.classList.contains('ok')) { pick[p] = n; if (!raf) raf = requestAnimationFrame(frame); }
   }, 50000);
-  setInterval(function () { if (auto && sun) go(nowPhase()); }, 20000);
+  setInterval(function () { if (auto && (window.ShoreSun || sun)) go(nowPhase()); }, 20000);
 
   document.addEventListener('shorescene', function (e) { var n = e.detail; if (n === 'live') { auto = true; go(nowPhase()); } else { var i = NAMES.indexOf(n === 'noon' ? 'midday' : n); if (i > -1) { auto = false; go(i); } } });
   if (!window.ShoreScene) {

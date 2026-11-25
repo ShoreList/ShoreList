@@ -142,5 +142,7 @@ try {
   if (six && +six[1] !== liveN) bad(`index.html: founding partner card says ${six[1]} tours but ${liveN} experiences are live in operators-public.json`);
   for (const f of pages) { const t = fs.readFileSync(f, 'utf8'); if (/We verify their business license|personally reviewed before going live|four local operators/i.test(t)) bad(`${f}: unsupported operator claim (license check, personal review or a fixed operator count)`); }
 } catch (e) { bad('stated facts: ' + e.message); }
+// homepage CSS is inlined from the .css sources: fail if index.html is stale
+try { const { execFileSync } = await import('node:child_process'); execFileSync('node', ['tools/inline-home-css.mjs', '--check'], { stdio: 'pipe' }); } catch (e) { bad('index.html: inlined homepage CSS is out of date (run node tools/inline-home-css.mjs)'); }
 if (fails.length) { console.error(fails.join('\n')); process.exit(1); }
 console.log(`ok: ${pages.length} pages, ${cat.items.length} products`);
