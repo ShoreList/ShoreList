@@ -39,14 +39,17 @@
   /* scroll reveal for cards and section titles below the fold */
   var io=('IntersectionObserver' in window&&!rm)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('lx-on');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.05}):null;
   var SEL='.card,.exp-card,.town-card,.wk-card,.rec-card,.ev-card,.xcard,.visit-card,.tix-card,.feat-card,.stat-card,.op-card,.more-tile,.sec-title,.sec h2';
-  function rv(el){
-    if(!io||el.dataset.lxr)return;el.dataset.lxr='1';
-    var r=el.getBoundingClientRect();if(r.top<innerHeight*.95)return;   /* already on screen: leave it alone */
-    el.classList.add('lx-rv');io.observe(el);
+  /* Batched: mark first, then read every position, then add classes, so the page lays out once instead of once per element. */
+  function rvAll(list){
+    if(!io)return;var els=[];
+    list.forEach(function(el){if(!el.dataset.lxr){el.dataset.lxr='1';els.push(el);}});
+    var lim=innerHeight*.95,tops=els.map(function(el){return el.getBoundingClientRect().top;});
+    els.forEach(function(el,i){if(tops[i]<lim)return;   /* already on screen: leave it alone */
+      el.classList.add('lx-rv');io.observe(el);});
   }
   function scan(n){
     (n.querySelectorAll?n:d).querySelectorAll('img').forEach(img);
-    (n.querySelectorAll?n:d).querySelectorAll(SEL).forEach(rv);
+    rvAll([].slice.call((n.querySelectorAll?n:d).querySelectorAll(SEL)));
   }
   function go(){scan(d);
     if('MutationObserver' in window)new MutationObserver(function(ms){ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1)scan(n);});});}).observe(d.body,{childList:true,subtree:true});
