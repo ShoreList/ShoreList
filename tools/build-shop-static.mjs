@@ -21,7 +21,7 @@ const BLOCKS = [
 ];
 const money = (i) => (i.from === true ? 'From ' : '') + '$' + (Number.isInteger(i.price) ? i.price : i.price.toFixed(2));
 const first = (i) => i.studio || i.img;
-const sized = (u, w) => (/^https:\/\/cdn\.shopify\.com\//.test(u) && !/_\d+x\.\w+$/.test(u) ? u + (u.includes('?') ? '&' : '?') + 'width=' + w : u);
+const sized = (u, w) => (/^https:\/\/cdn\.shopify\.com\//.test(u) && !/_\d+x\.\w+(\?.*)?$/.test(u) ? u.replace(/\.(\w+)(\?.*)?$/, '_' + w + 'x.$1$2') : u);
 const splitName = (n) => { const k = n.lastIndexOf(', '); return (k > 0 ? n.slice(0, k) : n).replace(/^The /, ''); };
 
 const collections = BLOCKS.filter((b) => cat.collections.some((c) => c.id === b.id) && cat.items.some((i) => i.collection === b.id && !retired.has(i.id)))
