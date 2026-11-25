@@ -416,7 +416,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 /* photo plates */
 .plates{position:absolute;inset:0;z-index:0;overflow:hidden;background:#0E1F33;--px:0px;--py:0px;opacity:0;transition:opacity .6s ease}
 .plates-on .plates{opacity:1}.plates-on .scene-cv{opacity:0!important}
-.plates img{position:absolute;left:-3%;top:-3%;width:106%;height:106%;max-width:none;object-fit:cover;object-position:var(--pos,62% 50%);opacity:0;visibility:hidden;transform:translate3d(var(--px),var(--py),0) scale(1.02);animation:kb 70s ease-in-out infinite alternate;will-change:opacity,transform;user-select:none;-webkit-user-drag:none}
+.plates img{position:absolute;left:-3%;top:-3%;width:106%;height:106%;max-width:100%;object-fit:cover;object-position:var(--pos,62% 50%);opacity:0;visibility:hidden;transform:translate3d(var(--px),var(--py),0) scale(1.02);animation:kb 70s ease-in-out infinite alternate;will-change:opacity,transform;user-select:none;-webkit-user-drag:none}
 .plates img[data-p="3"]{filter:brightness(.5) saturate(.8) hue-rotate(8deg)}
 @keyframes kb{from{scale:1}to{scale:1.07}}
 .ripple{position:absolute;z-index:2;width:12px;height:5px;margin:-2px 0 0 -6px;border-radius:50%;border:2px solid rgba(255,255,255,.75);pointer-events:none;animation:rpl 1.7s ease-out forwards}
