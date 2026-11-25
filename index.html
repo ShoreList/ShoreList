@@ -1078,6 +1078,11 @@ main #explore .cats-grid .cat .cat-live{font-size:.75rem}
 
 .mob-drawer{max-height:100dvh;overflow-y:auto;overscroll-behavior:contain}
 .mob-drawer .mobile-social{display:flex;flex-wrap:wrap;gap:0 18px;border-top:1px solid rgba(217,199,163,.22)}
+
+/* Keep offscreen homepage sections out of the first layout and paint. */
+@media(max-width:820px){
+  main#main > section:not(#hero){content-visibility:auto;contain-intrinsic-block-size:auto 650px}
+}
 /* ShoreList design tokens: the single source of truth for color and type. Linked last on every page.
    Palette: Harbor Navy, Sailcloth, Dune Sand, Sea Glass, Signal Red (one small accent), Weathered Teak (optional).
    Type: Libre Caslon Display (headlines, wordmark), Libre Caslon Text (product names), DM Sans (UI, body), DM Mono (captions). */

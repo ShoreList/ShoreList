@@ -322,10 +322,10 @@
     for (var i = 0; i < els.length && i < 4000; i++) {
       var e = els[i], tag = e.tagName;
       if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'SVG' || tag === 'PATH' || !e.firstChild) continue;
-      var cs = getComputedStyle(e);
-      if (cs.display === 'none' || cs.visibility === 'hidden') continue;
       var own = false; for (var c = e.firstChild; c; c = c.nextSibling) if (c.nodeType === 3 && c.textContent.trim().length > 2) { own = true; break; }
       if (!own) continue;
+      var cs = getComputedStyle(e);
+      if (cs.display === 'none' || cs.visibility === 'hidden') continue;
       var fs = parseFloat(cs.fontSize);
       if (fs < 11.5 && e.textContent.length < 60) edits.push([e, 'fontSize', '12px']);
       var col = rgb(cs.color), bg = bgOf(e); if (!col || !bg || col.length > 3 && col[3] < 0.5) continue;
