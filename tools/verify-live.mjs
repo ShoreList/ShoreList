@@ -14,7 +14,7 @@ const note = (area, msg) => problems.push({ area, msg });
 async function head(url) {
   for (const method of ['HEAD', 'GET']) {
     try {
-      const r = await fetch(url, { method, redirect: 'follow', signal: AbortSignal.timeout(20000) });
+      const r = await fetch(new URL(url, SITE), { method, redirect: 'follow', signal: AbortSignal.timeout(20000) });
       if (r.ok || method === 'GET') return { ok: r.ok, status: r.status, type: r.headers.get('content-type') || '' };
     } catch (e) { if (method === 'GET') return { ok: false, status: 0, type: String(e.message || e) }; }
   }
@@ -34,7 +34,7 @@ for (const it of items) for (const k of ['img', 'studio', 'lookbook']) if (it[k]
 const picks = fs.readFileSync('shore-picks.html', 'utf8');
 for (const m of picks.matchAll(/<img[^>]*\ssrc="(https:[^"]+)"/g)) imgs.add(m[1]);
 const imgList = [...imgs];
-const imgRes = await pool(imgList, 8, async (u) => ({ u, r: await head(new URL(u, SITE)) }));
+const imgRes = await pool(imgList, 8, async (u) => ({ u, r: await head(u) }));
 for (const { u, r } of imgRes) if (!r.ok || !/image/i.test(r.type)) note('image', `${r.status || 'ERR'} ${u}`);
 
 // 2. Shopify parity (public products.json, paged)

@@ -35,7 +35,7 @@
   var cond = document.getElementById('cond');
   if (cond) {
     var B = [['Wrightsville', 34.2097, -77.7964], ['Carolina Beach', 34.0345, -77.8976], ['Kure Beach', 33.994, -77.9068]];
-    var cur = 1, cache = {};
+    var cur = 1, requested = false;
     var WX = function (c) { return c === 0 ? 'Clear' : c < 4 ? 'Partly cloudy' : c < 50 ? 'Foggy' : c < 70 ? 'Rain' : c < 80 ? 'Snow' : c < 95 ? 'Showers' : 'Storms'; };
     function t12(iso) { var d = new Date(iso); return isNaN(d) ? '' : d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }); }
     function paint(d) {
@@ -61,6 +61,7 @@
     }
     function get(i) {
       if (!window.ShoreWX) return;
+      requested = true;
       ShoreWX.get(i).then(function (d) {
         cond.hidden = false; paintWX(d);
         if (window.__shoreCtx) window.__shoreCtx({ temp: d.temp, code: d.code, wave: d.waveFt != null ? d.waveFt / 3.281 : null, set: d.sunset, flag: d.flag.label, water: d.waterF }, B[i][0]);
@@ -77,7 +78,11 @@
         var p = pool[Math.floor(Math.random() * pool.length)]; track('surprise_me', { to: p.slug }); location.href = p.url;
       });
     });
-    get(cur);
+    if (document.body.classList.contains('home') && document.readyState !== 'complete') {
+      function startConditions() { if (!requested) get(cur); }
+      window.addEventListener('load', startConditions, { once: true });
+      setTimeout(startConditions, 2500);
+    } else get(cur);
   }
 
   // ---------- concierge ("Shore AI") ----------
@@ -91,9 +96,8 @@
   fab.innerHTML = '<span class="orb" aria-hidden="true"></span><span class="lbl">Shore AI</span>';
   var box = document.createElement('div');
   box.className = 'cc'; box.id = 'cc'; box.hidden = true; box.setAttribute('role', 'dialog'); box.setAttribute('aria-label', 'Shore AI concierge');
-  box.innerHTML = '<header><span class="orb big" aria-hidden="true"></span><div>Shore AI<small id="ccs">Experiences, events and shop picks, tuned to right now</small></div><button type="button" class="spk" id="ccsp" aria-pressed="false" title="Read answers aloud">&#128266;</button></header><div class="log" id="ccl" aria-live="polite"><div class="m bot">Hi, I\'m Shore AI. Ask me anything about Wilmington and the beaches, or tap the mic.</div></div><div class="chips" id="ccc"></div><form id="ccf"><input id="cci" type="text" maxlength="200" placeholder="Ask anything about the coast" aria-label="Your question" autocomplete="off"/><button type="button" id="ccm" class="mic" aria-label="Speak your question" hidden>&#127908;</button><button type="submit">Ask</button></form>';
   document.body.appendChild(fab); document.body.appendChild(box);
-  var log = box.querySelector('#ccl'), speakOn = false;
+  var log, speakOn = false;
   function add(cls, html) { var d = document.createElement('div'); d.className = 'm ' + cls; d.innerHTML = html; log.appendChild(d); log.scrollTop = log.scrollHeight; return d; }
   function section(it) { return it.t === 'cat' ? 'Experiences' : /shop/.test(it.url) ? 'Shop' : /event/.test(it.url) ? 'Events' : 'Guide'; }
   function chipsNow() {
@@ -104,7 +108,6 @@
     else c.unshift('What is on this weekend?');
     box.querySelector('#ccc').innerHTML = c.slice(0, 5).map(function (x) { return '<button type="button">' + esc(x) + '</button>'; }).join('');
   }
-  chipsNow();
   function typeInto(el, text, cb) {
     if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) { el.textContent = text; cb && cb(); return; }
     var i = 0; (function step() { el.textContent = text.slice(0, i); i += 2; log.scrollTop = log.scrollHeight; if (i <= text.length + 1) setTimeout(step, 14); else { el.textContent = text; cb && cb(); } })();
@@ -139,14 +142,36 @@
         });
     });
   }
-  fab.addEventListener('click', function () { box.hidden = !box.hidden; fab.setAttribute('aria-expanded', String(!box.hidden)); if (!box.hidden) { loadIndex(); chipsNow(); box.querySelector('#cci').focus(); track('concierge_open'); } });
-  box.querySelector('#ccf').addEventListener('submit', function (e) { e.preventDefault(); var i = box.querySelector('#cci'); var v = i.value; i.value = ''; ask(v); });
-  box.querySelector('#ccc').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) ask(b.textContent); });
-  box.querySelector('#ccsp').addEventListener('click', function () { speakOn = !speakOn; this.setAttribute('aria-pressed', String(speakOn)); if (!speakOn && window.speechSynthesis) speechSynthesis.cancel(); });
-  var SR = window.SpeechRecognition || window.webkitSpeechRecognition, mic = box.querySelector('#ccm');
-  if (SR) { mic.hidden = false; mic.addEventListener('click', function () { try { var r = new SR(); r.lang = 'en-US'; r.interimResults = false; mic.classList.add('on'); r.onresult = function (e) { var t = e.results[0][0].transcript; speakOn = true; box.querySelector('#ccsp').setAttribute('aria-pressed', 'true'); ask(t); }; r.onend = function () { mic.classList.remove('on'); }; r.onerror = r.onend; r.start(); } catch (e) { mic.classList.remove('on'); } }); }
+  // Keep the launcher available while deferring the dialog until it is opened.
+  function initConcierge() {
+    if (log) return;
+    box.innerHTML = '<header><span class="orb big" aria-hidden="true"></span><div>Shore AI<small id="ccs">Experiences, events and shop picks, tuned to right now</small></div><button type="button" class="spk" id="ccsp" aria-pressed="false" title="Read answers aloud">&#128266;</button></header><div class="log" id="ccl" aria-live="polite"><div class="m bot">Hi, I\'m Shore AI. Ask me anything about Wilmington and the beaches, or tap the mic.</div></div><div class="chips" id="ccc"></div><form id="ccf"><input id="cci" type="text" maxlength="200" placeholder="Ask anything about the coast" aria-label="Your question" autocomplete="off"/><button type="button" id="ccm" class="mic" aria-label="Speak your question" hidden>&#127908;</button><button type="submit">Ask</button></form>';
+    log = box.querySelector('#ccl');
+    box.querySelector('#ccf').addEventListener('submit', function (e) { e.preventDefault(); var i = box.querySelector('#cci'); var v = i.value; i.value = ''; ask(v); });
+    box.querySelector('#ccc').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) ask(b.textContent); });
+    box.querySelector('#ccsp').addEventListener('click', function () { speakOn = !speakOn; this.setAttribute('aria-pressed', String(speakOn)); if (!speakOn && window.speechSynthesis) speechSynthesis.cancel(); });
+    var SR = window.SpeechRecognition || window.webkitSpeechRecognition, mic = box.querySelector('#ccm');
+    if (SR) { mic.hidden = false; mic.addEventListener('click', function () { try { var r = new SR(); r.lang = 'en-US'; r.interimResults = false; mic.classList.add('on'); r.onresult = function (e) { var t = e.results[0][0].transcript; speakOn = true; box.querySelector('#ccsp').setAttribute('aria-pressed', 'true'); ask(t); }; r.onend = function () { mic.classList.remove('on'); }; r.onerror = r.onend; r.start(); } catch (e) { mic.classList.remove('on'); } }); }
+  }
+  function openConcierge() {
+    initConcierge();
+    chipsNow();
+    box.hidden = false;
+    fab.setAttribute('aria-expanded', 'true');
+  }
+  fab.addEventListener('click', function () {
+    if (!box.hidden) {
+      box.hidden = true;
+      fab.setAttribute('aria-expanded', 'false');
+      return;
+    }
+    openConcierge();
+    loadIndex();
+    box.querySelector('#cci').focus();
+    track('concierge_open');
+  });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !box.hidden) { box.hidden = true; fab.setAttribute('aria-expanded', 'false'); fab.focus(); } });
-  document.addEventListener('shore:ask', function (e) { box.hidden = false; fab.setAttribute('aria-expanded', 'true'); ask(String(e.detail || '')); });
+  document.addEventListener('shore:ask', function (e) { openConcierge(); ask(String(e.detail || '')); });
 
 
   // ---------- floating quick dock + tilt ----------

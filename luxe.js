@@ -5,6 +5,8 @@
   var d=document,root=d.documentElement,rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   var seen=false;try{seen=sessionStorage.getItem('lx-splash')==='1';}catch(e){}
   var isHome=location.pathname==='/'||/\/index(\.html)?$/.test(location.pathname);
+  var fine=window.matchMedia&&matchMedia('(hover:hover) and (pointer:fine)').matches;
+  var decorate=!isHome||fine;
   /* splash: home page, first visit per session, never for reduced motion; auto-clears fast */
   if(isHome&&!seen&&!rm){
     var s=d.createElement('div');s.id='lx-splash';s.setAttribute('aria-hidden','true');
@@ -38,7 +40,7 @@
   }
   /* scroll reveal for cards and section titles below the fold */
   var seen=new WeakSet();
-  var io=('IntersectionObserver' in window&&!rm)?new IntersectionObserver(function(es){es.forEach(function(e){var t=e.target;
+  var io=(decorate&&'IntersectionObserver' in window&&!rm)?new IntersectionObserver(function(es){es.forEach(function(e){var t=e.target;
     if(!seen.has(t)){seen.add(t);if(e.isIntersecting){io.unobserve(t);return;}   /* already on screen: leave it alone */
       t.classList.add('lx-rv');return;}
     if(e.isIntersecting){t.classList.add('lx-on');io.unobserve(t);}});},{rootMargin:'0px 0px -8% 0px',threshold:.05}):null;
@@ -57,11 +59,12 @@
   function go(){scan(d);
     if('MutationObserver' in window)new MutationObserver(function(ms){ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1)scan(n);});});}).observe(d.body,{childList:true,subtree:true});
   }
-  if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',go);else go();
+  // Keep the touch homepage content visible without scanning each card at startup.
+  if(decorate){if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',go);else go();}
 
   /* instant navigation: prerender likely next pages (Speculation Rules), where supported */
   try{
-    if(HTMLScriptElement.supports&&HTMLScriptElement.supports('speculationrules')&&!(navigator.connection&&navigator.connection.saveData)){
+    if(decorate&&HTMLScriptElement.supports&&HTMLScriptElement.supports('speculationrules')&&!(navigator.connection&&navigator.connection.saveData)){
       var sp=d.createElement('script');sp.type='speculationrules';
       sp.textContent=JSON.stringify({prerender:[{where:{and:[{href_matches:'/*'},{not:{href_matches:['/dashboard*','/success*','/.netlify/*','/api/*']}}]},eagerness:'moderate'}]});
       d.head.appendChild(sp);
@@ -70,9 +73,8 @@
   /* photo tiles: pointer-tracked light and tilt, plus a live "right now" chip from the conditions feed */
   (function(){
     var grid=d.querySelector('#explore .cats-grid');if(!grid)return;
-    var fine=window.matchMedia&&matchMedia('(hover:hover) and (pointer:fine)').matches;
-    grid.querySelectorAll('.cat').forEach(function(c){var s=d.createElement('span');s.className='cat-sheen';s.setAttribute('aria-hidden','true');c.appendChild(s);});
     if(fine&&!rm){
+      grid.querySelectorAll('.cat').forEach(function(c){var s=d.createElement('span');s.className='cat-sheen';s.setAttribute('aria-hidden','true');c.appendChild(s);});
       var raf=0;
       grid.addEventListener('pointermove',function(e){
         var c=e.target.closest&&e.target.closest('.cat');if(!c)return;
