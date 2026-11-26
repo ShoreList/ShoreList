@@ -140,14 +140,14 @@
     '.sp-in svg{flex:none;opacity:.7}',
     '.sp-in input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:#D9C7A3;font:500 1.05rem "DM Sans",system-ui,sans-serif}',
     '.sp-in input::placeholder{color:rgba(217,199,163,.5)}',
-    '.sp-esc{font:600 .68rem "DM Sans",system-ui,sans-serif;border:1px solid rgba(217,199,163,.3);border-radius:5px;padding:2px 7px;opacity:.7;background:none;color:inherit;cursor:pointer}',
+    '.sp-esc{font:600 12px "DM Sans",system-ui,sans-serif;border:1px solid rgba(217,199,163,.3);border-radius:5px;padding:2px 7px;opacity:.7;background:none;color:inherit;cursor:pointer}',
     '.sp-list{list-style:none;margin:0;padding:8px;max-height:min(56vh,420px);overflow:auto}',
-    '.sp-h{padding:8px 10px 4px;font:700 .68rem "DM Sans",system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#D9C7A3}',
+    '.sp-h{padding:8px 10px 4px;font:700 12px "DM Sans",system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#D9C7A3}',
     '.sp-li a{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:12px;color:inherit;text-decoration:none}',
     '.sp-li a[aria-selected=true],.sp-li a:hover{background:rgba(181,54,47,.18)}',
     '.sp-t{font-weight:500;font-size:.98rem;line-height:1.25}',
     '.sp-s{font-size:.8rem;opacity:.7;line-height:1.35;margin-top:2px}',
-    '.sp-b{margin-left:auto;flex:none;font:700 .7rem "DM Sans",system-ui,sans-serif;border-radius:100px;padding:3px 10px;background:rgba(217,199,163,.12);white-space:nowrap}',
+    '.sp-b{margin-left:auto;flex:none;font:700 12px "DM Sans",system-ui,sans-serif;border-radius:100px;padding:3px 10px;background:rgba(217,199,163,.12);white-space:nowrap}',
     '.sp-b.sp-book{background:#B5362F;color:#fff}',
     '.sp-empty{padding:26px 18px;text-align:center;opacity:.8;font-size:.95rem;line-height:1.5}',
     '.sp-empty a{color:#D9C7A3;font-weight:500}',
@@ -353,6 +353,8 @@
     slice();
   }
   function scheduleFix() {
+    // Home uses fixed CSS for these styles; avoid a whole-document scan during startup.
+    if (location.pathname === '/' || /^\/index(?:\.html)?$/.test(location.pathname)) return;
     var timer, running = false, pending = false;
     function run() {
       if (running) { pending = true; return; }
