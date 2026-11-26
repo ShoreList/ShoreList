@@ -88,7 +88,18 @@
         el.classList.add('live');
       }).catch(function () {});
     }
-    if (w.ShoreWX) go(); else w.addEventListener('load', go);
+    function loadWeather() {
+      if (w.ShoreWX || d.readyState === 'complete') go();
+      else w.addEventListener('load', go, { once: true });
+    }
+    if ('IntersectionObserver' in w) {
+      var weatherObserver = new IntersectionObserver(function (entries) {
+        if (!entries[0].isIntersecting) return;
+        weatherObserver.disconnect();
+        loadWeather();
+      }, { rootMargin: '500px' });
+      weatherObserver.observe(el);
+    } else loadWeather();
   })();
 
   /* ---------- experiences carousel: arrows, dots, optional slow auto-advance with a pause control ---------- */

@@ -104,9 +104,9 @@
    "type": "beach",
    "color": "Navy",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-all-over-print-tote-bag_1000x.webp",
-   "alt": "Navy tote bag printed edge to edge with white sailboats on teal waves, on the sand with a towel at Wrightsville Beach",
-   "meta": "A printed tote with a navy sloop pattern running seam to seam across the whole bag. A Wrightsville Beach carry-all for the Carolina coast.",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8848050272079715985_2048.jpg",
+   "alt": "Tote with navy handles and an edge-to-edge print of white sailboats on a navy background",
+   "meta": "White sailboats repeat across the navy tote. Shown with navy handles; beige handles are also available.",
    "cta": "Choose size",
    "price": 48,
    "from": true,
@@ -115,8 +115,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8437957555573950274_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-all-over-print-tote-bag_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8848050272079715985_2048.jpg",
+   "lookbook": "",
    "facts": [
     [
      "Size",
@@ -553,8 +553,8 @@
    "type": "hats",
    "color": "Navy Blue",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-corduroy-cap-carolina-beach_1000x.webp",
-   "alt": "Man in a navy corduroy cap with an embroidered brown pelican, on the sand at Carolina Beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/755985813891049725_2048.jpg",
+   "alt": "Navy blue corduroy cap with a small brown pelican embroidered on the front",
    "meta": "A brown pelican embroidered on the front of a soft corduroy cap.",
    "cta": "Choose color",
    "price": 49,
@@ -583,7 +583,7 @@
      "Navy Blue, Olive"
     ]
    ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-corduroy-cap-carolina-beach_1920x.webp"
+   "lookbook": ""
   },
   {
    "id": "the-pelican-cuffed-beanie-carolina-beach",
@@ -593,10 +593,10 @@
    "name": "The Pelican Cuffed Beanie, Carolina Beach",
    "url": "https://shorelist.myshopify.com/products/the-pelican-cuffed-beanie-carolina-beach",
    "type": "hats",
-   "color": "Forest green",
+   "color": "Spruce",
    "added": "2026-11-23",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-cuffed-beanie-carolina-beach_1000x.webp",
-   "alt": "Woman in a forest green cuffed beanie embroidered with a brown pelican, on the sand at Carolina Beach",
+   "alt": "Spruce green cuffed beanie with a small brown pelican embroidered on the cuff",
    "meta": "A brown pelican embroidered on the cuff of a classic knit beanie.",
    "cta": "Choose color",
    "price": 30,
@@ -880,9 +880,9 @@
    "shelf": "kure-beach",
    "name": "The Blue Crab Embroidered Crewneck, Kure Beach",
    "url": "https://shorelist.myshopify.com/products/the-blue-crab-embroidered-crewneck-kure-beach",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4874290219685606735_2048.jpg",
-   "alt": "White crewneck sweatshirt with a small embroidered blue crab on the chest, ShoreList, Kure Beach",
-   "meta": "An Atlantic blue crab stitched small on the chest of a crewneck, in white or chalky mint.",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17367446352125890490_2048.jpg",
+   "alt": "Chalky Mint crewneck with a small embroidered blue crab and the letters KB",
+   "meta": "A small Atlantic blue crab is embroidered on the chest. Available in Chalky Mint and White.",
    "cta": "Choose size",
    "price": 88,
    "scenes": [
@@ -902,15 +902,26 @@
     [
      "Embroidery",
      "Stitched in blue, white and red thread"
+    ],
+    [
+     "Colors",
+     "Chalky Mint, White"
     ]
    ],
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4874290219685606735_2048.jpg",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17367446352125890490_2048.jpg",
    "town": "kure-beach",
    "type": "tops",
-   "color": "White",
+   "color": "Chalky Mint",
    "added": "2026-11-21",
    "motif": "sea-life",
-   "lookbook": "/shop-art/blue-crab-crewneck-chalky-mint-1000.webp"
+   "lookbook": "",
+   "gallery": [
+    {
+     "src": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4874290219685606735_2048.jpg",
+     "alt": "White crewneck with a small embroidered blue crab and the letters KB",
+     "styled": false
+    }
+   ]
   },
   {
    "id": "kure-beach-lifeguard-stand-printed-canvas-tote-bag",
@@ -1118,11 +1129,11 @@
    "name": "Airlie Oak Framed Art Print, Wrightsville Beach and Wilmington",
    "url": "https://shorelist.myshopify.com/products/airlie-oak-framed-art-print-wrightsville-beach-and-wilmington",
    "type": "prints",
-   "color": "Ivory",
+   "color": "Black",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-framed-art-print-wrightsville-beach-and-wilmington-v2_1000x.webp",
-   "alt": "Framed art print of the Airlie Oak, a painterly Southern live oak with Spanish moss and azaleas, above a console",
-   "meta": "A framed art print of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC, set like a botanical plate on warm ivory with a Wrightsville Beach and Wilmington caption. Made to order.",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/18372799870615515575_2048.jpg",
+   "alt": "Botanical illustration of the Airlie Oak on ivory paper in a black frame",
+   "meta": "A botanical illustration of the Airlie Oak on warm ivory, captioned Wrightsville Beach and Wilmington, North Carolina. Shown in a black frame.",
    "cta": "Choose size",
    "price": 84,
    "from": true,
@@ -1132,7 +1143,7 @@
    "cut": "unisex",
    "store": "shopify",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/18372799870615515575_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-framed-art-print-wrightsville-beach-and-wilmington-v2_1920x.webp",
+   "lookbook": "",
    "facts": [
     [
      "Sizes",
