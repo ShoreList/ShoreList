@@ -779,7 +779,7 @@ body:not(.home):not(.pg-home) .dock{display:none!important}
     <noscript><section class="soon"><h2>The shop needs JavaScript to show every product</h2><p>You can still browse and buy in our store.</p><a class="sbtn" href="https://shorelist.myshopify.com/collections/all" target="_blank" rel="noopener">Open the ShoreList store</a></section></noscript>
   </div>
   <section class="drop" id="drops" aria-labelledby="dropH"><div class="wrap"><h2 id="dropH">Sign up for ShoreList shop emails</h2><p class="s">Take 10% off one eligible order through our Shopify checkout, and hear first when new pieces are ready. Unsubscribe any time.</p>
-    <form id="dropForm" novalidate><label class="sr" for="dropEmail">Email address</label><input id="dropEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required/><button class="sbtn" type="submit">Get 10% off</button><p class="dropmsg" id="dropMsg" role="status" aria-live="polite"></p></form><div class="shop-social" role="group" aria-label="Follow ShoreList"><p>Follow ShoreList for new releases.</p><a href="https://www.tiktok.com/@shorelist" target="_blank" rel="noopener noreferrer" aria-label="ShoreList on TikTok">TikTok</a><a href="https://www.instagram.com/shorelist" target="_blank" rel="noopener noreferrer" aria-label="ShoreList on Instagram">Instagram</a></div></div></section>
+    <form id="dropForm" action="https://formspree.io/f/xeevzzqd" method="post"><input type="hidden" name="list" value="Shop drop list"><input type="hidden" name="source" value="/shop"><input type="hidden" name="_subject" value="ShoreList shop drop list signup"><label class="sr" for="dropEmail">Email address</label><input id="dropEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required/><button class="sbtn" type="submit">Get 10% off</button><p class="dropmsg" id="dropMsg" role="status" aria-live="polite"></p></form><div class="shop-social" role="group" aria-label="Follow ShoreList"><p>Follow ShoreList for new releases.</p><a href="https://www.tiktok.com/@shorelist" target="_blank" rel="noopener noreferrer" aria-label="ShoreList on TikTok">TikTok</a><a href="https://www.instagram.com/shorelist" target="_blank" rel="noopener noreferrer" aria-label="ShoreList on Instagram">Instagram</a></div></div></section>
   <section class="faq" id="faq" aria-labelledby="faqH"><div class="wrap"><h2 id="faqH">Questions</h2>
 <!--SHOP-STATIC:faq-->
 <details><summary>What can I buy in the ShoreList Shop?</summary><p>Embroidered and printed apparel, home goods, beach gear and can coolers, designed for Wilmington, Wrightsville Beach, Carolina Beach and Kure Beach.</p></details>
@@ -1107,13 +1107,11 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&nav.classLi
 <script>
 (function(){var f=document.getElementById('dropForm');if(!f)return;var m=document.getElementById('dropMsg'),i=document.getElementById('dropEmail'),busy=false;
 function ok(v){return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);}
-/* Runs before the site-wide submit tracker (document, capture), so a submit that fails validation is not counted as a lead. */
-window.addEventListener('submit',function(e){if(e.target!==f)return;if(busy){e.preventDefault();e.stopPropagation();return;}if(!ok((i.value||'').trim())){e.preventDefault();e.stopPropagation();m.textContent='Please enter a valid email address.';i.focus();}},true);
 f.addEventListener('submit',function(e){e.preventDefault();if(busy)return;var v=(i.value||'').trim();
 if(!ok(v)){m.textContent='Please enter a valid email address.';i.focus();return;}
 busy=true;m.textContent='Adding you to the list.';
-fetch('https://formspree.io/f/xeevzzqd',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify({email:v,list:'Shop drop list',source:location.pathname,_subject:'ShoreList shop drop list signup'})})
-.then(function(r){if(!r.ok)throw new Error('bad');m.textContent="You're on the list. Use code SHOREWELCOME10 at our Shopify checkout for 10% off one eligible order.";f.reset();})
+fetch(f.action,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify({email:v,list:'Shop drop list',source:location.pathname,_subject:'ShoreList shop drop list signup'})})
+.then(function(r){if(!r.ok)throw new Error('bad');m.textContent="You're on the list. Use code SHOREWELCOME10 at our Shopify checkout for 10% off one eligible order.";f.reset();try{f.dispatchEvent(new CustomEvent('sl:shop-signup-complete',{bubbles:true}));}catch(e){}})
 .catch(function(){m.textContent="That didn't go through. Please try again in a moment.";})
 .then(function(){busy=false;});});})();
 </script></body>
