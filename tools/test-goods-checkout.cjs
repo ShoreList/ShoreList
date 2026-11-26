@@ -350,7 +350,7 @@ test('get-goods-session: paid goods order summary without address or email; othe
 }));
 
 // ================= shop-cart.js in a stub DOM =================
-function runCart() {
+function runCart(storageOverrides = {}) {
   const store = {}; const handlers = {};
   const made = []; const mkEl = (tag) => { const kids = {}; const el = { tag, className: '', innerHTML: '', style: {}, attrs: {}, listeners: {}, open: false, parentNode: null,
     setAttribute(k, v) { this.attrs[k] = v; }, getAttribute(k) { return this.attrs[k]; }, removeAttribute() {}, hasAttribute(k) { return k in this.attrs; },
@@ -362,11 +362,26 @@ function runCart() {
   const tracked = [];
   const doc = { head, body: bodyEl, createElement: mkEl, querySelector: (s) => (s === 'nav.sl-hdr' ? nav : null), addEventListener(ev, fn) { (handlers[ev] = handlers[ev] || []).push(fn); }, dispatchEvent() {} };
   const win = { addEventListener() {}, gtag: (n, p) => tracked.push([n, p]), ShoreAttrib: { get: () => ({ utm_source: 'x' }) }, location: { href: '' } };
-  const ctx = { window: win, document: doc, localStorage: { getItem: (k) => store[k] || null, setItem: (k, v) => { store[k] = v; } }, fetch: (...a) => global.fetch(...a), KeyboardEvent: function () {}, setInterval: () => 0, clearInterval() {}, Date, JSON, Math, Array, String, Number, Object, Promise, location: win.location, console };
+  const storage = { getItem: (k) => store[k] || null, setItem: (k, v) => { store[k] = v; }, ...storageOverrides };
+  const ctx = { window: win, document: doc, localStorage: storage, fetch: (...a) => global.fetch(...a), KeyboardEvent: function () {}, setInterval: () => 0, clearInterval() {}, Date, JSON, Math, Array, String, Number, Object, Promise, location: win.location, console };
   win.window = win; vm.createContext(ctx);
   vm.runInContext(fs.readFileSync(path.join(ROOT, 'shop-cart.js'), 'utf8'), ctx);
   return { win, store, tracked, doc, ctx, bodyEl, made };
 }
+test('shop-cart: retains items during the visit when storage reads or writes are blocked', () => {
+  function blocked() { throw new Error('Storage unavailable'); }
+  for (const method of ['getItem', 'setItem']) {
+    const { win, made } = runCart({ [method]: blocked });
+    const bag = win.ShoreBag;
+    bag.addGoods({ item: 'tee', variant: 'm', name: 'Test Tee', cents: 2500 });
+    bag.open();
+    const drawer = made.filter((element) => element.tag === 'dialog')[1];
+    assert.match(drawer.querySelector('.slbag-in').innerHTML, /Test Tee/);
+    bag.addGoods({ item: 'tee', variant: 'm', name: 'Test Tee', cents: 2500 });
+    bag.open();
+    assert.strictEqual(bag.count(), 2);
+  }
+});
 test('shop-cart: goods lines join the bag as their own group, honest multi-store notice, checkout posts item/variant/qty and follows the Stripe url; Shopify and Fourthwall unchanged', async () => {
   const c = runCart(); const bag = c.win.ShoreBag; assert(typeof bag.addGoods === 'function');
   assert.strictEqual(bag.addGoods({ item: 'tee', variant: 'm', name: 'Test Tee', variantLabel: 'M', cents: 2500, lead: [5, 12], max: 4 }), true);

@@ -11,9 +11,9 @@
    - ShoreList Gear (Fourthwall): link-out lines. They are held here so nothing is forgotten, but
      each opens its own page and checks out there, separate from the Shopify lines.
 
-   The bag lives in localStorage only. The Shopify checkout link is rebuilt from the bag when
-   the shopper taps Checkout (never from a stale link), a second tab keeps the bag in sync, and
-   opening the bag re-checks price and availability of each Shopify line against the store.
+   The bag uses localStorage for persistence and tab sync when available, and memory otherwise.
+   The Shopify checkout link is rebuilt from the bag when the shopper taps Checkout, and opening
+   the bag re-checks price and availability of each Shopify line against the store.
 
    If the product lookup fails (offline, function down) the dialog stays open and shows a
    plain link to the product page, so a tap always gives a visible result. */
@@ -30,6 +30,7 @@
   var CLEAR_FIRST = false;
   var OUT_RE = /^https:\/\/shorelist-shop\.fourthwall\.com\//i;
   var bag = [];
+  var storageAvailable = true;
 
   function clean(list) {
     if (!Array.isArray(list)) return [];
@@ -40,9 +41,17 @@
       return /^\d+$/.test(String(l.id));
     }).map(function (l) { if (l.out === true) l.qty = 1; else l.qty = Math.min(l.goods ? 10 : 20, Math.floor(l.qty)); return l; });
   }
-  function load() { var raw = []; try { raw = JSON.parse(localStorage.getItem(KEY) || '[]') || []; } catch (e) { raw = []; } bag = clean(raw); }
-  function save() { try { localStorage.setItem(KEY, JSON.stringify(bag)); } catch (e) {} }
-  /* Always re-read the bag before changing it, so a change made in another tab is never overwritten. */
+  function load() {
+    if (!storageAvailable) return;
+    var raw;
+    try { raw = localStorage.getItem(KEY); } catch (e) { storageAvailable = false; return; }
+    try { bag = clean(JSON.parse(raw || '[]')); } catch (e) { bag = []; }
+  }
+  function save() {
+    if (!storageAvailable) return;
+    try { localStorage.setItem(KEY, JSON.stringify(bag)); } catch (e) { storageAvailable = false; }
+  }
+  /* Re-read the stored bag before changing it to include edits made in another tab. */
   function mutate(fn) { load(); var r = fn(); save(); paintBtn(); return r; }
   load();
 
@@ -172,24 +181,27 @@
 
   /* ---------- option picker ---------- */
   var cur = null;
+  var pickRequest = 0;
   function matchVariant() {
     if (!cur) return null;
     return cur.p.variants.filter(function (v) { return v.options.every(function (o, k) { return o === cur.sel[k]; }); })[0] || null;
   }
   function paintPick() {
     var p = cur.p, v = matchVariant();
+    var available = p.variants.filter(function (variant) { return variant.available; });
     var body = pick.querySelector('.slbag-in');
     var img = (v && v.image) || cur.img || p.image;
     var h = '<div class="slbag-head">' + (img ? '<img alt="" src="' + esc(img) + '"/>' : '') + '<div><h3 id="slbagPickT">' + esc(cur.name || p.title) + '</h3><div class="slbag-price">' + (v ? money(v.price) : '') + '</div></div></div>';
     p.options.forEach(function (o, k) {
       if (o.values.length === 1 && /^(title|default title)$/i.test(o.name + '')) return;
       h += '<div role="group" aria-labelledby="slbagOpt' + k + '"><span class="slbag-lbl" id="slbagOpt' + k + '">' + esc(o.name) + '</span><div class="slbag-opts">' + o.values.map(function (val) {
-        var ok = p.variants.some(function (x) { return x.available && x.options[k] === val && x.options.every(function (ov, j) { return j === k || cur.sel[j] == null || ov === cur.sel[j]; }); });
+        var ok = available.some(function (x) { return x.options[k] === val; });
         return '<button type="button" class="slbag-opt" data-k="' + k + '" data-v="' + esc(val) + '" aria-pressed="' + (cur.sel[k] === val) + '"' + (ok ? '' : ' disabled') + '>' + esc(val) + '</button>';
       }).join('') + '</div></div>';
     });
     var ready = v && v.available;
-    h += '<button type="button" class="slbag-go" id="slbagAdd"' + (ready ? '' : ' disabled') + '>' + (ready ? 'Add to bag' : (v ? 'Sold out in this option' : 'Choose your options')) + '</button>';
+    var label = available.length ? (v ? 'Sold out in this option' : 'Choose your options') : 'Sold out';
+    h += '<button type="button" class="slbag-go" id="slbagAdd"' + (ready ? '' : ' disabled') + '>' + (ready ? 'Add to bag' : label) + '</button>';
     h += '<p class="slbag-msg" role="status" aria-live="polite"></p>';
     h += preBlock(cur.name || p.title, false);
     h += '<p class="slbag-note"><a href="' + esc(cur.url) + '" target="_blank" rel="noopener" style="color:inherit">Full product details</a></p>';
@@ -199,7 +211,17 @@
     var o = e.target.closest ? e.target.closest('.slbag-opt') : null;
     if (o && cur) {
       var ok = o.getAttribute('data-k'), ov = o.getAttribute('data-v');
-      cur.sel[+ok] = ov; paintPick();
+      var index = Number(ok);
+      var compatible = cur.p.variants.filter(function (v) { return v.available && v.options[index] === ov; });
+      cur.sel[index] = ov;
+      /* Keep prior choices that can still form an available combination with the new one. */
+      cur.sel.forEach(function (value, k) {
+        if (k === index || value == null) return;
+        var matches = compatible.filter(function (v) { return v.options[k] === value; });
+        if (matches.length) compatible = matches;
+        else cur.sel[k] = null;
+      });
+      paintPick();
       /* the picker was rebuilt: put focus back on the option that was just chosen */
       var again = pick.querySelectorAll('.slbag-opt');
       for (var z = 0; z < again.length; z++) { if (again[z].getAttribute('data-k') === ok && again[z].getAttribute('data-v') === ov) { again[z].focus(); break; } }
@@ -227,12 +249,14 @@
     var a = pick.querySelector('#slbagOut'); if (a && pick.open) a.focus();
   }
   function start(handle, url, name, img, seen) {
+    var request = ++pickRequest;
     cur = null;
     pick.querySelector('.slbag-in').innerHTML = '<h3 id="slbagPickT">' + esc(name || 'Loading') + '</h3><p class="slbag-msg" role="status">Loading colors and sizes.</p>';
     openD(pick);
     fetch('/.netlify/functions/shop-product?handle=' + encodeURIComponent(handle))
       .then(function (r) { if (!r.ok) throw new Error('lookup'); return r.json(); })
       .then(function (p) {
+        if (request !== pickRequest || !pick.hasAttribute('open')) return;
         if (!p || !p.variants || !p.variants.length) throw new Error('empty');
         cur = { p: p, url: url, name: name, img: img, sel: p.options.map(function (o) { return o.values.length === 1 ? o.values[0] : null; }) };
         if (p.variants.length === 1) cur.sel = p.variants[0].options.slice();
@@ -240,7 +264,7 @@
         /* "seen" means the quick view already sent view_item for this open */
         if (!seen) track('view_item', { currency: 'USD', value: p.variants[0].price, items: [{ item_id: p.handle, item_name: name || p.title, price: p.variants[0].price }] });
       })
-      .catch(function () { fail(url, name); });
+      .catch(function () { if (request === pickRequest && pick.hasAttribute('open')) fail(url, name); });
   }
 
   /* ---------- keep Shopify lines honest: re-check price and availability ---------- */

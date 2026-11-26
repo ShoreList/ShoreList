@@ -30,7 +30,9 @@ const items = cat.items;
 
 // 1. images
 const imgs = new Set();
-for (const it of items) for (const k of ['img', 'studio', 'lookbook']) if (it[k]) imgs.add(it[k]);
+for (const it of items) for (const k of ['img', 'studio', 'lookbook']) {
+  if (it[k]) imgs.add(URL.parse(it[k], SITE + '/')?.href ?? it[k]);
+}
 const picks = fs.readFileSync('shore-picks.html', 'utf8');
 for (const m of picks.matchAll(/<img[^>]*\ssrc="(https:[^"]+)"/g)) imgs.add(m[1]);
 const imgList = [...imgs];
@@ -43,7 +45,11 @@ try {
   for (let page = 1; page <= 6; page++) {
     const r = await fetch(`${STORE}/products.json?limit=250&page=${page}`, { signal: AbortSignal.timeout(30000) });
     if (!r.ok) { note('shopify', `products.json page ${page} returned ${r.status}`); break; }
-    const j = await r.json(); if (!j.products.length) break;
+    const j = await r.json();
+    if (!j.products.length) {
+      if (page === 1) note('shopify', 'products.json returned no products on the first page');
+      break;
+    }
     for (const p of j.products) live.set(p.handle, p);
   }
 } catch (e) { note('shopify', `could not read products.json: ${e.message}`); }
