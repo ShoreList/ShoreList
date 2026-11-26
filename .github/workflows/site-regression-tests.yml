@@ -7,6 +7,9 @@ on:
       - 'operators-public.json'
       - 'netlify/functions/_shared.js'
       - 'netlify/functions/plan-itinerary.js'
+      - 'netlify/functions/concierge.js'
+      - 'search-index.json'
+      - 'tools/test-concierge.cjs'
       - 'tools/operators-lib.mjs'
       - 'tools/test-operators.mjs'
       - 'tools/fixtures/legacy-operators-snapshot.json'
@@ -25,6 +28,9 @@ on:
       - 'operators-public.json'
       - 'netlify/functions/_shared.js'
       - 'netlify/functions/plan-itinerary.js'
+      - 'netlify/functions/concierge.js'
+      - 'search-index.json'
+      - 'tools/test-concierge.cjs'
       - 'tools/operators-lib.mjs'
       - 'tools/test-operators.mjs'
       - 'tools/fixtures/legacy-operators-snapshot.json'
@@ -46,4 +52,4 @@ jobs:
         with:
           node-version: 22
       - run: node tools/test-operators.mjs
-      - run: node --test tools/test-plan-itinerary.cjs tools/test-shop-promo.mjs tools/test-shop-structured-data.mjs
+      - run: node --test tools/test-concierge.cjs tools/test-plan-itinerary.cjs tools/test-shop-promo.mjs tools/test-shop-structured-data.mjs
