@@ -1,12 +1,17 @@
 #!/usr/bin/env node
 // Writes the crawlable, no-JavaScript parts of shop.html from shop-catalog.json:
-//   - collection blocks, the six "Start here" cards (catalog.startHere), and the Product/ItemList + FAQPage JSON-LD
+//   - collection blocks, the six "Start here" cards (catalog.startHere), the Shore Merch cards, and the Product/ItemList + FAQPage JSON-LD
 // The FAQPage JSON-LD is built from the visible FAQ text in shop.html, so the two cannot disagree.
 // Run: node tools/build-shop-static.mjs   (node tools/build-shop-static.mjs --check exits 1 if shop.html is stale)
 import fs from 'node:fs';
+import { validateShoreMerch } from './shore-merch-gate.mjs';
 
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const cat = JSON.parse(fs.readFileSync('shop-catalog.json', 'utf8'));
+const merch = JSON.parse(fs.readFileSync('data/shore-merch.json', 'utf8'));
+const retiredAliases = JSON.parse(fs.readFileSync('docs/shore-merch-retired-aliases.json', 'utf8'));
+const retiredRecords = JSON.parse(fs.readFileSync('docs/retired-items.json', 'utf8'));
+validateShoreMerch(merch, cat, retiredAliases, retiredRecords);
 const byId = new Map(cat.items.map((i) => [i.id, i]));
 const ri = (cat.retired && cat.retired.items) || {};
 const retired = new Set(Array.isArray(ri) ? ri.map((r) => (typeof r === 'string' ? r : r.id)) : Object.keys(ri));
@@ -54,9 +59,13 @@ const ld = {
 };
 const HOME = ['carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt', 'the-pelican-corduroy-cap-carolina-beach', 'airlie-oak-framed-art-print-wrightsville-beach-and-wilmington'].map((id) => byId.get(id)).filter((i) => i && !retired.has(i.id));
 const homeBand = `<ul class="hx-shop-grid">${HOME.map((i) => `<li><a href="/shop/${esc(i.town || 'wilmington')}"><span class="hx-shop-ph"><img src="${esc(sized(i.studio || i.img, 800))}" alt="${esc(i.alt || i.name)}" loading="lazy" decoding="async" width="800" height="1000"/></span><span class="hx-shop-n">${esc(splitName(i.name))}</span></a></li>`).join('')}</ul>`;
-const put = (name, body) => { html = html.replace(new RegExp(`(<!--SHOP-STATIC:${name}-->)[\\s\\S]*?(<!--/SHOP-STATIC:${name}-->)`), `$1\n${body}\n$2`); };
+const put = (name, body) => { html = html.replace(new RegExp(`(<!--SHOP-STATIC:${name}-->)[\\s\\S]*?(<!--/SHOP-STATIC:${name}-->)`), (_m, start, end) => `${start}\n${body}\n${end}`); };
 put('collections', `<div class="cblocks" id="cblocks">${collections.join('')}</div>`);
 put('cards', cards.join('\n'));
+put('merch', merch.map((p) => {
+  const price = (p.vary ? 'From ' : '') + '$' + (p.price / 100).toFixed(2);
+  return `<article class="card"><a class="merch-item" href="${esc(p.url)}"><div class="ph"><img class="p1" src="${esc(p.lookbook?.path || p.image)}" alt="${esc(p.alt || p.name)}" loading="lazy" decoding="async" width="720" height="900"/></div><div class="bd"><h3>${esc(p.name)}</h3><span class="price">${esc(price)}</span>${p.lookbook ? '<small class="merch-note">Studio product photo on an AI-generated background</small>' : ''}<span class="merch-shop-link">Shop on Fourthwall</span></div></a></article>`;
+}).join('\n'));
 if (fs.existsSync('index.html')) { let ix = fs.readFileSync('index.html', 'utf8'); ix = ix.replace(/(<!--SHOP-STATIC:homeband-->)[\s\S]*?(<!--\/SHOP-STATIC:homeband-->)/, `$1\n    ${homeBand}\n    $2`); if (process.argv.includes('--check')) { if (ix !== fs.readFileSync('index.html', 'utf8')) { console.error('index.html shop band is stale: run node tools/build-shop-static.mjs'); process.exit(1); } } else fs.writeFileSync('index.html', ix); }
 put('ld', `<script type="application/ld+json">${JSON.stringify(ld)}</script>`);
 if (process.argv.includes('--check')) { if (html !== fs.readFileSync('shop.html', 'utf8')) { console.error('shop.html static blocks are stale: run node tools/build-shop-static.mjs'); process.exit(1); } console.log('shop static blocks current'); }

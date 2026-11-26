@@ -164,6 +164,9 @@ for (const f of fs.readdirSync('.').filter((x) => /\.(js|mjs|html|css)$/.test(x)
   if (/\.js$/.test(f)) { try { new vm.Script(t, { filename: f }); } catch (e) { bad(f + ': syntax error: ' + e.message); } }
 }
 try { const { execFileSync } = await import('node:child_process'); execFileSync('node', ['tools/inline-home-css.mjs', '--check'], { stdio: 'pipe' }); } catch (e) { bad('index.html: inlined homepage CSS is out of date (run node tools/inline-home-css.mjs)'); }
+try { const { execFileSync } = await import('node:child_process'); execFileSync('node', ['tools/build-shop-static.mjs', '--check'], { stdio: 'pipe' }); }
+catch (e) { bad('shop static build failed: ' + (e.stderr?.toString().split('\n').find(line => /Error:|stale/.test(line)) || 'run node tools/build-shop-static.mjs')); }
+
 // content guard: no political slogans or lookalike phrasing anywhere in shipped site files (ShoreList is a local coastal shop)
 {
   const BAD = /river\s*(?:to|2)\s*(?:the\s*)?sea|between the river and the (?:sea|ocean)|free palestine|intifada/i;
