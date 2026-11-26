@@ -34,7 +34,7 @@ for (const it of items) for (const k of ['img', 'studio', 'lookbook']) if (it[k]
 const picks = fs.readFileSync('shore-picks.html', 'utf8');
 for (const m of picks.matchAll(/<img[^>]*\ssrc="(https:[^"]+)"/g)) imgs.add(m[1]);
 const imgList = [...imgs];
-const imgRes = await pool(imgList, 8, async (u) => ({ u, r: await head(u) }));
+const imgRes = await pool(imgList, 8, async (u) => ({ u, r: await head(new URL(u, SITE)) }));
 for (const { u, r } of imgRes) if (!r.ok || !/image/i.test(r.type)) note('image', `${r.status || 'ERR'} ${u}`);
 
 // 2. Shopify parity (public products.json, paged)
