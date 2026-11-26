@@ -34,13 +34,18 @@ async function run() {
     const response = await lookup;
     assert.ok(response.ok(), 'live product lookup should succeed');
     const product = await response.json();
+    const variant = product.variants.find((row) => row.available);
+    assert.ok(variant, 'the product has an available variant');
     const picker = page.locator('dialog.slbag-pick');
+    for (const [index, value] of variant.options.entries()) {
+      const options = picker.locator('.slbag-opt[data-k="' + index + '"]');
+      await options.first().waitFor();
+      await options.and(page.getByRole('button', { name: value, exact: true })).click();
+    }
     const add = picker.locator('#slbagAdd');
-    await add.waitFor();
-    assert.ok(await add.isEnabled(), 'the initial variant is available');
     const selected = (await picker.getByRole('button', { pressed: true }).allTextContents()).map((label) => label.trim());
-    const variant = product.variants.find((row) => row.available && JSON.stringify(row.options) === JSON.stringify(selected));
-    assert.ok(variant, 'the shopper-selected variant resolves against the live lookup');
+    assert.deepEqual(selected, variant.options);
+    assert.ok(await add.isEnabled(), 'the shopper-selected variant is available');
     await add.click();
     const drawer = page.locator('dialog.slbag-drawer');
     await drawer.getByRole('button', { name: 'One more', exact: true }).click();
