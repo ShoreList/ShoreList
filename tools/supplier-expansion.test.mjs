@@ -135,7 +135,7 @@ test('Fourthwall writes use the hidden option and keep credentials off the signe
     await rm(dir, { recursive: true, force: true });
   });
   const responses = [
-    { results: [], totalPages: 0 },
+    { results: [{ name: 'Salt Wash Organic Cotton Market Tote', slug: 'salt-wash-organic-cotton-market-tote' }], totalPages: 1 },
     {
       supportsBackendRendering: true,
       customizableAreas: [{ regionId: 'default', available: true, supportsBackendRendering: true,
@@ -163,6 +163,9 @@ test('Fourthwall writes use the hidden option and keep credentials off the signe
   assert.equal(calls[3].request.headers.Authorization, undefined);
   assert.equal(calls[3].request.headers['x-goog-content-length-range'], '0,33');
   assert.equal(JSON.parse(calls[5].request.body).publishOnCreate, false);
+  responses.push({ results: [], totalPages: 0 });
+  await assert.rejects(() => stageDrafts([{ title: 'Banks Channel at Dawn' }], plans, queue, { items: [] }), /known ShoreList offer/);
+  assert.equal(calls.length, 7, 'an unrecognized shop triggers no additional API call');
 });
 
 test('CJ draft maps an exact variant and freight option into a dormant catalog record', () => {

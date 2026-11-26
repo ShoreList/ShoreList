@@ -9,6 +9,7 @@ import goods from '../netlify/functions/_goods.js';
 const root = new URL('../', import.meta.url);
 const load = async (path) => JSON.parse(await readFile(new URL(path, root), 'utf8'));
 const API = 'https://api.fourthwall.com/open-api/v1.0';
+const KNOWN_FOURTHWALL_OFFER = 'salt-wash-organic-cotton-market-tote';
 const SCORES = ['MOOD', 'ORIGINALITY', 'EMBELLISHMENT', 'PLACE', 'COLOR', 'TYPE', 'SELL', 'MOCKUP QUALITY', 'AWARD', 'REALNESS'];
 const HARD_RULES = ['noGrey', 'noClubWording', 'noBadgesOrCircles', 'noStrayLetteringOrNumbers', 'noCheapPhotography'];
 const GREY = /\b(gr[ae]y|charcoal|slate|ash|graphite|pepper|smoke|storm|concrete|pewter|steel)\b/i;
@@ -138,8 +139,12 @@ async function existingOffers(auth) {
       throw new Error('Fourthwall inventory could not be reconciled');
     }
     offers.push(...result.results);
-    if (page + 1 >= result.totalPages) return offers;
+    if (page + 1 >= result.totalPages) break;
   }
+  if (!offers.some((offer) => offer.slug === KNOWN_FOURTHWALL_OFFER)) {
+    throw new Error('Fourthwall credentials did not resolve the known ShoreList offer');
+  }
+  return offers;
 }
 
 export async function stageDrafts(specs, plans, queue, catalog) {
@@ -292,6 +297,11 @@ async function main([command = 'audit', ...args]) {
         await fourthwall('/product-templates/' + encodeURIComponent(id));
       console.log(JSON.stringify({ productId, name, priceFrom, priceTo, supportsBackendRendering, customizableAreas }));
     }
+  } else if (command === 'fourthwall-audit' && args.length === 0) {
+    const offers = await existingOffers(fourthwallAuth());
+    const titles = new Set(offers.map((offer) => normalize(offer.name)));
+    const matchingCandidates = queue.items.filter((item) => titles.has(normalize(item.title))).map((item) => item.title);
+    console.log(JSON.stringify({ knownShoreListOffer: KNOWN_FOURTHWALL_OFFER, offerCount: offers.length, matchingCandidates }));
   } else if (command === 'fourthwall-drafts' && args.length === 1) {
     await stageDrafts(JSON.parse(await readFile(args[0], 'utf8')), plans, queue, catalog);
   } else if (command === 'cj-search' && args.length === 1) {
@@ -314,7 +324,7 @@ async function main([command = 'audit', ...args]) {
     const result = cjDraft(spec, plans[spec.title], await cjSnapshot(spec));
     console.log(JSON.stringify(result, null, 2));
   } else {
-    throw new Error('Commands: audit, fourthwall-templates, fourthwall-drafts FILE, cj-search TITLE, cj-quote PID VID ORIGIN ZIP, cj-draft FILE');
+    throw new Error('Commands: audit, fourthwall-templates, fourthwall-audit, fourthwall-drafts FILE, cj-search TITLE, cj-quote PID VID ORIGIN ZIP, cj-draft FILE');
   }
 }
 
