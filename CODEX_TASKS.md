@@ -53,6 +53,7 @@ Legend: P0 launch-critical (do before 5 PM Thu), P1 this week, P2 soon, P3 hygie
 ## P1
 
 ### T-06 Product fidelity audit, all 110 cards
+- Owner: Dot/fix/photo-fidelity-five. Temporary photo-only release priority; preserve and reconcile the existing shop drafts afterwards.
 - Files: `shop-catalog.json` only.
 - Do: for each item, open the lead image and confirm product type, color, text and design match the Shopify title/variants. Known good: see AGENTS section 8. Fix mismatches studio-first (same pattern as PRs #316, #317). Seven products without lifestyle photos stay studio-first until the owner supplies verified photos.
 - Accept: audit table (item, lead image, verdict VERIFIED); `build-shop-static` re-run; `check-site` green; `sw.js` bumped.
