@@ -1,0 +1,29 @@
+# ShoreList coastal luxury brand standard
+
+This owner direction applies to all new and materially revised ShoreList design and brand work, including product concepts, artwork, copy, packaging, photography, storefronts, ads, supplier imports and work made with Higgsfield or other generators. Every release needs an independent, evidenced brand match of **at least 90/100** on the exact version presented for approval. The threshold applies on tight timelines and to supplier-provided material.
+
+## Creative brief
+
+Start with a place, a real object or a memory someone who spends time on this coast would recognize. Wrightsville Beach leads the ShoreList identity. Its sunset light, John Nesbitt Loop, Banks Channel, Intracoastal Waterway, old live oaks, waves, boards and piers offer specific visual references. Wilmington, the Cape Fear beaches, the Outer Banks and Charleston add depth when the work identifies the actual place and preserves its geography and character.
+
+Choose one clear motif or a purposeful pair. Dolphins, sharks, fossil shark teeth, distinct shells, brown pelicans and locally documented owls can carry a design on their own. Use a regional field guide or authoritative record for identity, anatomy, habitat and occurrence. For a shell presented as a local beach find, verify the species and named shoreline. An attractive shell shape or a record from another coast cannot support that claim. Use regionally documented coquinas, whelks, scallops, augers or olive shells as starting points for research. Distinguish fossil teeth from those of living sharks and verify the specific locality before labeling a tooth. [NC Sea Grant shell reference](https://ncseagrant.ncsu.edu/seashells-of-north-carolina-updated-and-expanded/) [Cape Hatteras shelling reference](https://www.nps.gov/places/old-lighthouse-beach.htm) [Cape Lookout mollusks](https://www.nps.gov/calo/learn/nature/mollusks.htm) [NC Geological Survey fossil reference](https://www.deq.nc.gov/about/divisions/energy-mineral-and-land-resources/nc-geological-survey/nc-geology-frequently-asked-questions) [NOAA Fisheries dolphin research](https://www.fisheries.noaa.gov/inport/item/67355/full-list)
+
+Build palettes from referenced light and materials. For Wrightsville, start with the observed sunset color relationships across the sound, from warm oyster, pale apricot and muted coral to deep tidal blue and sea-glass green. Check compass direction, tidal water, bridge and pier shapes, town labels and shoreline against a map or a reliable photograph. Verify the Loop against the town's route. Use the Cape Fear, Outer Banks and Charleston as distinct places. [Wrightsville Beach Loop](https://townofwrightsvillebeach.com/181/Parks-Recreation) [USACE Banks Channel and Masonboro Inlet survey](https://eft.usace.army.mil/saw-nav/INLETS/MASONBORO/INLET/Masonboro_Inlet.pdf) [NC DEQ Bald Head Woods Reserve](https://www.deq.nc.gov/about/divisions/nc-coastal-reserve/reserve-sites/bald-head-woods-reserve) [NPS Outer Banks geography](https://home.nps.gov/articles/nps-geodiversity-atlas-cape-hatteras-national-seashore-north-carolina.htm)
+
+Make the work feel coastal luxury through controlled color, originality, legible craft at actual size, generous space and precise finishing. Every embellishment and word needs a reason. Apply the established hard failures for grey including Pepper, Beach Club or Yacht Club wording, badges or circles, unnecessary numbers or stray lettering, and cheap supplier photography. Unverified or mismatched local references, imitation artwork, generic souvenir styling and false product imagery are also hard failures. A hard failure holds a design at any score.
+
+## Independent review
+
+Score each dimension on an integer scale from 0 to 20. Record specific observations and the supporting references. A score of 18 represents strong, release-quality execution for the dimension. High scores require clearly documented evidence. Missing evidence or a failed fact check holds the work.
+
+| Dimension | Evidence required |
+| --- | --- |
+| Local fidelity | Exact place, waterway, landmark, shell or species is supported by suitable references. Shapes, viewpoint and setting agree with them. |
+| Coastal luxury | The palette, typography, composition and finish feel considered and consistent with ShoreList. |
+| Personal connection | A specific coastal experience or object gives the work meaning for people who know or visit the place. |
+| Originality and execution | The design is original and resolved at its intended scale, material and production method. |
+| Presentation accuracy | Copy and imagery accurately represent the final piece or brand asset. Exact product details and AI disclosure are clear where relevant. |
+
+Record reviewer identity, independent review confirmation, full Git commit SHA or SHA-256 asset digest, at least one geography or natural-history source, verified local accuracy, hard-failure outcome, and the five criterion scores with written evidence. The review applies to that revision only. Material changes require a new review. Owner quality approval remains required for new merchandise.
+
+For supplier expansion, this brand review is in addition to the existing ten product criteria. Their arithmetic mean must be at least 9/10 with each criterion at least 8/10. The independent blind photography minimum remains 8/10. Exact product imagery remains lookbook 1, actual studio photograph 2. Draft artwork, generated concepts and supplier mockups are held until these records are complete.

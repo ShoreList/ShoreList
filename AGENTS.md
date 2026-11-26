@@ -77,7 +77,9 @@ Commit messages end with the attribution lines your tool requires. Default branc
 
 Vanilla JS, ES5-friendly style is used in browser files (`var`, IIFEs); match the surrounding file. Build DOM with `createElement` for anything from data (no `innerHTML` with untrusted strings; use the local `esc`). Every `<img>` has real alt text and dimensions where known. No new dependencies without approval (the repo has one: `@netlify/blobs`). Prefer editing existing modules over adding parallel ones; search before creating (`grep -rn`). Tests: add or extend a script in `tools/` and wire it into `check.yml` when it should gate PRs.
 
-## 8. Product fidelity rules (shop)
+## 8. Coastal luxury and product fidelity
+
+The owner's [Coastal Brand Standard](docs/COASTAL-BRAND-STANDARD.md) is a hard release rule for all new and materially revised designs and brand work. Apply it to artwork, copy, pages, photography, ads, supplier materials and generated creative. Work from documented local references for Wrightsville Beach, the Cape Fear beaches, the Intracoastal, the Outer Banks and Charleston. A named independent reviewer must document a coastal luxury brand match of at least **90/100** for the exact version. Any factual, fidelity or brand hard failure holds the work at every score. Never assign a score without a review. In new merchandise, preserve all existing product and photo gates and require owner quality approval.
 
 - What the card/PDP shows must match what Shopify sells: name, colors, sizes, price, text/artwork on the item. Verify by viewing the image, not the filename.
 - Known corrected mismatches (do not regress): Blue Crab Embroidered Crewneck (Kure Beach) is **White only** (lookbook shows aqua); Blue Crab Corduroy Cap and Cuffed Beanie (Kure Beach) show the **navy** studio image (lookbook shows brown/olive). Those three use studio-first images (`lookbook: ""`).
