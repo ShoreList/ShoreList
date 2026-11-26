@@ -1,0 +1,343 @@
+{
+  "Banks Channel at Dawn": {
+    "description": "A quiet dawn study of Banks Channel, with open sound water and the low shore of Wrightsville Beach.",
+    "direction": "Red Oak frame, oyster paper tone, pale coral dawn and blue-green water.",
+    "templateId": "pro_kRSsoYjwSoyyTEmWko5o0A",
+    "templateName": "Framed High-Quality Matte Poster",
+    "publicBaseCents": 2035,
+    "productionMethod": "PRINTED",
+    "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_kRSsoYjwSoyyTEmWko5o0A",
+    "backendRendering": true,
+    "artwork": "docs/supplier-art/banks-channel-at-dawn.svg"
+  },
+  "Masonboro Salt Marsh": {
+    "description": "Tidal creeks fold through the salt marsh at Masonboro Island Reserve in this coastal study.",
+    "direction": "Keep the creek network open and use spartina green and dark tidal blue.",
+    "templateId": "pro_kRSsoYjwSoyyTEmWko5o0A",
+    "templateName": "Framed High-Quality Matte Poster",
+    "publicBaseCents": 2035,
+    "productionMethod": "PRINTED",
+    "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_kRSsoYjwSoyyTEmWko5o0A",
+    "backendRendering": true,
+    "artwork": "docs/supplier-art/masonboro-salt-marsh.svg"
+  },
+  "Wrightsville Under Sail": {
+    "description": "A small sloop crosses the sheltered waters of Wrightsville Beach, with the low barrier island on the horizon.",
+    "direction": "An off-center cream sail and a narrow wake with room around both.",
+    "templateId": "pro_kRSsoYjwSoyyTEmWko5o0A",
+    "templateName": "Framed High-Quality Matte Poster",
+    "publicBaseCents": 2035,
+    "productionMethod": "PRINTED",
+    "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_kRSsoYjwSoyyTEmWko5o0A",
+    "backendRendering": true,
+    "artwork": "docs/supplier-art/wrightsville-under-sail.svg"
+  },
+  "Carolina Beach Dunes": {
+    "description": "A dune study inspired by the sandy ridges and longleaf pines at Carolina Beach State Park.",
+    "direction": "Layer pale sand with longleaf green. Show the river-side terrain.",
+    "templateId": "pro_kRSsoYjwSoyyTEmWko5o0A",
+    "templateName": "Framed High-Quality Matte Poster",
+    "publicBaseCents": 2035,
+    "productionMethod": "PRINTED",
+    "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_kRSsoYjwSoyyTEmWko5o0A",
+    "backendRendering": true,
+    "artwork": "docs/supplier-art/carolina-beach-dunes.svg"
+  },
+  "Kure Pier Morning": {
+    "description": "Morning light crosses the Atlantic beneath the fishing pier at Kure Beach.",
+    "direction": "Use the low pier deck and repeated pilings. Compare directly with the existing Kure pier print before advancing.",
+    "templateId": "pro_kRSsoYjwSoyyTEmWko5o0A",
+    "templateName": "Framed High-Quality Matte Poster",
+    "publicBaseCents": 2035,
+    "productionMethod": "PRINTED",
+    "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_kRSsoYjwSoyyTEmWko5o0A",
+    "backendRendering": true,
+    "artwork": "docs/supplier-art/kure-pier-morning.svg"
+  },
+  "Cape Fear Waterfront": {
+    "description": "The Cape Fear River seen from the Wilmington waterfront, with the Riverwalk tracing the bank.",
+    "direction": "Use the continuous boardwalk, brick buildings and open river. Keep individual buildings impressionistic.",
+    "templateId": "pro_kRSsoYjwSoyyTEmWko5o0A",
+    "templateName": "Framed High-Quality Matte Poster",
+    "publicBaseCents": 2035,
+    "productionMethod": "PRINTED",
+    "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_kRSsoYjwSoyyTEmWko5o0A",
+    "backendRendering": true,
+    "artwork": "docs/supplier-art/cape-fear-waterfront.svg"
+  },
+  "Bald Head Maritime Forest": {
+    "description": "Live oak branches lean over a sandy trail in the maritime woods of Bald Head Island.",
+    "direction": "Use a low, spreading live oak canopy and native palmetto shapes at ground level.",
+    "templateId": "pro_kRSsoYjwSoyyTEmWko5o0A",
+    "templateName": "Framed High-Quality Matte Poster",
+    "publicBaseCents": 2035,
+    "productionMethod": "PRINTED",
+    "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_kRSsoYjwSoyyTEmWko5o0A",
+    "backendRendering": true,
+    "artwork": "docs/supplier-art/bald-head-maritime-forest.svg"
+  },
+  "Masonboro Inlet Study": {
+    "description": "An aerial study of the meeting of sound and ocean at Masonboro Inlet.",
+    "direction": "Keep Wrightsville to the northeast, Masonboro Island to the southwest and the Atlantic to the east.",
+    "templateId": "pro_kRSsoYjwSoyyTEmWko5o0A",
+    "templateName": "Framed High-Quality Matte Poster",
+    "publicBaseCents": 2035,
+    "productionMethod": "PRINTED",
+    "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_kRSsoYjwSoyyTEmWko5o0A",
+    "backendRendering": true,
+    "artwork": "docs/supplier-art/masonboro-inlet-study.svg"
+  },
+  "Banks Channel Woven Throw": {
+    "description": "Bands of blue and oyster follow the quiet lines of Banks Channel.",
+    "direction": "Require a genuinely woven construction and woven sample detail. The public snapshot returned knit and printed blanks."
+  },
+  "Salt Marsh Cushion": {
+    "description": "A branching tidal creek crosses a field of marsh green in this cushion design.",
+    "direction": "Use a quiet cream reverse if supported. Confirm seams and crop with a real sample.",
+    "templateId": "pro_0aad9ccaf31e46aaa7",
+    "templateName": "All-Over Print Pillow",
+    "publicBaseCents": 1695,
+    "productionMethod": "ALL_OVER_PRINT",
+    "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_0aad9ccaf31e46aaa7",
+    "backendRendering": true
+  },
+  "Cape Fear Coastal Candle": {
+    "description": "A candle with a river-blue label inspired by the Wilmington waterfront.",
+    "direction": "Keep the glass clear and the label spare. Confirm scent choices and required safety copy.",
+    "templateId": "pro_N__f9U5XQJqcP_oCvwk2rw",
+    "templateName": "Soy Wax Candle In A Clear Glass Jar",
+    "publicBaseCents": 1295,
+    "productionMethod": "PRINTED",
+    "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_N__f9U5XQJqcP_oCvwk2rw",
+    "backendRendering": true
+  },
+  "Masonboro Textile Wall Hanging": {
+    "description": "An open pattern of tidal creeks and marsh grasses for a textile wall hanging.",
+    "direction": "Require a purpose-made hanging with a finished edge and attachment. Do not convert a blanket or flag by changing the label."
+  },
+  "Sloop Knit Crewneck": {
+    "description": "A small single-mast sloop sits on the chest of a navy knit crewneck.",
+    "direction": "Use intarsia or the template's supported knit method. Oyster sail, single teal wake.",
+    "templateId": "pro_quHTYBtVRFqTh6ODh8g9Bw",
+    "templateName": "Knitted Crewneck Sweater Classic Fit",
+    "publicBaseCents": 3800,
+    "productionMethod": "KNITTING",
+    "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_quHTYBtVRFqTh6ODh8g9Bw",
+    "backendRendering": false,
+    "artwork": "docs/supplier-art/knit/sloop.svg"
+  },
+  "Pelican Knit Crewneck": {
+    "description": "A brown pelican in profile sits on the chest of an oyster knit crewneck.",
+    "direction": "Use an open silhouette and small warm accent. Verify knit resolution at actual size.",
+    "templateId": "pro_quHTYBtVRFqTh6ODh8g9Bw",
+    "templateName": "Knitted Crewneck Sweater Classic Fit",
+    "publicBaseCents": 3800,
+    "productionMethod": "KNITTING",
+    "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_quHTYBtVRFqTh6ODh8g9Bw",
+    "backendRendering": false,
+    "artwork": "docs/supplier-art/knit/pelican.svg"
+  },
+  "Blue Crab Knit Quarter Zip": {
+    "description": "A small blue crab sits below the shoulder of a knit quarter zip.",
+    "direction": "Use oyster and deep blue with a restrained coral accent. Check separation from the zipper.",
+    "templateId": "pro_9IEPqxSWRWm_pCsJTuFTbQ",
+    "templateName": "Knitted Unisex Quarter Zip Sweater",
+    "publicBaseCents": 4200,
+    "productionMethod": "KNITTING",
+    "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_9IEPqxSWRWm_pCsJTuFTbQ",
+    "backendRendering": false,
+    "artwork": "docs/supplier-art/knit/blue-crab.svg"
+  },
+  "Lighthouse Knit Cardigan": {
+    "description": "A spare lighthouse motif sits on the chest of a navy knit cardigan.",
+    "direction": "Reference the Old Baldy silhouette before drawing. Check motif placement with the button placket closed.",
+    "templateId": "pro_jxzU4X9-SpuG6MnU0DDPIg",
+    "templateName": "Knitted Cardigan Without Pocket",
+    "publicBaseCents": 4200,
+    "productionMethod": "KNITTING",
+    "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_jxzU4X9-SpuG6MnU0DDPIg",
+    "backendRendering": false,
+    "artwork": "docs/supplier-art/knit/old-baldy.svg"
+  },
+  "Sloop Embroidered Polo": {
+    "description": "A small sloop is embroidered on the chest of a pique polo.",
+    "direction": "Use one cream sail and two short tide lines; no text and no border.",
+    "templateId": "pro_STPsbnZuTlyjzeJPJKtufg",
+    "templateName": "SOL'S Unisex Premium Pique Polo Shirt",
+    "publicBaseCents": 1985,
+    "productionMethod": "EMBROIDERY",
+    "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_STPsbnZuTlyjzeJPJKtufg",
+    "backendRendering": true
+  },
+  "Pelican Embroidered Polo": {
+    "description": "A small brown pelican in profile is embroidered on a pique polo.",
+    "direction": "Use a clean silhouette and restrained thread palette; inspect the beak and eye in the stitch proof.",
+    "templateId": "pro_STPsbnZuTlyjzeJPJKtufg",
+    "templateName": "SOL'S Unisex Premium Pique Polo Shirt",
+    "publicBaseCents": 1985,
+    "productionMethod": "EMBROIDERY",
+    "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_STPsbnZuTlyjzeJPJKtufg",
+    "backendRendering": true
+  },
+  "Sea Oats Heavyweight Long Sleeve": {
+    "description": "A small group of sea oat stems arcs across the chest of a heavyweight long sleeve.",
+    "direction": "Use a restrained muted gold design and leave the sleeves unmarked.",
+    "templateId": "pro_Gke2BSS5Tc2pABL9Pfk4gg",
+    "templateName": "AS Colour Unisex Premium Heavyweight Long Sleeve Shirt",
+    "publicBaseCents": 2531,
+    "productionMethod": "DTG",
+    "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_Gke2BSS5Tc2pABL9Pfk4gg",
+    "backendRendering": true
+  },
+  "Cape Fear Packable Jacket": {
+    "description": "A small tidal-line mark sits on the chest of a packable jacket.",
+    "direction": "Confirm actual packability and embroidered area support; inspect packed and worn views.",
+    "templateId": "pro_e1ff99d4d6154e6abf",
+    "templateName": "Champion Packable Jacket",
+    "publicBaseCents": 4257,
+    "productionMethod": "EMBROIDERY",
+    "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_e1ff99d4d6154e6abf",
+    "backendRendering": true
+  },
+  "Banks Channel Beach Towel": {
+    "description": "Narrow tide lines run across a beach towel in channel blue and oyster.",
+    "direction": "Confirm towel pile, print side and edge crop in the design editor.",
+    "templateId": "pro_4eca61554bd446bd8a",
+    "templateName": "Beach Towel",
+    "publicBaseCents": 2882,
+    "productionMethod": "SUBLIMATION",
+    "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_4eca61554bd446bd8a",
+    "backendRendering": false
+  },
+  "Masonboro Beach Tote": {
+    "description": "A branching marsh creek sits low on a natural cotton beach tote.",
+    "direction": "Use a small dark-teal mark. Check against the existing Fourthwall sloop tote and Shopify coastal totes.",
+    "templateId": "pro_5a05131dbedf41a39b",
+    "templateName": "Econscious Organic Cotton Tote",
+    "publicBaseCents": 1831,
+    "productionMethod": "DTG",
+    "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_5a05131dbedf41a39b",
+    "backendRendering": true
+  },
+  "Salt Marsh Travel Pouch": {
+    "description": "A travel pouch with a small tidal creek motif in marsh green.",
+    "direction": "Require a purpose-made zip pouch and verify its lining and zipper. Existing Shopify pouches must be reviewed before advancing."
+  },
+  "Cape Fear Beach Blanket": {
+    "description": "A beach blanket design with broad blue and oyster bands drawn from the Cape Fear River.",
+    "direction": "Require a beach-appropriate blank. An indoor throw or knit blanket needs a separately approved change in product scope."
+  },
+  "Coastal Beach Cart": {
+    "description": "A compact cart for carrying beach gear from the parking lot to the sand.",
+    "direction": "Confirm wide wheels, folded dimensions, freight and open and folded photos. Compare with current Beach Setup gear.",
+    "search": "collapsible beach wagon wide wheels",
+    "publicResearchLead": {
+      "pid": "1897475304580055042",
+      "sku": "CJYL231685201AZ",
+      "url": "https://cjdropshipping.com/product/440lbs-collapsible-foldable-wagon-cart-with-strapping-system-beach-wagon-utility-cart-utility-wagon-grocery-cart-for-camping-shopping-sports-gardening-fishing-supports-3pcs-plastic-liner-bag-p-1897475304580055042.html"
+    }
+  },
+  "Soundside Picnic Mat": {
+    "description": "A picnic mat for spreading out by the sound.",
+    "direction": "Prefer oyster and navy. Check packed size and compare with existing beach and picnic blankets.",
+    "search": "foldable picnic mat carry strap"
+  },
+  "Harbor Folding Table": {
+    "description": "A low folding table for a picnic setup near the water.",
+    "direction": "Verify leg locks, load rating, footprint and corrosion-sensitive hardware.",
+    "search": "portable low folding camping table",
+    "publicResearchLead": {
+      "pid": "1381571317270188032",
+      "url": "https://cjdropshipping.com/product/outdoor-ultra-light-aluminum-portable-folding-table-p-1381571317270188032.html"
+    }
+  },
+  "Dockside Dry Bag": {
+    "description": "A roll-top bag for keeping small essentials together on a day near the water.",
+    "direction": "Verify closure and capacity. Use no waterproof rating or flotation claim without evidence.",
+    "search": "roll top dry bag",
+    "publicResearchLead": {
+      "pid": "51ECEA1A-F85A-48D9-BE5B-0AFEE6402E5C",
+      "url": "https://cjdropshipping.com/product/waterproof-outdoor-travel-bag-p-51ECEA1A-F85A-48D9-BE5B-0AFEE6402E5C.html"
+    }
+  },
+  "Captain Canvas Weekender": {
+    "description": "A canvas weekender for a short stay on the coast.",
+    "direction": "Require a verified canvas composition, hardware close-ups and review against the Sloop Weekender.",
+    "search": "cotton canvas duffel weekender bag",
+    "publicResearchLead": {
+      "pid": "BBA307AE-433A-44F1-BE04-3F769F5468D8",
+      "url": "https://cjdropshipping.com/product/canvas-travel-bag-p-BBA307AE-433A-44F1-BE04-3F769F5468D8.html"
+    }
+  },
+  "Harbor Travel Organizer": {
+    "description": "An organizer that keeps small travel pieces together.",
+    "direction": "Check interior pocket layout and photograph both open and closed.",
+    "search": "travel organizer zip compartments"
+  },
+  "Coastal Toiletry Case": {
+    "description": "A zip case for toiletries on a weekend away.",
+    "direction": "Require verified lining and a clear difference from current zip pouches.",
+    "search": "canvas toiletry bag wash bag"
+  },
+  "Floating Phone Pouch": {
+    "description": "A phone pouch for a day near the water.",
+    "direction": "Require evidence for floating load, waterproof rating and phone dimensions before adding those claims.",
+    "search": "floating phone waterproof pouch",
+    "publicResearchLead": {
+      "pid": "2502261014381626400",
+      "url": "https://cjdropshipping.com/product/outdoor-mobile-phone-waterproof-bag-swimming-diving-touch-screen-pvc-p-2502261014381626400.html"
+    }
+  },
+  "Harbor Woven Lantern": {
+    "description": "A woven lantern with a warm glow for a sheltered porch.",
+    "direction": "Require a safe light source with verifiable power specs and appropriate markings. Avoid open-flame claims.",
+    "search": "woven lantern rattan LED"
+  },
+  "Coastal Ceramic Sculpture": {
+    "description": "A ceramic object for a narrow shelf or side table.",
+    "direction": "Require original, unbranded form and stable base. Verify breakage packaging.",
+    "search": "coastal ceramic sculpture tabletop"
+  },
+  "Soundside Serving Tray": {
+    "description": "A serving tray for bringing a few pieces out to the porch.",
+    "direction": "Verify dimensions, finish and food-contact status. Default to serving packaged goods until evidence exists.",
+    "search": "wood serving tray handles"
+  },
+  "Marsh Woven Basket": {
+    "description": "A woven basket for keeping small pieces together at home.",
+    "direction": "Verify weave, interior dimensions and exact finish. Use no named fiber without supplier evidence.",
+    "search": "natural woven storage basket",
+    "publicResearchLead": {
+      "pid": "1869558091336273920",
+      "url": "https://cjdropshipping.com/product/large-woven-storage-basket-with-sturdy-handle-holder-p-1869558091336273920.html"
+    }
+  },
+  "Soundside Picnic Basket": {
+    "description": "A lidded basket for carrying a picnic down to the sound.",
+    "direction": "Check handle attachment, usable capacity, included pieces and oversize shipping.",
+    "search": "woven picnic basket lid"
+  },
+  "Harbor Bottle Carrier": {
+    "description": "A carrier for a bottle on a day out.",
+    "direction": "Verify diameter, height and closure. Omit duration claims unless independently supported.",
+    "search": "insulated single bottle carrier",
+    "publicResearchLead": {
+      "pid": "1503992382675759104",
+      "url": "https://cjdropshipping.com/product/outdoor-travel-sports-portable-insulation-cup-strap-cover-p-1503992382675759104.html"
+    }
+  },
+  "Coastal Insulated Picnic Carrier": {
+    "description": "An insulated carrier for a picnic near the water.",
+    "direction": "Confirm capacity, cleanability and shipping. Reconcile against existing coolers.",
+    "search": "insulated picnic tote cooler",
+    "publicResearchLead": {
+      "pid": "1442374695218450432",
+      "url": "https://cjdropshipping.com/product/thickened-outdoor-oxford-cloth-portable-cooler-bag-p-1442374695218450432.html"
+    }
+  },
+  "Dockside Reusable Tableware Set": {
+    "description": "A reusable tableware set for eating outside.",
+    "direction": "Verify the exact pieces, composition and available food-contact evidence. No dishwasher or heat claims without proof.",
+    "search": "reusable outdoor dinnerware set"
+  }
+}

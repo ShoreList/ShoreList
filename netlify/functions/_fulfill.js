@@ -38,8 +38,9 @@ function groupLines(lines) {
   lines.forEach((l, i) => {
     const adapter = R.adapterName(l.supplier);
     const sname = (l.supplier && l.supplier.name) || 'unknown';
-    let g = groups.find((x) => x.adapter === adapter && x.supplierName === sname);
-    if (!g) { g = { id: 'g' + groups.length, adapter, supplierName: sname, lineIdx: [], status: 'pending', attempts: 0, supplierOrderId: null, lastError: '', tracking: [] }; groups.push(g); }
+    const route = adapter === 'cj' ? JSON.stringify(R.ADAPTERS.cj.fulfillmentRoute(l.supplier)) : null;
+    let g = groups.find((x) => x.adapter === adapter && x.supplierName === sname && (x.route || null) === route);
+    if (!g) { g = { id: 'g' + groups.length, adapter, supplierName: sname, ...(route ? { route } : {}), lineIdx: [], status: 'pending', attempts: 0, supplierOrderId: null, lastError: '', tracking: [] }; groups.push(g); }
     g.lineIdx.push(i);
   });
   return groups;
@@ -235,7 +236,7 @@ async function driftCheck() {
     if (pick.adapter.name === 'manual') continue;
     for (const v of it.variants) {
       if (!v.supplier_ref) continue;
-      let c; try { c = await pick.adapter.getCost(v.supplier_ref); } catch (err) { c = { ok: false, error: err.message }; }
+      let c; try { c = await pick.adapter.getCost(v.supplier_ref, it.supplier); } catch (err) { c = { ok: false, error: err.message }; }
       if (!c.ok) { flags.push({ sku: v.sku, kind: 'lookup-failed', detail: c.error }); continue; }
       const ship = it.shipping_cents != null ? it.shipping_cents : it.shipping_tiers[0].cents;
       const revenue = v.price_cents + ship;

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="3000" viewBox="0 0 480 600" role="img" aria-labelledby="art-title">
+  <title id="art-title">Masonboro Inlet Study</title>
+  <rect fill="#275763" x="0" y="0" width="480" height="600"/>
+  <path fill="#4a7775" opacity="1" d="M0 0H480Q358 86 303 184Q272 242 236 290Q216 327 245 366Q281 401 245 449Q208 498 188 600H0Z"/>
+  <path fill="#91aaa0" opacity="1" d="M0 0H408Q322 58 271 145Q225 195 208 249Q201 277 176 304Q147 344 189 378Q222 409 190 455Q143 501 128 600H0Z"/>
+  <path fill="#d7b781" opacity="1" d="M123 0H338Q284 58 257 117Q224 145 209 197Q194 241 166 250Q132 248 131 220Q145 175 125 132Q96 56 123 0Z"/>
+  <path fill="#f2e7cc" opacity="1" d="M296 0H328Q286 40 259 107Q221 146 207 198Q191 238 174 244Q193 206 195 183Q229 103 250 80Z"/>
+  <path fill="#586b4b" opacity="1" d="M142 0H270Q238 53 215 92Q207 142 178 168Q165 211 147 222Q152 164 138 142Q116 64 142 0Z"/>
+  <path fill="#d7b781" opacity="1" d="M0 410Q32 387 62 369Q95 350 122 360Q149 369 147 390Q123 447 101 490Q68 548 60 600H0Z"/>
+  <path fill="#f2e7cc" opacity="1" d="M0 556Q51 500 63 453Q87 416 144 378Q147 395 128 424Q103 458 97 491Q76 528 56 600H34Z"/>
+  <path fill="#586b4b" opacity="1" d="M0 421Q39 389 78 386Q94 381 118 377Q69 418 63 452Q41 514 0 532Z"/>
+  <path fill="#173944" opacity="1" d="M145 253L188 275L182 280L138 260Z"/>
+  <path fill="#173944" opacity="1" d="M112 344L150 359L145 367L100 351Z"/>
+  <path fill="#d7b781" opacity="0.75" d="M191 282Q232 252 252 223Q235 268 218 286Q207 292 191 288Z"/>
+  <path fill="#d7b781" opacity="0.79" d="M151 365Q194 357 205 374Q186 373 176 380Z"/>
+  <path fill="none" stroke="#f2e7cc" stroke-width="1.8" opacity="0.58" stroke-linecap="round" stroke-linejoin="round" d="M249 224q45 -23 74 -70"/>
+  <path fill="none" stroke="#f2e7cc" stroke-width="1.8" opacity="0.58" stroke-linecap="round" stroke-linejoin="round" d="M326 244q45 -23 74 -70"/>
+  <path fill="none" stroke="#f2e7cc" stroke-width="1.8" opacity="0.58" stroke-linecap="round" stroke-linejoin="round" d="M205 342q45 -23 74 -70"/>
+  <path fill="none" stroke="#f2e7cc" stroke-width="1.8" opacity="0.58" stroke-linecap="round" stroke-linejoin="round" d="M310 409q45 -23 74 -70"/>
+  <path fill="none" stroke="#f2e7cc" stroke-width="1.8" opacity="0.58" stroke-linecap="round" stroke-linejoin="round" d="M206 526q45 -23 74 -70"/>
+  <path fill="none" stroke="#f2e7cc" stroke-width="1.8" opacity="0.58" stroke-linecap="round" stroke-linejoin="round" d="M250 569q45 -23 74 -70"/>
+  <path fill="none" stroke="#f2e7cc" stroke-width="1.8" opacity="0.58" stroke-linecap="round" stroke-linejoin="round" d="M116 615q45 -23 74 -70"/>
+</svg>
