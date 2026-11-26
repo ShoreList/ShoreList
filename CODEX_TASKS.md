@@ -46,6 +46,7 @@ Legend: P0 launch-critical (do before 5 PM Thu), P1 this week, P2 soon, P3 hygie
 - Dependencies: owner supplies photos. Approval: owner.
 
 ### T-21 Triage the nightly verifier
+- Owner: Codex/fix/shorelist-shop-readiness.
 - Do: read the `verify-live` Action summary each morning; fix `price`/`stock`/`page` findings the same day (price or availability mismatch is launch-critical), file `image` findings under T-20.
 
 ## P1
@@ -81,6 +82,7 @@ Legend: P0 launch-critical (do before 5 PM Thu), P1 this week, P2 soon, P3 hygie
 - Dependencies: none. Approval: none.
 
 ### T-11 Error handling and failure UX for shop
+- Owner: Codex/fix/shorelist-shop-readiness.
 - Files: `shop-cart.js`, `shop.html`, `netlify/functions/shop-product.js`.
 - Do: simulate offline, `shop-product` 500, variant sold out, empty bag, localStorage blocked; every case shows a visible, honest message and a working link. Confirm the hidden "could not load the shop" state is reachable only on real failure.
 - Accept: scripted cases pass in Playwright with network interception.
