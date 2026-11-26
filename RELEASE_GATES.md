@@ -38,10 +38,13 @@ Mobile Lighthouse (CI `lighthouse-budget.mjs`). Floors are 90 for performance, a
 - [ ] `sitemap.xml` entries and `lastmod` correct for changed URLs; `update-sitemap-lastmod` run when needed.
 - [ ] No new duplicate titles (compare `thin-content-gate` counts to baseline 201 titles / 222 descriptions).
 
-## G6 Product fidelity (hard for catalog or image changes)
-- [ ] Each changed card's lead image was opened and matches product type, color, text and design of what Shopify sells (name, variant colors).
+## G6 Coastal luxury and product fidelity (hard for new or materially revised brand work)
+
+- [ ] The exact revision has an independent 90/100 or higher coastal luxury review, checked local references, no hard failures, and evidence for all five dimensions in the [Coastal Brand Standard](docs/COASTAL-BRAND-STANDARD.md).
+- [ ] New merchandise also has evidence for all ten product criteria. The mean is at least 9/10, each score is at least 8/10, and the blind photo review is at least 8/10. Obtain owner quality approval before publication.
+- [ ] Each changed card's lead image was opened and matches the exact product type, color, text and design at the intended checkout.
 - [ ] No color shown that is not sold; no baked-in titles from AI tools; AI lifestyle imagery or video is labeled and does not misrepresent the product.
-- [ ] Price and variants on card match Shopify (re-query Admin or live `shop-product`).
+- [ ] Price and variants on the card match the intended checkout. Verify them against Shopify Admin or live `shop-product`, Fourthwall merchant data, or the Direct catalog and authenticated CJ variant data, as applicable.
 - [ ] Banned wording absent (see `tools/ingest-shopify-products.mjs`), no em/en dashes in copy, no divisive slogans.
 
 ## G7 Checkout and discounts (hard for cart, promo, catalog price, or Shopify discount changes)

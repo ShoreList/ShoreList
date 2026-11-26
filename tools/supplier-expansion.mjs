@@ -5,12 +5,12 @@ import { pathToFileURL } from 'node:url';
 import { setTimeout as delay } from 'node:timers/promises';
 import cj from '../netlify/functions/_suppliers/cj.js';
 import goods from '../netlify/functions/_goods.js';
+import { coastalBrandIssues, MINIMUM_BRAND_SCORE, MINIMUM_PRODUCT_MEAN, productScoreIssues } from './coastal-brand-review.mjs';
 
 const root = new URL('../', import.meta.url);
 const load = async (path) => JSON.parse(await readFile(new URL(path, root), 'utf8'));
 const API = 'https://api.fourthwall.com/open-api/v1.0';
 const KNOWN_FOURTHWALL_OFFER = 'salt-wash-organic-cotton-market-tote';
-const SCORES = ['MOOD', 'ORIGINALITY', 'EMBELLISHMENT', 'PLACE', 'COLOR', 'TYPE', 'SELL', 'MOCKUP QUALITY', 'AWARD', 'REALNESS'];
 const HARD_RULES = ['noGrey', 'noClubWording', 'noBadgesOrCircles', 'noStrayLetteringOrNumbers', 'noCheapPhotography'];
 const GREY = /\b(gr[ae]y|charcoal|slate|ash|graphite|pepper|smoke|storm|concrete|pewter|steel)\b/i;
 const CLUB = /\b(beach|yacht)[\s-]+club\b/i;
@@ -26,7 +26,7 @@ const money = (v) => Number.isSafeInteger(v) && v >= 0;
 const promotionalRevenue = (retail, shipping) => retail - Math.ceil(retail * 15 / 100) + shipping;
 
 // This evaluates evidence supplied by reviewers. It never assigns a score.
-export function releaseIssues(item, policy) {
+export function releaseIssues(item) {
   const issues = [];
   if (!item.skuVerified || !hasText(item.supplierSku) || !https(item.supplierUrl)) issues.push('exact supplier SKU');
   if (!hasText(item.catalogReconciliation)) issues.push('cross-store duplicate review');
@@ -55,18 +55,11 @@ export function releaseIssues(item, policy) {
       photos[0]?.url === photos[1]?.url || photos[0]?.sha256 === photos[1]?.sha256 || item.studio?.actualProduct !== true) {
     issues.push('distinct exact-product images in lookbook, studio order');
   }
-  const values = SCORES.map((key) => item.scores?.[key]);
-  if (!values.every(scoreValid) || !SCORES.every((key) => hasText(item.scoreEvidence?.[key]))) {
-    issues.push('evidence for all ten scores');
-  } else {
-    if (values.some((value) => value < 8)) issues.push('criterion score below 8');
-    if (values.reduce((sum, val) => sum + val, 0) / SCORES.length < policy.minimumMean) {
-      issues.push('mean below ' + policy.minimumMean);
-    }
-  }
+  issues.push(...productScoreIssues(item.scores, item.scoreEvidence));
   const photo = item.independentPhotoReview;
   if (!photo || photo.blind !== true || !scoreValid(photo.score) || photo.score < 8 ||
       !hasText(photo.reviewer) || !hasText(photo.evidence)) issues.push('independent blind photo review');
+  issues.push(...coastalBrandIssues(item.coastalBrandReview));
   if (!hasText(item.ownerApproval?.evidence) || item.ownerApproval?.approved !== true) issues.push('owner approval');
   return issues;
 }
@@ -277,9 +270,12 @@ async function main([command = 'audit', ...args]) {
   const existing = new Set([...catalog.items, ...direct.items].map((item) => normalize(item.name)));
   const publicItems = [...catalog.items, ...direct.items.filter((item) => item.status === 'live')];
   if (command === 'audit') {
+    if (queue.minimumMean !== MINIMUM_PRODUCT_MEAN || queue.minimumCoastalBrandMatch !== MINIMUM_BRAND_SCORE) {
+      throw new Error('The supplier queue must match ShoreList’s coastal brand and product review thresholds');
+    }
     for (const item of queue.items) {
       if (!plans[item.title]) throw new Error('Missing development record: ' + item.title);
-      const issues = releaseIssues(item, queue);
+      const issues = releaseIssues(item);
       for (const listed of publicItems.filter((entry) => normalize(entry.name) === normalize(item.title))) {
         if (issues.length || item.status === 'RESEARCH_ONLY') {
           throw new Error('Unapproved expansion candidate appears in a live catalog: ' + item.title);

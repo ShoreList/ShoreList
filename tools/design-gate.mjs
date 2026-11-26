@@ -5,6 +5,7 @@
 // fashion-expert review, which this bot requires via a REVIEW file per item (see needReview).
 import fs from 'node:fs';
 import path from 'node:path';
+import { coastalBrandIssues, productScoreIssues } from './coastal-brand-review.mjs';
 
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > -1 ? process.argv[i + 1] : d; };
 const SPECS = arg('--specs', '/home/claude/plans/newline/specs');
@@ -98,9 +99,16 @@ for (const f of svgFiles(ART)) {
 // 3. expert review gate: every item must have a passing independent review
 let reviews = {};
 try { reviews = JSON.parse(fs.readFileSync(REVIEWS, 'utf8')); } catch { /* none yet */ }
-for (const it of items.filter(i => i._src === 'catalog' || i.status)) {
-  const id = it.id, r = reviews[id];
-  if (!r) { (it._src === 'catalog' ? F : W)(id, 'no passing expert review: not sellable'); continue; }
+for (const it of items) {
+  const id = it.id || it.name, r = reviews[id];
+  if (!r) { F(id, 'no passing expert review: not sellable'); continue; }
+  if (it._src === 'spec') {
+    for (const issue of [...productScoreIssues(r.scores, r.scoreEvidence), ...coastalBrandIssues(r.coastalBrandReview)]) {
+      F(id, issue);
+    }
+    if (r.verdict !== 'PASS') F(id, 'expert verdict is not PASS');
+    continue;
+  }
   const sc = r.scores || {}, vals = Object.values(sc);
   const mean = vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : 0;
   if (mean < 9.0) F(id, `expert mean ${mean.toFixed(2)} under 9.0`);

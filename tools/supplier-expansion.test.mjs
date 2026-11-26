@@ -3,18 +3,28 @@ import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { test } from 'node:test';
+import { BRAND_CRITERIA, coastalBrandIssues } from './coastal-brand-review.mjs';
 import cj from '../netlify/functions/_suppliers/cj.js';
 import { cjDraft, releaseIssues, selectedVariants, stageDrafts } from './supplier-expansion.mjs';
 
 const queue = JSON.parse(await readFile(new URL('../docs/supplier-expansion-candidates.json', import.meta.url)));
 const plans = JSON.parse(await readFile(new URL('../docs/supplier-expansion-development.json', import.meta.url)));
+const brandFixture = () => ({
+  independent: true,
+  reviewer: 'Fixture reviewer',
+  reviewedRevision: 'a'.repeat(64),
+  localAccuracyVerified: true,
+  references: [{ url: 'https://example.com/test-reference', evidence: 'Synthetic test evidence' }],
+  hasHardFailure: false,
+  criteria: Object.fromEntries(BRAND_CRITERIA.map((key) => [key, { score: 18, evidence: 'Synthetic test evidence' }])),
+});
 
 test('the development data covers all 40 candidates and the gate holds research-only entries', async () => {
   assert.equal(queue.items.filter((x) => x.supplier === 'fourthwall').length, 24);
   assert.equal(queue.items.filter((x) => x.supplier === 'cj').length, 16);
   assert.deepEqual(Object.keys(plans), queue.items.map((x) => x.title));
   for (const item of queue.items) {
-    const issues = releaseIssues(item, queue);
+    const issues = releaseIssues(item);
     if (item.status === 'RESEARCH_ONLY') assert.ok(issues.length);
     else assert.deepEqual(issues, []);
 
@@ -50,21 +60,37 @@ test('review gate rejects missing score evidence, duplicate images, hard failure
     scores: Object.fromEntries(criteria.map((c) => [c, 9])),
     scoreEvidence: Object.fromEntries(criteria.map((c) => [c, 'test'])),
     independentPhotoReview: { blind: true, score: 8, reviewer: 'test', evidence: 'test' },
+    coastalBrandReview: brandFixture(),
     ownerApproval: { approved: true, evidence: 'test' },
   };
-  assert.deepEqual(releaseIssues(item, queue), []);
+  assert.deepEqual(releaseIssues(item), []);
+  item.scores.MOOD = 8;
+  assert.deepEqual(releaseIssues(item), ['product review mean below 9/10']);
   item.scores.MOOD = 7;
-  assert.deepEqual(releaseIssues(item, queue), ['criterion score below 8']);
+  assert.deepEqual(releaseIssues(item), ['criterion score below 8', 'product review mean below 9/10']);
   item.scores.MOOD = '9';
   item.studio.sha256 = item.lookbook.sha256;
   item.studio.actualProduct = false;
   item.colors = ['Pepper'];
   item.hardRuleReview.noBadgesOrCircles.pass = false;
   item.landedCost.productCents = 3300;
-  assert.deepEqual(releaseIssues(item, queue), [
+  assert.deepEqual(releaseIssues(item), [
     'available approved colorways', 'hard-rule review', 'nonpositive contribution after 15% discount',
     'distinct exact-product images in lookbook, studio order', 'evidence for all ten scores',
   ]);
+});
+
+test('the coastal luxury review requires 90, exact revision, local references and zero hard failures', () => {
+  const review = brandFixture();
+  assert.deepEqual(coastalBrandIssues(review), []);
+  review.criteria.localFidelity.score = 17;
+  assert.deepEqual(coastalBrandIssues(review), ['coastal luxury brand match below 90/100']);
+  review.criteria.localFidelity.score = 20;
+  review.localAccuracyVerified = false;
+  review.hasHardFailure = true;
+  assert.deepEqual(coastalBrandIssues(review), ['verified local references', 'coastal brand hard-failure review']);
+  review.reviewedRevision = 'version unspecified';
+  assert.deepEqual(coastalBrandIssues(review), ['independent coastal luxury review of the exact revision']);
 });
 
 test('Fourthwall variant selection requires exact available colors and sizes with USD base cost', () => {

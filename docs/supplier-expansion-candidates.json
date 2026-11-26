@@ -2,14 +2,17 @@
   "purpose": "Research queue only; not storefront inventory or replacement master registry",
   "baselineCatalogBlob": "5cfed05c67f4d0ef8c2017abd4544807d7bb8e12",
   "baselineCount": 109,
-  "minimumMean": 8,
-  "proposedTarget": 9,
+  "minimumMean": 9,
+  "minimumCoastalBrandMatch": 90,
   "hardFails": [
     "grey including Pepper",
     "Beach Club or Yacht Club wording",
     "badges or circles",
     "unnecessary numbers or stray lettering",
-    "cheap supplier photography"
+    "cheap supplier photography",
+    "unverified or mismatched local references",
+    "imitation artwork or generic souvenir styling",
+    "false product imagery"
   ],
   "releaseRequirements": [
     "verify exact supplier SKU and availability",
@@ -18,7 +21,8 @@
     "verify shipping and fulfillment",
     "two distinct exact-product images editorial first studio second",
     "independent blind photography review >=8",
-    "all ten scores evidenced and mean >=8",
+    "all ten scores evidenced and mean >=9, each score >=8",
+    "independent coastal luxury brand match >=90/100 on exact revision with verified local references and no hard failures",
     "owner approval before publication"
   ],
   "items": [
@@ -46,6 +50,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -72,6 +77,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -98,6 +104,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -124,6 +131,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -150,6 +158,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -176,6 +185,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -202,6 +212,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -228,6 +239,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -254,6 +266,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -280,6 +293,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -306,6 +320,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -332,6 +347,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -358,6 +374,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -384,6 +401,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -410,6 +428,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -436,6 +455,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -462,6 +482,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -488,6 +509,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -514,6 +536,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -540,6 +563,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -566,6 +590,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -592,6 +617,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -618,6 +644,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -644,6 +671,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -670,6 +698,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -696,6 +725,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -722,6 +752,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -748,6 +779,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -774,6 +806,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -800,6 +833,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -826,6 +860,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -852,6 +887,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -878,6 +914,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -904,6 +941,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -930,6 +968,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -956,6 +995,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -982,6 +1022,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -1008,6 +1049,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -1034,6 +1076,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     },
     {
@@ -1060,6 +1103,7 @@
         "REALNESS": null
       },
       "independentPhotoReview": null,
+      "coastalBrandReview": null,
       "ownerApproval": null
     }
   ]
