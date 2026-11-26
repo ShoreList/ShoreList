@@ -11,6 +11,7 @@ const run = promisify(execFile); // async on purpose: a blocking spawn would fre
 const PAGES = [
   ['/', { performance: 90, accessibility: 100, 'best-practices': 90, seo: 100 }],
   ['/shop.html', { performance: 90, accessibility: 98, 'best-practices': 90, seo: 100 }],
+  ['/shop/fourthwall.html', { performance: 90, accessibility: 96, 'best-practices': 90, seo: 100 }],
   ['/events.html', { performance: 90, accessibility: 98, 'best-practices': 90, seo: 100 }],
   ['/things-to-do/ghost-tours.html', { performance: 90, accessibility: 95, 'best-practices': 90, seo: 100 }],
 ];

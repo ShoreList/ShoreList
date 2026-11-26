@@ -712,6 +712,14 @@ body{padding-bottom:88px}
 body:not(.home):not(.pg-home) .dock{display:none!important}
 .sl-sky{z-index:-1!important}
 </style><!--HOME-CSS:end-->
+<style>
+/* Shop departments: native links stay usable without JavaScript. */
+.shop-departments{display:flex;flex-wrap:wrap;gap:0 22px;margin-block:4px}
+.shop-departments a{display:inline-flex;align-items:center;min-height:44px;padding-inline:2px;color:#142d40;border-bottom:2px solid transparent;font-size:.875rem;font-weight:650;text-decoration:none}
+.shop-departments a[aria-current]{border-color:currentColor}
+.shop-departments a:hover{text-decoration:underline;text-underline-offset:.25em}
+.shop-departments a:focus-visible{outline:2px solid #905033;outline-offset:2px}
+</style>
 <script src="/luxe.js" defer></script>
 </head>
 <body class="shop">
@@ -723,6 +731,10 @@ body:not(.home):not(.pg-home) .dock{display:none!important}
     <div class="mobile-social" role="group" aria-label="Follow ShoreList"><a href="#drops">Sign up for emails</a><a href="https://www.tiktok.com/@shorelist" target="_blank" rel="noopener noreferrer" aria-label="ShoreList on TikTok">TikTok</a><a href="https://www.instagram.com/shorelist" target="_blank" rel="noopener noreferrer" aria-label="ShoreList on Instagram">Instagram</a></div>
   </div>
   <button type="button" class="sl-burger" aria-label="Open menu" aria-expanded="false" aria-controls="sl-links"><span></span><span></span><span></span></button>
+</nav>
+<nav class="wrap shop-departments" aria-label="Shop departments">
+  <a href="/shop" aria-current="page">ShoreList Shop</a>
+  <a href="/shop/fourthwall">Shore Fourthwall Shop</a>
 </nav>
 <header class="hero" id="top">
   <div class="hero-in">

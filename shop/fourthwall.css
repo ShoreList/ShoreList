@@ -1,0 +1,143 @@
+:root {
+  color-scheme: light;
+  --harbor: #142d40;
+  --sailcloth: #fbf8f0;
+  --sand: #eee9de;
+  --rule: #d6d0c5;
+  --muted: #4f5c62;
+  --display: Georgia, 'Times New Roman', serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-padding-top: 1rem; }
+body.fw-shop {
+  margin: 0;
+  background: var(--sailcloth);
+  color: var(--harbor);
+  font: 1rem/1.6 system-ui, sans-serif;
+}
+a { color: inherit; }
+a:focus-visible { outline: 2px solid #905033; outline-offset: 4px; }
+img { display: block; max-width: 100%; }
+.fw-wrap { width: min(100% - 3rem, 74rem); margin-inline: auto; }
+.fw-skip {
+  position: absolute;
+  z-index: 1;
+  top: .5rem;
+  left: .5rem;
+  padding: .65rem 1rem;
+  transform: translateY(-150%);
+  background: var(--sailcloth);
+}
+.fw-skip:focus { transform: translateY(0); }
+.fw-header { border-bottom: 1px solid var(--rule); }
+.fw-header-inner, .fw-footer-inner {
+  display: flex;
+  min-height: 4rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem 1.5rem;
+}
+.fw-wordmark {
+  color: var(--harbor);
+  font: 700 1.9rem/1 var(--display);
+  letter-spacing: -.06em;
+  align-content: center;
+  min-height: 44px;
+  text-decoration: none;
+}
+.fw-guide { font-size: .875rem; text-underline-offset: .25em; align-content: center; min-height: 44px; }
+.fw-departments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem 1.375rem;
+  margin-block: .5rem;
+}
+.fw-departments a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+  font-size: .875rem;
+  font-weight: 650;
+}
+.fw-departments a:hover { text-decoration: underline; text-underline-offset: .3em; }
+.fw-departments [aria-current] { border-color: var(--harbor); }
+.fw-hero {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  background: var(--harbor);
+  color: var(--sailcloth);
+}
+.fw-intro { padding: clamp(2rem, 4.5vw, 4rem); align-self: center; }
+.fw-intro > p { max-width: 33ch; }
+.fw-location {
+  margin: 0;
+  color: #dfd7c5;
+  font-size: .75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+}
+.fw-intro h1, .fw-product h2 {
+  margin: .65rem 0;
+  font: 400 clamp(2.7rem, 5.1vw, 4.7rem)/.98 var(--display);
+  letter-spacing: -.055em;
+  text-wrap: balance;
+}
+.fw-hero-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: .6rem;
+  color: var(--sailcloth);
+  font-weight: 650;
+  text-underline-offset: .3em;
+}
+.fw-hero-link:focus-visible { outline-color: var(--sailcloth); }
+.fw-coast { width: 100%; height: 100%; min-height: 22rem; object-fit: cover; object-position: 47% center; }
+.fw-product {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  gap: clamp(1.5rem, 6vw, 6rem);
+  padding-block: clamp(2.5rem, 7vw, 6rem);
+}
+.fw-product-photo {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  aspect-ratio: 1.24;
+  background: var(--sand);
+}
+.fw-product-photo img { width: min(100%, 24rem); height: 100%; object-fit: contain; mix-blend-mode: multiply; }
+.fw-product h2 { max-width: 15ch; font-size: clamp(2.2rem, 4vw, 3.65rem); }
+.fw-variant, .fw-checkout-note { color: var(--muted); }
+.fw-variant, .fw-price { margin-block: .65rem; }
+.fw-price { min-height: 1.6em; font-weight: 650; }
+.fw-button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  padding: .65rem 1.35rem;
+  background: var(--harbor);
+  color: var(--sailcloth);
+  font-weight: 650;
+  text-decoration: none;
+}
+.fw-button:hover { background: #254760; text-decoration: underline; text-underline-offset: .2em; }
+.fw-checkout-note { max-width: 36ch; font-size: .875rem; }
+.fw-footer { border-top: 1px solid var(--rule); color: var(--muted); font-size: .875rem; }
+.fw-footer-inner { flex-wrap: wrap; padding-block: .75rem; }
+.fw-footer nav { display: flex; flex-wrap: wrap; gap: 0 1.25rem; }
+.fw-footer a { align-content: center; min-height: 44px; text-underline-offset: .2em; }
+
+@media (max-width: 45rem) {
+  .fw-wrap { width: min(100% - 2rem, 74rem); }
+  .fw-hero, .fw-product { grid-template-columns: 1fr; }
+  .fw-intro { padding: 1.55rem 1.25rem .9rem; }
+  .fw-coast { min-height: 0; aspect-ratio: 2; }
+  .fw-product { gap: 1.25rem; padding-block: 2rem; }
+  .fw-product-photo img { width: 68%; }
+}
