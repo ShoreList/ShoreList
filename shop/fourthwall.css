@@ -2,7 +2,6 @@
   color-scheme: light;
   --harbor: #142d40;
   --sailcloth: #fbf8f0;
-  --sand: #eee9de;
   --rule: #d6d0c5;
   --muted: #4f5c62;
   --display: Georgia, 'Times New Roman', serif;
@@ -109,9 +108,10 @@ img { display: block; max-width: 100%; }
   place-items: center;
   min-width: 0;
   aspect-ratio: 1.24;
-  background: var(--sand);
+  border: 1px solid var(--rule);
+  background: #fff;
 }
-.fw-product-photo img { width: min(100%, 24rem); height: 100%; object-fit: contain; mix-blend-mode: multiply; }
+.fw-product-photo img { width: min(100%, 24rem); height: 100%; object-fit: contain; }
 .fw-product h2 { max-width: 15ch; font-size: clamp(2.2rem, 4vw, 3.65rem); }
 .fw-variant, .fw-checkout-note { color: var(--muted); }
 .fw-variant, .fw-price { margin-block: .65rem; }
