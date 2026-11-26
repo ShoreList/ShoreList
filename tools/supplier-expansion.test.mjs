@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { test } from 'node:test';
 import { BRAND_CRITERIA, coastalBrandIssues } from './coastal-brand-review.mjs';
 import cj from '../netlify/functions/_suppliers/cj.js';
-import { cjDraft, releaseIssues, selectedVariants, stageDrafts } from './supplier-expansion.mjs';
+import { cjDraft, releaseIssues, releaseRevision, selectedVariants, stageDrafts } from './supplier-expansion.mjs';
 
 const queue = JSON.parse(await readFile(new URL('../docs/supplier-expansion-candidates.json', import.meta.url)));
 const plans = JSON.parse(await readFile(new URL('../docs/supplier-expansion-development.json', import.meta.url)));
@@ -59,14 +59,27 @@ test('review gate rejects missing score evidence, duplicate images, hard failure
       actualProduct: true, evidence: 'test' },
     scores: Object.fromEntries(criteria.map((c) => [c, 9])),
     scoreEvidence: Object.fromEntries(criteria.map((c) => [c, 'test'])),
-    independentPhotoReview: { blind: true, score: 8, reviewer: 'test', evidence: 'test' },
+    independentPhotoReview: { blind: true, score: 8, reviewer: 'test', evidence: 'test',
+      lookbookSha256: 'a'.repeat(64), studioSha256: 'b'.repeat(64) },
     coastalBrandReview: brandFixture(),
     ownerApproval: { approved: true, evidence: 'test' },
   };
+  const signFixture = () => {
+    item.coastalBrandReview.reviewedRevision = releaseRevision(item);
+    item.ownerApproval.reviewedRevision = releaseRevision(item);
+  };
+  signFixture();
   assert.deepEqual(releaseIssues(item), []);
+  assert.equal(releaseRevision({ ...item, status: 'READY' }), releaseRevision(item));
+  assert.equal(releaseRevision(Object.fromEntries(Object.entries(item).reverse())), releaseRevision(item));
+  assert.deepEqual(releaseIssues({ ...item, description: 'Revised fixture artwork copy.' }), [
+    'coastal luxury review is for a different submission revision', 'owner approval of the exact submission revision',
+  ]);
   item.scores.MOOD = 8;
+  signFixture();
   assert.deepEqual(releaseIssues(item), ['product review mean below 9/10']);
   item.scores.MOOD = 7;
+  signFixture();
   assert.deepEqual(releaseIssues(item), ['criterion score below 8', 'product review mean below 9/10']);
   item.scores.MOOD = '9';
   item.studio.sha256 = item.lookbook.sha256;
@@ -74,9 +87,11 @@ test('review gate rejects missing score evidence, duplicate images, hard failure
   item.colors = ['Pepper'];
   item.hardRuleReview.noBadgesOrCircles.pass = false;
   item.landedCost.productCents = 3300;
+  signFixture();
   assert.deepEqual(releaseIssues(item), [
     'available approved colorways', 'hard-rule review', 'nonpositive contribution after 15% discount',
     'distinct exact-product images in lookbook, studio order', 'evidence for all ten scores',
+    'independent blind review of the exact photo pair',
   ]);
 });
 
