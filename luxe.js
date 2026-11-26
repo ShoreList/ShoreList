@@ -6,7 +6,8 @@
   var seen=false;try{seen=sessionStorage.getItem('lx-splash')==='1';}catch(e){}
   var isHome=location.pathname==='/'||/\/index(\.html)?$/.test(location.pathname);
   var fine=window.matchMedia&&matchMedia('(hover:hover) and (pointer:fine)').matches;
-  var decorate=!isHome||fine;
+  var shopLanding=/^\/shop(?:\.html|\/)?$/.test(location.pathname);
+  var decorate=!(isHome||shopLanding)||fine;
   /* splash: home page, first visit per session, never for reduced motion; auto-clears fast */
   if(isHome&&!seen&&!rm){
     var s=d.createElement('div');s.id='lx-splash';s.setAttribute('aria-hidden','true');
@@ -59,7 +60,7 @@
   function go(){scan(d);
     if('MutationObserver' in window)new MutationObserver(function(ms){ms.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType===1)scan(n);});});}).observe(d.body,{childList:true,subtree:true});
   }
-  // Keep the touch homepage content visible without scanning each card at startup.
+  // Keep touch home and shop content visible without scanning every card at startup.
   if(decorate){if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',go);else go();}
 
   /* instant navigation: prerender likely next pages (Speculation Rules), where supported */
