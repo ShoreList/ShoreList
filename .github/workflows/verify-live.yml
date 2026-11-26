@@ -1,0 +1,18 @@
+name: verify-live
+# Nightly read-only check of the live site: images, Shopify price/availability parity, sitemap URLs.
+# Reports in the job summary and fails the run when something is wrong. It never changes the site.
+on:
+  schedule:
+    - cron: '17 9 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/verify-live.mjs
