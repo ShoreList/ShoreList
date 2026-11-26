@@ -155,7 +155,10 @@
     d.innerHTML = '<a href="/category" aria-label="Experiences">&#9875;<span>Experiences</span></a><a href="/events" aria-label="Events">&#9733;<span>Events</span></a><a href="/shop" aria-label="Shop">&#9728;<span>Shop</span></a><a href="/planner" aria-label="Plan my day">&#10022;<span>Plan my day</span></a>';
     document.body.appendChild(d);
     var tick = false; function upd() { tick = false; d.classList.toggle('show', window.scrollY > 520); }
-    window.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(upd); } }, { passive: true }); upd();
+    function scheduleDock() { if (!tick) { tick = true; requestAnimationFrame(upd); } }
+    window.addEventListener('scroll', scheduleDock, { passive: true });
+    // CSS already hides the dock at the top. Give restored scroll positions a post-paint check.
+    window.addEventListener('pageshow', function () { requestAnimationFrame(scheduleDock); });
     if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce), (hover: none)').matches)) {
       document.querySelectorAll('.path').forEach(function (p) {
         p.addEventListener('pointermove', function (e) { var r = p.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; p.style.transform = 'perspective(600px) rotateX(' + (-y * 9) + 'deg) rotateY(' + (x * 11) + 'deg) translateY(-4px)'; p.style.animation = 'none'; });
