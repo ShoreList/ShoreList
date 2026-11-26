@@ -1,6 +1,6 @@
 # AGENTS.md: ShoreList engineering instructions (Codex, Claude Code, any coding agent)
 
-Read this first, then `CODEX_HANDOFF.md`, `CODEX_TASKS.md`, `INTEGRATIONS.md`, `RELEASE_GATES.md`. Do not ask the owner to re-explain the business; it is written here. Last verified against `main` on 2026-11-25 (head `8e2b5a1`).
+Read this first, then `CODEX_HANDOFF.md`, `CODEX_TASKS.md`, `INTEGRATIONS.md`, `RELEASE_GATES.md`. Do not ask the owner to re-explain the business; it is written here. Last verified against `main` on 2026-11-25 22:56 ET (head `c1f9bbe`). **Other agents and the owner's tools also merge to `main` (PRs #318 to #323 landed from elsewhere while this package was written).** Always `git fetch origin main` first and re-read `git log` before you start.
 
 Evidence labels used in every doc: **VERIFIED** (observed or executed in this repo/store, with how), **ESTIMATE** (reasoned number or judgment), **HYPOTHESIS** (plausible, untested), **UNKNOWN** (not checked, or not checkable from the sandbox). Use them in your own reports. Never write "passed" for a command you did not run to a zero exit.
 
@@ -27,10 +27,10 @@ ShoreList LLC (Wilmington, NC; owner/approver: RJ Brideau) is a local guide and 
 
 - **Static site** at repo root (hand-written HTML/CSS/vanilla JS, no framework, no bundler). Published directory is the repo root, so anything not blocked in `netlify.toml` is public. Root-level `.md` files in this onboarding package are blocked there on purpose; keep that block if you add files.
 - **Hosting:** Netlify (`netlify.toml`, `_headers`, Netlify Functions in `netlify/functions`, `@netlify/blobs`). Whether pushes to `main` auto-deploy and the Netlify build settings: **UNKNOWN** (dashboard not inspected). The live site was observed lagging merged PRs by minutes on 2026-11-25.
-- **Shop (`shop.html`, `shop/<town>.html`, `shop-catalog.json`):** cards render from `shop-catalog.json` (110 items: 109 Shopify, 1 Fourthwall). `tools/build-shop-static.mjs` fills `<!--SHOP-STATIC:name-->` regions so the page is crawlable without JS. Lookbook-first image rule in `shop.html`: `first=(i.img&&!sameImg(i.img,i.studio||''))?i.img:(i.lookbook||i.studio||i.img)`. Catalog fields: `name, img, studio, lookbook, alt, color, facts, scenes, price`.
+- **Shop (`shop.html`, `shop/<town>.html`, `shop-catalog.json`):** cards render from `shop-catalog.json` (109 items: 108 Shopify, 1 Fourthwall). `tools/build-shop-static.mjs` fills `<!--SHOP-STATIC:name-->` regions so the page is crawlable without JS. Lookbook-first image rule in `shop.html`: `first=(i.img&&!sameImg(i.img,i.studio||''))?i.img:(i.lookbook||i.studio||i.img)`. Catalog fields: `name, img, studio, lookbook, alt, color, facts, scenes, price`.
 - **Cart and checkout (`shop-cart.js`):** localStorage bag with three line groups: Shopify lines (one Shopify cart permalink on `shorelist.myshopify.com`), Fourthwall link-outs, and ShoreList Direct goods (Stripe Checkout via `create-goods-checkout`; zero live items today). Server re-prices Direct lines from `dropship-catalog.json`.
 - **Promos (`shop-promo.js`):** `SALES` array of UTC windows; banner plus hero line; preview with `?promo-preview=1|bf|cm`.
-- **Service worker (`sw.js`):** `const VERSION = 'sl-vNNN-YYYY-MM-DD'` **must be bumped in every PR that changes cached files**. Current: `sl-v260-2026-11-25`.
+- **Service worker (`sw.js`):** `const VERSION = 'sl-vNNN-YYYY-MM-DD'` **must be bumped in every PR that changes cached files**. Current: `sl-v277-2026-11-25` (check `sw.js`; it moves every deploy).
 - **Functions:** bookings and guides checkout (Stripe), availability, `stripe-webhook`, supplier sync (`sync-supplier-orders` hourly, `check-supplier-drift` daily), AI helpers (`shop-bot`, `concierge`, `plan-itinerary`), `shop-product` (live variant lookup from Shopify by handle). Supplier adapters in `netlify/functions/_suppliers/` (`printify`, `cj`, `manual`).
 - **Generated files:** `search-index.json`, `llms*.txt`, `operators-public.json`, `events-data.json` (a GitHub Action refreshes events), sitemap lastmod. Regenerate with the matching `tools/*.mjs`; do not hand-edit generated output.
 
@@ -38,7 +38,7 @@ ShoreList LLC (Wilmington, NC; owner/approver: RJ Brideau) is a local guide and 
 
 | Purpose | Command | Status 2026-11-25 (VERIFIED, run locally) |
 |---|---|---|
-| Structure, JSON-LD, copy and slogan guards | `node tools/check-site.mjs` | exit 0 ("144 pages, 110 products") |
+| Structure, JSON-LD, copy and slogan guards | `node tools/check-site.mjs` | exit 0 ("144 pages, 109 products") |
 | Keyword config | `node tools/check-keywords.mjs` | exit 0 |
 | Thin content (warn only in CI) | `node tools/thin-content-gate.mjs --site . --entities tools/local-entities.json --warn-only` | exit 0 with warnings |
 | Feeds unit tests | `node --test tools/feeds/feeds.test.mjs` | 14 pass |
@@ -48,9 +48,10 @@ ShoreList LLC (Wilmington, NC; owner/approver: RJ Brideau) is a local guide and 
 | Goods checkout tests (all network mocked) | `node tools/test-goods-checkout.cjs` | 25 pass |
 | Operators fixture test | `node tools/test-operators.mjs` | **FAILS** (known, see tasks T-15) |
 | Shop link check | `node tools/check-shop-links.mjs` | needs live network; all 110 errored in the sandbox, so the result is **UNKNOWN**. Run it from a networked machine. |
-| Mobile Lighthouse budget | `node tools/lighthouse-budget.mjs` | CI job `speed` fails on `main` (see handoff). Needs Chrome. |
+| Mobile Lighthouse budget | `node tools/lighthouse-budget.mjs` | CI job `speed` is green on the latest `main` runs (home 98, shop 92, events 96, ghost-tours 95 on 2026-11-26 02:59Z). Needs Chrome. |
+| Live verifier (read only, needs network) | `node tools/verify-live.mjs` | Ran in GitHub Actions 2026-11-26 03:29Z: 23 Shore Picks images 404 (see T-20); all 109 shop prices match Shopify; 91 of 91 sitemap URLs load. Runs nightly (`.github/workflows/verify-live.yml`). |
 
-CI (`.github/workflows/check.yml`): job `check` runs the first five rows and passes on `main`; job `speed` is red on `main` for 22 of the last 30 `site-check` runs (VERIFIED via `gh run list`). Merge decisions: `check` must be green; `speed` must not get *worse* than main for the pages you touched (compare numbers), and you must say so in the PR.
+CI (`.github/workflows/check.yml`): job `check` runs the first five rows and passes on `main`; job `speed` failed in 22 of the 30 `site-check` runs up to the afternoon of 2026-11-25 and passed on the runs after PRs #318 to #323 (VERIFIED via `gh run list`). Netlify also posts PR checks (redirect rules, header rules, pages changed), so deploy previews/checks exist. Merge decisions: `check` must be green; `speed` must not get *worse* than main for the pages you touched (compare numbers), and you must say so in the PR.
 
 ## 5. Change workflow
 

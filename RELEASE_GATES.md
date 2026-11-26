@@ -18,10 +18,10 @@ A release is any merge to `main` (it can deploy). Every gate needs evidence in t
 - [ ] Known failures unchanged and named (`test-operators`; `speed` baseline below). A new failure blocks.
 
 ## G2 Performance (hard for touched pages)
-Mobile Lighthouse (CI `lighthouse-budget.mjs`). Floors are 90 for performance, accessibility, best-practices, SEO. Baseline on `main` 2026-11-25: `/` 65, `/shop.html` 94, `/events.html` 85, `/things-to-do/ghost-tours.html` 65.
-- [ ] Pages you touched do not score lower than baseline; shop must stay >= 90; CLS <= 0.1 on pages you touched (shop baseline 0.059).
+Mobile Lighthouse (CI `lighthouse-budget.mjs`). Floors are 90 for performance, accessibility, best-practices, SEO. Baseline on `main` 2026-11-26 02:59Z: `/` 98, `/shop.html` 92 (CLS 0.083), `/events.html` 96, `/things-to-do/ghost-tours.html` 95.
+- [ ] Pages you touched do not score lower than baseline; shop must stay >= 90; CLS <= 0.1 on pages you touched (shop baseline 0.083).
 - [ ] Image changes use sized Shopify `_NNNx` URLs or compressed webp; no full-size photos on cards.
-- [ ] Homepage below 90 is a known launch risk (L2); do not add weight to it.
+- [ ] The homepage is now 98; any PR that drops it below 90 does not merge.
 
 ## G3 Accessibility (hard)
 - [ ] Lighthouse accessibility >= 96 on touched pages (baseline 96 to 100) and no regression.

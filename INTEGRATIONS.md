@@ -19,7 +19,10 @@ No secrets belong here. Env var **names** only; values live in each vendor dashb
 | GitHub Actions | CI, events refresh, IndexNow | **CONNECTED** | `site-check` runs on PRs and `main` (VERIFIED via `gh run list`); `indexnow` succeeded on recent merges. |
 | IndexNow | Search engine ping | **CONNECTED (workflow success)** | `.github/workflows/indexnow.yml`; engine acceptance UNKNOWN. |
 | NOAA Tides, Open-Meteo | Weather/tide widgets (client fetch) | **CONNECTED by CSP allow-list** | Live response not tested today. |
-| Instagram `@shorelist` | Social | **LINKED** | Footer link only; no API. Facebook/TikTok: not provided, none linked. Meta Page/Ads: **PLANNED, owner-only**. |
+| Instagram and TikTok `@shorelist` | Social | **LINKED** | Plain links on the shop page and footers (PR #318); no API. No Facebook link. Meta Page/Ads: **PLANNED, owner-only**. |
+| Netlify PR checks | Redirect rules, header rules, pages changed on every PR | **CONNECTED** | Seen on PRs #324 to #326 (VERIFIED). |
+| GitHub Action `verify-live` | Nightly read-only live checks | **CONNECTED** | First manual run 2026-11-26 03:29Z worked; scheduled run unverified until it fires. |
+| Shop Pay / Shopify checkout | Payment at `shop.app` and shopify domains | **CONNECTED** | Handoff reached checkout with correct items in a live walk-through; no payment made. |
 | Higgsfield (AI video) | Lookbook video for ads | **PLANNED** | Web UI set up; nothing generated; no credits bought; owner approval required; AI-generated content must be disclosed. |
 | ChatGPT (collaborator) | Authenticated Shopify admin work, owner Drive registry | external | Not part of the repo. |
 | Windsor.ai, AfterShip/TikTok Shop, Canva | Available in owner tooling | **PLANNED/UNUSED** | Not wired into the site. |

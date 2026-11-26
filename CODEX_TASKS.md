@@ -12,7 +12,10 @@ Legend: P0 launch-critical (do before 5 PM Thu), P1 this week, P2 soon, P3 hygie
 - Accept: written finding labeled VERIFIED with timestamps; if cache is the cause, a proposed `_headers`/SW fix (separate PR). Netlify dashboard access is owner-only: ask the owner for the deploy log if needed.
 - Dependencies: none. Approval: none (read only). Impact: prevents customers seeing old prices, headline or banners on launch day.
 
-### T-02 Homepage mobile performance to >= 90 (or document why not)
+### T-02 Homepage mobile performance (RESOLVED by other PRs; guard it)
+- Status 2026-11-26 02:59Z: `/` scores 98, `speed` green (VERIFIED). Do not start new perf work; just keep every PR from lowering it. The original brief below is kept for history.
+
+#### Original brief
 - Why: L2, `speed` red; TBT 4,200 ms on `/`. Files: `index.html`, `home.js`, `home.css`, `scene.js`, `ambient.js`, `sound.js`, `luxe.js` (claim only what you touch), `sw.js`.
 - Do: profile with Lighthouse trace; find long tasks (candidate culprits, HYPOTHESIS: decorative scene/ambient/weather scripts, third-party gtag). Defer or idle-split. **Do not change the homepage design or content** (AGENTS rule 6); performance-only.
 - Accept: `node tools/lighthouse-budget.mjs` shows `/` >= 90 or a PR comment with before/after numbers and the remaining blocker; accessibility stays 100; screenshots before/after identical at 390 and 1280 widths; `check-site` green.
@@ -35,6 +38,15 @@ Legend: P0 launch-critical (do before 5 PM Thu), P1 this week, P2 soon, P3 hygie
 - Do: list the 42 products not in the site catalog with status, published flag, reason (draft, held low quality, retired in `docs/retired-items.json`, duplicate). Do not publish anything new.
 - Accept: table in the PR; zero published-and-sellable Shopify products unexplained.
 - Dependencies: none. Approval: none for report; owner to publish or delete anything. Impact: avoids selling items the site does not show, or showing items that are unavailable.
+
+### T-20 Real photos for 23 Shore Picks restaurants
+- Why: L11. Files: `shore-picks.html` (only the `src` of listed cards), uploaded assets.
+- Do: owner supplies real photos (or licensed ones with credit); upload to Shopify Files or `shop-art/`; point each card at the new file; rerun `node tools/verify-live.mjs` from a networked machine or the Action.
+- Accept: verifier reports zero image failures. Never generate pictures of real restaurants.
+- Dependencies: owner supplies photos. Approval: owner.
+
+### T-21 Triage the nightly verifier
+- Do: read the `verify-live` Action summary each morning; fix `price`/`stock`/`page` findings the same day (price or availability mismatch is launch-critical), file `image` findings under T-20.
 
 ## P1
 

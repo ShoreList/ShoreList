@@ -18,7 +18,7 @@ Operating rules (full text in AGENTS.md):
 
 Your first job, in this order, no more:
 1. Run the commands in AGENTS.md section 4 and report actual results next to the baseline in CODEX_HANDOFF.md. Do not fix anything yet.
-2. Start CODEX_TASKS.md P0: T-01 (confirm deploy pipeline and live parity), then T-03 (checkout handoff test, stop before payment), then T-04 (Shopify SEO/alt text, authorized and reversible). T-02 (homepage mobile performance) runs on its own branch because its files do not overlap with the others.
+2. Start CODEX_TASKS.md P0: T-01 (confirm deploy pipeline and live parity), then T-03 (checkout handoff test, stop before payment), then T-04 (Shopify SEO/alt text, authorized and reversible), then T-21 (read the nightly verify-live report). T-02 is already resolved; just do not regress homepage speed.
 3. For each task: branch, smallest change that meets the acceptance criteria, run RELEASE_GATES.md gates, open a PR with evidence (commands, exit codes, desktop 1280 and mobile 390 screenshots, rollback line). Merge only when check is green and the gates pass and my merge delegation in AGENTS.md rule 1 applies; otherwise stop and ask me one specific question.
 4. Prioritize launch-critical defects over redesigns or refactors. If something would take longer than the time left before launch, document it in CODEX_TASKS.md instead.
 

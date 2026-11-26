@@ -9,6 +9,13 @@ Format: newest first. Each future entry: date, PR or action, what changed, evide
 - `netlify.toml`: 404 redirects for those root `.md` files so the repo-root publish does not expose them. Not deployed.
 - Evidence: `node tools/check-site.mjs` re-run after the change (result recorded in the PR). Rollback: delete the files and the redirect block.
 
+## 2026-11-25 late evening
+- #326 Shore Picks: featured spotlight drops a photo that fails to load (Caprice hero 404). #324 Shore Picks cards drop the empty image box when a photo fails (20 of 61 404). Verified live with a fresh fetch at 22:56 ET.
+- #325 Nightly read-only live verifier and Action (images, Shopify price and stock parity, sitemap). First run: 23 image failures, no price or page problems.
+- #323 sale banners restricted to verified Shopify windows and eligibility; #322 welcome copy: 10% off one eligible order; #320 shop FAQ: unofficial, not affiliated with Airlie Gardens or places shown; #318 storefront, mobile signup and social links repaired (TikTok link added). These four were merged by another agent or tool; summarized from commit subjects only.
+- Speed: after #318 to #323 the CI `speed` job went green (home 98, shop 92).
+- Buyer walk-through of the live shop (no order placed): bag, checkout handoff and `SHORE15` verified.
+
 ## 2026-11-25 (launch eve fixes)
 - #317 Blue Crab Corduroy Cap and Cuffed Beanie (Kure Beach) lead with the real navy studio image; lookbook photos showed brown/olive.
 - #316 Blue Crab Embroidered Crewneck (Kure Beach) leads with the real white product; lookbook showed aqua; product is White only.
@@ -50,4 +57,4 @@ Format: newest first. Each future entry: date, PR or action, what changed, evide
 - 2026-11-21 (110 commits): not itemized here; see `git log --since=2026-11-21 --until=2026-11-22`. The ShoreList Direct (Stripe goods) code, supplier adapters and test suite exist on `main` today; the commit that introduced them was not located in this pass (UNKNOWN which PR).
 
 ## Not done (so no changelog entry exists)
-- No real Shopify test order completed. Higgsfield video not generated. Seven lifestyle photos outstanding. Shopify SEO titles/alt texts not yet filled. Homepage speed floor not met. Live deploy of the latest merges not independently verified. See `CODEX_TASKS.md`.
+- No real Shopify test order completed. Higgsfield video not generated. Seven lifestyle photos outstanding. 23 Shore Picks photos outstanding. Shopify SEO titles/alt texts not yet filled. See `CODEX_TASKS.md`.
