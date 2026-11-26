@@ -221,19 +221,77 @@ export async function stageDrafts(specs, plans, queue, catalog) {
   }
 }
 
-async function cjSnapshot({ pid, vid, origin, zip }) {
+export async function cjVariants(pid) {
   if (!cj.configured()) throw new Error('CJ API credential unavailable');
-  if (![pid, vid].every(hasText) || !/^[A-Z]{2}$/.test(origin) || !/^\d{5}$/.test(zip)) {
-    throw new Error('Provide CJ product ID, variant ID, warehouse country and US ZIP');
-  }
+  if (!/^[a-z\d-]+$/i.test(pid ?? '')) throw new Error('Provide a valid CJ product ID');
   const variants = await cj.listVariants(pid);
-  const variant = variants.find((v) => String(v.vid) === vid && String(v.pid) === pid);
+  if (!Array.isArray(variants) || variants.some((variant) =>
+    String(variant?.pid) !== pid || !/^[a-z\d-]+$/i.test(String(variant.vid ?? '')) ||
+    !hasText(variant.variantSku))) {
+    throw new Error('CJ returned invalid variant data for the supplied product');
+  }
+  return variants.map(({ vid, variantSku, variantNameEn, variantKeyEn, variantImage }) => ({
+    vid: String(vid), variantSku, variantNameEn: variantNameEn ?? null, variantKeyEn: variantKeyEn ?? null,
+    variantImage: https(variantImage) ? variantImage : null,
+  }));
+}
+
+async function cjStockedVariant({ pid, vid, origin }) {
+  if (!hasText(vid) || !/^[A-Z]{2}$/.test(origin)) {
+    throw new Error('Provide CJ variant ID and warehouse country');
+  }
+  const variants = await cjVariants(pid);
+  const variant = variants.find((entry) => entry.vid === vid);
   if (!variant) throw new Error('CJ variant does not belong to the supplied product');
   const cost = await cj.getCost({ vid }, { from_country: origin });
   if (!cost.ok || !cost.in_stock) throw new Error('CJ cost or warehouse stock is unavailable');
+  return { variant, cost };
+}
+
+async function cjSnapshot({ pid, vid, origin, zip }) {
+  if (!/^\d{5}$/.test(zip)) throw new Error('Provide a five-digit US ZIP');
+  const { variant, cost } = await cjStockedVariant({ pid, vid, origin });
   const freight = await cj.quoteFreight(vid, { origin, zip });
   if (!Array.isArray(freight) || !freight.length) throw new Error('No CJ freight options for this variant and ZIP');
   return { variant, cost, freight };
+}
+
+function cjPostageCents(quote) {
+  const charges = quote.totalPostageFee == null ?
+    [quote.logisticPrice, quote.taxesFee ?? 0, quote.clearanceOperationFee ?? 0] : [quote.totalPostageFee];
+  const amounts = charges.map((value) =>
+    (typeof value === 'number' || hasText(value)) && Number(value) >= 0
+      ? Math.round(Number(value) * 100) : NaN);
+  const total = amounts.reduce((sum, cents) => sum + cents, 0);
+  return amounts.every(money) && money(total) ? total : null;
+}
+
+export async function cjCoverage({ pid, vid, origin, zips }) {
+  if (!zips?.length || zips.length > 10 || zips.some((zip) => !/^\d{5}$/.test(zip)) ||
+      new Set(zips).size !== zips.length) {
+    throw new Error('Provide 1 to 10 distinct five-digit US ZIPs');
+  }
+  const { variant, cost } = await cjStockedVariant({ pid, vid, origin });
+  const destinations = [];
+  for (const zip of zips) {
+    try {
+      const quotes = await cj.quoteFreight(vid, { origin, zip });
+      if (!Array.isArray(quotes)) throw new Error('Invalid freight response');
+      const options = [];
+      for (const quote of quotes) {
+        if (!hasText(quote?.logisticName)) continue;
+        const postageCents = cjPostageCents(quote);
+        if (postageCents == null) continue;
+        options.push({ logistics: quote.logisticName, postageCents,
+          quotedTransitDays: quote.logisticAging ?? null });
+      }
+      const status = options.length ? 'QUOTED' : quotes.length ? 'UNKNOWN' : 'NO_SERVICE';
+      destinations.push({ zip, status, options });
+    } catch {
+      destinations.push({ zip, status: 'UNKNOWN', options: [] });
+    }
+  }
+  return { pid, vid, sku: variant.variantSku, origin, quantity: 1, cost, destinations };
 }
 
 export function cjDraft(spec, plan, { variant, cost, freight }) {
@@ -246,12 +304,8 @@ export function cjDraft(spec, plan, { variant, cost, freight }) {
   const quotes = freight.filter((entry) => entry.logisticName === logistics);
   if (quotes.length !== 1) throw new Error('Select one unambiguous CJ freight option');
   const quote = quotes[0];
-  const charges = quote.totalPostageFee == null ?
-    [quote.logisticPrice, quote.taxesFee ?? 0, quote.clearanceOperationFee ?? 0] : [quote.totalPostageFee];
-  if (!charges.every((value) => value !== '' && value != null && Number.isFinite(Number(value)) && Number(value) >= 0)) {
-    throw new Error('CJ freight cost is unavailable');
-  }
-  const supplierShippingCents = charges.reduce((total, value) => total + Math.round(Number(value) * 100), 0);
+  const supplierShippingCents = cjPostageCents(quote);
+  if (supplierShippingCents == null) throw new Error('CJ freight cost is unavailable');
   const marginCents = promotionalRevenue(retailCents, shippingCents) -
     cost.cost_cents - supplierShippingCents - otherCents - paymentFeesCents;
   if (marginCents <= 0) throw new Error('CJ draft has nonpositive contribution after a 15% discount');
@@ -332,6 +386,21 @@ async function main([command = 'audit', ...args]) {
     for (const entry of result.content.flatMap((group) => group.productList)) {
       console.log(JSON.stringify({ pid: entry.id, sku: entry.sku, name: entry.nameEn, sellPrice: entry.sellPrice }));
     }
+  } else if (command === 'cj-inspect' && (args.length === 1 || args.length === 2)) {
+    const [title, selectedPid] = args;
+    if (!queue.items.some((entry) => entry.supplier === 'cj' && entry.title === title)) {
+      throw new Error('Unknown CJ candidate');
+    }
+    const pid = selectedPid ?? plans[title].publicResearchLead?.pid;
+    if (!pid) throw new Error('Use cj-search to find a product ID and then supply it explicitly');
+    const variants = await cjVariants(pid);
+    console.log(JSON.stringify({ title, pid, variants }, null, 2));
+    if (!variants.length) process.exitCode = 1;
+  } else if (command === 'cj-coverage' && args.length >= 4) {
+    const [pid, vid, origin, ...zips] = args;
+    const report = await cjCoverage({ pid, vid, origin, zips });
+    console.log(JSON.stringify(report, null, 2));
+    if (report.destinations.some((destination) => destination.status !== 'QUOTED')) process.exitCode = 1;
   } else if (command === 'cj-quote' && args.length === 4) {
     const [pid, vid, origin, zip] = args;
     const { variant, cost, freight } = await cjSnapshot({ pid, vid, origin, zip });
@@ -344,7 +413,7 @@ async function main([command = 'audit', ...args]) {
     const result = cjDraft(spec, plans[spec.title], await cjSnapshot(spec));
     console.log(JSON.stringify(result, null, 2));
   } else {
-    throw new Error('Commands: audit, revision TITLE, fourthwall-templates, fourthwall-audit, fourthwall-drafts FILE, cj-search TITLE, cj-quote PID VID ORIGIN ZIP, cj-draft FILE');
+    throw new Error('Commands: audit, revision TITLE, fourthwall-templates, fourthwall-audit, fourthwall-drafts FILE, cj-search TITLE, cj-inspect TITLE [PID], cj-quote PID VID ORIGIN ZIP, cj-coverage PID VID ORIGIN ZIP..., cj-draft FILE');
   }
 }
 
