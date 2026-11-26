@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { test } from 'node:test';
 import { BRAND_CRITERIA, coastalBrandIssues } from './coastal-brand-review.mjs';
 import cj from '../netlify/functions/_suppliers/cj.js';
-import { cjDraft, releaseIssues, releaseRevision, selectedVariants, stageDrafts } from './supplier-expansion.mjs';
+import { cjCoverage, cjDraft, cjVariants, releaseIssues, releaseRevision, selectedVariants, stageDrafts } from './supplier-expansion.mjs';
 
 const queue = JSON.parse(await readFile(new URL('../docs/supplier-expansion-candidates.json', import.meta.url)));
 const plans = JSON.parse(await readFile(new URL('../docs/supplier-expansion-development.json', import.meta.url)));
@@ -222,4 +222,48 @@ test('CJ draft maps an exact variant and freight option into a dormant catalog r
   assert.deepEqual(draft.variants[0].supplier_ref, { vid: 'test-vid' });
   assert.equal(evidence.discountStressMarginCents, 1950);
   assert.throws(() => cjDraft({ ...input, retailCents: 4000 }, plan, snapshot), /nonpositive/);
+  assert.throws(() => cjDraft(input, plan, { ...snapshot,
+    freight: [{ logisticName: 'Test carrier', totalPostageFee: ' ' }] }), /cost is unavailable/);
+});
+
+test('CJ inspection preserves exact variant IDs and coverage separates quotes from unavailable evidence', async (t) => {
+  t.mock.method(cj, 'configured', () => true);
+  const image = 'https://example.com/test-variant.png';
+  const variants = [
+    { pid: 'test-pid', vid: 'test-vid', variantSku: 'test-sku', variantNameEn: 'Oyster / 10 L',
+      variantKeyEn: 'Oyster-10 L', variantImage: image },
+    { pid: 'test-pid', vid: 'second-vid', variantSku: 'second-sku', variantImage: 'file:///tmp/wrong.png' },
+  ];
+  t.mock.method(cj, 'listVariants', async () => variants);
+  t.mock.method(cj, 'getCost', async () => ({ ok: true, in_stock: true, cost_cents: 1000, on_hand: 3 }));
+  const freight = t.mock.method(cj, 'quoteFreight', async (_, { zip }) => {
+    if (zip === '28401') return [
+      { logisticName: 'Test carrier', logisticPrice: 4, totalPostageFee: '5.20', logisticAging: '2-5' },
+      { logisticName: 'Alternative carrier', logisticPrice: 4, taxesFee: '0.40' },
+    ];
+    if (zip === '98101') return [];
+    if (zip === '96813') return [{ logisticName: 'Unpriced carrier', totalPostageFee: '-0.001' }];
+    throw new Error('temporary upstream failure');
+  });
+  const selected = await cjVariants('test-pid');
+  assert.equal(selected[0].vid, 'test-vid');
+  assert.equal(selected[0].variantImage, image);
+  assert.equal(selected[1].variantImage, null);
+  const spec = { pid: 'test-pid', vid: 'test-vid', origin: 'US', zips: ['28401', '98101', '96813', '99501'] };
+  const report = await cjCoverage(spec);
+  assert.equal(report.quantity, 1);
+  assert.equal(report.cost.on_hand, 3);
+  assert.deepEqual(report.destinations, [
+    { zip: '28401', status: 'QUOTED', options: [
+      { logistics: 'Test carrier', postageCents: 520, quotedTransitDays: '2-5' },
+      { logistics: 'Alternative carrier', postageCents: 440, quotedTransitDays: null },
+    ] },
+    { zip: '98101', status: 'NO_SERVICE', options: [] },
+    { zip: '96813', status: 'UNKNOWN', options: [] },
+    { zip: '99501', status: 'UNKNOWN', options: [] },
+  ]);
+  await assert.rejects(cjCoverage({ ...spec, zips: ['28401', '28401'] }), /distinct/);
+  await assert.rejects(cjCoverage({ ...spec, vid: 'wrong-vid' }), /does not belong/);
+  await assert.rejects(cjVariants('wrong-pid'), /invalid variant data/);
+  assert.equal(freight.mock.callCount(), 4);
 });
