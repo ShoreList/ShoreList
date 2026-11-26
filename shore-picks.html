@@ -1239,5 +1239,14 @@ document.getElementById('applyBtn').addEventListener('click',function(){
 <script src="/beachwx.js" defer></script>
 <script src="/widgets.js" defer></script>
 <script src="/shore-plus.js" defer></script>
+<script>
+/* A pick photo that fails to load (file missing from the CDN) must not leave an empty dark box: drop the image block and let the card read as text. */
+(function(){
+  function drop(img){var b=img&&img.closest&&img.closest('.c-img');if(!b||b.getAttribute('data-gone'))return;b.setAttribute('data-gone','1');var c=b.closest('.card');if(c)c.classList.add('no-photo');b.style.display='none';}
+  document.addEventListener('error',function(e){var t=e.target;if(t&&t.tagName==='IMG')drop(t);},true);
+  function sweep(){document.querySelectorAll('.c-img img').forEach(function(i){if(i.complete&&i.naturalWidth===0&&i.getAttribute('src'))drop(i);});}
+  window.addEventListener('load',function(){sweep();setTimeout(sweep,1500);});
+})();
+</script>
 </body>
 </html>
