@@ -4,6 +4,11 @@ Source: `git log origin/main` (308 non-automated commits as of 2026-11-25; the r
 
 Format: newest first. Each future entry: date, PR or action, what changed, evidence (command/exit code), rollback.
 
+## 2026-11-26
+
+- #333, squash commit `9989b4485f6360ef7d7f75199835f8350fb21268`. Added the 90/100 coastal luxury release standard, documented 40 held supplier candidates and added Fourthwall draft and CJ sourcing tools. No offers were published. PR site, speed, supplier, Netlify header and redirect checks passed.
+- After merge, direct HTTP checks returned 200 for the live shop, catalog and service worker. The catalog matched blob `5cfed05c67f4d0ef8c2017abd4544807d7bb8e12`. Sampled internal paths returned 404. The exact production Netlify deploy revision remained unverified. Rollback is a revert of the squash commit.
+
 ## Unreleased (branch `codex-onboarding`, not merged, not deployed)
 - Added `AGENTS.md`, `CODEX_HANDOFF.md`, `CODEX_TASKS.md`, `INTEGRATIONS.md`, `RELEASE_GATES.md`, `CODEX_START_PROMPT.md`, this `CHANGELOG.md`.
 - `netlify.toml`: 404 redirects for those root `.md` files so the repo-root publish does not expose them. Not deployed.

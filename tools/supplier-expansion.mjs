@@ -25,6 +25,15 @@ const scoreValid = (v) => Number.isFinite(v) && v >= 0 && v <= 10;
 const money = (v) => Number.isSafeInteger(v) && v >= 0;
 const promotionalRevenue = (retail, shipping) => retail - Math.ceil(retail * 15 / 100) + shipping;
 
+// A queue status change is operational. All other submission fields are reviewed.
+export function releaseRevision({ status, coastalBrandReview, ownerApproval, ...submission }) {
+  const canonical = JSON.stringify(submission, (_, value) => {
+    if (!value || typeof value !== 'object' || Array.isArray(value)) return value;
+    return Object.fromEntries(Object.keys(value).sort().map((key) => [key, value[key]]));
+  });
+  return createHash('sha256').update(canonical).digest('hex');
+}
+
 // This evaluates evidence supplied by reviewers. It never assigns a score.
 export function releaseIssues(item) {
   const issues = [];
@@ -58,9 +67,20 @@ export function releaseIssues(item) {
   issues.push(...productScoreIssues(item.scores, item.scoreEvidence));
   const photo = item.independentPhotoReview;
   if (!photo || photo.blind !== true || !scoreValid(photo.score) || photo.score < 8 ||
-      !hasText(photo.reviewer) || !hasText(photo.evidence)) issues.push('independent blind photo review');
-  issues.push(...coastalBrandIssues(item.coastalBrandReview));
-  if (!hasText(item.ownerApproval?.evidence) || item.ownerApproval?.approved !== true) issues.push('owner approval');
+      !hasText(photo.reviewer) || !hasText(photo.evidence) ||
+      photo.lookbookSha256 !== item.lookbook?.sha256 || photo.studioSha256 !== item.studio?.sha256) {
+    issues.push('independent blind review of the exact photo pair');
+  }
+  const revision = releaseRevision(item);
+  const brand = coastalBrandIssues(item.coastalBrandReview);
+  issues.push(...brand);
+  if (brand.length === 0 && item.coastalBrandReview.reviewedRevision !== revision) {
+    issues.push('coastal luxury review is for a different submission revision');
+  }
+  if (!hasText(item.ownerApproval?.evidence) || item.ownerApproval?.approved !== true ||
+      item.ownerApproval.reviewedRevision !== revision) {
+    issues.push('owner approval of the exact submission revision');
+  }
   return issues;
 }
 
@@ -286,6 +306,10 @@ async function main([command = 'audit', ...args]) {
       }
       console.log(JSON.stringify({ title: item.title, supplier: item.supplier, issues }));
     }
+  } else if (command === 'revision' && args.length === 1) {
+    const item = queue.items.find((candidate) => candidate.title === args[0]);
+    if (!item) throw new Error('Unknown supplier candidate');
+    console.log(releaseRevision(item));
   } else if (command === 'fourthwall-templates') {
     const ids = new Set(Object.values(plans).map((plan) => plan.templateId).filter(Boolean));
     for (const id of ids) {
@@ -320,7 +344,7 @@ async function main([command = 'audit', ...args]) {
     const result = cjDraft(spec, plans[spec.title], await cjSnapshot(spec));
     console.log(JSON.stringify(result, null, 2));
   } else {
-    throw new Error('Commands: audit, fourthwall-templates, fourthwall-audit, fourthwall-drafts FILE, cj-search TITLE, cj-quote PID VID ORIGIN ZIP, cj-draft FILE');
+    throw new Error('Commands: audit, revision TITLE, fourthwall-templates, fourthwall-audit, fourthwall-drafts FILE, cj-search TITLE, cj-quote PID VID ORIGIN ZIP, cj-draft FILE');
   }
 }
 
