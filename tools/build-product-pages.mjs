@@ -95,7 +95,9 @@ function page(i) {
 <p class="gg-price">${shown}</p>
 ${optionHtml}
 ${factHtml}
-<p><a class="nav-book" href="${esc(buy)}" rel="noopener">Buy on the shop</a></p>
+<p class="made-note">Made to order. Delivery usually 1-2 weeks. Shipping is calculated at checkout.</p>
+<p><a class="nav-book" href="${esc(buy)}" rel="noopener">Secure checkout</a></p>
+<p class="trust">Designed in Wilmington, NC &middot; Secure checkout &middot; Questions? hello via the <a href="mailto:rj@shorelist.net">contact page</a></p>
 <p>This page is the ShoreList address for the piece. Checkout still runs on the shop, where shipping and tax are shown before you pay. See <a href="/shipping-returns">shipping and returns</a>, the <a href="/shop/${town}">${esc(townName)} shop</a>, and the <a href="/gift-finder">gift finder</a>.</p>
 </div></div></section>
 </main>

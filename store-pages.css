@@ -25,6 +25,8 @@
 .tp-mail:hover{background:var(--ev-teal)}
 .tp-faq h3{margin-top:22px}
 /* gift guide */
+.made-note,.trust{margin:8px 0 14px;font-size:.92rem;line-height:1.45;color:var(--ev-ink)}
+.trust a{color:inherit}
 .gg-wide{max-width:1180px}
 .gg-sec{margin:0 0 clamp(40px,6vw,72px)}
 .gg-sec>p{margin:0 0 6px}

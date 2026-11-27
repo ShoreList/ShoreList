@@ -105,12 +105,13 @@ test('the Christmas note is the code only after Cyber Monday and through Dec 7',
 });
 
 test('home and shop render the sale in HTML with the Eastern codes', () => {
-  assert.match(home, /Black Friday: 15% off today with code SHOREFRIDAY15/);
+  assert.match(home, /Black Friday: 15% off today with code SHOREFRIDAY15, ends 11:59 PM ET tonight/);
+  assert.match(home, /Monday only, ends 11:59 PM ET/);
   assert.match(home, /Cyber Monday: 15% off today with code SHORECYBER15/);
   assert.match(home, /href="\/shop"/);
   assert.match(home, /data-code="SHOREFRIDAY15"/);
   assert.match(home, /data-code="SHORECYBER15"/);
-  assert.match(home, /height:36px/);
+  assert.match(home, /min-height:56px/);
   assert.match(shop, /15% off eligible Shopify orders with code SHOREFRIDAY15/);
   assert.match(shop, /SHORECYBER15/);
   assert.match(shop, /ordering by December 7/);
