@@ -205,8 +205,12 @@ function scoreItem(it, q, budget, who) {
   s += Math.max(0, 20 - it.price) / 10;
   return s;
 }
+function weakGift(it) {
+  const n = (it.title + ' ' + it.handle).toLowerCase();
+  return /tea towel|\bmug\b|ornament|can cooler|cooler sleeve/.test(n);
+}
 function fallbackPicks(items, q, budget, who) {
-  return items.map((it) => ({ it, s: scoreItem(it, q, budget, who) }))
+  return items.filter((it) => !weakGift(it)).map((it) => ({ it, s: scoreItem(it, q, budget, who) }))
     .filter((row) => row.s >= 0)
     .sort((a, b) => b.s - a.s || a.it.price - b.it.price || a.it.title.localeCompare(b.it.title))
     .slice(0, 6)
