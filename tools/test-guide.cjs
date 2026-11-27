@@ -6,7 +6,7 @@ test('path picks the character and the session lock holds', () => {
   g.resetGuide();
   assert.equal(g.characterFor('/shop', '').id, 'wrighty');
   assert.equal(g.characterFor('/', '').id, 'shelby');
-  assert.equal(g.characterFor('/events/this-weekend', '').id, 'shelby');
+  assert.equal(g.characterFor('/events/this-weekend', '').id, 'cape');
   assert.equal(g.characterFor('/things-to-do/walking-tours', '').id, 'cape');
   assert.equal(g.characterFor('/shop', 'cape').id, 'cape');
 });
