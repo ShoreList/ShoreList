@@ -132,5 +132,6 @@ var b=f.querySelector('button');b.disabled=true;b.textContent='Joining...';
 fetch('https://formspree.io/f/xeevzzqd',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify({email:v,list:f.getAttribute('data-list'),source:location.pathname,_subject:'The Shore Report signup'})}).then(function(r){if(!r.ok)throw 0;m.textContent='You are in. Watch your inbox for the next issue.';f.reset();t('weekly_signup',{})}).catch(function(){m.textContent='Something went wrong. Please try again, or email rj@shorelist.net.'}).finally(function(){b.disabled=false;b.textContent='Get it free'})});})();
 </script>
 <script src="/shore-plus.js" defer></script>
+<script src="/shore-guide.js" defer></script>
 </body>
 </html>

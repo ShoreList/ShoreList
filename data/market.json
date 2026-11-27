@@ -36,7 +36,9 @@
       "id": "wrighty",
       "name": "Wrighty",
       "creature": "pelican",
-      "pages": ["shop", "gift-finder"],
+      "accent": "#0E1F33",
+      "paths": ["/shop", "/gift-finder", "/holiday-gift-guide"],
+      "greeting": "Hi, I'm Wrighty, ShoreList's shop guide.",
       "sayOk": "Wrighty here. These pieces are in the shop right now.",
       "sayNone": "Wrighty could not find a shop piece for that. Try another budget, or open the full shop."
     },
@@ -44,14 +46,16 @@
       "id": "shelby",
       "name": "Shelby",
       "creature": "loggerhead",
-      "pages": ["home", "beach-guides"],
+      "accent": "#8A7348",
+      "paths": ["/", "/wrightsville-beach", "/carolina-beach", "/kure-beach", "/downtown"],
       "greeting": "Hi, I'm Shelby, ShoreList's beach guide."
     },
     "cape": {
       "id": "cape",
       "name": "Captain Cape",
       "creature": "pelican",
-      "pages": ["tours", "bookings"],
+      "accent": "#B5362F",
+      "paths": ["/things-to-do", "/events", "/guides", "/planner"],
       "greeting": "Hi, I'm Captain Cape, ShoreList's harbor guide."
     }
   }

@@ -14,6 +14,10 @@
 [functions."gift-finder"]
   included_files = ["shop-catalog.json", "data/operators.json", "data/market.json"]
 
+# The three guides answer only from the search index and market config.
+[functions."guide"]
+  included_files = ["search-index.json", "data/market.json", "data/operators.json"]
+
 # ShoreList Direct (physical goods): the catalog is read by the checkout, the order page and the fulfillment code.
 [functions."create-goods-checkout"]
   included_files = ["dropship-catalog.json"]

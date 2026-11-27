@@ -300,5 +300,6 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 window.addEventListener('load',function(){var c=document.getElementById('wxchip');if(!c||!window.ShoreWX)return;
 window.ShoreWX.get(0).then(function(x){if(x==null||x.temp==null)return;var t='Wrightsville Beach now: '+Math.round(x.temp)+'°F, wind '+Math.round(x.wind||0)+' mph'+(x.waveFt!=null?', surf '+x.waveFt.toFixed(1)+' ft':'');c.querySelector('span').textContent=t;}).catch(function(){});});
 </script>
+<script src="/shore-guide.js" defer></script>
 </body>
 </html>
