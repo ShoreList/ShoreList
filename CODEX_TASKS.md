@@ -50,8 +50,15 @@ Legend: P0 launch-critical (do before 5 PM Thu), P1 this week, P2 soon, P3 hygie
 - Files: `tools/verify-live.mjs` for verifier corrections.
 - Do: read the `verify-live` Action summary each morning; fix `price`/`stock`/`page` findings the same day (price or availability mismatch is launch-critical), file `image` findings under T-20.
 
+
+### T-23 Priced first screen on /shop (shop.html)
+- Owner: ShoreList Shop & Merch/shop-merch/fix2-priced-first-screen. Assigned by ShoreList Chief, Nov 26 2026 11:21 PM ET (ranked fix 2). Shop & Merch is the sole writer on `shop.html`.
+- Files: `shop.html`, `shop.css`, `tools/build-shop-static.mjs`, `sw.js`, `CODEX_TASKS.md`, `CHANGELOG.md`.
+- Do: four priced gifts under $35 (real catalog prices, Wrightsville first where a real one exists), labeled "Gifts under $35" if that is honest otherwise "Start here" (never a sales-rank label), sit directly under the /shop headline and are visible on the first screen at 390 px. A short "Order by Dec 7 for Christmas" line may be added only if it matches the T-22 note wording and dates. Hero photo links to the Kure Beach Lifeguard Stand Embroidered Crewneck shown in it, not the unreleased $78 hoodie. Do not include the catalog title patch or the Banks Channel crewneck. Bump `sw.js` to `sl-v294-2026-11-27` (next above main's `sl-v293-2026-11-27`).
+- Accept: `check-site`, `check-keywords`, `thin-content-gate` and shop tests pass; BF banner and collection filter still work; 390 and 1280 screenshots in `/workspace/shorelist/evidence-fix2/`.
+
 ### T-22 Collection filter fix and Christmas order-by note (shop.html, shop-promo.js)
-- Owner: ShoreList Shop & Merch/shop-merch/collection-filter-xmas-banner. Assigned by ShoreList Chief, Nov 26 2026 11:12 PM ET. Shop & Merch is the sole writer on `shop.html` while this is open.
+- Owner: ShoreList Shop & Merch/shop-merch/collection-filter-xmas-banner. Assigned by ShoreList Chief, Nov 26 2026 11:12 PM ET. Merged to main as `14ab363` (#354), live `sl-v289`. Shop & Merch remains the sole writer on `shop.html` for follow-on shop work.
 - Shipping claim: cursor/shop-collection-filter-xmas-ac26.
 - Files: `shop.html`, `shop-promo.js`, `tools/test-shop-promo.mjs`, `sw.js`, `CODEX_TASKS.md`, `CHANGELOG.md`.
 - Do: `setFilter` keeps the current collection when the chip handlers omit the 5th argument; chip handlers pass `coll`; chip counts are scoped to the open collection; add a `bags` type chip. Add a Christmas order-by note (recommended order-by Dec 7, dates vary by item, no guarantee) that shows only when no sale is active, from Dec 1 12:00 AM ET, and hides after Dec 7 11:59 PM ET.

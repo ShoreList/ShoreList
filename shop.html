@@ -28,6 +28,9 @@
 <link rel="preconnect" href="https://cdn.shopify.com" crossorigin/>
 <link rel="preload" href="/shop-catalog.json" as="fetch" crossorigin="anonymous"/>
 <link rel="preload" as="image" href="/shop-art/hero-kb-crewneck-1000.webp" imagesrcset="/shop-art/hero-kb-crewneck-1000.webp 1000w, /shop-art/hero-kb-crewneck-2000.webp 2000w" imagesizes="(min-width:900px) 50vw, 100vw" fetchpriority="high"/>
+<!--SHOP-STATIC:lcp-->
+
+<!--/SHOP-STATIC:lcp-->
 <!--HOME-CSS:start--><style id="home-css">
 /* Cinematic hero + widgets. Loaded after shorelist.css. */
 .hero.hero-cine{background:#0E1F33!important;color:#fff;min-height:100svh;padding-top:110px}
@@ -437,11 +440,35 @@ nav.sl-hdr .sl-tools svg{width:18px;height:18px;fill:none;stroke:currentColor;st
 .hero-cta{margin-top:28px}
 .hero-img{aspect-ratio:4/5;max-height:80vh;overflow:hidden;background:var(--sand)}
 .hero-img img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}
+a.hero-img{display:block;color:inherit;text-decoration:none}
+a.hero-img:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.hero-start{margin:20px 0 0}
+.hero-start-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 0 10px}
+.hero-start-h h2{font-family:var(--sans,"DM Sans",system-ui,sans-serif);font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;margin:0}
+.hero-start-grid,.grid.hero-start-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 12px}
+.hero-start-grid .card .bd{padding-top:8px}
+.hero-start-grid .card h3{font-size:.92rem}
+@media(min-width:900px){
+  .hero-start-grid .card .ph{aspect-ratio:auto;height:132px}
+  .hero-start-grid .card .ph img{height:132px;width:100%;object-fit:cover}
+  .hero-start-grid .card h3{font-size:.85rem}
+}
 @media(min-width:900px){
   .hero-in{grid-template-columns:minmax(0,5fr) minmax(0,6fr);min-height:min(78vh,680px)}
   .hero-txt{padding:72px 56px 72px max(var(--gut),calc((100vw - 1280px)/2 + var(--gut)));display:flex;flex-direction:column;justify-content:center}
   .hero h1{font-size:clamp(3rem,4.6vw,4.4rem);margin:20px 0 24px}
   .hero-img{aspect-ratio:auto;max-height:none}
+}
+@media(max-width:899px){
+  .hero-txt{padding:18px var(--gut) 28px}
+  .hero h1{margin:8px 0 12px;font-size:2.05rem;line-height:1.05;max-width:11em}
+  .hero p.lead{font-size:.95rem;margin:12px 0 0}
+  .hero-cta{margin-top:16px}
+  .hero-start{margin:14px 0 0}
+  .hero-start-grid{gap:12px 8px}
+  .hero-start-grid .card .ph{aspect-ratio:auto;height:64px}
+  .hero-start-grid .card .ph img{height:64px;width:100%;object-fit:cover}
+  .hero-img{aspect-ratio:16/10;max-height:168px}
 }
 
 /* sections */
@@ -729,10 +756,21 @@ body:not(.home):not(.pg-home) .dock{display:none!important}
     <div class="hero-txt">
       <p class="kicker">The ShoreList Shop</p>
       <h1>Goods from Wilmington&rsquo;s coast.</h1>
+      <section class="hero-start" id="featured" aria-labelledby="featH">
+        <div class="hero-start-h"><h2 id="featH">Gifts under $35</h2><a class="tlink" href="#results" id="featAll">Shop everything</a></div>
+        <div class="grid hero-start-grid" id="featGrid">
+<!--SHOP-STATIC:cards-->
+<article class="card"><div class="ph" data-qv="sea-oats-carolina-coast-kiss-cut-vinyl-sticker-3-inch"><img class="p1" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-sea-oats-carolina-coast-kiss-cut-vinyl-sticker-3-inch_480x.webp" alt="Kiss-cut vinyl sticker with a lifelike painted sea oats illustration, applied to a navy beach cooler on the sand" fetchpriority="low" loading="eager" decoding="async" width="800" height="1000"/></div><div class="bd"><h3><button type="button" data-qv="sea-oats-carolina-coast-kiss-cut-vinyl-sticker-3-inch" aria-haspopup="dialog">Sea Oats Carolina Coast Kiss-Cut Vinyl Sticker</button></h3><div class="row"><span class="price">$6</span></div></div></article>
+<article class="card"><div class="ph" data-qv="wrightsville-can-cooler"><img class="p1" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-can-cooler_480x.webp" alt="Hand holding a can in the Wrightsville Beach can cooler on a dock at sunset" fetchpriority="low" loading="lazy" decoding="async" width="800" height="1000"/></div><div class="bd"><h3><button type="button" data-qv="wrightsville-can-cooler" aria-haspopup="dialog">Wrightsville Beach Can Cooler</button></h3><div class="row"><span class="price">$12</span></div></div></article>
+<article class="card"><div class="ph" data-qv="wrightsville-ornament-2026"><img class="p1" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-ornament-2026_480x.webp" alt="Wrightsville Beach 2026 ornament on a Christmas tree in a coastal living room" fetchpriority="low" loading="lazy" decoding="async" width="800" height="1000"/></div><div class="bd"><h3><button type="button" data-qv="wrightsville-ornament-2026" aria-haspopup="dialog">Wrightsville Beach Christmas Ornament 2026</button></h3><div class="row"><span class="price">$18</span></div></div></article>
+<article class="card"><div class="ph" data-qv="wrightsville-beach-sloop-all-over-print-zip-pouch"><img class="p1" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-all-over-print-zip-pouch_480x.webp" alt="Navy zip pouch printed edge to edge with white sailboats on teal waves, on the sand with sunglasses at Wrightsville Beach" fetchpriority="low" loading="lazy" decoding="async" width="800" height="1000"/></div><div class="bd"><h3><button type="button" data-qv="wrightsville-beach-sloop-all-over-print-zip-pouch" aria-haspopup="dialog">Wrightsville Beach Sloop All Over Print Zip Pouch</button></h3><div class="row"><span class="price">From $28</span></div></div></article>
+<!--/SHOP-STATIC:cards-->
+        </div>
+      </section>
       <p class="lead">Made to order for Wilmington, Wrightsville Beach, Carolina Beach and Kure Beach. Wilmington NC souvenirs, embroidered crewnecks, caps, totes and art prints, each with one small local mark.</p>
       <div class="hero-cta"><a class="sbtn" href="#collections" id="heroShop">Shop the collections</a></div>
     </div>
-    <div class="hero-img"><img src="/shop-art/hero-kb-crewneck-1000.webp" srcset="/shop-art/hero-kb-crewneck-1000.webp 1000w, /shop-art/hero-kb-crewneck-2000.webp 2000w" sizes="(min-width:900px) 50vw, 100vw" alt="Smiling woman in a white crewneck sweatshirt with a small embroidered lifeguard stand and the words Kure Beach, on the dunes at Kure Beach" width="1000" height="1240" fetchpriority="high" decoding="async"/></div>
+    <a class="hero-img" href="https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt" data-qv="kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt"><img src="/shop-art/hero-kb-crewneck-1000.webp" srcset="/shop-art/hero-kb-crewneck-1000.webp 1000w, /shop-art/hero-kb-crewneck-2000.webp 2000w" sizes="(min-width:900px) 50vw, 100vw" alt="Smiling woman in a white crewneck sweatshirt with a small embroidered lifeguard stand and the words Kure Beach, on the dunes at Kure Beach" width="1000" height="1240" fetchpriority="high" decoding="async"/></a>
   </div>
 </header>
 <main id="main">
@@ -742,16 +780,6 @@ body:not(.home):not(.pg-home) .dock{display:none!important}
 <div class="cblocks" id="cblocks"><a class="cblock wide" href="/shop?collection=local-icons#results" data-coll="local-icons"><div class="cp"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-embroidered-crewneck-carolina-beach_1280x.webp" alt="" loading="lazy" decoding="async" width="1200" height="514"/></div><h3>Local Icons</h3><p>One small mark per beach town, on crewnecks, tees and caps.</p><span class="go">View the collection</span></a><a class="cblock" href="/shop?collection=shore-gear#results" data-coll="shore-gear"><div class="cp"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-weekender-tote-bag_960x.webp" alt="" loading="lazy" decoding="async" width="1200" height="900"/></div><h3>Shore Gear</h3><p>Totes, mugs, pillows and can coolers for the boat and the beach.</p><span class="go">View the collection</span></a><a class="cblock" href="/shop?collection=beach-setup#results" data-coll="beach-setup"><div class="cp"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-picnic-and-beach-blanket_960x.webp" alt="" loading="lazy" decoding="async" width="1200" height="900"/></div><h3>Beach Setup</h3><p>The chair, the shade, the towel and the cooler.</p><span class="go">View the collection</span></a><a class="cblock" href="/shop?collection=coastal-christmas#results" data-coll="coastal-christmas"><div class="cp"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-ceramic-ornament_960x.webp" alt="" loading="lazy" decoding="async" width="1200" height="900"/></div><h3>Locals' Christmas</h3><p>Ornaments and gifts for a Carolina Christmas.</p><span class="go">View the collection</span></a><a class="cblock" href="/shop?collection=landmarks#results" data-coll="landmarks"><div class="cp"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-framed-art-print-wrightsville-beach-and-wilmington-v2_960x.webp" alt="" loading="lazy" decoding="async" width="1200" height="900"/></div><h3>Landmark Prints</h3><p>A framed print of Wrightsville Beach and Wilmington.</p><span class="go">View the collection</span></a></div>
 <!--/SHOP-STATIC:collections-->
     </section>
-    <section class="sec" id="featured" aria-labelledby="featH"><div class="sec-h"><h2 id="featH">Start here</h2><a class="tlink" href="#results" id="featAll">Shop everything</a></div><div class="grid" id="featGrid">
-<!--SHOP-STATIC:cards-->
-<article class="card"><div class="ph" data-qv="carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt"><img class="p1" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13000623743151575142_2048_640x.jpg" alt="White crewneck sweatshirt with a small embroidered lifeguard stand and the words Carolina Beach, worn on the sand" loading="eager" decoding="async" width="800" height="1000"/></div><div class="bd"><h3><button type="button" data-qv="carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt" aria-haspopup="dialog">Carolina Beach Lifeguard Stand Embroidered Crewneck Sweatshirt</button></h3><div class="row"><span class="price">$88</span></div></div></article>
-<article class="card"><div class="ph" data-qv="kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt"><img class="p1" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5860568908472344756_2048_640x.jpg" alt="Smiling woman in a white crewneck sweatshirt with a small embroidered lifeguard stand and the words Kure Beach" loading="eager" decoding="async" width="800" height="1000"/></div><div class="bd"><h3><button type="button" data-qv="kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt" aria-haspopup="dialog">Kure Beach Lifeguard Stand Embroidered Crewneck Sweatshirt</button></h3><div class="row"><span class="price">$88</span></div></div></article>
-<article class="card"><div class="ph" data-qv="the-pelican-corduroy-cap-carolina-beach"><img class="p1" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/755985813891049725_2048_640x.jpg" alt="Man in a navy corduroy cap with an embroidered brown pelican, on the sand at Carolina Beach" loading="lazy" decoding="async" width="800" height="1000"/></div><div class="bd"><h3><button type="button" data-qv="the-pelican-corduroy-cap-carolina-beach" aria-haspopup="dialog">Pelican Corduroy Cap</button></h3><div class="row"><span class="price">$49</span></div></div></article>
-<article class="card"><div class="ph" data-qv="airlie-oak-framed-art-print-wrightsville-beach-and-wilmington"><img class="p1" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/18372799870615515575_2048_640x.jpg" alt="Framed art print of the Airlie Oak, a painterly Southern live oak with Spanish moss and azaleas, above a console" loading="lazy" decoding="async" width="800" height="1000"/></div><div class="bd"><h3><button type="button" data-qv="airlie-oak-framed-art-print-wrightsville-beach-and-wilmington" aria-haspopup="dialog">Airlie Oak Framed Art Print</button></h3><div class="row"><span class="price">From $84</span></div></div></article>
-<article class="card"><div class="ph" data-qv="wrightsville-beach-sloop-all-over-print-tote-bag"><img class="p1" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8848050272079715985_2048_640x.jpg?v=1795404833" alt="Navy-handled tote with a white sailboat pattern on the navy bag body" loading="lazy" decoding="async" width="800" height="1000"/></div><div class="bd"><h3><button type="button" data-qv="wrightsville-beach-sloop-all-over-print-tote-bag" aria-haspopup="dialog">Wrightsville Beach Sloop All Over Print Tote Bag</button></h3><div class="row"><span class="price">From $48</span></div></div></article>
-<article class="card"><div class="ph" data-qv="the-blue-crab-embroidered-crewneck-kure-beach"><img class="p1" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4874290219685606735_2048_640x.jpg" alt="White crewneck sweatshirt with a small embroidered blue crab on the chest, ShoreList, Kure Beach" loading="lazy" decoding="async" width="800" height="1000"/></div><div class="bd"><h3><button type="button" data-qv="the-blue-crab-embroidered-crewneck-kure-beach" aria-haspopup="dialog">Blue Crab Embroidered Crewneck</button></h3><div class="row"><span class="price">$88</span></div></div></article>
-<!--/SHOP-STATIC:cards-->
-    </div></section>
     <section class="sec" id="towns" aria-labelledby="townH"><div class="sec-h"><h2 id="townH">Shop by town</h2></div>
       <div class="towns" id="townGrid"><a class="town" href="/shop/wrightsville-beach"><b>Wrightsville Beach</b><span>Sloops, marinas and the sound</span></a><a class="town" href="/shop/carolina-beach"><b>Carolina Beach</b><span>The lifeguard stand on the sand</span></a><a class="town" href="/shop/kure-beach"><b>Kure Beach</b><span>The lifeguard stand at Kure</span></a><a class="town" href="/shop/wilmington"><b>Wilmington and the Coast</b><span>For the whole coast</span></a></div></section>
     <section class="sec" id="motifs" aria-labelledby="motifH" hidden><div class="sec-h"><h2 id="motifH">Shop by motif</h2></div><div class="motifs" id="motifGrid"></div></section>
@@ -920,11 +948,16 @@ body:not(.home):not(.pg-home) .dock{display:none!important}
     $('cnt').textContent=pieces(total)+(narrowed?' shown':'');
     $('shelves').innerHTML=html||'<p class="empty" style="padding:40px 0">Nothing matches that. Try a beach name or a color, or <button class="tlink" type="button" data-clear="1">clear the filters</button>.</p>';
   }
+  /* Four gifts under $35 under the shop headline, Wrightsville first. Real catalog prices. Not a sales-rank row: we have no order data.
+     Kept separate from catalog.startHere (that list waits on a Shopify title change). Do not add the Banks Channel crewneck. */
+  var FIRST_SCREEN=['sea-oats-carolina-coast-kiss-cut-vinyl-sticker-3-inch','wrightsville-can-cooler','wrightsville-ornament-2026','wrightsville-beach-sloop-all-over-print-zip-pouch'];
   function renderFeatured(){
-    var live=liveItems(),ids=(data.startHere||[]),list=ids.map(byId).filter(function(i){return i&&live.indexOf(i)>-1;}).slice(0,6);
-    if(!list.length)list=live.filter(function(i){return i.featured===true;}).slice(0,6);
+    var live=liveItems(),list=FIRST_SCREEN.map(byId).filter(function(i){return i&&live.indexOf(i)>-1;}).slice(0,4);
     if(!list.length)return;
-    $('featGrid').innerHTML=list.map(function(i,k){return cardHtml(i,k<2);}).join('');
+    var grid=$('featGrid');
+    var have=[].map.call(grid.querySelectorAll('h3 button[data-qv]'),function(b){return b.getAttribute('data-qv');});
+    if(have.join('|')===list.map(function(i){return i.id;}).join('|'))return;
+    grid.innerHTML=list.map(function(i,k){return cardHtml(i,k<1);}).join('');
   }
   function renderAll(){renderFeatured();render();paintChips();}
   function paintChips(){
@@ -1040,6 +1073,8 @@ body:not(.home):not(.pg-home) .dock{display:none!important}
     });
     $('collections').addEventListener('click',function(e){if(e.metaKey||e.ctrlKey||e.shiftKey||e.button)return;var c=e.target.closest('[data-coll]');if(!c)return;e.preventDefault();setFilter('all','all',true,'all',c.getAttribute('data-coll'));});
     $('featAll').addEventListener('click',function(e){e.preventDefault();setFilter('all','all',true,'all','all');});
+    var heroImg=document.querySelector('a.hero-img[data-qv]');
+    if(heroImg)heroImg.addEventListener('click',function(e){if(e.metaKey||e.ctrlKey||e.shiftKey||e.button)return;e.preventDefault();openQv(heroImg.getAttribute('data-qv'));});
     $('motifGrid').addEventListener('click',function(e){var m=e.target.closest('[data-motif-tile]');if(m){e.preventDefault();setFilter('all','all',true,m.getAttribute('data-motif-tile'),'all');return;}var dr=e.target.closest('[data-drop]');if(dr){e.preventDefault();$('drops').scrollIntoView({behavior:'smooth'});setTimeout(function(){$('dropEmail').focus({preventScroll:true});},350);}});
     $('heroShop').addEventListener('click',function(e){e.preventDefault();$('collections').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});});
     var d=$('qv');
