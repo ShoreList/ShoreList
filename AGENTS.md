@@ -4,6 +4,8 @@ Read this first, then `CODEX_HANDOFF.md`, `CODEX_TASKS.md`, `INTEGRATIONS.md`, `
 
 Evidence labels used in every doc: **VERIFIED** (observed or executed in this repo/store, with how), **ESTIMATE** (reasoned number or judgment), **HYPOTHESIS** (plausible, untested), **UNKNOWN** (not checked, or not checkable from the sandbox). Use them in your own reports. Never write "passed" for a command you did not run to a zero exit.
 
+**ShoreList Rulebook (binding):** read [docs/command-center/SHORELIST-STANDARDS.md](docs/command-center/SHORELIST-STANDARDS.md) before any build, publish or post. It is the single rulebook (rule IDs, pass/fail tests, enforcing step) and, where it differs from a line here, it wins for product, photo, copy, price and posting rules. It records the owner's Nov 27, 2026 delegation: a product or post that passes every hard rule and an independent 90/100 score ships without asking; spending, outreach, subscriptions and account changes still need the owner.
+
 ## 1. What ShoreList is
 
 ShoreList LLC (Wilmington, NC; owner/approver: RJ Brideau) is a local guide and bookings site for Wilmington and the Cape Fear beaches (Wrightsville, Carolina, Kure) plus a merch shop at `shorelist.net/shop`. Goals: be the locals' go-to and the tourists' "need it like oxygen" city guide (events, things to do, places), and run the shop like an established brand (benchmarks the owner named: Ralph Lauren, Faherty, Kiel James Patrick). Public launch target: **Thursday 2026-11-26, 5 PM Eastern**. Black Friday and Cyber Monday sales are scheduled (see `INTEGRATIONS.md`).
