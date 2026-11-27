@@ -18,6 +18,11 @@
     var boot = document.querySelector('script[src="/guide-boot.js"]');
     if (boot && boot.getAttribute('data-widgets') === '1') add('/widgets.js');
     if (document.getElementById('slgOpen')) add('/shore-guide.js');
+    var after = boot && boot.getAttribute('data-after');
+    if (after) after.split(/[,\s]+/).forEach(function (src) {
+      if (!src) return;
+      add(src.charAt(0) === '/' ? src : '/' + src);
+    });
   }
   var btn = document.getElementById('slgOpen');
   if (btn) btn.addEventListener('click', function () { window.__slgWantOpen = true; load(); });
