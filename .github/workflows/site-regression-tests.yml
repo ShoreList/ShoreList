@@ -20,6 +20,9 @@ on:
       - 'shop/*.html'
       - 'shop-catalog.json'
       - 'tools/test-shop-structured-data.mjs'
+      - 'tools/test-shop-photo-release.mjs'
+      - 'docs/shop-photo-review.json'
+      - 'tools/coastal-brand-review.mjs'
   push:
     branches: [main]
     paths:
@@ -41,6 +44,9 @@ on:
       - 'shop/*.html'
       - 'shop-catalog.json'
       - 'tools/test-shop-structured-data.mjs'
+      - 'tools/test-shop-photo-release.mjs'
+      - 'docs/shop-photo-review.json'
+      - 'tools/coastal-brand-review.mjs'
 permissions:
   contents: read
 jobs:
@@ -48,8 +54,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - run: node tools/test-operators.mjs
       - run: node --test tools/test-concierge.cjs tools/test-plan-itinerary.cjs tools/test-shop-promo.mjs tools/test-shop-structured-data.mjs
+      - run: node --test tools/test-shop-photo-release.mjs
+        env:
+          SHOP_PHOTO_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
