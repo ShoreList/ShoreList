@@ -319,6 +319,19 @@
       "store": "shopify",
       "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-sanderling-printed-garment-dyed-tee-studio-front.jpg",
       "status": "Lookbook is not used as the lead. Check the exact product and artwork before assigning the first image."
+    },
+    {
+      "id": "banks-channel-sunset-sail-crewneck",
+      "name": "Banks Channel Sunset Sail Crewneck",
+      "url": "https://shorelist.myshopify.com/products/banks-channel-sunset-sail-crewneck",
+      "color": "True Navy",
+      "store": "shopify",
+      "options": [
+        "Blue Spruce",
+        "True Navy"
+      ],
+      "status": "Pepper removed (Brand Standard grey hard failure). Old lookbook showed Pepper; studio-first until a True Navy lookbook passes blind review",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17887401445751990680_2048.jpg"
     }
   ],
   "reviews": {},
