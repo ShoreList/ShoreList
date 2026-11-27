@@ -429,6 +429,9 @@ window.addEventListener('load',function(){
 /* photo plates */
 .plates{position:absolute;inset:0;z-index:0;overflow:hidden;background:#0E1F33;--px:0px;--py:0px;opacity:0;transition:opacity .6s ease}
 .plates-on .plates{opacity:1}.plates-on .scene-cv{opacity:0!important}
+.scene-still .scene-cv{opacity:1!important;z-index:1;-webkit-mask-image:linear-gradient(to bottom,transparent 64%,#000 82%);mask-image:linear-gradient(to bottom,transparent 64%,#000 82%)}
+.scene-play{position:absolute;z-index:6;left:16px;bottom:118px;min-height:44px;padding:0 14px;border:1px solid #D9C7A3;border-radius:999px;background:rgba(14,31,51,.72);color:#F4F1EA;font:500 .78rem 'DM Sans',system-ui,sans-serif;cursor:pointer}
+.scene-play:focus-visible{outline:3px solid #D9C7A3;outline-offset:3px}
 .plates img{position:absolute;left:-3%;top:-3%;width:106%;height:106%;max-width:100%;object-fit:cover;object-position:var(--pos,62% 50%);opacity:0;visibility:hidden;transform:translate3d(var(--px),var(--py),0) scale(1.02);animation:kb 70s ease-in-out infinite alternate;will-change:opacity,transform;user-select:none;-webkit-user-drag:none}
 .plates img[data-p="3"]{filter:brightness(.5) saturate(.8) hue-rotate(8deg)}
 @keyframes kb{from{scale:1}to{scale:1.07}}
@@ -536,8 +539,13 @@ img.lx-in{animation:lx-fade .7s var(--lx-ease) both}
 
 /* native cross-page transitions (Chromium) */
 @view-transition{navigation:auto}
-::view-transition-old(root){animation:lx-vt-out .25s ease both}
-::view-transition-new(root){animation:lx-vt-in .45s var(--lx-ease) both}
+::view-transition-old(root){animation:lx-vt-out .22s ease both}
+::view-transition-new(root){animation:lx-vt-in .26s ease both}
+nav.sl-hdr,.ev-nav{view-transition-name:sl-chrome}
+#main{view-transition-name:sl-page}
+@media(prefers-reduced-motion:reduce){
+  ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
+}
 @keyframes lx-vt-out{to{opacity:0}}
 @keyframes lx-vt-in{from{opacity:0;transform:translateY(8px)}}
 /* scroll-driven reading progress (no JS) */
@@ -840,6 +848,16 @@ body:not(.home):not(.pg-home) .dock{display:none!important}
 .hx-tile .d.live{color:#9FC3B8;font-weight:500}
 @media(hover:hover){.hx-tile:hover{transform:translateY(-4px);background:rgba(244,241,234,.15);border-color:rgba(255,155,123,.7)}}
 
+.tn-grid{display:grid;grid-template-columns:1fr;gap:22px;min-height:280px}
+@media(min-width:800px){.tn-grid{grid-template-columns:1fr 1fr}}
+.tn-grid h3{font-family:Georgia,serif;font-weight:400;font-size:1.35rem;margin:0 0 10px}
+.tn-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.tn-skel{display:block;height:72px;border-radius:8px;background:rgba(14,31,51,.06)}
+.tn-card{display:block;padding:12px 14px;border:1px solid rgba(14,31,51,.12);border-radius:10px;background:#fff;text-decoration:none;color:#0E1F33}
+.tn-card b{display:block;font-weight:500}
+.tn-card span{display:block;font-size:.84rem;opacity:.8}
+.tn-note{margin:0;font-size:.95rem}
+#tonight-rails .sbtn{min-height:44px}
 /* ---------- beach report frame (cards are drawn by beachwx.js) ---------- */
 .hx-beach{background:linear-gradient(180deg,#F4F1EA 0%,#F4F1EA 100%);padding-top:60px}
 .hx-beach .bw{min-height:660px}
@@ -1361,6 +1379,29 @@ body:not(.home):not(.pg-home) .dock{display:none!important}
 </section>
 
 <section id="today-plan" aria-label="Things to do right now" hidden></section>
+
+<section class="hx" id="tonight-rails" aria-labelledby="tn-h">
+  <div class="hx-in">
+    <div class="hx-head">
+      <div>
+        <p class="hx-eye">From the events guide</p>
+        <h2 id="tn-h" class="hx-h">Tonight and <em>this weekend</em></h2>
+        <p class="hx-sub">Timed evening events for today, and the Friday to Sunday listings already on the calendar. Nothing here is guessed.</p>
+      </div>
+      <a class="sbtn" href="/planner?when=tonight">Plan tonight</a>
+    </div>
+    <div class="tn-grid">
+      <div>
+        <h3>Tonight</h3>
+        <ul class="tn-list" id="tn-list" aria-busy="true" aria-label="Tonight"><li class="tn-skel"></li><li class="tn-skel"></li><li class="tn-skel"></li></ul>
+      </div>
+      <div>
+        <h3>This weekend</h3>
+        <ul class="tn-list" id="we-list" aria-busy="true" aria-label="This weekend"><li class="tn-skel"></li><li class="tn-skel"></li><li class="tn-skel"></li></ul>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ── WHAT'S ON (filled from /events-data.json by home.js) ── -->
 <section class="hx" id="this-week" aria-labelledby="tw-h">

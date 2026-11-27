@@ -19,11 +19,50 @@
   function short(s) { var x = utc(s); return MON[x.getUTCMonth()] + ' ' + x.getUTCDate(); }
 
   /* ---------- what's on: next six events from the verified feed ---------- */
+  function evening(e) {
+    var m = /^(\d+):(\d\d)\s*([AP])M$/i.exec(e.time || '');
+    if (!m) return false;
+    var mins = ((+m[1] % 12) + (/p/i.test(m[3]) ? 12 : 0)) * 60 + +m[2];
+    return mins >= 16 * 60;
+  }
+  function railCard(e) {
+    var page = '/events/' + e.id + '.html';
+    var when = (e.time ? e.time + ' · ' : '') + (e.area || '');
+    var mark = e.verified ? 'Verified' : 'Listed';
+    return '<li><a class="tn-card" href="' + esc(page) + '"><b>' + esc(e.title) + '</b><span>' + esc(when) + (e.venue ? ' · ' + esc(e.venue) : '') + '</span><span>' + esc(mark) + '</span></a></li>';
+  }
+  function fillRails(all, today) {
+    var tn = d.getElementById('tn-list'), we = d.getElementById('we-list');
+    if (!tn || !we) return;
+    var dow = utc(today).getUTCDay();
+    var fri = plus(today, (5 - dow + 7) % 7), sun = plus(fri, 2);
+    if (dow === 5) fri = today;
+    if (dow === 6) { fri = plus(today, -1); sun = plus(today, 1); }
+    if (dow === 0) { fri = plus(today, -2); sun = today; }
+    var tonight = all.filter(function (e) { return e.start <= today && e.end >= today && evening(e); });
+    var weekend = all.filter(function (e) { return e.start <= sun && e.end >= fri; });
+    weekend.sort(function (a, b) {
+      var av = a.verified ? 0 : 1, bv = b.verified ? 0 : 1;
+      if (av !== bv) return av - bv;
+      if (!!a.time !== !!b.time) return a.time ? -1 : 1;
+      return (a.start < b.start ? -1 : a.start > b.start ? 1 : 0);
+    });
+    tn.innerHTML = tonight.length ? tonight.map(railCard).join('') : '<li class="tn-note">No timed evening events on the calendar yet. <a href="/events">Open the events guide</a>.</li>';
+    we.innerHTML = weekend.length ? weekend.slice(0, 6).map(railCard).join('') : '<li class="tn-note">No weekend listings are on the calendar yet. <a href="/events/this-weekend">This weekend</a>.</li>';
+    tn.removeAttribute('aria-busy');
+    we.removeAttribute('aria-busy');
+  }
   function loadEvents(list) {
     var today = todayNY(), dow = utc(today).getUTCDay();
     var sat = dow === 0 ? today : plus(today, 6 - dow), sun = dow === 0 ? today : plus(sat, 1);
     function fail() {
       list.innerHTML = '<li class="hx-ev-fail">The live list did not load just now. The full, dated calendar is on the <a href="/events">events guide</a>, and <a href="/events/this-weekend">this weekend</a> has its own page.</li>';
+      ['tn-list', 'we-list'].forEach(function (id) {
+        var el = d.getElementById(id);
+        if (!el) return;
+        el.innerHTML = '<li class="tn-note">The live list did not load just now. <a href="/events">Open the events guide</a>.</li>';
+        el.removeAttribute('aria-busy');
+      });
     }
     function clock(t) { var m = /^(\d+):(\d\d)\s*([AP])M$/i.exec(t || ''); return m ? ((+m[1] % 12) + (/p/i.test(m[3]) ? 12 : 0)) * 60 + +m[2] : 1440; }
     function label(e) {
@@ -58,6 +97,7 @@
       if (!all.length) { fail(); return; }
       list.innerHTML = all.slice(0, 6).map(card).join('');
       list.removeAttribute('aria-busy');
+      fillRails(all, today);
       var wk = all.filter(function (e) { return e.start <= sun && e.end >= sat; }).length, t = d.querySelector('[data-plan="weekend"]');
       if (t && wk) { t.textContent = wk + (wk === 1 ? ' event listed' : ' events listed') + (dow === 0 ? ' today' : ' this weekend'); t.classList.add('live'); }
     }).catch(fail);

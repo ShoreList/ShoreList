@@ -60,8 +60,13 @@ img.lx-in{animation:lx-fade .7s var(--lx-ease) both}
 
 /* native cross-page transitions (Chromium) */
 @view-transition{navigation:auto}
-::view-transition-old(root){animation:lx-vt-out .25s ease both}
-::view-transition-new(root){animation:lx-vt-in .45s var(--lx-ease) both}
+::view-transition-old(root){animation:lx-vt-out .22s ease both}
+::view-transition-new(root){animation:lx-vt-in .26s ease both}
+nav.sl-hdr,.ev-nav{view-transition-name:sl-chrome}
+#main{view-transition-name:sl-page}
+@media(prefers-reduced-motion:reduce){
+  ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
+}
 @keyframes lx-vt-out{to{opacity:0}}
 @keyframes lx-vt-in{from{opacity:0;transform:translateY(8px)}}
 /* scroll-driven reading progress (no JS) */
