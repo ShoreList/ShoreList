@@ -21,6 +21,8 @@ on:
       - 'shop-catalog.json'
       - 'tools/test-shop-structured-data.mjs'
       - 'tools/test-shop-photo-release.mjs'
+      - 'tools/build-store-pages.mjs'
+      - 'gift-guide.html'
       - 'docs/shop-photo-review.json'
       - 'tools/coastal-brand-review.mjs'
   push:
@@ -45,6 +47,8 @@ on:
       - 'shop-catalog.json'
       - 'tools/test-shop-structured-data.mjs'
       - 'tools/test-shop-photo-release.mjs'
+      - 'tools/build-store-pages.mjs'
+      - 'gift-guide.html'
       - 'docs/shop-photo-review.json'
       - 'tools/coastal-brand-review.mjs'
 permissions:
