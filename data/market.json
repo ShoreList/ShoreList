@@ -39,6 +39,7 @@
       "accent": "#0E1F33",
       "paths": ["/shop", "/gift-finder", "/holiday-gift-guide"],
       "greeting": "Hi, I'm Wrighty, ShoreList's shop guide.",
+      "questions": ["Who is the gift for?", "What do you want to spend?"],
       "sayOk": "Wrighty here. These pieces are in the shop right now.",
       "sayNone": "Wrighty could not find a shop piece for that. Try another budget, or open the full shop."
     },
@@ -48,7 +49,8 @@
       "creature": "loggerhead",
       "accent": "#8A7348",
       "paths": ["/", "/wrightsville-beach", "/carolina-beach", "/kure-beach", "/downtown"],
-      "greeting": "Hi, I'm Shelby, ShoreList's beach guide."
+      "greeting": "Hi, I'm Shelby, ShoreList's beach guide.",
+      "questions": ["Which beach are you asking about, Wrightsville, Carolina or Kure?", "Is this a beach day or a rainy day plan?"]
     },
     "cape": {
       "id": "cape",
@@ -56,7 +58,8 @@
       "creature": "pelican",
       "accent": "#B5362F",
       "paths": ["/things-to-do", "/events", "/guides", "/planner"],
-      "greeting": "Hi, I'm Captain Cape, ShoreList's harbor guide."
+      "greeting": "Hi, I'm Captain Cape, ShoreList's harbor guide.",
+      "questions": ["Do you want a tour you can book today?", "How many people are coming?"]
     }
   }
 }

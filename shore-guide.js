@@ -133,7 +133,7 @@
     });
     log.appendChild(ul);
   }
-  var greeted = false;
+  var greeted = false, asked = 0;
   function open() {
     if (!locked()) lock(fromPath().id);
     paint(byId(locked()));
@@ -161,11 +161,12 @@
     fetch('/.netlify/functions/guide', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ q: q, path: pathName(), character: locked() })
+      body: JSON.stringify({ q: q, path: pathName(), character: locked(), asked: asked })
     }).then(function (r) { return r.json(); }).then(function (data) {
       if (!data || !data.ok) { pending.textContent = who.name + ' is not sure right now. The pages on the site are still there.'; return; }
       pending.textContent = data.say || (who.name + ' is not sure about that.');
       addLinks(data.links);
+      if (typeof data.asked === 'number') asked = data.asked;
     }).catch(function () {
       pending.textContent = who.name + ' could not reach the guide just now.';
     }).then(function () { sendBtn.disabled = false; });

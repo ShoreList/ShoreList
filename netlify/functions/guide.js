@@ -12,7 +12,7 @@ const RATE = { max: 12, windowMs: 60000 };
 const MAX_Q = 300;
 const STOP = { the: 1, and: 1, for: 1, you: 1, your: 1, what: 1, where: 1, when: 1, how: 1, can: 1, does: 1, with: 1, from: 1, this: 1, that: 1, have: 1, about: 1, today: 1 };
 
-let MARKET, INDEX;
+let MARKET, INDEX, GUIDES;
 
 function readJson(name, dirs) {
   for (const d of dirs) {
@@ -32,7 +32,7 @@ function loadIndex() {
   INDEX = readJson('search-index.json', dirs);
   return INDEX;
 }
-function resetGuide() { MARKET = null; INDEX = null; }
+function resetGuide() { MARKET = null; INDEX = null; GUIDES = null; }
 
 function characters() { return loadMarket().characters || {}; }
 
@@ -76,36 +76,120 @@ function retrieve(q) {
   }).filter((row) => row.s > 0).sort((a, b) => b.s - a.s || String(a.it.title).localeCompare(String(b.it.title))).slice(0, 4).map((row) => row.it);
 }
 
+function guideDirs() {
+  return [
+    path.join(__dirname, '..', '..', 'content', 'guides'),
+    path.join(process.cwd(), 'content', 'guides'),
+    path.join(process.env.LAMBDA_TASK_ROOT || '/var/task', 'content', 'guides'),
+  ];
+}
+function parseGuide(raw, file) {
+  let persona = '';
+  let questions = [];
+  let body = String(raw || '');
+  if (body.startsWith('---')) {
+    const end = body.indexOf('\n---', 3);
+    if (end > 0) {
+      const fm = body.slice(3, end);
+      body = body.slice(end + 4);
+      const pm = fm.match(/^persona:\s*([a-z0-9-]+)/im);
+      if (pm) persona = pm[1].toLowerCase();
+      questions = fm.split('\n').map((l) => l.match(/^\s*-\s+(.+)$/)).filter(Boolean).map((m) => m[1].trim()).slice(0, 2);
+    }
+  }
+  const links = [];
+  const re = /\((\/[^)\s]+)\)/g;
+  let m;
+  while ((m = re.exec(body))) links.push(m[1].replace(/\/$/, '') || '/');
+  return { file, persona, questions, body: body.trim(), links: [...new Set(links)] };
+}
+function loadGuides() {
+  if (GUIDES) return GUIDES;
+  GUIDES = [];
+  for (const dir of guideDirs()) {
+    if (!fs.existsSync(dir)) continue;
+    for (const name of fs.readdirSync(dir).filter((f) => f.endsWith('.md')).sort()) {
+      GUIDES.push(parseGuide(fs.readFileSync(path.join(dir, name), 'utf8'), name));
+    }
+    if (GUIDES.length) break;
+  }
+  return GUIDES;
+}
+function wordsOf(q) {
+  return String(q || '').toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length > 2 && !STOP[w]);
+}
+function guideHits(q) {
+  const words = wordsOf(q);
+  return loadGuides().map((doc) => {
+    const hay = (doc.body + ' ' + doc.file).toLowerCase();
+    let s = 0;
+    words.forEach((w) => { if (hay.indexOf(w) !== -1) s += 1; });
+    if (doc.persona) s += 0;
+    return { doc, s };
+  }).filter((row) => row.s > 0).sort((a, b) => b.s - a.s || a.doc.file.localeCompare(b.doc.file)).slice(0, 3);
+}
+function bestSentence(body, words) {
+  const sentences = String(body || '').replace(/\s+/g, ' ').split(/(?<=\.)\s+/).map((s) => s.trim()).filter((s) => s.length > 24 && s.length < 320);
+  let best = '';
+  let score = 0;
+  sentences.forEach((s) => {
+    const low = s.toLowerCase();
+    let n = 0;
+    words.forEach((w) => { if (low.indexOf(w) !== -1) n += 1; });
+    if (n > score) { score = n; best = s; }
+  });
+  return score ? best : '';
+}
+function questionsFor(character) {
+  const fromDocs = loadGuides().filter((d) => d.persona === character.id).flatMap((d) => d.questions);
+  const list = fromDocs.length ? fromDocs : (character.questions || []);
+  return list.slice(0, 2);
+}
+function handoff(character, other) {
+  if (!other || other === character.id) return '';
+  if (other === 'wrighty') return "That's Wrighty's specialty. ";
+  if (other === 'cape') return "That's Captain Cape's specialty. ";
+  return "That's Shelby's specialty. ";
+}
+
 function linkOf(it) {
   const url = String(it.url || '');
   if (!url.startsWith('/')) return null;
   return { title: String(it.title), url, sub: String(it.sub || ''), price: typeof it.price === 'string' ? it.price : '' };
 }
 
-function fallbackAnswer(character, q) {
-  const hits = retrieve(q).map(linkOf).filter(Boolean);
+function fallbackAnswer(character, q, asked) {
   const name = character.name || 'ShoreList';
-  if (!hits.length) {
-    return {
-      say: name + ' is not sure about that from the ShoreList pages. Try the shop, things to do, or events.',
-      links: [
-        { title: 'Shop', url: '/shop', sub: '', price: '' },
-        { title: 'Things to do', url: '/things-to-do', sub: '', price: '' },
-        { title: 'Events', url: '/events', sub: '', price: '' },
-      ],
-    };
+  const words = wordsOf(q);
+  const docs = guideHits(q);
+  const hits = retrieve(q).map(linkOf).filter(Boolean);
+  let say = '';
+  let links = hits;
+  let other = '';
+  if (docs.length) {
+    const doc = docs[0].doc;
+    const sentence = bestSentence(doc.body, words);
+    other = doc.persona || ownerOf((doc.links[0] || hits[0] && hits[0].url) || '');
+    const fromDoc = doc.links.map((url) => ({ title: url, url, sub: '', price: '' }));
+    links = fromDoc.length ? fromDoc : hits;
+    say = sentence || (name + ' is not sure about that from the guide notes.');
+  } else if (!hits.length) {
+    say = name + ' is not sure about that from the ShoreList pages. Try the shop, things to do, or events.';
+    links = [
+      { title: 'Shop', url: '/shop', sub: '', price: '' },
+      { title: 'Things to do', url: '/things-to-do', sub: '', price: '' },
+      { title: 'Events', url: '/events', sub: '', price: '' },
+    ];
+  } else {
+    other = ownerOf(hits[0].url);
+    const detail = hits[0].sub ? ' The page says: ' + hits[0].sub : '';
+    say = 'Start with ' + hits[0].title + '.' + detail;
   }
-  const other = ownerOf(hits[0].url);
-  const handoff = other !== character.id
-    ? (other === 'wrighty' ? "That's Wrighty's specialty. " : other === 'cape' ? "That's Captain Cape's specialty. " : "That's Shelby's specialty. ")
-    : '';
-  const first = hits[0];
-  const listed = first.price ? ' The page lists ' + first.price + '.' : '';
-  const detail = first.sub ? ' The page says: ' + first.sub : '';
-  return {
-    say: handoff + 'Start with ' + first.title + '.' + detail + listed,
-    links: hits,
-  };
+  say = handoff(character, other) + say;
+  const n = Math.max(0, Math.min(2, parseInt(asked, 10) || 0));
+  const qs = questionsFor(character);
+  if (n < qs.length) say = say.replace(/\s+$/, '') + ' ' + qs[n];
+  return { say, links, asked: Math.min(2, n + (n < qs.length ? 1 : 0)) };
 }
 
 function cleanSay(say, allowedText) {
@@ -178,8 +262,8 @@ exports.handler = async (event) => {
   const q = String(typeof b.q === 'string' ? b.q : '').replace(/\s+/g, ' ').trim().slice(0, MAX_Q);
   if (q.length < 2) return send(400, { ok: false, reason: 'input' });
   let character;
-  try { character = characterFor(b.path, b.character); } catch (e) { return send(200, { ok: false, reason: 'config' }); }
-  const base = fallbackAnswer(character, q);
+  try { character = characterFor(b.path, b.character); loadGuides(); } catch (e) { return send(200, { ok: false, reason: 'config' }); }
+  const base = fallbackAnswer(character, q, b.asked);
   const pack = (source, say) => send(200, {
     ok: true,
     source,
@@ -189,12 +273,13 @@ exports.handler = async (event) => {
     accent: character.accent || '#0E1F33',
     say: say || base.say,
     links: base.links,
+    asked: base.asked,
   });
   const key = process.env.ANTHROPIC_API_KEY;
   const canModel = !aiOff() && (key || (process.env.CLOUDFLARE_ACCOUNT_ID && process.env.CLOUDFLARE_API_TOKEN));
   if (!canModel) return pack('fallback');
   if (!(await aiDailyCheck(event)).ok) return pack('fallback');
-  const lines = base.links.map((l) => [l.title, l.url, l.sub, l.price].filter(Boolean).join(' | ')).join('\n');
+  const lines = guideHits(q).map((h) => h.doc.body).concat(base.links.map((l) => [l.title, l.url, l.sub].filter(Boolean).join(' | '))).join('\n');
   try {
     const model = await callModel('Character: ' + character.name + '\nQuestion: ' + JSON.stringify(q) + '\nPages:\n' + lines);
     const raw = String(model.text || '').replace(/```json|```/g, '');
@@ -216,3 +301,4 @@ exports.retrieve = retrieve;
 exports.cleanSay = cleanSay;
 exports.resetGuide = resetGuide;
 exports.loadMarket = loadMarket;
+exports.loadGuides = loadGuides;

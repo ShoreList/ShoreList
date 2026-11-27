@@ -16,7 +16,7 @@
 
 # The three guides answer only from the search index and market config.
 [functions."guide"]
-  included_files = ["search-index.json", "data/market.json", "data/operators.json"]
+  included_files = ["search-index.json", "data/market.json", "data/operators.json", "content/guides/**"]
 
 # ShoreList Direct (physical goods): the catalog is read by the checkout, the order page and the fulfillment code.
 [functions."create-goods-checkout"]

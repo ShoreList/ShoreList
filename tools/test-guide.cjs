@@ -10,6 +10,21 @@ test('path picks the character and the session lock holds', () => {
   assert.equal(g.characterFor('/shop', 'cape').id, 'cape');
 });
 
+test('a guide file can be dropped in and is quoted, not paraphrased into a new price', () => {
+  g.resetGuide();
+  const docs = g.loadGuides();
+  assert.ok(docs.some((d) => d.file === 'beaches.md' && d.persona === 'shelby'));
+  const shelby = g.characterFor('/wrightsville-beach', '');
+  const ans = g.fallbackAnswer(shelby, 'Is parking free at Wrightsville Beach?', 0);
+  assert.match(ans.say, /parking meters run from March 1 to October 31/i);
+  assert.match(ans.say, /Which beach are you asking about/);
+  assert.ok(ans.links.some((l) => l.url === '/wrightsville-beach'));
+  const second = g.fallbackAnswer(shelby, 'Is parking free at Wrightsville Beach?', ans.asked);
+  assert.match(second.say, /rainy day/);
+  const third = g.fallbackAnswer(shelby, 'Is parking free at Wrightsville Beach?', second.asked);
+  assert.doesNotMatch(third.say, /rainy day/);
+});
+
 test('a gift question asked of Shelby still answers and names Wrighty', () => {
   g.resetGuide();
   const shelby = g.characterFor('/', '');
