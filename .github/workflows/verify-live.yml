@@ -16,3 +16,5 @@ jobs:
         with:
           node-version: 22
       - run: node tools/verify-live.mjs
+      - run: node tools/check-shop-links.mjs
+        if: ${{ !cancelled() }}
