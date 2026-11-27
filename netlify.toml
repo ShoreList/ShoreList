@@ -144,6 +144,21 @@
   status = 200
 
 [[redirects]]
+  from = "/wilmington-nc-gifts"
+  to = "/wilmington-nc-gifts.html"
+  status = 200
+
+[[redirects]]
+  from = "/wrightsville-beach-souvenirs"
+  to = "/wrightsville-beach-souvenirs.html"
+  status = 200
+
+[[redirects]]
+  from = "/wrightsville-beach-christmas-ornament"
+  to = "/wrightsville-beach-christmas-ornament.html"
+  status = 200
+
+[[redirects]]
   from = "/goods-success"
   to = "/goods-success.html"
   status = 200

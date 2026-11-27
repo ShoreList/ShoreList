@@ -136,6 +136,10 @@ Owner-side (`CLAUDE-MASTER-SHORELIST-TBM.md` mixes ShoreList and the other busin
 ### T-19 Custom checkout domain (owner decision)
 Evaluate a Shopify custom domain/checkout on a shorelist.net subdomain (L3). Needs owner approval (account/DNS change). HYPOTHESIS: improves trust and conversion.
 
+### T-23 Local gift guides (Wilmington and Wrightsville Beach)
+- Owner: Grok/cursor/local-gift-guides-49e1
+- Files: `wilmington-nc-gifts.html`, `wrightsville-beach-souvenirs.html`, `wrightsville-beach-christmas-ornament.html`, `tools/build-local-gift-guides.mjs`. Not `shop.html` or `shop-catalog.json`.
+
 ## Dependency map
 
 T-01 -> T-03 -> owner test order. T-05 -> T-08. T-02 independent of everything else (own files). T-04, T-06, T-10, T-11, T-13 can run in parallel because file sets are disjoint (check before starting).
