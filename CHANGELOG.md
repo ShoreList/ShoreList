@@ -6,6 +6,7 @@ Format: newest first. Each future entry: date, PR or action, what changed, evide
 
 ## 2026-11-26
 
+- Branch `shop-merch/collection-filter-xmas-banner` (ShoreList Shop & Merch, T-22). `shop.html`: changing a type, town or motif chip now keeps the open collection (`?collection=beach-setup` stays in the URL), chip counts follow the open collection, and a "Totes and bags" type chip was added. `shop-promo.js`: a Christmas order-by note ("We recommend ordering by December 7 for Christmas delivery. Delivery dates vary by item, and we cannot guarantee arrival by Christmas.") shows only when no sale is active, from Dec 1 12:00 AM ET, and hides after Dec 7 11:59 PM ET. `sw.js` bumped to `sl-v289-2026-11-26`. PR URL, merge SHA and live check are recorded in `/workspace/shorelist/ship-log.md` once merged. Rollback: revert the squash commit and bump `sw.js`.
 - #333, squash commit `9989b4485f6360ef7d7f75199835f8350fb21268`. Added the 90/100 coastal luxury release standard, documented 40 held supplier candidates and added Fourthwall draft and CJ sourcing tools. No offers were published. PR site, speed, supplier, Netlify header and redirect checks passed.
 - After merge, direct HTTP checks returned 200 for the live shop, catalog and service worker. The catalog matched blob `5cfed05c67f4d0ef8c2017abd4544807d7bb8e12`. Sampled internal paths returned 404. The exact production Netlify deploy revision remained unverified. Rollback is a revert of the squash commit.
 

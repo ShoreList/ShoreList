@@ -7,7 +7,16 @@
     { id: 'bf', label: 'Black Friday offer', lead: 'Black Friday:', code: 'SHOREFRIDAY15', when: 'today only',
       start: Date.UTC(2026, 10, 27, 5, 0, 0), end: Date.UTC(2026, 10, 28, 4, 59, 0) },
     { id: 'cm', label: 'Cyber Monday offer', lead: 'Cyber Monday:', code: 'SHORECYBER15', when: 'today only',
-      start: Date.UTC(2026, 10, 30, 5, 0, 0), end: Date.UTC(2026, 11, 1, 4, 59, 0) }
+      start: Date.UTC(2026, 10, 30, 5, 0, 0), end: Date.UTC(2026, 11, 1, 4, 59, 0) },
+    /* Christmas order-by note. Not a sale: no code and no discount. It must stay LAST in this list. refresh() uses the first
+       window that matches, so any sale above always wins and this note only shows when no sale is running. It starts the
+       instant Cyber Monday ends (Nov 30, 11:59 PM EST) and hides at Dec 8, 12:00 AM EST, so it is visible through Dec 7,
+       11:59 PM EST. Dec 7 is the recommended order-by date taken from Printify's published 2026 US Standard cut-offs
+       (Dec 7 to Dec 9 by print provider). They are recommendations, not guarantees, and ShoreList's own provider dates vary
+       by item. Do not add a delivery promise. */
+    { id: 'xmas', label: 'Christmas order-by note', lead: 'Christmas gifts:',
+      text: 'We recommend ordering by December 7 for Christmas delivery. Delivery dates vary by item, and we cannot guarantee arrival by Christmas.',
+      start: Date.UTC(2026, 11, 1, 4, 59, 0), end: Date.UTC(2026, 11, 8, 5, 0, 0) }
   ];
   var main = document.getElementById('main'); if (!main) return;
   var active = null, bar, heroLine, timer;
@@ -20,18 +29,22 @@
     bar.setAttribute('aria-label', s.label);
     bar.style.cssText = 'background:#0E1F33;color:#fff;text-align:center;padding:14px 16px;font:600 15px/1.4 "DM Sans",system-ui,sans-serif;letter-spacing:.01em';
     var lead = document.createElement('strong'); lead.textContent = s.lead;
-    var code = document.createElement('strong'); code.textContent = s.code;
+    var code = document.createElement('strong'); code.textContent = s.code || '';
     code.style.cssText = 'border:1px solid #fff;border-radius:6px;padding:1px 8px;margin:0 2px';
     bar.appendChild(lead);
-    bar.appendChild(document.createTextNode(' 15% off eligible Shopify orders with code '));
-    bar.appendChild(code);
-    bar.appendChild(document.createTextNode(' ' + s.when + '. Enter it at our Shopify checkout.'));
+    if (s.text) {
+      bar.appendChild(document.createTextNode(' ' + s.text));
+    } else {
+      bar.appendChild(document.createTextNode(' 15% off eligible Shopify orders with code '));
+      bar.appendChild(code);
+      bar.appendChild(document.createTextNode(' ' + s.when + '. Enter it at our Shopify checkout.'));
+    }
     main.insertBefore(bar, main.firstChild);
     var hero = document.querySelector('.hero-cta');
     if (hero) {
       heroLine = document.createElement('p');
       heroLine.style.cssText = 'margin:14px 0 0;font:600 15px/1.4 "DM Sans",system-ui,sans-serif';
-      heroLine.textContent = s.lead + ' 15% off eligible Shopify orders with code ' + s.code + ', ' + s.when + '.';
+      heroLine.textContent = s.text ? s.lead + ' ' + s.text : s.lead + ' 15% off eligible Shopify orders with code ' + s.code + ', ' + s.when + '.';
       hero.parentNode.insertBefore(heroLine, hero.nextSibling);
     }
   }
