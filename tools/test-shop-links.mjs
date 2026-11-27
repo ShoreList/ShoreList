@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { checkProductPage } from './check-shop-links.mjs';
+import { checkProductPage, nightlyTargets } from './check-shop-links.mjs';
 
 const host = 'shorelist.myshopify.com', url = 'https://' + host + '/products/example';
 const productHtml = (canonical = url, type = 'product') =>
@@ -35,4 +35,43 @@ test('non-product and off-domain inputs are rejected before a request', async ()
   for (const candidate of ['https://elsewhere.example/products/example', 'https://' + host + '/']) {
     assert.equal(await checkProductPage(candidate, [host], async () => assert.fail('unexpected fetch')), 'Unapproved merchant product URL');
   }
+});
+
+test('rate limiting uses Retry-After and makes at most one respectful retry', async () => {
+  let calls = 0;
+  const limited = (seconds) => new Response('', { status: 429, headers: { 'retry-after': String(seconds) } });
+  const waits = [];
+  const wait = async (ms) => { waits.push(ms); };
+  const retry = async () => ++calls === 1 ? limited(2) : reply()();
+  assert.equal(await checkProductPage(url, [host], retry, wait), null);
+  assert.deepEqual(waits, [2000]);
+  assert.equal(calls, 2);
+
+  calls = 0;
+  waits.length = 0;
+  const paused = async () => { calls++; return limited(60); };
+  assert.equal(await checkProductPage(url, [host], paused, wait), 'Merchant rate-limited verification (429)');
+  assert.equal(calls, 1);
+  assert.deepEqual(waits, []);
+
+  calls = 0;
+  const stillLimited = async () => { calls++; return limited(2); };
+  assert.equal(await checkProductPage(url, [host], stillLimited, wait), 'Merchant rate-limited verification (429)');
+  assert.equal(calls, 2);
+  assert.deepEqual(waits, [2000]);
+});
+
+test('daily rotation covers all unique Shopify URLs and always includes Fourthwall', () => {
+  const shop = Array.from({ length: 104 }, (_, index) => ({ store: 'shopify', url: url + index }));
+  const seller = { store: 'fourthwall', url: 'https://shorelist-shop.fourthwall.com/products/example' };
+  const all = [...shop, shop[0], seller];
+  const visited = new Set();
+  for (let day = 0; day < 9; day++) {
+    const rows = nightlyTargets(all, day);
+    const urls = new Set(rows.map((item) => item.url));
+    assert.ok(urls.has(seller.url));
+    assert.equal(urls.size, 13);
+    for (const selected of urls) visited.add(selected);
+  }
+  assert.equal(visited.size, 105);
 });
