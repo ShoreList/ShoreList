@@ -382,6 +382,50 @@ test('shop-cart: retains items during the visit when storage reads or writes are
     assert.strictEqual(bag.count(), 2);
   }
 });
+test('shop-cart: Shopify checkout retains first-touch campaign slugs and excludes unrelated data', () => {
+  const { win, store, made } = runCart();
+  store.slBag = JSON.stringify([{ id: '12345', qty: 2, price: 25, handle: 'test-tee', name: 'Test Tee' }]);
+  win.ShoreBag.open();
+  const drawer = made.filter((element) => element.tag === 'dialog')[1];
+  let href;
+  const checkout = { id: 'slbagPay', setAttribute(name, value) {
+    assert.strictEqual(name, 'href');
+    href = value;
+  } };
+  const click = () => drawer.listeners.click.forEach((handler) => handler({
+    target: checkout,
+    preventDefault() { assert.fail('The checkout link was blocked'); },
+  }));
+
+  win.ShoreAttrib.get = () => ({
+    utm_source: 'instagram',
+    utm_medium: 'paid_social',
+    utm_campaign: 'shorelist-launch',
+    ref: 'referral-code',
+    landing: '/shop',
+    referrer_host: 'example.com',
+    fbclid: 'click-id',
+  });
+  click();
+  const url = new URL(href);
+  assert.strictEqual(url.origin, 'https://shorelist.myshopify.com');
+  assert.strictEqual(url.pathname, '/cart/12345:2');
+  assert.deepStrictEqual([...url.searchParams], [
+    ['attributes[shorelist_source]', 'instagram'],
+    ['attributes[shorelist_medium]', 'paid_social'],
+    ['attributes[shorelist_campaign]', 'shorelist-launch'],
+  ]);
+
+  for (const getAttribution of [
+    () => ({}),
+    () => ({ utm_campaign: 'unsafe&ref=value', utm_source: 'person@example.com', utm_medium: 'a'.repeat(81) }),
+    () => { throw new Error('Attribution unavailable'); },
+  ]) {
+    win.ShoreAttrib.get = getAttribution;
+    click();
+    assert.strictEqual(href, 'https://shorelist.myshopify.com/cart/12345:2');
+  }
+});
 test('shop-cart: goods lines join the bag as their own group, honest multi-store notice, checkout posts item/variant/qty and follows the Stripe url; Shopify and Fourthwall unchanged', async () => {
   const c = runCart(); const bag = c.win.ShoreBag; assert(typeof bag.addGoods === 'function');
   assert.strictEqual(bag.addGoods({ item: 'tee', variant: 'm', name: 'Test Tee', variantLabel: 'M', cents: 2500, lead: [5, 12], max: 4 }), true);
