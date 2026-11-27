@@ -6,6 +6,7 @@ Format: newest first. Each future entry: date, PR or action, what changed, evide
 
 ## 2026-11-27
 
+- The phone hero image is in the HTML, the same Banks Channel AVIF the preload already requests, so the throttled Lighthouse run does not wait on a script to build it. `sw.js` is `sl-v321-2026-11-27`. Rollback: revert the squash commit and bump `sw.js`.
 - Home phone hero keeps its height in the first stylesheet, so the later sheet does not grow the page, and the Banks Channel AVIF is preloaded in the raw HTML with a matching imagesrcset. The events hero picture fills its frame again. `sw.js` is `sl-v320-2026-11-27`. Rollback: revert the squash commit and bump `sw.js`.
 - Home phone hero is an AVIF around 20KB, preloaded from the top of the head with imagesrcset and fetchpriority high, so the request is not waiting on later scripts. Shop cards for the cleaned galleries now use the studio mockup and an empty lookbook. Carolina Coast Terry Beach Towel and the Sloop Organic Cotton Market Tote are off the catalog until a studio photo exists. ShoreList OG Tee stays out. `sw.js` is `sl-v319-2026-11-27`. Rollback: revert the squash commit and bump `sw.js`.
 
