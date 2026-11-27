@@ -6,6 +6,7 @@ Format: newest first. Each future entry: date, PR or action, what changed, evide
 
 ## 2026-11-27
 
+- The Google tag for `G-EN91RH3PZV` now loads after the window load event, on `requestIdleCallback`, with `setTimeout` when that callback is missing. The measurement id and the existing `gtag('config')` call stay the same, including the success-page `page_location`. `sw.js` is `sl-v305-2026-11-27`. Rollback: revert the squash commit and bump `sw.js`.
 - The guide launcher is static HTML and CSS. `shore-guide.js` and `widgets.js` load on the first click, or on `requestIdleCallback` after the load event, and do not run before the largest paint. The homepage hero photo has its real width and height. `sw.js` is `sl-v304-2026-11-27`.
 - Homepage: `widgets.js` now loads on the first launcher click, or on `requestIdleCallback` after the load event, instead of during the first paint. The hero photo is given its real width and height. `sw.js` is `sl-v303-2026-11-27`.
 - Shop collections: Art & Prints, Home Decor and Gear cards now sit after Landmark Prints on `/shop`. They link to the live Shopify collections (`/collections/art-prints`, `/collections/home-decor`, `/collections/gear`), which already list Wrightsville Beach items first. Digital Downloads and Digital Guides are not on the page. Cover photos are the existing Wrightsville lookbooks for the sailfish print, the 2026 ornament and the can cooler. No prices changed. `sw.js` is `sl-v303-2026-11-27`. Rollback: revert the squash commit and bump `sw.js`.

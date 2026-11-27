@@ -25,7 +25,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" rel="stylesheet"/></noscript>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
+<script>
+window.addEventListener('load',function(){
+  function load(){
+    if(document.querySelector('script[data-sl-ga]'))return;
+    var tag=document.createElement('script');
+    tag.async=true;
+    tag.setAttribute('data-sl-ga','1');
+    tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
+    document.head.appendChild(tag);
+  }
+  if(window.requestIdleCallback)requestIdleCallback(load);
+  else setTimeout(load,1);
+});
+</script>
 <script>
 window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments);}
