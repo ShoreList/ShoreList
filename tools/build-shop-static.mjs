@@ -30,6 +30,13 @@ const collections = BLOCKS.filter((b) => cat.collections.some((c) => c.id === b.
     const img = cv && (cv.lookbook || cv.img);
     return `<a class="cblock${k === 0 ? ' wide' : ''}" href="/shop?collection=${esc(b.id)}#results" data-coll="${esc(b.id)}"><div class="cp">${img ? `<img src="${esc(img.replace(/_1920x(\.\w+)$/, k === 0 ? '_1280x$1' : '_960x$1'))}" alt="" loading="lazy" decoding="async" width="1200" height="${k === 0 ? 514 : 900}"/>` : ''}</div><h3>${esc(c.name)}</h3><p>${esc(b.line)}</p><span class="go">View the collection</span></a>`;
   });
+// Shopify storefront collections. These are not on-page filters, so they have no data-coll.
+const shopifyCollections = [
+  { href: 'https://shorelist.myshopify.com/collections/art-prints', name: 'Art & Prints', line: 'Framed prints from Wrightsville Beach, Carolina Beach and Kure Beach.', img: 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sailfish-framed-art-print_960x.jpg', alt: 'Framed Wrightsville Beach sailfish art print in a coastal study, rendered mockup' },
+  { href: 'https://shorelist.myshopify.com/collections/home-decor', name: 'Home Decor', line: 'Ornaments, mugs, pillows and towels for the house.', img: 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-ornament-2026_960x.webp', alt: 'Wrightsville Beach 2026 ornament on a Christmas tree in a coastal living room' },
+  { href: 'https://shorelist.myshopify.com/collections/gear', name: 'Gear', line: 'Coolers, totes and pouches for the boat and the beach.', img: 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-can-cooler_960x.webp', alt: 'Hand holding a can in the Wrightsville Beach can cooler on a dock at sunset' },
+].map((c) => `<a class="cblock" href="${esc(c.href)}" rel="noopener"><div class="cp"><img src="${esc(c.img)}" alt="${esc(c.alt)}" loading="lazy" decoding="async" width="1200" height="900"/></div><h3>${esc(c.name)}</h3><p>${esc(c.line)}</p><span class="go">View the collection</span></a>`);
+collections.push(...shopifyCollections);
 
 const FIRST_SCREEN = [
   'sea-oats-carolina-coast-kiss-cut-vinyl-sticker-3-inch',
