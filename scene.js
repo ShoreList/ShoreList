@@ -163,10 +163,9 @@
   var started = false;
   function go() {
     if (started) return;
-    started = true;
     var small = window.matchMedia && matchMedia('(max-width: 820px)').matches;
-    if (small && (reduce || (navigator.connection && navigator.connection.saveData))) return;
-    if (small) stillFrame = true;
+    if (small) return;
+    started = true;
     boot();
   }
   function whenIdle() {
@@ -180,15 +179,15 @@
     } else whenIdle();
   }
   host.addEventListener('shoreheroerror', arm, { once: true });
-  if (window.matchMedia && matchMedia('(max-width: 820px)').matches && !reduce && !(navigator.connection && navigator.connection.saveData)) {
-    if (host.classList.contains('plates-on')) arm();
-    else {
-      var mo = new MutationObserver(function () {
-        if (!host.classList.contains('plates-on')) return;
-        mo.disconnect();
-        arm();
-      });
-      mo.observe(host, { attributes: true, attributeFilter: ['class'] });
-    }
+  var play = document.getElementById('play-water');
+  if (play) {
+    if (reduce || (navigator.connection && navigator.connection.saveData)) play.hidden = true;
+    play.addEventListener('click', function () {
+      play.hidden = true;
+      if (started) { host.classList.add('scene-live'); return; }
+      started = true;
+      boot();
+      host.classList.add('scene-live');
+    });
   }
 })();

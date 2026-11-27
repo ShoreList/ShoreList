@@ -431,6 +431,8 @@ window.addEventListener('load',function(){
 .plates-on .plates{opacity:1}.plates-on .scene-cv{opacity:0!important}
 .scene-still .scene-cv{opacity:1!important;z-index:1;-webkit-mask-image:linear-gradient(to bottom,transparent 64%,#000 82%);mask-image:linear-gradient(to bottom,transparent 64%,#000 82%)}
 .scene-play{position:absolute;z-index:6;left:16px;bottom:118px;min-height:44px;padding:0 14px;border:1px solid #D9C7A3;border-radius:999px;background:rgba(14,31,51,.72);color:#F4F1EA;font:500 .78rem 'DM Sans',system-ui,sans-serif;cursor:pointer}
+@media(min-width:821px){.scene-play{display:none}}
+@media(prefers-reduced-motion:reduce){.scene-play{display:none}}
 .scene-play:focus-visible{outline:3px solid #D9C7A3;outline-offset:3px}
 .plates img{position:absolute;left:-3%;top:-3%;width:106%;height:106%;max-width:100%;object-fit:cover;object-position:var(--pos,62% 50%);opacity:0;visibility:hidden;transform:translate3d(var(--px),var(--py),0) scale(1.02);animation:kb 70s ease-in-out infinite alternate;will-change:opacity,transform;user-select:none;-webkit-user-drag:none}
 .plates img[data-p="3"]{filter:brightness(.5) saturate(.8) hue-rotate(8deg)}
@@ -1272,6 +1274,7 @@ body:not(.home):not(.pg-home) .dock{display:none!important}
     document.getElementById('hero').appendChild(wrap);
   })();
   </script>
+  <button type="button" class="scene-play" id="play-water">Play water</button>
   <div class="tod" id="tod" role="group" aria-label="Time of day"><button type="button" data-t="live" aria-pressed="true" title="Follows the real sunrise and sunset in Wilmington">Live</button><button type="button" data-t="dawn" aria-pressed="false">Dawn</button><button type="button" data-t="noon" aria-pressed="false">Midday</button><button type="button" data-t="golden" aria-pressed="false">Golden hour</button><button type="button" data-t="night" aria-pressed="false">Night</button></div>
   <div class="cond" id="cond" aria-label="Live beach conditions"><span class="dot" aria-hidden="true"></span><span class="stats" aria-live="polite">Checking live flag, weather, wind, waves and water temperature</span><span role="group" aria-label="Beach"><button type="button" data-b="0" aria-pressed="false">Wrightsville</button> <button type="button" data-b="1" aria-pressed="true">Carolina</button> <button type="button" data-b="2" aria-pressed="false">Kure</button></span><button type="button" class="sur">Surprise me</button><div class="tip"></div></div>
 
