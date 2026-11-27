@@ -2,6 +2,8 @@
 
 A release is any merge to `main` (it can deploy). Every gate needs evidence in the PR: command, exit code, or screenshot, labeled VERIFIED. A gate you could not run is reported UNKNOWN and blocks only if marked **hard**. Owner approval is required for items marked **owner**.
 
+**Rulebook pointer:** every gate below also follows [docs/command-center/SHORELIST-STANDARDS.md](docs/command-center/SHORELIST-STANDARDS.md) (rule IDs BW, HN, AR, BL, PH, PR, MN, ST, SC, PO, SU, OP). G6 is satisfied by the same independent review the Rulebook requires (SC1, SC5); the owner's Nov 27, 2026 delegation replaces per-product owner quality approval for items that pass every hard rule at 90/100 or better.
+
 ## G0 Scope and approvals (hard)
 - [ ] Change is within an authorized category (AGENTS rule 2) or has explicit owner approval in the PR thread.
 - [ ] No spend, account change, deletion, or new product publication included.
