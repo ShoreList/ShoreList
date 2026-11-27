@@ -34,6 +34,8 @@
 .gg-grid img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;background:var(--ev-sand)}
 .gg-name{display:block;margin-top:10px;font-family:'Libre Caslon Display',Georgia,serif;font-size:1.02rem;line-height:1.25;color:var(--ev-navy)}
 .gg-price{display:block;margin-top:2px;font-weight:500;color:var(--ev-ink)}
+.gg-pair{margin:8px 0 0;font-size:.82rem;line-height:1.4}
+.gg-pair a{color:inherit}
 .gg-line{display:block;margin-top:4px;font-size:.88rem;line-height:1.45;color:var(--ev-mute)}
 .gg-grid a:hover .gg-name{text-decoration:underline;text-underline-offset:3px}
 .gg-grid a:focus-visible{outline:2px solid var(--ev-red2);outline-offset:4px}

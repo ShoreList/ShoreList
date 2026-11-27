@@ -14,6 +14,23 @@
     "buoy": null
   },
   "eventFeeds": [],
+  "pairs": {
+    "cooler": ["towel", "cap", "sticker"],
+    "sticker": ["cooler", "mug"],
+    "ornament": ["mug", "print"],
+    "beanie": ["cap", "crewneck"],
+    "cap": ["beanie", "tee"],
+    "pouch": ["tote", "cooler"],
+    "mug": ["towel", "ornament"],
+    "towel": ["cooler", "tote"],
+    "pillow": ["print", "mug"],
+    "print": ["pillow", "mug"],
+    "tote": ["pouch", "towel"],
+    "tee": ["cap", "cooler"],
+    "tumbler": ["cooler", "mug"],
+    "crewneck": ["beanie", "cap"],
+    "item": ["mug", "cooler"]
+  },
   "characters": {
     "wrighty": {
       "id": "wrighty",
