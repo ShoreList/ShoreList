@@ -1,7 +1,7 @@
 {
   "id": "wilmington-nc",
   "name": "Wilmington, North Carolina",
-  "note": "One market. Add a town by appending to towns. Station ids and event feeds stay empty until a verified source is written here. Do not invent them.",
+  "note": "One market. Add a town by appending to towns. Station ids below were read from the live NOAA, NDBC and NWS responses on 2026-11-27. Do not add a station that did not respond.",
   "towns": [
     { "id": "wrightsville-beach", "name": "Wrightsville Beach", "match": ["wrightsville"], "rank": 40 },
     { "id": "carolina-beach", "name": "Carolina Beach", "match": ["carolina beach"], "rank": 12 },
@@ -9,9 +9,15 @@
     { "id": "wilmington", "name": "Wilmington", "match": [], "rank": 0, "default": true }
   ],
   "stations": {
-    "nwsOffice": null,
-    "tideStation": null,
-    "buoy": null
+    "nwsOffice": "ILM",
+    "tideStation": "8658163",
+    "buoy": "41110",
+    "verified": "2026-11-27",
+    "points": {
+      "wrightsville-beach": { "lat": 34.2097, "lon": -77.7964, "gridId": "ILM", "gridX": 95, "gridY": 75 },
+      "carolina-beach": { "lat": 34.0345, "lon": -77.8976, "gridId": "ILM", "gridX": 92, "gridY": 67 },
+      "kure-beach": { "lat": 33.994, "lon": -77.9068, "gridId": "ILM", "gridX": 92, "gridY": 65 }
+    }
   },
   "eventFeeds": [],
   "pairs": {
