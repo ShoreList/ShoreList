@@ -83,7 +83,7 @@ The owner's [Coastal Brand Standard](docs/COASTAL-BRAND-STANDARD.md) is a hard r
 
 - What the card/PDP shows must match what Shopify sells: name, colors, sizes, price, text/artwork on the item. Verify by viewing the image, not the filename.
 - Known corrected mismatches (do not regress): Blue Crab Embroidered Crewneck (Kure Beach) is **White only** (lookbook shows aqua); Blue Crab Corduroy Cap and Cuffed Beanie (Kure Beach) show the **navy** studio image (lookbook shows brown/olive). Those three use studio-first images (`lookbook: ""`).
-- A product with no verified lifestyle image stays studio-first; it is not listed with an unrelated or AI-made photo.
+- Audit, prepare and score the replacement pair before changing existing storefront product imagery. Release both images together, with an accurate, disclosed Higgsfield lookbook first and an independently verified actual studio image second, for the same sellable variant. A resized copy or a second studio angle does not satisfy the lookbook requirement. Existing gaps are recorded in `docs/shop-photo-review.json` and count as open remediation.
 - New product publication needs owner approval; the pipeline and quality gate are in the `shorelist-shop-product-pipeline` skill and in `tools/ingest-shopify-products.mjs` (it holds items without a lookbook).
 
 ## 9. Where context lives
