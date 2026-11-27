@@ -1,5 +1,5 @@
 .slg{position:fixed;right:16px;bottom:16px;z-index:80;font-family:'DM Sans',sans-serif;color:#0E1F33}
-.slg-btn{display:flex;align-items:center;gap:8px;min-height:48px;padding:6px 12px 6px 6px;border:0;border-radius:999px;background:var(--slg,#0E1F33);color:#F4F1EA;cursor:pointer;box-shadow:0 8px 24px rgba(14,31,51,.2)}
+.slg-btn{display:flex;align-items:center;gap:8px;min-height:48px;padding:6px 12px 6px 6px;border:3px solid var(--slg,#D9C7A3);border-radius:999px;background:#0E1F33;color:#F4F1EA;cursor:pointer;box-shadow:0 8px 24px rgba(14,31,51,.2)}
 .slg-btn svg,.slg-head svg{width:36px;height:36px;flex:0 0 auto;background:#F4F1EA;border-radius:50%}
 .slg-btn-t{font:500 .82rem 'DM Sans',sans-serif;padding-right:6px}
 .slg-panel{position:fixed;right:16px;bottom:76px;width:min(380px,calc(100vw - 24px));max-height:min(70vh,560px);display:flex;flex-direction:column;background:#F4F1EA;color:#0E1F33;border:1px solid rgba(14,31,51,.15);border-radius:8px;box-shadow:0 16px 40px rgba(14,31,51,.18)}

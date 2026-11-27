@@ -72,6 +72,7 @@
   panel.id = 'slgPanel';
   panel.setAttribute('role', 'dialog');
   panel.setAttribute('aria-modal', 'false');
+  panel.setAttribute('aria-labelledby', 'slgTitle');
   panel.hidden = true;
   var head = el('header', 'slg-head');
   var title = el('h2', '', 'Ask ' + who.name);
