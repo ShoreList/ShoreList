@@ -4,6 +4,10 @@ Source: `git log origin/main` (308 non-automated commits as of 2026-11-25; the r
 
 Format: newest first. Each future entry: date, PR or action, what changed, evidence (command/exit code), rollback.
 
+## 2026-11-27
+
+- Banks Channel Sunset Sail Crewneck (Shopify product 10457140723796, handle `banks-channel-sunset-sail-crewneck`): removed Pepper from the site catalog. Before: color Pepper, colors "Blue Spruce, Pepper, True Navy", lead image the Pepper lookbook. After: color True Navy, colors "Blue Spruce, True Navy", lead and studio image `17887401445751990680_2048.jpg`, lookbook cleared. That file is the True Navy variant image on the live Shopify product. Viewed the file: navy crewneck, small red pennant on the chest. Wrightsville Beach shop card updated to the same image and alt. Gift guide line for the Blue Crab crewneck now matches the catalog meta already on main ("white or chalky mint"). `sw.js` is `sl-v290-2026-11-26`. Shopify still sells Pepper; this change is the site catalog only. Evidence before merge: `node tools/check-site.mjs` exit 0 ("144 pages, 107 products"), `node tools/check-keywords.mjs` exit 0, `node tools/thin-content-gate.mjs --site . --entities tools/local-entities.json --warn-only` exit 0 (8 pages flagged, warn only). Rollback: revert the squash commit and bump `sw.js`.
+
 ## 2026-11-26
 
 - Branch `shop-merch/collection-filter-xmas-banner` (ShoreList Shop & Merch, T-22). `shop.html`: changing a type, town or motif chip now keeps the open collection (`?collection=beach-setup` stays in the URL), chip counts follow the open collection, and a "Totes and bags" type chip was added. `shop-promo.js`: a Christmas order-by note ("We recommend ordering by December 7 for Christmas delivery. Delivery dates vary by item, and we cannot guarantee arrival by Christmas.") shows only when no sale is active, from Dec 1 12:00 AM ET, and hides after Dec 7 11:59 PM ET. `sw.js` bumped to `sl-v289-2026-11-26`. PR URL, merge SHA and live check are recorded in `/workspace/shorelist/ship-log.md` once merged. Rollback: revert the squash commit and bump `sw.js`.

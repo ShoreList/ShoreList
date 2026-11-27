@@ -139,6 +139,18 @@ test('only scored, approved evidence for both exact images passes', () => {
   assert.ok(photoReviewIssues(item, { ...approvedReview, blindPhotoReview: { ...approvedReview.blindPhotoReview, score: 7 } }).includes('independent blind photo score of at least 8/10'));
 });
 
+// Owner order, 2026-11-27: drop the Pepper lookbook on this crewneck (grey is a
+// brand hard failure). The card stays studio-first on the True Navy variant
+// photo, recorded in shop-photo-review.json pending, until a scored lookbook
+// pair exists. No other id belongs in this set.
+const STUDIO_FIRST_HOLDS = new Set(['banks-channel-sunset-sail-crewneck']);
+
+function studioFirstHold(item) {
+  return STUDIO_FIRST_HOLDS.has(item.id) && pendingIds.has(item.id) &&
+    !asset(item.lookbook) && !item.lookbookGenerator &&
+    asset(item.img) && asset(item.img) === asset(item.studio);
+}
+
 const base = process.env.SHOP_PHOTO_BASE;
 test('changed storefront media must ship as an approved complete pair', { skip: !base }, () => {
   assert.match(base, /^[a-f0-9]{40}$/);
@@ -147,6 +159,12 @@ test('changed storefront media must ship as an approved complete pair', { skip: 
   for (const item of records) {
     const old = prior.get(item.id);
     if (old && JSON.stringify(photoFields(old)) === JSON.stringify(photoFields(item))) continue;
+    if (studioFirstHold(item)) continue;
     assert.deepEqual(photoReviewIssues(item, reviews[item.id]), [], item.id + ' needs a reviewed photo pair');
+  }
+  for (const id of STUDIO_FIRST_HOLDS) {
+    const item = records.find((row) => row.id === id);
+    assert.ok(item, id + ' is missing from the catalog');
+    assert.equal(studioFirstHold(item), true, id + ' must stay a pending studio-first hold with no lookbook');
   }
 });
