@@ -264,23 +264,48 @@
   function start(handle, url, name, img, seen) {
     var request = ++pickRequest;
     cur = null;
-    pick.querySelector('.slbag-in').innerHTML = '<h3 id="slbagPickT">' + esc(name || 'Loading') + '</h3><p class="slbag-msg" role="status">Loading colors and sizes.</p>';
     openD(pick);
+    var hit = variantBook && variantBook[handle];
+    if (hit && hit.variants && hit.variants.length) { useProduct(hit, handle, url, name, img, seen); return; }
+    if (!variantBook) {
+      pick.querySelector('.slbag-in').innerHTML = '<h3 id="slbagPickT">' + esc(name || 'Loading') + '</h3><p class="slbag-msg" role="status">Loading colors and sizes.</p>';
+      variantWait.then(function (book) {
+        if (request !== pickRequest || !pick.hasAttribute('open')) return;
+        var found = book && book[handle];
+        if (found && found.variants && found.variants.length) useProduct(found, handle, url, name, img, seen);
+        else liveProduct(handle, url, name, img, seen, request);
+      });
+      return;
+    }
+    pick.querySelector('.slbag-in').innerHTML = '<h3 id="slbagPickT">' + esc(name || 'Loading') + '</h3><p class="slbag-msg" role="status">Loading colors and sizes.</p>';
+    liveProduct(handle, url, name, img, seen, request);
+  }
+
+  /* ---------- keep Shopify lines honest: re-check price and availability ---------- */
+  /* Colors and sizes ship in /shop-variants.json so the picker does not wait on the live lookup.
+     The function is only the fallback when a handle is missing from that file. */
+  var variantBook = null;
+  var variantWait = fetch('/shop-variants.json').then(function (r) {
+    if (!r.ok) throw new Error('variants');
+    return r.json();
+  }).then(function (j) { variantBook = j && typeof j === 'object' ? j : {}; return variantBook; }).catch(function () { variantBook = {}; return variantBook; });
+  function useProduct(p, handle, url, name, img, seen) {
+    if (!p.handle) p.handle = handle;
+    cur = { p: p, url: url, name: name, img: img, sel: p.options.map(function (o) { return o.values.length === 1 ? o.values[0] : null; }) };
+    if (p.variants.length === 1) cur.sel = p.variants[0].options.slice();
+    paintPick();
+    if (!seen) track('view_item', { currency: 'USD', value: p.variants[0].price, items: [{ item_id: p.handle, item_name: name || p.title, price: p.variants[0].price }] });
+  }
+  function liveProduct(handle, url, name, img, seen, request) {
     fetch('/.netlify/functions/shop-product?handle=' + encodeURIComponent(handle))
       .then(function (r) { if (!r.ok) throw new Error('lookup'); return r.json(); })
       .then(function (p) {
         if (request !== pickRequest || !pick.hasAttribute('open')) return;
         if (!p || !p.variants || !p.variants.length) throw new Error('empty');
-        cur = { p: p, url: url, name: name, img: img, sel: p.options.map(function (o) { return o.values.length === 1 ? o.values[0] : null; }) };
-        if (p.variants.length === 1) cur.sel = p.variants[0].options.slice();
-        paintPick();
-        /* "seen" means the quick view already sent view_item for this open */
-        if (!seen) track('view_item', { currency: 'USD', value: p.variants[0].price, items: [{ item_id: p.handle, item_name: name || p.title, price: p.variants[0].price }] });
+        useProduct(p, handle, url, name, img, seen);
       })
       .catch(function () { if (request === pickRequest && pick.hasAttribute('open')) fail(url, name); });
   }
-
-  /* ---------- keep Shopify lines honest: re-check price and availability ---------- */
   var checked = {};
   function refresh() {
     var seenH = {};

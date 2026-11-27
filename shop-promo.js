@@ -1,72 +1,46 @@
-/* Shop sale banner. Each window shows only between its start and end (UTC epoch; late November Eastern is EST, UTC-5).
-   Public storefront always follows the configured sale windows. */
+/* Shop sale state. The banner itself is in the HTML (home and /shop) so it cannot push the page after load.
+   This script only sets data-sale on the document, before paint when it is inlined, and again if a tab stays open
+   across a window boundary. Late November Eastern is EST, UTC-5. */
 (function () {
   var SALES = [
-    { id: '1', label: 'Launch sale offer', lead: 'Launch sale:', code: 'SHORE15', when: 'through Thursday night',
+    { id: '1', code: 'SHORE15',
       start: Date.UTC(2026, 10, 25, 4, 0, 0), end: Date.UTC(2026, 10, 27, 4, 59, 0) },
-    { id: 'bf', label: 'Black Friday offer', lead: 'Black Friday:', code: 'SHOREFRIDAY15', when: 'today only',
+    { id: 'bf', code: 'SHOREFRIDAY15',
       start: Date.UTC(2026, 10, 27, 5, 0, 0), end: Date.UTC(2026, 10, 28, 4, 59, 0) },
-    { id: 'cm', label: 'Cyber Monday offer', lead: 'Cyber Monday:', code: 'SHORECYBER15', when: 'today only',
+    { id: 'cm', code: 'SHORECYBER15',
       start: Date.UTC(2026, 10, 30, 5, 0, 0), end: Date.UTC(2026, 11, 1, 4, 59, 0) },
-    /* Christmas order-by note. Not a sale: no code and no discount. It must stay LAST in this list. refresh() uses the first
-       window that matches, so any sale above always wins and this note only shows when no sale is running. It starts the
-       instant Cyber Monday ends (Nov 30, 11:59 PM EST) and hides at Dec 8, 12:00 AM EST, so it is visible through Dec 7,
-       11:59 PM EST. Dec 7 is the recommended order-by date taken from Printify's published 2026 US Standard cut-offs
-       (Dec 7 to Dec 9 by print provider). They are recommendations, not guarantees, and ShoreList's own provider dates vary
-       by item. Do not add a delivery promise. */
-    { id: 'xmas', label: 'Christmas order-by note', lead: 'Christmas gifts:',
-      text: 'We recommend ordering by December 7 for Christmas delivery. Delivery dates vary by item, and we cannot guarantee arrival by Christmas.',
+    /* Christmas order-by note. Not a sale. It must stay LAST so a sale above always wins.
+       It starts the instant Cyber Monday ends and hides at Dec 8, 12:00 AM EST. */
+    { id: 'xmas', code: 'xmas',
       start: Date.UTC(2026, 11, 1, 4, 59, 0), end: Date.UTC(2026, 11, 8, 5, 0, 0) }
   ];
-  var main = document.getElementById('main'); if (!main) return;
-  var active = null, bar, heroLine, timer;
+  var root = document.documentElement;
+  if (!root || !root.setAttribute) return;
+  var timer;
 
-  function renderOffer(s) {
-    if (bar) { bar.remove(); bar = null; }
-    if (heroLine) { heroLine.remove(); heroLine = null; }
-    if (!s) return;
-    bar = document.createElement('aside');
-    bar.setAttribute('aria-label', s.label);
-    bar.style.cssText = 'background:#0E1F33;color:#fff;text-align:center;padding:14px 16px;font:600 15px/1.4 "DM Sans",system-ui,sans-serif;letter-spacing:.01em';
-    var lead = document.createElement('strong'); lead.textContent = s.lead;
-    var code = document.createElement('strong'); code.textContent = s.code || '';
-    code.style.cssText = 'border:1px solid #fff;border-radius:6px;padding:1px 8px;margin:0 2px';
-    bar.appendChild(lead);
-    if (s.text) {
-      bar.appendChild(document.createTextNode(' ' + s.text));
-    } else {
-      bar.appendChild(document.createTextNode(' 15% off eligible Shopify orders with code '));
-      bar.appendChild(code);
-      bar.appendChild(document.createTextNode(' ' + s.when + '. Enter it at our Shopify checkout.'));
+  function codeAt(now) {
+    var code = 'off';
+    for (var i = 0; i < SALES.length; i++) {
+      var sale = SALES[i];
+      if (now >= sale.start && now < sale.end) { code = sale.code; break; }
     }
-    main.insertBefore(bar, main.firstChild);
-    var hero = document.querySelector('.hero-cta');
-    if (hero) {
-      heroLine = document.createElement('p');
-      heroLine.style.cssText = 'margin:14px 0 0;font:600 15px/1.4 "DM Sans",system-ui,sans-serif';
-      heroLine.textContent = s.text ? s.lead + ' ' + s.text : s.lead + ' 15% off eligible Shopify orders with code ' + s.code + ', ' + s.when + '.';
-      hero.parentNode.insertBefore(heroLine, hero.nextSibling);
-    }
+    return code;
   }
 
   function refresh() {
     clearTimeout(timer);
     timer = null;
-    var now = Date.now(), current = null, next = Infinity;
+    var now = Date.now(), next = Infinity;
     for (var i = 0; i < SALES.length; i++) {
       var sale = SALES[i];
-      if (now < sale.start) {
-        next = Math.min(next, sale.start);
-      } else if (now < sale.end) {
-        if (!current) current = sale;
-        next = Math.min(next, sale.end);
-      }
+      if (now < sale.start) next = Math.min(next, sale.start);
+      else if (now < sale.end) next = Math.min(next, sale.end);
     }
-    if (current !== active) { active = current; renderOffer(active); }
+    var code = codeAt(now);
+    if (root.getAttribute('data-sale') !== code) root.setAttribute('data-sale', code);
     if (Number.isFinite(next)) timer = setTimeout(refresh, Math.min(next - now, 2147483647));
   }
 
-  // Backgrounded and history-restored pages can miss the scheduled callback.
   document.addEventListener('visibilitychange', function () {
     if (!document.hidden) refresh();
   });

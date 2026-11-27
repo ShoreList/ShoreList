@@ -6,6 +6,8 @@ import path from 'node:path';
 const SITE = 'https://shorelist.net';
 const root = path.join(import.meta.dirname, '..');
 const cat = JSON.parse(fs.readFileSync(path.join(root, 'shop-catalog.json'), 'utf8'));
+const variantPath = path.join(root, 'shop-variants.json');
+const variants = fs.existsSync(variantPath) ? JSON.parse(fs.readFileSync(variantPath, 'utf8')) : {};
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const plain = (s) => String(s ?? '').replace(/[\u2013\u2014]/g, ',');
 const handleOf = (url) => {
@@ -48,6 +50,13 @@ function page(i) {
   const townName = { 'wrightsville-beach': 'Wrightsville Beach', 'carolina-beach': 'Carolina Beach', 'kure-beach': 'Kure Beach', wilmington: 'Wilmington' }[town];
   const buy = i.url + (String(i.url).includes('?') ? '&' : '?') + 'utm_source=shorelist.net&utm_medium=product&utm_campaign=shop-product&utm_content=' + handle;
   const shown = (from ? 'From $' : '$') + money(price);
+  const book = variants[handle];
+  const optionRows = book && Array.isArray(book.options)
+    ? book.options.filter((o) => o && o.name && Array.isArray(o.values) && o.values.length && !(o.values.length === 1 && /^(title|default title)$/i.test(o.name + ' ' + o.values[0])))
+    : [];
+  const optionHtml = optionRows.length
+    ? `<div class="tp-opts">${optionRows.map((o) => `<p><b>${esc(plain(o.name))}</b> ${esc(plain(o.values.join(', ')))}</p>`).join('')}</div>`
+    : '';
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,6 +93,7 @@ function page(i) {
 <section id="events-feed" aria-label="${esc(plain(i.name))}"><div class="ef-in"><div class="tp-in gg-wide">
 <p><img src="${esc(i.img)}" alt="${esc(plain(i.alt || i.name))}" width="800" height="1000" decoding="async"/></p>
 <p class="gg-price">${shown}</p>
+${optionHtml}
 ${factHtml}
 <p><a class="nav-book" href="${esc(buy)}" rel="noopener">Buy on the shop</a></p>
 <p>This page is the ShoreList address for the piece. Checkout still runs on the shop, where shipping and tax are shown before you pay. See <a href="/shipping-returns">shipping and returns</a>, the <a href="/shop/${town}">${esc(townName)} shop</a>, and the <a href="/gift-finder">gift finder</a>.</p>
