@@ -1,6 +1,7 @@
-/* Loads non-critical scripts after the page load, on requestIdleCallback,
-   or on the first tap if the visitor acts sooner. A setTimeout is the fallback
-   when requestIdleCallback is missing. */
+/* Loads non-critical scripts five seconds after the page load, then on
+   requestIdleCallback, or on the first tap if the visitor acts sooner.
+   The wait keeps events-app.js and the other idle scripts out of the
+   largest-paint window. */
 (function () {
   var started = false;
   function add(node) {
@@ -25,8 +26,10 @@
   }
   document.addEventListener('pointerdown', load, { once: true, capture: true, passive: true });
   function later() {
-    if (window.requestIdleCallback) requestIdleCallback(load);
-    else setTimeout(load, 1);
+    setTimeout(function () {
+      if (window.requestIdleCallback) requestIdleCallback(load);
+      else load();
+    }, 5000);
   }
   if (document.readyState === 'complete') later();
   else window.addEventListener('load', later);
