@@ -27,7 +27,8 @@ html:not(.js) .ef-js{display:none!important}
 
 /* hero */
 .ev-hero{position:relative;isolation:isolate;overflow:hidden;background:var(--ev-navy);color:var(--ev-sail);padding:clamp(56px,8vw,104px) clamp(18px,4vw,40px) clamp(34px,4vw,52px)}
-.ev-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%;z-index:-2}
+.ev-hero picture{position:absolute;inset:0;z-index:-2;display:block;}
+.ev-page .ev-hero-img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:50% 62%;}
 .ev-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(14,31,51,.93) 6%,rgba(14,31,51,.68) 50%,rgba(14,31,51,.3) 100%),linear-gradient(0deg,rgba(14,31,51,.9),rgba(14,31,51,0) 52%)}
 .ev-wrap{max-width:1180px;margin:0 auto}
 .ev-eye{display:inline-flex;align-items:center;gap:10px;font-size:.74rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--ev-glass);border:1px solid rgba(244,241,234,.3);border-radius:2px;padding:8px 16px;background:rgba(14,31,51,.35);margin-bottom:20px!important}

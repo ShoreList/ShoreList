@@ -13,6 +13,7 @@
 <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable site summary"/>
 <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<link rel="preload" as="image" href="/img/hero-mobile/wb-banks.avif" imagesrcset="/img/hero-mobile/wb-banks.avif 960w" imagesizes="100vw" type="image/avif" fetchpriority="high" media="(max-width: 820px)">
 <title>Things to Do in Wilmington, NC &amp; the Beaches | ShoreList</title>
 <meta name="description" content="Things to do in Wilmington, NC: book local tours, check live surf and beach conditions, find events and plan a trip to Wrightsville, Carolina and Kure Beach."/>
 <meta property="og:title" content="ShoreList | Things to Do in Wilmington, NC &amp; the Beaches"/>
@@ -52,9 +53,8 @@
   var b='https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-'+f+'_';
   var ss=[1280,1920,2560,3200,3840].map(function(w){return b+w+'x.jpg '+w+'w';}).join(', ');
   var mobile=window.matchMedia?matchMedia('(max-width: 820px)').matches:vw<=820;
+  if(mobile)f='wb-banks';
   window.__slHero={ph:ph,f:f,sz:sz,vw:vw,mobile:mobile};
-  var avif='/img/hero-mobile/'+f+'.avif';
-  document.write('<link rel="preload" as="image" fetchpriority="high" href="'+avif+'" imagesrcset="'+avif+' 960w" imagesizes="100vw" media="(max-width: 820px)">');
   if(!mobile)document.write('<link rel="preload" as="image" fetchpriority="high" imagesrcset="'+ss+'" imagesizes="'+sz+'" media="(min-width: 821px)">');
 }catch(e){}})();
 </script>
@@ -175,7 +175,9 @@ h1.hero-title .or{color:var(--coral);font-style:normal;}
 nav{padding:15px 20px;top:0;}
 .nav-links{display:none!important;}
 .nav-mob{display:flex;}
-.hero{padding:105px 20px 0;min-height:auto;}
+.hero{padding:92px 20px 0;min-height:calc(100svh - 98px);}
+.hero-cine .hero-layout{padding-bottom:250px;padding-top:56px;}
+.hero-tag,.hero-title,.hero-sub{animation:none;}
 .sec{padding:60px 20px;}
 .trust-bar{padding:14px 20px;gap:0;justify-content:flex-start;overflow-x:auto;}
 .cats-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));}
