@@ -60,7 +60,7 @@ function characterFor(pathname, locked) {
 function ownerOf(url) {
   const path = String(url || '');
   if (path.startsWith('/shop') || path.startsWith('/gift') || path.startsWith('/holiday') || path.startsWith('/prints') || path.startsWith('/guides') || path.startsWith('/shipping-returns') || path.startsWith('/size-guide') || path.startsWith('/wilmington-nc-gifts') || path.startsWith('/wrightsville-beach-souvenirs') || path.startsWith('/wrightsville-beach-christmas-ornament')) return 'wrighty';
-  if (path.startsWith('/things-to-do') || path.startsWith('/planner') || path.startsWith('/join') || path.startsWith('/waitlist')) return 'cape';
+  if (path.startsWith('/things-to-do') || path.startsWith('/events') || path.startsWith('/planner') || path.startsWith('/join') || path.startsWith('/waitlist')) return 'cape';
   return 'shelby';
 }
 
