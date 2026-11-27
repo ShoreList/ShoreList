@@ -66,10 +66,18 @@ test('a model price that is not in the pages is dropped', () => {
   assert.match(g.cleanSay('The page lists $25.', 'Listed $25'), /\$25/);
 });
 
+test('a plain model reply is kept and book now is removed for Captain Cape', () => {
+  const cape = g.characterFor('/things-to-do/ghost-tours', '');
+  const say = g.modelSay('Ghost tours are on the early list. Book now on the ghost page.', 'ghost tours coming soon', cape, [{ url: '/things-to-do/ghost-tours', title: 'Ghost tours' }]);
+  assert.match(say, /early list/i);
+  assert.doesNotMatch(say, /book now/i);
+});
+
 test('handler uses the fallback when no model key is set', async () => {
   g.resetGuide();
   const prev = process.env.ANTHROPIC_API_KEY;
   delete process.env.ANTHROPIC_API_KEY;
+  delete process.env.CLOUDFLARE_ACCOUNT_ID;
   delete process.env.CLOUDFLARE_API_TOKEN;
   try {
     const res = await g.handler({
@@ -81,6 +89,7 @@ test('handler uses the fallback when no model key is set', async () => {
     assert.equal(res.statusCode, 200);
     assert.equal(body.ok, true);
     assert.equal(body.source, 'fallback');
+    assert.equal(body.reason, 'not_configured');
     assert.equal(body.character, 'cape');
     assert.match(body.greeting, /Cap here/);
     assert.ok(body.links.length >= 1);

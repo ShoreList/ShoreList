@@ -249,6 +249,18 @@ const SYSTEM = [
 
 function aiOff() { return /^(0|false|no|off)$/i.test(String(process.env.GUIDE_AI || '').trim()); }
 
+function modelSay(text, lines, character, links) {
+  const raw = String(text || '').replace(/```json|```/g, '').trim();
+  const a = raw.indexOf('{'), c = raw.lastIndexOf('}');
+  if (a >= 0 && c > a) {
+    try {
+      const parsed = JSON.parse(raw.slice(a, c + 1));
+      if (parsed && parsed.say) return guardSay(cleanSay(parsed.say, lines), links, character);
+    } catch (e) {}
+  }
+  return guardSay(cleanSay(raw, lines), links, character);
+}
+
 async function callModel(user) {
   const key = process.env.ANTHROPIC_API_KEY;
   const account = process.env.CLOUDFLARE_ACCOUNT_ID;
@@ -256,6 +268,18 @@ async function callModel(user) {
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), 8000);
   try {
+    if (account && token) {
+      const r = await fetch('https://api.cloudflare.com/client/v4/accounts/' + encodeURIComponent(account) + '/ai/run/@cf/meta/llama-3.1-8b-instruct', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json', authorization: 'Bearer ' + token },
+        signal: ctrl.signal,
+        body: JSON.stringify({ max_tokens: 280, messages: [{ role: 'system', content: SYSTEM }, { role: 'user', content: user }] }),
+      });
+      if (!r.ok) throw new Error('upstream ' + r.status);
+      const d = await r.json();
+      const result = d && d.result || {};
+      return { source: 'workers-ai', text: result.response || '' };
+    }
     if (key) {
       const r = await fetch('https://api.anthropic.com/v1/messages', {
         method: 'POST',
@@ -272,16 +296,7 @@ async function callModel(user) {
       const d = await r.json();
       return { source: 'anthropic', text: (d.content || []).map((x) => x.text || '').join('') };
     }
-    const r = await fetch('https://api.cloudflare.com/client/v4/accounts/' + encodeURIComponent(account) + '/ai/run/@cf/meta/llama-3.1-8b-instruct', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json', authorization: 'Bearer ' + token },
-      signal: ctrl.signal,
-      body: JSON.stringify({ max_tokens: 280, messages: [{ role: 'system', content: SYSTEM }, { role: 'user', content: user }] }),
-    });
-    if (!r.ok) throw new Error('upstream ' + r.status);
-    const d = await r.json();
-    const result = d && d.result || {};
-    return { source: 'workers-ai', text: result.response || '' };
+    throw new Error('no model');
   } finally { clearTimeout(timer); }
 }
 
@@ -301,9 +316,10 @@ exports.handler = async (event) => {
   let character;
   try { character = characterFor(b.path, b.character); loadGuides(); } catch (e) { return send(200, { ok: false, reason: 'config' }); }
   const base = fallbackAnswer(character, q, b.asked);
-  const pack = (source, say) => send(200, {
+  const pack = (source, say, reason) => send(200, {
     ok: true,
     source,
+    reason: reason || '',
     character: character.id,
     name: character.name,
     greeting: character.greeting || '',
@@ -314,21 +330,17 @@ exports.handler = async (event) => {
   });
   const key = process.env.ANTHROPIC_API_KEY;
   const canModel = !aiOff() && (key || (process.env.CLOUDFLARE_ACCOUNT_ID && process.env.CLOUDFLARE_API_TOKEN));
-  if (!canModel) return pack('fallback');
+  if (!canModel) return pack('fallback', base.say, 'not_configured');
   if (!(await aiDailyCheck(event)).ok) return pack('fallback');
   const lines = guideHits(q).map((h) => h.doc.body).concat(base.links.map((l) => [l.title, l.url, l.sub].filter(Boolean).join(' | '))).join('\n');
   try {
     const model = await callModel('Character: ' + character.name + '\nQuestion: ' + JSON.stringify(q) + '\nPages:\n' + lines);
-    const raw = String(model.text || '').replace(/```json|```/g, '');
-    const a = raw.indexOf('{'), c = raw.lastIndexOf('}');
-    let parsed = null;
-    try { parsed = a >= 0 && c > a ? JSON.parse(raw.slice(a, c + 1)) : null; } catch (e) { parsed = null; }
-    const say = guardSay(cleanSay(parsed && parsed.say, lines), base.links, character);
-    if (!say) return pack('fallback');
+    const say = modelSay(model.text, lines, character, base.links);
+    if (!say) return pack('fallback', base.say, 'empty_model');
     return pack(model.source, say);
   } catch (e) {
     console.error('guide', e && e.message);
-    return pack('fallback');
+    return pack('fallback', base.say, 'model_error');
   }
 };
 
@@ -336,6 +348,7 @@ exports.characterFor = characterFor;
 exports.fallbackAnswer = fallbackAnswer;
 exports.retrieve = retrieve;
 exports.cleanSay = cleanSay;
+exports.modelSay = modelSay;
 exports.resetGuide = resetGuide;
 exports.loadMarket = loadMarket;
 exports.loadGuides = loadGuides;
