@@ -508,11 +508,8 @@ fetch('https://formspree.io/f/xeevzzqd',{method:'POST',headers:{'Accept':'applic
 .then(function(r){if(!r.ok)throw new Error('bad');m.textContent="You're on the list. Use code SHOREWELCOME10 at our Shopify checkout for 10% off one eligible order.";f.reset();})
 .catch(function(){m.textContent="That didn't go through. Please try again in a moment.";})
 .then(function(){busy=false;});});})();
-</script><link rel="stylesheet" href="/shore-guide.css" media="print">
-<noscript><link rel="stylesheet" href="/shore-guide.css"></noscript>
-<style>.slg{position:fixed;right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));z-index:80}.slg-tease{position:absolute;right:0;bottom:calc(100% + 10px);margin:0;max-width:min(15rem,calc(100vw - 28px))}.slg-btn{position:relative;display:block;width:124px;height:148px;padding:0;border:0;background:transparent;cursor:pointer}.slg-btn:focus-visible{outline:3px solid #D9C7A3;outline-offset:4px;box-shadow:0 0 0 6px #0E1F33}.slg-btn-t{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}</style>
-<div class="slg"><p class="slg-tease" id="slgTease">Want the tide and the flags?</p><button type="button" class="slg-btn" id="slgOpen" data-who="shelby" aria-label="Ask a guide" aria-haspopup="dialog" aria-expanded="false" aria-controls="slgPanel"><span class="slg-btn-t">Ask a guide</span></button></div>
-<script>(function(){var p=(location.pathname||'/').replace(/\.html$/,'')||'/';var who='shelby',ask='Ask Shelby',line='Want the tide and the flags?';if(p==='/shop'||p.indexOf('/shop/')===0||p.indexOf('/gift')===0||p.indexOf('/holiday-gift-guide')===0||p.indexOf('/prints')===0||p.indexOf('/guides')===0||p.indexOf('/shipping-returns')===0||p.indexOf('/size-guide')===0||p.indexOf('/wilmington-nc-gifts')===0||p.indexOf('/wrightsville-beach-souvenirs')===0||p.indexOf('/wrightsville-beach-christmas-ornament')===0){who='wrighty';ask='Ask Wrighty';line='Need a gift idea?'}else if(p==='/events'||p.indexOf('/events/')===0){who='cape';ask='Ask Captain Cape';line='Want this weekend?'}else if(p.indexOf('/things-to-do')===0||p==='/planner'||p==='/join'||p==='/waitlist'){who='cape';ask='Ask Captain Cape';line='A walk, the water, or after dark?'}var b=document.getElementById('slgOpen');if(b){b.setAttribute('data-who',who);b.setAttribute('aria-label',ask);}var t=document.getElementById('slgTease');if(t)t.textContent=line;})();</script>
+</script>
+
 <script src="/guide-boot.js" defer></script>
 <script src="/idle-boot.js" defer></script>
 </body>
