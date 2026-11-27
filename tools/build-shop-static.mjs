@@ -49,7 +49,7 @@ const firstScreen = FIRST_SCREEN.map((id) => byId.get(id)).filter((i) => i && !r
 const leadOf = (i) => i.lookbook || i.img || i.studio;
 const cards = firstScreen.map((i, k) => {
   const f = sized(leadOf(i), 480);
-  const pri = k === 0 ? 'fetchpriority="low" loading="eager"' : 'fetchpriority="low" loading="lazy"';
+  const pri = k === 0 ? 'fetchpriority="high" loading="eager"' : 'fetchpriority="low" loading="lazy"';
   return `<article class="card"><div class="ph" data-qv="${esc(i.id)}"><img class="p1" src="${esc(f)}" alt="${esc(i.alt || i.name)}" ${pri} decoding="async" width="800" height="1000"/></div><div class="bd"><h3><button type="button" data-qv="${esc(i.id)}" aria-haspopup="dialog">${esc(splitName(i.name))}</button></h3><div class="row"><span class="price">${esc(money(i))}</span></div></div></article>`;
 });
 const lcp = '';
