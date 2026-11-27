@@ -17,7 +17,7 @@ ShoreList (shorelist.net) is a hyperlocal booking marketplace for tours and expe
 - Wildlife and nature walks: https://shorelist.net/things-to-do/wildlife-tours https://shorelist.net/things-to-do/nature-walks
 - Scooter, golf cart and jet ski rentals: https://shorelist.net/things-to-do/scooter-rentals https://shorelist.net/things-to-do/jet-ski-rentals https://shorelist.net/things-to-do/golf-cart-rentals
 - Beach day services: https://shorelist.net/things-to-do/beach-photography https://shorelist.net/things-to-do/beach-picnics https://shorelist.net/things-to-do/beach-chairs https://shorelist.net/things-to-do/wellness
-- Town and beach guides (downtown Wilmington, Wrightsville Beach, Carolina Beach, Kure Beach): https://shorelist.net/downtown https://shorelist.net/wrightsville-beach https://shorelist.net/carolina-beach https://shorelist.net/kure-beach https://shorelist.net/pleasure-island
+- Town and beach guides (downtown Wilmington, Wrightsville Beach, Carolina Beach, Kure Beach): https://shorelist.net/downtown https://shorelist.net/wrightsville-beach https://shorelist.net/carolina-beach https://shorelist.net/kure-beach https://shorelist.net/pleasure-island https://shorelist.net/johnnie-mercers-pier
 - Events, including this weekend: https://shorelist.net/events https://shorelist.net/events/this-weekend
 - Where to stay: https://shorelist.net/where-to-stay
 - Trip planning and visitor questions: https://shorelist.net/plan-your-trip https://shorelist.net/wilmington-nc-faq
