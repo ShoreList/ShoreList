@@ -5,9 +5,9 @@
   'use strict';
   var KEY = 'sl-guide-character';
   var RULES = [
-    { id: 'wrighty', name: 'Wrighty', ask: 'Ask Wrighty', accent: '#0E1F33', greeting: "Hi, I'm Wrighty, ShoreList's shop guide.", paths: ['/shop', '/gift-finder', '/holiday-gift-guide'] },
-    { id: 'cape', name: 'Captain Cape', ask: 'Ask Captain Cape', accent: '#B5362F', greeting: "Hi, I'm Captain Cape, ShoreList's harbor guide.", paths: ['/things-to-do', '/events', '/guides', '/planner'] },
-    { id: 'shelby', name: 'Shelby', ask: 'Ask Shelby', accent: '#8A7348', greeting: "Hi, I'm Shelby, ShoreList's beach guide.", paths: ['/'] }
+    { id: 'wrighty', name: 'Wrighty', ask: 'Ask Wrighty', accent: '#0E1F33', greeting: "Hi, I'm Wrighty. I can help you find a gift or a souvenir from the ShoreList shop. Who are you shopping for?", paths: ['/shop', '/gift-guide', '/gift-finder', '/holiday-gift-guide', '/wilmington-nc-gifts', '/wrightsville-beach-souvenirs', '/wrightsville-beach-christmas-ornament', '/prints', '/guides', '/shipping-returns', '/size-guide'] },
+    { id: 'cape', name: 'Captain Cape', ask: 'Ask Captain Cape', accent: '#B5362F', greeting: "Cap here. I can help you pick a tour or an outing. What are you in the mood for: a walk through history, something on the water, or something after dark?", paths: ['/things-to-do', '/planner', '/join', '/waitlist'] },
+    { id: 'shelby', name: 'Shelby', ask: 'Ask Shelby', accent: '#8A7348', greeting: "Hi, I'm Shelby. I know Wilmington and the three beaches well. What brings you here: planning a trip, or figuring out today?", paths: ['/', '/downtown', '/wrightsville-beach', '/carolina-beach', '/kure-beach', '/pleasure-island', '/events', '/shore-picks', '/where-to-stay', '/plan-your-trip', '/wilmington-weather', '/surf'] }
   ];
   function pathName() { return (location.pathname || '/').replace(/\.html$/, '') || '/'; }
   function byId(id) { for (var i = 0; i < RULES.length; i++) if (RULES[i].id === id) return RULES[i]; return RULES[2]; }

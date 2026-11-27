@@ -6,8 +6,27 @@ test('path picks the character and the session lock holds', () => {
   g.resetGuide();
   assert.equal(g.characterFor('/shop', '').id, 'wrighty');
   assert.equal(g.characterFor('/', '').id, 'shelby');
+  assert.equal(g.characterFor('/events/this-weekend', '').id, 'shelby');
   assert.equal(g.characterFor('/things-to-do/walking-tours', '').id, 'cape');
   assert.equal(g.characterFor('/shop', 'cape').id, 'cape');
+});
+test('guide knowledge is loaded and Riverfest is not treated as a current festival', () => {
+  g.resetGuide();
+  const files = g.loadGuides().map((d) => d.file);
+  assert.ok(files.includes('guide-knowledge.md'));
+  assert.ok(files.includes('persona-voice.md'));
+  assert.ok(files.includes('shorelist-site-map.md'));
+  const shelby = g.characterFor('/downtown', '');
+  const ans = g.fallbackAnswer(shelby, 'Is Riverfest this year?', 2);
+  assert.match(ans.say, /canceled|not this year/i);
+  assert.doesNotMatch(ans.say, /October 3 to 4, 2026/);
+});
+test('Captain Cape does not say book now for a coming-soon tour', () => {
+  g.resetGuide();
+  const cape = g.characterFor('/things-to-do/ghost-tours', '');
+  const ans = g.fallbackAnswer(cape, 'book a ghost tour now', 0);
+  assert.equal(cape.id, 'cape');
+  assert.doesNotMatch(ans.say, /book now/i);
 });
 
 test('a guide file can be dropped in and is quoted, not paraphrased into a new price', () => {
@@ -63,7 +82,7 @@ test('handler uses the fallback when no model key is set', async () => {
     assert.equal(body.ok, true);
     assert.equal(body.source, 'fallback');
     assert.equal(body.character, 'cape');
-    assert.match(body.greeting, /Captain Cape/);
+    assert.match(body.greeting, /Cap here/);
     assert.ok(body.links.length >= 1);
     assert.ok(body.links.every((l) => l.url.startsWith('/')));
   } finally {

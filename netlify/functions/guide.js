@@ -10,7 +10,7 @@ const { corsHeaders, originAllowed, clientIp, rateLimitDurable, aiDailyCheck } =
 const MAX_BODY = 4000;
 const RATE = { max: 12, windowMs: 60000 };
 const MAX_Q = 300;
-const STOP = { the: 1, and: 1, for: 1, you: 1, your: 1, what: 1, where: 1, when: 1, how: 1, can: 1, does: 1, with: 1, from: 1, this: 1, that: 1, have: 1, about: 1, today: 1 };
+const STOP = { the: 1, and: 1, for: 1, you: 1, your: 1, what: 1, where: 1, when: 1, how: 1, can: 1, does: 1, with: 1, from: 1, this: 1, that: 1, have: 1, about: 1, today: 1, are: 1, was: 1, were: 1, not: 1, but: 1, is: 1 };
 
 let MARKET, INDEX, GUIDES;
 
@@ -59,8 +59,8 @@ function characterFor(pathname, locked) {
 
 function ownerOf(url) {
   const path = String(url || '');
-  if (path.startsWith('/shop') || path.startsWith('/gift') || path.startsWith('/holiday')) return 'wrighty';
-  if (path.startsWith('/things-to-do') || path.startsWith('/events') || path.startsWith('/guides') || path.startsWith('/planner')) return 'cape';
+  if (path.startsWith('/shop') || path.startsWith('/gift') || path.startsWith('/holiday') || path.startsWith('/prints') || path.startsWith('/guides') || path.startsWith('/shipping-returns') || path.startsWith('/size-guide') || path.startsWith('/wilmington-nc-gifts') || path.startsWith('/wrightsville-beach-souvenirs') || path.startsWith('/wrightsville-beach-christmas-ornament')) return 'wrighty';
+  if (path.startsWith('/things-to-do') || path.startsWith('/planner') || path.startsWith('/join') || path.startsWith('/waitlist')) return 'cape';
   return 'shelby';
 }
 
@@ -126,10 +126,16 @@ function guideHits(q) {
     words.forEach((w) => { if (hay.indexOf(w) !== -1) s += 1; });
     if (doc.persona) s += 0;
     return { doc, s };
-  }).filter((row) => row.s > 0).sort((a, b) => b.s - a.s || a.doc.file.localeCompare(b.doc.file)).slice(0, 3);
+  }).filter((row) => row.s > 0).sort((a, b) => b.s - a.s || a.doc.file.localeCompare(b.doc.file));
+}
+const STALE_CLAIM = ['october 3 to 4, 2026', 'november 10 to 14', 'open since 1939', 'dogs allowed on the beach at any hour', 'largest city in nc in 1850'];
+function staleClaim(sentence) {
+  const low = sentence.toLowerCase();
+  if (!STALE_CLAIM.some((p) => low.indexOf(p) !== -1)) return false;
+  return !/(canceled|cancelled|closed|do not|instead)/.test(low);
 }
 function bestSentence(body, words) {
-  const sentences = String(body || '').replace(/\s+/g, ' ').split(/(?<=\.)\s+/).map((s) => s.trim()).filter((s) => s.length > 24 && s.length < 320);
+  const sentences = String(body || '').replace(/\s+/g, ' ').split(/(?<=\.)\s+/).map((s) => s.trim()).filter((s) => s.length > 24 && s.length < 320 && !staleClaim(s));
   let best = '';
   let score = 0;
   sentences.forEach((s) => {
@@ -138,7 +144,29 @@ function bestSentence(body, words) {
     words.forEach((w) => { if (low.indexOf(w) !== -1) n += 1; });
     if (n > score) { score = n; best = s; }
   });
-  return score ? best : '';
+  return score ? plainSentence(best) : '';
+}
+function plainSentence(sentence) {
+  return String(sentence || '')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/\s*\(Source:[\s\S]*$/i, '')
+    .replace(/^[-*]\s+/, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+function bestAcross(docs, words, persona) {
+  let best = { sentence: '', score: 0, doc: null };
+  docs.forEach((doc) => {
+    const sentence = bestSentence(doc.body, words);
+    if (!sentence) return;
+    const low = sentence.toLowerCase();
+    let n = 0;
+    words.forEach((w) => { if (low.indexOf(w) !== -1) n += 1; });
+    if (doc.persona && doc.persona === persona) n += 1;
+    const personaTie = n === best.score && doc.persona === persona && !(best.doc && best.doc.persona === persona);
+    if (n > best.score || personaTie) best = { sentence, score: n, doc };
+  });
+  return best;
 }
 function questionsFor(character) {
   const fromDocs = loadGuides().filter((d) => d.persona === character.id).flatMap((d) => d.questions);
@@ -167,11 +195,14 @@ function fallbackAnswer(character, q, asked) {
   let links = hits;
   let other = '';
   if (docs.length) {
-    const doc = docs[0].doc;
-    const sentence = bestSentence(doc.body, words);
+    const picked = bestAcross(docs.map((d) => d.doc), words, character.id);
+    const doc = picked.doc || docs[0].doc;
+    const sentence = picked.sentence;
     other = doc.persona || ownerOf((doc.links[0] || hits[0] && hits[0].url) || '');
     const fromDoc = doc.links.map((url) => ({ title: url, url, sub: '', price: '' }));
-    links = fromDoc.length ? fromDoc : hits;
+    const named = fromDoc.filter((l) => words.some((w) => l.url.toLowerCase().indexOf(w) !== -1));
+    links = (named.length ? named : fromDoc).slice(0, 3);
+    if (!links.length) links = hits;
     say = sentence || (name + ' is not sure about that from the guide notes.');
   } else if (!hits.length) {
     say = name + ' is not sure about that from the ShoreList pages. Try the shop, things to do, or events.';
@@ -189,7 +220,13 @@ function fallbackAnswer(character, q, asked) {
   const n = Math.max(0, Math.min(2, parseInt(asked, 10) || 0));
   const qs = questionsFor(character);
   if (n < qs.length) say = say.replace(/\s+$/, '') + ' ' + qs[n];
-  return { say, links, asked: Math.min(2, n + (n < qs.length ? 1 : 0)) };
+  return { say: guardSay(say, links, character), links, asked: Math.min(2, n + (n < qs.length ? 1 : 0)) };
+}
+function guardSay(say, links, character) {
+  const primary = (links && links[0] && links[0].url) || '';
+  const walking = primary.indexOf('/things-to-do/walking-tours') === 0;
+  if (character && character.id === 'cape' && !walking) say = say.replace(/\bbook now\b/gi, 'see the page');
+  return String(say || '').replace(/\s+/g, ' ').trim();
 }
 
 function cleanSay(say, allowedText) {
@@ -286,7 +323,7 @@ exports.handler = async (event) => {
     const a = raw.indexOf('{'), c = raw.lastIndexOf('}');
     let parsed = null;
     try { parsed = a >= 0 && c > a ? JSON.parse(raw.slice(a, c + 1)) : null; } catch (e) { parsed = null; }
-    const say = cleanSay(parsed && parsed.say, lines);
+    const say = guardSay(cleanSay(parsed && parsed.say, lines), base.links, character);
     if (!say) return pack('fallback');
     return pack(model.source, say);
   } catch (e) {

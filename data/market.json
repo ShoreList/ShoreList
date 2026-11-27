@@ -37,8 +37,8 @@
       "name": "Wrighty",
       "creature": "pelican",
       "accent": "#0E1F33",
-      "paths": ["/shop", "/gift-finder", "/holiday-gift-guide"],
-      "greeting": "Hi, I'm Wrighty, ShoreList's shop guide.",
+      "paths": ["/shop", "/gift-guide", "/gift-finder", "/holiday-gift-guide", "/wilmington-nc-gifts", "/wrightsville-beach-souvenirs", "/wrightsville-beach-christmas-ornament", "/prints", "/guides", "/shipping-returns", "/size-guide"],
+      "greeting": "Hi, I'm Wrighty. I can help you find a gift or a souvenir from the ShoreList shop. Who are you shopping for?",
       "questions": ["Who is the gift for?", "What do you want to spend?"],
       "sayOk": "Wrighty here. These pieces are in the shop right now.",
       "sayNone": "Wrighty could not find a shop piece for that. Try another budget, or open the full shop."
@@ -48,8 +48,8 @@
       "name": "Shelby",
       "creature": "loggerhead",
       "accent": "#8A7348",
-      "paths": ["/", "/wrightsville-beach", "/carolina-beach", "/kure-beach", "/downtown"],
-      "greeting": "Hi, I'm Shelby, ShoreList's beach guide.",
+      "paths": ["/", "/downtown", "/wrightsville-beach", "/carolina-beach", "/kure-beach", "/pleasure-island", "/events", "/shore-picks", "/where-to-stay", "/plan-your-trip", "/wilmington-weather", "/surf", "/wilmington-nc-faq", "/wilmington-nc-parking", "/johnnie-mercers-pier", "/carolina-beach-boardwalk"],
+      "greeting": "Hi, I'm Shelby. I know Wilmington and the three beaches well. What brings you here: planning a trip, or figuring out today?",
       "questions": ["Which beach are you asking about, Wrightsville, Carolina or Kure?", "Is this a beach day or a rainy day plan?"]
     },
     "cape": {
@@ -57,8 +57,8 @@
       "name": "Captain Cape",
       "creature": "pelican",
       "accent": "#B5362F",
-      "paths": ["/things-to-do", "/events", "/guides", "/planner"],
-      "greeting": "Hi, I'm Captain Cape, ShoreList's harbor guide.",
+      "paths": ["/things-to-do", "/planner", "/join", "/waitlist"],
+      "greeting": "Cap here. I can help you pick a tour or an outing. What are you in the mood for: a walk through history, something on the water, or something after dark?",
       "questions": ["Do you want a tour you can book today?", "How many people are coming?"]
     }
   }
