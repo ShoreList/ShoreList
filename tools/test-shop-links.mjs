@@ -36,3 +36,27 @@ test('non-product and off-domain inputs are rejected before a request', async ()
     assert.equal(await checkProductPage(candidate, [host], async () => assert.fail('unexpected fetch')), 'Unapproved merchant product URL');
   }
 });
+
+test('rate limiting uses Retry-After and makes at most one respectful retry', async () => {
+  let calls = 0;
+  const limited = (seconds) => new Response('', { status: 429, headers: { 'retry-after': String(seconds) } });
+  const waits = [];
+  const wait = async (ms) => { waits.push(ms); };
+  const retry = async () => ++calls === 1 ? limited(2) : reply()();
+  assert.equal(await checkProductPage(url, [host], retry, wait), null);
+  assert.deepEqual(waits, [2000]);
+  assert.equal(calls, 2);
+
+  calls = 0;
+  waits.length = 0;
+  const paused = async () => { calls++; return limited(60); };
+  assert.equal(await checkProductPage(url, [host], paused, wait), 'Merchant rate-limited verification (429)');
+  assert.equal(calls, 1);
+  assert.deepEqual(waits, []);
+
+  calls = 0;
+  const stillLimited = async () => { calls++; return limited(2); };
+  assert.equal(await checkProductPage(url, [host], stillLimited, wait), 'Merchant rate-limited verification (429)');
+  assert.equal(calls, 2);
+  assert.deepEqual(waits, [2000]);
+});
