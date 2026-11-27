@@ -51,12 +51,11 @@
   var sz=Math.ceil(Math.max(vw,vh*1.5)*1.08*Math.min(d,1.5)/d)+'px';
   var b='https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-'+f+'_';
   var ss=[1280,1920,2560,3200,3840].map(function(w){return b+w+'x.jpg '+w+'w';}).join(', ');
-  var mobile=vw<=820;
+  var mobile=window.matchMedia?matchMedia('(max-width: 820px)').matches:vw<=820;
   window.__slHero={ph:ph,f:f,sz:sz,vw:vw,mobile:mobile};
-  var l=document.createElement('link');l.rel='preload';l.as='image';l.setAttribute('fetchpriority','high');
-  if(mobile)l.href='/img/hero-mobile/'+f+'.webp';
-  else{l.setAttribute('imagesrcset',ss);l.setAttribute('imagesizes',sz);}
-  document.head.appendChild(l);
+  var avif='/img/hero-mobile/'+f+'.avif';
+  document.write('<link rel="preload" as="image" fetchpriority="high" href="'+avif+'" imagesrcset="'+avif+' 960w" imagesizes="100vw" media="(max-width: 820px)">');
+  if(!mobile)document.write('<link rel="preload" as="image" fetchpriority="high" imagesrcset="'+ss+'" imagesizes="'+sz+'" media="(min-width: 821px)">');
 }catch(e){}})();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -396,7 +395,9 @@ window.addEventListener('load',function(){
     photo.setAttribute('data-early', '');
     photo.setAttribute('data-p', hero.ph);
     photo.fetchPriority = 'high';
-    photo.src = '/img/hero-mobile/' + hero.f + '.webp';
+    photo.sizes = '100vw';
+    photo.srcset = '/img/hero-mobile/' + hero.f + '.avif 960w';
+    photo.src = '/img/hero-mobile/' + hero.f + '.avif';
     wrap.appendChild(photo);
     document.getElementById('hero').appendChild(wrap);
   })();

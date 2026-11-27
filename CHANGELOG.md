@@ -6,6 +6,8 @@ Format: newest first. Each future entry: date, PR or action, what changed, evide
 
 ## 2026-11-27
 
+- Home phone hero is an AVIF around 20KB, preloaded from the top of the head with imagesrcset and fetchpriority high, so the request is not waiting on later scripts. `sw.js` is `sl-v319-2026-11-27`. Rollback: revert the squash commit and bump `sw.js`.
+
 - Live cams v1: `/cams` plays the two official Johnnie Mercer's Pier YouTube cams behind a click-to-play facade, plus a Southport Marina channel slot. Other local cams are links only. The home beach report features the pier's south view. CSP `frame-src` allows YouTube. `sw.js` is `sl-v318-2026-11-27`. Rollback: revert the squash commit and bump `sw.js`.
 - Home largest paint: the big stylesheet now loads after the hero, and the phone photo is painted from the critical CSS with fetchpriority already set. Nav and breadcrumb text that used Signal Red on Harbor Navy now uses Dune Sand so it clears WCAG AA. `sw.js` is `sl-v317-2026-11-27`. Rollback: revert the squash commit and bump `sw.js`.
 
