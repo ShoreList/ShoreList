@@ -6,6 +6,7 @@ Format: newest first. Each future entry: date, PR or action, what changed, evide
 
 ## 2026-11-27
 
+- Wrightsville Beach Varsity Fleece hoodie ($92), Varsity Tee ($42) and Signature Crewneck ($78) are back on the shop, studio photos only, and they lead the Wrightsville shelf and the top of the shop page. `sw.js` is `sl-v323-2026-11-27`. Rollback: revert the squash commit and bump `sw.js`.
 - The shop's first stylesheet reserves the phone size of the gift cards and the hero photo, so the later sheet does not shrink them. The variant file is no longer preloaded ahead of that photo. `sw.js` is `sl-v322-2026-11-27`. Rollback: revert the squash commit and bump `sw.js`.
 - Home has a slim Black Friday bar in the HTML, linking to the shop, with its height reserved. It shows SHOREFRIDAY15 through Friday Nov 27 at 11:59 PM Eastern, SHORECYBER15 on Monday Nov 30 only, and nothing Saturday or Sunday. The shop code banner is in the HTML at the top instead of being injected after load. Product pages list colors and sizes in the page, and the shop picker reads shop-variants.json first. The phone chat bubble sits above the Events button. `sw.js` is `sl-v321-2026-11-27`. Rollback: revert the squash commit and bump `sw.js`.
 - The phone hero image is in the HTML, the same Banks Channel AVIF the preload already requests, so the throttled Lighthouse run does not wait on a script to build it. `sw.js` is `sl-v321-2026-11-27`. Rollback: revert the squash commit and bump `sw.js`.

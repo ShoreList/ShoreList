@@ -1,6 +1,9 @@
 {
  "v": 1,
  "startHere": [
+  "wrightsville-beach-varsity-hoodie",
+  "wrightsville-beach-varsity-tee",
+  "wrightsville-beach-signature-crewneck",
   "wrightsville-can-cooler",
   "carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
   "kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
@@ -94,6 +97,75 @@
   }
  ],
  "items": [
+  {
+   "id": "wrightsville-beach-varsity-hoodie",
+   "collection": "local-icons",
+   "name": "Wrightsville Beach Hoodie, Varsity Fleece",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-varsity-hoodie",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2208554389027895019_2048.jpg",
+   "alt": "Studio photo of the Wrightsville Beach Hoodie, Varsity Fleece.",
+   "meta": "WRIGHTSVILLE arched over BEACH in soft cream varsity lettering on a garment-dyed heavyweight hoodie. Denim or True Navy.",
+   "cta": "Choose options",
+   "price": 92,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "buy": "https://shorelist.myshopify.com/cart/48573473456212:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2208554389027895019_2048.jpg",
+   "lookbook": "",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "type": "tops",
+   "added": "2026-11-27"
+  },
+  {
+   "id": "wrightsville-beach-varsity-tee",
+   "collection": "local-icons",
+   "name": "Wrightsville Beach T-Shirt, Varsity Tee",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-varsity-tee",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12620281615902647264_2048.jpg",
+   "alt": "Studio photo of the Wrightsville Beach T-Shirt, Varsity Tee.",
+   "meta": "WRIGHTSVILLE arched over BEACH in soft cream varsity lettering on a garment-dyed tee. Blue Jean or Blue Spruce.",
+   "cta": "Choose options",
+   "price": 42,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "buy": "https://shorelist.myshopify.com/cart/48574097457236:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12620281615902647264_2048.jpg",
+   "lookbook": "",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "type": "tops",
+   "added": "2026-11-27"
+  },
+  {
+   "id": "wrightsville-beach-signature-crewneck",
+   "collection": "local-icons",
+   "name": "Wrightsville Beach Signature Crewneck",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-signature-crewneck",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3739136137816494_2048.jpg",
+   "alt": "Studio photo of the Wrightsville Beach Signature Crewneck.",
+   "meta": "Signature Wrightsville Beach lettering with the small ShoreList pennant on a garment-dyed crewneck. Five colors.",
+   "cta": "Choose options",
+   "price": 78,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "buy": "https://shorelist.myshopify.com/cart/48574782668884:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3739136137816494_2048.jpg",
+   "lookbook": "",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "type": "tops",
+   "added": "2026-11-27"
+  },
   {
    "id": "wrightsville-beach-sloop-all-over-print-tote-bag",
    "collection": "shore-gear",
@@ -4023,12 +4095,10 @@
  "retired": {
   "note": "Removed from the on-site shop on 2026-11-21 (shop-redo). The shop only renders items in items[], so retired products stop showing everywhere (shop page, Tidebot, llms digest). Shopify/Fourthwall listings are unchanged until unpublished in admin. See plans/shop-redo-spec.md.",
   "items": {
-   "wrightsville-beach-varsity-hoodie": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
    "carolina-beach-varsity-hoodie": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
    "kure-beach-varsity-hoodie": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
    "wilmington-varsity-hoodie": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
    "ilm-hoodie": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
-   "wrightsville-beach-varsity-tee": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
    "carolina-beach-varsity-tee": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
    "kure-beach-varsity-tee": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
    "wilmington-varsity-tee": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
