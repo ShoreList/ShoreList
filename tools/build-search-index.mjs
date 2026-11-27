@@ -60,6 +60,7 @@ const pages = [
   ['List your business', 'Join ShoreList as a local operator', '/join', 'operator join list business partner vendor sell'],
   ['Join the waitlist', 'Get updates when new experiences go live', '/waitlist', 'waitlist signup notify email updates'],
   ['Legal and policies', 'Terms, privacy and refund policy', '/legal', 'terms privacy refund cancellation policy legal'],
+  ['Gift finder', 'Ask Wrighty for ShoreList gifts under $25, $35 or $50', '/gift-finder', 'gift finder wrighty presents under 25 35 50 for him for her for the home'],
 ];
 for (const [title, sub, url, kw] of pages) items.push({ t: 'page', title, sub, url, kw });
 const out = { v: 1, built: new Date().toISOString().slice(0, 10), items };

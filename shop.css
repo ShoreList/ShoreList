@@ -110,6 +110,7 @@ a.hero-img:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .gift-in{display:flex;flex-direction:column;gap:20px}
 .gift h2{font-size:1.7rem}
 .gift p{max-width:56ch;margin-top:4px}
+.gift-l{display:flex;flex-wrap:wrap;gap:10px}
 @media(min-width:800px){.gift-in{flex-direction:row;align-items:center;justify-content:space-between;gap:48px}}
 .made{padding:var(--sp) 0 0}
 .made h2{font-size:clamp(1.75rem,5vw,2.4rem);margin-bottom:28px}

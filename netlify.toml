@@ -10,6 +10,10 @@
 [functions."shop-bot"]
   included_files = ["shop-catalog.json", "data/operators.json"]
 
+# Gift finder checks every returned handle against the same catalog.
+[functions."gift-finder"]
+  included_files = ["shop-catalog.json", "data/operators.json", "data/market.json"]
+
 # ShoreList Direct (physical goods): the catalog is read by the checkout, the order page and the fulfillment code.
 [functions."create-goods-checkout"]
   included_files = ["dropship-catalog.json"]
