@@ -189,7 +189,7 @@ const sections = [
 const money = (n) => (Math.round(n * 100) % 100 === 0 ? n.toFixed(0) : n.toFixed(2));
 const price = (i) => `${i.from ? 'From ' : ''}$${money(i.price)}`;
 const cardPhoto = (i) => `<img src="${esc(i.img)}" alt="${esc(i.alt)}" width="800" height="1000" loading="lazy" decoding="async"/>` +
-  (i.lookbookGenerator === 'Higgsfield' ? '<small class="gg-line">AI-generated lookbook</small>' : '');
+  (i.lookbookGenerator === 'Higgsfield' || i.lookbookGenerator === 'ChatGPT' ? '<small class="gg-line">AI-generated lookbook</small>' : '');
 const card = (i) => `<li><a href="${esc(i.url)}" data-item-id="${esc(i.id)}">${cardPhoto(i)}<span class="gg-name">${esc(i.name)}</span><span class="gg-price">${price(i)}</span><span class="gg-line">${esc(i.meta)}</span></a></li>`;
 const used = [];
 const giftSections = sections.map((s) => {
