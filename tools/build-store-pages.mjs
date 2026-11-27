@@ -168,11 +168,11 @@ const shipBody = `<ul class="tp-short">
 const giftFaq = [
  [
   "What is a good gift from Wilmington NC?",
-  "Something that carries the town: an embroidered crewneck, beanie or cap with a Wrightsville Beach or Kure Beach icon, a Christmas ornament, or an art print of a Wrightsville Beach sunset or the Carolina Beach boardwalk. The gift guide sorts them by who is getting them."
+  "Something that carries the town: an embroidered crewneck or cap with a Wrightsville Beach, Kure Beach or Wilmington mark, or one of the Wrightsville varsity pieces. The gift guide leads with those eight, then beanies and caps."
  ],
  [
   "Are there Wilmington NC gifts under $20?",
-  "Yes. The Wrightsville Beach, Carolina Beach and Kure Beach ornaments and the can coolers are in the Under $20 section, at the prices shown on this page."
+  "This guide leads with the crewnecks, the Sloop cap and the Wrightsville varsity pieces. The full shop lists every current piece and its price."
  ],
  [
   "Will a gift arrive in time for the holidays?",
@@ -188,16 +188,10 @@ const giftFaq = [
  ]
 ];
 const sections = [
-  { id: 'under-20', h: 'Under $20: hosts, neighbors, stocking stuffers', p: 'Small, specific and about a town. The ornament is the keepsake. The can cooler is the one that actually goes on the boat.',
-    ids: ['wrightsville-ornament-2026', 'carolina-beach-ornament-2026', 'kure-beach-ornament-2026', 'wrightsville-can-cooler', 'carolina-beach-can-cooler', 'kure-beach-can-cooler'] },
-  { id: 'for-the-wall', h: 'For the wall', p: 'A print of the right stretch of coast beats a postcard. Each is made to order.',
-    ids: ['carolina-beach-boardwalk-art-print', 'wrightsville-beach-pier-art-print'] },
-  { id: 'wears-the-town', h: 'For the person who wears their town', p: 'A small embroidered icon and a town code, stitched on a garment-dyed crewneck. Sizing help is on the <a href="/size-guide">size guide</a>, and a fit question to us is welcome.',
-    ids: ['the-sloop-embroidered-crewneck-wrightsville-beach', 'the-blue-crab-embroidered-crewneck-kure-beach', ] },
-  { id: 'hats', h: 'Beanies and caps', p: 'Smaller than a sweatshirt, and the same stitched icon. Check each product page for sizing.',
-    ids: ['the-sloop-cuffed-beanie-wrightsville-beach', 'the-blue-crab-cuffed-beanie-kure-beach', 'the-sloop-corduroy-cap-wrightsville-beach', 'the-blue-crab-corduroy-cap-kure-beach', ] },
-  { id: 'beach-day', h: 'For the beach-day household', p: 'A towel for the sand and a tote for the walk down.',
-    ids: ['carolina-coast-towel', 'salt-wash-market-tote'] },
+  { id: 'lead', h: 'Start here', p: 'Eight pieces from the shop, in the order we are featuring them: the Sloop crewneck and cap, the Blue Crab crewneck, the Kure Beach lifeguard crewneck, the Live Oak crewneck, and the Wrightsville varsity hoodie, tee and signature crewneck. Sizing help is on the <a href="/size-guide">size guide</a>.',
+    ids: ['the-sloop-embroidered-crewneck-wrightsville-beach', 'the-sloop-corduroy-cap-wrightsville-beach', 'the-blue-crab-embroidered-crewneck-kure-beach', 'kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt', 'the-live-oak-embroidered-crewneck-wilmington', 'wrightsville-beach-varsity-hoodie', 'wrightsville-beach-varsity-tee', 'wrightsville-beach-signature-crewneck'] },
+  { id: 'hats', h: 'Beanies and caps', p: 'Smaller than a sweatshirt, and the same stitched icon. The Sloop cap is in the list above. Check each product page for sizing.',
+    ids: ['the-sloop-cuffed-beanie-wrightsville-beach', 'the-blue-crab-cuffed-beanie-kure-beach', 'the-blue-crab-corduroy-cap-kure-beach'] },
 ];
 const money = (n) => (Math.round(n * 100) % 100 === 0 ? n.toFixed(0) : n.toFixed(2));
 const price = (i) => `${i.from ? 'From ' : ''}$${money(i.price)}`;
@@ -224,7 +218,7 @@ const out = {
   'size-guide.html': page({ slug: 'size-guide', title: 'Size Guide | ShoreList Shop', desc: 'Garment measurements for ShoreList embroidered crewnecks in inches, how to measure a piece you own, and who to ask when a size is not listed.', eye: 'Size guide', h1: 'Fit, <em>measured</em>', lede: 'Every piece is made to order, so the right size matters. Here are the real numbers where we have them, and a straight answer where we do not.', body: sizeBody }),
   'shipping-returns.html': page({ slug: 'shipping-returns', title: 'Shipping and Returns | ShoreList Shop', desc: 'How ShoreList orders are made, how long they take, and what happens if a piece arrives damaged, defective or misprinted. Plain answers, nothing buried.', eye: 'Shipping and returns', h1: 'Shipping &amp; returns, <em>plainly</em>', lede: 'Made to order, shipped by our partners, fixed if it arrives wrong. Here is exactly how that works.', body: shipBody,
     ld: [{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }] }),
-  'gift-guide.html': page({ slug: 'gift-guide', title: 'Coastal Carolina Gift Guide | ShoreList Shop', desc: 'A short gift guide by recipient, from under $20 stocking stuffers to beach-day gear, drawn from the ShoreList shop at its current prices.', eye: 'Gift guide', h1: 'Gifts for people who <em>love the coast</em>', lede: 'This Wilmington NC gift guide sorts coastal Carolina gifts by who is getting them: ornaments and can coolers under $20, art prints of local piers, embroidered crewnecks, beanies and caps, and beach-day gear. Every item is in the shop today at its current price, and everything is made to order.', body: giftBody, ld: [...(giftLd ? [giftLd] : []), { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: giftFaq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a.replace(/<[^>]+>/g, '') } })) }], wide: true }),
+  'gift-guide.html': page({ slug: 'gift-guide', title: 'Coastal Carolina Gift Guide | ShoreList Shop', desc: 'A coastal Carolina gift guide from the ShoreList shop, leading with embroidered crewnecks, the Sloop cap and the Wrightsville varsity pieces, at current prices.', eye: 'Gift guide', h1: 'Gifts for people who <em>love the coast</em>', lede: 'This Wilmington NC gift guide leads with eight coastal Carolina pieces: the Sloop crewneck and cap, the Blue Crab crewneck, the Kure Beach lifeguard crewneck, the Live Oak crewneck, and the Wrightsville varsity hoodie, tee and signature crewneck. Every item is in the shop today at its current price, and everything is made to order.', body: giftBody, ld: [...(giftLd ? [giftLd] : []), { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: giftFaq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a.replace(/<[^>]+>/g, '') } })) }], wide: true }),
 };
 
 // ------------------------------------------------------------ town shop pages
