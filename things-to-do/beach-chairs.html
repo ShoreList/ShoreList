@@ -36,8 +36,8 @@ window.addEventListener('load',function(){
     tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
     document.head.appendChild(tag);
   }
-  if(window.requestIdleCallback)requestIdleCallback(load);
-  else setTimeout(load,1);
+  document.addEventListener('pointerdown',load,{once:true,passive:true});
+  setTimeout(function(){if(window.requestIdleCallback)requestIdleCallback(load);else load();},5000);
 });
 </script>
 <script>
@@ -52,7 +52,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 <link rel="stylesheet" href="/fixes.css"/>
 <link rel="stylesheet" href="/scene.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 <link rel="stylesheet" href="/tokens.css"/>
 <script>window.__CAT="beach-chairs";window.__H1="Beach Chair & Umbrella Rentals near Wilmington, NC";</script>
 </head>
@@ -267,14 +267,15 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
   </nav>
 </footer>
 
-<script src="/attrib.js"></script>
-<script src="/category-app.js"></script>
-<script src="/sound.js" defer></script>
-<script src="/beachwx.js" defer></script>
-<script src="/shore-plus.js" defer></script>
-<script src="/directory.js" defer></script>
+<script data-idle="/attrib.js"></script>
+<script data-idle="/category-app.js"></script>
+<script data-idle="/sound.js"></script>
+<script data-idle="/beachwx.js"></script>
+<script data-idle="/shore-plus.js"></script>
+<script data-idle="/directory.js"></script>
 <style>.slg{position:fixed;right:16px;bottom:16px;z-index:80}.slg-btn{display:flex;align-items:center;min-height:48px;padding:6px 14px;border:3px solid #D9C7A3;border-radius:999px;background:#0E1F33;color:#F4F1EA;cursor:pointer;font:500 .82rem/1 'DM Sans',sans-serif}</style>
 <div class="slg"><button type="button" class="slg-btn" id="slgOpen" aria-haspopup="dialog" aria-expanded="false" aria-controls="slgPanel"><span class="slg-btn-t">Ask a guide</span></button></div>
 <script src="/guide-boot.js" defer data-widgets="1"></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>

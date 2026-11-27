@@ -42,8 +42,8 @@ window.addEventListener('load',function(){
     tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
     document.head.appendChild(tag);
   }
-  if(window.requestIdleCallback)requestIdleCallback(load);
-  else setTimeout(load,1);
+  document.addEventListener('pointerdown',load,{once:true,passive:true});
+  setTimeout(function(){if(window.requestIdleCallback)requestIdleCallback(load);else load();},5000);
 });
 </script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EN91RH3PZV');</script>
@@ -55,7 +55,7 @@ ${lds}
 <link rel="stylesheet" href="/luxe.css"/>
 <link rel="stylesheet" href="/tokens.css"/>
 <link rel="stylesheet" href="/store-pages.css"/>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 </head>
 <body class="ev-page">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -74,7 +74,7 @@ ${body}
 </div></div></section>
 </main>
 ${FOOT}
-<script src="/shore-plus.js" defer></script>
+<script data-idle="/shore-plus.js"></script>
 </body>
 </html>
 `;

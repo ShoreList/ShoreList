@@ -216,8 +216,8 @@ window.addEventListener('load',function(){
     tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
     document.head.appendChild(tag);
   }
-  if(window.requestIdleCallback)requestIdleCallback(load);
-  else setTimeout(load,1);
+  document.addEventListener('pointerdown',load,{once:true,passive:true});
+  setTimeout(function(){if(window.requestIdleCallback)requestIdleCallback(load);else load();},5000);
 });
 </script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EN91RH3PZV');</script>
@@ -229,7 +229,7 @@ ${lds}
 <link rel="stylesheet" href="/luxe.css"/>
 <link rel="stylesheet" href="/tokens.css"/>
 <link rel="stylesheet" href="/store-pages.css"/>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 </head>
 <body class="ev-page">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -249,7 +249,7 @@ ${faqHtml}
 </div></div></section>
 </main>
 <footer class="ev-foot"><div>&copy; 2026 ShoreList LLC &middot; Wilmington, NC &amp; the Beaches</div><div><a href="/events">Events Guide</a><a href="/things-to-do">Things to Do</a><a href="/shore-picks">Shore Picks</a><a href="/where-to-stay">Where to Stay</a><a href="/wilmington-weather">Weather</a><a href="/guides">PDF Guides</a><a href="/prints">Art Prints</a><a href="/shipping-returns">Shipping &amp; Returns</a><a href="/size-guide">Size Guide</a><a href="/gift-guide">Gift Guide</a><a href="/wilmington-nc-gifts">Wilmington NC gifts</a><a href="/wrightsville-beach-souvenirs">Wrightsville Beach souvenirs</a><a href="/wrightsville-beach-christmas-ornament">Wrightsville Beach Christmas ornament</a><a href="/how-we-verify">How we verify</a><a href="/legal">Privacy &amp; Terms</a></div></footer>
-<script src="/shore-plus.js" defer></script>
+<script data-idle="/shore-plus.js"></script>
 </body>
 </html>
 `;

@@ -42,8 +42,8 @@ window.addEventListener('load',function(){
     tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
     document.head.appendChild(tag);
   }
-  if(window.requestIdleCallback)requestIdleCallback(load);
-  else setTimeout(load,1);
+  document.addEventListener('pointerdown',load,{once:true,passive:true});
+  setTimeout(function(){if(window.requestIdleCallback)requestIdleCallback(load);else load();},5000);
 });
 </script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EN91RH3PZV');</script>
@@ -154,7 +154,7 @@ window.addEventListener('load',function(){
 <link rel="stylesheet" href="/tokens.css"/>
 </noscript>
 <!--HOME-CSS:end-->
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 <script>
 (function(){
   'use strict';
@@ -465,11 +465,11 @@ b.addEventListener('click',function(){setOpen(!nav.classList.contains('open'));}
 nav.querySelector('a[href="#drops"]').addEventListener('click',function(){setOpen(false);});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&nav.classList.contains('open')){setOpen(false);b.focus();}});})();
 </script>
-<script src="/attrib.js" defer></script>
-<script src="/shop-cart.js" defer></script>
-<script src="/shop-promo.js" defer></script>
-<script src="/shop-analytics.js" data-ga-id="G-EN91RH3PZV" defer></script>
-<script src="/shore-plus.js" defer></script>
+<script data-idle="/attrib.js"></script>
+<script data-idle="/shop-cart.js"></script>
+<script data-idle="/shop-promo.js"></script>
+<script data-idle="/shop-analytics.js" data-ga-id="G-EN91RH3PZV"></script>
+<script data-idle="/shore-plus.js"></script>
 <script>
 (function(){var f=document.getElementById('dropForm');if(!f)return;var m=document.getElementById('dropMsg'),i=document.getElementById('dropEmail'),busy=false;
 function ok(v){return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v);}
@@ -485,5 +485,6 @@ fetch('https://formspree.io/f/xeevzzqd',{method:'POST',headers:{'Accept':'applic
 </script><style>.slg{position:fixed;right:16px;bottom:16px;z-index:80}.slg-btn{display:flex;align-items:center;min-height:48px;padding:6px 14px;border:3px solid #D9C7A3;border-radius:999px;background:#0E1F33;color:#F4F1EA;cursor:pointer;font:500 .82rem/1 'DM Sans',sans-serif}</style>
 <div class="slg"><button type="button" class="slg-btn" id="slgOpen" aria-haspopup="dialog" aria-expanded="false" aria-controls="slgPanel"><span class="slg-btn-t">Ask a guide</span></button></div>
 <script src="/guide-boot.js" defer></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>

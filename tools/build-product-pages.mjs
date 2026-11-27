@@ -70,7 +70,7 @@ function page(i) {
 <link rel="stylesheet" href="/luxe.css"/>
 <link rel="stylesheet" href="/tokens.css"/>
 <link rel="stylesheet" href="/store-pages.css"/>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 </head>
 <body class="ev-page">
 <a class="skip-link" href="#main">Skip to content</a>

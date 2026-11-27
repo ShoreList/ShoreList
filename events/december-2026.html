@@ -22,8 +22,8 @@ window.addEventListener('load',function(){
     tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
     document.head.appendChild(tag);
   }
-  if(window.requestIdleCallback)requestIdleCallback(load);
-  else setTimeout(load,1);
+  document.addEventListener('pointerdown',load,{once:true,passive:true});
+  setTimeout(function(){if(window.requestIdleCallback)requestIdleCallback(load);else load();},5000);
 });
 </script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EN91RH3PZV');</script>
@@ -35,7 +35,7 @@ window.addEventListener('load',function(){
 <link rel="stylesheet" href="/events.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
 <link rel="stylesheet" href="/tokens.css"/>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 </head>
 <body class="ev-page">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -108,10 +108,11 @@ window.addEventListener('load',function(){
 </div></section>
 </main>
 <footer class="ev-foot"><div>&copy; 2026 ShoreList LLC &middot; Wilmington, NC &amp; the Beaches</div><div><a href="/events">Events Guide</a><a href="/things-to-do">Things to Do</a><a href="/shore-picks">Shore Picks</a><a href="/where-to-stay">Where to Stay</a><a href="/wilmington-weather">Weather</a><a href="/guides">PDF Guides</a><a href="/prints">Art Prints</a><a href="/shipping-returns">Shipping &amp; Returns</a><a href="/size-guide">Size Guide</a><a href="/gift-guide">Gift Guide</a><a href="/how-we-verify">How we verify</a><a href="/legal">Privacy &amp; Terms</a></div></footer>
-<script src="/shore-plus.js" defer></script>
-<script src="/events-feed.js" defer></script>
+<script data-idle="/shore-plus.js"></script>
+<script data-idle="/events-feed.js"></script>
 <style>.slg{position:fixed;right:16px;bottom:16px;z-index:80}.slg-btn{display:flex;align-items:center;min-height:48px;padding:6px 14px;border:3px solid #D9C7A3;border-radius:999px;background:#0E1F33;color:#F4F1EA;cursor:pointer;font:500 .82rem/1 'DM Sans',sans-serif}</style>
 <div class="slg"><button type="button" class="slg-btn" id="slgOpen" aria-haspopup="dialog" aria-expanded="false" aria-controls="slgPanel"><span class="slg-btn-t">Ask a guide</span></button></div>
 <script src="/guide-boot.js" defer></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>
