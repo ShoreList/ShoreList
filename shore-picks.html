@@ -1214,7 +1214,6 @@ document.getElementById('applyBtn').addEventListener('click',function(){
 <script src="/picks.js" defer></script>
 <script src="/sound.js" defer></script>
 <script src="/beachwx.js" defer></script>
-<script src="/guide-boot.js" defer data-widgets="1"></script>
 <script src="/shore-plus.js" defer></script>
 <script>
 /* A pick photo that fails to load (file missing from the CDN) must not leave an empty dark box: drop the image block and let the card read as text. */
@@ -1225,6 +1224,8 @@ document.getElementById('applyBtn').addEventListener('click',function(){
   window.addEventListener('load',function(){sweep();setTimeout(sweep,1500);});
 })();
 </script>
-<script src="/shore-guide.js" defer></script>
+<style>.slg{position:fixed;right:16px;bottom:16px;z-index:80}.slg-btn{display:flex;align-items:center;min-height:48px;padding:6px 14px;border:3px solid #D9C7A3;border-radius:999px;background:#0E1F33;color:#F4F1EA;cursor:pointer;font:500 .82rem/1 'DM Sans',sans-serif}</style>
+<div class="slg"><button type="button" class="slg-btn" id="slgOpen" aria-haspopup="dialog" aria-expanded="false" aria-controls="slgPanel"><span class="slg-btn-t">Ask a guide</span></button></div>
+<script src="/guide-boot.js" defer data-widgets="1"></script>
 </body>
 </html>

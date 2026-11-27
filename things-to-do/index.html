@@ -387,13 +387,14 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 <script src="/attrib.js"></script>
 <script src="/sound.js" defer></script>
 <script src="/beachwx.js" defer></script>
-<script src="/guide-boot.js" defer data-widgets="1"></script>
 <script src="/shore-plus.js" defer></script>
 <script src="/today.js" defer></script>
 <script>
 window.addEventListener('load',function(){var c=document.getElementById('wxchip');if(!c||!window.ShoreWX)return;
 window.ShoreWX.get(0).then(function(x){if(x==null||x.temp==null)return;var t='Wrightsville Beach now: '+Math.round(x.temp)+'°F, wind '+Math.round(x.wind||0)+' mph'+(x.waveFt!=null?', surf '+x.waveFt.toFixed(1)+' ft':'');c.querySelector('span').textContent=t;}).catch(function(){});});
 </script>
-<script src="/shore-guide.js" defer></script>
+<style>.slg{position:fixed;right:16px;bottom:16px;z-index:80}.slg-btn{display:flex;align-items:center;min-height:48px;padding:6px 14px;border:3px solid #D9C7A3;border-radius:999px;background:#0E1F33;color:#F4F1EA;cursor:pointer;font:500 .82rem/1 'DM Sans',sans-serif}</style>
+<div class="slg"><button type="button" class="slg-btn" id="slgOpen" aria-haspopup="dialog" aria-expanded="false" aria-controls="slgPanel"><span class="slg-btn-t">Ask a guide</span></button></div>
+<script src="/guide-boot.js" defer data-widgets="1"></script>
 </body>
 </html>

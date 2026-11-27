@@ -60,14 +60,20 @@
     return svg;
   }
   var who = current();
-  var btn = el('button', 'slg-btn');
-  btn.type = 'button';
-  btn.appendChild(avatar(who.id === 'shelby' ? 'loggerhead' : 'pelican'));
-  var btnText = el('span', 'slg-btn-t', who.ask);
-  btn.appendChild(btnText);
-  btn.setAttribute('aria-haspopup', 'dialog');
-  btn.setAttribute('aria-expanded', 'false');
-  btn.setAttribute('aria-controls', 'slgPanel');
+  var existing = document.getElementById('slgOpen');
+  var btn = existing || el('button', 'slg-btn');
+  var btnText = existing ? existing.querySelector('.slg-btn-t') : el('span', 'slg-btn-t', who.ask);
+  if (!btnText) { btnText = el('span', 'slg-btn-t', who.ask); btn.appendChild(btnText); }
+  if (!existing) {
+    btn.type = 'button';
+    btn.appendChild(avatar(who.id === 'shelby' ? 'loggerhead' : 'pelican'));
+    btn.appendChild(btnText);
+    btn.setAttribute('aria-haspopup', 'dialog');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-controls', 'slgPanel');
+  } else if (!btn.querySelector('svg')) {
+    btn.insertBefore(avatar(who.id === 'shelby' ? 'loggerhead' : 'pelican'), btn.firstChild);
+  }
   var panel = el('div', 'slg-panel');
   panel.id = 'slgPanel';
   panel.setAttribute('role', 'dialog');
@@ -98,14 +104,18 @@
   panel.appendChild(head);
   panel.appendChild(log);
   panel.appendChild(form);
-  var css = document.createElement('link');
-  css.rel = 'stylesheet';
-  css.href = '/shore-guide.css';
-  document.head.appendChild(css);
-  var root = el('div', 'slg');
-  root.appendChild(btn);
+  if (!document.querySelector('link[href="/shore-guide.css"]')) {
+    var css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = '/shore-guide.css';
+    document.head.appendChild(css);
+  }
+  var root = existing && existing.parentNode ? existing.parentNode : el('div', 'slg');
+  if (!existing) {
+    root.appendChild(btn);
+    document.body.appendChild(root);
+  }
   root.appendChild(panel);
-  document.body.appendChild(root);
   function paint(next) {
     who = next;
     btnText.textContent = next.ask;
@@ -149,6 +159,7 @@
     btn.focus();
   }
   btn.addEventListener('click', function () { if (panel.hidden) open(); else shut(); });
+  if (window.__slgWantOpen) open();
   close.addEventListener('click', shut);
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden) shut(); });
   form.addEventListener('submit', function (e) {
