@@ -10,7 +10,8 @@ import { BRAND_CRITERIA, coastalBrandIssues, productScoreIssues } from './coasta
 const root = new URL('../', import.meta.url);
 const load = (path) => JSON.parse(readFileSync(new URL(path, root), 'utf8'));
 const records = load('shop-catalog.json').items;
-const { pending, reviews } = load('docs/shop-photo-review.json');
+const { pending, reviews, allowedGenerators } = load('docs/shop-photo-review.json');
+const acceptedGenerator = (name) => Array.isArray(allowedGenerators) && allowedGenerators.includes(name);
 const pendingIds = new Set(pending.map(({ id }) => id));
 const asset = (url) => String(url ?? '').split('?')[0].replace(/_\d+x(?=\.)/, '');
 const hash = (value) => typeof value === 'string' && /^[a-f0-9]{64}$/.test(value);
@@ -42,8 +43,8 @@ function photoReviewIssues(item, review = {}) {
   if (!hash(lookbookSha256) || !hash(studioSha256) || lookbookSha256 === studioSha256) {
     issues.push('distinct image content digests');
   }
-  if (review.generator !== 'Higgsfield' || !documented(review.generationId)) issues.push('Higgsfield job provenance');
-  if (item.lookbookGenerator !== 'Higgsfield') issues.push('Higgsfield storefront disclosure');
+  if (!acceptedGenerator(review.generator) || !documented(review.generationId)) issues.push('Higgsfield job provenance');
+  if (!acceptedGenerator(item.lookbookGenerator)) issues.push('Higgsfield storefront disclosure');
   for (const field of ['variant', 'fidelityEvidence', 'realismEvidence', 'studioEvidence', 'disclosureEvidence']) {
     if (!documented(review[field])) issues.push(field);
   }
@@ -103,7 +104,7 @@ test('generated storefront cards match the catalog disclosure metadata', () => {
     const html = readFileSync(new URL('../' + page, import.meta.url), 'utf8');
     for (const card of productCards(html)) {
       const id = card.match(/data-item-id="([^"]+)"/)[1];
-      assert.equal(card.includes(lookbookDisclosure), byId.get(id)?.lookbookGenerator === 'Higgsfield',
+      assert.equal(card.includes(lookbookDisclosure), acceptedGenerator(byId.get(id)?.lookbookGenerator),
         page + ' has stale photo disclosure for ' + id + '. Run node tools/build-store-pages.mjs.');
     }
   }
@@ -134,6 +135,8 @@ test('only scored, approved evidence for both exact images passes', () => {
   };
   assert.deepEqual(photoReviewIssues(item, approvedReview), []);
   assert.ok(photoReviewIssues({ ...item, lookbookGenerator: null }, approvedReview).includes('Higgsfield storefront disclosure'));
+  assert.equal(photoReviewIssues(item, { ...approvedReview, generator: 'ChatGPT' }).includes('Higgsfield job provenance'), false);
+  assert.equal(photoReviewIssues({ ...item, lookbookGenerator: 'ChatGPT' }, approvedReview).includes('Higgsfield storefront disclosure'), false);
   assert.ok(photoReviewIssues({ ...item, studio: '/new-studio.jpg' }, approvedReview).includes('brand and owner approvals of this exact image revision'));
   assert.ok(photoReviewIssues(item, { ...approvedReview, studioSha256: lookbookSha256 }).includes('distinct image content digests'));
   assert.ok(photoReviewIssues(item, { ...approvedReview, blindPhotoReview: { ...approvedReview.blindPhotoReview, score: 7 } }).includes('independent blind photo score of at least 8/10'));
