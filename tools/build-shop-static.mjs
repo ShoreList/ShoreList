@@ -38,11 +38,7 @@ const shopifyCollections = [
 ].map((c) => `<a class="cblock" href="${esc(c.href)}" rel="noopener"><div class="cp"><img src="${esc(c.img)}" alt="${esc(c.alt)}" loading="lazy" decoding="async" width="1200" height="900"/></div><h3>${esc(c.name)}</h3><p>${esc(c.line)}</p><span class="go">View the collection</span></a>`);
 collections.push(...shopifyCollections);
 
-const WB_FEAT = [
-  'wrightsville-beach-varsity-hoodie',
-  'wrightsville-beach-varsity-tee',
-  'wrightsville-beach-signature-crewneck',
-];
+const WB_FEAT = (cat.startHere || []).filter((id) => byId.get(id) && !retired.has(id));
 const FIRST_SCREEN = [
   'sea-oats-carolina-coast-kiss-cut-vinyl-sticker-3-inch',
   'wrightsville-can-cooler',
