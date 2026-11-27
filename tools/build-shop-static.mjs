@@ -38,15 +38,25 @@ const shopifyCollections = [
 ].map((c) => `<a class="cblock" href="${esc(c.href)}" rel="noopener"><div class="cp"><img src="${esc(c.img)}" alt="${esc(c.alt)}" loading="lazy" decoding="async" width="1200" height="900"/></div><h3>${esc(c.name)}</h3><p>${esc(c.line)}</p><span class="go">View the collection</span></a>`);
 collections.push(...shopifyCollections);
 
+const WB_FEAT = [
+  'wrightsville-beach-varsity-hoodie',
+  'wrightsville-beach-varsity-tee',
+  'wrightsville-beach-signature-crewneck',
+];
 const FIRST_SCREEN = [
   'sea-oats-carolina-coast-kiss-cut-vinyl-sticker-3-inch',
   'wrightsville-can-cooler',
   'wrightsville-ornament-2026',
   'wrightsville-beach-sloop-all-over-print-zip-pouch',
 ];
-const start = (cat.startHere || []).map((id) => byId.get(id)).filter((i) => i && !retired.has(i.id)).slice(0, 6);
+const start = (cat.startHere || []).map((id) => byId.get(id)).filter((i) => i && !retired.has(i.id)).slice(0, 9);
 const firstScreen = FIRST_SCREEN.map((id) => byId.get(id)).filter((i) => i && !retired.has(i.id)).slice(0, 4);
+const wbFeat = WB_FEAT.map((id) => byId.get(id)).filter((i) => i && !retired.has(i.id));
 const leadOf = (i) => i.lookbook || i.img || i.studio;
+const wbCards = wbFeat.map((i) => {
+  const f = sized(leadOf(i), 480);
+  return `<article class="card"><div class="ph" data-qv="${esc(i.id)}"><img class="p1" src="${esc(f)}" alt="${esc(i.alt || i.name)}" fetchpriority="low" loading="lazy" decoding="async" width="800" height="1000"/></div><div class="bd"><h3><button type="button" data-qv="${esc(i.id)}" aria-haspopup="dialog">${esc(splitName(i.name))}</button></h3><div class="row"><span class="price">${esc(money(i))}</span></div></div></article>`;
+});
 const cards = firstScreen.map((i, k) => {
   const f = sized(leadOf(i), 480);
   const pri = k === 0 ? 'fetchpriority="high" loading="eager"' : 'fetchpriority="low" loading="lazy"';
@@ -73,6 +83,7 @@ const HOME = ['carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt', 
 const homeBand = `<ul class="hx-shop-grid">${HOME.map((i) => `<li><a href="/shop/${esc(i.town || 'wilmington')}"><span class="hx-shop-ph"><img src="${esc(sized(i.studio || i.img, 800))}" alt="${esc(i.alt || i.name)}" loading="lazy" decoding="async" width="800" height="1000"/></span><span class="hx-shop-n">${esc(splitName(i.name))}</span></a></li>`).join('')}</ul>`;
 const put = (name, body) => { html = html.replace(new RegExp(`(<!--SHOP-STATIC:${name}-->)[\\s\\S]*?(<!--/SHOP-STATIC:${name}-->)`), (_, a, z) => `${a}\n${body}\n${z}`); };
 put('collections', `<div class="cblocks" id="cblocks">${collections.join('')}</div>`);
+put('wbfeat', wbCards.join('\n'));
 put('cards', cards.join('\n'));
 put('lcp', lcp);
 if (fs.existsSync('index.html')) { let ix = fs.readFileSync('index.html', 'utf8'); ix = ix.replace(/(<!--SHOP-STATIC:homeband-->)[\s\S]*?(<!--\/SHOP-STATIC:homeband-->)/, (_, a, z) => `${a}\n    ${homeBand}\n    ${z}`); if (process.argv.includes('--check')) { if (ix !== fs.readFileSync('index.html', 'utf8')) { console.error('index.html shop band is stale: run node tools/build-shop-static.mjs'); process.exit(1); } } else fs.writeFileSync('index.html', ix); }
