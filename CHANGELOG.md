@@ -6,6 +6,7 @@ Format: newest first. Each future entry: date, PR or action, what changed, evide
 
 ## 2026-11-27
 
+- The home sale bar now says Black Friday or Cyber Monday, 15% off today with the code, because the discount is for eligible Shopify orders. The shop preloads the first phone product photo and no longer treats the below-the-fold hero as the urgent image. `sw.js` is `sl-v325-2026-11-27`. Rollback: revert the squash commit and bump `sw.js`.
 - Home on a phone no longer scrolls sideways: the ticker stays inside the screen, the time-of-day row stays in the viewport, and the page clips horizontal overflow. The sale bar reads "code SHOREFRIDAY15" and "code SHORECYBER15" with the space. The guide mascot button is off every page. The chat orb sits below the time controls. `sw.js` is `sl-v324-2026-11-27`. Rollback: revert the squash commit and bump `sw.js`.
 - Wrightsville Beach Varsity Fleece hoodie ($92), Varsity Tee ($42) and Signature Crewneck ($78) are back on the shop, studio photos only, and they lead the Wrightsville shelf and the top of the shop page. `sw.js` is `sl-v323-2026-11-27`. Rollback: revert the squash commit and bump `sw.js`.
 - The shop's first stylesheet reserves the phone size of the gift cards and the hero photo, so the later sheet does not shrink them. The variant file is no longer preloaded ahead of that photo. `sw.js` is `sl-v322-2026-11-27`. Rollback: revert the squash commit and bump `sw.js`.
