@@ -1245,7 +1245,10 @@ body:not(.home):not(.pg-home) .dock{display:none!important}
     var wrap = document.createElement('div'), photo = new Image();
     wrap.className = 'plates plates-initial';
     wrap.setAttribute('aria-hidden', 'true');
+    var H = { 'kure-dawn2': 720, 'wb-sunrise': 638, 'wb-ocean': 640, 'wb-banks': 720, 'ff-oaks': 720, 'cb-dunes': 720, 'wb-golden': 638, 'wb-aerial2': 539, 'wb-twilight': 638 };
     photo.alt = '';
+    photo.width = 960;
+    photo.height = H[hero.f] || 720;
     photo.setAttribute('data-early', '');
     photo.setAttribute('data-p', hero.ph);
     photo.fetchPriority = 'high';
@@ -1847,7 +1850,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.ge
 <script src="/today.js" defer></script>
 <script src="/home.js" defer></script>
 <script src="/beachwx.js" defer></script>
-<script src="/widgets.js" defer></script>
+<script src="/guide-boot.js" defer data-widgets="1"></script>
 <script src="/attrib.js" defer></script>
 <script src="/shore-plus.js" defer></script>
 </body>
