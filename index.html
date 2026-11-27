@@ -608,6 +608,7 @@ window.addEventListener('load',function(){
 @media(min-width:821px){.scene-play{display:none}}
 @media(prefers-reduced-motion:reduce){.scene-play{display:none}}
 .scene-play:focus-visible{outline:3px solid #D9C7A3;outline-offset:3px}
+/* Full-bleed, no offset: a 106% slide shifted left left the next photo as a sliver on the right. */
 .plates img{position:absolute;left:0;top:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:var(--pos,62% 50%);opacity:0;visibility:hidden;transform:none;animation:none;will-change:auto;user-select:none;-webkit-user-drag:none}
 .plates img[data-p="3"]{filter:brightness(.5) saturate(.8) hue-rotate(8deg)}
 @keyframes kb{from{scale:1}to{scale:1.07}}
