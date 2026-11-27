@@ -1,12 +1,12 @@
 {
  "v": 1,
  "startHere": [
+  "wrightsville-can-cooler",
   "carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
   "kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
   "the-pelican-corduroy-cap-carolina-beach",
   "airlie-oak-framed-art-print-wrightsville-beach-and-wilmington",
-  "wrightsville-beach-sloop-all-over-print-tote-bag",
-  "the-blue-crab-embroidered-crewneck-kure-beach"
+  "wrightsville-beach-sloop-all-over-print-tote-bag"
  ],
  "note": "Only add an item here after it passes the shop gates: real supplier mockup of the exact colorway, lining/inside color checked, art at print resolution, product URL returns 200 signed out. Customer-facing fields (name, alt, meta, cta, collection blurbs, stores[].carries) must not name third-party blank brands; put those in the internal blank field. Run: node tools/check-shop-links.mjs",
  "collections": [
@@ -99,7 +99,7 @@
    "collection": "shore-gear",
    "shelf": "wrightsville-beach",
    "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop All Over Print Tote Bag",
+   "name": "Wrightsville Beach Tote, Sloop Print",
    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-all-over-print-tote-bag",
    "type": "beach",
    "color": "Navy",
@@ -506,7 +506,7 @@
    "collection": "local-icons",
    "shelf": "carolina-beach",
    "town": "carolina-beach",
-   "name": "The Pelican Embroidered Crewneck, Carolina Beach",
+   "name": "Carolina Beach Pelican Embroidered Crewneck",
    "url": "https://shorelist.myshopify.com/products/the-pelican-embroidered-crewneck-carolina-beach",
    "type": "tops",
    "color": "Blue Jean",
@@ -548,7 +548,7 @@
    "collection": "local-icons",
    "shelf": "carolina-beach",
    "town": "carolina-beach",
-   "name": "The Pelican Corduroy Cap, Carolina Beach",
+   "name": "Carolina Beach Pelican Corduroy Cap",
    "url": "https://shorelist.myshopify.com/products/the-pelican-corduroy-cap-carolina-beach",
    "type": "hats",
    "color": "Navy Blue",
@@ -590,7 +590,7 @@
    "collection": "local-icons",
    "shelf": "carolina-beach",
    "town": "carolina-beach",
-   "name": "The Pelican Cuffed Beanie, Carolina Beach",
+   "name": "Carolina Beach Pelican Cuffed Beanie",
    "url": "https://shorelist.myshopify.com/products/the-pelican-cuffed-beanie-carolina-beach",
    "type": "hats",
    "color": "Forest green",
@@ -878,7 +878,7 @@
    "id": "the-blue-crab-embroidered-crewneck-kure-beach",
    "collection": "local-icons",
    "shelf": "kure-beach",
-   "name": "The Blue Crab Embroidered Crewneck, Kure Beach",
+   "name": "Kure Beach Blue Crab Embroidered Crewneck",
    "url": "https://shorelist.myshopify.com/products/the-blue-crab-embroidered-crewneck-kure-beach",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4874290219685606735_2048.jpg",
    "alt": "White crewneck sweatshirt with a small embroidered blue crab on the chest, ShoreList, Kure Beach",
@@ -1115,7 +1115,7 @@
    "collection": "landmarks",
    "shelf": "wilmington",
    "town": "wilmington",
-   "name": "Airlie Oak Framed Art Print, Wrightsville Beach and Wilmington",
+   "name": "Airlie Oak Art Print, Wilmington NC",
    "url": "https://shorelist.myshopify.com/products/airlie-oak-framed-art-print-wrightsville-beach-and-wilmington",
    "type": "prints",
    "color": "Ivory",
@@ -1211,7 +1211,7 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11763539063403655751_2048.jpg",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9322141173352740051_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-printed-garment-dyed-tee_1920x.webp",
    "facts": [
     [
@@ -1726,7 +1726,7 @@
    "collection": "local-icons",
    "shelf": "carolina-beach",
    "town": "carolina-beach",
-   "name": "The Lifeguard Stand Bucket Hat, Carolina Beach",
+   "name": "Carolina Beach Lifeguard Stand Bucket Hat",
    "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-bucket-hat-carolina-beach",
    "type": "hats",
    "color": "White",
@@ -1766,7 +1766,7 @@
    "collection": "local-icons",
    "shelf": "carolina-beach",
    "town": "carolina-beach",
-   "name": "The Lifeguard Stand Canvas Tote, Carolina Beach",
+   "name": "Carolina Beach Lifeguard Stand Canvas Tote",
    "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-canvas-tote-carolina-beach",
    "type": "bags",
    "color": "Cream",
@@ -1807,7 +1807,7 @@
    "collection": "local-icons",
    "shelf": "carolina-beach",
    "town": "carolina-beach",
-   "name": "The Lifeguard Stand Dad Hat, Carolina Beach",
+   "name": "Carolina Beach Lifeguard Stand Dad Hat",
    "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-dad-hat-carolina-beach",
    "type": "hats",
    "color": "Stone",
@@ -1872,47 +1872,6 @@
     [
      "Fabric",
      "9.5 oz garment-dyed, 80% ring-spun cotton and 20% polyester"
-    ],
-    [
-     "Decoration",
-     "Printed (DTG) chest artwork, about 2.8 in wide"
-    ],
-    [
-     "Care",
-     "Machine wash cold inside out, tumble dry low, do not iron the print"
-    ]
-   ],
-   "lookbook": ""
-  },
-  {
-   "id": "carolina-beach-megalodon-tooth-printed-garment-dyed-tee",
-   "collection": "local-icons",
-   "shelf": "carolina-beach",
-   "town": "carolina-beach",
-   "name": "Carolina Beach Megalodon Tooth Printed Garment-Dyed Tee",
-   "url": "https://shorelist.myshopify.com/products/carolina-beach-megalodon-tooth-printed-garment-dyed-tee",
-   "type": "tops",
-   "color": "White",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/18012927483438169541_2048.jpg?v=1795411644",
-   "alt": "White tee with a small navy megalodon tooth print centered on the chest",
-   "meta": "A detailed megalodon tooth illustration with the town name Carolina Beach, printed on the chest of a heavyweight garment-dyed cotton tee.",
-   "cta": "Choose size",
-   "price": 42,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/18012927483438169541_2048.jpg?v=1795411644",
-   "facts": [
-    [
-     "Sizing",
-     "Relaxed fit, sizes S to 3XL"
-    ],
-    [
-     "Fabric",
-     "100% ring-spun cotton, garment-dyed"
     ],
     [
      "Decoration",
@@ -2009,7 +1968,7 @@
    "collection": "local-icons",
    "shelf": "kure-beach",
    "town": "kure-beach",
-   "name": "The Blue Crab Dad Hat, Kure Beach",
+   "name": "Kure Beach Blue Crab Dad Hat",
    "url": "https://shorelist.myshopify.com/products/the-blue-crab-dad-hat-kure-beach",
    "type": "hats",
    "color": "Stone",
@@ -2087,7 +2046,7 @@
    "collection": "local-icons",
    "shelf": "kure-beach",
    "town": "kure-beach",
-   "name": "The Lifeguard Stand Bucket Hat, Kure Beach",
+   "name": "Kure Beach Lifeguard Stand Bucket Hat",
    "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-bucket-hat-kure-beach",
    "type": "hats",
    "color": "White",
@@ -2127,7 +2086,7 @@
    "collection": "local-icons",
    "shelf": "kure-beach",
    "town": "kure-beach",
-   "name": "The Blue Crab Canvas Tote, Kure Beach",
+   "name": "Kure Beach Blue Crab Canvas Tote",
    "url": "https://shorelist.myshopify.com/products/the-blue-crab-canvas-tote-kure-beach",
    "type": "bags",
    "color": "Cream",
@@ -2168,7 +2127,7 @@
    "collection": "local-icons",
    "shelf": "kure-beach",
    "town": "kure-beach",
-   "name": "The Lifeguard Stand Dad Hat, Kure Beach",
+   "name": "Kure Beach Lifeguard Stand Dad Hat",
    "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-dad-hat-kure-beach",
    "type": "hats",
    "color": "Stone",
@@ -2209,7 +2168,7 @@
    "collection": "local-icons",
    "shelf": "kure-beach",
    "town": "kure-beach",
-   "name": "The Lifeguard Stand Canvas Tote, Kure Beach",
+   "name": "Kure Beach Lifeguard Stand Canvas Tote",
    "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-canvas-tote-kure-beach",
    "type": "bags",
    "color": "Cream",
@@ -2460,7 +2419,7 @@
    "collection": "local-icons",
    "shelf": "wrightsville-beach",
    "town": "wrightsville-beach",
-   "name": "Daymark Corduroy Cap, Wrightsville Beach",
+   "name": "Wrightsville Beach Daymark Cap",
    "url": "https://shorelist.myshopify.com/products/daymark-corduroy-cap-wrightsville-beach",
    "type": "hats",
    "color": "Navy Blue",
@@ -2492,91 +2451,6 @@
     ]
    ],
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-daymark-corduroy-cap-wrightsville-beach_1920x.webp"
-  },
-  {
-   "id": "shorelist-tilt-beach-umbrella-6-5-ft-upf-50",
-   "collection": "beach-setup",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "The Tilt Beach Umbrella",
-   "url": "https://shorelist.myshopify.com/products/shorelist-tilt-beach-umbrella-6-5-ft-upf-50",
-   "type": "beach",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-shorelist-tilt-beach-umbrella-6-5-ft-upf-50_1000x.webp",
-   "alt": "Teal beach umbrella open in the sand at Wrightsville Beach with a towel and sandals beneath it",
-   "meta": "A 6.5 ft tilting beach umbrella with UPF 50+ fabric, a sand anchor and a carry bag. About 3.5 lb.",
-   "cta": "Shop beach gear",
-   "price": 99,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/71c3cafdc73249299035b606ec9e19e8.webp",
-   "facts": [
-    [
-     "Size",
-     "6.5 ft across, 7 ft tall"
-    ],
-    [
-     "Sun protection",
-     "UPF 50+"
-    ],
-    [
-     "Frame",
-     "Aluminum pole with 8 fiberglass ribs and a sand anchor"
-    ],
-    [
-     "Fabric",
-     "Silver-coated polyester with a top air vent"
-    ],
-    [
-     "Weight",
-     "About 3.5 lb, carry bag included"
-    ]
-   ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-shorelist-tilt-beach-umbrella-6-5-ft-upf-50_1920x.webp"
-  },
-  {
-   "id": "shorelist-aluminum-backpack-beach-chair-mint-stripe",
-   "collection": "beach-setup",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "ShoreList Aluminum Backpack Beach Chair, Mint Stripe",
-   "url": "https://shorelist.myshopify.com/products/shorelist-aluminum-backpack-beach-chair-mint-stripe",
-   "type": "beach",
-   "color": "Mint stripe",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-shorelist-aluminum-backpack-beach-chair-mint-stripe_1000x.webp",
-   "alt": "Mint and white striped aluminum backpack beach chair open on the sand at Wrightsville Beach with a straw hat and a book",
-   "meta": "A mint stripe backpack beach chair with four recline positions, wooden armrests and shoulder straps for the walk over the dunes.",
-   "cta": "Shop beach gear",
-   "price": 109,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/602c12d5ea7b4cd08d340469e5c9b75e.webp",
-   "facts": [
-    [
-     "Recline",
-     "Four positions from 100 to 140 degrees"
-    ],
-    [
-     "Frame",
-     "Rustproof aluminum, supports up to 265 lb"
-    ],
-    [
-     "Seat",
-     "12 in seat height, detachable pillow, wooden armrests"
-    ],
-    [
-     "Carry",
-     "Folds flat with backpack shoulder straps"
-    ]
-   ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-shorelist-aluminum-backpack-beach-chair-mint-stripe_1920x.webp"
   },
   {
    "id": "wrightsville-beach-scallop-shell-printed-garment-dyed-tee",
@@ -2640,7 +2514,7 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11330414591097854260_2048.jpg",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17697498208600770942_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-oystercatcher-printed-garment-dyed-tee_1920x.webp",
    "gallery": [
     {
@@ -2757,7 +2631,7 @@
    "collection": "local-icons",
    "shelf": "wrightsville-beach",
    "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sailfish Printed Crewneck Sweatshirt",
+   "name": "Wrightsville Beach Sweatshirt, Sailfish",
    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sailfish-printed-crewneck-sweatshirt",
    "type": "tops",
    "color": "White",
@@ -2798,7 +2672,7 @@
    "collection": "local-icons",
    "shelf": "wrightsville-beach",
    "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sailfish Printed Garment-Dyed Tee",
+   "name": "Wrightsville Beach Sailfish T-Shirt",
    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sailfish-printed-garment-dyed-tee",
    "type": "tops",
    "color": "White",
@@ -2879,7 +2753,7 @@
    "collection": "local-icons",
    "shelf": "wilmington",
    "town": "wilmington",
-   "name": "The Live Oak Embroidered Crewneck, Wilmington",
+   "name": "Wilmington Live Oak Embroidered Crewneck",
    "url": "https://shorelist.myshopify.com/products/the-live-oak-embroidered-crewneck-wilmington",
    "type": "tops",
    "color": "Blue Jean",
@@ -2967,7 +2841,7 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5974500264955042200_2048.jpg",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5398372746728996241_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wild-venus-flytrap-cape-fear-printed-garment-dyed-tee_1920x.webp",
    "facts": [
     [
@@ -3400,7 +3274,7 @@
    "collection": "shore-gear",
    "shelf": "wrightsville-beach",
    "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop Printed Beach Towel",
+   "name": "Wrightsville Beach Towel, Sloop Print",
    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-beach-towel",
    "type": "beach",
    "color": "Navy",
@@ -3475,7 +3349,7 @@
    "collection": "local-icons",
    "shelf": "wrightsville-beach",
    "town": "wrightsville-beach",
-   "name": "Banks Channel Sunset Sail Crewneck",
+   "name": "Banks Channel Crewneck, Wrightsville Beach",
    "url": "https://shorelist.myshopify.com/products/banks-channel-sunset-sail-crewneck",
    "type": "tops",
    "color": "True Navy",
@@ -3510,74 +3384,6 @@
      "Banks Channel sunset scene across the back, small red pennant on the chest"
     ]
    ]
-  },
-  {
-   "id": "tilt-beach-umbrella",
-   "collection": "beach-setup",
-   "shelf": "beach-setup",
-   "name": "ShoreList Tilt Beach Umbrella",
-   "url": "https://shorelist.myshopify.com/products/shorelist-tilt-beach-umbrella-6-5-ft-upf-50",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-tilt-beach-umbrella_1000x.webp",
-   "alt": "Couple laughing under the teal tilt beach umbrella on the sand by the dunes at golden hour",
-   "meta": "6.5 ft tilting canopy with UPF 50+ shade and a carry sleeve.",
-   "cta": "Shop beach gear",
-   "price": 99,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48569723617364:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
-   "facts": [
-    [
-     "Size",
-     "6.5 ft canopy that tilts"
-    ],
-    [
-     "Frame",
-     "Aluminum tube, 8 fiberglass ribs and a sand anchor"
-    ],
-    [
-     "Details",
-     "UPF 50+ fabric with a top air vent"
-    ]
-   ],
-   "studio": "https://shorelist.myshopify.com/cdn/shop/files/896e91258188456b9739f40519a8211b.webp",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-tilt-beach-umbrella_1920x.webp"
-  },
-  {
-   "id": "backpack-beach-chair",
-   "collection": "beach-setup",
-   "shelf": "beach-setup",
-   "name": "ShoreList Backpack Beach Chair",
-   "url": "https://shorelist.myshopify.com/products/shorelist-aluminum-backpack-beach-chair-mint-stripe",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-backpack-beach-chair_1000x.webp",
-   "alt": "Woman reading in the backpack beach chair at the water edge",
-   "meta": "Four-position aluminum frame that holds up to 265 lb, with wooden armrests, a detachable pillow and backpack straps. Mint stripe.",
-   "cta": "Shop beach gear",
-   "price": 109,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48569729744980:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
-   "facts": [
-    [
-     "Support",
-     "Holds up to 265 lb on a rustproof aluminum frame"
-    ],
-    [
-     "Seat",
-     "Four backrest positions from 100 to 140 degrees, 12 in seat height"
-    ],
-    [
-     "Carry",
-     "Folds flat with shoulder straps and a detachable pillow"
-    ]
-   ],
-   "studio": "https://shorelist.myshopify.com/cdn/shop/files/e4e9481e914347868d7fc04ab6c9e261.webp",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-backpack-beach-chair_1920x.webp"
   },
   {
    "id": "salt-wash-market-tote",
@@ -3616,7 +3422,7 @@
   {
    "id": "wrightsville-beach-varsity-crewneck",
    "collection": "local-icons",
-   "name": "Wrightsville Beach Varsity Crewneck",
+   "name": "Wrightsville Beach Sweatshirt, Varsity Crew",
    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-varsity-crewneck",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-varsity-crewneck_1000x.webp",
    "alt": "Woman on the bow of a wooden sailboat at golden hour wearing the navy Wrightsville Beach varsity crewneck",
@@ -3728,7 +3534,7 @@
    "id": "the-sloop-embroidered-crewneck-wrightsville-beach",
    "collection": "local-icons",
    "shelf": "wrightsville-beach",
-   "name": "The Sloop Embroidered Crewneck, Wrightsville Beach",
+   "name": "Wrightsville Beach Crewneck, Sloop Embroidery",
    "url": "https://shorelist.myshopify.com/products/the-sloop-embroidered-crewneck-wrightsville-beach",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-embroidered-crewneck-wrightsville-beach_1000x.webp",
    "alt": "Woman on a marina dock at sunset wearing a washed blue crewneck with a small embroidered sailboat and the letters WB",
@@ -3765,7 +3571,7 @@
    "id": "the-sloop-corduroy-cap-wrightsville-beach",
    "collection": "local-icons",
    "shelf": "wrightsville-beach",
-   "name": "The Sloop Corduroy Cap, Wrightsville Beach",
+   "name": "Wrightsville Beach Hat, Sloop Corduroy Cap",
    "url": "https://shorelist.myshopify.com/products/the-sloop-corduroy-cap-wrightsville-beach",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-corduroy-cap-wrightsville-beach_1000x.webp",
    "alt": "Man at the helm of a wooden sailboat wearing a navy corduroy cap with a small embroidered sailboat",
@@ -3804,7 +3610,7 @@
    "id": "the-blue-crab-corduroy-cap-kure-beach",
    "collection": "local-icons",
    "shelf": "kure-beach",
-   "name": "The Blue Crab Corduroy Cap, Kure Beach",
+   "name": "Kure Beach Blue Crab Corduroy Cap",
    "url": "https://shorelist.myshopify.com/products/the-blue-crab-corduroy-cap-kure-beach",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11189473833607156489_2048.jpg",
    "alt": "Navy blue corduroy cap with a small embroidered blue crab, ShoreList, Kure Beach",
@@ -3842,7 +3648,7 @@
    "collection": "local-icons",
    "shelf": "wilmington",
    "town": "wilmington",
-   "name": "The Live Oak Corduroy Cap, Wilmington",
+   "name": "Wilmington Live Oak Corduroy Cap",
    "url": "https://shorelist.myshopify.com/products/the-live-oak-corduroy-cap-wilmington",
    "type": "hats",
    "color": "Navy Blue",
@@ -3882,7 +3688,7 @@
    "id": "the-sloop-cuffed-beanie-wrightsville-beach",
    "collection": "local-icons",
    "shelf": "wrightsville-beach",
-   "name": "The Sloop Cuffed Beanie, Wrightsville Beach",
+   "name": "Wrightsville Beach Beanie, Sloop Cuffed",
    "url": "https://shorelist.myshopify.com/products/the-sloop-cuffed-beanie-wrightsville-beach",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-cuffed-beanie-wrightsville-beach_1000x.webp",
    "alt": "Blonde woman on a marina dock wearing a navy cuffed beanie embroidered with a small sailboat and the letters WB",
@@ -3917,11 +3723,51 @@
    "motif": "boats-buoys"
   },
   {
+   "id": "daymark-cuffed-beanie-wrightsville-beach",
+   "collection": "local-icons",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Daymark Cuffed Beanie, Wrightsville Beach",
+   "url": "https://shorelist.myshopify.com/products/daymark-cuffed-beanie-wrightsville-beach",
+   "type": "hats",
+   "color": "Navy",
+   "added": "2026-11-22",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2220033262101786662_2048.jpg",
+   "alt": "Navy cuffed knit beanie with one small white embroidered sailboat and WB on the cuff",
+   "meta": "One small sloop and WB for Wrightsville Beach stitched on the cuff of a navy knit beanie, kept quiet on purpose.",
+   "cta": "Shop the beanie",
+   "price": 30,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2220033262101786662_2048.jpg",
+   "facts": [
+    [
+     "Fit",
+     "One size, cuffed"
+    ],
+    [
+     "Fabric",
+     "100% acrylic knit"
+    ],
+    [
+     "Embroidery",
+     "One small sloop and WB on the cuff"
+    ],
+    [
+     "Colors",
+     "Navy"
+    ]
+   ]
+  },
+  {
    "id": "the-live-oak-cuffed-beanie-wilmington",
    "collection": "local-icons",
    "shelf": "wilmington",
    "town": "wilmington",
-   "name": "The Live Oak Cuffed Beanie, Wilmington",
+   "name": "Wilmington Live Oak Cuffed Beanie",
    "url": "https://shorelist.myshopify.com/products/the-live-oak-cuffed-beanie-wilmington",
    "type": "hats",
    "color": "Navy",
@@ -3953,7 +3799,7 @@
    "id": "the-blue-crab-cuffed-beanie-kure-beach",
    "collection": "local-icons",
    "shelf": "kure-beach",
-   "name": "The Blue Crab Cuffed Beanie, Kure Beach",
+   "name": "Kure Beach Blue Crab Cuffed Beanie",
    "url": "https://shorelist.myshopify.com/products/the-blue-crab-cuffed-beanie-kure-beach",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13772687446342586023_2048.jpg",
    "alt": "Navy cuffed beanie embroidered with a small blue crab and the letters KB, ShoreList, Kure Beach",
@@ -4099,7 +3945,7 @@
    "collection": "local-icons",
    "shelf": "kure-beach",
    "town": "kure-beach",
-   "name": "The Blue Crab Rope Cap, Kure Beach",
+   "name": "Kure Beach Blue Crab Rope Cap",
    "url": "https://shorelist.myshopify.com/products/the-blue-crab-rope-cap-kure-beach",
    "type": "hats",
    "color": "Ivory",
@@ -4134,7 +3980,7 @@
    "collection": "local-icons",
    "shelf": "carolina-beach",
    "town": "carolina-beach",
-   "name": "The Lifeguard Stand Rope Cap, Carolina Beach",
+   "name": "Carolina Beach Lifeguard Stand Rope Cap",
    "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-rope-cap-carolina-beach",
    "type": "hats",
    "color": "Ivory",
@@ -4171,7 +4017,7 @@
    "collection": "local-icons",
    "shelf": "kure-beach",
    "town": "kure-beach",
-   "name": "The Lifeguard Stand Rope Cap, Kure Beach",
+   "name": "Kure Beach Lifeguard Stand Rope Cap",
    "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-rope-cap-kure-beach",
    "type": "hats",
    "color": "Ivory",
