@@ -171,5 +171,22 @@ try { const { execFileSync } = await import('node:child_process'); execFileSync(
   for (const f of walk('.')) if (/\.(html|js|json|xml|txt|css|webmanifest)$/.test(f) && f !== './tools/check-site.mjs' && BAD.test(fs.readFileSync(f, 'utf8'))) bad(`${f}: blocked political slogan or lookalike phrase`);
 }
 
+{
+  const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (['node_modules', '.git', '.claude'].includes(e.name) ? [] : e.isDirectory() ? walk(d + '/' + e.name) : [d + '/' + e.name]));
+  for (const f of walk('.').filter((p) => p.endsWith('.html'))) {
+    const h = fs.readFileSync(f, 'utf8');
+    for (const m of h.matchAll(/property="og:image" content="([^"]+)"/g)) {
+      const url = m[1];
+      let rel = '';
+      if (url.startsWith('https://shorelist.net/')) rel = url.slice('https://shorelist.net'.length);
+      else if (url.startsWith('/')) rel = url;
+      else continue;
+      rel = rel.split('?')[0];
+      if (!rel || rel.endsWith('/')) continue;
+      if (!fs.existsSync('.' + decodeURIComponent(rel))) bad(`${f}: og:image ${url} is not a file in the repo`);
+    }
+  }
+}
+
 if (fails.length) { console.error(fails.join('\n')); process.exit(1); }
 console.log(`ok: ${pages.length} pages, ${cat.items.length} products`);

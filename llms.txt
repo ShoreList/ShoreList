@@ -9,6 +9,8 @@
 - [Wrightsville Beach](https://shorelist.net/wrightsville-beach)
 - [Fishing pier at Wrightsville Beach](https://shorelist.net/johnnie-mercers-pier): address, town parking at the pier, and links to the pier's own hours, fees, fishing page and live cam
 - [Carolina Beach](https://shorelist.net/carolina-beach)
+- [Carolina Beach boardwalk](https://shorelist.net/carolina-beach-boardwalk): boardwalk notes taken from the Carolina Beach and Pleasure Island guides. It does not add events, prices or hours.
+- Shop products: each Shopify product has a page at https://shorelist.net/shop/products/<handle> with a canonical on shorelist.net. `/products/<handle>` redirects there. Checkout stays on shorelist.myshopify.com.
 - [Kure Beach](https://shorelist.net/kure-beach)
 - [Events](https://shorelist.net/events): dated local events, updated regularly
 - [Wilmington weather](https://shorelist.net/wilmington-weather): live current conditions, hourly and 7-day forecast, beach, surf and tide report

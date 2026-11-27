@@ -56,6 +56,7 @@ const pages = [
   ['Downtown Wilmington', 'Riverwalk, history and nightlife', '/downtown', 'downtown riverwalk historic district'],
   ['Wrightsville Beach', 'Surf, paddle and island life', '/wrightsville-beach', 'wrightsville beach surf paddle'],
   ['Carolina Beach', 'Boardwalk, fishing and beach days', '/carolina-beach', 'carolina beach boardwalk fishing'],
+  ['Carolina Beach boardwalk', 'Boardwalk notes from the Carolina Beach and Pleasure Island guides', '/carolina-beach-boardwalk', 'carolina beach boardwalk fireworks dogs parking'],
   ['Kure Beach', 'Quiet beach town and Fort Fisher', '/kure-beach', 'kure beach fort fisher'],
   ['List your business', 'Join ShoreList as a local operator', '/join', 'operator join list business partner vendor sell'],
   ['Join the waitlist', 'Get updates when new experiences go live', '/waitlist', 'waitlist signup notify email updates'],
