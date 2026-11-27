@@ -151,6 +151,10 @@ Evaluate a Shopify custom domain/checkout on a shorelist.net subdomain (L3). Nee
 - Owner: Grok/cursor/local-gift-guides-49e1
 - Files: `wilmington-nc-gifts.html`, `wrightsville-beach-souvenirs.html`, `wrightsville-beach-christmas-ornament.html`, `tools/build-local-gift-guides.mjs`. Not `shop.html` or `shop-catalog.json`.
 
+### T-shop-lead-order Shop lead order
+- Owner: Grok/shop-merch/shop-lead-order
+- Files: `shop-catalog.json`, `shop.html`, `tools/build-shop-static.mjs`, `sw.js`, `CHANGELOG.md`. Lead the catalog and the shop's first row with the eight named pieces. Move the thirteen named goods to the end.
+
 ## Dependency map
 
 T-01 -> T-03 -> owner test order. T-05 -> T-08. T-02 independent of everything else (own files). T-04, T-06, T-10, T-11, T-13 can run in parallel because file sets are disjoint (check before starting).
