@@ -159,6 +159,11 @@
   status = 200
 
 [[redirects]]
+  from = "/johnnie-mercers-pier"
+  to = "/johnnie-mercers-pier.html"
+  status = 200
+
+[[redirects]]
   from = "/goods-success"
   to = "/goods-success.html"
   status = 200

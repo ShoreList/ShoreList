@@ -143,6 +143,10 @@ Owner-side (`CLAUDE-MASTER-SHORELIST-TBM.md` mixes ShoreList and the other busin
 ### T-19 Custom checkout domain (owner decision)
 Evaluate a Shopify custom domain/checkout on a shorelist.net subdomain (L3). Needs owner approval (account/DNS change). HYPOTHESIS: improves trust and conversion.
 
+### T-24 Fishing pier visitor guide
+- Owner: Grok/cursor/pier-visitor-guide-49e1
+- Files: `johnnie-mercers-pier.html`, `tools/build-pier-guide.mjs`, plus the souvenirs-page link. Not `shop.html` or `shop-catalog.json`.
+
 ### T-23 Local gift guides (Wilmington and Wrightsville Beach)
 - Owner: Grok/cursor/local-gift-guides-49e1
 - Files: `wilmington-nc-gifts.html`, `wrightsville-beach-souvenirs.html`, `wrightsville-beach-christmas-ornament.html`, `tools/build-local-gift-guides.mjs`. Not `shop.html` or `shop-catalog.json`.

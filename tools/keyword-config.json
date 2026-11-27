@@ -103,6 +103,7 @@
     { "url": "/prints", "cluster": "shop", "tier": "T1", "primary": "art prints", "geo": ["{city}"] },
     { "url": "/wilmington-nc-gifts", "cluster": "shop", "tier": "T1", "primary": "wilmington nc gifts", "geo": ["Wilmington", "NC"] },
     { "url": "/wrightsville-beach-souvenirs", "cluster": "shop", "tier": "T1", "primary": "wrightsville beach souvenirs", "geo": ["Wrightsville Beach"] },
-    { "url": "/wrightsville-beach-christmas-ornament", "cluster": "shop", "tier": "T1", "primary": "wrightsville beach christmas ornament", "geo": ["Wrightsville Beach"] }
+    { "url": "/wrightsville-beach-christmas-ornament", "cluster": "shop", "tier": "T1", "primary": "wrightsville beach christmas ornament", "geo": ["Wrightsville Beach"] },
+    { "url": "/johnnie-mercers-pier", "cluster": "town", "tier": "T2", "primary": "johnnie mercer's pier", "geo": ["Wrightsville Beach"] }
   ]
 }
