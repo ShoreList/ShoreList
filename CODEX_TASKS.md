@@ -52,6 +52,7 @@ Legend: P0 launch-critical (do before 5 PM Thu), P1 this week, P2 soon, P3 hygie
 
 ### T-22 Collection filter fix and Christmas order-by note (shop.html, shop-promo.js)
 - Owner: ShoreList Shop & Merch/shop-merch/collection-filter-xmas-banner. Assigned by ShoreList Chief, Nov 26 2026 11:12 PM ET. Shop & Merch is the sole writer on `shop.html` while this is open.
+- Shipping claim: cursor/shop-collection-filter-xmas-ac26.
 - Files: `shop.html`, `shop-promo.js`, `tools/test-shop-promo.mjs`, `sw.js`, `CODEX_TASKS.md`, `CHANGELOG.md`.
 - Do: `setFilter` keeps the current collection when the chip handlers omit the 5th argument; chip handlers pass `coll`; chip counts are scoped to the open collection; add a `bags` type chip. Add a Christmas order-by note (recommended order-by Dec 7, dates vary by item, no guarantee) that shows only when no sale is active, from Dec 1 12:00 AM ET, and hides after Dec 7 11:59 PM ET.
 - Accept: type chip change keeps `?collection=beach-setup`; BF/CM banners unchanged; `check-site`, `check-keywords`, `thin-content-gate` and the listed tests pass.
