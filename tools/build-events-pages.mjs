@@ -266,7 +266,7 @@ function page({ path, title, desc, h1, lede, list, crumb, h2, intro, photo, link
 <link rel="stylesheet" href="/events.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
 <link rel="stylesheet" href="/tokens.css"/>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 </head>
 <body class="ev-page">
 ${NAV}
@@ -291,8 +291,9 @@ ${onward(links)}
 </div></section>
 </main>
 ${FOOT}
-<script src="/shore-plus.js" defer></script>
-<script src="/events-feed.js" defer></script>
+<script data-idle="/shore-plus.js"></script>
+<script data-idle="/events-feed.js"></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>
 `;
@@ -352,7 +353,7 @@ monthPages.forEach((m, i) => {
 <link rel="stylesheet" href="/events.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
 <link rel="stylesheet" href="/tokens.css"/>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 </head>
 <body class="ev-page">
 ${NAV}
@@ -381,7 +382,8 @@ ${onward([['/events', 'All events', 'The full searchable calendar'], ['/events/t
 </div></section>
 </main>
 ${FOOT}
-<script src="/shore-plus.js" defer></script>
+<script data-idle="/shore-plus.js"></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>
 `);
@@ -486,7 +488,7 @@ function eventPage(e) {
 <link rel="stylesheet" href="/events.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
 <link rel="stylesheet" href="/tokens.css"/>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 </head>
 <body class="ev-page">
 ${NAV}
@@ -514,7 +516,8 @@ ${SPRITE}${onward(links)}
 </div></section>
 </main>
 ${FOOT}
-<script src="/shore-plus.js" defer></script>
+<script data-idle="/shore-plus.js"></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>
 `;
@@ -545,7 +548,7 @@ for (const f of fs.readdirSync('events')) if (!keepFiles.has(f) && /\.(html|ics)
 <link rel="stylesheet" href="/events.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
 <link rel="stylesheet" href="/tokens.css"/>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 </head>
 <body class="ev-page">
 ${NAV}
@@ -577,7 +580,8 @@ ${SPRITE}${onward([['/events', 'All events', 'Upcoming events in Wilmington and 
 </div></section>
 </main>
 ${FOOT}
-<script src="/shore-plus.js" defer></script>
+<script data-idle="/shore-plus.js"></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>
 `;

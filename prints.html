@@ -75,7 +75,7 @@ window.addEventListener('load',function(){
 @media(max-width:560px){.gd-prev{grid-template-columns:1fr 1fr 1fr;gap:8px}}
 .gd-hint{position:absolute;top:10px;right:10px;background:rgba(14,31,51,.78);color:#F4F1EA;font:700 .72rem "DM Sans",system-ui,sans-serif;letter-spacing:.04em;padding:5px 10px;border-radius:2px;pointer-events:none}.gd-gal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin}.gd-gal img{flex:0 0 100%;scroll-snap-align:start}
 </style>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 <link rel="stylesheet" href="/tokens.css"/>
 </head>
 <body class="ev-page">
@@ -139,10 +139,11 @@ window.addEventListener('load',function(){
   });
 })();
 </script>
-<script src="/attrib.js" defer></script>
-<script src="/shore-plus.js" defer></script>
+<script data-idle="/attrib.js"></script>
+<script data-idle="/shore-plus.js"></script>
 <style>.slg{position:fixed;right:16px;bottom:16px;z-index:80}.slg-btn{display:flex;align-items:center;min-height:48px;padding:6px 14px;border:3px solid #D9C7A3;border-radius:999px;background:#0E1F33;color:#F4F1EA;cursor:pointer;font:500 .82rem/1 'DM Sans',sans-serif}</style>
 <div class="slg"><button type="button" class="slg-btn" id="slgOpen" aria-haspopup="dialog" aria-expanded="false" aria-controls="slgPanel"><span class="slg-btn-t">Ask a guide</span></button></div>
 <script src="/guide-boot.js" defer></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>

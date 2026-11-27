@@ -170,8 +170,8 @@ ${liveHtml}
       .replaceAll('&display=swap', '&display=optional')
       .replace('</head>', '<link rel="preload" as="image" href="/img/hero-mobile/ghost-tours.webp" media="(max-width: 820px)" fetchpriority="high"/>\n</head>')
       .replace(/<img class="hero-photo"[^>]+>/, '<picture><source media="(max-width: 820px)" srcset="/img/hero-mobile/ghost-tours.webp"/>$&</picture>')
-      .replace('<script src="/attrib.js"></script>', '<script src="/attrib.js" defer></script>')
-      .replace('<script src="/category-app.js"></script>', '<script src="/category-app.js" defer></script>'));
+      .replace('<script data-idle="/attrib.js"></script>', '<script data-idle="/attrib.js"></script>')
+      .replace('<script data-idle="/category-app.js"></script>', '<script data-idle="/category-app.js"></script>'));
   }
   fs.writeFileSync(`things-to-do/${slug}.html`, h);
 }
@@ -179,10 +179,10 @@ ${liveHtml}
 // ---------- shell for hub + guide (template without the booking app) ----------
 function shell({ url, title, desc, image, lds, photo, heroExtra, breadcrumb, tag, h1, sub, main, scripts }) {
   let h = head(tpl, { url, title, desc, image, extraLd: lds });
-  const s1 = h.indexOf('<script src="/category-app.js">', h.indexOf('</footer>')), s2 = h.indexOf('<script src="/sound.js"');
+  const s1 = h.indexOf('<script data-idle="/category-app.js">', h.indexOf('</footer>')), s2 = h.indexOf('<script data-idle="/sound.js"');
   if (s1 < 0 || s2 < 0) throw new Error('template scripts missing');
   h = h.slice(0, s1) + h.slice(s2);                       // drop the booking scripts
-  h = h.replace('<script src="/directory.js" defer></script>\n', (scripts || ''));   // local directory is for category pages only
+  h = h.replace('<script src="/directory.js"></script>\n', (scripts || ''));   // local directory is for category pages only
   for (const [a, b] of [
     ['<body>', '<body class="pg">'],
     [HERO_OPEN, heroOpen(photo, ' tall')],
@@ -302,7 +302,7 @@ fs.writeFileSync('things-to-do/index.html', shell({
   ],
   photo: 'wildlife-tours',
   heroExtra: WX_CHIP + '\n    <div class="hero-jump" role="navigation" aria-label="Jump to a section">' + GROUPS.map(([id, name]) => `<a href="#${id}">${name}</a>`).join('') + '</div>',
-  scripts: '<script src="/today.js" defer></script>\n' + WX_SCRIPT + '\n',
+  scripts: '<script data-idle="/today.js"></script>\n' + WX_SCRIPT + '\n',
   breadcrumb: '<span>Things to Do</span>', tag: 'Wilmington &middot; Wrightsville &middot; Carolina &middot; Kure',
   h1: 'Things to Do in Wilmington, NC <em>&amp; the Beaches</em>',
   sub: 'Tours, water sports, museums, rentals and local experiences across downtown Wilmington, Wrightsville Beach, Carolina Beach and Kure Beach.',
