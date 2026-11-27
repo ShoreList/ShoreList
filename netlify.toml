@@ -54,6 +54,12 @@
   status = 404
   force = true
 
+# Shopify hosts checkout. These addresses are the ShoreList product pages.
+[[redirects]]
+  from = "/products/:handle"
+  to = "/shop/products/:handle"
+  status = 301
+
 # Internal build tooling, docs and repo metadata are not part of the public site. Nothing the pages load lives here.
 [[redirects]]
   from = "/tools/*"
