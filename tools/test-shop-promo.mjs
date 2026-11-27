@@ -6,27 +6,49 @@ import { runInNewContext } from 'node:vm';
 const script = readFileSync(new URL('../shop-promo.js', import.meta.url), 'utf8');
 
 function render(instant, search = '', shop = true) {
+  let now = instant;
+  let scheduled;
+  let hidden = false;
+  const documentEvents = new Map();
+  const windowEvents = new Map();
+  const append = (parent, child) => {
+    child.remove = () => { parent.children.splice(parent.children.indexOf(child), 1); };
+    parent.children.unshift(child);
+  };
   function node(tag, textContent = '') {
     return {
       tag, textContent, attrs: {}, style: {}, children: [],
       appendChild(child) { this.children.push(child); },
       setAttribute(name, value) { this.attrs[name] = value; },
-      insertBefore(child) { this.children.unshift(child); },
+      insertBefore(child) { append(this, child); },
     };
   }
   const main = node('main');
   const hero = node('section');
   runInNewContext(script, {
-    Date: { UTC: Date.UTC, now: () => instant },
+    Date: { UTC: Date.UTC, now: () => now },
     location: { search },
+    setTimeout(callback, delay) { scheduled = { callback, delay }; return 1; },
+    clearTimeout() { scheduled = undefined; },
+    window: { addEventListener: (event, callback) => windowEvents.set(event, callback) },
     document: {
+      get hidden() { return hidden; },
+      addEventListener: (event, callback) => documentEvents.set(event, callback),
       createElement: node,
       createTextNode: (text) => node('#text', text),
       getElementById: (id) => id === 'main' && shop ? main : null,
       querySelector: (selector) => selector === '.hero-cta' ? { parentNode: hero } : null,
     },
   });
-  return { banner: main.children[0], hero: hero.children[0] };
+  return {
+    get banner() { return main.children[0]; },
+    get hero() { return hero.children[0]; },
+    get counts() { return [main.children.length, hero.children.length]; },
+    get delay() { return scheduled?.delay; },
+    tick(instant) { now = instant; scheduled.callback(); },
+    visibility(instant, value) { now = instant; hidden = value; documentEvents.get('visibilitychange')(); },
+    restore(instant) { now = instant; windowEvents.get('pageshow')(); },
+  };
 }
 
 const windows = [
@@ -58,4 +80,45 @@ test('public query strings do not preview expired or future offers', () => {
     assert.equal(render(outside, '?promo-preview=' + marker).banner, undefined);
   }
   assert.equal(render(Date.parse(windows[0][1]), '', false).banner, undefined);
+});
+
+test('an open shop tab removes expired offers and rolls over to the next sale', () => {
+  const end = Date.parse(windows[0][2]);
+  const friday = Date.parse(windows[1][1]);
+  const fridayEnd = Date.parse(windows[1][2]);
+  const monday = Date.parse(windows[2][1]);
+  const mondayEnd = Date.parse(windows[2][2]);
+  const page = render(end - 100);
+  assert.equal(page.delay, 100);
+  assert.match(page.hero.textContent, /SHORE15/);
+  page.tick(end);
+  assert.deepEqual(page.counts, [0, 0]);
+  assert.equal(page.delay, friday - end);
+  page.tick(friday);
+  assert.deepEqual(page.counts, [1, 1]);
+  assert.match(page.hero.textContent, /SHOREFRIDAY15/);
+  page.tick(fridayEnd);
+  assert.deepEqual(page.counts, [0, 0]);
+  page.tick(monday);
+  assert.match(page.hero.textContent, /SHORECYBER15/);
+  page.tick(mondayEnd);
+  assert.deepEqual(page.counts, [0, 0]);
+  assert.equal(page.delay, undefined);
+});
+
+test('a suspended or restored tab catches up without stacking banners', () => {
+  const friday = Date.parse(windows[1][1]);
+  const monday = Date.parse(windows[2][1]);
+  const page = render(friday - 1000);
+  page.visibility(friday, true);
+  assert.deepEqual(page.counts, [0, 0]);
+  page.visibility(friday + 1, false);
+  assert.match(page.hero.textContent, /SHOREFRIDAY15/);
+  const banner = page.banner;
+  page.restore(friday + 10);
+  assert.equal(page.banner, banner);
+  assert.deepEqual(page.counts, [1, 1]);
+  page.restore(monday);
+  assert.match(page.hero.textContent, /SHORECYBER15/);
+  assert.deepEqual(page.counts, [1, 1]);
 });
