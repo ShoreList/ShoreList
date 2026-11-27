@@ -21,6 +21,8 @@ on:
       - 'shop-catalog.json'
       - 'tools/test-shop-structured-data.mjs'
       - 'tools/test-shop-photo-release.mjs'
+      - 'tools/check-shop-links.mjs'
+      - 'tools/test-shop-links.mjs'
       - 'tools/build-store-pages.mjs'
       - 'gift-guide.html'
       - 'docs/shop-photo-review.json'
@@ -47,6 +49,8 @@ on:
       - 'shop-catalog.json'
       - 'tools/test-shop-structured-data.mjs'
       - 'tools/test-shop-photo-release.mjs'
+      - 'tools/check-shop-links.mjs'
+      - 'tools/test-shop-links.mjs'
       - 'tools/build-store-pages.mjs'
       - 'gift-guide.html'
       - 'docs/shop-photo-review.json'
@@ -64,7 +68,7 @@ jobs:
         with:
           node-version: 22
       - run: node tools/test-operators.mjs
-      - run: node --test tools/test-concierge.cjs tools/test-plan-itinerary.cjs tools/test-shop-promo.mjs tools/test-shop-structured-data.mjs
+      - run: node --test tools/test-concierge.cjs tools/test-plan-itinerary.cjs tools/test-shop-promo.mjs tools/test-shop-structured-data.mjs tools/test-shop-links.mjs
       - run: node --test tools/test-shop-photo-release.mjs
         env:
           SHOP_PHOTO_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
