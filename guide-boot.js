@@ -21,6 +21,7 @@
     if (started) return;
     started = true;
     enableGuideCss();
+    add('/front-door.js');
     var boot = document.querySelector('script[src="/guide-boot.js"]');
     if (boot && boot.getAttribute('data-widgets') === '1') add('/widgets.js');
     if (document.getElementById('slgOpen')) add('/shore-guide.js');

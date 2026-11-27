@@ -304,8 +304,17 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 
 <section class="pl-sec" id="builder" aria-labelledby="builder-h">
   <div class="wrap">
-    <h2 class="t" id="builder-h">Three quick questions, <em>then your plan</em></h2>
+    <h2 class="t" id="builder-h">A few quick questions, <em>then your plan</em></h2>
     <p class="pl-sub">Tap what fits. Your answers become a short brief, shown on the right, and that brief is all the planner sees.</p>
+    <div class="pl-chips" id="pl-quick" role="group" aria-label="Start from a common question" style="margin-bottom:18px">
+      <button type="button" class="pl-chip" data-q="tonight">Tonight</button>
+      <button type="button" class="pl-chip" data-q="weekend">This weekend</button>
+      <button type="button" class="pl-chip" data-q="rain">Rainy day</button>
+      <button type="button" class="pl-chip" data-q="kids">With kids</button>
+      <button type="button" class="pl-chip" data-q="free">Free</button>
+      <button type="button" class="pl-chip" data-q="eat">Where to eat</button>
+      <button type="button" class="pl-chip" data-q="beach">Beach report</button>
+    </div>
     <div class="pl-build">
       <div class="pl-steps">
         <fieldset class="pl-step" id="step-who">
@@ -355,6 +364,38 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
           <label class="pl-lab" for="trip-input">Anything else? (optional)</label>
           <textarea class="pl-notes" id="trip-input" maxlength="280" placeholder="Ages of kids, budget, mobility needs, a must-see, where you are staying"></textarea>
           <p class="pl-count"><span id="pl-count">0</span> / 280</p>
+        </fieldset>
+
+        <fieldset class="pl-step" id="step-shape">
+          <legend><span class="pl-num" aria-hidden="true">4</span>Shape the day</legend>
+          <p class="pl-hint">Optional. Tonight, the weekend, and a rain plan are built from ShoreList pages. One day still asks the planner.</p>
+          <span class="pl-lab" id="lab-mode">Plan</span>
+          <div class="pl-chips" data-group="mode" data-mode="one" role="group" aria-labelledby="lab-mode">
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="tonight">Tonight</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="weekend">This weekend</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="day">One day</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="rain">Rain plan</button>
+          </div>
+          <span class="pl-lab" id="lab-area">Area</span>
+          <div class="pl-chips" data-group="area" data-mode="one" role="group" aria-labelledby="lab-area">
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="any">Any</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="downtown">Downtown</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="wrightsville">Wrightsville Beach</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="carolina">Carolina Beach</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="kure">Kure Beach</button>
+          </div>
+          <span class="pl-lab" id="lab-budget">Budget</span>
+          <div class="pl-chips" data-group="budget" data-mode="one" role="group" aria-labelledby="lab-budget">
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="free">Free</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="under25">Under $25</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="under75">Under $75</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="any">Any</button>
+          </div>
+          <span class="pl-lab" id="lab-move">Getting around</span>
+          <div class="pl-chips" data-group="move" data-mode="one" role="group" aria-labelledby="lab-move">
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="walking">Walking</button>
+            <button type="button" class="pl-chip" aria-pressed="false" data-v="car">Car</button>
+          </div>
         </fieldset>
       </div>
 
@@ -429,6 +470,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
   <nav aria-label="Footer"><a href="/">Experiences</a><a href="/events">Events Guide</a><a href="/planner" aria-current="page">Trip Planner</a><a href="/waitlist">Join Waitlist</a><a href="/join">Operators</a><a href="/guides">PDF Guides</a><a href="/prints">Art Prints</a><a href="/shipping-returns">Shipping &amp; Returns</a><a href="/size-guide">Size Guide</a><a href="/gift-guide">Gift Guide</a><a href="mailto:shorelistwilmington@gmail.com">Contact</a><a href="/legal">Privacy &amp; Terms</a><a href="/legal#accessibility">Accessibility</a></nav>
 </footer>
 
+<script src="/front-door.js"></script>
 <script>
 (function(){
   'use strict';
@@ -437,7 +479,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
   /* Category keys the planner function may return, mapped to pages that exist on the site. */
   var CATS={'film-tours':1,'ghost-tours':1,'surf-lessons':1,'nature-walks':1,'walking-tours':1,'kayak-tours':1,'fishing-charters':1,'river-cruises':1,'paddleboard':1,'bike-tours':1,'wildlife-tours':1,'beach-picnics':1,'jet-ski-rentals':1,'golf-cart-rentals':1,'beach-photography':1,'sailboat-rides':1,'wellness':1,'museums':1,'beach-chairs':1,'ebike-rentals':1};
   var ALIAS={'historic-tours':'walking-tours','sup':'paddleboard','spa':'wellness'};
-  var sel={who:[],like:[],day:[],part:[]}, live=null, liveText='', liveCat={}, busy=false, lastBrief='';
+  var sel={who:[],like:[],day:[],part:[],mode:[],area:[],budget:[],move:[]}, live=null, liveText='', liveCat={}, busy=false, lastBrief='';
 
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];});}
   function track(n,p){try{if(typeof window.gtag==='function')window.gtag('event',n,p||{});}catch(e){}}
@@ -449,6 +491,10 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
     if(sel.who.length)s.push('Group: '+sel.who[0]+'.');
     if(sel.like.length)s.push('We like '+list(sel.like)+'.');
     if(sel.day.length||sel.part.length)s.push('Visiting '+(sel.day[0]||'soon')+(sel.part.length?', planning '+sel.part[0]:'')+'.');
+    if(sel.mode.length)s.push('Plan type: '+sel.mode[0]+'.');
+    if(sel.area.length)s.push('Area: '+sel.area[0]+'.');
+    if(sel.budget.length)s.push('Budget: '+sel.budget[0]+'.');
+    if(sel.move.length)s.push('Getting around: '+sel.move[0]+'.');
     if(notes)s.push('Notes: '+notes);
     if(s.length&&sel.day[0]==='today'&&liveText)s.push('Conditions right now: '+liveText+'.');
     return s.join(' ').slice(0,600);
@@ -467,6 +513,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
   }
   d.querySelectorAll('.pl-chips').forEach(function(g){
     var key=g.getAttribute('data-group'), one=g.getAttribute('data-mode')==='one';
+    if(!key)return;
     g.addEventListener('click',function(e){
       var b=e.target.closest&&e.target.closest('.pl-chip'); if(!b)return;
       var on=b.getAttribute('aria-pressed')==='true';
@@ -493,6 +540,38 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
     }).catch(function(){});
   }
   tryWX(0);
+  function press(group, value) {
+    var g = d.querySelector('.pl-chips[data-group="' + group + '"]'); if (!g) return;
+    var chip = g.querySelector('.pl-chip[data-v="' + value + '"]'); if (!chip) return;
+    if (g.getAttribute('data-mode') === 'one') g.querySelectorAll('.pl-chip').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+    chip.setAttribute('aria-pressed', 'true');
+    sel[group] = [].map.call(g.querySelectorAll('.pl-chip[aria-pressed=true]'), function (x) { return x.getAttribute('data-v'); });
+  }
+  function applyQuick(q) {
+    if (q === 'tonight') { press('mode', 'tonight'); press('day', 'today'); press('part', 'the afternoon and evening'); }
+    else if (q === 'weekend') { press('mode', 'weekend'); press('day', 'this weekend'); }
+    else if (q === 'rain') { press('mode', 'rain'); }
+    else if (q === 'kids') { press('who', 'a family with kids'); }
+    else if (q === 'free') { press('budget', 'free'); }
+    else if (q === 'eat') { press('like', 'good food and drink'); }
+    else if (q === 'beach') { if (!$('trip-input').value) $('trip-input').value = 'Start from the beach report.'; }
+    if (window.ShoreFront) ShoreFront.remember({ q: q, mode: sel.mode[0] || '', area: sel.area[0] || '', budget: sel.budget[0] || '', move: sel.move[0] || '' });
+    paint();
+  }
+  var quick = $('pl-quick');
+  if (quick) quick.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-q]'); if (!b) return;
+    applyQuick(b.getAttribute('data-q'));
+  });
+  (function prefill() {
+    var when = '', saved = window.ShoreFront ? ShoreFront.read() : {};
+    try { when = new URLSearchParams(location.search).get('when') || ''; } catch (e) {}
+    if (when === 'tonight' || when === 'weekend') applyQuick(when);
+    else if (saved && saved.q && /tonight|weekend|rainy|kids|free|eat|beach/.test(saved.q)) {
+      var map = { tonight: 'tonight', 'this weekend': 'weekend', 'rainy day': 'rain', 'with kids': 'kids', free: 'free', 'where to eat': 'eat', 'beach report': 'beach' };
+      if (map[saved.q]) applyQuick(map[saved.q]);
+    }
+  })();
   fetch('/search-index.json',{credentials:'same-origin'}).then(function(r){return r.json();}).then(function(j){
     (j.items||[]).forEach(function(it){if(it.t==='cat'&&it.slug)liveCat[it.slug]=+it.live||0;});
   }).catch(function(){});
@@ -523,8 +602,8 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
   /* ---- render ---- */
   function catOf(item){var c=String(item.category||'').toLowerCase().trim(); c=ALIAS[c]||c; return CATS[c]?c:null;}
   function render(plan,mode){
-    var isSample=mode!=='ok', h='';
-    $('result-kicker').textContent=isSample?'Sample itinerary':'Your itinerary';
+    var isSample=mode!=='ok'&&mode!=='index', h='';
+    $('result-kicker').textContent=mode==='index'?'From ShoreList pages':isSample?'Sample itinerary':'Your itinerary';
     $('result-title').textContent=plan.title||'Your Wilmington Itinerary';
     if(mode==='down'){
       h+='<div class="pl-alert" role="alert"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4.5M12 17.5v.5"/></svg><div><b>The planner is not reachable right now</b><p>We could not get a custom plan back, and nothing you entered was lost. Here is a ready-made sample day in the meantime. You can try again, or browse <a href="/things-to-do">things to do</a> and <a href="/events/this-weekend">this weekend\'s events</a> directly.</p><button type="button" class="pl-btn line" id="btn-retry">Try again</button></div></div>';
@@ -544,7 +623,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
     h+='</ol>';
     $('result-content').innerHTML=h;
     $('pl-go').hidden=false;
-    $('result-status').textContent=mode==='ok'?'Your itinerary is ready.':'The planner could not be reached. A sample itinerary is shown instead.';
+    $('result-status').textContent=mode==='ok'?'Your itinerary is ready.':mode==='index'?'This plan is built from ShoreList pages and listings.':'The planner could not be reached. A sample itinerary is shown instead.';
     var r=$('btn-retry'); if(r)r.addEventListener('click',function(){build(lastBrief);});
     try{$('result-title').focus({preventScroll:true});}catch(e){}
   }
@@ -557,6 +636,15 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
   }
   function show(){var s=$('result-section'); s.classList.add('show'); s.style.paddingTop=''; try{s.scrollIntoView({behavior:'smooth',block:'start'});}catch(e){s.scrollIntoView();}}
 
+  function fromIndex(){
+    if(!window.ShoreFront){render(SAMPLE,'down');return Promise.resolve();}
+    return ShoreFront.load().then(function(){
+      var plan=ShoreFront.itinerary({mode:sel.mode[0]||'day',area:sel.area[0]||'',budget:sel.budget[0]||'',move:sel.move[0]||'',like:sel.like.join(' ')});
+      if(!plan){render(SAMPLE,'down');return;}
+      render(plan,'index');
+      track('planner_index',{mode:sel.mode[0]||'day',items:plan.items.length});
+    }).catch(function(){render(SAMPLE,'down');});
+  }
   function build(text){
     if(busy)return;
     var input=text||brief(), err=$('pl-err');
@@ -569,6 +657,11 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
     err.classList.remove('show');
     lastBrief=input; busy=true;
     var btn=$('btn-plan'); btn.disabled=true; btn.textContent='Drafting your day';
+    if(sel.mode[0]==='tonight'||sel.mode[0]==='weekend'||sel.mode[0]==='rain'){
+      loading(); show();
+      fromIndex().then(function(){busy=false;btn.disabled=false;btn.textContent='Draft my itinerary';});
+      return;
+    }
     loading(); show();
     var msgs=['Sending your brief to the planner','Drafting your stops','Matching stops to ShoreList pages'], mi=0;
     var tick=setInterval(function(){var t=$('pl-load-t'); if(t&&mi<msgs.length-1)t.textContent=msgs[++mi];},2600);
@@ -576,7 +669,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
     fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({input:input}),signal:ctl?ctl.signal:undefined})
       .then(function(r){if(!r.ok)throw new Error('planner '+r.status);return r.json();})
       .then(function(plan){if(!plan||!Array.isArray(plan.items)||!plan.items.length)throw new Error('empty plan');render(plan,'ok');track('planner_result',{items:plan.items.length});})
-      .catch(function(e){render(SAMPLE,'down');track('planner_fallback',{reason:String(e&&e.message||e).slice(0,60)});})
+      .catch(function(e){track('planner_fallback',{reason:String(e&&e.message||e).slice(0,60)});return fromIndex();})
       .then(function(){clearInterval(tick);clearTimeout(to);busy=false;btn.disabled=false;btn.textContent='Draft my itinerary';});
   }
   $('btn-plan').addEventListener('click',function(){build();});
@@ -584,7 +677,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
   $('btn-reset').addEventListener('click',function(){
     $('result-section').classList.remove('show'); $('result-content').innerHTML=''; $('pl-go').hidden=true;
     d.querySelectorAll('.pl-chip').forEach(function(c){c.setAttribute('aria-pressed','false');});
-    sel={who:[],like:[],day:[],part:[]}; $('trip-input').value=''; paint();
+    sel={who:[],like:[],day:[],part:[],mode:[],area:[],budget:[],move:[]}; $('trip-input').value=''; paint();
     try{$('builder').scrollIntoView({behavior:'smooth',block:'start'});}catch(e){}
     var first=d.querySelector('#step-who .pl-chip'); if(first)first.focus({preventScroll:true});
   });
