@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 250" class="slg-art">
+  <defs>
+    <radialGradient id="shell" cx="36%" cy="28%" r="72%">
+      <stop offset="0%" stop-color="#F7F3EA"/>
+      <stop offset="28%" stop-color="#E7D7B4"/>
+      <stop offset="62%" stop-color="#D9C7A3"/>
+      <stop offset="100%" stop-color="#6E8F86"/>
+    </radialGradient>
+    <radialGradient id="scute" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#F4F1EA"/>
+      <stop offset="55%" stop-color="#D9C7A3"/>
+      <stop offset="100%" stop-color="#8AA89F"/>
+    </radialGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9FC3B8"/>
+      <stop offset="35%" stop-color="#1C334C"/>
+      <stop offset="100%" stop-color="#0E1F33"/>
+    </linearGradient>
+    <linearGradient id="head" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F4F1EA"/>
+      <stop offset="58%" stop-color="#E4D3AE"/>
+      <stop offset="100%" stop-color="#9FC3B8"/>
+    </linearGradient>
+    <linearGradient id="flip" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F4F1EA"/>
+      <stop offset="40%" stop-color="#9FC3B8"/>
+      <stop offset="100%" stop-color="#0E1F33"/>
+    </linearGradient>
+    <radialGradient id="spec" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#F4F1EA" stop-opacity=".95"/>
+      <stop offset="45%" stop-color="#F4F1EA" stop-opacity=".25"/>
+      <stop offset="100%" stop-color="#F4F1EA" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <ellipse class="slg-shadow" cx="108" cy="226" rx="58" ry="9"/>
+  <g class="slg-bob">
+    <path class="slg-flip slg-flip-back" d="M58 168c-26 0-40 18-26 32 16 10 38 0 44-16 4-12-4-16-18-16z" fill="url(#flip)"/>
+    <ellipse cx="118" cy="186" rx="46" ry="22" fill="#0E1F33"/>
+    <ellipse cx="126" cy="192" rx="24" ry="11" fill="#9FC3B8" opacity=".45"/>
+    <ellipse cx="112" cy="168" rx="62" ry="8" fill="#0E1F33" opacity=".18"/>
+    <g class="slg-shell">
+      <ellipse cx="112" cy="156" rx="58" ry="40" fill="#0E1F33" opacity=".28"/>
+      <ellipse cx="112" cy="150" rx="54" ry="36" fill="url(#shell)"/>
+      <ellipse cx="96" cy="132" rx="22" ry="16" fill="url(#scute)" stroke="#0E1F33" stroke-opacity=".2"/>
+      <ellipse cx="128" cy="130" rx="20" ry="15" fill="url(#scute)" stroke="#0E1F33" stroke-opacity=".2"/>
+      <ellipse cx="90" cy="158" rx="18" ry="14" fill="url(#scute)" stroke="#0E1F33" stroke-opacity=".18"/>
+      <ellipse cx="132" cy="158" rx="18" ry="14" fill="url(#scute)" stroke="#0E1F33" stroke-opacity=".18"/>
+      <ellipse cx="112" cy="148" rx="16" ry="13" fill="url(#scute)" stroke="#0E1F33" stroke-opacity=".28"/>
+      <ellipse cx="104" cy="142" rx="7" ry="5" fill="url(#spec)"/>
+      <ellipse cx="86" cy="128" rx="18" ry="8" fill="url(#spec)" transform="rotate(-18 86 128)"/>
+    </g>
+    <path class="slg-flip slg-flip-front" d="M86 176c-8 20 0 34 16 36 20 2 34-16 30-32-4-14-24-18-46-4z" fill="url(#flip)"/>
+    <path d="M98 190c10 6 22 4 28-4" fill="none" stroke="#F4F1EA" stroke-opacity=".35" stroke-width="1.4"/>
+    <g class="slg-head">
+      <path d="M146 162c10-8 22-8 30-2 2 10-6 18-18 20-10 1-16-8-12-18z" fill="url(#head)"/>
+      <ellipse cx="176" cy="140" rx="22" ry="16" fill="url(#head)"/>
+      <ellipse cx="168" cy="146" rx="9" ry="6" fill="#0E1F33" opacity=".1"/>
+      <ellipse cx="166" cy="132" rx="8" ry="5" fill="url(#spec)"/>
+      <g class="slg-gaze">
+        <ellipse cx="184" cy="136" rx="5" ry="5" fill="#F4F1EA"/>
+        <ellipse cx="185" cy="136.4" rx="2.6" ry="2.6" fill="#9FC3B8"/>
+        <ellipse class="slg-lid" cx="185.2" cy="136.6" rx="1.7" ry="1.7" fill="#0E1F33"/>
+        <circle cx="186" cy="135.6" r=".8" fill="#F4F1EA"/>
+      </g>
+      <path class="slg-smile" d="M172 148c5 5 12 5 16-1" fill="none" stroke="#0E1F33" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>
