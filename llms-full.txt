@@ -22,7 +22,7 @@ ShoreList (shorelist.net) is a hyperlocal booking marketplace for tours and expe
 - Where to stay: https://shorelist.net/where-to-stay
 - Trip planning and visitor questions: https://shorelist.net/plan-your-trip https://shorelist.net/wilmington-nc-faq
 - Parking: https://shorelist.net/wilmington-nc-parking
-- Weather, tides and surf conditions: https://shorelist.net/wilmington-weather
+- Weather, tides and surf conditions: https://shorelist.net/wilmington-weather https://shorelist.net/cams
 - Where to eat: https://shorelist.net/shore-picks
 - Souvenirs, apparel, gifts and art prints: https://shorelist.net/shop https://shorelist.net/gift-guide https://shorelist.net/shop/wrightsville-beach https://shorelist.net/shop/carolina-beach https://shorelist.net/shop/kure-beach https://shorelist.net/shop/wilmington https://shorelist.net/prints https://shorelist.net/wilmington-nc-gifts https://shorelist.net/wrightsville-beach-souvenirs https://shorelist.net/wrightsville-beach-christmas-ornament
 
@@ -63,6 +63,7 @@ ShoreList (shorelist.net) is a hyperlocal booking marketplace for tours and expe
 - Kure Beach events: Markets and community events https://shorelist.net/events/kure-beach
 - Downtown Wilmington events: Concerts, theater, markets and parades https://shorelist.net/events/downtown-wilmington
 - Wilmington, NC weather: Live conditions, hourly and 7-day forecast, beach, surf and tide report https://shorelist.net/wilmington-weather
+- Live beach cams in Wilmington, NC: Official Johnnie Mercer pier cams, plus links to other local cameras https://shorelist.net/cams
 - ShoreList Surf: Live surf check for Wrightsville, Carolina and Kure Beach, lessons, paddling and beginner guides https://shorelist.net/surf
 - Choosing a first surfboard: Soft-top or hard board, how size works and what a first setup involves https://shorelist.net/surf/first-surfboard
 - Paddleboards and kayaks: inflatable or hard: How they compare, carrying and storing them, and where each fits on local water https://shorelist.net/surf/paddleboard-and-kayak
@@ -81,10 +82,188 @@ ShoreList (shorelist.net) is a hyperlocal booking marketplace for tours and expe
 - Downtown Wilmington: Riverwalk, history and nightlife https://shorelist.net/downtown
 - Wrightsville Beach: Surf, paddle and island life https://shorelist.net/wrightsville-beach
 - Carolina Beach: Boardwalk, fishing and beach days https://shorelist.net/carolina-beach
+- Carolina Beach boardwalk: Boardwalk notes from the Carolina Beach and Pleasure Island guides https://shorelist.net/carolina-beach-boardwalk
 - Kure Beach: Quiet beach town and Fort Fisher https://shorelist.net/kure-beach
 - List your business: Join ShoreList as a local operator https://shorelist.net/join
 - Join the waitlist: Get updates when new experiences go live https://shorelist.net/waitlist
 - Legal and policies: Terms, privacy and refund policy https://shorelist.net/legal
+- Gift finder: Ask Wrighty for ShoreList gifts under $25, $35 or $50 https://shorelist.net/gift-finder
+- Holiday gift guide: Wrightsville Beach holiday gifts under $25, $35 and $50 https://shorelist.net/holiday-gift-guide
+- Rooted in Memory: The Gullah Geechee Vision of Jonathan Green: Greater Wilmington · Cameron Art Museum https://shorelist.net/events/rooted-in-memory-the-gullah-geechee-visi-2026-06-19.html
+- Kure Beach Holiday Market: 9:00 AM · Kure Beach · Ocean Front Park and Pavilion https://shorelist.net/events/kure-beach-holiday-market-2026-11-21.html
+- Downtown Wilmington Holiday Tree Lighting: 5:30 PM · Downtown · Water Street and Market Street https://shorelist.net/events/downtown-wilmington-holiday-tree-lightin-2026-11-27.html
+- Enchanted Airlie: 5:30 PM · Greater Wilmington · Airlie Gardens https://shorelist.net/events/enchanted-airlie-2026-11-27.html
+- Wrightsville Beach Christmas Kick-Off and Tree Lighting: 5:30 PM · Wrightsville Beach · Wrightsville Beach Park https://shorelist.net/events/wrightsville-beach-christmas-kick-off-an-2026-11-27.html
+- Festival in the Park (NC Holiday Flotilla): 10:00 AM · Wrightsville Beach · Wrightsville Beach Park https://shorelist.net/events/festival-in-the-park-nc-holiday-flotilla-2026-11-28.html
+- North Carolina Holiday Flotilla and Fireworks: 6:00 PM · Wrightsville Beach · Banks Channel https://shorelist.net/events/north-carolina-holiday-flotilla-and-fire-2026-11-28.html
+- Wilmington Holiday Parade: 6:00 PM · Downtown · Front Street https://shorelist.net/events/wilmington-holiday-parade-2026-11-29.html
+- Gentle Yoga: 9:00 AM · Wilmington · NC https://shorelist.net/events/cameron-10002074-1796115600-17961192-ada3dfa3-2026-12-01.html
+- Public Tour: 1:00 PM · Wilmington · Cameron Art Museum https://shorelist.net/events/cameron-10002075-1796216400-17962182-514a2a56-2026-12-02.html
+- Sing We Now of Christmas: A Joyful Celebration of the Season: Downtown · Wilson Center at Cape Fear Community College https://shorelist.net/events/sing-we-now-of-christmas-a-joyful-celebr-2026-12-02.html
+- Jazz at CAM: Yolanda Rabun: Greater Wilmington · Cameron Art Museum https://shorelist.net/events/jazz-at-cam-yolanda-rabun-2026-12-03.html
+- Mary's Art Explorers: Chloe Zoe with Author and Illustrator Jane Smith: 10:00 AM · Wilmington · Cameron Art Museum https://shorelist.net/events/cameron-10002084-1796292000-17962956-dd2bb0ad-2026-12-03.html
+- A Charlie Brown Christmas: Downtown · Wilson Center at Cape Fear Community College https://shorelist.net/events/a-charlie-brown-christmas-2026-12-04.html
+- Carolina Beach Christmas Parade: 7:00 PM · Carolina Beach · Lake Park Blvd. https://shorelist.net/events/carolina-beach-christmas-parade-2026-12-04.html
+- Movies in the Park: The Santa Clause: 6:00 PM · Wrightsville Beach · Town of Wrightsville Beach park (exact location not stated on source) https://shorelist.net/events/movies-in-the-park-the-santa-clause-2026-12-04.html
+- Night Tour at the Burgwin-Wright House: Downtown · Burgwin-Wright House and Gardens https://shorelist.net/events/night-tour-at-the-burgwin-wright-house-2026-12-04.html
+- A Colonial Apparition River Cruise: Downtown · Wilmington Water Tours https://shorelist.net/events/a-colonial-apparition-river-cruise-2026-12-05.html
+- Cape Fear Museum Holiday Gift Workshop: Downtown · Cape Fear Museum https://shorelist.net/events/cape-fear-museum-holiday-gift-workshop-2026-12-05.html
+- Carolina Beach Holiday Market: 9:00 AM · Carolina Beach · Carolina Beach Lake Park https://shorelist.net/events/carolina-beach-holiday-market-2026-12-05.html
+- City Ballet's The Nutcracker: Downtown · Wilson Center at Cape Fear Community College https://shorelist.net/events/city-ballet-s-the-nutcracker-2026-12-05.html
+- Museum School Open House at Ponysaurus: 1:00 PM · Wilmington · Cameron Art Museum https://shorelist.net/events/cameron-10002085-1796475600-17964864-678ca0b9-2026-12-05.html
+- Music & Mimosas at CAM Café with Roger Davis: 10:00 AM · Wilmington · Cameron Art Museum https://shorelist.net/events/cameron-10002063-1796464800-17964792-15ec5345-2026-12-05.html
+- Wilmington Historic Half Marathon, 10K and 5K: Downtown · Downtown Wilmington https://shorelist.net/events/wilmington-historic-half-marathon-10k-an-2026-12-05.html
+- The Gift of Poetry: Words from the Heart: 1:00 PM · Wilmington · Cameron Art Museum https://shorelist.net/events/cameron-10002086-1796562000-17965692-5643128b-2026-12-06.html
+- Pearl Harbor Day Remembrance at Battleship North Carolina: 9:00 AM · Downtown · Battleship North Carolina https://shorelist.net/events/pearl-harbor-day-remembrance-at-battlesh-2026-12-07.html
+- Cape Fear Festival of Trees: Greater Wilmington · Discovery Bay at Independence Mall https://shorelist.net/events/cape-fear-festival-of-trees-2026-12-08.html
+- Gentle Yoga: 9:00 AM · Wilmington · NC https://shorelist.net/events/cameron-10002076-1796720400-17967240-4c7d12ad-2026-12-08.html
+- Public Tour: 1:00 PM · Wilmington · Cameron Art Museum https://shorelist.net/events/cameron-10002078-1796821200-17968230-03d621d7-2026-12-09.html
+- CAM at the Movies: Always Looking: Titus Brooks Heagins: 7:30 PM · Wilmington · Cameron Art Museum https://shorelist.net/events/cameron-10002088-1797017400-17970246-80b9503a-2026-12-11.html
+- Colonial Wilmington and The Revolution Walking Tour: Downtown · Burgwin-Wright House and Gardens https://shorelist.net/events/colonial-wilmington-and-the-revolution-w-2026-12-11.html
+- Holiday Light Spectacular at the Wilmington Railroad Museum: 6:30 PM · Downtown · Wilmington Railroad Museum https://shorelist.net/events/holiday-light-spectacular-at-the-wilming-2026-12-11.html
+- Miracle on 34th Street (Thalian Association Community Theatre): 7:30 PM · Downtown · Thalian Hall Main Stage https://shorelist.net/events/miracle-on-34th-street-thalian-associati-2026-12-11.html
+- Holiday Movie at the Lake: A Christmas Story: 5:00 PM · Carolina Beach · Carolina Beach Lake Park https://shorelist.net/events/holiday-movie-at-the-lake-a-christmas-st-2026-12-12.html
+- Kids@CAM: Minnie Evans Birthday: Greater Wilmington · Cameron Art Museum https://shorelist.net/events/kids-cam-minnie-evans-birthday-2026-12-12.html
+- Polar Express Reading with Santa: 3:30 PM · Downtown · Wilmington Railroad Museum https://shorelist.net/events/polar-express-reading-with-santa-2026-12-12.html
+- WCFA's The Nutcracker: Downtown · Wilson Center at Cape Fear Community College https://shorelist.net/events/wcfa-s-the-nutcracker-2026-12-12.html
+- Connections Monday: 10:30 AM · Wilmington · Cameron Art Museum https://shorelist.net/events/cameron-10002089-1797244200-17972514-e1ac30d3-2026-12-14.html
+- Gentle Yoga: 9:00 AM · Wilmington · NC https://shorelist.net/events/cameron-10002082-1797325200-17973288-ab11b695-2026-12-15.html
+- Public Tour: 1:00 PM · Wilmington · Cameron Art Museum https://shorelist.net/events/cameron-10002079-1797426000-17974278-3f18d405-2026-12-16.html
+- Leslie Odom, Jr.: The Christmas Tour: 7:30 PM · Downtown · Wilson Center at Cape Fear Community College https://shorelist.net/events/leslie-odom-jr-the-christmas-tour-2026-12-17.html
+- Mary's Art Explorers: How the Grinch Stole Christmas: 10:00 AM · Wilmington · Cameron Art Museum https://shorelist.net/events/cameron-10000404-1797501600-17975052-00a4d178-2026-12-17.html
+- Kure Beach Holiday Whoobie Whatty: 6:00 PM · Kure Beach · Ocean Front Park and Pavilion https://shorelist.net/events/kure-beach-holiday-whoobie-whatty-2026-12-18.html
+- Holiday Story Time by the Sea: 11:00 AM · Kure Beach · Ocean Front Park and Pavilion https://shorelist.net/events/holiday-story-time-by-the-sea-2026-12-19.html
+- Home Alone in Concert (Wilmington Symphony Orchestra): 2:30 PM · Downtown · Wilson Center at Cape Fear Community College https://shorelist.net/events/home-alone-in-concert-wilmington-symphon-2026-12-19.html
+- Santa by the Sea: 5:00 PM · Carolina Beach · Carolina Beach Lake Park https://shorelist.net/events/santa-by-the-sea-2026-12-19.html
+- Gentle Yoga: 9:00 AM · Wilmington · NC https://shorelist.net/events/cameron-10002083-1797930000-17979336-28bd7a9a-2026-12-22.html
+- Public Tour: 1:00 PM · Wilmington · Cameron Art Museum https://shorelist.net/events/cameron-10002080-1798030800-17980326-3d272df6-2026-12-23.html
+- Public Tour: 1:00 PM · Wilmington · Cameron Art Museum https://shorelist.net/events/cameron-10002081-1798635600-17986374-7c59b8fd-2026-12-30.html
+- New Year's Eve Gala at Thalian Hall: 6:00 PM · Downtown · Thalian Hall https://shorelist.net/events/new-year-s-eve-gala-at-thalian-hall-2026-12-31.html
+- New Year's Noon at the Children's Museum of Wilmington: 9:00 AM · Downtown · Children's Museum of Wilmington https://shorelist.net/events/new-year-s-noon-at-the-children-s-museum-2026-12-31.html
+- Carolina Beach State Park Trail Half Marathon and 5K: Carolina Beach · Carolina Beach State Park https://shorelist.net/events/carolina-beach-state-park-trail-half-mar-2027-01-02.html
+- Jazz at CAM: Le'Andra McPhatter: Greater Wilmington · Cameron Art Museum https://shorelist.net/events/jazz-at-cam-le-andra-mcphatter-2027-01-07.html
+- Tig Notaro: Downtown · Wilson Center at Cape Fear Community College https://shorelist.net/events/tig-notaro-2027-01-08.html
+- Floating Lantern Ceremony: 3:00 PM · Wilmington · Cameron Art Museum https://shorelist.net/events/cameron-10000905-1799593200-17996076-ee82be32-2027-01-10.html
+- Wilmington Symphony Orchestra: Bernstein Chichester Psalms and Still Symphony No. 1: 7:30 PM · Downtown · Wilson Center at Cape Fear Community College https://shorelist.net/events/wilmington-symphony-orchestra-bernstein--2027-01-16.html
+- Baz Luhrmann's Romeo + Juliet in Concert: Downtown · Wilson Center at Cape Fear Community College https://shorelist.net/events/baz-luhrmann-s-romeo-juliet-in-concert-2027-01-19.html
+- A Beautiful Noise: The Neil Diamond Musical: Downtown · Wilson Center at Cape Fear Community College https://shorelist.net/events/a-beautiful-noise-the-neil-diamond-music-2027-01-22.html
+- 47th Annual North Carolina Jazz Festival: 7:30 PM · Downtown · Hotel Ballast https://shorelist.net/events/47th-annual-north-carolina-jazz-festival-2027-02-04.html
+- Music at CAM: Dear MariBella and the Pigkickers: Greater Wilmington · Cameron Art Museum https://shorelist.net/events/music-at-cam-dear-maribella-and-the-pigk-2027-02-04.html
+- The Wiz: Downtown · Wilson Center at Cape Fear Community College https://shorelist.net/events/the-wiz-2027-02-06.html
+- Jazz at CAM: Brandon Mitchell Quartet: Greater Wilmington · Cameron Art Museum https://shorelist.net/events/jazz-at-cam-brandon-mitchell-quartet-2027-02-11.html
+- Jefferson Starship and John Waite: Downtown · Wilson Center at Cape Fear Community College https://shorelist.net/events/jefferson-starship-and-john-waite-2027-02-20.html
+- Special Olympics Polar Plunge and Run: 1:00 PM · Kure Beach · Kure Beach Pavilion https://shorelist.net/events/special-olympics-polar-plunge-and-run-2027-02-20.html
+- Wilmington Symphony Young People's Concert: 4:00 PM · Downtown · Wilson Center at Cape Fear Community College https://shorelist.net/events/wilmington-symphony-young-people-s-conce-2027-02-21.html
+- Water for Elephants: Downtown · Wilson Center at Cape Fear Community College https://shorelist.net/events/water-for-elephants-2027-02-23.html
+- Hidden Battleship Tour: 11:00 AM · Downtown · Battleship North Carolina https://shorelist.net/events/hidden-battleship-tour-2027-02-27.html
+- Novant Health Wilmington NC Marathon, Half Marathon and 5K: Greater Wilmington · Start on the UNCW campus per race site https://shorelist.net/events/novant-health-wilmington-nc-marathon-hal-2027-02-27.html
+- Wilmington Symphony Youth Orchestras Concert (February): 4:00 PM · Greater Wilmington · Kenan Auditorium https://shorelist.net/events/wilmington-symphony-youth-orchestras-con-2027-02-28.html
+- Jazz at CAM: Matt Booth Quartet: 7:00 PM · Wilmington · Cameron Art Museum https://shorelist.net/events/cameron-10001979-1804186800-18041940-b05befc5-2027-03-04.html
+- Hidden Battleship Tour: 11:00 AM · Greater Wilmington · Battleship North Carolina https://shorelist.net/events/battleship-tag-localist-com-2008-EventI-c6365b29-2027-03-20.html
+- Wrightsville Beach Hoodie, Varsity Fleece: wrightsville-beach · $92 https://shorelist.net/shop/products/wrightsville-beach-varsity-hoodie.html
+- Wrightsville Beach T-Shirt, Varsity Tee: wrightsville-beach · $42 https://shorelist.net/shop/products/wrightsville-beach-varsity-tee.html
+- Wrightsville Beach Signature Crewneck: wrightsville-beach · $78 https://shorelist.net/shop/products/wrightsville-beach-signature-crewneck.html
+- Wrightsville Beach Tote, Sloop Print: wrightsville-beach · $48 https://shorelist.net/shop/products/wrightsville-beach-sloop-all-over-print-tote-bag.html
+- Wrightsville Beach Sloop Weekender Tote Bag: wrightsville-beach · $78 https://shorelist.net/shop/products/wrightsville-beach-sloop-weekender-tote-bag.html
+- Wrightsville Beach Sloop Picnic and Beach Blanket: wrightsville-beach · $98 https://shorelist.net/shop/products/wrightsville-beach-sloop-picnic-and-beach-blanket.html
+- Wrightsville Beach Sloop Printed Mug: wrightsville-beach · $30 https://shorelist.net/shop/products/wrightsville-beach-sloop-printed-mug.html
+- Wrightsville Beach Sloop Printed Throw Pillow: wrightsville-beach · $42 https://shorelist.net/shop/products/wrightsville-beach-sloop-printed-throw-pillow.html
+- Wrightsville Beach Sloop All Over Print Zip Pouch: wrightsville-beach · $28 https://shorelist.net/shop/products/wrightsville-beach-sloop-all-over-print-zip-pouch.html
+- Wrightsville Beach Sloop Printed Tea Towel: wrightsville-beach · $30 https://shorelist.net/shop/products/wrightsville-beach-sloop-printed-tea-towel.html
+- Wrightsville Beach Sloop Printed Pet Bandana: wrightsville-beach · $28 https://shorelist.net/shop/products/wrightsville-beach-sloop-printed-pet-bandana.html
+- Wrightsville Beach Sloop Can Cooler Sleeve: wrightsville-beach · $14 https://shorelist.net/shop/products/wrightsville-beach-sloop-can-cooler-sleeve.html
+- Carolina Beach Lifeguard Stand Embroidered Crewneck Sweatshirt: carolina-beach · $88 https://shorelist.net/shop/products/carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt.html
+- Carolina Beach Pelican Embroidered Crewneck: carolina-beach · $88 https://shorelist.net/shop/products/the-pelican-embroidered-crewneck-carolina-beach.html
+- Carolina Beach Pelican Corduroy Cap: carolina-beach · $49 https://shorelist.net/shop/products/the-pelican-corduroy-cap-carolina-beach.html
+- Carolina Beach Pelican Cuffed Beanie: carolina-beach · $30 https://shorelist.net/shop/products/the-pelican-cuffed-beanie-carolina-beach.html
+- Carolina Beach Lifeguard Stand Printed Throw Pillow: carolina-beach · $42 https://shorelist.net/shop/products/carolina-beach-lifeguard-stand-printed-throw-pillow.html
+- Carolina Beach Lifeguard Stand Printed Zip Pouch: carolina-beach · $30 https://shorelist.net/shop/products/carolina-beach-lifeguard-stand-printed-zip-pouch.html
+- Carolina Beach Lifeguard Stand Printed Mug: carolina-beach · $30 https://shorelist.net/shop/products/carolina-beach-lifeguard-stand-printed-mug.html
+- Carolina Beach Lifeguard Stand Printed Garment-Dyed Tee: carolina-beach · $42 https://shorelist.net/shop/products/carolina-beach-lifeguard-stand-printed-garment-dyed-tee.html
+- Brown Pelican Carolina Coast Printed Garment-Dyed Tee: carolina-beach · $42 https://shorelist.net/shop/products/brown-pelican-carolina-coast-printed-garment-dyed-tee.html
+- Kure Beach Lifeguard Stand Embroidered Crewneck Sweatshirt: kure-beach · $88 https://shorelist.net/shop/products/kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt.html
+- Kure Beach Blue Crab Embroidered Crewneck: kure-beach · $88 https://shorelist.net/shop/products/the-blue-crab-embroidered-crewneck-kure-beach.html
+- Kure Beach Lifeguard Stand Printed Canvas Tote Bag: kure-beach · $36 https://shorelist.net/shop/products/kure-beach-lifeguard-stand-printed-canvas-tote-bag.html
+- Kure Beach Lifeguard Stand Printed Throw Pillow: kure-beach · $42 https://shorelist.net/shop/products/kure-beach-lifeguard-stand-printed-throw-pillow.html
+- Kure Beach Lifeguard Stand Printed Zip Pouch: kure-beach · $30 https://shorelist.net/shop/products/kure-beach-lifeguard-stand-printed-zip-pouch.html
+- Kure Beach Lifeguard Stand Printed Mug: kure-beach · $30 https://shorelist.net/shop/products/kure-beach-lifeguard-stand-printed-mug.html
+- Kure Beach Lifeguard Stand Printed Garment-Dyed Tee: kure-beach · $42 https://shorelist.net/shop/products/kure-beach-lifeguard-stand-printed-garment-dyed-tee.html
+- Airlie Oak Art Print, Wilmington NC: wilmington · $84 https://shorelist.net/shop/products/airlie-oak-framed-art-print-wrightsville-beach-and-wilmington.html
+- Airlie Oak Wilmington All Over Print Tote Bag: wilmington · $48 https://shorelist.net/shop/products/airlie-oak-wilmington-all-over-print-tote-bag.html
+- Airlie Oak Wilmington Printed Garment-Dyed Tee: wilmington · $42 https://shorelist.net/shop/products/airlie-oak-wilmington-printed-garment-dyed-tee.html
+- Azalea Wilmington Printed Garment-Dyed Tee: wilmington · $42 https://shorelist.net/shop/products/azalea-wilmington-printed-garment-dyed-tee.html
+- Blue Crab Carolina Coast Printed Garment-Dyed Tee: wilmington · $42 https://shorelist.net/shop/products/blue-crab-carolina-coast-printed-garment-dyed-tee.html
+- Sea Oats Carolina Coast Printed Garment-Dyed Tee: wilmington · $42 https://shorelist.net/shop/products/sea-oats-carolina-coast-printed-garment-dyed-tee.html
+- Camellia Wilmington Printed Garment-Dyed Tee: wilmington · $42 https://shorelist.net/shop/products/camellia-wilmington-printed-garment-dyed-tee.html
+- Airlie Oak Wilmington Printed Mug: wilmington · $30 https://shorelist.net/shop/products/airlie-oak-wilmington-printed-mug.html
+- Airlie Oak Wilmington Ceramic Ornament: wilmington · $18 https://shorelist.net/shop/products/airlie-oak-wilmington-ceramic-ornament.html
+- Airlie Oak Wilmington All Over Print Zip Pouch: wilmington · $28 https://shorelist.net/shop/products/airlie-oak-wilmington-all-over-print-zip-pouch.html
+- Airlie Oak Wilmington Throw Pillow: wilmington · $42 https://shorelist.net/shop/products/airlie-oak-wilmington-throw-pillow.html
+- Airlie Oak Wilmington Tea Towel: wilmington · $30 https://shorelist.net/shop/products/airlie-oak-wilmington-tea-towel.html
+- Wrightsville Beach Can Cooler: wrightsville-beach · $12 https://shorelist.net/shop/products/wrightsville-beach-can-cooler.html
+- Carolina Beach Can Cooler: carolina-beach · $12 https://shorelist.net/shop/products/carolina-beach-can-cooler.html
+- Carolina Beach Scallop Shell Printed Crewneck Sweatshirt: carolina-beach · $88 https://shorelist.net/shop/products/carolina-beach-scallop-shell-printed-crewneck-sweatshirt.html
+- Carolina Beach Lifeguard Stand Bucket Hat: carolina-beach · $42 https://shorelist.net/shop/products/the-lifeguard-stand-bucket-hat-carolina-beach.html
+- Carolina Beach Lifeguard Stand Canvas Tote: carolina-beach · $48 https://shorelist.net/shop/products/the-lifeguard-stand-canvas-tote-carolina-beach.html
+- Carolina Beach Lifeguard Stand Dad Hat: carolina-beach · $42 https://shorelist.net/shop/products/the-lifeguard-stand-dad-hat-carolina-beach.html
+- Carolina Beach Megalodon Tooth Printed Crewneck Sweatshirt: carolina-beach · $88 https://shorelist.net/shop/products/carolina-beach-megalodon-tooth-printed-crewneck-sweatshirt.html
+- Carolina Beach Megalodon Tooth Printed Canvas Tote: carolina-beach · $48 https://shorelist.net/shop/products/carolina-beach-megalodon-tooth-printed-canvas-tote.html
+- Kure Beach Can Cooler: kure-beach · $12 https://shorelist.net/shop/products/kure-beach-can-cooler.html
+- Kure Beach Blue Crab Dad Hat: kure-beach · $42 https://shorelist.net/shop/products/the-blue-crab-dad-hat-kure-beach.html
+- Kure Beach Scallop Shell Printed Canvas Tote Bag: kure-beach · $36 https://shorelist.net/shop/products/kure-beach-scallop-shell-printed-canvas-tote-bag.html
+- Kure Beach Lifeguard Stand Bucket Hat: kure-beach · $42 https://shorelist.net/shop/products/the-lifeguard-stand-bucket-hat-kure-beach.html
+- Kure Beach Blue Crab Canvas Tote: kure-beach · $48 https://shorelist.net/shop/products/the-blue-crab-canvas-tote-kure-beach.html
+- Kure Beach Lifeguard Stand Dad Hat: kure-beach · $42 https://shorelist.net/shop/products/the-lifeguard-stand-dad-hat-kure-beach.html
+- Kure Beach Lifeguard Stand Canvas Tote: kure-beach · $48 https://shorelist.net/shop/products/the-lifeguard-stand-canvas-tote-kure-beach.html
+- Kure Beach Sea Turtle Printed Crewneck Sweatshirt: kure-beach · $88 https://shorelist.net/shop/products/kure-beach-sea-turtle-printed-crewneck-sweatshirt.html
+- Kure Beach Sea Turtle Printed Garment-Dyed Tee: kure-beach · $42 https://shorelist.net/shop/products/kure-beach-sea-turtle-printed-garment-dyed-tee.html
+- Kure Beach Sanderling Printed Garment-Dyed Tee: kure-beach · $44 https://shorelist.net/shop/products/kure-beach-sanderling-printed-garment-dyed-tee.html
+- Kure Beach Sea Turtle Printed Canvas Tote: kure-beach · $48 https://shorelist.net/shop/products/kure-beach-sea-turtle-printed-canvas-tote.html
+- Wrightsville Beach Christmas Ornament 2026: wrightsville-beach · $18 https://shorelist.net/shop/products/wrightsville-beach-christmas-ornament-2026.html
+- Wrightsville Beach Daymark Cap: wrightsville-beach · $49 https://shorelist.net/shop/products/daymark-corduroy-cap-wrightsville-beach.html
+- Wrightsville Beach Scallop Shell Printed Garment-Dyed Tee: wrightsville-beach · $42 https://shorelist.net/shop/products/wrightsville-beach-scallop-shell-printed-garment-dyed-tee.html
+- Wrightsville Beach Oystercatcher Printed Garment-Dyed Tee: wrightsville-beach · $44 https://shorelist.net/shop/products/wrightsville-beach-oystercatcher-printed-garment-dyed-tee.html
+- Wrightsville Beach Scallop Shell Printed Mug: wrightsville-beach · $30 https://shorelist.net/shop/products/wrightsville-beach-scallop-shell-printed-mug.html
+- Wrightsville Beach Sloop All Over Print Duffel Bag: wrightsville-beach · $98 https://shorelist.net/shop/products/wrightsville-beach-sloop-all-over-print-duffel-bag.html
+- Wrightsville Beach Sweatshirt, Sailfish: wrightsville-beach · $88 https://shorelist.net/shop/products/wrightsville-beach-sailfish-printed-crewneck-sweatshirt.html
+- Wrightsville Beach Sailfish T-Shirt: wrightsville-beach · $42 https://shorelist.net/shop/products/wrightsville-beach-sailfish-printed-garment-dyed-tee.html
+- Wrightsville Beach Sailfish Printed Canvas Tote: wrightsville-beach · $48 https://shorelist.net/shop/products/wrightsville-beach-sailfish-printed-canvas-tote.html
+- Wilmington Live Oak Embroidered Crewneck: wilmington · $88 https://shorelist.net/shop/products/the-live-oak-embroidered-crewneck-wilmington.html
+- Camellia Carolina Coast Kiss-Cut Vinyl Sticker, 3 inch: wilmington · $6 https://shorelist.net/shop/products/camellia-carolina-coast-kiss-cut-vinyl-sticker-3-inch.html
+- Wild Venus Flytrap Cape Fear Printed Garment-Dyed Tee: wilmington · $42 https://shorelist.net/shop/products/wild-venus-flytrap-cape-fear-printed-garment-dyed-tee.html
+- Carolina Beach Megalodon Tooth Framed Art Print: carolina-beach · $84 https://shorelist.net/shop/products/carolina-beach-megalodon-tooth-framed-art-print.html
+- Carolina Beach Brown Pelican Framed Art Print: carolina-beach · $84 https://shorelist.net/shop/products/carolina-beach-brown-pelican-framed-art-print.html
+- Carolina Beach Megalodon Tooth Illustration Printed Garment-Dyed Tee: carolina-beach · $42 https://shorelist.net/shop/products/carolina-beach-megalodon-tooth-illustration-printed-garment-dyed-tee.html
+- Kure Beach Sea Turtle Framed Art Print: kure-beach · $84 https://shorelist.net/shop/products/kure-beach-sea-turtle-framed-art-print.html
+- Kure Beach Blue Crab Framed Art Print: kure-beach · $84 https://shorelist.net/shop/products/kure-beach-blue-crab-framed-art-print.html
+- Blue Crab Carolina Coast Insulated Stainless Water Bottle, 20 oz: kure-beach · $39 https://shorelist.net/shop/products/blue-crab-carolina-coast-insulated-stainless-water-bottle-20-oz.html
+- Blue Crab Carolina Coast Kiss-Cut Vinyl Sticker, 3 inch: kure-beach · $6 https://shorelist.net/shop/products/blue-crab-carolina-coast-kiss-cut-vinyl-sticker-3-inch.html
+- Wrightsville Beach Sailfish Framed Art Print: wrightsville-beach · $84 https://shorelist.net/shop/products/wrightsville-beach-sailfish-framed-art-print.html
+- Wrightsville Beach Sea Oats Framed Art Print: wrightsville-beach · $84 https://shorelist.net/shop/products/wrightsville-beach-sea-oats-framed-art-print.html
+- Sea Oats Carolina Coast Insulated Stainless Tumbler, 20 oz: wrightsville-beach · $38 https://shorelist.net/shop/products/sea-oats-carolina-coast-insulated-stainless-tumbler-20-oz.html
+- Sea Oats Carolina Coast Kiss-Cut Vinyl Sticker, 3 inch: wrightsville-beach · $6 https://shorelist.net/shop/products/sea-oats-carolina-coast-kiss-cut-vinyl-sticker-3-inch.html
+- Wrightsville Beach Towel, Sloop Print: wrightsville-beach · $58 https://shorelist.net/shop/products/wrightsville-beach-sloop-printed-beach-towel.html
+- Wrightsville Beach Sloop Printed Beach Cloth, 38 x 81 in: wrightsville-beach · $79 https://shorelist.net/shop/products/wrightsville-beach-sloop-printed-beach-cloth-38-x-81-in.html
+- Banks Channel Crewneck, Wrightsville Beach: wrightsville-beach · $88 https://shorelist.net/shop/products/banks-channel-sunset-sail-crewneck.html
+- Wrightsville Beach Sweatshirt, Varsity Crew: wrightsville-beach · $78 https://shorelist.net/shop/products/wrightsville-beach-varsity-crewneck.html
+- Carolina Beach Varsity Crewneck: carolina-beach · $78 https://shorelist.net/shop/products/carolina-beach-varsity-crewneck.html
+- Kure Beach Varsity Crewneck: kure-beach · $78 https://shorelist.net/shop/products/kure-beach-varsity-crewneck.html
+- Wilmington Varsity Crewneck: wilmington · $78 https://shorelist.net/shop/products/wilmington-varsity-crewneck.html
+- ILM Crewneck: wilmington · $78 https://shorelist.net/shop/products/ilm-crewneck.html
+- Wrightsville Beach Crewneck, Sloop Embroidery: wrightsville-beach · $88 https://shorelist.net/shop/products/the-sloop-embroidered-crewneck-wrightsville-beach.html
+- Wrightsville Beach Hat, Sloop Corduroy Cap: wrightsville-beach · $49 https://shorelist.net/shop/products/the-sloop-corduroy-cap-wrightsville-beach.html
+- Kure Beach Blue Crab Corduroy Cap: kure-beach · $49 https://shorelist.net/shop/products/the-blue-crab-corduroy-cap-kure-beach.html
+- Wilmington Live Oak Corduroy Cap: wilmington · $49 https://shorelist.net/shop/products/the-live-oak-corduroy-cap-wilmington.html
+- Wrightsville Beach Beanie, Sloop Cuffed: wrightsville-beach · $30 https://shorelist.net/shop/products/the-sloop-cuffed-beanie-wrightsville-beach.html
+- Daymark Cuffed Beanie, Wrightsville Beach: wrightsville-beach · $30 https://shorelist.net/shop/products/daymark-cuffed-beanie-wrightsville-beach.html
+- Wilmington Live Oak Cuffed Beanie: wilmington · $30 https://shorelist.net/shop/products/the-live-oak-cuffed-beanie-wilmington.html
+- Kure Beach Blue Crab Cuffed Beanie: kure-beach · $30 https://shorelist.net/shop/products/the-blue-crab-cuffed-beanie-kure-beach.html
+- Daymark Blue Crab Crewneck: wilmington · $88 https://shorelist.net/shop/products/daymark-blue-crab-crewneck.html
+- Wrightsville Beach Sloop Printed Canvas Tote Bag: wrightsville-beach · $36 https://shorelist.net/shop/products/wrightsville-beach-sloop-printed-canvas-tote-bag.html
+- Wrightsville Beach Sloop Printed Zip Pouch: wrightsville-beach · $30 https://shorelist.net/shop/products/wrightsville-beach-sloop-printed-zip-pouch.html
+- Kure Beach Blue Crab Rope Cap: kure-beach · $45 https://shorelist.net/shop/products/the-blue-crab-rope-cap-kure-beach.html
+- Carolina Beach Lifeguard Stand Rope Cap: carolina-beach · $45 https://shorelist.net/shop/products/the-lifeguard-stand-rope-cap-carolina-beach.html
+- Kure Beach Lifeguard Stand Rope Cap: kure-beach · $45 https://shorelist.net/shop/products/the-lifeguard-stand-rope-cap-kure-beach.html
 
 ## Guides and answers by activity
 
@@ -352,7 +531,7 @@ A: Per the City of Wilmington, on-street meters are enforced Monday to Saturday 
 Q: How do I pay for parking at Wrightsville Beach?
 A: The town lists pay stations and Text2Park mobile payment, and operates more than 1,600 metered public spaces. Rates and hours vary by location, so check the posted signs.
 
-## Upcoming events in Wilmington, NC and the beaches (updated 2026-11-26; live list at https://shorelist.net/events)
+## Upcoming events in Wilmington, NC and the beaches (updated 2026-11-27; live list at https://shorelist.net/events)
 - Rooted in Memory: The Gullah Geechee Vision of Jonathan Green: 2026-06-19 to 2027-01-24, Cameron Art Museum, Greater Wilmington. Arts. Museum admission. https://cameronartmuseum.org/exhibitions/ | ShoreList page: https://shorelist.net/events/rooted-in-memory-the-gullah-geechee-visi-2026-06-19
 - Kure Beach Holiday Market: 2026-11-21 to 2026-11-28, 9:00 AM, Ocean Front Park and Pavilion, Kure Beach. Markets. Free to browse. https://www.townofkurebeach.org/recreation/ocean-front-park-and-pavilion/activities-events | ShoreList page: https://shorelist.net/events/kure-beach-holiday-market-2026-11-21
 - Riverfront Farmers Market: 2026-11-21 to 2026-11-28, Dock Street, Downtown, Downtown. Markets. https://www.wilmingtondowntown.com/events/
@@ -363,7 +542,6 @@ A: The town lists pay stations and Text2Park mobile payment, and operates more t
 - North Carolina Holiday Flotilla and Fireworks: 2026-11-28, 6:00 PM, Banks Channel, Wrightsville Beach. Holiday. Free to watch from public areas (cost not stated on sources). https://www.ncholidayflotilla.org/ | ShoreList page: https://shorelist.net/events/north-carolina-holiday-flotilla-and-fire-2026-11-28
 - Really Cool Stuff Holiday Market: 2026-11-28, Downtown Wilmington, Downtown. Markets. https://www.wilmingtondowntown.com/events/
 - Wilmington Holiday Parade: 2026-11-29, 6:00 PM, Front Street, Downtown. Holiday. Free. https://www.wilmingtonnc.gov/Events-directory/Holiday-Parade-2026 | ShoreList page: https://shorelist.net/events/wilmington-holiday-parade-2026-11-29
-- Gentle Yoga: 2026-12-01, 9:00 AM, NC, Wilmington. Arts. https://cameronartmuseum.org/event/gentle-yoga-55/ | ShoreList page: https://shorelist.net/events/cameron-10002074-1796115600-17961192-ada3dfa3-2026-12-01
 - Public Tour: 2026-12-02, 1:00 PM, Cameron Art Museum, Wilmington. Arts. https://cameronartmuseum.org/event/public-tour-93/ | ShoreList page: https://shorelist.net/events/cameron-10002075-1796216400-17962182-514a2a56-2026-12-02
 - Sing We Now of Christmas: A Joyful Celebration of the Season: 2026-12-02, Wilson Center at Cape Fear Community College, Downtown. Music. Tickets required. https://www.wilsoncentertickets.com/events/detail/sing-we-now-of-christmas-1575279 | ShoreList page: https://shorelist.net/events/sing-we-now-of-christmas-a-joyful-celebr-2026-12-02
 - Jazz at CAM: Yolanda Rabun: 2026-12-03, Cameron Art Museum, Greater Wilmington. Music. Tickets required per prior Jazz at CAM concerts; price not on listing. https://cameronartmuseum.org/event/jazz-at-cam-yolanda-rabun/ | ShoreList page: https://shorelist.net/events/jazz-at-cam-yolanda-rabun-2026-12-03
@@ -531,6 +709,9 @@ Handpicked restaurants, coffee shops and bars. Editorial picks, not paid placeme
 - Jack Mackerel's Bar (Kure Beach; Island Cocktails): Caribbean cocktails and festive island energy just off the Kure boardwalk: the pre-dinner rum drink or the after-dinner encore.
 
 ## Shop (original ShoreList designs, printed on demand)
+- Wrightsville Beach Hoodie, Varsity Fleece ($92): WRIGHTSVILLE arched over BEACH in soft cream varsity lettering on a garment-dyed heavyweight hoodie. Denim or True Navy. https://shorelist.myshopify.com/products/wrightsville-beach-varsity-hoodie
+- Wrightsville Beach T-Shirt, Varsity Tee ($42): WRIGHTSVILLE arched over BEACH in soft cream varsity lettering on a garment-dyed tee. Blue Jean or Blue Spruce. https://shorelist.myshopify.com/products/wrightsville-beach-varsity-tee
+- Wrightsville Beach Signature Crewneck ($78): Signature Wrightsville Beach lettering with the small ShoreList pennant on a garment-dyed crewneck. Five colors. https://shorelist.myshopify.com/products/wrightsville-beach-signature-crewneck
 - Wrightsville Beach Tote, Sloop Print ($48): A printed tote with a navy sloop pattern running seam to seam across the whole bag. A Wrightsville Beach carry-all for the Carolina coast. https://shorelist.myshopify.com/products/wrightsville-beach-sloop-all-over-print-tote-bag
 - Wrightsville Beach Sloop Weekender Tote Bag ($78): A large printed weekender tote with a navy sloop pattern wrapped around the body and bottom. A Wrightsville Beach bag for beach weekends on the Carolina coast. https://shorelist.myshopify.com/products/wrightsville-beach-sloop-weekender-tote-bag
 - Wrightsville Beach Sloop Picnic and Beach Blanket ($98): A printed picnic and beach blanket with a navy sloop pattern edge to edge on a fleece front. A Wrightsville Beach blanket for shore picnics on the Carolina coast. https://shorelist.myshopify.com/products/wrightsville-beach-sloop-picnic-and-beach-blanket
@@ -568,7 +749,6 @@ Handpicked restaurants, coffee shops and bars. Editorial picks, not paid placeme
 - Airlie Oak Wilmington All Over Print Zip Pouch ($28): A printed zip pouch with a painterly illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC, on warm ivory. Two sizes, made to order. https://shorelist.myshopify.com/products/airlie-oak-wilmington-all-over-print-zip-pouch
 - Airlie Oak Wilmington Throw Pillow ($42): A printed square throw pillow with a painterly illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC, on warm ivory. Two sizes, made to order. https://shorelist.myshopify.com/products/airlie-oak-wilmington-throw-pillow
 - Airlie Oak Wilmington Tea Towel ($30): A printed kitchen tea towel with a painterly illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC, on warm ivory. Made to order. https://shorelist.myshopify.com/products/airlie-oak-wilmington-tea-towel
-- Carolina Coast Terry Beach Towel ($68): Full-size 35 x 62 in terry beach towel in 100% cotton, with a restrained Carolina Coast lockup. https://shorelist.myshopify.com/products/beach-towel
 - Wrightsville Beach Can Cooler ($12): Navy foam-lined can cooler with the town name, printed on both sides. Folds flat for the beach bag. https://shorelist.myshopify.com/products/wrightsville-beach-can-cooler
 - Carolina Beach Can Cooler ($12): Navy foam-lined can cooler with the town name, printed on both sides. Folds flat for the beach bag. https://shorelist.myshopify.com/products/carolina-beach-can-cooler
 - Carolina Beach Scallop Shell Printed Crewneck Sweatshirt ($88): A hand-inked navy and coral scallop shell printed small on the left chest of a white garment-dyed crewneck. A Carolina Beach layer for cool evenings on the coast. https://shorelist.myshopify.com/products/carolina-beach-scallop-shell-printed-crewneck-sweatshirt
@@ -614,7 +794,6 @@ Handpicked restaurants, coffee shops and bars. Editorial picks, not paid placeme
 - Wrightsville Beach Towel, Sloop Print ($58): A printed beach towel with an all-over pattern of small sailboats on navy, in two sizes. Made to order. https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-beach-towel
 - Wrightsville Beach Sloop Printed Beach Cloth, 38 x 81 in ($79): A large printed beach cloth, 38 x 81 in, with an all-over pattern of small sailboats on navy and knotted fringe ends. Made to order. https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-beach-cloth-38-x-81-in
 - Banks Channel Crewneck, Wrightsville Beach ($88): A wooden sloop slipping down Banks Channel at sunset, printed across the back of a crewneck sweatshirt with the town name arched above it. A small red pennant sits on the chest. https://shorelist.myshopify.com/products/banks-channel-sunset-sail-crewneck
-- Sloop Organic Cotton Market Tote ($48): Organic cotton twill, 20 x 14 x 5 in, with one small sloop print. Natural color, sturdy handles. https://shorelist-shop.fourthwall.com/products/salt-wash-organic-cotton-market-tote
 - Wrightsville Beach Sweatshirt, Varsity Crew ($78): WRIGHTSVILLE arched over BEACH in cream varsity lettering on a garment-dyed crewneck, with 1899, the year the town was incorporated. https://shorelist.myshopify.com/products/wrightsville-beach-varsity-crewneck
 - Carolina Beach Varsity Crewneck ($78): CAROLINA arched over BEACH in cream varsity lettering on a garment-dyed crewneck, with 1925, the year the town was incorporated. https://shorelist.myshopify.com/products/carolina-beach-varsity-crewneck
 - Kure Beach Varsity Crewneck ($78): KURE BEACH arched over N.C. in cream varsity lettering on a garment-dyed crewneck, with Pleasure Island and 1947. https://shorelist.myshopify.com/products/kure-beach-varsity-crewneck
