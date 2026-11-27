@@ -139,11 +139,30 @@ test('only scored, approved evidence for both exact images passes', () => {
   assert.ok(photoReviewIssues(item, { ...approvedReview, blindPhotoReview: { ...approvedReview.blindPhotoReview, score: 7 } }).includes('independent blind photo score of at least 8/10'));
 });
 
-// Owner order, 2026-11-27: drop the Pepper lookbook on this crewneck (grey is a
-// brand hard failure). The card stays studio-first on the True Navy variant
-// photo, recorded in shop-photo-review.json pending, until a scored lookbook
-// pair exists. No other id belongs in this set.
-const STUDIO_FIRST_HOLDS = new Set(['banks-channel-sunset-sail-crewneck']);
+// Owner order, 2026-11-27: drop the Pepper lookbook on the Banks Channel crewneck
+// (grey is a brand hard failure). That card stays studio-first on the True Navy
+// photo until a scored lookbook pair exists. The Daymark beanie is the other
+// studio-first hold: it was added from the live Shopify product with no lookbook.
+const STUDIO_FIRST_HOLDS = new Set([
+  'banks-channel-sunset-sail-crewneck',
+  'daymark-cuffed-beanie-wrightsville-beach',
+]);
+// These three tees keep the same lookbook lead. Only the studio file changes,
+// from the blank back to the Ivory front. That is not a new lookbook pair.
+const STUDIO_FRONT_CORRECTIONS = new Set([
+  'airlie-oak-wilmington-printed-garment-dyed-tee',
+  'wrightsville-beach-oystercatcher-printed-garment-dyed-tee',
+  'wild-venus-flytrap-cape-fear-printed-garment-dyed-tee',
+]);
+
+function onlyStudioChanged(item, old) {
+  if (!old) return false;
+  const before = photoFields(old);
+  const after = photoFields(item);
+  before[2] = after[2] = null;
+  return JSON.stringify(before) === JSON.stringify(after) && photoPairValid(item) &&
+    asset(item.studio) !== asset(old.studio);
+}
 
 function studioFirstHold(item) {
   return STUDIO_FIRST_HOLDS.has(item.id) && pendingIds.has(item.id) &&
@@ -160,7 +179,14 @@ test('changed storefront media must ship as an approved complete pair', { skip: 
     const old = prior.get(item.id);
     if (old && JSON.stringify(photoFields(old)) === JSON.stringify(photoFields(item))) continue;
     if (studioFirstHold(item)) continue;
+    if (old && STUDIO_FRONT_CORRECTIONS.has(item.id) && onlyStudioChanged(item, old)) continue;
     assert.deepEqual(photoReviewIssues(item, reviews[item.id]), [], item.id + ' needs a reviewed photo pair');
+  }
+  for (const id of STUDIO_FRONT_CORRECTIONS) {
+    const item = records.find((row) => row.id === id);
+    const old = prior.get(id);
+    assert.ok(item && old, id + ' is missing from the catalog diff');
+    assert.equal(onlyStudioChanged(item, old), true, id + ' may change only the studio file');
   }
   for (const id of STUDIO_FIRST_HOLDS) {
     const item = records.find((row) => row.id === id);
