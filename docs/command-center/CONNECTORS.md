@@ -1,18 +1,56 @@
-# ShoreList connector runbook
+# ShoreList connector runbook and inventory
 
-Access is specific to the agent, workspace, provider, and action. Use the existing authorized ShoreList account where available. Provider setup belongs in secure settings. Record connection names, permissions, exact objects read, and validation dates. Keep secret values, signed URLs, customer data, and payment details out of handoffs.
+Checked Thu Nov 26, 2026, about 11:00 PM ET by ShoreList Chief (executor). ShoreList only. No secrets recorded here; env var names only.
+Status key: CONNECTED (read-only identity call succeeded), CONNECTED-WRONG-ACCOUNT (works, but the account is not ShoreList: do not use), NEEDS-AUTH (installed, not signed in), NO-CONNECTOR (nothing installed in this session), USER-STATED (RJ says the paid account is active, not verified by a bot).
+Access route order for anything not connected: (1) connector/plugin, (2) official API with a token kept in the platform's secure settings, (3) the signed-in browser on the box.
+Plugin IDs: only Stripe (408) is known. The plugin search tool (SearchPlugins / GetMcpServerStatus) was not available in the executor's session, so every "plugin: look up" line still needs a SearchPlugins call from ShoreList Chief's own session.
 
-| Provider | Intended use | First verification | Boundaries |
+## Usable for ShoreList today
+| Service | Status | How bots access it | Safe config notes |
 | --- | --- | --- | --- |
-| **GitHub** | Shared repository, branch and PR ownership, check results and evidence | Fetch `ShoreList/ShoreList` main. Open the target PR and its checks with the assigned identity | Follow branch scope and release approval. Stage files by name. Treat a main merge as production-capable |
-| **Netlify** | Deployment status, preview verification, functions and hosting | Match the preview or live artifact to its exact Git SHA or asset digest. Visit the intended route | Use the smallest needed access. Verify production independently after an authorized release |
-| **Higgsfield** | Exact-product AI lookbooks and approved creative video | Discover official workspace tools or plugins. Confirm the project account and available reference asset, image generation/editing, video, job-status and export operations | Verify credits and permission before any consuming operation. Use official provider tool names as discovered. Keep drafts clearly identified and require exact-variant reference, actual studio photo, approval and disclosure |
-| **Shopify** | Product, variant, offer, order evidence and hosted checkout | Read the ShoreList storefront or authorized Admin. Compare one exact variant and price with `shop-product` | Check eligibility by promo window and stop before payment for ordinary agent tests. Reversible copy, SEO and merchandising edits follow AGENTS.md and need a before-and-after log |
-| **Fourthwall** | Template/offer evidence, draft artwork and hosted checkout | Read the template and exact regional variant capabilities or an authorized store offer | Use hidden draft mode when authorized. Confirm no existing offer before a retry. Publication, spending, and merchant changes follow owner gates |
-| **CJ Dropshipping** | Candidate search, exact variant, warehouse stock and freight quotes | Reuse Dot's authenticated evidence or run a read-only search/inspection in its existing authorized session | Keep `CJ_API_KEY` in the provider's secure environment. Use ZIP samples and exact services. Keep drafts dormant pending review. Order creation, payment, and supplier automation require approval |
-| **Stripe and Printify** | Hosted checkout, fulfillment and evidence for applicable products | Inspect authorized test or read-only evidence and run the existing mocks | Keep production webhooks, server-side prices, and fulfillment safeguards intact. Real orders, spending, and account changes require authority |
-| **GA4 and Search Console** | Qualified search demand, funnel and campaign verification | Confirm the correct ShoreList property and a read-only report or approved debug event | Keep PII out of URLs, events and output. Measured results need property evidence |
-| **Other ShoreList connectors** | Canva, social platforms, Formspree, Resend or documented owner tools where relevant | Inventory installed tools and validate the ShoreList account and the single needed action | Use the least necessary scope. Sending, publishing, advertising spend, purchases, or account changes require existing authorization |
+| GitHub `ShoreList/ShoreList` | CONNECTED, VERIFIED | `cursor-github` connector, account `ShoreList` (admin+push). gh CLI on the box is NOT logged in. | Inline tools can read, branch, open/merge PRs, but cannot commit files. File changes go through a Cursor cloud agent (Codex) on a branch. `main` has no branch protection (VERIFIED Nov 26). |
+| Netlify hosting | Live, NO-CONNECTOR | Indirect: merge to `main` deploys (see manual). Netlify posts PR checks (Redirect rules, Header rules, Pages changed) on site `stellular-yeot-4f4d8a`. | Route: plugin look up, then Netlify personal access token + `netlify` CLI, then browser app.netlify.com. Env var names in repo INTEGRATIONS.md. |
+| Gmail `shorelistwilmington@gmail.com` | CONNECTED, VERIFIED | `user-Gmail` (get_me returned this address) | ShoreList's main mailbox. Read OK. Sending any email needs RJ's yes. |
+| Google Calendar `shorelistwilmington@gmail.com` | CONNECTED, VERIFIED | `user-Google-calendar` | Primary calendar is ShoreList's. |
+| Google Drive | CONNECTED | `user-Google-drive` | Found "ShoreList Creative Library" folder, ShoreList-Lookbook.zip, merch spec/audit docs. Which Google account owns the connection: UNKNOWN (no whoami tool). |
+| Google Sheets | CONNECTED | `user-Google-sheets` | Account identity UNKNOWN. Use only ShoreList-named sheets. |
+| Notion | CONNECTED | `user-Notion`, workspace "RJ Brideau's Space" (RJ's personal account) | OK for ShoreList pages if kept under a ShoreList-only parent page. |
+| Canva | CONNECTED | `user-Canva` | Search for "ShoreList" returned 0 designs. Account identity UNKNOWN; confirm it is not the non-ShoreList Canva before making ShoreList designs. |
+| vidIQ | CONNECTED, no social accounts linked | `user-Vidiq` (has Instagram Reel / TikTok publish tools) | Possible posting route for @shorelist IG/TikTok once RJ links them (account change). |
+| Firecrawl, TubeAlfred | CONNECTED | `user-Firecrawl`, `user-Tubealfred-youtube` | Brand-neutral public research only. |
+| Stripe | NEEDS-AUTH | Plugin 408 installed, needs sign-in | Repo uses `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET` (values in Netlify only). Live/test mode UNKNOWN. |
+
+## Connected but NOT ShoreList: do not use
+| Namespace | Actual account | Note |
+| --- | --- | --- |
+| `user-Google-calendar--rj` | a non-ShoreList account | Mislabeled "--rj"; it is non-ShoreList's calendar. |
+| `user-Gmail--rj` | itsrjbrideau@gmail.com | RJ's personal Gmail, not rj@shorelist.net. Read only if RJ asks; never send from it. rj@shorelist.net is not connected. |
+| `user-Cloudflare` | a non-ShoreList account | Not ShoreList, do not use. shorelist.net DNS is at Namecheap (registrar-servers.com), not Cloudflare. |
+| `user-Buffer` | a non-ShoreList account and channels | Not ShoreList, do not use. Do not add ShoreList channels to this org. |
+| `user-Google-search-console` | only a non-ShoreList property | No shorelist.net property visible. |
+| `user-Google-analytics` | a non-ShoreList account | No ShoreList property visible. ShoreList pages use GA4 ID G-EN91RH3PZV (public ID). |
+| `user-X` | a non-ShoreList X account | Not ShoreList. |
+| `user-Runway` | a non-ShoreList team | Not ShoreList. |
+| `user-Fal` | a non-ShoreList account | Not ShoreList. |
+
+## Not connected (with access route)
+| Service | Status | Route 1 connector/plugin | Route 2 official API + token | Route 3 browser on the box | Notes |
+| --- | --- | --- | --- | --- | --- |
+| Higgsfield | NO-CONNECTOR, USER-STATED paid through Sun Nov 29 night | plugin: look up | Higgsfield cloud API key (platform.higgsfield.ai) | higgsfield.ai signed in as ShoreList | Top of queue: use before it lapses. |
+| Meta (Facebook + Instagram @shorelist) | NO-CONNECTOR, USER-STATED top-tier plan; live IG ads | plugin: look up (or vidIQ link) | Graph API system-user token from Meta Business Suite | business.facebook.com signed in | Live IG ads: read-only reporting at most. |
+| TikTok @shorelist | NO-CONNECTOR; live TikTok ads | plugin: look up (or vidIQ link) | TikTok Content Posting API (app approval) | tiktok.com / TikTok Studio signed in | TikTok ads: untouched, read-only reporting at most. |
+| Shopify `shorelist.myshopify.com` | NO-CONNECTOR this session (was read via RJ's Shopify tool Nov 25) | plugin: look up | Admin API custom-app token | admin.shopify.com signed in | Needed to verify SHOREFRIDAY15 / SHORECYBER15 and ingest products. |
+| Printify | NO-CONNECTOR | plugin: look up | Printify personal access token (`PRINTIFY_API_TOKEN`, `PRINTIFY_SHOP_ID` names) | printify.com signed in | Publish gate-passed products; real order-by dates. |
+| Google Search Console (shorelist.net) | Connector is on the wrong account | reconnect `user-Google-search-console` as the ShoreList Google account | Search Console API (same OAuth) | search.google.com signed in | Whether a shorelist.net property exists anywhere: UNKNOWN. |
+| Google Analytics 4 (G-EN91RH3PZV) | Connector is on the wrong account | reconnect `user-Google-analytics` as the ShoreList Google account | GA Data API | analytics.google.com | |
+| Google Business Profile | NO-CONNECTOR | plugin: look up | Business Profile API (needs Google access approval) | business.google.com signed in | Local SEO. |
+| Fourthwall `shorelist-shop.fourthwall.com` | NO-CONNECTOR | plugin: look up | Fourthwall Open API credentials | fourthwall.com signed in | 1 catalog item links out; not in BF sale. |
+| CJdropshipping | NO-CONNECTOR | plugin: look up | CJ API key (`CJ_API_KEY` name) | cjdropshipping.com signed in | Code-only adapter; Dot owns CJ research. |
+| TikTok Shop | NO-CONNECTOR | plugin: look up | TikTok Shop Partner API (app approval) | seller-us.tiktok.com | Not in use (UNKNOWN whether a shop exists). |
+| LinkedIn | NO-CONNECTOR, USER-STATED top-tier subscription | plugin: look up | Marketing API (partner approval) | linkedin.com signed in | Low priority for a local tours shop. |
+| Metricool / Supermetrics / Windsor.ai | NO-CONNECTOR; no evidence ShoreList has accounts | plugin: look up | each vendor API key | vendor site | Optional reporting. Adding one is a new subscription: RJ's yes. |
+| Vercel | Not used | n/a | n/a | n/a | No vercel.json; site is on Netlify. Do not set up. |
+| Namecheap (DNS for shorelist.net) | NO-CONNECTOR | none | Namecheap API (IP allow-list) | namecheap.com | DNS changes are account changes: RJ's yes. |
 
 ## First session checklist
 

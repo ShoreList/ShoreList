@@ -4,6 +4,17 @@
 
 This handoff covers ShoreList exclusively. There are no credentials or customer records in this document. Use the authorized ShoreList connections available to your session.
 
+## Current standing directions (Nov 26, 2026, 11:15 PM ET)
+
+This section overrides older approval language below. Full runbook: [OPERATING-MANUAL.md](OPERATING-MANUAL.md). Connector inventory: [CONNECTORS.md](CONNECTORS.md).
+
+- **Team:** ShoreList Chief plans and assigns. Shop & Merch owns products and shop fixes. Social & Local owns posts, local SEO and the operator pipeline. Codex owns implementation and release tests. Claude owns independent review.
+- **Edit:** fresh branch off `main`, claim files in `CODEX_TASKS.md` (one writer per file), bump `sw.js` VERSION for cached-file changes, run `check-site`, `check-keywords`, `thin-content-gate`.
+- **Publish:** products need an independent score with mean 8.0+ and no line under 7. Site changes go by PR with CI `check` green and `speed` not worse, then squash merge.
+- **Deploy:** Netlify site `stellular-yeot-4f4d8a` serves shorelist.net and /shop; merging to `main` deploys. Verify live: `sw.js` VERSION matches `main`, private-window check of changed pages at 1280 and 390, /shop loads and hands off to Shopify, nightly `verify-live` summary.
+- **Approvals:** RJ's Nov 26 rule lets bots publish gate-passed products, deploy through the normal pipeline and post scored content without asking. Spending, new subscriptions, DMs/emails to people or businesses, and account or permission changes need RJ's yes, batched in `/workspace/shorelist/rj-morning.md` (not `edward-morning.md`). Live IG and TikTok ads stay untouched.
+- **Commits:** the inline GitHub connector can branch, open and merge PRs but cannot commit files; file changes go through a Codex cloud agent.
+
 ## Latest repository checkpoint
 
 - Main at packaging: [`adae375`](https://github.com/ShoreList/ShoreList/commit/adae375ec978060c1c79b9a3906e02ba62ad1896). [#350](https://github.com/ShoreList/ShoreList/pull/350) merged paced merchant checks that respect rate limits. This supersedes the older assignment to add pacing in the dated snapshot below.
@@ -16,7 +27,6 @@ This handoff covers ShoreList exclusively. There are no credentials or customer 
 Paste the block below into the ShoreList-only Grok project or agent instructions. Give the agent this command center and the referenced repository files from the handoff packet.
 
 ```text
-You are the ShoreList research, merchandising, and creative specialist. Work exclusively for ShoreList LLC, a Wilmington, North Carolina guide and coastal shop run by RJ Brideau. Never mix ShoreList with Late to AI, TaskBot Market, or unrelated accounts, audiences, files, assets, prompts, data, and credentials. Codex owns repository implementation and release testing. Claude provides independent review where eligible. Dot is the CJ research owner where its existing access is available.
 
 Read the command center, the dated status, the prompt library, and the connector runbook. Then read AGENTS.md, RELEASE_GATES.md, the Coastal Brand Standard, the supplier expansion and photo-review rules, and the current engineering queue. Read the source references from the latest main when connected. Treat yesterday's links, product counts, campaign windows, prices, code status, and credentials as facts to recheck. The original CODEX_START_PROMPT.md is included as a source, and its launch countdown is historical.
 
@@ -224,7 +234,6 @@ Evidence labels used in every doc: **VERIFIED** (observed or executed in this re
 
 ShoreList LLC (Wilmington, NC; owner/approver: RJ Brideau) is a local guide and bookings site for Wilmington and the Cape Fear beaches (Wrightsville, Carolina, Kure) plus a merch shop at `shorelist.net/shop`. Goals: be the locals' go-to and the tourists' "need it like oxygen" city guide (events, things to do, places), and run the shop like an established brand (benchmarks the owner named: Ralph Lauren, Faherty, Kiel James Patrick). Public launch target: **Thursday 2026-11-26, 5 PM Eastern**. Black Friday and Cyber Monday sales are scheduled (see `INTEGRATIONS.md`).
 
-**Brand wall (hard rule):** ShoreList is a separate business from Late to AI and TaskBot Market. Never add their names, products, links, copy, accounts, analytics IDs, code or data to this repo, the site or the Shopify store, and never reuse ShoreList assets there. If a task seems to need both, stop and report.
 
 ## 2. Hard operating rules
 
@@ -237,7 +246,6 @@ ShoreList LLC (Wilmington, NC; owner/approver: RJ Brideau) is a local guide and 
 7. Avoid generic AI-sounding copy, artificial product imagery and unsupported marketing claims. A product photo must show the product the customer receives (color, text, design). Colors we do not sell must not appear. AI-generated lifestyle imagery or video must be disclosed as such and must not misrepresent the product.
 8. Do not invent test results, sales, reviews, traffic, inventory or history.
 9. Copy rules enforced by `tools/check-site.mjs`: no em or en dashes in visible copy, no banned phrases (for example "Cape Fear coast"), no `Organization.sameAs` in JSON-LD until profiles are verified, and a content guard that fails the build on divisive slogans (see the guard regex in `tools/check-site.mjs`; do not weaken it). The shop headline is "Goods from Wilmington's coast." Keep copy plain, local and factual.
-10. Late to AI / TaskBot Market work is out of scope here.
 
 ## 3. Architecture (VERIFIED from repo files)
 
@@ -304,7 +312,6 @@ The owner's [Coastal Brand Standard](https://github.com/ShoreList/ShoreList/blob
 
 ## 9. Where context lives
 
-Repo: this package, `docs/`, `tools/shopify-compact.md`, `tools/shopify-ingest-plan.json`, `README` files under `data/`. Owner-side project docs (Claude Project "TaskBot Market + LateToAI", ShoreList files such as `claude/SHORELIST-LAUNCH-AUDIT-2026-11-25.md`, `claude/shorelist-build-rules-MASTER.md`, `claude/shorelist-hard-rules-v2.md`) hold the longer audit and build rules; the owner can attach them. Treat that material as background, and re-verify before relying on any number.
 
 </details>
 
@@ -323,7 +330,6 @@ You are the engineering agent for ShoreList LLC (Wilmington, NC), working in the
 Before doing anything else, read these files in this order and follow them as binding instructions: AGENTS.md, CODEX_HANDOFF.md, CODEX_TASKS.md, INTEGRATIONS.md, RELEASE_GATES.md, CHANGELOG.md. Do not ask me to re-explain the business, the stack or earlier decisions; they are in those files. If a file contradicts what you observe in the repo, trust what you can verify, say so, and propose the doc fix.
 
 Operating rules (full text in AGENTS.md):
-- ShoreList is a separate business from Late to AI and TaskBot Market. Never mix their names, code, data, assets or accounts.
 - No spending, deployment, deletion, new product publication or account changes without my explicit approval. Treat any merge to main as a possible deployment. Reversible Shopify description, SEO, merchandising and collection-organization changes are authorized; log before and after in CHANGELOG.md.
 - Never expose or commit credentials. Never enter passwords, accept terms or create accounts for me.
 - Work only on an isolated branch or git worktree. Claude Code may be editing this repo too: before touching a file, check open branches and CODEX_TASKS.md so two agents never edit the same file. Never overwrite unrelated work. Stage files by name; never commit .claude/.
@@ -359,7 +365,6 @@ A release is any merge to `main` (it can deploy). Every gate needs evidence in t
 ## G0 Scope and approvals (hard)
 - [ ] Change is within an authorized category (AGENTS rule 2) or has explicit owner approval in the PR thread.
 - [ ] No spend, account change, deletion, or new product publication included.
-- [ ] Brand wall respected (no Late to AI / TaskBot Market content).
 - [ ] No secrets in diff (`git diff origin/main | grep -nE 'sk_|whsec_|shpat_|re_[A-Za-z0-9]{16}|BEGIN .*PRIVATE'` returns nothing).
 - [ ] Rollback line written (`git revert <sha>`, bump `sw.js`; Shopify before/after record).
 
