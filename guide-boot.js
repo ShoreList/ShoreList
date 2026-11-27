@@ -1,6 +1,7 @@
 /* Starts widgets.js, and the guide chat when the launcher is on the page.
-   A click loads them immediately. Otherwise they start on requestIdleCallback
-   after the load event, so they do not run before the largest paint. */
+   A click loads them immediately. Otherwise they wait until 5 seconds after
+   the load event, then requestIdleCallback, so they do not run during the
+   largest paint. The guide stylesheet stays print-only until that same moment. */
 (function () {
   var started = false;
   function add(src) {
@@ -12,9 +13,14 @@
     s.setAttribute('data-sl-src', src);
     document.body.appendChild(s);
   }
+  function enableGuideCss() {
+    var links = document.querySelectorAll('link[href="/shore-guide.css"]');
+    for (var i = 0; i < links.length; i++) if (links[i].media === 'print') links[i].media = 'all';
+  }
   function load() {
     if (started) return;
     started = true;
+    enableGuideCss();
     var boot = document.querySelector('script[src="/guide-boot.js"]');
     if (boot && boot.getAttribute('data-widgets') === '1') add('/widgets.js');
     if (document.getElementById('slgOpen')) add('/shore-guide.js');
@@ -27,8 +33,10 @@
   var btn = document.getElementById('slgOpen');
   if (btn) btn.addEventListener('click', function () { window.__slgWantOpen = true; load(); });
   function later() {
-    if (window.requestIdleCallback) requestIdleCallback(load, { timeout: 4000 });
-    else setTimeout(load, 4000);
+    setTimeout(function () {
+      if (window.requestIdleCallback) requestIdleCallback(load);
+      else load();
+    }, 5000);
   }
   if (document.readyState === 'complete') later();
   else window.addEventListener('load', later);
