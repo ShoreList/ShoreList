@@ -320,7 +320,6 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 <link rel="manifest" href="/manifest.webmanifest"/>
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is ShoreList?", "acceptedAnswer": {"@type": "Answer", "text": "ShoreList is a hyperlocal experience booking platform for Wilmington, built specifically for the Wilmington & the Beaches area. We connect visitors and locals with locally-owned operators offering everything from ghost tours and surf lessons to kayak tours, film location experiences, and coastal nature walks. ShoreList lists Wilmington-area operators only."}}, {"@type": "Question", "name": "Is ShoreList live?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. ShoreList is live, and some experiences can be booked today: walking tours in downtown Wilmington and Carolina Beach, with secure checkout. Other experiences, including the ghost walk, film location tours, surf lessons and nature walks, are listed as coming soon and cannot be booked yet. You can join the waitlist to hear when one opens."}}, {"@type": "Question", "name": "Is there a cost to book an experience?", "acceptedAnswer": {"@type": "Answer", "text": "You pay the full price at booking: no surprises, no hidden fees, no second charge later. Secure checkout through Stripe takes under 60 seconds. Your booking is instantly confirmed and the operator is notified. You will never be charged anything beyond the price shown at checkout."}}, {"@type": "Question", "name": "Are the operators verified?", "acceptedAnswer": {"@type": "Answer", "text": "Every operator signs the ShoreList operator listing agreement before going live. As a condition of listing, operators certify that they carry commercial general liability insurance of at least $1,000,000 per occurrence and $2,000,000 aggregate, and they must provide a current certificate of insurance on request. Operators are responsible for holding the licenses and permits their business needs in North Carolina. ShoreList lists Wilmington-area operators only."}}, {"@type": "Question", "name": "What types of experiences are available?", "acceptedAnswer": {"@type": "Answer", "text": "ShoreList has guide pages for 22 categories of local coastal experiences, including ghost and history tours, surf lessons, film and TV location tours, kayak and paddleboard tours, sunset sails, fishing charters, nature walks (including wild Venus flytraps), e-bike rentals, beach photography and wildlife tours. Walking tours can be booked on ShoreList today. Other categories are listed as coming soon, with a waitlist. ShoreList lists Wilmington-area operators only: no national chains."}}, {"@type": "Question", "name": "What is your cancellation policy?", "acceptedAnswer": {"@type": "Answer", "text": "Cancel at least 24 hours before your experience and you receive a full refund, no questions asked. Cancellations made less than 24 hours before the experience are non-refundable. Weather-related cancellations, including operator-initiated cancellations due to unsafe conditions, always receive a full refund. All refunds are processed through Stripe and typically appear within 5 to 10 business days."}}]}</script>
-<script src="/luxe.js" defer></script>
 <!--HOME-CSS:start--><style id="home-css">
 /* Cinematic hero + widgets. Loaded after shorelist.css. */
 .hero.hero-cine{background:#0E1F33!important;color:#fff;min-height:100svh;padding-top:110px}
@@ -1620,7 +1619,7 @@ body:not(.home):not(.pg-home) .dock{display:none!important}
         <div class="tc-content">
           <div class="tc-name">Kure Beach</div>
           <div class="tc-tagline">Where the Cape Fear River meets the Atlantic.</div>
-          <ul class="tc-points"><li>Fort Fisher</li><li>Miles of quiet beach</li><li>Aquarium expanding</li></ul>
+          <ul class="tc-points"><li>Fort Fisher</li><li>Miles of quiet beach</li><li>Aquarium closed for construction</li></ul>
           <div class="tc-cta"><span>Explore Kure Beach</span><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         </div>
       </a>
@@ -1850,8 +1849,9 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.ge
 <script src="/today.js" defer></script>
 <script src="/home.js" defer></script>
 <script src="/beachwx.js" defer></script>
-<script src="/guide-boot.js" defer data-widgets="1"></script>
 <script src="/attrib.js" defer></script>
-<script src="/shore-plus.js" defer></script>
+<style>.slg{position:fixed;right:16px;bottom:16px;z-index:80}.slg-btn{display:flex;align-items:center;min-height:48px;padding:6px 14px;border:3px solid #D9C7A3;border-radius:999px;background:#0E1F33;color:#F4F1EA;cursor:pointer;font:500 .82rem/1 'DM Sans',sans-serif}</style>
+<div class="slg"><button type="button" class="slg-btn" id="slgOpen" aria-haspopup="dialog" aria-expanded="false" aria-controls="slgPanel"><span class="slg-btn-t">Ask a guide</span></button></div>
+<script src="/guide-boot.js" defer data-widgets="1" data-after="/luxe.js,/shore-plus.js"></script>
 </body>
 </html>

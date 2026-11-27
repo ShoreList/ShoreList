@@ -363,7 +363,7 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
       <p class="t-chip is-off" data-t-chip aria-live="polite">Live conditions</p>
       <div class="hero-tag">Pleasure Island &nbsp;&middot;&nbsp; NC Coast</div>
       <h1 class="hero-title">Carolina Beach, NC<br/><em>Wild, Warm, and Real.</em></h1>
-      <p class="hero-sub">A classic American beach town with a boardwalk that has been open since 1939, wild Venus flytraps, and July 4th fireworks. Carolina Beach doesn't pretend to be anything it isn't, and that's exactly why people love it.</p>
+      <p class="hero-sub">A classic American beach town with a boardwalk, wild Venus flytraps, and July 4th fireworks. Carolina Beach doesn't pretend to be anything it isn't, and that's exactly why people love it.</p>
       <div class="hero-badges">
         <div class="hb"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-surf" xlink:href="#i-surf"/></svg>Surf Lessons</div>
         <div class="hb"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-leaf" xlink:href="#i-leaf"/></svg>Wild Venus Flytraps</div>
@@ -431,29 +431,7 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
       </div>
       <div class="t-on-season">
         <h3>Seasonal highlights</h3>
-    <div class="events-list">
-      <div class="event-row">
-        <div class="er-ico"><svg aria-hidden="true" focusable="false"><use href="#i-surf" xlink:href="#i-surf"/></svg></div>
-        <div class="er-body"><div class="er-name">Carolina Beach Music Festival</div><div class="er-meta">Saturday, June 6 &nbsp;&middot;&nbsp; All Day &nbsp;&middot;&nbsp; Carolina Beach Boardwalk</div></div>
-        <span class="er-badge er-free">Free</span>
-      </div>
-      <div class="event-row">
-        <div class="er-ico"><svg aria-hidden="true" focusable="false"><use href="#i-fireworks" xlink:href="#i-fireworks"/></svg></div>
-        <div class="er-body"><div class="er-name">Boardwalk Fireworks Thursdays</div><div class="er-meta">Every Thursday, Memorial Day through Labor Day &nbsp;&middot;&nbsp; Dusk</div></div>
-        <span class="er-badge er-free">Free</span>
-      </div>
-      <div class="event-row">
-        <div class="er-ico"><svg aria-hidden="true" focusable="false"><use href="#i-fireworks" xlink:href="#i-fireworks"/></svg></div>
-        <div class="er-body"><div class="er-name">America&#8217;s 250th Birthday: July 4th, 2026</div><div class="er-meta">Saturday, July 4 &nbsp;&middot;&nbsp; Fireworks over the Atlantic at dusk</div></div>
-        <span class="er-badge er-free">Free</span>
-      </div>
-      <div class="event-row">
-        <div class="er-ico"><svg aria-hidden="true" focusable="false"><use href="#i-food" xlink:href="#i-food"/></svg></div>
-        <div class="er-body"><div class="er-name">Pleasure Island Seafood, Blues &amp; Jazz Festival</div><div class="er-meta">Late June &amp; Late September &nbsp;&middot;&nbsp; Carolina Beach Lake Park</div></div>
-        <span class="er-badge er-paid">Ticketed</span>
-      </div>
-    </div>
-        <p class="t-note">Some dates in this list are from the 2026 season and may have passed. The <a href="/events/carolina-beach">Carolina Beach events page</a> shows what is next.</p>
+    <p>The old seasonal list was removed because those dates have passed. What is coming up is on the <a href="/events/carolina-beach">events page</a>, taken from organizer calendars.</p>
       </div>
     </div>
     <p class="t-on-foot"><a href="/events" class="t-btn">View Full Events Calendar &#8594;</a></p>
@@ -543,7 +521,7 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
       <div class="fact"><div class="fact-n">Thursdays</div><div class="fact-l">boardwalk fireworks, Memorial Day to Labor Day</div></div>
       <div class="fact"><div class="fact-n">Daily</div><div class="fact-l">lifeguards, Memorial weekend to Labor Day weekend</div></div>
       <div class="fact"><div class="fact-n">19 mi</div><div class="fact-l">to Wilmington International Airport</div></div>
-      <div class="fact"><div class="fact-n">Oct 1 to Mar 31</div><div class="fact-l">dogs allowed on the beach at any hour</div></div>
+      <div class="fact"><div class="fact-n">Apr 1 to Sep 30</div><div class="fact-l">leashed dogs on the beach only before 9 a.m. and after 5 p.m.</div></div>
     </div>
   </div>
 </section>
@@ -634,7 +612,9 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
 <script src="/sound.js" defer></script>
 <script src="/beachwx.js" defer></script>
 <script src="/town.js" defer></script>
-<script src="/guide-boot.js" defer data-widgets="1"></script>
 <script src="/shore-plus.js" defer></script>
+<style>.slg{position:fixed;right:16px;bottom:16px;z-index:80}.slg-btn{display:flex;align-items:center;min-height:48px;padding:6px 14px;border:3px solid #D9C7A3;border-radius:999px;background:#0E1F33;color:#F4F1EA;cursor:pointer;font:500 .82rem/1 'DM Sans',sans-serif}</style>
+<div class="slg"><button type="button" class="slg-btn" id="slgOpen" aria-haspopup="dialog" aria-expanded="false" aria-controls="slgPanel"><span class="slg-btn-t">Ask a guide</span></button></div>
+<script src="/guide-boot.js" defer data-widgets="1"></script>
 </body>
 </html>

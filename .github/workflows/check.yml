@@ -18,6 +18,7 @@ jobs:
       - run: node --test tools/feeds/feeds.test.mjs
       - run: node --test tools/indexnow-ping.test.mjs
       - run: node --test tools/test-gift-finder.cjs
+      - run: node --test tools/test-guide.cjs
   speed:
     # Mobile Lighthouse budget on the homepage, shop, events and a category page: a speed or accessibility regression fails the PR.
     runs-on: ubuntu-latest

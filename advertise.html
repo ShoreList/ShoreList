@@ -111,5 +111,8 @@ var b=f.querySelector('button');b.disabled=true;b.textContent='Sending...';
 fetch('https://formspree.io/f/xeevzzqd',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify({email:v,business:f.business.value,interest:f.interest.value,list:'Advertiser inquiry',source:location.pathname,_subject:'ShoreList advertiser inquiry'})}).then(function(r){if(!r.ok)throw 0;m.textContent='Thank you. We will be in touch within two business days.';f.reset();t('advertise_inquiry',{interest:f.interest.value})}).catch(function(){m.textContent='Something went wrong. Please email rj@shorelist.net.'}).finally(function(){b.disabled=false;b.textContent='Send request'})});})();
 </script>
 <script src="/shore-plus.js" defer></script>
+<style>.slg{position:fixed;right:16px;bottom:16px;z-index:80}.slg-btn{display:flex;align-items:center;min-height:48px;padding:6px 14px;border:3px solid #D9C7A3;border-radius:999px;background:#0E1F33;color:#F4F1EA;cursor:pointer;font:500 .82rem/1 'DM Sans',sans-serif}</style>
+<div class="slg"><button type="button" class="slg-btn" id="slgOpen" aria-haspopup="dialog" aria-expanded="false" aria-controls="slgPanel"><span class="slg-btn-t">Ask a guide</span></button></div>
+<script src="/guide-boot.js" defer></script>
 </body>
 </html>
