@@ -188,7 +188,9 @@ const sections = [
 ];
 const money = (n) => (Math.round(n * 100) % 100 === 0 ? n.toFixed(0) : n.toFixed(2));
 const price = (i) => `${i.from ? 'From ' : ''}$${money(i.price)}`;
-const card = (i) => `<li><a href="${esc(i.url)}" data-item-id="${esc(i.id)}"><img src="${esc(i.img)}" alt="${esc(i.alt)}" width="800" height="1000" loading="lazy" decoding="async"/><span class="gg-name">${esc(i.name)}</span><span class="gg-price">${price(i)}</span><span class="gg-line">${esc(i.meta)}</span></a></li>`;
+const cardPhoto = (i) => `<img src="${esc(i.img)}" alt="${esc(i.alt)}" width="800" height="1000" loading="lazy" decoding="async"/>` +
+  (i.lookbookGenerator === 'Higgsfield' ? '<small class="gg-line">AI-generated lookbook</small>' : '');
+const card = (i) => `<li><a href="${esc(i.url)}" data-item-id="${esc(i.id)}">${cardPhoto(i)}<span class="gg-name">${esc(i.name)}</span><span class="gg-price">${price(i)}</span><span class="gg-line">${esc(i.meta)}</span></a></li>`;
 const used = [];
 const giftSections = sections.map((s) => {
   const items = s.ids.map((id) => byId.get(id)).filter(Boolean); // an item that left the catalog drops out of the guide; it returns when it is back in items[]
@@ -271,7 +273,7 @@ for (const t of shopTowns) {
   if (!items.length) continue;
   const utm = `utm_source=shorelist.net&utm_medium=landing&utm_campaign=shop-${t.id}`;
   const link = (u) => u + (u.includes('?') ? '&' : '?') + utm;
-  const tcard = (i) => `<li><a href="${esc(link(i.url))}" data-item-id="${esc(i.id)}" rel="noopener"><img src="${esc(i.img)}" alt="${esc(i.alt)}" width="800" height="1000" loading="lazy" decoding="async"/><span class="gg-name">${esc(i.name)}</span><span class="gg-price">${price(i)}</span><span class="gg-line">${esc(i.meta)}</span></a></li>`;
+  const tcard = (i) => `<li><a href="${esc(link(i.url))}" data-item-id="${esc(i.id)}" rel="noopener">${cardPhoto(i)}<span class="gg-name">${esc(i.name)}</span><span class="gg-price">${price(i)}</span><span class="gg-line">${esc(i.meta)}</span></a></li>`;
   const faqs = [[c.q[0], c.q[1]], ...townFaqShared];
   const others = shopTowns.filter((x) => x.id !== t.id && TOWN_COPY[x.id]).map((x) => `<a href="/shop/${x.id}">${esc(x.name)}</a>`).join(', ');
   const body = `<section class="gg-sec" id="pieces" aria-labelledby="pieces-h"><h2 id="pieces-h">${esc(t.name)} pieces</h2><p>${c.about}</p><ul class="gg-grid">${items.map(tcard).join('')}</ul></section>

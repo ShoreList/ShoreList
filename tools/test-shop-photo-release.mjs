@@ -1,7 +1,9 @@
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
+import { copyFileSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import { test } from 'node:test';
 import { BRAND_CRITERIA, coastalBrandIssues, productScoreIssues } from './coastal-brand-review.mjs';
 
@@ -15,13 +17,18 @@ const hash = (value) => typeof value === 'string' && /^[a-f0-9]{64}$/.test(value
 const documented = (value) => typeof value === 'string' && Boolean(value.trim());
 
 function photoFields(item) {
-  return [item.img, item.lookbook, item.studio, item.alt, item.gallery ?? []];
+  return [item.img, item.lookbook, item.studio, item.alt, item.gallery ?? [], item.lookbookGenerator ?? null];
 }
 
 function photoPairValid({ img, lookbook, studio }) {
   return Boolean(asset(lookbook) && asset(studio) && asset(lookbook) !== asset(studio) &&
     asset(img) === asset(lookbook));
 }
+
+const landingPages = ['gift-guide.html', 'shop/carolina-beach.html', 'shop/kure-beach.html',
+  'shop/wilmington.html', 'shop/wrightsville-beach.html'];
+const productCards = (html) => html.match(/<li><a [^>]+data-item-id="[^"]+"[^>]*>[\s\S]*?<\/a><\/li>/g) ?? [];
+const lookbookDisclosure = '<small class="gg-line">AI-generated lookbook</small>';
 
 function photoRevision(item, lookbookSha256, studioSha256) {
   return createHash('sha256')
@@ -36,6 +43,7 @@ function photoReviewIssues(item, review = {}) {
     issues.push('distinct image content digests');
   }
   if (review.generator !== 'Higgsfield' || !documented(review.generationId)) issues.push('Higgsfield job provenance');
+  if (item.lookbookGenerator !== 'Higgsfield') issues.push('Higgsfield storefront disclosure');
   for (const field of ['variant', 'fidelityEvidence', 'realismEvidence', 'studioEvidence', 'disclosureEvidence']) {
     if (!documented(review[field])) issues.push(field);
   }
@@ -67,8 +75,42 @@ test('a missing lookbook or duplicate image fails release review', () => {
   assert.ok(photoReviewIssues({ img: '/coast.jpg', lookbook: '/coast.jpg', studio: '/studio.jpg' }).length);
 });
 
+test('town and gift guide cards visibly disclose Higgsfield lookbooks', (t) => {
+  const fixture = mkdtempSync(join(tmpdir(), 'shorelist-photo-disclosure-'));
+  t.after(() => rmSync(fixture, { recursive: true, force: true }));
+  mkdirSync(join(fixture, 'tools'));
+  const generator = join(fixture, 'tools', 'build-store-pages.mjs');
+  copyFileSync(new URL('../tools/build-store-pages.mjs', import.meta.url), generator);
+  const catalog = load('shop-catalog.json');
+  const item = catalog.items.find((entry) => entry.id === 'the-blue-crab-embroidered-crewneck-kure-beach');
+  item.img = item.lookbook = '/fixtures/synthetic-lookbook.webp';
+  item.lookbookGenerator = 'Higgsfield';
+  writeFileSync(join(fixture, 'shop-catalog.json'), JSON.stringify(catalog));
+  execFileSync(process.execPath, [generator]);
+  for (const page of ['gift-guide.html', 'shop/kure-beach.html']) {
+    const html = readFileSync(join(fixture, page), 'utf8');
+    const cards = productCards(html);
+    assert.match(cards.find((card) => card.includes('data-item-id="' + item.id + '"')),
+      /<img src="\/fixtures\/synthetic-lookbook\.webp"[^>]*\/><small class="gg-line">AI-generated lookbook<\/small>/);
+    assert.ok(cards.some((card) => !card.includes(item.id) && !card.includes('AI-generated lookbook')));
+    assert.equal((html.match(/AI-generated lookbook/g) ?? []).length, 1);
+  }
+});
+
+test('generated storefront cards match the catalog disclosure metadata', () => {
+  const byId = new Map(records.map((item) => [item.id, item]));
+  for (const page of landingPages) {
+    const html = readFileSync(new URL('../' + page, import.meta.url), 'utf8');
+    for (const card of productCards(html)) {
+      const id = card.match(/data-item-id="([^"]+)"/)[1];
+      assert.equal(card.includes(lookbookDisclosure), byId.get(id)?.lookbookGenerator === 'Higgsfield',
+        page + ' has stale photo disclosure for ' + id + '. Run node tools/build-store-pages.mjs.');
+    }
+  }
+});
+
 test('only scored, approved evidence for both exact images passes', () => {
-  const item = { img: '/lookbook_640x.jpg', lookbook: '/lookbook.jpg', studio: '/studio.jpg' };
+  const item = { img: '/lookbook_640x.jpg', lookbook: '/lookbook.jpg', studio: '/studio.jpg', lookbookGenerator: 'Higgsfield' };
   const lookbookSha256 = 'a'.repeat(64);
   const studioSha256 = 'b'.repeat(64);
   const reviewedRevision = photoRevision(item, lookbookSha256, studioSha256);
@@ -91,6 +133,7 @@ test('only scored, approved evidence for both exact images passes', () => {
     ownerApproval: { reviewedRevision, approved: true, reviewer: 'Synthetic owner' },
   };
   assert.deepEqual(photoReviewIssues(item, approvedReview), []);
+  assert.ok(photoReviewIssues({ ...item, lookbookGenerator: null }, approvedReview).includes('Higgsfield storefront disclosure'));
   assert.ok(photoReviewIssues({ ...item, studio: '/new-studio.jpg' }, approvedReview).includes('brand and owner approvals of this exact image revision'));
   assert.ok(photoReviewIssues(item, { ...approvedReview, studioSha256: lookbookSha256 }).includes('distinct image content digests'));
   assert.ok(photoReviewIssues(item, { ...approvedReview, blindPhotoReview: { ...approvedReview.blindPhotoReview, score: 7 } }).includes('independent blind photo score of at least 8/10'));
