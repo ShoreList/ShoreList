@@ -12,7 +12,7 @@ const byId = new Map(cat.items.map((i) => [i.id, i]));
 const FOOT = `<footer class="ev-foot"><div>&copy; 2026 ShoreList LLC &middot; Wilmington, NC &amp; the Beaches</div><div><a href="/events">Events Guide</a><a href="/things-to-do">Things to Do</a><a href="/shore-picks">Shore Picks</a><a href="/where-to-stay">Where to Stay</a><a href="/wilmington-weather">Weather</a><a href="/guides">PDF Guides</a><a href="/prints">Art Prints</a><a href="/shipping-returns">Shipping &amp; Returns</a><a href="/size-guide">Size Guide</a><a href="/gift-guide">Gift Guide</a><a href="/how-we-verify">How we verify</a><a href="/legal">Privacy &amp; Terms</a></div></footer>`;
 const NAV = `<nav class="ev-nav" aria-label="Primary"><a class="nav-logo" href="/" aria-label="ShoreList home">Shore<span>List</span></a><div class="nav-right"><a href="/shop">Shop</a><a href="/events">Events</a><a href="/things-to-do">Things to Do</a><a class="nav-book" href="/things-to-do">Book Experiences</a></div></nav>`;
 
-function page({ slug, title, desc, eye, h1, lede, body, ld = [], wide = false, ogImage = `${SITE}/og-home.jpg` }) {
+function page({ slug, title, desc, eye, h1, lede, body, ld = [], wide = false, ogImage = `${SITE}/og-home.jpg`, orderBy = false }) {
   const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'ShoreList', item: SITE + '/' },
     { '@type': 'ListItem', position: 2, name: 'Shop', item: SITE + '/shop' },
@@ -31,7 +31,7 @@ function page({ slug, title, desc, eye, h1, lede, body, ld = [], wide = false, o
 <meta property="og:title" content="${esc(title)}"/><meta property="og:description" content="${esc(desc)}"/><meta property="og:type" content="website"/><meta property="og:url" content="${SITE}/${slug}"/>
 <meta property="og:image" content="${ogImage}"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="${ogImage}"/>
 <link rel="icon" href="/favicon.ico"/><link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
-<script>document.documentElement.className+=' js'</script>
+<script>document.documentElement.className+=' js'</script>${orderBy ? `\n<script>(function(){document.documentElement.setAttribute('data-orderby',Date.now()<Date.UTC(2026,11,9,5,0,0)?'on':'off');})();</script>\n<style>.order-by{display:none}html[data-orderby="on"] .order-by{display:block}</style>` : ''}
 <script>
 window.addEventListener('load',function(){
   function load(){
@@ -176,7 +176,7 @@ const giftFaq = [
  ],
  [
   "Will a gift arrive in time for the holidays?",
-  "Every piece is made to order, and we do not publish holiday order-by dates. Shipping and the estimated delivery for your address are shown at checkout, before you pay."
+  "Order by Dec 8 for Christmas delivery (US standard shipping). Shipping and the estimated delivery for your address are shown at checkout, before you pay."
  ],
  [
   "Is there a gift that does not need shipping?",
@@ -206,7 +206,8 @@ const giftSections = sections.map((s) => {
   return `<section class="gg-sec" id="${s.id}" aria-labelledby="${s.id}-h"><h2 id="${s.id}-h">${s.h}</h2><p>${s.p}</p><ul class="gg-grid">${items.map(card).join('')}</ul></section>`;
 }).filter(Boolean).join('\n');
 const giftFaqHtml = `<section class="tp-faq" id="faq"><h2>Gift questions</h2>${giftFaq.map(([q, a]) => `<h3>${q}</h3><p>${a}</p>`).join('')}</section>`;
-const giftBody = `<p>Prices and links come straight from the shop, so what you see here is what you pay before shipping and tax. Everything is made to order. Shipping and delivery estimates for your address are shown at checkout, and the <a href="/shipping-returns">shipping and returns page</a> covers the rest. We do not publish holiday order-by dates.</p>
+const giftBody = `<p class="order-by">Order by Dec 8 for Christmas delivery (US standard shipping).</p>
+<p>Prices and links come straight from the shop, so what you see here is what you pay before shipping and tax. Everything is made to order. Shipping and delivery estimates for your address are shown at checkout, and the <a href="/shipping-returns">shipping and returns page</a> covers the rest.</p>
 ${giftSections}
 <section class="gg-sec" id="no-shipping" aria-labelledby="ns-h"><h2 id="ns-h">Nothing to ship</h2>
 <p>For a visitor coming to town, the <a href="/guides">PDF guides</a> are $14 each and download right after checkout, including Wilmington Holidays 2026. The <a href="/prints">art prints</a> are $12 each as print-ready files. Seven percent North Carolina sales tax is added at checkout on both.</p></section>
@@ -218,7 +219,7 @@ const out = {
   'size-guide.html': page({ slug: 'size-guide', title: 'Size Guide | ShoreList Shop', desc: 'Garment measurements for ShoreList embroidered crewnecks in inches, how to measure a piece you own, and who to ask when a size is not listed.', eye: 'Size guide', h1: 'Fit, <em>measured</em>', lede: 'Every piece is made to order, so the right size matters. Here are the real numbers where we have them, and a straight answer where we do not.', body: sizeBody }),
   'shipping-returns.html': page({ slug: 'shipping-returns', title: 'Shipping and Returns | ShoreList Shop', desc: 'How ShoreList orders are made, how long they take, and what happens if a piece arrives damaged, defective or misprinted. Plain answers, nothing buried.', eye: 'Shipping and returns', h1: 'Shipping &amp; returns, <em>plainly</em>', lede: 'Made to order, shipped by our partners, fixed if it arrives wrong. Here is exactly how that works.', body: shipBody,
     ld: [{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }] }),
-  'gift-guide.html': page({ slug: 'gift-guide', title: 'Coastal Carolina Gift Guide | ShoreList Shop', desc: 'A coastal Carolina gift guide from the ShoreList shop, leading with embroidered crewnecks, the Sloop cap and the Wrightsville varsity pieces, at current prices.', eye: 'Gift guide', h1: 'Gifts for people who <em>love the coast</em>', lede: 'This Wilmington NC gift guide leads with eight coastal Carolina pieces: the Sloop crewneck and cap, the Blue Crab crewneck, the Kure Beach lifeguard crewneck, the Live Oak crewneck, and the Wrightsville varsity hoodie, tee and signature crewneck. Every item is in the shop today at its current price, and everything is made to order.', body: giftBody, ld: [...(giftLd ? [giftLd] : []), { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: giftFaq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a.replace(/<[^>]+>/g, '') } })) }], wide: true }),
+  'gift-guide.html': page({ slug: 'gift-guide', title: 'Coastal Carolina Gift Guide | ShoreList Shop', desc: 'A coastal Carolina gift guide from the ShoreList shop, leading with embroidered crewnecks, the Sloop cap and the Wrightsville varsity pieces, at current prices.', eye: 'Gift guide', h1: 'Gifts for people who <em>love the coast</em>', lede: 'This Wilmington NC gift guide leads with eight coastal Carolina pieces: the Sloop crewneck and cap, the Blue Crab crewneck, the Kure Beach lifeguard crewneck, the Live Oak crewneck, and the Wrightsville varsity hoodie, tee and signature crewneck. Every item is in the shop today at its current price, and everything is made to order.', body: giftBody, orderBy: true, ld: [...(giftLd ? [giftLd] : []), { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: giftFaq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a.replace(/<[^>]+>/g, '') } })) }], wide: true }),
 };
 
 // ------------------------------------------------------------ town shop pages

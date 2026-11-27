@@ -8,7 +8,7 @@
 <link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/180126218099143496_2048_480x.jpg?v=1795318122" fetchpriority="high" media="(max-width: 899px)">
 <!--/SHOP-STATIC:lcp-->
 <script>
-(function(){var n=Date.now(),a='off',w=[['SHORE15',Date.UTC(2026,10,25,4,0,0),Date.UTC(2026,10,27,4,59,0)],['SHOREFRIDAY15',Date.UTC(2026,10,27,5,0,0),Date.UTC(2026,10,28,4,59,0)],['SHORECYBER15',Date.UTC(2026,10,30,5,0,0),Date.UTC(2026,11,1,4,59,0)],['xmas',Date.UTC(2026,11,1,4,59,0),Date.UTC(2026,11,8,5,0,0)]];for(var i=0;i<w.length;i++){if(n>=w[i][1]&&n<w[i][2]){a=w[i][0];break;}}document.documentElement.setAttribute('data-sale',a);})();
+(function(){var n=Date.now(),a='off',w=[['SHORE15',Date.UTC(2026,10,25,4,0,0),Date.UTC(2026,10,27,4,59,0)],['SHOREFRIDAY15',Date.UTC(2026,10,27,5,0,0),Date.UTC(2026,10,28,4,59,0)],['SHORECYBER15',Date.UTC(2026,10,30,5,0,0),Date.UTC(2026,11,1,4,59,0)],['xmas',Date.UTC(2026,11,1,4,59,0),Date.UTC(2026,11,8,5,0,0)]];for(var i=0;i<w.length;i++){if(n>=w[i][1]&&n<w[i][2]){a=w[i][0];break;}}document.documentElement.setAttribute('data-sale',a);document.documentElement.setAttribute('data-orderby',n<Date.UTC(2026,11,9,5,0,0)?'on':'off');})();
 </script>
 <meta name="theme-color" content="#0E1F33"/>
 <link rel="canonical" href="https://shorelist.net/shop"/>
@@ -30,6 +30,9 @@ body.shop{margin:0;background:#F4F1EA;color:#0E1F33;font:400 1rem/1.6 "DM Sans",
 .sl-sale span{display:none}
 html[data-sale="SHOREFRIDAY15"] .sl-sale,html[data-sale="SHORECYBER15"] .sl-sale,html[data-sale="xmas"] .sl-sale{display:flex}
 html[data-sale="SHOREFRIDAY15"] .sl-sale [data-code="SHOREFRIDAY15"],html[data-sale="SHORECYBER15"] .sl-sale [data-code="SHORECYBER15"],html[data-sale="xmas"] .sl-sale [data-code="xmas"]{display:block}
+.order-by{display:none;margin:0;padding:8px 16px;background:#F4F1EA;color:#0E1F33;text-align:center;font:500 14px/1.4 "DM Sans",system-ui,sans-serif}
+html[data-orderby="on"] .order-by{display:block}
+html[data-sale="xmas"] .order-by{display:none}
 nav.sl-hdr{display:flex;align-items:center;min-height:64px;padding:0 16px;background:#0E1F33;color:#F4F1EA}
 .hero{background:#F4F1EA}
 .hero-txt{padding:18px 20px 28px}
@@ -68,7 +71,8 @@ window.addEventListener('load',function(){
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
 </head>
 <body class="shop">
-<aside class="sl-sale" aria-label="Shop offer"><span data-code="SHOREFRIDAY15"><strong>Black Friday:</strong> 15% off eligible Shopify orders with code SHOREFRIDAY15, ends 11:59 PM ET tonight. Enter it at our Shopify checkout.</span><span data-code="SHORECYBER15"><strong>Cyber Monday:</strong> 15% off eligible Shopify orders with code SHORECYBER15, Monday only, ends 11:59 PM ET. Enter it at our Shopify checkout.</span><span data-code="xmas"><strong>Christmas gifts:</strong> We recommend ordering by December 7 for Christmas delivery. Delivery dates vary by item, and we cannot guarantee arrival by Christmas.</span></aside>
+<aside class="sl-sale" aria-label="Shop offer"><span data-code="SHOREFRIDAY15"><strong>Black Friday:</strong> 15% off eligible Shopify orders with code SHOREFRIDAY15, ends 11:59 PM ET tonight. Enter it at our Shopify checkout.</span><span data-code="SHORECYBER15"><strong>Cyber Monday:</strong> 15% off eligible Shopify orders with code SHORECYBER15, Monday only, ends 11:59 PM ET. Enter it at our Shopify checkout.</span><span data-code="xmas">Order by Dec 8 for Christmas delivery (US standard shipping).</span></aside>
+<p class="order-by">Order by Dec 8 for Christmas delivery (US standard shipping).</p>
 <a class="skip" href="#main">Skip to content</a>
 <nav class="sl-hdr shop-nav" aria-label="Primary">
   <a href="/" class="sl-logo" aria-label="ShoreList home">ShoreList</a>
@@ -161,7 +165,7 @@ window.addEventListener('load',function(){
 <!--/SHOP-STATIC:faq-->
   </div></section>
 </main>
-<dialog id="qv" aria-labelledby="qvn"><button class="qvx" type="button" id="qvx" aria-label="Close product details">Close</button><div class="qvg"><div class="qvm"><img id="qvi" alt="" width="600" height="750" decoding="async"/><div class="qvth" id="qvth" hidden></div></div><div class="qvt"><p class="k" id="qvk"></p><h3 id="qvn"></h3><div class="price" id="qvp"></div><p id="qvm"></p><div class="qvcta" id="qvcta"></div><dl class="pre" id="qvpre"></dl></div></div></dialog>
+<dialog id="qv" aria-labelledby="qvn"><button class="qvx" type="button" id="qvx" aria-label="Close product details">Close</button><div class="qvg"><div class="qvm"><img id="qvi" alt="" width="600" height="750" decoding="async"/><div class="qvth" id="qvth" hidden></div></div><div class="qvt"><p class="k" id="qvk"></p><h3 id="qvn"></h3><div class="price" id="qvp"></div><p id="qvm"></p><p class="order-by">Order by Dec 8 for Christmas delivery (US standard shipping).</p><div class="qvcta" id="qvcta"></div><dl class="pre" id="qvpre"></dl></div></div></dialog>
 <footer class="sf">
   <div class="fl"><a href="/">Experiences</a><a href="/events">Events</a><a href="/prints">Art prints</a><a href="/gift-guide">Gift guide</a><a href="/size-guide">Size guide</a><a href="/shipping-returns">Shipping</a><a href="/shipping-returns#returns">Returns</a><a href="mailto:rj@shorelist.net">Contact</a><a href="/waitlist?src=shop">Waitlist</a><a href="/legal">Privacy &amp; Terms</a><a href="https://www.instagram.com/shorelist" target="_blank" rel="noopener noreferrer" aria-label="ShoreList on Instagram">Instagram</a><a href="https://www.tiktok.com/@shorelist" target="_blank" rel="noopener noreferrer" aria-label="ShoreList on TikTok">TikTok</a></div>
   <div class="fine">&copy; 2026 ShoreList LLC</div>
