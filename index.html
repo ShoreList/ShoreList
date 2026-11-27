@@ -51,12 +51,11 @@
   var sz=Math.ceil(Math.max(vw,vh*1.5)*1.08*Math.min(d,1.5)/d)+'px';
   var b='https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-'+f+'_';
   var ss=[1280,1920,2560,3200,3840].map(function(w){return b+w+'x.jpg '+w+'w';}).join(', ');
-  var mobile=vw<=820;
+  var mobile=window.matchMedia?matchMedia('(max-width: 820px)').matches:vw<=820;
   window.__slHero={ph:ph,f:f,sz:sz,vw:vw,mobile:mobile};
-  var l=document.createElement('link');l.rel='preload';l.as='image';l.setAttribute('fetchpriority','high');
-  if(mobile)l.href='/img/hero-mobile/'+f+'.webp';
-  else{l.setAttribute('imagesrcset',ss);l.setAttribute('imagesizes',sz);}
-  document.head.appendChild(l);
+  var avif='/img/hero-mobile/'+f+'.avif';
+  document.write('<link rel="preload" as="image" fetchpriority="high" href="'+avif+'" imagesrcset="'+avif+' 960w" imagesizes="100vw" media="(max-width: 820px)">');
+  if(!mobile)document.write('<link rel="preload" as="image" fetchpriority="high" imagesrcset="'+ss+'" imagesizes="'+sz+'" media="(min-width: 821px)">');
 }catch(e){}})();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -396,7 +395,9 @@ window.addEventListener('load',function(){
     photo.setAttribute('data-early', '');
     photo.setAttribute('data-p', hero.ph);
     photo.fetchPriority = 'high';
-    photo.src = '/img/hero-mobile/' + hero.f + '.webp';
+    photo.sizes = '100vw';
+    photo.srcset = '/img/hero-mobile/' + hero.f + '.avif 960w';
+    photo.src = '/img/hero-mobile/' + hero.f + '.avif';
     wrap.appendChild(photo);
     document.getElementById('hero').appendChild(wrap);
   })();
@@ -1790,7 +1791,7 @@ body:not(.home):not(.pg-home) .dock{display:none!important}
     <p class="hx-eye">The shop</p>
     <h2 class="hx-h" id="shop-band-h">Take a little of it home.</h2>
     <!--SHOP-STATIC:homeband-->
-    <ul class="hx-shop-grid"><li><a href="/shop/carolina-beach"><span class="hx-shop-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13000623743151575142_2048_800x.jpg" alt="White crewneck sweatshirt with a small embroidered lifeguard stand and the words Carolina Beach, worn on the sand" loading="lazy" decoding="async" width="800" height="1000"/></span><span class="hx-shop-n">Carolina Beach Lifeguard Stand Embroidered Crewneck Sweatshirt</span></a></li><li><a href="/shop/carolina-beach"><span class="hx-shop-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/755985813891049725_2048_800x.jpg" alt="Man in a navy corduroy cap with an embroidered brown pelican, on the sand at Carolina Beach" loading="lazy" decoding="async" width="800" height="1000"/></span><span class="hx-shop-n">Carolina Beach Pelican Corduroy Cap</span></a></li><li><a href="/shop/wilmington"><span class="hx-shop-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/18372799870615515575_2048_800x.jpg" alt="Framed art print of the Airlie Oak, a painterly Southern live oak with Spanish moss and azaleas, above a console" loading="lazy" decoding="async" width="800" height="1000"/></span><span class="hx-shop-n">Airlie Oak Art Print</span></a></li></ul>
+    <ul class="hx-shop-grid"><li><a href="/shop/carolina-beach"><span class="hx-shop-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13000623743151575142_2048_800x.jpg" alt="Studio photo of the Carolina Beach Lifeguard Stand Embroidered Crewneck Sweatshirt." loading="lazy" decoding="async" width="800" height="1000"/></span><span class="hx-shop-n">Carolina Beach Lifeguard Stand Embroidered Crewneck Sweatshirt</span></a></li><li><a href="/shop/carolina-beach"><span class="hx-shop-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/554477750588018687_2048_800x.jpg?v=1795401930" alt="Studio photo of the Carolina Beach Pelican Corduroy Cap." loading="lazy" decoding="async" width="800" height="1000"/></span><span class="hx-shop-n">Carolina Beach Pelican Corduroy Cap</span></a></li><li><a href="/shop/wilmington"><span class="hx-shop-ph"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/18372799870615515575_2048_800x.jpg" alt="Studio photo of the Airlie Oak Art Print, Wilmington NC." loading="lazy" decoding="async" width="800" height="1000"/></span><span class="hx-shop-n">Airlie Oak Art Print</span></a></li></ul>
     <!--/SHOP-STATIC:homeband-->
     <p class="hx-shop-link"><a class="hx-more" href="/holiday-gift-guide">Holiday gift guide</a> <a class="hx-more" href="/shop">Visit the shop</a></p>
   </div>
