@@ -156,6 +156,30 @@
     while (headArt.firstChild) headArt.removeChild(headArt.firstChild);
     headArt.appendChild(miniAvatar());
     if (tease) tease.textContent = teaseFor(pathName());
+    mountArt(next.id);
+  }
+  var artId = '';
+  function mountArt(id) {
+    if (!id || artId === id) return;
+    artId = id;
+    fetch('/img/guides/' + id + '.svg').then(function (r) {
+      if (!r.ok) throw new Error('art');
+      return r.text();
+    }).then(function (txt) {
+      var old = btn.querySelectorAll('.slg-fig');
+      for (var i = 0; i < old.length; i++) old[i].parentNode.removeChild(old[i]);
+      var doc = new DOMParser().parseFromString(txt, 'image/svg+xml');
+      var art = doc.documentElement;
+      if (!art || String(art.nodeName).toLowerCase() !== 'svg') return;
+      art.setAttribute('class', 'slg-art');
+      art.setAttribute('aria-hidden', 'true');
+      var wrap = document.createElement('span');
+      wrap.className = 'slg-fig';
+      wrap.appendChild(document.importNode(art, true));
+      btn.appendChild(wrap);
+      while (headArt.firstChild) headArt.removeChild(headArt.firstChild);
+      headArt.appendChild(miniAvatar());
+    }).catch(function () { artId = ''; });
   }
   paint(who);
   function fillChips() {
@@ -232,10 +256,11 @@
   function shut() {
     panel.classList.remove('slg-on');
     root.classList.remove('is-open');
+    btn.classList.remove('is-hi');
     btn.setAttribute('aria-expanded', 'false');
     var done = function () { panel.hidden = true; panel.style.bottom = ''; panel.style.maxHeight = ''; };
     if (reduce) done();
-    else setTimeout(done, 380);
+    else setTimeout(done, 560);
     btn.focus();
   }
   function ask(q) {
@@ -259,8 +284,15 @@
       pending.textContent = who.name + ' could not reach the guide just now.';
     }).then(function () { sendBtn.disabled = false; busy = false; });
   }
-  btn.addEventListener('click', function () { if (panel.hidden) open(); else shut(); });
-  if (window.__slgWantOpen || location.hash === '#ask') open();
+  var waving = false;
+  function greetTap(then) {
+    btn.classList.add('is-hi');
+    if (reduce || waving) { then(); return; }
+    waving = true;
+    setTimeout(function () { waving = false; then(); }, 420);
+  }
+  btn.addEventListener('click', function () { if (panel.hidden) greetTap(open); else shut(); });
+  if (window.__slgWantOpen || location.hash === '#ask') greetTap(open);
   close.addEventListener('click', shut);
   soundBtn.addEventListener('click', function () {
     var on = !soundOn();
