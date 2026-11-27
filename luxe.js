@@ -108,6 +108,49 @@
   });
 })();
 
+/* Magnetic press on fine pointers. Touch gets a short scale, and one tick on a primary control. */
+(function(){
+  'use strict';
+  var d=document, rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine=window.matchMedia&&matchMedia('(hover:hover) and (pointer:fine)').matches;
+  var sel='a.path,a.hx-tile,a.hx-ev,a.sbtn,a.hx-more,button.scene-play';
+  if(rm)return;
+  if(fine){
+    var box=null, raf=0, px=0, py=0;
+    d.addEventListener('pointermove',function(e){
+      px=e.clientX; py=e.clientY;
+      if(raf)return;
+      raf=requestAnimationFrame(function(){
+        raf=0;
+        var el=d.elementFromPoint(px,py);
+        el=el&&el.closest?el.closest(sel):null;
+        if(box&&box!==el){box.style.transform='';box=null;}
+        if(!el)return;
+        var r=el.getBoundingClientRect();
+        var dx=Math.max(-6,Math.min(6,(px-(r.left+r.width/2))/r.width*10));
+        var dy=Math.max(-6,Math.min(6,(py-(r.top+r.height/2))/r.height*10));
+        el.style.transform='translate('+dx.toFixed(1)+'px,'+dy.toFixed(1)+'px)';
+        box=el;
+      });
+    },{passive:true});
+    d.addEventListener('pointerleave',function(){if(box)box.style.transform='';box=null;});
+  }else{
+    d.addEventListener('pointerdown',function(e){
+      var el=e.target.closest&&e.target.closest(sel); if(!el)return;
+      el.style.transform='scale(.97)';
+      if(navigator.vibrate&&el.classList.contains('p-main')){try{navigator.vibrate(10);}catch(err){}}
+    },{passive:true});
+    d.addEventListener('pointerup',function(){
+      var nodes=d.querySelectorAll(sel);
+      for(var i=0;i<nodes.length;i++) nodes[i].style.transform='';
+    },{passive:true});
+    d.addEventListener('pointercancel',function(){
+      var nodes=d.querySelectorAll(sel);
+      for(var i=0;i<nodes.length;i++) nodes[i].style.transform='';
+    },{passive:true});
+  }
+})();
+
 /* Unified site header: every page gets the same logo, links and call to action.
    The page's own <nav> stays in the HTML as the no-script fallback. */
 (function(){

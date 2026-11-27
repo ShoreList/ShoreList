@@ -108,6 +108,11 @@
 /* photo plates */
 .plates{position:absolute;inset:0;z-index:0;overflow:hidden;background:#0E1F33;--px:0px;--py:0px;opacity:0;transition:opacity .6s ease}
 .plates-on .plates{opacity:1}.plates-on .scene-cv{opacity:0!important}
+.scene-still .scene-cv{opacity:1!important;z-index:1;-webkit-mask-image:linear-gradient(to bottom,transparent 64%,#000 82%);mask-image:linear-gradient(to bottom,transparent 64%,#000 82%)}
+.scene-play{position:absolute;z-index:6;left:16px;bottom:118px;min-height:44px;padding:0 14px;border:1px solid #D9C7A3;border-radius:999px;background:rgba(14,31,51,.72);color:#F4F1EA;font:500 .78rem 'DM Sans',system-ui,sans-serif;cursor:pointer}
+@media(min-width:821px){.scene-play{display:none}}
+@media(prefers-reduced-motion:reduce){.scene-play{display:none}}
+.scene-play:focus-visible{outline:3px solid #D9C7A3;outline-offset:3px}
 .plates img{position:absolute;left:-3%;top:-3%;width:106%;height:106%;max-width:100%;object-fit:cover;object-position:var(--pos,62% 50%);opacity:0;visibility:hidden;transform:translate3d(var(--px),var(--py),0) scale(1.02);animation:kb 70s ease-in-out infinite alternate;will-change:opacity,transform;user-select:none;-webkit-user-drag:none}
 .plates img[data-p="3"]{filter:brightness(.5) saturate(.8) hue-rotate(8deg)}
 @keyframes kb{from{scale:1}to{scale:1.07}}
