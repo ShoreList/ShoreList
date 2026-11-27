@@ -148,10 +148,14 @@ test('only scored, approved evidence for both exact images passes', () => {
 // because it has no lookbook. The ILM crewneck lookbook was removed because the
 // lettering was about twice the size on the garment; the card stays on the True
 // Navy studio photo until a corrected lookbook passes review.
+// The Wrightsville sailfish crewneck lookbook showed a shoreline scene that
+// did not match the white crewneck that is sold. The card stays on the studio
+// photo until a matching lookbook passes review.
 const STUDIO_FIRST_HOLDS = new Set([
   'banks-channel-sunset-sail-crewneck',
   'daymark-cuffed-beanie-wrightsville-beach',
   'ilm-crewneck',
+  'wrightsville-beach-sailfish-printed-crewneck-sweatshirt',
 ]);
 // These three tees keep the same lookbook lead. Only the studio file changes,
 // from the blank back to the Ivory front. That is not a new lookbook pair.
