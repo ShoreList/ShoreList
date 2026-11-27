@@ -273,10 +273,42 @@ for (const t of shopTowns) {
   if (!items.length) continue;
   const utm = `utm_source=shorelist.net&utm_medium=landing&utm_campaign=shop-${t.id}`;
   const link = (u) => u + (u.includes('?') ? '&' : '?') + utm;
-  const tcard = (i) => `<li><a href="${esc(link(i.url))}" data-item-id="${esc(i.id)}" rel="noopener">${cardPhoto(i)}<span class="gg-name">${esc(i.name)}</span><span class="gg-price">${price(i)}</span><span class="gg-line">${esc(i.meta)}</span></a></li>`;
+  const kindOfName = (name) => {
+    const n = String(name || '').toLowerCase();
+    if (/can cooler|cooler sleeve/.test(n)) return 'cooler';
+    if (/sticker/.test(n)) return 'sticker';
+    if (/ornament/.test(n)) return 'ornament';
+    if (/beanie/.test(n)) return 'beanie';
+    if (/\bcap\b|dad hat|bucket hat|rope cap/.test(n)) return 'cap';
+    if (/pouch/.test(n)) return 'pouch';
+    if (/\bmug\b/.test(n)) return 'mug';
+    if (/towel|blanket|beach cloth/.test(n)) return 'towel';
+    if (/pillow/.test(n)) return 'pillow';
+    if (/print|framed/.test(n)) return 'print';
+    if (/tote|duffel/.test(n)) return 'tote';
+    if (/\btee\b|t-shirt/.test(n)) return 'tee';
+    if (/tumbler|water bottle/.test(n)) return 'tumbler';
+    if (/crewneck|sweatshirt|hoodie/.test(n)) return 'crewneck';
+    return 'item';
+  };
+  let pairRules = {};
+  try { pairRules = JSON.parse(fs.readFileSync(new URL('../data/market.json', import.meta.url), 'utf8')).pairs || {}; } catch (e) { pairRules = {}; }
+  const pairsFor = (i) => {
+    const kind = kindOfName(i.name);
+    const want = new Set(pairRules[kind] || pairRules.item || []);
+    return items.filter((x) => x.id !== i.id && want.has(kindOfName(x.name)))
+      .sort((a, b) => Math.abs(a.price - i.price) - Math.abs(b.price - i.price) || a.price - b.price)
+      .slice(0, 2);
+  };
+  const tcard = (i) => {
+    const mates = t.id === 'wrightsville-beach' ? pairsFor(i) : [];
+    const pair = mates.length ? `<p class="gg-pair">Pairs well with ${mates.map((m) => `<a href="${esc(link(m.url))}">${esc(m.name)}</a>`).join(' and ')}</p>` : '';
+    return `<li><a href="${esc(link(i.url))}" data-item-id="${esc(i.id)}" rel="noopener">${cardPhoto(i)}<span class="gg-name">${esc(i.name)}</span><span class="gg-price">${price(i)}</span><span class="gg-line">${esc(i.meta)}</span></a>${pair}</li>`;
+  };
+  const guide = t.id === 'wrightsville-beach' ? `<section class="gg-sec" id="visit" aria-labelledby="visit-h"><h2 id="visit-h">Before you shop the beach</h2><p>Wrightsville Beach is about 20 minutes east of downtown Wilmington. Beach access has no charge. Parking meters run from March 1 to October 31, 9 a.m. to 7 p.m., and some meters until 8 p.m. Peak surf season on the island is June to September, including the end of Johnnie Mercer's Pier. The full guide is on the <a href="/wrightsville-beach">Wrightsville Beach page</a>, with the <a href="/wilmington-nc-parking">parking guide</a>, <a href="/johnnie-mercers-pier">Johnnie Mercer's Pier</a> and <a href="/things-to-do/surf-lessons">surf lessons</a>.</p><p>These notes are the same facts already on that guide, checked against the visitors bureau and the town. Rules and fees change, so confirm before you go.</p></section>` : '';
   const faqs = [[c.q[0], c.q[1]], ...townFaqShared];
   const others = shopTowns.filter((x) => x.id !== t.id && TOWN_COPY[x.id]).map((x) => `<a href="/shop/${x.id}">${esc(x.name)}</a>`).join(', ');
-  const body = `<section class="gg-sec" id="pieces" aria-labelledby="pieces-h"><h2 id="pieces-h">${esc(t.name)} pieces</h2><p>${c.about}</p><ul class="gg-grid">${items.map(tcard).join('')}</ul></section>
+  const body = `${guide}<section class="gg-sec" id="pieces" aria-labelledby="pieces-h"><h2 id="pieces-h">${esc(t.name)} pieces</h2><p>${c.about}</p><ul class="gg-grid">${items.map(tcard).join('')}</ul></section>
 <section class="gg-sec" id="more" aria-labelledby="more-h"><h2 id="more-h">More from the shop</h2><p>Browse every town and filter by product type or motif on the <a href="/shop?town=${t.id}">full shop page</a>, shop by recipient in the <a href="/gift-guide">gift guide</a>, or see ${others}. We are adding new pieces for each town, so check back or join the drop list on the shop page. Prices are shown before shipping and tax, and everything is made to order.</p></section>
 <section class="tp-faq" id="faq"><h2>Questions</h2>${faqs.map(([q, a]) => `<h3>${q}</h3><p>${a}</p>`).join('')}</section>`;
   const ld = [{ '@context': 'https://schema.org', '@type': 'ItemList', name: `ShoreList ${t.name} shop`, itemListElement: items.map((i, n) => ({ '@type': 'ListItem', position: n + 1, item: { '@type': 'Product', name: i.name, url: i.url, image: i.img, description: i.meta, brand: { '@type': 'Brand', name: 'ShoreList' }, offers: i.from ? { '@type': 'AggregateOffer', priceCurrency: 'USD', lowPrice: i.price, offerCount: 1, availability: 'https://schema.org/InStock', url: i.url } : { '@type': 'Offer', priceCurrency: 'USD', price: i.price, availability: 'https://schema.org/InStock', url: i.url } } })) },
