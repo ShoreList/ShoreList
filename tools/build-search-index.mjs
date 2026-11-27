@@ -38,6 +38,7 @@ const pages = [
   ['Kure Beach events', 'Markets and community events', '/events/kure-beach', 'kure beach events'],
   ['Downtown Wilmington events', 'Concerts, theater, markets and parades', '/events/downtown-wilmington', 'downtown events concerts theater'],
   ['Wilmington, NC weather', 'Live conditions, hourly and 7-day forecast, beach, surf and tide report', '/wilmington-weather', 'weather forecast rain temperature surf tide water temp wind beach conditions today'],
+  ['Live beach cams in Wilmington, NC', 'Official Johnnie Mercer pier cams, plus links to other local cameras', '/cams', 'live cam webcam pier wrightsville beach southport surfchex'],
   ['ShoreList Surf', 'Live surf check for Wrightsville, Carolina and Kure Beach, lessons, paddling and beginner guides', '/surf', 'surf surfing waves swell surf report surf check lessons paddle beginner board'],
   ['Choosing a first surfboard', 'Soft-top or hard board, how size works and what a first setup involves', '/surf/first-surfboard', 'surfboard first board beginner soft top foam longboard size buy'],
   ['Paddleboards and kayaks: inflatable or hard', 'How they compare, carrying and storing them, and where each fits on local water', '/surf/paddleboard-and-kayak', 'paddleboard sup kayak inflatable hard buy storage transport'],
