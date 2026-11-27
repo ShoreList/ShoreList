@@ -92,6 +92,7 @@
     { "url": "/plan-your-trip", "cluster": "plan", "tier": "T2", "primary": "trip", "geo": ["{city}"] },
     { "url": "/wilmington-nc-parking", "cluster": "parking", "tier": "T3", "primary": "parking", "geo": ["{city}"] },
     { "url": "/wilmington-weather", "cluster": "weather", "tier": "T3", "primary": "weather", "geo": ["{city}"] },
+    { "url": "/cams", "cluster": "weather", "tier": "T3", "primary": "live beach cams", "geo": ["{city}"] },
     { "url": "/wilmington-nc-faq", "cluster": "plan", "tier": "T3", "primary": "faq", "geo": ["{city}"] },
     { "url": "/shore-picks", "cluster": "eat", "tier": "T2", "primary": "restaurants", "geo": ["{city}"] },
     { "url": "/shop", "cluster": "shop", "tier": "T1", "primary": "souvenirs", "geo": ["{city}"] },

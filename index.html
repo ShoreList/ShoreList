@@ -355,6 +355,8 @@ window.addEventListener('load',function(){
     <a href="#explore">Experiences</a>
     <a href="/events" class="nav-events-link">Events Guide</a>
     <a href="/shore-picks">Shore Picks</a>
+    <a href="/cams">Live cams</a>
+    <a href="/wilmington-weather">Weather</a>
     <a href="/shop">Shop</a>
     <a href="/planner" class="nav-planner">✦ Plan My Trip</a>
     <a href="/join" class="nav-op">Operators</a>
@@ -371,6 +373,8 @@ window.addEventListener('load',function(){
   <a href="/shop" onclick="closeNav()">Shop</a>
   <a href="/planner" onclick="closeNav()">✦ AI Trip Planner</a>
   <a href="/shore-picks" onclick="closeNav()">Shore Picks</a>
+  <a href="/cams" onclick="closeNav()">Live cams</a>
+  <a href="/wilmington-weather" onclick="closeNav()">Weather</a>
   <a href="#how" onclick="closeNav()">How It Works</a>
   <a href="/things-to-do" class="mob-cta" onclick="closeNav()">Book Experiences</a>
   <a href="/join" onclick="closeNav()" style="font-size:0.84rem;color:rgba(217,199,163,0.82);margin-top:8px;padding:13px 0;border-top:1px solid rgba(255,255,255,0.04);">Are you a local operator? →</a>
@@ -957,6 +961,18 @@ body:not(.home):not(.pg-home) .dock{display:none!important}
    so it never delays first paint. Hero, nav and intro styles stay inline in index.html. */
 :root{--hn:#0E1F33;--hn2:#0E1F33;--hs:#F4F1EA;--hd:#D9C7A3;--hg:#9FC3B8;--hink:#0E1F33;--hmute:#0E1F33;--hred:#B5362F;--hcoral:#D9C7A3;--hline:rgba(14,31,51,.12);--hease:cubic-bezier(.2,.7,.2,1)}
 
+/* Featured pier cam under the beach report. The 16:9 box is reserved before play. */
+.hx-cam{max-width:420px;margin:8px 0 28px}
+.hx-cam h3{font-family:'Libre Caslon Display',Georgia,serif;font-weight:400;font-size:1.45rem;margin:0 0 8px}
+.hx-cam .cam-stage{position:relative;aspect-ratio:16/9;background:#0E1F33;overflow:hidden}
+.hx-cam .cam-stage img,.hx-cam .cam-stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
+.hx-cam .cam-play{position:absolute;left:12px;right:12px;bottom:12px;min-height:48px;border:0;background:#F4F1EA;color:#0E1F33;font:600 .95rem "DM Sans",system-ui,sans-serif;cursor:pointer}
+.hx-cam .cam-wx{margin:8px 0;background:#0E1F33;color:#F4F1EA;padding:10px 12px;font-size:.92rem;line-height:1.45}
+.hx-cam .cam-close{display:none;min-height:44px;margin-top:8px;border:1.5px solid rgba(14,31,51,.28);background:#fff;color:#0E1F33;font:inherit;cursor:pointer;padding:8px 12px}
+.hx-cam .is-on .cam-close{display:inline-flex;align-items:center}
+.hx-cam p{margin:6px 0;line-height:1.5}
+.hx-cam a{color:#8A5A3B}
+
 /* ---------- shared section language ---------- */
 .hx{padding:88px 24px;background:var(--hs);color:var(--hink);position:relative}
 .hx-in{max-width:1180px;margin:0 auto;position:relative}
@@ -1382,6 +1398,19 @@ body:not(.home):not(.pg-home) .dock{display:none!important}
       </div>
       <a class="hx-more" href="/wilmington-weather">Full forecast and tides <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
+    <aside class="hx-cam" data-home-cam aria-labelledby="hx-cam-h">
+      <h3 id="hx-cam-h">Johnnie Mercer's Pier, south view</h3>
+      <div class="cam-frame">
+        <div class="cam-stage">
+          <img src="https://i.ytimg.com/vi/itXoEFJZtD0/hqdefault.jpg" alt="" width="480" height="360" decoding="async" loading="lazy"/>
+          <button type="button" class="cam-play">Play live cam: Johnnie Mercer's Pier, south view</button>
+        </div>
+        <button type="button" class="cam-close">Close cam</button>
+      </div>
+      <p class="cam-wx"></p>
+      <p>Live cam by <a href="https://johnniemercersfishingpier.com/live-cam/" target="_blank" rel="noopener noreferrer">Johnnie Mercer's Fishing Pier</a>. ShoreList does not operate this camera.</p>
+      <p><a href="/cams">All live cams</a>. Live video. No transcript is available.</p>
+    </aside>
   </div>
   <p class="hx-swipe" aria-hidden="true">Swipe for Carolina and Kure Beach &rarr;</p>
   <div class="bw" data-beachwx="all" data-beachwx-defer role="region" aria-label="Beach conditions by town" tabindex="0"></div>
@@ -1898,6 +1927,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.ge
 <style>.slg{position:fixed;right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));z-index:80}.slg-tease{position:absolute;right:0;bottom:calc(100% + 10px);margin:0;max-width:min(15rem,calc(100vw - 28px))}.slg-btn{position:relative;display:block;width:124px;height:148px;padding:0;border:0;background:transparent;cursor:pointer}.slg-btn:focus-visible{outline:3px solid #D9C7A3;outline-offset:4px;box-shadow:0 0 0 6px #0E1F33}.slg-btn-t{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}</style>
 <div class="slg"><p class="slg-tease" id="slgTease">Want the tide and the flags?</p><button type="button" class="slg-btn" id="slgOpen" data-who="shelby" aria-label="Ask a guide" aria-haspopup="dialog" aria-expanded="false" aria-controls="slgPanel"><span class="slg-btn-t">Ask a guide</span></button></div>
 <script>(function(){var p=(location.pathname||'/').replace(/\.html$/,'')||'/';var who='shelby',ask='Ask Shelby',line='Want the tide and the flags?';if(p==='/shop'||p.indexOf('/shop/')===0||p.indexOf('/gift')===0||p.indexOf('/holiday-gift-guide')===0||p.indexOf('/prints')===0||p.indexOf('/guides')===0||p.indexOf('/shipping-returns')===0||p.indexOf('/size-guide')===0||p.indexOf('/wilmington-nc-gifts')===0||p.indexOf('/wrightsville-beach-souvenirs')===0||p.indexOf('/wrightsville-beach-christmas-ornament')===0){who='wrighty';ask='Ask Wrighty';line='Need a gift idea?'}else if(p==='/events'||p.indexOf('/events/')===0){who='cape';ask='Ask Captain Cape';line='Want this weekend?'}else if(p.indexOf('/things-to-do')===0||p==='/planner'||p==='/join'||p==='/waitlist'){who='cape';ask='Ask Captain Cape';line='A walk, the water, or after dark?'}var b=document.getElementById('slgOpen');if(b){b.setAttribute('data-who',who);b.setAttribute('aria-label',ask);}var t=document.getElementById('slgTease');if(t)t.textContent=line;})();</script>
+<script src="/cams.js" defer></script>
 <script src="/guide-boot.js" defer data-widgets="1" data-after="/luxe.js,/shore-plus.js,/sound.js,/today.js,/home.js,/beachwx.js,/attrib.js"></script>
 
 </body>
