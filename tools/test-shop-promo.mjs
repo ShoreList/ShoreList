@@ -4,46 +4,33 @@ import { test } from 'node:test';
 import { runInNewContext } from 'node:vm';
 
 const script = readFileSync(new URL('../shop-promo.js', import.meta.url), 'utf8');
+const home = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+const shop = readFileSync(new URL('../shop.html', import.meta.url), 'utf8');
 
-function render(instant, search = '', shop = true) {
+function render(instant) {
   let now = instant;
   let scheduled;
   let hidden = false;
   const documentEvents = new Map();
   const windowEvents = new Map();
-  const append = (parent, child) => {
-    child.remove = () => { parent.children.splice(parent.children.indexOf(child), 1); };
-    parent.children.unshift(child);
+  const root = {
+    attrs: {},
+    setAttribute(name, value) { this.attrs[name] = value; },
+    getAttribute(name) { return this.attrs[name]; },
   };
-  function node(tag, textContent = '') {
-    return {
-      tag, textContent, attrs: {}, style: {}, children: [],
-      appendChild(child) { this.children.push(child); },
-      setAttribute(name, value) { this.attrs[name] = value; },
-      insertBefore(child) { append(this, child); },
-    };
-  }
-  const main = node('main');
-  const hero = node('section');
   runInNewContext(script, {
     Date: { UTC: Date.UTC, now: () => now },
-    location: { search },
     setTimeout(callback, delay) { scheduled = { callback, delay }; return 1; },
     clearTimeout() { scheduled = undefined; },
     window: { addEventListener: (event, callback) => windowEvents.set(event, callback) },
     document: {
+      documentElement: root,
       get hidden() { return hidden; },
       addEventListener: (event, callback) => documentEvents.set(event, callback),
-      createElement: node,
-      createTextNode: (text) => node('#text', text),
-      getElementById: (id) => id === 'main' && shop ? main : null,
-      querySelector: (selector) => selector === '.hero-cta' ? { parentNode: hero } : null,
     },
   });
   return {
-    get banner() { return main.children[0]; },
-    get hero() { return hero.children[0]; },
-    get counts() { return [main.children.length, hero.children.length]; },
+    get code() { return root.attrs['data-sale']; },
     get delay() { return scheduled?.delay; },
     tick(instant) { now = instant; scheduled.callback(); },
     visibility(instant, value) { now = instant; hidden = value; documentEvents.get('visibilitychange')(); },
@@ -56,112 +43,77 @@ const windows = [
   ['SHOREFRIDAY15', '2026-11-27T05:00:00Z', '2026-11-28T04:59:00Z'],
   ['SHORECYBER15', '2026-11-30T05:00:00Z', '2026-12-01T04:59:00Z'],
 ];
+
 for (const [code, opens, closes] of windows) {
-  test(code + ' appears exactly inside its configured UTC window', () => {
+  test(code + ' is the active code exactly inside its UTC window', () => {
     const start = Date.parse(opens);
     const end = Date.parse(closes);
-    assert.equal(render(start - 1).banner, undefined);
-    // At the end instant the sale code is gone. Only the Christmas note (no code) may follow Cyber Monday.
-    const after = render(end).banner;
-    assert.ok(!after || !after.children.map((child) => child.textContent).join('').includes(code));
-    for (const instant of [start, end - 1]) {
-      const { banner, hero } = render(instant);
-      assert.equal(banner.tag, 'aside');
-      assert.ok(banner.attrs['aria-label']);
-      const visible = banner.children.map((child) => child.textContent).join('');
-      assert.match(visible, new RegExp(code));
-      assert.match(visible, /eligible Shopify orders/);
-      assert.match(hero.textContent, new RegExp(code));
-    }
+    assert.notEqual(render(start - 1).code, code);
+    assert.notEqual(render(end).code, code);
+    for (const instant of [start, end - 1]) assert.equal(render(instant).code, code);
   });
 }
 
-test('public query strings do not preview expired or future offers', () => {
-  const outside = Date.parse('2026-11-29T15:00:00Z');
-  for (const marker of ['1','bf','cm']) {
-    assert.equal(render(outside, '?promo-preview=' + marker).banner, undefined);
-  }
-  assert.equal(render(Date.parse(windows[0][1]), '', false).banner, undefined);
+test('the script does not build a banner after load', () => {
+  assert.doesNotMatch(script, /createElement|insertBefore|innerHTML/);
 });
 
-const xmasStart = Date.parse('2026-12-01T04:59:00Z');
-const xmasEnd = Date.parse('2026-12-08T05:00:00Z');
-
-test('an open shop tab removes expired offers and rolls over to the next sale', () => {
+test('an open tab rolls from one code to the next without stacking', () => {
   const end = Date.parse(windows[0][2]);
   const friday = Date.parse(windows[1][1]);
   const fridayEnd = Date.parse(windows[1][2]);
   const monday = Date.parse(windows[2][1]);
   const mondayEnd = Date.parse(windows[2][2]);
   const page = render(end - 100);
+  assert.equal(page.code, 'SHORE15');
   assert.equal(page.delay, 100);
-  assert.match(page.hero.textContent, /SHORE15/);
   page.tick(end);
-  assert.deepEqual(page.counts, [0, 0]);
+  assert.equal(page.code, 'off');
   assert.equal(page.delay, friday - end);
   page.tick(friday);
-  assert.deepEqual(page.counts, [1, 1]);
-  assert.match(page.hero.textContent, /SHOREFRIDAY15/);
+  assert.equal(page.code, 'SHOREFRIDAY15');
   page.tick(fridayEnd);
-  assert.deepEqual(page.counts, [0, 0]);
+  assert.equal(page.code, 'off');
   page.tick(monday);
-  assert.match(page.hero.textContent, /SHORECYBER15/);
+  assert.equal(page.code, 'SHORECYBER15');
   page.tick(mondayEnd);
-  assert.deepEqual(page.counts, [1, 1]);
-  assert.match(page.hero.textContent, /December 7/);
-  assert.equal(page.delay, xmasEnd - mondayEnd);
-  page.tick(xmasEnd);
-  assert.deepEqual(page.counts, [0, 0]);
-  assert.equal(page.delay, undefined);
+  assert.equal(page.code, 'xmas');
 });
 
-test('a suspended or restored tab catches up without stacking banners', () => {
+test('a suspended or restored tab catches up', () => {
   const friday = Date.parse(windows[1][1]);
   const monday = Date.parse(windows[2][1]);
   const page = render(friday - 1000);
   page.visibility(friday, true);
-  assert.deepEqual(page.counts, [0, 0]);
+  assert.equal(page.code, 'off');
   page.visibility(friday + 1, false);
-  assert.match(page.hero.textContent, /SHOREFRIDAY15/);
-  const banner = page.banner;
-  page.restore(friday + 10);
-  assert.equal(page.banner, banner);
-  assert.deepEqual(page.counts, [1, 1]);
+  assert.equal(page.code, 'SHOREFRIDAY15');
   page.restore(monday);
-  assert.match(page.hero.textContent, /SHORECYBER15/);
-  assert.deepEqual(page.counts, [1, 1]);
+  assert.equal(page.code, 'SHORECYBER15');
 });
 
-test('Christmas order-by note shows only after Cyber Monday and hides after Dec 7 11:59 PM ET', () => {
-  assert.equal(xmasStart, Date.parse(windows[2][2]), 'starts the instant Cyber Monday ends');
-  assert.equal(xmasEnd, Date.parse('2026-12-07T23:59:59-05:00') + 1000, 'hidden from Dec 8 12:00 AM ET');
-  for (const instant of [xmasStart, Date.parse('2026-12-03T17:00:00Z'), Date.parse('2026-12-07T23:59:59-05:00')]) {
-    const { banner, hero } = render(instant);
-    assert.equal(banner.tag, 'aside');
-    assert.equal(banner.attrs['aria-label'], 'Christmas order-by note');
-    const visible = banner.children.map((child) => child.textContent).join('');
-    assert.match(visible, /ordering by December 7 for Christmas delivery/);
-    assert.match(visible, /Delivery dates vary by item/);
-    assert.match(visible, /cannot guarantee/);
-    assert.doesNotMatch(visible, /15%|SHORE|code|\u2014|\u2013/);
-    assert.match(hero.textContent, /December 7/);
-  }
-  assert.equal(render(xmasEnd).banner, undefined);
-  assert.equal(render(Date.parse('2026-12-20T17:00:00Z')).banner, undefined);
+const xmasStart = Date.parse('2026-12-01T04:59:00Z');
+const xmasEnd = Date.parse('2026-12-08T05:00:00Z');
+
+test('the Christmas note is the code only after Cyber Monday and through Dec 7', () => {
+  assert.equal(xmasStart, Date.parse(windows[2][2]));
+  assert.equal(render(xmasStart).code, 'xmas');
+  assert.equal(render(Date.parse('2026-12-07T23:59:59-05:00')).code, 'xmas');
+  assert.equal(render(xmasEnd).code, 'off');
+  assert.equal(render(Date.parse('2026-11-28T17:00:00Z')).code, 'off');
+  assert.equal(render(Date.parse('2026-11-29T17:00:00Z')).code, 'off');
 });
 
-test('the Christmas note never overrides a sale and is absent before Cyber Monday ends', () => {
-  const sales = [['SHORE15', windows[0]], ['SHOREFRIDAY15', windows[1]], ['SHORECYBER15', windows[2]]];
-  for (const [code, w] of sales) {
-    for (const instant of [Date.parse(w[1]), Date.parse(w[2]) - 1]) {
-      const { banner } = render(instant);
-      const visible = banner.children.map((child) => child.textContent).join('');
-      assert.match(visible, new RegExp(code));
-      assert.doesNotMatch(visible, /Christmas/);
-    }
-  }
-  // Saturday and Sunday after Black Friday have no banner at all, and nothing shows before the launch sale.
-  assert.equal(render(Date.parse('2026-11-28T17:00:00Z')).banner, undefined);
-  assert.equal(render(Date.parse('2026-11-29T17:00:00Z')).banner, undefined);
-  assert.equal(render(Date.parse(windows[0][1]) - 1).banner, undefined);
+test('home and shop render the sale in HTML with the Eastern codes', () => {
+  assert.match(home, /15% off everything today with code/);
+  assert.match(home, /href="\/shop"/);
+  assert.match(home, /data-code="SHOREFRIDAY15"/);
+  assert.match(home, /data-code="SHORECYBER15"/);
+  assert.match(home, /height:36px/);
+  assert.match(shop, /15% off eligible Shopify orders with code SHOREFRIDAY15/);
+  assert.match(shop, /SHORECYBER15/);
+  assert.match(shop, /ordering by December 7/);
+  assert.match(shop, /min-height:44px/);
+  assert.doesNotMatch(home.match(/class="sl-sale"[\s\S]{0,400}/)[0], /\u2014|\u2013/);
+  assert.doesNotMatch(shop.match(/class="sl-sale"[\s\S]{0,900}/)[0], /\u2014|\u2013/);
 });
