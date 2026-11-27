@@ -1,0 +1,41 @@
+{
+  "id": "wilmington-nc",
+  "name": "Wilmington, North Carolina",
+  "note": "One market. Add a town by appending to towns. Station ids and event feeds stay empty until a verified source is written here. Do not invent them.",
+  "towns": [
+    { "id": "wrightsville-beach", "name": "Wrightsville Beach", "match": ["wrightsville"], "rank": 40 },
+    { "id": "carolina-beach", "name": "Carolina Beach", "match": ["carolina beach"], "rank": 12 },
+    { "id": "kure-beach", "name": "Kure Beach", "match": ["kure"], "rank": 10 },
+    { "id": "wilmington", "name": "Wilmington", "match": [], "rank": 0, "default": true }
+  ],
+  "stations": {
+    "nwsOffice": null,
+    "tideStation": null,
+    "buoy": null
+  },
+  "eventFeeds": [],
+  "characters": {
+    "wrighty": {
+      "id": "wrighty",
+      "name": "Wrighty",
+      "creature": "pelican",
+      "pages": ["shop", "gift-finder"],
+      "sayOk": "Wrighty here. These pieces are in the shop right now.",
+      "sayNone": "Wrighty could not find a shop piece for that. Try another budget, or open the full shop."
+    },
+    "shelby": {
+      "id": "shelby",
+      "name": "Shelby",
+      "creature": "loggerhead",
+      "pages": ["home", "beach-guides"],
+      "greeting": "Hi, I'm Shelby, ShoreList's beach guide."
+    },
+    "cape": {
+      "id": "cape",
+      "name": "Captain Cape",
+      "creature": "pelican",
+      "pages": ["tours", "bookings"],
+      "greeting": "Hi, I'm Captain Cape, ShoreList's harbor guide."
+    }
+  }
+}
