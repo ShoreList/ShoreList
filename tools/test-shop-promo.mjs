@@ -61,7 +61,9 @@ for (const [code, opens, closes] of windows) {
     const start = Date.parse(opens);
     const end = Date.parse(closes);
     assert.equal(render(start - 1).banner, undefined);
-    assert.equal(render(end).banner, undefined);
+    // At the end instant the sale code is gone. Only the Christmas note (no code) may follow Cyber Monday.
+    const after = render(end).banner;
+    assert.ok(!after || !after.children.map((child) => child.textContent).join('').includes(code));
     for (const instant of [start, end - 1]) {
       const { banner, hero } = render(instant);
       assert.equal(banner.tag, 'aside');
@@ -81,6 +83,9 @@ test('public query strings do not preview expired or future offers', () => {
   }
   assert.equal(render(Date.parse(windows[0][1]), '', false).banner, undefined);
 });
+
+const xmasStart = Date.parse('2026-12-01T04:59:00Z');
+const xmasEnd = Date.parse('2026-12-08T05:00:00Z');
 
 test('an open shop tab removes expired offers and rolls over to the next sale', () => {
   const end = Date.parse(windows[0][2]);
@@ -102,6 +107,10 @@ test('an open shop tab removes expired offers and rolls over to the next sale', 
   page.tick(monday);
   assert.match(page.hero.textContent, /SHORECYBER15/);
   page.tick(mondayEnd);
+  assert.deepEqual(page.counts, [1, 1]);
+  assert.match(page.hero.textContent, /December 7/);
+  assert.equal(page.delay, xmasEnd - mondayEnd);
+  page.tick(xmasEnd);
   assert.deepEqual(page.counts, [0, 0]);
   assert.equal(page.delay, undefined);
 });
@@ -121,4 +130,38 @@ test('a suspended or restored tab catches up without stacking banners', () => {
   page.restore(monday);
   assert.match(page.hero.textContent, /SHORECYBER15/);
   assert.deepEqual(page.counts, [1, 1]);
+});
+
+test('Christmas order-by note shows only after Cyber Monday and hides after Dec 7 11:59 PM ET', () => {
+  assert.equal(xmasStart, Date.parse(windows[2][2]), 'starts the instant Cyber Monday ends');
+  assert.equal(xmasEnd, Date.parse('2026-12-07T23:59:59-05:00') + 1000, 'hidden from Dec 8 12:00 AM ET');
+  for (const instant of [xmasStart, Date.parse('2026-12-03T17:00:00Z'), Date.parse('2026-12-07T23:59:59-05:00')]) {
+    const { banner, hero } = render(instant);
+    assert.equal(banner.tag, 'aside');
+    assert.equal(banner.attrs['aria-label'], 'Christmas order-by note');
+    const visible = banner.children.map((child) => child.textContent).join('');
+    assert.match(visible, /ordering by December 7 for Christmas delivery/);
+    assert.match(visible, /Delivery dates vary by item/);
+    assert.match(visible, /cannot guarantee/);
+    assert.doesNotMatch(visible, /15%|SHORE|code|\u2014|\u2013/);
+    assert.match(hero.textContent, /December 7/);
+  }
+  assert.equal(render(xmasEnd).banner, undefined);
+  assert.equal(render(Date.parse('2026-12-20T17:00:00Z')).banner, undefined);
+});
+
+test('the Christmas note never overrides a sale and is absent before Cyber Monday ends', () => {
+  const sales = [['SHORE15', windows[0]], ['SHOREFRIDAY15', windows[1]], ['SHORECYBER15', windows[2]]];
+  for (const [code, w] of sales) {
+    for (const instant of [Date.parse(w[1]), Date.parse(w[2]) - 1]) {
+      const { banner } = render(instant);
+      const visible = banner.children.map((child) => child.textContent).join('');
+      assert.match(visible, new RegExp(code));
+      assert.doesNotMatch(visible, /Christmas/);
+    }
+  }
+  // Saturday and Sunday after Black Friday have no banner at all, and nothing shows before the launch sale.
+  assert.equal(render(Date.parse('2026-11-28T17:00:00Z')).banner, undefined);
+  assert.equal(render(Date.parse('2026-11-29T17:00:00Z')).banner, undefined);
+  assert.equal(render(Date.parse(windows[0][1]) - 1).banner, undefined);
 });
