@@ -10,7 +10,20 @@
 <meta name="description" content="Reach Wilmington and beach-town visitors with clearly labeled sponsored picks, event promotion, newsletter sponsorship and category sponsorships on ShoreList."/>
 <meta property="og:title" content="Advertise with ShoreList"/><meta property="og:description" content="Sponsored picks, events, newsletter and category sponsorships for Wilmington businesses."/><meta property="og:type" content="website"/><meta property="og:url" content="https://shorelist.net/advertise"/>
 <script>document.documentElement.className+=' js'</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
+<script>
+window.addEventListener('load',function(){
+  function load(){
+    if(document.querySelector('script[data-sl-ga]'))return;
+    var tag=document.createElement('script');
+    tag.async=true;
+    tag.setAttribute('data-sl-ga','1');
+    tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
+    document.head.appendChild(tag);
+  }
+  if(window.requestIdleCallback)requestIdleCallback(load);
+  else setTimeout(load,1);
+});
+</script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EN91RH3PZV');</script>
 <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb4-golden_1200x630_crop_center.webp"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb4-golden_1200x630_crop_center.webp"/>
 <link rel="icon" href="/favicon.ico"/><link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>

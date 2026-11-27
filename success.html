@@ -75,7 +75,20 @@ nav{width:100%;max-width:700px;display:flex;align-items:center;justify-content:s
 <link rel="stylesheet" href="/luxe.css"/>
 <script src="/luxe.js" defer></script>
 <link rel="stylesheet" href="/tokens.css"/>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
+<script>
+window.addEventListener('load',function(){
+  function load(){
+    if(document.querySelector('script[data-sl-ga]'))return;
+    var tag=document.createElement('script');
+    tag.async=true;
+    tag.setAttribute('data-sl-ga','1');
+    tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
+    document.head.appendChild(tag);
+  }
+  if(window.requestIdleCallback)requestIdleCallback(load);
+  else setTimeout(load,1);
+});
+</script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());gtag('config','G-EN91RH3PZV',{page_location:location.origin+location.pathname});

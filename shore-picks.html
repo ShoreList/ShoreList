@@ -245,7 +245,20 @@ footer{text-align:center;padding:52px 26px 40px;}
 .c-book{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;}
 .sl-spon a{display:inline-flex;align-items:center;min-height:44px;}
 </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
+<script>
+window.addEventListener('load',function(){
+  function load(){
+    if(document.querySelector('script[data-sl-ga]'))return;
+    var tag=document.createElement('script');
+    tag.async=true;
+    tag.setAttribute('data-sl-ga','1');
+    tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
+    document.head.appendChild(tag);
+  }
+  if(window.requestIdleCallback)requestIdleCallback(load);
+  else setTimeout(load,1);
+});
+</script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());gtag('config','G-EN91RH3PZV');
