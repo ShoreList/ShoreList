@@ -6,6 +6,14 @@ import { pathToFileURL } from 'node:url';
 const attr = (tag, name) => tag.match(new RegExp('\\s' + name + '\\s*=\\s*["\']([^"\']+)["\']', 'i'))?.[1];
 const productRoute = (url) => url.origin + url.pathname.replace(/\/+$/, '');
 const rateLimited = 'Merchant rate-limited verification (429)';
+const nightlyShopifyCount = 12;
+
+export function nightlyTargets(items, utcDay) {
+  const shopify = [...new Set(items.filter((item) => item.store === 'shopify').map((item) => item.url))];
+  const start = (utcDay * nightlyShopifyCount) % Math.max(1, shopify.length);
+  const selected = new Set(shopify.concat(shopify).slice(start, start + Math.min(shopify.length, nightlyShopifyCount)));
+  return items.filter((item) => item.store !== 'shopify' || selected.has(item.url));
+}
 
 function retryDelay(header) {
   if (!header) return 2000;
@@ -66,7 +74,9 @@ export async function checkProductPage(value, allowedHosts, fetchPage = fetch, w
 async function main() {
   const catalog = JSON.parse(fs.readFileSync(new URL('../shop-catalog.json', import.meta.url), 'utf8'));
   // Report each catalog card even if several cards share one merchant page.
-  const items = catalog.items.filter((item) => item.store === 'shopify' || item.store === 'fourthwall');
+  const allItems = catalog.items.filter((item) => item.store === 'shopify' || item.store === 'fourthwall');
+  const nightly = process.argv.includes('--nightly');
+  const items = nightly ? nightlyTargets(allItems, Math.floor(Date.now() / 86400000)) : allItems;
   const urls = [...new Set(items.map((item) => item.url))];
   const results = new Map();
   const pausedHosts = new Set();
@@ -89,6 +99,7 @@ async function main() {
     return issue ? ['- ' + item.id + ': ' + issue] : [];
   });
   const report = ['## Merchant product destinations', '',
+    nightly ? 'Nightly rotation checks Shopify product pages in batches and every Fourthwall product page.' : 'Full catalog mode.',
     items.length + ' cards, ' + (urls.length - skipped) + ' of ' + urls.length + ' destinations requested. ' +
     problems.length + ' card failures or unavailable checks.', ...problems].join('\n');
   console.log(report);
