@@ -11,7 +11,7 @@ const m = rest.search(/\n(var |function |const |let )/);
 const ctx = {}; vm.createContext(ctx);
 vm.runInContext(html.slice(a, o + 5 + m) + ';this.CAT_DATA=CAT_DATA;this.OPS=OPS;', ctx);
 ctx.OPS = toPublic(loadOperators()).categories; // operators now live in data/operators.json
-const strip = (s) => String(s || '').replace(/<[^>]*>/g, '').replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n)).replace(/&amp;/g, '&').replace(/&mdash;/g, '\u2014').replace(/&ndash;/g, '\u2013').replace(/\s+/g, ' ').trim();
+const strip = (s) => String(s || '').replace(/<[^>]*>/g, '').replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n)).replace(/&amp;/g, '&').replace(/&mdash;/g, ', ').replace(/&ndash;/g, ', ').replace(/[\u2014\u2013]/g, ', ').replace(/\s+/g, ' ').trim();
 
 const items = [];
 for (const [slug, c] of Object.entries(ctx.CAT_DATA)) {
@@ -65,7 +65,47 @@ const pages = [
   ['Holiday gift guide', 'Wrightsville Beach holiday gifts under $25, $35 and $50', '/holiday-gift-guide', 'holiday christmas gift guide ornament wrightsville'],
 ];
 for (const [title, sub, url, kw] of pages) items.push({ t: 'page', title, sub, url, kw });
-const out = { v: 1, built: new Date().toISOString().slice(0, 10), items };
+
+const events = JSON.parse(fs.readFileSync(new URL('../events-data.json', import.meta.url), 'utf8')).events || [];
+for (const e of events) {
+  if (!e || !e.id || !e.title || !e.start) continue;
+  const page = '/events/' + e.id + '.html';
+  if (!fs.existsSync(new URL('../' + page, import.meta.url))) continue;
+  items.push({
+    t: 'event',
+    id: e.id,
+    title: strip(e.title),
+    sub: [e.time, e.area, e.venue].filter(Boolean).join(' · '),
+    url: page,
+    kw: [e.cat, e.area, e.time, e.tickets, 'event'].filter(Boolean).join(' ').toLowerCase(),
+    start: e.start,
+    end: e.end || e.start,
+    time: e.time || '',
+    area: strip(e.area || ''),
+    cat: strip(e.cat || ''),
+    tickets: strip(e.tickets || '').slice(0, 120),
+    verified: !!e.verified,
+  });
+}
+
+const catalog = JSON.parse(fs.readFileSync(new URL('../shop-catalog.json', import.meta.url), 'utf8'));
+for (const p of catalog.items || []) {
+  if (!p || !p.name || !p.url) continue;
+  const handle = String(p.url).split('/products/')[1] || '';
+  const local = handle ? '/shop/products/' + handle.split('?')[0] + '.html' : '';
+  const url = local && fs.existsSync(new URL('../' + local, import.meta.url)) ? local : p.url;
+  items.push({
+    t: 'shop',
+    title: strip(p.name),
+    sub: [p.town, p.price != null ? '$' + p.price : ''].filter(Boolean).join(' · '),
+    url,
+    kw: [p.town, p.type, p.color, 'shop gift'].filter(Boolean).join(' ').toLowerCase(),
+    price: p.price != null ? String(p.price) : '',
+    town: strip(p.town || ''),
+  });
+}
+
+const out = { v: 2, built: new Date().toISOString().slice(0, 10), items };
 fs.writeFileSync(new URL('../search-index.json', import.meta.url), JSON.stringify(out));
 console.log('search-index.json:', items.length, 'items',
   '(' + items.filter((i) => i.t === 'cat').length + ' categories, ' + items.filter((i) => i.t === 'tour').length + ' live tours)');

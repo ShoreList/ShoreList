@@ -99,6 +99,7 @@
 
   function search(q) {
     if (!INDEX) return [];
+    if (window.ShoreFront) return window.ShoreFront.search(INDEX.items, q, 8);
     var nq = norm(q);
     if (!nq) return suggestions();
     var tokens = nq.split(' ');
@@ -109,6 +110,8 @@
       var s = score(it, nq, tokens);
       if (it.slug && boostSlugs[it.slug]) s += boostSlugs[it.slug];
       if (it.t === 'tour' && s > 0) s += 6;            // bookable things first
+      if (it.t === 'event' && s > 0 && /tonight|weekend|event/.test(nq)) s += 8;
+      if (it.t === 'shop' && s > 0 && /shop|gift|buy/.test(nq)) s += 8;
       if (s > 0) scored.push({ it: it, s: s });
     });
     scored.sort(function (a, b) { return b.s - a.s; });
@@ -148,7 +151,10 @@
     '.sp-b.sp-book{background:#B5362F;color:#fff}',
     '.sp-empty{padding:26px 18px;text-align:center;opacity:.8;font-size:.95rem;line-height:1.5}',
     '.sp-empty a{color:#D9C7A3;font-weight:500}',
-    '.sp-foot{display:flex;gap:16px;justify-content:space-between;padding:10px 16px;border-top:1px solid rgba(217,199,163,.12);font-size:.74rem;opacity:.65}',
+    '.sp-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px 0}',
+    '.sp-chips button{font:600 .75rem "DM Sans",system-ui,sans-serif;color:#D9C7A3;background:transparent;border:1px solid rgba(217,199,163,.35);border-radius:100px;min-height:36px;padding:4px 10px;cursor:pointer}',
+    '.sp-foot{display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap;padding:10px 16px;border-top:1px solid rgba(217,199,163,.12);font-size:.74rem;opacity:.85}',
+    '.sp-wx{color:#D9C7A3}',
     '@media(prefers-reduced-motion:reduce){.sp-fab{transition:none}}'
   ].join('\n');
 
@@ -170,13 +176,23 @@
     ov.innerHTML = '<div class="sp-box"><div class="sp-in"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>' +
       '<input type="text" id="sp-input" role="combobox" aria-expanded="true" aria-controls="sp-list" aria-autocomplete="list" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Try: ghost tour, surf lesson, rainy day, events" />' +
       '<button type="button" class="sp-esc" aria-label="Close search">Esc</button></div>' +
+      '<div class="sp-chips" role="group" aria-label="Common questions"></div>' +
       '<ul class="sp-list" id="sp-list" role="listbox" aria-label="Results"></ul>' +
-      '<div class="sp-foot"><span>Up and down to move, Enter to open</span><span>Prices and times are shown at checkout</span></div></div>';
+      '<div class="sp-foot"><span class="sp-wx"></span><span>Up and down to move, Enter to open</span><span>Prices and times come from the ShoreList pages</span></div></div>';
     document.body.appendChild(ov);
     input = ov.querySelector('#sp-input'); list = ov.querySelector('#sp-list');
+    var chips = ov.querySelector('.sp-chips');
+    var chipList = (window.ShoreFront && ShoreFront.chips) || [['Tonight', 'tonight'], ['This weekend', 'this weekend'], ['Rainy day', 'rainy day'], ['With kids', 'with kids'], ['Free', 'free'], ['Where to eat', 'where to eat'], ['Beach report', 'beach report']];
+    chips.innerHTML = chipList.map(function (c) { return '<button type="button" data-q="' + esc(c[1]) + '">' + esc(c[0]) + '</button>'; }).join('');
+    chips.addEventListener('click', function (e) {
+      var b = e.target.closest && e.target.closest('button'); if (!b) return;
+      input.value = b.getAttribute('data-q') || '';
+      if (window.ShoreFront) ShoreFront.remember({ q: input.value });
+      render(input.value);
+    });
     ov.addEventListener('mousedown', function (e) { if (e.target === ov) close(); });
     ov.querySelector('.sp-esc').addEventListener('click', close);
-    input.addEventListener('input', function () { render(input.value); });
+    input.addEventListener('input', function () { if (window.ShoreFront) ShoreFront.remember({ q: input.value }); render(input.value); });
     input.addEventListener('keydown', onKey);
     list.addEventListener('mousemove', function (e) { var a = e.target.closest && e.target.closest('a[data-i]'); if (a) setActive(+a.getAttribute('data-i')); });
     list.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[data-i]'); if (a) track('search_select', { search_term: input.value.slice(0, 60), item_type: results[+a.getAttribute('data-i')].t }); });
@@ -192,13 +208,15 @@
 
   function badge(it) {
     if (it.t === 'tour') return '<span class="sp-b sp-book">Book' + (it.price ? ' · ' + esc(it.price) : '') + '</span>';
-    if (it.t === 'cat') return it.live ? '<span class="sp-b sp-book">' + it.live + ' live</span>' : '<span class="sp-b">Coming soon</span>';
+    if (it.t === 'cat') return it.live ? '<span class="sp-b sp-book">' + it.live + ' live</span>' : '<span class="sp-b">Join waitlist</span>';
+    if (it.t === 'event') return '<span class="sp-b">' + esc(window.ShoreFront ? ShoreFront.cta(it) : 'View') + '</span>';
+    if (it.t === 'shop') return '<span class="sp-b">View</span>';
     return '';
   }
 
   function render(q) {
     results = search(q);
-    var html = '', lastType = '', labels = { tour: 'Book now', cat: 'Experiences', page: 'Explore' };
+    var html = '', lastType = '', labels = { tour: 'Book now', cat: 'Experiences', page: 'Explore', event: 'Events', shop: 'Shop' };
     if (!results.length) {
       list.innerHTML = '<li class="sp-empty">Nothing matches "' + esc(q) + '" yet.<br/>Try a plain word like <em>surf</em>, <em>ghost</em> or <em>events</em>, or <a href="/category">browse all experiences</a>.</li>';
       input.removeAttribute('aria-activedescendant'); active = -1; return;
@@ -240,6 +258,14 @@
     document.documentElement.style.overflow = 'hidden';
     input.value = '';
     load().then(function () { render(''); });
+    var wx = ov.querySelector('.sp-wx');
+    if (wx && window.ShoreWX && window.ShoreWX.get) {
+      window.ShoreWX.get(0).then(function (x) {
+        if (!x || x.temp == null) return;
+        var flag = x.flag && x.flag.label ? x.flag.label + ', ' : '';
+        wx.textContent = flag + Math.round(x.temp) + 'F at Wrightsville Beach';
+      }).catch(function () {});
+    }
     setTimeout(function () { input.focus(); }, 0);
     track('search_open', { method: src || 'key' });
   }
