@@ -1211,7 +1211,7 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11763539063403655751_2048.jpg",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9322141173352740051_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-printed-garment-dyed-tee_1920x.webp",
    "facts": [
     [
@@ -2640,7 +2640,7 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11330414591097854260_2048.jpg",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17697498208600770942_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-oystercatcher-printed-garment-dyed-tee_1920x.webp",
    "gallery": [
     {
@@ -2967,7 +2967,7 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5974500264955042200_2048.jpg",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5398372746728996241_2048.jpg",
    "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wild-venus-flytrap-cape-fear-printed-garment-dyed-tee_1920x.webp",
    "facts": [
     [
@@ -3915,6 +3915,46 @@
    "color": "Navy",
    "added": "2026-11-21",
    "motif": "boats-buoys"
+  },
+  {
+   "id": "daymark-cuffed-beanie-wrightsville-beach",
+   "collection": "local-icons",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Daymark Cuffed Beanie, Wrightsville Beach",
+   "url": "https://shorelist.myshopify.com/products/daymark-cuffed-beanie-wrightsville-beach",
+   "type": "hats",
+   "color": "Navy",
+   "added": "2026-11-22",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2220033262101786662_2048.jpg",
+   "alt": "Navy cuffed knit beanie with one small white embroidered sailboat and WB on the cuff",
+   "meta": "One small sloop and WB for Wrightsville Beach stitched on the cuff of a navy knit beanie, kept quiet on purpose.",
+   "cta": "Shop the beanie",
+   "price": 30,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2220033262101786662_2048.jpg",
+   "facts": [
+    [
+     "Fit",
+     "One size, cuffed"
+    ],
+    [
+     "Fabric",
+     "100% acrylic knit"
+    ],
+    [
+     "Embroidery",
+     "One small sloop and WB on the cuff"
+    ],
+    [
+     "Colors",
+     "Navy"
+    ]
+   ]
   },
   {
    "id": "the-live-oak-cuffed-beanie-wilmington",
