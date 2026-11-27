@@ -345,6 +345,18 @@
       ],
       "status": "Added to the catalog studio-first from the live Shopify product (published 2026-11-22). No lookbook yet; needs a Higgsfield lookbook and blind review before one is added",
       "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2220033262101786662_2048.jpg"
+    },
+    {
+      "id": "ilm-crewneck",
+      "name": "ILM Crewneck",
+      "url": "https://shorelist.myshopify.com/products/ilm-crewneck",
+      "color": "True Navy",
+      "store": "shopify",
+      "options": [
+        "True Navy"
+      ],
+      "status": "Lookbook removed. The ILM lettering in that scene was about twice the size on the garment, so it was unfaithful. Studio-first on the True Navy photo until a corrected lookbook passes review",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9446758540865204948_2048.jpg"
     }
   ],
   "reviews": {},
