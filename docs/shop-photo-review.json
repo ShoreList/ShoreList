@@ -341,5 +341,140 @@
       "status": "Held for independent review",
       "finding": "Both straps contact a visible peg. The navy tooth is about 22 percent of the visible bag body width in the comparison and the centered lettering appears legible. Check exact artwork, true color, product shape, and whether the vendor studio asset qualifies as an actual studio photograph before assigning scores. The scene is styled with coastal dune vegetation and does not claim a precise location."
     }
-  ]
+  ],
+  "toteBatch": {
+    "sourceAudit": "Eight Shopify variants matched the live merchant endpoint. The Natural Fourthwall source was identified on the public merchant gallery. Three printed tote galleries reuse identical model poses and backgrounds across separately decorated products. Gallery metadata does not establish a photographed finished sample.",
+    "originalPhotoSearch": "The connected ShoreList Creative Library Original Photos folder was empty. Targeted image searches for Megalodon, Sea Turtle, Airlie Oak and tote returned no matches.",
+    "releaseStatus": "No image pair cleared independent review. No approved reviews or numeric scores were entered.",
+    "drafts": [
+      {
+        "id": "wrightsville-beach-sloop-all-over-print-tote-bag",
+        "generator": "Higgsfield GPT Image 2.6",
+        "jobId": "7fcf4691-8346-4975-bcaa-661a705da8db",
+        "lookbookSha256": "62a1729d18ce2b8ff29bc227b454cce4f17934a051cca31be6ff4918207c99e2",
+        "studioReferenceSha256": "4e5b5cdd6ae7a483fa3cc28630fa5bda7815f5d88556603f81b2ad22f683f8c8",
+        "studioReference": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8848050272079715985_2048.jpg?v=1795404833",
+        "creditsQuoted": 0,
+        "preliminaryStatus": "rejected",
+        "finding": "The draft redraws the all-over pattern. Sail shapes, placement and visible spacing differ from the Navy 16-inch reference.",
+        "studioProvenance": "Merchant gallery reference verified for comparison. Physical-sample studio capture has not been verified.",
+        "variantOptions": [
+          "16\" × 16''",
+          "Navy"
+        ]
+      },
+      {
+        "id": "airlie-oak-wilmington-all-over-print-tote-bag",
+        "generator": "Higgsfield GPT Image 2.6",
+        "jobId": "a8bdb01e-b608-477b-aa0d-b748b45fca00",
+        "lookbookSha256": "9eae3c834970eb033a8f00ceedcb7b433212444b47498fd75caa9da742e19a8d",
+        "studioReferenceSha256": "78a4a9a4370cbd0064b38fcbe3db767dde9a82bd1a1e3b1469fbe752e43548ef",
+        "studioReference": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/1681256103521192887_2048.jpg?v=1795412454",
+        "creditsQuoted": 0,
+        "preliminaryStatus": "rejected",
+        "finding": "The draft redraws the live oak. The branching and canopy detail differ from the exact merchant artwork.",
+        "studioProvenance": "Merchant gallery reference verified for comparison. Physical-sample studio capture has not been verified.",
+        "variantOptions": [
+          "16\" × 16''",
+          "Navy"
+        ]
+      },
+      {
+        "id": "the-lifeguard-stand-canvas-tote-carolina-beach",
+        "generator": "Higgsfield GPT Image 2.6",
+        "jobId": "0d78dc2c-ec56-40cf-93ad-7c91c9c59d88",
+        "lookbookSha256": "0b79d1dac88c11bec41ccb8fcf8be3537d5581b6c87a544db2504fa983de888b",
+        "studioReferenceSha256": "59e63761fa7b16c5ebe81f6e1b5a5a83a35901a742c669e1b568080ca0ecf66d",
+        "studioReference": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3245672284682119365_2048.jpg?v=1795405115",
+        "creditsQuoted": 0,
+        "preliminaryStatus": "held",
+        "finding": "The front mark remains small, the Carolina Beach label is legible and the peg supports both straps. A verified sample photo and exact embroidery comparison are still needed.",
+        "studioProvenance": "Merchant gallery reference verified for comparison. Physical-sample studio capture has not been verified.",
+        "variantOptions": [
+          "One size",
+          "Cream"
+        ]
+      },
+      {
+        "id": "the-blue-crab-canvas-tote-kure-beach",
+        "generator": "Higgsfield GPT Image 2.6",
+        "jobId": "e64510e8-a09c-4684-b6fa-9b620de0c577",
+        "lookbookSha256": "8ded9ca0ba4654f634af9cebe63bfad61ac034db4d26a52febe392e2a25c8dd0",
+        "studioReferenceSha256": "13fa0d47ef0d00a423428ca29ac38ab9c6b9b5d99b75ead7be85a06349f2d601",
+        "studioReference": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7066691774119677009_2048.jpg?v=1795405231",
+        "creditsQuoted": 0,
+        "preliminaryStatus": "held",
+        "finding": "The blue crab and KB lettering remain in the expected location and the hanging pose is supported. A verified sample photo and comparison of thread color and claw detail are still needed.",
+        "studioProvenance": "Merchant gallery reference verified for comparison. Physical-sample studio capture has not been verified.",
+        "variantOptions": [
+          "One size",
+          "Cream"
+        ]
+      },
+      {
+        "id": "the-lifeguard-stand-canvas-tote-kure-beach",
+        "generator": "Higgsfield GPT Image 2.6",
+        "jobId": "a340347a-5137-4133-823f-1b788a95e645",
+        "lookbookSha256": "934bbe6a789bd720dc8e3e07684a29bfe2543ae9374c8154de8cbe9571d8f328",
+        "studioReferenceSha256": "ef6c3011acd843a7f73e63e3ab25add1a64a2a8f7405fc5aa68fcb4903693ee2",
+        "studioReference": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6462593349328086418_2048.jpg?v=1795406807",
+        "creditsQuoted": 0,
+        "preliminaryStatus": "held",
+        "finding": "The Kure Beach mark and lettering remain small and centered, with visible support. Independently verify the mark and stitching against a physical-sample studio photo.",
+        "studioProvenance": "Merchant gallery reference verified for comparison. Physical-sample studio capture has not been verified.",
+        "variantOptions": [
+          "One size",
+          "Cream"
+        ]
+      },
+      {
+        "id": "kure-beach-sea-turtle-printed-canvas-tote",
+        "generator": "Higgsfield GPT Image 2.6",
+        "jobId": "ca2a0f7a-3bee-48cf-acda-d70d1f9093b5",
+        "lookbookSha256": "449fb229b822073cebb86252437ea080cc4d03f8bb45a850f2e0632c4606befd",
+        "studioReferenceSha256": "e68018424ae7d10edd614ae725d09c905b9d051e2837a56f42d1616792c1f6cd",
+        "studioReference": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8262565940838947013_2048.jpg?v=1795413167",
+        "creditsQuoted": 0,
+        "preliminaryStatus": "rejected",
+        "finding": "At artwork scale the turtle head and flipper contour have visibly changed from the merchant image. The draft is unsuitable for representing this exact print.",
+        "studioProvenance": "Merchant gallery reference verified for comparison. Physical-sample studio capture has not been verified.",
+        "variantOptions": [
+          "One size",
+          "Cream"
+        ]
+      },
+      {
+        "id": "wrightsville-beach-sailfish-printed-canvas-tote",
+        "generator": "Higgsfield GPT Image 2.6",
+        "jobId": "d25b9dc7-be53-4107-b9b6-9dc3b8cb11e5",
+        "lookbookSha256": "e6b319ee692ac2c30877f2e88ec9f59edc5b40fd0adc20c3c0511d67fc893609",
+        "studioReferenceSha256": "51be02801b7a85bd7ea7a27a6e80dceb96d14a9510ad238eed56d1a79832582d",
+        "studioReference": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9689393900630634296_2048.jpg?v=1795444779",
+        "creditsQuoted": 0,
+        "preliminaryStatus": "held",
+        "finding": "The visible artwork remains small and the Wrightsville Beach wording is legible. Verify the sailfish fin and bill outline against a named physical-sample photo before scoring.",
+        "studioProvenance": "Merchant gallery reference verified for comparison. Physical-sample studio capture has not been verified.",
+        "variantOptions": [
+          "One size",
+          "Cream"
+        ]
+      },
+      {
+        "id": "salt-wash-market-tote",
+        "generator": "Higgsfield GPT Image 2.6",
+        "jobId": "564650d9-10b8-4cd4-a758-35ebc3a5c7a3",
+        "lookbookSha256": "b5ad043c2f210f98ca63093fafbc2c3229539e2a023f8ab34b383c430517791e",
+        "studioReferenceSha256": "6019d2ce5fa823f4e061e7fd410c2417f4def6b7c6b623fc6716a20d292c9c59",
+        "studioReference": "https://imgproxy.fourthwall.dev/BH96zQHHegCWivfU620XpCVkwZTjVaPP1u3pR75t-3Q/w:1920/sm:1/enc/_m1Cm7Nryr0EUKSs/vVMmwqf8lrkZFdtL/I4xt1tUItCEH8r5_/GfHN3T01opO7beEu/NiQJLs9nNSUNcq2L/mHSkEu9chmJGPvNt/eO5cJXIENLdTw78D/MPbRbc4EX1hdbGWO/_N_mQpwYk5uuPXlO/LxxiY43jJDCZLgug/ED20QX-C2Mpm55cA/4uxwlWrU1ypqaZ4-/D8zsJzRPapCeSkOE/wTwoQzjrA70qCjeG/sToaJ54wGmg.jpg",
+        "creditsQuoted": 0,
+        "preliminaryStatus": "rejected",
+        "finding": "The Market Tote has a visibly narrower, taller front panel than the Natural merchant reference. The listed 20 × 14 × 5-inch proportions are not represented convincingly.",
+        "studioProvenance": "Merchant gallery reference verified for comparison. Physical-sample studio capture has not been verified.",
+        "variantOptions": [
+          "Natural",
+          "20 × 14 × 5 in, listed dimensions"
+        ]
+      }
+    ]
+  }
 }
