@@ -1007,7 +1007,9 @@ window.addEventListener('load',function(){
   }
 
   /* ---------- results ---------- */
+  var resultsObserver=null;
   function render(){
+    if(resultsObserver){resultsObserver.disconnect();resultsObserver=null;}
     var live=liveItems(),needle=q.trim().toLowerCase(),html='',total=0;
     var narrowed=!!needle||sortBy!=='feat'||town!=='all'||type!=='all'||motif!=='all'||coll!=='all';
     if(!narrowed){
@@ -1059,11 +1061,11 @@ window.addEventListener('load',function(){
     if(scroll){var el=$('results');el.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'});}
   }
   function tiles(){
-    var live=liveItems(),out='',k=0;
+    var live=liveItems(),out='';
     townDefs().forEach(function(s){
       var list=live.filter(function(i){return townOf(i)===s.id;});if(!list.length)return;
-      var cv=byId(s.cover)||list[0],eager=k++<4;
-      out+='<a class="town" href="/shop/'+esc(s.id)+esc(qs())+'" data-tile="'+esc(s.id)+'"><div class="tp">'+(cv&&cv.img?'<img src="'+esc(cv.img)+'" alt="" '+(eager?'loading="eager"':'loading="lazy"')+' decoding="async" width="800" height="1000"/>':'')+'</div><div class="tx"><b>'+esc(s.name)+'</b><span>'+esc(s.tag||'')+'</span><i>'+pieces(list.length)+'</i></div></a>';
+      var cv=byId(s.cover)||list[0];
+      out+='<a class="town" href="/shop/'+esc(s.id)+esc(qs())+'" data-tile="'+esc(s.id)+'"><div class="tp">'+(cv&&cv.img?'<img src="'+esc(cv.img)+'" alt="" loading="lazy" decoding="async" width="800" height="1000"/>':'')+'</div><div class="tx"><b>'+esc(s.name)+'</b><span>'+esc(s.tag||'')+'</span><i>'+pieces(list.length)+'</i></div></a>';
     });
     if(out)$('townGrid').innerHTML=out;
   }
@@ -1178,8 +1180,17 @@ window.addEventListener('load',function(){
     if(live.length){
       window.__slCatalog=data;try{document.dispatchEvent(new CustomEvent('sl:catalog',{detail:data}));}catch(e){}
       try{var sp=new URLSearchParams(location.search),t0=sp.get('town'),y0=sp.get('type'),m0=sp.get('motif'),c0=sp.get('collection');if(c0&&(data.collections||[]).some(function(c){return c.id===c0;}))coll=c0;if(m0&&motifDefs().some(function(m){return m.id===m0;}))motif=m0;if(t0&&townIds()[t0])town=t0;if(y0&&TYPES.some(function(x){return x[0]===y0;}))type=y0;}catch(e){}
-      tiles();motifTiles();wire();renderAll();
-      if(town!=='all'||type!=='all'||motif!=='all'||coll!=='all')setTimeout(function(){$('results').scrollIntoView({block:'start'});},60);
+      tiles();motifTiles();wire();renderFeatured();paintChips();
+      var filtered=town!=='all'||type!=='all'||motif!=='all'||coll!=='all';
+      // Featured cards are already in the HTML. Build the lower shelves once a shopper is near them.
+      if(filtered||location.hash||!window.IntersectionObserver)render();
+      else{
+        resultsObserver=new window.IntersectionObserver(function(entries){
+          if(resultsObserver&&entries.some(function(entry){return entry.isIntersecting;}))render();
+        },{rootMargin:'600px 0px'});
+        resultsObserver.observe($('results'));
+      }
+      if(filtered)setTimeout(function(){$('results').scrollIntoView({block:'start'});},60);
     }else{
       $('shelves').innerHTML='<section class="soon"><h2>The shop is opening soon</h2><p>We are finishing the first collections now. Join the waitlist and we will tell you when they are live.</p><a class="sbtn" href="/waitlist?src=shop">Join the waitlist</a></section>';
     }
