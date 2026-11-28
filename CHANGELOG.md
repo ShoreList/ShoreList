@@ -6,6 +6,7 @@ Format: newest first. Each future entry: date, PR or action, what changed, evide
 
 ## 2026-11-28
 
+- Home Decor and Gear tiles on the shop no longer use lookbook files that 404. Home Decor shows the Sloop printed throw pillow. Gear shows the Sloop all over print duffel. Six holiday gift guide cards that used missing lookbooks now use the studio photo of that piece. A check fails the build when an image URL in an HTML page does not return 200. `sw.js` is `sl-v334-2026-11-28`. Rollback: revert the squash commit and bump `sw.js`.
 - Four embroidered crewnecks now show From $68, and the Sloop corduroy cap shows $46, matching the lowered Shopify prices. The catalog, shop cards, gift guides, product JSON-LD and the pier and souvenir pages use those prices. `sw.js` is `sl-v333-2026-11-28`. Rollback: revert the squash commit and bump `sw.js`.
 - Shop card frames are square, on white, so the square studio photos no longer sit in a taller beige band. Quick view and product photos use the same white square. `sw.js` is `sl-v332-2026-11-28`. Rollback: revert the squash commit and bump `sw.js`.
 - Wrightsville Beach shelf links for the can cooler and the 2026 ornament open their product pages. They had used the catalog id, which 404s. The shelf builder now uses the Shopify handle. `sw.js` is `sl-v332-2026-11-28`. Rollback: revert the squash commit and bump `sw.js`.

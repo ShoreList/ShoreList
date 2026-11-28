@@ -33,8 +33,8 @@ const collections = BLOCKS.filter((b) => cat.collections.some((c) => c.id === b.
 // Shopify storefront collections. These are not on-page filters, so they have no data-coll.
 const shopifyCollections = [
   { href: '/prints', name: 'Art & Prints', line: 'Framed prints from Wrightsville Beach, Carolina Beach and Kure Beach.', img: 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sailfish-framed-art-print_960x.jpg', alt: 'Framed Wrightsville Beach sailfish art print in a coastal study, rendered mockup' },
-  { href: '/shop#collections', name: 'Home Decor', line: 'Ornaments, mugs, pillows and towels for the house.', img: 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-ornament-2026_960x.webp', alt: 'Wrightsville Beach 2026 ornament on a Christmas tree in a coastal living room' },
-  { href: '/shop?collection=shore-gear#results', name: 'Gear', line: 'Coolers, totes and pouches for the boat and the beach.', img: 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-can-cooler_960x.webp', alt: 'Hand holding a can in the Wrightsville Beach can cooler on a dock at sunset' },
+  { href: '/shop#collections', name: 'Home Decor', line: 'Ornaments, mugs, pillows and towels for the house.', img: 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10845976540544592137_2048.jpg?v=1795396185', alt: 'Wrightsville Beach Sloop printed throw pillow' },
+  { href: '/shop?collection=shore-gear#results', name: 'Gear', line: 'Coolers, totes and pouches for the boat and the beach.', img: 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10656102888954431234_2048.jpg?v=1795404687', alt: 'Wrightsville Beach Sloop all over print duffel bag' },
 ].map((c) => `<a class="cblock" href="${esc(c.href)}" rel="noopener"><div class="cp"><img src="${esc(c.img)}" alt="${esc(c.alt)}" loading="lazy" decoding="async" width="1200" height="900"/></div><h3>${esc(c.name)}</h3><p>${esc(c.line)}</p><span class="go">View the collection</span></a>`);
 collections.push(...shopifyCollections);
 
