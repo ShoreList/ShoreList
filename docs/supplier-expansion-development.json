@@ -124,18 +124,110 @@
     "productionMethod": "KNITTING",
     "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_quHTYBtVRFqTh6ODh8g9Bw",
     "backendRendering": false,
-    "artwork": "docs/supplier-art/knit/sloop.svg"
+    "artwork": "docs/supplier-art/knit/sloop.svg",
+    "productionReadiness": {
+      "asOf": "2026-11-28",
+      "priority": "P1",
+      "status": "RESEARCH_ONLY",
+      "supplierModel": "K01",
+      "publicCatalogEvidence": {
+        "status": "VERIFIED",
+        "url": "https://products.fourthwall.com/category/sweaters-f0f8f",
+        "baseCents": 3800,
+        "notes": "Current public category price; not a signed-in exact variant quote. K08 detail page previously displayed $41, so reconcile in merchant account before release."
+      },
+      "knitConstraints": {
+        "status": "VERIFIED",
+        "sources": [
+          "https://design.knitwise.com/en-US/rules-of-knitwise-template-423476",
+          "https://design.knitwise.com/en-US/step-1-design-using-the-knitwise-template-423481"
+        ],
+        "maximumYarnColorsIncludingBaseAndTrim": 4,
+        "requirements": "Use official template and yarn palette; single trim color from the same four; preserve factory interface; avoid stray pixels and anti-aliased intermediate colors; inspect front, back, side and all sizes."
+      },
+      "artworkAssessment": {
+        "artworkSha256": "01ffc1075518a1c81b00625f7d43af81957d066148819312e081f8e97c59f76d",
+        "status": "HYPOTHESIS",
+        "notes": "Two foreground colors plus navy base and matching navy trim: three total proposed. The existing artwork retained its sail, mast, hull and separated wakes in a 47 × 48 px screen raster. The raster does not establish actual stitch resolution. Inspect the mast and lower sail clearance on the supplier proof.",
+        "localReference": "https://eft.usace.army.mil/saw-nav/INLETS/MASONBORO/INLET/Masonboro_Inlet.pdf"
+      },
+      "catalogDifferentiation": {
+        "status": "HYPOTHESIS",
+        "notes": "Current assortment has a sloop fleece and Harbor Goods printed tee; jacquard knit construction must be the genuine point of difference."
+      },
+      "pricingScenario": {
+        "status": "ESTIMATE",
+        "retailCents": 10800,
+        "baseOnlySpreadCents": 7000,
+        "stress15PercentBaseOnlySpreadCents": 5380,
+        "notes": "Illustrative only, excludes shipping, payment fees, tax, refunds and advertising. Shopify promotions do not apply to Fourthwall. Not an approved price or net profit."
+      },
+      "releaseBlockers": [
+        "Exact merchant template/variant availability and quote",
+        "Official yarn palette and size-specific production proof",
+        "Physical sample quality and genuine studio photography",
+        "Originality and trademark clearance",
+        "Shipping, checkout, care, labeling and safety evidence",
+        "Independent five-category review at 90/100 each plus existing gates"
+      ]
+    }
   },
   "Pelican Knit Crewneck": {
     "description": "A brown pelican in profile sits on the chest of an oyster knit crewneck.",
-    "direction": "Use an open silhouette and small warm accent. Verify knit resolution at actual size.",
+    "direction": "Keep the long bill and brown throat pouch distinct from the dark neck. Verify the eye and pouch at actual knit size.",
     "templateId": "pro_quHTYBtVRFqTh6ODh8g9Bw",
     "templateName": "Knitted Crewneck Sweater Classic Fit",
     "publicBaseCents": 3800,
     "productionMethod": "KNITTING",
     "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_quHTYBtVRFqTh6ODh8g9Bw",
     "backendRendering": false,
-    "artwork": "docs/supplier-art/knit/pelican.svg"
+    "artwork": "docs/supplier-art/knit/pelican.svg",
+    "productionReadiness": {
+      "asOf": "2026-11-28",
+      "priority": "P2",
+      "status": "RESEARCH_ONLY",
+      "supplierModel": "K01",
+      "publicCatalogEvidence": {
+        "status": "VERIFIED",
+        "url": "https://products.fourthwall.com/category/sweaters-f0f8f",
+        "baseCents": 3800,
+        "notes": "Current public category price; not a signed-in exact variant quote. K08 detail page previously displayed $41, so reconcile in merchant account before release."
+      },
+      "knitConstraints": {
+        "status": "VERIFIED",
+        "sources": [
+          "https://design.knitwise.com/en-US/rules-of-knitwise-template-423476",
+          "https://design.knitwise.com/en-US/step-1-design-using-the-knitwise-template-423481"
+        ],
+        "maximumYarnColorsIncludingBaseAndTrim": 4,
+        "requirements": "Use official template and yarn palette; single trim color from the same four; preserve factory interface; avoid stray pixels and anti-aliased intermediate colors; inspect front, back, side and all sizes."
+      },
+      "artworkAssessment": {
+        "artworkSha256": "0b89baaa93c4cb814af8547b73575c00ecee2386ac6c180954185d8f0955adcc",
+        "status": "HYPOTHESIS",
+        "notes": "Three foreground colors plus oyster base and matching oyster trim: four total proposed. Enlarged the navy eye and reshaped the brown pouch for the Atlantic brown pelican profile. In a 98 × 60 px screen raster of the motif, the same eye region held 12 solid navy pixels after revision versus one before. The brown pouch and long bill remained visible. The raster establishes screen legibility only. Verify the official yarn match and the eye, bill and pouch on the supplier proof.",
+        "localReference": "https://www.allaboutbirds.org/guide/Brown_pelican/id"
+      },
+      "catalogDifferentiation": {
+        "status": "HYPOTHESIS",
+        "notes": "Existing pelican fleece and cap require distinct knit construction and a premium finish."
+      },
+      "pricingScenario": {
+        "status": "ESTIMATE",
+        "retailCents": 10800,
+        "baseOnlySpreadCents": 7000,
+        "stress15PercentBaseOnlySpreadCents": 5380,
+        "notes": "Illustrative only, excludes shipping, payment fees, tax, refunds and advertising. Shopify promotions do not apply to Fourthwall. Not an approved price or net profit."
+      },
+      "releaseBlockers": [
+        "Exact merchant template/variant availability and quote",
+        "Official yarn palette and size-specific production proof",
+        "Physical sample quality and genuine studio photography",
+        "Originality and trademark clearance",
+        "Shipping, checkout, care, labeling and safety evidence",
+        "Independent review with a brand-match score of at least 90/100 across five dimensions, a product score of at least 90/100, and the existing imagery gates"
+      ]
+    }
   },
   "Blue Crab Knit Quarter Zip": {
     "description": "A small blue crab sits below the shoulder of a knit quarter zip.",
@@ -146,7 +238,53 @@
     "productionMethod": "KNITTING",
     "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_9IEPqxSWRWm_pCsJTuFTbQ",
     "backendRendering": false,
-    "artwork": "docs/supplier-art/knit/blue-crab.svg"
+    "artwork": "docs/supplier-art/knit/blue-crab.svg",
+    "productionReadiness": {
+      "asOf": "2026-11-28",
+      "priority": "P1",
+      "status": "RESEARCH_ONLY",
+      "supplierModel": "K30",
+      "publicCatalogEvidence": {
+        "status": "VERIFIED",
+        "url": "https://products.fourthwall.com/category/sweaters-f0f8f",
+        "baseCents": 4200,
+        "notes": "Current public category price; not a signed-in exact variant quote. K08 detail page previously displayed $41, so reconcile in merchant account before release."
+      },
+      "knitConstraints": {
+        "status": "VERIFIED",
+        "sources": [
+          "https://design.knitwise.com/en-US/rules-of-knitwise-template-423476",
+          "https://design.knitwise.com/en-US/step-1-design-using-the-knitwise-template-423481"
+        ],
+        "maximumYarnColorsIncludingBaseAndTrim": 4,
+        "requirements": "Use official template and yarn palette; single trim color from the same four; preserve factory interface; avoid stray pixels and anti-aliased intermediate colors; inspect front, back, side and all sizes."
+      },
+      "artworkAssessment": {
+        "artworkSha256": "f2fe1c374d8ed787726c7749d2810c86a9b5b45dd791e58880d5d9fcfd0c436f",
+        "status": "HYPOTHESIS",
+        "notes": "Retained the original vector and reshaped the rear pair into flattened swimming paddles, increasing the separation from the adjacent walking legs. At a 48 px wide nearest-neighbor screen raster, both paddles still read separately on oyster. This is a screen legibility check, not Knitwise gauge or a stitch proof. Three artwork colors including oyster, with proposed matching oyster base and trim, stay within the four-color artwork limit. Confirm official yarn palette, seam clearance and size-specific proof.",
+        "localReference": "https://www.deq.nc.gov/about/divisions/marine-fisheries/public-information-and-education/kids-educational-pages/crustaceans"
+      },
+      "catalogDifferentiation": {
+        "status": "HYPOTHESIS",
+        "notes": "Distinct quarter-zip knit silhouette; compare against current blue crab fleece, hats and apparel."
+      },
+      "pricingScenario": {
+        "status": "ESTIMATE",
+        "retailCents": 11800,
+        "baseOnlySpreadCents": 7600,
+        "stress15PercentBaseOnlySpreadCents": 5830,
+        "notes": "Illustrative only, excludes shipping, payment fees, tax, refunds and advertising. Shopify promotions do not apply to Fourthwall. Not an approved price or net profit."
+      },
+      "releaseBlockers": [
+        "Exact merchant template/variant availability and quote",
+        "Official yarn palette and size-specific production proof",
+        "Physical sample quality and genuine studio photography",
+        "Originality and trademark clearance",
+        "Shipping, checkout, care, labeling and safety evidence",
+        "Independent five-category review at 90/100 each plus existing gates"
+      ]
+    }
   },
   "Lighthouse Knit Cardigan": {
     "description": "A spare lighthouse motif sits on the chest of a navy knit cardigan.",
@@ -157,7 +295,52 @@
     "productionMethod": "KNITTING",
     "publicTemplateUrl": "https://api.fourthwall.com/open-api/v1.0/product-templates/pro_jxzU4X9-SpuG6MnU0DDPIg",
     "backendRendering": false,
-    "artwork": "docs/supplier-art/knit/old-baldy.svg"
+    "artwork": "docs/supplier-art/knit/old-baldy.svg",
+    "productionReadiness": {
+      "asOf": "2026-11-28",
+      "priority": "HOLD",
+      "status": "RESEARCH_ONLY",
+      "supplierModel": "K08",
+      "publicCatalogEvidence": {
+        "status": "VERIFIED",
+        "url": "https://products.fourthwall.com/category/sweaters-f0f8f",
+        "baseCents": 4200,
+        "notes": "Current public category price; not a signed-in exact variant quote. K08 detail page previously displayed $41, so reconcile in merchant account before release."
+      },
+      "knitConstraints": {
+        "status": "VERIFIED",
+        "sources": [
+          "https://design.knitwise.com/en-US/rules-of-knitwise-template-423476",
+          "https://design.knitwise.com/en-US/step-1-design-using-the-knitwise-template-423481"
+        ],
+        "maximumYarnColorsIncludingBaseAndTrim": 4,
+        "requirements": "Use official template and yarn palette; single trim color from the same four; preserve factory interface; avoid stray pixels and anti-aliased intermediate colors; inspect front, back, side and all sizes."
+      },
+      "artworkAssessment": {
+        "status": "HYPOTHESIS",
+        "notes": "Four foreground colors plus proposed navy base make five; reduce to three foreground colors or fewer. Existing drawing also needs exact architecture and rights review; do not name or depict a protected landmark mark.",
+        "localReference": "https://www.oldbaldy.org/oldbaldylighthouse"
+      },
+      "catalogDifferentiation": {
+        "status": "HYPOTHESIS",
+        "notes": "Defer until trademark and original artwork screen resolves; no supplier or listing action."
+      },
+      "pricingScenario": {
+        "status": "ESTIMATE",
+        "retailCents": 11800,
+        "baseOnlySpreadCents": 7600,
+        "stress15PercentBaseOnlySpreadCents": 5830,
+        "notes": "Illustrative only, excludes shipping, payment fees, tax, refunds and advertising. Shopify promotions do not apply to Fourthwall. Not an approved price or net profit."
+      },
+      "releaseBlockers": [
+        "Exact merchant template/variant availability and quote",
+        "Official yarn palette and size-specific production proof",
+        "Physical sample quality and genuine studio photography",
+        "Originality and trademark clearance",
+        "Shipping, checkout, care, labeling and safety evidence",
+        "Independent five-category review at 90/100 each plus existing gates"
+      ]
+    }
   },
   "Sloop Embroidered Polo": {
     "description": "A small sloop is embroidered on the chest of a pique polo.",

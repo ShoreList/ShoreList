@@ -180,3 +180,6 @@ T-01 -> T-03 -> owner test order. T-05 -> T-08. T-02 independent of everything e
 
 ### T-live-variant-parity Verify each public Shopify picker variant
 - Owner: Codex/ops/verify-live-shop-variant-parity. Claim `tools/verify-live.mjs` and `tools/test-verify-live.mjs` to compare live picker prices and stock with the existing Shopify feed.
+
+### T-featured-product-deep-links Repair the two Gifts Under $35 Quick View links
+- Owner: Dot/fix/featured-product-deep-links. Claim netlify.toml for exactly two scoped compatibility redirects that preserve canonical product pages and checkout variants.
