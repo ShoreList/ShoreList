@@ -1,0 +1,35 @@
+name: CJ catalog verification
+on:
+  workflow_dispatch:
+    inputs:
+      candidate:
+        description: Exact CJ candidate title from the supplier expansion queue
+        type: string
+        default: Dockside Dry Bag
+        required: true
+permissions:
+  contents: read
+jobs:
+  search:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    environment: cj-catalog
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Search the CJ US warehouse catalog
+        env:
+          CJ_API_KEY: ${{ secrets.CJ_API_KEY }}
+          CJ_CANDIDATE: ${{ inputs.candidate }}
+        run: |
+          results="$(node tools/supplier-expansion.mjs cj-search "$CJ_CANDIDATE")"
+          count=0
+          if [[ -n "$results" ]]; then
+            count="$(printf '%s\n' "$results" | wc -l)"
+          fi
+          printf 'CJ catalog access verified. First page returned %d results.\n' "$count"
