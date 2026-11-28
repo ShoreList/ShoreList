@@ -61,10 +61,16 @@ The source designs were drawn for ShoreList. Both rendered as transparent 600 ×
 
 | Candidate | Artwork to upload | SHA-256 |
 |---|---|---|
-| White Cannonball Jelly polo | [600 × 600 PNG](supplier-art/embroidery/cannonball-jelly.png) | `2ff0049cfacdab60b00d4bb4ae5e4cc5b85a4cdf2837db37107ae482902060e5` |
+| White Cannonball Jelly polo | [600 × 600 PNG](supplier-art/embroidery/cannonball-jelly.png) | `bf9a3e7380c056e93717badcdfb502cb9784bcd2040bbdee56717362d8448e84` |
 | Navy Coquina polo | [600 × 600 PNG](supplier-art/embroidery/coquina.png) | `9405946e6510cf7047f7be4f405a20c06290c62d88380d3349c9cedaf6b30dea` |
 
 Both PNGs have transparent backgrounds and 150 dpi resolution metadata. Use the left-chest region on the verified SOL'S 11362 blank. At that scale, keep the visible motifs at 1.39 in and 1.52 in wide respectively. Digitization, thread selection and a physical stitch proof are still pending. Treat these files as draft artwork and keep them out of customer-facing imagery.
+
+### November 28 follow-up
+
+- **VERIFIED:** Replaced the cannonball's tapered chestnut rim with an 11 px round-ended stroke (1.86 mm at 150 dpi). The exported PNG has at least 10 fully opaque chestnut pixels across the vertical cross-sections between the end-cap centers, with at least 14 fully opaque oyster pixels below the rim before the navy contour. Its overall width is still 208 px. This is an artwork measurement against AR8. Thread choice, stitch density and the physical result remain **UNKNOWN**.
+- **VERIFIED:** The Fourthwall public template records for SOL'S 11362, Knitwise K01 and K30 returned HTTP 200. The records provide template base prices. Freight to Wilmington, total landed cost and a shopper purchase path for the proposed ShoreList products remain **UNKNOWN**. Use each template's delivery estimate and the exact product's checkout before making any retail shipping claim. [Fourthwall shipping guidance](https://help.fourthwall.com/frequently-asked-questions/shipping-and-orders/shipping-costs)
+- **UNKNOWN:** The authenticated CJ catalog session was unavailable in this workspace. The mint-stripe chair remains the first draft to reconcile. Match SKU `CJLY36122900001` to its CJ variant ID, image and US warehouse before using the existing ZIP coverage commands. Apply the same check to umbrella SKU `CJZS31328570001` next. Shopify inventory counts cannot establish supplier stock or freight.
 
 ## Uploaded conversion blueprint: implementation reconciliation
 
