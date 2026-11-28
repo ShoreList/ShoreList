@@ -52,11 +52,11 @@ const leadOf = (i) => i.lookbook || i.img || i.studio;
 const wbCards = wbFeat.map((i, k) => {
   const f = sized(leadOf(i), 480);
   const pri = k === 0 ? 'fetchpriority="high" loading="eager"' : (k === 1 ? 'fetchpriority="auto" loading="eager"' : 'fetchpriority="low" loading="lazy"');
-  return `<article class="card"><div class="ph" data-qv="${esc(i.id)}"><img class="p1" src="${esc(f)}" alt="${esc(i.alt || i.name)}" ${pri} decoding="async" width="800" height="1000"/></div><div class="bd"><h3><button type="button" data-qv="${esc(i.id)}" aria-haspopup="dialog">${esc(splitName(i.name))}</button></h3><div class="row"><span class="price">${esc(money(i))}</span></div></div></article>`;
+  return `<article class="card"><div class="ph" data-qv="${esc(i.id)}"><img class="p1" src="${esc(f)}" alt="${esc(i.alt || i.name)}" ${pri} decoding="async" width="800" height="1000"/></div><div class="bd"><h3><button type="button" data-qv="${esc(i.id)}" aria-haspopup="dialog">${esc(splitName(i.name))}</button></h3><div class="row"><span class="price">${esc(money(i))}</span></div><p class="made-note">Made to order. Delivery usually 1-2 weeks. Shipping is calculated at checkout.</p></div></article>`;
 });
 const cards = firstScreen.map((i) => {
   const f = sized(leadOf(i), 480);
-  return `<article class="card"><div class="ph" data-qv="${esc(i.id)}"><img class="p1" src="${esc(f)}" alt="${esc(i.alt || i.name)}" fetchpriority="low" loading="lazy" decoding="async" width="800" height="1000"/></div><div class="bd"><h3><button type="button" data-qv="${esc(i.id)}" aria-haspopup="dialog">${esc(splitName(i.name))}</button></h3><div class="row"><span class="price">${esc(money(i))}</span></div></div></article>`;
+  return `<article class="card"><div class="ph" data-qv="${esc(i.id)}"><img class="p1" src="${esc(f)}" alt="${esc(i.alt || i.name)}" fetchpriority="low" loading="lazy" decoding="async" width="800" height="1000"/></div><div class="bd"><h3><button type="button" data-qv="${esc(i.id)}" aria-haspopup="dialog">${esc(splitName(i.name))}</button></h3><div class="row"><span class="price">${esc(money(i))}</span></div><p class="made-note">Made to order. Delivery usually 1-2 weeks. Shipping is calculated at checkout.</p></div></article>`;
 });
 const lcpSrc = wbFeat[0] ? sized(leadOf(wbFeat[0]), 480) : '';
 const lcp = lcpSrc ? `<link rel="preconnect" href="https://cdn.shopify.com" crossorigin>\n<link rel="preload" as="image" href="${esc(lcpSrc)}" fetchpriority="high" media="(max-width: 899px)">` : '';
