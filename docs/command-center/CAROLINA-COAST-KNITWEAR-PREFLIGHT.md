@@ -1,0 +1,36 @@
+# Carolina Coast knitwear supplier feasibility | 2026-11-28 | HOLD
+
+## Scope and preflight
+Research only, not product design, merchant creation, artwork approval, sample order, or release. Owner three-gate policy applies. Current main 30be644fbbe0a2f60c96ef917b3efc1dceb995c8; branch compared before work, 4 ahead and 9 behind. Read AGENTS, RELEASE_GATES, CODEX_TASKS, CODEX_HANDOFF, INTEGRATIONS, collection brief, three-gate policy and rulebook (blob 3c759adf9e18828799f2a68744adaaca61e2efc3). Existing shop writer lock and OP6 freeze through Nov 30 23:59 ET respected; no shared file edited. Rebase, Chief coordination and actual release checks required before any integration. This document is an evidence packet, not a new rulebook. Relevant IDs: BW3-6, HN2/9/10, AR1-12, BL1-5, PH, PR1-7, SC1-8, SU3-6, OP1-8.
+
+## Verified public supplier evidence
+Fourthwall offers genuine on-demand jacquard knitwear, rather than a graphic printed onto fleece:
+- Knitwise K01 classic crewneck, $38, S to 2XL, 55% cotton / 45% polyester, up to four yarn colors, no minimum: https://fourthwall.com/products/knitted-crewneck-sweater-classic-fit
+- Knitwise K02 relaxed crewneck, $39 public starting price: https://fourthwall.com/design-and-sell/custom-cardigans and https://fourthwall.com/products/knitted-crewneck-sweater-relaxed-fit
+- Knitwise K08 cardigan without pocket, $41, S to 2XL, 55/45 cotton/polyester, four-color jacquard: https://products.fourthwall.com/knitted-cardigan-without-pocket
+- Knitwise direct K01 specifications: 12-gauge Birdseye jacquard, average 1 lb product weight, solid color trim, four colors total including base, each template pixel corresponds to a knit loop; direct shipping starts $10 and direct delivery is 2 to 4 weeks; direct maker states China manufacture/dispatch. These are not Fourthwall shipping quotes, size availability, origin guarantees or delivery promises: https://www.knitwise.com/products/crewneck-classic-fit
+- Fourthwall public US card fee 2.9% + $0.30; actual account, tax/shipping fee basis and payment mix UNKNOWN: https://fourthwall.com/pricing
+- Printify public search did not identify comparable custom jacquard SKU; CJ public POD page describes sourcing/customization but does not identify equivalent verified named knit SKU: https://www.cjdropshipping.com/printonDemand/home . This is not proof they cannot supply it. Authenticated supplier catalogs not accessed. SU3 exception not established; no new supplier connection requested or made.
+
+## Duplicate screen
+VERIFIED repository catalog blob d4def0ad0477d18870b4257b8ba97864d135b17a: 92 items plus 7 Harbor Goods entries. Name search for knit, cardigan, sweater found zero. Sea oats already appears on printed tee, framed art, tumbler and sticker. This suggests true knitwear may fill a category gap; full live/draft artwork and cross-supplier duplicate check UNKNOWN. No new product proposed for sale or authored.
+
+## Benchmark / product-class risk
+Premium reference: KJP Harbor Gull Sweater $138 (women's fit), https://kieljamespatrick.com/products/harbor-gull-sweater ; Original Anchor Birdseye Sweater $138 (100% cotton, woven label, tailored unisex fit), https://kieljamespatrick.com/products/the-original-cotton-anchor-sweater-navy ; American Sail Intarsia Sweater $148 (100% cotton), https://kieljamespatrick.com/products/american-sail-intarsia-sweater . Local reference: Surf City NC of Salt & Sea Textured Oat Sweater $63, https://ofsaltandseaboutique.com/products/stripe-texture-puff-sleeve-sweater-msw9485-oat-milk-l ; Nautical Cable-knit Sweater $75 regular / $25 displayed sale, https://ofsaltandseaboutique.com/products/nautical-cable-knit-sweater . These are observed page prices, not same-day inventory guarantees. No competitor design copying, no flag patterns, no claim of superiority. A blended lightweight jacquard is not equivalent to 100% cotton, intarsia or cable knit. Blank and finishing parity not established. Do not label it cable knit, embroidered or 100% cotton. AR12 head-to-head remains UNKNOWN for art, photography, copy and finishing; no wins assigned. Sample or exact physical evidence needed to evaluate hand feel, seam distortion, pilling, wash shrinkage, label and construction. A sample requires explicit spending approval, none given.
+
+## Local reference and visual constraints for possible future knit study
+NC DEQ confirms Masonboro Island barrier-island habitats and loggerhead nesting: https://www.deq.nc.gov/about/divisions/nc-coastal-reserve/reserve-sites/masonboro-island-reserve . Public species reference supports research for the existing Dune or Loggerhead directions; not a license to depict reserve marks or an endorsement. No artwork yet. Never show disturbed dunes, nests or handled turtles. Use a single original motif and specific place attribution; no repeating designer pattern. The maker's actual swatches differ from rulebook hex values; e.g. Navy #343d55 and Powder #c5d1d0 are not exact core colors. Check actual yarn chart, no grey/white on dark, and 2-3 artwork colors maximum subject to rulebook; do not silently map swatches or override AR3. Knit loop resolution is not embroidery; require Chief decision on category method and actual template. Rejected Southern Live Oak study A stays rejected and will not be reused.
+
+## Economics (ESTIMATE, not margin verification)
+Public base plus advertised US card fee on item subtotal only. No account-specific fee, taxes/shipping fee, size surcharge, freight subsidy, return reserve or ad allocation included. PR7 list-price plus owner's separate hypothetical 15% stress; do not advertise Shopify codes for Fourthwall. $25 stressed contribution floor applied conservatively.
+| Model | Base | Test retail | List before other costs | Stress before other costs | Max other costs at stress floor |
+|---|---:|---:|---:|---:|---:|
+| K01 | 38 | 88 | 47.15 | 34.33 | 9.33 |
+| K01 | 38 | 98 | 56.86 | 42.58 | 17.58 |
+| K02 | 39 | 98 | 55.86 | 41.58 | 16.58 |
+| K08 | 41 | 108 | 63.57 | 47.84 | 22.84 |
+
+Formula: item revenue * (1 - .029) - .30 - public base; stress item revenue = .85 * test retail. Remaining headroom is stress contribution minus $25. Higher price is not automatically justified; PR4 requires head-to-head above applicable price bands. Freight ZIP 28401 quote UNKNOWN; if K01 at $88 absorbs $10 freight as illustrative scenario, stress falls to $24.33 even before other costs. No profit claims or pricing changes.
+
+## Decision
+HOLD. Promising research lead for real knitwear, not approved for creation. Before proceeding: verify SU3 and category compatibility, actual available sizes, approved yarn palette and template, full supplier duplicate screen, physical quality evidence, actual quote and shipping terms, IP screen, comparator visuals, then documented concept preflight. Any missing required evidence blocks. Independent reviewer must assess exact original artwork before mockup/merchant creation; final review and technical release remain separate. No new scores, assets, listings, spend, outreach, account changes or ad changes. No production site edits.
