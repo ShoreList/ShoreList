@@ -316,9 +316,18 @@
     shopLines().forEach(function (l) { if (l.handle && !seenH[l.handle] && !(checked[l.handle] && Date.now() - checked[l.handle] < 60000)) seenH[l.handle] = 1; });
     Object.keys(seenH).forEach(function (h) {
       fetch('/.netlify/functions/shop-product?handle=' + encodeURIComponent(h))
-        .then(function (r) { if (!r.ok) throw new Error('lookup'); return r.json(); })
+        .then(function (r) {
+          if (r.status === 404) {
+            return r.json().then(function (body) {
+              if (body && body.error === 'Product not found') return { variants: [] };
+              throw new Error('lookup');
+            });
+          }
+          if (!r.ok) throw new Error('lookup');
+          return r.json();
+        })
         .then(function (p) {
-          if (!p || !p.variants) return;
+          if (!p || !Array.isArray(p.variants)) return;
           checked[h] = Date.now();
           var changed = false;
           mutate(function () {
