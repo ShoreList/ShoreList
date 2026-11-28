@@ -17,7 +17,7 @@ Local references (facts for original drawings, not permission to copy images):
 - NC Sea Grant shell reference: https://ncseagrant.ncsu.edu/coastwatch/summer-2024-seashells-of-north-carolina/
 - NC coast moon jelly morphology: https://coastalreview.org/2020/12/strange-beauty-jellyfish-of-the-nc-coast/
 
-All names and colors below are HYPOTHESIS, not inventory. Color availability and decoration area UNKNOWN. Use original design files; no borrowed logos, no circles or badge frames, no invented coordinates, no grey. Proposed stitch sizes are targets, not verified factory specifications.
+All names and colors below are HYPOTHESIS, not inventory. Supplier blank availability and decoration areas are in the checkpoint below. Exact thread and yarn colors remain unverified. Use original design files; no borrowed logos, no circles or badge frames, no invented coordinates, no grey. Proposed stitch sizes are targets, not verified factory specifications.
 
 | Priority | Draft concept | Method / candidate | Original design direction | Blocking proof |
 |---|---|---|---|---|
@@ -29,6 +29,24 @@ All names and colors below are HYPOTHESIS, not inventory. Color availability and
 | P2 | Sea Oats Knit Cardigan | K08 | Cream ground, muted gold and olive stems, no badge, no depiction of picking or dune disturbance. | Botanical source, template and yarn proof, exact variant. |
 
 No scores assigned. Require all five independent 90/100 categories, ten prior product criteria and blind photo review, original rights and labeling/safety evidence, true studio photo, verified costs, shipping and checkout. No AI-generated lifestyle scene represented as photography. No public offer until exact version clears gates.
+
+## Exact template checkpoint, November 28
+
+Fourthwall's public template API returned the following available blank options. These are supplier template prices before freight and fees. A template variant ID does not identify a ShoreList offer or a purchasable product.
+
+| Candidate | Blank and public variant | Decoration and next proof |
+|---|---|---|
+| Cannonball Jelly Embroidered Polo | SOL'S 11362 in White. Medium template variant `prv_Mf1QsgY_TLi6NRL7wa7vwg`. S through 5XL returned available, $19.85 through XL, $21.95 through $27.95 for 2XL through 5XL. | `embroidery_chest_left`, 4 × 4 in upload area, 600 × 600 px at 150 dpi. The artwork can occupy a smaller area within the canvas. White is the blank's supplier name. Use an original compact cannonball silhouette and inspect the proof at actual size. |
+| Coquina Embroidered Polo | SOL'S 11362 in Navy. Medium template variant `prv_yT9BziQwTSGEbIHQpjCq7w`. Same public size range and pricing as White. | Same left-chest area. Keep the two shell shapes readable without outlines so thin that they disappear into the knit. Verify species and finish before grading. |
+| Moon Jelly and Scallop Shell Knit Crewnecks | Classic Fit knit template, S through 2XL, $38 each. | Default panel 1,150 × 1,350 px. The API shows a generic Knitted option with no public yarn palette or backend rendering. Confirm palette and motif placement in the editor. |
+| Whelk Knit Quarter Zip | Unisex knit quarter zip template, 2XS through 3XL, $42 each. | Default panel 1,100 × 1,360 px. Confirm actual placket clearance and yarn colors in the editor. |
+| Sea Oats Knit Cardigan | Pocketless knit cardigan template, S through 2XL, $42 each. | Default panel 1,250 × 1,300 px. Confirm front-panel placement and the yarn palette in the editor. |
+
+Sources: [polo](https://api.fourthwall.com/open-api/v1.0/product-templates/pro_STPsbnZuTlyjzeJPJKtufg), [crewneck](https://api.fourthwall.com/open-api/v1.0/product-templates/pro_quHTYBtVRFqTh6ODh8g9Bw), [quarter zip](https://api.fourthwall.com/open-api/v1.0/product-templates/pro_9IEPqxSWRWm_pCsJTuFTbQ), [cardigan](https://api.fourthwall.com/open-api/v1.0/product-templates/pro_jxzU4X9-SpuG6MnU0DDPIg).
+
+The [public ShoreList catalog](https://shorelist.net/shop-catalog.json) returned four printed scallop products and no matching coquina or jellyfish titles. The [public Fourthwall collection](https://shorelist-shop.fourthwall.com/collections/all) showed no matching shell or jellyfish slug. Private offer collisions remain unverified. The proposed pieces have no verified public purchase path, stitch or knit proofs, sellable image pairs, or independent scores.
+
+CJ Shopify readback: the $109 mint-stripe chair (`CJLY36122900001`) and $99 tilt umbrella (`CJZS31328570001`) both remain drafts. Shopify reports 80 and 69 units respectively and places both under CJ fulfillment while displaying Printify as their vendor. Treat those quantities as Shopify inventory counts only. The chair remains the stronger candidate on visual fit. CJ warehouse stock, freight, landed cost and fulfillment remain unverified. The [Dockside Dry Bag supplier lead](https://cjdropshipping.com/product/waterproof-outdoor-travel-bag-p-51ECEA1A-F85A-48D9-BE5B-0AFEE6402E5C.html) reached a human-verification page. Continue from the existing [variant review](CJ-VARIANT-REVIEW.md) when authenticated evidence is available.
 
 ## Uploaded conversion blueprint: implementation reconciliation
 
