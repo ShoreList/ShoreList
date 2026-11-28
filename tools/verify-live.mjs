@@ -19,6 +19,18 @@ async function head(url) {
     } catch (e) { if (method === 'GET') return { ok: false, status: 0, type: String(e.message || e) }; }
   }
 }
+
+async function fetchImage(url) {
+  try {
+    // A cached HEAD response can survive after the image GET starts returning 404.
+    const response = await fetch(url, { signal: AbortSignal.timeout(20000) });
+    const result = { status: response.status, type: response.headers.get('content-type') || '' };
+    await response.body?.cancel();
+    return result;
+  } catch (error) {
+    return { status: 0, type: error.message };
+  }
+}
 async function pool(items, n, fn) {
   const out = []; let i = 0;
   await Promise.all(Array.from({ length: n }, async () => { while (i < items.length) { const k = i++; out[k] = await fn(items[k]); } }));
@@ -63,9 +75,9 @@ for (const [tag] of picks.matchAll(/<(?:article|div)\b[^>]*\bdata-pick="[^"]+"[^
   if (classes.includes('no-photo')) textOnlyPicks.push(tag.match(/\sdata-pick="([^"]+)"/)[1]);
 }
 const imgList = [...imgs.keys()];
-const imgRes = await pool(imgList, 8, async (u) => ({ u, r: await head(u) }));
+const imgRes = await pool(imgList, 8, async (u) => ({ u, r: await fetchImage(u) }));
 for (const { u, r } of imgRes) {
-  if (!r.ok || !/^image\//i.test(r.type)) note('image', `${r.status || 'ERR'} ${u} (${r.type || 'no content type'}; ${imgs.get(u).join(', ')})`);
+  if (r.status !== 200 || !/^image\//i.test(r.type)) note('image', `${r.status || 'ERR'} ${u} (${r.type || 'no content type'}; ${imgs.get(u).join(', ')})`);
 }
 
 // 2. Shopify parity (public products.json, paged)
