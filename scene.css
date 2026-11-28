@@ -1,5 +1,5 @@
 /* Cinematic hero + widgets. Loaded after shorelist.css. */
-.hero.hero-cine{background:#0E1F33!important;color:#fff;min-height:100svh;padding-top:110px}
+.hero.hero-cine{background:#0E1F33!important;color:#fff;min-height:100svh;padding-top:110px;overflow:hidden}
 .hero-cine .hero-grad,.hero-cine .hero-dots,.hero-cine .compass,.hero-cine .hero-right,.hero-cine .weather-badge,.hero-cine .hero-stats,.hero-cine .trust-strip{display:none!important}
 .scene-cv{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0;opacity:0;transition:opacity 1.2s ease}
 .scene-ready .scene-cv{opacity:1}
@@ -45,7 +45,7 @@
 .cc form{display:flex;gap:8px;padding:10px;border-top:1px solid rgba(14,31,51,.12)}
 .cc input{flex:1;min-width:0;border:1px solid rgba(14,31,51,.2);border-radius:2px;padding:10px 14px;font:500 .9rem 'DM Sans',sans-serif}
 .cc form button{border:0;border-radius:2px;background:#0E1F33;color:#fff;font-weight:500;padding:0 16px;cursor:pointer}
-@media(max-width:820px){.hero.hero-cine{padding:92px 20px 0}.hero-cine .hero-layout{padding-bottom:260px;padding-top:56px}.paths{grid-template-columns:1fr;max-width:420px}.path{flex-direction:row;align-items:center;gap:12px}.path i{margin:0}.tod{right:auto;left:16px;top:84px;transform:none;max-width:calc(100% - 32px);overflow-x:auto}.cond{left:16px;right:16px;max-width:none;bottom:70px}.cond .sur{margin-left:0}}
+@media(max-width:820px){.hero.hero-cine{padding:92px 20px 0}.hero-cine .hero-layout{padding-bottom:260px;padding-top:56px}.paths{grid-template-columns:1fr;max-width:420px}.path{flex-direction:row;align-items:center;gap:12px}.path i{margin:0}.tod{display:none}.cond{left:16px;right:16px;max-width:none;bottom:70px}.cond .sur{margin-left:0}}
 @media(prefers-reduced-motion:reduce){.path,.cc-fab{transition:none}.path.rip::after{animation:none}}
 
 @media(min-width:821px){body:not(:has(.hero-cine)) .cc-fab{right:auto;left:16px}body:not(:has(.hero-cine)) .cc{right:auto;left:16px}}
@@ -113,7 +113,8 @@
 @media(min-width:821px){.scene-play{display:none}}
 @media(prefers-reduced-motion:reduce){.scene-play{display:none}}
 .scene-play:focus-visible{outline:3px solid #D9C7A3;outline-offset:3px}
-.plates img{position:absolute;left:-3%;top:-3%;width:106%;height:106%;max-width:100%;object-fit:cover;object-position:var(--pos,62% 50%);opacity:0;visibility:hidden;transform:translate3d(var(--px),var(--py),0) scale(1.02);animation:kb 70s ease-in-out infinite alternate;will-change:opacity,transform;user-select:none;-webkit-user-drag:none}
+/* Full-bleed, no offset: a 106% slide shifted left left the next photo as a sliver on the right. */
+.plates img{position:absolute;left:0;top:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:var(--pos,62% 50%);opacity:0;visibility:hidden;transform:none;animation:none;will-change:auto;user-select:none;-webkit-user-drag:none}
 .plates img[data-p="3"]{filter:brightness(.5) saturate(.8) hue-rotate(8deg)}
 @keyframes kb{from{scale:1}to{scale:1.07}}
 .ripple{position:absolute;z-index:2;width:12px;height:5px;margin:-2px 0 0 -6px;border-radius:50%;border:2px solid rgba(255,255,255,.75);pointer-events:none;animation:rpl 1.7s ease-out forwards}
