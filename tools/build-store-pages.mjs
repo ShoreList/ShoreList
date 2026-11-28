@@ -310,8 +310,8 @@ for (const t of shopTowns) {
   };
   const tcard = (i) => {
     const mates = t.id === 'wrightsville-beach' ? pairsFor(i) : [];
-    const pair = mates.length ? `<p class="gg-pair">Pairs well with ${mates.map((m) => `<a href="${esc(link(m.url))}">${esc(m.name)}</a>`).join(' and ')}</p>` : '';
-    return `<li><a href="${esc(link(i.url))}" data-item-id="${esc(i.id)}" rel="noopener">${cardPhoto(i)}<span class="gg-name">${esc(i.name)}</span><span class="gg-price">${price(i)}</span><span class="gg-line">${esc(i.meta)}</span></a>${pair}</li>`;
+    const pair = mates.length ? `<p class="gg-pair">Pairs well with ${mates.map((m) => `<a href="/shop/products/${esc(m.id)}">${esc(m.name)}</a>`).join(' and ')}</p>` : '';
+    return `<li><a href="/shop/products/${esc(i.id)}" data-item-id="${esc(i.id)}">${cardPhoto(i)}<span class="gg-name">${esc(i.name)}</span><span class="gg-price">${price(i)}</span><span class="gg-line">${esc(i.meta)}</span></a>${pair}</li>`;
   };
   const guide = t.id === 'wrightsville-beach' ? `<section class="gg-sec" id="visit" aria-labelledby="visit-h"><h2 id="visit-h">Before you shop the beach</h2><p>Wrightsville Beach is about 20 minutes east of downtown Wilmington. Beach access has no charge. Parking meters run from March 1 to October 31, 9 a.m. to 7 p.m., and some meters until 8 p.m. Peak surf season on the island is June to September, including the end of Johnnie Mercer's Pier. The full guide is on the <a href="/wrightsville-beach">Wrightsville Beach page</a>, with the <a href="/wilmington-nc-parking">parking guide</a>, <a href="/johnnie-mercers-pier">Johnnie Mercer's Pier</a> and <a href="/things-to-do/surf-lessons">surf lessons</a>.</p><p>These notes are the same facts already on that guide, checked against the visitors bureau and the town. Rules and fees change, so confirm before you go.</p></section>` : '';
   const faqs = [[c.q[0], c.q[1]], ...townFaqShared];

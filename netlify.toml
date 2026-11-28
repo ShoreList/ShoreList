@@ -317,9 +317,39 @@
   status = 200
 
 [[redirects]]
-  from = "/shop/:slug"
-  to = "/shop/:slug.html"
+  from = "/shop/wilmington"
+  to = "/shop/wilmington.html"
   status = 200
+
+[[redirects]]
+  from = "/shop/carolina-beach"
+  to = "/shop/carolina-beach.html"
+  status = 200
+
+[[redirects]]
+  from = "/shop/kure-beach"
+  to = "/shop/kure-beach.html"
+  status = 200
+
+[[redirects]]
+  from = "/shop/wrightsville-beach"
+  to = "/shop/wrightsville-beach.html"
+  status = 200
+
+[[redirects]]
+  from = "/shop/:handle"
+  to = "/shop/products/:handle"
+  status = 301
+
+[[redirects]]
+  from = "/bio"
+  to = "/shop?utm_source=bio"
+  status = 302
+
+[[redirects]]
+  from = "/links"
+  to = "/shop?utm_source=bio"
+  status = 302
 
 [[redirects]]
   from = "/wilmington-nc-faq"
