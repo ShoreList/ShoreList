@@ -334,7 +334,8 @@ for (const t of shopTowns) {
 // They are not catalog items[], so the shop bag and the Shopify cart never see them.
 const harbor = Array.isArray(cat.harborGoods) ? cat.harborGoods : [];
 if (harbor.length) {
-  const hcard = (i, n) => `<li><a href="${esc(i.url)}" data-item-id="${esc(i.id)}"><img src="${esc(i.img)}" alt="${esc(i.alt)}" width="800" height="1066" ${n === 0 ? 'fetchpriority="high" loading="eager"' : 'loading="lazy"'} decoding="async"/><span class="gg-name">${esc(i.name)}</span><span class="gg-price">${price(i)}</span><span class="gg-line">${esc(i.meta || '')}</span></a></li>`;
+  const fit = (i) => (i.cut === 'unisex' ? '<span class="gg-fit">Unisex fit</span>' : '');
+  const hcard = (i, n) => `<li><a href="${esc(i.url)}" data-item-id="${esc(i.id)}"><img src="${esc(i.img)}" alt="${esc(i.alt)}" width="800" height="1066" ${n === 0 ? 'fetchpriority="high" loading="eager"' : 'loading="lazy"'} decoding="async"/>${fit(i)}<span class="gg-name">${esc(i.name)}</span><span class="gg-price">${price(i)}</span><span class="gg-line">${esc(i.meta || '')}</span></a></li>`;
   const harborBody = `<p class="tp-note">Harbor Goods checks out on our Fourthwall shop. Shopify sale codes do not apply.</p>
 <p>The price on each card is the lowest price on that Fourthwall page. Larger sizes cost more on the tees and the crewneck. Shipping is shown before you pay.</p>
 <ul class="gg-grid">${harbor.map(hcard).join('')}</ul>

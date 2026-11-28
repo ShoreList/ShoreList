@@ -3601,7 +3601,7 @@
    "motif": "sea-life"
   }
  ],
- "harborGoods_note": "ShoreList Harbor Goods. These eight pieces check out on shorelist-shop.fourthwall.com and are not in items[], so the shop page and the bag never treat them as Shopify lines. price is the lowest USD amount on the public Fourthwall product page, rechecked 2026-11-28. from is true when larger sizes cost more. An earlier read of the pickleball tee showed $46. The same page then showed $52, which is the price on the card.",
+ "harborGoods_note": "ShoreList Harbor Goods. These eight pieces check out on shorelist-shop.fourthwall.com and are not in items[], so the shop page and the bag never treat them as Shopify lines. price is the lowest USD amount on the public Fourthwall product page, rechecked 2026-11-28. from is true when larger sizes cost more. An earlier read of the pickleball tee showed $46. The same page then showed $52, which is the price on the card. cut is unisex on all eight. dept is apparel on the tees and crewneck, and bags on the two totes.",
  "harborGoods": [
   {
    "id": "salt-wash-sloop-garment-dyed-tee",
@@ -3612,6 +3612,8 @@
    "meta": "Light blue garment-dyed tee with a small sailboat and Wrightsville on the chest.",
    "price": 52,
    "from": true,
+   "cut": "unisex",
+   "dept": "apparel",
    "store": "fourthwall"
   },
   {
@@ -3623,6 +3625,8 @@
    "meta": "Light grey organic crewneck with a small sailboat and Wrightsville on the chest.",
    "price": 78,
    "from": true,
+   "cut": "unisex",
+   "dept": "apparel",
    "store": "fourthwall"
   },
   {
@@ -3634,6 +3638,8 @@
    "meta": "Light blue garment-dyed tee printed Wrightsville Beach Golf, with coordinates.",
    "price": 52,
    "from": true,
+   "cut": "unisex",
+   "dept": "apparel",
    "store": "fourthwall"
   },
   {
@@ -3645,6 +3651,8 @@
    "meta": "Ivory garment-dyed tee printed Wrightsville Beach Tennis, with coordinates.",
    "price": 52,
    "from": true,
+   "cut": "unisex",
+   "dept": "apparel",
    "store": "fourthwall"
   },
   {
@@ -3656,6 +3664,8 @@
    "meta": "Blue jean garment-dyed tee printed Wrightsville Beach Pickleball, with coordinates.",
    "price": 52,
    "from": true,
+   "cut": "unisex",
+   "dept": "apparel",
    "store": "fourthwall"
   },
   {
@@ -3667,6 +3677,8 @@
    "meta": "Ivory garment-dyed tee printed Carolina Beach and the boardwalk, with coordinates.",
    "price": 52,
    "from": true,
+   "cut": "unisex",
+   "dept": "apparel",
    "store": "fourthwall"
   },
   {
@@ -3677,6 +3689,8 @@
    "alt": "Natural cotton market tote with a sailboat and Wrightsville Beach printed on the front",
    "meta": "Natural organic cotton market tote with a small sailboat and Wrightsville Beach on the front.",
    "price": 58,
+   "cut": "unisex",
+   "dept": "bags",
    "store": "fourthwall"
   },
   {
@@ -3687,6 +3701,8 @@
    "alt": "Natural cotton tote printed with a pennant, ShoreList, and Yacht & Beach Club",
    "meta": "Natural organic cotton tote with a pennant, ShoreList, and Yacht & Beach Club on the front.",
    "price": 58,
+   "cut": "unisex",
+   "dept": "bags",
    "store": "fourthwall"
   }
  ],
