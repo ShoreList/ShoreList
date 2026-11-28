@@ -22,7 +22,9 @@ on:
       - 'tools/test-shop-structured-data.mjs'
       - 'tools/test-shop-photo-release.mjs'
       - 'tools/check-shop-links.mjs'
+      - 'tools/check-html-images.mjs'
       - 'tools/test-shop-links.mjs'
+      - 'holiday-gift-guide.html'
       - 'tools/build-store-pages.mjs'
       - 'gift-guide.html'
       - 'docs/shop-photo-review.json'
@@ -50,7 +52,9 @@ on:
       - 'tools/test-shop-structured-data.mjs'
       - 'tools/test-shop-photo-release.mjs'
       - 'tools/check-shop-links.mjs'
+      - 'tools/check-html-images.mjs'
       - 'tools/test-shop-links.mjs'
+      - 'holiday-gift-guide.html'
       - 'tools/build-store-pages.mjs'
       - 'gift-guide.html'
       - 'docs/shop-photo-review.json'
@@ -67,6 +71,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - run: node tools/check-html-images.mjs
       - run: node tools/test-operators.mjs
       - run: node --test tools/test-concierge.cjs tools/test-plan-itinerary.cjs tools/test-shop-promo.mjs tools/test-shop-structured-data.mjs tools/test-shop-links.mjs
       - run: node --test tools/test-shop-photo-release.mjs
