@@ -11,6 +11,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - run: npm install --no-save puppeteer@23.11.1
+      - run: node tools/check-card-height.mjs
       - run: node tools/check-site.mjs
       - run: node tools/check-keywords.mjs
       - run: node tools/test-product-pages.mjs
