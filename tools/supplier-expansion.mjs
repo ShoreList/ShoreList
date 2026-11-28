@@ -84,6 +84,28 @@ export function releaseIssues(item) {
   return issues;
 }
 
+export function harborReleaseIssues(listing, queue) {
+  if (listing.store !== 'fourthwall') return ['Harbor Goods requires a Fourthwall checkout'];
+  if ([listing.name, listing.meta, listing.alt].some((value) => CLUB.test(value ?? ''))) {
+    return ['Harbor Goods customer copy contains prohibited club wording'];
+  }
+  const matches = queue.items.filter((candidate) => candidate.supplier === 'fourthwall' &&
+    candidate.supplierUrl === listing.url && normalize(candidate.title) === normalize(listing.name));
+  if (matches.length !== 1 || matches[0].status === 'RESEARCH_ONLY') {
+    return ['one release-ready Fourthwall record for this exact product URL and name'];
+  }
+  const [candidate] = matches;
+  const issues = releaseIssues(candidate);
+  if (candidate.supplierSku !== listing.sku || candidate.retail !== Math.round(listing.price * 100)) {
+    issues.push('storefront SKU and price must match the reviewed submission');
+  }
+  if (listing.img !== candidate.lookbook?.url || listing.lookbook !== candidate.lookbook?.url ||
+      listing.studio !== candidate.studio?.url) {
+    issues.push('storefront images must match the reviewed lookbook and studio pair');
+  }
+  return issues;
+}
+
 export async function fourthwall(path, { auth, method = 'GET', body } = {}) {
   const response = await fetch(API + path, {
     method,
@@ -164,7 +186,10 @@ export async function stageDrafts(specs, plans, queue, catalog) {
   if (!Array.isArray(specs) || !specs.length) throw new Error('Provide one or more Fourthwall draft specs');
   const auth = fourthwallAuth();
   const offers = await existingOffers(auth);
-  const titles = new Set([...offers.map((x) => x.name), ...catalog.items.map((x) => x.name)].map(normalize));
+  const titles = new Set([
+    ...offers.map((item) => item.name),
+    ...[...catalog.items, ...(catalog.harborGoods ?? [])].map((item) => item.name),
+  ].map(normalize));
   const prepared = [];
   for (const spec of specs) {
     const item = queue.items.find((x) => x.title === spec.title && x.supplier === 'fourthwall');
@@ -341,8 +366,9 @@ async function main([command = 'audit', ...args]) {
     load('docs/supplier-expansion-candidates.json'), load('docs/supplier-expansion-development.json'),
     load('shop-catalog.json'), load('dropship-catalog.json'),
   ]);
-  const existing = new Set([...catalog.items, ...direct.items].map((item) => normalize(item.name)));
-  const publicItems = [...catalog.items, ...direct.items.filter((item) => item.status === 'live')];
+  const storefrontItems = [...catalog.items, ...(catalog.harborGoods ?? [])];
+  const existing = new Set([...storefrontItems, ...direct.items].map((item) => normalize(item.name)));
+  const publicItems = [...storefrontItems, ...direct.items.filter((item) => item.status === 'live')];
   if (command === 'audit') {
     if (queue.minimumMean !== MINIMUM_PRODUCT_MEAN || queue.minimumCoastalBrandMatch !== MINIMUM_BRAND_SCORE) {
       throw new Error('The supplier queue must match ShoreList’s coastal brand and product review thresholds');

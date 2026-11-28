@@ -6,10 +6,12 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { test } from 'node:test';
 import { BRAND_CRITERIA, coastalBrandIssues, productScoreIssues } from './coastal-brand-review.mjs';
+import { harborReleaseIssues } from './supplier-expansion.mjs';
 
 const root = new URL('../', import.meta.url);
 const load = (path) => JSON.parse(readFileSync(new URL(path, root), 'utf8'));
-const records = load('shop-catalog.json').items;
+const catalog = load('shop-catalog.json');
+const records = catalog.items;
 const { pending, reviews, allowedGenerators } = load('docs/shop-photo-review.json');
 const acceptedGenerator = (name) => Array.isArray(allowedGenerators) && allowedGenerators.includes(name);
 const pendingIds = new Set(pending.map(({ id }) => id));
@@ -261,5 +263,21 @@ test('changed storefront media must ship as an approved complete pair', { skip: 
     const item = records.find((row) => row.id === id);
     assert.ok(item, id + ' is missing from the catalog');
     assert.equal(studioFirstHold(item), true, id + ' must stay a pending studio-first hold with no lookbook');
+  }
+});
+
+test('new or materially changed Harbor Goods listings require exact release evidence', { skip: !base }, () => {
+  assert.match(base, /^[a-f0-9]{40}$/);
+  const previous = JSON.parse(execFileSync('git', ['show', base + ':shop-catalog.json'], { cwd: root, encoding: 'utf8' }));
+  const queue = load('docs/supplier-expansion-candidates.json');
+  const prior = new Map((previous.harborGoods ?? []).map((item) => [item.id, item]));
+  const productFields = (item) => [item.store, item.name, item.url, item.sku, item.price, item.meta, ...photoFields(item)];
+  for (const item of catalog.harborGoods ?? []) {
+    const old = prior.get(item.id);
+    if (old && JSON.stringify(productFields(old)) === JSON.stringify(productFields(item))) continue;
+    assert.deepEqual([
+      ...harborReleaseIssues(item, queue),
+      ...photoReviewIssues(item, reviews[item.id]),
+    ], [], item.id + ' needs exact supplier, product and photo release evidence');
   }
 });
