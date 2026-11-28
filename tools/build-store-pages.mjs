@@ -363,10 +363,10 @@ if (harbor.length) {
   out['shop/harbor-goods.html'] = page({
     slug: 'shop/harbor-goods',
     title: 'ShoreList Harbor Goods | Wilmington NC',
-    desc: 'Garment-dyed tees, an organic crewneck and cotton totes from Wilmington, NC. Harbor Goods checks out on our Fourthwall shop. Shopify sale codes do not apply.',
+    desc: 'Garment-dyed tees, an organic crewneck and a cotton market tote for Wilmington, NC. Harbor Goods checks out on our Fourthwall shop. Shopify sale codes do not apply.',
     eye: 'Harbor Goods',
     h1: 'ShoreList Harbor Goods',
-    lede: 'Eight pieces for Wilmington, Wrightsville Beach and Carolina Beach. Open a card to choose a size and pay on Fourthwall. These pieces are not in the ShoreList Shop bag.',
+    lede: 'Coastal staples for Wilmington, Wrightsville Beach and Carolina Beach. Open a card to choose a size and pay on Fourthwall. These pieces are not in the ShoreList Shop bag.',
     body: harborBody,
     ld: harborLd,
     wide: true,

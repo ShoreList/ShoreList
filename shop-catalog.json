@@ -3601,7 +3601,7 @@
    "motif": "sea-life"
   }
  ],
- "harborGoods_note": "ShoreList Harbor Goods. These eight pieces check out on shorelist-shop.fourthwall.com and are not in items[], so the shop page and the bag never treat them as Shopify lines. price is the lowest USD amount on the public Fourthwall product page, rechecked 2026-11-28. from is true when larger sizes cost more. An earlier read of the pickleball tee showed $46. The same page then showed $52, which is the price on the card. cut is unisex on all eight. dept is apparel on the tees and crewneck, and bags on the two totes.",
+ "harborGoods_note": "ShoreList Harbor Goods. These pieces check out on shorelist-shop.fourthwall.com and are not in items[], so the shop page and the bag never treat them as Shopify lines. price is the lowest USD amount on the public Fourthwall product page, rechecked 2026-11-28. from is true when larger sizes cost more. An earlier read of the pickleball tee showed $46. The same page then showed $52, which is the price on the card. cut is unisex across Harbor Goods. dept is apparel on the tees and crewneck, and bags on the market tote.",
  "harborGoods": [
   {
    "id": "salt-wash-sloop-garment-dyed-tee",
@@ -3688,18 +3688,6 @@
    "img": "/shop-art/harbor-salt-wash-organic-cotton-market-tote.webp",
    "alt": "Natural cotton market tote with a sailboat and Wrightsville Beach printed on the front",
    "meta": "Natural organic cotton market tote with a small sailboat and Wrightsville Beach on the front.",
-   "price": 58,
-   "cut": "unisex",
-   "dept": "bags",
-   "store": "fourthwall"
-  },
-  {
-   "id": "yacht-beach-club-organic-cotton-tote",
-   "name": "Yacht & Beach Club Organic Cotton Tote",
-   "url": "https://shorelist-shop.fourthwall.com/products/yacht-beach-club-organic-cotton-tote",
-   "img": "/shop-art/harbor-yacht-beach-club-organic-cotton-tote.webp",
-   "alt": "Natural cotton tote printed with a pennant, ShoreList, and Yacht & Beach Club",
-   "meta": "Natural organic cotton tote with a pennant, ShoreList, and Yacht & Beach Club on the front.",
    "price": 58,
    "cut": "unisex",
    "dept": "bags",

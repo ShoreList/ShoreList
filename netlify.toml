@@ -366,6 +366,19 @@
   to = "/shop/harbor-goods.html"
   status = 200
 
+# The old Fourthwall collection URL and its former generic redirect target.
+[[redirects]]
+  from = "/shop/fourthwall"
+  to = "/shop/harbor-goods"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/fourthwall"
+  to = "/shop/harbor-goods"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/shop/:handle"
   to = "/shop/products/:handle"
