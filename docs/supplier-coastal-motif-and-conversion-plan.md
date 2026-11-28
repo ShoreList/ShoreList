@@ -57,6 +57,15 @@ CJ Shopify readback: the $109 mint-stripe chair (`CJLY36122900001`) and $99 tilt
 
 The source designs were drawn for ShoreList. Both rendered as transparent 600 × 600 RGBA PNGs and were visually inspected. Export each SVG at 600 × 600 px for the verified left-chest template region. The listed dimensions refer to the actual visible motif. Keep the artwork at the measured scale during supplier proofing. SVG colors are design targets. The actual thread substitutions, fill widths, gap integrity, stitch count and finish still need supplier digitization and a physical proof. The export is artwork for a proof, and neither an actual garment photograph nor approval to list it. [Fourthwall artwork guidance](https://help.fourthwall.com/create-and-sell-products/how-to-guides/mixed-print-regions-combining-dtg-and-embroidery)
 
+### Files for supplier digitization
+
+| Candidate | Artwork to upload | SHA-256 |
+|---|---|---|
+| White Cannonball Jelly polo | [600 × 600 PNG](supplier-art/embroidery/cannonball-jelly.png) | `2ff0049cfacdab60b00d4bb4ae5e4cc5b85a4cdf2837db37107ae482902060e5` |
+| Navy Coquina polo | [600 × 600 PNG](supplier-art/embroidery/coquina.png) | `9405946e6510cf7047f7be4f405a20c06290c62d88380d3349c9cedaf6b30dea` |
+
+Both PNGs have transparent backgrounds and 150 dpi resolution metadata. Use the left-chest region on the verified SOL'S 11362 blank. At that scale, keep the visible motifs at 1.39 in and 1.52 in wide respectively. Digitization, thread selection and a physical stitch proof are still pending. Treat these files as draft artwork and keep them out of customer-facing imagery.
+
 ## Uploaded conversion blueprint: implementation reconciliation
 
 The proposed seven-module architecture assumes Shopify Liquid owns shorelist.net, but AGENTS.md and source files establish a static Netlify site with Shopify cart permalinks and separate Fourthwall checkout. Preserve the existing stack. Treat 95+ mobile Lighthouse and CLS below 0.05 as target, not achieved fact. Sub-100ms and model response figures are unverified targets. New recurring software overhead target is $0; existing subscriptions are not zero. Do not buy under-$10 assets without approval.
