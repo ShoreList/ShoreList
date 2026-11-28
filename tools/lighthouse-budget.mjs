@@ -35,9 +35,13 @@ for (const [p, floors] of PAGES) {
   const got = Object.fromEntries(Object.entries(j.categories).map(([k, v]) => [k, Math.round(v.score * 100)]));
   console.log(p.padEnd(36), JSON.stringify(got), 'LCP', j.audits['largest-contentful-paint'].displayValue, 'TBT', j.audits['total-blocking-time'].displayValue, 'CLS', j.audits['cumulative-layout-shift'].displayValue);
   if (got.performance < floors.performance) {
-    const candidate = j.audits['largest-contentful-paint-element']?.details?.items?.[0]?.items?.[0]?.node?.selector;
+    const lcpDetails = j.audits['largest-contentful-paint-element']?.details?.items ?? [];
+    const lcpNode = lcpDetails[0]?.items?.[0]?.node;
+    const candidate = lcpNode?.selector;
+    const image = lcpNode?.snippet?.match(/\bsrc="([^"]+)"/)?.[1];
+    const lcpPhases = lcpDetails[1]?.items?.map(({ phase, timing }) => [phase, Math.round(timing)]);
     const slowTasks = j.audits['long-tasks']?.details?.items?.slice(0, 3).map(({ url, duration }) => [url, Math.round(duration)]);
-    console.log('Performance details', JSON.stringify({ candidate, slowTasks }));
+    console.log('Performance details', JSON.stringify({ candidate, image, lcpPhases, slowTasks }));
   }
   for (const [k, min] of Object.entries(floors)) if (got[k] < min) fails.push(`${p}: ${k} ${got[k]} is under the floor of ${min}`);
 }
