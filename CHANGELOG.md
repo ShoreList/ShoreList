@@ -6,6 +6,7 @@ Format: newest first. Each future entry: date, PR or action, what changed, evide
 
 ## 2026-11-28
 
+- Four embroidered crewnecks now show From $68, and the Sloop corduroy cap shows $46, matching the lowered Shopify prices. The catalog, shop cards, gift guides, product JSON-LD and the pier and souvenir pages use those prices. `sw.js` is `sl-v333-2026-11-28`. Rollback: revert the squash commit and bump `sw.js`.
 - Shop card frames are square, on white, so the square studio photos no longer sit in a taller beige band. Quick view and product photos use the same white square. `sw.js` is `sl-v332-2026-11-28`. Rollback: revert the squash commit and bump `sw.js`.
 - Wrightsville Beach shelf links for the can cooler and the 2026 ornament open their product pages. They had used the catalog id, which 404s. The shelf builder now uses the Shopify handle. `sw.js` is `sl-v332-2026-11-28`. Rollback: revert the squash commit and bump `sw.js`.
 - Shop card photos show the whole product again. The phone rule that forced them to 64px tall is gone. Cards, the quick view, gift guides and product photos use a 4:5 frame with object-fit contain. On a phone the order-by line sits inside the sale bar instead of as a second banner. `sw.js` is `sl-v331-2026-11-28`. Rollback: revert the squash commit and bump `sw.js`.
