@@ -162,3 +162,6 @@ Evaluate a Shopify custom domain/checkout on a shorelist.net subdomain (L3). Nee
 ## Dependency map
 
 T-01 -> T-03 -> owner test order. T-05 -> T-08. T-02 independent of everything else (own files). T-04, T-06, T-10, T-11, T-13 can run in parallel because file sets are disjoint (check before starting).
+
+### Harbor Goods
+- Owner: Grok/cursor/harbor-goods-4568. ShoreList Harbor Goods at /shop/harbor-goods. Fourthwall link-out only. Not the Shopify bag.

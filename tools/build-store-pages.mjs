@@ -1,4 +1,5 @@
-// Builds /size-guide, /shipping-returns and /gift-guide. Run: node tools/build-store-pages.mjs
+// Builds /size-guide, /shipping-returns, /gift-guide, town shop pages and /shop/harbor-goods.
+// Run: node tools/build-store-pages.mjs
 // The gift guide is generated from shop-catalog.json (read only) so every link, name and price is the catalog's.
 // tools/check-site.mjs fails if a gift-guide link is not a live catalog item, so re-run this after the catalog changes.
 import fs from 'node:fs';
@@ -327,6 +328,49 @@ for (const t of shopTowns) {
     { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a.replace(/<[^>]+>/g, '') } })) }];
   out[`shop/${t.id}.html`] = page({ slug: `shop/${t.id}`, title: c.title, desc: c.desc, eye: t.name, h1: c.h1, lede: c.lede, body, ld, wide: true, ogImage: `${SITE}/og-shop-${t.id}.jpg` });
   townOut.push(t.id);
+}
+
+// Harbor Goods is a separate Fourthwall section. Cards link straight to the product page.
+// They are not catalog items[], so the shop bag and the Shopify cart never see them.
+const harbor = Array.isArray(cat.harborGoods) ? cat.harborGoods : [];
+if (harbor.length) {
+  const hcard = (i, n) => `<li><a href="${esc(i.url)}" data-item-id="${esc(i.id)}"><img src="${esc(i.img)}" alt="${esc(i.alt)}" width="800" height="1066" ${n === 0 ? 'fetchpriority="high" loading="eager"' : 'loading="lazy"'} decoding="async"/><span class="gg-name">${esc(i.name)}</span><span class="gg-price">${price(i)}</span><span class="gg-line">${esc(i.meta || '')}</span></a></li>`;
+  const harborBody = `<p class="tp-note">Harbor Goods checks out on our Fourthwall shop. Shopify sale codes do not apply.</p>
+<p>The price on each card is the lowest price on that Fourthwall page. Larger sizes cost more on the tees and the crewneck. Shipping is shown before you pay.</p>
+<ul class="gg-grid">${harbor.map(hcard).join('')}</ul>
+<p class="tp-src">These pieces are not in the <a href="/shop">ShoreList Shop</a> bag. Open a card to choose a size and pay on Fourthwall.</p>`;
+  const harborLd = [{
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'ShoreList Harbor Goods',
+    itemListElement: harbor.map((i, n) => ({
+      '@type': 'ListItem',
+      position: n + 1,
+      item: {
+        '@type': 'Product',
+        name: i.name,
+        url: i.url,
+        image: `${SITE}${i.img}`,
+        description: i.meta,
+        brand: { '@type': 'Brand', name: 'ShoreList' },
+        offers: i.from
+          ? { '@type': 'AggregateOffer', priceCurrency: 'USD', lowPrice: i.price, offerCount: 1, availability: 'https://schema.org/InStock', url: i.url }
+          : { '@type': 'Offer', priceCurrency: 'USD', price: i.price, availability: 'https://schema.org/InStock', url: i.url },
+      },
+    })),
+  }];
+  out['shop/harbor-goods.html'] = page({
+    slug: 'shop/harbor-goods',
+    title: 'ShoreList Harbor Goods | Wilmington NC',
+    desc: 'Garment-dyed tees, an organic crewneck and cotton totes from Wilmington, NC. Harbor Goods checks out on our Fourthwall shop. Shopify sale codes do not apply.',
+    eye: 'Harbor Goods',
+    h1: 'ShoreList Harbor Goods',
+    lede: 'Eight pieces for Wilmington, Wrightsville Beach and Carolina Beach. Open a card to choose a size and pay on Fourthwall. These pieces are not in the ShoreList Shop bag.',
+    body: harborBody,
+    ld: harborLd,
+    wide: true,
+    ogImage: `${SITE}/shop-art/harbor-salt-wash-sloop-garment-dyed-tee.webp`,
+  });
 }
 
 for (const [f, h] of Object.entries(out)) fs.writeFileSync(new URL('../' + f, import.meta.url), h);

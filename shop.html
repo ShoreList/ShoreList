@@ -81,7 +81,7 @@ window.addEventListener('load',function(){
 <nav class="sl-hdr shop-nav" aria-label="Primary">
   <a href="/" class="sl-logo" aria-label="ShoreList home">ShoreList</a>
   <div class="sl-links" id="sl-links">
-    <a href="/shop/wrightsville-beach">Wrightsville Beach</a><a href="/shop/carolina-beach">Carolina Beach</a><a href="/shop/kure-beach">Kure Beach</a><a href="/shop/wilmington">Wilmington</a><a href="/shop?collection=shore-gear#results">Gear</a><a href="/shop#collections">Home decor</a><a href="/prints">Framed art</a><a href="/prints">Art prints</a><a href="/gift-guide">Gifts</a><a href="/things-to-do" class="sl-exp">Experiences</a>
+    <a href="/shop/wrightsville-beach">Wrightsville Beach</a><a href="/shop/carolina-beach">Carolina Beach</a><a href="/shop/kure-beach">Kure Beach</a><a href="/shop/wilmington">Wilmington</a><a href="/shop/harbor-goods">Harbor Goods</a><a href="/shop?collection=shore-gear#results">Gear</a><a href="/shop#collections">Home decor</a><a href="/prints">Framed art</a><a href="/prints">Art prints</a><a href="/gift-guide">Gifts</a><a href="/things-to-do" class="sl-exp">Experiences</a>
     <div class="mobile-social" role="group" aria-label="Follow ShoreList"><a href="#drops">Sign up for emails</a><a href="https://www.tiktok.com/@shorelist" target="_blank" rel="noopener noreferrer" aria-label="ShoreList on TikTok">TikTok</a><a href="https://www.instagram.com/shorelist" target="_blank" rel="noopener noreferrer" aria-label="ShoreList on Instagram">Instagram</a></div>
   </div>
   <button type="button" class="sl-burger" aria-label="Open menu" aria-expanded="false" aria-controls="sl-links"><span></span><span></span><span></span></button>
@@ -247,7 +247,7 @@ window.addEventListener('load',function(){
     return old&&isFinite(d)&&now-d<=14*864e5;
   }
   function pieces(n){return n+' piece'+(n===1?'':'s');}
-  function liveItems(){return data.items.filter(function(i){return i.url&&safeUrl(i.url);});}
+  function liveItems(){return data.items.filter(function(i){return i.url&&safeUrl(i.url)&&i.store!=='fourthwall';});}
 
   /* ---------- cards: lookbook photo first, studio shot on hover, name, price, color ---------- */
   var DOTS={white:'#F4F1EA',ivory:'#EFE6D2',natural:'#E4D8BE',navy:'#0E1F33','navy blue':'#1B3552','blue jean':'#5C7A99',mint:'#BCD8CD',teal:'#2F6F73','forest green':'#2F4A3A',sand:'#D9C7A3',black:'#1B1B1B',red:'#B5362F'};
