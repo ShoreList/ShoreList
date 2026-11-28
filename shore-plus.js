@@ -41,9 +41,12 @@
     }
   }, true);
   document.addEventListener('submit', function (e) {
-    var f = e.target; if (!f || f.tagName !== 'FORM') return;
+    var f = e.target; if (!f || f.tagName !== 'FORM' || f.id === 'dropForm') return;
     track('generate_lead', { form_id: f.id || f.getAttribute('name') || 'form', page_path: location.pathname });
   }, true);
+  document.addEventListener('sl:shop-signup-complete', function (e) {
+    if (e.target && e.target.id === 'dropForm') track('generate_lead', { form_id: 'dropForm', page_path: location.pathname });
+  });
   (function () {
     var marks = [25, 50, 75, 90], seen = {};
     function onScroll() {

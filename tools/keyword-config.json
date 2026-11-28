@@ -95,7 +95,7 @@
     { "url": "/cams", "cluster": "weather", "tier": "T3", "primary": "live beach cams", "geo": ["{city}"] },
     { "url": "/wilmington-nc-faq", "cluster": "plan", "tier": "T3", "primary": "faq", "geo": ["{city}"] },
     { "url": "/shore-picks", "cluster": "eat", "tier": "T2", "primary": "restaurants", "geo": ["{city}"] },
-    { "url": "/shop", "cluster": "shop", "tier": "T1", "primary": "souvenirs", "geo": ["{city}"] },
+    { "url": "/shop", "cluster": "shop", "tier": "T1", "primary": "coastal apparel", "also": ["souvenirs"], "geo": ["{city}"] },
     { "url": "/gift-guide", "cluster": "shop", "tier": "T1", "primary": "gift", "geo": ["Carolina"] },
     { "url": "/shop/wrightsville-beach", "cluster": "shop", "tier": "T1", "primary": "souvenirs", "geo": ["Wrightsville Beach"] },
     { "url": "/shop/carolina-beach", "cluster": "shop", "tier": "T1", "primary": "souvenirs", "geo": ["Carolina Beach"] },
