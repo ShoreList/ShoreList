@@ -1,5 +1,13 @@
 /* ShoreList home page: everything below the hero. Loaded from the body, after the hero markup,
    so it never delays first paint. Hero, nav and intro styles stay inline in index.html. */
+body.home .cc-fab,body.home .cc{display:none!important}
+.cond-card{background:#F4F1EA;color:#0E1F33;padding:28px 20px 4px}
+.cond-card .cond{position:static;left:auto;right:auto;bottom:auto;max-width:760px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:14px 16px;background:#fff;color:#0E1F33;border:1px solid rgba(14,31,51,.12);border-radius:2px}
+.cond-card .cond .dot{background:#2E8B6F}
+.cond-card .cond button{border:1px solid rgba(14,31,51,.28);background:#fff;color:#0E1F33;min-height:40px}
+.cond-card .cond button[aria-pressed=true]{background:#0E1F33;color:#F4F1EA}
+.cond-card .cond .sur{margin-left:0}
+.cond-card .cond .tip a{color:#0E1F33}
 :root{--hn:#0E1F33;--hn2:#0E1F33;--hs:#F4F1EA;--hd:#D9C7A3;--hg:#9FC3B8;--hink:#0E1F33;--hmute:#0E1F33;--hred:#B5362F;--hcoral:#D9C7A3;--hline:rgba(14,31,51,.12);--hease:cubic-bezier(.2,.7,.2,1)}
 
 /* Featured pier cam under the beach report. The 16:9 box is reserved before play. */
