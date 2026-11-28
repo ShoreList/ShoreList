@@ -8,6 +8,11 @@ const productRoute = (url) => url.origin + url.pathname.replace(/\/+$/, '');
 const rateLimited = 'Merchant rate-limited verification (429)';
 const nightlyShopifyCount = 12;
 
+export function merchantCards(catalog) {
+  return [...catalog.items, ...(catalog.harborGoods ?? [])]
+    .filter((item) => item.store === 'shopify' || item.store === 'fourthwall');
+}
+
 export function nightlyTargets(items, utcDay) {
   const shopify = [...new Set(items.filter((item) => item.store === 'shopify').map((item) => item.url))];
   const start = (utcDay * nightlyShopifyCount) % Math.max(1, shopify.length);
@@ -74,7 +79,7 @@ export async function checkProductPage(value, allowedHosts, fetchPage = fetch, w
 async function main() {
   const catalog = JSON.parse(fs.readFileSync(new URL('../shop-catalog.json', import.meta.url), 'utf8'));
   // Report each catalog card even if several cards share one merchant page.
-  const allItems = catalog.items.filter((item) => item.store === 'shopify' || item.store === 'fourthwall');
+  const allItems = merchantCards(catalog);
   const nightly = process.argv.includes('--nightly');
   const items = nightly ? nightlyTargets(allItems, Math.floor(Date.now() / 86400000)) : allItems;
   const urls = [...new Set(items.map((item) => item.url))];

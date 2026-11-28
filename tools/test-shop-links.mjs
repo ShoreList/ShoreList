@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { checkProductPage, nightlyTargets } from './check-shop-links.mjs';
+import { checkProductPage, merchantCards, nightlyTargets } from './check-shop-links.mjs';
 
 const host = 'shorelist.myshopify.com', url = 'https://' + host + '/products/example';
 const productHtml = (canonical = url, type = 'product') =>
@@ -64,14 +64,18 @@ test('rate limiting uses Retry-After and makes at most one respectful retry', as
 test('daily rotation covers all unique Shopify URLs and always includes Fourthwall', () => {
   const shop = Array.from({ length: 104 }, (_, index) => ({ store: 'shopify', url: url + index }));
   const seller = { store: 'fourthwall', url: 'https://shorelist-shop.fourthwall.com/products/example' };
-  const all = [...shop, shop[0], seller];
+  const harbor = { store: 'fourthwall', url: 'https://shorelist-shop.fourthwall.com/products/harbor-example' };
+  const catalog = { items: [...shop, shop[0], seller, { store: 'goods', url: '/shop' }], harborGoods: [harbor] };
+  assert.deepEqual(merchantCards({ items: [seller] }), [seller]);
+  const all = merchantCards(catalog);
   const visited = new Set();
   for (let day = 0; day < 9; day++) {
     const rows = nightlyTargets(all, day);
     const urls = new Set(rows.map((item) => item.url));
     assert.ok(urls.has(seller.url));
-    assert.equal(urls.size, 13);
+    assert.ok(urls.has(harbor.url));
+    assert.equal(urls.size, 14);
     for (const selected of urls) visited.add(selected);
   }
-  assert.equal(visited.size, 105);
+  assert.equal(visited.size, 106);
 });
