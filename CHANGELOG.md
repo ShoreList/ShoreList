@@ -6,6 +6,7 @@ Format: newest first. Each future entry: date, PR or action, what changed, evide
 
 ## 2026-11-28
 
+- Shop card photos show the whole product again. The phone rule that forced them to 64px tall is gone. Cards, the quick view, gift guides and product photos use a 4:5 frame with object-fit contain. On a phone the order-by line sits inside the sale bar instead of as a second banner. `sw.js` is `sl-v331-2026-11-28`. Rollback: revert the squash commit and bump `sw.js`.
 - Shop browsing stays on shorelist.net. Collection, hero, quick view and town product links open /shop or /shop/products/{handle}. Shopify is only the cart permalink, with the visit's utm values and first-touch attribution. /shop/{handle} redirects to the product page, and the four town shelves stay put. Product pages load GA4 G-EN91RH3PZV. Sale banners say the 15% is applied automatically at checkout. /bio and /links redirect to /shop?utm_source=bio. `sw.js` is `sl-v330-2026-11-28`. Rollback: revert the squash commit and bump `sw.js`.
 
 ## 2026-11-27
