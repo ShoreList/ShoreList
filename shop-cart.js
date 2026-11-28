@@ -68,19 +68,23 @@
   function total() { return buyable().reduce(function (a, l) { return a + l.qty * l.price; }, 0); }
   function checkoutUrl() {
     var path = '/cart/' + buyable().map(function (l) { return l.id + ':' + l.qty; }).join(',');
+    var utm = { utm_source: 'shorelist.net', utm_medium: 'shop', utm_campaign: 'checkout' };
+    var extra = [];
     // Keep campaign slugs with the Shopify order. Exclude landing URLs, referrers and click IDs.
     try {
       var attrib = window.ShoreAttrib && window.ShoreAttrib.get();
       if (attrib) {
         var fields = { utm_source: 'source', utm_medium: 'medium', utm_campaign: 'campaign' };
-        var params = Object.keys(fields).filter(function (key) {
-          return typeof attrib[key] === 'string' && /^[a-z0-9][a-z0-9._~-]{0,79}$/.test(attrib[key]);
-        }).map(function (key) {
-          return 'attributes%5Bshorelist_' + fields[key] + '%5D=' + encodeURIComponent(attrib[key]);
+        Object.keys(fields).forEach(function (key) {
+          if (typeof attrib[key] === 'string' && /^[a-z0-9][a-z0-9._~-]{0,79}$/.test(attrib[key])) {
+            utm[key] = attrib[key];
+            extra.push('attributes%5Bshorelist_' + fields[key] + '%5D=' + encodeURIComponent(attrib[key]));
+          }
         });
-        if (params.length) path += '?' + params.join('&');
       }
     } catch (e) { /* Attribution must never prevent checkout. */ }
+    var params = Object.keys(utm).map(function (key) { return key + '=' + encodeURIComponent(utm[key]); }).concat(extra);
+    path += '?' + params.join('&');
     return CLEAR_FIRST ? STORE + '/cart/clear?return_to=' + encodeURIComponent(path) : STORE + path;
   }
   function wearable(name) { return /\b(crewneck|tee|hoodie|cap|beanie|hat)\b/i.test(name || ''); }

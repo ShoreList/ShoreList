@@ -48,9 +48,12 @@ function page(i) {
     : /kure/i.test(i.name) ? 'kure-beach'
     : 'wilmington';
   const townName = { 'wrightsville-beach': 'Wrightsville Beach', 'carolina-beach': 'Carolina Beach', 'kure-beach': 'Kure Beach', wilmington: 'Wilmington' }[town];
-  const buy = i.url + (String(i.url).includes('?') ? '&' : '?') + 'utm_source=shorelist.net&utm_medium=product&utm_campaign=shop-product&utm_content=' + handle;
-  const shown = (from ? 'From $' : '$') + money(price);
   const book = variants[handle];
+  const liveVar = book && Array.isArray(book.variants) ? (book.variants.find((v) => v && v.available && v.id) || book.variants.find((v) => v && v.id)) : null;
+  const buy = liveVar
+    ? 'https://shorelist.myshopify.com/cart/' + liveVar.id + ':1?utm_source=shorelist.net&utm_medium=product&utm_campaign=shop-product&utm_content=' + handle
+    : '/shop';
+  const shown = (from ? 'From $' : '$') + money(price);
   const optionRows = book && Array.isArray(book.options)
     ? book.options.filter((o) => o && o.name && Array.isArray(o.values) && o.values.length && !(o.values.length === 1 && /^(title|default title)$/i.test(o.name + ' ' + o.values[0])))
     : [];
@@ -70,6 +73,20 @@ function page(i) {
 <meta property="og:title" content="${esc(plain(i.name))}"/><meta property="og:description" content="${esc(plain(i.meta || i.name).slice(0, 180))}"/><meta property="og:type" content="product"/><meta property="og:url" content="${canon}"/>
 <meta property="og:image" content="${esc(i.img)}"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="${esc(i.img)}"/>
 <link rel="icon" href="/favicon.ico"/><link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
+<script>
+window.addEventListener('load',function(){
+  function load(){
+    if(document.querySelector('script[data-sl-ga]'))return;
+    var tag=document.createElement('script');
+    tag.async=true;tag.setAttribute('data-sl-ga','1');
+    tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
+    document.head.appendChild(tag);
+  }
+  document.addEventListener('pointerdown',load,{once:true,passive:true});
+  setTimeout(function(){if(window.requestIdleCallback)requestIdleCallback(load);else load();},5000);
+});
+</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EN91RH3PZV');</script>
 <link rel="manifest" href="/manifest.webmanifest"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" rel="stylesheet"/></noscript>
@@ -96,12 +113,16 @@ function page(i) {
 ${optionHtml}
 ${factHtml}
 <p class="made-note">Made to order. Delivery usually 1-2 weeks. Shipping is calculated at checkout.</p>
-<p><a class="nav-book" href="${esc(buy)}" rel="noopener">Secure checkout</a></p>
+<p><a class="nav-book" href="${esc(buy)}" rel="noopener">Add to cart</a></p>
 <p class="trust">Designed in Wilmington, NC &middot; Secure checkout &middot; Questions? hello via the <a href="mailto:rj@shorelist.net">contact page</a></p>
 <p>This page is the ShoreList address for the piece. Checkout still runs on the shop, where shipping and tax are shown before you pay. See <a href="/shipping-returns">shipping and returns</a>, the <a href="/shop/${town}">${esc(townName)} shop</a>, and the <a href="/gift-finder">gift finder</a>.</p>
 </div></div></section>
 </main>
 <footer class="ev-foot"><div>&copy; 2026 ShoreList LLC &middot; Wilmington, NC &amp; the Beaches</div><div><a href="/shop">Shop</a><a href="/gift-guide">Gift guide</a><a href="/shipping-returns">Shipping &amp; Returns</a><a href="/legal">Privacy &amp; Terms</a></div></footer>
+<script src="/attrib.js" defer></script>
+<script>
+(function(){var a=document.querySelector('a.nav-book');if(!a)return;a.addEventListener('click',function(){try{var attrib=window.ShoreAttrib&&window.ShoreAttrib.get();if(!attrib)return;var u=new URL(a.href,location.origin);if(u.hostname!=='shorelist.myshopify.com')return;var map={utm_source:'source',utm_medium:'medium',utm_campaign:'campaign'};Object.keys(map).forEach(function(k){if(typeof attrib[k]==='string'&&attrib[k]){if(!u.searchParams.get(k))u.searchParams.set(k,attrib[k]);u.searchParams.set('attributes[shorelist_'+map[k]+']',attrib[k]);}});a.href=u.toString();}catch(e){}});})();
+</script>
 </body>
 </html>
 `;

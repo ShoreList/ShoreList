@@ -4,6 +4,10 @@ Source: `git log origin/main` (308 non-automated commits as of 2026-11-25; the r
 
 Format: newest first. Each future entry: date, PR or action, what changed, evidence (command/exit code), rollback.
 
+## 2026-11-28
+
+- Shop browsing stays on shorelist.net. Collection, hero, quick view and town product links open /shop or /shop/products/{handle}. Shopify is only the cart permalink, with the visit's utm values and first-touch attribution. /shop/{handle} redirects to the product page, and the four town shelves stay put. Product pages load GA4 G-EN91RH3PZV. Sale banners say the 15% is applied automatically at checkout. /bio and /links redirect to /shop?utm_source=bio. `sw.js` is `sl-v330-2026-11-28`. Rollback: revert the squash commit and bump `sw.js`.
+
 ## 2026-11-27
 
 - Shop, the product quick view, and the gift guides say "Order by Dec 8 for Christmas delivery (US standard shipping)." The line is hidden after Dec 8 at 11:59 PM Eastern. That date is Printify's published US Standard cutoff of Dec 9, minus one buffer day. It does not say delivery is guaranteed.
