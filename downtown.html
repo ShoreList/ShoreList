@@ -327,7 +327,13 @@ window.addEventListener('load',function(){
 <main id="main">
 
 <section class="hero has-photo">
-  <img class="hero-photo" width="1920" height="1371" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bridge_1920x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bridge_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bridge_1920x.webp 1920w" sizes="100vw" alt="The Wilmington Riverwalk at sunset with the Cape Fear Memorial Bridge lit in the distance" fetchpriority="high" decoding="async"/>
+  <picture>
+  <source media="(max-width: 767px)" type="image/webp" srcset="/img/places/wilmington-phone.webp">
+  <source media="(max-width: 767px)" type="image/jpeg" srcset="/img/places/wilmington-phone.jpg">
+  <source type="image/webp" srcset="/img/places/wilmington-desk.webp">
+  <img class="hero-photo" src="/img/places/wilmington-desk.jpg" alt="The Cape Fear riverfront boardwalk in downtown Wilmington" width="1920" height="1080" fetchpriority="high" decoding="async" style="object-fit:cover;object-position:40% 55%">
+</picture>
+<p class="hero-credit">Photo: Cape Fear riverfront, Wilmington. Kevin Dunlap, Unsplash License.</p>
   <div class="hero-inner">
     <div>
       <div class="hero-bc"><a href="/">ShoreList</a> &nbsp;&#8250;&nbsp; <a href="/map">Wilmington &amp; the Beaches</a> &nbsp;&#8250;&nbsp; Downtown Wilmington</div>
@@ -563,7 +569,7 @@ window.addEventListener('load',function(){
 </main>
 <footer>
   <a href="/" class="foot-logo"><span class="foot-s">Shore</span><span class="foot-l">List</span></a>
-  <div class="foot-copy">&#169; 2026 ShoreList LLC &nbsp;&middot;&nbsp; Wilmington, NC &nbsp;&middot;&nbsp; Your local guide to coastal adventures</div>
+  <div class="foot-copy">&#169; 2026 ShoreList LLC &nbsp;&middot;&nbsp; Wilmington, NC &nbsp;&middot;&nbsp; Your guide to Wilmington and the beaches</div>
   <nav class="foot-links" aria-label="Footer">
     <a href="/things-to-do">Things to Do</a>
     <a href="/plan-your-trip">Plan Your Trip</a>

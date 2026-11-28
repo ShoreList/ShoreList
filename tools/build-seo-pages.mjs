@@ -168,8 +168,8 @@ ${liveHtml}
       .replace('<link rel="preconnect" href="https://fonts.googleapis.com"/>',
         '<link rel="preconnect" href="https://cdn.shopify.com"/>\n<link rel="preconnect" href="https://fonts.googleapis.com"/>')
       .replaceAll('&display=swap', '&display=optional')
-      .replace('</head>', '<link rel="preload" as="image" href="/img/hero-mobile/ghost-tours.webp" media="(max-width: 820px)" fetchpriority="high"/>\n</head>')
-      .replace(/<img class="hero-photo"[^>]+>/, '<picture><source media="(max-width: 820px)" srcset="/img/hero-mobile/ghost-tours.webp"/>$&</picture>')
+      .replace('</head>', '<link rel="preload" as="image" href="/assets/rj-photos/hero-mobile/ghost-tours.webp" media="(max-width: 820px)" fetchpriority="high"/>\n</head>')
+      .replace(/<img class="hero-photo"[^>]+>/, '<picture><source media="(max-width: 820px)" srcset="/assets/rj-photos/hero-mobile/ghost-tours.webp"/>$&</picture>')
       .replace('<script data-idle="/attrib.js"></script>', '<script data-idle="/attrib.js"></script>')
       .replace('<script data-idle="/category-app.js"></script>', '<script data-idle="/category-app.js"></script>'));
   }

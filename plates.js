@@ -9,15 +9,15 @@
   // Real, openly licensed photos (credits are listed under the town cards on this page and in /hero-photo-credits.txt).
   // ph = phase index: 0 dawn, 1 midday, 2 golden hour, 3 night (night is darkened in CSS). pos/mpos = focal point on desktop/phone.
   var PICS = [
-    { f: 'kure-dawn2', ph: 0, pos: '50% 62%', place: 'Kure Beach', by: 'Staniulis', lic: 'CC0' },
-    { f: 'wb-sunrise', ph: 0, pos: '50% 38%', place: 'Wrightsville Beach', by: 'James Willamor', lic: 'CC BY-SA 2.0' },
-    { f: 'wb-ocean', ph: 1, pos: '50% 45%', place: 'Wrightsville Beach', by: 'DiscoA340', lic: 'CC BY-SA 4.0' },
-    { f: 'wb-banks', ph: 1, pos: '50% 72%', place: 'Banks Channel, Wrightsville Beach', by: 'Gerry Dincher', lic: 'CC BY-SA 2.0' },
-    { f: 'ff-oaks', ph: 1, pos: '50% 82%', place: 'Fort Fisher', by: 'Staniulis', lic: 'CC0', f2: 'contrast(1.03) saturate(.82) brightness(1)' },
-    { f: 'cb-dunes', ph: 1, pos: '50% 58%', place: 'Carolina Beach', by: 'Mx. Granger', lic: 'CC0' },
-    { f: 'wb-golden', ph: 2, pos: '58% 60%', mpos: '62% 60%', place: 'Wrightsville Beach', by: 'NCSU16', lic: 'CC BY-SA 3.0' },
-    { f: 'wb-aerial2', ph: 2, pos: '50% 50%', mpos: '40% 50%', place: 'Wrightsville Beach and the sound', by: 'FOCIIS Photography', lic: 'CC BY-SA 4.0' },
-    { f: 'wb-twilight', ph: 3, pos: '70% 55%', mpos: '78% 55%', place: 'Wrightsville Beach', by: 'NCSU16', lic: 'CC BY-SA 3.0' }
+    { f: 'kure-dawn2', ph: 0, pos: '50% 62%', place: 'Kure Beach', by: 'RJ Brideau', lic: 'ShoreList' },
+    { f: 'wb-sunrise', ph: 0, pos: '50% 38%', place: 'Wrightsville Beach', by: 'RJ Brideau', lic: 'ShoreList' },
+    { f: 'wb-ocean', ph: 1, pos: '50% 45%', place: 'Wrightsville Beach', by: 'RJ Brideau', lic: 'ShoreList' },
+    { f: 'wb-banks', ph: 1, pos: '50% 72%', place: 'Banks Channel, Wrightsville Beach', by: 'RJ Brideau', lic: 'ShoreList' },
+    { f: 'ff-oaks', ph: 1, pos: '50% 82%', place: 'Fort Fisher', by: 'RJ Brideau', lic: 'ShoreList', f2: 'contrast(1.03) saturate(.82) brightness(1)' },
+    { f: 'cb-dunes', ph: 1, pos: '50% 58%', place: 'Carolina Beach', by: 'RJ Brideau', lic: 'ShoreList' },
+    { f: 'wb-golden', ph: 2, pos: '58% 60%', mpos: '62% 60%', place: 'Wrightsville Beach', by: 'RJ Brideau', lic: 'ShoreList' },
+    { f: 'wb-aerial2', ph: 2, pos: '50% 50%', mpos: '40% 50%', place: 'Wrightsville Beach and the sound', by: 'RJ Brideau', lic: 'ShoreList' },
+    { f: 'wb-twilight', ph: 3, pos: '70% 55%', mpos: '78% 55%', place: 'Wrightsville Beach', by: 'RJ Brideau', lic: 'ShoreList' }
   ];
   var NAMES = ['dawn', 'midday', 'golden', 'night'];
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -51,7 +51,7 @@
   if (!wrap.parentNode) host.insertBefore(wrap, host.firstChild);
   var cap = document.createElement('p'); cap.className = 'plate-credit'; host.appendChild(cap);
   function credit() { var p = PICS[pick[Math.round(cur) % 4]]; cap.textContent = 'Photo: ' + p.place + ', ' + p.by + ', ' + p.lic; }
-  function src(i) { if (mobile) { var a = '/img/hero-mobile/' + PICS[i].f + '.avif'; return { s: a + ' 960w', f: a }; } var b = BASE + PICS[i].f, c = 'x.jpg'; return { s: [1280, 1920, 2560, 3200, 3840].map(function (w) { return b + '_' + w + c + ' ' + w + 'w'; }).join(', '), f: b + '_2560' + c }; }
+  function src(i) { if (mobile) { var a = '/assets/rj-photos/hero-mobile/' + PICS[i].f + '.avif'; return { s: a + ' 960w', f: a }; } var b = BASE + PICS[i].f, c = 'x.jpg'; return { s: [1280, 1920, 2560, 3200, 3840].map(function (w) { return b + '_' + w + c + ' ' + w + 'w'; }).join(', '), f: b + '_2560' + c }; }
   // Same rule as the preload in index.html. Phones use a single local image and larger screens use a responsive CDN image. Uses window size, not a layout read, so it never forces a reflow.
   function need() { if (mobile) return '100vw'; if (H0 && H0.sz) return H0.sz; var vw = innerWidth, vh = innerHeight, d = window.devicePixelRatio || 1; return Math.ceil(Math.max(vw, vh * 1.5) * 1.08 * Math.min(d, 1.5) / d) + 'px'; }
   function load(i, high) {
