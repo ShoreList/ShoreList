@@ -174,7 +174,7 @@
   },
   "Pelican Knit Crewneck": {
     "description": "A brown pelican in profile sits on the chest of an oyster knit crewneck.",
-    "direction": "Use an open silhouette and small warm accent. Verify knit resolution at actual size.",
+    "direction": "Keep the long bill and brown throat pouch distinct from the dark neck. Verify the eye and pouch at actual knit size.",
     "templateId": "pro_quHTYBtVRFqTh6ODh8g9Bw",
     "templateName": "Knitted Crewneck Sweater Classic Fit",
     "publicBaseCents": 3800,
@@ -203,9 +203,10 @@
         "requirements": "Use official template and yarn palette; single trim color from the same four; preserve factory interface; avoid stray pixels and anti-aliased intermediate colors; inspect front, back, side and all sizes."
       },
       "artworkAssessment": {
+        "artworkSha256": "0b89baaa93c4cb814af8547b73575c00ecee2386ac6c180954185d8f0955adcc",
         "status": "HYPOTHESIS",
-        "notes": "Three foreground colors plus oyster base and matching oyster trim: four total proposed. Check oversized bill and throat pouch against brown pelican identification; simplify if eye disappears at stitch scale.",
-        "localReference": "https://www.audubon.org/north-carolina/birds"
+        "notes": "Three foreground colors plus oyster base and matching oyster trim: four total proposed. Enlarged the navy eye and reshaped the brown pouch for the Atlantic brown pelican profile. In a 98 × 60 px screen raster of the motif, the same eye region held 12 solid navy pixels after revision versus one before. The brown pouch and long bill remained visible. The raster establishes screen legibility only. Verify the official yarn match and the eye, bill and pouch on the supplier proof.",
+        "localReference": "https://www.allaboutbirds.org/guide/Brown_pelican/id"
       },
       "catalogDifferentiation": {
         "status": "HYPOTHESIS",
@@ -224,7 +225,7 @@
         "Physical sample quality and genuine studio photography",
         "Originality and trademark clearance",
         "Shipping, checkout, care, labeling and safety evidence",
-        "Independent five-category review at 90/100 each plus existing gates"
+        "Independent review with a brand-match score of at least 90/100 across five dimensions, a product score of at least 90/100, and the existing imagery gates"
       ]
     }
   },
