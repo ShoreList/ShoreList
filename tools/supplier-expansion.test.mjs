@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { test } from 'node:test';
 import { BRAND_CRITERIA, coastalBrandIssues } from './coastal-brand-review.mjs';
 import cj from '../netlify/functions/_suppliers/cj.js';
-import { cjCoverage, cjDraft, cjVariants, releaseIssues, releaseRevision, selectedVariants, stageDrafts } from './supplier-expansion.mjs';
+import { cjCoverage, cjDraft, cjVariants, harborReleaseIssues, releaseIssues, releaseRevision, selectedVariants, stageDrafts } from './supplier-expansion.mjs';
 
 const queue = JSON.parse(await readFile(new URL('../docs/supplier-expansion-candidates.json', import.meta.url)));
 const plans = JSON.parse(await readFile(new URL('../docs/supplier-expansion-development.json', import.meta.url)));
@@ -42,6 +42,8 @@ test('review gate rejects missing score evidence, duplicate images, hard failure
   // Synthetic QA fixture only. The real candidate queue has no assigned scores.
   const item = {
     title: 'QA fixture',
+    supplier: 'fourthwall',
+    status: 'READY',
     supplierSku: 'test-sku',
     skuVerified: true,
     supplierUrl: 'https://example.com/product',
@@ -70,6 +72,14 @@ test('review gate rejects missing score evidence, duplicate images, hard failure
   };
   signFixture();
   assert.deepEqual(releaseIssues(item), []);
+  const listing = { store: 'fourthwall', name: item.title, url: item.supplierUrl, sku: item.supplierSku, price: 40,
+    img: item.lookbook.url, lookbook: item.lookbook.url, studio: item.studio.url };
+  assert.deepEqual(harborReleaseIssues(listing, { items: [item] }), []);
+  assert.match(harborReleaseIssues(listing, { items: [{ ...item, status: 'RESEARCH_ONLY' }] }).join(), /release-ready/);
+  assert.match(harborReleaseIssues({ ...listing, url: 'https://example.com/other' }, { items: [item] }).join(), /exact product URL/);
+  assert.match(harborReleaseIssues({ ...listing, sku: 'wrong', price: 42 }, { items: [item] }).join(), /SKU and price/);
+  assert.match(harborReleaseIssues({ ...listing, img: listing.studio }, { items: [item] }).join(), /reviewed lookbook/);
+  assert.match(harborReleaseIssues({ ...listing, alt: 'Yacht & Beach Club artwork' }, { items: [item] }).join(), /club wording/);
   assert.equal(releaseRevision({ ...item, status: 'READY' }), releaseRevision(item));
   assert.equal(releaseRevision(Object.fromEntries(Object.entries(item).reverse())), releaseRevision(item));
   assert.deepEqual(releaseIssues({ ...item, description: 'Revised fixture artwork copy.' }), [
