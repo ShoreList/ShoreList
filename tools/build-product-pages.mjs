@@ -49,10 +49,14 @@ function page(i) {
     : 'wilmington';
   const townName = { 'wrightsville-beach': 'Wrightsville Beach', 'carolina-beach': 'Carolina Beach', 'kure-beach': 'Kure Beach', wilmington: 'Wilmington' }[town];
   const book = variants[handle];
-  const liveVar = book && Array.isArray(book.variants) ? (book.variants.find((v) => v && v.available && v.id) || book.variants.find((v) => v && v.id)) : null;
-  const buy = liveVar
-    ? 'https://shorelist.myshopify.com/cart/' + liveVar.id + ':1?utm_source=shorelist.net&utm_medium=product&utm_campaign=shop-product&utm_content=' + handle
-    : '/shop';
+  const rows = Array.isArray(book?.variants) ? book.variants : [];
+  const onlyVariant = rows.length === 1 ? rows[0] : null;
+  const direct = onlyVariant?.available === true && /^\d+$/.test(String(onlyVariant.id));
+  const buy = new URL(direct ? '/cart/' + onlyVariant.id + ':1' : '/products/' + handle, 'https://shorelist.myshopify.com');
+  buy.search = new URLSearchParams({
+    utm_source: 'shorelist.net', utm_medium: 'product', utm_campaign: 'shop-product', utm_content: handle,
+  });
+  const buyLabel = direct ? 'Add to cart' : 'Choose options at ShoreList Shop';
   const shown = (from ? 'From $' : '$') + money(price);
   const optionRows = book && Array.isArray(book.options)
     ? book.options.filter((o) => o && o.name && Array.isArray(o.values) && o.values.length && !(o.values.length === 1 && /^(title|default title)$/i.test(o.name + ' ' + o.values[0])))
@@ -113,7 +117,7 @@ window.addEventListener('load',function(){
 ${optionHtml}
 ${factHtml}
 <p class="made-note">Made to order. Delivery usually 1-2 weeks. Shipping is calculated at checkout.</p>
-<p><a class="nav-book" href="${esc(buy)}" rel="noopener">Add to cart</a></p>
+<p><a class="nav-book" href="${esc(buy)}" rel="noopener">${buyLabel}</a></p>
 <p class="trust">Designed in Wilmington, NC &middot; Secure checkout &middot; Questions? hello via the <a href="mailto:rj@shorelist.net">contact page</a></p>
 <p>This page is the ShoreList address for the piece. Checkout still runs on the shop, where shipping and tax are shown before you pay. See <a href="/shipping-returns">shipping and returns</a>, the <a href="/shop/${town}">${esc(townName)} shop</a>, and the <a href="/gift-finder">gift finder</a>.</p>
 </div></div></section>

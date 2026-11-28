@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 
 const cat = JSON.parse(fs.readFileSync('shop-catalog.json', 'utf8'));
+const variants = JSON.parse(fs.readFileSync('shop-variants.json', 'utf8'));
 const handleOf = (url) => {
   const m = /\/products\/([a-z0-9-]+)/i.exec(String(url || ''));
   return m ? m[1].toLowerCase() : '';
@@ -21,6 +22,20 @@ for (const i of items) {
   if (!h.includes(`<link rel="canonical" href="${canon}"/>`)) bad(`${handle}: canonical is not ${canon}`);
   if (/rel="canonical" href="https:\/\/shorelist\.myshopify\.com/.test(h)) bad(`${handle}: canonical points at Shopify`);
   if (!sm.includes(`<loc>${canon}</loc>`)) bad(`${handle}: missing from sitemap`);
+  const cta = h.match(/<a class="nav-book" href="([^"]+)"[^>]*>([^<]+)<\/a>/);
+  const destination = cta && URL.parse(cta[1].replaceAll('&amp;', '&'));
+  const rows = variants[handle]?.variants ?? [];
+  const one = rows.length === 1 ? rows[0] : null;
+  if (destination?.origin !== 'https://shorelist.myshopify.com' ||
+      destination.searchParams.get('utm_content') !== handle) {
+    bad(`${handle}: purchase link does not reach the ShoreList Shop with this product's campaign tag`);
+  } else if (one?.available === true && /^\d+$/.test(String(one.id))) {
+    if (destination.pathname !== `/cart/${one.id}:1` || cta[2] !== 'Add to cart') {
+      bad(`${handle}: single available variant does not have its exact cart link`);
+    }
+  } else if (destination.pathname !== `/products/${handle}` || cta[2] !== 'Choose options at ShoreList Shop') {
+    bad(`${handle}: shoppers must choose their variant before checkout`);
+  }
   const ld = [...h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
   const product = ld.find((j) => j['@type'] === 'Product');
   if (!product) bad(`${handle}: no Product JSON-LD`);
