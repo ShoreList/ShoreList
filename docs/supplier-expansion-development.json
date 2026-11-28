@@ -146,8 +146,9 @@
         "requirements": "Use official template and yarn palette; single trim color from the same four; preserve factory interface; avoid stray pixels and anti-aliased intermediate colors; inspect front, back, side and all sizes."
       },
       "artworkAssessment": {
+        "artworkSha256": "01ffc1075518a1c81b00625f7d43af81957d066148819312e081f8e97c59f76d",
         "status": "HYPOTHESIS",
-        "notes": "Two foreground colors plus navy base and matching navy trim: three total proposed. Keep original sail/wake motif; reject if a knit proof loses the separation of the sail and hull.",
+        "notes": "Two foreground colors plus navy base and matching navy trim: three total proposed. The existing artwork retained its sail, mast, hull and separated wakes in a 47 × 48 px screen raster. The raster does not establish actual stitch resolution. Inspect the mast and lower sail clearance on the supplier proof.",
         "localReference": "https://eft.usace.army.mil/saw-nav/INLETS/MASONBORO/INLET/Masonboro_Inlet.pdf"
       },
       "catalogDifferentiation": {
@@ -258,8 +259,9 @@
         "requirements": "Use official template and yarn palette; single trim color from the same four; preserve factory interface; avoid stray pixels and anti-aliased intermediate colors; inspect front, back, side and all sizes."
       },
       "artworkAssessment": {
+        "artworkSha256": "f2fe1c374d8ed787726c7749d2810c86a9b5b45dd791e58880d5d9fcfd0c436f",
         "status": "HYPOTHESIS",
-        "notes": "Existing vector shows three foreground colors; use oyster base and matching trim, max four total. Current limb strokes do not clearly resolve rear swimming paddles; redraw before template proof. Keep motif clear of zipper and seams.",
+        "notes": "Retained the original vector and reshaped the rear pair into flattened swimming paddles, increasing the separation from the adjacent walking legs. At a 48 px wide nearest-neighbor screen raster, both paddles still read separately on oyster. This is a screen legibility check, not Knitwise gauge or a stitch proof. Three artwork colors including oyster, with proposed matching oyster base and trim, stay within the four-color artwork limit. Confirm official yarn palette, seam clearance and size-specific proof.",
         "localReference": "https://www.deq.nc.gov/about/divisions/marine-fisheries/public-information-and-education/kids-educational-pages/crustaceans"
       },
       "catalogDifferentiation": {
