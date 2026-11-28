@@ -1,0 +1,98 @@
+name: ShoreList overnight
+on:
+  schedule:
+    - cron: '17 3 29 11 *'
+    - cron: '37 6 29 11 *'
+    - cron: '11 12 29 11 *'
+  workflow_dispatch:
+    inputs:
+      stage:
+        description: Audit stage
+        type: choice
+        options: [storefront, promotion, supplier]
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  overnight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Select the overnight stage
+        id: plan
+        env:
+          EVENT: ${{ github.event_name }}
+          SCHEDULE: ${{ github.event.schedule }}
+          MANUAL_STAGE: ${{ inputs.stage }}
+        run: |
+          stage=""
+          if [[ "$EVENT" == workflow_dispatch ]]; then
+            stage="$MANUAL_STAGE"
+          elif [[ "$(date -u +%F)" == 2026-11-29 ]]; then
+            case "$SCHEDULE" in
+              '17 3 29 11 *') stage=storefront ;;
+              '37 6 29 11 *') stage=promotion ;;
+              '11 12 29 11 *') stage=supplier ;;
+            esac
+          fi
+          echo "stage=$stage" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+        if: steps.plan.outputs.stage != ''
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        if: steps.plan.outputs.stage != ''
+        with:
+          node-version: 22
+      - name: Compare live checkout assets to main
+        if: steps.plan.outputs.stage == 'storefront'
+        run: |
+          set -u
+          latest="$(mktemp)"
+          failed=0
+          echo '## Live checkout assets' >> "$GITHUB_STEP_SUMMARY"
+          for asset in sw.js shop-cart.js shop-variants.json; do
+            if curl --fail --silent --show-error --retry 2 --max-time 15 --retry-max-time 40 \
+              "https://shorelist.net/$asset" -o "$latest" && cmp -s "$asset" "$latest"; then
+              echo "- $asset matches this revision." >> "$GITHUB_STEP_SUMMARY"
+            else
+              echo "- $asset differs from this revision or could not be fetched." >> "$GITHUB_STEP_SUMMARY"
+              failed=1
+            fi
+          done
+          exit "$failed"
+      - name: Verify catalog routes and checkout
+        if: ${{ !cancelled() && steps.plan.outputs.stage == 'storefront' }}
+        run: |
+          npm ci --ignore-scripts
+          node tools/test-product-pages.mjs
+          node tools/test-goods-checkout.cjs
+      - name: Verify Cyber Monday promotion windows
+        if: steps.plan.outputs.stage == 'promotion'
+        run: |
+          node tools/test-shop-promo.mjs
+          echo 'Promo window tests passed. The live discount still needs the Nov 30 Shopify cart check.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Prepare the supplier evidence report
+        if: steps.plan.outputs.stage == 'supplier'
+        shell: bash
+        run: |
+          node tools/supplier-expansion.mjs audit > supplier-evidence.jsonl
+          node --input-type=module <<'JS' >> "$GITHUB_STEP_SUMMARY"
+          import fs from 'node:fs';
+          const rows = fs.readFileSync('supplier-evidence.jsonl', 'utf8').trim().split('\n').map(line => JSON.parse(line));
+          console.log('## Supplier evidence queue\n');
+          for (const supplier of new Set(rows.map(item => item.supplier))) {
+            const candidates = rows.filter(item => item.supplier === supplier);
+            const held = candidates.filter(item => item.issues.length);
+            console.log('- ' + supplier + ': ' + candidates.length + ' candidates, ' + held.length + ' with missing evidence.');
+          }
+          console.log('\nSee the supplier evidence artifact for each candidate and its missing records.');
+          JS
+      - uses: actions/upload-artifact@v4
+        if: steps.plan.outputs.stage == 'supplier'
+        with:
+          name: supplier-evidence
+          path: supplier-evidence.jsonl
+          retention-days: 7
