@@ -89,6 +89,175 @@
   status = 301
   force = true
 
+# Keep links to the products retired in #402 going to their town collections.
+[[redirects]]
+  from = "/shop/products/the-live-oak-corduroy-cap-wilmington"
+  to = "/shop/wilmington"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/the-live-oak-corduroy-cap-wilmington.html"
+  to = "/shop/wilmington"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/the-live-oak-cuffed-beanie-wilmington"
+  to = "/shop/wilmington"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/the-live-oak-cuffed-beanie-wilmington.html"
+  to = "/shop/wilmington"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/the-live-oak-embroidered-crewneck-wilmington"
+  to = "/shop/wilmington"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/the-live-oak-embroidered-crewneck-wilmington.html"
+  to = "/shop/wilmington"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-sloop-all-over-print-duffel-bag"
+  to = "/shop/wrightsville-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-sloop-all-over-print-duffel-bag.html"
+  to = "/shop/wrightsville-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-sloop-all-over-print-tote-bag"
+  to = "/shop/wrightsville-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-sloop-all-over-print-tote-bag.html"
+  to = "/shop/wrightsville-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-sloop-all-over-print-zip-pouch"
+  to = "/shop/wrightsville-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-sloop-all-over-print-zip-pouch.html"
+  to = "/shop/wrightsville-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-sloop-picnic-and-beach-blanket"
+  to = "/shop/wrightsville-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-sloop-picnic-and-beach-blanket.html"
+  to = "/shop/wrightsville-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-sloop-printed-beach-cloth-38-x-81-in"
+  to = "/shop/wrightsville-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-sloop-printed-beach-cloth-38-x-81-in.html"
+  to = "/shop/wrightsville-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-sloop-printed-beach-towel"
+  to = "/shop/wrightsville-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-sloop-printed-beach-towel.html"
+  to = "/shop/wrightsville-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-sloop-printed-canvas-tote-bag"
+  to = "/shop/wrightsville-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-sloop-printed-canvas-tote-bag.html"
+  to = "/shop/wrightsville-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-sloop-printed-pet-bandana"
+  to = "/shop/wrightsville-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-sloop-printed-pet-bandana.html"
+  to = "/shop/wrightsville-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-sloop-printed-throw-pillow"
+  to = "/shop/wrightsville-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-sloop-printed-throw-pillow.html"
+  to = "/shop/wrightsville-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-sloop-printed-zip-pouch"
+  to = "/shop/wrightsville-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-sloop-printed-zip-pouch.html"
+  to = "/shop/wrightsville-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-sloop-weekender-tote-bag"
+  to = "/shop/wrightsville-beach"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-sloop-weekender-tote-bag.html"
+  to = "/shop/wrightsville-beach"
+  status = 301
+  force = true
+
 # Internal build tooling, docs and repo metadata are not part of the public site. Nothing the pages load lives here.
 [[redirects]]
   from = "/tools/*"
