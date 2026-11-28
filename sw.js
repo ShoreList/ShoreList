@@ -3,7 +3,7 @@
    - HTML: network first, falls back to cache, then /offline.html
    - scripts, styles and JSON: network first with cache fallback; images and fonts: cache first
    Bump VERSION on each deploy that changes cached shell files. */
-const VERSION = 'sl-v336-2026-11-28';
+const VERSION = 'sl-v337-2026-11-28';
 const SHELL = ['/offline.html', '/front-door.js', '/shore-plus.js', '/search-index.json', '/icons/icon-192.png'];
 const SKIP = /^\/(\.netlify|dashboard|success|guide-success|goods-success|api)\b/;
 

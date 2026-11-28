@@ -682,89 +682,97 @@
    }
   },
   "wrightsville-beach-sloop-printed-canvas-tote-bag": {
-   "id": "wrightsville-beach-sloop-printed-canvas-tote-bag",
-   "collection": "shore-gear",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop Printed Canvas Tote Bag",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-canvas-tote-bag",
-   "type": "beach",
-   "color": "Natural",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-canvas-tote-bag-v2_1000x.webp",
-   "alt": "Natural canvas tote bag with a navy panel of small sailboats printed on the front",
-   "meta": "A printed canvas tote with a navy panel of little sloops on the front. Roomy enough for a beach day or a Wilmington errand run.",
-   "cta": "Shop tote bags",
-   "price": 36,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12079303666000630164_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-canvas-tote-bag-v2_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "About 15 x 16 in with 20 in handles"
+   "reason": "sloop print sails have no mast, boom or jib and the repeat is random; set to DRAFT in Shopify 2026-11-27, replace with a correctly rigged sloop",
+   "retired": "2026-11-27",
+   "item": {
+    "id": "wrightsville-beach-sloop-printed-canvas-tote-bag",
+    "collection": "shore-gear",
+    "shelf": "wrightsville-beach",
+    "town": "wrightsville-beach",
+    "name": "Wrightsville Beach Sloop Printed Canvas Tote Bag",
+    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-canvas-tote-bag",
+    "type": "beach",
+    "color": "Natural",
+    "added": "2026-11-23",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12079303666000630164_2048.jpg?v=1795376578",
+    "alt": "Studio photo of the Wrightsville Beach Sloop Printed Canvas Tote Bag.",
+    "meta": "A printed canvas tote with a navy panel of little sloops on the front. Roomy enough for a beach day or a Wilmington errand run.",
+    "cta": "Shop tote bags",
+    "price": 36,
+    "scenes": [
+     "beach"
     ],
-    [
-     "Fabric",
-     "100% cotton canvas in natural"
+    "cut": "unisex",
+    "store": "shopify",
+    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12079303666000630164_2048.jpg?v=1795376578",
+    "lookbook": "",
+    "facts": [
+     [
+      "Size",
+      "About 15 x 16 in with 20 in handles"
+     ],
+     [
+      "Fabric",
+      "100% cotton canvas in natural"
+     ],
+     [
+      "Print",
+      "Sailboat pattern panel on the front"
+     ],
+     [
+      "Care",
+      "Machine wash cold, tumble dry low"
+     ]
     ],
-    [
-     "Print",
-     "Sailboat pattern panel on the front"
-    ],
-    [
-     "Care",
-     "Machine wash cold, tumble dry low"
-    ]
-   ],
-   "motif": "boats-buoys",
-   "featured": true
+    "motif": "boats-buoys",
+    "featured": true
+   }
   },
   "wrightsville-beach-sloop-printed-zip-pouch": {
-   "id": "wrightsville-beach-sloop-printed-zip-pouch",
-   "collection": "shore-gear",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop Printed Zip Pouch",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-zip-pouch",
-   "type": "beach",
-   "color": "Natural",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-zip-pouch_1000x.webp",
-   "alt": "Natural canvas zip pouch with a navy sailboat panel lying on beach sand beside shells and sunglasses",
-   "meta": "A natural canvas zip pouch with a navy panel of little sloops on the front and a wrist strap. Holds sunscreen, keys and phone for a Wrightsville Beach day.",
-   "cta": "Shop pouches",
-   "price": 30,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10521571959228082054_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-zip-pouch_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "About 8.3 x 7.8 in"
+   "reason": "sloop print sails have no mast, boom or jib and the repeat is random; set to DRAFT in Shopify 2026-11-27, replace with a correctly rigged sloop",
+   "retired": "2026-11-27",
+   "item": {
+    "id": "wrightsville-beach-sloop-printed-zip-pouch",
+    "collection": "shore-gear",
+    "shelf": "wrightsville-beach",
+    "town": "wrightsville-beach",
+    "name": "Wrightsville Beach Sloop Printed Zip Pouch",
+    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-zip-pouch",
+    "type": "beach",
+    "color": "Natural",
+    "added": "2026-11-23",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10521571959228082054_2048.jpg?v=1795396350",
+    "alt": "Studio photo of the Wrightsville Beach Sloop Printed Zip Pouch.",
+    "meta": "A natural canvas zip pouch with a navy panel of little sloops on the front and a wrist strap. Holds sunscreen, keys and phone for a Wrightsville Beach day.",
+    "cta": "Shop pouches",
+    "price": 30,
+    "scenes": [
+     "beach"
     ],
-    [
-     "Fabric",
-     "100% cotton canvas with a zipper and carry strap"
+    "cut": "unisex",
+    "store": "shopify",
+    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10521571959228082054_2048.jpg?v=1795396350",
+    "lookbook": "",
+    "facts": [
+     [
+      "Size",
+      "About 8.3 x 7.8 in"
+     ],
+     [
+      "Fabric",
+      "100% cotton canvas with a zipper and carry strap"
+     ],
+     [
+      "Print",
+      "Navy sailboat pattern panel on the front"
+     ],
+     [
+      "Care",
+      "Spot clean"
+     ]
     ],
-    [
-     "Print",
-     "Navy sailboat pattern panel on the front"
-    ],
-    [
-     "Care",
-     "Spot clean"
-    ]
-   ],
-   "motif": "boats-buoys"
+    "motif": "boats-buoys"
+   }
   },
   "wrightsville-beach-airlie-live-oak-all-over-print-tote-bag": {
    "reason": "Airlie live oak all-over print does not match the real Airlie Oak poster art (green tree with hanging moss); unpublished in Printify, awaiting new Airlie Oak builds",
@@ -851,6 +859,542 @@
       "Microwave and dishwasher safe"
      ]
     ]
+   }
+  },
+  "the-live-oak-embroidered-crewneck-wilmington": {
+   "reason": "live oak embroidery is a flat green blob on a stub trunk; set to DRAFT in Shopify 2026-11-27, redraw before relisting",
+   "retired": "2026-11-27",
+   "item": {
+    "id": "the-live-oak-embroidered-crewneck-wilmington",
+    "collection": "local-icons",
+    "shelf": "wilmington",
+    "town": "wilmington",
+    "name": "Wilmington Live Oak Embroidered Crewneck",
+    "url": "https://shorelist.myshopify.com/products/the-live-oak-embroidered-crewneck-wilmington",
+    "type": "tops",
+    "color": "Blue Jean",
+    "added": "2026-11-23",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/392796372616078076_2048.jpg",
+    "alt": "Studio photo of the Wilmington Live Oak Embroidered Crewneck.",
+    "meta": "A live oak hung with Spanish moss, stitched small on the chest of a blue jean crewneck.",
+    "cta": "Choose color and size",
+    "price": 68,
+    "from": true,
+    "scenes": [
+     "riverwalk"
+    ],
+    "cut": "unisex",
+    "store": "shopify",
+    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/392796372616078076_2048.jpg",
+    "facts": [
+     [
+      "Sizing",
+      "Relaxed fit, sizes S to 3XL"
+     ],
+     [
+      "Fabric",
+      "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
+     ],
+     [
+      "Embroidery",
+      "Stitched in green, chestnut and white thread"
+     ]
+    ],
+    "lookbook": ""
+   }
+  },
+  "wrightsville-beach-sloop-all-over-print-tote-bag": {
+   "reason": "sloop print sails have no mast, boom or jib and the repeat is random; set to DRAFT in Shopify 2026-11-27, replace with a correctly rigged sloop",
+   "retired": "2026-11-27",
+   "item": {
+    "id": "wrightsville-beach-sloop-all-over-print-tote-bag",
+    "collection": "shore-gear",
+    "shelf": "wrightsville-beach",
+    "town": "wrightsville-beach",
+    "name": "Wrightsville Beach Tote, Sloop Print",
+    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-all-over-print-tote-bag",
+    "type": "beach",
+    "color": "Navy",
+    "added": "2026-11-23",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8848050272079715985_2048_1000x.jpg?v=1795404833",
+    "alt": "Navy-handled tote with a white sailboat pattern on the navy bag body",
+    "meta": "A printed tote with a navy sloop pattern running seam to seam across the whole bag. A Wrightsville Beach carry-all for the Carolina coast.",
+    "cta": "Choose size",
+    "price": 48,
+    "from": true,
+    "scenes": [
+     "beach"
+    ],
+    "cut": "unisex",
+    "store": "shopify",
+    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8848050272079715985_2048_1000x.jpg?v=1795404833",
+    "lookbook": "",
+    "facts": [
+     [
+      "Size",
+      "16 x 16 in or 18 x 18 in"
+     ],
+     [
+      "Handles",
+      "Navy or beige cotton webbing, solid color"
+     ],
+     [
+      "Fabric",
+      "100% spun polyester with a laminate lining, spot clean"
+     ],
+     [
+      "Print",
+      "Sailboat pattern printed edge to edge on the bag body, not embroidered"
+     ]
+    ],
+    "motif": "boats-buoys"
+   }
+  },
+  "wrightsville-beach-sloop-weekender-tote-bag": {
+   "reason": "sloop print sails have no mast, boom or jib and the repeat is random; set to DRAFT in Shopify 2026-11-27, replace with a correctly rigged sloop",
+   "retired": "2026-11-27",
+   "item": {
+    "id": "wrightsville-beach-sloop-weekender-tote-bag",
+    "collection": "shore-gear",
+    "shelf": "wrightsville-beach",
+    "town": "wrightsville-beach",
+    "name": "Wrightsville Beach Sloop Weekender Tote Bag",
+    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-weekender-tote-bag",
+    "type": "beach",
+    "color": "Navy",
+    "added": "2026-11-23",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13894062535701194746_2048.jpg?v=1795405038",
+    "alt": "Studio photo of the Wrightsville Beach Sloop Weekender Tote Bag.",
+    "meta": "A large printed weekender tote with a navy sloop pattern wrapped around the body and bottom. A Wrightsville Beach bag for beach weekends on the Carolina coast.",
+    "cta": "Shop tote bags",
+    "price": 78,
+    "scenes": [
+     "beach"
+    ],
+    "cut": "unisex",
+    "store": "shopify",
+    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13894062535701194746_2048.jpg?v=1795405038",
+    "lookbook": "",
+    "facts": [
+     [
+      "Size",
+      "24 x 13 in with a T bottom"
+     ],
+     [
+      "Handles",
+      "Black, solid color"
+     ],
+     [
+      "Fabric",
+      "100% spun polyester exterior, black cotton blend lining, spot clean"
+     ],
+     [
+      "Print",
+      "Sailboat pattern printed edge to edge around the body and bottom, not embroidered"
+     ]
+    ],
+    "motif": "boats-buoys"
+   }
+  },
+  "wrightsville-beach-sloop-picnic-and-beach-blanket": {
+   "reason": "sloop print sails have no mast, boom or jib and the repeat is random; set to DRAFT in Shopify 2026-11-27, replace with a correctly rigged sloop",
+   "retired": "2026-11-27",
+   "item": {
+    "id": "wrightsville-beach-sloop-picnic-and-beach-blanket",
+    "collection": "beach-setup",
+    "shelf": "wrightsville-beach",
+    "town": "wrightsville-beach",
+    "name": "Wrightsville Beach Sloop Picnic and Beach Blanket",
+    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-picnic-and-beach-blanket",
+    "type": "beach",
+    "color": "Navy",
+    "added": "2026-11-23",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/71162535559617095_2048.jpg?v=1795405283",
+    "alt": "Studio photo of the Wrightsville Beach Sloop Picnic and Beach Blanket.",
+    "meta": "A printed picnic and beach blanket with a navy sloop pattern edge to edge on a fleece front. A Wrightsville Beach blanket for shore picnics on the Carolina coast.",
+    "cta": "Shop beach gear",
+    "price": 98,
+    "scenes": [
+     "beach"
+    ],
+    "cut": "unisex",
+    "store": "shopify",
+    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/71162535559617095_2048.jpg?v=1795405283",
+    "lookbook": "",
+    "facts": [
+     [
+      "Size",
+      "61 x 51 in, with a black carrying strap and buckles"
+     ],
+     [
+      "Fabric",
+      "100% polyester fleece front, water resistant black oxford back, spot clean"
+     ],
+     [
+      "Print",
+      "Sailboat pattern printed edge to edge on the fleece side, not embroidered"
+     ]
+    ],
+    "motif": "boats-buoys"
+   }
+  },
+  "wrightsville-beach-sloop-printed-throw-pillow": {
+   "reason": "sloop print sails have no mast, boom or jib and the repeat is random; set to DRAFT in Shopify 2026-11-27, replace with a correctly rigged sloop",
+   "retired": "2026-11-27",
+   "item": {
+    "id": "wrightsville-beach-sloop-printed-throw-pillow",
+    "collection": "shore-gear",
+    "shelf": "wrightsville-beach",
+    "town": "wrightsville-beach",
+    "name": "Wrightsville Beach Sloop Printed Throw Pillow",
+    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-throw-pillow",
+    "type": "beach",
+    "color": "Navy",
+    "added": "2026-11-23",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10845976540544592137_2048.jpg?v=1795396185",
+    "alt": "Studio photo of the Wrightsville Beach Sloop Printed Throw Pillow.",
+    "meta": "A square throw pillow with a navy all-over pattern of little sloops. Printed, not embroidered, for a Wilmington NC porch or beach house.",
+    "cta": "Shop home decor",
+    "price": 42,
+    "scenes": [
+     "beach"
+    ],
+    "cut": "unisex",
+    "store": "shopify",
+    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10845976540544592137_2048.jpg?v=1795396185",
+    "lookbook": "",
+    "facts": [
+     [
+      "Size",
+      "16 x 16 in or 18 x 18 in"
+     ],
+     [
+      "Fabric",
+      "100% polyester cover with insert"
+     ],
+     [
+      "Print",
+      "Sailboat pattern edge to edge"
+     ],
+     [
+      "Care",
+      "Spot clean or machine wash cold per the cover label"
+     ]
+    ],
+    "motif": "boats-buoys"
+   }
+  },
+  "wrightsville-beach-sloop-all-over-print-zip-pouch": {
+   "reason": "sloop print sails have no mast, boom or jib and the repeat is random; set to DRAFT in Shopify 2026-11-27, replace with a correctly rigged sloop",
+   "retired": "2026-11-27",
+   "item": {
+    "id": "wrightsville-beach-sloop-all-over-print-zip-pouch",
+    "collection": "shore-gear",
+    "shelf": "wrightsville-beach",
+    "town": "wrightsville-beach",
+    "name": "Wrightsville Beach Sloop All Over Print Zip Pouch",
+    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-all-over-print-zip-pouch",
+    "type": "beach",
+    "color": "Navy",
+    "added": "2026-11-23",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6935754229711099713_2048.jpg?v=1795405159",
+    "alt": "Studio photo of the Wrightsville Beach Sloop All Over Print Zip Pouch.",
+    "meta": "A printed zip pouch with a navy sloop pattern running to the seams. A Wrightsville Beach travel kit pouch for the Carolina coast.",
+    "cta": "Choose size",
+    "price": 28,
+    "from": true,
+    "scenes": [
+     "beach"
+    ],
+    "cut": "unisex",
+    "store": "shopify",
+    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6935754229711099713_2048.jpg?v=1795405159",
+    "lookbook": "",
+    "facts": [
+     [
+      "Size",
+      "Small or Large, see the size chart image"
+     ],
+     [
+      "Zipper",
+      "White"
+     ],
+     [
+      "Fabric",
+      "100% polyester with a laminate interior, spot clean"
+     ],
+     [
+      "Print",
+      "Sailboat pattern printed edge to edge, not embroidered"
+     ]
+    ],
+    "motif": "boats-buoys"
+   }
+  },
+  "wrightsville-beach-sloop-printed-pet-bandana": {
+   "reason": "sloop print sails have no mast, boom or jib and the repeat is random; set to DRAFT in Shopify 2026-11-27, replace with a correctly rigged sloop",
+   "retired": "2026-11-27",
+   "item": {
+    "id": "wrightsville-beach-sloop-printed-pet-bandana",
+    "collection": "shore-gear",
+    "shelf": "wrightsville-beach",
+    "town": "wrightsville-beach",
+    "name": "Wrightsville Beach Sloop Printed Pet Bandana",
+    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-pet-bandana",
+    "type": "beach",
+    "color": "Navy",
+    "added": "2026-11-23",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12094930629799905524_2048.jpg?v=1795396820",
+    "alt": "Studio photo of the Wrightsville Beach Sloop Printed Pet Bandana.",
+    "meta": "A navy pet bandana printed with little sloops that clips onto an adjustable black collar. Sold in size Small only. For beach walks with your dog on the Carolina coast.",
+    "cta": "Shop pet gear",
+    "price": 28,
+    "scenes": [
+     "beach"
+    ],
+    "cut": "unisex",
+    "store": "shopify",
+    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12094930629799905524_2048.jpg?v=1795396820",
+    "lookbook": "",
+    "facts": [
+     [
+      "Size",
+      "Small"
+     ],
+     [
+      "Fabric",
+      "100% polyester"
+     ],
+     [
+      "Fit",
+      "Clip-on bandana with an adjustable, removable collar"
+     ]
+    ],
+    "motif": "boats-buoys"
+   }
+  },
+  "wrightsville-beach-sloop-all-over-print-duffel-bag": {
+   "reason": "sloop print sails have no mast, boom or jib and the repeat is random; set to DRAFT in Shopify 2026-11-27, replace with a correctly rigged sloop",
+   "retired": "2026-11-27",
+   "item": {
+    "id": "wrightsville-beach-sloop-all-over-print-duffel-bag",
+    "collection": "shore-gear",
+    "shelf": "wrightsville-beach",
+    "town": "wrightsville-beach",
+    "name": "Wrightsville Beach Sloop All Over Print Duffel Bag",
+    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-all-over-print-duffel-bag",
+    "type": "beach",
+    "color": "Navy",
+    "added": "2026-11-23",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10656102888954431234_2048.jpg?v=1795404687",
+    "alt": "Studio photo of the Wrightsville Beach Sloop All Over Print Duffel Bag.",
+    "meta": "A printed duffel with a navy sloop pattern running edge to edge across the body and both ends. A Wrightsville Beach weekend bag for the Carolina coast.",
+    "cta": "Choose size",
+    "price": 98,
+    "from": true,
+    "scenes": [
+     "beach"
+    ],
+    "cut": "unisex",
+    "store": "shopify",
+    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10656102888954431234_2048.jpg?v=1795404687",
+    "lookbook": "",
+    "facts": [
+     [
+      "Size",
+      "Small or Large, see the size chart image"
+     ],
+     [
+      "Fabric",
+      "100% polyester Oxford canvas, spot clean"
+     ],
+     [
+      "Strap",
+      "Black, adjustable, with a shoulder pad"
+     ],
+     [
+      "Print",
+      "Sailboat pattern printed edge to edge on the body and both end panels, not embroidered"
+     ]
+    ],
+    "motif": "boats-buoys"
+   }
+  },
+  "wrightsville-beach-sloop-printed-beach-towel": {
+   "reason": "sloop print sails have no mast, boom or jib and the repeat is random; set to DRAFT in Shopify 2026-11-27, replace with a correctly rigged sloop",
+   "retired": "2026-11-27",
+   "item": {
+    "id": "wrightsville-beach-sloop-printed-beach-towel",
+    "collection": "shore-gear",
+    "shelf": "wrightsville-beach",
+    "town": "wrightsville-beach",
+    "name": "Wrightsville Beach Towel, Sloop Print",
+    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-beach-towel",
+    "type": "beach",
+    "color": "Navy",
+    "added": "2026-11-23",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3327526685446775726_2048.jpg?v=1795451470",
+    "alt": "Studio photo of the Wrightsville Beach Towel, Sloop Print.",
+    "meta": "A printed beach towel with an all-over pattern of small sailboats on navy, in two sizes. Made to order.",
+    "cta": "Choose size",
+    "price": 58,
+    "from": true,
+    "scenes": [
+     "beach"
+    ],
+    "cut": "unisex",
+    "store": "shopify",
+    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3327526685446775726_2048.jpg?v=1795451470",
+    "lookbook": "",
+    "facts": [
+     [
+      "Sizes",
+      "30 x 60 in or 36 x 72 in"
+     ],
+     [
+      "Fabric",
+      "Polyester printed face with a cotton loop back"
+     ],
+     [
+      "Pattern",
+      "All-over sailboat pattern on navy"
+     ]
+    ]
+   }
+  },
+  "wrightsville-beach-sloop-printed-beach-cloth-38-x-81-in": {
+   "reason": "sloop print sails have no mast, boom or jib and the repeat is random; set to DRAFT in Shopify 2026-11-27, replace with a correctly rigged sloop",
+   "retired": "2026-11-27",
+   "item": {
+    "id": "wrightsville-beach-sloop-printed-beach-cloth-38-x-81-in",
+    "collection": "shore-gear",
+    "shelf": "wrightsville-beach",
+    "town": "wrightsville-beach",
+    "name": "Wrightsville Beach Sloop Printed Beach Cloth, 38 x 81 in",
+    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-beach-cloth-38-x-81-in",
+    "type": "beach",
+    "color": "Navy",
+    "added": "2026-11-23",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/14255062148024729065_2048.jpg?v=1795458026",
+    "alt": "Studio photo of the Wrightsville Beach Sloop Printed Beach Cloth, 38 x 81 in.",
+    "meta": "A large printed beach cloth, 38 x 81 in, with an all-over pattern of small sailboats on navy and knotted fringe ends. Made to order.",
+    "cta": "Add to bag",
+    "price": 79,
+    "scenes": [
+     "beach"
+    ],
+    "cut": "unisex",
+    "store": "shopify",
+    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/14255062148024729065_2048.jpg?v=1795458026",
+    "lookbook": "",
+    "facts": [
+     [
+      "Size",
+      "38 x 81 in"
+     ],
+     [
+      "Fabric",
+      "100% polyester, printed edge to edge"
+     ],
+     [
+      "Care",
+      "Machine wash separately in cold water, tumble dry low"
+     ]
+    ]
+   }
+  },
+  "the-live-oak-corduroy-cap-wilmington": {
+   "reason": "live oak embroidery is a flat green blob on a stub trunk; set to DRAFT in Shopify 2026-11-27, redraw before relisting",
+   "retired": "2026-11-27",
+   "item": {
+    "id": "the-live-oak-corduroy-cap-wilmington",
+    "collection": "local-icons",
+    "shelf": "wilmington",
+    "town": "wilmington",
+    "name": "Wilmington Live Oak Corduroy Cap",
+    "url": "https://shorelist.myshopify.com/products/the-live-oak-corduroy-cap-wilmington",
+    "type": "hats",
+    "color": "Navy Blue",
+    "added": "2026-11-23",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15008965743144943281_2048.jpg?v=1795273271",
+    "alt": "Studio photo of the Wilmington Live Oak Corduroy Cap.",
+    "meta": "A live oak hung with Spanish moss embroidered on the front of a soft corduroy cap, with ILM for Wilmington on the back.",
+    "cta": "Choose color",
+    "price": 49,
+    "scenes": [
+     "riverwalk"
+    ],
+    "cut": "unisex",
+    "store": "shopify",
+    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15008965743144943281_2048.jpg?v=1795273271",
+    "facts": [
+     [
+      "Fit",
+      "Unstructured, low profile, curved brim, one size"
+     ],
+     [
+      "Fabric",
+      "Cotton corduroy"
+     ],
+     [
+      "Closure",
+      "Adjustable strap with a brass buckle"
+     ],
+     [
+      "Colors",
+      "Navy Blue, Burgundy, Black"
+     ]
+    ],
+    "lookbook": ""
+   }
+  },
+  "the-live-oak-cuffed-beanie-wilmington": {
+   "reason": "live oak embroidery is a flat green blob on a stub trunk; set to DRAFT in Shopify 2026-11-27, redraw before relisting",
+   "retired": "2026-11-27",
+   "item": {
+    "id": "the-live-oak-cuffed-beanie-wilmington",
+    "collection": "local-icons",
+    "shelf": "wilmington",
+    "town": "wilmington",
+    "name": "Wilmington Live Oak Cuffed Beanie",
+    "url": "https://shorelist.myshopify.com/products/the-live-oak-cuffed-beanie-wilmington",
+    "type": "hats",
+    "color": "Navy",
+    "added": "2026-11-23",
+    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5126613936494193933_2048.jpg?v=1795274390",
+    "alt": "Studio photo of the Wilmington Live Oak Cuffed Beanie.",
+    "meta": "A live oak and ILM for Wilmington embroidered side by side on the cuff of a classic knit beanie.",
+    "cta": "Choose color",
+    "price": 30,
+    "scenes": [
+     "riverwalk"
+    ],
+    "cut": "unisex",
+    "store": "shopify",
+    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5126613936494193933_2048.jpg?v=1795274390",
+    "facts": [
+     [
+      "Fit",
+      "Classic cuffed beanie, one size"
+     ],
+     [
+      "Fabric",
+      "Soft acrylic knit with a fold-up cuff"
+     ]
+    ],
+    "lookbook": ""
+   }
+  }
+ },
+ "collections": {
+  "beach-setup": {
+   "reason": "its only item, the Sloop picnic and beach blanket, was set to DRAFT in Shopify 2026-11-27; restore with that item",
+   "retired": "2026-11-27",
+   "collection": {
+    "id": "beach-setup",
+    "name": "Beach Setup",
+    "blurb": "The chair, the shade, the towel and the cooler. Everything for a full day on Wrightsville, Carolina Beach or Kure.",
+    "art": "tide-line"
    }
   }
  }

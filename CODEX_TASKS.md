@@ -155,6 +155,10 @@ Evaluate a Shopify custom domain/checkout on a shorelist.net subdomain (L3). Nee
 - Owner: Grok/shop-merch/shop-lead-order
 - Files: `shop-catalog.json`, `shop.html`, `tools/build-shop-static.mjs`, `sw.js`, `CHANGELOG.md`. Lead the catalog and the shop's first row with the eight named pieces. Move the thirteen named goods to the end.
 
+### T-hide-14 Hide 14 pulled items from the site
+- Owner: ShoreList Shop & Merch/shop-merch/hide-14-pulled-items. Assigned by ShoreList Chief, Nov 27 2026 (RJ approved). 14 Shopify products set to DRAFT on Nov 27; the site must stop listing them.
+- Files: `shop-catalog.json`, `docs/retired-items.json`, `shop.html`, `shop/*.html` (town pages, per-product pages for the 14 handles), `gift-guide.html`, `sitemap.xml`, `llms-full.txt`, `search-index.json`, `sw.js`, `CHANGELOG.md`, plus the other pages that link the 14 handles (`holiday-gift-guide.html`, `wilmington-nc-gifts.html`, `gift-finder.html`, `wrightsville-beach-souvenirs.html`, `wrightsville-beach-christmas-ornament.html`) only for link removal. Also removes the "1925" line from the Carolina Beach varsity crewneck copy. No art, no Printify.
+
 ## Dependency map
 
 T-01 -> T-03 -> owner test order. T-05 -> T-08. T-02 independent of everything else (own files). T-04, T-06, T-10, T-11, T-13 can run in parallel because file sets are disjoint (check before starting).

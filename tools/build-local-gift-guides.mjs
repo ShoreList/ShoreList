@@ -20,10 +20,7 @@ const HANDLES = {
   scallopMug: 'wrightsville-beach-scallop-shell-printed-mug',
   sloopBeanie: 'the-sloop-cuffed-beanie-wrightsville-beach',
   daymarkBeanie: 'daymark-cuffed-beanie-wrightsville-beach',
-  zip: 'wrightsville-beach-sloop-printed-zip-pouch',
-  zipAll: 'wrightsville-beach-sloop-all-over-print-zip-pouch',
   towel: 'wrightsville-beach-sloop-printed-tea-towel',
-  bandana: 'wrightsville-beach-sloop-printed-pet-bandana',
   airlieOrn: 'airlie-oak-wilmington-ceramic-ornament',
   airlieMug: 'airlie-oak-wilmington-printed-mug',
   crew: 'the-sloop-embroidered-crewneck-wrightsville-beach',
@@ -64,18 +61,8 @@ const FACTS = {
     ['wb', 'One small sloop and WB are stitched on the cuff.'],
     ['navy', 'The knit listed on the product page is navy.'],
   ],
-  [HANDLES.zip]: [
-    ['sloop', 'Zip pouch with the sloop print.'],
-  ],
-  [HANDLES.zipAll]: [
-    ['sloop', 'Zip pouch with an all-over sloop print.'],
-    ['zipper', 'White zipper.'],
-  ],
   [HANDLES.towel]: [
     ['tea towel', 'Printed tea towel with the sloop pattern.'],
-  ],
-  [HANDLES.bandana]: [
-    ['bandana', 'Printed pet bandana with the sloop pattern.'],
   ],
   [HANDLES.airlieOrn]: [
     ['airlie oak', 'Ceramic ornament with an illustration of the Airlie Oak.'],
@@ -283,7 +270,7 @@ const get = (key) => {
   return item;
 };
 
-const underKeys = ['sticker', 'cooler', 'sleeve', 'ornament', 'bandana', 'zipAll', 'sloopMug', 'scallopMug', 'sloopBeanie', 'daymarkBeanie', 'zip', 'towel'];
+const underKeys = ['sticker', 'cooler', 'sleeve', 'ornament', 'sloopMug', 'scallopMug', 'sloopBeanie', 'daymarkBeanie', 'towel'];
 for (const key of underKeys) if (!(get(key).max < 35)) throw new Error(key + ' is not under $35: ' + get(key).priceText);
 if (!(get('crew').min > 35)) throw new Error('crewneck expected above $35, got ' + get('crew').priceText);
 
@@ -295,15 +282,15 @@ for (const item of by.values()) {
 const ornamentPrice = get('ornament').priceText;
 const note = `${HOLIDAY} ${CHECKOUT}`;
 
-const wilmingtonProducts = ['sticker', 'airlieOrn', 'ornament', 'cooler', 'sleeve', 'bandana', 'zipAll', 'airlieMug', 'sloopMug', 'scallopMug', 'sloopBeanie', 'daymarkBeanie', 'zip', 'towel', 'crew'].map(get);
-const souvenirProducts = ['sticker', 'cooler', 'sleeve', 'ornament', 'bandana', 'zipAll', 'sloopMug', 'scallopMug', 'sloopBeanie', 'daymarkBeanie', 'zip', 'towel', 'crew'].map(get);
-const ornamentProducts = ['ornament', 'sticker', 'cooler', 'sleeve', 'sloopMug', 'scallopMug', 'sloopBeanie', 'daymarkBeanie', 'zip', 'zipAll', 'towel', 'bandana', 'crew'].map(get);
+const wilmingtonProducts = ['sticker', 'airlieOrn', 'ornament', 'cooler', 'sleeve', 'airlieMug', 'sloopMug', 'scallopMug', 'sloopBeanie', 'daymarkBeanie', 'towel', 'crew'].map(get);
+const souvenirProducts = ['sticker', 'cooler', 'sleeve', 'ornament', 'sloopMug', 'scallopMug', 'sloopBeanie', 'daymarkBeanie', 'towel', 'crew'].map(get);
+const ornamentProducts = ['ornament', 'sticker', 'cooler', 'sleeve', 'sloopMug', 'scallopMug', 'sloopBeanie', 'daymarkBeanie', 'towel', 'crew'].map(get);
 
 const pages = [
   {
     slug: 'wilmington-nc-gifts',
     title: 'Wilmington NC Gifts | ShoreList Shop',
-    desc: 'Wilmington NC gifts from ShoreList with live shop prices. Under $35: a sticker, can coolers, the 2026 ornament, mugs, beanies and small goods, then a crewneck.',
+    desc: 'Wilmington NC gifts from ShoreList with live shop prices. Under $35: a sticker, can coolers, the 2026 ornament, mugs and beanies, then a crewneck.',
     eye: 'Wilmington NC gifts',
     h1: 'Wilmington NC gifts from ShoreList',
     lede: 'A Wilmington NC gift that names a real place is easier to give than a generic shell. This page starts with pieces under $35, then one embroidered crewneck. Every price is the current item price from the shop.',
@@ -311,10 +298,10 @@ const pages = [
     html: `<p>People usually want a Wilmington NC gift for a host on Front Street, a neighbor, or a visitor who walked the Wilmington Riverwalk and still has room in a suitcase. The useful ones name the city or the beach a short drive east. Airlie Gardens is a public garden at 300 Airlie Road in Wilmington, a few minutes northeast of downtown and close to Wrightsville Beach. The Airlie Oak ornament and mug on this page show an illustration of that oak. ShoreList is an independent company and is not affiliated with, sponsored by or endorsed by Airlie Gardens. Visit details are on <a href="https://www.airliegardens.org/plan-your-visit">the garden's own site</a>.</p>
 <p>Wrightsville Beach is the strand most of these gifts point to. Banks Channel is the sheltered water on the sound side. Johnnie Mercer's Pier is the fishing pier on the ocean side. The pier's own site describes it as the first concrete fishing pier in North Carolina, in the heart of Wrightsville Beach, extending more than 1,200 feet into the Atlantic. ShoreList is not affiliated with the pier and does not use its logo. Hours and rules are on <a href="https://johnniemercersfishingpier.com">the pier's own site</a>. South of the strand, Masonboro Inlet lies between Wrightsville Beach and Masonboro Island. Masonboro Island is undeveloped and reached by boat, not by a road from the beach.</p>
 ${guides('wilmington-nc-gifts')}
-${section('under-35', 'Gifts under $35', 'Sticker, can coolers, ornaments, the pet bandana, pouches, mugs, beanies and the tea towel. Colors and sizes are the ones currently on each product page.', wilmingtonProducts.filter((i) => i.max < 35))}
+${section('under-35', 'Gifts under $35', 'Sticker, can coolers, ornaments, mugs, beanies and the tea towel. Colors and sizes are the ones currently on each product page.', wilmingtonProducts.filter((i) => i.max < 35))}
 ${section('larger', 'A larger gift', 'One embroidered crewneck, after the smaller gifts. The colors listed on the card are the colors in the live product data.', wilmingtonProducts.filter((i) => i.min >= 35))}`,
     faqs: [
-      ['What is a useful Wilmington NC gift under $35?', 'A sticker, can cooler, ornament, mug, beanie, pouch, tea towel or pet bandana from this page. The price on the card is the current item price, before shipping and tax.'],
+      ['What is a useful Wilmington NC gift under $35?', 'A sticker, can cooler, ornament, mug, beanie or tea towel from this page. The price on the card is the current item price, before shipping and tax.'],
       ['When should a Christmas gift be ordered?', HOLIDAY + ' ' + CHECKOUT],
       ['Is ShoreList part of Airlie Gardens or the fishing pier?', 'No. ShoreList is an independent Wilmington company. Naming Airlie Gardens or the pier describes the place. ShoreList is not affiliated with, sponsored by or endorsed by either of them.'],
     ],
@@ -322,15 +309,15 @@ ${section('larger', 'A larger gift', 'One embroidered crewneck, after the smalle
   {
     slug: 'wrightsville-beach-souvenirs',
     title: 'Wrightsville Beach Souvenirs | ShoreList Shop',
-    desc: 'Wrightsville Beach souvenirs from ShoreList. Under $35 first: can coolers, the 2026 ornament, a sticker, mugs, beanies, pouches, a tea towel and a pet bandana.',
+    desc: 'Wrightsville Beach souvenirs from ShoreList. Under $35 first: can coolers, the 2026 ornament, a sticker, mugs, beanies and a tea towel.',
     eye: 'Wrightsville Beach',
     h1: 'Wrightsville Beach souvenirs to take home',
     lede: 'Wrightsville Beach souvenirs on this page name the beach in a small way: a sloop, the letters WB, the town name on a can cooler, or the year on an ornament. Gifts under $35 come first. The embroidered crewneck is the larger piece.',
     products: souvenirProducts,
-    html: `<p>A Wrightsville Beach souvenir works when the person who gets it can tell where it is from without a long explanation. The can cooler and the can cooler sleeve are the beach-day pieces. The ornament is the dated keepsake. Mugs, beanies, zip pouches, the tea towel and the pet bandana cover the house, the head and the dog. The sea oats sticker is the smallest of the set. None of these is a town seal or a photo of a landmark.</p>
+    html: `<p>A Wrightsville Beach souvenir works when the person who gets it can tell where it is from without a long explanation. The can cooler and the can cooler sleeve are the beach-day pieces. The ornament is the dated keepsake. Mugs, beanies and the tea towel cover the kitchen and the head. The sea oats sticker is the smallest of the set. None of these is a town seal or a photo of a landmark.</p>
 <p>On the ocean side, Johnnie Mercer's Pier is the fishing pier in the heart of Wrightsville Beach. Its own site says it was the first concrete fishing pier in North Carolina and that it extends more than 1,200 feet into the Atlantic. That is a landmark, not a partnership. ShoreList does not use the pier's logo. Check hours on <a href="https://johnniemercersfishingpier.com">the pier's own site</a>. Banks Channel is the calmer water on the sound side. The Loop at Wrightsville Beach crosses Banks Channel and passes Wrightsville Beach Park, an easy walk if the gift is for someone who already spends mornings there. Masonboro Inlet is the inlet south of the strand, between Wrightsville Beach and Masonboro Island. The island is undeveloped and reached by boat.</p>
 ${guides('wrightsville-beach-souvenirs')}
-${section('under-35', 'Gifts under $35', 'The sticker, both can coolers, the ornament, the pet bandana, both zip pouches, both mugs, both beanies and the tea towel. Each card lists the colors and sizes available right now.', souvenirProducts.filter((i) => i.max < 35))}
+${section('under-35', 'Gifts under $35', 'The sticker, both can coolers, the ornament, both mugs, both beanies and the tea towel. Each card lists the colors and sizes available right now.', souvenirProducts.filter((i) => i.max < 35))}
 ${section('larger', 'A larger gift', 'The sloop crewneck, for someone who wants the beach on a sweatshirt. Card colors come from the live product, not from a fixed list.', souvenirProducts.filter((i) => i.min >= 35))}`,
     faqs: [
       ['What should I look for in Wrightsville Beach souvenirs?', 'A piece that names Wrightsville Beach, uses the letters WB, or carries the sloop used on these goods. This page leads with gifts under $35 and ends with one crewneck.'],
@@ -343,7 +330,7 @@ ${section('larger', 'A larger gift', 'The sloop crewneck, for someone who wants 
     desc: `The Wrightsville Beach Christmas ornament for 2026 is a round ceramic keepsake from ShoreList at ${ornamentPrice}. See the printed year and the smaller gifts that pair with it.`,
     eye: 'Christmas ornament',
     h1: 'Wrightsville Beach Christmas ornament for 2026',
-    lede: `The Wrightsville Beach Christmas ornament for 2026 is ${ornamentPrice} today. It is the small dated gift on this page. The sticker, can coolers, mugs, beanies, pouches, tea towel and pet bandana sit with it, all under $35, and one crewneck follows if you want something larger.`,
+    lede: `The Wrightsville Beach Christmas ornament for 2026 is ${ornamentPrice} today. It is the small dated gift on this page. The sticker, can coolers, mugs, beanies and tea towel sit with it, all under $35, and one crewneck follows if you want something larger.`,
     products: ornamentProducts,
     html: `<p>This ornament is for a tree in town or for a household that spends a week at Wrightsville Beach and wants the year written on the gift. It is not a shirt and it does not pretend to be a photo of the strand. The card below uses the live product title, price, photo and the options currently for sale. Open the product page before you pay. The delivery estimate there is for your address, and this page does not add one.</p>
 <p>Wrightsville Beach in December is quieter than July, which is why a dated ornament makes more sense than another beach towel for some people. Banks Channel is still the sheltered water on the sound side of the island. Johnnie Mercer's Pier is still the fishing pier on the strand. The pier's own site is the place to see whether it is open. ShoreList is not affiliated with the pier. Airlie Gardens, at 300 Airlie Road in Wilmington, is a separate stop a few minutes northeast of downtown and close to the beach. The garden publishes its own visit details. ShoreList is not affiliated with Airlie Gardens. Masonboro Inlet and Masonboro Island are south of the strand. The island is undeveloped and reached by boat.</p>
@@ -353,7 +340,7 @@ ${section('pair', 'Small gifts to give with it', 'Each of these is under $35. Co
 ${section('larger', 'If the ornament is not enough', 'The embroidered sloop crewneck is the one larger piece on this page.', ornamentProducts.filter((i) => i.min >= 35))}`,
     faqs: [
       ['What is printed on the Wrightsville Beach Christmas ornament?', 'A sloop, the words Wrightsville Beach, and Christmas 2026, on a round ceramic ornament with a gold cord. The price on this page is the current shop price.'],
-      ['What else is under $35 on this page?', 'The sea oats sticker, the Wrightsville Beach can cooler, the sloop can cooler sleeve, two mugs, two beanies, two zip pouches, a tea towel and a pet bandana, at the prices shown.'],
+      ['What else is under $35 on this page?', 'The sea oats sticker, the Wrightsville Beach can cooler, the sloop can cooler sleeve, two mugs, two beanies and a tea towel, at the prices shown.'],
       ['Can you promise Christmas delivery?', HOLIDAY + ' ' + CHECKOUT],
     ],
   },
