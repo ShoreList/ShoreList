@@ -48,8 +48,13 @@ const start = (cat.startHere || []).map((id) => byId.get(id)).filter((i) => i &&
 const firstScreen = FIRST_SCREEN.map((id) => byId.get(id)).filter((i) => i && !retired.has(i.id)).slice(0, 4);
 const wbFeat = WB_FEAT.map((id) => byId.get(id)).filter((i) => i && !retired.has(i.id));
 const leadOf = (i) => i.lookbook || i.img || i.studio;
+const remoteLead = wbFeat[0] ? sized(leadOf(wbFeat[0]), 480) : '';
+// A byte-for-byte copy of this exact Shopify image avoids a second origin for the first paint.
+const mirroredSource = 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/180126218099143496_2048_480x.jpg?v=1795318122';
+const mirroredLead = '/shop-art/sloop-crewneck-480-1795318122.jpg';
+const lcpSrc = remoteLead === mirroredSource && fs.existsSync('.' + mirroredLead) ? mirroredLead : remoteLead;
 const wbCards = wbFeat.map((i, k) => {
-  const f = sized(leadOf(i), 480);
+  const f = k === 0 ? lcpSrc : sized(leadOf(i), 480);
   const pri = k === 0 ? 'fetchpriority="high" loading="eager"' : (k === 1 ? 'fetchpriority="auto" loading="eager"' : 'fetchpriority="low" loading="lazy"');
   return `<article class="card"><div class="ph" data-qv="${esc(i.id)}"><img class="p1" src="${esc(f)}" alt="${esc(i.alt || i.name)}" ${pri} decoding="async" width="800" height="1000"/></div><div class="bd"><h3><button type="button" data-qv="${esc(i.id)}" aria-haspopup="dialog">${esc(splitName(i.name))}</button></h3><div class="row"><span class="price">${esc(money(i))}</span></div><p class="made-note">Made to order. Delivery usually 1-2 weeks. Shipping is calculated at checkout.</p></div></article>`;
 });
@@ -57,7 +62,6 @@ const cards = firstScreen.map((i) => {
   const f = sized(leadOf(i), 480);
   return `<article class="card"><div class="ph" data-qv="${esc(i.id)}"><img class="p1" src="${esc(f)}" alt="${esc(i.alt || i.name)}" fetchpriority="low" loading="lazy" decoding="async" width="800" height="1000"/></div><div class="bd"><h3><button type="button" data-qv="${esc(i.id)}" aria-haspopup="dialog">${esc(splitName(i.name))}</button></h3><div class="row"><span class="price">${esc(money(i))}</span></div><p class="made-note">Made to order. Delivery usually 1-2 weeks. Shipping is calculated at checkout.</p></div></article>`;
 });
-const lcpSrc = wbFeat[0] ? sized(leadOf(wbFeat[0]), 480) : '';
 const lcp = lcpSrc ? `<link rel="preconnect" href="https://cdn.shopify.com" crossorigin>\n<link rel="preload" as="image" href="${esc(lcpSrc)}" fetchpriority="high" media="(max-width: 899px)">` : '';
 
 const faqBlock = html.match(/<!--SHOP-STATIC:faq-->([\s\S]*?)<!--\/SHOP-STATIC:faq-->/)[1];
