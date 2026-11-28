@@ -46,7 +46,7 @@ Legend: P0 launch-critical (do before 5 PM Thu), P1 this week, P2 soon, P3 hygie
 - Dependencies: owner supplies photos. Approval: owner.
 
 ### T-21 Triage the nightly verifier
-- Owner: Codex/fix/shorelist-shop-readiness.
+- Owner: Codex/fix/shore-picks-live-photo-diagnostics (follow-up to merged #335).
 - Files: `tools/verify-live.mjs` for verifier corrections.
 - Do: read the `verify-live` Action summary each morning; fix `price`/`stock`/`page` findings the same day (price or availability mismatch is launch-critical), file `image` findings under T-20.
 
