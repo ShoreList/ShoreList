@@ -24,6 +24,8 @@ on:
       - 'tools/check-shop-links.mjs'
       - 'tools/check-html-images.mjs'
       - 'tools/test-shop-links.mjs'
+      - 'tools/verify-live.mjs'
+      - 'tools/test-verify-live.mjs'
       - 'holiday-gift-guide.html'
       - 'tools/build-store-pages.mjs'
       - 'gift-guide.html'
@@ -54,6 +56,8 @@ on:
       - 'tools/check-shop-links.mjs'
       - 'tools/check-html-images.mjs'
       - 'tools/test-shop-links.mjs'
+      - 'tools/verify-live.mjs'
+      - 'tools/test-verify-live.mjs'
       - 'holiday-gift-guide.html'
       - 'tools/build-store-pages.mjs'
       - 'gift-guide.html'
@@ -74,6 +78,7 @@ jobs:
       - run: node tools/check-html-images.mjs
       - run: node tools/test-operators.mjs
       - run: node --test tools/test-concierge.cjs tools/test-plan-itinerary.cjs tools/test-shop-promo.mjs tools/test-shop-structured-data.mjs tools/test-shop-links.mjs
+      - run: node --test tools/test-verify-live.mjs
       - run: node --test tools/test-shop-photo-release.mjs
         env:
           SHOP_PHOTO_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
