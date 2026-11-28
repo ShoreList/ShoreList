@@ -155,9 +155,9 @@ details.tools[open]>summary::after{content:"\2212"}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 16px}
 @media(min-width:760px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:48px 32px}}
 .card{position:relative;display:flex;flex-direction:column;background:none;border:0;min-width:0}
-.card .ph{position:relative;aspect-ratio:4/5;background:var(--sail);overflow:hidden;cursor:pointer}
-.card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;background:var(--sail);display:block}
-.card .ph img.p1{mix-blend-mode:multiply}
+.card .ph{position:relative;aspect-ratio:1/1;background:#fff;overflow:hidden;cursor:pointer}
+.card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;background:#fff;display:block}
+.card .ph img.p1{mix-blend-mode:normal}
 .card .ph img.p2{opacity:0;transition:opacity .35s}
 @media(hover:hover){.card:hover .ph img.p2{opacity:1}}
 .card .bd{padding-top:14px;display:flex;flex-direction:column;gap:4px;flex:1}
@@ -214,13 +214,13 @@ dialog#qv{border:0;padding:0;margin:auto;width:min(960px,94vw);max-height:92dvh;
 dialog#qv::backdrop{background:rgba(14,31,51,.6)}
 .qvx{position:absolute;top:0;right:0;z-index:3;min-height:48px;padding:0 18px;border:0;background:var(--sail);color:var(--ink);font:500 .74rem var(--sans);letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
 .qvg{display:grid;grid-template-columns:1fr 1fr}
-.qvm{background:var(--sail)}
+.qvm{background:#fff}
 .qvm{align-self:start}
-.qvm img{width:100%;height:auto;max-height:86dvh;object-fit:contain;display:block;background:var(--sail)}
+.qvm img{width:100%;height:auto;max-height:86dvh;object-fit:contain;display:block;background:#fff}
 .qvth{display:flex;gap:8px;padding:10px;background:var(--sail)}
-.qvth button{width:60px;aspect-ratio:4/5;border:1px solid var(--line);padding:0;background:var(--sail);cursor:pointer;opacity:.7}
+.qvth button{width:60px;aspect-ratio:1/1;border:1px solid var(--line);padding:0;background:#fff;cursor:pointer;opacity:.7}
 .qvth button[aria-pressed=true]{opacity:1;border-color:var(--ink)}
-.qvth img{width:100%;height:100%;object-fit:contain;aspect-ratio:auto;background:var(--sail)}
+.qvth img{width:100%;height:100%;object-fit:contain;aspect-ratio:auto;background:#fff}
 .qvt{padding:44px 36px 32px;display:flex;flex-direction:column;gap:14px}
 .qvt .k{font:500 .72rem var(--mono);letter-spacing:.14em;text-transform:uppercase}
 .qvt h3{font:400 1.8rem var(--serif)}
