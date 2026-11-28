@@ -3490,6 +3490,95 @@
    "motif": "sea-life"
   }
  ],
+ "harborGoods_note": "ShoreList Harbor Goods. These eight pieces check out on shorelist-shop.fourthwall.com and are not in items[], so the shop page and the bag never treat them as Shopify lines. price is the lowest USD amount on the public Fourthwall product page, rechecked 2026-11-28. from is true when larger sizes cost more. An earlier read of the pickleball tee showed $46. The same page then showed $52, which is the price on the card.",
+ "harborGoods": [
+  {
+   "id": "salt-wash-sloop-garment-dyed-tee",
+   "name": "Salt Wash Sloop Garment-Dyed Tee",
+   "url": "https://shorelist-shop.fourthwall.com/products/salt-wash-sloop-garment-dyed-tee",
+   "img": "/shop-art/harbor-salt-wash-sloop-garment-dyed-tee.webp",
+   "alt": "Light blue garment-dyed tee with a small sailboat and Wrightsville printed on the chest",
+   "meta": "Light blue garment-dyed tee with a small sailboat and Wrightsville on the chest.",
+   "price": 52,
+   "from": true,
+   "store": "fourthwall"
+  },
+  {
+   "id": "salt-wash-organic-crewneck",
+   "name": "Salt Wash Organic Crewneck",
+   "url": "https://shorelist-shop.fourthwall.com/products/salt-wash-organic-crewneck",
+   "img": "/shop-art/harbor-salt-wash-organic-crewneck.webp",
+   "alt": "Light grey organic crewneck with a small sailboat and Wrightsville printed on the chest",
+   "meta": "Light grey organic crewneck with a small sailboat and Wrightsville on the chest.",
+   "price": 78,
+   "from": true,
+   "store": "fourthwall"
+  },
+  {
+   "id": "wrightsville-golf-tee",
+   "name": "Wrightsville Golf Tee",
+   "url": "https://shorelist-shop.fourthwall.com/products/wrightsville-golf-tee",
+   "img": "/shop-art/harbor-wrightsville-golf-tee.webp",
+   "alt": "Light blue tee printed with Wrightsville Beach Golf and map coordinates",
+   "meta": "Light blue garment-dyed tee printed Wrightsville Beach Golf, with coordinates.",
+   "price": 52,
+   "from": true,
+   "store": "fourthwall"
+  },
+  {
+   "id": "wrightsville-beach-tennis-garment-dyed-tee",
+   "name": "Wrightsville Beach Tennis Garment-Dyed Tee",
+   "url": "https://shorelist-shop.fourthwall.com/products/wrightsville-beach-tennis-garment-dyed-tee",
+   "img": "/shop-art/harbor-wrightsville-beach-tennis-garment-dyed-tee.webp",
+   "alt": "Ivory tee printed with Wrightsville Beach Tennis and map coordinates",
+   "meta": "Ivory garment-dyed tee printed Wrightsville Beach Tennis, with coordinates.",
+   "price": 52,
+   "from": true,
+   "store": "fourthwall"
+  },
+  {
+   "id": "wrightsville-beach-pickleball-garment-dyed-tee",
+   "name": "Wrightsville Beach Pickleball Garment-Dyed Tee",
+   "url": "https://shorelist-shop.fourthwall.com/products/wrightsville-beach-pickleball-garment-dyed-tee",
+   "img": "/shop-art/harbor-wrightsville-beach-pickleball-garment-dyed-tee.webp",
+   "alt": "Blue jean tee printed with Wrightsville Beach Pickleball and map coordinates",
+   "meta": "Blue jean garment-dyed tee printed Wrightsville Beach Pickleball, with coordinates.",
+   "price": 52,
+   "from": true,
+   "store": "fourthwall"
+  },
+  {
+   "id": "carolina-beach-boardwalk-garment-dyed-tee",
+   "name": "Carolina Beach Boardwalk Garment-Dyed Tee",
+   "url": "https://shorelist-shop.fourthwall.com/products/carolina-beach-boardwalk-garment-dyed-tee",
+   "img": "/shop-art/harbor-carolina-beach-boardwalk-garment-dyed-tee.webp",
+   "alt": "Ivory tee printed with Carolina Beach, the boardwalk, and map coordinates",
+   "meta": "Ivory garment-dyed tee printed Carolina Beach and the boardwalk, with coordinates.",
+   "price": 52,
+   "from": true,
+   "store": "fourthwall"
+  },
+  {
+   "id": "salt-wash-organic-cotton-market-tote",
+   "name": "Salt Wash Organic Cotton Market Tote",
+   "url": "https://shorelist-shop.fourthwall.com/products/salt-wash-organic-cotton-market-tote",
+   "img": "/shop-art/harbor-salt-wash-organic-cotton-market-tote.webp",
+   "alt": "Natural cotton market tote with a sailboat and Wrightsville Beach printed on the front",
+   "meta": "Natural organic cotton market tote with a small sailboat and Wrightsville Beach on the front.",
+   "price": 58,
+   "store": "fourthwall"
+  },
+  {
+   "id": "yacht-beach-club-organic-cotton-tote",
+   "name": "Yacht & Beach Club Organic Cotton Tote",
+   "url": "https://shorelist-shop.fourthwall.com/products/yacht-beach-club-organic-cotton-tote",
+   "img": "/shop-art/harbor-yacht-beach-club-organic-cotton-tote.webp",
+   "alt": "Natural cotton tote printed with a pennant, ShoreList, and Yacht & Beach Club",
+   "meta": "Natural organic cotton tote with a pennant, ShoreList, and Yacht & Beach Club on the front.",
+   "price": 58,
+   "store": "fourthwall"
+  }
+ ],
  "scenes": [
   {
    "id": "beach",

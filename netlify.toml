@@ -337,6 +337,11 @@
   status = 200
 
 [[redirects]]
+  from = "/shop/harbor-goods"
+  to = "/shop/harbor-goods.html"
+  status = 200
+
+[[redirects]]
   from = "/shop/:handle"
   to = "/shop/products/:handle"
   status = 301
