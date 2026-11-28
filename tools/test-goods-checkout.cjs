@@ -411,11 +411,18 @@ test('shop-cart: Shopify checkout retains first-touch campaign slugs and exclude
   assert.strictEqual(url.origin, 'https://shorelist.myshopify.com');
   assert.strictEqual(url.pathname, '/cart/12345:2');
   assert.deepStrictEqual([...url.searchParams], [
+    ['utm_source', 'instagram'],
+    ['utm_medium', 'paid_social'],
+    ['utm_campaign', 'shorelist-launch'],
     ['attributes[shorelist_source]', 'instagram'],
     ['attributes[shorelist_medium]', 'paid_social'],
     ['attributes[shorelist_campaign]', 'shorelist-launch'],
   ]);
+  assert.strictEqual(url.searchParams.get('ref'), null);
+  assert.strictEqual(url.searchParams.get('landing'), null);
+  assert.strictEqual(url.searchParams.get('fbclid'), null);
 
+  const fallback = 'https://shorelist.myshopify.com/cart/12345:2?utm_source=shorelist.net&utm_medium=shop&utm_campaign=checkout';
   for (const getAttribution of [
     () => ({}),
     () => ({ utm_campaign: 'unsafe&ref=value', utm_source: 'person@example.com', utm_medium: 'a'.repeat(81) }),
@@ -423,7 +430,7 @@ test('shop-cart: Shopify checkout retains first-touch campaign slugs and exclude
   ]) {
     win.ShoreAttrib.get = getAttribution;
     click();
-    assert.strictEqual(href, 'https://shorelist.myshopify.com/cart/12345:2');
+    assert.strictEqual(href, fallback);
   }
 });
 test('shop-cart: goods lines join the bag as their own group, honest multi-store notice, checkout posts item/variant/qty and follows the Stripe url; Shopify and Fourthwall unchanged', async () => {
