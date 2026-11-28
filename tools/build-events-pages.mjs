@@ -221,7 +221,7 @@ const PHOTO = {
   kure: { file: 'shorelist-hero-kure', w: 1920, h: 1072, alt: '', credit: STYLED }
 };
 const AREA_PHOTO = { 'downtown-wilmington': 'riverwalk', 'wrightsville-beach': 'wrightsville', 'carolina-beach': 'carolina', 'kure-beach': 'kure', 'greater-wilmington': 'bridge' };
-const heroImg = (p) => `<img class="ev-hero-img" width="${p.w}" height="${p.h}" src="${CDN}${p.file}_1920x.webp" srcset="${CDN}${p.file}_1000x.webp 1000w, ${CDN}${p.file}_1920x.webp 1920w" sizes="100vw" alt="${esc(p.alt)}" fetchpriority="high" decoding="async"/>`;
+const heroImg = (p) => `<img class="ev-hero-img" width="${p.w}" height="${p.h}" src="${CDN}${p.file}_1920x.webp" srcset="${CDN}${p.file}_1920x.webp 1920w" sizes="100vw" alt="${esc(p.alt)}" fetchpriority="high" decoding="async"/>`;
 const onward = (links) => '<nav class="ev-on" aria-label="Plan the rest of your visit"><h2>Plan the rest of your visit</h2><ul>' + links.map(([href, label, sub]) => '<li><a href="' + href + '"><strong>' + esc(label) + '</strong><span>' + esc(sub) + '</span>' + ico('arrow') + '</a></li>').join('') + '</ul></nav>';
 // Shared document head, nav and footer for every /events/ page (identical markup for area, weekend and event pages).
 const headHtml = (path, title, desc, lds, robots) => `<!DOCTYPE html>

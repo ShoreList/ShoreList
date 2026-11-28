@@ -168,8 +168,7 @@ ${liveHtml}
       .replace('<link rel="preconnect" href="https://fonts.googleapis.com"/>',
         '<link rel="preconnect" href="https://cdn.shopify.com"/>\n<link rel="preconnect" href="https://fonts.googleapis.com"/>')
       .replaceAll('&display=swap', '&display=optional')
-      .replace('</head>', '<link rel="preload" as="image" href="/img/hero-mobile/ghost-tours.webp" media="(max-width: 820px)" fetchpriority="high"/>\n</head>')
-      .replace(/<img class="hero-photo"[^>]+>/, '<picture><source media="(max-width: 820px)" srcset="/img/hero-mobile/ghost-tours.webp"/>$&</picture>')
+      .replace('</head>', '<link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-ghost-tours_1920x.webp" fetchpriority="high"/>\n</head>')
       .replace('<script data-idle="/attrib.js"></script>', '<script data-idle="/attrib.js"></script>')
       .replace('<script data-idle="/category-app.js"></script>', '<script data-idle="/category-app.js"></script>'));
   }
