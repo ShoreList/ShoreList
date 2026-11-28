@@ -11,7 +11,7 @@ const m = rest.search(/\n(var |function |const |let )/);
 const ctx = {}; vm.createContext(ctx);
 vm.runInContext(html.slice(a, o + 5 + m) + ';this.CAT_DATA=CAT_DATA;this.OPS=OPS;', ctx);
 ctx.OPS = toPublic(loadOperators()).categories; // operators now live in data/operators.json
-const strip = (s) => String(s || '').replace(/<[^>]*>/g, '').replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n)).replace(/&amp;/g, '&').replace(/&mdash;/g, '\u2014').replace(/&ndash;/g, '\u2013').replace(/\s+/g, ' ').trim();
+const strip = (s) => String(s || '').replace(/<[^>]*>/g, '').replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n)).replace(/&amp;/g, '&').replace(/&mdash;/g, ', ').replace(/&ndash;/g, ', ').replace(/[\u2014\u2013]/g, ', ').replace(/\s+/g, ' ').trim();
 
 const items = [];
 for (const [slug, c] of Object.entries(ctx.CAT_DATA)) {
@@ -38,6 +38,7 @@ const pages = [
   ['Kure Beach events', 'Markets and community events', '/events/kure-beach', 'kure beach events'],
   ['Downtown Wilmington events', 'Concerts, theater, markets and parades', '/events/downtown-wilmington', 'downtown events concerts theater'],
   ['Wilmington, NC weather', 'Live conditions, hourly and 7-day forecast, beach, surf and tide report', '/wilmington-weather', 'weather forecast rain temperature surf tide water temp wind beach conditions today'],
+  ['Live beach cams in Wilmington, NC', 'Official Johnnie Mercer pier cams, plus links to other local cameras', '/cams', 'live cam webcam pier wrightsville beach southport surfchex'],
   ['ShoreList Surf', 'Live surf check for Wrightsville, Carolina and Kure Beach, lessons, paddling and beginner guides', '/surf', 'surf surfing waves swell surf report surf check lessons paddle beginner board'],
   ['Choosing a first surfboard', 'Soft-top or hard board, how size works and what a first setup involves', '/surf/first-surfboard', 'surfboard first board beginner soft top foam longboard size buy'],
   ['Paddleboards and kayaks: inflatable or hard', 'How they compare, carrying and storing them, and where each fits on local water', '/surf/paddleboard-and-kayak', 'paddleboard sup kayak inflatable hard buy storage transport'],
@@ -56,13 +57,56 @@ const pages = [
   ['Downtown Wilmington', 'Riverwalk, history and nightlife', '/downtown', 'downtown riverwalk historic district'],
   ['Wrightsville Beach', 'Surf, paddle and island life', '/wrightsville-beach', 'wrightsville beach surf paddle'],
   ['Carolina Beach', 'Boardwalk, fishing and beach days', '/carolina-beach', 'carolina beach boardwalk fishing'],
+  ['Carolina Beach boardwalk', 'Boardwalk notes from the Carolina Beach and Pleasure Island guides', '/carolina-beach-boardwalk', 'carolina beach boardwalk fireworks dogs parking'],
   ['Kure Beach', 'Quiet beach town and Fort Fisher', '/kure-beach', 'kure beach fort fisher'],
   ['List your business', 'Join ShoreList as a local operator', '/join', 'operator join list business partner vendor sell'],
   ['Join the waitlist', 'Get updates when new experiences go live', '/waitlist', 'waitlist signup notify email updates'],
   ['Legal and policies', 'Terms, privacy and refund policy', '/legal', 'terms privacy refund cancellation policy legal'],
+  ['Gift finder', 'Ask Wrighty for ShoreList gifts under $25, $35 or $50', '/gift-finder', 'gift finder wrighty presents under 25 35 50 for him for her for the home'],
+  ['Holiday gift guide', 'Wrightsville Beach holiday gifts under $25, $35 and $50', '/holiday-gift-guide', 'holiday christmas gift guide ornament wrightsville'],
 ];
 for (const [title, sub, url, kw] of pages) items.push({ t: 'page', title, sub, url, kw });
-const out = { v: 1, built: new Date().toISOString().slice(0, 10), items };
+
+const events = JSON.parse(fs.readFileSync(new URL('../events-data.json', import.meta.url), 'utf8')).events || [];
+for (const e of events) {
+  if (!e || !e.id || !e.title || !e.start) continue;
+  const page = '/events/' + e.id + '.html';
+  if (!fs.existsSync(new URL('../' + page, import.meta.url))) continue;
+  items.push({
+    t: 'event',
+    id: e.id,
+    title: strip(e.title),
+    sub: [e.time, e.area, e.venue].filter(Boolean).join(' · '),
+    url: page,
+    kw: [e.cat, e.area, e.time, e.tickets, 'event'].filter(Boolean).join(' ').toLowerCase(),
+    start: e.start,
+    end: e.end || e.start,
+    time: e.time || '',
+    area: strip(e.area || ''),
+    cat: strip(e.cat || ''),
+    tickets: strip(e.tickets || '').slice(0, 120),
+    verified: !!e.verified,
+  });
+}
+
+const catalog = JSON.parse(fs.readFileSync(new URL('../shop-catalog.json', import.meta.url), 'utf8'));
+for (const p of catalog.items || []) {
+  if (!p || !p.name || !p.url) continue;
+  const handle = String(p.url).split('/products/')[1] || '';
+  const local = handle ? '/shop/products/' + handle.split('?')[0] + '.html' : '';
+  const url = local && fs.existsSync(new URL('../' + local, import.meta.url)) ? local : p.url;
+  items.push({
+    t: 'shop',
+    title: strip(p.name),
+    sub: [p.town, p.price != null ? '$' + p.price : ''].filter(Boolean).join(' · '),
+    url,
+    kw: [p.town, p.type, p.color, 'shop gift'].filter(Boolean).join(' ').toLowerCase(),
+    price: p.price != null ? String(p.price) : '',
+    town: strip(p.town || ''),
+  });
+}
+
+const out = { v: 2, built: new Date().toISOString().slice(0, 10), items };
 fs.writeFileSync(new URL('../search-index.json', import.meta.url), JSON.stringify(out));
 console.log('search-index.json:', items.length, 'items',
   '(' + items.filter((i) => i.t === 'cat').length + ' categories, ' + items.filter((i) => i.t === 'tour').length + ' live tours)');

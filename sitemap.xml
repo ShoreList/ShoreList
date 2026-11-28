@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://shorelist.net/</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://shorelist.net/things-to-do</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://shorelist.net/</loc><lastmod>2026-11-28</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://shorelist.net/things-to-do</loc><lastmod>2026-11-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://shorelist.net/plan-your-trip</loc><lastmod>2026-11-22</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://shorelist.net/things-to-do/ghost-tours</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://shorelist.net/things-to-do/walking-tours</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -28,14 +28,16 @@
   <url><loc>https://shorelist.net/downtown</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://shorelist.net/wrightsville-beach</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://shorelist.net/carolina-beach</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://shorelist.net/carolina-beach-boardwalk</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://shorelist.net/kure-beach</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://shorelist.net/shore-picks</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://shorelist.net/events</loc><lastmod>2026-11-22</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://shorelist.net/shop</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://shorelist.net/shop/wrightsville-beach</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://shorelist.net/shop/carolina-beach</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://shorelist.net/shop</loc><lastmod>2026-11-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://shorelist.net/shop/wrightsville-beach</loc><lastmod>2026-11-28</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://shorelist.net/shop/carolina-beach</loc><lastmod>2026-11-28</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://shorelist.net/shop/kure-beach</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://shorelist.net/shop/wilmington</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://shorelist.net/shop/harbor-goods</loc><lastmod>2026-11-28</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://shorelist.net/planner</loc><lastmod>2026-11-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://shorelist.net/map</loc><lastmod>2026-11-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://shorelist.net/join</loc><lastmod>2026-11-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -52,45 +54,146 @@
   <url><loc>https://shorelist.net/prints</loc><lastmod>2026-11-22</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://shorelist.net/shipping-returns</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://shorelist.net/size-guide</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://shorelist.net/gift-guide</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/gift-guide</loc><lastmod>2026-11-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/gift-finder</loc><lastmod>2026-11-28</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/holiday-gift-guide</loc><lastmod>2026-11-28</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/wilmington-nc-gifts</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/wrightsville-beach-souvenirs</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/wrightsville-beach-christmas-ornament</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/johnnie-mercers-pier</loc><lastmod>2026-11-27</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://shorelist.net/guides</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://shorelist.net/how-we-verify</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://shorelist.net/pleasure-island</loc><lastmod>2026-11-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://shorelist.net/wilmington-nc-parking</loc><lastmod>2026-11-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://shorelist.net/wilmington-nc-faq</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://shorelist.net/wilmington-weather</loc><lastmod>2026-11-22</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://shorelist.net/cams</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://shorelist.net/advertise</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://shorelist.net/surf</loc><lastmod>2026-11-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://shorelist.net/surf/first-surfboard</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://shorelist.net/surf/paddleboard-and-kayak</loc><lastmod>2026-11-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://shorelist.net/surf/know-before-you-go</loc><lastmod>2026-11-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <!-- event-pages:start (written by tools/build-events-pages.mjs) -->
-  <url><loc>https://shorelist.net/events/by-month</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-  <url><loc>https://shorelist.net/events/december-2026</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-  <url><loc>https://shorelist.net/events/january-2027</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-  <url><loc>https://shorelist.net/events/february-2027</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-  <url><loc>https://shorelist.net/events/kure-beach-holiday-market-2026-11-21</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shorelist.net/events/sing-we-now-of-christmas-a-joyful-celebr-2026-12-02</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shorelist.net/events/a-charlie-brown-christmas-2026-12-04</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shorelist.net/events/carolina-beach-holiday-market-2026-12-05</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shorelist.net/events/city-ballet-s-the-nutcracker-2026-12-05</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shorelist.net/events/pearl-harbor-day-remembrance-at-battlesh-2026-12-07</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shorelist.net/events/holiday-movie-at-the-lake-a-christmas-st-2026-12-12</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shorelist.net/events/leslie-odom-jr-the-christmas-tour-2026-12-17</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shorelist.net/events/kure-beach-holiday-whoobie-whatty-2026-12-18</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shorelist.net/events/holiday-story-time-by-the-sea-2026-12-19</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shorelist.net/events/home-alone-in-concert-wilmington-symphon-2026-12-19</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shorelist.net/events/santa-by-the-sea-2026-12-19</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shorelist.net/events/new-year-s-noon-at-the-children-s-museum-2026-12-31</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shorelist.net/events/carolina-beach-state-park-trail-half-mar-2027-01-02</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shorelist.net/events/tig-notaro-2027-01-08</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shorelist.net/events/wilmington-symphony-orchestra-bernstein--2027-01-16</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shorelist.net/events/baz-luhrmann-s-romeo-juliet-in-concert-2027-01-19</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shorelist.net/events/a-beautiful-noise-the-neil-diamond-music-2027-01-22</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shorelist.net/events/the-wiz-2027-02-06</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shorelist.net/events/jefferson-starship-and-john-waite-2027-02-20</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shorelist.net/events/wilmington-symphony-young-people-s-conce-2027-02-21</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shorelist.net/events/water-for-elephants-2027-02-23</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shorelist.net/events/hidden-battleship-tour-2027-02-27</loc><lastmod>2026-11-25</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/events/by-month</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://shorelist.net/events/december-2026</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://shorelist.net/events/january-2027</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://shorelist.net/events/february-2027</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://shorelist.net/events/kure-beach-holiday-market-2026-11-21</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/events/sing-we-now-of-christmas-a-joyful-celebr-2026-12-02</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/events/a-charlie-brown-christmas-2026-12-04</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/events/carolina-beach-holiday-market-2026-12-05</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/events/city-ballet-s-the-nutcracker-2026-12-05</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/events/pearl-harbor-day-remembrance-at-battlesh-2026-12-07</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/events/holiday-movie-at-the-lake-a-christmas-st-2026-12-12</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/events/leslie-odom-jr-the-christmas-tour-2026-12-17</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/events/kure-beach-holiday-whoobie-whatty-2026-12-18</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/events/holiday-story-time-by-the-sea-2026-12-19</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/events/home-alone-in-concert-wilmington-symphon-2026-12-19</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/events/santa-by-the-sea-2026-12-19</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/events/new-year-s-noon-at-the-children-s-museum-2026-12-31</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/events/carolina-beach-state-park-trail-half-mar-2027-01-02</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/events/tig-notaro-2027-01-08</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/events/wilmington-symphony-orchestra-bernstein--2027-01-16</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/events/baz-luhrmann-s-romeo-juliet-in-concert-2027-01-19</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/events/a-beautiful-noise-the-neil-diamond-music-2027-01-22</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/events/the-wiz-2027-02-06</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/events/jefferson-starship-and-john-waite-2027-02-20</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/events/wilmington-symphony-young-people-s-conce-2027-02-21</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/events/water-for-elephants-2027-02-23</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shorelist.net/events/hidden-battleship-tour-2027-02-27</loc><lastmod>2026-11-27</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
   <!-- event-pages:end -->
+  <!-- product-pages:start -->
+  <url><loc>https://shorelist.net/shop/products/the-sloop-embroidered-crewneck-wrightsville-beach</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/the-sloop-corduroy-cap-wrightsville-beach</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/the-blue-crab-embroidered-crewneck-kure-beach</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/wrightsville-beach-hoodie-varsity</loc><lastmod>2026-11-28</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/wrightsville-beach-tee-varsity</loc><lastmod>2026-11-28</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/wrightsville-beach-blue-crab-embroidered-crewneck</loc><lastmod>2026-11-28</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/wrightsville-beach-signature-crewneck</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/carolina-beach-blue-crab-embroidered-crewneck</loc><lastmod>2026-11-28</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/the-pelican-embroidered-crewneck-carolina-beach</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/the-pelican-corduroy-cap-carolina-beach</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/the-pelican-cuffed-beanie-carolina-beach</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/carolina-beach-lifeguard-stand-printed-throw-pillow</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/carolina-beach-lifeguard-stand-printed-zip-pouch</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/carolina-beach-lifeguard-stand-printed-garment-dyed-tee</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/brown-pelican-carolina-coast-printed-garment-dyed-tee</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/kure-beach-lifeguard-stand-printed-canvas-tote-bag</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/kure-beach-lifeguard-stand-printed-throw-pillow</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/kure-beach-lifeguard-stand-printed-zip-pouch</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/kure-beach-lifeguard-stand-printed-garment-dyed-tee</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/airlie-oak-framed-art-print-wrightsville-beach-and-wilmington</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/airlie-oak-wilmington-all-over-print-tote-bag</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/airlie-oak-wilmington-printed-garment-dyed-tee</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/azalea-wilmington-printed-garment-dyed-tee</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/blue-crab-carolina-coast-printed-garment-dyed-tee</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/sea-oats-carolina-coast-printed-garment-dyed-tee</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/camellia-wilmington-printed-garment-dyed-tee</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/airlie-oak-wilmington-all-over-print-zip-pouch</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/airlie-oak-wilmington-throw-pillow</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/carolina-beach-scallop-shell-printed-crewneck-sweatshirt</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/the-lifeguard-stand-bucket-hat-carolina-beach</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/the-lifeguard-stand-canvas-tote-carolina-beach</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/the-lifeguard-stand-dad-hat-carolina-beach</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/carolina-beach-megalodon-tooth-printed-crewneck-sweatshirt</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/carolina-beach-megalodon-tooth-printed-canvas-tote</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/the-blue-crab-dad-hat-kure-beach</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/kure-beach-scallop-shell-printed-canvas-tote-bag</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/the-lifeguard-stand-bucket-hat-kure-beach</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/the-blue-crab-canvas-tote-kure-beach</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/the-lifeguard-stand-dad-hat-kure-beach</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/the-lifeguard-stand-canvas-tote-kure-beach</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/kure-beach-sea-turtle-printed-crewneck-sweatshirt</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/kure-beach-sea-turtle-printed-garment-dyed-tee</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/kure-beach-sanderling-printed-garment-dyed-tee</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/kure-beach-sea-turtle-printed-canvas-tote</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/daymark-corduroy-cap-wrightsville-beach</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/wrightsville-beach-scallop-shell-printed-garment-dyed-tee</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/wrightsville-beach-oystercatcher-printed-garment-dyed-tee</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/wrightsville-beach-sailfish-printed-crewneck-sweatshirt</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/wrightsville-beach-sailfish-printed-garment-dyed-tee</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/wrightsville-beach-sailfish-printed-canvas-tote</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/camellia-carolina-coast-kiss-cut-vinyl-sticker-3-inch</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/wild-venus-flytrap-cape-fear-printed-garment-dyed-tee</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/carolina-beach-megalodon-tooth-framed-art-print</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/carolina-beach-brown-pelican-framed-art-print</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/carolina-beach-megalodon-tooth-illustration-printed-garment-dyed-tee</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/kure-beach-sea-turtle-framed-art-print</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/kure-beach-blue-crab-framed-art-print</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/blue-crab-carolina-coast-insulated-stainless-water-bottle-20-oz</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/blue-crab-carolina-coast-kiss-cut-vinyl-sticker-3-inch</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/wrightsville-beach-sailfish-framed-art-print</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/wrightsville-beach-sea-oats-framed-art-print</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/sea-oats-carolina-coast-insulated-stainless-tumbler-20-oz</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/sea-oats-carolina-coast-kiss-cut-vinyl-sticker-3-inch</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/banks-channel-sunset-sail-crewneck</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/wrightsville-beach-varsity-crewneck</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/carolina-beach-varsity-crewneck</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/kure-beach-varsity-crewneck</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/wilmington-varsity-crewneck</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/ilm-crewneck</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/the-blue-crab-corduroy-cap-kure-beach</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/the-sloop-cuffed-beanie-wrightsville-beach</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/daymark-cuffed-beanie-wrightsville-beach</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/the-blue-crab-cuffed-beanie-kure-beach</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/daymark-blue-crab-crewneck</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/the-blue-crab-rope-cap-kure-beach</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/the-lifeguard-stand-rope-cap-carolina-beach</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/the-lifeguard-stand-rope-cap-kure-beach</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/wrightsville-beach-sloop-printed-mug</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/wrightsville-beach-sloop-printed-tea-towel</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/wrightsville-beach-sloop-can-cooler-sleeve</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/carolina-beach-lifeguard-stand-printed-mug</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/kure-beach-lifeguard-stand-printed-mug</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/airlie-oak-wilmington-printed-mug</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/airlie-oak-wilmington-ceramic-ornament</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/airlie-oak-wilmington-tea-towel</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/wrightsville-beach-can-cooler</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/carolina-beach-can-cooler</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/kure-beach-can-cooler</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/wrightsville-beach-christmas-ornament-2026</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shorelist.net/shop/products/wrightsville-beach-scallop-shell-printed-mug</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <!-- product-pages:end -->
 </urlset>

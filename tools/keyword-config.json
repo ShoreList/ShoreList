@@ -92,6 +92,7 @@
     { "url": "/plan-your-trip", "cluster": "plan", "tier": "T2", "primary": "trip", "geo": ["{city}"] },
     { "url": "/wilmington-nc-parking", "cluster": "parking", "tier": "T3", "primary": "parking", "geo": ["{city}"] },
     { "url": "/wilmington-weather", "cluster": "weather", "tier": "T3", "primary": "weather", "geo": ["{city}"] },
+    { "url": "/cams", "cluster": "weather", "tier": "T3", "primary": "live beach cams", "geo": ["{city}"] },
     { "url": "/wilmington-nc-faq", "cluster": "plan", "tier": "T3", "primary": "faq", "geo": ["{city}"] },
     { "url": "/shore-picks", "cluster": "eat", "tier": "T2", "primary": "restaurants", "geo": ["{city}"] },
     { "url": "/shop", "cluster": "shop", "tier": "T1", "primary": "souvenirs", "geo": ["{city}"] },
@@ -100,6 +101,11 @@
     { "url": "/shop/carolina-beach", "cluster": "shop", "tier": "T1", "primary": "souvenirs", "geo": ["Carolina Beach"] },
     { "url": "/shop/kure-beach", "cluster": "shop", "tier": "T1", "primary": "souvenirs", "geo": ["Kure Beach"] },
     { "url": "/shop/wilmington", "cluster": "shop", "tier": "T1", "primary": "souvenirs", "geo": ["Wilmington"] },
-    { "url": "/prints", "cluster": "shop", "tier": "T1", "primary": "art prints", "geo": ["{city}"] }
+    { "url": "/shop/harbor-goods", "cluster": "shop", "tier": "T1", "primary": "harbor goods", "geo": ["Wilmington"] },
+    { "url": "/prints", "cluster": "shop", "tier": "T1", "primary": "art prints", "geo": ["{city}"] },
+    { "url": "/wilmington-nc-gifts", "cluster": "shop", "tier": "T1", "primary": "wilmington nc gifts", "geo": ["Wilmington", "NC"] },
+    { "url": "/wrightsville-beach-souvenirs", "cluster": "shop", "tier": "T1", "primary": "wrightsville beach souvenirs", "geo": ["Wrightsville Beach"] },
+    { "url": "/wrightsville-beach-christmas-ornament", "cluster": "shop", "tier": "T1", "primary": "wrightsville beach christmas ornament", "geo": ["Wrightsville Beach"] },
+    { "url": "/johnnie-mercers-pier", "cluster": "town", "tier": "T2", "primary": "johnnie mercer's pier", "geo": ["Wrightsville Beach"] }
   ]
 }

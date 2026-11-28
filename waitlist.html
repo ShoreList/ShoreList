@@ -14,16 +14,29 @@
 <meta property="og:description" content="Get first access to hyperlocal Wilmington tours, events and ShoreList shop drops."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://shorelist.net/waitlist"/>
-<meta property="og:image" content="https://shorelist.net/og-waitlist.jpg"/>
+<meta property="og:image" content="https://shorelist.net/img/hero/wb-banks-1920.webp"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:site_name" content="ShoreList"/>
-<meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://shorelist.net/og-waitlist.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://shorelist.net/img/hero/wb-banks-1920.webp"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" rel="stylesheet"/></noscript>
 <!-- ── ANALYTICS: Replace G-EN91RH3PZV with your GA4 Measurement ID from analytics.google.com ── -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
+<script>
+window.addEventListener('load',function(){
+  function load(){
+    if(document.querySelector('script[data-sl-ga]'))return;
+    var tag=document.createElement('script');
+    tag.async=true;
+    tag.setAttribute('data-sl-ga','1');
+    tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
+    document.head.appendChild(tag);
+  }
+  document.addEventListener('pointerdown',load,{once:true,passive:true});
+  setTimeout(function(){if(window.requestIdleCallback)requestIdleCallback(load);else load();},5000);
+});
+</script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());gtag('config','G-EN91RH3PZV');
@@ -48,7 +61,7 @@ a{color:inherit}
 
 nav.wl-nav{position:sticky;top:0;z-index:200;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;background:rgba(14,31,51,.96);border-bottom:1px solid rgba(244,241,234,.12)}
 .nav-logo{font-family:'Libre Caslon Display',Georgia,serif;font-size:1.5rem;color:var(--sail);text-decoration:none;font-weight:400}
-.nav-logo span{color:var(--coral);font-style:normal}
+.nav-logo span{color:#D9C7A3;font-style:normal}
 .nav-back,.nav-ev-link{font-size:.9rem;font-weight:500;color:rgba(244,241,234,.88);text-decoration:none;padding:8px 0}
 
 /* HERO */
@@ -170,7 +183,7 @@ footer{background:var(--navy);padding:40px 24px;text-align:center;color:rgba(244
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
 <link rel="stylesheet" href="/scene.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 <link rel="stylesheet" href="/tokens.css"/>
 </head>
 <body>
@@ -205,7 +218,7 @@ footer{background:var(--navy);padding:40px 24px;text-align:center;color:rgba(244
 
 <main id="main">
 <div class="wl-hero">
-<img class="wl-hero-bg" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-wrightsville_1920x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-wrightsville_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-wrightsville_1920x.webp 1920w" sizes="100vw" width="1920" height="1072" alt="" fetchpriority="high" decoding="async"/>
+<img class="wl-hero-bg" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-wrightsville_1920x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-wrightsville_1280x.webp 1280w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-wrightsville_1920x.webp 1920w" sizes="100vw" width="1920" height="1072" alt="" fetchpriority="high" decoding="async"/>
 <div class="page">
   <div class="wl-intro">
   <div class="wl-tag"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-sparkle" xlink:href="#i-sparkle"/></svg> First access list</div>
@@ -484,9 +497,11 @@ function shareShoreList(){
   }
 }
 </script>
-<script src="/sound.js" defer></script>
-<script src="/beachwx.js" defer></script>
-<script src="/widgets.js" defer></script>
-<script src="/shore-plus.js" defer></script>
+<script data-idle="/sound.js"></script>
+<script data-idle="/beachwx.js"></script>
+<script data-idle="/shore-plus.js"></script>
+
+<script src="/guide-boot.js" defer data-widgets="1"></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>

@@ -18,7 +18,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--teal);min-height:100vh;di
 @keyframes wave{0%{transform:translate(-50%,-50%) rotate(0deg);}100%{transform:translate(-50%,-50%) rotate(360deg);}}
 nav{width:100%;max-width:700px;display:flex;align-items:center;justify-content:space-between;margin-bottom:48px;position:relative;z-index:1;}
 .nav-logo{display:inline-flex;align-items:center;min-height:44px;font-family:'Libre Caslon Display',Georgia,serif;font-size:1.3rem;color:var(--navy);text-decoration:none;font-weight:400;}
-.nav-logo span{color:var(--coral);}
+.nav-logo span{color:#D9C7A3;}
 .nav-home{display:inline-flex;align-items:center;min-height:44px;font-size:0.82rem;font-weight:500;color:rgba(217,199,163,0.5);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
 .nav-home:hover{color:var(--cream);}
 .check-wrap{position:relative;z-index:1;margin-bottom:32px;}
@@ -73,14 +73,27 @@ nav{width:100%;max-width:700px;display:flex;align-items:center;justify-content:s
 @media(max-width:600px){.action-row{flex-direction:column;}.bc-grid{grid-template-columns:1fr;}.more-grid{grid-template-columns:repeat(2,1fr);}nav{margin-bottom:32px;}}
 </style>
 <link rel="stylesheet" href="/luxe.css"/>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 <link rel="stylesheet" href="/tokens.css"/>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
+<script>
+window.addEventListener('load',function(){
+  function load(){
+    if(document.querySelector('script[data-sl-ga]'))return;
+    var tag=document.createElement('script');
+    tag.async=true;
+    tag.setAttribute('data-sl-ga','1');
+    tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
+    document.head.appendChild(tag);
+  }
+  document.addEventListener('pointerdown',load,{once:true,passive:true});
+  setTimeout(function(){if(window.requestIdleCallback)requestIdleCallback(load);else load();},5000);
+});
+</script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());gtag('config','G-EN91RH3PZV',{page_location:location.origin+location.pathname});
 </script>
-<script src="/purchase-analytics.js" defer></script>
+<script data-idle="/purchase-analytics.js"></script>
 </head>
 <body class="pg-success">
 
@@ -301,5 +314,8 @@ function confetti(){
   setTimeout(function(){container.remove();},4000);
 }
 </script>
+
+<script src="/guide-boot.js" defer></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>

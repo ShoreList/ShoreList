@@ -25,15 +25,24 @@
 .tp-mail:hover{background:var(--ev-teal)}
 .tp-faq h3{margin-top:22px}
 /* gift guide */
+.made-note,.trust{margin:8px 0 14px;font-size:.92rem;line-height:1.45;color:var(--ev-ink)}
+.trust a{color:inherit}
 .gg-wide{max-width:1180px}
 .gg-sec{margin:0 0 clamp(40px,6vw,72px)}
 .gg-sec>p{margin:0 0 6px}
 .tp-in .gg-grid{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:22px 14px}
 .gg-grid li{margin:0;max-width:none}
 .gg-grid a{display:block;color:var(--ev-ink);text-decoration:none}
-.gg-grid img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;background:var(--ev-sand)}
-.gg-name{display:block;margin-top:10px;font-family:'Libre Caslon Display',Georgia,serif;font-size:1.02rem;line-height:1.25;color:var(--ev-navy)}
+.gg-grid img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;object-position:center;background:#fff}
+.tp-in>p>img{display:block;width:100%;max-width:520px;height:auto;aspect-ratio:1/1;object-fit:contain;object-position:center;background:#fff}
+.gg-fit{display:inline-block;margin-top:10px;padding:2px 8px;border:1px solid var(--ev-line);font-size:.72rem;font-weight:650;letter-spacing:.08em;text-transform:uppercase;color:var(--ev-navy)}
+.gg-name{display:block;margin-top:8px;font-family:'Libre Caslon Display',Georgia,serif;font-size:1.02rem;line-height:1.25;color:var(--ev-navy)}
 .gg-price{display:block;margin-top:2px;font-weight:500;color:var(--ev-ink)}
+.tp-opts{margin:0 0 14px}
+.tp-opts p{margin:0 0 6px}
+.tp-opts b{font-weight:500}
+.gg-pair{margin:8px 0 0;font-size:.82rem;line-height:1.4}
+.gg-pair a{color:inherit}
 .gg-line{display:block;margin-top:4px;font-size:.88rem;line-height:1.45;color:var(--ev-mute)}
 .gg-grid a:hover .gg-name{text-decoration:underline;text-underline-offset:3px}
 .gg-grid a:focus-visible{outline:2px solid var(--ev-red2);outline-offset:4px}

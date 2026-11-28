@@ -5,6 +5,7 @@
 // fashion-expert review, which this bot requires via a REVIEW file per item (see needReview).
 import fs from 'node:fs';
 import path from 'node:path';
+import { coastalBrandIssues, productScoreIssues } from './coastal-brand-review.mjs';
 
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > -1 ? process.argv[i + 1] : d; };
 const SPECS = arg('--specs', '/home/claude/plans/newline/specs');
@@ -41,17 +42,37 @@ function priceRules(it) {
   if (/\b(poster|big print)\b/.test(t) && /tee|shirt/.test(t)) F(it.id, 'big poster tee banned');
 }
 
-// Standing rule: never sell a grey product unless it is unwashed (raw, not faded or washed grey).
+// Pepper and grey are allowed when the product is tagged luxury quality (AR5):
+// an explicit luxury-quality tag, or Luxury look 8+ with a named premium blank
+// and not a boardwalk print-tee. Otherwise they stay off unless the blank is unwashed or raw.
 const GREY = /\b(gr[ae]y|charcoal|slate|ash|graphite|heather gr[ae]y|pepper|smoke|storm|concrete|pewter|steel)\b/i;
+function taggedLuxuryQuality(it, review) {
+  const bits = [it.quality, it.tier, it.tag]
+    .concat(Array.isArray(it.tags) ? it.tags : [])
+    .concat(it.luxuryQuality === true ? ['luxury quality'] : [])
+    .filter(v => v != null && v !== false)
+    .map(v => String(v).toLowerCase().trim());
+  if (bits.some(v => v === 'luxury quality' || v === 'luxury')) return true;
+  const scores = (review && review.scores) || {};
+  const luxury = scores['Luxury look'] ?? scores.B1 ?? scores.luxury;
+  const blank = it.blank || it.blankName || (review && (review.blank || review.namedBlank));
+  const cheapTee = /\b(poster|big print|boardwalk)\b/i.test(`${it.name || ''} ${it.meta || ''} ${it.id || ''}`) && /tee|shirt/i.test(`${it.name || ''} ${it.id || ''}`);
+  return typeof luxury === 'number' && luxury >= 8 && Boolean(blank) && !cheapTee;
+}
 function greyRule(it) {
   const hay = [it.id, it.name, it.meta, it.color, ...(it.variants || []).map(v => v.color), ...(it.colors || [])].filter(Boolean).join(' ');
-  if (GREY.test(hay) && !/unwashed|raw/i.test(hay)) F(it.id || it.name, 'grey product/colorway not marked unwashed (rule: no washed or faded grey)');
+  if (!GREY.test(hay) || /unwashed|raw/i.test(hay)) return;
+  if (taggedLuxuryQuality(it, reviews[it.id || it.name])) return;
+  F(it.id || it.name, 'Pepper or grey colorway is allowed only when the product is tagged luxury quality');
 }
 function codeRule(it) {
   const t = `${it.name} ${it.id}`;
   if (/wrightsville|\bwb\b|kure|\bkb\b|carolina beach|\bcb\b|wilmington|\bilm\b/i.test(t) &&
       !/\b(WB|CB|KB|ILM)\b|wrightsville|kure|carolina beach|wilmington/i.test(t)) W(it.id, 'town code missing');
 }
+
+let reviews = {};
+try { reviews = JSON.parse(fs.readFileSync(REVIEWS, 'utf8')); } catch { /* none yet */ }
 
 // 1. live catalog + draft specs
 const items = [...catalog.items.map(i => ({ ...i, _src: 'catalog' }))];
@@ -96,11 +117,16 @@ for (const f of svgFiles(ART)) {
 }
 
 // 3. expert review gate: every item must have a passing independent review
-let reviews = {};
-try { reviews = JSON.parse(fs.readFileSync(REVIEWS, 'utf8')); } catch { /* none yet */ }
-for (const it of items.filter(i => i._src === 'catalog' || i.status)) {
-  const id = it.id, r = reviews[id];
-  if (!r) { (it._src === 'catalog' ? F : W)(id, 'no passing expert review: not sellable'); continue; }
+for (const it of items) {
+  const id = it.id || it.name, r = reviews[id];
+  if (!r) { F(id, 'no passing expert review: not sellable'); continue; }
+  if (it._src === 'spec') {
+    for (const issue of [...productScoreIssues(r.scores, r.scoreEvidence), ...coastalBrandIssues(r.coastalBrandReview)]) {
+      F(id, issue);
+    }
+    if (r.verdict !== 'PASS') F(id, 'expert verdict is not PASS');
+    continue;
+  }
   const sc = r.scores || {}, vals = Object.values(sc);
   const mean = vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : 0;
   if (mean < 9.0) F(id, `expert mean ${mean.toFixed(2)} under 9.0`);

@@ -221,7 +221,7 @@ const PHOTO = {
   kure: { file: 'shorelist-hero-kure', w: 1920, h: 1072, alt: '', credit: STYLED }
 };
 const AREA_PHOTO = { 'downtown-wilmington': 'riverwalk', 'wrightsville-beach': 'wrightsville', 'carolina-beach': 'carolina', 'kure-beach': 'kure', 'greater-wilmington': 'bridge' };
-const heroImg = (p) => `<img class="ev-hero-img" width="${p.w}" height="${p.h}" src="${CDN}${p.file}_1920x.webp" srcset="${CDN}${p.file}_1000x.webp 1000w, ${CDN}${p.file}_1920x.webp 1920w" sizes="100vw" alt="${esc(p.alt)}" fetchpriority="high" decoding="async"/>`;
+const heroImg = (p) => `<img class="ev-hero-img" width="${p.w}" height="${p.h}" src="${CDN}${p.file}_1920x.webp" srcset="${CDN}${p.file}_1280x.webp 1280w, ${CDN}${p.file}_1920x.webp 1920w" sizes="100vw" alt="${esc(p.alt)}" fetchpriority="high" decoding="async"/>`;
 const onward = (links) => '<nav class="ev-on" aria-label="Plan the rest of your visit"><h2>Plan the rest of your visit</h2><ul>' + links.map(([href, label, sub]) => '<li><a href="' + href + '"><strong>' + esc(label) + '</strong><span>' + esc(sub) + '</span>' + ico('arrow') + '</a></li>').join('') + '</ul></nav>';
 // Shared document head, nav and footer for every /events/ page (identical markup for area, weekend and event pages).
 const headHtml = (path, title, desc, lds, robots) => `<!DOCTYPE html>
@@ -238,7 +238,20 @@ const headHtml = (path, title, desc, lds, robots) => `<!DOCTYPE html>
 <meta property="og:image" content="${img}"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="${img}"/>
 <link rel="icon" href="/favicon.ico"/><link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
 <script>document.documentElement.className+=' js'</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
+<script>
+window.addEventListener('load',function(){
+  function load(){
+    if(document.querySelector('script[data-sl-ga]'))return;
+    var tag=document.createElement('script');
+    tag.async=true;
+    tag.setAttribute('data-sl-ga','1');
+    tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
+    document.head.appendChild(tag);
+  }
+  document.addEventListener('pointerdown',load,{once:true,passive:true});
+  setTimeout(function(){if(window.requestIdleCallback)requestIdleCallback(load);else load();},5000);
+});
+</script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EN91RH3PZV');</script>
 <link rel="manifest" href="/manifest.webmanifest"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -253,7 +266,7 @@ function page({ path, title, desc, h1, lede, list, crumb, h2, intro, photo, link
 <link rel="stylesheet" href="/events.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
 <link rel="stylesheet" href="/tokens.css"/>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 </head>
 <body class="ev-page">
 ${NAV}
@@ -278,8 +291,9 @@ ${onward(links)}
 </div></section>
 </main>
 ${FOOT}
-<script src="/shore-plus.js" defer></script>
-<script src="/events-feed.js" defer></script>
+<script data-idle="/shore-plus.js"></script>
+<script data-idle="/events-feed.js"></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>
 `;
@@ -339,7 +353,7 @@ monthPages.forEach((m, i) => {
 <link rel="stylesheet" href="/events.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
 <link rel="stylesheet" href="/tokens.css"/>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 </head>
 <body class="ev-page">
 ${NAV}
@@ -368,7 +382,8 @@ ${onward([['/events', 'All events', 'The full searchable calendar'], ['/events/t
 </div></section>
 </main>
 ${FOOT}
-<script src="/shore-plus.js" defer></script>
+<script data-idle="/shore-plus.js"></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>
 `);
@@ -473,7 +488,7 @@ function eventPage(e) {
 <link rel="stylesheet" href="/events.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
 <link rel="stylesheet" href="/tokens.css"/>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 </head>
 <body class="ev-page">
 ${NAV}
@@ -501,7 +516,8 @@ ${SPRITE}${onward(links)}
 </div></section>
 </main>
 ${FOOT}
-<script src="/shore-plus.js" defer></script>
+<script data-idle="/shore-plus.js"></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>
 `;
@@ -532,7 +548,7 @@ for (const f of fs.readdirSync('events')) if (!keepFiles.has(f) && /\.(html|ics)
 <link rel="stylesheet" href="/events.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
 <link rel="stylesheet" href="/tokens.css"/>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 </head>
 <body class="ev-page">
 ${NAV}
@@ -564,7 +580,8 @@ ${SPRITE}${onward([['/events', 'All events', 'Upcoming events in Wilmington and 
 </div></section>
 </main>
 ${FOOT}
-<script src="/shore-plus.js" defer></script>
+<script data-idle="/shore-plus.js"></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>
 `;

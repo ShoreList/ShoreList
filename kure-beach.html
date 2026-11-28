@@ -14,11 +14,11 @@
 <meta property="og:description" content="Fort Fisher, quiet beaches, nature walks and the fishing pier on Pleasure Island. A local Kure Beach visitor guide from ShoreList."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://shorelist.net/kure-beach"/>
-<meta property="og:image" content="https://shorelist.net/og-kure-beach.jpg"/>
+<meta property="og:image" content="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1920x.webp"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:site_name" content="ShoreList"/>
-<meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://shorelist.net/og-kure-beach.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1920x.webp"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" rel="stylesheet"/></noscript>
@@ -52,7 +52,7 @@ body{font-family:'DM Sans',sans-serif;background:#F4F1EA;color:#0E1F33;overflow-
 /* launch-banner removed */
 nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:14px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(14,31,51,0.97);border-bottom:1px solid rgba(255,255,255,0.07);}
 .nav-logo{font-family:'Libre Caslon Display',Georgia,serif;font-size:1.3rem;color:#F4F1EA;text-decoration:none;font-weight:400;}
-.nav-logo span{color:var(--coral);}
+.nav-logo span{color:#D9C7A3;}
 .nav-right{display:flex;align-items:center;gap:16px;}
 .nav-back{font-size:0.78rem;font-weight:500;color:rgba(217,199,163,0.60);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;white-space:nowrap;}
 .nav-back:hover{color:#D9C7A3;}
@@ -63,10 +63,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:14px 48px;display:fl
 .hero::before{content:'';position:absolute;inset:0;background:rgba(14,31,51,.4);}
 .hero::after{content:'';position:absolute;inset:0;background-image:rgba(14,31,51,.4);background-size:28px 28px;pointer-events:none;}
 .hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;}
-.hero-tag{font-size:0.66rem;font-weight:500;letter-spacing:0.24em;text-transform:uppercase;color:var(--coral);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.hero-tag{font-size:0.66rem;font-weight:500;letter-spacing:0.24em;text-transform:uppercase;color:#D9C7A3;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
 .hero-tag::before{content:'';width:22px;height:1px;background:var(--coral);}
 .hero-bc{font-size:0.75rem;color:rgba(217,199,163,0.40);margin-bottom:10px;}
-.hero-bc a{color:var(--coral);text-decoration:none;}
+.hero-bc a{color:#D9C7A3;text-decoration:none;}
 h1.hero-title{font-family:'Libre Caslon Display',Georgia,serif;font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:400;color:#F4F1EA;line-height:1.05;margin-bottom:12px;}
 h1.hero-title em{color:var(--coral);font-style:normal;}
 .hero-sub{font-size:0.97rem;color:rgba(217,199,163,0.70);line-height:1.85;max-width:520px;margin-bottom:24px;}
@@ -204,7 +204,20 @@ footer{background:#0E1F33;padding:32px 48px;display:flex;justify-content:space-b
 @media(max-width:480px){.facts-grid{grid-template-columns:1fr;}.other-towns{grid-template-columns:1fr;}}
 </style>
 <!-- ANALYTICS: GA4 (Google Analytics 4) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
+<script>
+window.addEventListener('load',function(){
+  function load(){
+    if(document.querySelector('script[data-sl-ga]'))return;
+    var tag=document.createElement('script');
+    tag.async=true;
+    tag.setAttribute('data-sl-ga','1');
+    tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
+    document.head.appendChild(tag);
+  }
+  document.addEventListener('pointerdown',load,{once:true,passive:true});
+  setTimeout(function(){if(window.requestIdleCallback)requestIdleCallback(load);else load();},5000);
+});
+</script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EN91RH3PZV');</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"TouristDestination","name":"Kure Beach, NC","url":"https://shorelist.net/kure-beach","description":"Visitor guide to Kure Beach, North Carolina, things to do, local experiences, and events.","touristType":"Coastal travelers","containedInPlace":{"@type":"AdministrativeArea","name":"New Hanover County, North Carolina"},"publisher":{"@type":"Organization","@id":"https://shorelist.net/#org","name":"ShoreList","url":"https://shorelist.net/"}}
@@ -216,7 +229,7 @@ footer{background:#0E1F33;padding:32px 48px;display:flex;justify-content:space-b
 <link rel="stylesheet" href="/luxe.css"/>
 <link rel="stylesheet" href="/town.css"/>
 <noscript><style>.t-evs{display:none!important}.t-chip{display:none!important}</style></noscript>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 <style id="scene-hero">
 .hero-photo{position:absolute;left:-2%;top:-2%;width:104%;height:104%;max-width:none;object-fit:cover;object-position:50% 62%;z-index:0;animation:heroDrift 60s ease-in-out infinite alternate}
 @keyframes heroDrift{from{transform:scale(1) translate3d(0,0,0)}to{transform:scale(1.04) translate3d(-1.2%,-.8%,0)}}
@@ -237,8 +250,9 @@ section.hero[data-photo] .btn-ghost svg{color:#fff!important}
 section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;border:1px solid rgba(255,255,255,.22)!important;}
 @media(max-width:768px){section.hero[data-photo]{min-height:0}}
 </style>
-<link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1920x.webp" imagesrcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_640x.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1280x.webp 1280w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1920x.webp 1920w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_2560x.webp 2560w" imagesizes="100vw" fetchpriority="high"/>
+<link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1920x.webp" imagesrcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1280x.webp 1280w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1920x.webp 1920w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_2560x.webp 2560w" imagesizes="100vw" fetchpriority="high"/>
 <link rel="stylesheet" href="/tokens.css"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do you pronounce Kure Beach?","acceptedAnswer":{"@type":"Answer","text":"\"Cure-ee,\" according to the Town of Kure Beach."}},{"@type":"Question","name":"Is the North Carolina Aquarium at Fort Fisher open?","acceptedAnswer":{"@type":"Answer","text":"Not for now. It closed to the public on May 26, 2026 for construction that the state expects to take 30 months, and no reopening date has been given. See the state announcement ."}},{"@type":"Question","name":"Is Fort Fisher State Historic Site free?","acceptedAnswer":{"@type":"Answer","text":"General admission is free. The site is open Tuesday to Saturday, 9 a.m. to 5 p.m., and closed Sunday, Monday and designated state holidays. Guided tours cost extra. Details are on the NC Historic Sites page ."}},{"@type":"Question","name":"Can you drive on the beach at Fort Fisher?","acceptedAnswer":{"@type":"Answer","text":"At Fort Fisher State Recreation Area, yes, with a four-wheel-drive vehicle during posted hours and a per-vehicle fee. NC State Parks says it is the only park in its system that allows four-wheel-drive beach access. See the park page ."}},{"@type":"Question","name":"When is paid parking at Kure Beach?","acceptedAnswer":{"@type":"Answer","text":"In 2026 it ran March 15 to September 30, 8 a.m. to 6 p.m., per local news. Each town sets its dates yearly, so see the parking guide and confirm with the town."}}]}</script>
 </head>
 <body class="town" data-town="kure" data-wx="2">
 
@@ -277,7 +291,7 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
 <nav aria-label="Primary">
   <a href="/" class="nav-logo" aria-label="ShoreList home">Shore<span>List</span></a>
   <div class="nav-right">
-    <a href="/map" style="font-size:0.78rem;font-weight:500;color:var(--coral);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;">Map</a>
+    <a href="/map" style="font-size:0.78rem;font-weight:500;color:#D9C7A3;text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;">Map</a>
     <a href="/" class="nav-back">&#8592; All Experiences</a>
     <a href="/things-to-do" class="nav-book">Book Experiences</a>
   </div>
@@ -285,7 +299,7 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
 <main id="main">
 
 <section class="hero" data-photo>
-  <img class="hero-photo" alt="" width="1920" height="1072" decoding="async" fetchpriority="high" sizes="100vw" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_640x.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1280x.webp 1280w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1920x.webp 1920w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_2560x.webp 2560w" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1920x.webp"/>
+  <img class="hero-photo" alt="The beach at Kure Beach" width="1920" height="1072" decoding="async" fetchpriority="high" sizes="100vw" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1280x.webp 1280w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1920x.webp 1920w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_2560x.webp 2560w" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1920x.webp"/>
   <div class="scene-scrim" aria-hidden="true"></div>
   <div class="hero-inner">
     <div>
@@ -299,7 +313,7 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
         <div class="hb"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-leaf" xlink:href="#i-leaf"/></svg>Coastal Nature Walks</div>
         <div class="hb"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-kite" xlink:href="#i-kite"/></svg>Cape Fear Kite Festival</div>
         <div class="hb"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-beach" xlink:href="#i-beach"/></svg>Wild Atlantic Beach</div>
-        <div class="hb"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-aquarium" xlink:href="#i-aquarium"/></svg>Aquarium Expanding</div>
+        <div class="hb"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-aquarium" xlink:href="#i-aquarium"/></svg>Aquarium closed</div>
       </div>
       <div class="hero-btns">
         <a href="#experiences" class="btn-fill">Book a Kure Beach Experience &#8594;</a>
@@ -330,14 +344,13 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
   <div class="aa-inner">
     <div class="aa-icon"><svg aria-hidden="true" focusable="false"><use href="#i-construction" xlink:href="#i-construction"/></svg></div>
     <div class="aa-body">
-      <div class="aa-title">NC Aquarium at Fort Fisher: Closed for $65 Million Expansion</div>
+      <div class="aa-title">NC Aquarium at Fort Fisher is closed</div>
       <div class="aa-text">
-        The main aquarium at 900 Loggerhead Road <strong>closed May 26, 2026</strong> for a major renovation estimated to take approximately 30 months. The aquarium plans to reopen after the renovation. During construction, the aquarium team has opened <strong>Discovery Cove</strong>, a satellite location at Independence Mall in Wilmington with animal encounters, marine life habitats, and education programs. Free admission. <a href="https://www.ncaquariums.com/fort-fisher" target="_blank" rel="noopener noreferrer">Check ncaquariums.com for current details &#8599;</a>
+        It closed to the public on May 26, 2026. The state expects about 30 months of construction. No reopening date has been announced, so this is not a visit recommendation. A free Discovery Cove satellite is at Independence Mall in Wilmington. <a href="https://www.dncr.nc.gov/news/press-releases/2026/05/28/north-carolina-aquarium-fort-fisher-breaks-ground-transformational-expansion" rel="noopener">State announcement</a>. <a href="https://www.ncaquariums.com/faqs-ncaff-renovation-expansion" rel="noopener">NC Aquariums</a>.
       </div>
       <div class="aa-tags">
         <span class="aa-tag"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-closed" xlink:href="#i-closed"/></svg>Fort Fisher Location Closed May 26, 2026</span>
-        <span class="aa-tag"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-clock" xlink:href="#i-clock"/></svg>Reopening approx. late 2028</span>
-        <span class="aa-tag aa-tag-coral"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-sparkle" xlink:href="#i-sparkle"/></svg>Discovery Cove at Independence Mall: Open &amp; Free</span>
+        <span class="aa-tag"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-clock" xlink:href="#i-clock"/></svg>No announced reopening date</span>
       </div>
     </div>
   </div>
@@ -348,9 +361,9 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
     <h2 id="t-do-h">Top things to do at <em>Kure Beach</em></h2>
     <p class="t-lede">Start with the activities this guide covers for Kure Beach. Each card opens the full category page.</p>
     <ul class="t-cards t-cards-odd">
-      <li><a class="t-card" href="/things-to-do/nature-walks"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-nature-walks_800x600_crop_center.webp" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>Nature Walks</b><span>Maritime forest, coastal dunes and tidal wetlands.</span><i>See options</i></span></a></li>
-      <li><a class="t-card" href="/things-to-do/museums"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-museums_800x600_crop_center.webp" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>Museums &amp; Attractions</b><span>Fort Fisher earthworks and museum, plus aquarium updates.</span><i>See options</i></span></a></li>
-      <li><a class="t-card" href="/things-to-do/wildlife-tours"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-wildlife-tours_800x600_crop_center.webp" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>Wildlife Tours</b><span>Sea turtle and shorebird habitat at Fort Fisher.</span><i>See options</i></span></a></li>
+      <li><a class="t-card" href="/things-to-do/nature-walks"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-nature-walks_800x600_crop_center.webp" width="800" height="600" alt="A coastal trail near Wilmington" loading="lazy" decoding="async"/><span class="t-card-b"><b>Nature Walks</b><span>Maritime forest, coastal dunes and tidal wetlands.</span><i>See options</i></span></a></li>
+      <li><a class="t-card" href="/things-to-do/museums"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-museums_800x600_crop_center.webp" width="800" height="600" alt="A museum gallery in Wilmington" loading="lazy" decoding="async"/><span class="t-card-b"><b>Museums &amp; Attractions</b><span>Fort Fisher earthworks and museum. The aquarium is closed.</span><i>See options</i></span></a></li>
+      <li><a class="t-card" href="/things-to-do/wildlife-tours"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-wildlife-tours_800x600_crop_center.webp" width="800" height="600" alt="A boat on the water, for wildlife tours toward Masonboro Island" loading="lazy" decoding="async"/><span class="t-card-b"><b>Wildlife Tours</b><span>Sea turtle and shorebird habitat at Fort Fisher.</span><i>See options</i></span></a></li>
     </ul>
     <p class="t-note">Activity photos are illustrative and may not show the exact tour or location.</p>
   </div>
@@ -373,29 +386,7 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
       </div>
       <div class="t-on-season">
         <h3>Seasonal highlights</h3>
-    <div class="events-list">
-      <div class="ev-row">
-        <div class="er-ico"><svg aria-hidden="true" focusable="false"><use href="#i-kite" xlink:href="#i-kite"/></svg></div>
-        <div class="er-body"><div class="er-name">Cape Fear Kite Festival</div><div class="er-meta">November 6 to 8, 2026 &nbsp;&middot;&nbsp; Fort Fisher State Recreation Area &nbsp;&middot;&nbsp; Kites over the Atlantic</div></div>
-        <span class="er-badge er-free">Free</span>
-      </div>
-      <div class="ev-row">
-        <div class="er-ico"><svg aria-hidden="true" focusable="false"><use href="#i-fort" xlink:href="#i-fort"/></svg></div>
-        <div class="er-body"><div class="er-name">Fort Fisher Civil War Living History</div><div class="er-meta">October 2026 &nbsp;&middot;&nbsp; Fort Fisher Historic Site &nbsp;&middot;&nbsp; Re-enactors, artillery demonstrations, and camp life</div></div>
-        <span class="er-badge er-free">Free</span>
-      </div>
-      <div class="ev-row">
-        <div class="er-ico"><svg aria-hidden="true" focusable="false"><use href="#i-fireworks" xlink:href="#i-fireworks"/></svg></div>
-        <div class="er-body"><div class="er-name">America&rsquo;s 250th Birthday: July 4th, 2026</div><div class="er-meta">Saturday, July 4 &nbsp;&middot;&nbsp; Kure Beach &amp; Pleasure Island &nbsp;&middot;&nbsp; Fireworks and celebrations across the island</div></div>
-        <span class="er-badge er-free">Free</span>
-      </div>
-      <div class="ev-row">
-        <div class="er-ico"><svg aria-hidden="true" focusable="false"><use href="#i-aquarium" xlink:href="#i-aquarium"/></svg></div>
-        <div class="er-body"><div class="er-name">Discovery Cove: NC Aquarium at Independence Mall</div><div class="er-meta">Year-round &nbsp;&middot;&nbsp; Independence Mall, Wilmington &nbsp;&middot;&nbsp; Satellite aquarium during Fort Fisher renovation &nbsp;&middot;&nbsp; Free admission</div></div>
-        <span class="er-badge er-free">Free</span>
-      </div>
-    </div>
-        <p class="t-note">Some dates in this list are from the 2026 season and may have passed. The <a href="/events/kure-beach">Kure Beach events page</a> shows what is next.</p>
+    <p>The old seasonal list was removed because those dates have passed. What is coming up is on the <a href="/events/kure-beach">events page</a>, taken from organizer calendars.</p>
       </div>
     </div>
     <p class="t-on-foot"><a href="/events" class="t-btn">View Full Events Calendar &#8594;</a></p>
@@ -461,14 +452,14 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
           <div class="aq-notice">
             <span class="aq-notice-ico"><svg aria-hidden="true" focusable="false"><use href="#i-construction" xlink:href="#i-construction"/></svg></span>
             <div class="aq-notice-text">
-              <strong>The Fort Fisher Aquarium closed May 26, 2026</strong> for a $65 million renovation and expansion expected to take approximately 30 months. During this time, visit <strong>Discovery Cove</strong> at Independence Mall in Wilmington, the aquarium&rsquo;s satellite location featuring animal encounters, marine life habitats, and education programs. Free admission. <a href="https://www.ncaquariums.com/fort-fisher" target="_blank" rel="noopener noreferrer">ncaquariums.com &#8599;</a>
+              <strong>The Fort Fisher Aquarium closed to the public on May 26, 2026.</strong> The state expects about 30 months of construction. No reopening date has been announced. A free Discovery Cove satellite is at Independence Mall in Wilmington. <a href="https://www.ncaquariums.com/faqs-ncaff-renovation-expansion" rel="noopener">NC Aquariums</a>
             </div>
           </div>
-          <div class="aq-desc">When it reopens, the NC Aquarium at Fort Fisher plans to feature a 400,000-gallon sand tiger shark habitat, a Pacific live coral reef, an interactive shark and ray touch pool, an education center, and a rooftop sky deck overlooking the Atlantic. Check ncaquariums.com for current plans.</div>
+          <div class="aq-desc">The aquarium closed to the public on May 26, 2026. No reopening date has been announced. This is not a recommendation to visit it.</div>
           <div class="aq-grid">
             <div class="aq-block">
               <div class="aq-block-label">Fort Fisher Location Status</div>
-              <div class="aq-block-value">Closed from May 26, 2026<br/>Reopening approx. late 2028</div>
+              <div class="aq-block-value">Closed to the public May 26, 2026<br/>No announced reopening date</div>
             </div>
             <div class="aq-block">
               <div class="aq-block-label">Discovery Cove (During Renovation)</div>
@@ -476,7 +467,7 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
             </div>
             <div class="aq-block">
               <div class="aq-block-label">What the Expansion Includes</div>
-              <div class="aq-block-value">400K-gal shark habitat &middot; Live coral reef &middot; Rooftop sky deck</div>
+              <div class="aq-block-value">Not listed here. Check the state announcement.</div>
             </div>
             <div class="aq-block">
               <div class="aq-block-label">Latest Official Updates</div>
@@ -516,6 +507,7 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
       <details><summary>Is Fort Fisher State Historic Site free?</summary><p>General admission is free. The site is open Tuesday to Saturday, 9 a.m. to 5 p.m., and closed Sunday, Monday and designated state holidays. Guided tours cost extra. Details are on the <a href="https://historicsites.nc.gov/all-sites/fort-fisher/plan-your-visit" rel="noopener">NC Historic Sites page</a>.</p></details>
       <details><summary>Can you drive on the beach at Fort Fisher?</summary><p>At Fort Fisher State Recreation Area, yes, with a four-wheel-drive vehicle during posted hours and a per-vehicle fee. NC State Parks says it is the only park in its system that allows four-wheel-drive beach access. See the <a href="https://www.ncparks.gov/fort-fisher-state-recreation-area/home" rel="noopener">park page</a>.</p></details>
       <details><summary>When is paid parking at Kure Beach?</summary><p>In 2026 it ran March 15 to September 30, 8 a.m. to 6 p.m., per local news. Each town sets its dates yearly, so see the <a href="/wilmington-nc-parking">parking guide</a> and confirm with the town.</p></details>
+    <p>Shop pieces for these beaches: <a href="/shop/wrightsville-beach">Wrightsville Beach</a> and <a href="/shop/carolina-beach">Carolina Beach</a>. Kure Beach pieces are on the <a href="/shop/kure-beach">Kure Beach shop</a>.</p>
     <p class="t-src">Sources, checked November 2026: <a href="https://www.townofkurebeach.org/" rel="noopener">Town of Kure Beach</a>; <a href="https://carolina-beach.wilmingtonandbeaches.com/press-and-media/area-information" rel="noopener">Wilmington and Beaches: about the island</a>. Rules, hours and fees change, so confirm before you go. See also the <a href="/pleasure-island">Pleasure Island guide</a>.</p>
   </div>
 </section>
@@ -537,19 +529,19 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
     <h2 class="sec-title sec-title-light">More <em>Town Guides</em></h2>
     <div class="other-towns">
       <a href="/downtown" class="ot">
-        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bridge_1000x.webp" width="1000" height="714" alt="" loading="lazy" decoding="async"/>
+        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bridge_1000x.webp" width="1000" height="714" alt="The Cape Fear Memorial Bridge at Wilmington" loading="lazy" decoding="async"/>
         <span class="ot-ico"><svg aria-hidden="true" focusable="false"><use href="#i-building" xlink:href="#i-building"/></svg></span>
         <div class="ot-name">Downtown Wilmington</div>
         <div class="ot-sub">Ghost tours, film history, river cruises</div>
       </a>
       <a href="/carolina-beach" class="ot">
-        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1000x.webp" width="1000" height="558" alt="" loading="lazy" decoding="async"/>
+        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1000x.webp" width="1000" height="558" alt="The beach at Carolina Beach" loading="lazy" decoding="async"/>
         <span class="ot-ico"><svg aria-hidden="true" focusable="false"><use href="#i-park" xlink:href="#i-park"/></svg></span>
         <div class="ot-name">Carolina Beach</div>
         <div class="ot-sub">Boardwalk, Venus flytraps, surf</div>
       </a>
       <a href="/wrightsville-beach" class="ot">
-        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-wrightsville_1000x.webp" width="1000" height="558" alt="" loading="lazy" decoding="async"/>
+        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-wrightsville_1000x.webp" width="1000" height="558" alt="Wrightsville Beach shoreline" loading="lazy" decoding="async"/>
         <span class="ot-ico"><svg aria-hidden="true" focusable="false"><use href="#i-surf" xlink:href="#i-surf"/></svg></span>
         <div class="ot-name">Wrightsville Beach</div>
         <div class="ot-sub">The closest beach to downtown Wilmington</div>
@@ -589,10 +581,12 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
   <div class="sc-text"><strong>Tours are bookable now</strong>: see what is open this week</div>
   <a href="/things-to-do" class="sc-btn">Browse Experiences &#8594;</a>
 </div>
-<script src="/sound.js" defer></script>
-<script src="/beachwx.js" defer></script>
-<script src="/town.js" defer></script>
-<script src="/widgets.js" defer></script>
-<script src="/shore-plus.js" defer></script>
+<script data-idle="/sound.js"></script>
+<script data-idle="/beachwx.js"></script>
+<script data-idle="/town.js"></script>
+<script data-idle="/shore-plus.js"></script>
+
+<script src="/guide-boot.js" defer data-widgets="1"></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>

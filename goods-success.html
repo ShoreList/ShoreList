@@ -24,12 +24,25 @@
 .gs-err{color:var(--ev-red);font-weight:500}
 </style>
 <link rel="stylesheet" href="/tokens.css"/>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
+<script>
+window.addEventListener('load',function(){
+  function load(){
+    if(document.querySelector('script[data-sl-ga]'))return;
+    var tag=document.createElement('script');
+    tag.async=true;
+    tag.setAttribute('data-sl-ga','1');
+    tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
+    document.head.appendChild(tag);
+  }
+  document.addEventListener('pointerdown',load,{once:true,passive:true});
+  setTimeout(function(){if(window.requestIdleCallback)requestIdleCallback(load);else load();},5000);
+});
+</script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());gtag('config','G-EN91RH3PZV',{page_location:location.origin+location.pathname});
 </script>
-<script src="/purchase-analytics.js" defer></script>
+<script data-idle="/purchase-analytics.js"></script>
 </head>
 <body class="ev-page">
 <nav class="ev-nav" aria-label="Primary"><a class="nav-logo" href="/" aria-label="ShoreList home">Shore<span>List</span></a><div class="nav-right"><a href="/guides">Guides</a><a class="nav-book" href="/things-to-do">Book Experiences</a></div></nav>
@@ -84,5 +97,8 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV',{page_location:location.origi
     .catch(function(){bad('We could not reach the server. Please reload this page in a moment.');});
 })();
 </script>
+
+<script src="/guide-boot.js" defer></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>

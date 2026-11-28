@@ -14,7 +14,8 @@ No secrets belong here. Env var **names** only; values live in each vendor dashb
 | Google Analytics 4 | Traffic and shop events | **PARTIAL** | Measurement ID `G-EN91RH3PZV` in pages (public ID). gtag events coded in `shop-cart.js`, `shop-analytics.js`, `purchase-analytics.js`. Data actually arriving in GA4: UNKNOWN. Google conversion beacon is allowed in CSP; whether an Ads account is linked: UNKNOWN. |
 | Formspree (`xeevzzqd`) | Email signup form | **UNVERIFIED** | Form endpoint in `shop.html` and others (public id). Delivery to the owner and welcome follow-up: UNKNOWN. No ESP (Klaviyo/Mailchimp) in code. |
 | Resend | Transactional email (orders, alerts) | **CODE-ONLY** | `RESEND_API_KEY`, `MAIL_FROM`, `OWNER_ALERT_EMAIL`; sender-domain verification UNKNOWN. |
-| Anthropic API | Shop bot, concierge, itinerary planner | **CODE-ONLY** | `ANTHROPIC_API_KEY`, `SHOP_BOT_MODEL`, `PLANNER_MODEL`; caps `AI_DAILY_CAP`, `SHOP_BOT_DAILY_CAP`; kill switch `SHOP_BOT_OFF`. Spending cap/billing: owner. |
+| Anthropic API | Shop bot, concierge, itinerary planner, guide chat if no Workers credentials | **CODE-ONLY** | `ANTHROPIC_API_KEY`, `SHOP_BOT_MODEL`, `PLANNER_MODEL`, `GUIDE_MODEL`; caps `AI_DAILY_CAP`, `SHOP_BOT_DAILY_CAP`; kill switch `SHOP_BOT_OFF` and `GUIDE_AI`. Spending cap/billing: owner. |
+| Cloudflare Workers AI | Guide chat model when `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN` are both set | **CODE-ONLY** | Model in code is `@cf/meta/llama-3.1-8b-instruct`. No key is in the repo. Live guide returns `source: fallback` and `reason: not_configured` until RJ adds the two Cloudflare names in Netlify. |
 | Netlify (hosting, Functions, Blobs, scheduled functions) | Hosting | **CONNECTED (by repo config)** | `netlify.toml` schedules (`@hourly`, `@daily`) and bundles; dashboard, env var values and deploy settings UNKNOWN. |
 | GitHub Actions | CI, events refresh, IndexNow | **CONNECTED** | `site-check` runs on PRs and `main` (VERIFIED via `gh run list`); `indexnow` succeeded on recent merges. |
 | IndexNow | Search engine ping | **CONNECTED (workflow success)** | `.github/workflows/indexnow.yml`; engine acceptance UNKNOWN. |
@@ -29,7 +30,7 @@ No secrets belong here. Env var **names** only; values live in each vendor dashb
 
 ## Env var names the code reads (VERIFIED by grep; values never recorded)
 
-`STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `RESEND_API_KEY`, `MAIL_FROM`, `OWNER_ALERT_EMAIL`, `PRINTIFY_API_TOKEN`, `PRINTIFY_SHOP_ID`, `CJ_API_KEY`, `CJ_PAY_MODE`, `ANTHROPIC_API_KEY`, `PLANNER_MODEL`, `SHOP_BOT_MODEL`, `SHOP_BOT_DAILY_CAP`, `SHOP_BOT_OFF`, `AI_DAILY_CAP`, `DASHBOARD_PASSWORD`, `URL` (set by Netlify), `LIGHTHOUSE_BIN` (local tooling).
+`STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `RESEND_API_KEY`, `MAIL_FROM`, `OWNER_ALERT_EMAIL`, `PRINTIFY_API_TOKEN`, `PRINTIFY_SHOP_ID`, `CJ_API_KEY`, `CJ_PAY_MODE`, `ANTHROPIC_API_KEY`, `PLANNER_MODEL`, `SHOP_BOT_MODEL`, `GUIDE_MODEL`, `GUIDE_AI`, `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_API_TOKEN`, `SHOP_BOT_DAILY_CAP`, `SHOP_BOT_OFF`, `AI_DAILY_CAP`, `DASHBOARD_PASSWORD`, `URL` (set by Netlify), `LIGHTHOUSE_BIN` (local tooling).
 
 Secret scan of tracked files (2026-11-25, `git grep` for Stripe live/test keys, webhook secrets, Resend keys, Shopify tokens, AWS/GitHub tokens, private keys outside the mocked test file): no matches (VERIFIED). The test file uses obvious dummy values.
 

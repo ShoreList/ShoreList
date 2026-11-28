@@ -10,7 +10,20 @@
 <meta name="description" content="A free weekly letter for Wilmington, NC and the beaches: events, new things to do, a ready-made itinerary and the week&rsquo;s beach conditions."/>
 <meta property="og:title" content="The Shore Report by ShoreList"/><meta property="og:description" content="Events, things to do, itineraries and beach conditions for Wilmington NC, in your inbox every week."/><meta property="og:type" content="website"/><meta property="og:url" content="https://shorelist.net/weekly"/>
 <script>document.documentElement.className+=' js'</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
+<script>
+window.addEventListener('load',function(){
+  function load(){
+    if(document.querySelector('script[data-sl-ga]'))return;
+    var tag=document.createElement('script');
+    tag.async=true;
+    tag.setAttribute('data-sl-ga','1');
+    tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
+    document.head.appendChild(tag);
+  }
+  document.addEventListener('pointerdown',load,{once:true,passive:true});
+  setTimeout(function(){if(window.requestIdleCallback)requestIdleCallback(load);else load();},5000);
+});
+</script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EN91RH3PZV');</script>
 <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb4-golden_1200x630_crop_center.webp"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb4-golden_1200x630_crop_center.webp"/>
 <link rel="icon" href="/favicon.ico"/><link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
@@ -71,7 +84,7 @@
 .sl-spon a{font-weight:500;color:#B5362F;margin-left:auto;padding:12px 0;min-height:44px;display:inline-flex;align-items:center}
 .sl-spon-w{padding:0 clamp(16px,4vw,40px);background:var(--ev-sail)}
 </style>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 <link rel="stylesheet" href="/tokens.css"/>
 </head>
 <body class="ev-page">
@@ -131,6 +144,9 @@ f.addEventListener('submit',function(e){e.preventDefault();var v=f.email.value.t
 var b=f.querySelector('button');b.disabled=true;b.textContent='Joining...';
 fetch('https://formspree.io/f/xeevzzqd',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify({email:v,list:f.getAttribute('data-list'),source:location.pathname,_subject:'The Shore Report signup'})}).then(function(r){if(!r.ok)throw 0;m.textContent='You are in. Watch your inbox for the next issue.';f.reset();t('weekly_signup',{})}).catch(function(){m.textContent='Something went wrong. Please try again, or email rj@shorelist.net.'}).finally(function(){b.disabled=false;b.textContent='Get it free'})});})();
 </script>
-<script src="/shore-plus.js" defer></script>
+<script data-idle="/shore-plus.js"></script>
+
+<script src="/guide-boot.js" defer></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>

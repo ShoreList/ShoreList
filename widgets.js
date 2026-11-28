@@ -9,6 +9,7 @@
   function norm(s) { return String(s || '').toLowerCase().replace(/[^a-z0-9\s]/g, ' '); }
   var STOP = { the: 1, a: 1, and: 1, for: 1, to: 1, in: 1, of: 1, is: 1, what: 1, where: 1, can: 1, i: 1, we: 1, do: 1, with: 1, on: 1, my: 1, me: 1, near: 1, good: 1 };
   function find(q, n) {
+    if (window.ShoreFront) return window.ShoreFront.search(index || [], q, n || 4);
     var t = norm(q).split(/\s+/).filter(function (w) { return w.length > 1 && !STOP[w]; });
     return (index || []).map(function (it) {
       var hay = norm(it.title + ' ' + (it.sub || '') + ' ' + (it.slug || '')), s = 0;
@@ -97,12 +98,8 @@
   function add(cls, html) { var d = document.createElement('div'); d.className = 'm ' + cls; d.innerHTML = html; log.appendChild(d); log.scrollTop = log.scrollHeight; return d; }
   function section(it) { return it.t === 'cat' ? 'Experiences' : /shop/.test(it.url) ? 'Shop' : /event/.test(it.url) ? 'Events' : 'Guide'; }
   function chipsNow() {
-    var c = ['Plan my day', 'Surf lesson', 'Ghost tour', 'Beach gear'];
-    var t = ctx.text;
-    if (/rain|shower|storm/.test(t)) c.unshift('Rainy day ideas');
-    else if (/waves (\d+\.\d)/.test(t) && parseFloat(RegExp.$1) >= 2) c.unshift('Is it good for surfing?');
-    else c.unshift('What is on this weekend?');
-    box.querySelector('#ccc').innerHTML = c.slice(0, 5).map(function (x) { return '<button type="button">' + esc(x) + '</button>'; }).join('');
+    var c = ['Tonight', 'This weekend', 'Rainy day', 'With kids', 'Free', 'Where to eat', 'Beach report'];
+    box.querySelector('#ccc').innerHTML = c.map(function (x) { return '<button type="button">' + esc(x) + '</button>'; }).join('');
   }
   chipsNow();
   function typeInto(el, text, cb) {
@@ -118,14 +115,18 @@
   }
   function ask(q) {
     q = q.trim(); if (q.length < 2) return; track('concierge_ask');
+    if (window.ShoreFront) ShoreFront.remember({ q: q });
     add('me', esc(q));
     var wait = add('bot', '<span class="think"><i></i><i></i><i></i></span>');
     loadIndex().then(function () {
-      var hits = find(q, 4), extra = [];
-      if (/shop|gear|shirt|tee|hat|apparel|merch|tote|chair|umbrella|towel/i.test(q)) extra.push({ title: 'ShoreList Shop', sub: 'Coastal tees, totes and beach gear', url: '/shop' });
-      if (/event|tonight|weekend|festival|music|this week|today/i.test(q)) extra.push({ title: 'Events Guide', sub: 'Dated local events, updated regularly', url: '/events' });
-      if (/plan|itinerary|day|trip/i.test(q)) extra.push({ title: 'AI Trip Planner', sub: 'Build a full day for your group', url: '/planner' });
-      hits = extra.concat(hits).slice(0, 4);
+      var hits = find(q, 4);
+      if (!window.ShoreFront) {
+        var extra = [];
+        if (/shop|gear|shirt|tee|hat|apparel|merch|tote|chair|umbrella|towel/i.test(q)) extra.push({ title: 'ShoreList Shop', sub: 'Coastal tees, totes and beach gear', url: '/shop' });
+        if (/event|tonight|weekend|festival|music|this week|today/i.test(q)) extra.push({ title: 'Events Guide', sub: 'Dated local events, updated regularly', url: '/events' });
+        if (/plan|itinerary|day|trip/i.test(q)) extra.push({ title: 'AI Trip Planner', sub: 'Build a full day for your group', url: '/planner' });
+        hits = extra.concat(hits).slice(0, 4);
+      }
       var fallback = hits.length ? 'Here are the closest matches:' : 'I could not find an exact match. Try experiences, events or the shop:';
       if (!hits.length) hits = [{ title: 'Browse experiences', sub: 'All experiences', url: '/category' }, { title: 'Events Guide', sub: 'What is on', url: '/events' }, { title: 'Shop', sub: 'Coastal apparel and gear', url: '/shop' }];
       function show(text) {

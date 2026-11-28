@@ -8,7 +8,7 @@
 <meta property="og:title" content="Shore Picks: Wilmington, NC Restaurants, Coffee and Bars | ShoreList"/>
 <meta property="og:description" content="The locals' guide to where to eat, sip, and celebrate across Wilmington &amp; the beaches. Handpicked, honest, and always updated."/>
 <meta property="og:type" content="website"/>
-<meta property="og:image" content="https://shorelist.net/og-home.jpg"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://shorelist.net/og-home.jpg"/>
+<meta property="og:image" content="https://shorelist.net/img/hero/wb-banks-1920.webp"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://shorelist.net/img/hero/wb-banks-1920.webp"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <link rel="canonical" href="https://shorelist.net/shore-picks"/>
@@ -245,7 +245,20 @@ footer{text-align:center;padding:52px 26px 40px;}
 .c-book{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;}
 .sl-spon a{display:inline-flex;align-items:center;min-height:44px;}
 </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
+<script>
+window.addEventListener('load',function(){
+  function load(){
+    if(document.querySelector('script[data-sl-ga]'))return;
+    var tag=document.createElement('script');
+    tag.async=true;
+    tag.setAttribute('data-sl-ga','1');
+    tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
+    document.head.appendChild(tag);
+  }
+  document.addEventListener('pointerdown',load,{once:true,passive:true});
+  setTimeout(function(){if(window.requestIdleCallback)requestIdleCallback(load);else load();},5000);
+});
+</script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());gtag('config','G-EN91RH3PZV');
@@ -254,7 +267,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
 <link rel="stylesheet" href="/scene.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 <link rel="stylesheet" href="/tokens.css"/>
 </head>
 <body>
@@ -343,8 +356,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
   <div class="sec-head">
     <div><h2>Featured <em>Shore Pick</em></h2><p>This week's premium spotlight: the top of the page.</p></div>
   </div>
-  <div class="spotlight" data-pick="caprice" data-cat="eat" data-loc="downtown" data-vibe="date">
-    <div class="sl-img"><img loading="lazy" decoding="async" width="1000" height="667" alt="Steak frites, mussels and red wine by candlelight" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-pick-caprice_1000x.webp"/></div>
+  <div class="spotlight no-photo" style="grid-template-columns:1fr" data-pick="caprice" data-cat="eat" data-loc="downtown" data-vibe="date">
     <div class="sl-body">
       <span class="sl-badge">&#9733; Featured Shore Pick</span>
       <h3>Caprice Bistro</h3>
@@ -377,8 +389,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       </div>
     </article>
 
-    <article data-pick="opa" class="card" data-cat="eat" data-loc="downtown" data-vibe="date waterfront">
-      <div class="c-img"><img loading="lazy" decoding="async" width="1000" height="667" alt="Grilled whole fish and Greek salad on a table by the water" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-pick-opa_1000x.webp"/></div>
+    <article data-pick="opa" class="card no-photo" data-cat="eat" data-loc="downtown" data-vibe="date waterfront">
       <span class="c-loc">Downtown</span>
       <div class="c-body">
         <h3 class="c-name">Opa by Giorgios</h3>
@@ -389,8 +400,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       </div>
     </article>
 
-    <article data-pick="marinagrill" class="card" data-cat="eat" data-loc="downtown" data-vibe="family waterfront">
-      <div class="c-img"><img loading="lazy" decoding="async" width="1000" height="667" alt="Flatbread and fish tacos on a marina patio" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-pick-marinagrill_1000x.webp"/></div>
+    <article data-pick="marinagrill" class="card no-photo" data-cat="eat" data-loc="downtown" data-vibe="family waterfront">
       <span class="c-loc">Downtown</span>
       <div class="c-body">
         <h3 class="c-name">Marina Grill</h3>
@@ -401,8 +411,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       </div>
     </article>
 
-    <article data-pick="steam" class="card" data-cat="eat" data-loc="downtown" data-vibe="date waterfront">
-      <div class="c-img"><img loading="lazy" decoding="async" width="1000" height="667" alt="Seared scallops by a window over the river" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-pick-steam_1000x.webp"/></div>
+    <article data-pick="steam" class="card no-photo" data-cat="eat" data-loc="downtown" data-vibe="date waterfront">
       <span class="c-loc">Downtown</span>
       <div class="c-body">
         <h3 class="c-name">Steam Restaurant &amp; Bar</h3>
@@ -413,8 +422,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       </div>
     </article>
 
-    <article data-pick="ruths" class="card" data-cat="eat" data-loc="downtown" data-vibe="date">
-      <div class="c-img"><img loading="lazy" decoding="async" width="1000" height="667" alt="Sizzling steak on a hot plate" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-pick-ruths_1000x.webp"/></div>
+    <article data-pick="ruths" class="card no-photo" data-cat="eat" data-loc="downtown" data-vibe="date">
       <span class="c-loc">Downtown</span>
       <div class="c-body">
         <h3 class="c-name">Ruth&rsquo;s Chris Steak House</h3>
@@ -929,8 +937,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       </div>
     </article>
 
-    <article data-pick="rooftop" class="card" data-cat="drinks" data-loc="downtown" data-vibe="date">
-      <div class="c-img"><img loading="lazy" decoding="async" width="1000" height="667" alt="A rooftop bar at night under string lights" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-pick-rooftop_1000x.webp"/></div>
+    <article data-pick="rooftop" class="card no-photo" data-cat="drinks" data-loc="downtown" data-vibe="date">
       <span class="c-badge std">Shore Pick</span><span class="c-loc">Downtown</span>
       <div class="c-body">
         <h3 class="c-name">The Rooftop Bar</h3>
@@ -941,8 +948,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       </div>
     </article>
 
-    <article data-pick="dram" class="card" data-cat="drinks" data-loc="downtown" data-vibe="date">
-      <div class="c-img"><img loading="lazy" decoding="async" width="1000" height="667" alt="A stirred whiskey cocktail with an orange twist" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-pick-dram_1000x.webp"/></div>
+    <article data-pick="dram" class="card no-photo" data-cat="drinks" data-loc="downtown" data-vibe="date">
       <span class="c-badge std">Shore Pick</span><span class="c-loc">Downtown</span>
       <div class="c-body">
         <h3 class="c-name">Dram Yard</h3>
@@ -953,8 +959,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       </div>
     </article>
 
-    <article data-pick="bluepost" class="card" data-cat="drinks" data-loc="downtown" data-vibe="family">
-      <div class="c-img"><img loading="lazy" decoding="async" width="1000" height="667" alt="A pool table and two pints in a brick bar" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-pick-bluepost_1000x.webp"/></div>
+    <article data-pick="bluepost" class="card no-photo" data-cat="drinks" data-loc="downtown" data-vibe="family">
       <span class="c-badge std">Shore Pick</span><span class="c-loc">Downtown</span>
       <div class="c-body">
         <h3 class="c-name">The Blue Post</h3>
@@ -966,8 +971,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
     </article>
 
     <!-- CAROLINA BEACH DRINKS -->
-    <article data-pick="oceangrill" class="card feat" data-cat="drinks" data-loc="carolina-beach" data-vibe="waterfront family">
-      <div class="c-img"><img loading="lazy" decoding="async" width="1000" height="667" alt="A frozen drink on a tiki bar over the ocean" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-pick-oceangrill_1000x.webp"/></div>
+    <article data-pick="oceangrill" class="card no-photo feat" data-cat="drinks" data-loc="carolina-beach" data-vibe="waterfront family">
       <span class="c-badge std">Shore Pick</span><span class="c-loc">Carolina Beach</span>
       <div class="c-body">
         <h3 class="c-name">Ocean Grill &amp; Tiki Bar</h3>
@@ -978,8 +982,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       </div>
     </article>
 
-    <article data-pick="fatpelican" class="card" data-cat="drinks" data-loc="carolina-beach" data-vibe="dog">
-      <div class="c-img"><img loading="lazy" decoding="async" width="1000" height="667" alt="A cold beer on a worn bar under string lights" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-pick-fatpelican_1000x.webp"/></div>
+    <article data-pick="fatpelican" class="card no-photo" data-cat="drinks" data-loc="carolina-beach" data-vibe="dog">
       <span class="c-badge std">Shore Pick</span><span class="c-loc">Carolina Beach</span>
       <div class="c-body">
         <h3 class="c-name">The Fat Pelican</h3>
@@ -990,8 +993,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       </div>
     </article>
 
-    <article data-pick="hurricane" class="card" data-cat="drinks" data-loc="carolina-beach" data-vibe="waterfront">
-      <div class="c-img"><img loading="lazy" decoding="async" width="1000" height="667" alt="A bucket of beers and wings on a rooftop deck" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-pick-hurricane_1000x.webp"/></div>
+    <article data-pick="hurricane" class="card no-photo" data-cat="drinks" data-loc="carolina-beach" data-vibe="waterfront">
       <span class="c-badge std">Shore Pick</span><span class="c-loc">Carolina Beach</span>
       <div class="c-body">
         <h3 class="c-name">Hurricane Alley's</h3>
@@ -1002,8 +1004,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       </div>
     </article>
 
-    <article data-pick="lazypirate" class="card" data-cat="drinks" data-loc="carolina-beach" data-vibe="family">
-      <div class="c-img"><img loading="lazy" decoding="async" width="1000" height="667" alt="Tropical drinks at a tiki hut by a volleyball court" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-pick-lazypirate_1000x.webp"/></div>
+    <article data-pick="lazypirate" class="card no-photo" data-cat="drinks" data-loc="carolina-beach" data-vibe="family">
       <span class="c-badge std">Shore Pick</span><span class="c-loc">Carolina Beach</span>
       <div class="c-body">
         <h3 class="c-name">Lazy Pirate Island Sports Grill</h3>
@@ -1014,8 +1015,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       </div>
     </article>
 
-    <article data-pick="silverdollar" class="card" data-cat="drinks" data-loc="carolina-beach" data-vibe="waterfront">
-      <div class="c-img"><img loading="lazy" decoding="async" width="1000" height="667" alt="A microphone on a small bar stage" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-pick-silverdollar_1000x.webp"/></div>
+    <article data-pick="silverdollar" class="card no-photo" data-cat="drinks" data-loc="carolina-beach" data-vibe="waterfront">
       <span class="c-badge std">Shore Pick</span><span class="c-loc">Carolina Beach</span>
       <div class="c-body">
         <h3 class="c-name">Silver Dollar &amp; The Top Dollar Rooftop</h3>
@@ -1026,8 +1026,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       </div>
     </article>
 
-    <article data-pick="sanddollar" class="card" data-cat="drinks" data-loc="carolina-beach" data-vibe="family">
-      <div class="c-img"><img loading="lazy" decoding="async" width="1000" height="667" alt="Wings and draft beers at a sports bar" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-pick-sanddollar_1000x.webp"/></div>
+    <article data-pick="sanddollar" class="card no-photo" data-cat="drinks" data-loc="carolina-beach" data-vibe="family">
       <span class="c-badge std">Shore Pick</span><span class="c-loc">Carolina Beach</span>
       <div class="c-body">
         <h3 class="c-name">Sand Dollar Sports Bar</h3>
@@ -1038,8 +1037,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       </div>
     </article>
 
-    <article data-pick="lastresort" class="card" data-cat="drinks" data-loc="carolina-beach" data-vibe="dog">
-      <div class="c-img"><img loading="lazy" decoding="async" width="1000" height="667" alt="Two draft beers on a weathered bar" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-pick-lastresort_1000x.webp"/></div>
+    <article data-pick="lastresort" class="card no-photo" data-cat="drinks" data-loc="carolina-beach" data-vibe="dog">
       <span class="c-badge std">Shore Pick</span><span class="c-loc">Carolina Beach</span>
       <div class="c-body">
         <h3 class="c-name">The Last Resort</h3>
@@ -1051,8 +1049,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
     </article>
 
     <!-- WRIGHTSVILLE DRINKS -->
-    <article data-pick="palmroom" class="card feat" data-cat="drinks" data-loc="wrightsville" data-vibe="family">
-      <div class="c-img"><img loading="lazy" decoding="async" width="1000" height="667" alt="A rum and cola on a dark wood bar" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-pick-palmroom_1000x.webp"/></div>
+    <article data-pick="palmroom" class="card no-photo feat" data-cat="drinks" data-loc="wrightsville" data-vibe="family">
       <span class="c-badge">&#9733; Featured</span><span class="c-loc">Wrightsville</span>
       <div class="c-body">
         <h3 class="c-name">The Palm Room</h3>
@@ -1063,8 +1060,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       </div>
     </article>
 
-    <article data-pick="poes" class="card" data-cat="drinks" data-loc="wrightsville" data-vibe="family">
-      <div class="c-img"><img loading="lazy" decoding="async" width="1000" height="667" alt="A burger and a dark beer in a tavern" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-pick-poes_1000x.webp"/></div>
+    <article data-pick="poes" class="card no-photo" data-cat="drinks" data-loc="wrightsville" data-vibe="family">
       <span class="c-badge std">Shore Pick</span><span class="c-loc">Wrightsville</span>
       <div class="c-body">
         <h3 class="c-name">Poe's Tavern</h3>
@@ -1075,8 +1071,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       </div>
     </article>
 
-    <article data-pick="bankschannel" class="card" data-cat="drinks" data-loc="wrightsville" data-vibe="waterfront family">
-      <div class="c-img"><img loading="lazy" decoding="async" width="1000" height="667" alt="A pint and fish and chips" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-pick-bankschannel_1000x.webp"/></div>
+    <article data-pick="bankschannel" class="card no-photo" data-cat="drinks" data-loc="wrightsville" data-vibe="waterfront family">
       <span class="c-badge std">Shore Pick</span><span class="c-loc">Wrightsville</span>
       <div class="c-body">
         <h3 class="c-name">Banks Channel Pub &amp; Grille</h3>
@@ -1087,8 +1082,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       </div>
     </article>
 
-    <article data-pick="reddogs" class="card" data-cat="drinks" data-loc="wrightsville" data-vibe="date">
-      <div class="c-img"><img loading="lazy" decoding="async" width="1000" height="667" alt="A dance floor under club lights" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-pick-reddogs_1000x.webp"/></div>
+    <article data-pick="reddogs" class="card no-photo" data-cat="drinks" data-loc="wrightsville" data-vibe="date">
       <span class="c-badge std">Shore Pick</span><span class="c-loc">Wrightsville</span>
       <div class="c-body">
         <h3 class="c-name">Red Dogs</h3>
@@ -1099,8 +1093,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       </div>
     </article>
 
-    <article data-pick="jimmys" class="card" data-cat="drinks" data-loc="wrightsville" data-vibe="family">
-      <div class="c-img"><img loading="lazy" decoding="async" width="1000" height="667" alt="A bucket of beers by a live music stage" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-pick-jimmys_1000x.webp"/></div>
+    <article data-pick="jimmys" class="card no-photo" data-cat="drinks" data-loc="wrightsville" data-vibe="family">
       <span class="c-badge std">Shore Pick</span><span class="c-loc">Wrightsville</span>
       <div class="c-body">
         <h3 class="c-name">Jimmy's</h3>
@@ -1112,8 +1105,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
     </article>
 
     <!-- KURE DRINKS -->
-    <article data-pick="fantasy" class="card feat" data-cat="drinks" data-loc="kure" data-vibe="waterfront family">
-      <div class="c-img"><img loading="lazy" decoding="async" width="1000" height="667" alt="A tiki patio with torches at dusk" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-pick-fantasy_1000x.webp"/></div>
+    <article data-pick="fantasy" class="card no-photo feat" data-cat="drinks" data-loc="kure" data-vibe="waterfront family">
       <span class="c-badge">&#9733; Featured</span><span class="c-loc">Kure Beach</span>
       <div class="c-body">
         <h3 class="c-name">Big Daddy's Fantasy Island Tiki Bar</h3>
@@ -1124,8 +1116,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       </div>
     </article>
 
-    <article data-pick="budjoes" class="card" data-cat="drinks" data-loc="kure" data-vibe="dog">
-      <div class="c-img"><img loading="lazy" decoding="async" width="1000" height="667" alt="A dog relaxing on a sandy deck beside two beers" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-pick-budjoes_1000x.webp"/></div>
+    <article data-pick="budjoes" class="card no-photo" data-cat="drinks" data-loc="kure" data-vibe="dog">
       <span class="c-badge std">Shore Pick</span><span class="c-loc">Kure Beach</span>
       <div class="c-body">
         <h3 class="c-name">Bud &amp; Joe's Sandbar</h3>
@@ -1136,8 +1127,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
       </div>
     </article>
 
-    <article data-pick="jackbar" class="card" data-cat="drinks" data-loc="kure" data-vibe="family">
-      <div class="c-img"><img loading="lazy" decoding="async" width="1000" height="667" alt="A row of island cocktails" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-pick-jackbar_1000x.webp"/></div>
+    <article data-pick="jackbar" class="card no-photo" data-cat="drinks" data-loc="kure" data-vibe="family">
       <span class="c-badge std">Shore Pick</span><span class="c-loc">Kure Beach</span>
       <div class="c-body">
         <h3 class="c-name">Jack Mackerel's Bar</h3>
@@ -1234,11 +1224,10 @@ document.getElementById('applyBtn').addEventListener('click',function(){
   window.location.href='mailto:rj@shorelist.net?subject=Shore%20Picks%20Application%20-%20'+biz+'&body='+body;
 });
 </script>
-<script src="/picks.js" defer></script>
-<script src="/sound.js" defer></script>
-<script src="/beachwx.js" defer></script>
-<script src="/widgets.js" defer></script>
-<script src="/shore-plus.js" defer></script>
+<script data-idle="/picks.js"></script>
+<script data-idle="/sound.js"></script>
+<script data-idle="/beachwx.js"></script>
+<script data-idle="/shore-plus.js"></script>
 <script>
 /* A pick photo that fails to load (file missing from the CDN) must not leave an empty dark box: drop the image block and let the card read as text. */
 (function(){
@@ -1248,5 +1237,8 @@ document.getElementById('applyBtn').addEventListener('click',function(){
   window.addEventListener('load',function(){sweep();setTimeout(sweep,1500);});
 })();
 </script>
+
+<script src="/guide-boot.js" defer data-widgets="1"></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>

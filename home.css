@@ -1,6 +1,26 @@
 /* ShoreList home page: everything below the hero. Loaded from the body, after the hero markup,
    so it never delays first paint. Hero, nav and intro styles stay inline in index.html. */
+body.home .cc-fab,body.home .cc{display:none!important}
+.cond-card{background:#F4F1EA;color:#0E1F33;padding:28px 20px 4px}
+.cond-card .cond{position:static;left:auto;right:auto;bottom:auto;max-width:760px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:14px 16px;background:#fff;color:#0E1F33;border:1px solid rgba(14,31,51,.12);border-radius:2px}
+.cond-card .cond .dot{background:#2E8B6F}
+.cond-card .cond button{border:1px solid rgba(14,31,51,.28);background:#fff;color:#0E1F33;min-height:40px}
+.cond-card .cond button[aria-pressed=true]{background:#0E1F33;color:#F4F1EA}
+.cond-card .cond .sur{margin-left:0}
+.cond-card .cond .tip a{color:#0E1F33}
 :root{--hn:#0E1F33;--hn2:#0E1F33;--hs:#F4F1EA;--hd:#D9C7A3;--hg:#9FC3B8;--hink:#0E1F33;--hmute:#0E1F33;--hred:#B5362F;--hcoral:#D9C7A3;--hline:rgba(14,31,51,.12);--hease:cubic-bezier(.2,.7,.2,1)}
+
+/* Featured pier cam under the beach report. The 16:9 box is reserved before play. */
+.hx-cam{max-width:420px;margin:8px 0 28px}
+.hx-cam h3{font-family:'Libre Caslon Display',Georgia,serif;font-weight:400;font-size:1.45rem;margin:0 0 8px}
+.hx-cam .cam-stage{position:relative;aspect-ratio:16/9;background:#0E1F33;overflow:hidden}
+.hx-cam .cam-stage img,.hx-cam .cam-stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
+.hx-cam .cam-play{position:absolute;left:12px;right:12px;bottom:12px;min-height:48px;border:0;background:#F4F1EA;color:#0E1F33;font:600 .95rem "DM Sans",system-ui,sans-serif;cursor:pointer}
+.hx-cam .cam-wx{margin:8px 0;background:#0E1F33;color:#F4F1EA;padding:10px 12px;font-size:.92rem;line-height:1.45}
+.hx-cam .cam-close{display:none;min-height:44px;margin-top:8px;border:1.5px solid rgba(14,31,51,.28);background:#fff;color:#0E1F33;font:inherit;cursor:pointer;padding:8px 12px}
+.hx-cam .is-on .cam-close{display:inline-flex;align-items:center}
+.hx-cam p{margin:6px 0;line-height:1.5}
+.hx-cam a{color:#8A5A3B}
 
 /* ---------- shared section language ---------- */
 .hx{padding:88px 24px;background:var(--hs);color:var(--hink);position:relative}
@@ -65,6 +85,16 @@
 .hx-tile .d.live{color:#9FC3B8;font-weight:500}
 @media(hover:hover){.hx-tile:hover{transform:translateY(-4px);background:rgba(244,241,234,.15);border-color:rgba(255,155,123,.7)}}
 
+.tn-grid{display:grid;grid-template-columns:1fr;gap:22px;min-height:280px}
+@media(min-width:800px){.tn-grid{grid-template-columns:1fr 1fr}}
+.tn-grid h3{font-family:Georgia,serif;font-weight:400;font-size:1.35rem;margin:0 0 10px}
+.tn-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.tn-skel{display:block;height:72px;border-radius:8px;background:rgba(14,31,51,.06)}
+.tn-card{display:block;padding:12px 14px;border:1px solid rgba(14,31,51,.12);border-radius:10px;background:#fff;text-decoration:none;color:#0E1F33}
+.tn-card b{display:block;font-weight:500}
+.tn-card span{display:block;font-size:.84rem;opacity:.8}
+.tn-note{margin:0;font-size:.95rem}
+#tonight-rails .sbtn{min-height:44px}
 /* ---------- beach report frame (cards are drawn by beachwx.js) ---------- */
 .hx-beach{background:linear-gradient(180deg,#F4F1EA 0%,#F4F1EA 100%);padding-top:60px}
 .hx-beach .bw{min-height:660px}

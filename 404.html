@@ -7,7 +7,20 @@
 <meta name="robots" content="noindex"/>
 <meta name="theme-color" content="#0E1F33"/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" rel="stylesheet"/></noscript>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
+<script>
+window.addEventListener('load',function(){
+  function load(){
+    if(document.querySelector('script[data-sl-ga]'))return;
+    var tag=document.createElement('script');
+    tag.async=true;
+    tag.setAttribute('data-sl-ga','1');
+    tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
+    document.head.appendChild(tag);
+  }
+  document.addEventListener('pointerdown',load,{once:true,passive:true});
+  setTimeout(function(){if(window.requestIdleCallback)requestIdleCallback(load);else load();},5000);
+});
+</script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());gtag('config','G-EN91RH3PZV');
@@ -57,14 +70,14 @@ footer{background:var(--navy);color:rgba(244,241,234,.8);padding:40px 24px;text-
 <link rel="manifest" href="/manifest.webmanifest"/>
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
 <link rel="stylesheet" href="/luxe.css"/>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 <link rel="stylesheet" href="/tokens.css"/>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <nav class="nf-nav" aria-label="Primary"><a href="/" class="brand" aria-label="ShoreList home">Shore<span>List</span></a></nav>
 <main id="main">
-  <img class="nf-bg" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bench_1920x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bench_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bench_1920x.webp 1920w" sizes="100vw" width="1920" height="1373" alt="" fetchpriority="high" decoding="async"/>
+  <img class="nf-bg" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bench_1920x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bench_1280x.webp 1280w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bench_1920x.webp 1920w" sizes="100vw" width="1920" height="1373" alt="" fetchpriority="high" decoding="async"/>
   <div class="nf">
     <div class="code"><i></i>Error 404 &middot; Page not found</div>
     <h1>Looks like you drifted <em>off course</em></h1>
@@ -114,6 +127,9 @@ footer{background:var(--navy);color:rgba(244,241,234,.8);padding:40px 24px;text-
   }).catch(function(){});
 })();
 </script>
-<script src="/shore-plus.js" defer></script>
+<script data-idle="/shore-plus.js"></script>
+
+<script src="/guide-boot.js" defer></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>

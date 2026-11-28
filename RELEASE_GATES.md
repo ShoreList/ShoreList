@@ -2,6 +2,8 @@
 
 A release is any merge to `main` (it can deploy). Every gate needs evidence in the PR: command, exit code, or screenshot, labeled VERIFIED. A gate you could not run is reported UNKNOWN and blocks only if marked **hard**. Owner approval is required for items marked **owner**.
 
+**Rulebook pointer:** every gate below also follows [docs/command-center/SHORELIST-STANDARDS.md](docs/command-center/SHORELIST-STANDARDS.md) (rule IDs BW, HN, AR, BL, PH, PR, MN, ST, SC, PO, SU, OP). G6 is satisfied by the same independent review the Rulebook requires (SC1, SC5); the owner's Nov 27, 2026 delegation replaces per-product owner quality approval for items that pass every hard rule at 90/100 or better.
+
 ## G0 Scope and approvals (hard)
 - [ ] Change is within an authorized category (AGENTS rule 2) or has explicit owner approval in the PR thread.
 - [ ] No spend, account change, deletion, or new product publication included.
@@ -38,10 +40,14 @@ Mobile Lighthouse (CI `lighthouse-budget.mjs`). Floors are 90 for performance, a
 - [ ] `sitemap.xml` entries and `lastmod` correct for changed URLs; `update-sitemap-lastmod` run when needed.
 - [ ] No new duplicate titles (compare `thin-content-gate` counts to baseline 201 titles / 222 descriptions).
 
-## G6 Product fidelity (hard for catalog or image changes)
-- [ ] Each changed card's lead image was opened and matches product type, color, text and design of what Shopify sells (name, variant colors).
+## G6 Coastal luxury and product fidelity (hard for new or materially revised brand work)
+
+- [ ] The exact revision has an independent 90/100 or higher coastal luxury review, checked local references, no hard failures, and evidence for all five dimensions in the [Coastal Brand Standard](docs/COASTAL-BRAND-STANDARD.md).
+- [ ] New merchandise also has evidence for all ten product criteria. The mean is at least 9/10, each score is at least 8/10, and the blind photo review is at least 8/10. Obtain owner quality approval before publication.
+- [ ] Each changed card's lead image was opened and matches the exact product type, color, text and design at the intended checkout.
+- [ ] Before removing or replacing product imagery, audit both assets, prepare the exact replacement pair, and complete the existing product, coastal luxury and blind photo scoring. Release the accurately disclosed Higgsfield lookbook first and the verified actual studio image second in the same change. Record the sellable variant, file digests, scale and realism evidence, and exact-version approval in `docs/shop-photo-review.json`.
 - [ ] No color shown that is not sold; no baked-in titles from AI tools; AI lifestyle imagery or video is labeled and does not misrepresent the product.
-- [ ] Price and variants on card match Shopify (re-query Admin or live `shop-product`).
+- [ ] Price and variants on the card match the intended checkout. Verify them against Shopify Admin or live `shop-product`, Fourthwall merchant data, or the Direct catalog and authenticated CJ variant data, as applicable.
 - [ ] Banned wording absent (see `tools/ingest-shopify-products.mjs`), no em/en dashes in copy, no divisive slogans.
 
 ## G7 Checkout and discounts (hard for cart, promo, catalog price, or Shopify discount changes)

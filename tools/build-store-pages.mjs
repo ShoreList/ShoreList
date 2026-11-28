@@ -1,4 +1,5 @@
-// Builds /size-guide, /shipping-returns and /gift-guide. Run: node tools/build-store-pages.mjs
+// Builds /size-guide, /shipping-returns, /gift-guide, town shop pages and /shop/harbor-goods.
+// Run: node tools/build-store-pages.mjs
 // The gift guide is generated from shop-catalog.json (read only) so every link, name and price is the catalog's.
 // tools/check-site.mjs fails if a gift-guide link is not a live catalog item, so re-run this after the catalog changes.
 import fs from 'node:fs';
@@ -12,7 +13,7 @@ const byId = new Map(cat.items.map((i) => [i.id, i]));
 const FOOT = `<footer class="ev-foot"><div>&copy; 2026 ShoreList LLC &middot; Wilmington, NC &amp; the Beaches</div><div><a href="/events">Events Guide</a><a href="/things-to-do">Things to Do</a><a href="/shore-picks">Shore Picks</a><a href="/where-to-stay">Where to Stay</a><a href="/wilmington-weather">Weather</a><a href="/guides">PDF Guides</a><a href="/prints">Art Prints</a><a href="/shipping-returns">Shipping &amp; Returns</a><a href="/size-guide">Size Guide</a><a href="/gift-guide">Gift Guide</a><a href="/how-we-verify">How we verify</a><a href="/legal">Privacy &amp; Terms</a></div></footer>`;
 const NAV = `<nav class="ev-nav" aria-label="Primary"><a class="nav-logo" href="/" aria-label="ShoreList home">Shore<span>List</span></a><div class="nav-right"><a href="/shop">Shop</a><a href="/events">Events</a><a href="/things-to-do">Things to Do</a><a class="nav-book" href="/things-to-do">Book Experiences</a></div></nav>`;
 
-function page({ slug, title, desc, eye, h1, lede, body, ld = [], wide = false, ogImage = `${SITE}/og-home.jpg` }) {
+function page({ slug, title, desc, eye, h1, lede, body, ld = [], wide = false, ogImage = `${SITE}/og-home.jpg`, orderBy = false }) {
   const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'ShoreList', item: SITE + '/' },
     { '@type': 'ListItem', position: 2, name: 'Shop', item: SITE + '/shop' },
@@ -31,8 +32,21 @@ function page({ slug, title, desc, eye, h1, lede, body, ld = [], wide = false, o
 <meta property="og:title" content="${esc(title)}"/><meta property="og:description" content="${esc(desc)}"/><meta property="og:type" content="website"/><meta property="og:url" content="${SITE}/${slug}"/>
 <meta property="og:image" content="${ogImage}"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="${ogImage}"/>
 <link rel="icon" href="/favicon.ico"/><link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
-<script>document.documentElement.className+=' js'</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
+<script>document.documentElement.className+=' js'</script>${orderBy ? `\n<script>(function(){document.documentElement.setAttribute('data-orderby',Date.now()<Date.UTC(2026,11,9,5,0,0)?'on':'off');})();</script>\n<style>.order-by{display:none}html[data-orderby="on"] .order-by{display:block}</style>` : ''}
+<script>
+window.addEventListener('load',function(){
+  function load(){
+    if(document.querySelector('script[data-sl-ga]'))return;
+    var tag=document.createElement('script');
+    tag.async=true;
+    tag.setAttribute('data-sl-ga','1');
+    tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
+    document.head.appendChild(tag);
+  }
+  document.addEventListener('pointerdown',load,{once:true,passive:true});
+  setTimeout(function(){if(window.requestIdleCallback)requestIdleCallback(load);else load();},5000);
+});
+</script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EN91RH3PZV');</script>
 <link rel="manifest" href="/manifest.webmanifest"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -42,7 +56,7 @@ ${lds}
 <link rel="stylesheet" href="/luxe.css"/>
 <link rel="stylesheet" href="/tokens.css"/>
 <link rel="stylesheet" href="/store-pages.css"/>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 </head>
 <body class="ev-page">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -61,7 +75,7 @@ ${body}
 </div></div></section>
 </main>
 ${FOOT}
-<script src="/shore-plus.js" defer></script>
+<script data-idle="/shore-plus.js"></script>
 </body>
 </html>
 `;
@@ -155,15 +169,15 @@ const shipBody = `<ul class="tp-short">
 const giftFaq = [
  [
   "What is a good gift from Wilmington NC?",
-  "Something that carries the town: an embroidered crewneck, beanie or cap with a Wrightsville Beach or Kure Beach icon, a Christmas ornament, or an art print of a Wrightsville Beach sunset or the Carolina Beach boardwalk. The gift guide sorts them by who is getting them."
+  "Something that carries the town: an embroidered crewneck or cap with a Wrightsville Beach, Kure Beach or Wilmington mark, or one of the Wrightsville varsity pieces. The gift guide leads with those eight, then beanies and caps."
  ],
  [
   "Are there Wilmington NC gifts under $20?",
-  "Yes. The Wrightsville Beach, Carolina Beach and Kure Beach ornaments and the can coolers are in the Under $20 section, at the prices shown on this page."
+  "This guide leads with the crewnecks, the Sloop cap and the Wrightsville varsity pieces. The full shop lists every current piece and its price."
  ],
  [
   "Will a gift arrive in time for the holidays?",
-  "Every piece is made to order, and we do not publish holiday order-by dates. Shipping and the estimated delivery for your address are shown at checkout, before you pay."
+  "Order by Dec 8 for Christmas delivery (US standard shipping). Shipping and the estimated delivery for your address are shown at checkout, before you pay."
  ],
  [
   "Is there a gift that does not need shipping?",
@@ -175,20 +189,16 @@ const giftFaq = [
  ]
 ];
 const sections = [
-  { id: 'under-20', h: 'Under $20: hosts, neighbors, stocking stuffers', p: 'Small, specific and about a town. The ornament is the keepsake. The can cooler is the one that actually goes on the boat.',
-    ids: ['wrightsville-ornament-2026', 'carolina-beach-ornament-2026', 'kure-beach-ornament-2026', 'wrightsville-can-cooler', 'carolina-beach-can-cooler', 'kure-beach-can-cooler'] },
-  { id: 'for-the-wall', h: 'For the wall', p: 'A print of the right stretch of coast beats a postcard. Each is made to order.',
-    ids: ['carolina-beach-boardwalk-art-print', 'wrightsville-beach-pier-art-print'] },
-  { id: 'wears-the-town', h: 'For the person who wears their town', p: 'A small embroidered icon and a town code, stitched on a garment-dyed crewneck. Sizing help is on the <a href="/size-guide">size guide</a>, and a fit question to us is welcome.',
-    ids: ['the-sloop-embroidered-crewneck-wrightsville-beach', 'the-blue-crab-embroidered-crewneck-kure-beach', ] },
-  { id: 'hats', h: 'Beanies and caps', p: 'Smaller than a sweatshirt, and the same stitched icon. Check each product page for sizing.',
-    ids: ['the-sloop-cuffed-beanie-wrightsville-beach', 'the-blue-crab-cuffed-beanie-kure-beach', 'the-sloop-corduroy-cap-wrightsville-beach', 'the-blue-crab-corduroy-cap-kure-beach', ] },
-  { id: 'beach-day', h: 'For the beach-day household', p: 'A towel for the sand and a tote for the walk down.',
-    ids: ['carolina-coast-towel', 'salt-wash-market-tote'] },
+  { id: 'lead', h: 'Start here', p: 'Eight pieces from the shop, in the order we are featuring them: the Sloop crewneck and cap, the Blue Crab crewneck, the Kure Beach lifeguard crewneck, the Airlie Oak framed print, and the Wrightsville varsity hoodie, tee and signature crewneck. Sizing help is on the <a href="/size-guide">size guide</a>.',
+    ids: ['the-sloop-embroidered-crewneck-wrightsville-beach', 'the-sloop-corduroy-cap-wrightsville-beach', 'the-blue-crab-embroidered-crewneck-kure-beach', 'kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt', 'airlie-oak-framed-art-print-wrightsville-beach-and-wilmington', 'wrightsville-beach-hoodie-varsity', 'wrightsville-beach-tee-varsity', 'wrightsville-beach-signature-crewneck'] },
+  { id: 'hats', h: 'Beanies and caps', p: 'Smaller than a sweatshirt, and the same stitched icon. The Sloop cap is in the list above. Check each product page for sizing.',
+    ids: ['the-sloop-cuffed-beanie-wrightsville-beach', 'the-blue-crab-cuffed-beanie-kure-beach', 'the-blue-crab-corduroy-cap-kure-beach'] },
 ];
 const money = (n) => (Math.round(n * 100) % 100 === 0 ? n.toFixed(0) : n.toFixed(2));
 const price = (i) => `${i.from ? 'From ' : ''}$${money(i.price)}`;
-const card = (i) => `<li><a href="${esc(i.url)}" data-item-id="${esc(i.id)}"><img src="${esc(i.img)}" alt="${esc(i.alt)}" width="800" height="1000" loading="lazy" decoding="async"/><span class="gg-name">${esc(i.name)}</span><span class="gg-price">${price(i)}</span><span class="gg-line">${esc(i.meta)}</span></a></li>`;
+const cardPhoto = (i) => `<img src="${esc(i.img)}" alt="${esc(i.alt)}" width="800" height="1000" loading="lazy" decoding="async"/>` +
+  (i.lookbookGenerator === 'Higgsfield' || i.lookbookGenerator === 'ChatGPT' ? '<small class="gg-line">AI-generated lookbook</small>' : '');
+const card = (i) => `<li><a href="${esc(i.url)}" data-item-id="${esc(i.id)}">${cardPhoto(i)}<span class="gg-name">${esc(i.name)}</span><span class="gg-price">${price(i)}</span><span class="gg-line">${esc(i.meta)}</span></a></li>`;
 const used = [];
 const giftSections = sections.map((s) => {
   const items = s.ids.map((id) => byId.get(id)).filter(Boolean); // an item that left the catalog drops out of the guide; it returns when it is back in items[]
@@ -197,7 +207,8 @@ const giftSections = sections.map((s) => {
   return `<section class="gg-sec" id="${s.id}" aria-labelledby="${s.id}-h"><h2 id="${s.id}-h">${s.h}</h2><p>${s.p}</p><ul class="gg-grid">${items.map(card).join('')}</ul></section>`;
 }).filter(Boolean).join('\n');
 const giftFaqHtml = `<section class="tp-faq" id="faq"><h2>Gift questions</h2>${giftFaq.map(([q, a]) => `<h3>${q}</h3><p>${a}</p>`).join('')}</section>`;
-const giftBody = `<p>Prices and links come straight from the shop, so what you see here is what you pay before shipping and tax. Everything is made to order. Shipping and delivery estimates for your address are shown at checkout, and the <a href="/shipping-returns">shipping and returns page</a> covers the rest. We do not publish holiday order-by dates.</p>
+const giftBody = `<p class="order-by">Order by Dec 8 for Christmas delivery (US standard shipping).</p>
+<p>Prices and links come straight from the shop, so what you see here is what you pay before shipping and tax. Everything is made to order. Shipping and delivery estimates for your address are shown at checkout, and the <a href="/shipping-returns">shipping and returns page</a> covers the rest.</p>
 ${giftSections}
 <section class="gg-sec" id="no-shipping" aria-labelledby="ns-h"><h2 id="ns-h">Nothing to ship</h2>
 <p>For a visitor coming to town, the <a href="/guides">PDF guides</a> are $14 each and download right after checkout, including Wilmington Holidays 2026. The <a href="/prints">art prints</a> are $12 each as print-ready files. Seven percent North Carolina sales tax is added at checkout on both.</p></section>
@@ -209,7 +220,7 @@ const out = {
   'size-guide.html': page({ slug: 'size-guide', title: 'Size Guide | ShoreList Shop', desc: 'Garment measurements for ShoreList embroidered crewnecks in inches, how to measure a piece you own, and who to ask when a size is not listed.', eye: 'Size guide', h1: 'Fit, <em>measured</em>', lede: 'Every piece is made to order, so the right size matters. Here are the real numbers where we have them, and a straight answer where we do not.', body: sizeBody }),
   'shipping-returns.html': page({ slug: 'shipping-returns', title: 'Shipping and Returns | ShoreList Shop', desc: 'How ShoreList orders are made, how long they take, and what happens if a piece arrives damaged, defective or misprinted. Plain answers, nothing buried.', eye: 'Shipping and returns', h1: 'Shipping &amp; returns, <em>plainly</em>', lede: 'Made to order, shipped by our partners, fixed if it arrives wrong. Here is exactly how that works.', body: shipBody,
     ld: [{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }] }),
-  'gift-guide.html': page({ slug: 'gift-guide', title: 'Coastal Carolina Gift Guide | ShoreList Shop', desc: 'A short gift guide by recipient, from under $20 stocking stuffers to beach-day gear, drawn from the ShoreList shop at its current prices.', eye: 'Gift guide', h1: 'Gifts for people who <em>love the coast</em>', lede: 'This Wilmington NC gift guide sorts coastal Carolina gifts by who is getting them: ornaments and can coolers under $20, art prints of local piers, embroidered crewnecks, beanies and caps, and beach-day gear. Every item is in the shop today at its current price, and everything is made to order.', body: giftBody, ld: [...(giftLd ? [giftLd] : []), { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: giftFaq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a.replace(/<[^>]+>/g, '') } })) }], wide: true }),
+  'gift-guide.html': page({ slug: 'gift-guide', title: 'Coastal Carolina Gift Guide | ShoreList Shop', desc: 'A coastal Carolina gift guide from the ShoreList shop, leading with embroidered crewnecks, the Sloop cap and the Wrightsville varsity pieces, at current prices.', eye: 'Gift guide', h1: 'Gifts for people who <em>love the coast</em>', lede: 'This Wilmington NC gift guide leads with eight coastal Carolina pieces: the Sloop crewneck and cap, the Blue Crab crewneck, the Kure Beach lifeguard crewneck, the Airlie Oak framed print, and the Wrightsville varsity hoodie, tee and signature crewneck. Every item is in the shop today at its current price, and everything is made to order.', body: giftBody, orderBy: true, ld: [...(giftLd ? [giftLd] : []), { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: giftFaq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a.replace(/<[^>]+>/g, '') } })) }], wide: true }),
 };
 
 // ------------------------------------------------------------ town shop pages
@@ -271,16 +282,96 @@ for (const t of shopTowns) {
   if (!items.length) continue;
   const utm = `utm_source=shorelist.net&utm_medium=landing&utm_campaign=shop-${t.id}`;
   const link = (u) => u + (u.includes('?') ? '&' : '?') + utm;
-  const tcard = (i) => `<li><a href="${esc(link(i.url))}" data-item-id="${esc(i.id)}" rel="noopener"><img src="${esc(i.img)}" alt="${esc(i.alt)}" width="800" height="1000" loading="lazy" decoding="async"/><span class="gg-name">${esc(i.name)}</span><span class="gg-price">${price(i)}</span><span class="gg-line">${esc(i.meta)}</span></a></li>`;
+  const kindOfName = (name) => {
+    const n = String(name || '').toLowerCase();
+    if (/can cooler|cooler sleeve/.test(n)) return 'cooler';
+    if (/sticker/.test(n)) return 'sticker';
+    if (/ornament/.test(n)) return 'ornament';
+    if (/beanie/.test(n)) return 'beanie';
+    if (/\bcap\b|dad hat|bucket hat|rope cap/.test(n)) return 'cap';
+    if (/pouch/.test(n)) return 'pouch';
+    if (/\bmug\b/.test(n)) return 'mug';
+    if (/towel|blanket|beach cloth/.test(n)) return 'towel';
+    if (/pillow/.test(n)) return 'pillow';
+    if (/print|framed/.test(n)) return 'print';
+    if (/tote|duffel/.test(n)) return 'tote';
+    if (/\btee\b|t-shirt/.test(n)) return 'tee';
+    if (/tumbler|water bottle/.test(n)) return 'tumbler';
+    if (/crewneck|sweatshirt|hoodie/.test(n)) return 'crewneck';
+    return 'item';
+  };
+  let pairRules = {};
+  try { pairRules = JSON.parse(fs.readFileSync(new URL('../data/market.json', import.meta.url), 'utf8')).pairs || {}; } catch (e) { pairRules = {}; }
+  const pairsFor = (i) => {
+    const kind = kindOfName(i.name);
+    const want = new Set(pairRules[kind] || pairRules.item || []);
+    return items.filter((x) => x.id !== i.id && want.has(kindOfName(x.name)))
+      .sort((a, b) => Math.abs(a.price - i.price) - Math.abs(b.price - i.price) || a.price - b.price)
+      .slice(0, 2);
+  };
+  const handleOf = (i) => {
+    const m = String(i.url || '').match(/\/products\/([^/?#]+)/);
+    return m ? m[1] : i.id;
+  };
+  const tcard = (i) => {
+    const mates = t.id === 'wrightsville-beach' ? pairsFor(i) : [];
+    const pair = mates.length ? `<p class="gg-pair">Pairs well with ${mates.map((m) => `<a href="/shop/products/${esc(handleOf(m))}">${esc(m.name)}</a>`).join(' and ')}</p>` : '';
+    return `<li><a href="/shop/products/${esc(handleOf(i))}" data-item-id="${esc(i.id)}">${cardPhoto(i)}<span class="gg-name">${esc(i.name)}</span><span class="gg-price">${price(i)}</span><span class="gg-line">${esc(i.meta)}</span></a>${pair}</li>`;
+  };
+  const guide = t.id === 'wrightsville-beach' ? `<section class="gg-sec" id="visit" aria-labelledby="visit-h"><h2 id="visit-h">Before you shop the beach</h2><p>Wrightsville Beach is about 20 minutes east of downtown Wilmington. Beach access has no charge. Parking meters run from March 1 to October 31, 9 a.m. to 7 p.m., and some meters until 8 p.m. Peak surf season on the island is June to September, including the end of Johnnie Mercer's Pier. The full guide is on the <a href="/wrightsville-beach">Wrightsville Beach page</a>, with the <a href="/wilmington-nc-parking">parking guide</a>, <a href="/johnnie-mercers-pier">Johnnie Mercer's Pier</a> and <a href="/things-to-do/surf-lessons">surf lessons</a>.</p><p>These notes are the same facts already on that guide, checked against the visitors bureau and the town. Rules and fees change, so confirm before you go.</p></section>` : '';
   const faqs = [[c.q[0], c.q[1]], ...townFaqShared];
   const others = shopTowns.filter((x) => x.id !== t.id && TOWN_COPY[x.id]).map((x) => `<a href="/shop/${x.id}">${esc(x.name)}</a>`).join(', ');
-  const body = `<section class="gg-sec" id="pieces" aria-labelledby="pieces-h"><h2 id="pieces-h">${esc(t.name)} pieces</h2><p>${c.about}</p><ul class="gg-grid">${items.map(tcard).join('')}</ul></section>
+  const body = `${guide}<section class="gg-sec" id="pieces" aria-labelledby="pieces-h"><h2 id="pieces-h">${esc(t.name)} pieces</h2><p>${c.about}</p><ul class="gg-grid">${items.map(tcard).join('')}</ul></section>
 <section class="gg-sec" id="more" aria-labelledby="more-h"><h2 id="more-h">More from the shop</h2><p>Browse every town and filter by product type or motif on the <a href="/shop?town=${t.id}">full shop page</a>, shop by recipient in the <a href="/gift-guide">gift guide</a>, or see ${others}. We are adding new pieces for each town, so check back or join the drop list on the shop page. Prices are shown before shipping and tax, and everything is made to order.</p></section>
 <section class="tp-faq" id="faq"><h2>Questions</h2>${faqs.map(([q, a]) => `<h3>${q}</h3><p>${a}</p>`).join('')}</section>`;
   const ld = [{ '@context': 'https://schema.org', '@type': 'ItemList', name: `ShoreList ${t.name} shop`, itemListElement: items.map((i, n) => ({ '@type': 'ListItem', position: n + 1, item: { '@type': 'Product', name: i.name, url: i.url, image: i.img, description: i.meta, brand: { '@type': 'Brand', name: 'ShoreList' }, offers: i.from ? { '@type': 'AggregateOffer', priceCurrency: 'USD', lowPrice: i.price, offerCount: 1, availability: 'https://schema.org/InStock', url: i.url } : { '@type': 'Offer', priceCurrency: 'USD', price: i.price, availability: 'https://schema.org/InStock', url: i.url } } })) },
     { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a.replace(/<[^>]+>/g, '') } })) }];
   out[`shop/${t.id}.html`] = page({ slug: `shop/${t.id}`, title: c.title, desc: c.desc, eye: t.name, h1: c.h1, lede: c.lede, body, ld, wide: true, ogImage: `${SITE}/og-shop-${t.id}.jpg` });
   townOut.push(t.id);
+}
+
+// Harbor Goods is a separate Fourthwall section. Cards link straight to the product page.
+// They are not catalog items[], so the shop bag and the Shopify cart never see them.
+const harbor = Array.isArray(cat.harborGoods) ? cat.harborGoods : [];
+if (harbor.length) {
+  const fit = (i) => (i.cut === 'unisex' ? '<span class="gg-fit">Unisex fit</span>' : '');
+  const hcard = (i, n) => `<li><a href="${esc(i.url)}" data-item-id="${esc(i.id)}"><img src="${esc(i.img)}" alt="${esc(i.alt)}" width="800" height="1066" ${n === 0 ? 'fetchpriority="high" loading="eager"' : 'loading="lazy"'} decoding="async"/>${fit(i)}<span class="gg-name">${esc(i.name)}</span><span class="gg-price">${price(i)}</span><span class="gg-line">${esc(i.meta || '')}</span></a></li>`;
+  const harborBody = `<p class="tp-note">Harbor Goods checks out on our Fourthwall shop. Shopify sale codes do not apply.</p>
+<p>The price on each card is the lowest price on that Fourthwall page. Larger sizes cost more on the tees and the crewneck. Shipping is shown before you pay.</p>
+<ul class="gg-grid">${harbor.map(hcard).join('')}</ul>
+<p class="tp-src">These pieces are not in the <a href="/shop">ShoreList Shop</a> bag. Open a card to choose a size and pay on Fourthwall.</p>`;
+  const harborLd = [{
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'ShoreList Harbor Goods',
+    itemListElement: harbor.map((i, n) => ({
+      '@type': 'ListItem',
+      position: n + 1,
+      item: {
+        '@type': 'Product',
+        name: i.name,
+        url: i.url,
+        image: `${SITE}${i.img}`,
+        description: i.meta,
+        brand: { '@type': 'Brand', name: 'ShoreList' },
+        offers: i.from
+          ? { '@type': 'AggregateOffer', priceCurrency: 'USD', lowPrice: i.price, offerCount: 1, availability: 'https://schema.org/InStock', url: i.url }
+          : { '@type': 'Offer', priceCurrency: 'USD', price: i.price, availability: 'https://schema.org/InStock', url: i.url },
+      },
+    })),
+  }];
+  out['shop/harbor-goods.html'] = page({
+    slug: 'shop/harbor-goods',
+    title: 'ShoreList Harbor Goods | Wilmington NC',
+    desc: 'Garment-dyed tees, an organic crewneck and a cotton market tote for Wilmington, NC. Harbor Goods checks out on our Fourthwall shop. Shopify sale codes do not apply.',
+    eye: 'Harbor Goods',
+    h1: 'ShoreList Harbor Goods',
+    lede: 'Coastal staples for Wilmington, Wrightsville Beach and Carolina Beach. Open a card to choose a size and pay on Fourthwall. These pieces are not in the ShoreList Shop bag.',
+    body: harborBody,
+    ld: harborLd,
+    wide: true,
+    ogImage: `${SITE}/shop-art/harbor-salt-wash-sloop-garment-dyed-tee.webp`,
+  });
 }
 
 for (const [f, h] of Object.entries(out)) fs.writeFileSync(new URL('../' + f, import.meta.url), h);

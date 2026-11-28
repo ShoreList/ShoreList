@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25",
+ "updated": "2026-11-27",
  "events": [
   {
    "id": "rooted-in-memory-the-gullah-geechee-visi-2026-06-19",
@@ -136,20 +136,6 @@
    "time": "6:00 PM",
    "tickets": "Free",
    "verified": "https://www.wilmingtonnc.gov/Events-directory/Holiday-Parade-2026"
-  },
-  {
-   "id": "cameron-10002074-1796115600-17961192-ada3dfa3-2026-12-01",
-   "title": "Gentle Yoga",
-   "start": "2026-12-01",
-   "end": "2026-12-01",
-   "venue": "NC",
-   "area": "Wilmington",
-   "cat": "Arts",
-   "url": "https://cameronartmuseum.org/event/gentle-yoga-55/",
-   "source": "cameron",
-   "sourceUrl": "https://cameronartmuseum.org/event/gentle-yoga-55/",
-   "via": "Cameron Art Museum events calendar",
-   "time": "9:00 AM"
   },
   {
    "id": "cameron-10002075-1796216400-17962182-514a2a56-2026-12-02",

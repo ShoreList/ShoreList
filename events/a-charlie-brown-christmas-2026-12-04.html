@@ -12,7 +12,20 @@
 <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb5-golden_1200x630_crop_center.webp"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb5-golden_1200x630_crop_center.webp"/>
 <link rel="icon" href="/favicon.ico"/><link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
 <script>document.documentElement.className+=' js'</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
+<script>
+window.addEventListener('load',function(){
+  function load(){
+    if(document.querySelector('script[data-sl-ga]'))return;
+    var tag=document.createElement('script');
+    tag.async=true;
+    tag.setAttribute('data-sl-ga','1');
+    tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
+    document.head.appendChild(tag);
+  }
+  document.addEventListener('pointerdown',load,{once:true,passive:true});
+  setTimeout(function(){if(window.requestIdleCallback)requestIdleCallback(load);else load();},5000);
+});
+</script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EN91RH3PZV');</script>
 <link rel="manifest" href="/manifest.webmanifest"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -22,14 +35,14 @@
 <link rel="stylesheet" href="/events.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
 <link rel="stylesheet" href="/tokens.css"/>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 </head>
 <body class="ev-page">
 <a class="skip-link" href="#main">Skip to content</a>
 <nav class="ev-nav" aria-label="Primary"><a class="nav-logo" href="/" aria-label="ShoreList home">Shore<span>List</span></a><div class="nav-right"><a href="/events">Events</a><a href="/things-to-do">Things to Do</a><a href="/shore-picks">Shore Picks</a><a class="nav-book" href="/things-to-do">Book Experiences</a></div></nav>
 <main id="main">
 <header class="ev-hero ev-hero-sub">
-  <img class="ev-hero-img" width="1000" height="667" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-riverwalk_1920x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-riverwalk_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-riverwalk_1920x.webp 1920w" sizes="100vw" alt="Shops and restaurants along the Wilmington Riverwalk beside the Cape Fear River" fetchpriority="high" decoding="async"/>
+  <img class="ev-hero-img" width="1000" height="667" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-riverwalk_1920x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-riverwalk_1280x.webp 1280w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-riverwalk_1920x.webp 1920w" sizes="100vw" alt="Shops and restaurants along the Wilmington Riverwalk beside the Cape Fear River" fetchpriority="high" decoding="async"/>
   <div class="ev-wrap">
     <p class="ev-eye"><i></i>Family event</p>
     <h1>A Charlie Brown Christmas</h1>
@@ -51,6 +64,7 @@
 </div></section>
 </main>
 <footer class="ev-foot"><div>&copy; 2026 ShoreList LLC &middot; Wilmington, NC &amp; the Beaches</div><div><a href="/events">Events Guide</a><a href="/things-to-do">Things to Do</a><a href="/shore-picks">Shore Picks</a><a href="/where-to-stay">Where to Stay</a><a href="/wilmington-weather">Weather</a><a href="/guides">PDF Guides</a><a href="/prints">Art Prints</a><a href="/shipping-returns">Shipping &amp; Returns</a><a href="/size-guide">Size Guide</a><a href="/gift-guide">Gift Guide</a><a href="/how-we-verify">How we verify</a><a href="/legal">Privacy &amp; Terms</a></div></footer>
-<script src="/shore-plus.js" defer></script>
+<script data-idle="/shore-plus.js"></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>

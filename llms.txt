@@ -7,10 +7,14 @@
 - [Trip planning guide](https://shorelist.net/plan-your-trip): when to visit, where to stay, distances between downtown and the beaches, a three-day itinerary and FAQs
 - [Downtown Wilmington](https://shorelist.net/downtown)
 - [Wrightsville Beach](https://shorelist.net/wrightsville-beach)
+- [Fishing pier at Wrightsville Beach](https://shorelist.net/johnnie-mercers-pier): address, town parking at the pier, and links to the pier's own hours, fees, fishing page and live cam
 - [Carolina Beach](https://shorelist.net/carolina-beach)
+- [Carolina Beach boardwalk](https://shorelist.net/carolina-beach-boardwalk): boardwalk notes taken from the Carolina Beach and Pleasure Island guides. It does not add events, prices or hours.
+- Shop products: each Shopify product has a page at https://shorelist.net/shop/products/<handle> with a canonical on shorelist.net. `/products/<handle>` redirects there. Checkout stays on shorelist.myshopify.com.
 - [Kure Beach](https://shorelist.net/kure-beach)
 - [Events](https://shorelist.net/events): dated local events, updated regularly
 - [Wilmington weather](https://shorelist.net/wilmington-weather): live current conditions, hourly and 7-day forecast, beach, surf and tide report
+- [Live beach cams](https://shorelist.net/cams): official Johnnie Mercer's Pier YouTube cams, a Southport Marina slot, and links out to other local cameras
 - [ShoreList Surf](https://shorelist.net/surf): live surf check for Wrightsville, Carolina and Kure Beach, surf lessons and paddling, and plain guides to a [first surfboard](https://shorelist.net/surf/first-surfboard), [paddleboards and kayaks](https://shorelist.net/surf/paddleboard-and-kayak) and [water safety and rules](https://shorelist.net/surf/know-before-you-go)
 - [Where to stay](https://shorelist.net/where-to-stay): which area to choose (downtown, Wrightsville Beach, Carolina Beach, Kure Beach, midtown) and what lodging each offers
 - [This weekend](https://shorelist.net/events/this-weekend): events for the current weekend, rebuilt daily
@@ -42,4 +46,7 @@
 - [Shipping and returns](https://shorelist.net/shipping-returns): how ShoreList shop orders are made to order, what is stated about production time, and how damaged, defective or misprinted pieces are handled
 - [Size guide](https://shorelist.net/size-guide): garment measurements in inches for the embroidered crewnecks and varsity hoodies, and how to measure a piece you own
 - [Gift guide](https://shorelist.net/gift-guide): shop items sorted by recipient, linked to the stores that sell them at their current prices
+- [Wilmington NC gifts](https://shorelist.net/wilmington-nc-gifts): local gift guide, smaller pieces first, prices from the live shop
+- [Wrightsville Beach souvenirs](https://shorelist.net/wrightsville-beach-souvenirs): beach gifts under $35, then one crewneck, prices from the live shop
+- [Wrightsville Beach Christmas ornament](https://shorelist.net/wrightsville-beach-christmas-ornament): the 2026 ornament and smaller gifts to pair with it
 - Machine-readable catalog: https://shorelist.net/shop-catalog.json

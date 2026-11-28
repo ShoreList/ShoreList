@@ -1,0 +1,79 @@
+name: site-regression-tests
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/site-regression-tests.yml'
+      - 'data/operators.json'
+      - 'operators-public.json'
+      - 'netlify/functions/_shared.js'
+      - 'netlify/functions/plan-itinerary.js'
+      - 'netlify/functions/concierge.js'
+      - 'search-index.json'
+      - 'tools/test-concierge.cjs'
+      - 'tools/operators-lib.mjs'
+      - 'tools/test-operators.mjs'
+      - 'tools/fixtures/legacy-operators-snapshot.json'
+      - 'tools/test-plan-itinerary.cjs'
+      - 'shop-promo.js'
+      - 'tools/test-shop-promo.mjs'
+      - 'shop.html'
+      - 'shop/*.html'
+      - 'shop-catalog.json'
+      - 'tools/test-shop-structured-data.mjs'
+      - 'tools/test-shop-photo-release.mjs'
+      - 'tools/check-shop-links.mjs'
+      - 'tools/check-html-images.mjs'
+      - 'tools/test-shop-links.mjs'
+      - 'holiday-gift-guide.html'
+      - 'tools/build-store-pages.mjs'
+      - 'gift-guide.html'
+      - 'docs/shop-photo-review.json'
+      - 'tools/coastal-brand-review.mjs'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/site-regression-tests.yml'
+      - 'data/operators.json'
+      - 'operators-public.json'
+      - 'netlify/functions/_shared.js'
+      - 'netlify/functions/plan-itinerary.js'
+      - 'netlify/functions/concierge.js'
+      - 'search-index.json'
+      - 'tools/test-concierge.cjs'
+      - 'tools/operators-lib.mjs'
+      - 'tools/test-operators.mjs'
+      - 'tools/fixtures/legacy-operators-snapshot.json'
+      - 'tools/test-plan-itinerary.cjs'
+      - 'shop-promo.js'
+      - 'tools/test-shop-promo.mjs'
+      - 'shop.html'
+      - 'shop/*.html'
+      - 'shop-catalog.json'
+      - 'tools/test-shop-structured-data.mjs'
+      - 'tools/test-shop-photo-release.mjs'
+      - 'tools/check-shop-links.mjs'
+      - 'tools/check-html-images.mjs'
+      - 'tools/test-shop-links.mjs'
+      - 'holiday-gift-guide.html'
+      - 'tools/build-store-pages.mjs'
+      - 'gift-guide.html'
+      - 'docs/shop-photo-review.json'
+      - 'tools/coastal-brand-review.mjs'
+permissions:
+  contents: read
+jobs:
+  regressions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/check-html-images.mjs
+      - run: node tools/test-operators.mjs
+      - run: node --test tools/test-concierge.cjs tools/test-plan-itinerary.cjs tools/test-shop-promo.mjs tools/test-shop-structured-data.mjs tools/test-shop-links.mjs
+      - run: node --test tools/test-shop-photo-release.mjs
+        env:
+          SHOP_PHOTO_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}

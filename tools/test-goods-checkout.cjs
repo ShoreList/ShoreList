@@ -350,7 +350,7 @@ test('get-goods-session: paid goods order summary without address or email; othe
 }));
 
 // ================= shop-cart.js in a stub DOM =================
-function runCart() {
+function runCart(storageOverrides = {}) {
   const store = {}; const handlers = {};
   const made = []; const mkEl = (tag) => { const kids = {}; const el = { tag, className: '', innerHTML: '', style: {}, attrs: {}, listeners: {}, open: false, parentNode: null,
     setAttribute(k, v) { this.attrs[k] = v; }, getAttribute(k) { return this.attrs[k]; }, removeAttribute() {}, hasAttribute(k) { return k in this.attrs; },
@@ -362,11 +362,77 @@ function runCart() {
   const tracked = [];
   const doc = { head, body: bodyEl, createElement: mkEl, querySelector: (s) => (s === 'nav.sl-hdr' ? nav : null), addEventListener(ev, fn) { (handlers[ev] = handlers[ev] || []).push(fn); }, dispatchEvent() {} };
   const win = { addEventListener() {}, gtag: (n, p) => tracked.push([n, p]), ShoreAttrib: { get: () => ({ utm_source: 'x' }) }, location: { href: '' } };
-  const ctx = { window: win, document: doc, localStorage: { getItem: (k) => store[k] || null, setItem: (k, v) => { store[k] = v; } }, fetch: (...a) => global.fetch(...a), KeyboardEvent: function () {}, setInterval: () => 0, clearInterval() {}, Date, JSON, Math, Array, String, Number, Object, Promise, location: win.location, console };
+  const storage = { getItem: (k) => store[k] || null, setItem: (k, v) => { store[k] = v; }, ...storageOverrides };
+  const ctx = { window: win, document: doc, localStorage: storage, fetch: (...a) => global.fetch(...a), KeyboardEvent: function () {}, setInterval: () => 0, clearInterval() {}, Date, JSON, Math, Array, String, Number, Object, Promise, location: win.location, console };
   win.window = win; vm.createContext(ctx);
   vm.runInContext(fs.readFileSync(path.join(ROOT, 'shop-cart.js'), 'utf8'), ctx);
   return { win, store, tracked, doc, ctx, bodyEl, made };
 }
+test('shop-cart: retains items during the visit when storage reads or writes are blocked', () => {
+  function blocked() { throw new Error('Storage unavailable'); }
+  for (const method of ['getItem', 'setItem']) {
+    const { win, made } = runCart({ [method]: blocked });
+    const bag = win.ShoreBag;
+    bag.addGoods({ item: 'tee', variant: 'm', name: 'Test Tee', cents: 2500 });
+    bag.open();
+    const drawer = made.filter((element) => element.tag === 'dialog')[1];
+    assert.match(drawer.querySelector('.slbag-in').innerHTML, /Test Tee/);
+    bag.addGoods({ item: 'tee', variant: 'm', name: 'Test Tee', cents: 2500 });
+    bag.open();
+    assert.strictEqual(bag.count(), 2);
+  }
+});
+test('shop-cart: Shopify checkout retains first-touch campaign slugs and excludes unrelated data', () => {
+  const { win, store, made } = runCart();
+  store.slBag = JSON.stringify([{ id: '12345', qty: 2, price: 25, handle: 'test-tee', name: 'Test Tee' }]);
+  win.ShoreBag.open();
+  const drawer = made.filter((element) => element.tag === 'dialog')[1];
+  let href;
+  const checkout = { id: 'slbagPay', setAttribute(name, value) {
+    assert.strictEqual(name, 'href');
+    href = value;
+  } };
+  const click = () => drawer.listeners.click.forEach((handler) => handler({
+    target: checkout,
+    preventDefault() { assert.fail('The checkout link was blocked'); },
+  }));
+
+  win.ShoreAttrib.get = () => ({
+    utm_source: 'instagram',
+    utm_medium: 'paid_social',
+    utm_campaign: 'shorelist-launch',
+    ref: 'referral-code',
+    landing: '/shop',
+    referrer_host: 'example.com',
+    fbclid: 'click-id',
+  });
+  click();
+  const url = new URL(href);
+  assert.strictEqual(url.origin, 'https://shorelist.myshopify.com');
+  assert.strictEqual(url.pathname, '/cart/12345:2');
+  assert.deepStrictEqual([...url.searchParams], [
+    ['utm_source', 'instagram'],
+    ['utm_medium', 'paid_social'],
+    ['utm_campaign', 'shorelist-launch'],
+    ['attributes[shorelist_source]', 'instagram'],
+    ['attributes[shorelist_medium]', 'paid_social'],
+    ['attributes[shorelist_campaign]', 'shorelist-launch'],
+  ]);
+  assert.strictEqual(url.searchParams.get('ref'), null);
+  assert.strictEqual(url.searchParams.get('landing'), null);
+  assert.strictEqual(url.searchParams.get('fbclid'), null);
+
+  const fallback = 'https://shorelist.myshopify.com/cart/12345:2?utm_source=shorelist.net&utm_medium=shop&utm_campaign=checkout';
+  for (const getAttribution of [
+    () => ({}),
+    () => ({ utm_campaign: 'unsafe&ref=value', utm_source: 'person@example.com', utm_medium: 'a'.repeat(81) }),
+    () => { throw new Error('Attribution unavailable'); },
+  ]) {
+    win.ShoreAttrib.get = getAttribution;
+    click();
+    assert.strictEqual(href, fallback);
+  }
+});
 test('shop-cart: goods lines join the bag as their own group, honest multi-store notice, checkout posts item/variant/qty and follows the Stripe url; Shopify and Fourthwall unchanged', async () => {
   const c = runCart(); const bag = c.win.ShoreBag; assert(typeof bag.addGoods === 'function');
   assert.strictEqual(bag.addGoods({ item: 'tee', variant: 'm', name: 'Test Tee', variantLabel: 'M', cents: 2500, lead: [5, 12], max: 4 }), true);

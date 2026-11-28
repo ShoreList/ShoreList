@@ -1,0 +1,45 @@
+/* Live cam desk. Facades hold a 16:9 box so the player swap does not shift the page. */
+.ev-foot{background:#0E1F33;color:#F4F1EA;padding:28px 20px;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
+.ev-foot a{color:#D9C7A3}
+.skip-link{position:absolute;left:12px;top:-40px;background:#F4F1EA;color:#0E1F33;padding:8px 12px;z-index:10000}
+.skip-link:focus{top:12px}
+.cam-wrap{max-width:1120px;margin:0 auto;padding:28px 20px 72px;color:#0E1F33;font-family:"DM Sans",system-ui,sans-serif}
+.cam-wrap h1{font-family:"Libre Caslon Display",Georgia,serif;font-weight:400;font-size:clamp(2rem,5vw,3.2rem);line-height:1.05;margin:0 0 12px}
+.cam-wrap h2{font-family:"Libre Caslon Display",Georgia,serif;font-weight:400;font-size:clamp(1.5rem,3vw,2.1rem);margin:28px 0 12px}
+.cam-lead,.cam-note,.cam-foot{max-width:68ch;line-height:1.6}
+.cam-lead{font-size:1.05rem}
+.cam-filters{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}
+.cam-filters button{font:inherit;font-weight:500;min-height:44px;padding:0 14px;border:1.5px solid rgba(14,31,51,.28);background:#F4F1EA;color:#0E1F33;border-radius:2px;cursor:pointer}
+.cam-filters button[aria-checked="true"]{background:#0E1F33;color:#F4F1EA;border-color:#0E1F33}
+.cam-filters button:focus-visible,.cam-play:focus-visible,.cam-close:focus-visible,.cam-offbtn:focus-visible{outline:3px solid #B5362F;outline-offset:2px}
+.cam-grid{display:grid;gap:28px}
+.cam-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.cam-row h2{grid-column:1/-1}
+.cam-card{background:#fff;border:1px solid rgba(14,31,51,.12);padding:14px;min-width:0}
+.cam-card h3{font-family:"Libre Caslon Display",Georgia,serif;font-weight:400;font-size:1.35rem;margin:0 0 4px;line-height:1.2}
+.cam-place{margin:0 0 10px;color:#8A5A3B;font-size:.85rem;letter-spacing:.04em;text-transform:uppercase}
+.cam-frame{display:grid;gap:8px}
+.cam-stage{position:relative;aspect-ratio:16/9;background:#0E1F33;color:#F4F1EA;overflow:hidden}
+.cam-stage img,.cam-stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
+.cam-stage-type{display:grid;place-items:center;padding:16px;text-align:center}
+.cam-stage-type p{position:static;margin:0;font-family:"Libre Caslon Display",Georgia,serif;font-size:1.4rem}
+.cam-play{position:absolute;left:12px;right:12px;bottom:12px;min-height:48px;border:0;background:#F4F1EA;color:#0E1F33;font:600 .95rem "DM Sans",system-ui,sans-serif;cursor:pointer;padding:10px 12px}
+.cam-stage-type .cam-play{position:absolute}
+.is-on .cam-play{display:none}
+.cam-close,.cam-offbtn{display:none;min-height:44px;border:1.5px solid rgba(14,31,51,.28);background:#fff;color:#0E1F33;font:inherit;cursor:pointer;padding:8px 12px}
+.is-on .cam-close,.is-on .cam-offbtn{display:inline-flex;align-items:center}
+.cam-wx{margin:0;background:#0E1F33;color:#F4F1EA;padding:10px 12px;font-size:.92rem;line-height:1.45}
+.cam-host,.cam-credit,.cam-tr,.cam-offline{font-size:.92rem;line-height:1.45}
+.cam-credit a,.cam-offline a,.cam-foot a,.cam-note a{color:#8A5A3B}
+.cam-card[hidden]{display:none}
+.hx-cam{max-width:420px;margin:18px 0 8px}
+.hx-cam .cam-stage{position:relative;aspect-ratio:16/9;background:#0E1F33;overflow:hidden}
+.hx-cam .cam-stage img,.hx-cam .cam-stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
+.hx-cam .cam-play{position:absolute;left:12px;right:12px;bottom:12px;min-height:48px;border:0;background:#F4F1EA;color:#0E1F33;font:600 .95rem "DM Sans",system-ui,sans-serif;cursor:pointer}
+.hx-cam .cam-wx{margin:8px 0;background:#0E1F33;color:#F4F1EA;padding:10px 12px;font-size:.92rem;line-height:1.45}
+.hx-cam .cam-close{display:none;min-height:44px;margin-top:8px}
+.hx-cam .is-on .cam-close{display:inline-flex}
+.hx-cam p{margin:6px 0}
+@media (prefers-reduced-motion: reduce){
+  .cam-play,.cam-close,.cam-offbtn,.cam-filters button{transition:none}
+}

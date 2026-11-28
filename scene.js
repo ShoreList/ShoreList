@@ -32,6 +32,7 @@
   function phaseNow() { return phaseAt(Date.now()); }
   window.ShoreSun = { phaseAt: phaseAt, now: phaseNow };
 
+  var stillFrame = false;
   function boot() {
 
   // keyframes: skyTop, skyHorizon, sun, seaDeep, seaLight, sunY(0..1 horizon-relative), stars, warmth
@@ -104,14 +105,16 @@
   function size() { var r = host.getBoundingClientRect(); cv.width = Math.max(2, Math.floor(r.width * scale)); cv.height = Math.max(2, Math.floor(r.height * scale)); gl.viewport(0, 0, cv.width, cv.height); }
   function draw(now) {
     var s = blend(cur);
-    gl.uniform2f(U.R, cv.width, cv.height); gl.uniform1f(U.T, (now - t0) / 1000);
+    var pace = 1, sea = window.__slSea;
+    if (sea && sea.wind) pace = Math.max(0.45, Math.min(1.8, 0.55 + sea.wind / 18));
+    gl.uniform2f(U.R, cv.width, cv.height); gl.uniform1f(U.T, (now - t0) / 1000 * pace);
     gl.uniform3fv(U.top, s.top); gl.uniform3fv(U.hor, s.hor); gl.uniform3fv(U.sun, s.sun); gl.uniform3fv(U.deep, s.deep); gl.uniform3fv(U.lite, s.lite);
     gl.uniform1f(U.sy, s.sy); gl.uniform1f(U.st, s.st); gl.uniform2f(U.M, mx, my); gl.uniform3fv(U.RP, rips);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
   }
   function loop(now) {
     requestAnimationFrame(loop);
-    if (!visible || document.hidden || host.classList.contains('plates-on')) { last = now; return; }
+    if (!visible || document.hidden || (host.classList.contains('plates-on') && !host.classList.contains('scene-live'))) { last = now; return; }
     var dt = now - last; last = now;
     if (dt > 34) slow++; else if (slow > 0) slow -= .5;
     if (slow > 30 && scale > .6) { scale = Math.max(.6, scale - .25); slow = 0; size(); }
@@ -126,7 +129,23 @@
   host.addEventListener('pointermove', function (e) { var n = performance.now(); if (n - lastRip > 420) { var r0 = host.getBoundingClientRect(), yy = 1 - (e.clientY - r0.top) / r0.height; if (yy < 0.4) { lastRip = n; ripple((e.clientX - r0.left) / r0.width, yy); } } var r = host.getBoundingClientRect(); tmx = (e.clientX - r.left) / r.width - .5; tmy = (e.clientY - r.top) / r.height - .5; });
   if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { visible = en[0].isIntersecting; }).observe(host);
   size();
-  if (reduce) { draw(performance.now()); host.classList.add('scene-ready'); }
+  if (reduce || stillFrame) {
+    draw(performance.now());
+    host.classList.add('scene-ready');
+    if (stillFrame) host.classList.add('scene-still');
+    if (stillFrame && !reduce) {
+      var play = document.createElement('button');
+      play.type = 'button';
+      play.className = 'scene-play';
+      play.textContent = 'Play water';
+      play.addEventListener('click', function () {
+        play.hidden = true;
+        host.classList.add('scene-live');
+        requestAnimationFrame(loop);
+      });
+      host.appendChild(play);
+    }
+  }
   else requestAnimationFrame(loop);
 
   window.ShoreScene = {
@@ -143,13 +162,10 @@
   // The photo is the primary hero. Start the shader only as a visible, idle fallback.
   var started = false;
   function go() {
-    if (started || host.classList.contains('plates-on')) return;
+    if (started) return;
+    var small = window.matchMedia && matchMedia('(max-width: 820px)').matches;
+    if (small) return;
     started = true;
-    // Keep a failed photo from triggering a costly shader on small screens.
-    if (window.matchMedia && matchMedia('(max-width: 820px)').matches) {
-      host.classList.add('scene-fallback');
-      return;
-    }
     boot();
   }
   function whenIdle() {
@@ -163,4 +179,15 @@
     } else whenIdle();
   }
   host.addEventListener('shoreheroerror', arm, { once: true });
+  var play = document.getElementById('play-water');
+  if (play) {
+    if (reduce || (navigator.connection && navigator.connection.saveData)) play.hidden = true;
+    play.addEventListener('click', function () {
+      play.hidden = true;
+      if (started) { host.classList.add('scene-live'); return; }
+      started = true;
+      boot();
+      host.classList.add('scene-live');
+    });
+  }
 })();

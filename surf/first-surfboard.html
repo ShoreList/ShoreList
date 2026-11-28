@@ -12,7 +12,20 @@
 <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb5-golden_1200x630_crop_center.webp"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb5-golden_1200x630_crop_center.webp"/>
 <link rel="icon" href="/favicon.ico"/><link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
 <script>document.documentElement.className+=' js'</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
+<script>
+window.addEventListener('load',function(){
+  function load(){
+    if(document.querySelector('script[data-sl-ga]'))return;
+    var tag=document.createElement('script');
+    tag.async=true;
+    tag.setAttribute('data-sl-ga','1');
+    tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
+    document.head.appendChild(tag);
+  }
+  document.addEventListener('pointerdown',load,{once:true,passive:true});
+  setTimeout(function(){if(window.requestIdleCallback)requestIdleCallback(load);else load();},5000);
+});
+</script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EN91RH3PZV');</script>
 <link rel="manifest" href="/manifest.webmanifest"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -21,7 +34,7 @@
 <link rel="stylesheet" href="/luxe.css"/>
 <link rel="stylesheet" href="/surf-hub.css"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ShoreList","item":"https://shorelist.net/"},{"@type":"ListItem","position":2,"name":"Surf","item":"https://shorelist.net/surf"},{"@type":"ListItem","position":3,"name":"Choosing a first surfboard","item":"https://shorelist.net/surf/first-surfboard"}]}</script>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 <link rel="stylesheet" href="/tokens.css"/>
 </head>
 <body class="ev-page">
@@ -105,6 +118,9 @@
 </div></section>
 </main>
 <footer class="ev-foot"><div>&copy; 2026 ShoreList LLC &middot; Wilmington, NC &amp; the Beaches</div><div><a href="/surf">Surf</a><a href="/events">Events Guide</a><a href="/things-to-do">Things to Do</a><a href="/shore-picks">Shore Picks</a><a href="/planner">Trip Planner</a><a href="/wilmington-weather">Weather</a><a href="/guides">PDF Guides</a><a href="/prints">Art Prints</a><a href="/shipping-returns">Shipping &amp; Returns</a><a href="/size-guide">Size Guide</a><a href="/gift-guide">Gift Guide</a><a href="/legal">Privacy &amp; Terms</a></div></footer>
-<script src="/shore-plus.js" defer></script>
+<script data-idle="/shore-plus.js"></script>
+
+<script src="/guide-boot.js" defer></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>

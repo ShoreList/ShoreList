@@ -14,11 +14,11 @@
 <meta property="og:description" content="Surf lessons, Venus flytraps, fishing charters and boardwalk fireworks on Pleasure Island. A local Carolina Beach visitor guide from ShoreList."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://shorelist.net/carolina-beach"/>
-<meta property="og:image" content="https://shorelist.net/og-carolina-beach.jpg"/>
+<meta property="og:image" content="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1920x.webp"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:site_name" content="ShoreList"/>
-<meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://shorelist.net/og-carolina-beach.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1920x.webp"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" rel="stylesheet"/></noscript>
@@ -54,7 +54,7 @@ body{font-family:'DM Sans',sans-serif;background:#F4F1EA;color:#0E1F33;overflow-
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:14px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(14,31,51,0.97);border-bottom:1px solid rgba(255,255,255,0.07);}
 .nav-logo{font-family:'Libre Caslon Display',Georgia,serif;font-size:1.3rem;color:#F4F1EA;text-decoration:none;font-weight:400;}
-.nav-logo span{color:var(--coral);}
+.nav-logo span{color:#D9C7A3;}
 .nav-right{display:flex;align-items:center;gap:16px;}
 .nav-back{font-size:0.78rem;font-weight:500;color:rgba(217,199,163,0.60);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;white-space:nowrap;}
 .nav-back:hover{color:#D9C7A3;}
@@ -66,10 +66,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:14px 48px;display:fl
 .hero::before{content:'';position:absolute;inset:0;background:rgba(14,31,51,.4);}
 .hero::after{content:'';position:absolute;inset:0;background-image:rgba(14,31,51,.4);background-size:28px 28px;pointer-events:none;}
 .hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;}
-.hero-tag{font-size:0.66rem;font-weight:500;letter-spacing:0.24em;text-transform:uppercase;color:var(--coral);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.hero-tag{font-size:0.66rem;font-weight:500;letter-spacing:0.24em;text-transform:uppercase;color:#D9C7A3;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
 .hero-tag::before{content:'';width:22px;height:1px;background:var(--coral);}
 .hero-breadcrumb{font-size:0.75rem;color:rgba(217,199,163,0.40);margin-bottom:10px;}
-.hero-breadcrumb a{color:var(--coral);text-decoration:none;}
+.hero-breadcrumb a{color:#D9C7A3;text-decoration:none;}
 h1.hero-title{font-family:'Libre Caslon Display',Georgia,serif;font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:400;color:#F4F1EA;line-height:1.05;margin-bottom:12px;}
 h1.hero-title em{color:var(--coral);font-style:normal;}
 .hero-sub{font-size:0.97rem;color:rgba(217,199,163,0.70);line-height:1.85;max-width:520px;margin-bottom:24px;}
@@ -181,7 +181,20 @@ footer{background:#0E1F33;padding:32px 48px;display:flex;justify-content:space-b
 @media(max-width:480px){.facts-grid{grid-template-columns:1fr;}.other-towns{grid-template-columns:1fr;}}
 </style>
 <!-- ANALYTICS: GA4 (Google Analytics 4) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
+<script>
+window.addEventListener('load',function(){
+  function load(){
+    if(document.querySelector('script[data-sl-ga]'))return;
+    var tag=document.createElement('script');
+    tag.async=true;
+    tag.setAttribute('data-sl-ga','1');
+    tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
+    document.head.appendChild(tag);
+  }
+  document.addEventListener('pointerdown',load,{once:true,passive:true});
+  setTimeout(function(){if(window.requestIdleCallback)requestIdleCallback(load);else load();},5000);
+});
+</script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EN91RH3PZV');</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"TouristDestination","name":"Carolina Beach, NC","url":"https://shorelist.net/carolina-beach","description":"Visitor guide to Carolina Beach, North Carolina, things to do, local experiences, and events.","touristType":"Coastal travelers","containedInPlace":{"@type":"AdministrativeArea","name":"New Hanover County, North Carolina"},"publisher":{"@type":"Organization","@id":"https://shorelist.net/#org","name":"ShoreList","url":"https://shorelist.net/"}}
@@ -193,7 +206,7 @@ footer{background:#0E1F33;padding:32px 48px;display:flex;justify-content:space-b
 <link rel="stylesheet" href="/luxe.css"/>
 <link rel="stylesheet" href="/town.css"/>
 <noscript><style>.t-evs{display:none!important}.t-chip{display:none!important}</style></noscript>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 <style id="scene-hero">
 .hero-photo{position:absolute;left:-2%;top:-2%;width:104%;height:104%;max-width:none;object-fit:cover;object-position:50% 60%;z-index:0;animation:heroDrift 60s ease-in-out infinite alternate}
 @keyframes heroDrift{from{transform:scale(1) translate3d(0,0,0)}to{transform:scale(1.04) translate3d(-1.2%,-.8%,0)}}
@@ -214,8 +227,9 @@ section.hero[data-photo] .btn-ghost svg{color:#fff!important}
 section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;border:1px solid rgba(255,255,255,.22)!important;}
 @media(max-width:768px){section.hero[data-photo]{min-height:0}}
 </style>
-<link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1920x.webp" imagesrcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_640x.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1280x.webp 1280w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1920x.webp 1920w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_2560x.webp 2560w" imagesizes="100vw" fetchpriority="high"/>
+<link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1920x.webp" imagesrcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1280x.webp 1280w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1920x.webp 1920w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_2560x.webp 2560w" imagesizes="100vw" fetchpriority="high"/>
 <link rel="stylesheet" href="/tokens.css"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the beach free at Carolina Beach?","acceptedAnswer":{"@type":"Answer","text":"Access to the beach has no charge. Parking is separate: in 2026 paid parking ran March 1 to October 31, 9 a.m. to 8 p.m., and was free November 1 to the end of February. See the parking guide and confirm with the town."}},{"@type":"Question","name":"Are dogs allowed on the beach at Carolina Beach?","acceptedAnswer":{"@type":"Answer","text":"Dogs must be leashed. From April 1 to September 30 they are allowed on the beach only before 9 a.m. and after 5 p.m., and from October 1 to March 31 at any hour. They are not allowed on the historic wooden boardwalk or in the Boardwalk Business District. See the town dog rules ."}},{"@type":"Question","name":"Can you drive on the beach at Carolina Beach?","acceptedAnswer":{"@type":"Answer","text":"Only four-wheel-drive vehicles, and only at Freeman Park, which requires a paid permit and also allows overnight camping. Read the town Freeman Park rules first."}},{"@type":"Question","name":"Where can I see Venus flytraps near Carolina Beach?","acceptedAnswer":{"@type":"Answer","text":"On the Flytrap Trail and elsewhere in Carolina Beach State Park, according to the visitors bureau. Most day-use activities at the park, such as hiking, biking and fishing, have no fee. See nature walks near Wilmington ."}}]}</script>
 </head>
 <body class="town" data-town="carolina" data-wx="1">
 
@@ -346,7 +360,7 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
 <nav aria-label="Primary">
   <a href="/" class="nav-logo" aria-label="ShoreList home">Shore<span>List</span></a>
   <div class="nav-right">
-    <a href="/map" style="font-size:0.78rem;font-weight:500;color:var(--coral);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;">Map</a>
+    <a href="/map" style="font-size:0.78rem;font-weight:500;color:#D9C7A3;text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;">Map</a>
     <a href="/" class="nav-back">&#8592; All Experiences</a>
     <a href="/things-to-do" class="nav-book">Book Experiences</a>
   </div>
@@ -354,7 +368,7 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
 <main id="main">
 
 <section class="hero" data-photo>
-  <img class="hero-photo" alt="" width="1920" height="1072" decoding="async" fetchpriority="high" sizes="100vw" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_640x.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1280x.webp 1280w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1920x.webp 1920w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_2560x.webp 2560w" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1920x.webp"/>
+  <img class="hero-photo" alt="The beach at Carolina Beach" width="1920" height="1072" decoding="async" fetchpriority="high" sizes="100vw" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1280x.webp 1280w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1920x.webp 1920w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_2560x.webp 2560w" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-carolina_1920x.webp"/>
   <div class="scene-scrim" aria-hidden="true"></div>
   <div class="hero-inner">
     <div>
@@ -362,7 +376,7 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
       <p class="t-chip is-off" data-t-chip aria-live="polite">Live conditions</p>
       <div class="hero-tag">Pleasure Island &nbsp;&middot;&nbsp; NC Coast</div>
       <h1 class="hero-title">Carolina Beach, NC<br/><em>Wild, Warm, and Real.</em></h1>
-      <p class="hero-sub">A classic American beach town with a boardwalk that has been open since 1939, wild Venus flytraps, and July 4th fireworks. Carolina Beach doesn't pretend to be anything it isn't, and that's exactly why people love it.</p>
+      <p class="hero-sub">A classic American beach town with a boardwalk, wild Venus flytraps, and July 4th fireworks. Carolina Beach doesn't pretend to be anything it isn't, and that's exactly why people love it.</p>
       <div class="hero-badges">
         <div class="hb"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-surf" xlink:href="#i-surf"/></svg>Surf Lessons</div>
         <div class="hb"><svg class="ico-xs" aria-hidden="true" focusable="false"><use href="#i-leaf" xlink:href="#i-leaf"/></svg>Wild Venus Flytraps</div>
@@ -402,12 +416,12 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
     <h2 id="t-do-h">Top things to do in <em>Carolina Beach</em></h2>
     <p class="t-lede">Start with the activities this guide covers for Carolina Beach. Each card opens the full category page.</p>
     <ul class="t-cards">
-      <li><a class="t-card" href="/things-to-do/walking-tours"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-walking-tours_640x480_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-walking-tours_480x360_crop_center.webp 480w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-walking-tours_800x600_crop_center.webp 800w" sizes="(max-width:640px) 100vw, 360px" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>Walking &amp; History Tours</b><span>Mural and boardwalk history walks on Pleasure Island.</span><i>See options</i></span></a></li>
-      <li><a class="t-card" href="/things-to-do/surf-lessons"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-surf-lessons_640x480_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-surf-lessons_480x360_crop_center.webp 480w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-surf-lessons_800x600_crop_center.webp 800w" sizes="(max-width:640px) 100vw, 360px" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>Surf Lessons</b><span>Learn with a local instructor, all gear included.</span><i>See options</i></span></a></li>
-      <li><a class="t-card" href="/things-to-do/nature-walks"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-nature-walks_640x480_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-nature-walks_480x360_crop_center.webp 480w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-nature-walks_800x600_crop_center.webp 800w" sizes="(max-width:640px) 100vw, 360px" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>Nature Walks</b><span>Venus flytraps and cypress swamps in Carolina Beach State Park.</span><i>See options</i></span></a></li>
-      <li><a class="t-card" href="/things-to-do/fishing-charters"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-fishing-charters_640x480_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-fishing-charters_480x360_crop_center.webp 480w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-fishing-charters_800x600_crop_center.webp 800w" sizes="(max-width:640px) 100vw, 360px" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>Fishing Charters</b><span>Half and full-day trips from Carolina Beach Marina.</span><i>See options</i></span></a></li>
-      <li><a class="t-card" href="/things-to-do/jet-ski-rentals"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-jet-ski-rentals_640x480_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-jet-ski-rentals_480x360_crop_center.webp 480w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-jet-ski-rentals_800x600_crop_center.webp 800w" sizes="(max-width:640px) 100vw, 360px" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>Jet Ski Rentals</b><span>Hit the Atlantic, no experience needed.</span><i>See options</i></span></a></li>
-      <li><a class="t-card" href="/things-to-do/ebike-rentals"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-ebike-rentals_640x480_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-ebike-rentals_480x360_crop_center.webp 480w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-ebike-rentals_800x600_crop_center.webp 800w" sizes="(max-width:640px) 100vw, 360px" width="800" height="600" alt="" loading="lazy" decoding="async"/><span class="t-card-b"><b>E-Bike Rentals</b><span>Ride the island on an e-bike.</span><i>See options</i></span></a></li>
+      <li><a class="t-card" href="/things-to-do/walking-tours"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-walking-tours_640x480_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-walking-tours_480x360_crop_center.webp 480w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-walking-tours_800x600_crop_center.webp 800w" sizes="(max-width:640px) 100vw, 360px" width="800" height="600" alt="A walking tour, for history walks on Pleasure Island and downtown" loading="lazy" decoding="async"/><span class="t-card-b"><b>Walking &amp; History Tours</b><span>Mural and boardwalk history walks on Pleasure Island.</span><i>See options</i></span></a></li>
+      <li><a class="t-card" href="/things-to-do/surf-lessons"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-surf-lessons_640x480_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-surf-lessons_480x360_crop_center.webp 480w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-surf-lessons_800x600_crop_center.webp 800w" sizes="(max-width:640px) 100vw, 360px" width="800" height="600" alt="A surf lesson on the beach" loading="lazy" decoding="async"/><span class="t-card-b"><b>Surf Lessons</b><span>Learn with a local instructor, all gear included.</span><i>See options</i></span></a></li>
+      <li><a class="t-card" href="/things-to-do/nature-walks"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-nature-walks_640x480_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-nature-walks_480x360_crop_center.webp 480w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-nature-walks_800x600_crop_center.webp 800w" sizes="(max-width:640px) 100vw, 360px" width="800" height="600" alt="A coastal trail near Wilmington" loading="lazy" decoding="async"/><span class="t-card-b"><b>Nature Walks</b><span>Venus flytraps and cypress swamps in Carolina Beach State Park.</span><i>See options</i></span></a></li>
+      <li><a class="t-card" href="/things-to-do/fishing-charters"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-fishing-charters_640x480_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-fishing-charters_480x360_crop_center.webp 480w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-fishing-charters_800x600_crop_center.webp 800w" sizes="(max-width:640px) 100vw, 360px" width="800" height="600" alt="A fishing boat, for charters from the beach marinas" loading="lazy" decoding="async"/><span class="t-card-b"><b>Fishing Charters</b><span>Half and full-day trips from Carolina Beach Marina.</span><i>See options</i></span></a></li>
+      <li><a class="t-card" href="/things-to-do/jet-ski-rentals"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-jet-ski-rentals_640x480_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-jet-ski-rentals_480x360_crop_center.webp 480w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-jet-ski-rentals_800x600_crop_center.webp 800w" sizes="(max-width:640px) 100vw, 360px" width="800" height="600" alt="A jet ski on the water" loading="lazy" decoding="async"/><span class="t-card-b"><b>Jet Ski Rentals</b><span>Hit the Atlantic, no experience needed.</span><i>See options</i></span></a></li>
+      <li><a class="t-card" href="/things-to-do/ebike-rentals"><img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-ebike-rentals_640x480_crop_center.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-ebike-rentals_480x360_crop_center.webp 480w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-ebike-rentals_800x600_crop_center.webp 800w" sizes="(max-width:640px) 100vw, 360px" width="800" height="600" alt="An electric bike for the beach towns" loading="lazy" decoding="async"/><span class="t-card-b"><b>E-Bike Rentals</b><span>Ride the island on an e-bike.</span><i>See options</i></span></a></li>
     </ul>
     <p class="t-note">Activity photos are illustrative and may not show the exact tour or location.</p>
   </div>
@@ -430,29 +444,7 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
       </div>
       <div class="t-on-season">
         <h3>Seasonal highlights</h3>
-    <div class="events-list">
-      <div class="event-row">
-        <div class="er-ico"><svg aria-hidden="true" focusable="false"><use href="#i-surf" xlink:href="#i-surf"/></svg></div>
-        <div class="er-body"><div class="er-name">Carolina Beach Music Festival</div><div class="er-meta">Saturday, June 6 &nbsp;&middot;&nbsp; All Day &nbsp;&middot;&nbsp; Carolina Beach Boardwalk</div></div>
-        <span class="er-badge er-free">Free</span>
-      </div>
-      <div class="event-row">
-        <div class="er-ico"><svg aria-hidden="true" focusable="false"><use href="#i-fireworks" xlink:href="#i-fireworks"/></svg></div>
-        <div class="er-body"><div class="er-name">Boardwalk Fireworks Thursdays</div><div class="er-meta">Every Thursday, Memorial Day through Labor Day &nbsp;&middot;&nbsp; Dusk</div></div>
-        <span class="er-badge er-free">Free</span>
-      </div>
-      <div class="event-row">
-        <div class="er-ico"><svg aria-hidden="true" focusable="false"><use href="#i-fireworks" xlink:href="#i-fireworks"/></svg></div>
-        <div class="er-body"><div class="er-name">America&#8217;s 250th Birthday: July 4th, 2026</div><div class="er-meta">Saturday, July 4 &nbsp;&middot;&nbsp; Fireworks over the Atlantic at dusk</div></div>
-        <span class="er-badge er-free">Free</span>
-      </div>
-      <div class="event-row">
-        <div class="er-ico"><svg aria-hidden="true" focusable="false"><use href="#i-food" xlink:href="#i-food"/></svg></div>
-        <div class="er-body"><div class="er-name">Pleasure Island Seafood, Blues &amp; Jazz Festival</div><div class="er-meta">Late June &amp; Late September &nbsp;&middot;&nbsp; Carolina Beach Lake Park</div></div>
-        <span class="er-badge er-paid">Ticketed</span>
-      </div>
-    </div>
-        <p class="t-note">Some dates in this list are from the 2026 season and may have passed. The <a href="/events/carolina-beach">Carolina Beach events page</a> shows what is next.</p>
+    <p>The old seasonal list was removed because those dates have passed. What is coming up is on the <a href="/events/carolina-beach">events page</a>, taken from organizer calendars.</p>
       </div>
     </div>
     <p class="t-on-foot"><a href="/events" class="t-btn">View Full Events Calendar &#8594;</a></p>
@@ -467,7 +459,6 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
       <div class="exp-card">
         <div class="exp-card-top" style="background:#0E1F33;"></div>
         <div class="exp-card-body">
-          <img src="/carolina-beach-tours-sm.webp" width="156" height="132" loading="lazy" decoding="async" alt="Carolina Beach Tours" style="height:44px;width:auto;display:block;margin-bottom:12px;"/>
           <h3 class="exp-name">Carolina Beach Tours</h3>
           <div class="exp-desc">A ShoreList Founding Partner. Led by <strong>Amanda Leese</strong>, these guided history walks tell the story of Pleasure Island, from the Carolina Beach Mural Project (surf and shag-culture art) to the gritty, colorful dive-bar history of the boardwalk. Two seasonal Carolina Beach tours.</div>
           <div class="exp-tags"><span class="exp-tag">Carolina Beach</span><span class="exp-tag">Founding Partner</span><span class="exp-tag">Mural &amp; History Walks</span><span class="exp-tag">Seasonal</span><span class="exp-tag">4.9&#9733; on Viator &amp; TripAdvisor</span></div>
@@ -542,7 +533,7 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
       <div class="fact"><div class="fact-n">Thursdays</div><div class="fact-l">boardwalk fireworks, Memorial Day to Labor Day</div></div>
       <div class="fact"><div class="fact-n">Daily</div><div class="fact-l">lifeguards, Memorial weekend to Labor Day weekend</div></div>
       <div class="fact"><div class="fact-n">19 mi</div><div class="fact-l">to Wilmington International Airport</div></div>
-      <div class="fact"><div class="fact-n">Oct 1 to Mar 31</div><div class="fact-l">dogs allowed on the beach at any hour</div></div>
+      <div class="fact"><div class="fact-n">Apr 1 to Sep 30</div><div class="fact-l">leashed dogs on the beach only before 9 a.m. and after 5 p.m.</div></div>
     </div>
   </div>
 </section>
@@ -550,11 +541,12 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
   <div class="t-wrap">
     <p class="t-eye">Quick answers</p>
     <h2 id="t-faq-h">Carolina Beach: <em>quick answers</em></h2>
-    <p class="t-lede">Carolina Beach is the busiest town on Pleasure Island, about 30 minutes south of downtown Wilmington and about 19 miles from Wilmington International Airport. It has a boardwalk, a charter boat basin and Carolina Beach State Park, and the visitors bureau says there is no charge to access the beach.</p>
+    <p class="t-lede">Carolina Beach is the busiest town on Pleasure Island, about 30 minutes south of downtown Wilmington and about 19 miles from Wilmington International Airport. It has a <a href="/carolina-beach-boardwalk">boardwalk</a>, a charter boat basin and Carolina Beach State Park, and the visitors bureau says there is no charge to access the beach.</p>
       <details><summary>Is the beach free at Carolina Beach?</summary><p>Access to the beach has no charge. Parking is separate: in 2026 paid parking ran March 1 to October 31, 9 a.m. to 8 p.m., and was free November 1 to the end of February. See the <a href="/wilmington-nc-parking">parking guide</a> and confirm with the town.</p></details>
       <details><summary>Are dogs allowed on the beach at Carolina Beach?</summary><p>Dogs must be leashed. From April 1 to September 30 they are allowed on the beach only before 9 a.m. and after 5 p.m., and from October 1 to March 31 at any hour. They are not allowed on the historic wooden boardwalk or in the Boardwalk Business District. See the <a href="https://carolinabeach.org/visitors/pet-rules" rel="noopener">town dog rules</a>.</p></details>
       <details><summary>Can you drive on the beach at Carolina Beach?</summary><p>Only four-wheel-drive vehicles, and only at Freeman Park, which requires a paid permit and also allows overnight camping. Read the <a href="https://www.carolinabeach.org/visitors/freeman-park" rel="noopener">town Freeman Park rules</a> first.</p></details>
       <details><summary>Where can I see Venus flytraps near Carolina Beach?</summary><p>On the Flytrap Trail and elsewhere in Carolina Beach State Park, according to the visitors bureau. Most day-use activities at the park, such as hiking, biking and fishing, have no fee. See <a href="/things-to-do/nature-walks">nature walks near Wilmington</a>.</p></details>
+    <p>Shop pieces for these beaches: <a href="/shop/wrightsville-beach">Wrightsville Beach</a> and <a href="/shop/carolina-beach">Carolina Beach</a>. Kure Beach pieces are on the <a href="/shop/kure-beach">Kure Beach shop</a>.</p>
     <p class="t-src">Sources, checked November 2026: <a href="https://carolina-beach.wilmingtonandbeaches.com/about/island-info/faq/" rel="noopener">Wilmington and Beaches: Carolina Beach FAQ</a>; <a href="https://carolina-beach.wilmingtonandbeaches.com/press-and-media/area-information" rel="noopener">Wilmington and Beaches: about Carolina Beach</a>; <a href="https://www.ncparks.gov/state-parks/carolina-beach-state-park/general-information" rel="noopener">NC State Parks: Carolina Beach State Park</a>. Rules, hours and fees change, so confirm before you go. See also the <a href="/pleasure-island">Pleasure Island guide</a>.</p>
   </div>
 </section>
@@ -576,19 +568,19 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
     <h2 class="sec-title sec-title-light">More <em>Town Guides</em></h2>
     <div class="other-towns">
       <a href="/downtown" class="ot">
-        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bridge_1000x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bridge_500x.webp 500w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bridge_1000x.webp 1000w" sizes="(max-width:640px) 100vw, 380px" width="1000" height="714" alt="" loading="lazy" decoding="async"/>
+        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bridge_1000x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bridge_500x.webp 500w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-bridge_1000x.webp 1000w" sizes="(max-width:640px) 100vw, 380px" width="1000" height="714" alt="The Cape Fear Memorial Bridge at Wilmington" loading="lazy" decoding="async"/>
         <span class="ot-ico"><svg aria-hidden="true" focusable="false"><use href="#i-building" xlink:href="#i-building"/></svg></span>
         <div class="ot-name">Downtown Wilmington</div>
         <div class="ot-sub">Ghost tours, film history, river cruises</div>
       </a>
       <a href="/wrightsville-beach" class="ot">
-        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-wrightsville_1000x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-wrightsville_500x.webp 500w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-wrightsville_1000x.webp 1000w" sizes="(max-width:640px) 100vw, 380px" width="1000" height="558" alt="" loading="lazy" decoding="async"/>
+        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-wrightsville_1000x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-wrightsville_500x.webp 500w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-wrightsville_1000x.webp 1000w" sizes="(max-width:640px) 100vw, 380px" width="1000" height="558" alt="Wrightsville Beach shoreline" loading="lazy" decoding="async"/>
         <span class="ot-ico"><svg aria-hidden="true" focusable="false"><use href="#i-surf" xlink:href="#i-surf"/></svg></span>
         <div class="ot-name">Wrightsville Beach</div>
         <div class="ot-sub">The closest beach to downtown Wilmington</div>
       </a>
       <a href="/kure-beach" class="ot">
-        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1000x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_500x.webp 500w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1000x.webp 1000w" sizes="(max-width:640px) 100vw, 380px" width="1000" height="558" alt="" loading="lazy" decoding="async"/>
+        <img src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1000x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_500x.webp 500w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-hero-kure_1000x.webp 1000w" sizes="(max-width:640px) 100vw, 380px" width="1000" height="558" alt="The beach at Kure Beach" loading="lazy" decoding="async"/>
         <span class="ot-ico"><svg aria-hidden="true" focusable="false"><use href="#i-beach" xlink:href="#i-beach"/></svg></span>
         <div class="ot-name">Kure Beach</div>
         <div class="ot-sub">Fort Fisher &amp; wild beaches</div>
@@ -629,10 +621,12 @@ section.hero[data-photo] .weather-card{background:rgba(14,31,51,.55)!important;b
   <div class="sc-text"><strong>Tours are bookable now</strong>: see what is open this week</div>
   <a href="/things-to-do" class="sc-btn">Browse Experiences &#8594;</a>
 </div>
-<script src="/sound.js" defer></script>
-<script src="/beachwx.js" defer></script>
-<script src="/town.js" defer></script>
-<script src="/widgets.js" defer></script>
-<script src="/shore-plus.js" defer></script>
+<script data-idle="/sound.js"></script>
+<script data-idle="/beachwx.js"></script>
+<script data-idle="/town.js"></script>
+<script data-idle="/shore-plus.js"></script>
+
+<script src="/guide-boot.js" defer data-widgets="1"></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>

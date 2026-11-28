@@ -58,7 +58,7 @@ const HERO_OPEN = '<section class="hero" aria-label="Page header">';
 if (!tpl.includes(HERO_OPEN)) throw new Error('template hero missing');
 // photo hero: a real <img> (so it can be prioritised and sized) under a navy overlay
 const heroOpen = (slug, extra = '') => `<section class="hero ph${extra}" aria-label="Page header">
-  <img class="hero-photo" src="${PHOTO(slug)}_1920x.webp" srcset="${PHOTO(slug)}_640x.webp 640w, ${PHOTO(slug)}_1000x.webp 1000w, ${PHOTO(slug)}_1280x.webp 1280w, ${PHOTO(slug)}_1920x.webp 1920w" sizes="100vw" width="1920" height="1072" alt="" fetchpriority="high" decoding="async"/>`;
+  <img class="hero-photo" src="${PHOTO(slug)}_1920x.webp" srcset="${PHOTO(slug)}_1280x.webp 1280w, ${PHOTO(slug)}_1920x.webp 1920w" sizes="100vw" width="1920" height="1072" alt="" fetchpriority="high" decoding="async"/>`;
 const title = (slug) => strip(ctx.CAT_DATA[slug].title);
 const thumb = (slug, w, h, alt, sizes) => `<img src="${PHOTO(slug)}_${w}x${h}_crop_center.webp"${sizes ? ` srcset="${w >= 480 ? `${PHOTO(slug)}_${w / 2}x${h / 2}_crop_center.webp ${w / 2}w, ` : ''}${PHOTO(slug)}_${w}x${h}_crop_center.webp ${w}w, ${PHOTO(slug)}_${w * 2}x${h * 2}_crop_center.webp ${w * 2}w" sizes="${sizes}"` : ''} width="${w}" height="${h}" alt="${esc(alt)}" loading="lazy" decoding="async"/>`;
 const ico = (id) => `<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><use href="#i-${id}"/></svg>`;
@@ -168,10 +168,9 @@ ${liveHtml}
       .replace('<link rel="preconnect" href="https://fonts.googleapis.com"/>',
         '<link rel="preconnect" href="https://cdn.shopify.com"/>\n<link rel="preconnect" href="https://fonts.googleapis.com"/>')
       .replaceAll('&display=swap', '&display=optional')
-      .replace('</head>', '<link rel="preload" as="image" href="/img/hero-mobile/ghost-tours.webp" media="(max-width: 820px)" fetchpriority="high"/>\n</head>')
-      .replace(/<img class="hero-photo"[^>]+>/, '<picture><source media="(max-width: 820px)" srcset="/img/hero-mobile/ghost-tours.webp"/>$&</picture>')
-      .replace('<script src="/attrib.js"></script>', '<script src="/attrib.js" defer></script>')
-      .replace('<script src="/category-app.js"></script>', '<script src="/category-app.js" defer></script>'));
+      .replace('</head>', '<link rel="preload" as="image" href="/img/hero/ghost-tours-1080.webp" media="(max-width: 820px)" fetchpriority="high"/>\n</head>')
+      .replace('<script data-idle="/attrib.js"></script>', '<script data-idle="/attrib.js"></script>')
+      .replace('<script data-idle="/category-app.js"></script>', '<script data-idle="/category-app.js"></script>'));
   }
   fs.writeFileSync(`things-to-do/${slug}.html`, h);
 }
@@ -179,10 +178,10 @@ ${liveHtml}
 // ---------- shell for hub + guide (template without the booking app) ----------
 function shell({ url, title, desc, image, lds, photo, heroExtra, breadcrumb, tag, h1, sub, main, scripts }) {
   let h = head(tpl, { url, title, desc, image, extraLd: lds });
-  const s1 = h.indexOf('<script src="/category-app.js">', h.indexOf('</footer>')), s2 = h.indexOf('<script src="/sound.js"');
+  const s1 = h.indexOf('<script data-idle="/category-app.js">', h.indexOf('</footer>')), s2 = h.indexOf('<script data-idle="/sound.js"');
   if (s1 < 0 || s2 < 0) throw new Error('template scripts missing');
   h = h.slice(0, s1) + h.slice(s2);                       // drop the booking scripts
-  h = h.replace('<script src="/directory.js" defer></script>\n', (scripts || ''));   // local directory is for category pages only
+  h = h.replace('<script src="/directory.js"></script>\n', (scripts || ''));   // local directory is for category pages only
   for (const [a, b] of [
     ['<body>', '<body class="pg">'],
     [HERO_OPEN, heroOpen(photo, ' tall')],
@@ -302,7 +301,7 @@ fs.writeFileSync('things-to-do/index.html', shell({
   ],
   photo: 'wildlife-tours',
   heroExtra: WX_CHIP + '\n    <div class="hero-jump" role="navigation" aria-label="Jump to a section">' + GROUPS.map(([id, name]) => `<a href="#${id}">${name}</a>`).join('') + '</div>',
-  scripts: '<script src="/today.js" defer></script>\n' + WX_SCRIPT + '\n',
+  scripts: '<script data-idle="/today.js"></script>\n' + WX_SCRIPT + '\n',
   breadcrumb: '<span>Things to Do</span>', tag: 'Wilmington &middot; Wrightsville &middot; Carolina &middot; Kure',
   h1: 'Things to Do in Wilmington, NC <em>&amp; the Beaches</em>',
   sub: 'Tours, water sports, museums, rentals and local experiences across downtown Wilmington, Wrightsville Beach, Carolina Beach and Kure Beach.',

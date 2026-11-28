@@ -10,7 +10,20 @@
 <meta name="description" content="Reach Wilmington and beach-town visitors with clearly labeled sponsored picks, event promotion, newsletter sponsorship and category sponsorships on ShoreList."/>
 <meta property="og:title" content="Advertise with ShoreList"/><meta property="og:description" content="Sponsored picks, events, newsletter and category sponsorships for Wilmington businesses."/><meta property="og:type" content="website"/><meta property="og:url" content="https://shorelist.net/advertise"/>
 <script>document.documentElement.className+=' js'</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
+<script>
+window.addEventListener('load',function(){
+  function load(){
+    if(document.querySelector('script[data-sl-ga]'))return;
+    var tag=document.createElement('script');
+    tag.async=true;
+    tag.setAttribute('data-sl-ga','1');
+    tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
+    document.head.appendChild(tag);
+  }
+  document.addEventListener('pointerdown',load,{once:true,passive:true});
+  setTimeout(function(){if(window.requestIdleCallback)requestIdleCallback(load);else load();},5000);
+});
+</script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EN91RH3PZV');</script>
 <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb4-golden_1200x630_crop_center.webp"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb4-golden_1200x630_crop_center.webp"/>
 <link rel="icon" href="/favicon.ico"/><link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
@@ -46,7 +59,7 @@
 .ad-form button[disabled]{opacity:.6;cursor:progress}
 .ad-msg{font-weight:500;color:var(--ev-teal);min-height:1.6em}
 </style>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 <link rel="stylesheet" href="/tokens.css"/>
 </head>
 <body class="ev-page">
@@ -110,6 +123,9 @@ f.addEventListener('submit',function(e){e.preventDefault();var v=f.email.value.t
 var b=f.querySelector('button');b.disabled=true;b.textContent='Sending...';
 fetch('https://formspree.io/f/xeevzzqd',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify({email:v,business:f.business.value,interest:f.interest.value,list:'Advertiser inquiry',source:location.pathname,_subject:'ShoreList advertiser inquiry'})}).then(function(r){if(!r.ok)throw 0;m.textContent='Thank you. We will be in touch within two business days.';f.reset();t('advertise_inquiry',{interest:f.interest.value})}).catch(function(){m.textContent='Something went wrong. Please email rj@shorelist.net.'}).finally(function(){b.disabled=false;b.textContent='Send request'})});})();
 </script>
-<script src="/shore-plus.js" defer></script>
+<script data-idle="/shore-plus.js"></script>
+
+<script src="/guide-boot.js" defer></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>

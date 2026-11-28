@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Writes the crawlable, no-JavaScript parts of shop.html from shop-catalog.json:
-//   - collection blocks, the six "Start here" cards (catalog.startHere), and the Product/ItemList + FAQPage JSON-LD
+//   - collection blocks, the four first-screen "Gifts under $35" cards (FIRST_SCREEN below), and the Product/ItemList + FAQPage JSON-LD
 // The FAQPage JSON-LD is built from the visible FAQ text in shop.html, so the two cannot disagree.
 // Run: node tools/build-shop-static.mjs   (node tools/build-shop-static.mjs --check exits 1 if shop.html is stale)
 import fs from 'node:fs';
@@ -14,8 +14,7 @@ let html = fs.readFileSync('shop.html', 'utf8');
 
 const BLOCKS = [
   { id: 'local-icons', cover: 'the-pelican-embroidered-crewneck-carolina-beach', line: 'One small mark per beach town, on crewnecks, tees and caps.' },
-  { id: 'shore-gear', cover: 'wrightsville-beach-sloop-weekender-tote-bag', line: 'Totes, mugs, pillows and can coolers for the boat and the beach.' },
-  { id: 'beach-setup', cover: 'wrightsville-beach-sloop-picnic-and-beach-blanket', line: 'The chair, the shade, the towel and the cooler.' },
+  { id: 'shore-gear', cover: 'airlie-oak-wilmington-all-over-print-tote-bag', line: 'Totes, mugs, pillows and can coolers for the boat and the beach.' },
   { id: 'coastal-christmas', cover: 'airlie-oak-wilmington-ceramic-ornament', line: 'Ornaments and gifts for a Carolina Christmas.' },
   { id: 'landmarks', cover: 'airlie-oak-framed-art-print-wrightsville-beach-and-wilmington', line: 'A framed print of Wrightsville Beach and Wilmington.' },
 ];
@@ -30,12 +29,36 @@ const collections = BLOCKS.filter((b) => cat.collections.some((c) => c.id === b.
     const img = cv && (cv.lookbook || cv.img);
     return `<a class="cblock${k === 0 ? ' wide' : ''}" href="/shop?collection=${esc(b.id)}#results" data-coll="${esc(b.id)}"><div class="cp">${img ? `<img src="${esc(img.replace(/_1920x(\.\w+)$/, k === 0 ? '_1280x$1' : '_960x$1'))}" alt="" loading="lazy" decoding="async" width="1200" height="${k === 0 ? 514 : 900}"/>` : ''}</div><h3>${esc(c.name)}</h3><p>${esc(b.line)}</p><span class="go">View the collection</span></a>`;
   });
+// Shopify storefront collections. These are not on-page filters, so they have no data-coll.
+const shopifyCollections = [
+  { href: '/prints', name: 'Art & Prints', line: 'Framed prints from Wrightsville Beach, Carolina Beach and Kure Beach.', img: 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sailfish-framed-art-print_960x.jpg', alt: 'Framed Wrightsville Beach sailfish art print in a coastal study, rendered mockup' },
+  { href: '/shop#collections', name: 'Home Decor', line: 'Ornaments, mugs, pillows and towels for the house.', img: 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5833881298279680083_2048.jpg', alt: 'Airlie Oak Wilmington throw pillow' },
+  { href: '/shop?collection=shore-gear#results', name: 'Gear', line: 'Coolers, totes and pouches for the boat and the beach.', img: 'https://cdn.shopify.com/s/files/1/0686/5213/8580/files/1681256103521192887_2048_1000x.jpg?v=1795412454', alt: 'Airlie Oak Wilmington all over print tote bag' },
+].map((c) => `<a class="cblock" href="${esc(c.href)}" rel="noopener"><div class="cp"><img src="${esc(c.img)}" alt="${esc(c.alt)}" loading="lazy" decoding="async" width="1200" height="900"/></div><h3>${esc(c.name)}</h3><p>${esc(c.line)}</p><span class="go">View the collection</span></a>`);
+collections.push(...shopifyCollections);
 
-const start = (cat.startHere || []).map((id) => byId.get(id)).filter((i) => i && !retired.has(i.id)).slice(0, 6);
-const cards = start.map((i, k) => {
-  const f = first(i);
-  return `<article class="card"><div class="ph" data-qv="${esc(i.id)}"><img class="p1" src="${esc(sized(f, 640))}" alt="${esc(i.alt || i.name)}" ${k < 2 ? 'loading="eager"' : 'loading="lazy"'} decoding="async" width="800" height="1000"/></div><div class="bd"><h3><button type="button" data-qv="${esc(i.id)}" aria-haspopup="dialog">${esc(splitName(i.name))}</button></h3><div class="row"><span class="price">${esc(money(i))}</span></div></div></article>`;
+const WB_FEAT = (cat.startHere || []).filter((id) => byId.get(id) && !retired.has(id));
+const FIRST_SCREEN = [
+  'sea-oats-carolina-coast-kiss-cut-vinyl-sticker-3-inch',
+  'wrightsville-can-cooler',
+  'wrightsville-ornament-2026',
+  'airlie-oak-wilmington-all-over-print-zip-pouch',
+];
+const start = (cat.startHere || []).map((id) => byId.get(id)).filter((i) => i && !retired.has(i.id)).slice(0, 9);
+const firstScreen = FIRST_SCREEN.map((id) => byId.get(id)).filter((i) => i && !retired.has(i.id)).slice(0, 4);
+const wbFeat = WB_FEAT.map((id) => byId.get(id)).filter((i) => i && !retired.has(i.id));
+const leadOf = (i) => i.lookbook || i.img || i.studio;
+const wbCards = wbFeat.map((i, k) => {
+  const f = sized(leadOf(i), 480);
+  const pri = k === 0 ? 'fetchpriority="high" loading="eager"' : (k === 1 ? 'fetchpriority="auto" loading="eager"' : 'fetchpriority="low" loading="lazy"');
+  return `<article class="card"><div class="ph" data-qv="${esc(i.id)}"><img class="p1" src="${esc(f)}" alt="${esc(i.alt || i.name)}" ${pri} decoding="async" width="800" height="1000"/></div><div class="bd"><h3><button type="button" data-qv="${esc(i.id)}" aria-haspopup="dialog">${esc(splitName(i.name))}</button></h3><div class="row"><span class="price">${esc(money(i))}</span></div><p class="made-note">Made to order. Delivery usually 1-2 weeks. Shipping is calculated at checkout.</p></div></article>`;
 });
+const cards = firstScreen.map((i) => {
+  const f = sized(leadOf(i), 480);
+  return `<article class="card"><div class="ph" data-qv="${esc(i.id)}"><img class="p1" src="${esc(f)}" alt="${esc(i.alt || i.name)}" fetchpriority="low" loading="lazy" decoding="async" width="800" height="1000"/></div><div class="bd"><h3><button type="button" data-qv="${esc(i.id)}" aria-haspopup="dialog">${esc(splitName(i.name))}</button></h3><div class="row"><span class="price">${esc(money(i))}</span></div><p class="made-note">Made to order. Delivery usually 1-2 weeks. Shipping is calculated at checkout.</p></div></article>`;
+});
+const lcpSrc = wbFeat[0] ? sized(leadOf(wbFeat[0]), 480) : '';
+const lcp = lcpSrc ? `<link rel="preconnect" href="https://cdn.shopify.com" crossorigin>\n<link rel="preload" as="image" href="${esc(lcpSrc)}" fetchpriority="high" media="(max-width: 899px)">` : '';
 
 const faqBlock = html.match(/<!--SHOP-STATIC:faq-->([\s\S]*?)<!--\/SHOP-STATIC:faq-->/)[1];
 const strip = (h) => h.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/\s+/g, ' ').trim();
@@ -54,10 +77,12 @@ const ld = {
 };
 const HOME = ['carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt', 'the-pelican-corduroy-cap-carolina-beach', 'airlie-oak-framed-art-print-wrightsville-beach-and-wilmington'].map((id) => byId.get(id)).filter((i) => i && !retired.has(i.id));
 const homeBand = `<ul class="hx-shop-grid">${HOME.map((i) => `<li><a href="/shop/${esc(i.town || 'wilmington')}"><span class="hx-shop-ph"><img src="${esc(sized(i.studio || i.img, 800))}" alt="${esc(i.alt || i.name)}" loading="lazy" decoding="async" width="800" height="1000"/></span><span class="hx-shop-n">${esc(splitName(i.name))}</span></a></li>`).join('')}</ul>`;
-const put = (name, body) => { html = html.replace(new RegExp(`(<!--SHOP-STATIC:${name}-->)[\\s\\S]*?(<!--/SHOP-STATIC:${name}-->)`), `$1\n${body}\n$2`); };
+const put = (name, body) => { html = html.replace(new RegExp(`(<!--SHOP-STATIC:${name}-->)[\\s\\S]*?(<!--/SHOP-STATIC:${name}-->)`), (_, a, z) => `${a}\n${body}\n${z}`); };
 put('collections', `<div class="cblocks" id="cblocks">${collections.join('')}</div>`);
+put('wbfeat', wbCards.join('\n'));
 put('cards', cards.join('\n'));
-if (fs.existsSync('index.html')) { let ix = fs.readFileSync('index.html', 'utf8'); ix = ix.replace(/(<!--SHOP-STATIC:homeband-->)[\s\S]*?(<!--\/SHOP-STATIC:homeband-->)/, `$1\n    ${homeBand}\n    $2`); if (process.argv.includes('--check')) { if (ix !== fs.readFileSync('index.html', 'utf8')) { console.error('index.html shop band is stale: run node tools/build-shop-static.mjs'); process.exit(1); } } else fs.writeFileSync('index.html', ix); }
+put('lcp', lcp);
+if (fs.existsSync('index.html')) { let ix = fs.readFileSync('index.html', 'utf8'); ix = ix.replace(/(<!--SHOP-STATIC:homeband-->)[\s\S]*?(<!--\/SHOP-STATIC:homeband-->)/, (_, a, z) => `${a}\n    ${homeBand}\n    ${z}`); if (process.argv.includes('--check')) { if (ix !== fs.readFileSync('index.html', 'utf8')) { console.error('index.html shop band is stale: run node tools/build-shop-static.mjs'); process.exit(1); } } else fs.writeFileSync('index.html', ix); }
 put('ld', `<script type="application/ld+json">${JSON.stringify(ld)}</script>`);
 if (process.argv.includes('--check')) { if (html !== fs.readFileSync('shop.html', 'utf8')) { console.error('shop.html static blocks are stale: run node tools/build-shop-static.mjs'); process.exit(1); } console.log('shop static blocks current'); }
 else { fs.writeFileSync('shop.html', html); console.log(`shop.html: ${collections.length} collection blocks, ${cards.length} cards, ${faq.length} FAQ entries`); }

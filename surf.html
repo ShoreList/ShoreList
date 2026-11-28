@@ -12,7 +12,20 @@
 <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb5-golden_1200x630_crop_center.webp"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb5-golden_1200x630_crop_center.webp"/>
 <link rel="icon" href="/favicon.ico"/><link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
 <script>document.documentElement.className+=' js'</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
+<script>
+window.addEventListener('load',function(){
+  function load(){
+    if(document.querySelector('script[data-sl-ga]'))return;
+    var tag=document.createElement('script');
+    tag.async=true;
+    tag.setAttribute('data-sl-ga','1');
+    tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
+    document.head.appendChild(tag);
+  }
+  document.addEventListener('pointerdown',load,{once:true,passive:true});
+  setTimeout(function(){if(window.requestIdleCallback)requestIdleCallback(load);else load();},5000);
+});
+</script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EN91RH3PZV');</script>
 <link rel="manifest" href="/manifest.webmanifest"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -22,7 +35,7 @@
 <link rel="stylesheet" href="/surf-hub.css"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ShoreList","item":"https://shorelist.net/"},{"@type":"ListItem","position":2,"name":"Surf","item":"https://shorelist.net/surf"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can beginners surf at Wrightsville Beach?","acceptedAnswer":{"@type":"Answer","text":"Yes. Wrightsville Beach is a popular place to learn, and local instructors run lessons for first-timers when conditions allow. Check the live surf check on this page before you go."}},{"@type":"Question","name":"When is the best time of year to learn to surf here?","acceptedAnswer":{"@type":"Answer","text":"Late spring through early fall, when the water is warm enough to surf without a wetsuit. Mornings usually have the lightest wind."}},{"@type":"Question","name":"Do I need my own surfboard for a lesson?","acceptedAnswer":{"@type":"Answer","text":"No. Lessons include a board and start on the sand before you paddle out. Trying a board in a lesson or a rental is also the easiest way to find out what size suits you before you buy one."}},{"@type":"Question","name":"Is the flag on the surf check an official beach flag?","acceptedAnswer":{"@type":"Answer","text":"No. It is a ShoreList estimate worked out from live wave, wind and weather data. The flags posted on the beach and the instructions of lifeguards always come first."}},{"@type":"Question","name":"Does ShoreList sell surfboards or kayaks?","acceptedAnswer":{"@type":"Answer","text":"No. ShoreList is a local guide and booking marketplace. Our guides explain what to look for, and a local surf shop can fit you in person. The ShoreList shop carries apparel and beach goods, including two surf tees."}},{"@type":"Question","name":"Do I need a life jacket on a paddleboard or kayak?","acceptedAnswer":{"@type":"Answer","text":"Plan on having one for every person. The US Coast Guard treats a paddleboard as a vessel once it is used beyond a swimming, surfing or bathing area, and North Carolina requires anyone under 13 to wear a life jacket on a recreational vessel that is underway. Rules change, so confirm with the official sources linked in our guide."}}]}</script>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 <link rel="stylesheet" href="/tokens.css"/>
 </head>
 <body class="ev-page">
@@ -30,7 +43,7 @@
 <nav class="ev-nav" aria-label="Primary"><a class="nav-logo" href="/" aria-label="ShoreList home">Shore<span>List</span></a><div class="nav-right"><a href="/surf" aria-current="page">Surf</a><a href="/events">Events</a><a href="/things-to-do">Things to Do</a><a href="/shore-picks">Shore Picks</a><a class="nav-book" href="/things-to-do">Book Experiences</a></div></nav>
 <main id="main">
 <header class="ev-hero">
-  <img class="ev-hero-img" alt="Beachgoers at Wrightsville Beach on a sunny day" width="1920" height="1080" decoding="async" fetchpriority="high" sizes="100vw" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb5-midday_1000x563_crop_center.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb5-midday_1920x1080_crop_center.webp 1920w" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb5-midday_1920x1080_crop_center.webp"/>
+  <img class="ev-hero-img" alt="Beachgoers at Wrightsville Beach on a sunny day" width="1920" height="1080" decoding="async" fetchpriority="high" sizes="100vw" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb5-midday_1920x1080_crop_center.webp 1920w" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb5-midday_1920x1080_crop_center.webp"/>
   <div class="ev-wrap">
     <p class="ev-eye"><i></i>ShoreList Surf</p>
     <h1>Your day in the water, <em>read live</em></h1>
@@ -90,7 +103,7 @@
 </div></section>
 
 <section class="sv band" id="learn" aria-labelledby="learn-h">
-  <img alt="" width="1920" height="1080" loading="lazy" decoding="async" sizes="100vw" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb5-golden_1000x563_crop_center.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb5-golden_1920x1080_crop_center.webp 1920w" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb5-golden_1920x1080_crop_center.webp"/>
+  <img alt="" width="1920" height="1080" loading="lazy" decoding="async" sizes="100vw" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb5-golden_1920x1080_crop_center.webp 1920w" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-wb5-golden_1920x1080_crop_center.webp"/>
   <div class="sv-in band-grid">
     <div>
       <p class="ev-eye"><i></i>Learn to surf</p>
@@ -224,7 +237,10 @@
   document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.wc,a.good,.band a.btn');if(a){try{if(typeof gtag==='function')gtag('event','surf_hub_click',{link:a.getAttribute('href')});}catch(x){}}});
 })();
 </script>
-<script src="/beachwx.js" defer></script>
-<script src="/shore-plus.js" defer></script>
+<script data-idle="/beachwx.js"></script>
+<script data-idle="/shore-plus.js"></script>
+
+<script src="/guide-boot.js" defer></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>

@@ -6,7 +6,6 @@ import fs from 'node:fs';
 import { pathToFileURL } from 'node:url';
 const PAGES = [
   ['index.html', ['scene.css', 'fixes.css', 'luxe.css', 'tokens.css', 'home.css', 'tokens.css']],
-  ['shop.html', ['scene.css', 'fixes.css', 'luxe.css', 'shop.css', 'tokens.css']],
   ['events.html', ['events.css', 'scene.css', 'luxe.css', 'tokens.css']],
   ['things-to-do/ghost-tours.html', ['category.css', 'fixes.css', 'scene.css', 'luxe.css', 'tokens.css']],
 ];

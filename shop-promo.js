@@ -1,37 +1,49 @@
-/* Shop sale banner. Each window shows only between its start and end (UTC epoch; late November Eastern is EST, UTC-5).
-   Public storefront always follows the configured sale windows. */
+/* Shop sale state. The banner itself is in the HTML (home and /shop) so it cannot push the page after load.
+   This script only sets data-sale on the document, before paint when it is inlined, and again if a tab stays open
+   across a window boundary. Late November Eastern is EST, UTC-5. */
 (function () {
   var SALES = [
-    { id: '1', label: 'Launch sale offer', lead: 'Launch sale:', code: 'SHORE15', when: 'through Thursday night',
+    { id: '1', code: 'SHORE15',
       start: Date.UTC(2026, 10, 25, 4, 0, 0), end: Date.UTC(2026, 10, 27, 4, 59, 0) },
-    { id: 'bf', label: 'Black Friday offer', lead: 'Black Friday:', code: 'SHOREFRIDAY15', when: 'today only',
+    { id: 'bf', code: 'SHOREFRIDAY15',
       start: Date.UTC(2026, 10, 27, 5, 0, 0), end: Date.UTC(2026, 10, 28, 4, 59, 0) },
-    { id: 'cm', label: 'Cyber Monday offer', lead: 'Cyber Monday:', code: 'SHORECYBER15', when: 'today only',
-      start: Date.UTC(2026, 10, 30, 5, 0, 0), end: Date.UTC(2026, 11, 1, 4, 59, 0) }
+    { id: 'cm', code: 'SHORECYBER15',
+      start: Date.UTC(2026, 10, 30, 5, 0, 0), end: Date.UTC(2026, 11, 1, 4, 59, 0) },
+    /* Christmas order-by note. Not a sale. It must stay LAST so a sale above always wins.
+       It starts the instant Cyber Monday ends and hides at Dec 8, 12:00 AM EST. */
+    { id: 'xmas', code: 'xmas',
+      start: Date.UTC(2026, 11, 1, 4, 59, 0), end: Date.UTC(2026, 11, 8, 5, 0, 0) }
   ];
-  var now = Date.now();
-  var s = null;
-  for (var i = 0; i < SALES.length; i++) {
-    if (now >= SALES[i].start && now < SALES[i].end) { s = SALES[i]; break; }
+  var root = document.documentElement;
+  if (!root || !root.setAttribute) return;
+  var timer;
+
+  function codeAt(now) {
+    var code = 'off';
+    for (var i = 0; i < SALES.length; i++) {
+      var sale = SALES[i];
+      if (now >= sale.start && now < sale.end) { code = sale.code; break; }
+    }
+    return code;
   }
-  if (!s) return;
-  var main = document.getElementById('main'); if (!main) return;
-  var bar = document.createElement('aside');
-  bar.setAttribute('aria-label', s.label);
-  bar.style.cssText = 'background:#0E1F33;color:#fff;text-align:center;padding:14px 16px;font:600 15px/1.4 "DM Sans",system-ui,sans-serif;letter-spacing:.01em';
-  var lead = document.createElement('strong'); lead.textContent = s.lead;
-  var code = document.createElement('strong'); code.textContent = s.code;
-  code.style.cssText = 'border:1px solid #fff;border-radius:6px;padding:1px 8px;margin:0 2px';
-  bar.appendChild(lead);
-  bar.appendChild(document.createTextNode(' 15% off eligible Shopify orders with code '));
-  bar.appendChild(code);
-  bar.appendChild(document.createTextNode(' ' + s.when + '. Enter it at our Shopify checkout.'));
-  main.insertBefore(bar, main.firstChild);
-  var hero = document.querySelector('.hero-cta');
-  if (hero) {
-    var p = document.createElement('p');
-    p.style.cssText = 'margin:14px 0 0;font:600 15px/1.4 "DM Sans",system-ui,sans-serif';
-    p.textContent = s.lead + ' 15% off eligible Shopify orders with code ' + s.code + ', ' + s.when + '.';
-    hero.parentNode.insertBefore(p, hero.nextSibling);
+
+  function refresh() {
+    clearTimeout(timer);
+    timer = null;
+    var now = Date.now(), next = Infinity;
+    for (var i = 0; i < SALES.length; i++) {
+      var sale = SALES[i];
+      if (now < sale.start) next = Math.min(next, sale.start);
+      else if (now < sale.end) next = Math.min(next, sale.end);
+    }
+    var code = codeAt(now);
+    if (root.getAttribute('data-sale') !== code) root.setAttribute('data-sale', code);
+    if (Number.isFinite(next)) timer = setTimeout(refresh, Math.min(next - now, 2147483647));
   }
+
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden) refresh();
+  });
+  window.addEventListener('pageshow', refresh);
+  refresh();
 })();

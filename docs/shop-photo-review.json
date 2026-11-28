@@ -1,0 +1,1082 @@
+{
+  "allowedGenerators": [
+    "Higgsfield",
+    "ChatGPT"
+  ],
+  "pending": [
+    {
+      "id": "wrightsville-beach-sloop-all-over-print-tote-bag",
+      "name": "Wrightsville Beach Sloop All Over Print Tote Bag",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-all-over-print-tote-bag",
+      "color": "Navy",
+      "store": "shopify",
+      "options": [
+        "16\" × 16''",
+        "Navy"
+      ],
+      "status": "Source image matches a live variant; inspect before generation",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8848050272079715985_2048.jpg?v=1795404833"
+    },
+    {
+      "id": "airlie-oak-wilmington-all-over-print-tote-bag",
+      "name": "Airlie Oak Wilmington All Over Print Tote Bag",
+      "url": "https://shorelist.myshopify.com/products/airlie-oak-wilmington-all-over-print-tote-bag",
+      "color": "Ivory",
+      "store": "shopify",
+      "options": [
+        "16\" × 16''",
+        "Navy"
+      ],
+      "status": "Source image matches a live variant; inspect before generation",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/1681256103521192887_2048.jpg?v=1795412454"
+    },
+    {
+      "id": "the-lifeguard-stand-bucket-hat-carolina-beach",
+      "name": "The Lifeguard Stand Bucket Hat, Carolina Beach",
+      "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-bucket-hat-carolina-beach",
+      "color": "White",
+      "store": "shopify",
+      "options": [
+        "White",
+        "One size"
+      ],
+      "status": "Source image matches a live variant; inspect before generation",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7039749206102019615_2048.jpg?v=1795404863"
+    },
+    {
+      "id": "the-lifeguard-stand-canvas-tote-carolina-beach",
+      "name": "The Lifeguard Stand Canvas Tote, Carolina Beach",
+      "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-canvas-tote-carolina-beach",
+      "color": "Cream",
+      "store": "shopify",
+      "options": [
+        "One size",
+        "Cream"
+      ],
+      "status": "Source image matches a live variant; inspect before generation",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3245672284682119365_2048.jpg?v=1795405115"
+    },
+    {
+      "id": "carolina-beach-megalodon-tooth-printed-crewneck-sweatshirt",
+      "name": "Carolina Beach Megalodon Tooth Printed Crewneck Sweatshirt",
+      "url": "https://shorelist.myshopify.com/products/carolina-beach-megalodon-tooth-printed-crewneck-sweatshirt",
+      "color": "White",
+      "store": "shopify",
+      "options": [
+        "White",
+        "S"
+      ],
+      "status": "Source image matches a live variant; inspect before generation",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15930373361749766429_2048.jpg?v=1795528056"
+    },
+    {
+      "id": "carolina-beach-megalodon-tooth-printed-garment-dyed-tee",
+      "name": "Carolina Beach Megalodon Tooth Printed Garment-Dyed Tee",
+      "url": "https://shorelist.myshopify.com/products/carolina-beach-megalodon-tooth-printed-garment-dyed-tee",
+      "color": "White",
+      "store": "shopify",
+      "options": [
+        "White",
+        "S"
+      ],
+      "status": "Source image matches a live variant; inspect before generation",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/18012927483438169541_2048.jpg?v=1795411644"
+    },
+    {
+      "id": "carolina-beach-megalodon-tooth-printed-canvas-tote",
+      "name": "Carolina Beach Megalodon Tooth Printed Canvas Tote",
+      "url": "https://shorelist.myshopify.com/products/carolina-beach-megalodon-tooth-printed-canvas-tote",
+      "color": "Cream",
+      "store": "shopify",
+      "options": [
+        "One size",
+        "Cream"
+      ],
+      "status": "Source image matches a live variant; inspect before generation",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/14392590098025722907_2048.jpg?v=1795412553"
+    },
+    {
+      "id": "the-blue-crab-dad-hat-kure-beach",
+      "name": "The Blue Crab Dad Hat, Kure Beach",
+      "url": "https://shorelist.myshopify.com/products/the-blue-crab-dad-hat-kure-beach",
+      "color": "Stone",
+      "store": "shopify",
+      "options": [
+        "One size",
+        "Khaki"
+      ],
+      "status": "Reference color does not match the card label; resolve exact color first",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11407754714107868380_2048.jpg?v=1795403811"
+    },
+    {
+      "id": "the-lifeguard-stand-bucket-hat-kure-beach",
+      "name": "The Lifeguard Stand Bucket Hat, Kure Beach",
+      "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-bucket-hat-kure-beach",
+      "color": "White",
+      "store": "shopify",
+      "options": [
+        "White",
+        "One size"
+      ],
+      "status": "Source image matches a live variant; inspect before generation",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2225867852724475080_2048.jpg?v=1795404940"
+    },
+    {
+      "id": "the-blue-crab-canvas-tote-kure-beach",
+      "name": "The Blue Crab Canvas Tote, Kure Beach",
+      "url": "https://shorelist.myshopify.com/products/the-blue-crab-canvas-tote-kure-beach",
+      "color": "Cream",
+      "store": "shopify",
+      "options": [
+        "One size",
+        "Cream"
+      ],
+      "status": "Source image matches a live variant; inspect before generation",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7066691774119677009_2048.jpg?v=1795405231"
+    },
+    {
+      "id": "the-lifeguard-stand-canvas-tote-kure-beach",
+      "name": "The Lifeguard Stand Canvas Tote, Kure Beach",
+      "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-canvas-tote-kure-beach",
+      "color": "Cream",
+      "store": "shopify",
+      "options": [
+        "One size",
+        "Cream"
+      ],
+      "status": "Source image matches a live variant; inspect before generation",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6462593349328086418_2048.jpg?v=1795406807"
+    },
+    {
+      "id": "kure-beach-sea-turtle-printed-crewneck-sweatshirt",
+      "name": "Kure Beach Sea Turtle Printed Crewneck Sweatshirt",
+      "url": "https://shorelist.myshopify.com/products/kure-beach-sea-turtle-printed-crewneck-sweatshirt",
+      "color": "White",
+      "store": "shopify",
+      "options": [
+        "White",
+        "S"
+      ],
+      "status": "Source image matches a live variant; inspect before generation",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/16767505816766786217_2048.jpg?v=1795528045"
+    },
+    {
+      "id": "kure-beach-sea-turtle-printed-garment-dyed-tee",
+      "name": "Kure Beach Sea Turtle Printed Garment-Dyed Tee",
+      "url": "https://shorelist.myshopify.com/products/kure-beach-sea-turtle-printed-garment-dyed-tee",
+      "color": "White",
+      "store": "shopify",
+      "options": [
+        "White",
+        "S"
+      ],
+      "status": "Source image matches a live variant; inspect before generation",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10377396726498664865_2048.jpg?v=1795412352"
+    },
+    {
+      "id": "kure-beach-sea-turtle-printed-canvas-tote",
+      "name": "Kure Beach Sea Turtle Printed Canvas Tote",
+      "url": "https://shorelist.myshopify.com/products/kure-beach-sea-turtle-printed-canvas-tote",
+      "color": "Cream",
+      "store": "shopify",
+      "options": [
+        "One size",
+        "Cream"
+      ],
+      "status": "Source image matches a live variant; inspect before generation",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8262565940838947013_2048.jpg?v=1795413167"
+    },
+    {
+      "id": "wrightsville-beach-sailfish-printed-garment-dyed-tee",
+      "name": "Wrightsville Beach Sailfish Printed Garment-Dyed Tee",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sailfish-printed-garment-dyed-tee",
+      "color": "White",
+      "store": "shopify",
+      "options": [
+        "White",
+        "S"
+      ],
+      "status": "Source image matches a live variant; inspect before generation",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10608533032655915751_2048.jpg?v=1795528020"
+    },
+    {
+      "id": "wrightsville-beach-sailfish-printed-canvas-tote",
+      "name": "Wrightsville Beach Sailfish Printed Canvas Tote",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sailfish-printed-canvas-tote",
+      "color": "Cream",
+      "store": "shopify",
+      "options": [
+        "One size",
+        "Cream"
+      ],
+      "status": "Source image matches a live variant; inspect before generation",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9689393900630634296_2048.jpg?v=1795444779"
+    },
+    {
+      "id": "carolina-beach-megalodon-tooth-illustration-printed-garment-dyed-tee",
+      "name": "Carolina Beach Megalodon Tooth Illustration Printed Garment-Dyed Tee",
+      "url": "https://shorelist.myshopify.com/products/carolina-beach-megalodon-tooth-illustration-printed-garment-dyed-tee",
+      "color": "Ivory",
+      "store": "shopify",
+      "options": [
+        "Ivory",
+        "L"
+      ],
+      "status": "Source image matches a live variant; inspect before generation",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9592943249561454043_2048.jpg?v=1795458034"
+    },
+    {
+      "id": "salt-wash-market-tote",
+      "name": "Sloop Organic Cotton Market Tote",
+      "url": "https://shorelist-shop.fourthwall.com/products/salt-wash-organic-cotton-market-tote",
+      "color": "Natural",
+      "store": "fourthwall",
+      "status": "Fourthwall studio reference needs visual verification"
+    },
+    {
+      "id": "the-sloop-embroidered-crewneck-wrightsville-beach",
+      "name": "The Sloop Embroidered Crewneck, Wrightsville Beach",
+      "url": "https://shorelist.myshopify.com/products/the-sloop-embroidered-crewneck-wrightsville-beach",
+      "color": "Washed blue",
+      "store": "shopify",
+      "status": "Exact reference unresolved"
+    },
+    {
+      "id": "the-blue-crab-corduroy-cap-kure-beach",
+      "name": "The Blue Crab Corduroy Cap, Kure Beach",
+      "url": "https://shorelist.myshopify.com/products/the-blue-crab-corduroy-cap-kure-beach",
+      "color": "Navy Blue",
+      "store": "shopify",
+      "options": [
+        "Navy Blue",
+        "One size"
+      ],
+      "status": "Source image matches a live variant; inspect before generation",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11189473833607156489_2048.jpg?v=1795318322"
+    },
+    {
+      "id": "the-blue-crab-cuffed-beanie-kure-beach",
+      "name": "The Blue Crab Cuffed Beanie, Kure Beach",
+      "url": "https://shorelist.myshopify.com/products/the-blue-crab-cuffed-beanie-kure-beach",
+      "color": "Navy",
+      "store": "shopify",
+      "options": [
+        "One size",
+        "Navy"
+      ],
+      "status": "Source image matches a live variant; inspect before generation",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13772687446342586023_2048.jpg?v=1795318193"
+    },
+    {
+      "id": "the-blue-crab-rope-cap-kure-beach",
+      "name": "The Blue Crab Rope Cap, Kure Beach",
+      "url": "https://shorelist.myshopify.com/products/the-blue-crab-rope-cap-kure-beach",
+      "color": "Ivory",
+      "store": "shopify",
+      "options": [
+        "Ivory",
+        "Adjustable"
+      ],
+      "status": "Source image matches a live variant; inspect before generation",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11942122253093304092_2048.jpg?v=1795400363"
+    },
+    {
+      "id": "the-lifeguard-stand-rope-cap-carolina-beach",
+      "name": "The Lifeguard Stand Rope Cap, Carolina Beach",
+      "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-rope-cap-carolina-beach",
+      "color": "Ivory",
+      "store": "shopify",
+      "options": [
+        "Chambray",
+        "Adjustable"
+      ],
+      "status": "Reference color does not match the card label; resolve exact color first",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15088731947567056959_2048.jpg?v=1795400994"
+    },
+    {
+      "id": "the-lifeguard-stand-rope-cap-kure-beach",
+      "name": "The Lifeguard Stand Rope Cap, Kure Beach",
+      "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-rope-cap-kure-beach",
+      "color": "Ivory",
+      "store": "shopify",
+      "options": [
+        "Ivory",
+        "Adjustable"
+      ],
+      "status": "Live variant candidate; visually verify before using",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11002461942969889786_2048_f7eaae3a-7bb8-4d57-a7b5-030a7754daba.jpg?v=1795401643"
+    },
+    {
+      "id": "the-blue-crab-embroidered-crewneck-kure-beach",
+      "name": "The Blue Crab Embroidered Crewneck, Kure Beach",
+      "url": "https://shorelist.myshopify.com/products/the-blue-crab-embroidered-crewneck-kure-beach",
+      "color": "White",
+      "store": "shopify",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4874290219685606735_2048.jpg",
+      "status": "Lookbook is not used as the lead. Verify the active color against the studio image and proposed Chalky Mint lookbook."
+    },
+    {
+      "id": "kure-beach-sanderling-printed-garment-dyed-tee",
+      "name": "Kure Beach Sanderling Printed Garment-Dyed Tee",
+      "url": "https://shorelist.myshopify.com/products/kure-beach-sanderling-printed-garment-dyed-tee",
+      "color": "Ivory",
+      "store": "shopify",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-sanderling-printed-garment-dyed-tee-studio-front.jpg",
+      "status": "Lookbook is not used as the lead. Check the exact product and artwork before assigning the first image."
+    },
+    {
+      "id": "banks-channel-sunset-sail-crewneck",
+      "name": "Banks Channel Sunset Sail Crewneck",
+      "url": "https://shorelist.myshopify.com/products/banks-channel-sunset-sail-crewneck",
+      "color": "True Navy",
+      "store": "shopify",
+      "options": [
+        "Blue Spruce",
+        "True Navy"
+      ],
+      "status": "Pepper removed (Brand Standard grey hard failure). Old lookbook showed Pepper; studio-first until a True Navy lookbook passes blind review",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17887401445751990680_2048.jpg"
+    },
+    {
+      "id": "daymark-cuffed-beanie-wrightsville-beach",
+      "name": "Daymark Cuffed Beanie, Wrightsville Beach",
+      "url": "https://shorelist.myshopify.com/products/daymark-cuffed-beanie-wrightsville-beach",
+      "color": "Navy",
+      "store": "shopify",
+      "options": [
+        "One size",
+        "Navy"
+      ],
+      "status": "Added to the catalog studio-first from the live Shopify product (published 2026-11-22). No lookbook yet; needs a Higgsfield lookbook and blind review before one is added",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2220033262101786662_2048.jpg"
+    },
+    {
+      "id": "ilm-crewneck",
+      "name": "ILM Crewneck",
+      "url": "https://shorelist.myshopify.com/products/ilm-crewneck",
+      "color": "True Navy",
+      "store": "shopify",
+      "options": [
+        "True Navy"
+      ],
+      "status": "Lookbook removed. Viewed 9446758540865204948_2048.jpg on 2026-11-27: navy crewneck, cream ILM, and WILMINGTON · NORTH CAROLINA underneath. Studio-first until a matching lookbook passes review",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9446758540865204948_2048.jpg"
+    },
+    {
+      "id": "wrightsville-beach-sailfish-printed-crewneck-sweatshirt",
+      "name": "Wrightsville Beach Sweatshirt, Sailfish",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sailfish-printed-crewneck-sweatshirt",
+      "color": "White",
+      "store": "shopify",
+      "options": [
+        "White"
+      ],
+      "status": "Lookbook removed. The shoreline scene did not match the white crewneck that is sold. Studio-first on the product photo until a matching lookbook passes review",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12418470100735145739_2048.jpg"
+    },
+    {
+      "id": "wrightsville-beach-sloop-weekender-tote-bag",
+      "name": "Wrightsville Beach Sloop Weekender Tote Bag",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-weekender-tote-bag",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13894062535701194746_2048.jpg?v=1795405038"
+    },
+    {
+      "id": "wrightsville-beach-sloop-picnic-and-beach-blanket",
+      "name": "Wrightsville Beach Sloop Picnic and Beach Blanket",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-picnic-and-beach-blanket",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/71162535559617095_2048.jpg?v=1795405283"
+    },
+    {
+      "id": "wrightsville-beach-sloop-printed-mug",
+      "name": "Wrightsville Beach Sloop Printed Mug",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-mug",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5906329180415418302_2048.jpg?v=1795396815"
+    },
+    {
+      "id": "wrightsville-beach-sloop-printed-throw-pillow",
+      "name": "Wrightsville Beach Sloop Printed Throw Pillow",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-throw-pillow",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10845976540544592137_2048.jpg?v=1795396185"
+    },
+    {
+      "id": "wrightsville-beach-sloop-all-over-print-zip-pouch",
+      "name": "Wrightsville Beach Sloop All Over Print Zip Pouch",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-all-over-print-zip-pouch",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6935754229711099713_2048.jpg?v=1795405159"
+    },
+    {
+      "id": "wrightsville-beach-sloop-printed-tea-towel",
+      "name": "Wrightsville Beach Sloop Printed Tea Towel",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-tea-towel",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13002889693185505046_2048.jpg?v=1795397834"
+    },
+    {
+      "id": "wrightsville-beach-sloop-printed-pet-bandana",
+      "name": "Wrightsville Beach Sloop Printed Pet Bandana",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-pet-bandana",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12094930629799905524_2048.jpg?v=1795396820"
+    },
+    {
+      "id": "wrightsville-beach-sloop-can-cooler-sleeve",
+      "name": "Wrightsville Beach Sloop Can Cooler Sleeve",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-can-cooler-sleeve",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17349877194870767359_2048.jpg?v=1795376602"
+    },
+    {
+      "id": "carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
+      "name": "Carolina Beach Lifeguard Stand Embroidered Crewneck Sweatshirt",
+      "url": "https://shorelist.myshopify.com/products/carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13000623743151575142_2048.jpg"
+    },
+    {
+      "id": "the-pelican-embroidered-crewneck-carolina-beach",
+      "name": "Carolina Beach Pelican Embroidered Crewneck",
+      "url": "https://shorelist.myshopify.com/products/the-pelican-embroidered-crewneck-carolina-beach",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17511693076647559523_2048.jpg?v=1795401935"
+    },
+    {
+      "id": "the-pelican-corduroy-cap-carolina-beach",
+      "name": "Carolina Beach Pelican Corduroy Cap",
+      "url": "https://shorelist.myshopify.com/products/the-pelican-corduroy-cap-carolina-beach",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/554477750588018687_2048.jpg?v=1795401930"
+    },
+    {
+      "id": "the-pelican-cuffed-beanie-carolina-beach",
+      "name": "Carolina Beach Pelican Cuffed Beanie",
+      "url": "https://shorelist.myshopify.com/products/the-pelican-cuffed-beanie-carolina-beach",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5161036051979177776_2048.jpg?v=1795401924"
+    },
+    {
+      "id": "carolina-beach-lifeguard-stand-printed-throw-pillow",
+      "name": "Carolina Beach Lifeguard Stand Printed Throw Pillow",
+      "url": "https://shorelist.myshopify.com/products/carolina-beach-lifeguard-stand-printed-throw-pillow",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12353768058891167259_2048.jpg?v=1795397785"
+    },
+    {
+      "id": "carolina-beach-lifeguard-stand-printed-zip-pouch",
+      "name": "Carolina Beach Lifeguard Stand Printed Zip Pouch",
+      "url": "https://shorelist.myshopify.com/products/carolina-beach-lifeguard-stand-printed-zip-pouch",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15530950866645752954_2048.jpg?v=1795397602"
+    },
+    {
+      "id": "carolina-beach-lifeguard-stand-printed-mug",
+      "name": "Carolina Beach Lifeguard Stand Printed Mug",
+      "url": "https://shorelist.myshopify.com/products/carolina-beach-lifeguard-stand-printed-mug",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3438836625257813204_2048.jpg?v=1795397560"
+    },
+    {
+      "id": "carolina-beach-lifeguard-stand-printed-garment-dyed-tee",
+      "name": "Carolina Beach Lifeguard Stand Printed Garment-Dyed Tee",
+      "url": "https://shorelist.myshopify.com/products/carolina-beach-lifeguard-stand-printed-garment-dyed-tee",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15494710442550733373_2048.jpg?v=1795396842"
+    },
+    {
+      "id": "brown-pelican-carolina-coast-printed-garment-dyed-tee",
+      "name": "Brown Pelican Carolina Coast Printed Garment-Dyed Tee",
+      "url": "https://shorelist.myshopify.com/products/brown-pelican-carolina-coast-printed-garment-dyed-tee",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/14016020971221668230_2048.jpg?v=1795449541"
+    },
+    {
+      "id": "kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
+      "name": "Kure Beach Lifeguard Stand Embroidered Crewneck Sweatshirt",
+      "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5860568908472344756_2048.jpg"
+    },
+    {
+      "id": "kure-beach-lifeguard-stand-printed-canvas-tote-bag",
+      "name": "Kure Beach Lifeguard Stand Printed Canvas Tote Bag",
+      "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-printed-canvas-tote-bag",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4978189819285394626_2048.jpg?v=1795397485"
+    },
+    {
+      "id": "kure-beach-lifeguard-stand-printed-throw-pillow",
+      "name": "Kure Beach Lifeguard Stand Printed Throw Pillow",
+      "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-printed-throw-pillow",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4443965749188829078_2048.jpg?v=1795397742"
+    },
+    {
+      "id": "kure-beach-lifeguard-stand-printed-zip-pouch",
+      "name": "Kure Beach Lifeguard Stand Printed Zip Pouch",
+      "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-printed-zip-pouch",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/1925704596928453072_2048.jpg?v=1795397442"
+    },
+    {
+      "id": "kure-beach-lifeguard-stand-printed-mug",
+      "name": "Kure Beach Lifeguard Stand Printed Mug",
+      "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-printed-mug",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15581314161783206053_2048.jpg?v=1795397399"
+    },
+    {
+      "id": "kure-beach-lifeguard-stand-printed-garment-dyed-tee",
+      "name": "Kure Beach Lifeguard Stand Printed Garment-Dyed Tee",
+      "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-printed-garment-dyed-tee",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10323877380730444236_2048.jpg?v=1795398350"
+    },
+    {
+      "id": "airlie-oak-framed-art-print-wrightsville-beach-and-wilmington",
+      "name": "Airlie Oak Art Print, Wilmington NC",
+      "url": "https://shorelist.myshopify.com/products/airlie-oak-framed-art-print-wrightsville-beach-and-wilmington",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/18372799870615515575_2048.jpg"
+    },
+    {
+      "id": "airlie-oak-wilmington-printed-garment-dyed-tee",
+      "name": "Airlie Oak Wilmington Printed Garment-Dyed Tee",
+      "url": "https://shorelist.myshopify.com/products/airlie-oak-wilmington-printed-garment-dyed-tee",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9322141173352740051_2048.jpg"
+    },
+    {
+      "id": "azalea-wilmington-printed-garment-dyed-tee",
+      "name": "Azalea Wilmington Printed Garment-Dyed Tee",
+      "url": "https://shorelist.myshopify.com/products/azalea-wilmington-printed-garment-dyed-tee",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/16341958443817143553_2048.jpg"
+    },
+    {
+      "id": "blue-crab-carolina-coast-printed-garment-dyed-tee",
+      "name": "Blue Crab Carolina Coast Printed Garment-Dyed Tee",
+      "url": "https://shorelist.myshopify.com/products/blue-crab-carolina-coast-printed-garment-dyed-tee",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8689840203936068468_2048.jpg?v=1795447219"
+    },
+    {
+      "id": "sea-oats-carolina-coast-printed-garment-dyed-tee",
+      "name": "Sea Oats Carolina Coast Printed Garment-Dyed Tee",
+      "url": "https://shorelist.myshopify.com/products/sea-oats-carolina-coast-printed-garment-dyed-tee",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/366906241246011215_2048.jpg?v=1795447409"
+    },
+    {
+      "id": "camellia-wilmington-printed-garment-dyed-tee",
+      "name": "Camellia Wilmington Printed Garment-Dyed Tee",
+      "url": "https://shorelist.myshopify.com/products/camellia-wilmington-printed-garment-dyed-tee",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7105371076677075614_2048.jpg"
+    },
+    {
+      "id": "airlie-oak-wilmington-printed-mug",
+      "name": "Airlie Oak Wilmington Printed Mug",
+      "url": "https://shorelist.myshopify.com/products/airlie-oak-wilmington-printed-mug",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17705579613895622135_2048.jpg"
+    },
+    {
+      "id": "airlie-oak-wilmington-ceramic-ornament",
+      "name": "Airlie Oak Wilmington Ceramic Ornament",
+      "url": "https://shorelist.myshopify.com/products/airlie-oak-wilmington-ceramic-ornament",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/14053065159852629044_2048.jpg"
+    },
+    {
+      "id": "airlie-oak-wilmington-all-over-print-zip-pouch",
+      "name": "Airlie Oak Wilmington All Over Print Zip Pouch",
+      "url": "https://shorelist.myshopify.com/products/airlie-oak-wilmington-all-over-print-zip-pouch",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17996432865084604974_2048.jpg"
+    },
+    {
+      "id": "airlie-oak-wilmington-throw-pillow",
+      "name": "Airlie Oak Wilmington Throw Pillow",
+      "url": "https://shorelist.myshopify.com/products/airlie-oak-wilmington-throw-pillow",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5833881298279680083_2048.jpg"
+    },
+    {
+      "id": "airlie-oak-wilmington-tea-towel",
+      "name": "Airlie Oak Wilmington Tea Towel",
+      "url": "https://shorelist.myshopify.com/products/airlie-oak-wilmington-tea-towel",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/18186560907249845613_2048.jpg"
+    },
+    {
+      "id": "wrightsville-can-cooler",
+      "name": "Wrightsville Beach Can Cooler",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-can-cooler",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/16675080237515692816_2048.jpg?v=1795234262"
+    },
+    {
+      "id": "carolina-beach-can-cooler",
+      "name": "Carolina Beach Can Cooler",
+      "url": "https://shorelist.myshopify.com/products/carolina-beach-can-cooler",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://shorelist.myshopify.com/cdn/shop/files/18309295045651903048_2048.jpg"
+    },
+    {
+      "id": "carolina-beach-scallop-shell-printed-crewneck-sweatshirt",
+      "name": "Carolina Beach Scallop Shell Printed Crewneck Sweatshirt",
+      "url": "https://shorelist.myshopify.com/products/carolina-beach-scallop-shell-printed-crewneck-sweatshirt",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/14568469345645711557_2048.jpg"
+    },
+    {
+      "id": "the-lifeguard-stand-dad-hat-carolina-beach",
+      "name": "Carolina Beach Lifeguard Stand Dad Hat",
+      "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-dad-hat-carolina-beach",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17705373984459054970_2048.jpg"
+    },
+    {
+      "id": "kure-beach-can-cooler",
+      "name": "Kure Beach Can Cooler",
+      "url": "https://shorelist.myshopify.com/products/kure-beach-can-cooler",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://shorelist.myshopify.com/cdn/shop/files/5200674536494590319_2048.jpg"
+    },
+    {
+      "id": "kure-beach-scallop-shell-printed-canvas-tote-bag",
+      "name": "Kure Beach Scallop Shell Printed Canvas Tote Bag",
+      "url": "https://shorelist.myshopify.com/products/kure-beach-scallop-shell-printed-canvas-tote-bag",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15683278664081730040_2048.jpg?v=1795404394"
+    },
+    {
+      "id": "the-lifeguard-stand-dad-hat-kure-beach",
+      "name": "Kure Beach Lifeguard Stand Dad Hat",
+      "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-dad-hat-kure-beach",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2145508029400222277_2048.jpg"
+    },
+    {
+      "id": "wrightsville-ornament-2026",
+      "name": "Wrightsville Beach Christmas Ornament 2026",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-christmas-ornament-2026",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5725671387617568149_2048.jpg?v=1795235170"
+    },
+    {
+      "id": "daymark-corduroy-cap-wrightsville-beach",
+      "name": "Wrightsville Beach Daymark Cap",
+      "url": "https://shorelist.myshopify.com/products/daymark-corduroy-cap-wrightsville-beach",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8866227092479380040_2048.jpg?v=1795314233"
+    },
+    {
+      "id": "wrightsville-beach-scallop-shell-printed-garment-dyed-tee",
+      "name": "Wrightsville Beach Scallop Shell Printed Garment-Dyed Tee",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-scallop-shell-printed-garment-dyed-tee",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9148931619747742029_2048.jpg?v=1795404387"
+    },
+    {
+      "id": "wrightsville-beach-oystercatcher-printed-garment-dyed-tee",
+      "name": "Wrightsville Beach Oystercatcher Printed Garment-Dyed Tee",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-oystercatcher-printed-garment-dyed-tee",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17697498208600770942_2048.jpg?v=1795470190"
+    },
+    {
+      "id": "wrightsville-beach-scallop-shell-printed-mug",
+      "name": "Wrightsville Beach Scallop Shell Printed Mug",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-scallop-shell-printed-mug",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2582597852983607060_2048.jpg?v=1795404278"
+    },
+    {
+      "id": "wrightsville-beach-sloop-all-over-print-duffel-bag",
+      "name": "Wrightsville Beach Sloop All Over Print Duffel Bag",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-all-over-print-duffel-bag",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10656102888954431234_2048.jpg?v=1795404687"
+    },
+    {
+      "id": "the-live-oak-embroidered-crewneck-wilmington",
+      "name": "Wilmington Live Oak Embroidered Crewneck",
+      "url": "https://shorelist.myshopify.com/products/the-live-oak-embroidered-crewneck-wilmington",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/392796372616078076_2048.jpg"
+    },
+    {
+      "id": "camellia-carolina-coast-kiss-cut-vinyl-sticker-3-inch",
+      "name": "Camellia Carolina Coast Kiss-Cut Vinyl Sticker, 3 inch",
+      "url": "https://shorelist.myshopify.com/products/camellia-carolina-coast-kiss-cut-vinyl-sticker-3-inch",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15243950351917908964_1200.jpg"
+    },
+    {
+      "id": "wild-venus-flytrap-cape-fear-printed-garment-dyed-tee",
+      "name": "Wild Venus Flytrap Cape Fear Printed Garment-Dyed Tee",
+      "url": "https://shorelist.myshopify.com/products/wild-venus-flytrap-cape-fear-printed-garment-dyed-tee",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17805697231138893652_2048.jpg?v=1795458419"
+    },
+    {
+      "id": "carolina-beach-megalodon-tooth-framed-art-print",
+      "name": "Carolina Beach Megalodon Tooth Framed Art Print",
+      "url": "https://shorelist.myshopify.com/products/carolina-beach-megalodon-tooth-framed-art-print",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7756219583509349462_2048.jpg"
+    },
+    {
+      "id": "carolina-beach-brown-pelican-framed-art-print",
+      "name": "Carolina Beach Brown Pelican Framed Art Print",
+      "url": "https://shorelist.myshopify.com/products/carolina-beach-brown-pelican-framed-art-print",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4792794011467400570_2048.jpg"
+    },
+    {
+      "id": "kure-beach-sea-turtle-framed-art-print",
+      "name": "Kure Beach Sea Turtle Framed Art Print",
+      "url": "https://shorelist.myshopify.com/products/kure-beach-sea-turtle-framed-art-print",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/865118314705992598_2048.jpg"
+    },
+    {
+      "id": "kure-beach-blue-crab-framed-art-print",
+      "name": "Kure Beach Blue Crab Framed Art Print",
+      "url": "https://shorelist.myshopify.com/products/kure-beach-blue-crab-framed-art-print",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12040546470448815130_2048.jpg"
+    },
+    {
+      "id": "blue-crab-carolina-coast-insulated-stainless-water-bottle-20-oz",
+      "name": "Blue Crab Carolina Coast Insulated Stainless Water Bottle, 20 oz",
+      "url": "https://shorelist.myshopify.com/products/blue-crab-carolina-coast-insulated-stainless-water-bottle-20-oz",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11495380665131246352_2048.jpg?v=1795451445"
+    },
+    {
+      "id": "blue-crab-carolina-coast-kiss-cut-vinyl-sticker-3-inch",
+      "name": "Blue Crab Carolina Coast Kiss-Cut Vinyl Sticker, 3 inch",
+      "url": "https://shorelist.myshopify.com/products/blue-crab-carolina-coast-kiss-cut-vinyl-sticker-3-inch",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17544007515790696736_1200.jpg?v=1795451450"
+    },
+    {
+      "id": "wrightsville-beach-sailfish-framed-art-print",
+      "name": "Wrightsville Beach Sailfish Framed Art Print",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sailfish-framed-art-print",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11774690371034893721_2048.jpg?v=1795446943"
+    },
+    {
+      "id": "wrightsville-beach-sea-oats-framed-art-print",
+      "name": "Wrightsville Beach Sea Oats Framed Art Print",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sea-oats-framed-art-print",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15591723388903573580_2048.jpg?v=1795450556"
+    },
+    {
+      "id": "sea-oats-carolina-coast-insulated-stainless-tumbler-20-oz",
+      "name": "Sea Oats Carolina Coast Insulated Stainless Tumbler, 20 oz",
+      "url": "https://shorelist.myshopify.com/products/sea-oats-carolina-coast-insulated-stainless-tumbler-20-oz",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13085431489695915564_2048.jpg?v=1795451430"
+    },
+    {
+      "id": "sea-oats-carolina-coast-kiss-cut-vinyl-sticker-3-inch",
+      "name": "Sea Oats Carolina Coast Kiss-Cut Vinyl Sticker, 3 inch",
+      "url": "https://shorelist.myshopify.com/products/sea-oats-carolina-coast-kiss-cut-vinyl-sticker-3-inch",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12106373145236340930_1200.jpg?v=1795451456"
+    },
+    {
+      "id": "wrightsville-beach-sloop-printed-beach-towel",
+      "name": "Wrightsville Beach Towel, Sloop Print",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-beach-towel",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3327526685446775726_2048.jpg?v=1795451470"
+    },
+    {
+      "id": "wrightsville-beach-sloop-printed-beach-cloth-38-x-81-in",
+      "name": "Wrightsville Beach Sloop Printed Beach Cloth, 38 x 81 in",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-beach-cloth-38-x-81-in",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/14255062148024729065_2048.jpg?v=1795458026"
+    },
+    {
+      "id": "wrightsville-beach-hoodie-varsity",
+      "name": "Wrightsville Beach Hoodie, Varsity Fleece",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-hoodie-varsity",
+      "status": "Studio-first hold. Lookbook empty until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2994141325846479500_2048.jpg?v=1795827218"
+    },
+    {
+      "id": "wrightsville-beach-tee-varsity",
+      "name": "Wrightsville Beach T-Shirt, Varsity Tee",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-tee-varsity",
+      "status": "Studio-first hold. Lookbook empty until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17468496152942394856_2048.jpg?v=1795827478"
+    },
+    {
+      "id": "wrightsville-beach-signature-crewneck",
+      "name": "Wrightsville Beach Signature Crewneck",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-signature-crewneck",
+      "status": "Studio-first hold. Lookbook empty until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3739136137816494_2048.jpg"
+    },
+    {
+      "id": "wrightsville-beach-varsity-crewneck",
+      "name": "Wrightsville Beach Sweatshirt, Varsity Crew",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-varsity-crewneck",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8214280971553777558_2048.jpg"
+    },
+    {
+      "id": "carolina-beach-varsity-crewneck",
+      "name": "Carolina Beach Varsity Crewneck",
+      "url": "https://shorelist.myshopify.com/products/carolina-beach-varsity-crewneck",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15469697947599356445_2048.jpg"
+    },
+    {
+      "id": "kure-beach-varsity-crewneck",
+      "name": "Kure Beach Varsity Crewneck",
+      "url": "https://shorelist.myshopify.com/products/kure-beach-varsity-crewneck",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15404441680492765180_2048.jpg"
+    },
+    {
+      "id": "wilmington-varsity-crewneck",
+      "name": "Wilmington Varsity Crewneck",
+      "url": "https://shorelist.myshopify.com/products/wilmington-varsity-crewneck",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/885599791757679174_2048.jpg"
+    },
+    {
+      "id": "the-sloop-corduroy-cap-wrightsville-beach",
+      "name": "Wrightsville Beach Hat, Sloop Corduroy Cap",
+      "url": "https://shorelist.myshopify.com/products/the-sloop-corduroy-cap-wrightsville-beach",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7042525475132206278_2048.jpg?v=1795318073"
+    },
+    {
+      "id": "the-live-oak-corduroy-cap-wilmington",
+      "name": "Wilmington Live Oak Corduroy Cap",
+      "url": "https://shorelist.myshopify.com/products/the-live-oak-corduroy-cap-wilmington",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15008965743144943281_2048.jpg?v=1795273271"
+    },
+    {
+      "id": "the-sloop-cuffed-beanie-wrightsville-beach",
+      "name": "Wrightsville Beach Beanie, Sloop Cuffed",
+      "url": "https://shorelist.myshopify.com/products/the-sloop-cuffed-beanie-wrightsville-beach",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6062137644770390613_2048.jpg?v=1795318060"
+    },
+    {
+      "id": "the-live-oak-cuffed-beanie-wilmington",
+      "name": "Wilmington Live Oak Cuffed Beanie",
+      "url": "https://shorelist.myshopify.com/products/the-live-oak-cuffed-beanie-wilmington",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5126613936494193933_2048.jpg?v=1795274390"
+    },
+    {
+      "id": "daymark-blue-crab-crewneck",
+      "name": "Daymark Blue Crab Crewneck",
+      "url": "https://shorelist.myshopify.com/products/daymark-blue-crab-crewneck",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5007874699452909705_2048.jpg?v=1795359205"
+    },
+    {
+      "id": "wrightsville-beach-sloop-printed-canvas-tote-bag",
+      "name": "Wrightsville Beach Sloop Printed Canvas Tote Bag",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-canvas-tote-bag",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12079303666000630164_2048.jpg?v=1795376578"
+    },
+    {
+      "id": "wrightsville-beach-sloop-printed-zip-pouch",
+      "name": "Wrightsville Beach Sloop Printed Zip Pouch",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-zip-pouch",
+      "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10521571959228082054_2048.jpg?v=1795396350"
+    },
+    {
+      "id": "wrightsville-beach-blue-crab-embroidered-crewneck",
+      "name": "Wrightsville Beach Blue Crab Embroidered Crewneck",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-blue-crab-embroidered-crewneck",
+      "color": "White",
+      "status": "Studio-first hold. Lookbook empty until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3918752085900864476_2048.jpg?v=1795836286"
+    },
+    {
+      "id": "carolina-beach-blue-crab-embroidered-crewneck",
+      "name": "Carolina Beach Blue Crab Embroidered Crewneck",
+      "url": "https://shorelist.myshopify.com/products/carolina-beach-blue-crab-embroidered-crewneck",
+      "color": "White",
+      "status": "Studio-first hold. Lookbook empty until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15470732138873385796_2048.jpg?v=1795836318"
+    }
+  ],
+  "reviews": {},
+  "pilots": [
+    {
+      "id": "carolina-beach-megalodon-tooth-printed-canvas-tote",
+      "generator": "Higgsfield GPT Image 2.6",
+      "jobId": "0cb18889-8dff-4d36-b27d-cc9c1a148c4a",
+      "lookbookSha256": "7a4e556c0e60ee0ad6d9d95daba6a10c31e09bf581972720983602344c927b55",
+      "studioSha256": "80c43d57f54c85852f27621ed4231c1b020c9bdae61574deb33d62e75c36d5d0",
+      "status": "Rejected by preliminary fidelity and realism review",
+      "finding": "The tooth-to-body width is close to the reference. The unsupported, rigid upright handles fail the realism check. Independent scores were not assigned."
+    },
+    {
+      "id": "carolina-beach-megalodon-tooth-printed-canvas-tote",
+      "generator": "Higgsfield GPT Image 2.6",
+      "jobId": "f3682154-3d50-4846-b745-b3905dba753c",
+      "lookbookSha256": "7085db104d688c64ae5f0d6223697d8e0fa5db0b2a186e2ac514487d09723df4",
+      "studioSha256": "80c43d57f54c85852f27621ed4231c1b020c9bdae61574deb33d62e75c36d5d0",
+      "status": "Held for independent review",
+      "finding": "Both straps contact a visible peg. The navy tooth is about 22 percent of the visible bag body width in the comparison and the centered lettering appears legible. Check exact artwork, true color, product shape, and whether the vendor studio asset qualifies as an actual studio photograph before assigning scores. The scene is styled with coastal dune vegetation and does not claim a precise location."
+    }
+  ],
+  "toteBatch": {
+    "sourceAudit": "Eight Shopify variants matched the live merchant endpoint. The Natural Fourthwall source was identified on the public merchant gallery. Three printed tote galleries reuse identical model poses and backgrounds across separately decorated products. Gallery metadata does not establish a photographed finished sample.",
+    "originalPhotoSearch": "The connected ShoreList Creative Library Original Photos folder was empty. Targeted image searches for Megalodon, Sea Turtle, Airlie Oak and tote returned no matches.",
+    "releaseStatus": "No image pair cleared independent review. No approved reviews or numeric scores were entered.",
+    "drafts": [
+      {
+        "id": "wrightsville-beach-sloop-all-over-print-tote-bag",
+        "generator": "Higgsfield GPT Image 2.6",
+        "jobId": "7fcf4691-8346-4975-bcaa-661a705da8db",
+        "lookbookSha256": "62a1729d18ce2b8ff29bc227b454cce4f17934a051cca31be6ff4918207c99e2",
+        "studioReferenceSha256": "4e5b5cdd6ae7a483fa3cc28630fa5bda7815f5d88556603f81b2ad22f683f8c8",
+        "studioReference": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8848050272079715985_2048.jpg?v=1795404833",
+        "creditsQuoted": 0,
+        "preliminaryStatus": "rejected",
+        "finding": "The draft redraws the all-over pattern. Sail shapes, placement and visible spacing differ from the Navy 16-inch reference.",
+        "studioProvenance": "Merchant gallery reference verified for comparison. Physical-sample studio capture has not been verified.",
+        "variantOptions": [
+          "16\" × 16''",
+          "Navy"
+        ]
+      },
+      {
+        "id": "airlie-oak-wilmington-all-over-print-tote-bag",
+        "generator": "Higgsfield GPT Image 2.6",
+        "jobId": "a8bdb01e-b608-477b-aa0d-b748b45fca00",
+        "lookbookSha256": "9eae3c834970eb033a8f00ceedcb7b433212444b47498fd75caa9da742e19a8d",
+        "studioReferenceSha256": "78a4a9a4370cbd0064b38fcbe3db767dde9a82bd1a1e3b1469fbe752e43548ef",
+        "studioReference": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/1681256103521192887_2048.jpg?v=1795412454",
+        "creditsQuoted": 0,
+        "preliminaryStatus": "rejected",
+        "finding": "The draft redraws the live oak. The branching and canopy detail differ from the exact merchant artwork.",
+        "studioProvenance": "Merchant gallery reference verified for comparison. Physical-sample studio capture has not been verified.",
+        "variantOptions": [
+          "16\" × 16''",
+          "Navy"
+        ]
+      },
+      {
+        "id": "the-lifeguard-stand-canvas-tote-carolina-beach",
+        "generator": "Higgsfield GPT Image 2.6",
+        "jobId": "0d78dc2c-ec56-40cf-93ad-7c91c9c59d88",
+        "lookbookSha256": "0b79d1dac88c11bec41ccb8fcf8be3537d5581b6c87a544db2504fa983de888b",
+        "studioReferenceSha256": "59e63761fa7b16c5ebe81f6e1b5a5a83a35901a742c669e1b568080ca0ecf66d",
+        "studioReference": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3245672284682119365_2048.jpg?v=1795405115",
+        "creditsQuoted": 0,
+        "preliminaryStatus": "held",
+        "finding": "The front mark remains small, the Carolina Beach label is legible and the peg supports both straps. A verified sample photo and exact embroidery comparison are still needed.",
+        "studioProvenance": "Merchant gallery reference verified for comparison. Physical-sample studio capture has not been verified.",
+        "variantOptions": [
+          "One size",
+          "Cream"
+        ]
+      },
+      {
+        "id": "the-blue-crab-canvas-tote-kure-beach",
+        "generator": "Higgsfield GPT Image 2.6",
+        "jobId": "e64510e8-a09c-4684-b6fa-9b620de0c577",
+        "lookbookSha256": "8ded9ca0ba4654f634af9cebe63bfad61ac034db4d26a52febe392e2a25c8dd0",
+        "studioReferenceSha256": "13fa0d47ef0d00a423428ca29ac38ab9c6b9b5d99b75ead7be85a06349f2d601",
+        "studioReference": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7066691774119677009_2048.jpg?v=1795405231",
+        "creditsQuoted": 0,
+        "preliminaryStatus": "held",
+        "finding": "The blue crab and KB lettering remain in the expected location and the hanging pose is supported. A verified sample photo and comparison of thread color and claw detail are still needed.",
+        "studioProvenance": "Merchant gallery reference verified for comparison. Physical-sample studio capture has not been verified.",
+        "variantOptions": [
+          "One size",
+          "Cream"
+        ]
+      },
+      {
+        "id": "the-lifeguard-stand-canvas-tote-kure-beach",
+        "generator": "Higgsfield GPT Image 2.6",
+        "jobId": "a340347a-5137-4133-823f-1b788a95e645",
+        "lookbookSha256": "934bbe6a789bd720dc8e3e07684a29bfe2543ae9374c8154de8cbe9571d8f328",
+        "studioReferenceSha256": "ef6c3011acd843a7f73e63e3ab25add1a64a2a8f7405fc5aa68fcb4903693ee2",
+        "studioReference": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6462593349328086418_2048.jpg?v=1795406807",
+        "creditsQuoted": 0,
+        "preliminaryStatus": "held",
+        "finding": "The Kure Beach mark and lettering remain small and centered, with visible support. Independently verify the mark and stitching against a physical-sample studio photo.",
+        "studioProvenance": "Merchant gallery reference verified for comparison. Physical-sample studio capture has not been verified.",
+        "variantOptions": [
+          "One size",
+          "Cream"
+        ]
+      },
+      {
+        "id": "kure-beach-sea-turtle-printed-canvas-tote",
+        "generator": "Higgsfield GPT Image 2.6",
+        "jobId": "ca2a0f7a-3bee-48cf-acda-d70d1f9093b5",
+        "lookbookSha256": "449fb229b822073cebb86252437ea080cc4d03f8bb45a850f2e0632c4606befd",
+        "studioReferenceSha256": "e68018424ae7d10edd614ae725d09c905b9d051e2837a56f42d1616792c1f6cd",
+        "studioReference": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8262565940838947013_2048.jpg?v=1795413167",
+        "creditsQuoted": 0,
+        "preliminaryStatus": "rejected",
+        "finding": "At artwork scale the turtle head and flipper contour have visibly changed from the merchant image. The draft is unsuitable for representing this exact print.",
+        "studioProvenance": "Merchant gallery reference verified for comparison. Physical-sample studio capture has not been verified.",
+        "variantOptions": [
+          "One size",
+          "Cream"
+        ]
+      },
+      {
+        "id": "wrightsville-beach-sailfish-printed-canvas-tote",
+        "generator": "Higgsfield GPT Image 2.6",
+        "jobId": "d25b9dc7-be53-4107-b9b6-9dc3b8cb11e5",
+        "lookbookSha256": "e6b319ee692ac2c30877f2e88ec9f59edc5b40fd0adc20c3c0511d67fc893609",
+        "studioReferenceSha256": "51be02801b7a85bd7ea7a27a6e80dceb96d14a9510ad238eed56d1a79832582d",
+        "studioReference": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9689393900630634296_2048.jpg?v=1795444779",
+        "creditsQuoted": 0,
+        "preliminaryStatus": "held",
+        "finding": "The visible artwork remains small and the Wrightsville Beach wording is legible. Verify the sailfish fin and bill outline against a named physical-sample photo before scoring.",
+        "studioProvenance": "Merchant gallery reference verified for comparison. Physical-sample studio capture has not been verified.",
+        "variantOptions": [
+          "One size",
+          "Cream"
+        ]
+      },
+      {
+        "id": "salt-wash-market-tote",
+        "generator": "Higgsfield GPT Image 2.6",
+        "jobId": "564650d9-10b8-4cd4-a758-35ebc3a5c7a3",
+        "lookbookSha256": "b5ad043c2f210f98ca63093fafbc2c3229539e2a023f8ab34b383c430517791e",
+        "studioReferenceSha256": "6019d2ce5fa823f4e061e7fd410c2417f4def6b7c6b623fc6716a20d292c9c59",
+        "studioReference": "https://imgproxy.fourthwall.dev/BH96zQHHegCWivfU620XpCVkwZTjVaPP1u3pR75t-3Q/w:1920/sm:1/enc/_m1Cm7Nryr0EUKSs/vVMmwqf8lrkZFdtL/I4xt1tUItCEH8r5_/GfHN3T01opO7beEu/NiQJLs9nNSUNcq2L/mHSkEu9chmJGPvNt/eO5cJXIENLdTw78D/MPbRbc4EX1hdbGWO/_N_mQpwYk5uuPXlO/LxxiY43jJDCZLgug/ED20QX-C2Mpm55cA/4uxwlWrU1ypqaZ4-/D8zsJzRPapCeSkOE/wTwoQzjrA70qCjeG/sToaJ54wGmg.jpg",
+        "creditsQuoted": 0,
+        "preliminaryStatus": "rejected",
+        "finding": "The Market Tote has a visibly narrower, taller front panel than the Natural merchant reference. The listed 20 × 14 × 5-inch proportions are not represented convincingly.",
+        "studioProvenance": "Merchant gallery reference verified for comparison. Physical-sample studio capture has not been verified.",
+        "variantOptions": [
+          "Natural",
+          "20 × 14 × 5 in, listed dimensions"
+        ]
+      }
+    ]
+  }
+}

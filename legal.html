@@ -14,18 +14,31 @@
 <meta property="og:description" content="Plain-English privacy policy and terms of service for ShoreList's coastal experience booking platform in Wilmington, NC."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://shorelist.net/legal"/>
-<meta property="og:image" content="https://shorelist.net/og-home.jpg"/>
+<meta property="og:image" content="https://shorelist.net/img/hero/wb-banks-1920.webp"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:site_name" content="ShoreList"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Privacy Policy &amp; Terms | ShoreList Wilmington NC"/>
 <meta name="twitter:description" content="Plain-English privacy policy and terms of service for ShoreList's coastal experience booking platform in Wilmington, NC."/>
-<meta name="twitter:image" content="https://shorelist.net/og-home.jpg"/>
+<meta name="twitter:image" content="https://shorelist.net/img/hero/wb-banks-1920.webp"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" rel="stylesheet"/></noscript>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
+<script>
+window.addEventListener('load',function(){
+  function load(){
+    if(document.querySelector('script[data-sl-ga]'))return;
+    var tag=document.createElement('script');
+    tag.async=true;
+    tag.setAttribute('data-sl-ga','1');
+    tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
+    document.head.appendChild(tag);
+  }
+  document.addEventListener('pointerdown',load,{once:true,passive:true});
+  setTimeout(function(){if(window.requestIdleCallback)requestIdleCallback(load);else load();},5000);
+});
+</script>
 <script>
 window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments);}
@@ -462,7 +475,7 @@ footer{background:var(--navy);color:rgba(244,241,234,.85);padding:40px 24px}
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
 <link rel="stylesheet" href="/scene.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 <link rel="stylesheet" href="/tokens.css"/>
 </head>
 <body>
@@ -979,9 +992,11 @@ footer{background:var(--navy);color:rgba(244,241,234,.85);padding:40px 24px}
   addEventListener('resize',mark);mark();
 })();
 </script>
-<script src="/sound.js" defer></script>
-<script src="/beachwx.js" defer></script>
-<script src="/widgets.js" defer></script>
-<script src="/shore-plus.js" defer></script>
+<script data-idle="/sound.js"></script>
+<script data-idle="/beachwx.js"></script>
+<script data-idle="/shore-plus.js"></script>
+
+<script src="/guide-boot.js" defer data-widgets="1"></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>

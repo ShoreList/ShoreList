@@ -1,0 +1,32 @@
+name: supplier-expansion
+on:
+  pull_request:
+    paths:
+      - 'docs/supplier-*'
+      - 'docs/supplier-art/**'
+      - 'tools/supplier-expansion*'
+      - 'tools/coastal-brand-review.mjs'
+      - 'tools/design-gate.mjs'
+      - 'docs/COASTAL-BRAND-STANDARD.md'
+      - 'AGENTS.md'
+      - 'RELEASE_GATES.md'
+      - 'shop-catalog.json'
+      - 'dropship-catalog.json'
+      - 'netlify/functions/_fulfill.js'
+      - 'netlify/functions/_suppliers/cj.js'
+      - '.github/workflows/supplier-expansion.yml'
+  push:
+    branches: [feature/curated-supplier-expansion]
+permissions:
+  contents: read
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/supplier-expansion.mjs audit
+      - run: node --test tools/supplier-expansion.test.mjs
+      - run: node tools/test-goods-checkout.cjs

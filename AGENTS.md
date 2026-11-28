@@ -4,6 +4,8 @@ Read this first, then `CODEX_HANDOFF.md`, `CODEX_TASKS.md`, `INTEGRATIONS.md`, `
 
 Evidence labels used in every doc: **VERIFIED** (observed or executed in this repo/store, with how), **ESTIMATE** (reasoned number or judgment), **HYPOTHESIS** (plausible, untested), **UNKNOWN** (not checked, or not checkable from the sandbox). Use them in your own reports. Never write "passed" for a command you did not run to a zero exit.
 
+**ShoreList Rulebook (binding):** read [docs/command-center/SHORELIST-STANDARDS.md](docs/command-center/SHORELIST-STANDARDS.md) before any build, publish or post. It is the single rulebook (rule IDs, pass/fail tests, enforcing step) and, where it differs from a line here, it wins for product, photo, copy, price and posting rules. It records the owner's Nov 27, 2026 delegation: a product or post that passes every hard rule and an independent 90/100 score ships without asking; spending, outreach, subscriptions and account changes still need the owner.
+
 ## 1. What ShoreList is
 
 ShoreList LLC (Wilmington, NC; owner/approver: RJ Brideau) is a local guide and bookings site for Wilmington and the Cape Fear beaches (Wrightsville, Carolina, Kure) plus a merch shop at `shorelist.net/shop`. Goals: be the locals' go-to and the tourists' "need it like oxygen" city guide (events, things to do, places), and run the shop like an established brand (benchmarks the owner named: Ralph Lauren, Faherty, Kiel James Patrick). Public launch target: **Thursday 2026-11-26, 5 PM Eastern**. Black Friday and Cyber Monday sales are scheduled (see `INTEGRATIONS.md`).
@@ -77,11 +79,13 @@ Commit messages end with the attribution lines your tool requires. Default branc
 
 Vanilla JS, ES5-friendly style is used in browser files (`var`, IIFEs); match the surrounding file. Build DOM with `createElement` for anything from data (no `innerHTML` with untrusted strings; use the local `esc`). Every `<img>` has real alt text and dimensions where known. No new dependencies without approval (the repo has one: `@netlify/blobs`). Prefer editing existing modules over adding parallel ones; search before creating (`grep -rn`). Tests: add or extend a script in `tools/` and wire it into `check.yml` when it should gate PRs.
 
-## 8. Product fidelity rules (shop)
+## 8. Coastal luxury and product fidelity
+
+The owner's [Coastal Brand Standard](docs/COASTAL-BRAND-STANDARD.md) is a hard release rule for all new and materially revised designs and brand work. Apply it to artwork, copy, pages, photography, ads, supplier materials and generated creative. Work from documented local references for Wrightsville Beach, the Cape Fear beaches, the Intracoastal, the Outer Banks and Charleston. A named independent reviewer must document a coastal luxury brand match of at least **90/100** for the exact version. Any factual, fidelity or brand hard failure holds the work at every score. Never assign a score without a review. In new merchandise, preserve all existing product and photo gates and require owner quality approval.
 
 - What the card/PDP shows must match what Shopify sells: name, colors, sizes, price, text/artwork on the item. Verify by viewing the image, not the filename.
 - Known corrected mismatches (do not regress): Blue Crab Embroidered Crewneck (Kure Beach) is **White only** (lookbook shows aqua); Blue Crab Corduroy Cap and Cuffed Beanie (Kure Beach) show the **navy** studio image (lookbook shows brown/olive). Those three use studio-first images (`lookbook: ""`).
-- A product with no verified lifestyle image stays studio-first; it is not listed with an unrelated or AI-made photo.
+- Audit, prepare and score the replacement pair before changing existing storefront product imagery. Release both images together, with an accurate, disclosed Higgsfield lookbook first and an independently verified actual studio image second, for the same sellable variant. A resized copy or a second studio angle does not satisfy the lookbook requirement. Existing gaps are recorded in `docs/shop-photo-review.json` and count as open remediation.
 - New product publication needs owner approval; the pipeline and quality gate are in the `shorelist-shop-product-pipeline` skill and in `tools/ingest-shopify-products.mjs` (it holds items without a lookbook).
 
 ## 9. Where context lives

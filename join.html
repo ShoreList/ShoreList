@@ -525,7 +525,20 @@ footer{background:var(--navy);border-top:1px solid var(--ln);padding:36px 48px}
 
 </style>
 <!-- ── ANALYTICS: Replace G-EN91RH3PZV with your GA4 Measurement ID from analytics.google.com ── -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
+<script>
+window.addEventListener('load',function(){
+  function load(){
+    if(document.querySelector('script[data-sl-ga]'))return;
+    var tag=document.createElement('script');
+    tag.async=true;
+    tag.setAttribute('data-sl-ga','1');
+    tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
+    document.head.appendChild(tag);
+  }
+  document.addEventListener('pointerdown',load,{once:true,passive:true});
+  setTimeout(function(){if(window.requestIdleCallback)requestIdleCallback(load);else load();},5000);
+});
+</script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());gtag('config','G-EN91RH3PZV');
@@ -534,11 +547,11 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 <meta property="og:description" content="Reach Wilmington visitors who are planning now. No upfront cost, commission only when you earn. Go live in 48-72 hours."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://shorelist.net/join"/>
-<meta property="og:image" content="https://shorelist.net/og-join.jpg"/>
+<meta property="og:image" content="https://shorelist.net/img/hero/wb-banks-1920.webp"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:site_name" content="ShoreList"/>
-<meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://shorelist.net/og-join.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://shorelist.net/img/hero/wb-banks-1920.webp"/>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","name":"ShoreList Operator Partner Program","url":"https://shorelist.net/join","description":"Local operators apply to list tours, charters, and experiences on ShoreList. No upfront cost, commission only.","publisher":{"@type":"Organization","@id":"https://shorelist.net/#org","name":"ShoreList","url":"https://shorelist.net/"},"inLanguage":"en-US"}
 </script>
@@ -547,7 +560,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 <link rel="stylesheet" href="/fixes.css"/>
 <link rel="stylesheet" href="/scene.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 <link rel="stylesheet" href="/tokens.css"/>
 </head>
 <body>
@@ -601,7 +614,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 
 <!-- ── HERO ── -->
 <section class="hero">
-  <img class="hero-photo" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-riverwalk_1920x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-riverwalk_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-riverwalk_1920x.webp 1920w" sizes="100vw" width="1920" height="1281" alt="Shops and restaurants along the Wilmington Riverwalk beside the Cape Fear River" fetchpriority="high" decoding="async"/>
+  <img class="hero-photo" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-riverwalk_1920x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-riverwalk_1280x.webp 1280w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-real-dt-riverwalk_1920x.webp 1920w" sizes="100vw" width="1920" height="1281" alt="Shops and restaurants along the Wilmington Riverwalk beside the Cape Fear River" fetchpriority="high" decoding="async"/>
   <div class="hero-inner">
     <div class="hero-tag">Operator Partner Program</div>
     <div class="hero-grid">
@@ -645,8 +658,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
     <h2 class="sec-title">A highly rated Wilmington operator<br/><em>already chose ShoreList.</em></h2>
     <p class="sec-sub" style="margin:0 auto 30px;max-width:700px;">Amanda Leese, founder of Wilmington Walking Tours &amp; Carolina Beach Tours, signed on as a Founding Partner. Join her as a founding partner.</p>
     <div style="display:inline-flex;align-items:center;gap:22px;flex-wrap:wrap;justify-content:center;background:#F4F1EA;border-radius:16px;padding:18px 28px;box-shadow:0 14px 38px rgba(0,0,0,0.32);margin-bottom:26px;">
-      <img src="/wilmington-walking-tours.webp" width="440" height="366" alt="Wilmington Walking Tours" style="height:64px;width:auto;" loading="lazy" decoding="async"/>
-      <img src="/carolina-beach-tours-sm.webp" width="156" height="132" alt="Carolina Beach Tours" style="height:64px;width:auto;" loading="lazy" decoding="async"/>
+      <p style="margin:0;font-weight:600;">Wilmington Walking Tours and Carolina Beach Tours</p>
     </div>
     <div style="display:flex;justify-content:center;gap:11px;flex-wrap:wrap;margin-bottom:30px;">
       
@@ -1314,9 +1326,11 @@ function calcUpdate() {
 }
 calcUpdate();
 </script>
-<script src="/sound.js" defer></script>
-<script src="/beachwx.js" defer></script>
-<script src="/widgets.js" defer></script>
-<script src="/shore-plus.js" defer></script>
+<script data-idle="/sound.js"></script>
+<script data-idle="/beachwx.js"></script>
+<script data-idle="/shore-plus.js"></script>
+
+<script src="/guide-boot.js" defer data-widgets="1"></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>

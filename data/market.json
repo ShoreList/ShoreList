@@ -1,0 +1,71 @@
+{
+  "id": "wilmington-nc",
+  "name": "Wilmington, North Carolina",
+  "note": "One market. Add a town by appending to towns. Station ids below were read from the live NOAA, NDBC and NWS responses on 2026-11-27. Do not add a station that did not respond.",
+  "towns": [
+    { "id": "wrightsville-beach", "name": "Wrightsville Beach", "match": ["wrightsville"], "rank": 40 },
+    { "id": "carolina-beach", "name": "Carolina Beach", "match": ["carolina beach"], "rank": 12 },
+    { "id": "kure-beach", "name": "Kure Beach", "match": ["kure"], "rank": 10 },
+    { "id": "wilmington", "name": "Wilmington", "match": [], "rank": 0, "default": true }
+  ],
+  "stations": {
+    "nwsOffice": "ILM",
+    "tideStation": "8658163",
+    "buoy": "41110",
+    "verified": "2026-11-27",
+    "points": {
+      "wrightsville-beach": { "lat": 34.2097, "lon": -77.7964, "gridId": "ILM", "gridX": 95, "gridY": 75 },
+      "carolina-beach": { "lat": 34.0345, "lon": -77.8976, "gridId": "ILM", "gridX": 92, "gridY": 67 },
+      "kure-beach": { "lat": 33.994, "lon": -77.9068, "gridId": "ILM", "gridX": 92, "gridY": 65 }
+    }
+  },
+  "eventFeeds": [],
+  "pairs": {
+    "cooler": ["towel", "cap", "sticker"],
+    "sticker": ["cooler", "mug"],
+    "ornament": ["mug", "print"],
+    "beanie": ["cap", "crewneck"],
+    "cap": ["beanie", "tee"],
+    "pouch": ["tote", "cooler"],
+    "mug": ["towel", "ornament"],
+    "towel": ["cooler", "tote"],
+    "pillow": ["print", "mug"],
+    "print": ["pillow", "mug"],
+    "tote": ["pouch", "towel"],
+    "tee": ["cap", "cooler"],
+    "tumbler": ["cooler", "mug"],
+    "crewneck": ["beanie", "cap"],
+    "item": ["mug", "cooler"]
+  },
+  "characters": {
+    "wrighty": {
+      "id": "wrighty",
+      "name": "Wrighty",
+      "creature": "pelican",
+      "accent": "#0E1F33",
+      "paths": ["/shop", "/gift-guide", "/gift-finder", "/holiday-gift-guide", "/wilmington-nc-gifts", "/wrightsville-beach-souvenirs", "/wrightsville-beach-christmas-ornament", "/prints", "/guides", "/shipping-returns", "/size-guide"],
+      "greeting": "Hi, I'm Wrighty. I can help you find a gift or a souvenir from the ShoreList shop. Who are you shopping for?",
+      "questions": ["Who is the gift for?", "What do you want to spend?"],
+      "sayOk": "Wrighty here. These pieces are in the shop right now.",
+      "sayNone": "Wrighty could not find a shop piece for that. Try another budget, or open the full shop."
+    },
+    "shelby": {
+      "id": "shelby",
+      "name": "Shelby",
+      "creature": "loggerhead",
+      "accent": "#8A7348",
+      "paths": ["/", "/downtown", "/wrightsville-beach", "/carolina-beach", "/kure-beach", "/pleasure-island", "/shore-picks", "/where-to-stay", "/plan-your-trip", "/wilmington-weather", "/surf", "/wilmington-nc-faq", "/wilmington-nc-parking", "/johnnie-mercers-pier", "/carolina-beach-boardwalk"],
+      "greeting": "Hi, I'm Shelby. I know Wilmington and the three beaches well. What brings you here: planning a trip, or figuring out today?",
+      "questions": ["Which beach are you asking about, Wrightsville, Carolina or Kure?", "Is this a beach day or a rainy day plan?"]
+    },
+    "cape": {
+      "id": "cape",
+      "name": "Captain Cape",
+      "creature": "pelican",
+      "accent": "#B5362F",
+      "paths": ["/things-to-do", "/events", "/planner", "/join", "/waitlist"],
+      "greeting": "Cap here. I can help you pick a tour or an outing. What are you in the mood for: a walk through history, something on the water, or something after dark?",
+      "questions": ["Do you want a tour you can book today?", "How many people are coming?"]
+    }
+  }
+}

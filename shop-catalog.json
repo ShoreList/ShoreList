@@ -1,12 +1,14 @@
 {
  "v": 1,
  "startHere": [
-  "carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
+  "the-sloop-embroidered-crewneck-wrightsville-beach",
+  "the-sloop-corduroy-cap-wrightsville-beach",
+  "the-blue-crab-embroidered-crewneck-kure-beach",
   "kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
-  "the-pelican-corduroy-cap-carolina-beach",
   "airlie-oak-framed-art-print-wrightsville-beach-and-wilmington",
-  "wrightsville-beach-sloop-all-over-print-tote-bag",
-  "the-blue-crab-embroidered-crewneck-kure-beach"
+  "wrightsville-beach-hoodie-varsity",
+  "wrightsville-beach-tee-varsity",
+  "wrightsville-beach-signature-crewneck"
  ],
  "note": "Only add an item here after it passes the shop gates: real supplier mockup of the exact colorway, lining/inside color checked, art at print resolution, product URL returns 200 signed out. Customer-facing fields (name, alt, meta, cta, collection blurbs, stores[].carries) must not name third-party blank brands; put those in the internal blank field. Run: node tools/check-shop-links.mjs",
  "collections": [
@@ -51,12 +53,6 @@
    "name": "Harbor Capsules",
    "blurb": "Themed capsule sets, made to order.",
    "art": "tide-line"
-  },
-  {
-   "id": "beach-setup",
-   "name": "Beach Setup",
-   "blurb": "The chair, the shade, the towel and the cooler. Everything for a full day on Wrightsville, Carolina Beach or Kure.",
-   "art": "tide-line"
   }
  ],
  "shelves": [
@@ -65,8 +61,8 @@
    "name": "Wrightsville Beach",
    "town": true,
    "tag": "Sloops, marinas and the sound",
-   "blurb": "The sloop is our Wrightsville Beach mark, printed as a navy pattern on a tote, mug, pillow, pouch, tea towel and pet bandana, with a can cooler and a stitched cap and crewneck.",
-   "cover": "wrightsville-beach-sloop-all-over-print-tote-bag"
+   "blurb": "The sloop is our Wrightsville Beach mark, stitched on a cap, beanie and crewneck and printed on a mug, tea towel and can cooler.",
+   "cover": "the-sloop-embroidered-crewneck-wrightsville-beach"
   },
   {
    "id": "carolina-beach",
@@ -89,374 +85,315 @@
    "name": "Wilmington and the Coast",
    "town": true,
    "tag": "For the whole coast",
-   "blurb": "Pieces that belong to the whole coast: the Airlie Oak framed print, tote, tee, mug, zip pouch, throw pillow, tea towel and ornament, the Live Oak embroidered crewneck and the Carolina Coast beach towel.",
+   "blurb": "Pieces that belong to the whole coast: the Airlie Oak framed print, tote, tee, mug, zip pouch, throw pillow, tea towel, ornament and the Carolina Coast beach towel.",
    "cover": "airlie-oak-framed-art-print-wrightsville-beach-and-wilmington"
   }
  ],
  "items": [
   {
-   "id": "wrightsville-beach-sloop-all-over-print-tote-bag",
-   "collection": "shore-gear",
+   "id": "the-sloop-embroidered-crewneck-wrightsville-beach",
+   "collection": "local-icons",
    "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop All Over Print Tote Bag",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-all-over-print-tote-bag",
-   "type": "beach",
-   "color": "Navy",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-all-over-print-tote-bag_1000x.webp",
-   "alt": "Navy tote bag printed edge to edge with white sailboats on teal waves, on the sand with a towel at Wrightsville Beach",
-   "meta": "A printed tote with a navy sloop pattern running seam to seam across the whole bag. A Wrightsville Beach carry-all for the Carolina coast.",
-   "cta": "Choose size",
-   "price": 48,
+   "name": "Wrightsville Beach Crewneck, Sloop Embroidery",
+   "url": "https://shorelist.myshopify.com/products/the-sloop-embroidered-crewneck-wrightsville-beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/180126218099143496_2048.jpg?v=1795318122",
+   "alt": "Studio photo of the Wrightsville Beach Crewneck, Sloop Embroidery.",
+   "meta": "A little sloop under sail stitched on the chest, with WB for Wrightsville Beach beneath it.",
+   "cta": "Choose color and size",
+   "price": 68,
    "from": true,
    "scenes": [
     "beach"
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8437957555573950274_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-all-over-print-tote-bag_1920x.webp",
    "facts": [
     [
-     "Size",
-     "16 x 16 in or 18 x 18 in"
-    ],
-    [
-     "Handles",
-     "Navy or beige cotton webbing, solid color"
+     "Sizing",
+     "Relaxed fit, sizes S to 3XL"
     ],
     [
      "Fabric",
-     "100% spun polyester with a laminate lining, spot clean"
+     "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
     ],
     [
-     "Print",
-     "Sailboat pattern printed edge to edge on the bag body, not embroidered"
+     "Embroidery",
+     "Stitched in white, red and blue thread"
     ]
    ],
+   "lookbook": "",
+   "town": "wrightsville-beach",
+   "type": "tops",
+   "color": "Washed blue",
+   "added": "2026-11-21",
+   "motif": "boats-buoys",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/180126218099143496_2048.jpg?v=1795318122"
+  },
+  {
+   "id": "the-sloop-corduroy-cap-wrightsville-beach",
+   "collection": "local-icons",
+   "shelf": "wrightsville-beach",
+   "name": "Wrightsville Beach Hat, Sloop Corduroy Cap",
+   "url": "https://shorelist.myshopify.com/products/the-sloop-corduroy-cap-wrightsville-beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7042525475132206278_2048.jpg?v=1795318073",
+   "alt": "Studio photo of the Wrightsville Beach Hat, Sloop Corduroy Cap.",
+   "meta": "A little sloop embroidered on the front of a corduroy cap, with WB stitched on the back.",
+   "cta": "Choose color",
+   "price": 46,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "facts": [
+    [
+     "Sizing",
+     "One size, adjustable strap with a brass buckle"
+    ],
+    [
+     "Fabric",
+     "Cotton corduroy, unstructured low profile, curved brim"
+    ],
+    [
+     "Embroidery",
+     "Real embroidery on the front and the back"
+    ]
+   ],
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7042525475132206278_2048.jpg?v=1795318073",
+   "lookbook": "",
+   "town": "wrightsville-beach",
+   "type": "hats",
+   "color": "Navy",
+   "added": "2026-11-21",
+   "featured": true,
    "motif": "boats-buoys"
   },
   {
-   "id": "wrightsville-beach-sloop-weekender-tote-bag",
-   "collection": "shore-gear",
+   "id": "the-blue-crab-embroidered-crewneck-kure-beach",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "name": "Kure Beach Blue Crab Embroidered Crewneck",
+   "url": "https://shorelist.myshopify.com/products/the-blue-crab-embroidered-crewneck-kure-beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17367446352125890490_2048.jpg?v=1795668925",
+   "alt": "Studio photo of the Kure Beach Blue Crab Embroidered Crewneck.",
+   "meta": "An Atlantic blue crab stitched small on the chest of a crewneck, in white or chalky mint.",
+   "cta": "Choose size",
+   "price": 68,
+   "from": true,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, sizes S to 3XL"
+    ],
+    [
+     "Fabric",
+     "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
+    ],
+    [
+     "Embroidery",
+     "Stitched in blue, white and red thread"
+    ]
+   ],
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17367446352125890490_2048.jpg?v=1795668925",
+   "town": "kure-beach",
+   "type": "tops",
+   "color": "White",
+   "added": "2026-11-21",
+   "motif": "sea-life",
+   "lookbook": ""
+  },
+  {
+   "id": "kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "town": "kure-beach",
+   "name": "Kure Beach Lifeguard Stand Embroidered Crewneck Sweatshirt",
+   "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
+   "type": "tops",
+   "color": "White",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5860568908472344756_2048.jpg",
+   "alt": "Studio photo of the Kure Beach Lifeguard Stand Embroidered Crewneck Sweatshirt.",
+   "meta": "A small lifeguard stand with a red flag and the town name Kure Beach, embroidered on the chest of a white crewneck sweatshirt.",
+   "cta": "Choose size",
+   "price": 68,
+   "from": true,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5860568908472344756_2048.jpg",
+   "lookbook": "",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, sizes S to 3XL"
+    ],
+    [
+     "Fabric",
+     "9.5 oz garment-dyed, 80% ring-spun cotton and 20% polyester"
+    ],
+    [
+     "Embroidery",
+     "Lifeguard stand and town name stitched in navy and red thread, about 2.8 x 2.5 in"
+    ],
+    [
+     "Style",
+     "Classic crewneck with ribbed neck, cuffs and hem"
+    ],
+    [
+     "Care",
+     "Machine wash cold, tumble dry low, do not iron the embroidery"
+    ]
+   ],
+   "motif": "beach-scenes",
+   "featured": true
+  },
+  {
+   "id": "wrightsville-beach-hoodie-varsity",
+   "collection": "local-icons",
+   "name": "Wrightsville Beach Hoodie, Varsity Fleece",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-hoodie-varsity",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2994141325846479500_2048.jpg?v=1795827218",
+   "alt": "Studio mockup of the Wrightsville Beach Hoodie, Varsity Fleece, with a small sailboat crest on the left chest.",
+   "meta": "A small crest on the left chest, with WRIGHTSVILLE BEACH around a sailboat and a red flag, on a garment-dyed heavyweight hoodie. True Navy or Denim.",
+   "cta": "Choose options",
+   "price": 73,
+   "from": true,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "buy": "https://shorelist.myshopify.com/cart/48762574536788:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2994141325846479500_2048.jpg?v=1795827218",
+   "lookbook": "",
    "shelf": "wrightsville-beach",
    "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop Weekender Tote Bag",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-weekender-tote-bag",
-   "type": "beach",
-   "color": "Navy",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-weekender-tote-bag_1000x.webp",
-   "alt": "Navy weekender tote printed edge to edge with white sailboats on teal waves, on the sand at Wrightsville Beach",
-   "meta": "A large printed weekender tote with a navy sloop pattern wrapped around the body and bottom. A Wrightsville Beach bag for beach weekends on the Carolina coast.",
-   "cta": "Shop tote bags",
+   "type": "tops",
+   "added": "2026-11-28",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit. True Navy in S and XL. Denim in M, L and 2XL. 2XL is $80."
+    ],
+    [
+     "Fabric",
+     "Garment-dyed heavyweight ring-spun cotton blend fleece"
+    ],
+    [
+     "Print",
+     "A small crest on the left chest: WRIGHTSVILLE BEACH around a sailboat with a red flag"
+    ]
+   ]
+  },
+  {
+   "id": "wrightsville-beach-tee-varsity",
+   "collection": "local-icons",
+   "name": "Wrightsville Beach T-Shirt, Varsity Tee",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-tee-varsity",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17468496152942394856_2048.jpg?v=1795827478",
+   "alt": "Studio mockup of the Wrightsville Beach T-Shirt, Varsity Tee in Blue Spruce, with a small sailboat crest on the left chest.",
+   "meta": "A small crest on the left chest, with WRIGHTSVILLE BEACH around a sailboat and a red flag, on a garment-dyed tee. The back has a small flag with WRIGHTSVILLE BEACH under it. Blue Jean or Blue Spruce.",
+   "cta": "Choose options",
+   "price": 41,
+   "from": true,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "buy": "https://shorelist.myshopify.com/cart/48762636271700:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17468496152942394856_2048.jpg?v=1795827478",
+   "lookbook": "",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "type": "tops",
+   "color": "Blue Spruce",
+   "added": "2026-11-28",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, sizes S to 4XL. S to XL are $41, 2XL is $43, 3XL is $45 and 4XL is $51."
+    ],
+    [
+     "Fabric",
+     "Garment-dyed ring-spun cotton"
+    ],
+    [
+     "Print",
+     "A small crest on the left chest, with WRIGHTSVILLE BEACH around a sailboat and a red flag. The back has a small flag with WRIGHTSVILLE BEACH under it."
+    ]
+   ]
+  },
+  {
+   "id": "wrightsville-beach-blue-crab-embroidered-crewneck",
+   "collection": "local-icons",
+   "shelf": "wrightsville-beach",
+   "name": "Wrightsville Beach Blue Crab Embroidered Crewneck",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-blue-crab-embroidered-crewneck",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3918752085900864476_2048.jpg?v=1795836286",
+   "alt": "Studio mockup of the Wrightsville Beach Blue Crab Embroidered Crewneck in white, with a small blue crab and WB on the chest.",
+   "meta": "An Atlantic blue crab stitched small on the chest of a crewneck, with WB under it, in white or chalky mint.",
+   "cta": "Choose size",
+   "price": 88,
+   "from": true,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, sizes S to 3XL. 3XL is $96."
+    ],
+    [
+     "Fabric",
+     "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
+    ],
+    [
+     "Embroidery",
+     "A blue crab stitched in blue, white and red thread, with WB under it"
+    ]
+   ],
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3918752085900864476_2048.jpg?v=1795836286",
+   "town": "wrightsville-beach",
+   "type": "tops",
+   "color": "White",
+   "added": "2026-11-28",
+   "motif": "sea-life",
+   "lookbook": "",
+   "buy": "https://shorelist.myshopify.com/cart/48764381003860:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now"
+  },
+  {
+   "id": "wrightsville-beach-signature-crewneck",
+   "collection": "local-icons",
+   "name": "Wrightsville Beach Signature Crewneck",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-signature-crewneck",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3739136137816494_2048.jpg",
+   "alt": "Studio photo of the Wrightsville Beach Signature Crewneck.",
+   "meta": "Signature Wrightsville Beach lettering with the small ShoreList pennant on a garment-dyed crewneck. Five colors.",
+   "cta": "Choose options",
    "price": 78,
    "scenes": [
     "beach"
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13894062535701194746_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-weekender-tote-bag_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "24 x 13 in with a T bottom"
-    ],
-    [
-     "Handles",
-     "Black, solid color"
-    ],
-    [
-     "Fabric",
-     "100% spun polyester exterior, black cotton blend lining, spot clean"
-    ],
-    [
-     "Print",
-     "Sailboat pattern printed edge to edge around the body and bottom, not embroidered"
-    ]
-   ],
-   "motif": "boats-buoys"
-  },
-  {
-   "id": "wrightsville-beach-sloop-picnic-and-beach-blanket",
-   "collection": "beach-setup",
+   "buy": "https://shorelist.myshopify.com/cart/48574782668884:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3739136137816494_2048.jpg",
+   "lookbook": "",
    "shelf": "wrightsville-beach",
    "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop Picnic and Beach Blanket",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-picnic-and-beach-blanket",
-   "type": "beach",
-   "color": "Navy",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-picnic-and-beach-blanket_1000x.webp",
-   "alt": "Navy picnic blanket printed edge to edge with white sailboats on teal waves, spread on the sand at Wrightsville Beach",
-   "meta": "A printed picnic and beach blanket with a navy sloop pattern edge to edge on a fleece front. A Wrightsville Beach blanket for shore picnics on the Carolina coast.",
-   "cta": "Shop beach gear",
-   "price": 98,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/71162535559617095_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-picnic-and-beach-blanket_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "61 x 51 in, with a black carrying strap and buckles"
-    ],
-    [
-     "Fabric",
-     "100% polyester fleece front, water resistant black oxford back, spot clean"
-    ],
-    [
-     "Print",
-     "Sailboat pattern printed edge to edge on the fleece side, not embroidered"
-    ]
-   ],
-   "motif": "boats-buoys"
-  },
-  {
-   "id": "wrightsville-beach-sloop-printed-mug",
-   "collection": "shore-gear",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop Printed Mug",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-mug",
-   "type": "beach",
-   "color": "White",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-mug_1000x.webp",
-   "alt": "White ceramic mug covered in small navy sailboats sitting on beach sand beside a folded towel",
-   "meta": "A printed 11 oz white ceramic mug with a navy all-over pattern of little sloops on teal waves. Made to order.",
-   "cta": "Shop mugs",
-   "price": 30,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5906329180415418302_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-mug_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "11 oz white ceramic mug"
-    ],
-    [
-     "Print",
-     "Sailboat pattern wrapped around the mug"
-    ],
-    [
-     "Care",
-     "Microwave and dishwasher safe"
-    ]
-   ],
-   "motif": "boats-buoys"
-  },
-  {
-   "id": "wrightsville-beach-sloop-printed-throw-pillow",
-   "collection": "shore-gear",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop Printed Throw Pillow",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-throw-pillow",
-   "type": "beach",
-   "color": "Navy",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-throw-pillow_1000x.webp",
-   "alt": "Navy throw pillow covered in small sailboats on a weathered beach chair by the dunes",
-   "meta": "A square throw pillow with a navy all-over pattern of little sloops. Printed, not embroidered, for a Wilmington NC porch or beach house.",
-   "cta": "Shop home decor",
-   "price": 42,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10845976540544592137_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-throw-pillow_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "16 x 16 in or 18 x 18 in"
-    ],
-    [
-     "Fabric",
-     "100% polyester cover with insert"
-    ],
-    [
-     "Print",
-     "Sailboat pattern edge to edge"
-    ],
-    [
-     "Care",
-     "Spot clean or machine wash cold per the cover label"
-    ]
-   ],
-   "motif": "boats-buoys"
-  },
-  {
-   "id": "wrightsville-beach-sloop-all-over-print-zip-pouch",
-   "collection": "shore-gear",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop All Over Print Zip Pouch",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-all-over-print-zip-pouch",
-   "type": "beach",
-   "color": "Navy",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-all-over-print-zip-pouch_1000x.webp",
-   "alt": "Navy zip pouch printed edge to edge with white sailboats on teal waves, on the sand with sunglasses at Wrightsville Beach",
-   "meta": "A printed zip pouch with a navy sloop pattern running to the seams. A Wrightsville Beach travel kit pouch for the Carolina coast.",
-   "cta": "Choose size",
-   "price": 28,
-   "from": true,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6935754229711099713_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-all-over-print-zip-pouch_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "Small or Large, see the size chart image"
-    ],
-    [
-     "Zipper",
-     "White"
-    ],
-    [
-     "Fabric",
-     "100% polyester with a laminate interior, spot clean"
-    ],
-    [
-     "Print",
-     "Sailboat pattern printed edge to edge, not embroidered"
-    ]
-   ],
-   "motif": "boats-buoys"
-  },
-  {
-   "id": "wrightsville-beach-sloop-printed-tea-towel",
-   "collection": "shore-gear",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop Printed Tea Towel",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-tea-towel",
-   "type": "beach",
-   "color": "Teal",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-tea-towel_1000x.webp",
-   "alt": "Teal and navy sloop pattern tea towel hanging in a bright coastal kitchen",
-   "meta": "A printed polyester tea towel with a navy all-over pattern of small sailboats on teal waves. A Wrightsville Beach kitchen gift made for the Carolina coast and Wilmington NC.",
-   "cta": "Shop kitchen linens",
-   "price": 30,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13002889693185505046_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-tea-towel_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "18 x 30 in"
-    ],
-    [
-     "Fabric",
-     "Polyester, one sided print, lightweight"
-    ],
-    [
-     "Print",
-     "Navy sloop pattern on teal waves, printed not embroidered"
-    ],
-    [
-     "Made",
-     "Made to order"
-    ]
-   ],
-   "motif": "boats-buoys"
-  },
-  {
-   "id": "wrightsville-beach-sloop-printed-pet-bandana",
-   "collection": "shore-gear",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop Printed Pet Bandana",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-pet-bandana",
-   "type": "beach",
-   "color": "Navy",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-pet-bandana-v2_1000x.webp",
-   "alt": "Golden retriever on a sandy beach wearing a thin black collar with a navy sailboat print bandana hanging from it",
-   "meta": "A navy pet bandana printed with little sloops that clips onto an adjustable black collar. Sold in size Small only. For beach walks with your dog on the Carolina coast.",
-   "cta": "Shop pet gear",
-   "price": 28,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12094930629799905524_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-pet-bandana-v2_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "Small"
-    ],
-    [
-     "Fabric",
-     "100% polyester"
-    ],
-    [
-     "Fit",
-     "Clip-on bandana with an adjustable, removable collar"
-    ]
-   ],
-   "motif": "boats-buoys"
-  },
-  {
-   "id": "wrightsville-beach-sloop-can-cooler-sleeve",
-   "collection": "shore-gear",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop Can Cooler Sleeve",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-can-cooler-sleeve",
-   "type": "coolers",
-   "color": "Navy",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-can-cooler-sleeve-v2_1000x.webp",
-   "alt": "Navy can cooler sleeve covered in small sailboats around a regular can",
-   "meta": "A navy can cooler sleeve covered in little sloops, printed edge to edge. Keeps a regular can cool on the boat, the sand or the porch.",
-   "cta": "Shop can coolers",
-   "price": 14,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17349877194870767359_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-can-cooler-sleeve-v2_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "Fits a regular can, about 3.5 x 4.3 in"
-    ],
-    [
-     "Materials",
-     "Polyester outside, soft foam liner inside"
-    ],
-    [
-     "Print",
-     "Sailboat pattern printed edge to edge"
-    ]
-   ],
-   "motif": "boats-buoys"
+   "type": "tops",
+   "added": "2026-11-27"
   },
   {
    "id": "carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
@@ -468,8 +405,8 @@
    "type": "tops",
    "color": "White",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt_1000x.webp",
-   "alt": "White crewneck sweatshirt with a small embroidered lifeguard stand and the words Carolina Beach, worn on the sand",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13000623743151575142_2048.jpg",
+   "alt": "Studio photo of the Carolina Beach Lifeguard Stand Embroidered Crewneck Sweatshirt.",
    "meta": "A small lifeguard stand with a red flag and the town name Carolina Beach, embroidered on the chest of a white crewneck sweatshirt.",
    "cta": "Choose size",
    "price": 88,
@@ -479,7 +416,7 @@
    "cut": "unisex",
    "store": "shopify",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13000623743151575142_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt_1920x.webp",
+   "lookbook": "",
    "facts": [
     [
      "Sizing",
@@ -502,17 +439,57 @@
    "featured": true
   },
   {
+   "id": "carolina-beach-blue-crab-embroidered-crewneck",
+   "collection": "local-icons",
+   "shelf": "carolina-beach",
+   "name": "Carolina Beach Blue Crab Embroidered Crewneck",
+   "url": "https://shorelist.myshopify.com/products/carolina-beach-blue-crab-embroidered-crewneck",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15470732138873385796_2048.jpg?v=1795836318",
+   "alt": "Studio mockup of the Carolina Beach Blue Crab Embroidered Crewneck in white, with a small blue crab and CB on the chest.",
+   "meta": "An Atlantic blue crab stitched small on the chest of a crewneck, with CB under it, in white or chalky mint.",
+   "cta": "Choose size",
+   "price": 88,
+   "from": true,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, sizes S to 3XL. 3XL is $96."
+    ],
+    [
+     "Fabric",
+     "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
+    ],
+    [
+     "Embroidery",
+     "A blue crab stitched in blue, white and red thread, with CB under it"
+    ]
+   ],
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15470732138873385796_2048.jpg?v=1795836318",
+   "town": "carolina-beach",
+   "type": "tops",
+   "color": "White",
+   "added": "2026-11-28",
+   "motif": "sea-life",
+   "lookbook": "",
+   "buy": "https://shorelist.myshopify.com/cart/48764381921364:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now"
+  },
+  {
    "id": "the-pelican-embroidered-crewneck-carolina-beach",
    "collection": "local-icons",
    "shelf": "carolina-beach",
    "town": "carolina-beach",
-   "name": "The Pelican Embroidered Crewneck, Carolina Beach",
+   "name": "Carolina Beach Pelican Embroidered Crewneck",
    "url": "https://shorelist.myshopify.com/products/the-pelican-embroidered-crewneck-carolina-beach",
    "type": "tops",
    "color": "Blue Jean",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-embroidered-crewneck-carolina-beach_1000x.webp",
-   "alt": "Smiling woman in a blue jean crewneck sweatshirt with a small embroidered brown pelican, on the sand at Carolina Beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17511693076647559523_2048.jpg?v=1795401935",
+   "alt": "Studio photo of the Carolina Beach Pelican Embroidered Crewneck.",
    "meta": "A brown pelican stitched small on the chest in white, chestnut and gold thread, quiet on a blue jean crewneck.",
    "cta": "Choose color and size",
    "price": 88,
@@ -522,7 +499,7 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13933455820164530453_2048.jpg",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17511693076647559523_2048.jpg?v=1795401935",
    "facts": [
     [
      "Sizing",
@@ -541,20 +518,20 @@
      "Blue Jean, Blue Spruce, Denim"
     ]
    ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-embroidered-crewneck-carolina-beach_1920x.webp"
+   "lookbook": ""
   },
   {
    "id": "the-pelican-corduroy-cap-carolina-beach",
    "collection": "local-icons",
    "shelf": "carolina-beach",
    "town": "carolina-beach",
-   "name": "The Pelican Corduroy Cap, Carolina Beach",
+   "name": "Carolina Beach Pelican Corduroy Cap",
    "url": "https://shorelist.myshopify.com/products/the-pelican-corduroy-cap-carolina-beach",
    "type": "hats",
    "color": "Navy Blue",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-corduroy-cap-carolina-beach_1000x.webp",
-   "alt": "Man in a navy corduroy cap with an embroidered brown pelican, on the sand at Carolina Beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/554477750588018687_2048.jpg?v=1795401930",
+   "alt": "Studio photo of the Carolina Beach Pelican Corduroy Cap.",
    "meta": "A brown pelican embroidered on the front of a soft corduroy cap.",
    "cta": "Choose color",
    "price": 49,
@@ -564,7 +541,7 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/755985813891049725_2048.jpg",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/554477750588018687_2048.jpg?v=1795401930",
    "facts": [
     [
      "Fit",
@@ -583,20 +560,20 @@
      "Navy Blue, Olive"
     ]
    ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-corduroy-cap-carolina-beach_1920x.webp"
+   "lookbook": ""
   },
   {
    "id": "the-pelican-cuffed-beanie-carolina-beach",
    "collection": "local-icons",
    "shelf": "carolina-beach",
    "town": "carolina-beach",
-   "name": "The Pelican Cuffed Beanie, Carolina Beach",
+   "name": "Carolina Beach Pelican Cuffed Beanie",
    "url": "https://shorelist.myshopify.com/products/the-pelican-cuffed-beanie-carolina-beach",
    "type": "hats",
    "color": "Forest green",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-cuffed-beanie-carolina-beach_1000x.webp",
-   "alt": "Woman in a forest green cuffed beanie embroidered with a brown pelican, on the sand at Carolina Beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5161036051979177776_2048.jpg?v=1795401924",
+   "alt": "Studio photo of the Carolina Beach Pelican Cuffed Beanie.",
    "meta": "A brown pelican embroidered on the cuff of a classic knit beanie.",
    "cta": "Choose color",
    "price": 30,
@@ -605,7 +582,7 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2987194900095621589_2048.jpg",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5161036051979177776_2048.jpg?v=1795401924",
    "facts": [
     [
      "Fit",
@@ -620,7 +597,7 @@
      "Navy, Spruce, Olive"
     ]
    ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-pelican-cuffed-beanie-carolina-beach_1920x.webp"
+   "lookbook": ""
   },
   {
    "id": "carolina-beach-lifeguard-stand-printed-throw-pillow",
@@ -632,8 +609,8 @@
    "type": "beach",
    "color": "Ivory",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-throw-pillow_1000x.webp",
-   "alt": "Ivory throw pillow printed with a navy lifeguard stand and the words Carolina Beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12353768058891167259_2048.jpg?v=1795397785",
+   "alt": "Studio photo of the Carolina Beach Lifeguard Stand Printed Throw Pillow.",
    "meta": "A printed square throw pillow with one navy lifeguard stand, a small red flag and the words Carolina Beach on ivory. For a Wilmington NC porch or beach house.",
    "cta": "Shop home decor",
    "price": 42,
@@ -642,8 +619,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12353768058891167259_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-throw-pillow_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12353768058891167259_2048.jpg?v=1795397785",
+   "lookbook": "",
    "facts": [
     [
      "Size",
@@ -674,8 +651,8 @@
    "type": "beach",
    "color": "Natural",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-zip-pouch_1000x.webp",
-   "alt": "Natural canvas zip pouch printed with a navy lifeguard stand and the words Carolina Beach lying on beach sand",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15530950866645752954_2048.jpg?v=1795397602",
+   "alt": "Studio photo of the Carolina Beach Lifeguard Stand Printed Zip Pouch.",
    "meta": "A printed cotton canvas zip pouch with a navy lifeguard stand, a small red flag and the words Carolina Beach on the front. Holds sunscreen, keys and phone for a beach day.",
    "cta": "Shop pouches",
    "price": 30,
@@ -684,8 +661,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15530950866645752954_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-zip-pouch_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15530950866645752954_2048.jpg?v=1795397602",
+   "lookbook": "",
    "facts": [
     [
      "Size",
@@ -707,44 +684,6 @@
    "motif": "beach-scenes"
   },
   {
-   "id": "carolina-beach-lifeguard-stand-printed-mug",
-   "collection": "local-icons",
-   "shelf": "carolina-beach",
-   "town": "carolina-beach",
-   "name": "Carolina Beach Lifeguard Stand Printed Mug",
-   "url": "https://shorelist.myshopify.com/products/carolina-beach-lifeguard-stand-printed-mug",
-   "type": "beach",
-   "color": "Ivory",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-mug_1000x.webp",
-   "alt": "Ivory ceramic mug printed with a navy lifeguard stand and the words Carolina Beach sitting on beach sand",
-   "meta": "A printed 11 oz white ceramic mug with one navy lifeguard stand, a small red flag and the words Carolina Beach on an ivory field. Made to order.",
-   "cta": "Shop mugs",
-   "price": 30,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3438836625257813204_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-mug_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "11 oz white ceramic mug"
-    ],
-    [
-     "Print",
-     "Navy lifeguard stand with a red flag and the town name, one centered design on an ivory field"
-    ],
-    [
-     "Care",
-     "Microwave and dishwasher safe per the supplier"
-    ]
-   ],
-   "motif": "beach-scenes"
-  },
-  {
    "id": "carolina-beach-lifeguard-stand-printed-garment-dyed-tee",
    "collection": "local-icons",
    "shelf": "carolina-beach",
@@ -754,8 +693,8 @@
    "type": "tops",
    "color": "Ivory",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-garment-dyed-tee_1000x.webp",
-   "alt": "Ivory tee printed with a navy lifeguard stand, a red flag and the words Carolina Beach, worn on the sand",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15494710442550733373_2048.jpg?v=1795396842",
+   "alt": "Studio photo of the Carolina Beach Lifeguard Stand Printed Garment-Dyed Tee.",
    "meta": "A lifeguard stand on the Carolina Beach shoreline, printed in deep navy with a small red flag and the town name in full, on a relaxed ivory garment-dyed tee.",
    "cta": "Choose size",
    "price": 42,
@@ -764,8 +703,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15494710442550733373_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-lifeguard-stand-printed-garment-dyed-tee_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15494710442550733373_2048.jpg?v=1795396842",
+   "lookbook": "",
    "facts": [
     [
      "Sizing",
@@ -796,8 +735,8 @@
    "type": "tops",
    "color": "Ivory",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-brown-pelican-carolina-coast-printed-garment-dyed-tee-v2_1000x.webp",
-   "alt": "Ivory tee printed on the chest with a lifelike painted brown pelican on a piling, hanging on a dock rail, Carolina coast",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/14016020971221668230_2048.jpg?v=1795449541",
+   "alt": "Studio photo of the Brown Pelican Carolina Coast Printed Garment-Dyed Tee.",
    "meta": "A relaxed garment-dyed tee printed with a lifelike painted brown pelican on a wooden piling, a Carolina Beach coast favorite. Made to order.",
    "cta": "Choose size",
    "price": 42,
@@ -806,8 +745,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11884586188636456931_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-brown-pelican-carolina-coast-printed-garment-dyed-tee-v2_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/14016020971221668230_2048.jpg?v=1795449541",
+   "lookbook": "",
    "facts": [
     [
      "Sizing",
@@ -828,91 +767,6 @@
    ]
   },
   {
-   "id": "kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
-   "collection": "local-icons",
-   "shelf": "kure-beach",
-   "town": "kure-beach",
-   "name": "Kure Beach Lifeguard Stand Embroidered Crewneck Sweatshirt",
-   "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
-   "type": "tops",
-   "color": "White",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt_1000x.webp",
-   "alt": "Smiling woman in a white crewneck sweatshirt with a small embroidered lifeguard stand and the words Kure Beach",
-   "meta": "A small lifeguard stand with a red flag and the town name Kure Beach, embroidered on the chest of a white crewneck sweatshirt.",
-   "cta": "Choose size",
-   "price": 88,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5860568908472344756_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt_1920x.webp",
-   "facts": [
-    [
-     "Sizing",
-     "Relaxed fit, sizes S to 3XL"
-    ],
-    [
-     "Fabric",
-     "9.5 oz garment-dyed, 80% ring-spun cotton and 20% polyester"
-    ],
-    [
-     "Embroidery",
-     "Lifeguard stand and town name stitched in navy and red thread, about 2.8 x 2.5 in"
-    ],
-    [
-     "Style",
-     "Classic crewneck with ribbed neck, cuffs and hem"
-    ],
-    [
-     "Care",
-     "Machine wash cold, tumble dry low, do not iron the embroidery"
-    ]
-   ],
-   "motif": "beach-scenes",
-   "featured": true
-  },
-  {
-   "id": "the-blue-crab-embroidered-crewneck-kure-beach",
-   "collection": "local-icons",
-   "shelf": "kure-beach",
-   "name": "The Blue Crab Embroidered Crewneck, Kure Beach",
-   "url": "https://shorelist.myshopify.com/products/the-blue-crab-embroidered-crewneck-kure-beach",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4874290219685606735_2048.jpg",
-   "alt": "White crewneck sweatshirt with a small embroidered blue crab on the chest, ShoreList, Kure Beach",
-   "meta": "An Atlantic blue crab stitched small on the chest of a crewneck, in white or chalky mint.",
-   "cta": "Choose size",
-   "price": 88,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "facts": [
-    [
-     "Sizing",
-     "Relaxed fit, sizes S to 3XL"
-    ],
-    [
-     "Fabric",
-     "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
-    ],
-    [
-     "Embroidery",
-     "Stitched in blue, white and red thread"
-    ]
-   ],
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4874290219685606735_2048.jpg",
-   "town": "kure-beach",
-   "type": "tops",
-   "color": "White",
-   "added": "2026-11-21",
-   "motif": "sea-life",
-   "lookbook": "/shop-art/blue-crab-crewneck-chalky-mint-1000.webp"
-  },
-  {
    "id": "kure-beach-lifeguard-stand-printed-canvas-tote-bag",
    "collection": "local-icons",
    "shelf": "kure-beach",
@@ -922,8 +776,8 @@
    "type": "beach",
    "color": "Natural",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-canvas-tote-bag_1000x.webp",
-   "alt": "Natural canvas tote bag printed with a navy lifeguard stand and the words Kure Beach, leaning on a beach chair",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4978189819285394626_2048.jpg?v=1795397485",
+   "alt": "Studio photo of the Kure Beach Lifeguard Stand Printed Canvas Tote Bag.",
    "meta": "A natural cotton canvas tote printed with one navy lifeguard stand, a small red flag and the words Kure Beach. A Wilmington NC gift for beach days and market trips.",
    "cta": "Shop tote bags",
    "price": 36,
@@ -932,8 +786,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4978189819285394626_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-canvas-tote-bag_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4978189819285394626_2048.jpg?v=1795397485",
+   "lookbook": "",
    "facts": [
     [
      "Size",
@@ -960,8 +814,8 @@
    "type": "beach",
    "color": "Ivory",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-throw-pillow_1000x.webp",
-   "alt": "Ivory throw pillow printed with a navy lifeguard stand and the words Kure Beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4443965749188829078_2048.jpg?v=1795397742",
+   "alt": "Studio photo of the Kure Beach Lifeguard Stand Printed Throw Pillow.",
    "meta": "A printed square throw pillow with one navy lifeguard stand, a small red flag and the words Kure Beach on ivory. For a Wilmington NC porch or beach house.",
    "cta": "Shop home decor",
    "price": 42,
@@ -970,8 +824,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4443965749188829078_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-throw-pillow_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4443965749188829078_2048.jpg?v=1795397742",
+   "lookbook": "",
    "facts": [
     [
      "Size",
@@ -1002,8 +856,8 @@
    "type": "beach",
    "color": "Natural",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-zip-pouch_1000x.webp",
-   "alt": "Natural canvas zip pouch printed with a navy lifeguard stand and the words Kure Beach lying on beach sand",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/1925704596928453072_2048.jpg?v=1795397442",
+   "alt": "Studio photo of the Kure Beach Lifeguard Stand Printed Zip Pouch.",
    "meta": "A printed cotton canvas zip pouch with a navy lifeguard stand, a small red flag and the words Kure Beach on the front. Holds sunscreen, keys and phone for a beach day.",
    "cta": "Shop pouches",
    "price": 30,
@@ -1012,8 +866,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/1925704596928453072_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-zip-pouch_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/1925704596928453072_2048.jpg?v=1795397442",
+   "lookbook": "",
    "facts": [
     [
      "Size",
@@ -1035,44 +889,6 @@
    "motif": "beach-scenes"
   },
   {
-   "id": "kure-beach-lifeguard-stand-printed-mug",
-   "collection": "local-icons",
-   "shelf": "kure-beach",
-   "town": "kure-beach",
-   "name": "Kure Beach Lifeguard Stand Printed Mug",
-   "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-printed-mug",
-   "type": "beach",
-   "color": "Ivory",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-mug_1000x.webp",
-   "alt": "Ivory ceramic mug printed with a navy lifeguard stand and the words Kure Beach sitting on beach sand",
-   "meta": "A printed 11 oz white ceramic mug with one navy lifeguard stand, a small red flag and the words Kure Beach on an ivory field. Made to order.",
-   "cta": "Shop mugs",
-   "price": 30,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15581314161783206053_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-mug_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "11 oz white ceramic mug"
-    ],
-    [
-     "Print",
-     "Navy lifeguard stand with a red flag and the town name, one centered design on an ivory field"
-    ],
-    [
-     "Care",
-     "Microwave and dishwasher safe per the supplier"
-    ]
-   ],
-   "motif": "beach-scenes"
-  },
-  {
    "id": "kure-beach-lifeguard-stand-printed-garment-dyed-tee",
    "collection": "local-icons",
    "shelf": "kure-beach",
@@ -1082,8 +898,8 @@
    "type": "tops",
    "color": "Ivory",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-garment-dyed-tee_1000x.webp",
-   "alt": "Woman in an ivory tee printed with a navy lifeguard stand and the words Kure Beach, standing in the dunes",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10323877380730444236_2048.jpg?v=1795398350",
+   "alt": "Studio photo of the Kure Beach Lifeguard Stand Printed Garment-Dyed Tee.",
    "meta": "A navy lifeguard stand with a small red flag over the words Kure Beach, printed on a soft ivory garment-dyed tee.",
    "cta": "Choose size",
    "price": 42,
@@ -1092,8 +908,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10323877380730444236_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-lifeguard-stand-printed-garment-dyed-tee_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10323877380730444236_2048.jpg?v=1795398350",
+   "lookbook": "",
    "facts": [
     [
      "Sizing",
@@ -1115,13 +931,13 @@
    "collection": "landmarks",
    "shelf": "wilmington",
    "town": "wilmington",
-   "name": "Airlie Oak Framed Art Print, Wrightsville Beach and Wilmington",
+   "name": "Airlie Oak Art Print, Wilmington NC",
    "url": "https://shorelist.myshopify.com/products/airlie-oak-framed-art-print-wrightsville-beach-and-wilmington",
    "type": "prints",
    "color": "Ivory",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-framed-art-print-wrightsville-beach-and-wilmington-v2_1000x.webp",
-   "alt": "Framed art print of the Airlie Oak, a painterly Southern live oak with Spanish moss and azaleas, above a console",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/18372799870615515575_2048.jpg",
+   "alt": "Studio photo of the Airlie Oak Art Print, Wilmington NC.",
    "meta": "A framed art print of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC, set like a botanical plate on warm ivory with a Wrightsville Beach and Wilmington caption. Made to order.",
    "cta": "Choose size",
    "price": 84,
@@ -1132,7 +948,7 @@
    "cut": "unisex",
    "store": "shopify",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/18372799870615515575_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-framed-art-print-wrightsville-beach-and-wilmington-v2_1920x.webp",
+   "lookbook": "",
    "facts": [
     [
      "Sizes",
@@ -1159,8 +975,8 @@
    "type": "beach",
    "color": "Ivory",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-all-over-print-tote-bag-v2_1000x.webp",
-   "alt": "Ivory tote with navy handles printed with a painterly Airlie Oak, a Southern live oak, on a garden bench in Wilmington",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/1681256103521192887_2048_1000x.jpg?v=1795412454",
+   "alt": "Ivory tote with navy handles and a centered Airlie Oak illustration",
    "meta": "A printed tote with a painterly illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC, with Spanish moss and blush azaleas on warm ivory. Made to order.",
    "cta": "Choose size",
    "price": 48,
@@ -1170,8 +986,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/106502712840758978_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-all-over-print-tote-bag-v2_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/1681256103521192887_2048_1000x.jpg?v=1795412454",
+   "lookbook": "",
    "facts": [
     [
      "Size",
@@ -1201,8 +1017,8 @@
    "type": "tops",
    "color": "Ivory",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-printed-garment-dyed-tee_1000x.webp",
-   "alt": "Ivory tee printed on the chest with a painterly Airlie Oak, a Southern live oak, hanging in a Wilmington azalea garden",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9322141173352740051_2048.jpg",
+   "alt": "Studio photo of the Airlie Oak Wilmington Printed Garment-Dyed Tee.",
    "meta": "A relaxed garment-dyed tee printed with a painterly illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC, with Spanish moss and blush azaleas. Made to order.",
    "cta": "Choose size",
    "price": 42,
@@ -1211,8 +1027,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11763539063403655751_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-printed-garment-dyed-tee_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9322141173352740051_2048.jpg",
+   "lookbook": "",
    "facts": [
     [
      "Sizing",
@@ -1242,8 +1058,8 @@
    "type": "tops",
    "color": "Ivory",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-azalea-wilmington-printed-garment-dyed-tee_1000x.webp",
-   "alt": "Ivory tee printed on the chest with a lifelike painted pink azalea branch, hanging from a live oak in a Wilmington garden",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/16341958443817143553_2048.jpg",
+   "alt": "Studio photo of the Azalea Wilmington Printed Garment-Dyed Tee.",
    "meta": "A relaxed garment-dyed tee printed with a lifelike painted branch of pink azaleas, the spring bloom Wilmington NC is known for. Made to order.",
    "cta": "Choose size",
    "price": 42,
@@ -1253,7 +1069,7 @@
    "cut": "unisex",
    "store": "shopify",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/16341958443817143553_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-azalea-wilmington-printed-garment-dyed-tee_1920x.webp",
+   "lookbook": "",
    "facts": [
     [
      "Sizing",
@@ -1283,8 +1099,8 @@
    "type": "tops",
    "color": "Ivory",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-blue-crab-carolina-coast-printed-garment-dyed-tee_1000x.webp",
-   "alt": "Ivory tee printed on the chest with a lifelike painted blue crab with red tipped claws, hanging on a Carolina coast dune",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8689840203936068468_2048.jpg?v=1795447219",
+   "alt": "Studio photo of the Blue Crab Carolina Coast Printed Garment-Dyed Tee.",
    "meta": "A relaxed garment-dyed tee printed with a lifelike painted Atlantic blue crab, a Carolina coast classic. Made to order.",
    "cta": "Choose size",
    "price": 42,
@@ -1293,8 +1109,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9075329185768094852_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-blue-crab-carolina-coast-printed-garment-dyed-tee_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8689840203936068468_2048.jpg?v=1795447219",
+   "lookbook": "",
    "facts": [
     [
      "Sizing",
@@ -1324,8 +1140,8 @@
    "type": "tops",
    "color": "White",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-sea-oats-carolina-coast-printed-garment-dyed-tee_1000x.webp",
-   "alt": "White tee printed on the chest with a lifelike painted clump of sea oats, hanging from driftwood on a Carolina coast dune",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/366906241246011215_2048.jpg?v=1795447409",
+   "alt": "Studio photo of the Sea Oats Carolina Coast Printed Garment-Dyed Tee.",
    "meta": "A relaxed garment-dyed tee printed with a lifelike painted clump of sea oats, the grass that holds the Carolina dunes together. Made to order.",
    "cta": "Choose size",
    "price": 42,
@@ -1334,8 +1150,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9266024491075443012_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-sea-oats-carolina-coast-printed-garment-dyed-tee_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/366906241246011215_2048.jpg?v=1795447409",
+   "lookbook": "",
    "facts": [
     [
      "Sizing",
@@ -1356,88 +1172,6 @@
    ]
   },
   {
-   "id": "southern-magnolia-wilmington-printed-garment-dyed-tee",
-   "collection": "local-icons",
-   "shelf": "wilmington",
-   "town": "wilmington",
-   "name": "Southern Magnolia Wilmington Printed Garment-Dyed Tee",
-   "url": "https://shorelist.myshopify.com/products/southern-magnolia-wilmington-printed-garment-dyed-tee",
-   "type": "tops",
-   "color": "Navy",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-southern-magnolia-wilmington-printed-garment-dyed-tee_1000x.webp",
-   "alt": "Navy tee printed on the chest with a lifelike painted Southern magnolia branch and bloom, hanging in Wilmington",
-   "meta": "A relaxed garment-dyed tee printed with a lifelike painted Southern magnolia branch, white bloom and glossy leaves, a Wilmington NC garden favorite. Made to order.",
-   "cta": "Choose size",
-   "price": 42,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8976537824275797201_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-southern-magnolia-wilmington-printed-garment-dyed-tee_1920x.webp",
-   "facts": [
-    [
-     "Sizing",
-     "Relaxed fit, offered in sizes L to 3XL (S and M are not offered yet)"
-    ],
-    [
-     "Fabric",
-     "Heavyweight 6.1 oz ring-spun cotton, pre-shrunk, double-needle stitching, no side seams"
-    ],
-    [
-     "Print",
-     "Magnolia illustration printed on the front chest, not embroidered"
-    ],
-    [
-     "Colors",
-     "True Navy or Ivory"
-    ]
-   ]
-  },
-  {
-   "id": "dogwood-blossom-wilmington-printed-garment-dyed-tee",
-   "collection": "local-icons",
-   "shelf": "wilmington",
-   "town": "wilmington",
-   "name": "Dogwood Blossom Wilmington Printed Garment-Dyed Tee",
-   "url": "https://shorelist.myshopify.com/products/dogwood-blossom-wilmington-printed-garment-dyed-tee",
-   "type": "tops",
-   "color": "Navy",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-dogwood-blossom-wilmington-printed-garment-dyed-tee-v2_1000x.webp",
-   "alt": "Navy tee printed on the chest with a painterly flowering dogwood branch, hanging from a dogwood in a Wilmington garden",
-   "meta": "A relaxed garment-dyed tee printed with a lifelike painted flowering dogwood branch, white blooms and green leaves, a Wilmington NC spring favorite. Made to order.",
-   "cta": "Choose size",
-   "price": 42,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17482743242736198041_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-dogwood-blossom-wilmington-printed-garment-dyed-tee-v2_1920x.webp",
-   "facts": [
-    [
-     "Sizing",
-     "Relaxed fit, offered in sizes L to 3XL (S and M are not offered yet)"
-    ],
-    [
-     "Fabric",
-     "Heavyweight 6.1 oz ring-spun cotton, pre-shrunk, double-needle stitching, no side seams"
-    ],
-    [
-     "Print",
-     "Dogwood illustration printed on the front chest, not embroidered"
-    ],
-    [
-     "Colors",
-     "True Navy"
-    ]
-   ]
-  },
-  {
    "id": "camellia-wilmington-printed-garment-dyed-tee",
    "collection": "local-icons",
    "shelf": "wilmington",
@@ -1447,8 +1181,8 @@
    "type": "tops",
    "color": "Ivory",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-camellia-wilmington-printed-garment-dyed-tee-v2_1000x.webp",
-   "alt": "Ivory tee printed on the chest with a lifelike painted red camellia branch, hanging from a camellia shrub in Wilmington",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7105371076677075614_2048.jpg",
+   "alt": "Studio photo of the Camellia Wilmington Printed Garment-Dyed Tee.",
    "meta": "A relaxed garment-dyed tee printed with a lifelike painted red camellia branch, bloom and glossy leaves, a Wilmington NC garden favorite. Made to order.",
    "cta": "Choose size",
    "price": 42,
@@ -1458,7 +1192,7 @@
    "cut": "unisex",
    "store": "shopify",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7105371076677075614_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-camellia-wilmington-printed-garment-dyed-tee-v2_1920x.webp",
+   "lookbook": "",
    "facts": [
     [
      "Sizing",
@@ -1479,76 +1213,6 @@
    ]
   },
   {
-   "id": "airlie-oak-wilmington-printed-mug",
-   "collection": "shore-gear",
-   "shelf": "wilmington",
-   "town": "wilmington",
-   "name": "Airlie Oak Wilmington Printed Mug",
-   "url": "https://shorelist.myshopify.com/products/airlie-oak-wilmington-printed-mug",
-   "type": "beach",
-   "color": "Ivory",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-printed-mug-v2_1000x.webp",
-   "alt": "Ceramic mug printed with a painterly Airlie Oak, a Southern live oak with azaleas, on a garden bench in Wilmington",
-   "meta": "A printed 11 oz ceramic mug with a painterly illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC, with Spanish moss and blush azaleas. Made to order.",
-   "cta": "Shop mugs",
-   "price": 30,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17705579613895622135_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-printed-mug-v2_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "11 oz ceramic mug"
-    ],
-    [
-     "Print",
-     "Airlie Oak illustration on the front of the mug"
-    ],
-    [
-     "Care",
-     "Microwave and dishwasher safe"
-    ]
-   ]
-  },
-  {
-   "id": "airlie-oak-wilmington-ceramic-ornament",
-   "collection": "coastal-christmas",
-   "shelf": "wilmington",
-   "town": "wilmington",
-   "name": "Airlie Oak Wilmington Ceramic Ornament",
-   "url": "https://shorelist.myshopify.com/products/airlie-oak-wilmington-ceramic-ornament",
-   "type": "ornaments",
-   "color": "Ivory",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-ceramic-ornament_1000x.webp",
-   "alt": "Round ceramic ornament printed with a painterly Airlie Oak, a Southern live oak, hanging on a tree in Wilmington",
-   "meta": "A round ceramic Christmas ornament with a painterly illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC. A Wilmington NC gift, made to order.",
-   "cta": "Shop Christmas",
-   "price": 18,
-   "scenes": [
-    "riverwalk"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/14053065159852629044_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-ceramic-ornament_1920x.webp",
-   "facts": [
-    [
-     "Shape",
-     "Round glossy ceramic with a gold hanging cord"
-    ],
-    [
-     "Print",
-     "Airlie Oak illustration on the front"
-    ]
-   ]
-  },
-  {
    "id": "airlie-oak-wilmington-all-over-print-zip-pouch",
    "collection": "shore-gear",
    "shelf": "wilmington",
@@ -1558,8 +1222,8 @@
    "type": "beach",
    "color": "Ivory",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-all-over-print-zip-pouch_1000x.webp",
-   "alt": "Ivory zip pouch printed with a painterly Airlie Oak, a Southern live oak with azaleas, on a garden bench in Wilmington",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17996432865084604974_2048.jpg",
+   "alt": "Studio photo of the Airlie Oak Wilmington All Over Print Zip Pouch.",
    "meta": "A printed zip pouch with a painterly illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC, on warm ivory. Two sizes, made to order.",
    "cta": "Choose size",
    "price": 28,
@@ -1570,7 +1234,7 @@
    "cut": "unisex",
    "store": "shopify",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17996432865084604974_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-all-over-print-zip-pouch_1920x.webp",
+   "lookbook": "",
    "facts": [
     [
      "Sizes",
@@ -1596,8 +1260,8 @@
    "type": "beach",
    "color": "Ivory",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-throw-pillow_1000x.webp",
-   "alt": "Ivory throw pillow printed with a painterly Airlie Oak, a Southern live oak with Spanish moss, on a Wilmington porch chair",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5833881298279680083_2048.jpg",
+   "alt": "Studio photo of the Airlie Oak Wilmington Throw Pillow.",
    "meta": "A printed square throw pillow with a painterly illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC, on warm ivory. Two sizes, made to order.",
    "cta": "Shop home decor",
    "price": 42,
@@ -1607,7 +1271,7 @@
    "cut": "unisex",
    "store": "shopify",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5833881298279680083_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-throw-pillow_1920x.webp",
+   "lookbook": "",
    "facts": [
     [
      "Size",
@@ -1620,148 +1284,6 @@
    ]
   },
   {
-   "id": "airlie-oak-wilmington-tea-towel",
-   "collection": "shore-gear",
-   "shelf": "wilmington",
-   "town": "wilmington",
-   "name": "Airlie Oak Wilmington Tea Towel",
-   "url": "https://shorelist.myshopify.com/products/airlie-oak-wilmington-tea-towel",
-   "type": "beach",
-   "color": "Ivory",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-tea-towel_1000x.webp",
-   "alt": "Ivory tea towel printed with a painterly Airlie Oak, a Southern live oak with Spanish moss, on an oven handle, Wilmington",
-   "meta": "A printed kitchen tea towel with a painterly illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC, on warm ivory. Made to order.",
-   "cta": "Shop home decor",
-   "price": 30,
-   "scenes": [
-    "riverwalk"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/18186560907249845613_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-airlie-oak-wilmington-tea-towel_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "18 x 30 in"
-    ],
-    [
-     "Print",
-     "Airlie Oak illustration printed on the towel, not embroidered"
-    ]
-   ]
-  },
-  {
-   "id": "carolina-coast-towel",
-   "collection": "beach-setup",
-   "shelf": "wilmington",
-   "name": "Carolina Coast Terry Beach Towel",
-   "url": "https://shorelist.myshopify.com/products/beach-towel",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-coast-towel_1000x.webp",
-   "alt": "Woman walking up the beach with the terry beach towel over her shoulders",
-   "meta": "Full-size 35 x 62 in terry beach towel in 100% cotton, with a restrained Carolina Coast lockup.",
-   "cta": "Shop beach gear",
-   "price": 68,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48569495519316:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
-   "facts": [
-    [
-     "Size",
-     "35 x 62 in"
-    ],
-    [
-     "Fabric",
-     "100% cotton terry velour with hemmed edges"
-    ]
-   ],
-   "studio": "https://shorelist.myshopify.com/cdn/shop/files/carolina-coast-towel-lookbook.png",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-coast-towel_1920x.webp",
-   "town": "wilmington",
-   "type": "beach",
-   "added": "2026-11-20"
-  },
-  {
-   "id": "wrightsville-can-cooler",
-   "collection": "shore-gear",
-   "shelf": "wrightsville-beach",
-   "name": "Wrightsville Beach Can Cooler",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-can-cooler",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-can-cooler_1000x.webp",
-   "alt": "Hand holding a can in the Wrightsville Beach can cooler on a dock at sunset",
-   "meta": "Navy foam-lined can cooler with the town name, printed on both sides. Folds flat for the beach bag.",
-   "cta": "Shop drinkware",
-   "price": 12,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48571208204372:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
-   "facts": [
-    [
-     "Size",
-     "Fits a 12 oz can and folds flat"
-    ],
-    [
-     "Materials",
-     "Polyester outside, foam liner inside"
-    ],
-    [
-     "Print",
-     "Printed on both sides"
-    ]
-   ],
-   "studio": "https://shorelist.myshopify.com/cdn/shop/files/16675080237515692816_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-can-cooler_1920x.webp",
-   "town": "wrightsville-beach",
-   "type": "coolers",
-   "color": "Navy",
-   "added": "2026-11-20"
-  },
-  {
-   "id": "carolina-beach-can-cooler",
-   "collection": "shore-gear",
-   "shelf": "carolina-beach",
-   "name": "Carolina Beach Can Cooler",
-   "url": "https://shorelist.myshopify.com/products/carolina-beach-can-cooler",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-can-cooler_1000x.webp",
-   "alt": "Hand holding a can in the Carolina Beach can cooler on a boardwalk rail",
-   "meta": "Navy foam-lined can cooler with the town name, printed on both sides. Folds flat for the beach bag.",
-   "cta": "Shop drinkware",
-   "price": 12,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48571212169300:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
-   "facts": [
-    [
-     "Size",
-     "Fits a 12 oz can and folds flat"
-    ],
-    [
-     "Materials",
-     "Polyester outside, foam liner inside"
-    ],
-    [
-     "Print",
-     "Printed on both sides"
-    ]
-   ],
-   "studio": "https://shorelist.myshopify.com/cdn/shop/files/18309295045651903048_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-can-cooler_1920x.webp",
-   "town": "carolina-beach",
-   "type": "coolers",
-   "color": "Navy",
-   "added": "2026-11-20"
-  },
-  {
    "id": "carolina-beach-scallop-shell-printed-crewneck-sweatshirt",
    "collection": "shore-gear",
    "shelf": "carolina-beach",
@@ -1771,8 +1293,8 @@
    "type": "tops",
    "color": "White",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-scallop-shell-printed-crewneck-sweatshirt_1000x.webp",
-   "alt": "White crewneck sweatshirt with a small navy and coral scallop shell drawing printed on the left chest",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/14568469345645711557_2048.jpg",
+   "alt": "Studio photo of the Carolina Beach Scallop Shell Printed Crewneck Sweatshirt.",
    "meta": "A hand-inked navy and coral scallop shell printed small on the left chest of a white garment-dyed crewneck. A Carolina Beach layer for cool evenings on the coast.",
    "cta": "Choose size",
    "price": 88,
@@ -1782,7 +1304,7 @@
    "cut": "unisex",
    "store": "shopify",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/14568469345645711557_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-scallop-shell-printed-crewneck-sweatshirt_1920x.webp",
+   "lookbook": "",
    "facts": [
     [
      "Sizing",
@@ -1808,7 +1330,7 @@
    "collection": "local-icons",
    "shelf": "carolina-beach",
    "town": "carolina-beach",
-   "name": "The Lifeguard Stand Bucket Hat, Carolina Beach",
+   "name": "Carolina Beach Lifeguard Stand Bucket Hat",
    "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-bucket-hat-carolina-beach",
    "type": "hats",
    "color": "White",
@@ -1848,13 +1370,13 @@
    "collection": "local-icons",
    "shelf": "carolina-beach",
    "town": "carolina-beach",
-   "name": "The Lifeguard Stand Canvas Tote, Carolina Beach",
+   "name": "Carolina Beach Lifeguard Stand Canvas Tote",
    "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-canvas-tote-carolina-beach",
    "type": "bags",
    "color": "Cream",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-lifeguard-stand-canvas-tote-carolina-beach_1000x.jpg",
-   "alt": "Man carrying a cream canvas tote printed with a lifeguard stand illustration on a Carolina Beach walkway at dusk",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3245672284682119365_2048_1000x.jpg?v=1795405115",
+   "alt": "Cream canvas tote with a small lifeguard stand embroidered centered on the front",
    "meta": "The Carolina Beach lifeguard stand machine embroidered on a heavy 320 gsm cotton canvas tote for towels, books and shells.",
    "cta": "Choose color",
    "price": 48,
@@ -1863,7 +1385,7 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7823676963491228727_2048.jpg",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3245672284682119365_2048_1000x.jpg?v=1795405115",
    "facts": [
     [
      "Size",
@@ -1882,20 +1404,20 @@
      "Cream, Bone"
     ]
    ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-lifeguard-stand-canvas-tote-carolina-beach_1920x.jpg"
+   "lookbook": ""
   },
   {
    "id": "the-lifeguard-stand-dad-hat-carolina-beach",
    "collection": "local-icons",
    "shelf": "carolina-beach",
    "town": "carolina-beach",
-   "name": "The Lifeguard Stand Dad Hat, Carolina Beach",
+   "name": "Carolina Beach Lifeguard Stand Dad Hat",
    "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-dad-hat-carolina-beach",
    "type": "hats",
    "color": "Stone",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-lifeguard-stand-dad-hat-carolina-beach_1000x.jpg",
-   "alt": "Man in a cream dad hat with an embroidered lifeguard stand mark on a Carolina Beach boardwalk at dusk, rendered mockup",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17705373984459054970_2048.jpg",
+   "alt": "Studio photo of the Carolina Beach Lifeguard Stand Dad Hat.",
    "meta": "The Carolina Beach lifeguard stand machine embroidered in navy on a washed cotton twill dad hat with a brass buckle.",
    "cta": "Choose color",
    "price": 42,
@@ -1923,7 +1445,7 @@
      "White, Stone, Khaki, Light Blue"
     ]
    ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-lifeguard-stand-dad-hat-carolina-beach_1920x.jpg"
+   "lookbook": ""
   },
   {
    "id": "carolina-beach-megalodon-tooth-printed-crewneck-sweatshirt",
@@ -1935,8 +1457,8 @@
    "type": "tops",
    "color": "White",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-megalodon-tooth-printed-crewneck-sweatshirt_1000x.jpg",
-   "alt": "Woman in a white crewneck sweatshirt with a printed megalodon tooth illustration on a Carolina Beach walkway at dusk",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15930373361749766429_2048.jpg?v=1795528056",
+   "alt": "White crewneck with a small navy megalodon tooth print centered on the chest",
    "meta": "A detailed megalodon tooth illustration with the town name Carolina Beach, printed on the chest of a garment-dyed crewneck sweatshirt.",
    "cta": "Choose size",
    "price": 88,
@@ -1945,7 +1467,7 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15930373361749766429_2048.jpg",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15930373361749766429_2048.jpg?v=1795528056",
    "facts": [
     [
      "Sizing",
@@ -1964,48 +1486,7 @@
      "Machine wash cold inside out, tumble dry low, do not iron the print"
     ]
    ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-megalodon-tooth-printed-crewneck-sweatshirt_1920x.jpg"
-  },
-  {
-   "id": "carolina-beach-megalodon-tooth-printed-garment-dyed-tee",
-   "collection": "local-icons",
-   "shelf": "carolina-beach",
-   "town": "carolina-beach",
-   "name": "Carolina Beach Megalodon Tooth Printed Garment-Dyed Tee",
-   "url": "https://shorelist.myshopify.com/products/carolina-beach-megalodon-tooth-printed-garment-dyed-tee",
-   "type": "tops",
-   "color": "White",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-megalodon-tooth-printed-garment-dyed-tee_1000x.jpg",
-   "alt": "Man in a sand t-shirt with a printed megalodon tooth illustration on a Carolina Beach walkway at golden hour",
-   "meta": "A detailed megalodon tooth illustration with the town name Carolina Beach, printed on the chest of a heavyweight garment-dyed cotton tee.",
-   "cta": "Choose size",
-   "price": 42,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4321031616109357590_2048.jpg",
-   "facts": [
-    [
-     "Sizing",
-     "Relaxed fit, sizes S to 3XL"
-    ],
-    [
-     "Fabric",
-     "100% ring-spun cotton, garment-dyed"
-    ],
-    [
-     "Decoration",
-     "Printed (DTG) chest artwork, about 2.8 in wide"
-    ],
-    [
-     "Care",
-     "Machine wash cold inside out, tumble dry low, do not iron the print"
-    ]
-   ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-megalodon-tooth-printed-garment-dyed-tee_1920x.jpg"
+   "lookbook": ""
   },
   {
    "id": "carolina-beach-megalodon-tooth-printed-canvas-tote",
@@ -2017,8 +1498,8 @@
    "type": "bags",
    "color": "Cream",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-megalodon-tooth-printed-canvas-tote_1000x.jpg",
-   "alt": "Man carrying a cream canvas tote printed with a megalodon tooth illustration on a Carolina Beach walkway at dusk",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/14392590098025722907_2048_1000x.jpg?v=1795412553",
+   "alt": "Cream canvas tote with a small navy megalodon tooth print and Carolina Beach lettering below it",
    "meta": "A detailed megalodon tooth illustration with the town name Carolina Beach, printed on a heavy cotton canvas tote for towels, books and shells.",
    "cta": "Choose color",
    "price": 48,
@@ -2027,7 +1508,7 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/18299308138015823001_2048.jpg",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/14392590098025722907_2048_1000x.jpg?v=1795412553",
    "facts": [
     [
      "Size",
@@ -2039,59 +1520,21 @@
     ],
     [
      "Decoration",
-     "Printed (DTG) front artwork, about 6 in wide"
+     "Printed (DTG) front artwork"
     ],
     [
      "Colors",
      "Cream, Bone"
     ]
    ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-megalodon-tooth-printed-canvas-tote_1920x.jpg"
-  },
-  {
-   "id": "kure-beach-can-cooler",
-   "collection": "shore-gear",
-   "shelf": "kure-beach",
-   "name": "Kure Beach Can Cooler",
-   "url": "https://shorelist.myshopify.com/products/kure-beach-can-cooler",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-can-cooler_1000x.webp",
-   "alt": "Kure Beach can cooler in the sand beside a straw hat and sunglasses",
-   "meta": "Navy foam-lined can cooler with the town name, printed on both sides. Folds flat for the beach bag.",
-   "cta": "Shop drinkware",
-   "price": 12,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48571216855124:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
-   "facts": [
-    [
-     "Size",
-     "Fits a 12 oz can and folds flat"
-    ],
-    [
-     "Materials",
-     "Polyester outside, foam liner inside"
-    ],
-    [
-     "Print",
-     "Printed on both sides"
-    ]
-   ],
-   "studio": "https://shorelist.myshopify.com/cdn/shop/files/5200674536494590319_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-can-cooler_1920x.webp",
-   "town": "kure-beach",
-   "type": "coolers",
-   "color": "Navy",
-   "added": "2026-11-20"
+   "lookbook": ""
   },
   {
    "id": "the-blue-crab-dad-hat-kure-beach",
    "collection": "local-icons",
    "shelf": "kure-beach",
    "town": "kure-beach",
-   "name": "The Blue Crab Dad Hat, Kure Beach",
+   "name": "Kure Beach Blue Crab Dad Hat",
    "url": "https://shorelist.myshopify.com/products/the-blue-crab-dad-hat-kure-beach",
    "type": "hats",
    "color": "Stone",
@@ -2136,8 +1579,8 @@
    "type": "beach",
    "color": "Natural",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-scallop-shell-printed-canvas-tote-bag_1000x.webp",
-   "alt": "Natural canvas tote bag printed with a navy and coral scallop shell, leaning on a dune beside a folded towel and straw hat",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15683278664081730040_2048.jpg?v=1795404394",
+   "alt": "Studio photo of the Kure Beach Scallop Shell Printed Canvas Tote Bag.",
    "meta": "A natural cotton canvas tote printed with one hand-inked navy and coral scallop shell. A Kure Beach tote for beach days and market trips.",
    "cta": "Shop tote bags",
    "price": 36,
@@ -2146,8 +1589,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15683278664081730040_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-scallop-shell-printed-canvas-tote-bag_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15683278664081730040_2048.jpg?v=1795404394",
+   "lookbook": "",
    "facts": [
     [
      "Size",
@@ -2169,7 +1612,7 @@
    "collection": "local-icons",
    "shelf": "kure-beach",
    "town": "kure-beach",
-   "name": "The Lifeguard Stand Bucket Hat, Kure Beach",
+   "name": "Kure Beach Lifeguard Stand Bucket Hat",
    "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-bucket-hat-kure-beach",
    "type": "hats",
    "color": "White",
@@ -2209,13 +1652,13 @@
    "collection": "local-icons",
    "shelf": "kure-beach",
    "town": "kure-beach",
-   "name": "The Blue Crab Canvas Tote, Kure Beach",
+   "name": "Kure Beach Blue Crab Canvas Tote",
    "url": "https://shorelist.myshopify.com/products/the-blue-crab-canvas-tote-kure-beach",
    "type": "bags",
    "color": "Cream",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-canvas-tote-kure-beach_1000x.jpg",
-   "alt": "Man carrying a cream canvas tote with a printed blue crab illustration near the Kure Beach pier at dusk, rendered mockup",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7066691774119677009_2048_1000x.jpg?v=1795405231",
+   "alt": "Cream canvas tote with a small blue crab embroidered centered on the front",
    "meta": "An Atlantic blue crab, claws up, machine embroidered on a heavy 320 gsm cotton canvas tote for Kure Beach days.",
    "cta": "Choose color",
    "price": 48,
@@ -2224,7 +1667,7 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10952569068745645040_2048.jpg",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7066691774119677009_2048_1000x.jpg?v=1795405231",
    "facts": [
     [
      "Size",
@@ -2243,20 +1686,20 @@
      "Cream, Bone"
     ]
    ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-blue-crab-canvas-tote-kure-beach_1920x.jpg"
+   "lookbook": ""
   },
   {
    "id": "the-lifeguard-stand-dad-hat-kure-beach",
    "collection": "local-icons",
    "shelf": "kure-beach",
    "town": "kure-beach",
-   "name": "The Lifeguard Stand Dad Hat, Kure Beach",
+   "name": "Kure Beach Lifeguard Stand Dad Hat",
    "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-dad-hat-kure-beach",
    "type": "hats",
    "color": "Stone",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-lifeguard-stand-dad-hat-kure-beach_1000x.jpg",
-   "alt": "Woman in a cream dad hat with an embroidered lifeguard stand mark on a Kure Beach dune path at golden hour, rendered mockup",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2145508029400222277_2048.jpg",
+   "alt": "Studio photo of the Kure Beach Lifeguard Stand Dad Hat.",
    "meta": "The Kure Beach lifeguard stand machine embroidered in navy on a washed cotton twill dad hat with a brass buckle.",
    "cta": "Choose color",
    "price": 42,
@@ -2284,20 +1727,20 @@
      "White, Stone, Khaki, Light Blue"
     ]
    ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-lifeguard-stand-dad-hat-kure-beach_1920x.jpg"
+   "lookbook": ""
   },
   {
    "id": "the-lifeguard-stand-canvas-tote-kure-beach",
    "collection": "local-icons",
    "shelf": "kure-beach",
    "town": "kure-beach",
-   "name": "The Lifeguard Stand Canvas Tote, Kure Beach",
+   "name": "Kure Beach Lifeguard Stand Canvas Tote",
    "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-canvas-tote-kure-beach",
    "type": "bags",
    "color": "Cream",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-lifeguard-stand-canvas-tote-kure-beach_1000x.jpg",
-   "alt": "Woman carrying a cream canvas tote printed with a lifeguard stand illustration on a Kure Beach sand path at golden hour",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6462593349328086418_2048_1000x.jpg?v=1795406807",
+   "alt": "Cream canvas tote with a small lifeguard stand embroidered centered on the front",
    "meta": "The Kure Beach lifeguard stand machine embroidered on a heavy 320 gsm cotton canvas tote for towels, books and shells.",
    "cta": "Choose color",
    "price": 48,
@@ -2306,7 +1749,7 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/16742752245669625289_2048.jpg",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6462593349328086418_2048_1000x.jpg?v=1795406807",
    "facts": [
     [
      "Size",
@@ -2325,7 +1768,7 @@
      "Cream, Bone"
     ]
    ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-lifeguard-stand-canvas-tote-kure-beach_1920x.jpg"
+   "lookbook": ""
   },
   {
    "id": "kure-beach-sea-turtle-printed-crewneck-sweatshirt",
@@ -2337,8 +1780,8 @@
    "type": "tops",
    "color": "White",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-sea-turtle-printed-crewneck-sweatshirt_1000x.jpg",
-   "alt": "Man in a white crewneck sweatshirt with a printed sea turtle illustration on a Kure Beach dune walkway at dusk",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/16767505816766786217_2048.jpg",
+   "alt": "Mockup of the white Kure Beach Sea Turtle crewneck with a small printed chest design",
    "meta": "A detailed sea turtle illustration with the town name Kure Beach, printed on the chest of a garment-dyed crewneck sweatshirt.",
    "cta": "Choose size",
    "price": 88,
@@ -2365,8 +1808,7 @@
      "Care",
      "Machine wash cold inside out, tumble dry low, do not iron the print"
     ]
-   ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-sea-turtle-printed-crewneck-sweatshirt_1920x.jpg"
+   ]
   },
   {
    "id": "kure-beach-sea-turtle-printed-garment-dyed-tee",
@@ -2378,8 +1820,8 @@
    "type": "tops",
    "color": "White",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-sea-turtle-printed-garment-dyed-tee_1000x.jpg",
-   "alt": "Woman in a cream t-shirt with a printed sea turtle illustration at Kure Beach at dusk, rendered mockup",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10377396726498664865_2048.jpg",
+   "alt": "Mockup of the white Kure Beach Sea Turtle tee with a small printed chest design",
    "meta": "A detailed sea turtle illustration with the town name Kure Beach, printed on the chest of a heavyweight garment-dyed cotton tee.",
    "cta": "Choose size",
    "price": 42,
@@ -2388,7 +1830,7 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15583468215937839338_2048.jpg",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10377396726498664865_2048.jpg",
    "facts": [
     [
      "Sizing",
@@ -2406,8 +1848,7 @@
      "Care",
      "Machine wash cold inside out, tumble dry low, do not iron the print"
     ]
-   ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-sea-turtle-printed-garment-dyed-tee_1920x.jpg"
+   ]
   },
   {
    "id": "kure-beach-sanderling-printed-garment-dyed-tee",
@@ -2419,8 +1860,8 @@
    "type": "tops",
    "color": "Ivory",
    "added": "2026-11-24",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-sanderling-printed-garment-dyed-tee-studio-front_1000x.jpg",
-   "alt": "Kure Beach sanderling printed tee in Ivory by ShoreList",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15345356621402747892_2048.jpg?v=1795478531",
+   "alt": "Studio photo of the Kure Beach Sanderling Printed Garment-Dyed Tee.",
    "meta": "A relaxed ivory garment-dyed tee printed with a painterly sanderling running the wave edge on a Kure Beach sand flat. Made to order.",
    "cta": "Choose size",
    "price": 44,
@@ -2429,8 +1870,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-sanderling-printed-garment-dyed-tee-studio-front.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-sanderling-printed-garment-dyed-tee_1920x.jpg",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15345356621402747892_2048.jpg?v=1795478531",
+   "lookbook": "",
    "gallery": [
     {
      "src": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-sanderling-printed-garment-dyed-tee-chest-detail_1920x.jpg",
@@ -2470,8 +1911,8 @@
    "type": "bags",
    "color": "Cream",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-sea-turtle-printed-canvas-tote_1000x.jpg",
-   "alt": "Woman carrying a cream canvas tote printed with a sea turtle illustration on a Kure Beach sand path at golden hour",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8262565940838947013_2048_1000x.jpg?v=1795413167",
+   "alt": "Cream canvas tote with a small sea turtle print and Kure Beach lettering below it",
    "meta": "A detailed sea turtle illustration with the town name Kure Beach, printed on a heavy cotton canvas tote for towels, books and shells.",
    "cta": "Choose color",
    "price": 48,
@@ -2480,7 +1921,7 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11628454094117191509_2048.jpg",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8262565940838947013_2048_1000x.jpg?v=1795413167",
    "facts": [
     [
      "Size",
@@ -2492,65 +1933,27 @@
     ],
     [
      "Decoration",
-     "Printed (DTG) front artwork, about 6 in wide"
+     "Printed (DTG) front artwork"
     ],
     [
      "Colors",
      "Cream, Bone"
     ]
    ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-sea-turtle-printed-canvas-tote_1920x.jpg"
-  },
-  {
-   "id": "wrightsville-ornament-2026",
-   "collection": "coastal-christmas",
-   "shelf": "wrightsville-beach",
-   "name": "Wrightsville Beach Christmas Ornament 2026",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-christmas-ornament-2026",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-ornament-2026_1000x.webp",
-   "alt": "Wrightsville Beach 2026 ornament on a Christmas tree in a coastal living room",
-   "meta": "Dated ceramic keepsake: a sloop under a striped Carolina sunset, lettered Wrightsville Beach, Christmas 2026. ShoreList illustration.",
-   "cta": "Shop Christmas",
-   "price": 18,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48571263025236:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
-   "facts": [
-    [
-     "Size",
-     "About 2.9 in across, glossy ceramic"
-    ],
-    [
-     "Print",
-     "One side, with a gold hanging cord"
-    ],
-    [
-     "Lettering",
-     "Wrightsville Beach, Christmas 2026"
-    ]
-   ],
-   "studio": "https://shorelist.myshopify.com/cdn/shop/files/5725671387617568149_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-ornament-2026_1920x.webp",
-   "town": "wrightsville-beach",
-   "type": "ornaments",
-   "added": "2026-11-20",
-   "motif": "boats-buoys"
+   "lookbook": ""
   },
   {
    "id": "daymark-corduroy-cap-wrightsville-beach",
    "collection": "local-icons",
    "shelf": "wrightsville-beach",
    "town": "wrightsville-beach",
-   "name": "Daymark Corduroy Cap, Wrightsville Beach",
+   "name": "Wrightsville Beach Daymark Cap",
    "url": "https://shorelist.myshopify.com/products/daymark-corduroy-cap-wrightsville-beach",
    "type": "hats",
    "color": "Navy Blue",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-daymark-corduroy-cap-wrightsville-beach_1000x.webp",
-   "alt": "Man in a navy corduroy cap with a small white embroidered sailboat, on the dunes at Wrightsville Beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8866227092479380040_2048.jpg?v=1795314233",
+   "alt": "Studio photo of the Wrightsville Beach Daymark Cap.",
    "meta": "One small sloop stitched on the front of a navy corduroy cap, kept quiet on purpose.",
    "cta": "Shop the cap",
    "price": 49,
@@ -2560,7 +1963,7 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17489514768813412385_2048.jpg",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8866227092479380040_2048.jpg?v=1795314233",
    "facts": [
     [
      "Fit",
@@ -2575,92 +1978,7 @@
      "Adjustable strap with a brass buckle"
     ]
    ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-daymark-corduroy-cap-wrightsville-beach_1920x.webp"
-  },
-  {
-   "id": "shorelist-tilt-beach-umbrella-6-5-ft-upf-50",
-   "collection": "beach-setup",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "The Tilt Beach Umbrella",
-   "url": "https://shorelist.myshopify.com/products/shorelist-tilt-beach-umbrella-6-5-ft-upf-50",
-   "type": "beach",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-shorelist-tilt-beach-umbrella-6-5-ft-upf-50_1000x.webp",
-   "alt": "Teal beach umbrella open in the sand at Wrightsville Beach with a towel and sandals beneath it",
-   "meta": "A 6.5 ft tilting beach umbrella with UPF 50+ fabric, a sand anchor and a carry bag. About 3.5 lb.",
-   "cta": "Shop beach gear",
-   "price": 99,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/71c3cafdc73249299035b606ec9e19e8.webp",
-   "facts": [
-    [
-     "Size",
-     "6.5 ft across, 7 ft tall"
-    ],
-    [
-     "Sun protection",
-     "UPF 50+"
-    ],
-    [
-     "Frame",
-     "Aluminum pole with 8 fiberglass ribs and a sand anchor"
-    ],
-    [
-     "Fabric",
-     "Silver-coated polyester with a top air vent"
-    ],
-    [
-     "Weight",
-     "About 3.5 lb, carry bag included"
-    ]
-   ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-shorelist-tilt-beach-umbrella-6-5-ft-upf-50_1920x.webp"
-  },
-  {
-   "id": "shorelist-aluminum-backpack-beach-chair-mint-stripe",
-   "collection": "beach-setup",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "ShoreList Aluminum Backpack Beach Chair, Mint Stripe",
-   "url": "https://shorelist.myshopify.com/products/shorelist-aluminum-backpack-beach-chair-mint-stripe",
-   "type": "beach",
-   "color": "Mint stripe",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-shorelist-aluminum-backpack-beach-chair-mint-stripe_1000x.webp",
-   "alt": "Mint and white striped aluminum backpack beach chair open on the sand at Wrightsville Beach with a straw hat and a book",
-   "meta": "A mint stripe backpack beach chair with four recline positions, wooden armrests and shoulder straps for the walk over the dunes.",
-   "cta": "Shop beach gear",
-   "price": 109,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/602c12d5ea7b4cd08d340469e5c9b75e.webp",
-   "facts": [
-    [
-     "Recline",
-     "Four positions from 100 to 140 degrees"
-    ],
-    [
-     "Frame",
-     "Rustproof aluminum, supports up to 265 lb"
-    ],
-    [
-     "Seat",
-     "12 in seat height, detachable pillow, wooden armrests"
-    ],
-    [
-     "Carry",
-     "Folds flat with backpack shoulder straps"
-    ]
-   ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-shorelist-aluminum-backpack-beach-chair-mint-stripe_1920x.webp"
+   "lookbook": ""
   },
   {
    "id": "wrightsville-beach-scallop-shell-printed-garment-dyed-tee",
@@ -2672,8 +1990,8 @@
    "type": "tops",
    "color": "Ivory",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-scallop-shell-printed-garment-dyed-tee_1000x.webp",
-   "alt": "Ivory tee printed with a small navy and coral scallop shell drawing on the chest, worn on a Wrightsville Beach dune path",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9148931619747742029_2048.jpg?v=1795404387",
+   "alt": "Studio photo of the Wrightsville Beach Scallop Shell Printed Garment-Dyed Tee.",
    "meta": "A hand-inked navy and coral scallop shell printed on the chest of a relaxed ivory garment-dyed tee. A Wrightsville Beach tee for beach days on the Carolina coast.",
    "cta": "Choose size",
    "price": 42,
@@ -2682,8 +2000,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9148931619747742029_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-scallop-shell-printed-garment-dyed-tee_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9148931619747742029_2048.jpg?v=1795404387",
+   "lookbook": "",
    "facts": [
     [
      "Sizing",
@@ -2714,8 +2032,8 @@
    "type": "tops",
    "color": "Ivory",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-oystercatcher-printed-garment-dyed-tee_1000x.webp",
-   "alt": "Wrightsville Beach oystercatcher printed tee in Ivory by ShoreList",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17697498208600770942_2048.jpg?v=1795470190",
+   "alt": "Studio photo of the Wrightsville Beach Oystercatcher Printed Garment-Dyed Tee.",
    "meta": "A relaxed ivory garment-dyed tee printed with a painterly American oystercatcher on a Wrightsville Beach sand flat. Made to order.",
    "cta": "Choose size",
    "price": 44,
@@ -2724,8 +2042,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11330414591097854260_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-oystercatcher-printed-garment-dyed-tee_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17697498208600770942_2048.jpg?v=1795470190",
+   "lookbook": "",
    "gallery": [
     {
      "src": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-oystercatcher-printed-garment-dyed-tee-chest-detail_1920x.webp",
@@ -2756,98 +2074,17 @@
    ]
   },
   {
-   "id": "wrightsville-beach-scallop-shell-printed-mug",
-   "collection": "shore-gear",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Scallop Shell Printed Mug",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-scallop-shell-printed-mug",
-   "type": "beach",
-   "color": "White",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-scallop-shell-printed-mug_1000x.webp",
-   "alt": "White ceramic mug printed with a navy and coral scallop shell, sitting on beach sand beside a folded towel",
-   "meta": "A printed 11 oz white ceramic mug with one hand-inked navy and coral scallop shell. Made to order.",
-   "cta": "Shop mugs",
-   "price": 30,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2582597852983607060_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-scallop-shell-printed-mug_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "11 oz white ceramic mug"
-    ],
-    [
-     "Print",
-     "Scallop shell drawing on one side of the mug"
-    ],
-    [
-     "Care",
-     "Microwave and dishwasher safe"
-    ]
-   ],
-   "motif": "sea-life"
-  },
-  {
-   "id": "wrightsville-beach-sloop-all-over-print-duffel-bag",
-   "collection": "shore-gear",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop All Over Print Duffel Bag",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-all-over-print-duffel-bag",
-   "type": "beach",
-   "color": "Navy",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-all-over-print-duffel-bag_1000x.webp",
-   "alt": "Navy duffel bag printed edge to edge with white sailboats on teal waves, carried on a Wrightsville Beach dune path",
-   "meta": "A printed duffel with a navy sloop pattern running edge to edge across the body and both ends. A Wrightsville Beach weekend bag for the Carolina coast.",
-   "cta": "Choose size",
-   "price": 98,
-   "from": true,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10656102888954431234_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-all-over-print-duffel-bag_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "Small or Large, see the size chart image"
-    ],
-    [
-     "Fabric",
-     "100% polyester Oxford canvas, spot clean"
-    ],
-    [
-     "Strap",
-     "Black, adjustable, with a shoulder pad"
-    ],
-    [
-     "Print",
-     "Sailboat pattern printed edge to edge on the body and both end panels, not embroidered"
-    ]
-   ],
-   "motif": "boats-buoys"
-  },
-  {
    "id": "wrightsville-beach-sailfish-printed-crewneck-sweatshirt",
    "collection": "local-icons",
    "shelf": "wrightsville-beach",
    "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sailfish Printed Crewneck Sweatshirt",
+   "name": "Wrightsville Beach Sweatshirt, Sailfish",
    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sailfish-printed-crewneck-sweatshirt",
    "type": "tops",
    "color": "White",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sailfish-printed-crewneck-sweatshirt_1000x.jpg",
-   "alt": "Man in a white crewneck sweatshirt with a small printed sailfish illustration on the Wrightsville Beach shoreline at dusk",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12418470100735145739_2048.jpg",
+   "alt": "White crewneck sweatshirt with a small printed sailfish and Wrightsville Beach on the chest",
    "meta": "A detailed sailfish illustration with the town name Wrightsville Beach, printed on the chest of a garment-dyed crewneck sweatshirt.",
    "cta": "Choose size",
    "price": 88,
@@ -2875,14 +2112,14 @@
      "Machine wash cold inside out, tumble dry low, do not iron the print"
     ]
    ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sailfish-printed-crewneck-sweatshirt_1920x.jpg"
+   "lookbook": ""
   },
   {
    "id": "wrightsville-beach-sailfish-printed-garment-dyed-tee",
    "collection": "local-icons",
    "shelf": "wrightsville-beach",
    "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sailfish Printed Garment-Dyed Tee",
+   "name": "Wrightsville Beach Sailfish T-Shirt",
    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sailfish-printed-garment-dyed-tee",
    "type": "tops",
    "color": "White",
@@ -2927,8 +2164,8 @@
    "type": "bags",
    "color": "Cream",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sailfish-printed-canvas-tote_1000x.jpg",
-   "alt": "Woman carrying a cream canvas tote printed with a sailfish illustration on a Wrightsville Beach sand path at golden hour",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9689393900630634296_2048_1000x.jpg?v=1795444779",
+   "alt": "Cream canvas tote with a small sailfish print and Wrightsville Beach lettering below it",
    "meta": "A detailed sailfish illustration with the town name Wrightsville Beach, printed on a heavy cotton canvas tote for towels, books and shells.",
    "cta": "Choose color",
    "price": 48,
@@ -2937,7 +2174,7 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3900473599203568477_2048.jpg",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9689393900630634296_2048_1000x.jpg?v=1795444779",
    "facts": [
     [
      "Size",
@@ -2949,51 +2186,14 @@
     ],
     [
      "Decoration",
-     "Printed (DTG) front artwork, about 6 in wide"
+     "Printed (DTG) front artwork"
     ],
     [
      "Colors",
      "Cream, Bone"
     ]
    ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sailfish-printed-canvas-tote_1920x.jpg"
-  },
-  {
-   "id": "the-live-oak-embroidered-crewneck-wilmington",
-   "collection": "local-icons",
-   "shelf": "wilmington",
-   "town": "wilmington",
-   "name": "The Live Oak Embroidered Crewneck, Wilmington",
-   "url": "https://shorelist.myshopify.com/products/the-live-oak-embroidered-crewneck-wilmington",
-   "type": "tops",
-   "color": "Blue Jean",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-embroidered-crewneck-wilmington_1000x.webp",
-   "alt": "Smiling woman in a blue jean crewneck sweatshirt with a small embroidered live oak tree, on the Wilmington Riverwalk",
-   "meta": "A live oak hung with Spanish moss, stitched small on the chest of a blue jean crewneck.",
-   "cta": "Choose color and size",
-   "price": 88,
-   "scenes": [
-    "riverwalk"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/392796372616078076_2048.jpg",
-   "facts": [
-    [
-     "Sizing",
-     "Relaxed fit, sizes S to 3XL"
-    ],
-    [
-     "Fabric",
-     "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
-    ],
-    [
-     "Embroidery",
-     "Stitched in green, chestnut and white thread"
-    ]
-   ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-embroidered-crewneck-wilmington_1920x.webp"
+   "lookbook": ""
   },
   {
    "id": "camellia-carolina-coast-kiss-cut-vinyl-sticker-3-inch",
@@ -3004,8 +2204,8 @@
    "url": "https://shorelist.myshopify.com/products/camellia-carolina-coast-kiss-cut-vinyl-sticker-3-inch",
    "type": "beach",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-camellia-carolina-coast-kiss-cut-vinyl-sticker-3-inch_1000x.webp",
-   "alt": "Kiss-cut vinyl sticker with a lifelike painted camellia branch illustration, applied to a laptop lid beside a sunny window",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15243950351917908964_1200.jpg",
+   "alt": "Studio photo of the Camellia Carolina Coast Kiss-Cut Vinyl Sticker, 3 inch.",
    "meta": "A 3 x 3 in kiss-cut vinyl sticker with a lifelike painted camellia branch illustration. Made to order.",
    "cta": "Add to bag",
    "price": 6,
@@ -3015,7 +2215,7 @@
    "cut": "unisex",
    "store": "shopify",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15243950351917908964_1200.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-camellia-carolina-coast-kiss-cut-vinyl-sticker-3-inch_1920x.webp",
+   "lookbook": "",
    "facts": [
     [
      "Size",
@@ -3041,8 +2241,8 @@
    "type": "tops",
    "color": "Ivory",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wild-venus-flytrap-cape-fear-printed-garment-dyed-tee_1000x.webp",
-   "alt": "Ivory tee printed on the chest with a lifelike painted wild Venus flytrap, hanging from a longleaf pine, Cape Fear",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17805697231138893652_2048.jpg?v=1795458419",
+   "alt": "Studio photo of the Wild Venus Flytrap Cape Fear Printed Garment-Dyed Tee.",
    "meta": "A relaxed garment-dyed tee printed with a small lifelike painted illustration of a wild Venus flytrap, a Cape Fear region native. Made to order.",
    "cta": "Choose size",
    "price": 42,
@@ -3051,8 +2251,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5974500264955042200_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wild-venus-flytrap-cape-fear-printed-garment-dyed-tee_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17805697231138893652_2048.jpg?v=1795458419",
+   "lookbook": "",
    "facts": [
     [
      "Fabric",
@@ -3078,8 +2278,8 @@
    "type": "prints",
    "color": "Cream",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-megalodon-tooth-framed-art-print_1000x.jpg",
-   "alt": "Framed Carolina Beach megalodon tooth art print on a coastal living room wall, rendered mockup",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7756219583509349462_2048.jpg",
+   "alt": "Studio photo of the Carolina Beach Megalodon Tooth Framed Art Print.",
    "meta": "A framed art print of a megalodon tooth illustration with the Carolina Beach name, set like a museum plate on warm cream. Made to order.",
    "cta": "Choose size",
    "price": 84,
@@ -3090,7 +2290,7 @@
    "cut": "unisex",
    "store": "shopify",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7756219583509349462_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-megalodon-tooth-framed-art-print_1920x.jpg",
+   "lookbook": "",
    "facts": [
     [
      "Sizes",
@@ -3116,8 +2316,8 @@
    "type": "prints",
    "color": "Cream",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-brown-pelican-framed-art-print_1000x.webp",
-   "alt": "Framed Carolina Beach brown pelican art print with a cream natural history plate in a black frame above a sofa",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4792794011467400570_2048.jpg",
+   "alt": "Studio photo of the Carolina Beach Brown Pelican Framed Art Print.",
    "meta": "A framed art print of a brown pelican illustration with the Carolina Beach name, set like a natural history plate on warm cream. Made to order.",
    "cta": "Choose size",
    "price": 84,
@@ -3128,7 +2328,7 @@
    "cut": "unisex",
    "store": "shopify",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/4792794011467400570_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-brown-pelican-framed-art-print_1920x.webp",
+   "lookbook": "",
    "facts": [
     [
      "Sizes",
@@ -3154,8 +2354,8 @@
    "type": "tops",
    "color": "Ivory",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-megalodon-tooth-illustration-printed-garment-dyed-tee_1000x.webp",
-   "alt": "Ivory tee printed on the chest with a lifelike painted megalodon tooth, hanging from driftwood at Carolina Beach",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9592943249561454043_2048.jpg?v=1795458034",
+   "alt": "Ivory tee with a large, centered illustration of a fossil megalodon tooth on the upper chest",
    "meta": "A relaxed garment-dyed tee printed with a lifelike painted illustration of a fossil megalodon tooth, a Carolina Beach favorite. An illustration only, no real tooth is included. Made to order.",
    "cta": "Choose size",
    "price": 42,
@@ -3164,8 +2364,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/1245389131768878811_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-megalodon-tooth-illustration-printed-garment-dyed-tee_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9592943249561454043_2048.jpg?v=1795458034",
+   "lookbook": "",
    "facts": [
     [
      "Fabric",
@@ -3191,8 +2391,8 @@
    "type": "prints",
    "color": "Cream",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-sea-turtle-framed-art-print_1000x.jpg",
-   "alt": "Framed Kure Beach sea turtle art print in a coastal beach house hallway, rendered mockup",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/865118314705992598_2048.jpg",
+   "alt": "Studio photo of the Kure Beach Sea Turtle Framed Art Print.",
    "meta": "A framed art print of a sea turtle illustration with the Kure Beach name, set like a natural history plate on warm cream. Made to order.",
    "cta": "Choose size",
    "price": 84,
@@ -3203,7 +2403,7 @@
    "cut": "unisex",
    "store": "shopify",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/865118314705992598_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-sea-turtle-framed-art-print_1920x.jpg",
+   "lookbook": "",
    "facts": [
     [
      "Sizes",
@@ -3229,8 +2429,8 @@
    "type": "prints",
    "color": "Cream",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-blue-crab-framed-art-print_1000x.webp",
-   "alt": "Framed Kure Beach blue crab art print with a cream natural history plate in a walnut frame above a console table",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12040546470448815130_2048.jpg",
+   "alt": "Studio photo of the Kure Beach Blue Crab Framed Art Print.",
    "meta": "A framed art print of a blue crab illustration with the Kure Beach name, set like a natural history plate on warm cream. Made to order.",
    "cta": "Choose size",
    "price": 84,
@@ -3241,7 +2441,7 @@
    "cut": "unisex",
    "store": "shopify",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12040546470448815130_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-blue-crab-framed-art-print_1920x.webp",
+   "lookbook": "",
    "facts": [
     [
      "Sizes",
@@ -3267,8 +2467,8 @@
    "type": "beach",
    "color": "White",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-blue-crab-carolina-coast-insulated-stainless-water-bottle-20-oz_1000x.webp",
-   "alt": "White insulated water bottle printed with a lifelike painted blue crab and the words Carolina Coast, on a dock plank",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11495380665131246352_2048.jpg?v=1795451445",
+   "alt": "Studio photo of the Blue Crab Carolina Coast Insulated Stainless Water Bottle, 20 oz.",
    "meta": "A 20 oz double-wall insulated stainless steel bottle printed with a lifelike painted blue crab and Carolina Coast. Made to order.",
    "cta": "Add to bag",
    "price": 39,
@@ -3277,8 +2477,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11495380665131246352_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-blue-crab-carolina-coast-insulated-stainless-water-bottle-20-oz_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11495380665131246352_2048.jpg?v=1795451445",
+   "lookbook": "",
    "facts": [
     [
      "Size",
@@ -3303,8 +2503,8 @@
    "url": "https://shorelist.myshopify.com/products/blue-crab-carolina-coast-kiss-cut-vinyl-sticker-3-inch",
    "type": "beach",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-blue-crab-carolina-coast-kiss-cut-vinyl-sticker-3-inch_1000x.webp",
-   "alt": "Kiss-cut vinyl sticker with a lifelike painted blue crab illustration, applied to a navy water bottle on a porch rail",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17544007515790696736_1200.jpg?v=1795451450",
+   "alt": "Studio photo of the Blue Crab Carolina Coast Kiss-Cut Vinyl Sticker, 3 inch.",
    "meta": "A 3 x 3 in kiss-cut vinyl sticker with a lifelike painted blue crab illustration. Made to order.",
    "cta": "Add to bag",
    "price": 6,
@@ -3313,8 +2513,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17544007515790696736_1200.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-blue-crab-carolina-coast-kiss-cut-vinyl-sticker-3-inch_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17544007515790696736_1200.jpg?v=1795451450",
+   "lookbook": "",
    "facts": [
     [
      "Size",
@@ -3340,8 +2540,8 @@
    "type": "prints",
    "color": "Cream",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sailfish-framed-art-print_1000x.jpg",
-   "alt": "Framed Wrightsville Beach sailfish art print in a coastal study, rendered mockup",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11774690371034893721_2048.jpg?v=1795446943",
+   "alt": "Studio photo of the Wrightsville Beach Sailfish Framed Art Print.",
    "meta": "A framed art print of a sailfish illustration with the Wrightsville Beach name, set like a natural history plate on warm cream. Made to order.",
    "cta": "Choose size",
    "price": 84,
@@ -3351,8 +2551,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11774690371034893721_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sailfish-framed-art-print_1920x.jpg",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11774690371034893721_2048.jpg?v=1795446943",
+   "lookbook": "",
    "facts": [
     [
      "Sizes",
@@ -3378,8 +2578,8 @@
    "type": "prints",
    "color": "Cream",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sea-oats-framed-art-print_1000x.webp",
-   "alt": "Framed Wrightsville Beach sea oats art print with a cream natural history plate in a white frame above a bench",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15591723388903573580_2048.jpg?v=1795450556",
+   "alt": "Studio photo of the Wrightsville Beach Sea Oats Framed Art Print.",
    "meta": "A framed art print of a sea oats illustration with the Wrightsville Beach name, set like a natural history plate on warm cream. Made to order.",
    "cta": "Choose size",
    "price": 84,
@@ -3389,8 +2589,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5361218556487163662_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sea-oats-framed-art-print_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15591723388903573580_2048.jpg?v=1795450556",
+   "lookbook": "",
    "facts": [
     [
      "Sizes",
@@ -3416,8 +2616,8 @@
    "type": "beach",
    "color": "White",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-sea-oats-carolina-coast-insulated-stainless-tumbler-20-oz_1000x.webp",
-   "alt": "White insulated tumbler printed with lifelike painted sea oats and the words Carolina Coast, on a weathered boardwalk rail",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13085431489695915564_2048.jpg?v=1795451430",
+   "alt": "Studio photo of the Sea Oats Carolina Coast Insulated Stainless Tumbler, 20 oz.",
    "meta": "A 20 oz double-wall insulated stainless tumbler with a clear lid, printed with a lifelike painted sea oats illustration and Carolina Coast. Made to order.",
    "cta": "Add to bag",
    "price": 38,
@@ -3426,8 +2626,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13085431489695915564_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-sea-oats-carolina-coast-insulated-stainless-tumbler-20-oz_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13085431489695915564_2048.jpg?v=1795451430",
+   "lookbook": "",
    "facts": [
     [
      "Size",
@@ -3452,8 +2652,8 @@
    "url": "https://shorelist.myshopify.com/products/sea-oats-carolina-coast-kiss-cut-vinyl-sticker-3-inch",
    "type": "beach",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-sea-oats-carolina-coast-kiss-cut-vinyl-sticker-3-inch_1000x.webp",
-   "alt": "Kiss-cut vinyl sticker with a lifelike painted sea oats illustration, applied to a navy beach cooler on the sand",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12106373145236340930_1200.jpg?v=1795451456",
+   "alt": "Studio photo of the Sea Oats Carolina Coast Kiss-Cut Vinyl Sticker, 3 inch.",
    "meta": "A 3 x 3 in kiss-cut vinyl sticker with a lifelike painted sea oats illustration. Made to order.",
    "cta": "Add to bag",
    "price": 6,
@@ -3462,8 +2662,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12106373145236340930_1200.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-sea-oats-carolina-coast-kiss-cut-vinyl-sticker-3-inch_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12106373145236340930_1200.jpg?v=1795451456",
+   "lookbook": "",
    "facts": [
     [
      "Size",
@@ -3480,92 +2680,17 @@
    ]
   },
   {
-   "id": "wrightsville-beach-sloop-printed-beach-towel",
-   "collection": "shore-gear",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop Printed Beach Towel",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-beach-towel",
-   "type": "beach",
-   "color": "Navy",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-beach-towel-v2_1000x.webp",
-   "alt": "Navy beach towel with an all-over pattern of small white sailboats draped over a wooden beach chair on the sand",
-   "meta": "A printed beach towel with an all-over pattern of small sailboats on navy, in two sizes. Made to order.",
-   "cta": "Choose size",
-   "price": 58,
-   "from": true,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3327526685446775726_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-beach-towel-v2_1920x.webp",
-   "facts": [
-    [
-     "Sizes",
-     "30 x 60 in or 36 x 72 in"
-    ],
-    [
-     "Fabric",
-     "Polyester printed face with a cotton loop back"
-    ],
-    [
-     "Pattern",
-     "All-over sailboat pattern on navy"
-    ]
-   ]
-  },
-  {
-   "id": "wrightsville-beach-sloop-printed-beach-cloth-38-x-81-in",
-   "collection": "shore-gear",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop Printed Beach Cloth, 38 x 81 in",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-beach-cloth-38-x-81-in",
-   "type": "beach",
-   "color": "Navy",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-beach-cloth-38-x-81-in_1000x.webp",
-   "alt": "Long navy beach cloth with small white sailboats and knotted fringe ends, laid flat on pale sand beside a dune with sea oats",
-   "meta": "A large printed beach cloth, 38 x 81 in, with an all-over pattern of small sailboats on navy and knotted fringe ends. Made to order.",
-   "cta": "Add to bag",
-   "price": 79,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/14255062148024729065_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-beach-cloth-38-x-81-in_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "38 x 81 in"
-    ],
-    [
-     "Fabric",
-     "100% polyester, printed edge to edge"
-    ],
-    [
-     "Care",
-     "Machine wash separately in cold water, tumble dry low"
-    ]
-   ]
-  },
-  {
    "id": "banks-channel-sunset-sail-crewneck",
    "collection": "local-icons",
    "shelf": "wrightsville-beach",
    "town": "wrightsville-beach",
-   "name": "Banks Channel Sunset Sail Crewneck",
+   "name": "Banks Channel Crewneck, Wrightsville Beach",
    "url": "https://shorelist.myshopify.com/products/banks-channel-sunset-sail-crewneck",
    "type": "tops",
-   "color": "Pepper",
+   "color": "True Navy",
    "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-banks-channel-sunset-sail-crewneck_1000x.webp",
-   "alt": "Banks Channel Sunset Sail Crewneck in Pepper by ShoreList, Wrightsville Beach, hanging on a dock post",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17887401445751990680_2048.jpg",
+   "alt": "Banks Channel Sunset Sail Crewneck in True Navy by ShoreList, front view with a small red pennant on the chest",
    "meta": "A wooden sloop slipping down Banks Channel at sunset, printed across the back of a crewneck sweatshirt with the town name arched above it. A small red pennant sits on the chest.",
    "cta": "Choose color and size",
    "price": 88,
@@ -3574,8 +2699,8 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13402552244783826300_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-banks-channel-sunset-sail-crewneck_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17887401445751990680_2048.jpg",
+   "lookbook": "",
    "facts": [
     [
      "Sizing",
@@ -3587,7 +2712,7 @@
     ],
     [
      "Colors",
-     "Blue Spruce, Pepper, True Navy"
+     "Blue Spruce, True Navy"
     ],
     [
      "Print",
@@ -3596,114 +2721,12 @@
    ]
   },
   {
-   "id": "tilt-beach-umbrella",
-   "collection": "beach-setup",
-   "shelf": "beach-setup",
-   "name": "ShoreList Tilt Beach Umbrella",
-   "url": "https://shorelist.myshopify.com/products/shorelist-tilt-beach-umbrella-6-5-ft-upf-50",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-tilt-beach-umbrella_1000x.webp",
-   "alt": "Couple laughing under the teal tilt beach umbrella on the sand by the dunes at golden hour",
-   "meta": "6.5 ft tilting canopy with UPF 50+ shade and a carry sleeve.",
-   "cta": "Shop beach gear",
-   "price": 99,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48569723617364:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
-   "facts": [
-    [
-     "Size",
-     "6.5 ft canopy that tilts"
-    ],
-    [
-     "Frame",
-     "Aluminum tube, 8 fiberglass ribs and a sand anchor"
-    ],
-    [
-     "Details",
-     "UPF 50+ fabric with a top air vent"
-    ]
-   ],
-   "studio": "https://shorelist.myshopify.com/cdn/shop/files/896e91258188456b9739f40519a8211b.webp",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-tilt-beach-umbrella_1920x.webp"
-  },
-  {
-   "id": "backpack-beach-chair",
-   "collection": "beach-setup",
-   "shelf": "beach-setup",
-   "name": "ShoreList Backpack Beach Chair",
-   "url": "https://shorelist.myshopify.com/products/shorelist-aluminum-backpack-beach-chair-mint-stripe",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-backpack-beach-chair_1000x.webp",
-   "alt": "Woman reading in the backpack beach chair at the water edge",
-   "meta": "Four-position aluminum frame that holds up to 265 lb, with wooden armrests, a detachable pillow and backpack straps. Mint stripe.",
-   "cta": "Shop beach gear",
-   "price": 109,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48569729744980:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
-   "facts": [
-    [
-     "Support",
-     "Holds up to 265 lb on a rustproof aluminum frame"
-    ],
-    [
-     "Seat",
-     "Four backrest positions from 100 to 140 degrees, 12 in seat height"
-    ],
-    [
-     "Carry",
-     "Folds flat with shoulder straps and a detachable pillow"
-    ]
-   ],
-   "studio": "https://shorelist.myshopify.com/cdn/shop/files/e4e9481e914347868d7fc04ab6c9e261.webp",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-backpack-beach-chair_1920x.webp"
-  },
-  {
-   "id": "salt-wash-market-tote",
-   "collection": "shore-gear",
-   "shelf": "wilmington",
-   "name": "Sloop Organic Cotton Market Tote",
-   "url": "https://shorelist-shop.fourthwall.com/products/salt-wash-organic-cotton-market-tote",
-   "img": "https://imgproxy.fourthwall.dev/TZt3re_wDyZ0W16_4JbSgpMdKwOMYBzAwPsa2r3eqHA/w:1920/sm:1/enc/Pk5QPfjBEPCd6iv4/jzgR6bKsy7yyQSZv/n5nrwFsWvAAQyQVI/e3FznjKMNn4uGwsZ/xM5ia2wEXu6YZSfz/TuQbjJhrMqgnSt5p/M86zkfeYUuJkpP4U/Ep3Y89lpVKKlf5b7/nrschLQbJeecVVMi/aEvtdTJMIptcL7yO/lIdn7xEV_W8hJdaP/x6JU_2u2-_tiXm_x/KdGjIviHRxutI_um/KWy8ww.jpg",
-   "lookbook": "https://imgproxy.fourthwall.dev/TZt3re_wDyZ0W16_4JbSgpMdKwOMYBzAwPsa2r3eqHA/w:1920/sm:1/enc/Pk5QPfjBEPCd6iv4/jzgR6bKsy7yyQSZv/n5nrwFsWvAAQyQVI/e3FznjKMNn4uGwsZ/xM5ia2wEXu6YZSfz/TuQbjJhrMqgnSt5p/M86zkfeYUuJkpP4U/Ep3Y89lpVKKlf5b7/nrschLQbJeecVVMi/aEvtdTJMIptcL7yO/lIdn7xEV_W8hJdaP/x6JU_2u2-_tiXm_x/KdGjIviHRxutI_um/KWy8ww.jpg",
-   "alt": "Woman holding a natural organic cotton sloop tote on a wooden beach walkway",
-   "meta": "Organic cotton twill, 20 x 14 x 5 in, with one small sloop print. Natural color, sturdy handles.",
-   "cta": "Choose options and buy",
-   "price": 48,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "fourthwall",
-   "blank": "Econscious",
-   "facts": [
-    [
-     "Size",
-     "20 x 14 x 5 in"
-    ],
-    [
-     "Fabric",
-     "Organic cotton twill"
-    ]
-   ],
-   "town": "wilmington",
-   "type": "beach",
-   "color": "Natural",
-   "added": "2026-11-20",
-   "motif": "boats-buoys"
-  },
-  {
    "id": "wrightsville-beach-varsity-crewneck",
    "collection": "local-icons",
-   "name": "Wrightsville Beach Varsity Crewneck",
+   "name": "Wrightsville Beach Sweatshirt, Varsity Crew",
    "url": "https://shorelist.myshopify.com/products/wrightsville-beach-varsity-crewneck",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-varsity-crewneck_1000x.webp",
-   "alt": "Woman on the bow of a wooden sailboat at golden hour wearing the navy Wrightsville Beach varsity crewneck",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8214280971553777558_2048.jpg",
+   "alt": "Studio photo of the Wrightsville Beach Sweatshirt, Varsity Crew.",
    "meta": "WRIGHTSVILLE arched over BEACH in cream varsity lettering on a garment-dyed crewneck, with 1899, the year the town was incorporated.",
    "cta": "Choose options",
    "price": 78,
@@ -3714,7 +2737,7 @@
    "store": "shopify",
    "buy": "https://shorelist.myshopify.com/cart/48572798926932:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/8214280971553777558_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-varsity-crewneck_1920x.webp",
+   "lookbook": "",
    "shelf": "wrightsville-beach",
    "town": "wrightsville-beach",
    "type": "tops"
@@ -3724,9 +2747,9 @@
    "collection": "local-icons",
    "name": "Carolina Beach Varsity Crewneck",
    "url": "https://shorelist.myshopify.com/products/carolina-beach-varsity-crewneck",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-varsity-crewneck_1000x.webp",
-   "alt": "Man walking the boardwalk at dusk with a coffee wearing the navy Carolina Beach varsity crewneck",
-   "meta": "CAROLINA arched over BEACH in cream varsity lettering on a garment-dyed crewneck, with 1925, the year the town was incorporated.",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15469697947599356445_2048.jpg",
+   "alt": "Studio photo of the Carolina Beach Varsity Crewneck.",
+   "meta": "CAROLINA arched over BEACH in cream varsity lettering on a garment-dyed crewneck.",
    "cta": "Choose options",
    "price": 78,
    "scenes": [
@@ -3736,7 +2759,7 @@
    "store": "shopify",
    "buy": "https://shorelist.myshopify.com/cart/48572815081556:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15469697947599356445_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-carolina-beach-varsity-crewneck_1920x.webp",
+   "lookbook": "",
    "shelf": "carolina-beach",
    "town": "carolina-beach",
    "type": "tops"
@@ -3746,8 +2769,8 @@
    "collection": "local-icons",
    "name": "Kure Beach Varsity Crewneck",
    "url": "https://shorelist.myshopify.com/products/kure-beach-varsity-crewneck",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-varsity-crewneck_1000x.webp",
-   "alt": "Woman on the beach at sunrise by the fishing pier wearing the navy Kure Beach varsity crewneck",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15404441680492765180_2048.jpg",
+   "alt": "Studio photo of the Kure Beach Varsity Crewneck.",
    "meta": "KURE BEACH arched over N.C. in cream varsity lettering on a garment-dyed crewneck, with Pleasure Island and 1947.",
    "cta": "Choose options",
    "price": 78,
@@ -3758,7 +2781,7 @@
    "store": "shopify",
    "buy": "https://shorelist.myshopify.com/cart/48572825993300:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15404441680492765180_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-kure-beach-varsity-crewneck_1920x.webp",
+   "lookbook": "",
    "shelf": "kure-beach",
    "town": "kure-beach",
    "type": "tops"
@@ -3768,8 +2791,8 @@
    "collection": "local-icons",
    "name": "Wilmington Varsity Crewneck",
    "url": "https://shorelist.myshopify.com/products/wilmington-varsity-crewneck",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wilmington-varsity-crewneck_1000x.webp",
-   "alt": "Man leaning on the riverwalk railing at sunset wearing the navy Wilmington varsity crewneck",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/885599791757679174_2048.jpg",
+   "alt": "Studio photo of the Wilmington Varsity Crewneck.",
    "meta": "WILMINGTON arched over N.C. in cream varsity lettering on a garment-dyed crewneck, with The Port City and 1739.",
    "cta": "Choose options",
    "price": 78,
@@ -3780,7 +2803,7 @@
    "store": "shopify",
    "buy": "https://shorelist.myshopify.com/cart/48572834250836:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/885599791757679174_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wilmington-varsity-crewneck_1920x.webp",
+   "lookbook": "",
    "shelf": "wilmington",
    "town": "wilmington",
    "type": "tops"
@@ -3790,9 +2813,9 @@
    "collection": "local-icons",
    "name": "ILM Crewneck",
    "url": "https://shorelist.myshopify.com/products/ilm-crewneck",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-ilm-crewneck_1000x.webp",
-   "alt": "Woman leaving a small coastal airport with a leather weekender wearing the navy ILM crewneck",
-   "meta": "The airport code every local knows, set large in a fine serif on a garment-dyed crewneck.",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9446758540865204948_2048.jpg",
+   "alt": "Navy crewneck sweatshirt with cream ILM lettering and WILMINGTON · NORTH CAROLINA underneath",
+   "meta": "The airport code every local knows, set in a fine serif on a garment-dyed crewneck.",
    "cta": "Choose options",
    "price": 78,
    "scenes": [
@@ -3803,92 +2826,16 @@
    "store": "shopify",
    "buy": "https://shorelist.myshopify.com/cart/48572844408916:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
    "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/9446758540865204948_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-ilm-crewneck_1920x.webp",
+   "lookbook": "",
    "shelf": "wilmington",
    "town": "wilmington",
    "type": "tops"
   },
   {
-   "id": "the-sloop-embroidered-crewneck-wrightsville-beach",
-   "collection": "local-icons",
-   "shelf": "wrightsville-beach",
-   "name": "The Sloop Embroidered Crewneck, Wrightsville Beach",
-   "url": "https://shorelist.myshopify.com/products/the-sloop-embroidered-crewneck-wrightsville-beach",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-embroidered-crewneck-wrightsville-beach_1000x.webp",
-   "alt": "Woman on a marina dock at sunset wearing a washed blue crewneck with a small embroidered sailboat and the letters WB",
-   "meta": "A little sloop under sail stitched on the chest, with WB for Wrightsville Beach beneath it.",
-   "cta": "Choose color and size",
-   "price": 88,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "facts": [
-    [
-     "Sizing",
-     "Relaxed fit, sizes S to 3XL"
-    ],
-    [
-     "Fabric",
-     "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
-    ],
-    [
-     "Embroidery",
-     "Stitched in white, red and blue thread"
-    ]
-   ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-embroidered-crewneck-wrightsville-beach_1920x.webp",
-   "town": "wrightsville-beach",
-   "type": "tops",
-   "color": "Washed blue",
-   "added": "2026-11-21",
-   "motif": "boats-buoys"
-  },
-  {
-   "id": "the-sloop-corduroy-cap-wrightsville-beach",
-   "collection": "local-icons",
-   "shelf": "wrightsville-beach",
-   "name": "The Sloop Corduroy Cap, Wrightsville Beach",
-   "url": "https://shorelist.myshopify.com/products/the-sloop-corduroy-cap-wrightsville-beach",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-corduroy-cap-wrightsville-beach_1000x.webp",
-   "alt": "Man at the helm of a wooden sailboat wearing a navy corduroy cap with a small embroidered sailboat",
-   "meta": "A little sloop embroidered on the front of a corduroy cap, with WB stitched on the back.",
-   "cta": "Choose color",
-   "price": 49,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "facts": [
-    [
-     "Sizing",
-     "One size, adjustable strap with a brass buckle"
-    ],
-    [
-     "Fabric",
-     "Cotton corduroy, unstructured low profile, curved brim"
-    ],
-    [
-     "Embroidery",
-     "Real embroidery on the front and the back"
-    ]
-   ],
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/7042525475132206278_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-corduroy-cap-wrightsville-beach_1920x.webp",
-   "town": "wrightsville-beach",
-   "type": "hats",
-   "color": "Navy",
-   "added": "2026-11-21",
-   "featured": true,
-   "motif": "boats-buoys"
-  },
-  {
    "id": "the-blue-crab-corduroy-cap-kure-beach",
    "collection": "local-icons",
    "shelf": "kure-beach",
-   "name": "The Blue Crab Corduroy Cap, Kure Beach",
+   "name": "Kure Beach Blue Crab Corduroy Cap",
    "url": "https://shorelist.myshopify.com/products/the-blue-crab-corduroy-cap-kure-beach",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/11189473833607156489_2048.jpg",
    "alt": "Navy blue corduroy cap with a small embroidered blue crab, ShoreList, Kure Beach",
@@ -3922,54 +2869,13 @@
    "lookbook": ""
   },
   {
-   "id": "the-live-oak-corduroy-cap-wilmington",
-   "collection": "local-icons",
-   "shelf": "wilmington",
-   "town": "wilmington",
-   "name": "The Live Oak Corduroy Cap, Wilmington",
-   "url": "https://shorelist.myshopify.com/products/the-live-oak-corduroy-cap-wilmington",
-   "type": "hats",
-   "color": "Navy Blue",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-corduroy-cap-wilmington_1000x.webp",
-   "alt": "Corduroy cap with a small embroidered live oak on the front, supplier mockup",
-   "meta": "A live oak hung with Spanish moss embroidered on the front of a soft corduroy cap, with ILM for Wilmington on the back.",
-   "cta": "Choose color",
-   "price": 49,
-   "scenes": [
-    "riverwalk"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15008965743144943281_2048.jpg",
-   "facts": [
-    [
-     "Fit",
-     "Unstructured, low profile, curved brim, one size"
-    ],
-    [
-     "Fabric",
-     "Cotton corduroy"
-    ],
-    [
-     "Closure",
-     "Adjustable strap with a brass buckle"
-    ],
-    [
-     "Colors",
-     "Navy Blue, Burgundy, Black"
-    ]
-   ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-corduroy-cap-wilmington_1920x.webp"
-  },
-  {
    "id": "the-sloop-cuffed-beanie-wrightsville-beach",
    "collection": "local-icons",
    "shelf": "wrightsville-beach",
-   "name": "The Sloop Cuffed Beanie, Wrightsville Beach",
+   "name": "Wrightsville Beach Beanie, Sloop Cuffed",
    "url": "https://shorelist.myshopify.com/products/the-sloop-cuffed-beanie-wrightsville-beach",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-cuffed-beanie-wrightsville-beach_1000x.webp",
-   "alt": "Blonde woman on a marina dock wearing a navy cuffed beanie embroidered with a small sailboat and the letters WB",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6062137644770390613_2048.jpg?v=1795318060",
+   "alt": "Studio photo of the Wrightsville Beach Beanie, Sloop Cuffed.",
    "meta": "A little sloop and WB embroidered on the cuff of a classic knit beanie.",
    "cta": "Choose color",
    "price": 30,
@@ -3992,8 +2898,8 @@
      "Icon and town letters on the cuff"
     ]
    ],
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6062137644770390613_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-sloop-cuffed-beanie-wrightsville-beach_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/6062137644770390613_2048.jpg?v=1795318060",
+   "lookbook": "",
    "town": "wrightsville-beach",
    "type": "hats",
    "color": "Navy",
@@ -4001,43 +2907,50 @@
    "motif": "boats-buoys"
   },
   {
-   "id": "the-live-oak-cuffed-beanie-wilmington",
+   "id": "daymark-cuffed-beanie-wrightsville-beach",
    "collection": "local-icons",
-   "shelf": "wilmington",
-   "town": "wilmington",
-   "name": "The Live Oak Cuffed Beanie, Wilmington",
-   "url": "https://shorelist.myshopify.com/products/the-live-oak-cuffed-beanie-wilmington",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Daymark Cuffed Beanie, Wrightsville Beach",
+   "url": "https://shorelist.myshopify.com/products/daymark-cuffed-beanie-wrightsville-beach",
    "type": "hats",
    "color": "Navy",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-cuffed-beanie-wilmington_1000x.webp",
-   "alt": "Navy cuffed knit beanie with a live oak and the letters ILM embroidered on the cuff, supplier mockup",
-   "meta": "A live oak and ILM for Wilmington embroidered side by side on the cuff of a classic knit beanie.",
-   "cta": "Choose color",
+   "added": "2026-11-22",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2220033262101786662_2048.jpg",
+   "alt": "Navy cuffed knit beanie with one small white embroidered sailboat and WB on the cuff",
+   "meta": "One small sloop and WB for Wrightsville Beach stitched on the cuff of a navy knit beanie, kept quiet on purpose.",
+   "cta": "Shop the beanie",
    "price": 30,
    "scenes": [
-    "riverwalk"
+    "beach"
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10802425845324763419_2048.jpg",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2220033262101786662_2048.jpg",
    "facts": [
     [
      "Fit",
-     "Classic cuffed beanie, one size"
+     "One size, cuffed"
     ],
     [
      "Fabric",
-     "Soft acrylic knit with a fold-up cuff"
+     "100% acrylic knit"
+    ],
+    [
+     "Embroidery",
+     "One small sloop and WB on the cuff"
+    ],
+    [
+     "Colors",
+     "Navy"
     ]
-   ],
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-the-live-oak-cuffed-beanie-wilmington_1920x.webp"
+   ]
   },
   {
    "id": "the-blue-crab-cuffed-beanie-kure-beach",
    "collection": "local-icons",
    "shelf": "kure-beach",
-   "name": "The Blue Crab Cuffed Beanie, Kure Beach",
+   "name": "Kure Beach Blue Crab Cuffed Beanie",
    "url": "https://shorelist.myshopify.com/products/the-blue-crab-cuffed-beanie-kure-beach",
    "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13772687446342586023_2048.jpg",
    "alt": "Navy cuffed beanie embroidered with a small blue crab and the letters KB, ShoreList, Kure Beach",
@@ -4076,8 +2989,8 @@
    "shelf": "wilmington",
    "name": "Daymark Blue Crab Crewneck",
    "url": "https://shorelist.myshopify.com/products/daymark-blue-crab-crewneck",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-daymark-blue-crab-crewneck_1000x.webp",
-   "alt": "Woman in a soft white crewneck sweatshirt with a small navy blue crab mark at the left chest, standing among sea oats",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5007874699452909705_2048.jpg?v=1795359205",
+   "alt": "Studio photo of the Daymark Blue Crab Crewneck.",
    "meta": "A small navy blue crab with red claw tips at the left chest of a soft white garment-dyed crewneck. Made for Kure Beach and Carolina Beach days.",
    "cta": "Choose size",
    "price": 88,
@@ -4086,104 +2999,19 @@
    ],
    "cut": "unisex",
    "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5007874699452909705_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-daymark-blue-crab-crewneck_1920x.webp",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5007874699452909705_2048.jpg?v=1795359205",
+   "lookbook": "",
    "town": "wilmington",
    "type": "tops",
    "color": "White",
    "added": "2026-11-22"
   },
   {
-   "id": "wrightsville-beach-sloop-printed-canvas-tote-bag",
-   "collection": "shore-gear",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop Printed Canvas Tote Bag",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-canvas-tote-bag",
-   "type": "beach",
-   "color": "Natural",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-canvas-tote-bag-v2_1000x.webp",
-   "alt": "Natural canvas tote bag with a navy panel of small sailboats printed on the front",
-   "meta": "A printed canvas tote with a navy panel of little sloops on the front. Roomy enough for a beach day or a Wilmington errand run.",
-   "cta": "Shop tote bags",
-   "price": 36,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12079303666000630164_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-canvas-tote-bag-v2_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "About 15 x 16 in with 20 in handles"
-    ],
-    [
-     "Fabric",
-     "100% cotton canvas in natural"
-    ],
-    [
-     "Print",
-     "Sailboat pattern panel on the front"
-    ],
-    [
-     "Care",
-     "Machine wash cold, tumble dry low"
-    ]
-   ],
-   "motif": "boats-buoys",
-   "featured": true
-  },
-  {
-   "id": "wrightsville-beach-sloop-printed-zip-pouch",
-   "collection": "shore-gear",
-   "shelf": "wrightsville-beach",
-   "town": "wrightsville-beach",
-   "name": "Wrightsville Beach Sloop Printed Zip Pouch",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-zip-pouch",
-   "type": "beach",
-   "color": "Natural",
-   "added": "2026-11-23",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-zip-pouch_1000x.webp",
-   "alt": "Natural canvas zip pouch with a navy sailboat panel lying on beach sand beside shells and sunglasses",
-   "meta": "A natural canvas zip pouch with a navy panel of little sloops on the front and a wrist strap. Holds sunscreen, keys and phone for a Wrightsville Beach day.",
-   "cta": "Shop pouches",
-   "price": 30,
-   "scenes": [
-    "beach"
-   ],
-   "cut": "unisex",
-   "store": "shopify",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10521571959228082054_2048.jpg",
-   "lookbook": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-lookbook-wrightsville-beach-sloop-printed-zip-pouch_1920x.webp",
-   "facts": [
-    [
-     "Size",
-     "About 8.3 x 7.8 in"
-    ],
-    [
-     "Fabric",
-     "100% cotton canvas with a zipper and carry strap"
-    ],
-    [
-     "Print",
-     "Navy sailboat pattern panel on the front"
-    ],
-    [
-     "Care",
-     "Spot clean"
-    ]
-   ],
-   "motif": "boats-buoys"
-  },
-  {
    "id": "the-blue-crab-rope-cap-kure-beach",
    "collection": "local-icons",
    "shelf": "kure-beach",
    "town": "kure-beach",
-   "name": "The Blue Crab Rope Cap, Kure Beach",
+   "name": "Kure Beach Blue Crab Rope Cap",
    "url": "https://shorelist.myshopify.com/products/the-blue-crab-rope-cap-kure-beach",
    "type": "hats",
    "color": "Ivory",
@@ -4218,7 +3046,7 @@
    "collection": "local-icons",
    "shelf": "carolina-beach",
    "town": "carolina-beach",
-   "name": "The Lifeguard Stand Rope Cap, Carolina Beach",
+   "name": "Carolina Beach Lifeguard Stand Rope Cap",
    "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-rope-cap-carolina-beach",
    "type": "hats",
    "color": "Ivory",
@@ -4255,7 +3083,7 @@
    "collection": "local-icons",
    "shelf": "kure-beach",
    "town": "kure-beach",
-   "name": "The Lifeguard Stand Rope Cap, Kure Beach",
+   "name": "Kure Beach Lifeguard Stand Rope Cap",
    "url": "https://shorelist.myshopify.com/products/the-lifeguard-stand-rope-cap-kure-beach",
    "type": "hats",
    "color": "Ivory",
@@ -4284,6 +3112,586 @@
      "Ivory, Chambray, Peachy"
     ]
    ]
+  },
+  {
+   "id": "wrightsville-beach-sloop-printed-mug",
+   "collection": "shore-gear",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Wrightsville Beach Sloop Printed Mug",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-mug",
+   "type": "beach",
+   "color": "White",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5906329180415418302_2048.jpg?v=1795396815",
+   "alt": "Studio photo of the Wrightsville Beach Sloop Printed Mug.",
+   "meta": "A printed 11 oz white ceramic mug with a navy all-over pattern of little sloops on teal waves. Made to order.",
+   "cta": "Shop mugs",
+   "price": 30,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5906329180415418302_2048.jpg?v=1795396815",
+   "lookbook": "",
+   "facts": [
+    [
+     "Size",
+     "11 oz white ceramic mug"
+    ],
+    [
+     "Print",
+     "Sailboat pattern wrapped around the mug"
+    ],
+    [
+     "Care",
+     "Microwave and dishwasher safe"
+    ]
+   ],
+   "motif": "boats-buoys"
+  },
+  {
+   "id": "wrightsville-beach-sloop-printed-tea-towel",
+   "collection": "shore-gear",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Wrightsville Beach Sloop Printed Tea Towel",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-tea-towel",
+   "type": "beach",
+   "color": "Teal",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13002889693185505046_2048.jpg?v=1795397834",
+   "alt": "Studio photo of the Wrightsville Beach Sloop Printed Tea Towel.",
+   "meta": "A printed polyester tea towel with a navy all-over pattern of small sailboats on teal waves. A Wrightsville Beach kitchen gift made for the Carolina coast and Wilmington NC.",
+   "cta": "Shop kitchen linens",
+   "price": 30,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/13002889693185505046_2048.jpg?v=1795397834",
+   "lookbook": "",
+   "facts": [
+    [
+     "Size",
+     "18 x 30 in"
+    ],
+    [
+     "Fabric",
+     "Polyester, one sided print, lightweight"
+    ],
+    [
+     "Print",
+     "Navy sloop pattern on teal waves, printed not embroidered"
+    ],
+    [
+     "Made",
+     "Made to order"
+    ]
+   ],
+   "motif": "boats-buoys"
+  },
+  {
+   "id": "wrightsville-beach-sloop-can-cooler-sleeve",
+   "collection": "shore-gear",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Wrightsville Beach Sloop Can Cooler Sleeve",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-can-cooler-sleeve",
+   "type": "coolers",
+   "color": "Navy",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17349877194870767359_2048.jpg?v=1795376602",
+   "alt": "Studio photo of the Wrightsville Beach Sloop Can Cooler Sleeve.",
+   "meta": "A navy can cooler sleeve covered in little sloops, printed edge to edge. Keeps a regular can cool on the boat, the sand or the porch.",
+   "cta": "Shop can coolers",
+   "price": 14,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17349877194870767359_2048.jpg?v=1795376602",
+   "lookbook": "",
+   "facts": [
+    [
+     "Size",
+     "Fits a regular can, about 3.5 x 4.3 in"
+    ],
+    [
+     "Materials",
+     "Polyester outside, soft foam liner inside"
+    ],
+    [
+     "Print",
+     "Sailboat pattern printed edge to edge"
+    ]
+   ],
+   "motif": "boats-buoys"
+  },
+  {
+   "id": "carolina-beach-lifeguard-stand-printed-mug",
+   "collection": "local-icons",
+   "shelf": "carolina-beach",
+   "town": "carolina-beach",
+   "name": "Carolina Beach Lifeguard Stand Printed Mug",
+   "url": "https://shorelist.myshopify.com/products/carolina-beach-lifeguard-stand-printed-mug",
+   "type": "beach",
+   "color": "Ivory",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3438836625257813204_2048.jpg?v=1795397560",
+   "alt": "Studio photo of the Carolina Beach Lifeguard Stand Printed Mug.",
+   "meta": "A printed 11 oz white ceramic mug with one navy lifeguard stand, a small red flag and the words Carolina Beach on an ivory field. Made to order.",
+   "cta": "Shop mugs",
+   "price": 30,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3438836625257813204_2048.jpg?v=1795397560",
+   "lookbook": "",
+   "facts": [
+    [
+     "Size",
+     "11 oz white ceramic mug"
+    ],
+    [
+     "Print",
+     "Navy lifeguard stand with a red flag and the town name, one centered design on an ivory field"
+    ],
+    [
+     "Care",
+     "Microwave and dishwasher safe per the supplier"
+    ]
+   ],
+   "motif": "beach-scenes"
+  },
+  {
+   "id": "kure-beach-lifeguard-stand-printed-mug",
+   "collection": "local-icons",
+   "shelf": "kure-beach",
+   "town": "kure-beach",
+   "name": "Kure Beach Lifeguard Stand Printed Mug",
+   "url": "https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-printed-mug",
+   "type": "beach",
+   "color": "Ivory",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15581314161783206053_2048.jpg?v=1795397399",
+   "alt": "Studio photo of the Kure Beach Lifeguard Stand Printed Mug.",
+   "meta": "A printed 11 oz white ceramic mug with one navy lifeguard stand, a small red flag and the words Kure Beach on an ivory field. Made to order.",
+   "cta": "Shop mugs",
+   "price": 30,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15581314161783206053_2048.jpg?v=1795397399",
+   "lookbook": "",
+   "facts": [
+    [
+     "Size",
+     "11 oz white ceramic mug"
+    ],
+    [
+     "Print",
+     "Navy lifeguard stand with a red flag and the town name, one centered design on an ivory field"
+    ],
+    [
+     "Care",
+     "Microwave and dishwasher safe per the supplier"
+    ]
+   ],
+   "motif": "beach-scenes"
+  },
+  {
+   "id": "airlie-oak-wilmington-printed-mug",
+   "collection": "shore-gear",
+   "shelf": "wilmington",
+   "town": "wilmington",
+   "name": "Airlie Oak Wilmington Printed Mug",
+   "url": "https://shorelist.myshopify.com/products/airlie-oak-wilmington-printed-mug",
+   "type": "beach",
+   "color": "Ivory",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17705579613895622135_2048.jpg",
+   "alt": "Studio photo of the Airlie Oak Wilmington Printed Mug.",
+   "meta": "A printed 11 oz ceramic mug with a painterly illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC, with Spanish moss and blush azaleas. Made to order.",
+   "cta": "Shop mugs",
+   "price": 30,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17705579613895622135_2048.jpg",
+   "lookbook": "",
+   "facts": [
+    [
+     "Size",
+     "11 oz ceramic mug"
+    ],
+    [
+     "Print",
+     "Airlie Oak illustration on the front of the mug"
+    ],
+    [
+     "Care",
+     "Microwave and dishwasher safe"
+    ]
+   ]
+  },
+  {
+   "id": "airlie-oak-wilmington-ceramic-ornament",
+   "collection": "coastal-christmas",
+   "shelf": "wilmington",
+   "town": "wilmington",
+   "name": "Airlie Oak Wilmington Ceramic Ornament",
+   "url": "https://shorelist.myshopify.com/products/airlie-oak-wilmington-ceramic-ornament",
+   "type": "ornaments",
+   "color": "Ivory",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/14053065159852629044_2048.jpg",
+   "alt": "Studio photo of the Airlie Oak Wilmington Ceramic Ornament.",
+   "meta": "A round ceramic Christmas ornament with a painterly illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC. A Wilmington NC gift, made to order.",
+   "cta": "Shop Christmas",
+   "price": 18,
+   "scenes": [
+    "riverwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/14053065159852629044_2048.jpg",
+   "lookbook": "",
+   "facts": [
+    [
+     "Shape",
+     "Round glossy ceramic with a gold hanging cord"
+    ],
+    [
+     "Print",
+     "Airlie Oak illustration on the front"
+    ]
+   ]
+  },
+  {
+   "id": "airlie-oak-wilmington-tea-towel",
+   "collection": "shore-gear",
+   "shelf": "wilmington",
+   "town": "wilmington",
+   "name": "Airlie Oak Wilmington Tea Towel",
+   "url": "https://shorelist.myshopify.com/products/airlie-oak-wilmington-tea-towel",
+   "type": "beach",
+   "color": "Ivory",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/18186560907249845613_2048.jpg",
+   "alt": "Studio photo of the Airlie Oak Wilmington Tea Towel.",
+   "meta": "A printed kitchen tea towel with a painterly illustration of the Airlie Oak, the roughly 500 year old Southern live oak at Airlie Gardens in Wilmington NC, on warm ivory. Made to order.",
+   "cta": "Shop home decor",
+   "price": 30,
+   "scenes": [
+    "riverwalk"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/18186560907249845613_2048.jpg",
+   "lookbook": "",
+   "facts": [
+    [
+     "Size",
+     "18 x 30 in"
+    ],
+    [
+     "Print",
+     "Airlie Oak illustration printed on the towel, not embroidered"
+    ]
+   ]
+  },
+  {
+   "id": "wrightsville-can-cooler",
+   "collection": "shore-gear",
+   "shelf": "wrightsville-beach",
+   "name": "Wrightsville Beach Can Cooler",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-can-cooler",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/16675080237515692816_2048.jpg?v=1795234262",
+   "alt": "Studio photo of the Wrightsville Beach Can Cooler.",
+   "meta": "Navy foam-lined can cooler with the town name, printed on both sides. Folds flat for the beach bag.",
+   "cta": "Shop drinkware",
+   "price": 12,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "buy": "https://shorelist.myshopify.com/cart/48571208204372:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "facts": [
+    [
+     "Size",
+     "Fits a 12 oz can and folds flat"
+    ],
+    [
+     "Materials",
+     "Polyester outside, foam liner inside"
+    ],
+    [
+     "Print",
+     "Printed on both sides"
+    ]
+   ],
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/16675080237515692816_2048.jpg?v=1795234262",
+   "lookbook": "",
+   "town": "wrightsville-beach",
+   "type": "coolers",
+   "color": "Navy",
+   "added": "2026-11-20"
+  },
+  {
+   "id": "carolina-beach-can-cooler",
+   "collection": "shore-gear",
+   "shelf": "carolina-beach",
+   "name": "Carolina Beach Can Cooler",
+   "url": "https://shorelist.myshopify.com/products/carolina-beach-can-cooler",
+   "img": "https://shorelist.myshopify.com/cdn/shop/files/18309295045651903048_2048.jpg",
+   "alt": "Studio photo of the Carolina Beach Can Cooler.",
+   "meta": "Navy foam-lined can cooler with the town name, printed on both sides. Folds flat for the beach bag.",
+   "cta": "Shop drinkware",
+   "price": 12,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "buy": "https://shorelist.myshopify.com/cart/48571212169300:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "facts": [
+    [
+     "Size",
+     "Fits a 12 oz can and folds flat"
+    ],
+    [
+     "Materials",
+     "Polyester outside, foam liner inside"
+    ],
+    [
+     "Print",
+     "Printed on both sides"
+    ]
+   ],
+   "studio": "https://shorelist.myshopify.com/cdn/shop/files/18309295045651903048_2048.jpg",
+   "lookbook": "",
+   "town": "carolina-beach",
+   "type": "coolers",
+   "color": "Navy",
+   "added": "2026-11-20"
+  },
+  {
+   "id": "kure-beach-can-cooler",
+   "collection": "shore-gear",
+   "shelf": "kure-beach",
+   "name": "Kure Beach Can Cooler",
+   "url": "https://shorelist.myshopify.com/products/kure-beach-can-cooler",
+   "img": "https://shorelist.myshopify.com/cdn/shop/files/5200674536494590319_2048.jpg",
+   "alt": "Studio photo of the Kure Beach Can Cooler.",
+   "meta": "Navy foam-lined can cooler with the town name, printed on both sides. Folds flat for the beach bag.",
+   "cta": "Shop drinkware",
+   "price": 12,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "buy": "https://shorelist.myshopify.com/cart/48571216855124:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "facts": [
+    [
+     "Size",
+     "Fits a 12 oz can and folds flat"
+    ],
+    [
+     "Materials",
+     "Polyester outside, foam liner inside"
+    ],
+    [
+     "Print",
+     "Printed on both sides"
+    ]
+   ],
+   "studio": "https://shorelist.myshopify.com/cdn/shop/files/5200674536494590319_2048.jpg",
+   "lookbook": "",
+   "town": "kure-beach",
+   "type": "coolers",
+   "color": "Navy",
+   "added": "2026-11-20"
+  },
+  {
+   "id": "wrightsville-ornament-2026",
+   "collection": "coastal-christmas",
+   "shelf": "wrightsville-beach",
+   "name": "Wrightsville Beach Christmas Ornament 2026",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-christmas-ornament-2026",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5725671387617568149_2048.jpg?v=1795235170",
+   "alt": "Studio photo of the Wrightsville Beach Christmas Ornament 2026.",
+   "meta": "Dated ceramic keepsake: a sloop under a striped Carolina sunset, lettered Wrightsville Beach, Christmas 2026. ShoreList illustration.",
+   "cta": "Shop Christmas",
+   "price": 18,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "buy": "https://shorelist.myshopify.com/cart/48571263025236:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "facts": [
+    [
+     "Size",
+     "About 2.9 in across, glossy ceramic"
+    ],
+    [
+     "Print",
+     "One side, with a gold hanging cord"
+    ],
+    [
+     "Lettering",
+     "Wrightsville Beach, Christmas 2026"
+    ]
+   ],
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/5725671387617568149_2048.jpg?v=1795235170",
+   "lookbook": "",
+   "town": "wrightsville-beach",
+   "type": "ornaments",
+   "added": "2026-11-20",
+   "motif": "boats-buoys"
+  },
+  {
+   "id": "wrightsville-beach-scallop-shell-printed-mug",
+   "collection": "shore-gear",
+   "shelf": "wrightsville-beach",
+   "town": "wrightsville-beach",
+   "name": "Wrightsville Beach Scallop Shell Printed Mug",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-scallop-shell-printed-mug",
+   "type": "beach",
+   "color": "White",
+   "added": "2026-11-23",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2582597852983607060_2048.jpg?v=1795404278",
+   "alt": "Studio photo of the Wrightsville Beach Scallop Shell Printed Mug.",
+   "meta": "A printed 11 oz white ceramic mug with one hand-inked navy and coral scallop shell. Made to order.",
+   "cta": "Shop mugs",
+   "price": 30,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2582597852983607060_2048.jpg?v=1795404278",
+   "lookbook": "",
+   "facts": [
+    [
+     "Size",
+     "11 oz white ceramic mug"
+    ],
+    [
+     "Print",
+     "Scallop shell drawing on one side of the mug"
+    ],
+    [
+     "Care",
+     "Microwave and dishwasher safe"
+    ]
+   ],
+   "motif": "sea-life"
+  }
+ ],
+ "harborGoods_note": "ShoreList Harbor Goods. These pieces check out on shorelist-shop.fourthwall.com and are not in items[], so the shop page and the bag never treat them as Shopify lines. price is the lowest USD amount on the public Fourthwall product page, rechecked 2026-11-28. from is true when larger sizes cost more. An earlier read of the pickleball tee showed $46. The same page then showed $52, which is the price on the card. cut is unisex across Harbor Goods. dept is apparel on the tees and crewneck, and bags on the market tote.",
+ "harborGoods": [
+  {
+   "id": "salt-wash-sloop-garment-dyed-tee",
+   "name": "Salt Wash Sloop Garment-Dyed Tee",
+   "url": "https://shorelist-shop.fourthwall.com/products/salt-wash-sloop-garment-dyed-tee",
+   "img": "/shop-art/harbor-salt-wash-sloop-garment-dyed-tee.webp",
+   "alt": "Light blue garment-dyed tee with a small sailboat and Wrightsville printed on the chest",
+   "meta": "Light blue garment-dyed tee with a small sailboat and Wrightsville on the chest.",
+   "price": 52,
+   "from": true,
+   "cut": "unisex",
+   "dept": "apparel",
+   "store": "fourthwall"
+  },
+  {
+   "id": "salt-wash-organic-crewneck",
+   "name": "Salt Wash Organic Crewneck",
+   "url": "https://shorelist-shop.fourthwall.com/products/salt-wash-organic-crewneck",
+   "img": "/shop-art/harbor-salt-wash-organic-crewneck.webp",
+   "alt": "Light grey organic crewneck with a small sailboat and Wrightsville printed on the chest",
+   "meta": "Light grey organic crewneck with a small sailboat and Wrightsville on the chest.",
+   "price": 78,
+   "from": true,
+   "cut": "unisex",
+   "dept": "apparel",
+   "store": "fourthwall"
+  },
+  {
+   "id": "wrightsville-golf-tee",
+   "name": "Wrightsville Golf Tee",
+   "url": "https://shorelist-shop.fourthwall.com/products/wrightsville-golf-tee",
+   "img": "/shop-art/harbor-wrightsville-golf-tee.webp",
+   "alt": "Light blue tee printed with Wrightsville Beach Golf and map coordinates",
+   "meta": "Light blue garment-dyed tee printed Wrightsville Beach Golf, with coordinates.",
+   "price": 52,
+   "from": true,
+   "cut": "unisex",
+   "dept": "apparel",
+   "store": "fourthwall"
+  },
+  {
+   "id": "wrightsville-beach-tennis-garment-dyed-tee",
+   "name": "Wrightsville Beach Tennis Garment-Dyed Tee",
+   "url": "https://shorelist-shop.fourthwall.com/products/wrightsville-beach-tennis-garment-dyed-tee",
+   "img": "/shop-art/harbor-wrightsville-beach-tennis-garment-dyed-tee.webp",
+   "alt": "Ivory tee printed with Wrightsville Beach Tennis and map coordinates",
+   "meta": "Ivory garment-dyed tee printed Wrightsville Beach Tennis, with coordinates.",
+   "price": 52,
+   "from": true,
+   "cut": "unisex",
+   "dept": "apparel",
+   "store": "fourthwall"
+  },
+  {
+   "id": "wrightsville-beach-pickleball-garment-dyed-tee",
+   "name": "Wrightsville Beach Pickleball Garment-Dyed Tee",
+   "url": "https://shorelist-shop.fourthwall.com/products/wrightsville-beach-pickleball-garment-dyed-tee",
+   "img": "/shop-art/harbor-wrightsville-beach-pickleball-garment-dyed-tee.webp",
+   "alt": "Blue jean tee printed with Wrightsville Beach Pickleball and map coordinates",
+   "meta": "Blue jean garment-dyed tee printed Wrightsville Beach Pickleball, with coordinates.",
+   "price": 52,
+   "from": true,
+   "cut": "unisex",
+   "dept": "apparel",
+   "store": "fourthwall"
+  },
+  {
+   "id": "carolina-beach-boardwalk-garment-dyed-tee",
+   "name": "Carolina Beach Boardwalk Garment-Dyed Tee",
+   "url": "https://shorelist-shop.fourthwall.com/products/carolina-beach-boardwalk-garment-dyed-tee",
+   "img": "/shop-art/harbor-carolina-beach-boardwalk-garment-dyed-tee.webp",
+   "alt": "Ivory tee printed with Carolina Beach, the boardwalk, and map coordinates",
+   "meta": "Ivory garment-dyed tee printed Carolina Beach and the boardwalk, with coordinates.",
+   "price": 52,
+   "from": true,
+   "cut": "unisex",
+   "dept": "apparel",
+   "store": "fourthwall"
+  },
+  {
+   "id": "salt-wash-organic-cotton-market-tote",
+   "name": "Salt Wash Organic Cotton Market Tote",
+   "url": "https://shorelist-shop.fourthwall.com/products/salt-wash-organic-cotton-market-tote",
+   "img": "/shop-art/harbor-salt-wash-organic-cotton-market-tote.webp",
+   "alt": "Natural cotton market tote with a sailboat and Wrightsville Beach printed on the front",
+   "meta": "Natural organic cotton market tote with a small sailboat and Wrightsville Beach on the front.",
+   "price": 58,
+   "cut": "unisex",
+   "dept": "bags",
+   "store": "fourthwall"
   }
  ],
  "scenes": [
@@ -4327,12 +3735,10 @@
  "retired": {
   "note": "Removed from the on-site shop on 2026-11-21 (shop-redo). The shop only renders items in items[], so retired products stop showing everywhere (shop page, Tidebot, llms digest). Shopify/Fourthwall listings are unchanged until unpublished in admin. See plans/shop-redo-spec.md.",
   "items": {
-   "wrightsville-beach-varsity-hoodie": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
    "carolina-beach-varsity-hoodie": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
    "kure-beach-varsity-hoodie": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
    "wilmington-varsity-hoodie": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
    "ilm-hoodie": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
-   "wrightsville-beach-varsity-tee": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
    "carolina-beach-varsity-tee": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
    "kure-beach-varsity-tee": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
    "wilmington-varsity-tee": "arched town-name varsity graphic (mega-store look); replaced by Harbor Arch / Town Code concepts",
@@ -4369,7 +3775,21 @@
    "the-sloop-rope-cap-wrightsville-beach": "held for launch 2026-11-24: low-quality sailboat embroidery, redesign needed",
    "the-sloop-pique-polo-wrightsville-beach": "held for launch 2026-11-24: embroidery and design read as low quality, redesign needed",
    "the-blue-crab-pique-polo-kure-beach": "held for launch 2026-11-24: embroidery and design read as low quality, redesign needed",
-   "the-rope-line-crewneck-wrightsville-beach": "Held on 2026-11-25 because the public Shopify product URL returns HTTP 404. Restore after the signed-out product page is verified."
+   "the-rope-line-crewneck-wrightsville-beach": "Held on 2026-11-25 because the public Shopify product URL returns HTTP 404. Restore after the signed-out product page is verified.",
+   "the-live-oak-embroidered-crewneck-wilmington": "live oak embroidery is a flat green blob on a stub trunk; set to DRAFT in Shopify 2026-11-27, redraw before relisting",
+   "wrightsville-beach-sloop-all-over-print-tote-bag": "sloop print sails have no mast, boom or jib and the repeat is random; set to DRAFT in Shopify 2026-11-27, replace with a correctly rigged sloop",
+   "wrightsville-beach-sloop-weekender-tote-bag": "sloop print sails have no mast, boom or jib and the repeat is random; set to DRAFT in Shopify 2026-11-27, replace with a correctly rigged sloop",
+   "wrightsville-beach-sloop-picnic-and-beach-blanket": "sloop print sails have no mast, boom or jib and the repeat is random; set to DRAFT in Shopify 2026-11-27, replace with a correctly rigged sloop",
+   "wrightsville-beach-sloop-printed-throw-pillow": "sloop print sails have no mast, boom or jib and the repeat is random; set to DRAFT in Shopify 2026-11-27, replace with a correctly rigged sloop",
+   "wrightsville-beach-sloop-all-over-print-zip-pouch": "sloop print sails have no mast, boom or jib and the repeat is random; set to DRAFT in Shopify 2026-11-27, replace with a correctly rigged sloop",
+   "wrightsville-beach-sloop-printed-pet-bandana": "sloop print sails have no mast, boom or jib and the repeat is random; set to DRAFT in Shopify 2026-11-27, replace with a correctly rigged sloop",
+   "wrightsville-beach-sloop-all-over-print-duffel-bag": "sloop print sails have no mast, boom or jib and the repeat is random; set to DRAFT in Shopify 2026-11-27, replace with a correctly rigged sloop",
+   "wrightsville-beach-sloop-printed-beach-towel": "sloop print sails have no mast, boom or jib and the repeat is random; set to DRAFT in Shopify 2026-11-27, replace with a correctly rigged sloop",
+   "wrightsville-beach-sloop-printed-beach-cloth-38-x-81-in": "sloop print sails have no mast, boom or jib and the repeat is random; set to DRAFT in Shopify 2026-11-27, replace with a correctly rigged sloop",
+   "the-live-oak-corduroy-cap-wilmington": "live oak embroidery is a flat green blob on a stub trunk; set to DRAFT in Shopify 2026-11-27, redraw before relisting",
+   "the-live-oak-cuffed-beanie-wilmington": "live oak embroidery is a flat green blob on a stub trunk; set to DRAFT in Shopify 2026-11-27, redraw before relisting",
+   "wrightsville-beach-sloop-printed-canvas-tote-bag": "sloop print sails have no mast, boom or jib and the repeat is random; set to DRAFT in Shopify 2026-11-27, replace with a correctly rigged sloop",
+   "wrightsville-beach-sloop-printed-zip-pouch": "sloop print sails have no mast, boom or jib and the repeat is random; set to DRAFT in Shopify 2026-11-27, replace with a correctly rigged sloop"
   },
   "archive": {
    "the-rope-line-crewneck-wrightsville-beach": {

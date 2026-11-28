@@ -26,7 +26,20 @@
 <link rel="stylesheet" href="/category.css"/>
 <noscript><style>#mc:empty{min-height:0}</style></noscript>
 <!-- ── ANALYTICS: Replace G-EN91RH3PZV with your GA4 Measurement ID from analytics.google.com ── -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV"></script>
+<script>
+window.addEventListener('load',function(){
+  function load(){
+    if(document.querySelector('script[data-sl-ga]'))return;
+    var tag=document.createElement('script');
+    tag.async=true;
+    tag.setAttribute('data-sl-ga','1');
+    tag.src='https://www.googletagmanager.com/gtag/js?id=G-EN91RH3PZV';
+    document.head.appendChild(tag);
+  }
+  document.addEventListener('pointerdown',load,{once:true,passive:true});
+  setTimeout(function(){if(window.requestIdleCallback)requestIdleCallback(load);else load();},5000);
+});
+</script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());gtag('config','G-EN91RH3PZV');
@@ -39,7 +52,7 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
 <link rel="stylesheet" href="/fixes.css"/>
 <link rel="stylesheet" href="/scene.css"/>
 <link rel="stylesheet" href="/luxe.css"/>
-<script src="/luxe.js" defer></script>
+<script data-idle="/luxe.js"></script>
 <link rel="stylesheet" href="/tokens.css"/>
 <script>window.__CAT="bike-tours";window.__H1="Bike Tours in Wilmington, NC";</script>
 </head>
@@ -157,14 +170,14 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
   <a href="/" class="nav-logo" aria-label="ShoreList home">Shore<span>List</span></a>
   <div class="nav-right">
     <a href="/things-to-do" class="nav-back">&#8592; All Things to Do</a>
-    <a href="/events" class="nav-ev-link" style="font-size:0.78rem;font-weight:500;color:var(--coral);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;transition:color 0.2s;">Events Guide</a>
-    <a href="/shore-picks" style="font-size:0.78rem;font-weight:500;color:var(--coral);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;transition:color 0.2s;">Shore Picks</a>
+    <a href="/events" class="nav-ev-link" style="font-size:0.78rem;font-weight:500;color:#D9C7A3;text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;transition:color 0.2s;">Events Guide</a>
+    <a href="/shore-picks" style="font-size:0.78rem;font-weight:500;color:#D9C7A3;text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;transition:color 0.2s;">Shore Picks</a>
     <a href="/join" class="nav-join">List Your Business</a>
   </div>
 </nav>
 <main id="main">
 <section class="hero ph" aria-label="Page header">
-  <img class="hero-photo" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-bike-tours_1920x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-bike-tours_640x.webp 640w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-bike-tours_1000x.webp 1000w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-bike-tours_1280x.webp 1280w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-bike-tours_1920x.webp 1920w" sizes="100vw" width="1920" height="1072" alt="" fetchpriority="high" decoding="async"/>
+  <img class="hero-photo" src="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-bike-tours_1920x.webp" srcset="https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-bike-tours_1280x.webp 1280w, https://cdn.shopify.com/s/files/1/0686/5213/8580/files/shorelist-cat-bike-tours_1920x.webp 1920w" sizes="100vw" width="1920" height="1072" alt="" fetchpriority="high" decoding="async"/>
   <div class="hero-inner">
     <div class="hero-breadcrumb"><a href="/">ShoreList</a> &nbsp;&#8250;&nbsp; <a href="/things-to-do">Things to Do</a> &nbsp;&#8250;&nbsp; <span id="hbc">Bike Tours</span></div>
     <div class="hero-top">
@@ -254,12 +267,14 @@ gtag('js',new Date());gtag('config','G-EN91RH3PZV');
   </nav>
 </footer>
 
-<script src="/attrib.js"></script>
-<script src="/category-app.js"></script>
-<script src="/sound.js" defer></script>
-<script src="/beachwx.js" defer></script>
-<script src="/widgets.js" defer></script>
-<script src="/shore-plus.js" defer></script>
-<script src="/directory.js" defer></script>
+<script data-idle="/attrib.js"></script>
+<script data-idle="/category-app.js"></script>
+<script data-idle="/sound.js"></script>
+<script data-idle="/beachwx.js"></script>
+<script data-idle="/shore-plus.js"></script>
+<script data-idle="/directory.js"></script>
+
+<script src="/guide-boot.js" defer data-widgets="1"></script>
+<script src="/idle-boot.js" defer></script>
 </body>
 </html>
