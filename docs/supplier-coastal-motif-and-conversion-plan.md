@@ -48,6 +48,15 @@ The [public ShoreList catalog](https://shorelist.net/shop-catalog.json) returned
 
 CJ Shopify readback: the $109 mint-stripe chair (`CJLY36122900001`) and $99 tilt umbrella (`CJZS31328570001`) both remain drafts. Shopify reports 80 and 69 units respectively and places both under CJ fulfillment while displaying Printify as their vendor. Treat those quantities as Shopify inventory counts only. The chair remains the stronger candidate on visual fit. CJ warehouse stock, freight, landed cost and fulfillment remain unverified. The [Dockside Dry Bag supplier lead](https://cjdropshipping.com/product/waterproof-outdoor-travel-bag-p-51ECEA1A-F85A-48D9-BE5B-0AFEE6402E5C.html) reached a human-verification page. Continue from the existing [variant review](CJ-VARIANT-REVIEW.md) when authenticated evidence is available.
 
+## Original polo artwork checkpoint
+
+| Candidate | Editable source | Measured motif width on the 600 px transparent export | Design evidence |
+|---|---|---|---|
+| White Cannonball Jelly polo | [Cannonball jelly](supplier-art/embroidery/cannonball-jelly.svg) | 208 px / 1.39 in at 150 dpi | Three flat colors, domed bell, chestnut rim and compact oral arms. [Bald Head Island Conservancy](https://bhic.org/true-jellies/) |
+| Navy Coquina polo | [Variable coquina](supplier-art/embroidery/coquina.svg) | 228 px / 1.52 in at 150 dpi | Two flat colors and separate wedge-shaped valves. The two accent strokes are 11 px wide, about 0.073 in. [NC DEQ field guide](https://www.deq.nc.gov/documents/files/rulesregs/education/field-guide/field-guide-chapt-4/download) · [National Shell Museum](https://shells.shellmuseum.org/shell/donax-variabilis/) |
+
+The source designs were drawn for ShoreList. Both rendered as transparent 600 × 600 RGBA PNGs and were visually inspected. Export each SVG at 600 × 600 px for the verified left-chest template region. The listed dimensions refer to the actual visible motif. Keep the artwork at the measured scale during supplier proofing. SVG colors are design targets. The actual thread substitutions, fill widths, gap integrity, stitch count and finish still need supplier digitization and a physical proof. The export is artwork for a proof, and neither an actual garment photograph nor approval to list it. [Fourthwall artwork guidance](https://help.fourthwall.com/create-and-sell-products/how-to-guides/mixed-print-regions-combining-dtg-and-embroidery)
+
 ## Uploaded conversion blueprint: implementation reconciliation
 
 The proposed seven-module architecture assumes Shopify Liquid owns shorelist.net, but AGENTS.md and source files establish a static Netlify site with Shopify cart permalinks and separate Fourthwall checkout. Preserve the existing stack. Treat 95+ mobile Lighthouse and CLS below 0.05 as target, not achieved fact. Sub-100ms and model response figures are unverified targets. New recurring software overhead target is $0; existing subscriptions are not zero. Do not buy under-$10 assets without approval.
