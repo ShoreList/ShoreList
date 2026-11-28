@@ -106,7 +106,8 @@
    "alt": "Studio photo of the Wrightsville Beach Crewneck, Sloop Embroidery.",
    "meta": "A little sloop under sail stitched on the chest, with WB for Wrightsville Beach beneath it.",
    "cta": "Choose color and size",
-   "price": 88,
+   "price": 68,
+   "from": true,
    "scenes": [
     "beach"
    ],
@@ -144,7 +145,7 @@
    "alt": "Studio photo of the Wrightsville Beach Hat, Sloop Corduroy Cap.",
    "meta": "A little sloop embroidered on the front of a corduroy cap, with WB stitched on the back.",
    "cta": "Choose color",
-   "price": 49,
+   "price": 46,
    "scenes": [
     "beach"
    ],
@@ -183,7 +184,8 @@
    "alt": "Studio photo of the Kure Beach Blue Crab Embroidered Crewneck.",
    "meta": "An Atlantic blue crab stitched small on the chest of a crewneck, in white or chalky mint.",
    "cta": "Choose size",
-   "price": 88,
+   "price": 68,
+   "from": true,
    "scenes": [
     "beach"
    ],
@@ -225,7 +227,8 @@
    "alt": "Studio photo of the Kure Beach Lifeguard Stand Embroidered Crewneck Sweatshirt.",
    "meta": "A small lifeguard stand with a red flag and the town name Kure Beach, embroidered on the chest of a white crewneck sweatshirt.",
    "cta": "Choose size",
-   "price": 88,
+   "price": 68,
+   "from": true,
    "scenes": [
     "beach"
    ],
@@ -272,7 +275,8 @@
    "alt": "Studio photo of the Wilmington Live Oak Embroidered Crewneck.",
    "meta": "A live oak hung with Spanish moss, stitched small on the chest of a blue jean crewneck.",
    "cta": "Choose color and size",
-   "price": 88,
+   "price": 68,
+   "from": true,
    "scenes": [
     "riverwalk"
    ],
