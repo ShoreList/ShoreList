@@ -168,3 +168,6 @@ T-01 -> T-03 -> owner test order. T-05 -> T-08. T-02 independent of everything e
 
 ### T-fourthwall-legacy Restore Fourthwall collection links
 - Owner: Codex/fix/fourthwall-legacy-shop-links. Limit changes to the two legacy Fourthwall redirects in `netlify.toml`. Verify both reach Harbor Goods while ordinary product routes retain their behavior.
+
+### T-harbor-merchant-links Verify Harbor Goods shopping destinations
+- Owner: Codex/fix/check-harbor-goods-merchant-links. Include Harbor Goods in the existing merchant link check and nightly Fourthwall coverage.
