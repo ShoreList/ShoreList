@@ -548,6 +548,17 @@
   status = 301
   force = true
 
+# Keep existing featured Quick View item IDs working while catalog links are aligned.
+[[redirects]]
+  from = "/shop/products/wrightsville-can-cooler"
+  to = "/shop/products/wrightsville-beach-can-cooler"
+  status = 302
+
+[[redirects]]
+  from = "/shop/products/wrightsville-ornament-2026"
+  to = "/shop/products/wrightsville-beach-christmas-ornament-2026"
+  status = 302
+
 [[redirects]]
   from = "/shop/:handle"
   to = "/shop/products/:handle"
