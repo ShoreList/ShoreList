@@ -1,5 +1,16 @@
 # ShoreList status and assignments
 
+## Snapshot: Thu Nov 26, 2026, 11:15 PM ET (ShoreList Chief)
+
+- **Hosting (VERIFIED):** shorelist.net and /shop are one Netlify site (`stellular-yeot-4f4d8a`). Apex A 75.2.60.5, www CNAME to the netlify.app host, DNS at Namecheap. Live `sw.js` VERSION `sl-v287-2026-11-26`, `index.html` and `shop.html` byte sizes match `main` at `adae375`. Merge to `main` deploys (ESTIMATE; Netlify build settings UNKNOWN).
+- **Approval rule (RJ, Nov 26 10:53 PM ET):** bots publish gate-passed products, deploy through the normal pipeline and post scored content without asking. Spending, new subscriptions, DMs/emails, and account or permission changes still need RJ. Live IG and TikTok ads untouched (read-only reporting at most).
+- **Promo:** SHOREFRIDAY15 Fri Nov 27 only, SHORECYBER15 Mon Nov 30 only, 15%, ET midnight to 11:59 PM. Checkout application: UNKNOWN until Shop & Merch confirms.
+- **Connectors:** usable for ShoreList: GitHub (admin+push), ShoreList Gmail and Calendar, Drive, Sheets, Notion, Canva, vidIQ (no accounts linked), Firecrawl. Stripe plugin installed, needs sign-in. Not connected: Higgsfield, Meta/IG, TikTok, Shopify Admin, Printify, Netlify, Google Business Profile, Fourthwall, CJ. Search Console and GA4 connectors are on a non-ShoreList account. See [CONNECTORS.md](CONNECTORS.md) and [OPERATING-MANUAL.md](OPERATING-MANUAL.md).
+- **Connect queue for RJ:** Higgsfield (USER-STATED paid through Sun Nov 29), Meta/IG, TikTok, Shopify, Printify, Netlify, Search Console + GA4 as ShoreList, Google Business Profile, Stripe (408), Fourthwall, CJ.
+- **Assignments:** Shop & Merch: shop fallback check, BF banner, confirm both codes at checkout, log in ship-log. Social & Local: script 9 Reels (4 Fri, 1 Sat, 1 Sun, 3 Mon), hold code copy until checkout is confirmed and accounts are connected. Chief: keep STATUS and the manual current.
+- **Command center PR:** #351 (draft, mergeable clean, CI green on c0595ad). Ops update branch: `docs/command-center-ops-1126`.
+
+
 **Snapshot:** November 26, 2026, 10:13 PM Eastern. **Source:** `main` at `ad536ee611457ce326b8e5447f67988598c1e0ab`. Refresh GitHub and production before starting a new batch.
 
 ## Verified state
