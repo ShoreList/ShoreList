@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { test } from 'node:test';
 import { BRAND_CRITERIA, coastalBrandIssues } from './coastal-brand-review.mjs';
 import cj from '../netlify/functions/_suppliers/cj.js';
-import { cjCoverage, cjDraft, cjVariants, harborReleaseIssues, releaseIssues, releaseRevision, selectedVariants, stageDrafts } from './supplier-expansion.mjs';
+import { cjCoverage, cjDraft, cjVariants, FOURTHWALL_REVIEW_CATEGORIES, fourthwallQualityIssues, harborReleaseIssues, releaseIssues, releaseRevision, selectedVariants, stageDrafts } from './supplier-expansion.mjs';
 
 const queue = JSON.parse(await readFile(new URL('../docs/supplier-expansion-candidates.json', import.meta.url)));
 const plans = JSON.parse(await readFile(new URL('../docs/supplier-expansion-development.json', import.meta.url)));
@@ -63,6 +63,10 @@ test('review gate rejects missing score evidence, duplicate images, hard failure
     scoreEvidence: Object.fromEntries(criteria.map((c) => [c, 'test'])),
     independentPhotoReview: { blind: true, score: 8, reviewer: 'test', evidence: 'test',
       lookbookSha256: 'a'.repeat(64), studioSha256: 'b'.repeat(64) },
+    fiveCategoryReview: { independent: true, reviewer: 'Synthetic fixture reviewer',
+      categories: Object.fromEntries(FOURTHWALL_REVIEW_CATEGORIES.map((key) => [key, { score: 90, evidence: 'Synthetic fixture only' }])) },
+    complianceReview: Object.fromEntries(['intellectualPropertyAndRights', 'labelingAndCare', 'safetyAndApplicableRegulation',
+      'truthfulAdvertising', 'checkoutAndFulfillment'].map((key) => [key, { pass: true, evidence: 'Synthetic fixture only' }])),
     coastalBrandReview: brandFixture(),
     ownerApproval: { approved: true, evidence: 'test' },
   };
@@ -72,6 +76,15 @@ test('review gate rejects missing score evidence, duplicate images, hard failure
   };
   signFixture();
   assert.deepEqual(releaseIssues(item), []);
+  const weak = structuredClone(item);
+  weak.fiveCategoryReview.categories.garmentAndMaterialQuality.score = 89;
+  weak.fiveCategoryReview.categories.brandAndLocalIdentity.score = 100;
+  assert.match(releaseIssues(weak).join(), /garmentAndMaterialQuality requires 90/);
+  assert.match(releaseIssues(weak).join(), /different submission revision/);
+  assert.match(fourthwallQualityIssues(undefined, undefined).join(), /independent five-category/);
+  const noRights = structuredClone(item);
+  noRights.complianceReview.intellectualPropertyAndRights.pass = false;
+  assert.match(releaseIssues(noRights).join(), /compliance evidence: intellectualPropertyAndRights/);
   const listing = { store: 'fourthwall', name: item.title, url: item.supplierUrl, sku: item.supplierSku, price: 40,
     img: item.lookbook.url, lookbook: item.lookbook.url, studio: item.studio.url };
   assert.deepEqual(harborReleaseIssues(listing, { items: [item] }), []);
