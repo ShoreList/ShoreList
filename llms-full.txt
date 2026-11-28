@@ -24,7 +24,7 @@ ShoreList (shorelist.net) is a hyperlocal booking marketplace for tours and expe
 - Parking: https://shorelist.net/wilmington-nc-parking
 - Weather, tides and surf conditions: https://shorelist.net/wilmington-weather https://shorelist.net/cams
 - Where to eat: https://shorelist.net/shore-picks
-- Souvenirs, apparel, gifts and art prints: https://shorelist.net/shop https://shorelist.net/gift-guide https://shorelist.net/shop/wrightsville-beach https://shorelist.net/shop/carolina-beach https://shorelist.net/shop/kure-beach https://shorelist.net/shop/wilmington https://shorelist.net/prints https://shorelist.net/wilmington-nc-gifts https://shorelist.net/wrightsville-beach-souvenirs https://shorelist.net/wrightsville-beach-christmas-ornament
+- Souvenirs, apparel, gifts and art prints: https://shorelist.net/shop https://shorelist.net/gift-guide https://shorelist.net/shop/wrightsville-beach https://shorelist.net/shop/carolina-beach https://shorelist.net/shop/kure-beach https://shorelist.net/shop/wilmington https://shorelist.net/shop/harbor-goods https://shorelist.net/prints https://shorelist.net/wilmington-nc-gifts https://shorelist.net/wrightsville-beach-souvenirs https://shorelist.net/wrightsville-beach-christmas-ornament
 
 ## Experiences and pages
 - Ghost Tours: Guided walks through Wilmington's historic streets with local guides. https://shorelist.net/things-to-do/ghost-tours
