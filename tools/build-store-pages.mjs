@@ -190,7 +190,7 @@ const giftFaq = [
 ];
 const sections = [
   { id: 'lead', h: 'Start here', p: 'Eight pieces from the shop, in the order we are featuring them: the Sloop crewneck and cap, the Blue Crab crewneck, the Kure Beach lifeguard crewneck, the Airlie Oak framed print, and the Wrightsville varsity hoodie, tee and signature crewneck. Sizing help is on the <a href="/size-guide">size guide</a>.',
-    ids: ['the-sloop-embroidered-crewneck-wrightsville-beach', 'the-sloop-corduroy-cap-wrightsville-beach', 'the-blue-crab-embroidered-crewneck-kure-beach', 'kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt', 'airlie-oak-framed-art-print-wrightsville-beach-and-wilmington', 'wrightsville-beach-varsity-hoodie', 'wrightsville-beach-varsity-tee', 'wrightsville-beach-signature-crewneck'] },
+    ids: ['the-sloop-embroidered-crewneck-wrightsville-beach', 'the-sloop-corduroy-cap-wrightsville-beach', 'the-blue-crab-embroidered-crewneck-kure-beach', 'kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt', 'airlie-oak-framed-art-print-wrightsville-beach-and-wilmington', 'wrightsville-beach-hoodie-varsity', 'wrightsville-beach-tee-varsity', 'wrightsville-beach-signature-crewneck'] },
   { id: 'hats', h: 'Beanies and caps', p: 'Smaller than a sweatshirt, and the same stitched icon. The Sloop cap is in the list above. Check each product page for sizing.',
     ids: ['the-sloop-cuffed-beanie-wrightsville-beach', 'the-blue-crab-cuffed-beanie-kure-beach', 'the-blue-crab-corduroy-cap-kure-beach'] },
 ];

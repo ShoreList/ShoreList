@@ -64,6 +64,31 @@
   to = "/shop/products/:handle"
   status = 301
 
+# The arched-lettering Wrightsville varsity hoodie and tee were replaced by the crest versions.
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-varsity-hoodie"
+  to = "/shop/products/wrightsville-beach-hoodie-varsity"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-varsity-hoodie.html"
+  to = "/shop/products/wrightsville-beach-hoodie-varsity"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-varsity-tee"
+  to = "/shop/products/wrightsville-beach-tee-varsity"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop/products/wrightsville-beach-varsity-tee.html"
+  to = "/shop/products/wrightsville-beach-tee-varsity"
+  status = 301
+  force = true
+
 # Internal build tooling, docs and repo metadata are not part of the public site. Nothing the pages load lives here.
 [[redirects]]
   from = "/tools/*"
