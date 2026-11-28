@@ -177,3 +177,6 @@ T-01 -> T-03 -> owner test order. T-05 -> T-08. T-02 independent of everything e
 
 ### T-overnight-2026-11-28 Run the one-night ShoreList work queue
 - Owner: Codex/ops/shorelist-overnight-2026-11-28. Claim `.github/workflows/shorelist-overnight.yml` for read-only production checks, promo tests and a supplier evidence report on the night of Nov 28 ET.
+
+### T-live-variant-parity Verify each public Shopify picker variant
+- Owner: Codex/ops/verify-live-shop-variant-parity. Claim `tools/verify-live.mjs` and `tools/test-verify-live.mjs` to compare live picker prices and stock with the existing Shopify feed.

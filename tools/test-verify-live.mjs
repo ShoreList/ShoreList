@@ -8,11 +8,19 @@ import { fileURLToPath } from 'node:url';
 
 const verifier = fileURLToPath(new URL('verify-live.mjs', import.meta.url));
 
-function runVerifier(t, imageStatus) {
+const pickerVariants = [
+  { id: 1, price: 68, available: true },
+  { id: 2, price: 83, available: true },
+];
+
+function runVerifier(t, imageStatus, picker = pickerVariants, pickerStatus = 200) {
   const fixture = mkdtempSync(join(tmpdir(), 'shorelist-live-test-'));
   t.after(() => rmSync(fixture, { recursive: true, force: true }));
   writeFileSync(join(fixture, 'shop-catalog.json'), JSON.stringify({
-    items: [{ id: 'tee', img: '/tee.jpg', studio: '/tee.jpg', gallery: [{ src: '/detail.jpg' }] }],
+    items: [{
+      id: 'tee', url: 'https://shorelist.myshopify.com/products/tee', price: 68,
+      img: '/tee.jpg', studio: '/tee.jpg', gallery: [{ src: '/detail.jpg' }],
+    }],
     harborGoods: [{ id: 'bag', img: '/bag.jpg' }],
   }));
   writeFileSync(join(fixture, 'shore-picks.html'), `
@@ -26,7 +34,17 @@ function runVerifier(t, imageStatus) {
     const requested = new Set();
     globalThis.fetch = async (value, options = {}) => {
       const url = new URL(value);
-      if (url.hostname === 'shorelist.myshopify.com') return Response.json({ products: [{ handle: 'tee' }] });
+      if (url.hostname === 'shorelist.myshopify.com') {
+        return Response.json({ products: url.searchParams.get('page') === '1' ? [{
+          handle: 'tee', variants: [
+            { id: 1, price: '68.00', available: true },
+            { id: 2, price: '83.00', available: true },
+          ],
+        }] : [] });
+      }
+      if (url.pathname === '/shop-variants.json') {
+        return Response.json({ tee: { variants: ${JSON.stringify(picker)} } }, { status: ${pickerStatus} });
+      }
       if (url.pathname === '/shop') return new Response(null, { status: 200 });
       const path = url.pathname;
       if (requested.has(path)) throw new Error('duplicate image request: ' + path);
@@ -56,4 +74,26 @@ test('working assets pass while the report still lists incomplete coverage', (t)
   assert.match(result.stdout, /1 text-only Shore Picks cards: pending\./);
   assert.match(result.stdout, /2 of 2 product cards lack a distinct lookbook lead and separate studio reference/);
   assert.match(result.stdout, /Harbor Goods\/bag/);
+  assert.match(result.stdout, /Picker variants checked: 2\./);
+});
+
+test('picker drift is reported when the catalog minimum still matches', (t) => {
+  const result = runVerifier(t, 200, [
+    pickerVariants[0],
+    { id: '2', price: 88, available: false },
+    { id: 3, price: 68, available: true },
+  ]);
+  assert.equal(result.status, 1, result.stderr);
+  assert.match(result.stdout, /3 problem\(s\)/);
+  assert.match(result.stdout, /\[picker-price\] tee variant 2: picker \$88, Shopify \$83/);
+  assert.match(result.stdout, /\[picker-stock\] tee variant 2: picker available=false, Shopify available=true/);
+  assert.match(result.stdout, /\[picker-stock\] tee variant 3: no longer listed by Shopify/);
+  assert.doesNotMatch(result.stdout, /\[price\]/);
+});
+
+test('a temporary picker snapshot failure is reported', (t) => {
+  const result = runVerifier(t, 200, pickerVariants, 503);
+  assert.equal(result.status, 1, result.stderr);
+  assert.match(result.stdout, /\[picker\] could not read live shop-variants.json: HTTP 503/);
+  assert.match(result.stdout, /Picker variants checked: 0\./);
 });

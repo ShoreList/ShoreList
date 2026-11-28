@@ -1,7 +1,7 @@
 // Nightly live verifier. Reports only: it changes nothing. Run: node tools/verify-live.mjs [--site https://shorelist.net]
 // Checks (all against the live network):
 //  1. shop and Shore Picks image URLs load, and missing photo coverage is listed separately
-//  2. every catalog item is still published on Shopify and its price matches the catalog (lowest variant price)
+//  2. Shopify publication, catalog minimums, and prices and stock for the variants served by the picker
 //  3. every URL in sitemap.xml returns 200
 // Exit 1 when anything fails. Output is a markdown report (also written to $GITHUB_STEP_SUMMARY when set).
 import fs from 'node:fs';
@@ -94,6 +94,17 @@ try {
     for (const p of j.products) live.set(p.handle, p);
   }
 } catch (e) { note('shopify', `could not read products.json: ${e.message}`); }
+let pickerBook = {};
+let pickerVariantsChecked = 0;
+if (live.size && items.some((item) => /myshopify\.com\/products\//.test(item.url || ''))) {
+  try {
+    const response = await fetch(SITE + '/shop-variants.json', { signal: AbortSignal.timeout(20000) });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data = await response.json();
+    if (!data || typeof data !== 'object' || Array.isArray(data)) throw new Error('invalid JSON object');
+    pickerBook = data;
+  } catch (e) { note('picker', `could not read live shop-variants.json: ${e.message}`); }
+}
 if (live.size) for (const it of items) {
   const h = (/\/products\/([a-z0-9-]+)/i.exec(it.url || '') || [])[1];
   if (!h || !/myshopify\.com/.test(it.url)) continue; // Fourthwall item is checked by the sitemap/link step only
@@ -103,6 +114,26 @@ if (live.size) for (const it of items) {
   const low = Math.min(...prices);
   if (Math.abs(low - it.price) > 0.001) note('price', `${it.id}: catalog $${it.price} but Shopify lowest variant $${low}`);
   if (!p.variants.some((v) => v.available)) note('stock', `${it.id}: every variant is sold out on Shopify`);
+
+  // A product without a snapshot entry uses the live lookup when a shopper opens the picker.
+  const cached = pickerBook[h]?.variants;
+  if (!Array.isArray(cached) || !cached.length) continue;
+  const byId = new Map(p.variants.map((variant) => [String(variant.id), variant]));
+  for (const variant of cached) {
+    pickerVariantsChecked++;
+    const merchant = byId.get(String(variant.id));
+    const label = `${h} variant ${variant.id}`;
+    if (!merchant) {
+      note('picker-stock', `${label}: no longer listed by Shopify`);
+      continue;
+    }
+    if (variant.price !== Number(merchant.price)) {
+      note('picker-price', `${label}: picker $${variant.price}, Shopify $${merchant.price}`);
+    }
+    if (variant.available !== merchant.available) {
+      note('picker-stock', `${label}: picker available=${variant.available}, Shopify available=${merchant.available}`);
+    }
+  }
 }
 
 // 3. sitemap URLs
@@ -111,7 +142,7 @@ const urls = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].replace('h
 const urlRes = await pool(urls, 8, async (u) => ({ u, r: await head(u) }));
 for (const { u, r } of urlRes) if (!r.ok) note('page', `${r.status || 'ERR'} ${u}`);
 
-const lines = [`# Live verification ${new Date().toISOString()}`, '', `Site: ${SITE}. Images checked: ${imgList.length}. Shopify products read: ${live.size}. Sitemap URLs checked: ${urls.length}.`, ''];
+const lines = [`# Live verification ${new Date().toISOString()}`, '', `Site: ${SITE}. Images checked: ${imgList.length}. Shopify products read: ${live.size}. Picker variants checked: ${pickerVariantsChecked}. Sitemap URLs checked: ${urls.length}.`, ''];
 if (!problems.length) lines.push('No problems found.');
 else { lines.push(`${problems.length} problem(s):`, ''); for (const p of problems) lines.push(`- [${p.area}] ${p.msg}`); }
 lines.push('', '## Photo coverage awaiting remediation', '',
