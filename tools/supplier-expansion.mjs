@@ -34,6 +34,35 @@ export function releaseRevision({ status, coastalBrandReview, ownerApproval, ...
   return createHash('sha256').update(canonical).digest('hex');
 }
 
+export const FOURTHWALL_REVIEW_CATEGORIES = Object.freeze([
+  'brandAndLocalIdentity', 'garmentAndMaterialQuality', 'artworkAndManufacturing',
+  'photographyAndPresentation', 'commercialAndCustomerExperience',
+]);
+const FOURTHWALL_COMPLIANCE = [
+  'intellectualPropertyAndRights', 'labelingAndCare', 'safetyAndApplicableRegulation',
+  'truthfulAdvertising', 'checkoutAndFulfillment',
+];
+
+// Scores are supplied by independent reviewers, never inferred or averaged.
+// These records are included in releaseRevision, so changing one invalidates approval.
+export function fourthwallQualityIssues(review, compliance) {
+  const issues = [];
+  if (review?.independent !== true || !hasText(review?.reviewer)) {
+    issues.push('independent five-category Fourthwall review');
+  }
+  for (const category of FOURTHWALL_REVIEW_CATEGORIES) {
+    const entry = review?.categories?.[category];
+    if (!Number.isInteger(entry?.score) || entry.score < 90 || entry.score > 100 ||
+        !hasText(entry.evidence)) issues.push('Fourthwall ' + category + ' requires 90/100 with evidence');
+  }
+  for (const rule of FOURTHWALL_COMPLIANCE) {
+    if (compliance?.[rule]?.pass !== true || !hasText(compliance[rule].evidence)) {
+      issues.push('Fourthwall compliance evidence: ' + rule);
+    }
+  }
+  return issues;
+}
+
 // This evaluates evidence supplied by reviewers. It never assigns a score.
 export function releaseIssues(item) {
   const issues = [];
@@ -65,6 +94,9 @@ export function releaseIssues(item) {
     issues.push('distinct exact-product images in lookbook, studio order');
   }
   issues.push(...productScoreIssues(item.scores, item.scoreEvidence));
+  if (item.supplier === 'fourthwall') {
+    issues.push(...fourthwallQualityIssues(item.fiveCategoryReview, item.complianceReview));
+  }
   const photo = item.independentPhotoReview;
   if (!photo || photo.blind !== true || !scoreValid(photo.score) || photo.score < 8 ||
       !hasText(photo.reviewer) || !hasText(photo.evidence) ||
