@@ -44,6 +44,7 @@ for (const p of pages) {
   }, p);
   rows.push(...found);
 }
+if (fs.existsSync(path.join(root, 'shop/beach-day-essentials.html'))) await import('./beach-essentials-viewport-helper.mjs').then(({ checkBeachEssentials }) => checkBeachEssentials({ browser, root })).catch((error) => { console.error(error); process.exitCode = 1; });
 await browser.close();
 server.close();
 
