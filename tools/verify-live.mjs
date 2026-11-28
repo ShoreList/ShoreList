@@ -1,6 +1,6 @@
 // Nightly live verifier. Reports only: it changes nothing. Run: node tools/verify-live.mjs [--site https://shorelist.net]
 // Checks (all against the live network):
-//  1. every image URL in shop-catalog.json and every pick photo in shore-picks.html loads (HTTP 200, image content type)
+//  1. shop and Shore Picks image URLs load, and missing photo coverage is listed separately
 //  2. every catalog item is still published on Shopify and its price matches the catalog (lowest variant price)
 //  3. every URL in sitemap.xml returns 200
 // Exit 1 when anything fails. Output is a markdown report (also written to $GITHUB_STEP_SUMMARY when set).
@@ -29,15 +29,44 @@ const cat = JSON.parse(fs.readFileSync('shop-catalog.json', 'utf8'));
 const items = cat.items;
 
 // 1. images
-const imgs = new Set();
-for (const it of items) for (const k of ['img', 'studio', 'lookbook']) {
-  if (it[k]) imgs.add(URL.parse(it[k], SITE + '/')?.href ?? it[k]);
+const imgs = new Map();
+function addImage(src, source) {
+  if (!src) return;
+  const url = URL.parse(src.replaceAll('&amp;', '&'), SITE + '/');
+  if (!url || !['http:', 'https:'].includes(url.protocol)) {
+    note('image', `${source}: invalid image URL ${src}`);
+    return;
+  }
+  if (!imgs.has(url.href)) imgs.set(url.href, []);
+  imgs.get(url.href).push(source);
 }
+
+const imageKey = (src) => (src || '').split('?')[0].replace(/_\d+x(?=\.[a-z]+$)/i, '').replace(/_\d{3,4}$/, '');
+const missingPairs = [];
+for (const [section, products] of [['Shop', items], ['Harbor Goods', cat.harborGoods ?? []]]) {
+  for (const item of products) {
+    const label = `${section}/${item.id}`;
+    for (const field of ['img', 'studio', 'lookbook']) addImage(item[field], `${label} ${field}`);
+    for (const [index, photo] of (item.gallery ?? []).entries()) {
+      addImage(photo?.src, `${label} gallery ${index + 1}`);
+    }
+    const [lead, lookbook, studio] = [item.img, item.lookbook, item.studio].map(imageKey);
+    if (!lookbook || !studio || lead !== lookbook || lookbook === studio) missingPairs.push(label);
+  }
+}
+
 const picks = fs.readFileSync('shore-picks.html', 'utf8');
-for (const m of picks.matchAll(/<img[^>]*\ssrc="(https:[^"]+)"/g)) imgs.add(m[1]);
-const imgList = [...imgs];
+for (const m of picks.matchAll(/<img\b[^>]*\ssrc="([^"]+)"/gi)) addImage(m[1], 'Shore Picks');
+const textOnlyPicks = [];
+for (const [tag] of picks.matchAll(/<(?:article|div)\b[^>]*\bdata-pick="[^"]+"[^>]*>/g)) {
+  const classes = (tag.match(/\sclass="([^"]*)"/)?.[1] ?? '').split(/\s+/);
+  if (classes.includes('no-photo')) textOnlyPicks.push(tag.match(/\sdata-pick="([^"]+)"/)[1]);
+}
+const imgList = [...imgs.keys()];
 const imgRes = await pool(imgList, 8, async (u) => ({ u, r: await head(u) }));
-for (const { u, r } of imgRes) if (!r.ok || !/image/i.test(r.type)) note('image', `${r.status || 'ERR'} ${u}`);
+for (const { u, r } of imgRes) {
+  if (!r.ok || !/^image\//i.test(r.type)) note('image', `${r.status || 'ERR'} ${u} (${r.type || 'no content type'}; ${imgs.get(u).join(', ')})`);
+}
 
 // 2. Shopify parity (public products.json, paged)
 const live = new Map();
@@ -73,6 +102,14 @@ for (const { u, r } of urlRes) if (!r.ok) note('page', `${r.status || 'ERR'} ${u
 const lines = [`# Live verification ${new Date().toISOString()}`, '', `Site: ${SITE}. Images checked: ${imgList.length}. Shopify products read: ${live.size}. Sitemap URLs checked: ${urls.length}.`, ''];
 if (!problems.length) lines.push('No problems found.');
 else { lines.push(`${problems.length} problem(s):`, ''); for (const p of problems) lines.push(`- [${p.area}] ${p.msg}`); }
+lines.push('', '## Photo coverage awaiting remediation', '',
+  'Coverage is based on storefront references. The photo release gate separately checks fidelity and approvals.',
+  '', `- ${textOnlyPicks.length} text-only Shore Picks cards${textOnlyPicks.length ? `: ${textOnlyPicks.join(', ')}` : ''}.`,
+  `- ${missingPairs.length} of ${items.length + (cat.harborGoods?.length ?? 0)} product cards lack a distinct lookbook lead and separate studio reference.`);
+if (missingPairs.length) {
+  lines.push('', '<details><summary>Product cards with incomplete photo coverage</summary>', '',
+    ...missingPairs.map((label) => `- ${label}`), '', '</details>');
+}
 const report = lines.join('\n');
 console.log(report);
 if (process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, report + '\n');
