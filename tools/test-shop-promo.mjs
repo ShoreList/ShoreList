@@ -113,7 +113,8 @@ test('home and shop render the sale in HTML with the Eastern codes', () => {
   assert.match(home, /min-height:56px/);
   assert.match(shop, /Black Friday: 15% off applied automatically at checkout, ends 11:59 PM ET tonight/);
   assert.match(shop, /Cyber Monday: 15% off applied automatically at checkout, ends 11:59 PM ET/);
-  assert.match(shop, /Order by Dec 8 for Christmas delivery \(US standard shipping\)/);
+  assert.ok(shop.includes('For Christmas delivery, we recommend ordering by December 8 (US standard shipping). Arrival is not guaranteed.'));
+  assert.ok(!shop.includes('Order by Dec 8 for Christmas delivery (US standard shipping).'));
   assert.match(shop, /data-orderby/);
   assert.match(shop, /Date\.UTC\(2026,11,9,5,0,0\)/);
   assert.match(shop, /min-height:44px/);

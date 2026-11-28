@@ -5,10 +5,7 @@
 import fs from 'node:fs';
 
 const SITE = 'https://shorelist.net';
-const promo = fs.readFileSync(new URL('../shop-promo.js', import.meta.url), 'utf8');
-const holidayMatch = promo.match(/id: 'xmas'[\s\S]*?text: '([^']+)'/);
-if (!holidayMatch) throw new Error('Christmas order-by note missing from shop-promo.js');
-const HOLIDAY = holidayMatch[1];
+const HOLIDAY = 'For Christmas delivery, we recommend ordering by December 8 (US standard shipping). Arrival is not guaranteed.';
 const CHECKOUT = 'Shipping cost and the delivery estimate for your address are shown at checkout, before you pay.';
 
 const HANDLES = {
