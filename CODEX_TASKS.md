@@ -171,3 +171,6 @@ T-01 -> T-03 -> owner test order. T-05 -> T-08. T-02 independent of everything e
 
 ### T-harbor-merchant-links Verify Harbor Goods shopping destinations
 - Owner: Codex/fix/check-harbor-goods-merchant-links. Include Harbor Goods in the existing merchant link check and nightly Fourthwall coverage.
+
+### T-retired-product-redirects Restore browsing from 14 retired product URLs
+- Owner: Codex/fix/retired-product-redirects. Claim `netlify.toml` and `CHANGELOG.md` for permanent redirects from the 14 product pages removed in #402 to their town collections (ST11, OP6).
