@@ -1,0 +1,26 @@
+{
+  "note": "Dated map for hero and section backgrounds. Beach slots stay empty until RJ's Shopify Files URLs arrive. Do not fill them with stock. Downtown uses one licensed riverfront photo. Both seasons point at the same files until a spring set is added.",
+  "seasons": [
+    { "id": "holiday", "from": "11-01", "to": "03-31" },
+    { "id": "beach", "from": "04-01", "to": "10-31" }
+  ],
+  "places": {
+    "homepage": { "status": "waiting-for-owner-cdn", "credit": "Photo: RJ Brideau / ShoreList" },
+    "wrightsville": { "status": "waiting-for-owner-cdn" },
+    "carolina": { "status": "waiting-for-owner-cdn" },
+    "kure": { "status": "waiting-for-owner-cdn" },
+    "wilmington": {
+      "status": "licensed",
+      "credit": "Photo: Cape Fear riverfront, Wilmington. Kevin Dunlap, Unsplash License.",
+      "source": "https://unsplash.com/photos/jIdbKQyNzX4",
+      "license": "Unsplash License",
+      "native": "6000x4138",
+      "desktop": "/img/places/wilmington-desk.webp",
+      "desktopJpg": "/img/places/wilmington-desk.jpg",
+      "phone": "/img/places/wilmington-phone.webp",
+      "phoneJpg": "/img/places/wilmington-phone.jpg",
+      "desktopSize": "1920x1080",
+      "phoneSize": "1080x1920"
+    }
+  }
+}

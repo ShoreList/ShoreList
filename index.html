@@ -13,14 +13,15 @@
 <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable site summary"/>
 <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-<link rel="preload" as="image" href="/img/hero-mobile/wb-banks.avif" type="image/avif" fetchpriority="high" media="(max-width: 820px)">
-<link rel="preload" as="image" href="/img/hero/wb-banks-1600.avif" type="image/avif" fetchpriority="high" media="(min-width: 821px)">
+<link rel="preload" as="image" href="/assets/rj-photos/hero-mobile/wb-banks.webp" type="image/webp" fetchpriority="high" media="(max-width: 767px)">
+<link rel="preload" as="image" href="/assets/rj-photos/hero/wb-banks-1600.webp" type="image/webp" fetchpriority="high" media="(min-width: 768px)">
+<link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/librecaslondisplay/v18/TuGOUUFxWphYQ6YI6q9Xp61FQzxDRKmzr1lWfxk.woff2" crossorigin>
 <script>
 /* Sale bar is in the HTML. This only picks the Eastern date before first paint, so the bar does not pop in later. */
 (function(){var n=Date.now(),a='off',w=[['SHORE15',Date.UTC(2026,10,25,4,0,0),Date.UTC(2026,10,27,4,59,0)],['SHOREFRIDAY15',Date.UTC(2026,10,27,5,0,0),Date.UTC(2026,10,28,4,59,0)],['SHORECYBER15',Date.UTC(2026,10,30,5,0,0),Date.UTC(2026,11,1,4,59,0)],['xmas',Date.UTC(2026,11,1,4,59,0),Date.UTC(2026,11,8,5,0,0)]];for(var i=0;i<w.length;i++){if(n>=w[i][1]&&n<w[i][2]){a=w[i][0];break;}}document.documentElement.setAttribute('data-sale',a);})();
 </script>
 <title>Things to Do in Wilmington, NC &amp; the Beaches | ShoreList</title>
-<meta name="description" content="Things to do in Wilmington, NC: book local tours, check live surf and beach conditions, find events and plan a trip to Wrightsville, Carolina and Kure Beach."/>
+<meta name="description" content="ShoreList covers downtown Wilmington, Wrightsville Beach, Carolina Beach and Kure Beach: experiences, tours, museums, coastal apparel and beach gear."/>
 <meta property="og:title" content="ShoreList | Things to Do in Wilmington, NC &amp; the Beaches"/>
 <meta property="og:description" content="Book local tours and adventures in Wilmington, NC and the surrounding beaches. Instant booking, local operators, secure Stripe checkout."/>
 <meta property="og:type" content="website"/>
@@ -32,8 +33,8 @@
 <meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://shorelist.net/og-home.jpg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=optional" onload="this.onload=null;this.rel='stylesheet'"/>
-<noscript><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=optional" rel="stylesheet"/></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400&display=swap" rel="stylesheet"/></noscript>
 <style>
 /* Critical styles: base, nav, hero and the approved explore and town sections. Everything else is in /home.css. */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
@@ -99,11 +100,11 @@ html[data-sale="SHOREFRIDAY15"] .sl-sale,html[data-sale="SHORECYBER15"] .sl-sale
 html[data-sale="SHOREFRIDAY15"] .sl-sale [data-code="SHOREFRIDAY15"],html[data-sale="SHORECYBER15"] .sl-sale [data-code="SHORECYBER15"]{display:inline}
 html[data-sale="SHOREFRIDAY15"] nav,html[data-sale="SHORECYBER15"] nav{top:56px}
 html[data-sale="SHOREFRIDAY15"] .hero,html[data-sale="SHORECYBER15"] .hero{padding-top:176px}
-.hero-static{position:relative;isolation:isolate;display:flex;align-items:flex-end;min-height:520px;height:min(70svh,620px);background:#0E1F33;color:#F4F1EA;overflow:hidden}
+.hero-static{position:relative;isolation:isolate;display:flex;align-items:flex-end;min-height:100svh;background:#0E1F33;color:#F4F1EA;overflow:hidden}
 .hero-static .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%;z-index:0}
-.hero-static .hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(14,31,51,.2) 0%,rgba(14,31,51,.05) 46%,rgba(14,31,51,.78) 100%)}
-.hero-static .hero-copy{position:relative;z-index:2;width:min(760px,100%);padding:24px 20px 28px}
-.hero-static h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(2.5rem,8vw,4.6rem);line-height:1.02;letter-spacing:-.5px;margin:0 0 10px;color:#F4F1EA}
+.hero-static .hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(14,31,51,0) 42%,rgba(14,31,51,.62) 100%)}
+.hero-static .hero-copy{position:relative;z-index:2;width:min(820px,100%);padding:24px 20px 36px}
+.hero-static h1{font-family:'Libre Caslon Display',Georgia,serif;font-weight:400;font-size:clamp(2.4rem,7.2vw,4.6rem);line-height:1.02;letter-spacing:-.5px;margin:0 0 10px;color:#F4F1EA}
 .hero-static .hero-sub{font-family:system-ui,sans-serif;font-size:1.02rem;line-height:1.4;max-width:34rem;margin:0 0 18px;color:rgba(244,241,234,.94)}
 .hero-static .hero-actions{display:flex;flex-wrap:wrap;gap:10px}
 .hero-static .btn-shop,.hero-static .btn-plan{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 16px;text-decoration:none;font:500 .95rem system-ui,sans-serif}
@@ -111,7 +112,7 @@ html[data-sale="SHOREFRIDAY15"] .hero,html[data-sale="SHORECYBER15"] .hero{paddi
 .hero-static .btn-plan{background:transparent;color:#F4F1EA;border:1px solid rgba(244,241,234,.75)}
 .hero-static .hero-credit{position:relative;z-index:2;margin:12px 0 0;font:400 11px/1.3 system-ui,sans-serif;color:rgba(244,241,234,.8)}
 body.home .cc-fab,body.home .cc{display:none!important}
-@media(min-width:821px){.hero-static{height:min(78vh,760px);min-height:620px}.hero-static .hero-copy{padding:40px 48px 48px}}
+@media(min-width:821px){.hero-static .hero-copy{padding:48px 56px 56px}}
 .hero{min-height:100vh;
   background:var(--teal);
   display:flex;flex-direction:column;justify-content:center;
@@ -375,19 +376,21 @@ window.addEventListener('load',function(){
 <main id="main">
 <section class="hero-static" id="hero" aria-label="Wilmington and the beaches">
   <picture>
-    <source type="image/avif" srcset="/img/hero-mobile/wb-banks.avif 960w, /img/hero/wb-banks-1600.avif 1600w" sizes="100vw">
-    <source type="image/webp" srcset="/img/hero-mobile/wb-banks.webp 960w, /img/hero/wb-banks-1600.webp 1600w" sizes="100vw">
-    <img class="hero-photo" src="/img/hero-mobile/wb-banks.webp" alt="Banks Channel and the pier at Wrightsville Beach, with beach houses across the water" width="1600" height="1200" fetchpriority="high" decoding="async">
+    <source media="(max-width: 767px)" type="image/webp" srcset="/assets/rj-photos/hero-mobile/wb-banks.webp">
+    <source media="(max-width: 767px)" type="image/avif" srcset="/assets/rj-photos/hero-mobile/wb-banks.avif">
+    <source media="(min-width: 768px)" type="image/webp" srcset="/assets/rj-photos/hero/wb-banks-1600.webp">
+    <source media="(min-width: 768px)" type="image/avif" srcset="/assets/rj-photos/hero/wb-banks-1600.avif">
+    <img class="hero-photo" src="/assets/rj-photos/hero-mobile/wb-banks.webp" alt="Banks Channel and the pier at Wrightsville Beach" width="1600" height="1200" fetchpriority="high" decoding="async" style="object-fit:cover;object-position:50% 62%">
   </picture>
   <div class="hero-shade" aria-hidden="true"></div>
   <div class="hero-copy">
-    <h1>Your local guide to the coast.</h1>
-    <p class="hero-sub">Tours, events and goods for Wrightsville, Carolina and Kure Beach.</p>
+    <h1>Your guide to Wilmington and the beaches.</h1>
+    <p class="hero-sub">Experiences, tours, museums, coastal apparel and beach gear, from downtown to Wrightsville, Carolina and Kure Beach.</p>
     <div class="hero-actions">
       <a class="btn-shop" href="/shop">Shop the coast</a>
       <a class="btn-plan" href="#plan-visit">Plan your visit</a>
     </div>
-    <p class="hero-credit">Photo: Banks Channel, Wrightsville Beach. Gerry Dincher, CC BY-SA&nbsp;2.0.</p>
+    <p class="hero-credit">Photo: RJ Brideau / ShoreList</p>
   </div>
 </section>
 
@@ -1687,7 +1690,7 @@ body:not(.home):not(.pg-home) .dock{display:none!important}
         </div>
       </a>
     </div>
-    <p class="tc-note">Live readings from NOAA and open-meteo. Downtown photo by Unexpected Snacks, CC BY-SA 4.0, via Wikimedia Commons. Hero and beach card photos are real photographs of these places, via Wikimedia Commons, resized and lightly color adjusted: <a href="https://commons.wikimedia.org/wiki/File:Kure_Beach_(13_April_2025).jpg" rel="noopener" target="_blank">Kure Beach at dawn (hero and Kure card)</a> by Staniulis (<a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="noopener" target="_blank">CC0</a>); <a href="https://commons.wikimedia.org/wiki/File:Wrightsville_Beach,_NC_-_10566962493.jpg" rel="noopener" target="_blank">Sunrise, Wrightsville Beach</a> by James Willamor (<a href="https://creativecommons.org/licenses/by-sa/2.0/" rel="noopener" target="_blank">CC BY-SA 2.0</a>); <a href="https://commons.wikimedia.org/wiki/File:Ocean_at_Wrightsville_Beach_2.jpg" rel="noopener" target="_blank">The Atlantic off Wrightsville Beach</a> by DiscoA340 (<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener" target="_blank">CC BY-SA 4.0</a>); <a href="https://commons.wikimedia.org/wiki/File:Banks_Channel_(24123830773).jpg" rel="noopener" target="_blank">Banks Channel, Wrightsville Beach (card and Shore Picks band)</a> by Gerry Dincher (<a href="https://creativecommons.org/licenses/by-sa/2.0/" rel="noopener" target="_blank">CC BY-SA 2.0</a>); <a href="https://commons.wikimedia.org/wiki/File:Fort_Fisher_State_Historic_Site_(13_April_2025).jpg" rel="noopener" target="_blank">Fort Fisher maritime forest</a> by Staniulis (<a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="noopener" target="_blank">CC0</a>); <a href="https://commons.wikimedia.org/wiki/File:Carolina_Beach_1.jpg" rel="noopener" target="_blank">Carolina Beach dunes and boardwalk (hero and card)</a> by Mx. Granger (<a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="noopener" target="_blank">CC0</a>); <a href="https://commons.wikimedia.org/wiki/File:Wrightsville_Beach_2.JPG" rel="noopener" target="_blank">Low sun at Wrightsville Beach</a> by NCSU16 (<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="noopener" target="_blank">CC BY-SA 3.0</a>); <a href="https://commons.wikimedia.org/wiki/File:Island_Life_in_Wrightsville_Beach.jpg" rel="noopener" target="_blank">Aerial of Wrightsville Beach and the sound</a> by FOCIIS Photography (<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener" target="_blank">CC BY-SA 4.0</a>); <a href="https://commons.wikimedia.org/wiki/File:Wrightsville_Beach_1.JPG" rel="noopener" target="_blank">Wrightsville Beach at twilight</a> by NCSU16 (<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="noopener" target="_blank">CC BY-SA 3.0</a>). A credit also shows in the corner of the hero for the photo on screen.</p>
+    <p class="tc-note">Live readings from NOAA and open-meteo. Photographs on this page are by RJ Brideau / ShoreList.</p>
   </div>
 </section>
 
@@ -1734,7 +1737,7 @@ body:not(.home):not(.pg-home) .dock{display:none!important}
     <a class="sp-pill" href="/shore-picks#coffee"><span class="sp-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3c0 1.5 1.5 1.5 1.5 3M12 3c0 1.5 1.5 1.5 1.5 3"/></svg></span><span><span class="t">Coffee &amp; Caf&eacute;s</span><span class="d">Where locals start the morning</span></span><span class="sp-go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
     <a class="sp-pill" href="/shore-picks#community"><span class="sp-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></span><span><span class="t">Locals&rsquo; Favorites</span><span class="d">Nominate a hidden gem</span></span><span class="sp-go"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
   </div>
-  <p class="sp-note">Background photo: Banks Channel at Wrightsville Beach by Gerry Dincher (CC BY-SA 2.0). It is not a photo of a specific venue.</p>
+  <p class="sp-note">Background photo: RJ Brideau / ShoreList. It is not a photo of a specific venue.</p>
 </div>
 </section>
 
@@ -1743,7 +1746,7 @@ body:not(.home):not(.pg-home) .dock{display:none!important}
   <div class="hx-in">
     <p class="hx-eye">Simple Process</p>
     <h2 class="hx-h" id="how-heading">How <em>ShoreList</em> works</h2>
-    <p class="hx-sub">Four steps from landing on this page to standing on Wilmington's beaches with a local guide.</p>
+    <p class="hx-sub">Four steps from this page to a tour, a museum or a beach day in Wilmington.</p>
     <ol class="hx-steps">
       <li class="hx-step"><div class="hx-step-n" aria-hidden="true">01</div><h3>Browse Local Experiences</h3><p>Discover local tours, charters, and adventures across Wilmington and the surrounding beaches, all in one place.</p></li>
       <li class="hx-step"><div class="hx-step-n" aria-hidden="true">02</div><h3>Book Instantly</h3><p>Pay securely and your spot is confirmed instantly. No phone tag, no back-and-forth. Confirmation hits your inbox in seconds.</p></li>
