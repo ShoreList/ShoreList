@@ -51,7 +51,7 @@
   if (!wrap.parentNode) host.insertBefore(wrap, host.firstChild);
   var cap = document.createElement('p'); cap.className = 'plate-credit'; host.appendChild(cap);
   function credit() { var p = PICS[pick[Math.round(cur) % 4]]; cap.textContent = 'Photo: ' + p.place + ', ' + p.by + ', ' + p.lic; }
-  function src(i) { if (mobile) { var a = '/img/hero-mobile/' + PICS[i].f + '.avif'; return { s: a + ' 960w', f: a }; } var b = BASE + PICS[i].f, c = 'x.jpg'; return { s: [1280, 1920, 2560, 3200, 3840].map(function (w) { return b + '_' + w + c + ' ' + w + 'w'; }).join(', '), f: b + '_2560' + c }; }
+  function src(i) { var b = BASE + PICS[i].f, c = 'x.jpg'; return { s: [1920, 2560, 3200, 3840].map(function (w) { return b + '_' + w + c + ' ' + w + 'w'; }).join(', '), f: b + '_1920' + c }; }
   // Same rule as the preload in index.html. Phones use a single local image and larger screens use a responsive CDN image. Uses window size, not a layout read, so it never forces a reflow.
   function need() { if (mobile) return '100vw'; if (H0 && H0.sz) return H0.sz; var vw = innerWidth, vh = innerHeight, d = window.devicePixelRatio || 1; return Math.ceil(Math.max(vw, vh * 1.5) * 1.08 * Math.min(d, 1.5) / d) + 'px'; }
   function load(i, high) {
