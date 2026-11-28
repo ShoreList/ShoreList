@@ -97,7 +97,6 @@ ShoreList (shorelist.net) is a hyperlocal booking marketplace for tours and expe
 - Festival in the Park (NC Holiday Flotilla): 10:00 AM · Wrightsville Beach · Wrightsville Beach Park https://shorelist.net/events/festival-in-the-park-nc-holiday-flotilla-2026-11-28.html
 - North Carolina Holiday Flotilla and Fireworks: 6:00 PM · Wrightsville Beach · Banks Channel https://shorelist.net/events/north-carolina-holiday-flotilla-and-fire-2026-11-28.html
 - Wilmington Holiday Parade: 6:00 PM · Downtown · Front Street https://shorelist.net/events/wilmington-holiday-parade-2026-11-29.html
-- Gentle Yoga: 9:00 AM · Wilmington · NC https://shorelist.net/events/cameron-10002074-1796115600-17961192-ada3dfa3-2026-12-01.html
 - Public Tour: 1:00 PM · Wilmington · Cameron Art Museum https://shorelist.net/events/cameron-10002075-1796216400-17962182-514a2a56-2026-12-02.html
 - Sing We Now of Christmas: A Joyful Celebration of the Season: Downtown · Wilson Center at Cape Fear Community College https://shorelist.net/events/sing-we-now-of-christmas-a-joyful-celebr-2026-12-02.html
 - Jazz at CAM: Yolanda Rabun: Greater Wilmington · Cameron Art Museum https://shorelist.net/events/jazz-at-cam-yolanda-rabun-2026-12-03.html
@@ -160,27 +159,26 @@ ShoreList (shorelist.net) is a hyperlocal booking marketplace for tours and expe
 - Wilmington Symphony Youth Orchestras Concert (February): 4:00 PM · Greater Wilmington · Kenan Auditorium https://shorelist.net/events/wilmington-symphony-youth-orchestras-con-2027-02-28.html
 - Jazz at CAM: Matt Booth Quartet: 7:00 PM · Wilmington · Cameron Art Museum https://shorelist.net/events/cameron-10001979-1804186800-18041940-b05befc5-2027-03-04.html
 - Hidden Battleship Tour: 11:00 AM · Greater Wilmington · Battleship North Carolina https://shorelist.net/events/battleship-tag-localist-com-2008-EventI-c6365b29-2027-03-20.html
-- Wrightsville Beach Hoodie, Varsity Fleece: wrightsville-beach · $92 https://shorelist.net/shop/products/wrightsville-beach-varsity-hoodie.html
-- Wrightsville Beach T-Shirt, Varsity Tee: wrightsville-beach · $42 https://shorelist.net/shop/products/wrightsville-beach-varsity-tee.html
+- Wrightsville Beach Crewneck, Sloop Embroidery: wrightsville-beach · $68 https://shorelist.net/shop/products/the-sloop-embroidered-crewneck-wrightsville-beach.html
+- Wrightsville Beach Hat, Sloop Corduroy Cap: wrightsville-beach · $46 https://shorelist.net/shop/products/the-sloop-corduroy-cap-wrightsville-beach.html
+- Kure Beach Blue Crab Embroidered Crewneck: kure-beach · $68 https://shorelist.net/shop/products/the-blue-crab-embroidered-crewneck-kure-beach.html
+- Kure Beach Lifeguard Stand Embroidered Crewneck Sweatshirt: kure-beach · $68 https://shorelist.net/shop/products/kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt.html
+- Wrightsville Beach Hoodie, Varsity Fleece: wrightsville-beach · $73 https://shorelist.net/shop/products/wrightsville-beach-hoodie-varsity.html
+- Wrightsville Beach T-Shirt, Varsity Tee: wrightsville-beach · $41 https://shorelist.net/shop/products/wrightsville-beach-tee-varsity.html
+- Wrightsville Beach Blue Crab Embroidered Crewneck: wrightsville-beach · $88 https://shorelist.net/shop/products/wrightsville-beach-blue-crab-embroidered-crewneck.html
 - Wrightsville Beach Signature Crewneck: wrightsville-beach · $78 https://shorelist.net/shop/products/wrightsville-beach-signature-crewneck.html
-- Wrightsville Beach Sloop Printed Mug: wrightsville-beach · $30 https://shorelist.net/shop/products/wrightsville-beach-sloop-printed-mug.html
-- Wrightsville Beach Sloop Printed Tea Towel: wrightsville-beach · $30 https://shorelist.net/shop/products/wrightsville-beach-sloop-printed-tea-towel.html
-- Wrightsville Beach Sloop Can Cooler Sleeve: wrightsville-beach · $14 https://shorelist.net/shop/products/wrightsville-beach-sloop-can-cooler-sleeve.html
 - Carolina Beach Lifeguard Stand Embroidered Crewneck Sweatshirt: carolina-beach · $88 https://shorelist.net/shop/products/carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt.html
+- Carolina Beach Blue Crab Embroidered Crewneck: carolina-beach · $88 https://shorelist.net/shop/products/carolina-beach-blue-crab-embroidered-crewneck.html
 - Carolina Beach Pelican Embroidered Crewneck: carolina-beach · $88 https://shorelist.net/shop/products/the-pelican-embroidered-crewneck-carolina-beach.html
 - Carolina Beach Pelican Corduroy Cap: carolina-beach · $49 https://shorelist.net/shop/products/the-pelican-corduroy-cap-carolina-beach.html
 - Carolina Beach Pelican Cuffed Beanie: carolina-beach · $30 https://shorelist.net/shop/products/the-pelican-cuffed-beanie-carolina-beach.html
 - Carolina Beach Lifeguard Stand Printed Throw Pillow: carolina-beach · $42 https://shorelist.net/shop/products/carolina-beach-lifeguard-stand-printed-throw-pillow.html
 - Carolina Beach Lifeguard Stand Printed Zip Pouch: carolina-beach · $30 https://shorelist.net/shop/products/carolina-beach-lifeguard-stand-printed-zip-pouch.html
-- Carolina Beach Lifeguard Stand Printed Mug: carolina-beach · $30 https://shorelist.net/shop/products/carolina-beach-lifeguard-stand-printed-mug.html
 - Carolina Beach Lifeguard Stand Printed Garment-Dyed Tee: carolina-beach · $42 https://shorelist.net/shop/products/carolina-beach-lifeguard-stand-printed-garment-dyed-tee.html
 - Brown Pelican Carolina Coast Printed Garment-Dyed Tee: carolina-beach · $42 https://shorelist.net/shop/products/brown-pelican-carolina-coast-printed-garment-dyed-tee.html
-- Kure Beach Lifeguard Stand Embroidered Crewneck Sweatshirt: kure-beach · $68 https://shorelist.net/shop/products/kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt.html
-- Kure Beach Blue Crab Embroidered Crewneck: kure-beach · $68 https://shorelist.net/shop/products/the-blue-crab-embroidered-crewneck-kure-beach.html
 - Kure Beach Lifeguard Stand Printed Canvas Tote Bag: kure-beach · $36 https://shorelist.net/shop/products/kure-beach-lifeguard-stand-printed-canvas-tote-bag.html
 - Kure Beach Lifeguard Stand Printed Throw Pillow: kure-beach · $42 https://shorelist.net/shop/products/kure-beach-lifeguard-stand-printed-throw-pillow.html
 - Kure Beach Lifeguard Stand Printed Zip Pouch: kure-beach · $30 https://shorelist.net/shop/products/kure-beach-lifeguard-stand-printed-zip-pouch.html
-- Kure Beach Lifeguard Stand Printed Mug: kure-beach · $30 https://shorelist.net/shop/products/kure-beach-lifeguard-stand-printed-mug.html
 - Kure Beach Lifeguard Stand Printed Garment-Dyed Tee: kure-beach · $42 https://shorelist.net/shop/products/kure-beach-lifeguard-stand-printed-garment-dyed-tee.html
 - Airlie Oak Art Print, Wilmington NC: wilmington · $84 https://shorelist.net/shop/products/airlie-oak-framed-art-print-wrightsville-beach-and-wilmington.html
 - Airlie Oak Wilmington All Over Print Tote Bag: wilmington · $48 https://shorelist.net/shop/products/airlie-oak-wilmington-all-over-print-tote-bag.html
@@ -189,20 +187,14 @@ ShoreList (shorelist.net) is a hyperlocal booking marketplace for tours and expe
 - Blue Crab Carolina Coast Printed Garment-Dyed Tee: wilmington · $42 https://shorelist.net/shop/products/blue-crab-carolina-coast-printed-garment-dyed-tee.html
 - Sea Oats Carolina Coast Printed Garment-Dyed Tee: wilmington · $42 https://shorelist.net/shop/products/sea-oats-carolina-coast-printed-garment-dyed-tee.html
 - Camellia Wilmington Printed Garment-Dyed Tee: wilmington · $42 https://shorelist.net/shop/products/camellia-wilmington-printed-garment-dyed-tee.html
-- Airlie Oak Wilmington Printed Mug: wilmington · $30 https://shorelist.net/shop/products/airlie-oak-wilmington-printed-mug.html
-- Airlie Oak Wilmington Ceramic Ornament: wilmington · $18 https://shorelist.net/shop/products/airlie-oak-wilmington-ceramic-ornament.html
 - Airlie Oak Wilmington All Over Print Zip Pouch: wilmington · $28 https://shorelist.net/shop/products/airlie-oak-wilmington-all-over-print-zip-pouch.html
 - Airlie Oak Wilmington Throw Pillow: wilmington · $42 https://shorelist.net/shop/products/airlie-oak-wilmington-throw-pillow.html
-- Airlie Oak Wilmington Tea Towel: wilmington · $30 https://shorelist.net/shop/products/airlie-oak-wilmington-tea-towel.html
-- Wrightsville Beach Can Cooler: wrightsville-beach · $12 https://shorelist.net/shop/products/wrightsville-beach-can-cooler.html
-- Carolina Beach Can Cooler: carolina-beach · $12 https://shorelist.net/shop/products/carolina-beach-can-cooler.html
 - Carolina Beach Scallop Shell Printed Crewneck Sweatshirt: carolina-beach · $88 https://shorelist.net/shop/products/carolina-beach-scallop-shell-printed-crewneck-sweatshirt.html
 - Carolina Beach Lifeguard Stand Bucket Hat: carolina-beach · $42 https://shorelist.net/shop/products/the-lifeguard-stand-bucket-hat-carolina-beach.html
 - Carolina Beach Lifeguard Stand Canvas Tote: carolina-beach · $48 https://shorelist.net/shop/products/the-lifeguard-stand-canvas-tote-carolina-beach.html
 - Carolina Beach Lifeguard Stand Dad Hat: carolina-beach · $42 https://shorelist.net/shop/products/the-lifeguard-stand-dad-hat-carolina-beach.html
 - Carolina Beach Megalodon Tooth Printed Crewneck Sweatshirt: carolina-beach · $88 https://shorelist.net/shop/products/carolina-beach-megalodon-tooth-printed-crewneck-sweatshirt.html
 - Carolina Beach Megalodon Tooth Printed Canvas Tote: carolina-beach · $48 https://shorelist.net/shop/products/carolina-beach-megalodon-tooth-printed-canvas-tote.html
-- Kure Beach Can Cooler: kure-beach · $12 https://shorelist.net/shop/products/kure-beach-can-cooler.html
 - Kure Beach Blue Crab Dad Hat: kure-beach · $42 https://shorelist.net/shop/products/the-blue-crab-dad-hat-kure-beach.html
 - Kure Beach Scallop Shell Printed Canvas Tote Bag: kure-beach · $36 https://shorelist.net/shop/products/kure-beach-scallop-shell-printed-canvas-tote-bag.html
 - Kure Beach Lifeguard Stand Bucket Hat: kure-beach · $42 https://shorelist.net/shop/products/the-lifeguard-stand-bucket-hat-kure-beach.html
@@ -213,11 +205,9 @@ ShoreList (shorelist.net) is a hyperlocal booking marketplace for tours and expe
 - Kure Beach Sea Turtle Printed Garment-Dyed Tee: kure-beach · $42 https://shorelist.net/shop/products/kure-beach-sea-turtle-printed-garment-dyed-tee.html
 - Kure Beach Sanderling Printed Garment-Dyed Tee: kure-beach · $44 https://shorelist.net/shop/products/kure-beach-sanderling-printed-garment-dyed-tee.html
 - Kure Beach Sea Turtle Printed Canvas Tote: kure-beach · $48 https://shorelist.net/shop/products/kure-beach-sea-turtle-printed-canvas-tote.html
-- Wrightsville Beach Christmas Ornament 2026: wrightsville-beach · $18 https://shorelist.net/shop/products/wrightsville-beach-christmas-ornament-2026.html
 - Wrightsville Beach Daymark Cap: wrightsville-beach · $49 https://shorelist.net/shop/products/daymark-corduroy-cap-wrightsville-beach.html
 - Wrightsville Beach Scallop Shell Printed Garment-Dyed Tee: wrightsville-beach · $42 https://shorelist.net/shop/products/wrightsville-beach-scallop-shell-printed-garment-dyed-tee.html
 - Wrightsville Beach Oystercatcher Printed Garment-Dyed Tee: wrightsville-beach · $44 https://shorelist.net/shop/products/wrightsville-beach-oystercatcher-printed-garment-dyed-tee.html
-- Wrightsville Beach Scallop Shell Printed Mug: wrightsville-beach · $30 https://shorelist.net/shop/products/wrightsville-beach-scallop-shell-printed-mug.html
 - Wrightsville Beach Sweatshirt, Sailfish: wrightsville-beach · $88 https://shorelist.net/shop/products/wrightsville-beach-sailfish-printed-crewneck-sweatshirt.html
 - Wrightsville Beach Sailfish T-Shirt: wrightsville-beach · $42 https://shorelist.net/shop/products/wrightsville-beach-sailfish-printed-garment-dyed-tee.html
 - Wrightsville Beach Sailfish Printed Canvas Tote: wrightsville-beach · $48 https://shorelist.net/shop/products/wrightsville-beach-sailfish-printed-canvas-tote.html
@@ -240,8 +230,6 @@ ShoreList (shorelist.net) is a hyperlocal booking marketplace for tours and expe
 - Kure Beach Varsity Crewneck: kure-beach · $78 https://shorelist.net/shop/products/kure-beach-varsity-crewneck.html
 - Wilmington Varsity Crewneck: wilmington · $78 https://shorelist.net/shop/products/wilmington-varsity-crewneck.html
 - ILM Crewneck: wilmington · $78 https://shorelist.net/shop/products/ilm-crewneck.html
-- Wrightsville Beach Crewneck, Sloop Embroidery: wrightsville-beach · $68 https://shorelist.net/shop/products/the-sloop-embroidered-crewneck-wrightsville-beach.html
-- Wrightsville Beach Hat, Sloop Corduroy Cap: wrightsville-beach · $46 https://shorelist.net/shop/products/the-sloop-corduroy-cap-wrightsville-beach.html
 - Kure Beach Blue Crab Corduroy Cap: kure-beach · $49 https://shorelist.net/shop/products/the-blue-crab-corduroy-cap-kure-beach.html
 - Wrightsville Beach Beanie, Sloop Cuffed: wrightsville-beach · $30 https://shorelist.net/shop/products/the-sloop-cuffed-beanie-wrightsville-beach.html
 - Daymark Cuffed Beanie, Wrightsville Beach: wrightsville-beach · $30 https://shorelist.net/shop/products/daymark-cuffed-beanie-wrightsville-beach.html
@@ -250,6 +238,19 @@ ShoreList (shorelist.net) is a hyperlocal booking marketplace for tours and expe
 - Kure Beach Blue Crab Rope Cap: kure-beach · $45 https://shorelist.net/shop/products/the-blue-crab-rope-cap-kure-beach.html
 - Carolina Beach Lifeguard Stand Rope Cap: carolina-beach · $45 https://shorelist.net/shop/products/the-lifeguard-stand-rope-cap-carolina-beach.html
 - Kure Beach Lifeguard Stand Rope Cap: kure-beach · $45 https://shorelist.net/shop/products/the-lifeguard-stand-rope-cap-kure-beach.html
+- Wrightsville Beach Sloop Printed Mug: wrightsville-beach · $30 https://shorelist.net/shop/products/wrightsville-beach-sloop-printed-mug.html
+- Wrightsville Beach Sloop Printed Tea Towel: wrightsville-beach · $30 https://shorelist.net/shop/products/wrightsville-beach-sloop-printed-tea-towel.html
+- Wrightsville Beach Sloop Can Cooler Sleeve: wrightsville-beach · $14 https://shorelist.net/shop/products/wrightsville-beach-sloop-can-cooler-sleeve.html
+- Carolina Beach Lifeguard Stand Printed Mug: carolina-beach · $30 https://shorelist.net/shop/products/carolina-beach-lifeguard-stand-printed-mug.html
+- Kure Beach Lifeguard Stand Printed Mug: kure-beach · $30 https://shorelist.net/shop/products/kure-beach-lifeguard-stand-printed-mug.html
+- Airlie Oak Wilmington Printed Mug: wilmington · $30 https://shorelist.net/shop/products/airlie-oak-wilmington-printed-mug.html
+- Airlie Oak Wilmington Ceramic Ornament: wilmington · $18 https://shorelist.net/shop/products/airlie-oak-wilmington-ceramic-ornament.html
+- Airlie Oak Wilmington Tea Towel: wilmington · $30 https://shorelist.net/shop/products/airlie-oak-wilmington-tea-towel.html
+- Wrightsville Beach Can Cooler: wrightsville-beach · $12 https://shorelist.net/shop/products/wrightsville-beach-can-cooler.html
+- Carolina Beach Can Cooler: carolina-beach · $12 https://shorelist.net/shop/products/carolina-beach-can-cooler.html
+- Kure Beach Can Cooler: kure-beach · $12 https://shorelist.net/shop/products/kure-beach-can-cooler.html
+- Wrightsville Beach Christmas Ornament 2026: wrightsville-beach · $18 https://shorelist.net/shop/products/wrightsville-beach-christmas-ornament-2026.html
+- Wrightsville Beach Scallop Shell Printed Mug: wrightsville-beach · $30 https://shorelist.net/shop/products/wrightsville-beach-scallop-shell-printed-mug.html
 
 ## Guides and answers by activity
 
@@ -699,10 +700,12 @@ Handpicked restaurants, coffee shops and bars. Editorial picks, not paid placeme
 - Wrightsville Beach Hat, Sloop Corduroy Cap ($46): A little sloop embroidered on the front of a corduroy cap, with WB stitched on the back. https://shorelist.myshopify.com/products/the-sloop-corduroy-cap-wrightsville-beach
 - Kure Beach Blue Crab Embroidered Crewneck ($68): An Atlantic blue crab stitched small on the chest of a crewneck, in white or chalky mint. https://shorelist.myshopify.com/products/the-blue-crab-embroidered-crewneck-kure-beach
 - Kure Beach Lifeguard Stand Embroidered Crewneck Sweatshirt ($68): A small lifeguard stand with a red flag and the town name Kure Beach, embroidered on the chest of a white crewneck sweatshirt. https://shorelist.myshopify.com/products/kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt
-- Wrightsville Beach Hoodie, Varsity Fleece ($92): WRIGHTSVILLE arched over BEACH in soft cream varsity lettering on a garment-dyed heavyweight hoodie. Denim or True Navy. https://shorelist.myshopify.com/products/wrightsville-beach-varsity-hoodie
-- Wrightsville Beach T-Shirt, Varsity Tee ($42): WRIGHTSVILLE arched over BEACH in soft cream varsity lettering on a garment-dyed tee. Blue Jean or Blue Spruce. https://shorelist.myshopify.com/products/wrightsville-beach-varsity-tee
+- Wrightsville Beach Hoodie, Varsity Fleece ($73): A small crest on the left chest, with WRIGHTSVILLE BEACH around a sailboat and a red flag, on a garment-dyed heavyweight hoodie. True Navy or Denim. https://shorelist.myshopify.com/products/wrightsville-beach-hoodie-varsity
+- Wrightsville Beach T-Shirt, Varsity Tee ($41): A small crest on the left chest, with WRIGHTSVILLE BEACH around a sailboat and a red flag, on a garment-dyed tee. The back has a small flag with WRIGHTSVILLE BEACH under it. Blue Jean or Blue Spruce. https://shorelist.myshopify.com/products/wrightsville-beach-tee-varsity
+- Wrightsville Beach Blue Crab Embroidered Crewneck ($88): An Atlantic blue crab stitched small on the chest of a crewneck, with WB under it, in white or chalky mint. https://shorelist.myshopify.com/products/wrightsville-beach-blue-crab-embroidered-crewneck
 - Wrightsville Beach Signature Crewneck ($78): Signature Wrightsville Beach lettering with the small ShoreList pennant on a garment-dyed crewneck. Five colors. https://shorelist.myshopify.com/products/wrightsville-beach-signature-crewneck
 - Carolina Beach Lifeguard Stand Embroidered Crewneck Sweatshirt ($88): A small lifeguard stand with a red flag and the town name Carolina Beach, embroidered on the chest of a white crewneck sweatshirt. https://shorelist.myshopify.com/products/carolina-beach-lifeguard-stand-embroidered-crewneck-sweatshirt
+- Carolina Beach Blue Crab Embroidered Crewneck ($88): An Atlantic blue crab stitched small on the chest of a crewneck, with CB under it, in white or chalky mint. https://shorelist.myshopify.com/products/carolina-beach-blue-crab-embroidered-crewneck
 - Carolina Beach Pelican Embroidered Crewneck ($88): A brown pelican stitched small on the chest in white, chestnut and gold thread, quiet on a blue jean crewneck. https://shorelist.myshopify.com/products/the-pelican-embroidered-crewneck-carolina-beach
 - Carolina Beach Pelican Corduroy Cap ($49): A brown pelican embroidered on the front of a soft corduroy cap. https://shorelist.myshopify.com/products/the-pelican-corduroy-cap-carolina-beach
 - Carolina Beach Pelican Cuffed Beanie ($30): A brown pelican embroidered on the cuff of a classic knit beanie. https://shorelist.myshopify.com/products/the-pelican-cuffed-beanie-carolina-beach

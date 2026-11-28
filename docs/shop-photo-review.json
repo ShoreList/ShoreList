@@ -809,18 +809,18 @@
       "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/14255062148024729065_2048.jpg?v=1795458026"
     },
     {
-      "id": "wrightsville-beach-varsity-hoodie",
+      "id": "wrightsville-beach-hoodie-varsity",
       "name": "Wrightsville Beach Hoodie, Varsity Fleece",
-      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-varsity-hoodie",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-hoodie-varsity",
       "status": "Studio-first hold. Lookbook empty until a reviewed pair exists.",
-      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2208554389027895019_2048.jpg"
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2994141325846479500_2048.jpg?v=1795827218"
     },
     {
-      "id": "wrightsville-beach-varsity-tee",
+      "id": "wrightsville-beach-tee-varsity",
       "name": "Wrightsville Beach T-Shirt, Varsity Tee",
-      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-varsity-tee",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-tee-varsity",
       "status": "Studio-first hold. Lookbook empty until a reviewed pair exists.",
-      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12620281615902647264_2048.jpg"
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17468496152942394856_2048.jpg?v=1795827478"
     },
     {
       "id": "wrightsville-beach-signature-crewneck",
@@ -905,6 +905,22 @@
       "url": "https://shorelist.myshopify.com/products/wrightsville-beach-sloop-printed-zip-pouch",
       "status": "Studio-first hold. Lookbook cleared 2026-11-27 until a reviewed pair exists.",
       "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/10521571959228082054_2048.jpg?v=1795396350"
+    },
+    {
+      "id": "wrightsville-beach-blue-crab-embroidered-crewneck",
+      "name": "Wrightsville Beach Blue Crab Embroidered Crewneck",
+      "url": "https://shorelist.myshopify.com/products/wrightsville-beach-blue-crab-embroidered-crewneck",
+      "color": "White",
+      "status": "Studio-first hold. Lookbook empty until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3918752085900864476_2048.jpg?v=1795836286"
+    },
+    {
+      "id": "carolina-beach-blue-crab-embroidered-crewneck",
+      "name": "Carolina Beach Blue Crab Embroidered Crewneck",
+      "url": "https://shorelist.myshopify.com/products/carolina-beach-blue-crab-embroidered-crewneck",
+      "color": "White",
+      "status": "Studio-first hold. Lookbook empty until a reviewed pair exists.",
+      "studioCandidate": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15470732138873385796_2048.jpg?v=1795836318"
     }
   ],
   "reviews": {},

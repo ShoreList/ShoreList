@@ -6,8 +6,8 @@
   "the-blue-crab-embroidered-crewneck-kure-beach",
   "kure-beach-lifeguard-stand-embroidered-crewneck-sweatshirt",
   "airlie-oak-framed-art-print-wrightsville-beach-and-wilmington",
-  "wrightsville-beach-varsity-hoodie",
-  "wrightsville-beach-varsity-tee",
+  "wrightsville-beach-hoodie-varsity",
+  "wrightsville-beach-tee-varsity",
   "wrightsville-beach-signature-crewneck"
  ],
  "note": "Only add an item here after it passes the shop gates: real supplier mockup of the exact colorway, lining/inside color checked, art at print resolution, product URL returns 200 signed out. Customer-facing fields (name, alt, meta, cta, collection blurbs, stores[].carries) must not name third-party blank brands; put those in the internal blank field. Run: node tools/check-shop-links.mjs",
@@ -256,50 +256,121 @@
    "featured": true
   },
   {
-   "id": "wrightsville-beach-varsity-hoodie",
+   "id": "wrightsville-beach-hoodie-varsity",
    "collection": "local-icons",
    "name": "Wrightsville Beach Hoodie, Varsity Fleece",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-varsity-hoodie",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2208554389027895019_2048.jpg",
-   "alt": "Studio photo of the Wrightsville Beach Hoodie, Varsity Fleece.",
-   "meta": "WRIGHTSVILLE arched over BEACH in soft cream varsity lettering on a garment-dyed heavyweight hoodie. Denim or True Navy.",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-hoodie-varsity",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2994141325846479500_2048.jpg?v=1795827218",
+   "alt": "Studio mockup of the Wrightsville Beach Hoodie, Varsity Fleece, with a small sailboat crest on the left chest.",
+   "meta": "A small crest on the left chest, with WRIGHTSVILLE BEACH around a sailboat and a red flag, on a garment-dyed heavyweight hoodie. True Navy or Denim.",
    "cta": "Choose options",
-   "price": 92,
+   "price": 73,
+   "from": true,
    "scenes": [
     "beach"
    ],
    "cut": "unisex",
    "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48573473456212:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2208554389027895019_2048.jpg",
+   "buy": "https://shorelist.myshopify.com/cart/48762574536788:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/2994141325846479500_2048.jpg?v=1795827218",
    "lookbook": "",
    "shelf": "wrightsville-beach",
    "town": "wrightsville-beach",
    "type": "tops",
-   "added": "2026-11-27"
+   "added": "2026-11-28",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit. True Navy in S and XL. Denim in M, L and 2XL. 2XL is $80."
+    ],
+    [
+     "Fabric",
+     "Garment-dyed heavyweight ring-spun cotton blend fleece"
+    ],
+    [
+     "Print",
+     "A small crest on the left chest: WRIGHTSVILLE BEACH around a sailboat with a red flag"
+    ]
+   ]
   },
   {
-   "id": "wrightsville-beach-varsity-tee",
+   "id": "wrightsville-beach-tee-varsity",
    "collection": "local-icons",
    "name": "Wrightsville Beach T-Shirt, Varsity Tee",
-   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-varsity-tee",
-   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12620281615902647264_2048.jpg",
-   "alt": "Studio photo of the Wrightsville Beach T-Shirt, Varsity Tee.",
-   "meta": "WRIGHTSVILLE arched over BEACH in soft cream varsity lettering on a garment-dyed tee. Blue Jean or Blue Spruce.",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-tee-varsity",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17468496152942394856_2048.jpg?v=1795827478",
+   "alt": "Studio mockup of the Wrightsville Beach T-Shirt, Varsity Tee in Blue Spruce, with a small sailboat crest on the left chest.",
+   "meta": "A small crest on the left chest, with WRIGHTSVILLE BEACH around a sailboat and a red flag, on a garment-dyed tee. The back has a small flag with WRIGHTSVILLE BEACH under it. Blue Jean or Blue Spruce.",
    "cta": "Choose options",
-   "price": 42,
+   "price": 41,
+   "from": true,
    "scenes": [
     "beach"
    ],
    "cut": "unisex",
    "store": "shopify",
-   "buy": "https://shorelist.myshopify.com/cart/48574097457236:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
-   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/12620281615902647264_2048.jpg",
+   "buy": "https://shorelist.myshopify.com/cart/48762636271700:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now",
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/17468496152942394856_2048.jpg?v=1795827478",
    "lookbook": "",
    "shelf": "wrightsville-beach",
    "town": "wrightsville-beach",
    "type": "tops",
-   "added": "2026-11-27"
+   "color": "Blue Spruce",
+   "added": "2026-11-28",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, sizes S to 4XL. S to XL are $41, 2XL is $43, 3XL is $45 and 4XL is $51."
+    ],
+    [
+     "Fabric",
+     "Garment-dyed ring-spun cotton"
+    ],
+    [
+     "Print",
+     "A small crest on the left chest, with WRIGHTSVILLE BEACH around a sailboat and a red flag. The back has a small flag with WRIGHTSVILLE BEACH under it."
+    ]
+   ]
+  },
+  {
+   "id": "wrightsville-beach-blue-crab-embroidered-crewneck",
+   "collection": "local-icons",
+   "shelf": "wrightsville-beach",
+   "name": "Wrightsville Beach Blue Crab Embroidered Crewneck",
+   "url": "https://shorelist.myshopify.com/products/wrightsville-beach-blue-crab-embroidered-crewneck",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3918752085900864476_2048.jpg?v=1795836286",
+   "alt": "Studio mockup of the Wrightsville Beach Blue Crab Embroidered Crewneck in white, with a small blue crab and WB on the chest.",
+   "meta": "An Atlantic blue crab stitched small on the chest of a crewneck, with WB under it, in white or chalky mint.",
+   "cta": "Choose size",
+   "price": 88,
+   "from": true,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, sizes S to 3XL. 3XL is $96."
+    ],
+    [
+     "Fabric",
+     "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
+    ],
+    [
+     "Embroidery",
+     "A blue crab stitched in blue, white and red thread, with WB under it"
+    ]
+   ],
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/3918752085900864476_2048.jpg?v=1795836286",
+   "town": "wrightsville-beach",
+   "type": "tops",
+   "color": "White",
+   "added": "2026-11-28",
+   "motif": "sea-life",
+   "lookbook": "",
+   "buy": "https://shorelist.myshopify.com/cart/48764381003860:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now"
   },
   {
    "id": "wrightsville-beach-signature-crewneck",
@@ -366,6 +437,46 @@
    ],
    "motif": "beach-scenes",
    "featured": true
+  },
+  {
+   "id": "carolina-beach-blue-crab-embroidered-crewneck",
+   "collection": "local-icons",
+   "shelf": "carolina-beach",
+   "name": "Carolina Beach Blue Crab Embroidered Crewneck",
+   "url": "https://shorelist.myshopify.com/products/carolina-beach-blue-crab-embroidered-crewneck",
+   "img": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15470732138873385796_2048.jpg?v=1795836318",
+   "alt": "Studio mockup of the Carolina Beach Blue Crab Embroidered Crewneck in white, with a small blue crab and CB on the chest.",
+   "meta": "An Atlantic blue crab stitched small on the chest of a crewneck, with CB under it, in white or chalky mint.",
+   "cta": "Choose size",
+   "price": 88,
+   "from": true,
+   "scenes": [
+    "beach"
+   ],
+   "cut": "unisex",
+   "store": "shopify",
+   "facts": [
+    [
+     "Sizing",
+     "Relaxed fit, sizes S to 3XL. 3XL is $96."
+    ],
+    [
+     "Fabric",
+     "Garment-dyed ring-spun cotton blend fleece, washed for a soft feel"
+    ],
+    [
+     "Embroidery",
+     "A blue crab stitched in blue, white and red thread, with CB under it"
+    ]
+   ],
+   "studio": "https://cdn.shopify.com/s/files/1/0686/5213/8580/files/15470732138873385796_2048.jpg?v=1795836318",
+   "town": "carolina-beach",
+   "type": "tops",
+   "color": "White",
+   "added": "2026-11-28",
+   "motif": "sea-life",
+   "lookbook": "",
+   "buy": "https://shorelist.myshopify.com/cart/48764381921364:1?utm_source=shorelist.net&utm_medium=shop&utm_campaign=buy-now"
   },
   {
    "id": "the-pelican-embroidered-crewneck-carolina-beach",
