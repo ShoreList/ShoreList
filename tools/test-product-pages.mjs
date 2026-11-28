@@ -1,8 +1,8 @@
 // Product pages must exist on shorelist.net, canonicalize here, and match the catalog price.
 import fs from 'node:fs';
-import assert from 'node:assert/strict';
 
 const cat = JSON.parse(fs.readFileSync('shop-catalog.json', 'utf8'));
+const variantBook = JSON.parse(fs.readFileSync('shop-variants.json', 'utf8'));
 const handleOf = (url) => {
   const m = /\/products\/([a-z0-9-]+)/i.exec(String(url || ''));
   return m ? m[1].toLowerCase() : '';
@@ -14,6 +14,12 @@ const bad = (m) => fails.push(m);
 if (!items.length) bad('no shopify products in catalog');
 for (const i of items) {
   const handle = handleOf(i.url);
+  const prices = (variantBook[handle]?.variants ?? [])
+    .filter((variant) => variant.available)
+    .map((variant) => variant.price);
+  if (prices.length && Math.min(...prices) !== Number(i.price)) {
+    bad(`${handle}: lowest available picker price ${Math.min(...prices)} != catalog ${i.price}`);
+  }
   const file = `shop/products/${handle}.html`;
   if (!fs.existsSync(file)) { bad(`missing ${file}`); continue; }
   const h = fs.readFileSync(file, 'utf8');

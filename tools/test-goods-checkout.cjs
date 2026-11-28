@@ -382,6 +382,29 @@ test('shop-cart: retains items during the visit when storage reads or writes are
     assert.strictEqual(bag.count(), 2);
   }
 });
+test('shop-cart: blocks confirmed retired items and keeps saved items on a temporary lookup error', async () => {
+  mockFetch((url) => {
+    if (url.endsWith('handle=retired-tee')) return { status: 404, body: { error: 'Product not found' } };
+    if (url.endsWith('handle=unconfirmed-cap')) return { status: 502, body: { error: 'Could not reach the store' } };
+    return { body: {} };
+  });
+  const { win, store, made } = runCart();
+  store.slBag = JSON.stringify([
+    { id: '111', qty: 1, price: 30, handle: 'retired-tee', name: 'Retired Tee' },
+    { id: '222', qty: 2, price: 40, handle: 'unconfirmed-cap', name: 'Saved Cap' },
+  ]);
+  win.ShoreBag.open();
+  await new Promise((resolve) => setImmediate(resolve));
+  const drawer = made.filter((element) => element.tag === 'dialog')[1];
+  const html = drawer.querySelector('.slbag-in').innerHTML;
+  const saved = JSON.parse(store.slBag);
+  assert.match(html, /No longer available/);
+  assert.match(html, /cart\/222:2\?/);
+  assert.doesNotMatch(html, /cart\/111/);
+  assert.strictEqual(win.ShoreBag.count(), 2);
+  assert.strictEqual(saved[0].gone, true);
+  assert.strictEqual(saved[1].gone, undefined);
+});
 test('shop-cart: Shopify checkout retains first-touch campaign slugs and excludes unrelated data', () => {
   const { win, store, made } = runCart();
   store.slBag = JSON.stringify([{ id: '12345', qty: 2, price: 25, handle: 'test-tee', name: 'Test Tee' }]);
