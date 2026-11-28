@@ -174,3 +174,6 @@ T-01 -> T-03 -> owner test order. T-05 -> T-08. T-02 independent of everything e
 
 ### T-retired-product-redirects Restore browsing from 14 retired product URLs
 - Owner: Codex/fix/retired-product-redirects. Claim `netlify.toml` and `CHANGELOG.md` for permanent redirects from the 14 product pages removed in #402 to their town collections (ST11, OP6).
+
+### T-overnight-2026-11-28 Run the one-night ShoreList work queue
+- Owner: Codex/ops/shorelist-overnight-2026-11-28. Claim `.github/workflows/shorelist-overnight.yml` for read-only production checks, promo tests and a supplier evidence report on the night of Nov 28 ET.
